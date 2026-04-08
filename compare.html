@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare IIT & NIT — CollegeCompass</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1f3d; --blue: #2255c4; --blue-bg: #eff6ff;
+  --green: #065f46; --green-bg: #f0fdf4;
+  --accent: #f59e0b; --border: #e2e8f0;
+  --bg: #f8fafc; --card: #ffffff; --muted: #64748b;
+  --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--navy); }
+
+nav { background: var(--navy); height: 60px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+.nav-logo-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.nav-logo-text { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #fff; }
+.nav-back { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; }
+.nav-back:hover { color: #fff; }
+
+.page-header { background: var(--navy); padding: 36px 24px 32px; text-align: center; }
+.page-header h1 { font-family: var(--font-head); font-size: clamp(24px,4vw,36px); font-weight: 800; color: #fff; margin-bottom: 8px; }
+.page-header p { font-size: 14px; color: rgba(255,255,255,0.5); }
+.header-chips { display: flex; gap: 10px; justify-content: center; margin-top: 16px; }
+.hchip { font-size: 12px; font-weight: 600; font-family: var(--font-head); padding: 5px 14px; border-radius: 20px; }
+.hchip-iit { background: rgba(59,116,232,0.2); color: #93c5fd; }
+.hchip-nit { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+
+.main { max-width: 1140px; margin: 0 auto; padding: 28px 16px 60px; }
+
+.bars { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 40px; }
+.bar { background: var(--card); border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+
+.bar-top { padding: 16px 18px 0; }
+.bar-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; }
+.type-tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+.type-tab { flex: 1; padding: 7px 0; border-radius: 8px; text-align: center; font-family: var(--font-head); font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s; border: 1.5px solid var(--border); background: var(--bg); color: var(--muted); }
+.type-tab:hover { border-color: var(--navy); color: var(--navy); }
+.type-tab.sel-all  { background: var(--navy);  border-color: var(--navy);  color: #fff; }
+.type-tab.sel-iit  { background: var(--blue);  border-color: var(--blue);  color: #fff; }
+.type-tab.sel-nit  { background: var(--green); border-color: var(--green); color: #fff; }
+
+.chips-scroll { display: flex; gap: 7px; padding: 0 18px 14px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--border); }
+.chips-scroll::-webkit-scrollbar { display: none; }
+.chip { flex-shrink: 0; padding: 5px 12px; border-radius: 16px; font-size: 12px; font-weight: 600; font-family: var(--font-head); cursor: pointer; transition: all 0.15s; white-space: nowrap; border: 1.5px solid var(--border); background: var(--bg); color: var(--muted); }
+.chip:hover { border-color: var(--navy); color: var(--navy); }
+.chip.active-iit { background: var(--blue);  border-color: var(--blue);  color: #fff; }
+.chip.active-nit { background: var(--green); border-color: var(--green); color: #fff; }
+.chip.active-all { background: var(--navy);  border-color: var(--navy);  color: #fff; }
+
+.detail { padding: 20px 18px; min-height: 280px; }
+.placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 240px; color: var(--muted); gap: 8px; }
+.placeholder-icon { font-size: 32px; }
+.placeholder-text { font-size: 13px; }
+
+.d-type-badge { display: inline-block; font-size: 10px; font-weight: 700; font-family: var(--font-head); padding: 3px 8px; border-radius: 5px; margin-bottom: 10px; }
+.d-type-iit { background: var(--blue-bg); color: var(--blue); }
+.d-type-nit { background: var(--green-bg); color: var(--green); }
+.d-name { font-family: var(--font-head); font-size: 15px; font-weight: 800; color: var(--navy); line-height: 1.3; margin-bottom: 4px; }
+.d-city { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+.d-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.d-stat { background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 10px 12px; }
+.d-stat-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; font-family: var(--font-head); margin-bottom: 3px; }
+.d-stat-val { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--navy); }
+.val-blue { color: var(--blue); }
+.val-green { color: #059669; }
+
+.d-famous-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; font-family: var(--font-head); margin-bottom: 8px; }
+.d-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+.d-tag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 5px; font-family: var(--font-head); }
+.d-tag-iit { background: var(--blue-bg); color: var(--blue); }
+.d-tag-nit { background: var(--green-bg); color: var(--green); }
+
+.d-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.d-badge { font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 5px; font-family: var(--font-head); }
+.badge-old { background: #fef9c3; color: #854d0e; }
+.badge-new { background: #f0fdf4; color: #166534; }
+.badge-est { background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
+
+.table-section { margin-top: 8px; }
+.table-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+.table-title { font-family: var(--font-head); font-size: 20px; font-weight: 800; color: var(--navy); }
+.table-filters { display: flex; gap: 6px; }
+.tfilter { padding: 6px 14px; border-radius: 7px; font-size: 12px; font-weight: 600; font-family: var(--font-head); cursor: pointer; transition: all 0.15s; border: 1.5px solid var(--border); background: var(--card); color: var(--muted); }
+.tfilter.f-all  { background: var(--navy);  border-color: var(--navy);  color: #fff; }
+.tfilter.f-iit  { background: var(--blue);  border-color: var(--blue);  color: #fff; }
+.tfilter.f-nit  { background: var(--green); border-color: var(--green); color: #fff; }
+.table-wrap { border-radius: 12px; border: 1px solid var(--border); overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 760px; }
+thead tr { background: var(--navy); }
+thead th { padding: 11px 14px; text-align: left; color: rgba(255,255,255,0.7); font-family: var(--font-head); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; white-space: nowrap; cursor: pointer; user-select: none; }
+thead th:hover { color: #fff; }
+thead th.sorted { color: var(--accent); }
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.12s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #f8fafc; }
+tbody td { padding: 11px 14px; vertical-align: middle; }
+.t-badge-iit { display: inline-block; background: var(--blue-bg); color: var(--blue); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; font-family: var(--font-head); }
+.t-badge-nit { display: inline-block; background: var(--green-bg); color: var(--green); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; font-family: var(--font-head); }
+.t-name { font-weight: 600; color: var(--navy); font-size: 13px; }
+.t-city { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.t-nirf-iit { font-family: var(--font-head); font-weight: 700; color: var(--blue); }
+.t-nirf-nit { font-family: var(--font-head); font-weight: 700; color: var(--green); }
+.t-nr { color: #cbd5e1; font-size: 11px; }
+.t-placement { font-weight: 600; color: #059669; font-family: var(--font-head); }
+@media (max-width: 680px) { .bars { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🎓</div>
+    <span class="nav-logo-text">CollegeCompass</span>
+  </a>
+  <a href="index.html" class="nav-back">← Home</a>
+</nav>
+
+<div class="page-header">
+  <h1>Compare IIT &amp; NIT</h1>
+  <p>Pick any two institutes — IIT vs IIT, NIT vs NIT, or IIT vs NIT</p>
+  <div class="header-chips">
+    <span class="hchip hchip-iit">🔬 23 IITs</span>
+    <span class="hchip hchip-nit">🏗️ 31 NITs</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="bars">
+    <div class="bar" id="barA">
+      <div class="bar-top">
+        <div class="bar-title">Institute A</div>
+        <div class="type-tabs">
+          <div class="type-tab sel-all" onclick="setFilter('A','ALL',this)">All</div>
+          <div class="type-tab" onclick="setFilter('A','IIT',this)">IIT</div>
+          <div class="type-tab" onclick="setFilter('A','NIT',this)">NIT</div>
+        </div>
+      </div>
+      <div class="chips-scroll" id="chipsA"></div>
+      <div class="detail" id="detailA">
+        <div class="placeholder"><div class="placeholder-icon">🔍</div><div class="placeholder-text">Select an institute above</div></div>
+      </div>
+    </div>
+
+    <div class="bar" id="barB">
+      <div class="bar-top">
+        <div class="bar-title">Institute B</div>
+        <div class="type-tabs">
+          <div class="type-tab sel-all" onclick="setFilter('B','ALL',this)">All</div>
+          <div class="type-tab" onclick="setFilter('B','IIT',this)">IIT</div>
+          <div class="type-tab" onclick="setFilter('B','NIT',this)">NIT</div>
+        </div>
+      </div>
+      <div class="chips-scroll" id="chipsB"></div>
+      <div class="detail" id="detailB">
+        <div class="placeholder"><div class="placeholder-icon">🔍</div><div class="placeholder-text">Select an institute above</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <div class="table-header">
+      <div class="table-title">All Institutes</div>
+      <div class="table-filters">
+        <div class="tfilter f-all" onclick="filterTable('ALL',this)">All</div>
+        <div class="tfilter" onclick="filterTable('IIT',this)">IIT</div>
+        <div class="tfilter" onclick="filterTable('NIT',this)">NIT</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortBy('type')">Type</th>
+            <th onclick="sortBy('name')">Institute</th>
+            <th onclick="sortBy('nirf')" class="sorted">NIRF ↕</th>
+            <th onclick="sortBy('fees')">Fees/yr</th>
+            <th onclick="sortBy('top')">Top Placement</th>
+            <th onclick="sortBy('avg')">Avg Placement</th>
+            <th onclick="sortBy('roi')">ROI</th>
+            <th onclick="sortBy('campus')">Campus</th>
+            <th onclick="sortBy('est')">Est.</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  IIT: [
+    {name:'IIT Madras',city:'Chennai',nirf:1,fees:'₹2.3–2.6L',top:150,avg:21.8,roi:2.22,campus:'620 acres',est:1959,oldNew:'Old',famous:['CSE','Electrical','Mechanical','Aerospace']},
+    {name:'IIT Delhi',city:'New Delhi',nirf:2,fees:'₹2.3–2.7L',top:180,avg:22.0,roi:2.2,campus:'325 acres',est:1961,oldNew:'Old',famous:['CSE','Electrical','Mechanical','Engg Physics']},
+    {name:'IIT Bombay',city:'Mumbai',nirf:3,fees:'₹2.3–2.6L',top:210,avg:23.5,roi:2.4,campus:'550 acres',est:1958,oldNew:'Old',famous:['CSE','Electrical','Mechanical','Chemical']},
+    {name:'IIT Kanpur',city:'Kanpur',nirf:4,fees:'₹2.3–2.6L',top:170,avg:20.5,roi:2.09,campus:'1050 acres',est:1959,oldNew:'Old',famous:['CSE','Electrical','Aerospace','Mechanical']},
+    {name:'IIT Kharagpur',city:'Kharagpur',nirf:5,fees:'₹2.3–2.6L',top:135,avg:20.0,roi:2.04,campus:'2100 acres',est:1951,oldNew:'Old',famous:['CSE','Electrical','Mechanical','Civil']},
+    {name:'IIT Roorkee',city:'Roorkee',nirf:6,fees:'₹2.3–2.6L',top:130,avg:19.0,roi:1.94,campus:'365 acres',est:1847,oldNew:'Old',famous:['CSE','Electrical','Civil','Mechanical']},
+    {name:'IIT Hyderabad',city:'Hyderabad',nirf:7,fees:'₹2.3–2.8L',top:110,avg:18.8,roi:1.84,campus:'576 acres',est:2008,oldNew:'New',famous:['CSE','AI','EE','Materials']},
+    {name:'IIT Guwahati',city:'Guwahati',nirf:8,fees:'₹2.3–2.6L',top:120,avg:18.6,roi:1.9,campus:'700 acres',est:1994,oldNew:'Old',famous:['CSE','ECE','Biotechnology','Data Science']},
+    {name:'IIT (BHU) Varanasi',city:'Varanasi',nirf:10,fees:'₹2.3–2.6L',top:115,avg:17.6,roi:1.8,campus:'400 acres',est:1919,oldNew:'Old',famous:['CSE','Electrical','Mechanical','Mining']},
+    {name:'IIT (ISM) Dhanbad',city:'Dhanbad',nirf:15,fees:'₹2.3–2.6L',top:100,avg:17.2,roi:1.76,campus:'393 acres',est:1926,oldNew:'Old',famous:['Mining','Petroleum','CSE','ECE']},
+    {name:'IIT Patna',city:'Patna',nirf:19,fees:'₹2.3–2.8L',top:82,avg:15.8,roi:1.55,campus:'501 acres',est:2008,oldNew:'New',famous:['CSE','Electrical','Mechanical','Civil']},
+    {name:'IIT Gandhinagar',city:'Gandhinagar',nirf:25,fees:'₹2.3–2.8L',top:90,avg:16.8,roi:1.65,campus:'400 acres',est:2008,oldNew:'New',famous:['CSE','Electrical','Chemical','Materials']},
+    {name:'IIT Mandi',city:'Mandi',nirf:26,fees:'₹2.3–2.8L',top:62,avg:14.4,roi:1.41,campus:'538 acres',est:2009,oldNew:'New',famous:['CSE','Data Science','EE','Bioengineering']},
+    {name:'IIT Jodhpur',city:'Jodhpur',nirf:27,fees:'₹2.3–2.8L',top:72,avg:15.0,roi:1.47,campus:'852 acres',est:2008,oldNew:'New',famous:['AI','CSE','EE','Bioengineering']},
+    {name:'IIT Ropar',city:'Rupnagar',nirf:32,fees:'₹2.3–2.8L',top:78,avg:15.1,roi:1.48,campus:'500 acres',est:2008,oldNew:'New',famous:['CSE','Electrical','Mechanical','Maths & Computing']},
+    {name:'IIT Bhubaneswar',city:'Bhubaneswar',nirf:39,fees:'₹2.3–2.8L',top:75,avg:15.2,roi:1.49,campus:'936 acres',est:2008,oldNew:'New',famous:['CSE','Electrical','Mechanical','Civil']},
+    {name:'IIT Indore',city:'Indore',nirf:null,fees:'₹2.3–2.8L',top:85,avg:15.3,roi:1.5,campus:'501 acres',est:2009,oldNew:'New',famous:['CSE','Electrical','Mechanical','Metallurgy']},
+    {name:'IIT Jammu',city:'Jammu',nirf:56,fees:'₹2.3–2.8L',top:32,avg:11.8,roi:1.16,campus:'400 acres',est:2016,oldNew:'New',famous:['CSE','EE','Mechanical','Chemical']},
+    {name:'IIT Tirupati',city:'Tirupati',nirf:57,fees:'₹2.3–2.8L',top:48,avg:13.1,roi:1.28,campus:'548 acres',est:2015,oldNew:'New',famous:['CSE','Electrical','Mechanical','Chemical']},
+    {name:'IIT Palakkad',city:'Palakkad',nirf:64,fees:'₹2.3–2.8L',top:40,avg:12.7,roi:1.25,campus:'500 acres',est:2015,oldNew:'New',famous:['CSE','Data Science','EE','Mechanical']},
+    {name:'IIT Bhilai',city:'Durg',nirf:72,fees:'₹2.3–2.8L',top:35,avg:11.6,roi:1.14,campus:'447 acres',est:2016,oldNew:'New',famous:['CSE','Data Science','EE','Mechanical']},
+    {name:'IIT Dharwad',city:'Dharwad',nirf:77,fees:'₹2.3–2.8L',top:38,avg:12.3,roi:1.21,campus:'470 acres',est:2016,oldNew:'New',famous:['CSE','Electrical','Mechanical','Interdisciplinary']},
+    {name:'IIT Goa',city:'Ponda',nirf:null,fees:'₹2.3–2.8L',top:44,avg:12.8,roi:1.25,campus:'300 acres',est:2016,oldNew:'New',famous:['CSE','Electrical','Maths & Computing','Mechanical']},
+  ],
+  NIT: [
+    {name:'NIT Tiruchirappalli',city:'Tiruchirappalli',nirf:9,fees:'₹1.4–1.8L',top:52,avg:14.5,roi:2.27,campus:'800 acres',est:1964,famous:['CSE','ECE','EEE','Instrumentation']},
+    {name:'NIT Karnataka Surathkal',city:'Surathkal',nirf:17,fees:'₹1.4–1.8L',top:55,avg:15.0,roi:2.34,campus:'295 acres',est:1960,famous:['CSE','IT','ECE','Mechanical']},
+    {name:'NIT Calicut',city:'Kozhikode',nirf:21,fees:'₹1.4–1.8L',top:42,avg:12.0,roi:1.88,campus:'300 acres',est:1961,famous:['CSE','ECE','EEE','Mechanical']},
+    {name:'NIT Warangal',city:'Warangal',nirf:28,fees:'₹1.4–1.8L',top:53,avg:15.6,roi:2.44,campus:'248 acres',est:1959,famous:['CSE','ECE','EEE','Mechanical']},
+    {name:'MNIT Jaipur',city:'Jaipur',nirf:42,fees:'₹1.4–1.8L',top:40,avg:12.0,roi:1.88,campus:'317 acres',est:1963,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'VNIT Nagpur',city:'Nagpur',nirf:44,fees:'₹1.4–1.8L',top:36,avg:10.4,roi:1.62,campus:'214 acres',est:1960,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Durgapur',city:'Durgapur',nirf:49,fees:'₹1.4–1.8L',top:36,avg:10.8,roi:1.69,campus:'187 acres',est:1960,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Silchar',city:'Silchar',nirf:50,fees:'₹1.3–1.8L',top:26,avg:8.8,roi:1.42,campus:'625 acres',est:1967,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Patna',city:'Patna',nirf:53,fees:'₹1.3–1.8L',top:28,avg:8.8,roi:1.42,campus:'125 acres',est:1886,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Jalandhar',city:'Jalandhar',nirf:55,fees:'₹1.3–1.8L',top:28,avg:9.5,roi:1.53,campus:'154 acres',est:1987,famous:['CSE','ECE','EE','IT']},
+    {name:'NIT Delhi',city:'Delhi',nirf:65,fees:'₹1.4–1.8L',top:24,avg:8.6,roi:1.34,campus:'51 acres',est:2010,famous:['CSE','ECE','EE','AI']},
+    {name:'NIT Surat',city:'Surat',nirf:66,fees:'₹1.4–1.8L',top:38,avg:10.8,roi:1.69,campus:'250 acres',est:1961,famous:['CSE','ECE','Civil','Mechanical']},
+    {name:'NIT Srinagar',city:'Srinagar',nirf:73,fees:'₹1.3–1.8L',top:22,avg:8.2,roi:1.32,campus:'67 acres',est:1960,famous:['CSE','ECE','EE','Civil']},
+    {name:'MANIT Bhopal',city:'Bhopal',nirf:81,fees:'₹1.4–1.8L',top:34,avg:10.7,roi:1.67,campus:'650 acres',est:1960,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Jamshedpur',city:'Jamshedpur',nirf:82,fees:'₹1.3–1.8L',top:26,avg:8.7,roi:1.4,campus:'341 acres',est:1960,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Meghalaya',city:'Shillong',nirf:83,fees:'₹1.3–1.8L',top:18,avg:7.1,roi:1.15,campus:'300 acres',est:2010,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Kurukshetra',city:'Kurukshetra',nirf:85,fees:'₹1.3–1.8L',top:30,avg:9.6,roi:1.55,campus:'300 acres',est:1963,famous:['CSE','ECE','EE','IT']},
+    {name:'NIT Raipur',city:'Raipur',nirf:86,fees:'₹1.3–1.8L',top:24,avg:8.6,roi:1.39,campus:'100 acres',est:1956,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Hamirpur',city:'Hamirpur',nirf:97,fees:'₹1.3–1.8L',top:28,avg:9.1,roi:1.47,campus:'320 acres',est:1986,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Puducherry',city:'Karaikal',nirf:99,fees:'₹1.3–1.8L',top:18,avg:7.3,roi:1.18,campus:'258 acres',est:2010,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Rourkela',city:'Rourkela',nirf:null,fees:'₹1.4–1.8L',top:46,avg:13.3,roi:2.08,campus:'647 acres',est:1961,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Allahabad',city:'Prayagraj',nirf:null,fees:'₹1.4–1.8L',top:51,avg:14.0,roi:2.19,campus:'222 acres',est:1961,famous:['CSE','ECE','EE','IT']},
+    {name:'NIT Agartala',city:'Agartala',nirf:null,fees:'₹1.3–1.8L',top:22,avg:7.8,roi:1.26,campus:'365 acres',est:1965,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Sikkim',city:'Ravangla',nirf:null,fees:'₹1.3–1.8L',top:16,avg:6.7,roi:1.08,campus:'100 acres',est:2010,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Andhra Pradesh',city:'Tadepalligudem',nirf:null,fees:'₹1.3–1.8L',top:20,avg:7.9,roi:1.27,campus:'172 acres',est:2015,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Uttarakhand',city:'Srinagar (UK)',nirf:null,fees:'₹1.3–1.8L',top:17,avg:7.0,roi:1.13,campus:'30 acres',est:2009,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Goa',city:'Ponda (Goa)',nirf:null,fees:'₹1.3–1.8L',top:24,avg:8.4,roi:1.35,campus:'126 acres',est:2010,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Nagaland',city:'Dimapur',nirf:null,fees:'₹1.3–1.8L',top:14,avg:6.3,roi:1.02,campus:'291 acres',est:2010,famous:['CSE','ECE','EE','Mechanical']},
+    {name:'NIT Arunachal Pradesh',city:'Yupia',nirf:null,fees:'₹1.3–1.8L',top:14,avg:6.2,roi:1.0,campus:'301 acres',est:2010,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Manipur',city:'Imphal',nirf:null,fees:'₹1.3–1.8L',top:15,avg:6.4,roi:1.03,campus:'341 acres',est:2010,famous:['CSE','ECE','EE','Civil']},
+    {name:'NIT Mizoram',city:'Aizawl',nirf:null,fees:'₹1.3–1.8L',top:14,avg:6.2,roi:1.0,campus:'190 acres',est:2010,famous:['CSE','ECE','EE','Civil']},
+  ]
+};
+
+const ALL = [...DATA.IIT.map(i=>({...i,type:'IIT'})), ...DATA.NIT.map(i=>({...i,type:'NIT'}))];
+const state = { A:{filter:'ALL',sel:null}, B:{filter:'ALL',sel:null} };
+let tFilter='ALL', tSort={key:'nirf',dir:1};
+
+function getList(f){ return f==='IIT'?DATA.IIT: f==='NIT'?DATA.NIT: ALL; }
+
+function renderChips(bar){
+  const list = [...getList(state[bar].filter)].sort((a,b)=>(a.nirf||999)-(b.nirf||999));
+  const sel = state[bar].sel;
+  document.getElementById('chips'+bar).innerHTML = list.map(i=>{
+    const type = i.type || (DATA.IIT.includes(i)?'IIT':'NIT');
+    const active = sel===i.name ? (type==='IIT'?'active-iit':'active-nit') : '';
+    return `<div class="chip ${active}" onclick="pick('${bar}','${i.name}')">${i.city}</div>`;
+  }).join('');
+}
+
+function setFilter(bar, f, el){
+  state[bar].filter=f; state[bar].sel=null;
+  el.closest('.bar-top').querySelectorAll('.type-tab').forEach(t=>t.classList.remove('sel-all','sel-iit','sel-nit'));
+  el.classList.add(f==='ALL'?'sel-all':f==='IIT'?'sel-iit':'sel-nit');
+  renderChips(bar);
+  document.getElementById('detail'+bar).innerHTML=`<div class="placeholder"><div class="placeholder-icon">🔍</div><div class="placeholder-text">Select an institute above</div></div>`;
+}
+
+function pick(bar, name){
+  state[bar].sel=name;
+  const inst=ALL.find(i=>i.name===name);
+  const type=inst.type||(DATA.IIT.find(i=>i.name===name)?'IIT':'NIT');
+  renderChips(bar);
+  document.getElementById('detail'+bar).innerHTML=renderDetail(inst,type);
+}
+
+function renderDetail(inst, type){
+  const isIIT=type==='IIT';
+  const tagCls=isIIT?'d-tag-iit':'d-tag-nit';
+  const valCls=isIIT?'val-blue':'';
+  const btnCls=isIIT?'predict-iit':'predict-nit';
+  const nirf=inst.nirf?`#${inst.nirf}`:'Not Ranked';
+  return `
+    <div class="d-type-badge d-type-${type.toLowerCase()}">${type}</div>
+    <div class="d-name">${inst.name}</div>
+    <div class="d-city">📍 ${inst.city}</div>
+    <div class="d-grid">
+      <div class="d-stat"><div class="d-stat-label">NIRF Rank</div><div class="d-stat-val ${valCls}">${nirf}</div></div>
+      <div class="d-stat"><div class="d-stat-label">Established</div><div class="d-stat-val">${inst.est}</div></div>
+      <div class="d-stat"><div class="d-stat-label">Top Placement</div><div class="d-stat-val val-green">₹${inst.top} LPA</div></div>
+      <div class="d-stat"><div class="d-stat-label">Avg Placement</div><div class="d-stat-val val-green">₹${inst.avg} LPA</div></div>
+      <div class="d-stat"><div class="d-stat-label">Fees / Year</div><div class="d-stat-val">${inst.fees}</div></div>
+      <div class="d-stat"><div class="d-stat-label">Campus Area</div><div class="d-stat-val">${inst.campus}</div></div>
+    </div>
+    <div class="d-famous-label">Famous For</div>
+    <div class="d-tags">${inst.famous.map(f=>`<span class="d-tag ${tagCls}">${f}</span>`).join('')}</div>
+    <div class="d-badges">
+      ${inst.oldNew?`<span class="d-badge ${inst.oldNew==='Old'?'badge-old':'badge-new'}">${inst.oldNew} ${type}</span>`:''}
+      <span class="d-badge badge-est">Est. ${inst.est}</span>
+    </div>
+    `;
+}
+
+function renderTable(){
+  let data = tFilter==='ALL'?[...ALL]:ALL.filter(d=>d.type===tFilter);
+  data.sort((a,b)=>{
+    const va=a[tSort.key]??9999, vb=b[tSort.key]??9999;
+    return tSort.dir*(typeof va==='string'?va.localeCompare(vb):va-vb);
+  });
+  document.getElementById('tableBody').innerHTML=data.map(d=>{
+    const isIIT=d.type==='IIT';
+    const badge=isIIT?`<span class="t-badge-iit">IIT</span>`:`<span class="t-badge-nit">NIT</span>`;
+    const nirf=d.nirf?`<span class="${isIIT?'t-nirf-iit':'t-nirf-nit'}">#${d.nirf}</span>`:`<span class="t-nr">NR</span>`;
+    return `<tr>
+      <td>${badge}</td>
+      <td><div class="t-name">${d.name}</div><div class="t-city">📍 ${d.city}</div></td>
+      <td>${nirf}</td><td>${d.fees}</td>
+      <td class="t-placement">₹${d.top} LPA</td>
+      <td class="t-placement">₹${d.avg} LPA</td>
+      <td class="t-placement">${d.roi}x</td>
+      <td>${d.campus}</td><td>${d.est}</td>
+    </tr>`;
+  }).join('');
+}
+
+function filterTable(type,el){
+  tFilter=type;
+  document.querySelectorAll('.tfilter').forEach(f=>f.classList.remove('f-all','f-iit','f-nit'));
+  el.classList.add(type==='ALL'?'f-all':type==='IIT'?'f-iit':'f-nit');
+  renderTable();
+}
+
+function sortBy(key){
+  tSort.dir=tSort.key===key?tSort.dir*-1:1; tSort.key=key;
+  document.querySelectorAll('thead th').forEach(t=>t.classList.remove('sorted'));
+  event.currentTarget.classList.add('sorted');
+  renderTable();
+}
+
+renderChips('A'); renderChips('B'); renderTable();
+</script>
+</body>
+</html>

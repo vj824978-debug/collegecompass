@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Private Engineering Colleges — CollegeCompass</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1f3d; --blue: #2255c4; --blue-bg: #eff6ff;
+  --accent: #f59e0b; --accent-bg: #fffbeb;
+  --green: #059669; --green-bg: #f0fdf4;
+  --border: #e2e8f0; --bg: #f8fafc; --card: #ffffff; --muted: #64748b;
+  --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--navy); }
+
+nav { background: var(--navy); height: 60px; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+.nav-logo-icon { width: 30px; height: 30px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.nav-logo-text { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #fff; }
+.nav-back { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; }
+.nav-back:hover { color: #fff; }
+
+.page-header { background: var(--navy); padding: 36px 24px 32px; text-align: center; }
+.page-header h1 { font-family: var(--font-head); font-size: clamp(22px,4vw,34px); font-weight: 800; color: #fff; margin-bottom: 8px; }
+.page-header p { font-size: 14px; color: rgba(255,255,255,0.5); }
+.header-stats { display: flex; gap: 20px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+.hstat { font-size: 12px; font-weight: 600; font-family: var(--font-head); padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); }
+
+.main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 60px; }
+
+/* FILTER BAR */
+.filter-bar { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+.filter-group { display: flex; flex-direction: column; gap: 6px; }
+.filter-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; font-family: var(--font-head); }
+.filter-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  font-family: var(--font-head); cursor: pointer; transition: all 0.15s;
+  border: 1.5px solid var(--border); background: var(--bg); color: var(--muted);
+  white-space: nowrap;
+}
+.chip:hover { border-color: var(--navy); color: var(--navy); }
+.chip.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.chip.active-t1 { background: var(--blue); border-color: var(--blue); color: #fff; }
+.chip.active-t2 { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+.chip.active-t3 { background: var(--green); border-color: var(--green); color: #fff; }
+.chip.active-t4 { background: #d97706; border-color: #d97706; color: #fff; }
+
+.filter-right { margin-left: auto; display: flex; align-items: flex-end; gap: 10px; }
+.search-box {
+  height: 36px; padding: 0 12px 0 32px; border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 13px; font-family: var(--font-body);
+  outline: none; background: var(--bg); color: var(--navy); width: 220px;
+}
+.search-box:focus { border-color: var(--blue); }
+.search-wrap { position: relative; }
+.search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 13px; color: var(--muted); pointer-events: none; }
+.result-count { font-size: 13px; color: var(--muted); white-space: nowrap; padding-bottom: 2px; }
+
+/* TABLE */
+.table-wrap { border-radius: 14px; border: 1px solid var(--border); overflow-x: auto; background: var(--card); }
+table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 900px; }
+thead tr { background: var(--navy); }
+thead th {
+  padding: 12px 14px; text-align: left; color: rgba(255,255,255,0.7);
+  font-family: var(--font-head); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.6px; white-space: nowrap;
+  cursor: pointer; user-select: none;
+}
+thead th:hover { color: #fff; }
+thead th.sorted { color: var(--accent); }
+thead th.sorted::after { content: ' ↕'; }
+
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.12s; }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: #f8fafc; }
+tbody td { padding: 13px 14px; vertical-align: middle; }
+
+.t-name { font-weight: 600; color: var(--navy); font-size: 13px; line-height: 1.4; }
+.t-city { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.tier-badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 5px; font-family: var(--font-head); white-space: nowrap; }
+.tier-1 { background: var(--blue-bg); color: var(--blue); }
+.tier-2 { background: #f5f3ff; color: #7c3aed; }
+.tier-3 { background: var(--green-bg); color: var(--green); }
+.tier-4 { background: var(--accent-bg); color: #b45309; }
+
+.t-placement { font-weight: 700; color: var(--green); font-family: var(--font-head); font-size: 13px; }
+.t-roi { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 5px; font-family: var(--font-head); }
+.roi-higher { background: var(--green-bg); color: var(--green); }
+.roi-medium { background: var(--blue-bg); color: var(--blue); }
+.roi-lower  { background: #fef2f2; color: #dc2626; }
+
+.t-hsq { font-size: 11px; font-weight: 600; font-family: var(--font-head); }
+.hsq-y { color: var(--green); }
+.hsq-n { color: var(--muted); }
+
+.admission-text { font-size: 11px; color: var(--muted); max-width: 200px; line-height: 1.4; }
+
+.empty-state { text-align: center; padding: 60px 20px; color: var(--muted); }
+.empty-icon { font-size: 36px; margin-bottom: 10px; }
+.empty-text { font-size: 14px; }
+
+
+
+
+@media (max-width: 600px) { .filter-right { margin-left: 0; width: 100%; } .search-box { width: 100%; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🎓</div>
+    <span class="nav-logo-text">CollegeCompass</span>
+  </a>
+  <a href="index.html" class="nav-back">← Home</a>
+</nav>
+
+<div class="page-header">
+  <h1>Top Private Engineering Colleges India</h1>
+  <p>78 handpicked colleges across 15 states with verified fees and placement data</p>
+  <div class="header-stats">
+    <span class="hstat">78 Colleges</span>
+    <span class="hstat">15 States</span>
+    <span class="hstat">2024 & 2025 Data</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="filter-bar">
+    <div class="filter-group">
+      <div class="filter-label">Tier</div>
+      <div class="filter-chips" id="tierChips">
+        <div class="chip active" onclick="setTier('ALL',this)">All Tiers</div>
+        <div class="chip" onclick="setTier('Tier 1',this)">Tier 1</div>
+        <div class="chip" onclick="setTier('Tier 2',this)">Tier 2</div>
+        <div class="chip" onclick="setTier('Tier 3',this)">Tier 3</div>
+        <div class="chip" onclick="setTier('Tier 4',this)">Tier 4</div>
+      </div>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label">State</div>
+      <div class="filter-chips" id="stateChips"></div>
+    </div>
+    <div class="filter-right">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input class="search-box" type="text" id="searchBox" placeholder="Search college..." oninput="render()">
+      </div>
+      <div class="result-count" id="resultCount">78 colleges</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">#&nbsp;&nbsp;College</th>
+          <th onclick="sortBy('tier')">Tier</th>
+          <th onclick="sortBy('state')">State</th>
+          <th onclick="sortBy('fees')">Fees (Total)</th>
+          <th onclick="sortBy('placement')">Top Placement</th>
+          <th onclick="sortBy('roi')">ROI</th>
+          <th>Admission Route</th>
+          <th>HS Quota</th>
+          
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+const RAW = [{"name":"AISSMS College of Engineering, Pune","state":"Maharashtra","city":"Pune","tier":"Tier 3","admission":"MHT-CET / JEE Main / CAP counselling","fees":"₹6-9 L","roi":"Lower","placement":"₹14 LPA","hsq":"Y"},{"name":"Amity University Rajasthan, Jaipur","state":"Rajasthan","city":"Jaipur","tier":"Tier 4","admission":"Amity process / JEE Main / board merit","fees":"₹8-12 L","roi":"Lower","placement":"₹10 LPA","hsq":"N"},{"name":"Amity University, Noida","state":"Uttar Pradesh","city":"Noida","tier":"Tier 3","admission":"Amity process / JEE Main / board merit","fees":"₹12-16 L","roi":"Lower","placement":"₹18 LPA","hsq":"N"},{"name":"Amrita Vishwa Vidyapeetham (School of Engineering)","state":"Tamil Nadu","city":"Coimbatore","tier":"Tier 2","admission":"AEEE / JEE Main","fees":"₹12-18 L","roi":"Medium","placement":"₹56 LPA","hsq":"N"},{"name":"Army Institute of Technology (AIT), Pune","state":"Maharashtra","city":"Pune","tier":"Tier 2","admission":"JEE Main (Army personnel)","fees":"₹7-9 L","roi":"Higher","placement":"₹52 LPA","hsq":"N"},{"name":"B.S. Abdur Rahman Crescent, Chennai","state":"Tamil Nadu","city":"Chennai","tier":"Tier 3","admission":"Crescent Entrance / JEE Main","fees":"₹8-12 L","roi":"Lower","placement":"₹18 LPA","hsq":"N"},{"name":"Banasthali Vidyapith","state":"Rajasthan","city":"Banasthali","tier":"Tier 3","admission":"Aptitude test / merit","fees":"₹6-8 L","roi":"Medium","placement":"₹14 LPA","hsq":"N"},{"name":"Bennett University, Greater Noida","state":"Uttar Pradesh","city":"Greater Noida","tier":"Tier 3","admission":"JEE Main / SAT / CUET","fees":"₹16-20 L","roi":"Lower","placement":"₹18 LPA","hsq":"N"},{"name":"Bharati Vidyapeeth College of Engineering, Pune","state":"Maharashtra","city":"Pune","tier":"Tier 3","admission":"BVP CET / JEE Main / MHT-CET","fees":"₹6-9 L","roi":"Lower","placement":"₹14 LPA","hsq":"Y"},{"name":"BITS Pilani — Goa Campus","state":"Goa","city":"Goa","tier":"Tier 2","admission":"BITSAT","fees":"₹24-28 L","roi":"Medium","placement":"₹60 LPA","hsq":"N"},{"name":"BITS Pilani — Hyderabad Campus","state":"Telangana","city":"Hyderabad","tier":"Tier 1","admission":"BITSAT","fees":"₹24-28 L","roi":"Medium","placement":"₹60 LPA","hsq":"N"},{"name":"BITS Pilani — Pilani Campus","state":"Rajasthan","city":"Pilani","tier":"Tier 1","admission":"BITSAT","fees":"₹24-28 L","roi":"Medium","placement":"₹60 LPA","hsq":"N"},{"name":"BMS College of Engineering, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 2","admission":"KCET / COMEDK / management","fees":"₹8-12 L","roi":"Higher","placement":"₹50 LPA","hsq":"Y"},{"name":"CGC College of Engineering, Mohali","state":"Punjab","city":"Mohali","tier":"Tier 4","admission":"JEE Main / PTU route","fees":"₹6-8 L","roi":"Lower","placement":"₹10 LPA","hsq":"N"},{"name":"CBIT, Hyderabad","state":"Telangana","city":"Hyderabad","tier":"Tier 2","admission":"TG EAPCET / JEE Main","fees":"₹5-7 L","roi":"Higher","placement":"₹44 LPA","hsq":"Y"},{"name":"Chandigarh University, Mohali","state":"Punjab","city":"Mohali","tier":"Tier 3","admission":"CUCET / JEE Main / board merit","fees":"₹10-14 L","roi":"Medium","placement":"₹54 LPA","hsq":"N"},{"name":"Chitkara University, Punjab","state":"Punjab","city":"Rajpura","tier":"Tier 3","admission":"JEE Main / institute process","fees":"₹10-14 L","roi":"Medium","placement":"₹32 LPA","hsq":"N"},{"name":"CHRIST University, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 3","admission":"University process / JEE Main / CUET","fees":"₹10-14 L","roi":"Lower","placement":"₹20 LPA","hsq":"N"},{"name":"CMR Institute of Technology, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 3","admission":"KCET / COMEDK / management","fees":"₹6-8 L","roi":"Medium","placement":"₹16 LPA","hsq":"Y"},{"name":"Dayananda Sagar College of Engineering, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 3","admission":"KCET / COMEDK / management","fees":"₹8-10 L","roi":"Medium","placement":"₹22 LPA","hsq":"Y"},{"name":"DA-IICT, Gandhinagar","state":"Gujarat","city":"Gandhinagar","tier":"Tier 2","admission":"JEE Main / ACPC","fees":"₹12-16 L","roi":"Higher","placement":"₹82 LPA","hsq":"Y"},{"name":"DIT University, Dehradun","state":"Uttarakhand","city":"Dehradun","tier":"Tier 3","admission":"JEE Main / board merit","fees":"₹12-16 L","roi":"Lower","placement":"₹58 LPA","hsq":"N"},{"name":"Galgotias University, Greater Noida","state":"Uttar Pradesh","city":"Greater Noida","tier":"Tier 3","admission":"JEE Main / CUET / board merit","fees":"₹8-10 L","roi":"Medium","placement":"₹18 LPA","hsq":"N"},{"name":"GITAM School of Technology, Vizag","state":"Andhra Pradesh","city":"Visakhapatnam","tier":"Tier 3","admission":"GAT / JEE Main / AP EAPCET","fees":"₹10-14 L","roi":"Lower","placement":"₹24 LPA","hsq":"Y"},{"name":"Graphic Era University, Dehradun","state":"Uttarakhand","city":"Dehradun","tier":"Tier 3","admission":"JEE Main / board merit","fees":"₹12-16 L","roi":"Medium","placement":"₹85 LPA","hsq":"N"},{"name":"Heritage Institute of Technology, Kolkata","state":"West Bengal","city":"Kolkata","tier":"Tier 3","admission":"WBJEE / JEE Main","fees":"₹5-7 L","roi":"Medium","placement":"₹18 LPA","hsq":"Y"},{"name":"Hindustan Institute of Technology, Chennai","state":"Tamil Nadu","city":"Chennai","tier":"Tier 3","admission":"HITSEEE / JEE Main","fees":"₹8-12 L","roi":"Lower","placement":"₹18 LPA","hsq":"N"},{"name":"IEM Kolkata","state":"West Bengal","city":"Kolkata","tier":"Tier 3","admission":"WBJEE / JEE Main","fees":"₹5-7 L","roi":"Higher","placement":"₹72 LPA","hsq":"Y"},{"name":"IIIT Bangalore","state":"Karnataka","city":"Bengaluru","tier":"Tier 1","admission":"JEE Main (iMTech route)","fees":"₹24-28 L","roi":"Higher","placement":"₹65 LPA","hsq":"N"},{"name":"IIIT Hyderabad","state":"Telangana","city":"Hyderabad","tier":"Tier 1","admission":"UGEE / JEE Main / Olympiad","fees":"₹16-18 L","roi":"Higher","placement":"₹1.0 Cr+","hsq":"N"},{"name":"Jain University, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 3","admission":"JAIN Entrance / JEE Main / KCET","fees":"₹12-16 L","roi":"Lower","placement":"₹18 LPA","hsq":"Y"},{"name":"JIIT Noida","state":"Uttar Pradesh","city":"Noida","tier":"Tier 2","admission":"JEE Main / Class 12 merit","fees":"₹12-14 L","roi":"Medium","placement":"₹60 LPA","hsq":"N"},{"name":"KJ Somaiya School of Engineering, Mumbai","state":"Maharashtra","city":"Mumbai","tier":"Tier 2","admission":"JEE Main / MHT-CET / SAT","fees":"₹14-16 L","roi":"Medium","placement":"₹58 LPA","hsq":"Y"},{"name":"KIIT, Bhubaneswar","state":"Odisha","city":"Bhubaneswar","tier":"Tier 2","admission":"KIITEE / JEE Main","fees":"₹16-20 L","roi":"Lower","placement":"₹63 LPA","hsq":"N"},{"name":"Karunya Institute, Coimbatore","state":"Tamil Nadu","city":"Coimbatore","tier":"Tier 3","admission":"KEEE / JEE Main","fees":"₹10-14 L","roi":"Lower","placement":"₹18 LPA","hsq":"N"},{"name":"KIET, Ghaziabad","state":"Uttar Pradesh","city":"Ghaziabad","tier":"Tier 3","admission":"JEE Main / UPTAC","fees":"₹5-7 L","roi":"Higher","placement":"₹48 LPA","hsq":"Y"},{"name":"KL University, Guntur","state":"Andhra Pradesh","city":"Vaddeswaram","tier":"Tier 3","admission":"KLEEE / JEE Main","fees":"₹10-14 L","roi":"Medium","placement":"₹60 LPA","hsq":"N"},{"name":"KLE Technological University, Hubballi","state":"Karnataka","city":"Hubballi","tier":"Tier 3","admission":"KCET / COMEDK / JEE Main","fees":"₹7-9 L","roi":"Medium","placement":"₹19 LPA","hsq":"Y"},{"name":"Kongu Engineering College, Erode","state":"Tamil Nadu","city":"Erode","tier":"Tier 3","admission":"TNEA / management","fees":"₹5-7 L","roi":"Higher","placement":"₹18 LPA","hsq":"Y"},{"name":"KPR Institute, Coimbatore","state":"Tamil Nadu","city":"Coimbatore","tier":"Tier 4","admission":"TNEA / management","fees":"₹5-7 L","roi":"Medium","placement":"₹16 LPA","hsq":"Y"},{"name":"LNMIIT Jaipur","state":"Rajasthan","city":"Jaipur","tier":"Tier 2","admission":"JEE Main","fees":"₹18-22 L","roi":"Medium","placement":"₹96 LPA","hsq":"N"},{"name":"LPU, Phagwara","state":"Punjab","city":"Phagwara","tier":"Tier 3","admission":"LPUNEST / JEE Main / board merit","fees":"₹10-14 L","roi":"Medium","placement":"₹64 LPA","hsq":"N"},{"name":"MS Ramaiah Institute of Technology, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 2","admission":"KCET / COMEDK / management","fees":"₹8-12 L","roi":"Higher","placement":"₹50 LPA","hsq":"Y"},{"name":"Manav Rachna University, Faridabad","state":"Haryana","city":"Faridabad","tier":"Tier 3","admission":"MRNAT / JEE Main","fees":"₹12-16 L","roi":"Lower","placement":"₹30 LPA","hsq":"N"},{"name":"Manipal Institute of Technology, Manipal","state":"Karnataka","city":"Manipal","tier":"Tier 2","admission":"MET","fees":"₹16-20 L","roi":"Medium","placement":"₹54 LPA","hsq":"N"},{"name":"Manipal University Jaipur","state":"Rajasthan","city":"Jaipur","tier":"Tier 3","admission":"MET / JEE Main","fees":"₹14-18 L","roi":"Lower","placement":"₹85 LPA","hsq":"N"},{"name":"MIT World Peace University, Pune","state":"Maharashtra","city":"Pune","tier":"Tier 3","admission":"JEE Main / MHT-CET","fees":"₹16-18 L","roi":"Medium","placement":"₹51 LPA","hsq":"Y"},{"name":"Narasaraopeta Engineering College, AP","state":"Andhra Pradesh","city":"Narasaraopet","tier":"Tier 4","admission":"AP EAPCET / management","fees":"₹3-5 L","roi":"Lower","placement":"₹10 LPA","hsq":"Y"},{"name":"NIIT University, Neemrana","state":"Rajasthan","city":"Neemrana","tier":"Tier 3","admission":"JEE Main / SAT / board merit","fees":"₹12-16 L","roi":"Lower","placement":"₹20 LPA","hsq":"N"},{"name":"Nirma University, Ahmedabad","state":"Gujarat","city":"Ahmedabad","tier":"Tier 2","admission":"JEE Main / GUJCET / ACPC","fees":"₹8-10 L","roi":"Higher","placement":"₹52 LPA","hsq":"Y"},{"name":"Nitte Meenakshi Institute, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 2","admission":"KCET / COMEDK / management","fees":"₹6-8 L","roi":"Medium","placement":"₹20 LPA","hsq":"Y"},{"name":"NMIET Pune","state":"Maharashtra","city":"Pune","tier":"Tier 4","admission":"MHT-CET / JEE Main / CAP","fees":"₹4-6 L","roi":"Lower","placement":"₹8 LPA","hsq":"Y"},{"name":"PDEU, Gandhinagar","state":"Gujarat","city":"Gandhinagar","tier":"Tier 2","admission":"JEE Main / ACPC","fees":"₹10-14 L","roi":"Medium","placement":"₹24 LPA","hsq":"Y"},{"name":"PES University, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 2","admission":"PESSAT / KCET / JEE Main","fees":"₹16-20 L","roi":"Medium","placement":"₹65 LPA","hsq":"Y"},{"name":"Presidency University, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 3","admission":"KCET / JEE Main","fees":"₹10-14 L","roi":"Lower","placement":"₹13 LPA","hsq":"Y"},{"name":"PSG College of Technology, Coimbatore","state":"Tamil Nadu","city":"Coimbatore","tier":"Tier 1","admission":"TNEA","fees":"₹4-6 L","roi":"Higher","placement":"₹47 LPA","hsq":"Y"},{"name":"RV College of Engineering, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 2","admission":"KCET / COMEDK / management","fees":"₹10-14 L","roi":"Higher","placement":"₹92 LPA","hsq":"Y"},{"name":"RGMCET, Nandyal","state":"Andhra Pradesh","city":"Nandyal","tier":"Tier 4","admission":"AP EAPCET / management","fees":"₹4-6 L","roi":"Lower","placement":"₹10 LPA","hsq":"Y"},{"name":"REVA University, Bengaluru","state":"Karnataka","city":"Bengaluru","tier":"Tier 3","admission":"REVA CET / KCET / COMEDK","fees":"₹12-16 L","roi":"Medium","placement":"₹31 LPA","hsq":"Y"},{"name":"SASTRA University, Thanjavur","state":"Tamil Nadu","city":"Thanjavur","tier":"Tier 2","admission":"Class 12 merit / JEE Main","fees":"₹7-9 L","roi":"Higher","placement":"₹35 LPA","hsq":"N"},{"name":"Sathyabama, Chennai","state":"Tamil Nadu","city":"Chennai","tier":"Tier 3","admission":"SAEEE / JEE Main","fees":"₹8-12 L","roi":"Medium","placement":"₹31 LPA","hsq":"N"},{"name":"Sharda University, Greater Noida","state":"Uttar Pradesh","city":"Greater Noida","tier":"Tier 3","admission":"SUAT / JEE Main","fees":"₹10-14 L","roi":"Lower","placement":"₹20 LPA","hsq":"N"},{"name":"Shiv Nadar University, Delhi-NCR","state":"Uttar Pradesh","city":"Greater Noida","tier":"Tier 2","admission":"SNU entrance / JEE Main / SAT","fees":"₹20-24 L","roi":"Lower","placement":"₹58 LPA","hsq":"N"},{"name":"SOA University, Bhubaneswar","state":"Odisha","city":"Bhubaneswar","tier":"Tier 3","admission":"SAAT / JEE Main","fees":"₹8-12 L","roi":"Medium","placement":"₹44 LPA","hsq":"N"},{"name":"Sreyas Institute, Hyderabad","state":"Telangana","city":"Hyderabad","tier":"Tier 4","admission":"TG EAPCET / management","fees":"₹4-6 L","roi":"Lower","placement":"₹10 LPA","hsq":"Y"},{"name":"SRM, Kattankulathur / Chennai","state":"Tamil Nadu","city":"Chennai","tier":"Tier 2","admission":"SRMJEEE / JEE Main","fees":"₹10-18 L","roi":"Medium","placement":"₹57 LPA","hsq":"N"},{"name":"SRM University Delhi-NCR, Sonepat","state":"Haryana","city":"Sonepat","tier":"Tier 3","admission":"SRMJEEE / JEE Main / CUET","fees":"₹10-14 L","roi":"Lower","placement":"₹18 LPA","hsq":"N"},{"name":"SRM University-AP, Amaravati","state":"Andhra Pradesh","city":"Amaravati","tier":"Tier 3","admission":"SRMJEEE / JEE Main / SAT","fees":"₹12-16 L","roi":"Medium","placement":"₹48 LPA","hsq":"N"},{"name":"SSN College of Engineering, Chennai","state":"Tamil Nadu","city":"Chennai","tier":"Tier 2","admission":"TNEA / management","fees":"₹8-10 L","roi":"Higher","placement":"₹1.17 Cr","hsq":"Y"},{"name":"St. Peter's Engineering College, Hyderabad","state":"Telangana","city":"Hyderabad","tier":"Tier 4","admission":"TG EAPCET / management","fees":"₹4-6 L","roi":"Lower","placement":"₹10 LPA","hsq":"Y"},{"name":"Symbiosis Institute of Technology, Pune","state":"Maharashtra","city":"Pune","tier":"Tier 3","admission":"SITEEE / JEE Main / MHT-CET","fees":"₹15-17 L","roi":"Medium","placement":"₹36 LPA","hsq":"N"},{"name":"Thapar Institute, Patiala","state":"Punjab","city":"Patiala","tier":"Tier 2","admission":"JEE Main / Class 12 merit","fees":"₹18-22 L","roi":"Medium","placement":"₹55 LPA","hsq":"Y"},{"name":"UPES, Dehradun","state":"Uttarakhand","city":"Dehradun","tier":"Tier 3","admission":"UPESEAT / JEE Main","fees":"₹18-24 L","roi":"Lower","placement":"₹50 LPA","hsq":"N"},{"name":"Vel Tech, Chennai","state":"Tamil Nadu","city":"Chennai","tier":"Tier 3","admission":"VTUEEE / JEE Main","fees":"₹8-12 L","roi":"Lower","placement":"₹18 LPA","hsq":"N"},{"name":"VIT (Vellore / Chennai / Bhopal / AP)","state":"Tamil Nadu","city":"Vellore/Chennai/Bhopal","tier":"Tier 2","admission":"VITEEE","fees":"₹8-14 L","roi":"Medium","placement":"₹63 LPA","hsq":"N"},{"name":"VJIT, Hyderabad","state":"Telangana","city":"Hyderabad","tier":"Tier 4","admission":"TG EAPCET / management","fees":"₹4-6 L","roi":"Medium","placement":"₹14 LPA","hsq":"Y"},{"name":"Vignan's Institute, Hyderabad","state":"Telangana","city":"Hyderabad","tier":"Tier 4","admission":"TS EAPCET / JEE Main","fees":"₹4-6 L","roi":"Lower","placement":"₹10 LPA","hsq":"Y"},{"name":"VNR VJIET, Hyderabad","state":"Telangana","city":"Hyderabad","tier":"Tier 3","admission":"TS EAPCET / Management","fees":"₹5-7 L","roi":"Higher","placement":"₹52 LPA","hsq":"Y"}];
+
+const STATES = ['All States',...[...new Set(RAW.map(c=>c.state))].sort()];
+let selTier='ALL', selState='ALL', sortKey='tier', sortDir=1;
+
+// Build state chips
+document.getElementById('stateChips').innerHTML = STATES.map((s,i) =>
+  `<div class="chip${i===0?' active':''}" onclick="setState('${s}',this)">${s}</div>`
+).join('');
+
+function setTier(t, el){
+  selTier=t;
+  document.querySelectorAll('#tierChips .chip').forEach(c=>c.classList.remove('active','active-t1','active-t2','active-t3','active-t4'));
+  const cls = t==='Tier 1'?'active-t1':t==='Tier 2'?'active-t2':t==='Tier 3'?'active-t3':t==='Tier 4'?'active-t4':'active';
+  el.classList.add(cls);
+  render();
+}
+
+function setState(s, el){
+  selState = s==='All States'?'ALL':s;
+  document.querySelectorAll('#stateChips .chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function sortBy(key){
+  sortDir = sortKey===key ? sortDir*-1 : 1;
+  sortKey=key;
+  document.querySelectorAll('thead th').forEach(t=>t.classList.remove('sorted'));
+  event.currentTarget.classList.add('sorted');
+  render();
+}
+
+const TIER_ORDER={'Tier 1':1,'Tier 2':2,'Tier 3':3,'Tier 4':4};
+const ROI_ORDER={'Higher':1,'Medium':2,'Lower':3};
+
+function render(){
+  const q = document.getElementById('searchBox').value.toLowerCase();
+  let data = RAW.filter(c=>{
+    if(selTier!=='ALL' && c.tier!==selTier) return false;
+    if(selState!=='ALL' && c.state!==selState) return false;
+    if(q && !c.name.toLowerCase().includes(q) && !c.city.toLowerCase().includes(q) && !c.state.toLowerCase().includes(q)) return false;
+    return true;
+  });
+
+  data.sort((a,b)=>{
+    let va, vb;
+    if(sortKey==='tier'){ va=TIER_ORDER[a.tier]||9; vb=TIER_ORDER[b.tier]||9; }
+    else if(sortKey==='roi'){ va=ROI_ORDER[a.roi]||9; vb=ROI_ORDER[b.roi]||9; }
+    else { va=a[sortKey]||''; vb=b[sortKey]||''; }
+    return sortDir*(typeof va==='string'?va.localeCompare(vb):va-vb);
+  });
+
+  document.getElementById('resultCount').textContent = data.length+' colleges';
+
+  if(!data.length){
+    document.getElementById('tableBody').innerHTML=`<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-text">No colleges match your filters</div></div></td></tr>`;
+    return;
+  }
+
+  const tierCls={'Tier 1':'tier-1','Tier 2':'tier-2','Tier 3':'tier-3','Tier 4':'tier-4'};
+  const roiCls={'Higher':'roi-higher','Medium':'roi-medium','Lower':'roi-lower'};
+
+  document.getElementById('tableBody').innerHTML = data.map((c,i)=>`
+    <tr>
+      <td>
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--muted);min-width:20px;padding-top:2px;">${i+1}</span>
+          <div><div class="t-name">${c.name}</div><div class="t-city">📍 ${c.city}</div></div>
+        </div>
+      </td>
+      <td><span class="tier-badge ${tierCls[c.tier]||'tier-3'}">${c.tier}</span></td>
+      <td style="font-size:12px;color:var(--muted);">${c.state}</td>
+      <td style="font-family:var(--font-head);font-size:13px;font-weight:600;">${c.fees}</td>
+      <td class="t-placement">${c.placement}</td>
+      <td><span class="t-roi ${roiCls[c.roi]||'roi-medium'}">${c.roi}</span></td>
+      <td><div class="admission-text">${c.admission}</div></td>
+      <td><span class="t-hsq ${c.hsq==='Y'?'hsq-y':'hsq-n'}">${c.hsq==='Y'?'✓ Yes':'No'}</span></td>
+      
+    </tr>`).join('');
+}
+
+render();
+</script>
+</body>
+</html>
