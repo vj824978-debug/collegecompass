@@ -496,8 +496,9 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
       <div id="formError" class="notice-error"></div>
 
       <button class="btn btn-primary" id="submitBtn" onclick="submitPredictor()" style="margin-top:22px;">
-        <span id="submitText">🎯 Get My Free Sample Report</span>
+        <span id="submitText">🎯 Get My Report</span>
         <div class="spinner" id="submitSpinner"></div>
+        <span id="submitLoadingMsg" style="display:none;font-size:13px;opacity:0.85;letter-spacing:0.1px;">⏳ Please don't refresh or close the page</span>
       </button>
     </div>
 
@@ -724,6 +725,7 @@ async function submitPredictor() {
   btn.disabled = true;
   document.getElementById('submitText').style.display = 'none';
   document.getElementById('submitSpinner').style.display = 'block';
+  document.getElementById('submitLoadingMsg').style.display = 'inline';
 
   try {
     const res  = await fetch(APPS_SCRIPT_URL, {
@@ -739,6 +741,7 @@ async function submitPredictor() {
   } finally {
     document.getElementById('submitText').style.display = 'inline';
     document.getElementById('submitSpinner').style.display = 'none';
+    document.getElementById('submitLoadingMsg').style.display = 'none';
     btn.disabled = false;
   }
 }
