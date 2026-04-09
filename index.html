@@ -720,6 +720,16 @@ async function submitPredictor() {
     collegeType:  document.getElementById('f_collegeType').value,
     collegeTypeS: document.getElementById('f_collegeTypeS').value
   };
+  window._reportMeta = {
+    name:   formData.name,
+    rank:   formData.jmrank,
+    cat:    formData.category,
+    branch: formData.branch !== 'ALL' ? formData.branch : '',
+    state:  formData.state  !== 'ALL' ? formData.state  : '',
+    gender: formData.gender,
+    round:  formData.round,
+    jarank: formData.jarank
+  };
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
@@ -798,12 +808,12 @@ function downloadPdf() {
   btn.disabled = true;
   btn.textContent = '⏳ Preparing...';
 
-  const name   = document.getElementById('f_name').value  || 'Student';
-  const email  = currentEmail || '';
-  const rank   = document.getElementById('f_jmrank').value || document.getElementById('f_jmrank_p').value || '';
-  const cat    = document.getElementById('f_category').value || '';
-  const branch = document.getElementById('f_branch').value  || '';
-  const state  = document.getElementById('f_state').value   || '';
+  const m      = window._reportMeta || {};
+  const name   = m.name   || 'Student';
+  const rank   = m.rank   || '';
+  const cat    = m.cat    || '';
+  const branch = m.branch || '';
+  const state  = m.state  || '';
 
   // Clone and clean — remove all blur/overlay/unlock elements
   const clone = content.cloneNode(true);
@@ -852,7 +862,7 @@ function downloadPdf() {
 </head>
 <body>
 <div class="hdr">
-  <div class="logo">College<span>Compass</span></div>
+  <div class="logo">College<span>PIPE</span></div>
   <div class="meta">Full College Prediction Report<br>${new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</div>
 </div>
 <div class="info">
