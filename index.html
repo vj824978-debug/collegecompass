@@ -579,7 +579,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
             <div style="font-size:12px;opacity:0.6;margin-bottom:8px;">One-time unlock · Change rank/branch anytime · 5 reports included</div>
             <a id="payLink" href="#" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
-              🔓 Unlock Full Report — ₹79
+              🔓 Unlock Full Report — ₹39
             </a>
           </div>
         </div>
@@ -795,7 +795,7 @@ function showResults(data) {
     : (exhausted ? 'Pack Used Up' : 'Sample College List');
   document.getElementById('resultsSub').textContent = isPaid
     ? 'Complete list based on your rank and preferences'
-    : (exhausted ? 'Your 5 reports have been used. Pay ₹79 for a new pack.' : 'Top 5 per category — pay ₹79 to see full list');
+    : (exhausted ? 'Your 5 reports have been used. Pay ₹ for a new pack.' : 'Top 5 per category — pay ₹39 to see full list');
 
   document.getElementById('downloadBar').style.display = isPaid ? 'block' : 'none';
   document.getElementById('upgradeBox').style.display  = isPaid ? 'none' : 'block';
@@ -805,7 +805,7 @@ function showResults(data) {
     // sync unlock button if already rendered
     const ub = document.getElementById('unlockBtn');
     if (ub) ub.href = data.paymentLink;
-    if (exhausted) document.getElementById('payLink').textContent = 'Pay ₹79 — Get New Pack of 5 Reports';
+    if (exhausted) document.getElementById('payLink').textContent = 'Pay ₹39 — Get New Pack of 5 Reports';
   }
 
   renderResults(data.results, isPaid);
