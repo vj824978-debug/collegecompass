@@ -538,7 +538,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
             <div style="font-size:12px;opacity:0.6;margin-bottom:8px;">One-time unlock · Change rank/branch anytime · 5 reports included</div>
-            <a id="payLink" href="#" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
+            <a id="payLink" href="javascript:void(0)" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
               🔓 Unlock Full Report — ₹39
             </a>
           </div>
@@ -656,7 +656,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
 // ═══════════════════════════════════════════════════════
 // CONFIG
 // ═══════════════════════════════════════════════════════
-const DATA_BASE = 'https://collegepipe.in/data/';
+const DATA_BASE = 'https://raw.githubusercontent.com/vj824978-debug/collegecompass/main/data/';
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMsjjnXMUFk2cIMEfXy9iasVWMpvyx8puxls6gExwHb25tIbn7oddEB6gjVHZIPT3j_A/exec';
 
 // ═══════════════════════════════════════════════════════
@@ -700,20 +700,18 @@ function loadData() {
     try {
       const files = ['jeemain','jeeadv','jeemainhs','csab'];
       const results = await Promise.all(
-        files.map(f => fetch(DATA_BASE + f + '.json').then(r => r.json()))
+        files.map(f => fetch(DATA_BASE + f + '.json').then(r => { if(!r.ok) throw new Error(f+' failed'); return r.json(); }))
       );
-      DB.jeemain   = results[0];
-      DB.jeeadv    = results[1];
-      DB.jeemainhs = results[2];
-      DB.csab      = results[3];
-      if (!DB.jeemain || !DB.jeemain.d || !DB.jeemain.d.length) throw new Error('Data empty');
+      DB.jeemain   = decodeJeeMain(results[0]);
+      DB.jeeadv    = decodeJeeAdv(results[1]);
+      DB.jeemainhs = decodeJeeMainHS(results[2]);
+      DB.csab      = decodeCSAB(results[3]);
       dataReady = true;
-      setStatus('ready', '✅ Data loaded!');
-      setTimeout(() => { const s = document.getElementById('dataStatus'); if(s) s.style.display='none'; }, 2000);
+      setStatus('ready', '✅ Data loaded — results are instant!');
+      setTimeout(() => { const s = document.getElementById('dataStatus'); if(s) s.style.display='none'; }, 3000);
       return true;
     } catch(e) {
-      console.error('loadData error:', e);
-      setStatus('error', '⚠️ ' + e.message);
+      setStatus('error', '⚠️ Could not load data. Please check your connection and retry.');
       dataPromise = null;
       return false;
     }
@@ -966,13 +964,31 @@ async function submitPredictor() {
     // Update with payment info when it arrives
     payPromise.then(info => {
       currentPayLink = info.paymentLink || '';
+      const pl = document.getElementById('payLink');
+
+      if (info.packExhausted) {
+        // Pack exhausted — show free results with new payment link
+        if (pl && info.paymentLink) pl.href = info.paymentLink;
+        document.getElementById('resultsSub').textContent = '⚠️ Your 5 reports are used up. Pay ₹39 for a new pack of 5.';
+        document.getElementById('upgradeBox').style.display = 'block';
+        return;
+      }
+
       if (info.isPaid) {
         // Re-run with paid tier
+        _isPaid = true;
         const paidResults = runPredictor(user, true);
         showResults(paidResults, true, '', user);
+        // Show remaining count
+        if (info.remaining != null) {
+          const rb = document.getElementById('remainingBar');
+          if (rb) {
+            rb.style.display = 'block';
+            rb.textContent = `You have ${info.remaining} report${info.remaining !== 1 ? 's' : ''} remaining in your pack.`;
+          }
+        }
       } else {
-        // Update pay link
-        const pl = document.getElementById('payLink');
+        // Free user — set payment link
         if (pl && info.paymentLink) pl.href = info.paymentLink;
       }
     }).catch(() => {});
