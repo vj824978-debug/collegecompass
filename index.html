@@ -920,11 +920,28 @@ async function submitPredictor() {
     const ok = await loadData();
     if (!ok) throw new Error('Could not load college data. Please check your connection.');
 
-    // Show free results instantly from JSON while Apps Script loads in background
+    // Check if coming from payment redirect
+    let justPaid = false;
+    try {
+      if (localStorage.getItem('cp_justpaid_'+email) === '1') {
+        justPaid = true;
+        localStorage.removeItem('cp_justpaid_'+email);
+      }
+    } catch(e) {}
+
+    // Show free results instantly
     const freeResults = runPredictor(user, false);
     showResults(freeResults, false, currentPayLink, user);
 
-    // Call Apps Script in background — checks paid status + gets payment link
+    // If just paid, show full results immediately
+    if (justPaid) {
+      _isPaid = true;
+      const paidResults = runPredictor(user, true);
+      showResults(paidResults, true, currentPayLink, user);
+      document.getElementById('paidBar').style.display = 'flex';
+    }
+
+    // Call Apps Script in background
     fetchPaymentInfo(email, user).then(info => {
       if (info.paymentLink) {
         currentPayLink = info.paymentLink;
@@ -932,8 +949,7 @@ async function submitPredictor() {
         if (pl) pl.href = info.paymentLink;
         try { localStorage.setItem('cp_pay_'+email, JSON.stringify({link:info.paymentLink})); } catch(e) {}
       }
-      if (info.isPaid) {
-        // Paid — show full results (Apps Script already incremented reportsUsed)
+      if (info.isPaid && !justPaid) {
         _isPaid = true;
         const paidResults = runPredictor(user, true);
         showResults(paidResults, true, info.paymentLink, user);
@@ -1094,6 +1110,9 @@ function renderTop10(title, picks) {
     currentEmail = email;
     window.history.replaceState({}, document.title, window.location.pathname);
     // Don't cache paid status — always check Apps Script for report count
+    // Set flag so submitPredictor shows full results immediately
+    try { localStorage.setItem('cp_justpaid_'+email, '1'); } catch(e) {}
+
     // Load saved form data and auto-submit
     try {
       const saved = JSON.parse(localStorage.getItem('cp_fd_'+email)||'null');
