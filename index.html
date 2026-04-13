@@ -1114,15 +1114,24 @@ function renderTop10(title, picks) {
 function openPayLink() {
   if (currentPayLink && currentPayLink !== '') {
     window.open(currentPayLink, '_blank');
-  } else {
-    // Payment link not loaded yet - wait and retry
-    const pl = document.getElementById('payLink');
-    if (pl && pl.href && pl.href.includes('rzp')) {
-      window.open(pl.href, '_blank');
-    } else {
-      alert('Payment link is loading, please wait a moment and try again.');
-    }
+    return;
   }
+  // Link not ready yet — wait up to 10 seconds
+  const btn = event && event.target;
+  if (btn) { btn.textContent = '⏳ Loading...'; btn.style.pointerEvents = 'none'; }
+  let tries = 0;
+  const interval = setInterval(() => {
+    tries++;
+    if (currentPayLink && currentPayLink !== '') {
+      clearInterval(interval);
+      window.open(currentPayLink, '_blank');
+      if (btn) { btn.textContent = '🔓 Unlock Full Report — ₹39'; btn.style.pointerEvents = 'auto'; }
+    } else if (tries > 20) {
+      clearInterval(interval);
+      if (btn) { btn.textContent = '🔓 Unlock Full Report — ₹39'; btn.style.pointerEvents = 'auto'; }
+      alert('Could not load payment link. Please try the Unlock button at the bottom.');
+    }
+  }, 500);
 }
 function e(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
