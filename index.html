@@ -578,7 +578,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
             <div style="font-size:12px;opacity:0.6;margin-bottom:8px;">One-time unlock · Change rank/branch anytime · 5 reports included</div>
-            <a id="payLink" href="javascript:void(0)" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
+            <a id="payLink" href="#" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
               🔓 Unlock Full Report — ₹39
             </a>
           </div>
@@ -695,14 +695,173 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
 </footer>
 
 <script>
-// ════════════════════════════════════════════════════
-// PASTE YOUR APPS SCRIPT URL HERE
-// ════════════════════════════════════════════════════
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMsjjnXMUFk2cIMEfXy9iasVWMpvyx8puxls6gExwHb25tIbn7oddEB6gjVHZIPT3j_A/exec';
+const DATA_BASE = 'https://collegepipe.in/data/';
 
+// ── Data store ──
+const DB = { jeemain: null, jeeadv: null, jeemainhs: null, csab: null };
+let dataReady = false;
+let dataPromise = null;
 let currentEmail = '';
+let currentPayLink = '';
+let _isPaid = false;
+window._reportMeta = {};
 
-// ── SUBMIT ──
+// ── Load data from GitHub Pages ──
+function loadData() {
+  if (dataPromise) return dataPromise;
+  dataPromise = (async () => {
+    try {
+      const files = ['jeemain','jeeadv','jeemainhs','csab'];
+      const results = await Promise.all(
+        files.map(f => fetch(DATA_BASE + f + '.json').then(r => r.json()))
+      );
+      DB.jeemain   = results[0];
+      DB.jeeadv    = results[1];
+      DB.jeemainhs = results[2];
+      DB.csab      = results[3];
+      if (!DB.jeemain || !DB.jeemain.d || !DB.jeemain.d.length) throw new Error('Data empty');
+      dataReady = true;
+      return true;
+    } catch(e) {
+      console.error('loadData error:', e);
+      dataPromise = null;
+      return false;
+    }
+  })();
+  return dataPromise;
+}
+
+// Start preloading immediately
+window.addEventListener('DOMContentLoaded', () => loadData());
+
+// ── Match helpers ──
+const norm = v => String(v == null ? '' : v).trim().toUpperCase();
+
+const CAT_IDS = {'EWS':0,'EWS (PWD)':1,'OBC-NCL':2,'OBC-NCL (PWD)':3,'OPEN':4,'OPEN (PWD)':5,'SC':6,'SC (PWD)':7,'ST':8,'ST (PWD)':9};
+const BG_IDS  = {'5 YEAR PROGRAM (DUAL DEGREE)':0,'BIO MED/TECH':1,'CSE/IT/AI':2,'CHEMICAL':3,'CIVIL':4,'ELECTRICAL/ELECTRONICS':5,'ENGINEERING PHYSICS':6,'MATHEMATICS AND COMPUTING':7,'MECHANICAL':8,'METALLURGY/MINING':9,'OTHERS':10};
+const CT_IDS  = {'NIT':0,'IIIT':1,'GFTI':2};
+
+function getCatId(v) { return CAT_IDS[norm(v)] ?? 4; }
+function getBgId(v)  { const k=norm(v); for(const p in BG_IDS) if(k.includes(p)) return BG_IDS[p]; return 10; }
+function genMatch(u, rowGen) { if(rowGen===0) return true; return norm(u).includes('FEMALE'); }
+
+const BRANCH_WEIGHT = {'CSE/IT/AI':1,'ELECTRICAL/ELECTRONICS':2,'ENGINEERING PHYSICS':2,'MATHEMATICS AND COMPUTING':2,'5 YEAR PROGRAM (DUAL DEGREE)':3,'CHEMICAL':3,'CIVIL':3,'MECHANICAL':3,'OTHERS':3,'BIO MED/TECH':4,'METALLURGY/MINING':4};
+function branchWeight(bg) { const k=norm(bg); for(const p in BRANCH_WEIGHT) if(k.includes(p)) return BRANCH_WEIGHT[p]; return 4; }
+
+// ── Predictors ──
+function buildJeeMain(user, isPaid) {
+  const db=DB.jeemain, C=db.c, B=db.b;
+  const limit=isPaid?100:5, dreamMin=Math.floor(user.jmrank*0.9);
+  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
+  const ctId=user.collegeType==='ALL'?-1:(CT_IDS[norm(user.collegeType)]??-1);
+  const round=user.round==='ALL'?-1:Number(user.round);
+  const dream=[], safe=[];
+  for(const r of db.d) {
+    if(round!==-1&&r[0]!==round) continue;
+    if(r[4]!==catId) continue;
+    if(!genMatch(user.gender,r[5])) continue;
+    if(bgId!==-1&&r[7]!==bgId) continue;
+    if(ctId!==-1&&r[8]!==ctId) continue;
+    const cr=r[6], qt=r[3]===0?'OS':r[3]===1?'HS':'AI';
+    if(cr>=dreamMin&&cr<user.jmrank) dream.push([r[0],C[r[1]],B[r[2]],qt,cr,cr-user.jmrank]);
+    else if(cr>=user.jmrank) safe.push([r[0],C[r[1]],B[r[2]],qt,cr,cr-user.jmrank]);
+  }
+  dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
+  return {dream:dream.slice(0,limit), safe:safe.slice(0,limit)};
+}
+
+function buildJeeAdv(user, isPaid) {
+  if(!user.jarank) return null;
+  const db=DB.jeeadv, C=db.c, B=db.b;
+  const limit=isPaid?50:5, dreamMin=Math.floor(user.jarank*0.9);
+  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
+  const round=user.round==='ALL'?-1:Number(user.round);
+  const dream=[], safe=[];
+  for(const r of db.d) {
+    if(round!==-1&&r[0]!==round) continue;
+    if(r[3]!==catId) continue;
+    if(!genMatch(user.gender,r[4])) continue;
+    if(bgId!==-1&&r[6]!==bgId) continue;
+    const cr=r[5];
+    if(cr>=dreamMin&&cr<user.jarank) dream.push([r[0],C[r[1]],B[r[2]],'',cr,cr-user.jarank]);
+    else if(cr>=user.jarank) safe.push([r[0],C[r[1]],B[r[2]],'',cr,cr-user.jarank]);
+  }
+  dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
+  return {dream:dream.slice(0,limit), safe:safe.slice(0,limit)};
+}
+
+function buildJeeMainHS(user, isPaid) {
+  if(!user.state||user.state==='ALL') return null;
+  const db=DB.jeemainhs, C=db.c, B=db.b, S=db.s;
+  const limit=isPaid?50:5;
+  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
+  const round=user.round==='ALL'?-1:Number(user.round);
+  const stId=S.findIndex(s=>norm(s)===norm(user.state));
+  if(stId===-1) return null;
+  const results=[];
+  for(const r of db.d) {
+    if(round!==-1&&r[0]!==round) continue;
+    if(r[3]!==catId) continue;
+    if(!genMatch(user.gender,r[4])) continue;
+    if(r[5]!==stId) continue;
+    if(bgId!==-1&&r[7]!==bgId) continue;
+    if(r[6]>=user.jmrank) results.push([C[r[1]],B[r[2]],r[6]]);
+  }
+  results.sort((a,b)=>a[2]-b[2]);
+  return results.slice(0,limit);
+}
+
+function buildCSAB(user, isPaid) {
+  const db=DB.csab, C=db.c, B=db.b;
+  const limit=isPaid?50:5, dreamMin=Math.floor(user.jmrank*0.9);
+  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
+  const round=user.round==='ALL'?-1:Number(user.round);
+  const CSAB_QT=['All India','Home State','Other State','Goa','J&K','Ladakh'];
+  const dream=[], safe=[];
+  for(const r of db.d) {
+    if(round!==-1&&r[0]!==round) continue;
+    if(r[4]!==catId) continue;
+    if(!genMatch(user.gender,r[5])) continue;
+    if(bgId!==-1&&r[7]!==bgId) continue;
+    const cr=r[6];
+    if(cr>=dreamMin&&cr<user.jmrank) dream.push([r[0],C[r[1]],B[r[2]],CSAB_QT[r[3]]||'',cr,cr-user.jmrank]);
+    else if(cr>=user.jmrank) safe.push([r[0],C[r[1]],B[r[2]],CSAB_QT[r[3]]||'',cr,cr-user.jmrank]);
+  }
+  dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
+  return {dream:dream.slice(0,limit), safe:safe.slice(0,limit)};
+}
+
+function buildTop10(user, isPaid, jeeMain, jeeAdv, csab) {
+  const limit=isPaid?10:3, allPicks=[];
+  function parse(section, exam, rank) {
+    if(!section||!rank) return;
+    for(const isDream of [true,false]) {
+      const rows=isDream?section.dream:section.safe;
+      if(!rows) continue;
+      for(const r of rows) {
+        const gap=r[4]-rank;
+        allPicks.push({col:r[1],br:r[2],exam,cr:r[4],gap,score:Math.abs(gap)+branchWeight(r[2])*800+(isDream?-500:0),isDream});
+      }
+    }
+  }
+  parse(jeeMain,'JEE Main',user.jmrank);
+  parse(jeeAdv,'JEE Adv',user.jarank);
+  parse(csab,'CSAB',user.jmrank);
+  allPicks.sort((a,b)=>a.score-b.score);
+  const seen=new Set(), unique=[];
+  for(const p of allPicks){const k=p.col+'|'+p.br; if(!seen.has(k)){seen.add(k);unique.push(p);}}
+  return unique.slice(0,limit);
+}
+
+function runPredictor(user, isPaid) {
+  const jeeMain=buildJeeMain(user,isPaid), jeeAdv=buildJeeAdv(user,isPaid);
+  const jeemainHS=buildJeeMainHS(user,isPaid), csab=buildCSAB(user,isPaid);
+  const top10=buildTop10(user,isPaid,jeeMain,jeeAdv,csab);
+  return {jeeMain,jeeAdv,jeemainHS,csab,top10};
+}
+
+// ── Submit ──
 async function submitPredictor() {
   const errEl = document.getElementById('formError');
   errEl.style.display = 'none';
@@ -716,35 +875,39 @@ async function submitPredictor() {
 
   if (!name)                         return showErr('Please enter your name.');
   if (!email || !email.includes('@')) return showErr('Please enter a valid email address.');
-  if (!/^\d{10}$/.test(phone))       return showErr('Please enter a valid 10-digit mobile number.');
+  if (!/^\d{10}$/.test(phone))      return showErr('Please enter a valid 10-digit mobile number.');
   if (!category)                     return showErr('Please select your category.');
   if (!gender)                       return showErr('Please select your gender.');
   if (!jmrank || Number(jmrank) < 1) return showErr('Please enter your JEE Main Rank.');
 
   currentEmail = email;
 
-  const formData = {
-    name, email, phone, category, gender, jmrank,
-    jarank:       document.getElementById('f_jarank').value || '0',
-    branch:       document.getElementById('f_branch').value,
-    state:        document.getElementById('f_state').value,
-    city:         document.getElementById('f_city').value,
-    round:        document.getElementById('f_round').value,
-    collegeType:  document.getElementById('f_collegeType').value,
-    collegeTypeS: document.getElementById('f_collegeTypeS').value
+  const user = {
+    name, email, phone, category, gender,
+    jmrank:      Number(jmrank),
+    jarank:      Number(document.getElementById('f_jarank').value) || 0,
+    branch:      document.getElementById('f_branch').value,
+    state:       document.getElementById('f_state').value,
+    city:        document.getElementById('f_city').value,
+    round:       document.getElementById('f_round').value,
+    collegeType: document.getElementById('f_collegeType').value,
+    collegeTypeS:document.getElementById('f_collegeTypeS').value
   };
-    // Save to localStorage so post-payment page can auto-submit instantly
-    try { localStorage.setItem('cp_fd_' + email, JSON.stringify({...formData, email})); } catch(e) {}
-  window._reportMeta = {
-    name:   formData.name,
-    rank:   formData.jmrank,
-    cat:    formData.category,
-    branch: formData.branch !== 'ALL' ? formData.branch : '',
-    state:  formData.state  !== 'ALL' ? formData.state  : '',
-    gender: formData.gender,
-    round:  formData.round,
-    jarank: formData.jarank
-  };
+
+  window._reportMeta = {name, rank:user.jmrank, cat:category, branch:user.branch!=='ALL'?user.branch:'', state:user.state!=='ALL'?user.state:'', gender, round:user.round, jarank:user.jarank};
+
+  // Save for post-payment
+  try { localStorage.setItem('cp_fd_'+email, JSON.stringify(user)); } catch(e) {}
+
+  // Load cached pay link instantly
+  try {
+    const cached = JSON.parse(localStorage.getItem('cp_pay_'+email)||'{}');
+    if (cached.link) {
+      currentPayLink = cached.link;
+      const pl = document.getElementById('payLink');
+      if (pl) pl.href = cached.link;
+    }
+  } catch(e) {}
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
@@ -753,24 +916,52 @@ async function submitPredictor() {
   document.getElementById('submitLoadingMsg').style.display = 'inline';
 
   try {
-    const data = await new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', APPS_SCRIPT_URL, true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.withCredentials = false;
-      xhr.onload = function() {
-        try { resolve(JSON.parse(xhr.responseText)); }
-        catch(e) { reject(new Error('Invalid response. Please try again.')); }
-      };
-      xhr.onerror = function() { reject(new Error('Network error. Please check your connection.')); };
-      xhr.ontimeout = function() { reject(new Error('Request timed out. Please try again.')); };
-      xhr.timeout = 60000;
-      xhr.send(new URLSearchParams({ action: 'submitForm', ...formData }).toString());
-    });
-    if (!data.success) throw new Error(data.error || 'Something went wrong.');
-    showResults(data);
-  } catch (err) {
-    showErr(err.message || 'Submission failed. Please try again.');
+    // Load data if not ready
+    const ok = await loadData();
+    if (!ok) throw new Error('Could not load college data. Please check your connection.');
+
+    // Check if paid from cache
+    let isPaid = false;
+    try {
+      const paidCache = localStorage.getItem('cp_paid_'+email);
+      if (paidCache === '1') isPaid = true;
+    } catch(e) {}
+
+    // Show results instantly from JSON
+    const results = runPredictor(user, isPaid);
+    showResults(results, isPaid, currentPayLink, user);
+
+    // Call Apps Script in background for payment link + paid status
+    fetchPaymentInfo(email, user).then(info => {
+      if (info.paymentLink) {
+        currentPayLink = info.paymentLink;
+        const pl = document.getElementById('payLink');
+        if (pl) pl.href = info.paymentLink;
+        // Cache it
+        try { localStorage.setItem('cp_pay_'+email, JSON.stringify({link:info.paymentLink})); } catch(e) {}
+      }
+      if (info.isPaid && !isPaid) {
+        // User just paid — show full results
+        try { localStorage.setItem('cp_paid_'+email, '1'); } catch(e) {}
+        _isPaid = true;
+        const paidResults = runPredictor(user, true);
+        showResults(paidResults, true, info.paymentLink, user);
+        if (info.remaining != null) {
+          const rb = document.getElementById('remainingBar');
+          if (rb) { rb.style.display='block'; rb.textContent=`You have ${info.remaining} report${info.remaining!==1?'s':''} remaining.`; }
+        }
+      }
+      if (info.packExhausted) {
+        document.getElementById('resultsSub').textContent = '⚠️ Your 5 reports are used up. Pay ₹39 for a new pack.';
+        if (info.paymentLink) {
+          const pl = document.getElementById('payLink');
+          if (pl) pl.href = info.paymentLink;
+        }
+      }
+    }).catch(()=>{});
+
+  } catch(err) {
+    showErr(err.message || 'Something went wrong. Please try again.');
   } finally {
     document.getElementById('submitText').style.display = 'inline';
     document.getElementById('submitSpinner').style.display = 'none';
@@ -779,487 +970,218 @@ async function submitPredictor() {
   }
 }
 
-// ── SHOW RESULTS ──
-function showResults(data) {
-  const isPaid      = data.tier === 'PAID';
-  const exhausted   = data.packExhausted === true;
+async function fetchPaymentInfo(email, user) {
+  try {
+    const params = new URLSearchParams({
+      name:user.name, email, phone:user.phone, category:user.category,
+      jmrank:user.jmrank, jarank:user.jarank, branch:user.branch,
+      gender:user.gender, state:user.state, city:user.city,
+      round:user.round, collegeType:user.collegeType, collegeTypeS:user.collegeTypeS
+    });
+    const res = await fetch(APPS_SCRIPT_URL, {method:'POST', body:params, headers:{'Content-Type':'application/x-www-form-urlencoded'}});
+    const data = await res.json();
+    return {
+      isPaid: data.tier==='PAID',
+      paymentLink: data.paymentLink||'',
+      remaining: data.remaining??null,
+      packExhausted: data.packExhausted===true
+    };
+  } catch(e) {
+    return {isPaid:false, paymentLink:'', remaining:null, packExhausted:false};
+  }
+}
+
+// ── Show Results ──
+function showResults(results, isPaid, payLink, user) {
+  _isPaid = isPaid;
+  const exhausted = false;
 
   document.getElementById('resultsArea').style.display = 'block';
   document.getElementById('paidBar').style.display     = isPaid ? 'flex' : 'none';
 
   const badge = document.getElementById('resultsBadge');
-  badge.textContent = isPaid ? '✅ Full Report' : (exhausted ? '⚠️ Pack Exhausted' : '🔍 Free Preview');
+  badge.textContent = isPaid ? '✅ Full Report' : '🔍 Free Preview';
   badge.className   = 'results-badge ' + (isPaid ? 'badge-paid' : 'badge-free');
 
-  // Remaining reports badge
-  const remBar = document.getElementById('remainingBar');
-  if (isPaid && data.remaining != null) {
-    remBar.style.display  = 'block';
-    remBar.textContent    = `You have ${data.remaining} report${data.remaining !== 1 ? 's' : ''} remaining in your pack.`;
-  } else {
-    remBar.style.display  = 'none';
-  }
-
-  document.getElementById('resultsTitle').textContent = isPaid
-    ? 'Your Full College List'
-    : (exhausted ? 'Pack Used Up' : 'Sample College List');
-  document.getElementById('resultsSub').textContent = isPaid
+  document.getElementById('resultsTitle').textContent = isPaid ? 'Your Full College List' : 'Sample College List';
+  document.getElementById('resultsSub').textContent   = isPaid
     ? 'Complete list based on your rank and preferences'
-    : (exhausted ? 'Your 5 reports have been used. Pay ₹ for a new pack.' : 'Top 5 per category — Get 5 Personalized College Reports in one payment — only ₹39');
+    : 'Top 5 per category — Get 5 Personalized College Reports in one payment — only ₹39';
 
   document.getElementById('downloadBar').style.display = isPaid ? 'block' : 'none';
-  document.getElementById('upgradeBox').style.display  = isPaid ? 'none' : 'block';
+  document.getElementById('upgradeBox').style.display  = isPaid ? 'none'  : 'block';
 
-  if (!isPaid && data.paymentLink) {
-    document.getElementById('payLink').href = data.paymentLink;
-    // sync unlock button if already rendered
-    const ub = document.getElementById('unlockBtn');
-    if (ub) ub.href = data.paymentLink;
-    if (exhausted) document.getElementById('payLink').textContent = 'Pay ₹39 — Get New Pack of 5 Reports';
+  if (!isPaid && currentPayLink) {
+    const pl = document.getElementById('payLink');
+    if (pl) pl.href = currentPayLink;
   }
 
-  renderResults(data.results, isPaid);
-  setTimeout(() => document.getElementById('resultsArea').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  renderResults(results, isPaid);
+  setTimeout(() => document.getElementById('resultsArea').scrollIntoView({behavior:'smooth', block:'start'}), 100);
 }
 
-// ── DOWNLOAD PDF ON DEMAND ──
-function downloadPdf() {
-  const content = document.getElementById('resultsContent');
-  if (!content) return;
-
-  const btn = document.getElementById('downloadBtn');
-  btn.disabled = true;
-  btn.textContent = '⏳ Preparing...';
-
-  const m      = window._reportMeta || {};
-  const name   = m.name   || 'Student';
-  const rank   = m.rank   || '';
-  const cat    = m.cat    || '';
-  const branch = m.branch || '';
-  const state  = m.state  || '';
-
-  // Clone and clean — remove all blur/overlay/unlock elements
-  const clone = content.cloneNode(true);
-  clone.querySelectorAll('table[style*="filter:blur"]').forEach(t => {
-    t.style.filter = 'none'; t.style.opacity = '1'; t.style.pointerEvents = 'auto';
-  });
-  clone.querySelectorAll('div[style*="blur"]').forEach(d => {
-    d.style.filter = 'none'; d.style.opacity = '1';
-  });
-  clone.querySelectorAll('div[style*="position:absolute"], div[style*="position: absolute"]').forEach(d => d.remove());
-  clone.querySelectorAll('a[onclick*="syncPayLink"]').forEach(a => {
-    const tr = a.closest('tr'); if (tr) tr.remove(); else a.remove();
-  });
-
-  const reportHTML = `<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>CollegePIPE — ${name}</title>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#0f1f3d;background:#fff;padding:32px;font-size:12px;}
-  .hdr{border-bottom:3px solid #2255c4;padding-bottom:14px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;}
-  .logo{font-size:20px;font-weight:900;color:#0f1f3d;letter-spacing:-0.5px;}
-  .logo span{color:#f59e0b;}
-  .meta{font-size:11px;color:#64748b;text-align:right;line-height:1.6;}
-  .info{background:#f0f4ff;border-radius:10px;padding:12px 16px;margin-bottom:20px;display:flex;gap:24px;flex-wrap:wrap;}
-  .info-item .lbl{font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.4px;}
-  .info-item .val{font-size:13px;font-weight:700;color:#0f1f3d;margin-top:2px;}
-  .result-section{margin-bottom:22px;}
-  .result-section-title{font-size:14px;font-weight:800;padding-bottom:7px;border-bottom:2px solid #e8f0fe;margin-bottom:9px;}
-  .sub-label{font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;margin:7px 0 5px;display:inline-block;text-transform:uppercase;letter-spacing:.3px;}
-  .sub-dream{background:rgba(248,113,113,.1);color:#dc2626;}
-  .sub-safe{background:rgba(52,211,153,.1);color:#059669;}
-  table{width:100%;border-collapse:collapse;font-size:11px;}
-  th{background:#f1f5f9;padding:6px 10px;text-align:left;font-size:9px;color:#64748b;border-bottom:1px solid #e2e8f0;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
-  td{padding:7px 10px;border-bottom:1px solid #f1f5f9;vertical-align:middle;}
-  tr:last-child td{border-bottom:none;}
-  tr.dream-row{background:rgba(254,226,226,.15);}
-  tr.safe-row{background:rgba(209,250,229,.12);}
-  .rank-badge{background:#eff6ff;color:#2255c4;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;display:inline-block;}
-  .gap-neg{color:#dc2626;font-weight:700;}
-  .gap-pos{color:#059669;font-weight:700;}
-  .footer{margin-top:28px;padding-top:10px;border-top:1px solid #e2e8f0;font-size:10px;color:#94a3b8;text-align:center;}
-</style>
-</head>
-<body>
-<div class="hdr">
-  <div class="logo">College<span>PIPE</span></div>
-  <div class="meta">Full College Prediction Report<br>${new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</div>
-</div>
-<div class="info">
-  <div class="info-item"><div class="lbl">Student</div><div class="val">${name}</div></div>
-  ${rank?`<div class="info-item"><div class="lbl">JEE Main Rank</div><div class="val">${Number(rank).toLocaleString('en-IN')}</div></div>`:''}
-  ${cat?`<div class="info-item"><div class="lbl">Category</div><div class="val">${cat}</div></div>`:''}
-  ${branch&&branch!=='ALL'?`<div class="info-item"><div class="lbl">Branch</div><div class="val">${branch}</div></div>`:''}
-  ${state&&state!=='ALL'?`<div class="info-item"><div class="lbl">State</div><div class="val">${state}</div></div>`:''}
-</div>
-${clone.innerHTML}
-<div class="footer">Generated by CollegePIPE &middot; Data from official JoSAA &amp; CSAB cutoffs &middot; Not affiliated with any government body</div>
-</body>
-</html>`;
-
-  // Download as .html file — opens directly in browser, student can Ctrl+P → Save as PDF
-  const blob = new Blob([reportHTML], { type: 'text/html;charset=utf-8' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = `CollegePIPE_${name.replace(/\s+/g,'_')}_Report.html`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-
-  btn.disabled = false;
-  btn.textContent = '⬇ Download Full PDF';
-}
-
-// ── RENDER RESULTS ──
-// Global flag — set by showResults
-let _isPaid = false;
-
+// ── Render ──
 function renderResults(results, isPaid) {
-  _isPaid = isPaid;
   if (!results) {
     document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--muted);padding:30px;">No results found. Try adjusting your filters.</p>';
     return;
   }
   let html = '';
   if (results.jeeMain)   html += renderDreamSafe('🎯 JEE Main', results.jeeMain, true);
-  if (results.jeeAdv)    html += renderDreamSafe('🔬 JEE Advanced', results.jeeAdv, true);
-  if (results.csab)      html += renderDreamSafe('📋 CSAB', results.csab, true);
-  if (results.jeeMainHS) html += renderSimple('🏠 JEE Main Home State', results.jeeMainHS, ['College','Branch','Closing Rank']);
-  if (results.topCity)   html += renderSimple('🏙️ Top City Colleges', results.topCity, ['College','Admission Route','Fees','Placement']);
-  if (results.stateCet)  html += renderSimple('📍 State CET', results.stateCet, ['College','City','Tier']);
-  if (results.top10)     html += renderTop10('🏆 Top 10 Personalised Picks', results.top10);
-  document.getElementById('resultsContent').innerHTML = html || '<p style="text-align:center;color:var(--muted);padding:30px;">No matching colleges found for your criteria.</p>';
+  if (results.jeeAdv)    html += renderDreamSafe('🔬 JEE Advanced', results.jeeAdv, false);
+  if (results.csab)      html += renderDreamSafe('📋 CSAB', results.csab, false);
+  if (results.jeemainHS) html += renderSimpleHS('🏠 JEE Main Home State', results.jeemainHS);
+  if (results.top10 && results.top10.length) html += renderTop10('🏆 Top 10 Personalised Picks', results.top10);
+  document.getElementById('resultsContent').innerHTML = html || '<p style="text-align:center;color:var(--muted);padding:30px;">No matching colleges found.</p>';
 }
 
-// Blur helper — shows `visible` rows, blurs rest, optionally shows unlock button
-function blurSection(rows, colSpan, visibleCount, showUnlock) {
+function blurRows(rows, colSpan, visibleCount, showUnlock) {
   if (_isPaid || rows.length <= visibleCount) return rows.join('');
   const visible = rows.slice(0, visibleCount).join('');
   const blurred = rows.slice(visibleCount).join('');
-  const unlockBtn = showUnlock ? `
-    <div style="margin-top:16px;">
-      <a href="#" target="_blank" onclick="syncPayLink(this);return true;"
-        style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3460,#2255c4);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:700;padding:12px 32px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(34,85,196,0.25);">
-        🔓 Unlock Full Report
-      </a>
-    </div>` : '';
-  return `${visible}
-  <tr style="padding:0;border:none;">
-    <td colspan="${colSpan}" style="padding:0;border:none;">
-      <div style="position:relative;">
-        <table style="width:100%;border-collapse:collapse;filter:blur(3px);pointer-events:none;user-select:none;opacity:0.5;">${blurred}</table>
-        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0.88) 45%,rgba(255,255,255,1) 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:20px;text-align:center;">
-          ${unlockBtn}
-        </div>
-      </div>
-    </td>
-  </tr>`;
+  const btn = showUnlock ? `<div style="margin-top:16px;"><a href="javascript:void(0)" onclick="openPayLink(event)" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3460,#2255c4);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:700;padding:12px 32px;border-radius:12px;text-decoration:none;">🔓 Unlock Full Report — ₹39</a></div>` : '';
+  return `${visible}<tr><td colspan="${colSpan}" style="padding:0;border:none;"><div style="position:relative;"><table style="width:100%;border-collapse:collapse;filter:blur(3px);pointer-events:none;user-select:none;opacity:0.5;">${blurred}</table><div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0.88) 45%,rgba(255,255,255,1) 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:20px;text-align:center;">${btn}</div></div></td></tr>`;
 }
 
-function syncPayLink(el) {
-  const main = document.getElementById('payLink');
-  if (main && main.href && main.href !== window.location.href) el.href = main.href;
-}
-
-// showUnlockInSafe = true for jeeMain, jeeAdv, csab safe sections
-function renderDreamSafe(title, data, showUnlockInSafe) {
-  if (!data || data === 'No matching colleges found') return '';
-  const lines = data.split('\n').filter(Boolean);
-  let dRows = [], sRows = [], sec = '', dMsg = '', sMsg = '';
-  const headers = '<tr><th style="width:40px;">Rnd</th><th>College</th><th>Branch</th><th style="width:90px;text-align:center;">Closing Rank</th><th style="width:70px;text-align:center;">Gap</th></tr>';
-
-  for (const line of lines) {
-    if (line === 'DREAM') { sec = 'd'; continue; }
-    if (line === 'SAFE')  { sec = 's'; continue; }
-    if (line.startsWith('No ')) {
-      if (sec === 'd') dMsg = line; else sMsg = line;
-      continue;
+function openPayLink(evt) {
+  evt && evt.preventDefault && evt.preventDefault();
+  if (currentPayLink) { window.open(currentPayLink,'_blank'); return; }
+  // Wait for pay link
+  const el = evt && evt.target;
+  if (el) { el.textContent='⏳ Loading...'; el.style.pointerEvents='none'; }
+  let tries=0;
+  const t = setInterval(()=>{
+    tries++;
+    if (currentPayLink) {
+      clearInterval(t); window.open(currentPayLink,'_blank');
+      if(el){el.textContent='🔓 Unlock Full Report — ₹39';el.style.pointerEvents='auto';}
+    } else if(tries>20){
+      clearInterval(t);
+      if(el){el.textContent='🔓 Unlock Full Report — ₹39';el.style.pointerEvents='auto';}
+      alert('Please try the Unlock button at the bottom.');
     }
-    const p = line.split('|'); if (p.length < 5) continue;
-    const gap = Number(p[5]) || 0;
-    const bq = p[3] ? `${p[2]} (${p[3]})` : p[2];
-    const tr = `<tr class="${sec==='d'?'dream-row':'safe-row'}">
-      <td style="text-align:center;">${e(p[0])}</td>
-      <td><strong>${e(p[1])}</strong></td>
-      <td style="color:var(--muted);font-size:11px;">${e(bq)}</td>
-      <td style="text-align:center;"><span class="rank-badge">${e(p[4])}</span></td>
-      <td style="text-align:center;" class="${gap<=0?'gap-neg':'gap-pos'}">${gap>=0?'+':''}${gap}</td>
-    </tr>`;
-    if (sec === 'd') dRows.push(tr); else sRows.push(tr);
-  }
-
-  // Dream: show 2, blur rest, NO unlock button
-  const dBody = dMsg
-    ? `<tr><td colspan="5" style="text-align:center;color:var(--muted);font-style:italic;padding:12px;">${e(dMsg)}</td></tr>`
-    : (dRows.length
-        ? headers + blurSection(dRows, 5, 2, false)
-        : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:10px;">No dream colleges found</td></tr>`);
-
-  // Safe: show 4, blur rest, show unlock button if showUnlockInSafe
-  const sBody = sMsg
-    ? `<tr><td colspan="5" style="text-align:center;color:var(--muted);font-style:italic;padding:12px;">${e(sMsg)}</td></tr>`
-    : (sRows.length
-        ? headers + blurSection(sRows, 5, 4, showUnlockInSafe)
-        : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:10px;">No safe colleges found</td></tr>`);
-
-  return `<div class="result-section">
-    <div class="result-section-title">${title}</div>
-    <div class="sub-label sub-dream">🎯 Dream Colleges</div>
-    <table class="ctable">${dBody}</table>
-    <div class="sub-label sub-safe" style="margin-top:12px;">✅ Safe Colleges</div>
-    <table class="ctable">${sBody}</table>
-  </div>`;
+  },500);
 }
 
-// renderSimple: show 4, blur rest, NO unlock button
-function renderSimple(title, data, headers) {
-  if (!data || data === 'No matching colleges found') return '';
-  const lines = data.split('\n').filter(Boolean);
-  if (!lines.length) return '';
-  const hHtml = headers.map(h => `<th>${e(h)}</th>`).join('');
-  const rows = lines.map(line => {
-    if (line.includes('|')) {
-      const p = line.split('|');
-      return `<tr>${p.slice(0, headers.length).map(c => `<td>${e(c)}</td>`).join('')}</tr>`;
-    }
-    const p = line.split(' - ');
-    if (p.length >= 3) {
-      const last = p[p.length-1], mid = p[p.length-2], first = p.slice(0,p.length-2).join(' - ');
-      return `<tr><td><strong>${e(first)}</strong></td><td>${e(mid)}</td><td>${e(last)}</td></tr>`;
-    }
-    return `<tr><td colspan="${headers.length}">${e(line)}</td></tr>`;
-  });
-  const body = `<tr>${hHtml}</tr>` + blurSection(rows, headers.length, 4, false);
-  return `<div class="result-section">
-    <div class="result-section-title">${title}</div>
-    <table class="ctable">${body}</table>
-  </div>`;
+function e(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function renderDreamSafe(title, section, showUnlock) {
+  if (!section) return '';
+  const headers='<tr><th style="width:40px;">Rnd</th><th>College</th><th>Branch</th><th style="width:90px;text-align:center;">Closing Rank</th><th style="width:70px;text-align:center;">Gap</th></tr>';
+  const mkRow=(r,cls)=>{const gap=r[5],bq=r[3]?`${r[2]} (${r[3]})`:r[2];return `<tr class="${cls}"><td style="text-align:center;">${e(r[0])}</td><td><strong>${e(r[1])}</strong></td><td style="color:var(--muted);font-size:11px;">${e(bq)}</td><td style="text-align:center;"><span class="rank-badge">${e(r[4])}</span></td><td style="text-align:center;" class="${gap<=0?'gap-neg':'gap-pos'}">${gap>=0?'+':''}${gap}</td></tr>`;};
+  const dRows=section.dream.map(r=>mkRow(r,'dream-row'));
+  const sRows=section.safe.map(r=>mkRow(r,'safe-row'));
+  const dBody=dRows.length?headers+blurRows(dRows,5,2,false):`<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px;font-style:italic;">No dream colleges found</td></tr>`;
+  const sBody=sRows.length?headers+blurRows(sRows,5,4,showUnlock):`<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px;font-style:italic;">No safe colleges found</td></tr>`;
+  return `<div class="result-section"><div class="result-section-title">${title}</div><div class="sub-label sub-dream">🎯 Dream Colleges</div><table class="ctable">${dBody}</table><div class="sub-label sub-safe" style="margin-top:12px;">✅ Safe Colleges</div><table class="ctable">${sBody}</table></div>`;
 }
 
-// renderTop10: show 4, blur rest, NO unlock button
-function renderTop10(title, data) {
-  if (!data || data === 'No picks available') return '';
-  const lines = data.split('\n').filter(Boolean);
-  const hHtml = '<tr><th style="width:30px;text-align:center;">#</th><th>College</th><th>Branch</th><th style="width:70px;text-align:center;">Exam</th><th style="width:90px;text-align:center;">Closing Rank</th><th style="width:60px;text-align:center;">Gap</th><th style="width:55px;text-align:center;">Type</th></tr>';
-  const rows = lines.map(line => {
-    const p = line.split('|'); if (p.length < 7) return '';
-    const gap = Number(p[5].replace('+',''));
-    return `<tr class="${p[6]==='Dream'?'dream-row':'safe-row'}">
-      <td style="text-align:center;font-weight:700;font-family:var(--font-head);">${e(p[0])}</td>
-      <td><strong>${e(p[1])}</strong></td>
-      <td style="color:var(--muted);font-size:11px;">${e(p[2])}</td>
-      <td style="text-align:center;">${e(p[3])}</td>
-      <td style="text-align:center;"><span class="rank-badge">${e(p[4])}</span></td>
-      <td style="text-align:center;" class="${gap<=0?'gap-neg':'gap-pos'}">${e(p[5])}</td>
-      <td style="text-align:center;">${e(p[6])}</td>
-    </tr>`;
-  }).filter(Boolean);
-  const body = hHtml + blurSection(rows, 7, 4, false);
-  return `<div class="result-section">
-    <div class="result-section-title">${title}</div>
-    <table class="ctable">${body}</table>
-  </div>`;
+function renderSimpleHS(title, rows) {
+  if (!rows||!rows.length) return '';
+  const headers='<tr><th>College</th><th>Branch</th><th style="width:90px;text-align:center;">Closing Rank</th></tr>';
+  const trs=rows.map(r=>`<tr class="safe-row"><td><strong>${e(r[0])}</strong></td><td style="color:var(--muted);font-size:11px;">${e(r[1])}</td><td style="text-align:center;"><span class="rank-badge">${e(r[2])}</span></td></tr>`);
+  return `<div class="result-section"><div class="result-section-title">${title}</div><table class="ctable">${headers+blurRows(trs,3,4,false)}</table></div>`;
 }
 
-function e(t) { return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-// ── TRY AGAIN ──
-function tryAgain() {
-  document.getElementById('resultsArea').style.display = 'none';
-  document.getElementById('f_email').value = currentEmail;
-  window.history.replaceState({}, document.title, window.location.pathname);
-  document.getElementById('formCard').scrollIntoView({ behavior: 'smooth' });
+function renderTop10(title, picks) {
+  if (!picks||!picks.length) return '';
+  const headers='<tr><th style="width:30px;text-align:center;">#</th><th>College</th><th>Branch</th><th style="width:70px;text-align:center;">Exam</th><th style="width:90px;text-align:center;">Closing Rank</th><th style="width:60px;text-align:center;">Gap</th><th style="width:55px;text-align:center;">Type</th></tr>';
+  const trs=picks.map((p,i)=>{const gc=p.gap<=0?'gap-neg':'gap-pos',gs=p.gap>=0?'+':'';return `<tr class="${p.isDream?'dream-row':'safe-row'}"><td style="text-align:center;font-weight:700;">${i+1}</td><td><strong>${e(p.col)}</strong></td><td style="color:var(--muted);font-size:11px;">${e(p.br)}</td><td style="text-align:center;">${e(p.exam)}</td><td style="text-align:center;"><span class="rank-badge">${e(p.cr)}</span></td><td style="text-align:center;" class="${gc}">${gs}${p.gap}</td><td style="text-align:center;">${p.isDream?'Dream':'Safe'}</td></tr>`;});
+  return `<div class="result-section"><div class="result-section-title">${title}</div><table class="ctable">${headers+blurRows(trs,7,3,false)}</table></div>`;
 }
 
-function showErr(msg) {
-  const el = document.getElementById('formError');
-  el.textContent = msg; el.style.display = 'block';
-}
-
-function getJmRank() {
-  return document.getElementById('rankInputArea').style.display !== 'none'
-    ? document.getElementById('f_jmrank').value || '0'
-    : document.getElementById('f_jmrank_p').value || '0';
-}
-
-// ── POST-PAYMENT REDIRECT ──
+// ── Post-payment redirect ──
 (function() {
   const params = new URLSearchParams(window.location.search);
-  if (params.get('paid') === '1' && params.get('email')) {
+  if (params.get('paid')==='1' && params.get('email')) {
     const email = params.get('email');
     currentEmail = email;
     window.history.replaceState({}, document.title, window.location.pathname);
-    document.getElementById('f_email').value = email;
-
-    // Show loading results
-    document.getElementById('resultsArea').style.display  = 'block';
-    document.getElementById('paidBar').style.display      = 'flex';
-    document.getElementById('upgradeBox').style.display   = 'none';
-    const badge = document.getElementById('resultsBadge');
-    badge.textContent = '✅ Full Report'; badge.className = 'results-badge badge-paid';
-    document.getElementById('resultsTitle').textContent = 'Your Full College List';
-    document.getElementById('resultsSub').textContent   = 'Loading your complete results...';
-    document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--muted);padding:40px;">⏳ Loading your full college list...</p>';
-
-    setTimeout(() => document.getElementById('predictor').scrollIntoView({ behavior: 'smooth' }), 100);
-
-    // Try localStorage first for instant results
+    // Mark as paid in cache
+    try { localStorage.setItem('cp_paid_'+email, '1'); } catch(e) {}
+    // Load saved form data and auto-submit
     try {
-      const saved = localStorage.getItem('cp_formData');
+      const saved = JSON.parse(localStorage.getItem('cp_fd_'+email)||'null');
       if (saved) {
-        const fd = JSON.parse(saved);
-        if (fd.email === email) {
-          document.getElementById('f_name').value        = fd.name || '';
-          document.getElementById('f_email').value       = fd.email || '';
-          document.getElementById('f_phone').value       = (fd.phone||'').replace('+91','');
-          document.getElementById('f_category').value    = fd.category || '';
-          document.getElementById('f_gender').value      = fd.gender || '';
-          document.getElementById('f_jmrank').value      = fd.jmrank || '';
-          document.getElementById('f_jarank').value      = fd.jarank || '0';
-          document.getElementById('f_branch').value      = fd.branch || 'ALL';
-          document.getElementById('f_state').value       = fd.state || 'ALL';
-          document.getElementById('f_city').value        = fd.city || 'ALL';
-          document.getElementById('f_round').value       = fd.round || '1';
-          document.getElementById('f_collegeType').value = fd.collegeType || 'ALL';
-          document.getElementById('f_collegeTypeS').value= fd.collegeTypeS || 'ALL';
-          document.getElementById('resultsSub').textContent = 'Complete list based on your rank and preferences';
-          document.getElementById('downloadBar').style.display = 'block';
-          // Submit form to get full results via Apps Script
-          // but also show a message to fill form
-          document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--success);padding:20px;font-weight:600;">✅ Payment confirmed! Click <strong>Get My Report</strong> below to see your full college list instantly.</p>';
-          document.getElementById('resultsArea').style.display = 'none';
-          document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
-          // Auto-submit after short delay
-          setTimeout(() => submitPredictor(), 500);
-          return;
-        }
+        document.getElementById('f_name').value         = saved.name||'';
+        document.getElementById('f_email').value        = email;
+        document.getElementById('f_phone').value        = (saved.phone||'').replace('+91','');
+        document.getElementById('f_category').value     = saved.category||'';
+        document.getElementById('f_gender').value       = saved.gender||'';
+        document.getElementById('f_jmrank').value       = saved.jmrank||'';
+        document.getElementById('f_jarank').value       = saved.jarank||'0';
+        document.getElementById('f_branch').value       = saved.branch||'ALL';
+        document.getElementById('f_state').value        = saved.state||'ALL';
+        document.getElementById('f_city').value         = saved.city||'ALL';
+        document.getElementById('f_round').value        = saved.round||'1';
+        document.getElementById('f_collegeType').value  = saved.collegeType||'ALL';
+        document.getElementById('f_collegeTypeS').value = saved.collegeTypeS||'ALL';
+        setTimeout(() => submitPredictor(), 300);
+        return;
       }
     } catch(e) {}
-    // Fallback: fetch from Apps Script
-    new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', APPS_SCRIPT_URL + '?email=' + encodeURIComponent(email), true);
-        xhr.withCredentials = false;
-        xhr.timeout = 60000;
-        xhr.onload = function() {
-          try { resolve(JSON.parse(xhr.responseText)); }
-          catch(e) { reject(new Error('Parse error')); }
-        };
-        xhr.onerror = () => reject(new Error('Network error'));
-        xhr.ontimeout = () => reject(new Error('Timeout'));
-        xhr.send();
-      })
-      .then(data => {
-        if (data.success) {
-          document.getElementById('resultsSub').textContent = 'Complete list based on your rank and preferences';
-          document.getElementById('downloadBar').style.display = 'block';
-          renderResults(data.results, true);
-        } else {
-          document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--danger);padding:20px;">Could not load results. Please submit the form again.</p>';
-        }
-      })
-      .catch(() => {
-        document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--danger);padding:20px;">Error loading results. Please submit the form again.</p>';
-      });
+    // No saved data — show message
+    document.getElementById('f_email').value = email;
+    document.getElementById('resultsArea').style.display = 'block';
+    document.getElementById('paidBar').style.display = 'flex';
+    document.getElementById('upgradeBox').style.display = 'none';
+    document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--success);padding:20px;font-weight:600;">✅ Payment confirmed! Please fill the form above and click Get My Report.</p>';
+    setTimeout(()=>document.getElementById('predictor').scrollIntoView({behavior:'smooth'}),100);
   }
 })();
 
-// ── RANK TAB SWITCHER ──
-function switchRankTab(tab) {
-  const isRank = tab === 'rank';
-  document.getElementById('rankInputArea').style.display = isRank ? 'block' : 'none';
-  document.getElementById('percInputArea').style.display = isRank ? 'none' : 'flex';
-  document.getElementById('tabRank').style.background = isRank ? 'var(--blue)' : 'transparent';
-  document.getElementById('tabRank').style.color      = isRank ? '#fff' : 'var(--blue)';
-  document.getElementById('tabPerc').style.background = isRank ? 'transparent' : 'var(--blue)';
-  document.getElementById('tabPerc').style.color      = isRank ? 'var(--blue)' : '#fff';
+// ── PDF Download ──
+function downloadPdf() {
+  const content = document.getElementById('resultsContent');
+  if (!content) return;
+  const btn = document.getElementById('downloadBtn');
+  btn.disabled=true; btn.textContent='⏳ Preparing...';
+  const m=window._reportMeta||{};
+  const clone=content.cloneNode(true);
+  clone.querySelectorAll('table[style*="filter:blur"]').forEach(t=>{t.style.filter='none';t.style.opacity='1';});
+  clone.querySelectorAll('div[style*="position:absolute"],div[style*="position: absolute"]').forEach(d=>d.remove());
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>CollegePIPE Report</title><style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:Arial,sans-serif;color:#0f1f3d;background:#fff;padding:32px;font-size:12px;}.result-section{margin-bottom:22px;}.result-section-title{font-size:14px;font-weight:800;padding-bottom:7px;border-bottom:2px solid #e8f0fe;margin-bottom:9px;}.sub-label{font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;margin:7px 0 5px;display:inline-block;}.sub-dream{background:rgba(248,113,113,.1);color:#dc2626;}.sub-safe{background:rgba(52,211,153,.1);color:#059669;}table{width:100%;border-collapse:collapse;font-size:11px;}th{background:#f1f5f9;padding:6px 10px;text-align:left;font-size:9px;color:#64748b;border-bottom:1px solid #e2e8f0;font-weight:700;}td{padding:7px 10px;border-bottom:1px solid #f1f5f9;}.rank-badge{background:#eff6ff;color:#2255c4;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;}.gap-neg{color:#dc2626;font-weight:700;}.gap-pos{color:#059669;font-weight:700;}</style></head><body><h2 style="margin-bottom:16px;">CollegePIPE — ${m.name||''} | Rank ${m.rank||''} | ${m.cat||''}</h2>${clone.innerHTML}</body></html>`;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download=`CollegePIPE_${(m.name||'Report').replace(/\s+/g,'_')}.html`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+  btn.disabled=false; btn.textContent='⬇ Download Full PDF';
 }
 
-// ── PERCENTILE CALCULATOR ──
-const CAT_STUDENTS = { open:1500000, ews:150000, obc:450000, sc:225000, st:112500 };
-function calcPercentile() {
-  const pct = parseFloat(document.getElementById('f_percentile').value);
-  const box = document.getElementById('ranksBox');
-  if (isNaN(pct)||pct<0||pct>100){box.style.display='none';return;}
-  const f = (100-pct)/100;
-  window._ranks = {};
-  for(const[c,s] of Object.entries(CAT_STUDENTS)){window._ranks[c]=Math.max(1,Math.round(f*s));}
-  ['open','ews','obc','sc','st'].forEach(c=>{
-    const el=document.getElementById('pr_'+c);
-    if(el) el.textContent=window._ranks[c].toLocaleString('en-IN');
-  });
-  box.style.display='block';
-  document.getElementById('f_jmrank_p').value='0';
-  document.getElementById('selRankBadge').style.display='none';
+// ── Try Again ──
+function tryAgain() {
+  document.getElementById('resultsArea').style.display='none';
+  document.getElementById('f_email').value=currentEmail;
+  window.history.replaceState({},document.title,window.location.pathname);
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
 }
+
+function showErr(msg){const el=document.getElementById('formError');el.textContent=msg;el.style.display='block';}
+function getJmRank(){return document.getElementById('rankInputArea').style.display!=='none'?document.getElementById('f_jmrank').value||'0':document.getElementById('f_jmrank_p').value||'0';}
+
+// ── Rank Tab ──
+function switchRankTab(tab){const isRank=tab==='rank';document.getElementById('rankInputArea').style.display=isRank?'block':'none';document.getElementById('percInputArea').style.display=isRank?'none':'flex';document.getElementById('tabRank').style.background=isRank?'var(--blue)':'transparent';document.getElementById('tabRank').style.color=isRank?'#fff':'var(--blue)';document.getElementById('tabPerc').style.background=isRank?'transparent':'var(--blue)';document.getElementById('tabPerc').style.color=isRank?'var(--blue)':'#fff';}
+
+// ── Percentile Calc ──
+const CAT_STUDENTS={open:1500000,ews:150000,obc:450000,sc:225000,st:112500};
+function calcPercentile(){const pct=parseFloat(document.getElementById('f_percentile').value);const box=document.getElementById('ranksBox');if(isNaN(pct)||pct<0||pct>100){box.style.display='none';return;}const f=(100-pct)/100;window._ranks={};for(const[c,s] of Object.entries(CAT_STUDENTS)){window._ranks[c]=Math.max(1,Math.round(f*s));}['open','ews','obc','sc','st'].forEach(c=>{const el=document.getElementById('pr_'+c);if(el)el.textContent=window._ranks[c].toLocaleString('en-IN');});box.style.display='block';document.getElementById('f_jmrank_p').value='0';document.getElementById('selRankBadge').style.display='none';}
 const RANK_LABELS={open:'OPEN',ews:'EWS',obc:'OBC-NCL',sc:'SC',st:'ST'};
-function useRank(cat){
-  if(!window._ranks) return;
-  const r=window._ranks[cat]; if(!r) return;
-  document.getElementById('f_jmrank_p').value=r;
-  document.getElementById('selRankVal').textContent=r.toLocaleString('en-IN');
-  document.getElementById('selRankCat').textContent='('+RANK_LABELS[cat]+')';
-  document.getElementById('selRankBadge').style.display='flex';
-}
-function clearRank(){
-  document.getElementById('f_jmrank_p').value='0';
-  document.getElementById('selRankBadge').style.display='none';
-}
+function useRank(cat){if(!window._ranks)return;const r=window._ranks[cat];if(!r)return;document.getElementById('f_jmrank_p').value=r;document.getElementById('selRankVal').textContent=r.toLocaleString('en-IN');document.getElementById('selRankCat').textContent='('+RANK_LABELS[cat]+')';document.getElementById('selRankBadge').style.display='flex';}
+function clearRank(){document.getElementById('f_jmrank_p').value='0';document.getElementById('selRankBadge').style.display='none';}
 
-// ── DATA ──
-const PVT = [
-  {name:'VIT Vellore',state:'Tamil Nadu',city:'Vellore',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹8-45 LPA'},
-  {name:'Manipal Institute of Technology',state:'Karnataka',city:'Manipal',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-40 LPA'},
-  {name:'SRM Institute of Science',state:'Tamil Nadu',city:'Chennai',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹6-35 LPA'},
-  {name:'Thapar University',state:'Punjab',city:'Patiala',tier:'Tier 1',fees:'₹2.5 L/yr',placement:'₹9-42 LPA'},
-  {name:'BITS Pilani',state:'Rajasthan',city:'Pilani',tier:'Tier 1',fees:'₹5-6 L/yr',placement:'₹12-80 LPA'},
-  {name:'Amity University Noida',state:'Delhi',city:'Noida',tier:'Tier 2',fees:'₹2-3 L/yr',placement:'₹5-25 LPA'},
-  {name:'BMS College of Engineering',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹8-38 LPA'},
-  {name:'KJSCE Mumbai',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-32 LPA'},
-  {name:'DJ Sanghvi College',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹1.8-2.5 L/yr',placement:'₹7-30 LPA'},
-  {name:'Symbiosis Institute of Technology',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-35 LPA'},
-  {name:'COEP Pune',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹1.2-1.8 L/yr',placement:'₹8-40 LPA'},
-  {name:'PES University',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹9-45 LPA'},
-  {name:'Kalinga Institute (KIIT)',state:'Odisha',city:'Bhubaneswar',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-38 LPA'},
-  {name:'DAIICT Gandhinagar',state:'Gujarat',city:'Gandhinagar',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹10-50 LPA'},
-  {name:'Nirma University',state:'Gujarat',city:'Ahmedabad',tier:'Tier 1',fees:'₹2.5-3 L/yr',placement:'₹8-35 LPA'},
-  {name:'Osmania University CEG',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹0.8-1.2 L/yr',placement:'₹7-30 LPA'},
-  {name:'CBIT Hyderabad',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹7-32 LPA'},
-];
-const CET=[
-  {name:'Government College of Engineering, Pune',city:'Pune',type:'Govt',tier:'Tier 1'},
-  {name:'Veermata Jijabai Tech Institute',city:'Mumbai',type:'Govt',tier:'Tier 1'},
-  {name:'College of Engineering, Anna University',city:'Chennai',type:'Govt',tier:'Tier 1'},
-  {name:'BMS College of Engineering',city:'Bangalore',type:'Pvt (Aided)',tier:'Tier 1'},
-  {name:'RV College of Engineering',city:'Bangalore',type:'Pvt',tier:'Tier 1'},
-  {name:'Osmania University CEG',city:'Hyderabad',type:'University',tier:'Tier 1'},
-  {name:'DTU Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},
-  {name:'NSIT Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},
-  {name:'COEP Technological University',city:'Pune',type:'Govt',tier:'Tier 1'},
-  {name:'KJ Somaiya College of Engineering',city:'Mumbai',type:'Pvt',tier:'Tier 1'},
-  {name:'PSG College of Technology',city:'Chennai',type:'Pvt (Aided)',tier:'Tier 1'},
-  {name:'Amity School of Engineering, Noida',city:'Noida',type:'Pvt',tier:'Tier 2'},
-  {name:'JNTUH College of Engineering',city:'Hyderabad',type:'Govt',tier:'Tier 1'},
-];
+// ── Static Data ──
+const PVT=[{name:'VIT Vellore',state:'Tamil Nadu',city:'Vellore',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹8-45 LPA'},{name:'Manipal Institute of Technology',state:'Karnataka',city:'Manipal',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-40 LPA'},{name:'SRM Institute of Science',state:'Tamil Nadu',city:'Chennai',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹6-35 LPA'},{name:'Thapar University',state:'Punjab',city:'Patiala',tier:'Tier 1',fees:'₹2.5 L/yr',placement:'₹9-42 LPA'},{name:'BITS Pilani',state:'Rajasthan',city:'Pilani',tier:'Tier 1',fees:'₹5-6 L/yr',placement:'₹12-80 LPA'},{name:'Amity University Noida',state:'Delhi',city:'Noida',tier:'Tier 2',fees:'₹2-3 L/yr',placement:'₹5-25 LPA'},{name:'BMS College of Engineering',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹8-38 LPA'},{name:'KJSCE Mumbai',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-32 LPA'},{name:'DJ Sanghvi College',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹1.8-2.5 L/yr',placement:'₹7-30 LPA'},{name:'Symbiosis Institute of Technology',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-35 LPA'},{name:'COEP Pune',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹1.2-1.8 L/yr',placement:'₹8-40 LPA'},{name:'PES University',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹9-45 LPA'},{name:'Kalinga Institute (KIIT)',state:'Odisha',city:'Bhubaneswar',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-38 LPA'},{name:'DAIICT Gandhinagar',state:'Gujarat',city:'Gandhinagar',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹10-50 LPA'},{name:'Nirma University',state:'Gujarat',city:'Ahmedabad',tier:'Tier 1',fees:'₹2.5-3 L/yr',placement:'₹8-35 LPA'},{name:'Osmania University CEG',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹0.8-1.2 L/yr',placement:'₹7-30 LPA'},{name:'CBIT Hyderabad',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹7-32 LPA'}];
+const CET=[{name:'Government College of Engineering, Pune',city:'Pune',type:'Govt',tier:'Tier 1'},{name:'Veermata Jijabai Tech Institute',city:'Mumbai',type:'Govt',tier:'Tier 1'},{name:'College of Engineering, Anna University',city:'Chennai',type:'Govt',tier:'Tier 1'},{name:'BMS College of Engineering',city:'Bangalore',type:'Pvt (Aided)',tier:'Tier 1'},{name:'RV College of Engineering',city:'Bangalore',type:'Pvt',tier:'Tier 1'},{name:'Osmania University CEG',city:'Hyderabad',type:'University',tier:'Tier 1'},{name:'DTU Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},{name:'NSIT Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},{name:'COEP Technological University',city:'Pune',type:'Govt',tier:'Tier 1'},{name:'KJ Somaiya College of Engineering',city:'Mumbai',type:'Pvt',tier:'Tier 1'},{name:'PSG College of Technology',city:'Chennai',type:'Pvt (Aided)',tier:'Tier 1'},{name:'Amity School of Engineering, Noida',city:'Noida',type:'Pvt',tier:'Tier 2'},{name:'JNTUH College of Engineering',city:'Hyderabad',type:'Govt',tier:'Tier 1'}];
 const IITS=[{name:'IIT Madras',city:'Chennai',nirf:1},{name:'IIT Delhi',city:'New Delhi',nirf:2},{name:'IIT Bombay',city:'Mumbai',nirf:3},{name:'IIT Kanpur',city:'Kanpur',nirf:5},{name:'IIT Kharagpur',city:'Kharagpur',nirf:4},{name:'IIT Roorkee',city:'Roorkee',nirf:7},{name:'IIT Hyderabad',city:'Hyderabad',nirf:8},{name:'IIT Guwahati',city:'Guwahati',nirf:9},{name:'IIT BHU',city:'Varanasi',nirf:12},{name:'IIT Gandhinagar',city:'Gandhinagar',nirf:14}];
 const NITS=[{name:'NIT Trichy',city:'Tiruchirappalli',nirf:10},{name:'NIT Surathkal',city:'Mangalore',nirf:16},{name:'NIT Warangal',city:'Warangal',nirf:18},{name:'NIT Calicut',city:'Kozhikode',nirf:23},{name:'NIT Rourkela',city:'Rourkela',nirf:20},{name:'NIT Allahabad',city:'Allahabad',nirf:27},{name:'MNIT Jaipur',city:'Jaipur',nirf:35},{name:'NIT Kurukshetra',city:'Kurukshetra',nirf:45},{name:'VNIT Nagpur',city:'Nagpur',nirf:38},{name:'NIT Silchar',city:'Silchar',nirf:40}];
 
 function ttag(t){const s=(t||'').toLowerCase();return s.includes('1')?`<span class="cc-tag t1">${t}</span>`:s.includes('2')?`<span class="cc-tag t2">${t}</span>`:`<span class="cc-tag t3">${t}</span>`;}
 function filterPvt(state,el){document.querySelectorAll('#pvtTabs .city-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');const f=state==='ALL'?PVT:PVT.filter(c=>c.state===state||c.city===state);document.getElementById('pvtGrid').innerHTML=f.slice(0,9).map(c=>`<div class="city-card"><div class="cc-name">${c.name}</div><div class="cc-meta">${ttag(c.tier)}<span class="cc-tag tf">📍 ${c.city}</span><span class="cc-tag tf">💰 ${c.fees}</span><span class="cc-tag tp">🏆 ${c.placement}</span></div></div>`).join('');}
 function filterCet(city,el){document.querySelectorAll('#cetTabs .city-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');const f=city==='ALL'?CET:CET.filter(c=>c.city===city);document.getElementById('cetGrid').innerHTML=f.slice(0,9).map(c=>`<div class="city-card"><div class="cc-name">${c.name}</div><div class="cc-meta">${ttag(c.tier)}<span class="cc-tag tf">📍 ${c.city}</span><span class="cc-tag tf">${c.type}</span></div></div>`).join('');}
-
-// Init
-filterPvt('ALL', document.querySelector('#pvtTabs .city-tab'));
-filterCet('ALL', document.querySelector('#cetTabs .city-tab'));
+filterPvt('ALL',document.querySelector('#pvtTabs .city-tab'));
+filterCet('ALL',document.querySelector('#cetTabs .city-tab'));
 document.getElementById('iitList').innerHTML=IITS.map((inst,i)=>`<div class="compare-row"><div class="cr-num">${i+1}</div><div class="cr-info"><div class="cr-name">${inst.name}</div><div class="cr-city">📍 ${inst.city}</div></div><div class="cr-nirf">NIRF #${inst.nirf}</div></div>`).join('');
 document.getElementById('nitList').innerHTML=NITS.map((inst,i)=>`<div class="compare-row"><div class="cr-num">${i+1}</div><div class="cr-info"><div class="cr-name">${inst.name}</div><div class="cr-city">📍 ${inst.city}</div></div><div class="cr-nirf">NIRF #${inst.nirf}</div></div>`).join('');
-
-// Counter animation
 function animCount(el,target,sfx){let c=0;const step=Math.ceil(target/60);const t=setInterval(()=>{c=Math.min(c+step,target);el.innerHTML=c.toLocaleString('en-IN')+(sfx||'');if(c>=target)clearInterval(t);},20);}
 const obs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('.band-num').forEach(el=>{const n=parseInt(el.textContent.replace(/[^0-9]/g,''));if(n)animCount(el,n,el.textContent.includes('+')?'+':'');});obs.disconnect();}});},{threshold:0.3});
 const sb=document.querySelector('.stats-band');if(sb)obs.observe(sb);
