@@ -538,7 +538,8 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
             <div style="font-size:12px;opacity:0.6;margin-bottom:8px;">One-time unlock · Change rank/branch anytime · 5 reports included</div>
-            <a id="payLink" href="javascript:void(0)" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
+            <div id="payLinkLoading" style="font-size:13px;color:rgba(255,255,255,0.6);padding:12px;">⏳ Generating secure payment link...</div>
+            <a id="payLink" href="javascript:void(0)" target="_blank" class="btn btn-pay" style="display:none;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
               🔓 Unlock Full Report — ₹39
             </a>
           </div>
@@ -968,9 +969,16 @@ async function submitPredictor() {
 
       if (info.packExhausted) {
         // Pack exhausted — show free results with new payment link
-        if (pl && info.paymentLink) pl.href = info.paymentLink;
         document.getElementById('resultsSub').textContent = '⚠️ Your 5 reports are used up. Pay ₹39 for a new pack of 5.';
         document.getElementById('upgradeBox').style.display = 'block';
+        if (info.paymentLink) {
+          const loading = document.getElementById('payLinkLoading');
+          if (loading) loading.style.display = 'none';
+          if (pl) {
+            pl.href = info.paymentLink;
+            pl.style.display = 'inline-flex';
+          }
+        }
         return;
       }
 
@@ -988,8 +996,15 @@ async function submitPredictor() {
           }
         }
       } else {
-        // Free user — set payment link
-        if (pl && info.paymentLink) pl.href = info.paymentLink;
+        // Free user — set payment link and show button
+        if (info.paymentLink) {
+          const loading = document.getElementById('payLinkLoading');
+          if (loading) loading.style.display = 'none';
+          if (pl) {
+            pl.href = info.paymentLink;
+            pl.style.display = 'inline-flex';
+          }
+        }
       }
     }).catch(() => {});
 
