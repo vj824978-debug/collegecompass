@@ -920,24 +920,25 @@ async function submitPredictor() {
     const ok = await loadData();
     if (!ok) throw new Error('Could not load college data. Please check your connection.');
 
-    // Check if coming from payment redirect
+    // Check if coming from payment redirect or previously paid
     let justPaid = false;
+    let cachedPaid = false;
     try {
       if (localStorage.getItem('cp_justpaid_'+email) === '1') {
         justPaid = true;
         localStorage.removeItem('cp_justpaid_'+email);
       }
+      if (localStorage.getItem('cp_paid_'+email) === '1') {
+        cachedPaid = true;
+      }
     } catch(e) {}
 
-    // Show free results instantly
-    const freeResults = runPredictor(user, false);
-    showResults(freeResults, false, currentPayLink, user);
+    const isPaidNow = justPaid || cachedPaid;
 
-    // If just paid, show full results immediately
-    if (justPaid) {
-      _isPaid = true;
-      const paidResults = runPredictor(user, true);
-      showResults(paidResults, true, currentPayLink, user);
+    // Show results instantly — paid if cached, free otherwise
+    const initialResults = runPredictor(user, isPaidNow);
+    showResults(initialResults, isPaidNow, currentPayLink, user);
+    if (isPaidNow) {
       document.getElementById('paidBar').style.display = 'flex';
     }
 
@@ -951,12 +952,18 @@ async function submitPredictor() {
       }
       if (info.isPaid && !justPaid) {
         _isPaid = true;
+        // Cache paid status for instant next visit
+        try { localStorage.setItem('cp_paid_'+email, '1'); } catch(e) {}
         const paidResults = runPredictor(user, true);
         showResults(paidResults, true, info.paymentLink, user);
         if (info.remaining != null) {
           const rb = document.getElementById('remainingBar');
           if (rb) { rb.style.display='block'; rb.textContent=`You have ${info.remaining} report${info.remaining!==1?'s':''} remaining.`; }
         }
+      }
+      if (info.packExhausted) {
+        // Clear paid cache when pack exhausted
+        try { localStorage.removeItem('cp_paid_'+email); } catch(e) {}
       }
       if (info.packExhausted) {
         document.getElementById('resultsSub').textContent = '⚠️ Your 5 reports are used up. Pay ₹39 for a new pack.';
