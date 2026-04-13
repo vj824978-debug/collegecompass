@@ -733,6 +733,8 @@ async function submitPredictor() {
     collegeType:  document.getElementById('f_collegeType').value,
     collegeTypeS: document.getElementById('f_collegeTypeS').value
   };
+    // Save to localStorage so post-payment page can auto-submit instantly
+    try { localStorage.setItem('cp_fd_' + email, JSON.stringify({...formData, email})); } catch(e) {}
   window._reportMeta = {
     name:   formData.name,
     rank:   formData.jmrank,
@@ -1106,7 +1108,39 @@ function getJmRank() {
 
     setTimeout(() => document.getElementById('predictor').scrollIntoView({ behavior: 'smooth' }), 100);
 
-    // Fetch results from Apps Script
+    // Try localStorage first for instant results
+    try {
+      const saved = localStorage.getItem('cp_formData');
+      if (saved) {
+        const fd = JSON.parse(saved);
+        if (fd.email === email) {
+          document.getElementById('f_name').value        = fd.name || '';
+          document.getElementById('f_email').value       = fd.email || '';
+          document.getElementById('f_phone').value       = (fd.phone||'').replace('+91','');
+          document.getElementById('f_category').value    = fd.category || '';
+          document.getElementById('f_gender').value      = fd.gender || '';
+          document.getElementById('f_jmrank').value      = fd.jmrank || '';
+          document.getElementById('f_jarank').value      = fd.jarank || '0';
+          document.getElementById('f_branch').value      = fd.branch || 'ALL';
+          document.getElementById('f_state').value       = fd.state || 'ALL';
+          document.getElementById('f_city').value        = fd.city || 'ALL';
+          document.getElementById('f_round').value       = fd.round || '1';
+          document.getElementById('f_collegeType').value = fd.collegeType || 'ALL';
+          document.getElementById('f_collegeTypeS').value= fd.collegeTypeS || 'ALL';
+          document.getElementById('resultsSub').textContent = 'Complete list based on your rank and preferences';
+          document.getElementById('downloadBar').style.display = 'block';
+          // Submit form to get full results via Apps Script
+          // but also show a message to fill form
+          document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--success);padding:20px;font-weight:600;">✅ Payment confirmed! Click <strong>Get My Report</strong> below to see your full college list instantly.</p>';
+          document.getElementById('resultsArea').style.display = 'none';
+          document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
+          // Auto-submit after short delay
+          setTimeout(() => submitPredictor(), 500);
+          return;
+        }
+      }
+    } catch(e) {}
+    // Fallback: fetch from Apps Script
     new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', APPS_SCRIPT_URL + '?email=' + encodeURIComponent(email), true);
@@ -1126,7 +1160,7 @@ function getJmRank() {
           document.getElementById('downloadBar').style.display = 'block';
           renderResults(data.results, true);
         } else {
-          document.getElementById('resultsContent').innerHTML = `<p style="text-align:center;color:var(--danger);padding:20px;">Could not load results. Please submit the form again.</p>`;
+          document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--danger);padding:20px;">Could not load results. Please submit the form again.</p>';
         }
       })
       .catch(() => {
