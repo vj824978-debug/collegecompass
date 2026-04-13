@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JEE College Predictor 2026 | Free NIT IIIT GFTI Prediction | CollegePIPE</title>
 <meta name="description" content="India's most comprehensive JEE college predictor. Enter your JEE Main rank, category, branch & city preference to get your personalised Dream & Safe college list across 2,800+ institutes. Free sample report — no signup needed.">
@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://collegepipe.in/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="JEE College Predictor 2026 | Free NIT IIIT Prediction | CollegePIPE">
-<meta name="twitter:description" content="Get your free personalised Dream & Safe college list based on JEE rank. Covers 2,800+ colleges across NITs, IIITs, GFTIs and private colleges."> 
+<meta name="twitter:description" content="Get your free personalised Dream & Safe college list based on JEE rank. Covers 2,800+ colleges across NITs, IIITs, GFTIs and private colleges.">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -82,6 +82,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .hcf-icon { width: 40px; height: 40px; border-radius: 10px; background: #ecfdf5; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
 .hcf-label { font-size: 11px; color: var(--muted); }
 .hcf-value { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--text); margin-top: 1px; }
+
+/* DATA LOADING BAR */
+#dataStatus { display: none; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 10px 16px; font-size: 13px; color: var(--blue); margin-bottom: 16px; text-align: center; }
+#dataStatus.error { background: #fef2f2; border-color: #fecaca; color: var(--danger); }
+#dataStatus.ready { background: var(--success-light); border-color: #6ee7b7; color: var(--success); }
 
 /* SECTIONS */
 section { padding: 80px 24px; }
@@ -154,14 +159,6 @@ input::placeholder { color: #b0bec5; }
 
 /* UPGRADE */
 .upgrade-box { background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 60%, #2255c4 100%); border-radius: 18px; padding: 36px; color: #fff; text-align: center; border: 1px solid rgba(255,255,255,0.06); }
-.upgrade-tag { display: inline-block; background: var(--accent); color: var(--navy); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
-.upgrade-box h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-.upgrade-box p { font-size: 13px; opacity: 0.85; margin-bottom: 18px; line-height: 1.6; }
-.price-pill { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 8px; padding: 8px 20px; font-family: var(--font-head); font-size: 24px; font-weight: 700; margin-bottom: 18px; }
-.price-pill span { font-size: 13px; font-weight: 400; opacity: 0.7; margin-left: 4px; }
-.feats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; text-align: left; }
-.feat { display: flex; align-items: flex-start; gap: 7px; font-size: 12px; opacity: 0.9; }
-.feat::before { content: '✓'; font-weight: 700; color: var(--accent); flex-shrink: 0; }
 
 /* STATS BAND */
 .stats-band { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 24px; }
@@ -201,7 +198,6 @@ input::placeholder { color: #b0bec5; }
 .tool-stat-num { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #fff; }
 .tool-stat-label { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 1px; }
 .tool-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); color: #fff; font-family: var(--font-head); font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 10px; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); }
-.tool-btn:hover { background: rgba(255,255,255,0.25); }
 
 /* CITIES */
 .city-section { background: #f1f5f9; }
@@ -249,7 +245,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   .compare-grid{grid-template-columns:1fr;}
   .nav-links{display:none;}
   .form-grid{grid-template-columns:1fr;}
-  .feats{grid-template-columns:1fr;}
   .pred-card{padding:20px 16px;}
 }
 </style>
@@ -290,8 +285,8 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
       <h1 class="hero-title">Not Just Prediction — <span>Your Complete Counselling Strategy</span></h1>
       <p class="hero-subtitle">India's most comprehensive college predictor. Enter your JEE rank and instantly get your personalised Dream & Safe college list across 2,800+ institutes — <strong style="color:#6ee7b7;">free sample, no signup needed.</strong></p>
       <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(110,231,183,0.1);border:1px solid rgba(110,231,183,0.25);border-radius:8px;padding:8px 14px;margin-bottom:28px;">
-        <span style="font-size:16px;">🎯</span>
-        <span style="font-size:13px;color:rgba(255,255,255,0.85);font-style:italic;">Not just prediction — your complete counselling strategy</span>
+        <span style="font-size:16px;">⚡</span>
+        <span style="font-size:13px;color:rgba(255,255,255,0.85);font-style:italic;">Instant results — no server wait, works on all devices</span>
       </div>
       <div class="hero-actions">
         <a href="#predictor" class="btn-hero-primary">🎯 Check Your Free Sample Report</a>
@@ -336,9 +331,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     PREDICTOR SECTION
-════════════════════════════════════════ -->
+<!-- PREDICTOR SECTION -->
 <section id="predictor" class="predictor-section">
   <div class="predictor-inner">
     <div style="text-align:center;margin-bottom:32px;">
@@ -347,20 +340,20 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
       <p class="section-sub" style="margin:0 auto;">Enter your rank and see matching colleges instantly — <strong>no signup, no payment needed</strong> for your free preview</p>
     </div>
 
+    <!-- Data loading status -->
+    <div id="dataStatus"></div>
+
     <!-- FORM -->
     <div class="pred-card" id="formCard">
       <div class="form-grid">
-
         <div class="field full">
           <label>Full Name *</label>
           <input type="text" id="f_name" placeholder="e.g. Rohan Sharma">
         </div>
-
         <div class="field">
           <label>Email Address *</label>
           <input type="email" id="f_email" placeholder="your@email.com">
         </div>
-
         <div class="field">
           <label>Mobile Number *</label>
           <div class="phone-row">
@@ -368,7 +361,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <input type="tel" id="f_phone" placeholder="10-digit" maxlength="10" oninput="this.value=this.value.replace(/\D/g,'')">
           </div>
         </div>
-
         <div class="field">
           <label>Category *</label>
           <select id="f_category">
@@ -380,7 +372,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <option value="ST">ST</option><option value="ST (PwD)">ST (PwD)</option>
           </select>
         </div>
-
         <div class="field">
           <label>Gender *</label>
           <select id="f_gender">
@@ -428,7 +419,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           <label>JEE Advanced Rank</label>
           <input type="number" id="f_jarank" placeholder="0 if not appeared" min="0">
         </div>
-
         <div class="field">
           <label>Branch / Course</label>
           <select id="f_branch">
@@ -446,7 +436,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <option value="Others">Others</option>
           </select>
         </div>
-
         <div class="field">
           <label>Counselling Round</label>
           <select id="f_round">
@@ -455,7 +444,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <option value="ALL">ALL</option>
           </select>
         </div>
-
         <div class="field full">
           <label>Home State</label>
           <select id="f_state">
@@ -474,7 +462,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <option>West Bengal</option>
           </select>
         </div>
-
         <div class="field">
           <label>Preferred College Type (JEE Main)</label>
           <select id="f_collegeType">
@@ -482,7 +469,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <option value="IIIT">IIIT</option><option value="GFTI">GFTI</option>
           </select>
         </div>
-
         <div class="field">
           <label>Top City for Private College</label>
           <select id="f_city">
@@ -492,7 +478,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <option>Bangalore</option><option>Kolkata</option>
           </select>
         </div>
-
         <div class="field full">
           <label>College Type from State CET</label>
           <select id="f_collegeTypeS">
@@ -503,7 +488,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <option value="govt - Women Only">govt - Women Only</option>
           </select>
         </div>
-
       </div>
 
       <div id="formError" class="notice-error"></div>
@@ -511,70 +495,46 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
       <button class="btn btn-primary" id="submitBtn" onclick="submitPredictor()" style="margin-top:22px;">
         <span id="submitText">🎯 Get My Report</span>
         <div class="spinner" id="submitSpinner"></div>
-        <span id="submitLoadingMsg" style="display:none;font-size:13px;opacity:0.85;letter-spacing:0.1px;">⏳ Please don't refresh or close the page</span>
+        <span id="submitLoadingMsg" style="display:none;font-size:13px;opacity:0.85;">⏳ Loading data...</span>
       </button>
     </div>
 
     <!-- RESULTS AREA -->
     <div id="resultsArea">
-
-      <!-- PAID SUCCESS BAR -->
       <div id="paidBar" class="paid-bar" style="display:none;">
         <div class="paid-bar-icon">🎉</div>
         <div><h4>Full Report Unlocked!</h4><p>Showing complete college list for your rank and preferences.</p></div>
       </div>
-
-      <!-- TRY AGAIN -->
       <div class="try-again-bar">
         <p>Want different rank, branch or state?</p>
         <button class="btn btn-outline" onclick="tryAgain()" style="height:38px;padding:0 18px;font-size:13px;">🔁 Change Details</button>
       </div>
-
-      <!-- RESULTS CARD -->
       <div class="pred-card">
         <div style="margin-bottom:20px;">
           <div id="resultsBadge" class="results-badge badge-free">🔍 Free Preview</div>
           <div id="resultsTitle" class="results-title">Sample College List</div>
-          <div id="resultsSub" class="results-sub">Your personalised preview — unlock the full list below</div>
+          <div id="resultsSub" class="results-sub">Top 5 per category — Get 5 Personalized College Reports in one payment — only ₹39</div>
         </div>
-
-        <!-- DOWNLOAD (paid only) -->
         <div id="downloadBar" style="display:none;margin-bottom:16px;text-align:center;">
           <button onclick="downloadPdf()" id="downloadBtn" class="btn btn-download" style="display:inline-flex;max-width:320px;">⬇ Download Full PDF</button>
         </div>
-
-        <!-- REMAINING REPORTS -->
         <div id="remainingBar" style="display:none;text-align:center;margin-bottom:16px;font-size:13px;color:var(--success);background:var(--success-light);border:1px solid #6ee7b7;border-radius:8px;padding:10px 16px;font-weight:600;"></div>
-
         <hr class="divider">
         <div id="resultsContent"><p style="text-align:center;color:var(--muted);padding:40px;">⏳ Loading your results...</p></div>
         <hr class="divider">
-
         <!-- UPGRADE BOX -->
         <div id="upgradeBox" class="upgrade-box">
           <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.2);border:1px solid rgba(245,158,11,0.4);border-radius:20px;padding:4px 14px;margin-bottom:16px;">
             <span style="font-size:14px;">🔓</span>
             <span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--accent-light);letter-spacing:0.5px;text-transform:uppercase;">Unlock Full Report</span>
           </div>
-          <h3>Get Your Complete College Strategy</h3>
-          <p style="margin-bottom:20px;">See every college you can get into — Dream, Safe, and Top Picks across all 6 categories. Used by 50,000+ JEE students to make smarter choices.</p>
+          <h3 style="font-family:var(--font-head);font-size:20px;font-weight:700;margin-bottom:8px;">Get Your Complete College Strategy</h3>
+          <p style="font-size:13px;opacity:0.85;margin-bottom:18px;line-height:1.6;">See every college you can get into — Dream, Safe, and Top Picks across all 6 categories.</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;text-align:left;">
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;">
-              <span style="font-size:16px;">🎯</span>
-              <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">100 JEE Main</div><div style="font-size:11px;opacity:0.6;">colleges</div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;">
-              <span style="font-size:16px;">🔬</span>
-              <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">50 JEE Advanced</div><div style="font-size:11px;opacity:0.6;">options</div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;">
-              <span style="font-size:16px;">📍</span>
-              <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">40 State CET</div><div style="font-size:11px;opacity:0.6;">colleges</div></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;">
-              <span style="font-size:16px;">🏆</span>
-              <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">5 Full Reports</div><div style="font-size:11px;opacity:0.6;">one payment</div></div>
-            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;"><span style="font-size:16px;">🎯</span><div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">100 JEE Main</div><div style="font-size:11px;opacity:0.6;">colleges</div></div></div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;"><span style="font-size:16px;">🔬</span><div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">50 JEE Advanced</div><div style="font-size:11px;opacity:0.6;">options</div></div></div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;"><span style="font-size:16px;">📍</span><div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">40 State CET</div><div style="font-size:11px;opacity:0.6;">colleges</div></div></div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;"><span style="font-size:16px;">🏆</span><div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">5 Full Reports</div><div style="font-size:11px;opacity:0.6;">one payment</div></div></div>
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
             <div style="font-size:12px;opacity:0.6;margin-bottom:8px;">One-time unlock · Change rank/branch anytime · 5 reports included</div>
@@ -585,8 +545,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
         </div>
       </div>
     </div>
-    <!-- END RESULTS -->
-
   </div>
 </section>
 
@@ -695,14 +653,179 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
 </footer>
 
 <script>
-// ════════════════════════════════════════════════════
-// PASTE YOUR APPS SCRIPT URL HERE
-// ════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// CONFIG
+// ═══════════════════════════════════════════════════════
+const DATA_BASE = 'https://raw.githubusercontent.com/vj824978-debug/collegecompass/main/data/';
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMsjjnXMUFk2cIMEfXy9iasVWMpvyx8puxls6gExwHb25tIbn7oddEB6gjVHZIPT3j_A/exec';
 
+// ═══════════════════════════════════════════════════════
+// DATA STORE
+// ═══════════════════════════════════════════════════════
+const DB = { jeemain: null, jeeadv: null, jeemainhs: null, csab: null };
+let dataReady = false;
+let dataPromise = null;
 let currentEmail = '';
+let currentPayLink = '';
+let _isPaid = false;
+window._reportMeta = {};
 
-// ── SUBMIT ──
+// ═══════════════════════════════════════════════════════
+// LOAD DATA — fetch JSON files from GitHub
+// ═══════════════════════════════════════════════════════
+function loadData() {
+  if (dataPromise) return dataPromise;
+  dataPromise = (async () => {
+    setStatus('loading', '⏳ Loading college data in background...');
+    try {
+      const files = ['jeemain','jeeadv','jeemainhs','csab'];
+      const results = await Promise.all(
+        files.map(f => fetch(DATA_BASE + f + '.json').then(r => { if(!r.ok) throw new Error(f+' failed'); return r.json(); }))
+      );
+      files.forEach((f,i) => { DB[f] = results[i].data; });
+      dataReady = true;
+      setStatus('ready', '✅ College data loaded — results will be instant!');
+      setTimeout(() => { const s = document.getElementById('dataStatus'); if(s) s.style.display='none'; }, 3000);
+      return true;
+    } catch(e) {
+      setStatus('error', '⚠️ Could not load data. Please check your connection and retry.');
+      dataPromise = null;
+      return false;
+    }
+  })();
+  return dataPromise;
+}
+
+function setStatus(type, msg) {
+  const el = document.getElementById('dataStatus');
+  if (!el) return;
+  el.style.display = 'block';
+  el.className = type === 'error' ? 'notice-error' : (type === 'ready' ? '' : '');
+  el.style.background = type==='error' ? '#fef2f2' : type==='ready' ? '#d1fae5' : '#eff6ff';
+  el.style.borderColor = type==='error' ? '#fecaca' : type==='ready' ? '#6ee7b7' : '#bfdbfe';
+  el.style.color = type==='error' ? '#dc2626' : type==='ready' ? '#065f46' : '#1d4ed8';
+  el.textContent = msg;
+}
+
+// Start loading immediately
+window.addEventListener('DOMContentLoaded', () => loadData());
+
+// ═══════════════════════════════════════════════════════
+// MATCH HELPERS
+// ═══════════════════════════════════════════════════════
+const norm = v => String(v == null ? '' : v).trim().toUpperCase();
+const matchRound  = (u, i) => (!u || u === 'ALL') ? true : Number(u) === Number(i);
+const matchCat    = (u, i) => norm(u) === norm(i);
+const matchGender = (u, i) => { const ni=norm(i),nu=norm(u); return ni==='GENDER-NEUTRAL'||ni===nu||ni.includes(nu); };
+const matchBranch = (u, i) => (!u||u==='ALL') ? true : norm(i).includes(norm(u));
+const matchColType= (u, i) => (!u||u==='ALL') ? true : norm(i)===norm(u);
+const matchState  = (u, i) => (!u||u==='ALL') ? true : norm(i)===norm(u);
+
+const BRANCH_WEIGHT = {'CSE/IT/AI':1,'ELECTRICAL/ELECTRONICS':2,'ENGINEERING PHYSICS':2,'MATHEMATICS AND COMPUTING':2,'5 YEAR PROGRAM (DUAL DEGREE)':3,'CHEMICAL':3,'CIVIL':3,'MECHANICAL':3,'OTHERS':3,'BIO MED/TECH':4,'METALLURGY/MINING':4};
+function branchWeight(bg) { const k=norm(bg); for(const p in BRANCH_WEIGHT) if(k.includes(p)) return BRANCH_WEIGHT[p]; return 4; }
+
+// ═══════════════════════════════════════════════════════
+// PREDICTOR FUNCTIONS
+// ═══════════════════════════════════════════════════════
+// JEEMain cols: [rnd, col, br, qt(HS/OS), cat, gen, cr, bg, ct]
+function buildJeeMain(user, isPaid) {
+  const limit = isPaid ? 100 : 5;
+  const dreamMin = Math.floor(user.jmrank * 0.9);
+  const dream=[], safe=[];
+  for (const r of DB.jeemain) {
+    if (!matchRound(user.round, r[0])) continue;
+    if (!matchCat(user.category, r[4])) continue;
+    if (!matchGender(user.gender, r[5])) continue;
+    if (!matchBranch(user.branch, r[7])) continue;
+    if (!matchColType(user.collegeType, r[8])) continue;
+    const cr=r[6];
+    if (cr>=dreamMin && cr<user.jmrank) dream.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
+    else if (cr>=user.jmrank) safe.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
+  }
+  dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
+  return { dream:dream.slice(0,limit), safe:safe.slice(0,limit) };
+}
+
+// JEEADV cols: [rnd, col, br, cat, gen, cr, bg]
+function buildJeeAdv(user, isPaid) {
+  if (!user.jarank) return null;
+  const limit = isPaid ? 50 : 5;
+  const dreamMin = Math.floor(user.jarank * 0.9);
+  const dream=[], safe=[];
+  for (const r of DB.jeeadv) {
+    if (!matchRound(user.round, r[0])) continue;
+    if (!matchCat(user.category, r[3])) continue;
+    if (!matchGender(user.gender, r[4])) continue;
+    if (!matchBranch(user.branch, r[6])) continue;
+    const cr=r[5];
+    if (cr>=dreamMin && cr<user.jarank) dream.push([r[0],r[1],r[2],'',cr,cr-user.jarank]);
+    else if (cr>=user.jarank) safe.push([r[0],r[1],r[2],'',cr,cr-user.jarank]);
+  }
+  dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
+  return { dream:dream.slice(0,limit), safe:safe.slice(0,limit) };
+}
+
+// JEEMAINHS cols: [rnd, col, br, cat, gen, st, cr, bg]
+function buildJeeMainHS(user, isPaid) {
+  if (!user.state || user.state==='ALL') return null;
+  const limit = isPaid ? 50 : 5;
+  const results=[];
+  for (const r of DB.jeemainhs) {
+    if (!matchRound(user.round, r[0])) continue;
+    if (!matchCat(user.category, r[3])) continue;
+    if (!matchGender(user.gender, r[4])) continue;
+    if (!matchState(user.state, r[5])) continue;
+    if (!matchBranch(user.branch, r[7])) continue;
+    if (r[6] >= user.jmrank) results.push([r[1],r[2],r[6]]);
+  }
+  results.sort((a,b)=>a[2]-b[2]);
+  return results.slice(0,limit);
+}
+
+// CSAB cols: [rnd, col, br, qt, cat, gen, cr, bg]
+function buildCSAB(user, isPaid) {
+  const limit = isPaid ? 50 : 5;
+  const dreamMin = Math.floor(user.jmrank * 0.9);
+  const dream=[], safe=[];
+  for (const r of DB.csab) {
+    if (!matchRound(user.round, r[0])) continue;
+    if (!matchCat(user.category, r[4])) continue;
+    if (!matchGender(user.gender, r[5])) continue;
+    if (!matchBranch(user.branch, r[7])) continue;
+    const cr=r[6];
+    if (cr>=dreamMin && cr<user.jmrank) dream.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
+    else if (cr>=user.jmrank) safe.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
+  }
+  dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
+  return { dream:dream.slice(0,limit), safe:safe.slice(0,limit) };
+}
+
+function buildTop10(user, isPaid, jeeMain, jeeAdv, csab) {
+  const limit = isPaid ? 10 : 3;
+  const allPicks=[];
+  function parse(section, exam, rank) {
+    if (!section||!rank) return;
+    for (const isDream of [true,false]) {
+      const rows = isDream ? section.dream : section.safe;
+      if (!rows) continue;
+      for (const r of rows) {
+        const gap=r[4]-rank;
+        allPicks.push({col:r[1],br:r[2],exam,cr:r[4],gap,score:Math.abs(gap)+branchWeight(r[2])*800+(isDream?-500:0),isDream});
+      }
+    }
+  }
+  parse(jeeMain,'JEE Main',user.jmrank);
+  parse(jeeAdv,'JEE Adv',user.jarank);
+  parse(csab,'CSAB',user.jmrank);
+  allPicks.sort((a,b)=>a.score-b.score);
+  const seen=new Set(), unique=[];
+  for (const p of allPicks) { const k=p.col+'|'+p.br; if(!seen.has(k)){seen.add(k);unique.push(p);} }
+  return unique.slice(0,limit);
+}
+
+// ═══════════════════════════════════════════════════════
+// SUBMIT
+// ═══════════════════════════════════════════════════════
 async function submitPredictor() {
   const errEl = document.getElementById('formError');
   errEl.style.display = 'none';
@@ -719,30 +842,23 @@ async function submitPredictor() {
   if (!/^\d{10}$/.test(phone))       return showErr('Please enter a valid 10-digit mobile number.');
   if (!category)                     return showErr('Please select your category.');
   if (!gender)                       return showErr('Please select your gender.');
-  if (!jmrank || Number(jmrank) < 1) return showErr('Please enter your JEE Main Rank.');
+  if (!jmrank || Number(jmrank)<1)   return showErr('Please enter your JEE Main Rank.');
 
   currentEmail = email;
 
-  const formData = {
-    name, email, phone, category, gender, jmrank,
-    jarank:       document.getElementById('f_jarank').value || '0',
-    branch:       document.getElementById('f_branch').value,
-    state:        document.getElementById('f_state').value,
-    city:         document.getElementById('f_city').value,
-    round:        document.getElementById('f_round').value,
-    collegeType:  document.getElementById('f_collegeType').value,
-    collegeTypeS: document.getElementById('f_collegeTypeS').value
+  const user = {
+    name, email, phone, category, gender,
+    jmrank:      Number(jmrank),
+    jarank:      Number(document.getElementById('f_jarank').value) || 0,
+    branch:      document.getElementById('f_branch').value,
+    state:       document.getElementById('f_state').value,
+    city:        document.getElementById('f_city').value,
+    round:       document.getElementById('f_round').value,
+    collegeType: document.getElementById('f_collegeType').value,
+    collegeTypeS:document.getElementById('f_collegeTypeS').value
   };
-  window._reportMeta = {
-    name:   formData.name,
-    rank:   formData.jmrank,
-    cat:    formData.category,
-    branch: formData.branch !== 'ALL' ? formData.branch : '',
-    state:  formData.state  !== 'ALL' ? formData.state  : '',
-    gender: formData.gender,
-    round:  formData.round,
-    jarank: formData.jarank
-  };
+
+  window._reportMeta = { name, rank: user.jmrank, cat: category, branch: user.branch !== 'ALL' ? user.branch : '', state: user.state !== 'ALL' ? user.state : '', gender, round: user.round, jarank: user.jarank };
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true;
@@ -751,16 +867,39 @@ async function submitPredictor() {
   document.getElementById('submitLoadingMsg').style.display = 'inline';
 
   try {
-    const res  = await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      body: new URLSearchParams({ action: 'submitForm', ...formData }),
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    });
-    const data = await res.json();
-    if (!data.success) throw new Error(data.error || 'Something went wrong.');
-    showResults(data);
-  } catch (err) {
-    showErr(err.message || 'Submission failed. Please try again.');
+    // Ensure data is loaded
+    const ok = await loadData();
+    if (!ok) throw new Error('Could not load college data. Please check your internet connection and try again.');
+
+    // Check payment status from Apps Script (fast, fire separately)
+    let isPaid = false;
+    let payLink = '';
+
+    // Get payment info — but don't block results on it
+    const payPromise = fetchPaymentInfo(email, user);
+
+    // Run predictor immediately with free tier
+    const results = runPredictor(user, false);
+
+    // Show free results right away
+    showResults(results, false, '', user);
+
+    // Update with payment info when it arrives
+    payPromise.then(info => {
+      currentPayLink = info.paymentLink || '';
+      if (info.isPaid) {
+        // Re-run with paid tier
+        const paidResults = runPredictor(user, true);
+        showResults(paidResults, true, '', user);
+      } else {
+        // Update pay link
+        const pl = document.getElementById('payLink');
+        if (pl && info.paymentLink) pl.href = info.paymentLink;
+      }
+    }).catch(() => {});
+
+  } catch(err) {
+    showErr(err.message || 'Something went wrong. Please try again.');
   } finally {
     document.getElementById('submitText').style.display = 'inline';
     document.getElementById('submitSpinner').style.display = 'none';
@@ -769,430 +908,228 @@ async function submitPredictor() {
   }
 }
 
-// ── SHOW RESULTS ──
-function showResults(data) {
-  const isPaid      = data.tier === 'PAID';
-  const exhausted   = data.packExhausted === true;
+function runPredictor(user, isPaid) {
+  const jeeMain   = buildJeeMain(user, isPaid);
+  const jeeAdv    = buildJeeAdv(user, isPaid);
+  const jeemainHS = buildJeeMainHS(user, isPaid);
+  const csab      = buildCSAB(user, isPaid);
+  const top10     = buildTop10(user, isPaid, jeeMain, jeeAdv, csab);
+  return { jeeMain, jeeAdv, jeemainHS, csab, top10 };
+}
 
+async function fetchPaymentInfo(email, user) {
+  try {
+    // Log to Apps Script (get/create payment link)
+    const params = new URLSearchParams({
+      name: user.name, email, phone: user.phone,
+      category: user.category, jmrank: user.jmrank, jarank: user.jarank,
+      branch: user.branch, gender: user.gender, state: user.state,
+      city: user.city, round: user.round,
+      collegeType: user.collegeType, collegeTypeS: user.collegeTypeS
+    });
+    const res = await fetch(APPS_SCRIPT_URL, { method:'POST', body: params, headers:{'Content-Type':'application/x-www-form-urlencoded'} });
+    const data = await res.json();
+    return { isPaid: data.tier==='PAID', paymentLink: data.paymentLink||'' };
+  } catch(e) {
+    return { isPaid: false, paymentLink: '' };
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// SHOW RESULTS
+// ═══════════════════════════════════════════════════════
+function showResults(results, isPaid, payLink, user) {
+  _isPaid = isPaid;
   document.getElementById('resultsArea').style.display = 'block';
   document.getElementById('paidBar').style.display     = isPaid ? 'flex' : 'none';
 
   const badge = document.getElementById('resultsBadge');
-  badge.textContent = isPaid ? '✅ Full Report' : (exhausted ? '⚠️ Pack Exhausted' : '🔍 Free Preview');
+  badge.textContent = isPaid ? '✅ Full Report' : '🔍 Free Preview';
   badge.className   = 'results-badge ' + (isPaid ? 'badge-paid' : 'badge-free');
 
-  // Remaining reports badge
-  const remBar = document.getElementById('remainingBar');
-  if (isPaid && data.remaining != null) {
-    remBar.style.display  = 'block';
-    remBar.textContent    = `You have ${data.remaining} report${data.remaining !== 1 ? 's' : ''} remaining in your pack.`;
-  } else {
-    remBar.style.display  = 'none';
-  }
-
-  document.getElementById('resultsTitle').textContent = isPaid
-    ? 'Your Full College List'
-    : (exhausted ? 'Pack Used Up' : 'Sample College List');
-  document.getElementById('resultsSub').textContent = isPaid
+  document.getElementById('resultsTitle').textContent = isPaid ? 'Your Full College List' : 'Sample College List';
+  document.getElementById('resultsSub').textContent   = isPaid
     ? 'Complete list based on your rank and preferences'
-    : (exhausted ? 'Your 5 reports have been used. Pay ₹ for a new pack.' : 'Top 5 per category — Get 5 Personalized College Reports in one payment — only ₹39');
+    : 'Top 5 per category — Get 5 Personalized College Reports in one payment — only ₹39';
 
   document.getElementById('downloadBar').style.display = isPaid ? 'block' : 'none';
   document.getElementById('upgradeBox').style.display  = isPaid ? 'none' : 'block';
 
-  if (!isPaid && data.paymentLink) {
-    document.getElementById('payLink').href = data.paymentLink;
-    // sync unlock button if already rendered
-    const ub = document.getElementById('unlockBtn');
-    if (ub) ub.href = data.paymentLink;
-    if (exhausted) document.getElementById('payLink').textContent = 'Pay ₹39 — Get New Pack of 5 Reports';
-  }
-
-  renderResults(data.results, isPaid);
-  setTimeout(() => document.getElementById('resultsArea').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  renderResults(results, isPaid);
+  setTimeout(() => document.getElementById('resultsArea').scrollIntoView({ behavior:'smooth', block:'start' }), 100);
 }
 
-// ── DOWNLOAD PDF ON DEMAND ──
-function downloadPdf() {
-  const content = document.getElementById('resultsContent');
-  if (!content) return;
-
-  const btn = document.getElementById('downloadBtn');
-  btn.disabled = true;
-  btn.textContent = '⏳ Preparing...';
-
-  const m      = window._reportMeta || {};
-  const name   = m.name   || 'Student';
-  const rank   = m.rank   || '';
-  const cat    = m.cat    || '';
-  const branch = m.branch || '';
-  const state  = m.state  || '';
-
-  // Clone and clean — remove all blur/overlay/unlock elements
-  const clone = content.cloneNode(true);
-  clone.querySelectorAll('table[style*="filter:blur"]').forEach(t => {
-    t.style.filter = 'none'; t.style.opacity = '1'; t.style.pointerEvents = 'auto';
-  });
-  clone.querySelectorAll('div[style*="blur"]').forEach(d => {
-    d.style.filter = 'none'; d.style.opacity = '1';
-  });
-  clone.querySelectorAll('div[style*="position:absolute"], div[style*="position: absolute"]').forEach(d => d.remove());
-  clone.querySelectorAll('a[onclick*="syncPayLink"]').forEach(a => {
-    const tr = a.closest('tr'); if (tr) tr.remove(); else a.remove();
-  });
-
-  const reportHTML = `<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>CollegePIPE — ${name}</title>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#0f1f3d;background:#fff;padding:32px;font-size:12px;}
-  .hdr{border-bottom:3px solid #2255c4;padding-bottom:14px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;}
-  .logo{font-size:20px;font-weight:900;color:#0f1f3d;letter-spacing:-0.5px;}
-  .logo span{color:#f59e0b;}
-  .meta{font-size:11px;color:#64748b;text-align:right;line-height:1.6;}
-  .info{background:#f0f4ff;border-radius:10px;padding:12px 16px;margin-bottom:20px;display:flex;gap:24px;flex-wrap:wrap;}
-  .info-item .lbl{font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.4px;}
-  .info-item .val{font-size:13px;font-weight:700;color:#0f1f3d;margin-top:2px;}
-  .result-section{margin-bottom:22px;}
-  .result-section-title{font-size:14px;font-weight:800;padding-bottom:7px;border-bottom:2px solid #e8f0fe;margin-bottom:9px;}
-  .sub-label{font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;margin:7px 0 5px;display:inline-block;text-transform:uppercase;letter-spacing:.3px;}
-  .sub-dream{background:rgba(248,113,113,.1);color:#dc2626;}
-  .sub-safe{background:rgba(52,211,153,.1);color:#059669;}
-  table{width:100%;border-collapse:collapse;font-size:11px;}
-  th{background:#f1f5f9;padding:6px 10px;text-align:left;font-size:9px;color:#64748b;border-bottom:1px solid #e2e8f0;font-weight:700;text-transform:uppercase;letter-spacing:.3px;}
-  td{padding:7px 10px;border-bottom:1px solid #f1f5f9;vertical-align:middle;}
-  tr:last-child td{border-bottom:none;}
-  tr.dream-row{background:rgba(254,226,226,.15);}
-  tr.safe-row{background:rgba(209,250,229,.12);}
-  .rank-badge{background:#eff6ff;color:#2255c4;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;display:inline-block;}
-  .gap-neg{color:#dc2626;font-weight:700;}
-  .gap-pos{color:#059669;font-weight:700;}
-  .footer{margin-top:28px;padding-top:10px;border-top:1px solid #e2e8f0;font-size:10px;color:#94a3b8;text-align:center;}
-</style>
-</head>
-<body>
-<div class="hdr">
-  <div class="logo">College<span>PIPE</span></div>
-  <div class="meta">Full College Prediction Report<br>${new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</div>
-</div>
-<div class="info">
-  <div class="info-item"><div class="lbl">Student</div><div class="val">${name}</div></div>
-  ${rank?`<div class="info-item"><div class="lbl">JEE Main Rank</div><div class="val">${Number(rank).toLocaleString('en-IN')}</div></div>`:''}
-  ${cat?`<div class="info-item"><div class="lbl">Category</div><div class="val">${cat}</div></div>`:''}
-  ${branch&&branch!=='ALL'?`<div class="info-item"><div class="lbl">Branch</div><div class="val">${branch}</div></div>`:''}
-  ${state&&state!=='ALL'?`<div class="info-item"><div class="lbl">State</div><div class="val">${state}</div></div>`:''}
-</div>
-${clone.innerHTML}
-<div class="footer">Generated by CollegePIPE &middot; Data from official JoSAA &amp; CSAB cutoffs &middot; Not affiliated with any government body</div>
-</body>
-</html>`;
-
-  // Download as .html file — opens directly in browser, student can Ctrl+P → Save as PDF
-  const blob = new Blob([reportHTML], { type: 'text/html;charset=utf-8' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = `CollegePIPE_${name.replace(/\s+/g,'_')}_Report.html`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-
-  btn.disabled = false;
-  btn.textContent = '⬇ Download Full PDF';
-}
-
-// ── RENDER RESULTS ──
-// Global flag — set by showResults
-let _isPaid = false;
-
+// ═══════════════════════════════════════════════════════
+// RENDER RESULTS
+// ═══════════════════════════════════════════════════════
 function renderResults(results, isPaid) {
-  _isPaid = isPaid;
   if (!results) {
     document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--muted);padding:30px;">No results found. Try adjusting your filters.</p>';
     return;
   }
   let html = '';
   if (results.jeeMain)   html += renderDreamSafe('🎯 JEE Main', results.jeeMain, true);
-  if (results.jeeAdv)    html += renderDreamSafe('🔬 JEE Advanced', results.jeeAdv, true);
-  if (results.csab)      html += renderDreamSafe('📋 CSAB', results.csab, true);
-  if (results.jeeMainHS) html += renderSimple('🏠 JEE Main Home State', results.jeeMainHS, ['College','Branch','Closing Rank']);
-  if (results.topCity)   html += renderSimple('🏙️ Top City Colleges', results.topCity, ['College','Admission Route','Fees','Placement']);
-  if (results.stateCet)  html += renderSimple('📍 State CET', results.stateCet, ['College','City','Tier']);
-  if (results.top10)     html += renderTop10('🏆 Top 10 Personalised Picks', results.top10);
+  if (results.jeeAdv)    html += renderDreamSafe('🔬 JEE Advanced', results.jeeAdv, false);
+  if (results.csab)      html += renderDreamSafe('📋 CSAB', results.csab, false);
+  if (results.jeemainHS) html += renderSimpleHS('🏠 JEE Main Home State', results.jeemainHS);
+  if (results.top10 && results.top10.length) html += renderTop10('🏆 Top 10 Personalised Picks', results.top10);
   document.getElementById('resultsContent').innerHTML = html || '<p style="text-align:center;color:var(--muted);padding:30px;">No matching colleges found for your criteria.</p>';
 }
 
-// Blur helper — shows `visible` rows, blurs rest, optionally shows unlock button
-function blurSection(rows, colSpan, visibleCount, showUnlock) {
+function blurRows(rows, colSpan, visibleCount, showUnlock) {
   if (_isPaid || rows.length <= visibleCount) return rows.join('');
   const visible = rows.slice(0, visibleCount).join('');
   const blurred = rows.slice(visibleCount).join('');
-  const unlockBtn = showUnlock ? `
-    <div style="margin-top:16px;">
-      <a href="#" target="_blank" onclick="syncPayLink(this);return true;"
-        style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3460,#2255c4);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:700;padding:12px 32px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(34,85,196,0.25);">
-        🔓 Unlock Full Report
-      </a>
-    </div>` : '';
-  return `${visible}
-  <tr style="padding:0;border:none;">
-    <td colspan="${colSpan}" style="padding:0;border:none;">
-      <div style="position:relative;">
-        <table style="width:100%;border-collapse:collapse;filter:blur(3px);pointer-events:none;user-select:none;opacity:0.5;">${blurred}</table>
-        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0.88) 45%,rgba(255,255,255,1) 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:20px;text-align:center;">
-          ${unlockBtn}
-        </div>
-      </div>
-    </td>
-  </tr>`;
+  const btn = showUnlock ? `<div style="margin-top:16px;"><a href="${e(currentPayLink||'#')}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3460,#2255c4);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:700;padding:12px 32px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(34,85,196,0.25);">🔓 Unlock Full Report — ₹39</a></div>` : '';
+  return `${visible}<tr style="padding:0;border:none;"><td colspan="${colSpan}" style="padding:0;border:none;"><div style="position:relative;"><table style="width:100%;border-collapse:collapse;filter:blur(3px);pointer-events:none;user-select:none;opacity:0.5;">${blurred}</table><div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0.88) 45%,rgba(255,255,255,1) 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:20px;text-align:center;">${btn}</div></div></td></tr>`;
 }
 
-function syncPayLink(el) {
-  const main = document.getElementById('payLink');
-  if (main && main.href && main.href !== window.location.href) el.href = main.href;
-}
-
-// showUnlockInSafe = true for jeeMain, jeeAdv, csab safe sections
-function renderDreamSafe(title, data, showUnlockInSafe) {
-  if (!data || data === 'No matching colleges found') return '';
-  const lines = data.split('\n').filter(Boolean);
-  let dRows = [], sRows = [], sec = '', dMsg = '', sMsg = '';
+function renderDreamSafe(title, section, showUnlock) {
+  if (!section) return '';
   const headers = '<tr><th style="width:40px;">Rnd</th><th>College</th><th>Branch</th><th style="width:90px;text-align:center;">Closing Rank</th><th style="width:70px;text-align:center;">Gap</th></tr>';
-
-  for (const line of lines) {
-    if (line === 'DREAM') { sec = 'd'; continue; }
-    if (line === 'SAFE')  { sec = 's'; continue; }
-    if (line.startsWith('No ')) {
-      if (sec === 'd') dMsg = line; else sMsg = line;
-      continue;
-    }
-    const p = line.split('|'); if (p.length < 5) continue;
-    const gap = Number(p[5]) || 0;
-    const bq = p[3] ? `${p[2]} (${p[3]})` : p[2];
-    const tr = `<tr class="${sec==='d'?'dream-row':'safe-row'}">
-      <td style="text-align:center;">${e(p[0])}</td>
-      <td><strong>${e(p[1])}</strong></td>
-      <td style="color:var(--muted);font-size:11px;">${e(bq)}</td>
-      <td style="text-align:center;"><span class="rank-badge">${e(p[4])}</span></td>
-      <td style="text-align:center;" class="${gap<=0?'gap-neg':'gap-pos'}">${gap>=0?'+':''}${gap}</td>
-    </tr>`;
-    if (sec === 'd') dRows.push(tr); else sRows.push(tr);
-  }
-
-  // Dream: show 2, blur rest, NO unlock button
-  const dBody = dMsg
-    ? `<tr><td colspan="5" style="text-align:center;color:var(--muted);font-style:italic;padding:12px;">${e(dMsg)}</td></tr>`
-    : (dRows.length
-        ? headers + blurSection(dRows, 5, 2, false)
-        : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:10px;">No dream colleges found</td></tr>`);
-
-  // Safe: show 4, blur rest, show unlock button if showUnlockInSafe
-  const sBody = sMsg
-    ? `<tr><td colspan="5" style="text-align:center;color:var(--muted);font-style:italic;padding:12px;">${e(sMsg)}</td></tr>`
-    : (sRows.length
-        ? headers + blurSection(sRows, 5, 4, showUnlockInSafe)
-        : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:10px;">No safe colleges found</td></tr>`);
-
-  return `<div class="result-section">
-    <div class="result-section-title">${title}</div>
-    <div class="sub-label sub-dream">🎯 Dream Colleges</div>
-    <table class="ctable">${dBody}</table>
-    <div class="sub-label sub-safe" style="margin-top:12px;">✅ Safe Colleges</div>
-    <table class="ctable">${sBody}</table>
-  </div>`;
+  const mkRow = (r, cls) => {
+    const gap=r[5], bq=r[3]?`${r[2]} (${r[3]})`:r[2];
+    return `<tr class="${cls}"><td style="text-align:center;">${e(r[0])}</td><td><strong>${e(r[1])}</strong></td><td style="color:var(--muted);font-size:11px;">${e(bq)}</td><td style="text-align:center;"><span class="rank-badge">${e(r[4])}</span></td><td style="text-align:center;" class="${gap<=0?'gap-neg':'gap-pos'}">${gap>=0?'+':''}${gap}</td></tr>`;
+  };
+  const dRows = section.dream.map(r=>mkRow(r,'dream-row'));
+  const sRows = section.safe.map(r=>mkRow(r,'safe-row'));
+  const dBody = dRows.length ? headers+blurRows(dRows,5,2,false) : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px;font-style:italic;">No dream colleges found</td></tr>`;
+  const sBody = sRows.length ? headers+blurRows(sRows,5,4,showUnlock) : `<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px;font-style:italic;">No safe colleges found</td></tr>`;
+  return `<div class="result-section"><div class="result-section-title">${title}</div><div class="sub-label sub-dream">🎯 Dream Colleges</div><table class="ctable">${dBody}</table><div class="sub-label sub-safe" style="margin-top:12px;">✅ Safe Colleges</div><table class="ctable">${sBody}</table></div>`;
 }
 
-// renderSimple: show 4, blur rest, NO unlock button
-function renderSimple(title, data, headers) {
-  if (!data || data === 'No matching colleges found') return '';
-  const lines = data.split('\n').filter(Boolean);
-  if (!lines.length) return '';
-  const hHtml = headers.map(h => `<th>${e(h)}</th>`).join('');
-  const rows = lines.map(line => {
-    if (line.includes('|')) {
-      const p = line.split('|');
-      return `<tr>${p.slice(0, headers.length).map(c => `<td>${e(c)}</td>`).join('')}</tr>`;
-    }
-    const p = line.split(' - ');
-    if (p.length >= 3) {
-      const last = p[p.length-1], mid = p[p.length-2], first = p.slice(0,p.length-2).join(' - ');
-      return `<tr><td><strong>${e(first)}</strong></td><td>${e(mid)}</td><td>${e(last)}</td></tr>`;
-    }
-    return `<tr><td colspan="${headers.length}">${e(line)}</td></tr>`;
+function renderSimpleHS(title, rows) {
+  if (!rows || !rows.length) return '';
+  const headers = '<tr><th>College</th><th>Branch</th><th style="width:90px;text-align:center;">Closing Rank</th></tr>';
+  const trs = rows.map(r=>`<tr class="safe-row"><td><strong>${e(r[0])}</strong></td><td style="color:var(--muted);font-size:11px;">${e(r[1])}</td><td style="text-align:center;"><span class="rank-badge">${e(r[2])}</span></td></tr>`);
+  return `<div class="result-section"><div class="result-section-title">${title}</div><table class="ctable">${headers+blurRows(trs,3,4,false)}</table></div>`;
+}
+
+function renderTop10(title, picks) {
+  if (!picks||!picks.length) return '';
+  const headers='<tr><th style="width:30px;text-align:center;">#</th><th>College</th><th>Branch</th><th style="width:70px;text-align:center;">Exam</th><th style="width:90px;text-align:center;">Closing Rank</th><th style="width:60px;text-align:center;">Gap</th><th style="width:55px;text-align:center;">Type</th></tr>';
+  const trs = picks.map((p,i)=>{
+    const gc=p.gap<=0?'gap-neg':'gap-pos', gs=p.gap>=0?'+':'';
+    return `<tr class="${p.isDream?'dream-row':'safe-row'}"><td style="text-align:center;font-weight:700;font-family:var(--font-head);">${i+1}</td><td><strong>${e(p.col)}</strong></td><td style="color:var(--muted);font-size:11px;">${e(p.br)}</td><td style="text-align:center;">${e(p.exam)}</td><td style="text-align:center;"><span class="rank-badge">${e(p.cr)}</span></td><td style="text-align:center;" class="${gc}">${gs}${p.gap}</td><td style="text-align:center;">${p.isDream?'Dream':'Safe'}</td></tr>`;
   });
-  const body = `<tr>${hHtml}</tr>` + blurSection(rows, headers.length, 4, false);
-  return `<div class="result-section">
-    <div class="result-section-title">${title}</div>
-    <table class="ctable">${body}</table>
-  </div>`;
+  return `<div class="result-section"><div class="result-section-title">${title}</div><table class="ctable">${headers+blurRows(trs,7,3,false)}</table></div>`;
 }
 
-// renderTop10: show 4, blur rest, NO unlock button
-function renderTop10(title, data) {
-  if (!data || data === 'No picks available') return '';
-  const lines = data.split('\n').filter(Boolean);
-  const hHtml = '<tr><th style="width:30px;text-align:center;">#</th><th>College</th><th>Branch</th><th style="width:70px;text-align:center;">Exam</th><th style="width:90px;text-align:center;">Closing Rank</th><th style="width:60px;text-align:center;">Gap</th><th style="width:55px;text-align:center;">Type</th></tr>';
-  const rows = lines.map(line => {
-    const p = line.split('|'); if (p.length < 7) return '';
-    const gap = Number(p[5].replace('+',''));
-    return `<tr class="${p[6]==='Dream'?'dream-row':'safe-row'}">
-      <td style="text-align:center;font-weight:700;font-family:var(--font-head);">${e(p[0])}</td>
-      <td><strong>${e(p[1])}</strong></td>
-      <td style="color:var(--muted);font-size:11px;">${e(p[2])}</td>
-      <td style="text-align:center;">${e(p[3])}</td>
-      <td style="text-align:center;"><span class="rank-badge">${e(p[4])}</span></td>
-      <td style="text-align:center;" class="${gap<=0?'gap-neg':'gap-pos'}">${e(p[5])}</td>
-      <td style="text-align:center;">${e(p[6])}</td>
-    </tr>`;
-  }).filter(Boolean);
-  const body = hHtml + blurSection(rows, 7, 4, false);
-  return `<div class="result-section">
-    <div class="result-section-title">${title}</div>
-    <table class="ctable">${body}</table>
-  </div>`;
-}
+function e(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-function e(t) { return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-// ── TRY AGAIN ──
-function tryAgain() {
-  document.getElementById('resultsArea').style.display = 'none';
-  document.getElementById('f_email').value = currentEmail;
-  window.history.replaceState({}, document.title, window.location.pathname);
-  document.getElementById('formCard').scrollIntoView({ behavior: 'smooth' });
-}
-
-function showErr(msg) {
-  const el = document.getElementById('formError');
-  el.textContent = msg; el.style.display = 'block';
-}
-
-function getJmRank() {
-  return document.getElementById('rankInputArea').style.display !== 'none'
-    ? document.getElementById('f_jmrank').value || '0'
-    : document.getElementById('f_jmrank_p').value || '0';
-}
-
-// ── POST-PAYMENT REDIRECT ──
+// ═══════════════════════════════════════════════════════
+// POST-PAYMENT REDIRECT
+// ═══════════════════════════════════════════════════════
 (function() {
   const params = new URLSearchParams(window.location.search);
-  if (params.get('paid') === '1' && params.get('email')) {
+  if (params.get('paid')==='1' && params.get('email')) {
     const email = params.get('email');
     currentEmail = email;
     window.history.replaceState({}, document.title, window.location.pathname);
     document.getElementById('f_email').value = email;
-
-    // Show loading results
-    document.getElementById('resultsArea').style.display  = 'block';
-    document.getElementById('paidBar').style.display      = 'flex';
-    document.getElementById('upgradeBox').style.display   = 'none';
+    document.getElementById('resultsArea').style.display = 'block';
+    document.getElementById('paidBar').style.display = 'flex';
+    document.getElementById('upgradeBox').style.display = 'none';
     const badge = document.getElementById('resultsBadge');
-    badge.textContent = '✅ Full Report'; badge.className = 'results-badge badge-paid';
-    document.getElementById('resultsTitle').textContent = 'Your Full College List';
-    document.getElementById('resultsSub').textContent   = 'Loading your complete results...';
-    document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--muted);padding:40px;">⏳ Loading your full college list...</p>';
+    badge.textContent='✅ Full Report'; badge.className='results-badge badge-paid';
+    document.getElementById('resultsTitle').textContent='Your Full College List';
+    document.getElementById('resultsSub').textContent='Loading your complete results...';
+    document.getElementById('resultsContent').innerHTML='<p style="text-align:center;color:var(--muted);padding:40px;">⏳ Loading your full college list...</p>';
+    setTimeout(()=>document.getElementById('predictor').scrollIntoView({behavior:'smooth'}),100);
 
-    setTimeout(() => document.getElementById('predictor').scrollIntoView({ behavior: 'smooth' }), 100);
-
-    // Fetch results from Apps Script
-    fetch(APPS_SCRIPT_URL + '?email=' + encodeURIComponent(email))
-      .then(r => r.json())
-      .then(data => {
-        if (data.success) {
-          document.getElementById('resultsSub').textContent = 'Complete list based on your rank and preferences';
-          document.getElementById('downloadBar').style.display = 'block';
-          renderResults(data.results, true);
-        } else {
-          document.getElementById('resultsContent').innerHTML = `<p style="text-align:center;color:var(--danger);padding:20px;">Could not load results. Please submit the form again.</p>`;
+    // Fetch user data from Apps Script to get their form data, then run predictor
+    fetch(APPS_SCRIPT_URL+'?email='+encodeURIComponent(email))
+      .then(r=>r.json())
+      .then(async data => {
+        if (data.success && data.tier==='PAID') {
+          // Need to rebuild user from stored formData — fetch from Apps Script
+          // For now show a message to re-submit
+          document.getElementById('resultsSub').textContent='Please fill in your details above to see your full results.';
+          document.getElementById('resultsContent').innerHTML='<p style="text-align:center;color:var(--success);padding:20px;font-weight:600;">✅ Payment confirmed! Please fill the form above with your details to see your full college list instantly.</p>';
+          document.getElementById('downloadBar').style.display='none';
         }
-      })
-      .catch(() => {
-        document.getElementById('resultsContent').innerHTML = '<p style="text-align:center;color:var(--danger);padding:20px;">Error loading results. Please submit the form again.</p>';
+      }).catch(()=>{
+        document.getElementById('resultsContent').innerHTML='<p style="text-align:center;color:var(--success);padding:20px;font-weight:600;">✅ Payment confirmed! Please fill the form above to see your full college list.</p>';
       });
   }
 })();
 
-// ── RANK TAB SWITCHER ──
-function switchRankTab(tab) {
-  const isRank = tab === 'rank';
-  document.getElementById('rankInputArea').style.display = isRank ? 'block' : 'none';
-  document.getElementById('percInputArea').style.display = isRank ? 'none' : 'flex';
-  document.getElementById('tabRank').style.background = isRank ? 'var(--blue)' : 'transparent';
-  document.getElementById('tabRank').style.color      = isRank ? '#fff' : 'var(--blue)';
-  document.getElementById('tabPerc').style.background = isRank ? 'transparent' : 'var(--blue)';
-  document.getElementById('tabPerc').style.color      = isRank ? 'var(--blue)' : '#fff';
+// ═══════════════════════════════════════════════════════
+// PDF DOWNLOAD
+// ═══════════════════════════════════════════════════════
+function downloadPdf() {
+  const content = document.getElementById('resultsContent');
+  if (!content) return;
+  const btn = document.getElementById('downloadBtn');
+  btn.disabled=true; btn.textContent='⏳ Preparing...';
+  const m=window._reportMeta||{};
+  const clone=content.cloneNode(true);
+  clone.querySelectorAll('table[style*="filter:blur"]').forEach(t=>{t.style.filter='none';t.style.opacity='1';});
+  clone.querySelectorAll('div[style*="blur"]').forEach(d=>{d.style.filter='none';d.style.opacity='1';});
+  clone.querySelectorAll('div[style*="position:absolute"],div[style*="position: absolute"]').forEach(d=>d.remove());
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>CollegePIPE — ${m.name||'Report'}</title><style>*{box-sizing:border-box;margin:0;padding:0;}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#0f1f3d;background:#fff;padding:32px;font-size:12px;}.hdr{border-bottom:3px solid #2255c4;padding-bottom:14px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:flex-end;}.logo{font-size:20px;font-weight:900;}.logo span{color:#f59e0b;}.result-section{margin-bottom:22px;}.result-section-title{font-size:14px;font-weight:800;padding-bottom:7px;border-bottom:2px solid #e8f0fe;margin-bottom:9px;}.sub-label{font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;margin:7px 0 5px;display:inline-block;}.sub-dream{background:rgba(248,113,113,.1);color:#dc2626;}.sub-safe{background:rgba(52,211,153,.1);color:#059669;}table{width:100%;border-collapse:collapse;font-size:11px;}th{background:#f1f5f9;padding:6px 10px;text-align:left;font-size:9px;color:#64748b;border-bottom:1px solid #e2e8f0;font-weight:700;}td{padding:7px 10px;border-bottom:1px solid #f1f5f9;vertical-align:middle;}tr.dream-row{background:rgba(254,226,226,.15);}tr.safe-row{background:rgba(209,250,229,.12);}.rank-badge{background:#eff6ff;color:#2255c4;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;display:inline-block;}.gap-neg{color:#dc2626;font-weight:700;}.gap-pos{color:#059669;font-weight:700;}.footer{margin-top:28px;padding-top:10px;border-top:1px solid #e2e8f0;font-size:10px;color:#94a3b8;text-align:center;}</style></head><body><div class="hdr"><div class="logo">College<span>PIPE</span></div><div style="font-size:11px;color:#64748b;text-align:right;">Full Report · ${new Date().toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}</div></div><div style="background:#f0f4ff;border-radius:10px;padding:12px 16px;margin-bottom:20px;display:flex;gap:24px;flex-wrap:wrap;">${m.name?`<div><div style="font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;">Student</div><div style="font-size:13px;font-weight:700;">${m.name}</div></div>`:''} ${m.rank?`<div><div style="font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;">JEE Main Rank</div><div style="font-size:13px;font-weight:700;">${Number(m.rank).toLocaleString('en-IN')}</div></div>`:''} ${m.cat?`<div><div style="font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;">Category</div><div style="font-size:13px;font-weight:700;">${m.cat}</div></div>`:''}</div>${clone.innerHTML}<div class="footer">Generated by CollegePIPE · Data from official JoSAA & CSAB cutoffs</div></body></html>`;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download=`CollegePIPE_${(m.name||'Report').replace(/\s+/g,'_')}_Report.html`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
+  btn.disabled=false; btn.textContent='⬇ Download Full PDF';
 }
 
-// ── PERCENTILE CALCULATOR ──
-const CAT_STUDENTS = { open:1500000, ews:150000, obc:450000, sc:225000, st:112500 };
+// ═══════════════════════════════════════════════════════
+// UI HELPERS
+// ═══════════════════════════════════════════════════════
+function tryAgain() {
+  document.getElementById('resultsArea').style.display='none';
+  document.getElementById('f_email').value=currentEmail;
+  window.history.replaceState({},document.title,window.location.pathname);
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
+}
+function showErr(msg) { const el=document.getElementById('formError'); el.textContent=msg; el.style.display='block'; }
+function getJmRank() {
+  return document.getElementById('rankInputArea').style.display!=='none'
+    ? document.getElementById('f_jmrank').value||'0'
+    : document.getElementById('f_jmrank_p').value||'0';
+}
+
+// ── RANK TAB ──
+function switchRankTab(tab) {
+  const isRank=tab==='rank';
+  document.getElementById('rankInputArea').style.display=isRank?'block':'none';
+  document.getElementById('percInputArea').style.display=isRank?'none':'flex';
+  document.getElementById('tabRank').style.background=isRank?'var(--blue)':'transparent';
+  document.getElementById('tabRank').style.color=isRank?'#fff':'var(--blue)';
+  document.getElementById('tabPerc').style.background=isRank?'transparent':'var(--blue)';
+  document.getElementById('tabPerc').style.color=isRank?'var(--blue)':'#fff';
+}
+
+// ── PERCENTILE CALC ──
+const CAT_STUDENTS={open:1500000,ews:150000,obc:450000,sc:225000,st:112500};
 function calcPercentile() {
-  const pct = parseFloat(document.getElementById('f_percentile').value);
-  const box = document.getElementById('ranksBox');
-  if (isNaN(pct)||pct<0||pct>100){box.style.display='none';return;}
-  const f = (100-pct)/100;
-  window._ranks = {};
+  const pct=parseFloat(document.getElementById('f_percentile').value);
+  const box=document.getElementById('ranksBox');
+  if(isNaN(pct)||pct<0||pct>100){box.style.display='none';return;}
+  const f=(100-pct)/100; window._ranks={};
   for(const[c,s] of Object.entries(CAT_STUDENTS)){window._ranks[c]=Math.max(1,Math.round(f*s));}
-  ['open','ews','obc','sc','st'].forEach(c=>{
-    const el=document.getElementById('pr_'+c);
-    if(el) el.textContent=window._ranks[c].toLocaleString('en-IN');
-  });
+  ['open','ews','obc','sc','st'].forEach(c=>{const el=document.getElementById('pr_'+c);if(el)el.textContent=window._ranks[c].toLocaleString('en-IN');});
   box.style.display='block';
   document.getElementById('f_jmrank_p').value='0';
   document.getElementById('selRankBadge').style.display='none';
 }
 const RANK_LABELS={open:'OPEN',ews:'EWS',obc:'OBC-NCL',sc:'SC',st:'ST'};
-function useRank(cat){
-  if(!window._ranks) return;
-  const r=window._ranks[cat]; if(!r) return;
+function useRank(cat) {
+  if(!window._ranks) return; const r=window._ranks[cat]; if(!r) return;
   document.getElementById('f_jmrank_p').value=r;
   document.getElementById('selRankVal').textContent=r.toLocaleString('en-IN');
   document.getElementById('selRankCat').textContent='('+RANK_LABELS[cat]+')';
   document.getElementById('selRankBadge').style.display='flex';
 }
-function clearRank(){
-  document.getElementById('f_jmrank_p').value='0';
-  document.getElementById('selRankBadge').style.display='none';
-}
+function clearRank(){document.getElementById('f_jmrank_p').value='0';document.getElementById('selRankBadge').style.display='none';}
 
-// ── DATA ──
-const PVT = [
-  {name:'VIT Vellore',state:'Tamil Nadu',city:'Vellore',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹8-45 LPA'},
-  {name:'Manipal Institute of Technology',state:'Karnataka',city:'Manipal',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-40 LPA'},
-  {name:'SRM Institute of Science',state:'Tamil Nadu',city:'Chennai',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹6-35 LPA'},
-  {name:'Thapar University',state:'Punjab',city:'Patiala',tier:'Tier 1',fees:'₹2.5 L/yr',placement:'₹9-42 LPA'},
-  {name:'BITS Pilani',state:'Rajasthan',city:'Pilani',tier:'Tier 1',fees:'₹5-6 L/yr',placement:'₹12-80 LPA'},
-  {name:'Amity University Noida',state:'Delhi',city:'Noida',tier:'Tier 2',fees:'₹2-3 L/yr',placement:'₹5-25 LPA'},
-  {name:'BMS College of Engineering',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹8-38 LPA'},
-  {name:'KJSCE Mumbai',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-32 LPA'},
-  {name:'DJ Sanghvi College',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹1.8-2.5 L/yr',placement:'₹7-30 LPA'},
-  {name:'Symbiosis Institute of Technology',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-35 LPA'},
-  {name:'COEP Pune',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹1.2-1.8 L/yr',placement:'₹8-40 LPA'},
-  {name:'PES University',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹9-45 LPA'},
-  {name:'Kalinga Institute (KIIT)',state:'Odisha',city:'Bhubaneswar',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-38 LPA'},
-  {name:'DAIICT Gandhinagar',state:'Gujarat',city:'Gandhinagar',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹10-50 LPA'},
-  {name:'Nirma University',state:'Gujarat',city:'Ahmedabad',tier:'Tier 1',fees:'₹2.5-3 L/yr',placement:'₹8-35 LPA'},
-  {name:'Osmania University CEG',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹0.8-1.2 L/yr',placement:'₹7-30 LPA'},
-  {name:'CBIT Hyderabad',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹7-32 LPA'},
-];
-const CET=[
-  {name:'Government College of Engineering, Pune',city:'Pune',type:'Govt',tier:'Tier 1'},
-  {name:'Veermata Jijabai Tech Institute',city:'Mumbai',type:'Govt',tier:'Tier 1'},
-  {name:'College of Engineering, Anna University',city:'Chennai',type:'Govt',tier:'Tier 1'},
-  {name:'BMS College of Engineering',city:'Bangalore',type:'Pvt (Aided)',tier:'Tier 1'},
-  {name:'RV College of Engineering',city:'Bangalore',type:'Pvt',tier:'Tier 1'},
-  {name:'Osmania University CEG',city:'Hyderabad',type:'University',tier:'Tier 1'},
-  {name:'DTU Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},
-  {name:'NSIT Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},
-  {name:'COEP Technological University',city:'Pune',type:'Govt',tier:'Tier 1'},
-  {name:'KJ Somaiya College of Engineering',city:'Mumbai',type:'Pvt',tier:'Tier 1'},
-  {name:'PSG College of Technology',city:'Chennai',type:'Pvt (Aided)',tier:'Tier 1'},
-  {name:'Amity School of Engineering, Noida',city:'Noida',type:'Pvt',tier:'Tier 2'},
-  {name:'JNTUH College of Engineering',city:'Hyderabad',type:'Govt',tier:'Tier 1'},
-];
+// ═══════════════════════════════════════════════════════
+// STATIC DATA
+// ═══════════════════════════════════════════════════════
+const PVT=[{name:'VIT Vellore',state:'Tamil Nadu',city:'Vellore',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹8-45 LPA'},{name:'Manipal Institute of Technology',state:'Karnataka',city:'Manipal',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-40 LPA'},{name:'SRM Institute of Science',state:'Tamil Nadu',city:'Chennai',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹6-35 LPA'},{name:'Thapar University',state:'Punjab',city:'Patiala',tier:'Tier 1',fees:'₹2.5 L/yr',placement:'₹9-42 LPA'},{name:'BITS Pilani',state:'Rajasthan',city:'Pilani',tier:'Tier 1',fees:'₹5-6 L/yr',placement:'₹12-80 LPA'},{name:'Amity University Noida',state:'Delhi',city:'Noida',tier:'Tier 2',fees:'₹2-3 L/yr',placement:'₹5-25 LPA'},{name:'BMS College of Engineering',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹8-38 LPA'},{name:'KJSCE Mumbai',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-32 LPA'},{name:'DJ Sanghvi College',state:'Maharashtra',city:'Mumbai',tier:'Tier 1',fees:'₹1.8-2.5 L/yr',placement:'₹7-30 LPA'},{name:'Symbiosis Institute of Technology',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹8-35 LPA'},{name:'COEP Pune',state:'Maharashtra',city:'Pune',tier:'Tier 1',fees:'₹1.2-1.8 L/yr',placement:'₹8-40 LPA'},{name:'PES University',state:'Karnataka',city:'Bangalore',tier:'Tier 1',fees:'₹3-4 L/yr',placement:'₹9-45 LPA'},{name:'Kalinga Institute (KIIT)',state:'Odisha',city:'Bhubaneswar',tier:'Tier 1',fees:'₹2-3 L/yr',placement:'₹7-38 LPA'},{name:'DAIICT Gandhinagar',state:'Gujarat',city:'Gandhinagar',tier:'Tier 1',fees:'₹2.5-3.5 L/yr',placement:'₹10-50 LPA'},{name:'Nirma University',state:'Gujarat',city:'Ahmedabad',tier:'Tier 1',fees:'₹2.5-3 L/yr',placement:'₹8-35 LPA'},{name:'Osmania University CEG',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹0.8-1.2 L/yr',placement:'₹7-30 LPA'},{name:'CBIT Hyderabad',state:'Telangana',city:'Hyderabad',tier:'Tier 1',fees:'₹1.5-2 L/yr',placement:'₹7-32 LPA'}];
+const CET=[{name:'Government College of Engineering, Pune',city:'Pune',type:'Govt',tier:'Tier 1'},{name:'Veermata Jijabai Tech Institute',city:'Mumbai',type:'Govt',tier:'Tier 1'},{name:'College of Engineering, Anna University',city:'Chennai',type:'Govt',tier:'Tier 1'},{name:'BMS College of Engineering',city:'Bangalore',type:'Pvt (Aided)',tier:'Tier 1'},{name:'RV College of Engineering',city:'Bangalore',type:'Pvt',tier:'Tier 1'},{name:'Osmania University CEG',city:'Hyderabad',type:'University',tier:'Tier 1'},{name:'DTU Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},{name:'NSIT Delhi',city:'Delhi',type:'Govt',tier:'Tier 1'},{name:'COEP Technological University',city:'Pune',type:'Govt',tier:'Tier 1'},{name:'KJ Somaiya College of Engineering',city:'Mumbai',type:'Pvt',tier:'Tier 1'},{name:'PSG College of Technology',city:'Chennai',type:'Pvt (Aided)',tier:'Tier 1'},{name:'Amity School of Engineering, Noida',city:'Noida',type:'Pvt',tier:'Tier 2'},{name:'JNTUH College of Engineering',city:'Hyderabad',type:'Govt',tier:'Tier 1'}];
 const IITS=[{name:'IIT Madras',city:'Chennai',nirf:1},{name:'IIT Delhi',city:'New Delhi',nirf:2},{name:'IIT Bombay',city:'Mumbai',nirf:3},{name:'IIT Kanpur',city:'Kanpur',nirf:5},{name:'IIT Kharagpur',city:'Kharagpur',nirf:4},{name:'IIT Roorkee',city:'Roorkee',nirf:7},{name:'IIT Hyderabad',city:'Hyderabad',nirf:8},{name:'IIT Guwahati',city:'Guwahati',nirf:9},{name:'IIT BHU',city:'Varanasi',nirf:12},{name:'IIT Gandhinagar',city:'Gandhinagar',nirf:14}];
 const NITS=[{name:'NIT Trichy',city:'Tiruchirappalli',nirf:10},{name:'NIT Surathkal',city:'Mangalore',nirf:16},{name:'NIT Warangal',city:'Warangal',nirf:18},{name:'NIT Calicut',city:'Kozhikode',nirf:23},{name:'NIT Rourkela',city:'Rourkela',nirf:20},{name:'NIT Allahabad',city:'Allahabad',nirf:27},{name:'MNIT Jaipur',city:'Jaipur',nirf:35},{name:'NIT Kurukshetra',city:'Kurukshetra',nirf:45},{name:'VNIT Nagpur',city:'Nagpur',nirf:38},{name:'NIT Silchar',city:'Silchar',nirf:40}];
 
@@ -1200,13 +1137,11 @@ function ttag(t){const s=(t||'').toLowerCase();return s.includes('1')?`<span cla
 function filterPvt(state,el){document.querySelectorAll('#pvtTabs .city-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');const f=state==='ALL'?PVT:PVT.filter(c=>c.state===state||c.city===state);document.getElementById('pvtGrid').innerHTML=f.slice(0,9).map(c=>`<div class="city-card"><div class="cc-name">${c.name}</div><div class="cc-meta">${ttag(c.tier)}<span class="cc-tag tf">📍 ${c.city}</span><span class="cc-tag tf">💰 ${c.fees}</span><span class="cc-tag tp">🏆 ${c.placement}</span></div></div>`).join('');}
 function filterCet(city,el){document.querySelectorAll('#cetTabs .city-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');const f=city==='ALL'?CET:CET.filter(c=>c.city===city);document.getElementById('cetGrid').innerHTML=f.slice(0,9).map(c=>`<div class="city-card"><div class="cc-name">${c.name}</div><div class="cc-meta">${ttag(c.tier)}<span class="cc-tag tf">📍 ${c.city}</span><span class="cc-tag tf">${c.type}</span></div></div>`).join('');}
 
-// Init
-filterPvt('ALL', document.querySelector('#pvtTabs .city-tab'));
-filterCet('ALL', document.querySelector('#cetTabs .city-tab'));
+filterPvt('ALL',document.querySelector('#pvtTabs .city-tab'));
+filterCet('ALL',document.querySelector('#cetTabs .city-tab'));
 document.getElementById('iitList').innerHTML=IITS.map((inst,i)=>`<div class="compare-row"><div class="cr-num">${i+1}</div><div class="cr-info"><div class="cr-name">${inst.name}</div><div class="cr-city">📍 ${inst.city}</div></div><div class="cr-nirf">NIRF #${inst.nirf}</div></div>`).join('');
 document.getElementById('nitList').innerHTML=NITS.map((inst,i)=>`<div class="compare-row"><div class="cr-num">${i+1}</div><div class="cr-info"><div class="cr-name">${inst.name}</div><div class="cr-city">📍 ${inst.city}</div></div><div class="cr-nirf">NIRF #${inst.nirf}</div></div>`).join('');
 
-// Counter animation
 function animCount(el,target,sfx){let c=0;const step=Math.ceil(target/60);const t=setInterval(()=>{c=Math.min(c+step,target);el.innerHTML=c.toLocaleString('en-IN')+(sfx||'');if(c>=target)clearInterval(t);},20);}
 const obs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){document.querySelectorAll('.band-num').forEach(el=>{const n=parseInt(el.textContent.replace(/[^0-9]/g,''));if(n)animCount(el,n,el.textContent.includes('+')?'+':'');});obs.disconnect();}});},{threshold:0.3});
 const sb=document.querySelector('.stats-band');if(sb)obs.observe(sb);
