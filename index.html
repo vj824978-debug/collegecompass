@@ -1076,7 +1076,7 @@ function blurRows(rows, colSpan, visibleCount, showUnlock) {
   if (_isPaid || rows.length <= visibleCount) return rows.join('');
   const visible = rows.slice(0, visibleCount).join('');
   const blurred = rows.slice(visibleCount).join('');
-  const btn = showUnlock ? `<div style="margin-top:16px;"><a href="${e(currentPayLink||'#')}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3460,#2255c4);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:700;padding:12px 32px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(34,85,196,0.25);">🔓 Unlock Full Report — ₹39</a></div>` : '';
+  const btn = showUnlock ? `<div style="margin-top:16px;"><a href="javascript:void(0)" onclick="openPayLink()" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3460,#2255c4);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:700;padding:12px 32px;border-radius:12px;text-decoration:none;box-shadow:0 4px 20px rgba(34,85,196,0.25);">🔓 Unlock Full Report — ₹39</a></div>` : '';
   return `${visible}<tr style="padding:0;border:none;"><td colspan="${colSpan}" style="padding:0;border:none;"><div style="position:relative;"><table style="width:100%;border-collapse:collapse;filter:blur(3px);pointer-events:none;user-select:none;opacity:0.5;">${blurred}</table><div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0.88) 45%,rgba(255,255,255,1) 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:20px;text-align:center;">${btn}</div></div></td></tr>`;
 }
 
@@ -1111,6 +1111,19 @@ function renderTop10(title, picks) {
   return `<div class="result-section"><div class="result-section-title">${title}</div><table class="ctable">${headers+blurRows(trs,7,3,false)}</table></div>`;
 }
 
+function openPayLink() {
+  if (currentPayLink && currentPayLink !== '') {
+    window.open(currentPayLink, '_blank');
+  } else {
+    // Payment link not loaded yet - wait and retry
+    const pl = document.getElementById('payLink');
+    if (pl && pl.href && pl.href.includes('rzp')) {
+      window.open(pl.href, '_blank');
+    } else {
+      alert('Payment link is loading, please wait a moment and try again.');
+    }
+  }
+}
 function e(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 // ═══════════════════════════════════════════════════════
