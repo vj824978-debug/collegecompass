@@ -700,18 +700,20 @@ function loadData() {
     try {
       const files = ['jeemain','jeeadv','jeemainhs','csab'];
       const results = await Promise.all(
-        files.map(f => fetch(DATA_BASE + f + '.json').then(r => { if(!r.ok) throw new Error(f+' failed'); return r.json(); }))
+        files.map(f => fetch(DATA_BASE + f + '.json').then(r => r.json()))
       );
-      DB.jeemain   = decodeJeeMain(results[0]);
-      DB.jeeadv    = decodeJeeAdv(results[1]);
-      DB.jeemainhs = decodeJeeMainHS(results[2]);
-      DB.csab      = decodeCSAB(results[3]);
+      DB.jeemain   = results[0];
+      DB.jeeadv    = results[1];
+      DB.jeemainhs = results[2];
+      DB.csab      = results[3];
+      if (!DB.jeemain || !DB.jeemain.d || !DB.jeemain.d.length) throw new Error('Data empty');
       dataReady = true;
-      setStatus('ready', '✅ Data loaded — results are instant!');
-      setTimeout(() => { const s = document.getElementById('dataStatus'); if(s) s.style.display='none'; }, 3000);
+      setStatus('ready', '✅ Data loaded!');
+      setTimeout(() => { const s = document.getElementById('dataStatus'); if(s) s.style.display='none'; }, 2000);
       return true;
     } catch(e) {
-      setStatus('error', '⚠️ Could not load data. Please check your connection and retry.');
+      console.error('loadData error:', e);
+      setStatus('error', '⚠️ ' + e.message);
       dataPromise = null;
       return false;
     }
