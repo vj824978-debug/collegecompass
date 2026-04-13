@@ -578,9 +578,9 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
             <div style="font-size:12px;opacity:0.6;margin-bottom:8px;">One-time unlock · Change rank/branch anytime · 5 reports included</div>
-            <a id="payLink" href="javascript:void(0)" onclick="openPayLink(event)" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
+            <button id="payLink" onclick="openPayLink(event)" class="btn btn-pay" style="display:inline-flex;max-width:360px;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);cursor:pointer;border:none;">
               🔓 Unlock Full Report — ₹39
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -1035,23 +1035,28 @@ function blurRows(rows, colSpan, visibleCount, showUnlock) {
 }
 
 function openPayLink(evt) {
-  evt && evt.preventDefault && evt.preventDefault();
-  if (currentPayLink) { window.open(currentPayLink,'_blank'); return; }
-  // Wait for pay link
-  const el = evt && evt.target;
-  if (el) { el.textContent='⏳ Loading...'; el.style.pointerEvents='none'; }
-  let tries=0;
-  const t = setInterval(()=>{
+  if (evt) { evt.preventDefault(); evt.stopPropagation(); }
+  if (currentPayLink && currentPayLink.length > 5) {
+    window.open(currentPayLink, '_blank');
+    return;
+  }
+  // Link not ready — show loading and wait
+  const el = evt && evt.currentTarget;
+  const origText = el ? el.innerHTML : '';
+  if (el) { el.innerHTML = '⏳ Loading payment link...'; el.style.opacity='0.7'; el.style.pointerEvents='none'; }
+  let tries = 0;
+  const t = setInterval(() => {
     tries++;
-    if (currentPayLink) {
-      clearInterval(t); window.open(currentPayLink,'_blank');
-      if(el){el.textContent='🔓 Unlock Full Report — ₹39';el.style.pointerEvents='auto';}
-    } else if(tries>20){
+    if (currentPayLink && currentPayLink.length > 5) {
       clearInterval(t);
-      if(el){el.textContent='🔓 Unlock Full Report — ₹39';el.style.pointerEvents='auto';}
-      alert('Please try the Unlock button at the bottom.');
+      window.open(currentPayLink, '_blank');
+      if (el) { el.innerHTML = origText; el.style.opacity='1'; el.style.pointerEvents='auto'; }
+    } else if (tries > 30) {
+      clearInterval(t);
+      if (el) { el.innerHTML = origText; el.style.opacity='1'; el.style.pointerEvents='auto'; }
+      alert('Payment link not loaded yet. Please wait a moment and try again.');
     }
-  },500);
+  }, 500);
 }
 
 function e(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
