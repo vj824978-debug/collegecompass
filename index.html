@@ -670,21 +670,44 @@ let currentPayLink = '';
 let _isPaid = false;
 window._reportMeta = {};
 
+// Decode integer-encoded JSON into usable row arrays
+// JEEMain row: [rnd, colIdx, brIdx, qtIdx, catInt, genInt, cr, bgIdx, ctIdx]
+// Returns:     [rnd, colName, brName, qt, catInt, genInt, cr, bgName, ctName]
+function decodeJeeMain(raw) {
+  const {cols, brs, qts, bgs, cts, data} = raw;
+  return data.map(r => [r[0], cols[r[1]], brs[r[2]], qts[r[3]], r[4], r[5], r[6], bgs[r[7]], cts[r[8]]]);
+}
+function decodeJeeAdv(raw) {
+  const {cols, brs, bgs, data} = raw;
+  return data.map(r => [r[0], cols[r[1]], brs[r[2]], r[3], r[4], r[5], bgs[r[6]]]);
+}
+function decodeJeeMainHS(raw) {
+  const {cols, brs, sts, bgs, data} = raw;
+  return data.map(r => [r[0], cols[r[1]], brs[r[2]], r[3], r[4], sts[r[5]], r[6], bgs[r[7]]]);
+}
+function decodeCSAB(raw) {
+  const {cols, brs, qts, bgs, data} = raw;
+  return data.map(r => [r[0], cols[r[1]], brs[r[2]], qts[r[3]], r[4], r[5], r[6], bgs[r[7]]]);
+}
+
 // ═══════════════════════════════════════════════════════
 // LOAD DATA — fetch JSON files from GitHub
 // ═══════════════════════════════════════════════════════
 function loadData() {
   if (dataPromise) return dataPromise;
   dataPromise = (async () => {
-    setStatus('loading', '⏳ Loading college data in background...');
+    setStatus('loading', '⏳ Loading college data...');
     try {
       const files = ['jeemain','jeeadv','jeemainhs','csab'];
       const results = await Promise.all(
         files.map(f => fetch(DATA_BASE + f + '.json').then(r => { if(!r.ok) throw new Error(f+' failed'); return r.json(); }))
       );
-      files.forEach((f,i) => { DB[f] = results[i].data; });
+      DB.jeemain   = decodeJeeMain(results[0]);
+      DB.jeeadv    = decodeJeeAdv(results[1]);
+      DB.jeemainhs = decodeJeeMainHS(results[2]);
+      DB.csab      = decodeCSAB(results[3]);
       dataReady = true;
-      setStatus('ready', '✅ College data loaded — results will be instant!');
+      setStatus('ready', '✅ Data loaded — results are instant!');
       setTimeout(() => { const s = document.getElementById('dataStatus'); if(s) s.style.display='none'; }, 3000);
       return true;
     } catch(e) {
@@ -714,9 +737,11 @@ window.addEventListener('DOMContentLoaded', () => loadData());
 // MATCH HELPERS
 // ═══════════════════════════════════════════════════════
 const norm = v => String(v == null ? '' : v).trim().toUpperCase();
+const CAT_MAP = {'OPEN':0,'EWS':1,'OBC-NCL':2,'SC':3,'ST':4,'OPEN (PWD)':5,'EWS (PWD)':6,'OBC-NCL (PWD)':7,'SC (PWD)':8,'ST (PWD)':9};
+const GEN_MAP = {'GENDER-NEUTRAL':0,'FEMALE-ONLY (INCLUDING SUPERNUMERARY)':1};
 const matchRound  = (u, i) => (!u || u === 'ALL') ? true : Number(u) === Number(i);
-const matchCat    = (u, i) => norm(u) === norm(i);
-const matchGender = (u, i) => { const ni=norm(i),nu=norm(u); return ni==='GENDER-NEUTRAL'||ni===nu||ni.includes(nu); };
+const matchCat    = (u, i) => CAT_MAP[norm(u)] === i;
+const matchGender = (u, i) => i === 0 || GEN_MAP[norm(u)] === i;
 const matchBranch = (u, i) => (!u||u==='ALL') ? true : norm(i).includes(norm(u));
 const matchColType= (u, i) => (!u||u==='ALL') ? true : norm(i)===norm(u);
 const matchState  = (u, i) => (!u||u==='ALL') ? true : norm(i)===norm(u);
@@ -727,74 +752,126 @@ function branchWeight(bg) { const k=norm(bg); for(const p in BRANCH_WEIGHT) if(k
 // ═══════════════════════════════════════════════════════
 // PREDICTOR FUNCTIONS
 // ═══════════════════════════════════════════════════════
-// JEEMain cols: [rnd, col, br, qt(HS/OS), cat, gen, cr, bg, ct]
+// Compressed format decoders
+// CAT: 0=EWS,1=EWS(PwD),2=OBC-NCL,3=OBC-NCL(PwD),4=OPEN,5=OPEN(PwD),6=SC,7=SC(PwD),8=ST,9=ST(PwD)
+// GEN: 0=Gender-Neutral, 1=Female-only
+// BG:  0=5YR,1=BioMed,2=CSE,3=Chem,4=Civil,5=Elec,6=EngPhy,7=MnC,8=Mech,9=Metal,10=Others
+// CT(jeemain): 0=NIT,1=IIIT,2=GFTI
+// QT(jeemain): 0=OS,1=HS,2=AI,3=GO,4=JK,5=LA
+// QT(csab): 0=AllIndia,1=HomeState,2=OtherState,3=GoeHomeState,4=JK,5=Ladakh
+
+const CAT_IDS = {'EWS':0,'EWS (PWD)':1,'OBC-NCL':2,'OBC-NCL (PWD)':3,'OPEN':4,'OPEN (PWD)':5,'SC':6,'SC (PWD)':7,'ST':8,'ST (PWD)':9};
+const BG_IDS  = {'5 YEAR PROGRAM (DUAL DEGREE)':0,'BIO MED/TECH':1,'CSE/IT/AI':2,'CHEMICAL':3,'CIVIL':4,'ELECTRICAL/ELECTRONICS':5,'ENGINEERING PHYSICS':6,'MATHEMATICS AND COMPUTING':7,'MECHANICAL':8,'METALLURGY/MINING':9,'OTHERS':10};
+const CT_IDS  = {'NIT':0,'IIIT':1,'GFTI':2};
+
+function getCatId(v) { return CAT_IDS[norm(v)] ?? 4; }
+function getBgId(v)  { const k=norm(v); for(const p in BG_IDS) if(k.includes(p)) return BG_IDS[p]; return 10; }
+
+function matchCatC(u,i)  { return getCatId(u)===i; }
+function matchGenC(u,i)  { return i===0 || ('NEUTRAL' in {} ? false : i===0) || (norm(u).includes('NEUTRAL') ? true : i===1); }
+function matchBranchC(u,i) { if(!u||u==='ALL') return true; return i===getBgId(u); }
+function matchColTypeC(u,i){ if(!u||u==='ALL') return true; return (CT_IDS[norm(u)]??-1)===i; }
+
+// Fix matchGenC properly
+function genMatch(userGender, rowGen) {
+  // rowGen: 0=Gender-Neutral, 1=Female-only
+  if (rowGen===0) return true; // GN seats open to all
+  // Female-only seats: only if user selected female
+  return norm(userGender).includes('FEMALE');
+}
+
+// JEEMain compressed: [rnd, colId, brId, qt, catId, genId, cr, bgId, ctId]
 function buildJeeMain(user, isPaid) {
+  const db = DB.jeemain;
+  const C=db.c, B=db.b;
   const limit = isPaid ? 100 : 5;
   const dreamMin = Math.floor(user.jmrank * 0.9);
+  const catId = getCatId(user.category);
+  const bgId  = user.branch==='ALL' ? -1 : getBgId(user.branch);
+  const ctId  = user.collegeType==='ALL' ? -1 : (CT_IDS[norm(user.collegeType)]??-1);
+  const round = user.round==='ALL' ? -1 : Number(user.round);
   const dream=[], safe=[];
-  for (const r of DB.jeemain) {
-    if (!matchRound(user.round, r[0])) continue;
-    if (!matchCat(user.category, r[4])) continue;
-    if (!matchGender(user.gender, r[5])) continue;
-    if (!matchBranch(user.branch, r[7])) continue;
-    if (!matchColType(user.collegeType, r[8])) continue;
+  for (const r of db.d) {
+    if (round!==-1 && r[0]!==round) continue;
+    if (r[4]!==catId) continue;
+    if (!genMatch(user.gender, r[5])) continue;
+    if (bgId!==-1 && r[7]!==bgId) continue;
+    if (ctId!==-1 && r[8]!==ctId) continue;
     const cr=r[6];
-    if (cr>=dreamMin && cr<user.jmrank) dream.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
-    else if (cr>=user.jmrank) safe.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
+    if (cr>=dreamMin && cr<user.jmrank) dream.push([r[0],C[r[1]],B[r[2]],r[3]===0?'OS':r[3]===1?'HS':'AI',cr,cr-user.jmrank]);
+    else if (cr>=user.jmrank) safe.push([r[0],C[r[1]],B[r[2]],r[3]===0?'OS':r[3]===1?'HS':'AI',cr,cr-user.jmrank]);
   }
   dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
   return { dream:dream.slice(0,limit), safe:safe.slice(0,limit) };
 }
 
-// JEEADV cols: [rnd, col, br, cat, gen, cr, bg]
+// JEEADV compressed: [rnd, colId, brId, catId, genId, cr, bgId]
 function buildJeeAdv(user, isPaid) {
   if (!user.jarank) return null;
+  const db = DB.jeeadv;
+  const C=db.c, B=db.b;
   const limit = isPaid ? 50 : 5;
   const dreamMin = Math.floor(user.jarank * 0.9);
+  const catId = getCatId(user.category);
+  const bgId  = user.branch==='ALL' ? -1 : getBgId(user.branch);
+  const round = user.round==='ALL' ? -1 : Number(user.round);
   const dream=[], safe=[];
-  for (const r of DB.jeeadv) {
-    if (!matchRound(user.round, r[0])) continue;
-    if (!matchCat(user.category, r[3])) continue;
-    if (!matchGender(user.gender, r[4])) continue;
-    if (!matchBranch(user.branch, r[6])) continue;
+  for (const r of db.d) {
+    if (round!==-1 && r[0]!==round) continue;
+    if (r[3]!==catId) continue;
+    if (!genMatch(user.gender, r[4])) continue;
+    if (bgId!==-1 && r[6]!==bgId) continue;
     const cr=r[5];
-    if (cr>=dreamMin && cr<user.jarank) dream.push([r[0],r[1],r[2],'',cr,cr-user.jarank]);
-    else if (cr>=user.jarank) safe.push([r[0],r[1],r[2],'',cr,cr-user.jarank]);
+    if (cr>=dreamMin && cr<user.jarank) dream.push([r[0],C[r[1]],B[r[2]],'',cr,cr-user.jarank]);
+    else if (cr>=user.jarank) safe.push([r[0],C[r[1]],B[r[2]],'',cr,cr-user.jarank]);
   }
   dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
   return { dream:dream.slice(0,limit), safe:safe.slice(0,limit) };
 }
 
-// JEEMAINHS cols: [rnd, col, br, cat, gen, st, cr, bg]
+// JEEMAINHS compressed: [rnd, colId, brId, catId, genId, stId, cr, bgId]
 function buildJeeMainHS(user, isPaid) {
   if (!user.state || user.state==='ALL') return null;
+  const db = DB.jeemainhs;
+  const C=db.c, B=db.b, S=db.s;
   const limit = isPaid ? 50 : 5;
+  const catId = getCatId(user.category);
+  const bgId  = user.branch==='ALL' ? -1 : getBgId(user.branch);
+  const round = user.round==='ALL' ? -1 : Number(user.round);
+  const stId  = S.findIndex(s=>norm(s)===norm(user.state));
+  if (stId===-1) return null;
   const results=[];
-  for (const r of DB.jeemainhs) {
-    if (!matchRound(user.round, r[0])) continue;
-    if (!matchCat(user.category, r[3])) continue;
-    if (!matchGender(user.gender, r[4])) continue;
-    if (!matchState(user.state, r[5])) continue;
-    if (!matchBranch(user.branch, r[7])) continue;
-    if (r[6] >= user.jmrank) results.push([r[1],r[2],r[6]]);
+  for (const r of db.d) {
+    if (round!==-1 && r[0]!==round) continue;
+    if (r[3]!==catId) continue;
+    if (!genMatch(user.gender, r[4])) continue;
+    if (r[5]!==stId) continue;
+    if (bgId!==-1 && r[7]!==bgId) continue;
+    if (r[6]>=user.jmrank) results.push([C[r[1]],B[r[2]],r[6]]);
   }
   results.sort((a,b)=>a[2]-b[2]);
   return results.slice(0,limit);
 }
 
-// CSAB cols: [rnd, col, br, qt, cat, gen, cr, bg]
+// CSAB compressed: [rnd, colId, brId, qt, catId, genId, cr, bgId]
 function buildCSAB(user, isPaid) {
+  const db = DB.csab;
+  const C=db.c, B=db.b;
   const limit = isPaid ? 50 : 5;
   const dreamMin = Math.floor(user.jmrank * 0.9);
+  const catId = getCatId(user.category);
+  const bgId  = user.branch==='ALL' ? -1 : getBgId(user.branch);
+  const round = user.round==='ALL' ? -1 : Number(user.round);
   const dream=[], safe=[];
-  for (const r of DB.csab) {
-    if (!matchRound(user.round, r[0])) continue;
-    if (!matchCat(user.category, r[4])) continue;
-    if (!matchGender(user.gender, r[5])) continue;
-    if (!matchBranch(user.branch, r[7])) continue;
+  const CSAB_QT=['All India','Home State','Other State','Goa Home State','J&K','Ladakh'];
+  for (const r of db.d) {
+    if (round!==-1 && r[0]!==round) continue;
+    if (r[4]!==catId) continue;
+    if (!genMatch(user.gender, r[5])) continue;
+    if (bgId!==-1 && r[7]!==bgId) continue;
     const cr=r[6];
-    if (cr>=dreamMin && cr<user.jmrank) dream.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
-    else if (cr>=user.jmrank) safe.push([r[0],r[1],r[2],r[3],cr,cr-user.jmrank]);
+    if (cr>=dreamMin && cr<user.jmrank) dream.push([r[0],C[r[1]],B[r[2]],CSAB_QT[r[3]]||'',cr,cr-user.jmrank]);
+    else if (cr>=user.jmrank) safe.push([r[0],C[r[1]],B[r[2]],CSAB_QT[r[3]]||'',cr,cr-user.jmrank]);
   }
   dream.sort((a,b)=>b[4]-a[4]); safe.sort((a,b)=>a[4]-b[4]);
   return { dream:dream.slice(0,limit), safe:safe.slice(0,limit) };
