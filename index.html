@@ -578,7 +578,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">
             <div style="font-size:12px;opacity:0.6;margin-bottom:8px;">One-time unlock · Change rank/branch anytime · 5 reports included</div>
-            <a id="payLink" href="#" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
+            <a id="payLink" href="javascript:void(0)" onclick="openPayLink(event)" target="_blank" class="btn btn-pay" style="display:inline-flex;max-width:360px;text-decoration:none;height:52px;font-size:16px;box-shadow:0 4px 20px rgba(245,158,11,0.4);">
               🔓 Unlock Full Report — ₹39
             </a>
           </div>
@@ -920,29 +920,20 @@ async function submitPredictor() {
     const ok = await loadData();
     if (!ok) throw new Error('Could not load college data. Please check your connection.');
 
-    // Check if paid from cache
-    let isPaid = false;
-    try {
-      const paidCache = localStorage.getItem('cp_paid_'+email);
-      if (paidCache === '1') isPaid = true;
-    } catch(e) {}
+    // Show free results instantly from JSON while Apps Script loads in background
+    const freeResults = runPredictor(user, false);
+    showResults(freeResults, false, currentPayLink, user);
 
-    // Show results instantly from JSON
-    const results = runPredictor(user, isPaid);
-    showResults(results, isPaid, currentPayLink, user);
-
-    // Call Apps Script in background for payment link + paid status
+    // Call Apps Script in background — checks paid status + gets payment link
     fetchPaymentInfo(email, user).then(info => {
       if (info.paymentLink) {
         currentPayLink = info.paymentLink;
         const pl = document.getElementById('payLink');
         if (pl) pl.href = info.paymentLink;
-        // Cache it
         try { localStorage.setItem('cp_pay_'+email, JSON.stringify({link:info.paymentLink})); } catch(e) {}
       }
-      if (info.isPaid && !isPaid) {
-        // User just paid — show full results
-        try { localStorage.setItem('cp_paid_'+email, '1'); } catch(e) {}
+      if (info.isPaid) {
+        // Paid — show full results (Apps Script already incremented reportsUsed)
         _isPaid = true;
         const paidResults = runPredictor(user, true);
         showResults(paidResults, true, info.paymentLink, user);
@@ -1097,8 +1088,7 @@ function renderTop10(title, picks) {
     const email = params.get('email');
     currentEmail = email;
     window.history.replaceState({}, document.title, window.location.pathname);
-    // Mark as paid in cache
-    try { localStorage.setItem('cp_paid_'+email, '1'); } catch(e) {}
+    // Don't cache paid status — always check Apps Script for report count
     // Load saved form data and auto-submit
     try {
       const saved = JSON.parse(localStorage.getItem('cp_fd_'+email)||'null');
