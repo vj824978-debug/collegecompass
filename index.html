@@ -933,7 +933,7 @@ async function submitPredictor() {
       }
     } catch(e) {}
 
-    const isPaidNow = justPaid || cachedPaid;
+    const isPaidNow = true; // Everyone gets full report free
 
     // Show results instantly — paid if cached, free otherwise
     const initialResults = runPredictor(user, isPaidNow);
