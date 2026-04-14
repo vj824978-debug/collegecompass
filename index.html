@@ -1023,7 +1023,7 @@ function showResults(results, isPaid, payLink, user) {
     : 'Top 5 per category — Get 5 Personalized College Reports in one payment — only ₹39';
 
   document.getElementById('downloadBar').style.display = isPaid ? 'block' : 'none';
-  document.getElementById('upgradeBox').style.display  = isPaid ? 'none'  : 'block';
+  document.getElementById('upgradeBox').style.display = 'none';
 
   if (!isPaid && currentPayLink) {
     const pl = document.getElementById('payLink');
@@ -1050,7 +1050,7 @@ function renderResults(results, isPaid) {
 }
 
 function blurRows(rows, colSpan, visibleCount, showUnlock) {
-  if (_isPaid || rows.length <= visibleCount) return rows.join('');
+  if (true || rows.length <= visibleCount) return rows.join('');
   const visible = rows.slice(0, visibleCount).join('');
   const blurred = rows.slice(visibleCount).join('');
   const btn = showUnlock ? `<div style="margin-top:16px;"><a href="javascript:void(0)" onclick="openPayLink(event)" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1a3460,#2255c4);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:700;padding:12px 32px;border-radius:12px;text-decoration:none;">🔓 Unlock Full Report — ₹39</a></div>` : '';
