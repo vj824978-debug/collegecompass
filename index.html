@@ -1044,7 +1044,7 @@ function renderResults(results, isPaid) {
   let html = '';
   if (results.jeeMain)   html += renderDreamSafe('🎯 JEE Main', results.jeeMain, true);
   if (results.jeeAdv)    html += renderDreamSafe('🔬 JEE Advanced', results.jeeAdv, false);
-  if (results.csab)      html += renderDreamSafe('📋 CSAB', results.csab, false);
+  if (results.csab) { html += `<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px 14px;margin-bottom:8px;font-size:12px;color:#92400e;">💡 <strong>CSAB Spot Round Tip:</strong> For more accurate results, enter your CRL (General/Common Rank) instead of category rank.</div>`; html += renderDreamSafe('📋 CSAB', results.csab, false); }
   if (results.jeemainHS) html += renderSimpleHS('🏠 JEE Main Home State', results.jeemainHS);
   if (results.top10 && results.top10.length) html += renderTop10('🏆 Top 10 Personalised Picks', results.top10);
   document.getElementById('resultsContent').innerHTML = html || '<p style="text-align:center;color:var(--muted);padding:30px;">No matching colleges found.</p>';
