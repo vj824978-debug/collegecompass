@@ -760,7 +760,7 @@ function buildJeeMain(user, isPaid) {
   const dream=[], safe=[];
   for(const r of db.d) {
     if(round!==-1&&r[0]!==round) continue;
-    if(r[3]===4 || r[3]===5) continue;
+    if(r[3]===3 || r[3]===4 || r[3]===5) continue;
     if(r[4]!==catId) continue;
     if(!genMatch(user.gender,r[5])) continue;
     if(bgId!==-1&&r[7]!==bgId) continue;
