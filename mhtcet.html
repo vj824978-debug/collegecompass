@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MHT CET College Predictor 2025 — 343 Maharashtra Colleges | CollegePIPE</title>
+<meta name="description" content="Predict your MHT CET college using your merit rank. Covers 343 engineering colleges in Maharashtra — Mumbai, Pune, Nagpur and more. All categories supported."/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0f1f3d; --navy-mid: #1a3460; --blue: #2255c4; --blue-light: #3b74e8;
+  --accent: #f59e0b; --accent-light: #fde68a;
+  --text: #0f1f3d; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --card: #ffffff;
+  --danger: #dc2626; --success: #059669;
+  --mht: #7c3aed; --mht-light: #f5f3ff; --mht-mid: #6d28d9;
+  --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{background:rgba(15,31,61,0.97);backdrop-filter:blur(12px);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:36px;height:36px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.nav-logo-text{font-family:var(--font-head);font-size:17px;font-weight:700;color:#fff;}
+.nav-links{display:flex;align-items:center;gap:8px;}
+.nav-link{color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:7px 14px;border-radius:8px;transition:all 0.2s;}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,0.08);}
+.nav-cta{background:var(--accent);color:var(--navy);font-family:var(--font-head);font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;text-decoration:none;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1e0545 0%,#3b0764 50%,#1a0438 100%);padding:100px 24px 44px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.hero-orb-1{width:350px;height:350px;background:rgba(124,58,237,0.25);top:-80px;right:5%;}
+.hero-orb-2{width:200px;height:200px;background:rgba(167,139,250,0.15);bottom:-40px;left:5%;}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.hero-breadcrumb a{color:rgba(255,255,255,0.45);font-size:13px;text-decoration:none;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,0.75);}
+.hero-breadcrumb span{color:rgba(255,255,255,0.25);font-size:12px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,58,237,0.25);border:1px solid rgba(167,139,250,0.4);color:#c4b5fd;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:14px;font-family:var(--font-head);}
+.hero-title{font-family:var(--font-head);font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:12px;}
+.hero-title span{color:#c4b5fd;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:24px;max-width:580px;line-height:1.7;}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;align-items:center;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--font-head);font-size:26px;font-weight:800;color:#fff;}
+.hero-stat-num span{color:#a78bfa;}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;}
+.hero-divider{width:1px;height:36px;background:rgba(255,255,255,0.12);}
+
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:32px 24px 60px;}
+
+/* NOTICE BOX */
+.notice-box{background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:14px 18px;margin-bottom:20px;font-size:13px;color:#92400e;display:flex;gap:10px;align-items:flex-start;}
+.notice-box .icon{font-size:16px;flex-shrink:0;}
+
+/* FORM */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:0 8px 40px rgba(124,58,237,0.06);margin-bottom:24px;}
+.form-card-title{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.form-card-sub{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+.form-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;font-family:var(--font-head);}
+.form-group select,.form-group input{border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;font-size:14px;font-family:var(--font-body);color:var(--text);background:#fff;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;}
+.form-group select:focus,.form-group input:focus{border-color:var(--mht);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
+
+/* CITY CHIPS */
+.city-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.city-chip{border:1.5px solid var(--border);background:#fff;color:var(--muted);font-size:12px;font-weight:600;font-family:var(--font-head);padding:7px 13px;border-radius:8px;cursor:pointer;transition:all 0.2s;}
+.city-chip.active{border-color:var(--mht);background:var(--mht-light);color:var(--mht);}
+
+/* INFO ROW */
+.info-row{background:var(--mht-light);border:1px solid #ddd6fe;border-radius:10px;padding:10px 14px;font-size:13px;color:#5b21b6;margin-top:12px;display:none;gap:8px;align-items:flex-start;}
+.info-row.show{display:flex;}
+
+/* SUBMIT */
+.btn-predict{background:var(--mht);color:#fff;font-family:var(--font-head);font-size:15px;font-weight:700;border:none;border-radius:12px;padding:14px 32px;cursor:pointer;width:100%;margin-top:20px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-predict:hover{background:var(--mht-mid);transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,58,237,0.3);}
+.btn-predict:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.form-error{background:#fef2f2;border:1px solid #fecaca;color:var(--danger);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:12px;display:none;}
+
+/* LOADING */
+.loading-state{display:none;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px;gap:16px;}
+.loading-state.show{display:flex;}
+.spinner{width:36px;height:36px;border:3px solid #ddd6fe;border-top-color:var(--mht);border-radius:50%;animation:spin 0.7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-text{font-family:var(--font-head);font-size:14px;color:var(--mht);font-weight:600;}
+
+/* RESULTS */
+.results-section{display:none;}
+.results-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px;}
+.results-title{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--navy);}
+.results-meta{font-size:13px;color:var(--muted);margin-top:3px;}
+.results-summary{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+.summary-pill{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;text-align:center;min-width:90px;}
+.summary-num{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--navy);}
+.summary-label{font-size:11px;color:var(--muted);margin-top:1px;}
+.btn-reset{background:transparent;border:1.5px solid var(--border);color:var(--muted);font-family:var(--font-head);font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.btn-reset:hover{border-color:var(--mht);color:var(--mht);}
+
+/* SECTION DIVIDERS */
+.section-divider{display:flex;align-items:center;gap:10px;margin:20px 0 12px;}
+.section-divider-line{flex:1;height:1px;background:var(--border);}
+.section-divider-label{display:flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;white-space:nowrap;}
+.label-dream{color:var(--danger);}
+.label-safe{color:var(--success);}
+
+/* COLLEGE CARD */
+.college-card{background:var(--card);border:1.5px solid var(--border);border-radius:14px;margin-bottom:8px;overflow:hidden;transition:border-color 0.2s,box-shadow 0.2s;}
+.college-card:hover{border-color:#c4b5fd;box-shadow:0 4px 20px rgba(124,58,237,0.08);}
+.college-card-header{display:flex;align-items:center;gap:12px;padding:14px 18px;}
+.college-num{width:34px;height:34px;border-radius:8px;background:var(--mht-light);border:1px solid #ddd6fe;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--mht);flex-shrink:0;}
+.college-info{flex:1;min-width:0;}
+.college-name{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--navy);line-height:1.3;}
+.college-meta{font-size:12px;color:var(--muted);margin-top:2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.college-closing{text-align:right;flex-shrink:0;}
+.closing-rank{font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--navy);}
+.closing-gap{font-family:var(--font-head);font-size:12px;font-weight:700;margin-top:2px;}
+.gap-safe{color:var(--success);}
+.gap-dream{color:var(--danger);}
+
+/* BRANCH+CAT ROWS */
+.college-branches{padding:0 18px 14px;display:flex;flex-direction:column;gap:4px;}
+.branch-row{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:#f8fafc;font-size:12px;}
+.branch-row:hover{background:#f0f4ff;}
+.branch-name{flex:1;font-weight:600;color:var(--navy);font-size:12px;}
+.branch-cats{display:flex;gap:4px;flex-wrap:wrap;}
+.cat-pill{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;font-family:var(--font-head);padding:2px 7px;border-radius:4px;}
+.cat-open{background:#dbeafe;color:#1d4ed8;}
+.cat-obc{background:#fef3c7;color:#92400e;}
+.cat-sc{background:#fce7f3;color:#9d174d;}
+.cat-st{background:#dcfce7;color:#166534;}
+.cat-seb{background:#ede9fe;color:#5b21b6;}
+.cat-ews{background:#ecfdf5;color:#065f46;}
+.cat-tfws{background:#fff7ed;color:#c2410c;}
+.cat-other{background:#f3f4f6;color:#374151;}
+
+/* NO RESULTS */
+.no-results{padding:48px 24px;text-align:center;color:var(--muted);}
+.no-results-icon{font-size:44px;margin-bottom:12px;}
+.no-results-text{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.no-results-sub{font-size:13px;}
+
+/* MOBILE */
+@media(max-width:640px){
+  .form-grid{grid-template-columns:1fr;}
+  .form-group.full{grid-column:1;}
+  .nav-links .nav-link:not(.nav-cta){display:none;}
+  .hero{padding:80px 16px 32px;}
+  .main{padding:20px 16px 40px;}
+  .form-card{padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🎓</div>
+    <span class="nav-logo-text">CollegePIPE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#predictor" class="nav-link">Predict</a>
+    <a href="pvt-colleges.html" class="nav-link">Private Colleges</a>
+    <a href="state-cet.html" class="nav-link">State CET</a>
+    <a href="compare.html" class="nav-link">IIT vs NIT</a>
+    <a href="index.html#counsellings" class="nav-link">Other Counsellings</a>
+    <a href="index.html#predictor" class="nav-cta">Predict Now →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#counsellings">Other Counsellings</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,0.65);">MHT CET</span>
+    </div>
+    <div class="hero-badge">🌊 MHT CET 2024-25 · CAP Round 1</div>
+    <h1 class="hero-title">MHT CET<br><span>College Predictor</span></h1>
+    <p class="hero-sub">Predict colleges across 343 Maharashtra engineering institutes using your MHT CET merit rank. All categories supported — OPEN, OBC, SC, ST, SEBC, EWS and more.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">343<span>+</span></div>
+        <div class="hero-stat-label">Colleges</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">10<span>+</span></div>
+        <div class="hero-stat-label">Categories</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">6<span>+</span></div>
+        <div class="hero-stat-label">Cities</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" style="color:#86efac;">Free</div>
+        <div class="hero-stat-label">No Signup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="main">
+
+  <div class="notice-box">
+    <span class="icon">💡</span>
+    <span>Enter your <strong>MHT CET State Merit Rank</strong> (not percentile). You can find this on your MHT CET scorecard or the official merit list. CAP Round 1 cutoff data from 2024-25.</span>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <div class="form-card-title">🎯 Enter Your Details</div>
+    <div class="form-card-sub">We'll show Dream colleges (just above your rank) and Safe colleges (within your rank) across all matching institutes.</div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">MHT CET Merit Rank</label>
+        <input type="number" id="f_rank" placeholder="e.g. 5000" min="1" max="200000"/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Category</label>
+        <select id="f_cat" onchange="updateInfo()">
+          <option value="">Select Category</option>
+          <option value="OPEN">General / Open</option>
+          <option value="OBC">OBC</option>
+          <option value="SC">SC</option>
+          <option value="ST">ST</option>
+          <option value="SEB">SEBC</option>
+          <option value="NT1">NT-1 (Nomadic Tribe 1)</option>
+          <option value="NT2">NT-2 (Nomadic Tribe 2)</option>
+          <option value="NT3">NT-3 (Nomadic Tribe 3)</option>
+          <option value="VJ">VJ/DT</option>
+          <option value="EWS">EWS</option>
+          <option value="TFWS">TFWS (Tuition Fee Waiver)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Home University Zone</label>
+        <select id="f_zone" onchange="updateInfo()">
+          <option value="">Select Your Zone</option>
+          <option value="MU">Mumbai (Mumbai, Thane, Raigad, Konkan)</option>
+          <option value="PU">Pune (Pune, Nashik, Kolhapur, Solapur, Ahmednagar)</option>
+          <option value="NG">Nagpur (Nagpur, Wardha, Chandrapur)</option>
+          <option value="AU">Aurangabad (Aurangabad, Latur, Nanded)</option>
+          <option value="AM">Amravati (Amravati, Akola, Yavatmal)</option>
+          <option value="JL">Jalgaon (Jalgaon, Dhule, Nandurbar)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Branch Preference</label>
+        <select id="f_branch">
+          <option value="ALL">All Branches</option>
+          <optgroup label="Computer Science">
+            <option value="CS">Computer Engineering / CSE</option>
+            <option value="CSAI">AI / Data Science / ML</option>
+            <option value="IT">Information Technology</option>
+          </optgroup>
+          <optgroup label="Electronics">
+            <option value="ECE">Electronics & Telecom / ECE</option>
+            <option value="EE">Electrical Engineering</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="MECH">Mechanical Engineering</option>
+            <option value="CIVIL">Civil Engineering</option>
+            <option value="CHEM">Chemical Engineering</option>
+            <option value="AERO">Aeronautical / Aerospace</option>
+            <option value="BIO">Bio Technology / Bio Medical</option>
+            <option value="ROBO">Robotics & Automation</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">City / Region Preference</label>
+        <div class="city-chips" id="cityChips">
+          <button class="city-chip active" data-city="ALL" onclick="setCity(this)">🗺️ All Maharashtra</button>
+          <button class="city-chip" data-city="Mumbai" onclick="setCity(this)">🌆 Mumbai</button>
+          <button class="city-chip" data-city="Pune" onclick="setCity(this)">🏛️ Pune</button>
+          <button class="city-chip" data-city="Nagpur" onclick="setCity(this)">🟠 Nagpur</button>
+          <button class="city-chip" data-city="Nashik" onclick="setCity(this)">🍇 Nashik</button>
+          <button class="city-chip" data-city="Kolhapur" onclick="setCity(this)">⚔️ Kolhapur</button>
+          <button class="city-chip" data-city="Aurangabad" onclick="setCity(this)">🏰 Aurangabad</button>
+          <button class="city-chip" data-city="Amravati" onclick="setCity(this)">🌿 Amravati</button>
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">Gender (for Ladies seats)</label>
+        <select id="f_gender">
+          <option value="M">Male</option>
+          <option value="F">Female (includes Ladies-only seats)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="info-row" id="infoRow">
+      <span>ℹ️</span>
+      <span id="infoText"></span>
+    </div>
+
+    <div class="form-error" id="formError"></div>
+    <button class="btn-predict" id="predictBtn" onclick="runPredictor()">🔮 Predict My MHT CET Colleges</button>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading-state" id="loadingState">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading college data…</div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-section" id="resultsSection">
+    <div class="results-header">
+      <div>
+        <div class="results-title">Your MHT CET Results</div>
+        <div class="results-meta" id="resultsMeta"></div>
+      </div>
+      <button class="btn-reset" onclick="resetForm()">← Change Inputs</button>
+    </div>
+    <div class="results-summary" id="resultsSummary"></div>
+    <div id="resultsContainer"></div>
+  </div>
+</div>
+
+<script>
+const DATA_URL = 'https://collegepipe.in/data/mhtcet.json';
+let DB = null;
+let dataPromise = null;
+
+function loadData() {
+  if (dataPromise) return dataPromise;
+  dataPromise = fetch(DATA_URL)
+    .then(r => { if (!r.ok) throw new Error('Failed'); return r.json(); })
+    .then(d => { DB = d; return true; })
+    .catch(() => { dataPromise = null; return false; });
+  return dataPromise;
+}
+window.addEventListener('DOMContentLoaded', loadData);
+
+// Category code builder
+// Format: G + [OPEN/OBC/SC/ST/SEB/NT1/NT2/NT3/VJ] + [H/O/S]
+// EWS and TFWS have no H/O/S suffix
+function getCatKeys(cat, zone, collegeZone, gender) {
+  if (cat === 'EWS')  return ['EWS'];
+  if (cat === 'TFWS') return ['TFWS'];
+
+  const catCode = cat; // OPEN, OBC, SC, ST, SEB, NT1, NT2, NT3, VJ
+
+  // Determine Home/Other/State suffix
+  // H = college in same zone as student
+  // O = college in different zone
+  // S = state level (all Maharashtra)
+  const suffix = (collegeZone === zone) ? 'H' : 'O';
+
+  const keys = [];
+  if (gender === 'F') {
+    keys.push('L' + catCode + suffix); // Ladies quota first
+    keys.push('L' + catCode + 'S');    // Ladies state
+  }
+  keys.push('G' + catCode + suffix);   // General home/other
+  keys.push('G' + catCode + 'S');      // State level fallback
+  return keys;
+}
+
+function getCatLabel(key) {
+  const labels = {
+    'GOPENH':'Open(H)','GOPENO':'Open(O)','GOPENS':'Open(S)',
+    'GOBCH':'OBC(H)','GOBCO':'OBC(O)','GOBCS':'OBC(S)',
+    'GSCH':'SC(H)','GSCO':'SC(O)','GSCS':'SC(S)',
+    'GSTH':'ST(H)','GSTO':'ST(O)','GSTS':'ST(S)',
+    'GSEBCH':'SEBC(H)','GSEBCO':'SEBC(O)','GSEBCS':'SEBC(S)',
+    'GNT1H':'NT1(H)','GNT1O':'NT1(O)','GNT1S':'NT1(S)',
+    'GNT2H':'NT2(H)','GNT2O':'NT2(O)','GNT2S':'NT2(S)',
+    'GNT3H':'NT3(H)','GNT3O':'NT3(O)','GNT3S':'NT3(S)',
+    'GVJH':'VJ(H)','GVJO':'VJ(O)','GVJS':'VJ(S)',
+    'LOPENH':'LOpen(H)','LOPENO':'LOpen(O)','LOPENS':'LOpen(S)',
+    'EWS':'EWS','TFWS':'TFWS',
+  };
+  return labels[key] || key;
+}
+
+function getCatClass(key) {
+  if (key.includes('OPEN') || key.includes('LOPEN')) return 'cat-open';
+  if (key.includes('OBC')) return 'cat-obc';
+  if (key.includes('SC')) return 'cat-sc';
+  if (key.includes('ST') || key.includes('VJ') || key.includes('NT')) return 'cat-st';
+  if (key.includes('SEB')) return 'cat-seb';
+  if (key === 'EWS') return 'cat-ews';
+  if (key === 'TFWS') return 'cat-tfws';
+  return 'cat-other';
+}
+
+let selectedCity = 'ALL';
+function setCity(btn) {
+  document.querySelectorAll('.city-chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedCity = btn.dataset.city;
+}
+
+function updateInfo() {
+  const cat  = document.getElementById('f_cat').value;
+  const zone = document.getElementById('f_zone').value;
+  const row  = document.getElementById('infoRow');
+  const txt  = document.getElementById('infoText');
+  let msg = '';
+  if (zone) {
+    const zoneNames = {'MU':'Mumbai','PU':'Pune','NG':'Nagpur','AU':'Aurangabad','AM':'Amravati','JL':'Jalgaon'};
+    msg = `Home zone: ${zoneNames[zone]}. Colleges in this zone will show Home (H) quota — which generally has easier cutoffs. Other zone colleges show Other (O) quota.`;
+  }
+  if (cat === 'TFWS') msg = '💡 TFWS (Tuition Fee Waiver Scheme) is for candidates with family income below ₹8 lakh. Seats are limited and cutoffs can be lower than Open category.';
+  if (cat === 'EWS') msg = '💡 EWS is for General category candidates with family income below ₹8 lakh and no existing reservations. EWS has no H/O/S split — single state-level cutoff.';
+  row.className = 'info-row' + (msg ? ' show' : '');
+  txt.textContent = msg;
+}
+
+function showErr(msg) {
+  const el = document.getElementById('formError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+async function runPredictor() {
+  document.getElementById('formError').style.display = 'none';
+  const rank   = parseInt(document.getElementById('f_rank').value);
+  const cat    = document.getElementById('f_cat').value;
+  const zone   = document.getElementById('f_zone').value;
+  const branch = document.getElementById('f_branch').value;
+  const gender = document.getElementById('f_gender').value;
+
+  if (!rank || rank < 1)  return showErr('Please enter a valid MHT CET merit rank.');
+  if (!cat)               return showErr('Please select your category.');
+  if (!zone)              return showErr('Please select your Home University zone.');
+
+  // Show loading
+  document.getElementById('formCard').style.display = 'none';
+  document.getElementById('loadingState').classList.add('show');
+
+  const ok = await loadData();
+  document.getElementById('loadingState').classList.remove('show');
+
+  if (!ok || !DB) {
+    document.getElementById('formCard').style.display = 'block';
+    return showErr('Could not load data. Please check your connection and try again.');
+  }
+
+  const dreamMin = Math.floor(rank * 0.85);
+  const dreamColleges = [];
+  const safeColleges  = [];
+
+  // Group results by college name
+  const byCollege = {};
+
+  for (const rec of DB.records) {
+    // City filter
+    if (selectedCity !== 'ALL' && rec.city !== selectedCity) continue;
+    // Branch filter
+    if (branch !== 'ALL' && rec.bg !== branch) continue;
+
+    // Get relevant category keys for this record
+    const keys = getCatKeys(cat, zone, rec.zone, gender);
+    let bestRank = null;
+    let bestKey  = null;
+
+    for (const k of keys) {
+      if (rec.r[k] && (bestRank === null || rec.r[k] < bestRank)) {
+        bestRank = rec.r[k];
+        bestKey  = k;
+      }
+    }
+    if (!bestRank) continue;
+
+    const colKey = rec.cn + '|||' + rec.city;
+    if (!byCollege[colKey]) {
+      byCollege[colKey] = { cn: rec.cn, city: rec.city, zone: rec.zone, branches: [], bestRank: null };
+    }
+    byCollege[colKey].branches.push({ bn: rec.bn, bg: rec.bg, rank: bestRank, key: bestKey });
+    if (!byCollege[colKey].bestRank || bestRank < byCollege[colKey].bestRank) {
+      byCollege[colKey].bestRank = bestRank;
+    }
+  }
+
+  // Classify colleges
+  for (const entry of Object.values(byCollege)) {
+    const gap = entry.bestRank - rank;
+    entry.gap = gap;
+    entry.branches.sort((a,b) => a.rank - b.rank);
+    if (entry.bestRank >= dreamMin && entry.bestRank < rank) dreamColleges.push(entry);
+    else if (entry.bestRank >= rank) safeColleges.push(entry);
+  }
+
+  dreamColleges.sort((a,b) => b.bestRank - a.bestRank);
+  safeColleges.sort((a,b)  => a.bestRank - b.bestRank);
+
+  const total = dreamColleges.length + safeColleges.length;
+  if (total === 0) {
+    document.getElementById('formCard').style.display = 'block';
+    return showErr('No colleges found. Try All Maharashtra or All Branches.');
+  }
+
+  // Render
+  const sec = document.getElementById('resultsSection');
+  sec.style.display = 'block';
+
+  const catNames = {'OPEN':'Open','OBC':'OBC','SC':'SC','ST':'ST','SEB':'SEBC',
+    'NT1':'NT-1','NT2':'NT-2','NT3':'NT-3','VJ':'VJ/DT','EWS':'EWS','TFWS':'TFWS'};
+  const zoneNames = {'MU':'Mumbai Zone','PU':'Pune Zone','NG':'Nagpur Zone','AU':'Aurangabad Zone','AM':'Amravati Zone','JL':'Jalgaon Zone'};
+  document.getElementById('resultsMeta').textContent =
+    `Rank ${rank.toLocaleString()} · ${catNames[cat]} · ${zoneNames[zone]} · ${selectedCity === 'ALL' ? 'All Maharashtra' : selectedCity} · CAP Round 1`;
+
+  document.getElementById('resultsSummary').innerHTML = `
+    <div class="summary-pill"><div class="summary-num" style="color:var(--danger);">${dreamColleges.length}</div><div class="summary-label">🎯 Dream</div></div>
+    <div class="summary-pill"><div class="summary-num" style="color:var(--success);">${safeColleges.length}</div><div class="summary-label">✅ Safe</div></div>
+    <div class="summary-pill"><div class="summary-num">${total}</div><div class="summary-label">Total</div></div>`;
+
+  const container = document.getElementById('resultsContainer');
+  container.innerHTML = '';
+
+  if (dreamColleges.length) {
+    container.innerHTML += `<div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-label label-dream">🎯 Dream Colleges <span style="font-weight:400;opacity:0.6;font-size:11px;">(just above your rank)</span></div><div class="section-divider-line"></div></div>`;
+    dreamColleges.forEach((col, i) => container.appendChild(buildCard(col, i+1, 'dream')));
+  }
+  if (safeColleges.length) {
+    container.innerHTML += `<div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-label label-safe">✅ Safe Colleges <span style="font-weight:400;opacity:0.6;font-size:11px;">(within your rank)</span></div><div class="section-divider-line"></div></div>`;
+    safeColleges.forEach((col, i) => container.appendChild(buildCard(col, i+1, 'safe')));
+  }
+
+  sec.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function buildCard(col, idx, type) {
+  const card = document.createElement('div');
+  card.className = 'college-card';
+  const gapClass = type === 'dream' ? 'gap-dream' : 'gap-safe';
+  const gapText  = type === 'dream' ? `${col.gap} to cutoff` : `+${col.gap} buffer`;
+
+  const branchRows = col.branches.slice(0, 6).map(b => {
+    const catClass = getCatClass(b.key);
+    const catLabel = getCatLabel(b.key);
+    return `<div class="branch-row">
+      <span class="branch-name">${b.bn}</span>
+      <span class="cat-pill ${catClass}">${catLabel}</span>
+      <span style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--navy);margin-left:4px;">${b.rank.toLocaleString()}</span>
+    </div>`;
+  }).join('');
+
+  const moreBranches = col.branches.length > 6
+    ? `<div style="font-size:11px;color:var(--muted);padding:4px 10px;">+${col.branches.length - 6} more branches</div>` : '';
+
+  card.innerHTML = `
+    <div class="college-card-header">
+      <div class="college-num">#${idx}</div>
+      <div class="college-info">
+        <div class="college-name">${col.cn}</div>
+        <div class="college-meta">📍 ${col.city}</div>
+      </div>
+      <div class="college-closing">
+        <div class="closing-rank">${col.bestRank.toLocaleString()}</div>
+        <div class="closing-gap ${gapClass}">${gapText}</div>
+      </div>
+    </div>
+    <div class="college-branches">${branchRows}${moreBranches}</div>`;
+  return card;
+}
+
+function resetForm() {
+  document.getElementById('resultsSection').style.display = 'none';
+  document.getElementById('formCard').style.display = 'block';
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>

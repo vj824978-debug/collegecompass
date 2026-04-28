@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>JAC Delhi College Predictor 2025 — DTU, NSUT, IGDTUW, IIIT Delhi | CollegePIPE</title>
+<meta name="description" content="Predict your JAC Delhi college based on JEE Main rank. Get cutoffs for DTU, NSUT, IGDTUW and IIIT Delhi for all categories — Delhi and Outside Delhi."/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0f1f3d; --navy-mid: #1a3460; --blue: #2255c4; --blue-light: #3b74e8;
+  --accent: #f59e0b; --accent-light: #fde68a; --teal: #0d9488; --green: #059669;
+  --text: #0f1f3d; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --card: #ffffff;
+  --danger: #dc2626; --success: #059669; --success-light: #d1fae5;
+  --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif; --radius: 16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{background:rgba(15,31,61,0.97);backdrop-filter:blur(12px);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:36px;height:36px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.nav-logo-text{font-family:var(--font-head);font-size:17px;font-weight:700;color:#fff;}
+.nav-links{display:flex;align-items:center;gap:8px;}
+.nav-link{color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:7px 14px;border-radius:8px;transition:all 0.2s;}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,0.08);}
+.nav-cta{background:var(--accent);color:var(--navy);font-family:var(--font-head);font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;text-decoration:none;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0f1f3d 0%,#1a3460 50%,#0f2d5a 100%);padding:100px 24px 40px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.hero-breadcrumb a{color:rgba(255,255,255,0.5);font-size:13px;text-decoration:none;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,0.8);}
+.hero-breadcrumb span{color:rgba(255,255,255,0.3);font-size:12px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:var(--accent-light);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:14px;font-family:var(--font-head);}
+.hero-title{font-family:var(--font-head);font-size:clamp(26px,4vw,40px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:12px;}
+.hero-title span{color:var(--accent);}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:24px;max-width:600px;line-height:1.7;}
+.college-chips{display:flex;gap:8px;flex-wrap:wrap;}
+.college-chip{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);font-size:12px;font-weight:600;font-family:var(--font-head);padding:6px 14px;border-radius:20px;}
+.college-chip.govt{border-color:rgba(110,231,183,0.3);color:#6ee7b7;}
+
+/* MAIN LAYOUT */
+.main{max-width:860px;margin:0 auto;padding:32px 24px 60px;}
+
+/* FORM CARD */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:0 8px 40px rgba(34,85,196,0.08);margin-bottom:24px;}
+.form-card-title{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.form-card-sub{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+.form-group label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;font-family:var(--font-head);}
+.form-group select,.form-group input{border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;font-size:14px;font-family:var(--font-body);color:var(--text);background:#fff;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;}
+.form-group select:focus,.form-group input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(34,85,196,0.08);}
+
+/* QUOTA TOGGLE */
+.quota-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.quota-btn{border:1.5px solid var(--border);background:#fff;color:var(--muted);font-size:12px;font-weight:600;font-family:var(--font-head);padding:7px 14px;border-radius:8px;cursor:pointer;transition:all 0.2s;}
+.quota-btn.active{border-color:var(--blue);background:#f0f4ff;color:var(--blue);}
+
+/* INFO BOXES */
+.info-box{background:#f0f7ff;border:1px solid #bfdbfe;border-radius:10px;padding:12px 16px;font-size:13px;color:#1e40af;margin-top:16px;display:flex;gap:8px;align-items:flex-start;}
+.info-box .icon{font-size:15px;flex-shrink:0;margin-top:1px;}
+
+/* SUBMIT BTN */
+.btn-predict{background:var(--blue);color:#fff;font-family:var(--font-head);font-size:15px;font-weight:700;border:none;border-radius:12px;padding:14px 32px;cursor:pointer;width:100%;margin-top:20px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-predict:hover{background:var(--blue-light);transform:translateY(-1px);box-shadow:0 8px 24px rgba(34,85,196,0.25);}
+.btn-predict:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.form-error{background:#fef2f2;border:1px solid #fecaca;color:var(--danger);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:12px;display:none;}
+
+/* RESULTS */
+.results-section{display:none;}
+.results-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+.results-title{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--navy);}
+.results-meta{font-size:13px;color:var(--muted);}
+.btn-reset{background:transparent;border:1.5px solid var(--border);color:var(--muted);font-family:var(--font-head);font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;cursor:pointer;transition:all 0.2s;}
+.btn-reset:hover{border-color:var(--blue);color:var(--blue);}
+
+/* COLLEGE SECTIONS */
+.college-section{margin-bottom:28px;}
+.college-header{display:flex;align-items:center;gap:10px;padding:14px 20px;background:var(--navy);border-radius:14px 14px 0 0;cursor:pointer;user-select:none;}
+.college-header-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;font-family:var(--font-head);flex-shrink:0;}
+.college-header-info{flex:1;}
+.college-header-name{font-family:var(--font-head);font-size:15px;font-weight:700;color:#fff;}
+.college-header-sub{font-size:12px;color:rgba(255,255,255,0.55);}
+.college-header-count{background:rgba(255,255,255,0.12);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;}
+.college-header-arrow{color:rgba(255,255,255,0.5);font-size:14px;transition:transform 0.2s;}
+.college-section.collapsed .college-header-arrow{transform:rotate(-90deg);}
+.college-body{background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 14px 14px;overflow:hidden;}
+.college-section.collapsed .college-body{display:none;}
+
+/* BRANCH TABLE */
+.branch-table{width:100%;border-collapse:collapse;}
+.branch-table th{background:#f8fafc;font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;padding:10px 16px;text-align:left;border-bottom:1px solid var(--border);}
+.branch-table th:last-child,.branch-table td:last-child{text-align:center;}
+.branch-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid #f1f5f9;vertical-align:middle;}
+.branch-table tr:last-child td{border-bottom:none;}
+.branch-table tr:hover td{background:#f8fafc;}
+.branch-name{font-weight:600;color:var(--navy);font-size:13px;}
+.branch-tag{display:inline-block;font-size:10px;font-weight:600;font-family:var(--font-head);padding:2px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;}
+.tag-cse{background:#dbeafe;color:#1d4ed8;}
+.tag-ece{background:#d1fae5;color:#065f46;}
+.tag-mech{background:#fef3c7;color:#92400e;}
+.tag-civil{background:#fce7f3;color:#9d174d;}
+.tag-other{background:#f3f4f6;color:#374151;}
+.rank-cell{font-family:var(--font-head);font-weight:700;font-size:14px;color:var(--navy);}
+.gap-cell{font-family:var(--font-head);font-weight:700;font-size:13px;text-align:center;}
+.gap-pos{color:var(--success);}
+.gap-neg{color:var(--danger);}
+.scheme-badge{display:inline-block;font-size:10px;font-weight:700;font-family:var(--font-head);padding:2px 8px;border-radius:4px;background:#ede9fe;color:#6d28d9;margin-left:6px;}
+
+/* SECTION LABELS */
+.section-label-row{padding:10px 16px;background:linear-gradient(90deg,#f0f4ff,#f8fafc);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+.section-label-row .label{font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;}
+.label-dream{color:var(--danger);}
+.label-safe{color:var(--success);}
+.label-icon{font-size:13px;}
+
+/* NO RESULTS */
+.no-results{padding:32px;text-align:center;color:var(--muted);}
+.no-results-icon{font-size:40px;margin-bottom:8px;}
+.no-results-text{font-size:14px;}
+
+/* LOADING */
+.loading{display:flex;align-items:center;justify-content:center;gap:12px;padding:40px;color:var(--muted);}
+.spinner{width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 0.6s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* IGDTUW NOTICE */
+.women-notice{background:linear-gradient(135deg,#fdf2f8,#fce7f3);border:1px solid #f9a8d4;border-radius:10px;padding:10px 14px;font-size:12px;color:#9d174d;margin:0 16px 12px;display:flex;gap:6px;align-items:center;}
+
+/* IIIT BONUS NOTICE */
+.bonus-notice{background:linear-gradient(135deg,#ede9fe,#f5f3ff);border:1px solid #c4b5fd;border-radius:10px;padding:10px 14px;font-size:12px;color:#5b21b6;margin:0 16px 12px;display:flex;gap:6px;align-items:center;}
+
+/* MOBILE */
+@media(max-width:640px){
+  .form-grid{grid-template-columns:1fr;}
+  .form-group.full{grid-column:1;}
+  .branch-table th:nth-child(3),.branch-table td:nth-child(3){display:none;}
+  .nav-links .nav-link:not(.nav-cta){display:none;}
+  .hero{padding:32px 16px 28px;}
+  .main{padding:20px 16px 40px;}
+  .form-card{padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🎓</div>
+    <span class="nav-logo-text">CollegePIPE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#predictor" class="nav-link">Predict</a>
+    <a href="pvt-colleges.html" class="nav-link">Private Colleges</a>
+    <a href="state-cet.html" class="nav-link">State CET</a>
+    <a href="compare.html" class="nav-link">IIT vs NIT</a>
+    <a href="index.html#counsellings" class="nav-link">Other Counsellings</a>
+    <a href="index.html#predictor" class="nav-cta">Predict Now →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#counsellings">Other Counsellings</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,0.7);">JAC Delhi</span>
+    </div>
+    <div class="hero-badge">🏙️ JAC Delhi — Round 5 · 2025</div>
+    <h1 class="hero-title">JAC Delhi<br><span>College Predictor</span></h1>
+    <p class="hero-sub">Find your best-fit college across DTU, NSUT, IGDTUW and IIIT Delhi using your JEE Main rank. Covers all categories, Delhi & Outside Delhi both.</p>
+    <div class="college-chips">
+      <span class="college-chip govt">🔵 DTU</span>
+      <span class="college-chip govt">🟢 NSUT</span>
+      <span class="college-chip govt">🟣 IIIT Delhi</span>
+      <span class="college-chip govt">🔴 IGDTUW</span>
+      <span class="college-chip" style="color:rgba(255,255,255,0.5);">Round 5 Data</span>
+      <span class="college-chip" style="color:rgba(255,255,255,0.5);">Free · No Signup</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <div class="form-card-title">🎯 Enter Your Details</div>
+    <div class="form-card-sub">We'll match your rank against Round 5 closing ranks for all branches.</div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>JEE Main Rank (CRL)</label>
+        <input type="number" id="f_rank" placeholder="e.g. 45000" min="1" max="1200000"/>
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select id="f_cat">
+          <option value="">Select Category</option>
+          <option value="GN">General (Open)</option>
+          <option value="EW">EWS</option>
+          <option value="OB">OBC-NCL</option>
+          <option value="SC">SC</option>
+          <option value="ST">ST</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Region</label>
+        <select id="f_region">
+          <option value="">Select Region</option>
+          <option value="Delhi">Delhi (Home State)</option>
+          <option value="Outside Delhi">Outside Delhi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="f_gender">
+          <option value="">Select Gender</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred College</label>
+        <select id="f_college">
+          <option value="ALL">All Colleges</option>
+          <option value="DTU">DTU — Delhi Tech University</option>
+          <option value="NSUT">NSUT — Netaji Subhas Univ of Tech</option>
+          <option value="IIIT Delhi">IIIT Delhi</option>
+          <option value="IGDTUW">IGDTUW (Women only)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Branch Preference</label>
+        <select id="f_branch">
+          <option value="ALL">All Branches</option>
+          <optgroup label="Computer Science">
+            <option value="CSE">Computer Science & Engineering</option>
+            <option value="AI/ML">AI / Machine Learning</option>
+            <option value="IT">Information Technology</option>
+            <option value="Math">Mathematics & Computing</option>
+          </optgroup>
+          <optgroup label="Electronics">
+            <option value="ECE">Electronics & Communication</option>
+            <option value="VLSI">VLSI / Electronics Engg</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="EE">Electrical Engineering</option>
+            <option value="Mech">Mechanical Engineering</option>
+            <option value="Civil">Civil Engineering</option>
+            <option value="Chem">Chemical Engineering</option>
+            <option value="Other">Other Branches</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label>Special Quota (optional — leave None if not applicable)</label>
+        <div class="quota-row" id="quotaRow">
+          <button class="quota-btn active" data-quota="NONE" onclick="setQuota(this)">None</button>
+          <button class="quota-btn" data-quota="CW" onclick="setQuota(this)">⚔️ CW (Defence)</button>
+          <button class="quota-btn" data-quota="PD" onclick="setQuota(this)">♿ PwD</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box" id="infoBox" style="display:none;">
+      <span class="icon">ℹ️</span>
+      <span id="infoText"></span>
+    </div>
+
+    <div class="form-error" id="formError"></div>
+    <button class="btn-predict" id="predictBtn" onclick="runPredictor()">🎯 Predict My JAC Colleges</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-section" id="resultsSection">
+    <div class="results-header">
+      <div>
+        <div class="results-title">Your JAC Delhi Results</div>
+        <div class="results-meta" id="resultsMeta"></div>
+      </div>
+      <button class="btn-reset" onclick="resetForm()">← Change Inputs</button>
+    </div>
+    <div id="resultsContainer"></div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+// ─── DATA ───────────────────────────────────────────────────────
+// Inline data — no fetch needed
+const JAC_DATA = {"records":[{"c":"DTU","r":"Delhi","s":"Standard","b":"Bio-Technology","ranks":{"GNGND":59055,"GNGLD":80880,"GNCWD":128079,"GNPDD":916464,"GNSGD":129631,"EWGND":140244,"EWGLD":203570,"OBGND":252856,"OBGLD":418769,"OBCWD":267734,"SCGND":510076}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Chemical Engineering","ranks":{"GNGND":49816,"GNGLD":55917,"GNCWD":152965,"GNPDD":1279355,"GNSGD":95129,"EWGND":125062,"EWGLD":200985,"EWCWD":384417,"OBGND":221288,"OBGLD":340919,"OBCWD":350209,"SCGND":469072}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Civil Engineering","ranks":{"GNGND":56161,"GNGLD":85250,"GNCWD":152423,"GNPDD":1071740,"GNSGD":136962,"EWGND":134993,"EWGLD":199792,"EWCWD":342635,"OBGND":236405,"OBGLD":365974,"OBCWD":688703,"SCGND":475427,"SCGLD":668920,"SCCWD":1033304,"STGND":420855,"STGLD":810016}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Computer Science and Engineering","ranks":{"GNGND":11352,"GNGLD":15118,"GNCWD":205133,"GNPDD":164943,"GNSGD":17868,"EWGND":27670,"EWGLD":31247,"EWCWD":102477,"EWPDD":293227,"OBGND":49930,"OBGLD":60658,"OBCWD":86912,"OBPDD":863726,"SCGND":109484,"SCGLD":127751,"SCCWD":242191,"SCPDD":701955,"STGND":356659,"STGLD":375308,"STCWD":476260}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Computer Science and Engineering (Data Science & Analytics)","ranks":{"GNGND":12442,"GNGLD":19590,"GNCWD":88380,"GNPDD":164213,"GNSGD":22510,"EWGND":28333,"EWCWD":115837,"OBGND":54273,"OBGLD":57393,"OBCWD":95366,"OBPDD":661822,"SCGND":107590,"SCGLD":137182,"SCCWD":415350,"STGND":432099}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Electrical Engineering","ranks":{"GNGND":31589,"GNGLD":42199,"GNCWD":92984,"GNPDD":838112,"GNSGD":54655,"EWGND":79048,"EWGLD":132804,"EWCWD":240501,"OBGND":147712,"OBGLD":192885,"OBCWD":384882,"SCGND":286821,"SCGLD":453582,"STGND":1235423}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Electronics Engineering (VLSI Design and Technology)","ranks":{"GNGND":24842,"GNGLD":27868,"GNCWD":27436,"GNPDD":451368,"GNSGD":52888,"EWGND":60649,"OBGND":109834,"OBGLD":144448,"OBCWD":246689,"SCGND":222503,"SCGLD":282842,"STGND":1117103}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Electronics and Communication Engineering","ranks":{"GNGND":22278,"GNGLD":26356,"GNCWD":40931,"GNPDD":440684,"GNSGD":30102,"EWGND":55620,"EWGLD":92816,"EWCWD":177633,"OBGND":105320,"OBGLD":121035,"OBCWD":188916,"OBPDD":759285,"SCGND":209811,"SCCWD":310403,"STGND":911267,"STGLD":967902}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Engineering Physics","ranks":{"GNGND":45024,"GNGLD":56476,"GNCWD":92102,"GNSGD":114374,"EWGND":111899,"OBGND":200344,"OBGLD":236184,"OBCWD":206544,"SCGND":440143,"SCGLD":451812,"STGND":880496}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Environmental Engineering","ranks":{"GNGND":58622,"GNGLD":88486,"GNCWD":159833,"GNPDD":1007481,"GNSGD":96556,"EWGND":149774,"OBGND":245862,"OBGLD":418006,"OBCWD":474266,"SCGND":521018,"SCGLD":653980}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Information Technology","ranks":{"GNGND":14561,"GNGLD":20121,"GNCWD":362645,"GNPDD":236246,"GNSGD":24641,"EWGND":33875,"EWGLD":38505,"EWPDD":327036,"OBGND":70083,"OBGLD":86242,"OBCWD":143686,"OBPDD":968761,"SCGND":134617,"STGND":553889,"STGLD":747794}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Information Technology (Cyber Security)","ranks":{"GNGND":19027,"GNGLD":23570,"GNCWD":393724,"GNPDD":226990,"GNSGD":24313,"EWGND":36194,"EWCWD":118959,"OBGND":83250,"OBGLD":96775,"SCGND":165771,"SCGLD":208540,"SCCWD":839253,"STGND":643847}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Mathematics and Computing","ranks":{"GNGND":20458,"GNGLD":23503,"GNCWD":24086,"GNPDD":340318,"GNSGD":28383,"EWGND":49805,"EWGLD":61080,"EWCWD":147398,"EWPDD":419962,"OBGND":100268,"OBGLD":115408,"OBCWD":181575,"SCGND":200587,"SCGLD":242941,"SCCWD":410043,"STGND":960804}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Mechanical Engineering","ranks":{"GNGND":44365,"GNGLD":79234,"GNCWD":121599,"GNPDD":774676,"GNSGD":91460,"EWGND":110006,"EWGLD":174639,"EWCWD":124364,"OBGND":183462,"OBGLD":335482,"OBCWD":699925,"SCGND":378952,"SCGLD":661821,"SCCWD":1315552,"STGND":1217615}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Mechanical Engineering with specialization in Automotive Engineering","ranks":{"GNGND":45443,"GNGLD":57002,"GNCWD":116177,"GNSGD":95906,"EWGND":111566,"EWCWD":345801,"OBGND":189390,"OBGLD":322243,"OBCWD":559592,"SCGND":418258,"SCGLD":547950}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Production & Industrial Engineering","ranks":{"GNGND":51783,"GNGLD":83392,"GNCWD":158992,"GNSGD":135824,"EWGND":129464,"OBGND":238229,"OBGLD":411736,"OBCWD":891801,"SCGND":499047,"SCGLD":699975}},{"c":"DTU","r":"Delhi","s":"Standard","b":"Software Engineering","ranks":{"GNGND":18706,"GNGLD":20996,"GNCWD":1261139,"GNPDD":333904,"GNSGD":23372,"EWGND":42387,"EWGLD":42751,"EWCWD":137016,"EWPDD":345115,"OBGND":80436,"OBGLD":106011,"OBCWD":160204,"SCGND":175926,"SCGLD":197551,"SCCWD":394754,"STGND":641245,"STGLD":667981}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Bio-Technology","ranks":{"GNGNO":19876,"GNGLO":23292,"EWGNO":28900,"OBGNO":34013,"SCGNO":148018,"STGNO":251327}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Chemical Engineering","ranks":{"GNGNO":16697,"EWGNO":23651,"OBGNO":31248,"OBGLO":59488,"SCGNO":142624,"STGNO":240965}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Civil Engineering","ranks":{"GNGNO":19179,"GNPDO":506657,"EWGNO":26863,"OBGNO":33304,"OBCWO":44636,"SCGNO":140447,"STGNO":141094}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Computer Science and Engineering","ranks":{"GNGNO":6200,"GNGLO":6391,"GNCWO":768211,"GNPDO":43518,"EWGNO":8557,"EWGLO":12353,"EWPDO":152345,"OBGNO":12574,"OBGLO":21525,"OBCWO":867962,"OBPDO":134244,"SCGNO":53632,"SCGLO":67313,"SCCWO":405412,"SCPDO":1035172,"STGNO":92242,"STCWO":444900}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Computer Science and Engineering (Data Science & Analytics)","ranks":{"GNGNO":6268,"EWGNO":9479,"OBGNO":13318,"SCGNO":53670,"STGNO":80545}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Electrical Engineering","ranks":{"GNGNO":11227,"GNGLO":12644,"GNCWO":39858,"GNPDO":340487,"EWGNO":16450,"EWPDO":723998,"OBGNO":23835,"OBGLO":43567,"OBPDO":592591,"SCGNO":108911,"STGNO":212113}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Electronics Engineering (VLSI Design and Technology)","ranks":{"GNGNO":9836,"GNPDO":157474,"EWGNO":13833,"OBGNO":20339,"SCGNO":99513,"STGNO":139989}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Electronics and Communication Engineering","ranks":{"GNGNO":9569,"GNCWO":216593,"EWGNO":12327,"EWCWO":88020,"OBGNO":19779,"SCGNO":85687,"SCGLO":118125,"SCCWO":134123,"STGNO":89324,"STGLO":234478}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Engineering Physics","ranks":{"GNGNO":14482,"GNCWO":168888,"EWGNO":26469,"OBGNO":30568,"OBGLO":60488,"OBPDO":1118227,"SCGNO":133584,"STGNO":245810}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Environmental Engineering","ranks":{"GNGNO":19949,"GNGLO":29881,"EWGNO":28047,"OBGNO":34253,"OBPDO":788516,"SCGNO":150918,"STGNO":249821}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Information Technology","ranks":{"GNGNO":7360,"GNPDO":75873,"EWGNO":9928,"EWCWO":77000,"OBGNO":14868,"OBCWO":38726,"SCGNO":61749,"SCGLO":85292,"STGNO":105678}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Information Technology (Cyber Security)","ranks":{"GNGNO":7932,"GNCWO":103647,"EWGNO":11953,"OBGNO":16943,"SCGNO":76028,"STGNO":153270}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Mathematics and Computing","ranks":{"GNGNO":8348,"GNGLO":11612,"GNCWO":124111,"EWGNO":11956,"OBGNO":18561,"OBPDO":211643,"SCGNO":78739,"STGNO":111434}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Mechanical Engineering","ranks":{"GNGNO":16022,"GNGLO":22085,"GNCWO":49836,"GNPDO":414710,"EWGNO":20369,"OBGNO":27909,"OBGLO":51115,"OBCWO":375936,"SCGNO":130322,"SCCWO":274465,"STGNO":206370}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Mechanical Engineering with specialization in Automotive Engineering","ranks":{"GNGNO":14546,"GNPDO":505224,"EWGNO":20968,"OBGNO":28377,"SCGNO":129461,"STGNO":243131,"STGLO":391598}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Production & Industrial Engineering","ranks":{"GNGNO":18665,"GNGLO":28229,"EWGNO":27458,"OBGNO":34091,"SCGNO":143584,"STGNO":217336}},{"c":"DTU","r":"Outside Delhi","s":"Standard","b":"Software Engineering","ranks":{"GNGNO":8165,"GNGLO":11158,"GNPDO":127567,"EWGNO":11153,"EWPDO":213306,"OBGNO":16560,"OBCWO":76557,"SCGNO":69379,"STGNO":178527}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"AIML","ranks":{"GNGND":64133,"GNCWD":106901,"GNPDD":518972,"EWGND":135852,"EWCWD":638944,"OBGND":280051,"OBCWD":377508,"SCGND":470209,"SG":75091}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"B.Arch (Paper 2)","ranks":{"GNGND":2977,"GNCWD":5547,"GNPDD":5674,"EWGND":18377,"OBGND":18619,"SCGND":21675,"STGND":17580}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"CSE","ranks":{"GNGND":50687,"GNCWD":103166,"GNPDD":313995,"EWGND":118163,"EWCWD":297111,"OBGND":204747,"OBCWD":371303,"SCGND":399917,"STGND":969509,"SG":56996,"KM":206575}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"CSE-AI","ranks":{"GNGND":44405,"GNCWD":73137,"GNPDD":433013,"EWGND":90958,"EWCWD":305236,"OBGND":186225,"OBCWD":324939,"SCGND":413693,"STGND":1183864,"SG":47534}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"DMAM","ranks":{"GNGND":94672,"GNCWD":189095,"EWGND":245925,"OBGND":450146,"SCGND":856293,"SG":137809}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"ECE","ranks":{"GNGND":79574,"GNCWD":141971,"GNPDD":1360126,"EWGND":192517,"OBGND":346713,"OBCWD":448138,"SCGND":597563,"SG":87211}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"ECE-AI","ranks":{"GNGND":75759,"GNCWD":163090,"GNPDD":1070615,"EWGND":183883,"EWCWD":556266,"OBGND":339542,"OBCWD":423703,"SCGND":698598,"SG":80409}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"IT","ranks":{"GNGND":64223,"GNCWD":121378,"GNPDD":946450,"EWGND":151085,"OBGND":270817,"OBCWD":396019,"SCGND":516592,"SG":66195}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"MAC","ranks":{"GNGND":69001,"GNCWD":132749,"GNPDD":758044,"EWGND":163983,"OBGND":306445,"OBCWD":479854,"SCGND":617454,"SG":79298}},{"c":"IGDTUW","r":"Delhi","s":"Standard","b":"MAE","ranks":{"GNGND":92818,"GNCWD":188819,"EWGND":244309,"EWCWD":273427,"OBGND":425801,"OBCWD":491287,"SCGND":820634,"SG":116920}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"AIML","ranks":{"GNGNO":25326,"EWGNO":33019,"EWCWO":116909,"OBGNO":51611,"SCGNO":185443,"STGNO":301035}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"B.Arch (Paper 2)","ranks":{"GNGNO":1129,"GNCWO":5527,"OBGNO":3307,"STGNO":8691}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"CSE","ranks":{"GNGNO":20667,"GNCWO":162681,"GNPDO":130295,"EWGNO":29387,"OBGNO":44123,"OBPDO":877504,"SCGNO":159820,"STGNO":298847}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"CSE-AI","ranks":{"GNGNO":23158,"GNCWO":99379,"GNPDO":156220,"EWGNO":32454,"OBGNO":48607,"OBCWO":373417,"SCGNO":171651,"STGNO":240177}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"DMAM","ranks":{"GNGNO":31577,"OBGNO":57384,"SCGNO":206949}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"ECE","ranks":{"GNGNO":27449,"GNPDO":263399,"EWGNO":36953,"OBGNO":53744,"SCGNO":189771,"STGNO":237746}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"ECE-AI","ranks":{"GNGNO":27368,"GNCWO":170117,"EWGNO":38849,"OBGNO":55626,"OBPDO":696244,"SCGNO":190655,"STGNO":362325}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"IT","ranks":{"GNGNO":25486,"GNPDO":183061,"EWGNO":32978,"OBGNO":50746,"OBCWO":919670,"SCGNO":181040,"SCCWO":181214,"STGNO":339001}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"MAC","ranks":{"GNGNO":26176,"EWGNO":35532,"OBGNO":53447,"SCGNO":190705,"STGNO":356418}},{"c":"IGDTUW","r":"Outside Delhi","s":"Standard","b":"MAE","ranks":{"GNGNO":30228,"EWGNO":40700,"OBGNO":59229,"OBCWO":68346,"SCGNO":193338,"STGNO":385313}},{"c":"IIIT Delhi","r":"All","s":"With Bonus","b":"CSE","ranks":{"OBGNO":1932}},{"c":"IIIT Delhi","r":"All","s":"With Bonus","b":"ECE","ranks":{"OBGND":14157}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"CSAI","ranks":{"GNGND":782,"GNGNO":620,"GNCWD":3126,"GNPDD":3403,"GNKM":27389,"EWGND":6064,"EWGNO":1449,"EWCWD":8848,"EWPDD":28144,"OBGND":9053,"OBGNO":2444,"OBCWD":16016,"SCGND":17636,"SCGNO":8586,"STGND":28202}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"CSAM","ranks":{"GNGND":2254,"GNGNO":881,"GNCWD":12177,"GNPDD":19338,"GNKM":3726,"EWGND":6860,"EWGNO":1719,"OBGND":12210,"OBGNO":2798,"OBCWD":16331,"SCGND":21858,"SCGNO":11166}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"CSB","ranks":{"GNGND":3531,"GNGNO":1228,"GNCWD":6309,"GNPDD":24688,"GNKM":7195,"EWGND":9425,"EWGNO":2320,"OBGND":15088,"OBGNO":3455,"OBCWD":18942,"SCGND":24589,"SCGNO":11688}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"CSD","ranks":{"GNGND":2606,"GNGNO":1008,"GNCWD":28905,"GNPDD":25228,"GNKM":3691,"EWGND":7924,"EWGNO":2072,"OBGND":13326,"OBGNO":2841,"OBCWD":17828,"SCGND":20377,"SCGNO":12412,"STGND":28457}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"CSE","ranks":{"GNGND":1413,"GNGNO":629,"GNCWD":16066,"GNPDD":18645,"GNKM":3183,"EWGND":5800,"EWGNO":1649,"EWCWD":8294,"EWPDD":23761,"OBGND":10580,"OBGNO":2269,"OBCWD":12321,"SCGND":18648,"SCGNO":10516,"STGND":27686}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"CSEcon","ranks":{"GNGND":2255,"GNGNO":955,"GNCWD":2801,"GNPDD":26530,"GNKM":3828,"EWGND":7449,"OBGND":13210,"OBGNO":2495,"SCGND":22488}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"CSSS","ranks":{"GNGND":3417,"GNGNO":1225,"GNCWD":6434,"GNPDD":26567,"GNKM":7068,"EWGND":10649,"EWGNO":2367,"OBGND":15688,"OBGNO":3252,"OBCWD":20355,"SCGND":24636,"SCGNO":13506}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"ECE","ranks":{"GNGND":3811,"GNGNO":1133,"GNCWD":7213,"GNPDD":19627,"GNKM":6138,"EWGND":9614,"EWGNO":2132,"OBGND":16246,"OBGNO":3290,"OBCWD":20180,"SCGND":24637,"SCGNO":12688}},{"c":"IIIT Delhi","r":"All","s":"Without Bonus","b":"EVE","ranks":{"GNGND":4210,"GNGNO":1198,"GNCWD":8217,"GNPDD":27879,"GNKM":26615,"EWGND":10813,"EWGNO":2511,"EWCWD":22138,"OBGND":17024,"OBGNO":3630,"OBCWD":22664,"SCGND":25483,"SCGNO":13546}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"B.Arch.**","ranks":{"GNGND":2998,"GNCWD":5785,"EWGND":22788,"OBGND":15543,"SCGND":22729,"STGND":14047}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Bio-Technology","ranks":{"GNGND":60434,"GNGLD":88803,"GNCWD":175286,"GNPDD":1448255,"EWGND":151099,"EWGLD":201548,"OBGND":259953,"OBGLD":377127,"OBCWD":1063589,"SCGND":529169,"SCGLD":677932}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"CE**","ranks":{"GNGND":61299,"GNGLD":95702,"GNCWD":174482,"EWGND":158357,"EWGLD":249387,"OBGND":262325,"OBGLD":454862,"SCGND":533192,"SCGLD":770451,"STGND":609755}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"CIOT*","ranks":{"GNGND":31856,"GNGLD":52490,"GNCWD":71270,"GNPDD":354232,"EWGND":73974,"EWGLD":118353,"EWCWD":185420,"OBGND":137360,"OBGLD":281905,"SCGND":247976,"SCGLD":477611,"STGND":1220645,"STGLD":1239050}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"CSDA*","ranks":{"GNGND":28092,"GNGLD":46242,"GNCWD":57247,"GNPDD":255186,"EWGND":59210,"EWGLD":115204,"EWPDD":641169,"OBGND":120050,"OBGLD":147461,"OBCWD":211511,"SCGND":233900,"SCGLD":441677,"STGND":1171733}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Computer Science and Engineering","ranks":{"GNGND":10907,"GNGLD":18652,"GNCWD":640484,"GNPDD":155404,"EWGND":29658,"EWGLD":46550,"EWCWD":61577,"EWPDD":195752,"OBGND":48539,"OBGLD":84454,"OBCWD":87660,"OBPDD":322633,"SCGND":117715,"SCGLD":145305,"SCCWD":210630,"STGND":343647,"STGLD":569974,"STPDD":410087,"KM":476338}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Computer Science and Engineering (Artificial Intelligence)","ranks":{"GNGND":7946,"GNGLD":14127,"GNCWD":398179,"GNPDD":146747,"EWGND":18161,"EWGLD":51563,"EWPDD":298614,"OBGND":35812,"OBGLD":79382,"OBCWD":83144,"OBPDD":449212,"SCGND":107246,"SCGLD":145136,"SCCWD":229299,"SCPDD":1410918,"STGND":180658,"STGLD":335926,"STCWD":457248}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Computer Science and Engineering (Data Science)","ranks":{"GNGND":12614,"GNGLD":20125,"GNCWD":90762,"GNPDD":166041,"EWGND":31843,"EWGLD":58486,"OBGND":55225,"OBGLD":84549,"OBCWD":89301,"OBPDD":454326,"SCGND":128099,"SCGLD":148245,"STGND":385222}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"ECAM*","ranks":{"GNGND":36172,"GNGLD":69943,"GNCWD":86806,"GNPDD":537380,"EWGND":88776,"EWGLD":193549,"EWCWD":262562,"OBGND":160492,"OBGLD":329782,"OBCWD":344946,"SCGND":348748,"SCGLD":638238,"STGND":1248079}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Electrical Engineering","ranks":{"GNGND":34252,"GNGLD":57483,"GNCWD":98553,"GNPDD":742149,"EWGND":84176,"EWGLD":162850,"EWCWD":202816,"OBGND":160670,"OBGLD":301282,"OBCWD":423231,"SCGND":341340,"SCGLD":695557,"STGND":1150595}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Electronics Engineering (VLSI Design and Technology)","ranks":{"GNGND":26229,"GNGLD":38500,"GNCWD":686998,"GNPDD":511854,"EWGND":67665,"EWGLD":94776,"OBGND":128434,"OBGLD":190216,"OBCWD":246224,"SCGND":263501,"SCGLD":473670,"STGND":1258832}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Electronics and Communication Engineering","ranks":{"GNGND":25052,"GNGLD":32842,"GNCWD":47716,"GNPDD":495463,"EWGND":61377,"EWGLD":103745,"EWCWD":159072,"OBGND":115535,"OBGLD":174856,"OBCWD":237741,"SCGND":235553,"SCGLD":386469,"STGND":1100168}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"GI**","ranks":{"GNGND":62530,"GNGLD":95857,"GNCWD":164724,"EWGND":159500,"EWGLD":247319,"OBGND":266294,"OBGLD":444865,"OBCWD":281850,"SCGND":546256,"SCGLD":827708}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Information Technology","ranks":{"GNGND":16301,"GNGLD":22065,"GNCWD":445902,"GNPDD":209008,"EWGND":44570,"EWGLD":59499,"EWCWD":127854,"OBGND":72460,"OBGLD":97154,"OBCWD":139393,"SCGND":172341,"SCGLD":206831,"STGND":616283,"STGLD":680357}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Information Technology (Network and Information Security)","ranks":{"GNGND":19226,"GNGLD":24421,"GNCWD":92363,"GNPDD":191803,"EWGND":48377,"EWGLD":77017,"OBGND":86115,"OBGLD":115607,"SCGND":187812,"SCGLD":274065,"SCCWD":712098,"STGND":713674}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Instrumentation and Control Engineering","ranks":{"GNGND":39133,"GNGLD":72920,"GNCWD":110653,"GNPDD":1053928,"EWGND":103539,"EWGLD":202641,"EWCWD":254388,"OBGND":180826,"OBGLD":355443,"OBCWD":451813,"SCGND":463839,"SCGLD":701184}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"MEEV**","ranks":{"GNGND":55009,"GNGLD":90397,"GNCWD":152353,"GNPDD":1301768,"EWGND":150283,"EWGLD":235810,"OBGND":253256,"OBGLD":450893,"OBCWD":1434042,"SCGND":495675,"SCGLD":809371}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Mathematics and Computing","ranks":{"GNGND":20967,"GNGLD":25534,"GNCWD":31778,"GNPDD":353540,"EWGND":50842,"EWGLD":92043,"OBGND":98154,"OBGLD":135201,"SCGND":205362,"SCGLD":226125,"STGND":947189}},{"c":"NSUT","r":"Delhi","s":"Standard","b":"Mechanical Engineering","ranks":{"GNGND":48319,"GNGLD":86822,"GNCWD":151116,"GNPDD":1242095,"EWGND":123175,"EWGLD":210150,"EWCWD":273836,"OBGND":207591,"OBGLD":432106,"OBCWD":626103,"SCGND":474963,"SCGLD":761432,"STGND":904236}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"B.Arch.**","ranks":{"GNGNO":1107,"EWGNO":2905,"OBGNO":2387,"SCGNO":2797}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Bio-Technology","ranks":{"GNGNO":19843,"GNGLO":29417,"EWGNO":29025,"OBGNO":35321,"OBGLO":59579,"SCGNO":140153,"SCCWO":350483,"STGNO":239753}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"CE**","ranks":{"GNGNO":19710,"GNGLO":31837,"EWGNO":26493,"EWGLO":45683,"OBGNO":34275,"OBCWO":49854,"SCGNO":140563}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"CIOT*","ranks":{"GNGNO":9720,"GNGLO":15228,"EWGNO":15113,"OBGNO":21003,"OBGLO":49174,"SCGNO":78579,"STGNO":216309}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"CSDA*","ranks":{"GNGNO":9434,"GNPDO":92922,"EWGNO":11876,"OBGNO":21820,"OBGLO":44817,"SCGNO":96278,"SCGLO":147133,"STGNO":218154}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Computer Science and Engineering","ranks":{"GNGNO":6249,"GNGLO":7495,"GNCWO":782499,"GNPDO":83599,"EWGNO":9255,"EWCWO":56383,"OBGNO":15149,"OBGLO":22041,"OBPDO":175269,"SCGNO":55475,"SCGLO":56400,"STGNO":125637}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Computer Science and Engineering (Artificial Intelligence)","ranks":{"GNGNO":6050,"GNGLO":7408,"GNCWO":39666,"EWGNO":9647,"EWGLO":16975,"OBGNO":14512,"OBGLO":20185,"SCGNO":55963,"STGNO":133524}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Computer Science and Engineering (Data Science)","ranks":{"GNGNO":7037,"EWGNO":10560,"EWGLO":19699,"OBGNO":16330,"SCGNO":60975,"SCGLO":97521,"STGNO":156622}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"ECAM*","ranks":{"GNGNO":10468,"GNGLO":17121,"GNCWO":203290,"EWGNO":15296,"EWGLO":37305,"EWCWO":88647,"OBGNO":22771,"OBGLO":46105,"OBPDO":625093,"SCGNO":100287,"STGNO":228033,"STGLO":337465}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Electrical Engineering","ranks":{"GNGNO":11618,"GNGLO":19079,"GNCWO":78306,"EWGNO":17516,"OBGNO":25227,"OBGLO":33912,"OBCWO":144979,"SCGNO":110025,"STGNO":218317,"STGLO":247867}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Electronics Engineering (VLSI Design and Technology)","ranks":{"GNGNO":10438,"GNGLO":14764,"EWGNO":14473,"OBGNO":21325,"OBGLO":42156,"SCGNO":105707,"STGNO":212888}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Electronics and Communication Engineering","ranks":{"GNGNO":9819,"GNGLO":15817,"GNPDO":183097,"EWGNO":14401,"EWGLO":20804,"EWPDO":177579,"OBGNO":20462,"OBGLO":41404,"OBPDO":399184,"SCGNO":93958,"SCGLO":145778,"STGNO":209471,"STGLO":283057}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"GI**","ranks":{"GNGNO":20300,"GNGLO":30438,"OBGNO":35734,"SCGNO":148808,"STGNO":254058}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Information Technology","ranks":{"GNGNO":7651,"GNGLO":11578,"GNPDO":134260,"EWGNO":11736,"OBGNO":16836,"OBGLO":25912,"OBCWO":34677,"SCGNO":76142,"SCGLO":104350,"STGNO":140115}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Information Technology (Network and Information Security)","ranks":{"GNGNO":8583,"GNGLO":13117,"EWGNO":12655,"OBGNO":17594,"SCGNO":85191,"STGNO":183056,"STGLO":213349}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Instrumentation and Control Engineering","ranks":{"GNGNO":13847,"GNGLO":23043,"GNCWO":289085,"GNPDO":219332,"EWGNO":19321,"OBGNO":27177,"OBGLO":56664,"SCGNO":112825,"SCGLO":173934,"STGNO":244269,"STCWO":482416}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"MEEV**","ranks":{"GNGNO":17097,"GNGLO":29213,"EWGNO":24542,"OBGNO":32224,"OBGLO":60621,"SCGNO":137631,"STGNO":241881}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Mathematics and Computing","ranks":{"GNGNO":7841,"GNGLO":12382,"EWGNO":12102,"OBGNO":18719,"OBGLO":37144,"SCGNO":83360,"STGNO":162475}},{"c":"NSUT","r":"Outside Delhi","s":"Standard","b":"Mechanical Engineering","ranks":{"GNGNO":16519,"GNGLO":27680,"GNPDO":406907,"EWGNO":20721,"EWGLO":40866,"OBGNO":30636,"OBGLO":59034,"OBPDO":876697,"SCGNO":137329,"SCGLO":192039,"SCCWO":325646,"STGNO":224750}}],"branch_names":{"AIML":"AI & Machine Learning","CSAI":"CSE (Artificial Intelligence)","CSAM":"CSE (Applied Mathematics)","CSB":"CSE (Bioinformatics)","CSD":"CSE (Design)","CSE":"Computer Science & Engineering","CSEcon":"CSE (Economics)","CSSS":"CSE (Social Systems)","CSDA*":"CSE (Data Analytics)*","CIOT*":"CSE (IoT)*","ECE":"Electronics & Communication Engg","ECE-AI":"ECE (Artificial Intelligence)","ECAM*":"ECE (Advanced Microelectronics)*","EVE":"Electronics & VLSI Engineering","DMAM":"Design & Manufacturing (AM)","MAC":"Mathematics & Computing","MAE":"Mathematics & Applied Engineering","IT":"Information Technology","CE**":"Civil Engineering**","GI**":"Geo-Informatics**","MEEV**":"Mechanical Engg (EV)**","CSE-AI":"CSE (Artificial Intelligence)","B.Arch (Paper 2)":"B.Arch","B.Arch.**":"B.Arch**"},"meta":{"round":5,"year":2025,"colleges":["DTU","NSUT","IGDTUW","IIIT Delhi"]}};
+
+// Branch group mapping — maps user selection to branch name keywords
+const BRANCH_MAP = {
+  'ALL':   null,
+  'CSE':   ['computer science','cse'],
+  'AI/ML': ['artificial intelligence','ai','machine learning','aiml','csai'],
+  'IT':    ['information technology',' it ','it (','ciot'],
+  'Math':  ['mathematics','computing','mac','dmam','csam','csd','csb','csss','csecon'],
+  'ECE':   ['electronics and communication','ece','ecam','evdt','eve'],
+  'VLSI':  ['vlsi','electronics engineering (','ecam'],
+  'EE':    ['electrical'],
+  'Mech':  ['mechanical','meev'],
+  'Civil': ['civil','gi**'],
+  'Chem':  ['chemical'],
+  'Other': null  // catch-all
+};
+
+// College colors
+const COLLEGE_COLORS = {
+  'DTU':        { bg:'#1e40af', icon:'🔵', tag:'DTU' },
+  'NSUT':       { bg:'#065f46', icon:'🟢', tag:'NSUT' },
+  'IIIT Delhi': { bg:'#5b21b6', icon:'🟣', tag:'IIIT-D' },
+  'IGDTUW':     { bg:'#9d174d', icon:'🔴', tag:'IGDTUW' }
+};
+
+// Branch tags
+function getBranchTag(name) {
+  const n = name.toLowerCase();
+  if (n.includes('computer') || n.includes('cse') || n.includes('csai') || n.includes('csam') || n.includes('csb') || n.includes('csd') || n.includes('csss') || n.includes('csecon') || n.includes('information tech') || n.includes('software') || n.includes('aiml') || n.includes('ai ') || n.includes('machine')) return ['CSE/IT/AI','tag-cse'];
+  if (n.includes('electronics') || n.includes('ece') || n.includes('eve') || n.includes('vlsi') || n.includes('ecam')) return ['ECE/VLSI','tag-ece'];
+  if (n.includes('electrical')) return ['EE','tag-ece'];
+  if (n.includes('mechani')) return ['Mech','tag-mech'];
+  if (n.includes('civil') || n.includes('geo')) return ['Civil','tag-civil'];
+  if (n.includes('mathematics') || n.includes('computing') || n.includes('mac') || n.includes('math')) return ['Math','tag-cse'];
+  return ['Other','tag-other'];
+}
+
+let selectedQuota = 'NONE';
+function setQuota(btn) {
+  document.querySelectorAll('.quota-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedQuota = btn.dataset.quota;
+}
+
+// Dynamic info box
+document.getElementById('f_gender').addEventListener('change', updateInfoBox);
+document.getElementById('f_college').addEventListener('change', updateInfoBox);
+function updateInfoBox() {
+  const gender  = document.getElementById('f_gender').value;
+  const college = document.getElementById('f_college').value;
+  const box     = document.getElementById('infoBox');
+  const txt     = document.getElementById('infoText');
+  let msg = '';
+  if (gender === 'F' && (college === 'ALL' || college === 'IIIT Delhi'))
+    msg = '✨ IIIT Delhi gives 10% rank relaxation to female candidates — results will show both With Bonus and Without Bonus rows.';
+  if (gender === 'M' && (college === 'ALL' || college === 'IGDTUW'))
+    msg = '⚠️ IGDTUW is a women-only college and will be excluded from your results.';
+  if (gender === 'F' && college === 'IGDTUW')
+    msg = '🎓 IGDTUW is a women-only college — showing Delhi region results only.';
+  box.style.display = msg ? 'flex' : 'none';
+  txt.textContent = msg;
+}
+
+function showErr(msg) {
+  const el = document.getElementById('formError');
+  el.textContent = msg;
+  el.style.display = 'block';
+  el.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function matchBranch(branchName, userBranch) {
+  if (!userBranch || userBranch === 'ALL') return true;
+  const n = branchName.toLowerCase();
+  const keywords = BRANCH_MAP[userBranch];
+  if (!keywords) {
+    // 'Other' — exclude known categories
+    const allKnown = Object.values(BRANCH_MAP).filter(Boolean).flat();
+    return !allKnown.some(kw => n.includes(kw));
+  }
+  return keywords.some(kw => n.includes(kw));
+}
+
+// Build rank column key from inputs
+// Key format: [CAT][QUOTA][REGION_D/O] or [CAT][G][ND/LD]
+// Examples: GNGND, GNGNO, GNGLD, GNCWD, GNPDD, EWGNO, OBGND etc.
+function getRankKeys(cat, quota, region, gender) {
+  const reg  = region === 'Delhi' ? 'D' : 'O';
+  const keys = [];
+  if (quota === 'CW') {
+    keys.push(cat + 'CW' + reg);
+  } else if (quota === 'PD') {
+    keys.push(cat + 'PD' + reg);
+  } else {
+    // General quota — try female quota first (LD), fall back to ND
+    if (gender === 'F') {
+      keys.push(cat + 'GL' + reg); // female quota
+      keys.push(cat + 'GN' + reg); // fallback to open
+    } else {
+      keys.push(cat + 'GN' + reg); // male / open
+    }
+  }
+  return keys;
+}
+
+// IIIT Delhi has both D and O keys even though region is 'All'
+function getIIITKeys(cat, quota, gender) {
+  const keys = [];
+  if (quota === 'CW') {
+    keys.push(cat + 'CWD', cat + 'CWO');
+  } else if (quota === 'PD') {
+    keys.push(cat + 'PDD', cat + 'PDO');
+  } else {
+    keys.push(cat + 'GND', cat + 'GNO');
+  }
+  return keys;
+}
+
+function runPredictor() {
+  document.getElementById('formError').style.display = 'none';
+  const rank    = parseInt(document.getElementById('f_rank').value);
+  const cat     = document.getElementById('f_cat').value;
+  const region  = document.getElementById('f_region').value;
+  const gender  = document.getElementById('f_gender').value;
+  const college = document.getElementById('f_college').value;
+  const branch  = document.getElementById('f_branch').value;
+
+  if (!rank || rank < 1)  return showErr('Please enter a valid JEE Main rank.');
+  if (!cat)               return showErr('Please select your category.');
+  if (!region)            return showErr('Please select your region (Delhi / Outside Delhi).');
+  if (!gender)            return showErr('Please select your gender.');
+
+  const dreamMin = Math.floor(rank * 0.85);
+  const byCollege = {};
+
+  for (const rec of JAC_DATA.records) {
+    if (college !== 'ALL' && rec.c !== college) continue;
+    if (gender === 'M' && rec.c === 'IGDTUW') continue;
+    if (!matchBranch(rec.b, branch)) continue;
+
+    let closingRank = null;
+    let schemeLabel = '';
+
+    if (rec.c === 'IIIT Delhi') {
+      // Skip With Bonus for males — females will see both rows labelled
+      if (gender === 'M' && rec.s === 'With Bonus') continue;
+      const keys = getIIITKeys(cat, selectedQuota, gender);
+      for (const k of keys) {
+        if (rec.ranks[k]) { closingRank = rec.ranks[k]; break; }
+      }
+      if (rec.s === 'With Bonus') schemeLabel = '♀ Bonus';
+    } else {
+      // Region must match
+      if (rec.r !== region) continue;
+      const keys = getRankKeys(cat, selectedQuota, region, gender);
+      for (const k of keys) {
+        if (rec.ranks[k]) { closingRank = rec.ranks[k]; break; }
+      }
+    }
+
+    if (!closingRank) continue;
+
+    if (!byCollege[rec.c]) byCollege[rec.c] = [];
+    byCollege[rec.c].push({
+      branch: rec.b, closingRank,
+      scheme: schemeLabel,
+      gap: closingRank - rank
+    });
+  }
+
+  // Sort within each college — dream first (gap <= 0 and >= dreamMin), then safe (gap > 0)
+  const collegeOrder = ['DTU','NSUT','IIIT Delhi','IGDTUW'];
+  
+  let totalCount = 0;
+  Object.values(byCollege).forEach(rows => totalCount += rows.length);
+
+  if (totalCount === 0) {
+    showErr('No colleges found matching your inputs. Try relaxing filters — select All Branches or All Colleges.');
+    return;
+  }
+
+  // Render
+  document.getElementById('formCard').style.display = 'none';
+  const sec = document.getElementById('resultsSection');
+  sec.style.display = 'block';
+
+  document.getElementById('resultsMeta').textContent =
+    `Rank ${rank.toLocaleString()} · ${cat === 'GN' ? 'General' : cat === 'EW' ? 'EWS' : cat === 'OB' ? 'OBC-NCL' : cat} · ${region} · ${gender === 'M' ? 'Male' : 'Female'} · Round 5`;
+
+  const container = document.getElementById('resultsContainer');
+  container.innerHTML = '';
+
+  for (const col of collegeOrder) {
+    if (!byCollege[col]) continue;
+    const rows = byCollege[col];
+    const clr  = COLLEGE_COLORS[col];
+
+    // Split dream vs safe
+    const dream = rows.filter(r => r.closingRank >= dreamMin && r.closingRank < rank).sort((a,b) => b.closingRank - a.closingRank);
+    const safe  = rows.filter(r => r.closingRank >= rank).sort((a,b) => a.closingRank - b.closingRank);
+    const total = dream.length + safe.length;
+    if (total === 0) continue;
+
+    const colDiv = document.createElement('div');
+    colDiv.className = 'college-section';
+    
+    const fullName = {
+      'DTU': 'Delhi Technological University',
+      'NSUT': 'Netaji Subhas University of Technology',
+      'IIIT Delhi': 'Indraprastha Institute of Information Technology',
+      'IGDTUW': 'Indira Gandhi Delhi Technical University for Women'
+    }[col];
+
+    colDiv.innerHTML = `
+      <div class="college-header" onclick="toggleSection(this.parentElement)">
+        <div class="college-header-icon" style="background:${clr.bg};color:#fff;">${clr.icon}</div>
+        <div class="college-header-info">
+          <div class="college-header-name">${col}</div>
+          <div class="college-header-sub">${fullName}</div>
+        </div>
+        <span class="college-header-count">${total} branch${total>1?'es':''}</span>
+        <span class="college-header-arrow">▾</span>
+      </div>
+      <div class="college-body">
+        ${col === 'IGDTUW' ? '<div class="women-notice">👩‍💻 Women-only college · Delhi region seats only</div>' : ''}
+        ${col === 'IIIT Delhi' && gender === 'F' ? '<div class="bonus-notice">✨ IIIT Delhi gives 10% rank relaxation to female students (With Bonus scheme shown separately)</div>' : ''}
+        ${renderTable(dream, safe, rank)}
+      </div>`;
+    container.appendChild(colDiv);
+  }
+
+  sec.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderTable(dream, safe, rank) {
+  let html = `<table class="branch-table">
+    <thead><tr>
+      <th>Branch</th>
+      <th>Closing Rank</th>
+      <th>Gap</th>
+    </tr></thead><tbody>`;
+
+  if (dream.length) {
+    html += `<tr><td colspan="3" style="padding:0;">
+      <div class="section-label-row">
+        <span class="label-icon">🎯</span>
+        <span class="label label-dream">Dream Colleges</span>
+        <span style="font-size:11px;color:var(--muted);margin-left:4px;">(closing rank slightly above yours)</span>
+      </div></td></tr>`;
+    for (const r of dream) {
+      const [tagLabel, tagClass] = getBranchTag(r.branch);
+      const dispName = JAC_DATA.branch_names[r.branch] || r.branch;
+      html += `<tr>
+        <td><span class="branch-name">${dispName}</span><span class="branch-tag ${tagClass}">${tagLabel}</span>${r.scheme ? `<span class="scheme-badge">${r.scheme}</span>` : ''}</td>
+        <td class="rank-cell">${r.closingRank.toLocaleString()}</td>
+        <td class="gap-cell gap-neg">${r.gap}</td>
+      </tr>`;
+    }
+  }
+
+  if (safe.length) {
+    html += `<tr><td colspan="3" style="padding:0;">
+      <div class="section-label-row">
+        <span class="label-icon">✅</span>
+        <span class="label label-safe">Safe Colleges</span>
+        <span style="font-size:11px;color:var(--muted);margin-left:4px;">(you're within the closing rank)</span>
+      </div></td></tr>`;
+    for (const r of safe) {
+      const [tagLabel, tagClass] = getBranchTag(r.branch);
+      const dispName = JAC_DATA.branch_names[r.branch] || r.branch;
+      html += `<tr>
+        <td><span class="branch-name">${dispName}</span><span class="branch-tag ${tagClass}">${tagLabel}</span>${r.scheme ? `<span class="scheme-badge">${r.scheme}</span>` : ''}</td>
+        <td class="rank-cell">${r.closingRank.toLocaleString()}</td>
+        <td class="gap-cell gap-pos">+${r.gap}</td>
+      </tr>`;
+    }
+  }
+
+  if (!dream.length && !safe.length) {
+    html += `<tr><td colspan="3"><div class="no-results"><div class="no-results-icon">🔍</div><div class="no-results-text">No matching branches found</div></div></td></tr>`;
+  }
+
+  html += '</tbody></table>';
+  return html;
+}
+
+function toggleSection(el) {
+  el.classList.toggle('collapsed');
+}
+
+function resetForm() {
+  document.getElementById('resultsSection').style.display = 'none';
+  document.getElementById('formCard').style.display = 'block';
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>

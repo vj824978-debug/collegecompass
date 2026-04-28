@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>COMEDK College Predictor 2025 — 111 Karnataka Colleges | CollegePIPE</title>
+<meta name="description" content="Predict your COMEDK college based on your COMEDK rank. Covers 111 private engineering colleges in Karnataka — Bengaluru, Mysore, Mangaluru and more."/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0f1f3d; --navy-mid: #1a3460; --blue: #2255c4; --blue-light: #3b74e8;
+  --accent: #f59e0b; --accent-light: #fde68a;
+  --teal: #0d9488; --green: #059669; --green-light: #d1fae5;
+  --text: #0f1f3d; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --card: #ffffff;
+  --danger: #dc2626; --success: #059669;
+  --comedk: #e05c1a; --comedk-light: #fff3ee;
+  --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif; --radius: 16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{background:rgba(15,31,61,0.97);backdrop-filter:blur(12px);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-icon{width:36px;height:36px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.nav-logo-text{font-family:var(--font-head);font-size:17px;font-weight:700;color:#fff;}
+.nav-links{display:flex;align-items:center;gap:8px;}
+.nav-link{color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;text-decoration:none;padding:7px 14px;border-radius:8px;transition:all 0.2s;}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,0.08);}
+.nav-cta{background:var(--accent);color:var(--navy);font-family:var(--font-head);font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;text-decoration:none;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#1a0a00 0%,#3d1a00 50%,#1a0f00 100%);padding:100px 24px 44px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.hero-orb-1{width:300px;height:300px;background:rgba(224,92,26,0.2);top:-60px;right:10%;}
+.hero-orb-2{width:200px;height:200px;background:rgba(245,158,11,0.12);bottom:-40px;left:5%;}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
+.hero-breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.hero-breadcrumb a{color:rgba(255,255,255,0.45);font-size:13px;text-decoration:none;transition:color 0.2s;}
+.hero-breadcrumb a:hover{color:rgba(255,255,255,0.8);}
+.hero-breadcrumb span{color:rgba(255,255,255,0.25);font-size:12px;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(224,92,26,0.2);border:1px solid rgba(224,92,26,0.4);color:#fdba74;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:14px;font-family:var(--font-head);}
+.hero-title{font-family:var(--font-head);font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:12px;}
+.hero-title span{color:#fb923c;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:24px;max-width:580px;line-height:1.7;}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--font-head);font-size:26px;font-weight:800;color:#fff;}
+.hero-stat-num span{color:#fb923c;}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;}
+.hero-divider{width:1px;background:rgba(255,255,255,0.12);align-self:stretch;}
+
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:32px 24px 60px;}
+
+/* FORM CARD */
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:0 8px 40px rgba(224,92,26,0.06);margin-bottom:24px;}
+.form-card-title{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--navy);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.form-card-sub{font-size:13px;color:var(--muted);margin-bottom:24px;}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+.form-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;font-family:var(--font-head);}
+.form-group select,.form-group input{border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;font-size:14px;font-family:var(--font-body);color:var(--text);background:#fff;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;}
+.form-group select:focus,.form-group input:focus{border-color:var(--comedk);box-shadow:0 0 0 3px rgba(224,92,26,0.08);}
+
+/* RANK HINT */
+.rank-hint{margin-top:6px;font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+.rank-hint-badge{background:#fff3ee;color:var(--comedk);font-size:11px;font-weight:600;padding:2px 8px;border-radius:5px;font-family:var(--font-head);}
+
+/* CITY CHIPS */
+.city-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.city-chip{border:1.5px solid var(--border);background:#fff;color:var(--muted);font-size:12px;font-weight:600;font-family:var(--font-head);padding:7px 14px;border-radius:8px;cursor:pointer;transition:all 0.2s;}
+.city-chip.active{border-color:var(--comedk);background:#fff3ee;color:var(--comedk);}
+
+/* SUBMIT */
+.btn-predict{background:var(--comedk);color:#fff;font-family:var(--font-head);font-size:15px;font-weight:700;border:none;border-radius:12px;padding:14px 32px;cursor:pointer;width:100%;margin-top:20px;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-predict:hover{background:#c44e14;transform:translateY(-1px);box-shadow:0 8px 24px rgba(224,92,26,0.3);}
+.form-error{background:#fef2f2;border:1px solid #fecaca;color:var(--danger);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:12px;display:none;}
+
+/* RESULTS */
+.results-section{display:none;}
+.results-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+.results-title{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--navy);}
+.results-meta{font-size:13px;color:var(--muted);margin-top:3px;}
+.results-summary{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.summary-pill{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 16px;text-align:center;}
+.summary-num{font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--navy);}
+.summary-label{font-size:11px;color:var(--muted);margin-top:2px;}
+.btn-reset{background:transparent;border:1.5px solid var(--border);color:var(--muted);font-family:var(--font-head);font-size:13px;font-weight:600;padding:8px 16px;border-radius:8px;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.btn-reset:hover{border-color:var(--comedk);color:var(--comedk);}
+
+/* DREAM / SAFE SECTION HEADERS */
+.section-divider{display:flex;align-items:center;gap:10px;margin:20px 0 12px;}
+.section-divider-line{flex:1;height:1px;background:var(--border);}
+.section-divider-label{display:flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;white-space:nowrap;}
+.label-dream{color:var(--danger);}
+.label-safe{color:var(--success);}
+
+/* COLLEGE CARDS */
+.college-card{background:var(--card);border:1.5px solid var(--border);border-radius:16px;margin-bottom:10px;overflow:hidden;transition:border-color 0.2s,box-shadow 0.2s;}
+.college-card:hover{border-color:#fbd5c0;box-shadow:0 4px 20px rgba(224,92,26,0.08);}
+.college-card-header{display:flex;align-items:center;gap:12px;padding:14px 18px;}
+.college-rank-badge{width:36px;height:36px;border-radius:8px;background:#fff3ee;border:1px solid #fbd5c0;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--comedk);flex-shrink:0;}
+.college-info{flex:1;min-width:0;}
+.college-name{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--navy);line-height:1.3;}
+.college-city{font-size:12px;color:var(--muted);margin-top:2px;display:flex;align-items:center;gap:4px;}
+.college-closing{text-align:right;flex-shrink:0;}
+.closing-rank{font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--navy);}
+.closing-gap{font-family:var(--font-head);font-size:12px;font-weight:700;margin-top:2px;}
+.gap-safe{color:var(--success);}
+.gap-dream{color:var(--danger);}
+
+/* BRANCH PILLS inside card */
+.college-branches{padding:0 18px 14px;display:flex;flex-wrap:wrap;gap:6px;}
+.branch-pill{display:inline-flex;align-items:center;gap:4px;background:#f8fafc;border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--text);}
+.branch-pill .bp-rank{font-family:var(--font-head);color:var(--comedk);margin-left:3px;}
+.branch-pill-cse{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8;}
+.branch-pill-ece{background:#f0fdf4;border-color:#bbf7d0;color:#15803d;}
+.branch-pill-mech{background:#fefce8;border-color:#fef08a;color:#a16207;}
+.branch-pill-other{background:#f8fafc;border-color:var(--border);color:var(--muted);}
+
+/* NO RESULTS */
+.no-results{padding:48px 24px;text-align:center;color:var(--muted);}
+.no-results-icon{font-size:44px;margin-bottom:12px;}
+.no-results-text{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.no-results-sub{font-size:13px;}
+
+/* MOBILE */
+@media(max-width:640px){
+  .form-grid{grid-template-columns:1fr;}
+  .form-group.full{grid-column:1;}
+  .nav-links .nav-link:not(.nav-cta){display:none;}
+  .hero{padding:80px 16px 32px;}
+  .main{padding:20px 16px 40px;}
+  .form-card{padding:20px;}
+  .hero-stats{gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🎓</div>
+    <span class="nav-logo-text">CollegePIPE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#predictor" class="nav-link">Predict</a>
+    <a href="pvt-colleges.html" class="nav-link">Private Colleges</a>
+    <a href="state-cet.html" class="nav-link">State CET</a>
+    <a href="compare.html" class="nav-link">IIT vs NIT</a>
+    <a href="index.html#counsellings" class="nav-link">Other Counsellings</a>
+    <a href="index.html#predictor" class="nav-cta">Predict Now →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#counsellings">Other Counsellings</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,0.65);">COMEDK</span>
+    </div>
+    <div class="hero-badge">🎓 COMEDK UGET 2025</div>
+    <h1 class="hero-title">COMEDK<br><span>College Predictor</span></h1>
+    <p class="hero-sub">Find your best-fit college across 111 private engineering institutes in Karnataka using your COMEDK rank. No categories — pure merit.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">111<span>+</span></div>
+        <div class="hero-stat-label">Colleges</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">49<span>+</span></div>
+        <div class="hero-stat-label">Branch Types</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" style="color:#6ee7b7;">Free</div>
+        <div class="hero-stat-label">No Signup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="main">
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <div class="form-card-title">🎯 Enter Your Details</div>
+    <div class="form-card-sub">We'll show Dream colleges (just above your rank) and Safe colleges (within your rank).</div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">COMEDK Rank</label>
+        <input type="number" id="f_rank" placeholder="e.g. 15000" min="1" max="120000"/>
+        <div class="rank-hint">
+          <span class="rank-hint-badge">Top 500</span> RV, Ramaiah, BMS
+          <span class="rank-hint-badge">500–5k</span> Tier 1 Bengaluru
+          <span class="rank-hint-badge">5k–20k</span> Good colleges
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Branch Preference</label>
+        <select id="f_branch">
+          <option value="ALL">All Branches</option>
+          <optgroup label="Computer Science">
+            <option value="CSE">CSE (All variants)</option>
+            <option value="CS">CSE Core</option>
+            <option value="AI">CSE — AI / ML</option>
+            <option value="CD">CSE — Data Science</option>
+            <option value="CI">CSE — IoT</option>
+            <option value="CY">CSE — Cyber Security</option>
+          </optgroup>
+          <optgroup label="Information Science">
+            <option value="ISE">ISE (All variants)</option>
+            <option value="IS">ISE Core</option>
+            <option value="IC">ISE — Cyber Security</option>
+          </optgroup>
+          <optgroup label="Electronics">
+            <option value="ECE">ECE (All variants)</option>
+            <option value="EC">ECE Core</option>
+            <option value="EE">Electrical & Electronics</option>
+            <option value="VLSI">VLSI / ECV</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="MECH">Mechanical</option>
+            <option value="CIVIL">Civil</option>
+            <option value="AERO">Aerospace / Aero</option>
+            <option value="BIO">Bio Tech / Bio Medical</option>
+            <option value="ROBOTICS">Robotics</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label class="form-label">City Preference</label>
+        <div class="city-chips" id="cityChips">
+          <button class="city-chip active" data-city="ALL" onclick="setCity(this)">🗺️ All Karnataka</button>
+          <button class="city-chip" data-city="Bengaluru" onclick="setCity(this)">🌆 Bengaluru</button>
+          <button class="city-chip" data-city="Mysore" onclick="setCity(this)">🏛️ Mysore</button>
+          <button class="city-chip" data-city="Mangaluru" onclick="setCity(this)">🌊 Mangaluru</button>
+          <button class="city-chip" data-city="Tumkur" onclick="setCity(this)">🏙️ Tumkur</button>
+          <button class="city-chip" data-city="Hassan" onclick="setCity(this)">🌿 Hassan</button>
+          <button class="city-chip" data-city="Hubli" onclick="setCity(this)">🏭 Hubli</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-error" id="formError"></div>
+    <button class="btn-predict" onclick="runPredictor()">🎓 Predict My COMEDK Colleges</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-section" id="resultsSection">
+    <div class="results-header">
+      <div>
+        <div class="results-title">Your COMEDK Results</div>
+        <div class="results-meta" id="resultsMeta"></div>
+      </div>
+      <button class="btn-reset" onclick="resetForm()">← Change Inputs</button>
+    </div>
+    <div class="results-summary" id="resultsSummary"></div>
+    <div id="resultsContainer"></div>
+  </div>
+</div>
+
+<script>
+const COMEDK_DATA = {"records":[{"code":"E001","name":"Acharya Institute of Technology","city":"Bengaluru","b":{"AE":104061,"AI":52746,"BT":105937,"CD":53623,"CS":51728,"CV":90907,"EC":89548,"EE":104887,"IS":75143,"ME":107616,"MT":90218,"RI":70413}},{"code":"E003","name":"A.C.S. College of Engineering","city":"Bengaluru","b":{"AI":92733,"AS":90119,"CS":104746,"CY":98461}},{"code":"E004","name":"Adichunchanagiri Institute Of Technology","city":"Chikkamagaluru","b":{"AI":106484,"CD":86772,"CS":59442}},{"code":"E005","name":"Akash Institute of Engineering and Technology","city":"Bengaluru","b":{"AD":71024,"CI":91347,"CS":111733,"CY":104762}},{"code":"E006","name":"Alvas Institute of Engineering and Technology","city":"Mangaluru","b":{"AI":89891,"CD":56170,"CS":107931,"IC":75282}},{"code":"E007","name":"AMC Engineering College","city":"Bengaluru","b":{"AE":95021,"AI":109229,"CD":92944,"CI":111096,"CS":109518,"EC":62066,"EE":70900}},{"code":"E009","name":"Angadi Institute of Technology and Management","city":"Belagavi","b":{"EC":107672}},{"code":"E011","name":"APS College of Engineering","city":"Bengaluru","b":{"CI":94218,"CS":41643}},{"code":"E012","name":"Atria Institute of Technology","city":"Bengaluru","b":{"AI":92297,"CD":111230,"CS":85478,"EC":110946,"IS":109052,"RA":104693}},{"code":"E014","name":"Anuvartik Mirji Bharatesh Institute of Technology","city":"Belagavi","b":{"AI":104513}},{"code":"E015","name":"B.N.M. Institute of Technology","city":"Bengaluru","b":{"AI":30837,"CS":24582,"EC":37057,"EE":62330,"IS":31447,"ME":108369}},{"code":"E016","name":"KLE Technological University Formerly known as BVBCET","city":"Karnataka","b":{"AR":53894,"BT":106895,"CA":33066,"CS":31388,"CV":111127,"EC":54028,"EE":110581,"ME":103984,"VLS":60902}},{"code":"E017","name":"Ballari Institute of Technology And Management","city":"Karnataka","b":{"AI":86938,"CA":73490}},{"code":"E019","name":"Bangalore Institute of Technology","city":"Bengaluru","b":{"AI":12943,"CD":10496,"CS":9177,"CV":84998,"EC":19284,"EE":29168,"EI":33853,"ET":25329,"IC":13341,"IS":15238,"ME":53844,"RI":17065,"VL":23687}},{"code":"E020","name":"Bangalore Technological Institute","city":"Bengaluru","b":{"AI":107728,"CD":103964,"CE":100965,"CS":81326,"EC":94248,"RI":65090}},{"code":"E021","name":"Bapuji Institute of Engineering and Technology","city":"Davanagere","b":{"AI":111412,"CD":111716,"CS":110850,"EC":101158,"IS":106067}},{"code":"E024","name":"Basaveshwar Engineering College","city":"Karnataka","b":{"AI":103197,"CS":92928,"EC":108233,"IS":108363}},{"code":"E026","name":"BLDEAs V.P. Dr.P.G.Halakatti College of Engineering and Technology","city":"Karnataka","b":{"CA":103425,"CS":106797}},{"code":"E027","name":"BMS College of Engineering","city":"Bengaluru","b":{"AD":4049,"AI":4569,"BT":30409,"CB":4349,"CD":3854,"CH":25041,"CS":3689,"CV":31147,"EC":5302,"IC":4089,"ME":13510}},{"code":"E028","name":"BMS Institute of Technology and Management","city":"Bengaluru","b":{"AI":16633,"CB":15601,"CS":14153,"CV":68667,"EC":19346,"EE":26385,"ME":43026}},{"code":"E030","name":"Brindavan College of Engineering","city":"Bengaluru","b":{"CV":6655}},{"code":"E032","name":"C.M.R. Institute of Technology","city":"Bengaluru","b":{"AD":24251,"AI":22998,"CD":19813,"CI":18611,"CS":18084,"EC":38765,"IS":26492}},{"code":"E033","name":"Cambridge Institute of Technology","city":"Bengaluru","b":{"AI":59221,"CD":58396,"CS":58952,"EC":111194,"EE":98440,"IC":63549,"ME":82604}},{"code":"E035","name":"Channabasaveshwara Institute of Technology","city":"Tumkur","b":{"CS":88016}},{"code":"E036","name":"Chanakya University","city":"Bengaluru","b":{"MAE":61373,"VL":48972}},{"code":"E037","name":"City Engineering College","city":"Bengaluru","b":{"IC":100851}},{"code":"E038","name":"Coorg Institute of Technology","city":"Karnataka","b":{"CS":63276}},{"code":"E039","name":"Dayananda Sagar Academy of Technology and Management","city":"Bengaluru","b":{"CD":37213,"CI":34054,"CS":35187,"CY":37819,"EC":46875,"IC":39604,"IS":44072,"ME":57162}},{"code":"E040","name":"Dayananda Sagar College of Engineering","city":"Bengaluru","b":{"AE":21325,"AI":6201,"AU":37797,"BT":44710,"CD":5740,"CG":7492,"CH":38499,"CS":5479,"CV":40753,"CY":6442,"EC":10951,"EE":19099,"ET":17797,"IC":6664,"IS":7373,"MD":50220,"ME":34913,"RI":8006}},{"code":"E041","name":"DON BOSCO Institute of Technology","city":"Bengaluru","b":{"AD":102657,"CI":107604,"CS":111427,"EC":81250,"EE":32466,"IC":33031}},{"code":"E042","name":"Dr. Ambedkar Institute of Technology","city":"Bengaluru","b":{"AE":107317,"AI":45417,"CB":59929,"CD":48747,"CS":42969,"EC":60654,"ECV":82112,"IS":60782}},{"code":"E043","name":"Yenepoya Institute of Technology formerly known as Dr. M V Shetty Institute of Technology","city":"Mangaluru","b":{"AI":89103}},{"code":"E045","name":"Dr H N National College Of Engineering","city":"Bengaluru","b":{"AD":106828,"CS":99127,"IS":83887}},{"code":"E046","name":"East Point College of Engineering and Technology","city":"Bengaluru","b":{"CD":104956,"CI":110249,"CS":87819,"EC":74935,"IC":110484,"IS":108885}},{"code":"E048","name":"East West Institute of Technology","city":"Bengaluru","b":{"AI":108498,"CI":64384,"CS":88757,"EC":69091,"EE":108308,"ME":104180}},{"code":"E049","name":"Garden City University","city":"Bengaluru","b":{"CN":79136,"CS":106127}},{"code":"E050","name":"Global Academy of Technology","city":"Bengaluru","b":{"AD":80207,"AE":76592,"AI":63167,"CI":79288,"CS":75438,"CV":104120,"EC":111800,"EE":91719,"IS":101196,"ME":94278}},{"code":"E051","name":"Institute of Technology","city":"Davanagere","b":{"CS":78310}},{"code":"E053","name":"Gopalan College of Engineering And Management","city":"Bengaluru","b":{"CD":90783,"CI":110929,"CS":101116,"EC":90597}},{"code":"E055","name":"GSSS Institute of Engineering and Technology for Women","city":"Mysore","b":{"AD":69950,"CI":52101,"CS":48397,"EC":110904,"IS":71549}},{"code":"E058","name":"Sri Jayachamarajendra College of Engineering constituent college of JSS Science and Technology University","city":"Mysore","b":{"CS":4752}},{"code":"E059","name":"Jawaharlal Nehru New College of Engineering JNNCE","city":"Shivamogga","b":{"AI":101886,"CD":104928,"CS":101301,"EC":75336,"IS":85433,"RI":100557}},{"code":"E060","name":"JSS Academy of Technical Education","city":"Bengaluru","b":{"CI":37474,"CS":36550,"CV":78471,"EC":56738,"EI":82291,"IS":44529,"ME":97000,"RA":51021}},{"code":"E061","name":"JSS Science and Technology University","city":"Mysore","b":{"BT":98365,"CB":18824,"CI":13641,"CS":12996,"CV":109696,"IS":19312,"ME":56635}},{"code":"E062","name":"Jain College of Engineering","city":"Belagavi","b":{"CI":96545,"CS":110288,"EC":79925}},{"code":"E064","name":"Jain College of Engineering and Research","city":"Belagavi","b":{"CI":110588,"CS":110996,"EC":77514}},{"code":"E065","name":"KLE Technological University Formerly called as KLE Dr. M.S. Sheshgiri College of Engineering and Technology","city":"Belagavi","b":{"CA":69481,"CH":94423,"CS":79727,"EC":94385,"EE":94755}},{"code":"E066","name":"KLE College of Engineering and Technology","city":"Belagavi","b":{"AD":105457,"CS":109981,"EC":96361}},{"code":"E067","name":"K.S School of Engineering And Management","city":"Bengaluru","b":{"CS":101569}},{"code":"E068","name":"K.S. Institute of Technology","city":"Bengaluru","b":{"AI":102605,"CS":106608,"EC":66339,"IC":78493}},{"code":"E073","name":"KLS Gogte Institute of Technology","city":"Belagavi","b":{"AE":107667,"CI":41876,"CS":53966,"CV":7406,"EC":68273,"EE":92019,"ME":88764}},{"code":"E074","name":"KLS Vishwanathrao Deshpande Institute of Technology","city":"Karnataka","b":{"CA":111074,"CS":110111,"EC":108632}},{"code":"E075","name":"KNS Institute of Technology","city":"Bengaluru","b":{"AI":103454,"CS":94425}},{"code":"E076","name":"M.S. Engineering College","city":"Bengaluru","b":{"CD":45773,"CS":101479}},{"code":"E077","name":"M.S. Ramaiah Institute of Technology","city":"Bengaluru","b":{"AD":2483,"AI":2402,"AS":9212,"BT":26988,"CH":28430,"CI":1649,"CS":1341,"CV":30423,"CY":2071,"EC":3162,"EE":5756,"EI":6106,"ET":4772,"IM":27429,"IS":2311,"MD":33938,"ME":12622}},{"code":"E078","name":"Maharaja Institute of Technology","city":"Karnataka","b":{"CA":100751,"CB":106222,"CD":111099,"CE":108542,"CI":96870,"CS":101975,"EC":110498,"IC":109740,"IS":111029}},{"code":"E079","name":"Malnad College of Engineering","city":"Hassan","b":{"CI":92605,"CS":110247}},{"code":"E080","name":"Mangalore Institute of Technology and Engineering","city":"Mangaluru","b":{"CS":109490}},{"code":"E082","name":"Maharaja Institute of Technology","city":"Mysore","b":{"AD":75566,"CS":109919}},{"code":"E084","name":"Nagarjuna College of Engineering And Technology","city":"Bengaluru","b":{"CD":59079,"CS":94779}},{"code":"E085","name":"The National Institute of Engineering North Campus","city":"Mysore","b":{"CI":15809,"CS":15390}},{"code":"E089","name":"P.E.S.College of Engineering","city":"Karnataka","b":{"CB":25053,"CD":29874,"CI":23957,"CS":35673,"CV":76684,"EC":41342,"ECV":43511,"EE":37003,"IS":42248,"RI":39412}},{"code":"E090","name":"PES Institute of Technology and Management","city":"Shivamogga","b":{"AI":111068,"CD":106482,"CE":110737,"CS":82096,"EC":108985,"EE":69375,"IS":107203,"ME":88296}},{"code":"E095","name":"R V College of Engineering","city":"Bengaluru","b":{"AS":3464,"BT":14685,"CD":649,"CH":11506,"CI":713,"CS":542,"CV":17969,"CY":774,"EC":1077,"EE":1866,"ET":1343,"IM":12328,"ME":5339}},{"code":"E099","name":"Raja Rajeswari College of Engineering","city":"Bengaluru","b":{"AI":103540,"CS":105648,"EC":56779,"IS":92310}},{"code":"E101","name":"Rajiv Gandhi Institute of Technology","city":"Bengaluru","b":{"AI":72485,"BM":96470,"CS":103272,"EC":67192}},{"code":"E104","name":"RNS Institute of Technology","city":"Bengaluru","b":{"CD":34045,"CI":33681,"CS":30222,"CV":92294,"CY":35124,"EC":40410,"EE":45507,"ME":57487}},{"code":"E107","name":"SJB Institute of Technology","city":"Bengaluru","b":{"AI":55981,"CD":62287,"CS":53748,"EC":109664,"IS":71438}},{"code":"E108","name":"S J C Institute of Technology","city":"Chikkamagaluru","b":{"AS":110023,"CI":62272,"CS":51440}},{"code":"E109","name":"S.E.A. College of Engineering and Technology","city":"Bengaluru","b":{"AI":38473,"CS":86597}},{"code":"E110","name":"SSETs S.G. Balekundri Institute of Technology","city":"Belagavi","b":{"AD":101776,"CS":104814}},{"code":"E112","name":"Sahyadri College of Engineering and Management","city":"Mangaluru","b":{"CI":103600,"CS":104962,"IS":102448,"RA":55193}},{"code":"E113","name":"Sai Vidya Institute of Technology","city":"Bengaluru","b":{"CI":110575,"CS":107167,"EC":33986}},{"code":"E114","name":"Sambhram Institute of Technology","city":"Bengaluru","b":{"ME":90200}},{"code":"E116","name":"Sapthagiri NPS University","city":"Bengaluru","b":{"CD":103424,"CS":110300,"EC":88619,"EE":93840}},{"code":"E117","name":"SDM College of Engineering and Technology, Tulu Minority","city":"Hubli","b":{"AI":55939,"CH":88258,"CS":49002,"CV":70309,"EC":66979,"EE":107627,"IS":57018,"ME":109315}},{"code":"E118","name":"SDM Institute of Technology, Tulu Minority","city":"Karnataka","b":{"AD":77621,"CS":89042}},{"code":"E122","name":"Shree Devi Institute of Technology","city":"Mangaluru","b":{"CI":81412}},{"code":"E123","name":"Shri Madhwa Vadiraja Institute of Technology and Management","city":"Karnataka","b":{"AD":62552}},{"code":"E125","name":"Siddaganga Institute of Technology","city":"Tumkur","b":{"CI":15983,"CS":14939,"EC":21476,"IS":18090}},{"code":"E126","name":"Sir M.Visvesvaraya Institute of Technology","city":"Bengaluru","b":{"AI":24120,"BT":78926,"CD":23926,"CS":22026,"CV":110094,"EC":34643,"EE":65232,"ET":52153,"IC":26568,"IS":30150,"ME":84225,"RI":34662,"UE":45918}},{"code":"E127","name":"SJM Institute of Technology-NH 4 Bye","city":"Karnataka","b":{"CS":86353}},{"code":"E137","name":"Sri Venkateshwara College of Engineering","city":"Bengaluru","b":{"CA":80920,"CS":109058,"CY":106739}},{"code":"E138","name":"Srinivas Institute of Technology","city":"Mangaluru","b":{"CS":90025}},{"code":"E141","name":"T. John Institute of Technology","city":"Bengaluru","b":{"AI":97282,"CS":106939}},{"code":"E142","name":"The National Institute of Engineering South Campus","city":"Mysore","b":{"EC":20308,"EE":23770,"ME":33516}},{"code":"E145","name":"Vemana Institute of Technology","city":"Bengaluru","b":{"AI":110976,"CD":87999,"CS":109781}},{"code":"E146","name":"Vidya Vikas Institute of Engineering and Technology","city":"Mysore","b":{"CS":106350,"IS":111279}},{"code":"E147","name":"Vidyavardhaka College of Engineering","city":"Mysore","b":{"CI":64888,"CS":82079,"CV":110523,"EC":105161,"EE":84576,"ME":106778}},{"code":"E152","name":"ATME College of Engineering","city":"Mysore","b":{"CI":99165,"CS":105603}},{"code":"E156","name":"Jyothy Institute of Technology","city":"Bengaluru","b":{"AI":88766,"CS":109278}},{"code":"E161","name":"Cambridge Institute of Technology North Campus","city":"Bengaluru","b":{"CD":105165,"CI":105955,"CS":104072,"CY":100037,"ME":21531}},{"code":"E164","name":"Reva University","city":"Bengaluru","b":{"AD":34295,"AG":71914,"CI":27585,"CIT":39983,"CV":102529,"EC":48305,"IC":42714,"IS":44161}},{"code":"E165","name":"Alliance College of Engineering and Design. Alliance University","city":"Bengaluru","b":{"AS":94827,"BT":104355,"CO":80186,"CSB":109154,"CS":42800,"CSD":86640,"CY":60538,"EC":110448,"EE":61682,"IC":109750,"INT":71584,"ME":88403}},{"code":"E171","name":"GITAM Deemed to be University","city":"Bengaluru","b":{"CD":24435,"CI":21709,"CS":20658,"CY":24121,"ECE":99933,"EC":37265,"ME":95156,"RI":29322,"VL":81522}},{"code":"E173","name":"Presidency University","city":"Bengaluru","b":{"CBD":75355,"CD":75286,"CI":58354,"CO":79721,"CSB":85739,"CS":46905,"CSD":86348,"CV":104478,"CY":76298,"EC":111665,"EE":97479,"IS":75506,"IST":107866,"VLS":89941}},{"code":"E187","name":"CMR University-Bagalur","city":"Bengaluru","b":{"CD":55912,"CE":87610,"CI":47545,"CN":75437,"CS":57965,"EC":66541,"INT":98024}},{"code":"E191","name":"Sir M V School Of Architecture","city":"Bengaluru","b":{"BD":44061}},{"code":"E194","name":"Jain College of Engineering and Technology","city":"Karnataka","b":{"AI":108652,"CS":99653,"EC":89005}},{"code":"E195","name":"Navkis College of Engineering","city":"Hassan","b":{"CI":95782}},{"code":"E197","name":"M.S. Ramaiah University of Applied Sciences","city":"Bengaluru","b":{"AVE":47146,"CV":68875,"IS":25525}},{"code":"E198","name":"R V Institute of Technology and Management","city":"Bengaluru","b":{"CI":15849,"CS":14773,"EC":18473}},{"code":"E203","name":"Amruta Institute of Engineering and Management Science","city":"Bengaluru","b":{"AI":81494,"CS":110891}},{"code":"E205","name":"Vijaya Vittala Institution of Technology","city":"Bengaluru","b":{"CS":40289}},{"code":"E207","name":"BGS College of Engineering and Technology","city":"Bengaluru","b":{"AD":108945,"AI":96926,"CG":70313,"CS":100335,"IS":89272}},{"code":"E209","name":"Aditya College of Engineering and Technology","city":"Bengaluru","b":{"AD":90966,"AI":107173}},{"code":"E211","name":"East West College of Engineering","city":"Bengaluru","b":{"AL":93611}},{"code":"E212","name":"Seshadripuram Institute of Technology","city":"Mysore","b":{"AI":104925,"CS":102501,"EC":105585}},{"code":"E214","name":"Sri Siddhartha School of Engineering","city":"Tumkur","b":{"CS":61878}},{"code":"E216","name":"New Ebenezer Institute of Technology","city":"Bengaluru","b":{"CAD":94868}},{"code":"E217","name":"Harsha Institute of Technology","city":"Bengaluru","b":{"CD":85336,"CS":80960,"EC":110173}}],"branch_names":{"CS":"Computer Science & Engg","AI":"CSE (Artificial Intelligence)","CD":"CSE (Data Science)","CI":"CSE (IoT)","CIT":"CSE (IoT)","CY":"CSE (Cyber Security)","IC":"ISE (Cyber Security)","CB":"CSE (Big Data)","CSB":"CSE (Blockchain)","CSD":"CSE (Data Science)","IS":"Information Science & Engg","IST":"ISE (IoT)","CG":"Computer & Communication Engg","CN":"Computer Networks","CO":"Computer Science (Other)","CA":"Computer Applications","EC":"Electronics & Communication Engg","ECE":"Electronics & Communication Engg","EE":"Electrical & Electronics Engg","EI":"Electronics & Instrumentation","ECV":"ECE (VLSI)","VL":"VLSI Design","VLS":"VLSI & Embedded Systems","ET":"Electronics & Telecom","ME":"Mechanical Engineering","CV":"Civil Engineering","CE":"Civil Engineering","CH":"Chemical Engineering","AD":"Aerospace Engineering","AE":"Automobile Engineering","AS":"Aeronautical Engineering","BT":"Bio Technology","BM":"Bio-Medical Engineering","MD":"Medical Electronics","MT":"Medical Electronics","RI":"Robotics & AI","RA":"Robotics & Automation","AU":"Automation & Robotics","AVE":"Automotive & Vehicle Engg","IM":"Industrial & Management Engg","MAE":"Mechanical & Automation Engg","INT":"Integrated Program","CAD":"CAD/CAM","CBD":"CSE (Big Data)","AG":"Agricultural Engineering","AL":"AI & Machine Learning","AR":"Architecture","BD":"Big Data Analytics","UE":"Urban Engineering"},"branch_groups":{"CSE":["CS","AI","CD","CI","CIT","CY","CB","CSB","CSD","CG","CN","CO","CA","IST"],"ISE":["IS","IC"],"ECE":["EC","ECE","ET"],"EEE":["EE"],"VLSI":["ECV","VL","VLS"],"MECH":["ME","MAE","AU","AVE","AE","CAD","IM"],"CIVIL":["CV","CE"],"AERO":["AD","AS","AG"],"BIO":["BT","BM","MD","MT"],"ROBOTICS":["RI","RA"],"OTHER":["CH","INT","CBD","AL","AR","BD","UE","EI"]},"meta":{"year":2025,"total_colleges":111}};
+
+// Branch group lookup — maps filter value to branch codes
+const BRANCH_FILTER = {
+  'ALL':     null,
+  'CSE':     ['CS','AI','CD','CI','CIT','CY','CB','CSB','CSD','CG','CN','CO','CA','IST','AL','BD','CBD'],
+  'CS':      ['CS'],
+  'AI':      ['AI','AL'],
+  'CD':      ['CD','CSD'],
+  'CI':      ['CI','CIT'],
+  'CY':      ['CY'],
+  'ISE':     ['IS','IC','IST'],
+  'IS':      ['IS'],
+  'IC':      ['IC'],
+  'ECE':     ['EC','ECE','ET','EI'],
+  'EC':      ['EC','ECE'],
+  'EE':      ['EE'],
+  'VLSI':    ['ECV','VL','VLS'],
+  'MECH':    ['ME','MAE','AU','AVE','AE','CAD','IM'],
+  'CIVIL':   ['CV','CE'],
+  'AERO':    ['AD','AS','AG','AR'],
+  'BIO':     ['BT','BM','MD','MT'],
+  'ROBOTICS':['RI','RA'],
+};
+
+// Branch styling
+function getBranchClass(code) {
+  const cseGroup = ['CS','AI','CD','CI','CIT','CY','CB','CSB','CSD','CG','CN','CO','CA','IS','IC','IST','AL','BD','CBD'];
+  const eceGroup = ['EC','ECE','ET','EI','ECV','VL','VLS','EE'];
+  if (cseGroup.includes(code)) return 'branch-pill-cse';
+  if (eceGroup.includes(code)) return 'branch-pill-ece';
+  if (['ME','MAE','AU','AVE','AE','CV','CE','AD','AS'].includes(code)) return 'branch-pill-mech';
+  return 'branch-pill-other';
+}
+
+let selectedCity = 'ALL';
+function setCity(btn) {
+  document.querySelectorAll('.city-chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedCity = btn.dataset.city;
+}
+
+function showErr(msg) {
+  const el = document.getElementById('formError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function runPredictor() {
+  document.getElementById('formError').style.display = 'none';
+  const rank   = parseInt(document.getElementById('f_rank').value);
+  const branch = document.getElementById('f_branch').value;
+
+  if (!rank || rank < 1 || rank > 120000)
+    return showErr('Please enter a valid COMEDK rank (1 – 1,20,000).');
+
+  const dreamMin   = Math.floor(rank * 0.85);
+  const branchCodes = BRANCH_FILTER[branch] || null;
+
+  const dreamColleges = [];
+  const safeColleges  = [];
+
+  for (const rec of COMEDK_DATA.records) {
+    // City filter
+    if (selectedCity !== 'ALL' && rec.city !== selectedCity) continue;
+
+    // Find best matching branch rank for this college
+    let bestRank = null;
+    let bestCode = null;
+    const matchedBranches = {}; // code → rank, all matches
+
+    for (const [code, cr] of Object.entries(rec.b)) {
+      // Branch filter
+      if (branchCodes && !branchCodes.includes(code)) continue;
+      matchedBranches[code] = cr;
+      // Track the BEST (lowest = most competitive) closing rank for sorting
+      if (bestRank === null || cr < bestRank) {
+        bestRank = cr;
+        bestCode = code;
+      }
+    }
+
+    if (!bestRank) continue;
+
+    // Use BEST branch rank to classify college as dream/safe
+    const gap = bestRank - rank;
+    const entry = { ...rec, matchedBranches, bestRank, bestCode, gap };
+
+    if (bestRank >= dreamMin && bestRank < rank) dreamColleges.push(entry);
+    else if (bestRank >= rank) safeColleges.push(entry);
+  }
+
+  // Sort: dream = closest to rank first (descending), safe = easiest first (ascending)
+  dreamColleges.sort((a,b) => b.bestRank - a.bestRank);
+  safeColleges.sort((a,b)  => a.bestRank - b.bestRank);
+
+  const total = dreamColleges.length + safeColleges.length;
+  if (total === 0) {
+    showErr('No colleges found. Try selecting All Branches or All Karnataka.');
+    return;
+  }
+
+  // Render
+  document.getElementById('formCard').style.display = 'none';
+  const sec = document.getElementById('resultsSection');
+  sec.style.display = 'block';
+
+  const branchLabel = branch === 'ALL' ? 'All Branches' : (document.getElementById('f_branch').selectedOptions[0]?.text || branch);
+  document.getElementById('resultsMeta').textContent =
+    `Rank ${rank.toLocaleString()} · ${branchLabel} · ${selectedCity === 'ALL' ? 'All Karnataka' : selectedCity}`;
+
+  // Summary pills
+  document.getElementById('resultsSummary').innerHTML = `
+    <div class="summary-pill">
+      <div class="summary-num" style="color:var(--danger);">${dreamColleges.length}</div>
+      <div class="summary-label">🎯 Dream Colleges</div>
+    </div>
+    <div class="summary-pill">
+      <div class="summary-num" style="color:var(--success);">${safeColleges.length}</div>
+      <div class="summary-label">✅ Safe Colleges</div>
+    </div>
+    <div class="summary-pill">
+      <div class="summary-num">${total}</div>
+      <div class="summary-label">Total Found</div>
+    </div>`;
+
+  const container = document.getElementById('resultsContainer');
+  container.innerHTML = '';
+
+  if (dreamColleges.length) {
+    container.innerHTML += `
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-label label-dream">🎯 Dream Colleges <span style="font-weight:400;opacity:0.6;font-size:11px;">(just above your rank — stretch)</span></div>
+        <div class="section-divider-line"></div>
+      </div>`;
+    dreamColleges.forEach((col, idx) => container.appendChild(buildCard(col, idx+1, 'dream')));
+  }
+
+  if (safeColleges.length) {
+    container.innerHTML += `
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <div class="section-divider-label label-safe">✅ Safe Colleges <span style="font-weight:400;opacity:0.6;font-size:11px;">(within your rank — can get admission)</span></div>
+        <div class="section-divider-line"></div>
+      </div>`;
+    safeColleges.forEach((col, idx) => container.appendChild(buildCard(col, idx+1, 'safe')));
+  }
+
+  sec.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function buildCard(col, idx, type) {
+  const card = document.createElement('div');
+  card.className = 'college-card';
+
+  const gap     = col.gap;
+  const gapClass = type === 'dream' ? 'gap-dream' : 'gap-safe';
+  const gapText  = type === 'dream'
+    ? `${gap} to cutoff`
+    : `+${gap} buffer`;
+
+  // Build branch pills — show all matched branches sorted by rank
+  const sortedBranches = Object.entries(col.matchedBranches)
+    .sort((a,b) => a[1] - b[1]);
+
+  const branchPills = sortedBranches.map(([code, cr]) => {
+    const name = COMEDK_DATA.branch_names[code] || code;
+    const cls  = getBranchClass(code);
+    return `<span class="branch-pill ${cls}">${name}<span class="bp-rank">${cr.toLocaleString()}</span></span>`;
+  }).join('');
+
+  card.innerHTML = `
+    <div class="college-card-header">
+      <div class="college-rank-badge">#${idx}</div>
+      <div class="college-info">
+        <div class="college-name">${col.name}</div>
+        <div class="college-city">📍 ${col.city} &nbsp;·&nbsp; ${col.code}</div>
+      </div>
+      <div class="college-closing">
+        <div class="closing-rank">${col.bestRank.toLocaleString()}</div>
+        <div class="closing-gap ${gapClass}">${gapText}</div>
+      </div>
+    </div>
+    <div class="college-branches">${branchPills}</div>`;
+
+  return card;
+}
+
+function resetForm() {
+  document.getElementById('resultsSection').style.display = 'none';
+  document.getElementById('formCard').style.display = 'block';
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
