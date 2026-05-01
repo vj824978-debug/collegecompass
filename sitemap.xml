@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://collegepipe.in/</loc>
-    <lastmod>2025-04-28</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Main JEE Predictor -->
   <url>
     <loc>https://collegepipe.in/index.html</loc>
-    <lastmod>2025-04-28</lastmod>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -24,38 +24,53 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://collegepipe.in/comedk.html</loc>
     <lastmod>2025-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://collegepipe.in/mhtcet.html</loc>
     <lastmod>2025-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://collegepipe.in/wbjee.html</loc>
     <lastmod>2025-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://collegepipe.in/acpc.html</loc>
     <lastmod>2025-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://collegepipe.in/uptac.html</loc>
     <lastmod>2025-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- New State CET Predictors -->
+  <url>
+    <loc>https://collegepipe.in/tgeapcet.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://collegepipe.in/apeamcet.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://collegepipe.in/biharugeac.html</loc>
+    <lastmod>2025-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -67,14 +82,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://collegepipe.in/pvt-colleges.html</loc>
     <lastmod>2025-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://collegepipe.in/state-cet.html</loc>
     <lastmod>2025-04-28</lastmod>
