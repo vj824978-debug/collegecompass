@@ -1330,10 +1330,8 @@ function renderTop10(title, picks) {
         document.getElementById('f_jarank').value       = saved.jarank||'0';
         document.getElementById('f_branch').value       = saved.branch||'ALL';
         document.getElementById('f_state').value        = saved.state||'ALL';
-        'ALL'         = saved.city||'ALL';
         document.getElementById('f_round').value        = saved.round||'1';
         document.getElementById('f_collegeType').value  = saved.collegeType||'ALL';
-        'ALL' = saved.collegeTypeS||'ALL';
         setTimeout(() => submitPredictor(), 300);
         return;
       }
