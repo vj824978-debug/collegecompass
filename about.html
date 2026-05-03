@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD41LV501H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZD41LV501H');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | CollegePIPE — JEE College Predictor</title>
+<meta name="description" content="Learn about CollegePIPE — India's most comprehensive JEE college predictor. Built by students, for students. Our mission, story and what makes us different.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://collegepipe.in/about.html">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1f3d; --navy-mid: #1a3460; --blue: #2255c4; --blue-light: #3b74e8;
+  --accent: #f59e0b; --accent-light: #fde68a; --teal: #0d9488; --green: #059669;
+  --text: #0f1f3d; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --card: #ffffff;
+  --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif; --radius: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15,31,61,0.97); backdrop-filter: blur(12px); padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-icon { width: 36px; height: 36px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.nav-logo-text { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: #fff; }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-link { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: all 0.2s; }
+.nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.nav-cta { background: var(--accent); color: var(--navy); font-family: var(--font-head); font-size: 13px; font-weight: 700; padding: 8px 20px; border-radius: 8px; text-decoration: none; }
+.nav-cta:hover { background: #e58f00; }
+
+/* HERO */
+.page-hero { padding-top: 64px; background: linear-gradient(135deg, #0f1f3d 0%, #1a3460 60%, #0d2557 100%); position: relative; overflow: hidden; }
+.hero-bg-grid { position: absolute; inset: 0; opacity: 0.04; background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 40px 40px; }
+.hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+.hero-orb-1 { width: 400px; height: 400px; background: rgba(34,85,196,0.25); top: -80px; right: -80px; }
+.hero-orb-2 { width: 250px; height: 250px; background: rgba(245,158,11,0.12); bottom: 0; left: 100px; }
+.hero-inner { max-width: 900px; margin: 0 auto; padding: 64px 24px 56px; position: relative; z-index: 1; text-align: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: var(--accent-light); font-size: 11px; font-weight: 600; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px; font-family: var(--font-head); letter-spacing: 0.5px; text-transform: uppercase; }
+.hero-title { font-family: var(--font-head); font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 16px; }
+.hero-title span { color: var(--accent); }
+.hero-sub { font-size: 16px; color: rgba(255,255,255,0.62); line-height: 1.75; max-width: 580px; margin: 0 auto 36px; }
+.hero-stats { display: flex; justify-content: center; gap: 0; flex-wrap: wrap; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 8px 0; max-width: 600px; margin: 0 auto; }
+.hstat { flex: 1; min-width: 120px; text-align: center; padding: 16px 12px; position: relative; }
+.hstat + .hstat::before { content:''; position:absolute; left:0; top:20%; bottom:20%; width:1px; background:rgba(255,255,255,0.1); }
+.hstat-num { font-family: var(--font-head); font-size: 26px; font-weight: 800; color: #fff; }
+.hstat-num span { color: var(--accent); }
+.hstat-label { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+
+/* CONTENT */
+.content-wrap { max-width: 900px; margin: 0 auto; padding: 64px 24px 80px; }
+
+/* MISSION */
+.mission-block { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 64px; align-items: center; }
+.mission-text .section-label { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.mission-text h2 { font-family: var(--font-head); font-size: clamp(22px,3vw,30px); font-weight: 800; color: var(--navy); margin-bottom: 14px; line-height: 1.3; }
+.mission-text p { font-size: 14px; color: #334155; line-height: 1.85; margin-bottom: 14px; }
+.mission-visual { background: linear-gradient(135deg, #0f1f3d, #1a3460); border-radius: 20px; padding: 32px; color: #fff; }
+.mv-title { font-family: var(--font-head); font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 20px; }
+.mv-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.mv-item:last-child { border-bottom: none; padding-bottom: 0; }
+.mv-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.mv-label { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.mv-desc { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+/* STORY */
+.story-section { margin-bottom: 64px; }
+.story-section .section-label { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.story-section h2 { font-family: var(--font-head); font-size: clamp(22px,3vw,30px); font-weight: 800; color: var(--navy); margin-bottom: 24px; }
+.story-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.story-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; position: relative; }
+.story-card::before { content: attr(data-step); position: absolute; top: 16px; right: 16px; font-family: var(--font-head); font-size: 32px; font-weight: 800; color: #f1f5f9; line-height: 1; }
+.sc-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.sc-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.sc-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* WHAT MAKES US DIFFERENT */
+.diff-section { margin-bottom: 64px; }
+.diff-section .section-label { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.diff-section h2 { font-family: var(--font-head); font-size: clamp(22px,3vw,30px); font-weight: 800; color: var(--navy); margin-bottom: 24px; }
+.diff-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.diff-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; display: flex; gap: 16px; align-items: flex-start; transition: all 0.2s; }
+.diff-card:hover { border-color: var(--blue); box-shadow: 0 6px 24px rgba(34,85,196,0.08); transform: translateY(-2px); }
+.diff-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.di-blue{background:#eff6ff;} .di-green{background:#f0fdf4;} .di-amber{background:#fffbeb;} .di-teal{background:#f0fdfa;} .di-purple{background:#f5f3ff;} .di-red{background:#fff1f2;}
+.diff-title { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.diff-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* DATA SECTION */
+.data-section { background: #f0f4ff; border-radius: 20px; padding: 40px; margin-bottom: 64px; }
+.data-section .section-label { font-family: var(--font-head); font-size: 11px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+.data-section h2 { font-family: var(--font-head); font-size: clamp(20px,3vw,26px); font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.data-section p { font-size: 14px; color: #334155; line-height: 1.8; margin-bottom: 16px; }
+.data-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.data-pill { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--navy); font-family: var(--font-head); }
+.dp-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+
+/* CTA */
+.cta-block { background: linear-gradient(135deg, #0f1f3d, #1a3460); border-radius: 20px; padding: 48px; text-align: center; color: #fff; }
+.cta-block h2 { font-family: var(--font-head); font-size: clamp(22px,3vw,30px); font-weight: 800; margin-bottom: 12px; }
+.cta-block p { font-size: 15px; color: rgba(255,255,255,0.62); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--navy); font-family: var(--font-head); font-size: 14px; font-weight: 700; padding: 13px 28px; border-radius: 12px; text-decoration: none; transition: all 0.2s; }
+.btn-primary:hover { background: #e58f00; transform: translateY(-2px); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); color: #fff; font-family: var(--font-head); font-size: 14px; font-weight: 600; padding: 13px 28px; border-radius: 12px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s; }
+.btn-secondary:hover { background: rgba(255,255,255,0.14); }
+
+footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.35); }
+footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+@media(max-width:768px){
+  .nav-links { display: none; }
+  .mission-block { grid-template-columns: 1fr; }
+  .story-cards { grid-template-columns: 1fr; }
+  .diff-grid { grid-template-columns: 1fr; }
+  .cta-block { padding: 32px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🎓</div>
+    <span class="nav-logo-text">CollegePIPE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#predictor" class="nav-link">Predict</a>
+    <a href="pvt-colleges.html" class="nav-link">Private Colleges</a>
+    <a href="state-cet.html" class="nav-link">State CET</a>
+    <a href="compare.html" class="nav-link">IIT vs NIT</a>
+    <a href="index.html#predictor" class="nav-cta">Predict Now →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">🏢 About Us</div>
+    <h1 class="hero-title">India's Most Comprehensive<br><span>JEE College Predictor</span></h1>
+    <p class="hero-sub">CollegePIPE was built to solve a real problem — JEE counselling is confusing, data is scattered, and students have no clear way to know which colleges they can actually get. We built a free, data-driven tool to change that.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">2800<span>+</span></div><div class="hstat-label">Colleges covered</div></div>
+      <div class="hstat"><div class="hstat-num">9<span>+</span></div><div class="hstat-label">Counsellings</div></div>
+      <div class="hstat"><div class="hstat-num">23<span>+</span></div><div class="hstat-label">States</div></div>
+      <div class="hstat"><div class="hstat-num" style="color:#6ee7b7;">Free</div><div class="hstat-label">to start</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <!-- MISSION -->
+  <div class="mission-block">
+    <div class="mission-text">
+      <div class="section-label">Our Mission</div>
+      <h2>Make JEE Counselling Less Stressful for Every Student</h2>
+      <p>Every year, over 12 lakh students appear for JEE Main. Most of them struggle during counselling — not because they don't work hard, but because the information is scattered, confusing, and often behind a paywall.</p>
+      <p>CollegePIPE's mission is to give every JEE aspirant — regardless of their coaching or background — access to accurate, data-driven college predictions completely free of cost.</p>
+      <p>We believe the right college information should be <strong>accessible, honest, and free for everyone</strong>.</p>
+    </div>
+    <div class="mission-visual">
+      <div class="mv-title">What we stand for</div>
+      <div class="mv-item">
+        <div class="mv-icon">🎯</div>
+        <div><div class="mv-label">Accuracy First</div><div class="mv-desc">All data sourced directly from official JoSAA & CSAB cutoff records</div></div>
+      </div>
+      <div class="mv-item">
+        <div class="mv-icon">🔓</div>
+        <div><div class="mv-label">Accessible to All</div><div class="mv-desc">Free sample report — no login, no signup required to get started</div></div>
+      </div>
+      <div class="mv-item">
+        <div class="mv-icon">🧠</div>
+        <div><div class="mv-label">Smart, Not Complicated</div><div class="mv-desc">Dream vs Safe split, branch weighting, Top 10 picks — all automated</div></div>
+      </div>
+      <div class="mv-item">
+        <div class="mv-icon">💰</div>
+        <div><div class="mv-label">Always Free</div><div class="mv-desc">Full predictions at zero cost — no login, no payment, no catch</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <div class="story-section">
+    <div class="section-label">Our Story</div>
+    <h2>How CollegePIPE Was Born</h2>
+    <div class="story-cards">
+      <div class="story-card" data-step="01">
+        <span class="sc-icon">😤</span>
+        <div class="sc-title">The Problem</div>
+        <p class="sc-text">Most predictor tools showed outdated data, required expensive subscriptions, or gave generic lists with no personalisation. JEE students deserved a better, completely free alternative.</p>
+      </div>
+      <div class="story-card" data-step="02">
+        <span class="sc-icon">🛠️</span>
+        <div class="sc-title">The Build</div>
+        <p class="sc-text">We collected and cleaned official cutoff data from JoSAA, CSAB, JAC, COMEDK and 7 other counsellings. We then built a prediction engine that accounts for category, gender, home state, branch, and round.</p>
+      </div>
+      <div class="story-card" data-step="03">
+        <span class="sc-icon">🚀</span>
+        <div class="sc-title">The Launch</div>
+        <p class="sc-text">CollegePIPE launched in April 2025. We cover 2,800+ colleges across 9 counsellings and 23 states — and we're still adding more. Our goal: be the most complete JEE counselling tool in India.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT MAKES US DIFFERENT -->
+  <div class="diff-section">
+    <div class="section-label">Why CollegePIPE</div>
+    <h2>What Makes Us Different</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon di-blue">📊</div>
+        <div>
+          <div class="diff-title">Official Data Only</div>
+          <div class="diff-desc">Every cutoff rank is taken directly from JoSAA, CSAB, and official state counselling portals — not estimated or scraped from forums.</div>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon di-green">🎯</div>
+        <div>
+          <div class="diff-title">Dream vs Safe Split</div>
+          <div class="diff-desc">We don't just list colleges. We split results into Dream (within 10% of your rank) and Safe colleges so you apply with a strategy, not hope.</div>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon di-amber">🏆</div>
+        <div>
+          <div class="diff-title">Top 10 Personalised Picks</div>
+          <div class="diff-desc">Our scoring algorithm considers branch market value, rank gap, and college reputation to give you a curated Top 10 list — not just a raw dump of data.</div>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon di-teal">🗺️</div>
+        <div>
+          <div class="diff-title">9 Counsellings in One Place</div>
+          <div class="diff-desc">JEE Main, JEE Advanced, CSAB, JAC Delhi, COMEDK, MHT CET, WBJEE, GUJCET, UPTAC and more — no need to visit 10 different sites.</div>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon di-purple">💸</div>
+        <div>
+          <div class="diff-title">Completely Free</div>
+          <div class="diff-desc">No subscription, no hidden fees, no signup required. Every student gets full access to their college predictions — 100% free.</div>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon di-red">⚡</div>
+        <div>
+          <div class="diff-title">Instant, No Signup</div>
+          <div class="diff-desc">Enter your rank and see results in seconds. No account creation, no OTP verification, no waiting. Your free sample is instant.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATA TRANSPARENCY -->
+  <div class="data-section">
+    <div class="section-label">Data Transparency</div>
+    <h2>Where Our Data Comes From</h2>
+    <p>We are committed to data accuracy and transparency. All cutoff data on CollegePIPE is sourced exclusively from official government portals. We update our database after every official counselling round.</p>
+    <p>We do <strong>not</strong> use estimated ranks, community-sourced data, or AI-generated cutoffs. If a data point cannot be verified from an official source, we don't include it.</p>
+    <div class="data-pills">
+      <div class="data-pill"><span class="dp-dot"></span> JoSAA Official Cutoffs</div>
+      <div class="data-pill"><span class="dp-dot"></span> CSAB Official Records</div>
+      <div class="data-pill"><span class="dp-dot"></span> JAC Delhi Portal</div>
+      <div class="data-pill"><span class="dp-dot"></span> COMEDK Official Data</div>
+      <div class="data-pill"><span class="dp-dot"></span> MHT CET Somaiya Cutoffs</div>
+      <div class="data-pill"><span class="dp-dot"></span> WBJEE Board Records</div>
+      <div class="data-pill"><span class="dp-dot"></span> ACPC Gujarat Portal</div>
+      <div class="data-pill"><span class="dp-dot"></span> UPTAC Official Data</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>Ready to Find Your College?</h2>
+    <p>Enter your JEE rank and get your personalised Dream & Safe college list in seconds — free, no signup needed.</p>
+    <div class="cta-actions">
+      <a href="index.html#predictor" class="btn-primary">🎯 Predict My College Now</a>
+      <a href="contact.html" class="btn-secondary">📬 Contact Us</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025-2026 CollegePIPE · Data sourced from official JoSAA, CSAB cutoffs · Not affiliated with any government body · 🔒 Payments secured by Razorpay</p>
+  <p style="margin-top:8px;">
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="about.html">About Us</a> &nbsp;·&nbsp;
+    <a href="contact.html">Contact</a> &nbsp;·&nbsp;
+    📧 <a href="mailto:support.collegepipe@gmail.com">support.collegepipe@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD41LV501H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZD41LV501H');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | CollegePIPE</title>
+<meta name="description" content="Privacy Policy for CollegePIPE — how we collect, use and protect your personal information.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://collegepipe.in/privacy-policy.html">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1f3d; --navy-mid: #1a3460; --blue: #2255c4; --blue-light: #3b74e8;
+  --accent: #f59e0b; --accent-light: #fde68a; --teal: #0d9488; --green: #059669;
+  --text: #0f1f3d; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --card: #ffffff;
+  --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif; --radius: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15,31,61,0.97); backdrop-filter: blur(12px); padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-icon { width: 36px; height: 36px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.nav-logo-text { font-family: var(--font-head); font-size: 17px; font-weight: 700; color: #fff; }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-link { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; text-decoration: none; padding: 7px 14px; border-radius: 8px; transition: all 0.2s; }
+.nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.nav-cta { background: var(--accent); color: var(--navy); font-family: var(--font-head); font-size: 13px; font-weight: 700; padding: 8px 20px; border-radius: 8px; text-decoration: none; }
+.nav-cta:hover { background: #e58f00; }
+
+/* PAGE HERO */
+.page-hero { padding-top: 64px; background: linear-gradient(135deg, #0f1f3d 0%, #1a3460 60%, #0d2557 100%); position: relative; overflow: hidden; }
+.page-hero-bg { position: absolute; inset: 0; opacity: 0.04; background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 40px 40px; }
+.page-hero-inner { max-width: 860px; margin: 0 auto; padding: 56px 24px 48px; position: relative; z-index: 1; }
+.page-hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: var(--accent-light); font-size: 11px; font-weight: 600; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; font-family: var(--font-head); letter-spacing: 0.5px; text-transform: uppercase; }
+.page-hero h1 { font-family: var(--font-head); font-size: clamp(26px, 4vw, 38px); font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.2; }
+.page-hero p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.page-hero-meta { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
+.meta-pill { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,0.5); font-family: var(--font-head); }
+.meta-pill span { color: rgba(255,255,255,0.8); font-weight: 600; }
+
+/* CONTENT */
+.content-wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* TOC */
+.toc-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 28px; margin-bottom: 40px; }
+.toc-title { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.toc-list li a { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--blue); text-decoration: none; padding: 5px 0; font-weight: 500; transition: color 0.2s; }
+.toc-list li a:hover { color: var(--navy); }
+.toc-num { width: 20px; height: 20px; border-radius: 5px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 10px; font-weight: 700; color: var(--blue); flex-shrink: 0; }
+
+/* SECTIONS */
+.policy-section { margin-bottom: 40px; scroll-margin-top: 80px; }
+.section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #e8f0fe; }
+.section-icon { width: 44px; height: 44px; border-radius: 12px; background: #eff6ff; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.section-title { font-family: var(--font-head); font-size: 18px; font-weight: 800; color: var(--navy); }
+.section-num { font-size: 11px; color: var(--muted); font-family: var(--font-head); margin-top: 1px; }
+
+.policy-text { font-size: 14px; color: #334155; line-height: 1.8; margin-bottom: 14px; }
+.policy-text:last-child { margin-bottom: 0; }
+
+.policy-list { list-style: none; margin: 12px 0 14px; }
+.policy-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #334155; line-height: 1.7; padding: 6px 0; border-bottom: 1px solid #f1f5f9; }
+.policy-list li:last-child { border-bottom: none; }
+.policy-list li::before { content: '→'; color: var(--blue); font-weight: 700; font-size: 13px; margin-top: 2px; flex-shrink: 0; }
+
+.highlight-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.highlight-box p { font-size: 13px; color: #1e40af; line-height: 1.7; }
+.highlight-box strong { color: #1e3a8a; }
+
+.warning-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.warning-box p { font-size: 13px; color: #92400e; line-height: 1.7; }
+
+.contact-card { background: linear-gradient(135deg, #0f1f3d, #1a3460); border-radius: var(--radius); padding: 32px; color: #fff; text-align: center; margin-top: 48px; }
+.contact-card h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.contact-card p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+.contact-card a { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--navy); font-family: var(--font-head); font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 10px; text-decoration: none; }
+.contact-card a:hover { background: #e58f00; }
+
+footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.35); }
+footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+@media(max-width:768px) {
+  .nav-links { display: none; }
+  .toc-list { grid-template-columns: 1fr; }
+  .page-hero-meta { gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🎓</div>
+    <span class="nav-logo-text">CollegePIPE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#predictor" class="nav-link">Predict</a>
+    <a href="pvt-colleges.html" class="nav-link">Private Colleges</a>
+    <a href="state-cet.html" class="nav-link">State CET</a>
+    <a href="compare.html" class="nav-link">IIT vs NIT</a>
+    <a href="index.html#predictor" class="nav-cta">Predict Now →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <div class="page-hero-badge">📄 Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>We believe in full transparency about how we handle your data. This policy explains exactly what we collect, why we collect it, and how we protect it.</p>
+    <div class="page-hero-meta">
+      <div class="meta-pill">📅 Last updated: <span>May 2025</span></div>
+      <div class="meta-pill">🏢 Operated by: <span>CollegePIPE</span></div>
+      <div class="meta-pill">📧 Contact: <span>support.collegepipe@gmail.com</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <!-- TOC -->
+  <div class="toc-card">
+    <div class="toc-title">📋 Table of Contents</div>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">1</span> Information We Collect</a></li>
+      <li><a href="#s2"><span class="toc-num">2</span> How We Use Your Information</a></li>
+      <li><a href="#s3"><span class="toc-num">3</span> Google AdSense & Cookies</a></li>
+      <li><a href="#s4"><span class="toc-num">4</span> Third-Party Services</a></li>
+      <li><a href="#s5"><span class="toc-num">5</span> Data Sharing & Disclosure</a></li>
+      <li><a href="#s6"><span class="toc-num">6</span> Data Security</a></li>
+      <li><a href="#s7"><span class="toc-num">7</span> Your Rights</a></li>
+      <li><a href="#s8"><span class="toc-num">8</span> Children's Privacy</a></li>
+      <li><a href="#s9"><span class="toc-num">9</span> Changes to This Policy</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span> Contact Us</a></li>
+    </ul>
+  </div>
+
+  <p class="policy-text">This Privacy Policy applies to <strong>CollegePIPE</strong> ("we", "us", or "our"), accessible at <strong>collegepipe.in</strong>. By using our website, you agree to the collection and use of information as described in this policy.</p>
+
+  <!-- 1 -->
+  <div class="policy-section" id="s1">
+    <div class="section-header">
+      <div class="section-icon">📥</div>
+      <div><div class="section-title">Information We Collect</div><div class="section-num">Section 1</div></div>
+    </div>
+    <p class="policy-text">When you use CollegePIPE's college predictor tool, we collect the following information that you voluntarily provide:</p>
+    <ul class="policy-list">
+      <li><strong>Full Name</strong> — to personalise your report</li>
+      <li><strong>Email Address</strong> — to identify your account and deliver your report</li>
+      <li><strong>Mobile Number</strong> — for order confirmation related to paid reports</li>
+      <li><strong>JEE Rank / Percentile</strong> — to generate your college prediction</li>
+      <li><strong>Category, Gender, Home State, Branch Preference</strong> — to filter results accurately</li>
+    </ul>
+    <p class="policy-text">We also automatically collect certain technical information when you visit our website:</p>
+    <ul class="policy-list">
+      <li><strong>IP address</strong> and approximate geographic location</li>
+      <li><strong>Browser type</strong> and operating system</li>
+      <li><strong>Pages visited</strong>, time spent, and referral source</li>
+      <li><strong>Device information</strong> (mobile, desktop, screen size)</li>
+    </ul>
+    <div class="highlight-box">
+      <p>💡 <strong>Note:</strong> We store form data (name, email, rank, preferences) in your browser's local storage to allow you to revisit your results. This data never leaves your device unless you submit the form.</p>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="policy-section" id="s2">
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <div><div class="section-title">How We Use Your Information</div><div class="section-num">Section 2</div></div>
+    </div>
+    <p class="policy-text">We use the information we collect for the following purposes:</p>
+    <ul class="policy-list">
+      <li>To generate and display your personalised college prediction report</li>
+      <li>To process payments and verify paid report access via Razorpay</li>
+      <li>To send you your report or order confirmation via email (if applicable)</li>
+      <li>To improve and optimise our prediction algorithms and website experience</li>
+      <li>To analyse usage patterns through Google Analytics (anonymised)</li>
+      <li>To display relevant advertisements through Google AdSense</li>
+      <li>To respond to support queries sent to our email</li>
+    </ul>
+    <p class="policy-text">We do <strong>not</strong> use your information for automated decision-making that produces legal or similarly significant effects on you.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="policy-section" id="s3">
+    <div class="section-header">
+      <div class="section-icon">🍪</div>
+      <div><div class="section-title">Google AdSense &amp; Cookies</div><div class="section-num">Section 3</div></div>
+    </div>
+    <p class="policy-text">CollegePIPE uses <strong>Google AdSense</strong> to display advertisements. Google AdSense uses cookies to serve ads based on your prior visits to our website or other websites on the internet.</p>
+    <ul class="policy-list">
+      <li>Google may use cookies to personalise ads shown to you</li>
+      <li>Third-party vendors, including Google, use cookies to serve ads based on your browsing history</li>
+      <li>The <strong>DoubleClick cookie</strong> is used by Google to serve interest-based ads</li>
+    </ul>
+    <div class="highlight-box">
+      <p>🔗 <strong>Opt out:</strong> You can opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--blue);">Google Ads Settings</a> or <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" style="color:var(--blue);">aboutads.info</a>.</p>
+    </div>
+    <p class="policy-text">We also use <strong>Google Analytics</strong> (via Google Tag Manager) to understand how visitors interact with our site. This data is anonymised and aggregated — we cannot identify you personally from Analytics data.</p>
+    <p class="policy-text"><strong>Types of cookies we use:</strong></p>
+    <ul class="policy-list">
+      <li><strong>Essential cookies</strong> — Required for the predictor tool to function (local storage for form data)</li>
+      <li><strong>Analytics cookies</strong> — Google Analytics to measure traffic and behaviour</li>
+      <li><strong>Advertising cookies</strong> — Google AdSense to serve relevant ads</li>
+    </ul>
+  </div>
+
+  <!-- 4 -->
+  <div class="policy-section" id="s4">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <div><div class="section-title">Third-Party Services</div><div class="section-num">Section 4</div></div>
+    </div>
+    <p class="policy-text">CollegePIPE integrates with the following third-party services, each with their own privacy policies:</p>
+    <ul class="policy-list">
+      <li><strong>Razorpay</strong> — Payment processing for paid reports. We do not store any card or payment details. All transactions are handled securely by Razorpay.</li>
+      <li><strong>Google Analytics</strong> — Website traffic analysis. Data is anonymised.</li>
+      <li><strong>Google AdSense</strong> — Advertisement delivery. Subject to Google's Privacy Policy.</li>
+      <li><strong>Google Apps Script</strong> — Backend processing for form submissions and report generation.</li>
+    </ul>
+    <p class="policy-text">We encourage you to review the privacy policies of these third-party services. CollegePIPE is not responsible for the privacy practices of external websites linked from our platform.</p>
+  </div>
+
+  <!-- 5 -->
+  <div class="policy-section" id="s5">
+    <div class="section-header">
+      <div class="section-icon">🤝</div>
+      <div><div class="section-title">Data Sharing &amp; Disclosure</div><div class="section-num">Section 5</div></div>
+    </div>
+    <p class="policy-text">We do <strong>not sell, rent, or trade</strong> your personal information to any third party. We may share your data only in these limited circumstances:</p>
+    <ul class="policy-list">
+      <li><strong>Service providers:</strong> We share data with Razorpay solely to process your payment. They are contractually bound to keep your data confidential.</li>
+      <li><strong>Legal requirements:</strong> We may disclose your information if required by law, court order, or government authority.</li>
+      <li><strong>Business transfer:</strong> In the unlikely event of a merger or acquisition, your data may be transferred as part of that transaction.</li>
+    </ul>
+    <div class="warning-box">
+      <p>⚠️ We will never sell your email address, mobile number, or rank data to any educational institution, coaching centre, or marketing agency.</p>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="policy-section" id="s6">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <div><div class="section-title">Data Security</div><div class="section-num">Section 6</div></div>
+    </div>
+    <p class="policy-text">We take reasonable technical and organisational measures to protect your personal information from unauthorised access, loss, or misuse:</p>
+    <ul class="policy-list">
+      <li>Our website is served over <strong>HTTPS</strong> (SSL/TLS encrypted)</li>
+      <li>Payment processing is handled entirely by <strong>Razorpay</strong> — we never see or store card details</li>
+      <li>Form data is stored only in your browser's local storage and on Google's secure infrastructure</li>
+      <li>Access to any user data is limited to authorised personnel only</li>
+    </ul>
+    <p class="policy-text">However, no method of transmission over the internet is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="policy-section" id="s7">
+    <div class="section-header">
+      <div class="section-icon">✋</div>
+      <div><div class="section-title">Your Rights</div><div class="section-num">Section 7</div></div>
+    </div>
+    <p class="policy-text">You have the following rights with respect to your personal data:</p>
+    <ul class="policy-list">
+      <li><strong>Access:</strong> You may request a copy of the personal data we hold about you</li>
+      <li><strong>Correction:</strong> You may request correction of inaccurate or incomplete data</li>
+      <li><strong>Deletion:</strong> You may request deletion of your personal data from our records</li>
+      <li><strong>Opt-out of communications:</strong> You may unsubscribe from any emails we send</li>
+      <li><strong>Cookie preferences:</strong> You may disable cookies via your browser settings (note: this may affect site functionality)</li>
+    </ul>
+    <p class="policy-text">To exercise any of these rights, please contact us at <a href="mailto:support.collegepipe@gmail.com" style="color:var(--blue);font-weight:600;">support.collegepipe@gmail.com</a>. We will respond within 30 days.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="policy-section" id="s8">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <div><div class="section-title">Children's Privacy</div><div class="section-num">Section 8</div></div>
+    </div>
+    <p class="policy-text">CollegePIPE is designed for JEE students who are typically 17 years of age or older. Our service is not directed at children under the age of 13.</p>
+    <p class="policy-text">We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us immediately and we will delete that data.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="policy-section" id="s9">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <div><div class="section-title">Changes to This Policy</div><div class="section-num">Section 9</div></div>
+    </div>
+    <p class="policy-text">We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we do:</p>
+    <ul class="policy-list">
+      <li>We will update the "Last updated" date at the top of this page</li>
+      <li>Significant changes will be announced on our homepage</li>
+      <li>Continued use of CollegePIPE after changes constitutes acceptance of the updated policy</li>
+    </ul>
+    <p class="policy-text">We encourage you to review this page periodically to stay informed.</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="policy-section" id="s10">
+    <div class="section-header">
+      <div class="section-icon">📬</div>
+      <div><div class="section-title">Contact Us</div><div class="section-num">Section 10</div></div>
+    </div>
+    <p class="policy-text">If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please reach out to us:</p>
+    <ul class="policy-list">
+      <li><strong>Email:</strong> support.collegepipe@gmail.com</li>
+      <li><strong>Website:</strong> collegepipe.in</li>
+      <li><strong>Response time:</strong> Within 2–3 business days</li>
+    </ul>
+  </div>
+
+  <!-- CONTACT CARD -->
+  <div class="contact-card">
+    <h3>Have Questions About Your Data?</h3>
+    <p>We're transparent about everything. Reach out and we'll respond within 2–3 business days.</p>
+    <a href="mailto:support.collegepipe@gmail.com">📧 support.collegepipe@gmail.com</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025-2026 CollegePIPE · Data sourced from official JoSAA, CSAB cutoffs · Not affiliated with any government body · 🔒 Payments secured by Razorpay</p>
+  <p style="margin-top:8px;">
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="about.html">About Us</a> &nbsp;·&nbsp;
+    <a href="contact.html">Contact</a> &nbsp;·&nbsp;
+    📧 <a href="mailto:support.collegepipe@gmail.com">support.collegepipe@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
