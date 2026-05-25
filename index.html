@@ -13,20 +13,20 @@
      crossorigin="anonymous"></script>
  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JEE College Predictor 2026 | Free NIT IIIT GFTI Prediction | CollegePIPE</title>
-<meta name="description" content="India's most comprehensive JEE college predictor. Enter your JEE Main rank, category, branch & city preference to get your personalised Dream & Safe college list across 2,800+ institutes. Free sample report — no signup needed.">
-<meta name="keywords" content="JEE college predictor, JEE Main college predictor 2026, NIT predictor, IIIT predictor, JEE rank college list, JoSAA predictor, free college predictor India, JEE Main 2026 colleges">
+<title>JEE & NEET UG College Predictor 2026 | Free NIT IIIT MBBS BDS Prediction | CollegePIPE</title>
+<meta name="description" content="India's most comprehensive college predictor. JEE Main + NEET UG. Enter your rank, category, branch/course & city preference to get your personalised Dream & Safe college list across 6,000+ institutes. Free sample report — no signup needed.">
+<meta name="keywords" content="JEE college predictor, NEET UG college predictor, JEE Main 2026, NEET UG 2026, MBBS predictor, NIT predictor, IIIT predictor, JEE rank college list, JoSAA predictor, MCC AIQ predictor, free college predictor India">
 <meta name="robots" content="index, follow">
 <meta name="author" content="CollegePIPE">
 <link rel="canonical" href="https://collegepipe.in/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CollegePIPE">
-<meta property="og:title" content="JEE College Predictor 2026 | Free NIT IIIT Prediction | CollegePIPE">
-<meta property="og:description" content="Get your free personalised Dream & Safe college list based on JEE rank. Covers 2,800+ colleges across NITs, IIITs, GFTIs and private colleges.">
+<meta property="og:title" content="JEE & NEET UG College Predictor 2026 | CollegePIPE">
+<meta property="og:description" content="Get your free personalised Dream & Safe college list based on JEE or NEET UG rank. Covers 6,000+ colleges across NITs, IIITs, GFTIs, medical and private colleges.">
 <meta property="og:url" content="https://collegepipe.in/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="JEE College Predictor 2026 | Free NIT IIIT Prediction | CollegePIPE">
-<meta name="twitter:description" content="Get your free personalised Dream & Safe college list based on JEE rank. Covers 2,800+ colleges across NITs, IIITs, GFTIs and private colleges."> 
+<meta name="twitter:title" content="JEE & NEET UG College Predictor 2026 | CollegePIPE">
+<meta name="twitter:description" content="Get your free personalised Dream & Safe college list based on JEE or NEET UG rank.">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -34,6 +34,7 @@
   --accent: #f59e0b; --accent-light: #fde68a; --teal: #0d9488; --green: #059669;
   --text: #0f1f3d; --muted: #64748b; --border: #e2e8f0; --bg: #f8fafc; --card: #ffffff;
   --danger: #dc2626; --success: #059669; --success-light: #d1fae5;
+  --rose: #f43f5e;
   --font-head: 'Sora', sans-serif; --font-body: 'DM Sans', sans-serif; --radius: 16px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -61,8 +62,26 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: var(--accent-light); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; font-family: var(--font-head); letter-spacing: 0.5px; text-transform: uppercase; }
 .hero-title { font-family: var(--font-head); font-size: clamp(26px,3.5vw,40px); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 20px; }
 .hero-title span { color: var(--accent); }
-.hero-subtitle { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 36px; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-subtitle { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 28px; }
+
+/* EXAM PICKER — NEW */
+.exam-picker { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.exam-btn { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 14px; text-decoration: none; transition: all 0.25s cubic-bezier(.2,.7,.2,1); position: relative; overflow: hidden; border: 1.5px solid transparent; }
+.exam-btn::before { content: ''; position: absolute; inset: 0; border-radius: 14px; padding: 1.5px; background: var(--edge); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.exam-jee { background: linear-gradient(135deg, rgba(59,116,232,0.18), rgba(34,85,196,0.10)); --edge: linear-gradient(135deg, rgba(59,116,232,0.7), rgba(34,85,196,0.25)); }
+.exam-jee:hover { background: linear-gradient(135deg, rgba(59,116,232,0.32), rgba(34,85,196,0.18)); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(59,116,232,0.30); }
+.exam-neet { background: linear-gradient(135deg, rgba(244,63,94,0.18), rgba(190,18,60,0.10)); --edge: linear-gradient(135deg, rgba(244,63,94,0.7), rgba(190,18,60,0.25)); }
+.exam-neet:hover { background: linear-gradient(135deg, rgba(244,63,94,0.32), rgba(190,18,60,0.18)); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(244,63,94,0.30); }
+.exam-icon-wrap { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-head); font-size: 12px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+.exam-jee .exam-icon-wrap { background: linear-gradient(135deg, #3b74e8, #1a3a8a); box-shadow: 0 6px 18px rgba(59,116,232,0.35), inset 0 1px 0 rgba(255,255,255,0.25); }
+.exam-neet .exam-icon-wrap { background: linear-gradient(135deg, #f43f5e, #9f1239); box-shadow: 0 6px 18px rgba(244,63,94,0.35), inset 0 1px 0 rgba(255,255,255,0.25); }
+.exam-text { flex: 1; min-width: 0; }
+.exam-name { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #fff; line-height: 1.2; }
+.exam-name .arrow { display: inline-block; margin-left: 4px; transition: transform 0.25s; }
+.exam-btn:hover .exam-name .arrow { transform: translateX(4px); }
+.exam-sub { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; font-weight: 500; letter-spacing: 0.2px; }
+
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
 .btn-hero-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--navy); font-family: var(--font-head); font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: 12px; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
 .btn-hero-primary:hover { background: #e58f00; transform: translateY(-2px); }
 .btn-hero-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); color: #fff; font-family: var(--font-head); font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 12px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s; }
@@ -187,7 +206,7 @@ input::placeholder { color: #b0bec5; }
 .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all 0.25s; text-decoration: none; color: inherit; display: block; }
 .feature-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(34,85,196,0.1); }
 .feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; }
-.fi-blue{background:#eff6ff;} .fi-amber{background:#fffbeb;} .fi-teal{background:#f0fdfa;} .fi-purple{background:#f5f3ff;}
+.fi-blue{background:#eff6ff;} .fi-amber{background:#fffbeb;} .fi-teal{background:#f0fdfa;} .fi-purple{background:#f5f3ff;} .fi-rose{background:#fff1f2;}
 .feature-title { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
 .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
 .feature-meta { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--blue); font-family: var(--font-head); }
@@ -203,6 +222,7 @@ input::placeholder { color: #b0bec5; }
 .tool-card-2{background:linear-gradient(135deg,#065f46,#0d9488);}
 .tool-card-3{background:linear-gradient(135deg,#7c2d12,#ea580c);}
 .tool-card-4{background:linear-gradient(135deg,#4c1d95,#7c3aed);}
+.tool-card-neet{background:linear-gradient(135deg,#9f1239,#f43f5e);}
 .tool-bg { position: absolute; right: -20px; top: -20px; font-size: 120px; opacity: 0.08; pointer-events: none; }
 .tool-badge { display: inline-block; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px; margin-bottom: 16px; font-family: var(--font-head); text-transform: uppercase; }
 .tool-title { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 10px; }
@@ -261,6 +281,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   .form-grid{grid-template-columns:1fr;}
   .feats{grid-template-columns:1fr;}
   .pred-card{padding:20px 16px;}
+  .exam-picker{grid-template-columns:1fr;}
 }
 
 /* COUNSELLINGS SECTION */
@@ -303,7 +324,8 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <span class="nav-logo-text">CollegePIPE</span>
   </a>
   <div class="nav-links">
-    <a href="#predictor" class="nav-link">Predict</a>
+    <a href="jee-predictor.html" class="nav-link">JEE Predictor</a>
+    <a href="neet-predictor.html" class="nav-link">NEET UG Predictor</a>
     <a href="pvt-colleges.html" class="nav-link">Private Colleges</a>
     <a href="state-cet.html" class="nav-link">State CET</a>
     <a href="compare.html" class="nav-link">IIT vs NIT</a>
@@ -321,19 +343,37 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <div>
       <div class="hero-badge">⚡ 2024 & 2025 Cutoff Data</div>
       <h1 class="hero-title">Not Just Prediction — <span>Your Complete Counselling Strategy</span></h1>
-      <p class="hero-subtitle">India's most comprehensive college predictor. Enter your JEE rank and instantly get your personalised Dream & Safe college list across 2,800+ institutes — <strong style="color:#6ee7b7;">free sample, no signup needed.</strong></p>
-      
+      <p class="hero-subtitle">India's most comprehensive college predictor. Enter your rank and instantly get your personalised Dream &amp; Safe college list across 6,000+ institutes — <strong style="color:#6ee7b7;">free sample, no signup needed.</strong></p>
+
+      <!-- ═══ NEW: EXAM PICKER ═══ -->
+      <div class="exam-picker">
+        <a href="jee-predictor.html" class="exam-btn exam-jee">
+          <div class="exam-icon-wrap">JEE</div>
+          <div class="exam-text">
+            <div class="exam-name">JEE Predictor <span class="arrow">→</span></div>
+            <div class="exam-sub">Engineering · NITs · IIITs · GFTIs · IITs</div>
+          </div>
+        </a>
+        <a href="neet-predictor.html" class="exam-btn exam-neet">
+          <div class="exam-icon-wrap">NEET</div>
+          <div class="exam-text">
+            <div class="exam-name">NEET UG Predictor <span class="arrow">→</span></div>
+            <div class="exam-sub">Medical · MBBS · BDS · BAMS · BHMS</div>
+          </div>
+        </a>
+      </div>
+
       <div class="hero-actions">
-  <a href="#predictor" class="btn-hero-primary">🚀 Predict Your JEE College Now</a>
+  <a href="#predictor" class="btn-hero-primary">🚀 Predict on this page</a>
   <a href="jeeadv-rank-predictor.html" class="btn-hero-secondary">🔬 Predict JEE Adv Rank</a>
   <a href="#features" class="btn-hero-secondary" style="font-size:13px;padding:10px 20px;">See How It Works ↓</a>
 </div>
       <div class="hero-stats">
-        <div class="stat-pill"><div class="stat-num">2800<span>+</span></div><div class="stat-label">Colleges</div></div>
+        <div class="stat-pill"><div class="stat-num">2800<span>+</span></div><div class="stat-label">Engg Colleges</div></div>
+        <div class="stat-divider"></div>
+        <div class="stat-pill"><div class="stat-num">3290</div><div class="stat-label">Med Colleges</div></div>
         <div class="stat-divider"></div>
         <div class="stat-pill"><div class="stat-num">23<span>+</span></div><div class="stat-label">States</div></div>
-        <div class="stat-divider"></div>
-        <div class="stat-pill"><div class="stat-num">6</div><div class="stat-label">Exam Types</div></div>
         <div class="stat-divider"></div>
         <div class="stat-pill"><div class="stat-num" style="color:#6ee7b7;">Free</div><div class="stat-label">Sample Report</div></div>
       </div>
@@ -413,7 +453,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <div class="band-stat"><div class="band-num">128</div><div class="band-label">IITs, NITs, IIITs & GFTIs</div></div>
     <div class="band-stat"><div class="band-num"><span>78</span></div><div class="band-label">Top Private Colleges India</div></div>
     <div class="band-stat"><div class="band-num">2,451</div><div class="band-label">State CET Colleges</div></div>
-    <div class="band-stat"><div class="band-num"><span>8</span></div><div class="band-label">Top Cities Covered</div></div>
+    <div class="band-stat"><div class="band-num"><span>3290</span></div><div class="band-label">Medical Colleges (NEET UG)</div></div>
     <div class="band-stat"><div class="band-num">23</div><div class="band-label">States with CET Data</div></div>
   </div>
 </div>
@@ -666,12 +706,12 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <h2 class="section-title">Everything You Need to Choose the Right College</h2>
     <p class="section-sub">From JEE rank predictor to private college explorer — all in one place, backed by 2024 & 2025 official cutoff data.</p>
     <div class="features-grid">
-      <a href="#predictor" class="feature-card"><div class="feature-icon fi-blue">🎯</div><div class="feature-title">JEE College Predictor</div><div class="feature-desc">Enter your JEE Main / Advanced rank and get Dream & Safe college lists with exact rank gaps. Covers JEE Main, Advanced, CSAB and Home State quota.</div><div class="feature-meta">Predict Now <span class="feature-arrow">→</span></div></a>
+      <a href="jee-predictor.html" class="feature-card"><div class="feature-icon fi-blue">🎯</div><div class="feature-title">JEE College Predictor</div><div class="feature-desc">Enter your JEE Main / Advanced rank and get Dream & Safe college lists with exact rank gaps. Covers JEE Main, Advanced, CSAB and Home State quota.</div><div class="feature-meta">Predict Now <span class="feature-arrow">→</span></div></a>
+      <a href="neet-predictor.html" class="feature-card"><div class="feature-icon fi-rose">🩺</div><div class="feature-title">NEET UG College Predictor</div><div class="feature-desc">Enter your NEET UG All India Rank and get medical colleges across MBBS, BDS, BAMS, BHMS and 11 more streams. AIQ + State Quota covered.</div><div class="feature-meta">Predict Now <span class="feature-arrow">→</span></div></a>
       <a href="pvt-colleges.html" class="feature-card"><div class="feature-icon fi-amber">🏛️</div><div class="feature-title">Top 100+ Private Colleges</div><div class="feature-desc">Curated list of India's best private engineering colleges with fees, ROI data, top placement figures and admission routes — filtered by state and tier.</div><div class="feature-meta">Explore Colleges <span class="feature-arrow">→</span></div></a>
       <a href="state-cet.html" class="feature-card"><div class="feature-icon fi-teal">📍</div><div class="feature-title">State CET — City Wise</div><div class="feature-desc">Browse 2,400+ state CET colleges across 23 states. Filter by your city, college type and tier to find the best options near you.</div><div class="feature-meta">Find Near Me <span class="feature-arrow">→</span></div></a>
       <a href="compare.html" class="feature-card"><div class="feature-icon fi-purple">⚖️</div><div class="feature-title">Compare IIT vs NIT</div><div class="feature-desc">Side-by-side comparison of IITs and NITs with NIRF rankings. Make an informed decision beyond just rank.</div><div class="feature-meta">Compare Now <span class="feature-arrow">→</span></div></a>
       <a href="#predictor" class="feature-card"><div class="feature-icon fi-blue">📊</div><div class="feature-title">Dream vs Safe Analysis</div><div class="feature-desc">Our algorithm splits results into Dream (within 10% of your rank) and Safe colleges (comfortably within reach), so you apply smartly.</div><div class="feature-meta">See How It Works <span class="feature-arrow">→</span></div></a>
-      <a href="#predictor" class="feature-card"><div class="feature-icon fi-amber">🏆</div><div class="feature-title">Top 10 Personalised Picks</div><div class="feature-desc">Our scoring engine picks your Top 10 colleges considering branch market value (CSE > ECE > Mechanical), rank gap and college reputation.</div><div class="feature-meta">Get My Picks <span class="feature-arrow">→</span></div></a>
     </div>
   </div>
 </section>
@@ -680,9 +720,10 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
 <section id="tools" class="tools-section">
   <div class="section-inner">
     <div class="section-label" style="color:rgba(255,255,255,0.5);">Our Tools</div>
-    <h2 class="section-title" style="color:#fff;">Four Powerful Tools.<br>One Decision Made Easy.</h2>
+    <h2 class="section-title" style="color:#fff;">Powerful Tools.<br>One Decision Made Easy.</h2>
     <div class="tools-grid">
-      <a href="#predictor" class="tool-card tool-card-1"><div class="tool-bg">🎯</div><div class="tool-badge">Most Popular</div><div class="tool-title">JEE College Predictor</div><div class="tool-desc">Get Dream & Safe college lists for JEE Main, Advanced and CSAB. Personalised Top 10 picks included.</div><div class="tool-stats"><div><div class="tool-stat-num">100+</div><div class="tool-stat-label">JEE Main results</div></div><div><div class="tool-stat-num">50+</div><div class="tool-stat-label">JEE Adv results</div></div></div><div class="tool-btn">Start Predicting →</div></a>
+      <a href="jee-predictor.html" class="tool-card tool-card-1"><div class="tool-bg">🎯</div><div class="tool-badge">Most Popular</div><div class="tool-title">JEE College Predictor</div><div class="tool-desc">Get Dream & Safe college lists for JEE Main, Advanced and CSAB. Personalised Top 10 picks included.</div><div class="tool-stats"><div><div class="tool-stat-num">100+</div><div class="tool-stat-label">JEE Main results</div></div><div><div class="tool-stat-num">50+</div><div class="tool-stat-label">JEE Adv results</div></div></div><div class="tool-btn">Start Predicting →</div></a>
+      <a href="neet-predictor.html" class="tool-card tool-card-neet"><div class="tool-bg">🩺</div><div class="tool-badge">New</div><div class="tool-title">NEET UG College Predictor</div><div class="tool-desc">Find medical colleges for your NEET UG rank — MBBS, BDS, BAMS, BHMS & more. AIQ + 22 state quotas.</div><div class="tool-stats"><div><div class="tool-stat-num">3,290</div><div class="tool-stat-label">Med Colleges</div></div><div><div class="tool-stat-num">15</div><div class="tool-stat-label">Courses</div></div></div><div class="tool-btn">Start Predicting →</div></a>
       <a href="pvt-colleges.html" class="tool-card tool-card-2"><div class="tool-bg">🏛️</div><div class="tool-badge">100+ Colleges</div><div class="tool-title">Top Private Colleges India</div><div class="tool-desc">Curated list of India's best private engineering colleges across 15 states with fees, ROI and placement data.</div><div class="tool-stats"><div><div class="tool-stat-num">78</div><div class="tool-stat-label">Colleges</div></div><div><div class="tool-stat-num">15</div><div class="tool-stat-label">States</div></div></div><div class="tool-btn">Explore Colleges →</div></a>
       <a href="state-cet.html" class="tool-card tool-card-3"><div class="tool-bg">📍</div><div class="tool-badge">2,451 Colleges</div><div class="tool-title">State CET City Wise</div><div class="tool-desc">Find state CET colleges in your city. Filter by Govt, Private, University. Tier-sorted for easy shortlisting.</div><div class="tool-stats"><div><div class="tool-stat-num">2,451</div><div class="tool-stat-label">Colleges</div></div><div><div class="tool-stat-num">23</div><div class="tool-stat-label">States</div></div></div><div class="tool-btn">Find Near Me →</div></a>
       <a href="compare.html" class="tool-card tool-card-4"><div class="tool-bg">⚖️</div><div class="tool-badge">128 Institutes</div><div class="tool-title">Compare IIT vs NIT</div><div class="tool-desc">NIRF rankings, fees, placements — side by side for all IITs and NITs.</div><div class="tool-stats"><div><div class="tool-stat-num">23</div><div class="tool-stat-label">IITs</div></div><div><div class="tool-stat-num">31</div><div class="tool-stat-label">NITs</div></div></div><div class="tool-btn">Compare Now →</div></a>
@@ -876,9 +917,10 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
 <section class="cta-section">
   <div class="hero-badge" style="display:inline-flex;margin-bottom:20px;">🚀 100% Free to Start</div>
   <h2 class="cta-title">See Your Dream Colleges <span>for Free</span></h2>
-  <p class="cta-sub">Enter your JEE rank and get a free personalised sample report — Dream colleges, Safe colleges and Top 10 picks. No signup needed.</p>
+  <p class="cta-sub">Enter your JEE or NEET UG rank and get a free personalised sample report — Dream colleges, Safe colleges and Top picks. No signup needed.</p>
   <div class="cta-actions">
-    <a href="#predictor" class="btn-hero-primary">🎯 Get Free Sample Report</a>
+    <a href="jee-predictor.html" class="btn-hero-primary">🎯 JEE Predictor</a>
+    <a href="neet-predictor.html" class="btn-hero-primary" style="background:#f43f5e;color:#fff;">🩺 NEET UG Predictor</a>
     <a href="#predictor" class="btn-hero-secondary">How It Works ↓</a>
   </div>
 </section>
@@ -888,11 +930,11 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   <p style="margin-top:8px;">
     <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6);">Privacy Policy</a> &nbsp;·&nbsp;
     <a href="about.html" style="color:rgba(255,255,255,0.6);">About Us</a> &nbsp;·&nbsp;
-    📧 <a href="mailto:support.collegepipe@gmail.com" style="color:rgba(255,255,255,0.6);">support.collegepipe@gmail.com</a>
+    📧 <a href="/cdn-cgi/l/email-protection#6e1d1b1e1e011c1a400d0102020b090b1e071e0b2e09030f0702400d0103" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="71020401011e03055f121e1d1d1416140118011431161c10181d5f121e1c">[email&#160;protected]</span></a>
   </p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyMsjjnXMUFk2cIMEfXy9iasVWMpvyx8puxls6gExwHb25tIbn7oddEB6gjVHZIPT3j_A/exec';
 const DATA_BASE = 'https://collegepipe.in/data/';
 
