@@ -267,35 +267,10 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 
     <form id="predForm" class="form-shell" onsubmit="event.preventDefault(); submitPredictor();">
 
-      <!-- BLOCK 1 — Personal -->
+      <!-- BLOCK 1 — Rank + Domicile -->
       <div class="form-block">
         <div class="block-head">
           <div class="block-num">1</div>
-          <h3>Your Details</h3>
-        </div>
-        <div class="form-grid">
-          <div class="field full">
-            <label class="req">Full Name</label>
-            <input type="text" id="f_name" placeholder="e.g. Anjali Verma" autocomplete="name">
-          </div>
-          <div class="field">
-            <label class="req">Email Address</label>
-            <input type="email" id="f_email" placeholder="your@email.com" autocomplete="email">
-          </div>
-          <div class="field">
-            <label class="req">Mobile Number</label>
-            <div class="phone-row">
-              <div class="phone-prefix">+91</div>
-              <input type="tel" id="f_phone" placeholder="10-digit" maxlength="10" autocomplete="tel-national" oninput="this.value=this.value.replace(/\D/g,'')">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BLOCK 2 — Rank + Domicile -->
-      <div class="form-block">
-        <div class="block-head">
-          <div class="block-num">2</div>
           <h3>NEET UG Rank &amp; Domicile</h3>
           <span class="helper">Picks state-specific filters below</span>
         </div>
@@ -316,10 +291,10 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
         </div>
       </div>
 
-      <!-- BLOCK 3 — AIQ Filters (always shown) -->
+      <!-- BLOCK 2 — AIQ Filters (always shown) -->
       <div class="form-block" id="aiqFilterBlock">
         <div class="block-head">
-          <div class="block-num">3</div>
+          <div class="block-num">2</div>
           <h3>All India Quota (MCC) Filters</h3>
           <span class="badge-aiq">AIQ · 15% central seats</span>
         </div>
@@ -332,10 +307,10 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
         </div>
       </div>
 
-      <!-- BLOCK 4 — State Filters (dynamic) -->
+      <!-- BLOCK 3 — State Filters (dynamic) -->
       <div class="form-block" id="stateFilterBlock" style="display:none;">
         <div class="block-head">
-          <div class="block-num">4</div>
+          <div class="block-num">3</div>
           <h3 id="stateFilterTitle">State Quota Filters</h3>
           <span class="badge-state" id="stateFilterTag">State · 85% domicile seats</span>
         </div>
@@ -344,10 +319,10 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
         </div>
       </div>
 
-      <!-- BLOCK 5 — Common Filters -->
+      <!-- BLOCK 4 — Common Filters -->
       <div class="form-block">
         <div class="block-head">
-          <div class="block-num" id="commonBlockNum">4</div>
+          <div class="block-num" id="commonBlockNum">3</div>
           <h3>Course &amp; College Preference</h3>
           <span class="helper">Optional — applies to both AIQ &amp; state</span>
         </div>
@@ -459,7 +434,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
   <p style="margin-top:8px;">
     <a href="privacy-policy.html">Privacy Policy</a> ·
     <a href="about.html">About Us</a> ·
-    📧 <a href="/cdn-cgi/l/email-protection#2d5e585d5d425f59034e424141484a485d445d486d4a404c4441034e4240"><span class="__cf_email__" data-cfemail="790a0c0909160b0d571a1615151c1e1c0910091c391e14181015571a1614">[email&#160;protected]</span></a>
+    📧 <a href="/cdn-cgi/l/email-protection#e5969095958a9791cb868a8989808280958c9580a58288848c89cb868a88"><span class="__cf_email__" data-cfemail="4a393f3a3a25383e64292526262f2d2f3a233a2f0a2d272b232664292527">[email&#160;protected]</span></a>
   </p>
 </footer>
 

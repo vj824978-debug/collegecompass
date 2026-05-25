@@ -193,24 +193,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <div class="pred-card" id="formCard">
       <div class="form-grid">
 
-        <div class="field full">
-          <label>Full Name *</label>
-          <input type="text" id="f_name" placeholder="e.g. Rohan Sharma">
-        </div>
-
-        <div class="field">
-          <label>Email Address *</label>
-          <input type="email" id="f_email" placeholder="your@email.com">
-        </div>
-
-        <div class="field">
-          <label>Mobile Number *</label>
-          <div class="phone-row">
-            <div class="phone-prefix">+91</div>
-            <input type="tel" id="f_phone" placeholder="10-digit" maxlength="10" oninput="this.value=this.value.replace(/\D/g,'')">
-          </div>
-        </div>
-
         <div class="field">
           <label>Category *</label>
           <select id="f_category">
@@ -227,8 +209,8 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           <label>Gender *</label>
           <select id="f_gender">
             <option value="">Select...</option>
-            <option value="Gender-Neutral">Gender-Neutral</option>
-            <option value="Female-only (including Supernumerary)">Female-only (including Supernumerary)</option>
+            <option value="Female-only (including Supernumerary)">Female</option>
+            <option value="Gender-Neutral">Gender Neutral</option>
           </select>
         </div>
 
@@ -400,7 +382,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   <p style="margin-top:8px;">
     <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6);">Privacy Policy</a> ·
     <a href="about.html" style="color:rgba(255,255,255,0.6);">About</a> ·
-    📧 <a href="/cdn-cgi/l/email-protection#b4c7c1c4c4dbc6c09ad7dbd8d8d1d3d1c4ddc4d1f4d3d9d5ddd89ad7dbd9" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="43303633332c31376d202c2f2f262426332a332603242e222a2f6d202c2e">[email&#160;protected]</span></a>
+    📧 <a href="/cdn-cgi/l/email-protection#b4c7c1c4c4dbc6c09ad7dbd8d8d1d3d1c4ddc4d1f4d3d9d5ddd89ad7dbd9" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="45363035352a37316b262a2929202220352c3520052228242c296b262a28">[email&#160;protected]</span></a>
   </p>
 </footer>
 
@@ -551,15 +533,12 @@ function runPredictor(user, isPaid) {
 
 async function submitPredictor() {
   const errEl = document.getElementById('formError'); errEl.style.display='none';
-  const name=document.getElementById('f_name').value.trim();
-  const email=document.getElementById('f_email').value.trim();
-  const phone=document.getElementById('f_phone').value.trim();
+  const name='';
+  const email='';
+  const phone='';
   const category=document.getElementById('f_category').value;
   const gender=document.getElementById('f_gender').value;
   const jmrank=getJmRank();
-  if (!name) return showErr('Please enter your name.');
-  if (!email || !email.includes('@')) return showErr('Please enter a valid email address.');
-  if (!/^\d{10}$/.test(phone)) return showErr('Please enter a valid 10-digit mobile number.');
   if (!category) return showErr('Please select your category.');
   if (!gender) return showErr('Please select your gender.');
   if (!jmrank || Number(jmrank) < 1) return showErr('Please enter your JEE Main Rank.');
@@ -717,9 +696,6 @@ function renderTop10(title, picks) {
     try {
       const saved = JSON.parse(localStorage.getItem('cp_fd_'+email)||'null');
       if (saved) {
-        document.getElementById('f_name').value = saved.name||'';
-        document.getElementById('f_email').value = email;
-        document.getElementById('f_phone').value = (saved.phone||'').replace('+91','');
         document.getElementById('f_category').value = saved.category||'';
         document.getElementById('f_gender').value = saved.gender||'';
         document.getElementById('f_jmrank').value = saved.jmrank||'';
@@ -732,7 +708,6 @@ function renderTop10(title, picks) {
         return;
       }
     } catch(e) {}
-    document.getElementById('f_email').value = email;
     document.getElementById('resultsArea').style.display = 'block';
     document.getElementById('paidBar').style.display = 'flex';
     document.getElementById('upgradeBox').style.display = 'none';
@@ -758,7 +733,6 @@ function downloadPdf() {
 function tryAgain() {
   document.getElementById('resultsArea').style.display='none';
   document.getElementById('formCard').style.display='block';
-  document.getElementById('f_email').value=currentEmail;
   window.history.replaceState({},document.title,window.location.pathname);
   document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
 }

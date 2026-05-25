@@ -120,14 +120,14 @@ async function init() {
     return;
   }
 
-  // Populate state dropdown (sorted by row count desc - most data first)
+  // Populate state dropdown (alphabetical, no cutoff counts)
   const sel = el('f_state');
-  const sortedStates = [...schema.states].sort((a,b) => b.rowCount - a.rowCount);
+  const sortedStates = [...schema.states].sort((a,b) => a.state.localeCompare(b.state));
   sortedStates.forEach(st => {
     if (st.rowCount === 0) return; // skip empty (Uttarakhand)
     const opt = document.createElement('option');
     opt.value = st.slug;
-    opt.textContent = st.state + ' (' + st.rowCount.toLocaleString('en-IN') + ' cutoffs)';
+    opt.textContent = st.state;
     sel.appendChild(opt);
   });
 
@@ -150,21 +150,7 @@ async function init() {
 
   el('dataStatus').innerHTML = '<span class="pending">⏳ Loading AIQ database in background…</span>';
 
-  // Pre-fill from last session
-  try {
-    for (let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i);
-      if (k && k.startsWith('cp_neet_fd_')) {
-        const saved = JSON.parse(localStorage.getItem(k) || 'null');
-        if (saved && saved.email) {
-          if (!el('f_name').value)  el('f_name').value  = saved.name  || '';
-          if (!el('f_email').value) el('f_email').value = saved.email || '';
-          if (!el('f_phone').value) el('f_phone').value = (saved.phone || '').replace('+91', '');
-          break;
-        }
-      }
-    }
-  } catch(e) {}
+
 }
 
 function buildAIQFilters() {
@@ -235,7 +221,7 @@ async function onStateChange() {
 
   if (!slug || slug === '__AIQ_ONLY__') {
     block.style.display = 'none';
-    commonNum.textContent = '4';
+    commonNum.textContent = '3';
     currentState = null;
     if (slug === '__AIQ_ONLY__') {
       // Show a friendly note in AIQ block
@@ -245,7 +231,7 @@ async function onStateChange() {
 
   // Show block with loading state
   block.style.display = 'block';
-  commonNum.textContent = '5';
+  commonNum.textContent = '4';
   host.innerHTML = '<div class="state-loading">Loading <strong>' + escapeHtml(sel.options[sel.selectedIndex].text) + '</strong> filters<span class="dots"></span></div>';
 
   const data = await loadState(slug);
@@ -289,10 +275,9 @@ function renderStateFilters(state) {
     defOpt.textContent = meta.required ? 'Select…' : 'Any';
     sel.appendChild(defOpt);
     if (k === 'gender') {
-      ['Any (gender-neutral)','Female','Male'].forEach(g => {
+      [['Female','Female'],['Gender Neutral','Any']].forEach(([label,v]) => {
         const opt = document.createElement('option');
-        const v = g === 'Female' ? 'Female' : g === 'Male' ? 'Male' : 'Any';
-        opt.value = v; opt.textContent = g;
+        opt.value = v; opt.textContent = label;
         sel.appendChild(opt);
       });
     } else {
@@ -342,17 +327,14 @@ async function submitPredictor() {
   const errEl = el('formError');
   errEl.style.display = 'none';
 
-  const name  = el('f_name').value.trim();
-  const email = el('f_email').value.trim();
-  const phone = el('f_phone').value.trim();
+  const name  = '';
+  const email = '';
+  const phone = '';
   const rank  = parseInt(el('f_rank').value, 10);
   const stateSlug = el('f_state').value;
   const course = el('f_course').value;
   const collegeType = el('f_collegeType').value;
 
-  if (!name)                          return showErr('Please enter your name.');
-  if (!email || !email.includes('@')) return showErr('Please enter a valid email address.');
-  if (!/^\d{10}$/.test(phone))       return showErr('Please enter a valid 10-digit mobile number.');
   if (!rank || rank < 1)              return showErr('Please enter a valid NEET UG All India Rank.');
   if (!stateSlug)                     return showErr('Please pick your domicile state or "AIQ only".');
 
@@ -397,7 +379,7 @@ async function submitPredictor() {
     stateGender: stateUserFilters?.gender || null
   };
 
-  try { localStorage.setItem('cp_neet_fd_'+email, JSON.stringify({name,email,phone})); } catch(e) {}
+
 
   const btn = el('submitBtn');
   btn.disabled = true;
