@@ -213,17 +213,19 @@ nav{background:rgba(15,31,61,0.97);backdrop-filter:blur(12px);padding:0 32px;hei
             <option value="OC_EWS_Girls">OC EWS (Girls)</option>
           </optgroup>
           <optgroup label="Backward Classes">
-            <option value="BCA_Boys">BC-A (Boys)</option>
-            <option value="BCA_Girls">BC-A (Girls)</option>
-            <option value="BCB_Boys">BC-B (Boys)</option>
-            <option value="BCB_Girls">BC-B (Girls)</option>
-            <option value="BCC_Boys">BC-C (Boys)</option>
-            <option value="BCC_Girls">BC-C (Girls)</option>
-            <option value="BCD_Boys">BC-D (Boys)</option>
-            <option value="BCD_Girls">BC-D (Girls)</option>
-            <option value="BCE_Boys">BC-E (Boys)</option>
-            <option value="BCE_Girls">BC-E (Girls)</option>
-          </optgroup>
+  <option value="OBC_Boys">OBC — All BC Categories (Boys)</option>
+  <option value="OBC_Girls">OBC — All BC Categories (Girls)</option>
+  <option value="BCA_Boys">BC-A (Boys)</option>
+  <option value="BCA_Girls">BC-A (Girls)</option>
+  <option value="BCB_Boys">BC-B (Boys)</option>
+  <option value="BCB_Girls">BC-B (Girls)</option>
+  <option value="BCC_Boys">BC-C (Boys)</option>
+  <option value="BCC_Girls">BC-C (Girls)</option>
+  <option value="BCD_Boys">BC-D (Boys)</option>
+  <option value="BCD_Girls">BC-D (Girls)</option>
+  <option value="BCE_Boys">BC-E (Boys)</option>
+  <option value="BCE_Girls">BC-E (Girls)</option>
+</optgroup>
           <optgroup label="SC / ST">
             <option value="SC_Boys">SC (Boys)</option>
             <option value="SC_Girls">SC (Girls)</option>
@@ -377,8 +379,19 @@ function runPredictor() {
   if (!rank || rank < 1)  return showErr('Please enter a valid AP EAMCET rank.');
   if (!cat)               return showErr('Please select your category.');
 
-  const catI = CAT_IDX[cat];
-  if (catI === undefined) return showErr('Invalid category selected.');
+  const OBC_BOYS_CATS  = ['BCA_Boys','BCB_Boys','BCC_Boys','BCD_Boys','BCE_Boys'];
+const OBC_GIRLS_CATS = ['BCA_Girls','BCB_Girls','BCC_Girls','BCD_Girls','BCE_Girls'];
+
+let catIndices;
+if (cat === 'OBC_Boys') {
+  catIndices = OBC_BOYS_CATS.map(c => CAT_IDX[c]);
+} else if (cat === 'OBC_Girls') {
+  catIndices = OBC_GIRLS_CATS.map(c => CAT_IDX[c]);
+} else {
+  const idx = CAT_IDX[cat];
+  if (idx === undefined) return showErr('Invalid category selected.');
+  catIndices = [idx];
+}
 
   const dreamMin = Math.floor(rank * 0.85);
   const byCollege = {};
@@ -386,7 +399,11 @@ function runPredictor() {
   for (const r of D.rows) {
     const ci   = r[0];
     const code = r[1];
-    const cr   = r[2 + catI];
+    let cr = 0;
+    for (const catI of catIndices) {
+      const v = r[2 + catI];
+      if (v && v > cr) cr = v;
+    }
 
     if (!cr) continue;
     if (!matchBranch(code, branch)) continue;
