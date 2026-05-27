@@ -44,14 +44,18 @@ function escapeHtml(t) {
 }
 
 function shortCollegeName(name) {
+  // Show full name INCLUDING the city.
+  // The cleaned dataset stores names as "<College Name>, <City>" — keep both.
+  // For legacy AIQ strings with embedded addresses ("…, ADDRESS, STATE, PIN"),
+  // collapse the address tail but always preserve the city segment.
   if (!name) return '';
-  let parts = name.split(',').map(s => s.trim()).filter(Boolean);
-  if (parts.length === 0) return name;
-  let out = parts[0];
-  if (out.length < 12 && parts.length > 1) out = parts.slice(0, 2).join(', ');
-  out = out.replace(/\s*\b\d{6}\b\s*$/, '');
-  if (out.length > 90) out = out.slice(0, 88) + '…';
-  return out;
+  let s = String(name).trim();
+  // Drop trailing 6-digit PIN code
+  s = s.replace(/\s*,?\s*\b\d{6}\b\s*$/g, '');
+  const parts = s.split(',').map(p => p.trim()).filter(Boolean);
+  if (parts.length <= 2) return parts.join(', ');
+  // Long, address-embedded form: keep first (name) + last (city/state) parts
+  return parts[0] + ', ' + parts[parts.length - 1];
 }
 
 function collegeTypePill(ct) {
