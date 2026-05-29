@@ -58,7 +58,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
 .hero-orb-1 { width: 500px; height: 500px; background: rgba(34,85,196,0.3); top: -100px; right: -100px; }
 .hero-orb-2 { width: 300px; height: 300px; background: rgba(245,158,11,0.15); bottom: 0; left: 200px; }
-.hero-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+.hero-inner { max-width: 920px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr; gap: 0; align-items: center; text-align: center; position: relative; z-index: 1; }
+.hero-inner .hero-title, .hero-inner .hero-subtitle { max-width: 780px; margin-left: auto; margin-right: auto; }
+.hero-inner .exam-picker { max-width: 700px; margin-left: auto; margin-right: auto; }
+.hero-inner .exam-text { text-align: left; }
+.hero-inner .hero-actions { justify-content: center; }
+.hero-inner .hero-stats { justify-content: center; }
+.hero-inner .hero-also { justify-content: center; }
 .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); color: var(--accent-light); font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; font-family: var(--font-head); letter-spacing: 0.5px; text-transform: uppercase; }
 .hero-title { font-family: var(--font-head); font-size: clamp(26px,3.5vw,40px); font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 20px; }
 .hero-title span { color: var(--accent); }
@@ -371,7 +377,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
       <div class="hero-stats">
         <div class="stat-pill"><div class="stat-num">2800<span>+</span></div><div class="stat-label">Engg Colleges</div></div>
         <div class="stat-divider"></div>
-        <div class="stat-pill"><div class="stat-num">2400+</div><div class="stat-label">Med Colleges</div></div>
+        <div class="stat-pill"><div class="stat-num">3290</div><div class="stat-label">Med Colleges</div></div>
         <div class="stat-divider"></div>
         <div class="stat-pill"><div class="stat-num">23<span>+</span></div><div class="stat-label">States</div></div>
         <div class="stat-divider"></div>
@@ -429,21 +435,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
         </a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card-main">
-        <div class="hc-title">Your College Matches</div>
-        <div class="hc-rank-row"><div class="hc-rank-badge">Rank 15,000</div><div class="hc-rank-text">CSE • OPEN • Male</div></div>
-        <div class="college-item"><div class="college-dot dot-dream"></div><div class="college-name">NIT Trichy — CSE</div><div class="college-rank">13,612</div><div class="college-tag tag-dream">Dream</div></div>
-        <div class="college-item"><div class="college-dot dot-dream"></div><div class="college-name">NIT Warangal — CSE</div><div class="college-rank">14,102</div><div class="college-tag tag-dream">Dream</div></div>
-        <div class="college-item"><div class="college-dot dot-safe"></div><div class="college-name">NIT Rourkela — CSE</div><div class="college-rank">15,234</div><div class="college-tag tag-safe">Safe</div></div>
-        <div class="college-item"><div class="college-dot dot-safe"></div><div class="college-name">IIIT Hyderabad — CSE</div><div class="college-rank">17,432</div><div class="college-tag tag-safe">Safe</div></div>
-        <div class="college-item"><div class="college-dot dot-safe"></div><div class="college-name">NIT Calicut — IT</div><div class="college-rank">16,891</div><div class="college-tag tag-safe">Safe</div></div>
-      </div>
-      <div class="hero-card-float">
-        <div class="hcf-icon">🏆</div>
-        <div><div class="hcf-label">Top Pick for You</div><div class="hcf-value">NIT Surathkal CSE</div></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -453,7 +444,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <div class="band-stat"><div class="band-num">128</div><div class="band-label">IITs, NITs, IIITs & GFTIs</div></div>
     <div class="band-stat"><div class="band-num"><span>78</span></div><div class="band-label">Top Private Colleges India</div></div>
     <div class="band-stat"><div class="band-num">2,451</div><div class="band-label">State CET Colleges</div></div>
-    <div class="band-stat"><div class="band-num"><span>2400+</span></div><div class="band-label">Medical Colleges (NEET UG)</div></div>
+    <div class="band-stat"><div class="band-num"><span>3290</span></div><div class="band-label">Medical Colleges (NEET UG)</div></div>
     <div class="band-stat"><div class="band-num">23</div><div class="band-label">States with CET Data</div></div>
   </div>
 </div>
@@ -472,24 +463,6 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <!-- FORM -->
     <div class="pred-card" id="formCard">
       <div class="form-grid">
-
-        <div class="field full">
-          <label>Full Name *</label>
-          <input type="text" id="f_name" placeholder="e.g. Rohan Sharma">
-        </div>
-
-        <div class="field">
-          <label>Email Address *</label>
-          <input type="email" id="f_email" placeholder="your@email.com">
-        </div>
-
-        <div class="field">
-          <label>Mobile Number *</label>
-          <div class="phone-row">
-            <div class="phone-prefix">+91</div>
-            <input type="tel" id="f_phone" placeholder="10-digit" maxlength="10" oninput="this.value=this.value.replace(/\D/g,'')">
-          </div>
-        </div>
 
         <div class="field">
           <label>Category *</label>
@@ -723,7 +696,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
     <h2 class="section-title" style="color:#fff;">Powerful Tools.<br>One Decision Made Easy.</h2>
     <div class="tools-grid">
       <a href="jee-predictor.html" class="tool-card tool-card-1"><div class="tool-bg">🎯</div><div class="tool-badge">Most Popular</div><div class="tool-title">JEE College Predictor</div><div class="tool-desc">Get Dream & Safe college lists for JEE Main, Advanced and CSAB. Personalised Top 10 picks included.</div><div class="tool-stats"><div><div class="tool-stat-num">100+</div><div class="tool-stat-label">JEE Main results</div></div><div><div class="tool-stat-num">50+</div><div class="tool-stat-label">JEE Adv results</div></div></div><div class="tool-btn">Start Predicting →</div></a>
-      <a href="neet-predictor.html" class="tool-card tool-card-neet"><div class="tool-bg">🩺</div><div class="tool-badge">New</div><div class="tool-title">NEET UG College Predictor</div><div class="tool-desc">Find medical colleges for your NEET UG rank — MBBS, BDS, BAMS, BHMS & more. AIQ + 22 state quotas.</div><div class="tool-stats"><div><div class="tool-stat-num">2400+</div><div class="tool-stat-label">Med Colleges</div></div><div><div class="tool-stat-num">15</div><div class="tool-stat-label">Courses</div></div></div><div class="tool-btn">Start Predicting →</div></a>
+      <a href="neet-predictor.html" class="tool-card tool-card-neet"><div class="tool-bg">🩺</div><div class="tool-badge">New</div><div class="tool-title">NEET UG College Predictor</div><div class="tool-desc">Find medical colleges for your NEET UG rank — MBBS, BDS, BAMS, BHMS & more. AIQ + 22 state quotas.</div><div class="tool-stats"><div><div class="tool-stat-num">3,290</div><div class="tool-stat-label">Med Colleges</div></div><div><div class="tool-stat-num">15</div><div class="tool-stat-label">Courses</div></div></div><div class="tool-btn">Start Predicting →</div></a>
       <a href="pvt-colleges.html" class="tool-card tool-card-2"><div class="tool-bg">🏛️</div><div class="tool-badge">100+ Colleges</div><div class="tool-title">Top Private Colleges India</div><div class="tool-desc">Curated list of India's best private engineering colleges across 15 states with fees, ROI and placement data.</div><div class="tool-stats"><div><div class="tool-stat-num">78</div><div class="tool-stat-label">Colleges</div></div><div><div class="tool-stat-num">15</div><div class="tool-stat-label">States</div></div></div><div class="tool-btn">Explore Colleges →</div></a>
       <a href="state-cet.html" class="tool-card tool-card-3"><div class="tool-bg">📍</div><div class="tool-badge">2,451 Colleges</div><div class="tool-title">State CET City Wise</div><div class="tool-desc">Find state CET colleges in your city. Filter by Govt, Private, University. Tier-sorted for easy shortlisting.</div><div class="tool-stats"><div><div class="tool-stat-num">2,451</div><div class="tool-stat-label">Colleges</div></div><div><div class="tool-stat-num">23</div><div class="tool-stat-label">States</div></div></div><div class="tool-btn">Find Near Me →</div></a>
       <a href="compare.html" class="tool-card tool-card-4"><div class="tool-bg">⚖️</div><div class="tool-badge">128 Institutes</div><div class="tool-title">Compare IIT vs NIT</div><div class="tool-desc">NIRF rankings, fees, placements — side by side for all IITs and NITs.</div><div class="tool-stats"><div><div class="tool-stat-num">23</div><div class="tool-stat-label">IITs</div></div><div><div class="tool-stat-num">31</div><div class="tool-stat-label">NITs</div></div></div><div class="tool-btn">Compare Now →</div></a>
@@ -930,7 +903,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   <p style="margin-top:8px;">
     <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6);">Privacy Policy</a> &nbsp;·&nbsp;
     <a href="about.html" style="color:rgba(255,255,255,0.6);">About Us</a> &nbsp;·&nbsp;
-    📧 <a href="/cdn-cgi/l/email-protection#6e1d1b1e1e011c1a400d0102020b090b1e071e0b2e09030f0702400d0103" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="71020401011e03055f121e1d1d1416140118011431161c10181d5f121e1c">[email&#160;protected]</span></a>
+    📧 <a href="/cdn-cgi/l/email-protection#f2818782829d8086dc919d9e9e979597829b8297b2959f939b9edc919d9f" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="f2818782829d8086dc919d9e9e979597829b8297b2959f939b9edc919d9f">[email&#160;protected]</span></a>
   </p>
 </footer>
 
@@ -1106,16 +1079,13 @@ async function submitPredictor() {
   const errEl = document.getElementById('formError');
   errEl.style.display = 'none';
 
-  const name     = document.getElementById('f_name').value.trim();
-  const email    = document.getElementById('f_email').value.trim();
-  const phone    = document.getElementById('f_phone').value.trim();
+  const name     = '';
+  const email    = '';
+  const phone    = '';
   const category = document.getElementById('f_category').value;
   const gender   = document.getElementById('f_gender').value;
   const jmrank   = getJmRank();
 
-  if (!name)                         return showErr('Please enter your name.');
-  if (!email || !email.includes('@')) return showErr('Please enter a valid email address.');
-  if (!/^\d{10}$/.test(phone))      return showErr('Please enter a valid 10-digit mobile number.');
   if (!category)                     return showErr('Please select your category.');
   if (!gender)                       return showErr('Please select your gender.');
   if (!jmrank || Number(jmrank) < 1) return showErr('Please enter your JEE Main Rank.');
@@ -1370,9 +1340,6 @@ function renderTop10(title, picks) {
     try {
       const saved = JSON.parse(localStorage.getItem('cp_fd_'+email)||'null');
       if (saved) {
-        document.getElementById('f_name').value         = saved.name||'';
-        document.getElementById('f_email').value        = email;
-        document.getElementById('f_phone').value        = (saved.phone||'').replace('+91','');
         document.getElementById('f_category').value     = saved.category||'';
         document.getElementById('f_gender').value       = saved.gender||'';
         document.getElementById('f_jmrank').value       = saved.jmrank||'';
@@ -1386,7 +1353,6 @@ function renderTop10(title, picks) {
       }
     } catch(e) {}
     // No saved data — show message
-    document.getElementById('f_email').value = email;
     document.getElementById('resultsArea').style.display = 'block';
     document.getElementById('paidBar').style.display = 'flex';
     document.getElementById('upgradeBox').style.display = 'none';
@@ -1417,7 +1383,6 @@ function downloadPdf() {
 function tryAgain() {
   document.getElementById('resultsArea').style.display='none';
   document.getElementById('formCard').style.display='block';
-  document.getElementById('f_email').value=currentEmail;
   window.history.replaceState({},document.title,window.location.pathname);
   document.getElementById('formCard').scrollIntoView({behavior:'smooth'});
 }
