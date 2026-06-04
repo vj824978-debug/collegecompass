@@ -79,6 +79,22 @@ label { font-size: 12px; font-weight: 500; color: var(--muted); text-transform: 
 input, select { height: 44px; border: 1.5px solid var(--border); border-radius: 10px; padding: 0 14px; font-size: 14px; font-family: var(--font-body); color: var(--text); background: var(--card); transition: border-color 0.2s; outline: none; width: 100%; }
 input:focus, select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(34,85,196,0.08); }
 input::placeholder { color: #b0bec5; }
+
+/* ── Multi-select dropdown ── */
+.msel { position: relative; width: 100%; }
+.msel-trigger { height: 44px; width: 100%; border: 1.5px solid var(--border); border-radius: 10px; padding: 0 12px 0 14px; font-size: 14px; font-family: var(--font-body); color: var(--text); background: var(--card); display: flex; align-items: center; gap: 8px; cursor: pointer; text-align: left; transition: border-color 0.2s; }
+.msel-trigger:hover { border-color: #cbd5e1; }
+.msel.open .msel-trigger { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(34,85,196,0.08); }
+.msel-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.msel-count { flex-shrink: 0; background: var(--blue); color: #fff; font-size: 11px; font-weight: 700; line-height: 1; border-radius: 20px; padding: 3px 8px; }
+.msel-chev { flex-shrink: 0; width: 14px; height: 14px; color: var(--muted); transition: transform 0.2s; }
+.msel.open .msel-chev { transform: rotate(180deg); }
+.msel-panel { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--card); border: 1.5px solid var(--border); border-radius: 12px; box-shadow: 0 14px 36px rgba(15,31,61,0.14); padding: 6px; z-index: 60; max-height: 280px; overflow-y: auto; display: none; }
+.msel.open .msel-panel { display: block; }
+.msel-opt { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--text); cursor: pointer; user-select: none; }
+.msel-opt:hover { background: #f1f5f9; }
+.msel-opt input[type=checkbox] { width: 18px; height: 18px; min-width: 18px; margin: 0; padding: 0; accent-color: var(--blue); cursor: pointer; }
+.msel-opt.all-opt { font-weight: 600; border-bottom: 1px solid var(--border); border-radius: 0; margin-bottom: 4px; padding-bottom: 11px; }
 .phone-row { display: flex; gap: 10px; }
 .phone-prefix { display: flex; align-items: center; height: 44px; padding: 0 14px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 14px; color: var(--muted); background: var(--bg); flex-shrink: 0; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 50px; padding: 0 28px; border-radius: 12px; font-family: var(--font-head); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; text-decoration: none; }
@@ -253,30 +269,40 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
         </div>
 
         <div class="field">
-          <label>Branch / Course</label>
-          <select id="f_branch">
-            <option value="ALL">ALL</option>
-            <option value="5 Year Program (Dual Degree)">5 Year Program (Dual Degree)</option>
-            <option value="Bio Med/Tech">Bio Med/Tech</option>
-            <option value="Chemical">Chemical</option>
-            <option value="Civil">Civil</option>
-            <option value="CSE/IT/AI">CSE/IT/AI</option>
-            <option value="Electrical/Electronics">Electrical/Electronics</option>
-            <option value="Engineering Physics">Engineering Physics</option>
-            <option value="Mathematics and Computing">Mathematics and Computing</option>
-            <option value="Mechanical">Mechanical</option>
-            <option value="Metallurgy/Mining">Metallurgy/Mining</option>
-            <option value="Others">Others</option>
-          </select>
+          <label>Branch / Course <span style="text-transform:none;color:var(--blue);font-weight:600;">· pick multiple</span></label>
+          <div class="msel" id="f_branch" data-allvalue="ALL" data-alllabel="All Branches">
+            <button type="button" class="msel-trigger"><span class="msel-label"></span><span class="msel-chev">▾</span></button>
+            <div class="msel-panel">
+              <label class="msel-opt all-opt"><input type="checkbox" value="ALL" checked>All Branches</label>
+              <label class="msel-opt"><input type="checkbox" value="5 Year Program (Dual Degree)">5 Year Program (Dual Degree)</label>
+              <label class="msel-opt"><input type="checkbox" value="Bio Med/Tech">Bio Med/Tech</label>
+              <label class="msel-opt"><input type="checkbox" value="Chemical">Chemical</label>
+              <label class="msel-opt"><input type="checkbox" value="Civil">Civil</label>
+              <label class="msel-opt"><input type="checkbox" value="CSE/IT/AI">CSE/IT/AI</label>
+              <label class="msel-opt"><input type="checkbox" value="Electrical/Electronics">Electrical/Electronics</label>
+              <label class="msel-opt"><input type="checkbox" value="Engineering Physics">Engineering Physics</label>
+              <label class="msel-opt"><input type="checkbox" value="Mathematics and Computing">Mathematics and Computing</label>
+              <label class="msel-opt"><input type="checkbox" value="Mechanical">Mechanical</label>
+              <label class="msel-opt"><input type="checkbox" value="Metallurgy/Mining">Metallurgy/Mining</label>
+              <label class="msel-opt"><input type="checkbox" value="Others">Others</label>
+            </div>
+          </div>
         </div>
 
         <div class="field">
-          <label>Counselling Round</label>
-          <select id="f_round">
-            <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-            <option value="4">4</option><option value="5">5</option><option value="6">6</option>
-            <option value="ALL">ALL</option>
-          </select>
+          <label>Counselling Round <span style="text-transform:none;color:var(--blue);font-weight:600;">· pick multiple</span></label>
+          <div class="msel" id="f_round" data-allvalue="ALL" data-alllabel="All Rounds">
+            <button type="button" class="msel-trigger"><span class="msel-label"></span><span class="msel-chev">▾</span></button>
+            <div class="msel-panel">
+              <label class="msel-opt all-opt"><input type="checkbox" value="ALL">All Rounds</label>
+              <label class="msel-opt"><input type="checkbox" value="1" checked>Round 1</label>
+              <label class="msel-opt"><input type="checkbox" value="2">Round 2</label>
+              <label class="msel-opt"><input type="checkbox" value="3">Round 3</label>
+              <label class="msel-opt"><input type="checkbox" value="4">Round 4</label>
+              <label class="msel-opt"><input type="checkbox" value="5">Round 5</label>
+              <label class="msel-opt"><input type="checkbox" value="6">Round 6</label>
+            </div>
+          </div>
         </div>
 
         <div class="field full">
@@ -299,11 +325,16 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
         </div>
 
         <div class="field">
-          <label>Preferred College Type (JEE Main)</label>
-          <select id="f_collegeType">
-            <option value="ALL">ALL</option><option value="NIT">NIT</option>
-            <option value="IIIT">IIIT</option><option value="GFTI">GFTI</option>
-          </select>
+          <label>Preferred College Type (JEE Main) <span style="text-transform:none;color:var(--blue);font-weight:600;">· pick multiple</span></label>
+          <div class="msel" id="f_collegeType" data-allvalue="ALL" data-alllabel="All Types">
+            <button type="button" class="msel-trigger"><span class="msel-label"></span><span class="msel-chev">▾</span></button>
+            <div class="msel-panel">
+              <label class="msel-opt all-opt"><input type="checkbox" value="ALL" checked>All Types</label>
+              <label class="msel-opt"><input type="checkbox" value="NIT">NIT</label>
+              <label class="msel-opt"><input type="checkbox" value="IIIT">IIIT</label>
+              <label class="msel-opt"><input type="checkbox" value="GFTI">GFTI</label>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -382,7 +413,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   <p style="margin-top:8px;">
     <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6);">Privacy Policy</a> ·
     <a href="about.html" style="color:rgba(255,255,255,0.6);">About</a> ·
-    📧 <a href="/cdn-cgi/l/email-protection#b4c7c1c4c4dbc6c09ad7dbd8d8d1d3d1c4ddc4d1f4d3d9d5ddd89ad7dbd9" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="45363035352a37316b262a2929202220352c3520052228242c296b262a28">[email&#160;protected]</span></a>
+    📧 <a href="/cdn-cgi/l/email-protection#50232520203f22247e333f3c3c3537352039203510373d31393c7e333f3d" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="ff8c8a8f8f908d8bd19c9093939a989a8f968f9abf98929e9693d19c9092">[email&#160;protected]</span></a>
   </p>
 </footer>
 
@@ -414,6 +445,78 @@ function loadData() {
 }
 window.addEventListener('DOMContentLoaded', () => loadData());
 
+// ── Multi-select dropdown component ──
+const MSel = (function(){
+  function opts(el){ return [...el.querySelectorAll('.msel-panel input[type=checkbox]')]; }
+  function allCb(el){ const av=el.dataset.allvalue; return opts(el).find(c=>c.value===av) || null; }
+  function refresh(el){
+    const av=el.dataset.allvalue, all=allCb(el);
+    const checked=opts(el).filter(c=>c.checked && c.value!==av);
+    const labelEl=el.querySelector('.msel-label');
+    const trig=el.querySelector('.msel-trigger');
+    let badge=trig.querySelector('.msel-count'); if(badge) badge.remove();
+    if(all && all.checked || checked.length===0){
+      labelEl.textContent = el.dataset.alllabel || 'ALL';
+    } else {
+      const first=checked[0].parentNode.textContent.trim();
+      labelEl.textContent = first;
+      if(checked.length>1){
+        const b=document.createElement('span');
+        b.className='msel-count'; b.textContent='+'+(checked.length-1);
+        trig.insertBefore(b, el.querySelector('.msel-chev'));
+      }
+    }
+  }
+  function onChange(el, cb){
+    const av=el.dataset.allvalue, all=allCb(el);
+    if(cb.value===av){
+      if(cb.checked) opts(el).forEach(c=>{ if(c.value!==av) c.checked=false; });
+    } else if(cb.checked && all){
+      all.checked=false;
+    }
+    const anySpecific=opts(el).some(c=>c.checked && c.value!==av);
+    if(!anySpecific && all) all.checked=true;
+    refresh(el);
+  }
+  function init(el){
+    const trig=el.querySelector('.msel-trigger');
+    trig.addEventListener('click', e=>{
+      e.stopPropagation();
+      const wasOpen=el.classList.contains('open');
+      document.querySelectorAll('.msel.open').forEach(m=>m.classList.remove('open'));
+      if(!wasOpen) el.classList.add('open');
+    });
+    opts(el).forEach(cb=> cb.addEventListener('change', ()=>onChange(el, cb)));
+    el.querySelector('.msel-panel').addEventListener('click', e=>e.stopPropagation());
+    refresh(el);
+  }
+  document.addEventListener('click', ()=> document.querySelectorAll('.msel.open').forEach(m=>m.classList.remove('open')));
+  window.addEventListener('DOMContentLoaded', ()=> document.querySelectorAll('.msel').forEach(init));
+  return {
+    get(id){
+      const el=document.getElementById(id); if(!el) return [];
+      const av=el.dataset.allvalue, all=allCb(el);
+      if(all && all.checked) return [];
+      return opts(el).filter(c=>c.checked && c.value!==av).map(c=>c.value);
+    },
+    label(id){
+      const vals=this.get(id);
+      return vals.length ? vals.join(', ') : '';
+    },
+    set(id, arr){
+      const el=document.getElementById(id); if(!el) return;
+      const av=el.dataset.allvalue, all=allCb(el);
+      const want = Array.isArray(arr) ? arr.map(String) : (arr ? String(arr).split(',').map(s=>s.trim()).filter(Boolean) : []);
+      const useAll = want.length===0 || want.includes(av);
+      opts(el).forEach(c=>{
+        if(c.value===av) c.checked = useAll;
+        else c.checked = !useAll && want.includes(c.value);
+      });
+      refresh(el);
+    }
+  };
+})();
+
 const norm = v => String(v == null ? '' : v).trim().toUpperCase();
 const CAT_IDS = {'EWS':0,'EWS (PWD)':1,'OBC-NCL':2,'OBC-NCL (PWD)':3,'OPEN':4,'OPEN (PWD)':5,'SC':6,'SC (PWD)':7,'ST':8,'ST (PWD)':9};
 const BG_IDS  = {'5 YEAR PROGRAM (DUAL DEGREE)':0,'BIO MED/TECH':1,'CSE/IT/AI':2,'CHEMICAL':3,'CIVIL':4,'ELECTRICAL/ELECTRONICS':5,'ENGINEERING PHYSICS':6,'MATHEMATICS AND COMPUTING':7,'MECHANICAL':8,'METALLURGY/MINING':9,'OTHERS':10};
@@ -421,23 +524,28 @@ const CT_IDS  = {'NIT':0,'IIIT':1,'GFTI':2};
 function getCatId(v) { return CAT_IDS[norm(v)] ?? 4; }
 function getBgId(v)  { const k=norm(v); for(const p in BG_IDS) if(k.includes(p)) return BG_IDS[p]; return 10; }
 function genMatch(u, rowGen) { if(rowGen===0) return true; return norm(u).includes('FEMALE'); }
+
+// Multi-select → id-set helpers. Empty/missing array means "no filter" (all).
+function bgIdSet(arr)  { if(!arr||!arr.length) return null; return new Set(arr.map(getBgId)); }
+function roundSet(arr) { if(!arr||!arr.length) return null; return new Set(arr.map(Number)); }
+function ctIdSet(arr)  { if(!arr||!arr.length) return null; const s=new Set(); arr.forEach(v=>{const id=CT_IDS[norm(v)]; if(id!=null) s.add(id);}); return s.size?s:null; }
 const BRANCH_WEIGHT = {'CSE/IT/AI':1,'ELECTRICAL/ELECTRONICS':2,'ENGINEERING PHYSICS':2,'MATHEMATICS AND COMPUTING':2,'5 YEAR PROGRAM (DUAL DEGREE)':3,'CHEMICAL':3,'CIVIL':3,'MECHANICAL':3,'OTHERS':3,'BIO MED/TECH':4,'METALLURGY/MINING':4};
 function branchWeight(bg) { const k=norm(bg); for(const p in BRANCH_WEIGHT) if(k.includes(p)) return BRANCH_WEIGHT[p]; return 4; }
 
 function buildJeeMain(user, isPaid) {
   const db=DB.jeemain, C=db.c, B=db.b;
   const limit=isPaid?100:5, dreamMin=Math.floor(user.jmrank*0.9);
-  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
-  const ctId=user.collegeType==='ALL'?-1:(CT_IDS[norm(user.collegeType)]??-1);
-  const round=user.round==='ALL'?-1:Number(user.round);
+  const catId=getCatId(user.category), bgIds=bgIdSet(user.branch);
+  const ctIds=ctIdSet(user.collegeType);
+  const rounds=roundSet(user.round);
   const dream=[], safe=[];
   for(const r of db.d) {
-    if(round!==-1&&r[0]!==round) continue;
+    if(rounds && !rounds.has(r[0])) continue;
     if(r[3]===3 || r[3]===4 || r[3]===5) continue;
     if(r[4]!==catId) continue;
     if(!genMatch(user.gender,r[5])) continue;
-    if(bgId!==-1&&r[7]!==bgId) continue;
-    if(ctId!==-1&&r[8]!==ctId) continue;
+    if(bgIds && !bgIds.has(r[7])) continue;
+    if(ctIds && !ctIds.has(r[8])) continue;
     const cr=r[6], qt=r[3]===0?'OS':r[3]===1?'HS':'AI';
     if(cr>=dreamMin&&cr<user.jmrank) dream.push([r[0],C[r[1]],B[r[2]],qt,cr,cr-user.jmrank]);
     else if(cr>=user.jmrank) safe.push([r[0],C[r[1]],B[r[2]],qt,cr,cr-user.jmrank]);
@@ -449,14 +557,14 @@ function buildJeeAdv(user, isPaid) {
   if(!user.jarank) return null;
   const db=DB.jeeadv, C=db.c, B=db.b;
   const limit=isPaid?50:5, dreamMin=Math.floor(user.jarank*0.9);
-  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
-  const round=user.round==='ALL'?-1:Number(user.round);
+  const catId=getCatId(user.category), bgIds=bgIdSet(user.branch);
+  const rounds=roundSet(user.round);
   const dream=[], safe=[];
   for(const r of db.d) {
-    if(round!==-1&&r[0]!==round) continue;
+    if(rounds && !rounds.has(r[0])) continue;
     if(r[3]!==catId) continue;
     if(!genMatch(user.gender,r[4])) continue;
-    if(bgId!==-1&&r[6]!==bgId) continue;
+    if(bgIds && !bgIds.has(r[6])) continue;
     const cr=r[5];
     if(cr>=dreamMin&&cr<user.jarank) dream.push([r[0],C[r[1]],B[r[2]],'',cr,cr-user.jarank]);
     else if(cr>=user.jarank) safe.push([r[0],C[r[1]],B[r[2]],'',cr,cr-user.jarank]);
@@ -468,17 +576,17 @@ function buildJeeMainHS(user, isPaid) {
   if(!user.state||user.state==='ALL') return null;
   const db=DB.jeemainhs, C=db.c, B=db.b, S=db.s;
   const limit=isPaid?50:5;
-  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
-  const round=user.round==='ALL'?-1:Number(user.round);
+  const catId=getCatId(user.category), bgIds=bgIdSet(user.branch);
+  const rounds=roundSet(user.round);
   const stId=S.findIndex(s=>norm(s)===norm(user.state));
   if(stId===-1) return null;
   const results=[];
   for(const r of db.d) {
-    if(round!==-1&&r[0]!==round) continue;
+    if(rounds && !rounds.has(r[0])) continue;
     if(r[3]!==catId) continue;
     if(!genMatch(user.gender,r[4])) continue;
     if(r[5]!==stId) continue;
-    if(bgId!==-1&&r[7]!==bgId) continue;
+    if(bgIds && !bgIds.has(r[7])) continue;
     if(r[6]>=user.jmrank) results.push([C[r[1]],B[r[2]],r[6]]);
   }
   results.sort((a,b)=>a[2]-b[2]);
@@ -487,15 +595,15 @@ function buildJeeMainHS(user, isPaid) {
 function buildCSAB(user, isPaid) {
   const db=DB.csab, C=db.c, B=db.b;
   const limit=isPaid?50:5, dreamMin=Math.floor(user.jmrank*0.9);
-  const catId=getCatId(user.category), bgId=user.branch==='ALL'?-1:getBgId(user.branch);
-  const round=user.round==='ALL'?-1:Number(user.round);
+  const catId=getCatId(user.category), bgIds=bgIdSet(user.branch);
+  const rounds=roundSet(user.round);
   const CSAB_QT=['All India','Home State','Other State','Goa','J&K','Ladakh'];
   const dream=[], safe=[];
   for(const r of db.d) {
-    if(round!==-1&&r[0]!==round) continue;
+    if(rounds && !rounds.has(r[0])) continue;
     if(r[4]!==catId) continue;
     if(!genMatch(user.gender,r[5])) continue;
-    if(bgId!==-1&&r[7]!==bgId) continue;
+    if(bgIds && !bgIds.has(r[7])) continue;
     const cr=r[6];
     if(cr>=dreamMin&&cr<user.jmrank) dream.push([r[0],C[r[1]],B[r[2]],CSAB_QT[r[3]]||'',cr,cr-user.jmrank]);
     else if(cr>=user.jmrank) safe.push([r[0],C[r[1]],B[r[2]],CSAB_QT[r[3]]||'',cr,cr-user.jmrank]);
@@ -547,14 +655,14 @@ async function submitPredictor() {
     name, email, phone, category, gender,
     jmrank: Number(jmrank),
     jarank: Number(document.getElementById('f_jarank').value) || 0,
-    branch: document.getElementById('f_branch').value,
+    branch: MSel.get('f_branch'),
     state: document.getElementById('f_state').value,
     city: 'ALL',
     round: document.getElementById('f_round').value,
     collegeType: document.getElementById('f_collegeType').value,
     collegeTypeS:'ALL'
   };
-  window._reportMeta = {name, rank:user.jmrank, cat:category, branch:user.branch!=='ALL'?user.branch:'', state:user.state!=='ALL'?user.state:'', gender, round:user.round, jarank:user.jarank};
+  window._reportMeta = {name, rank:user.jmrank, cat:category, branch:MSel.label('f_branch'), state:user.state!=='ALL'?user.state:'', gender, round:MSel.label('f_round')||'All Rounds', jarank:user.jarank};
   try { localStorage.setItem('cp_fd_'+email, JSON.stringify(user)); } catch(e) {}
   try {
     const cached = JSON.parse(localStorage.getItem('cp_pay_'+email)||'{}');
@@ -615,9 +723,9 @@ async function fetchPaymentInfo(email, user) {
   try {
     const params = new URLSearchParams({
       name:user.name, email, phone:user.phone, category:user.category,
-      jmrank:user.jmrank, jarank:user.jarank, branch:user.branch,
+      jmrank:user.jmrank, jarank:user.jarank, branch:(user.branch.join(',')||'ALL'),
       gender:user.gender, state:user.state, city:user.city,
-      round:user.round, collegeType:user.collegeType, collegeTypeS:user.collegeTypeS
+      round:(user.round.join(',')||'ALL'), collegeType:(user.collegeType.join(',')||'ALL'), collegeTypeS:user.collegeTypeS
     });
     const res = await fetch(APPS_SCRIPT_URL, {method:'POST', body:params, headers:{'Content-Type':'application/x-www-form-urlencoded'}});
     const data = await res.json();
@@ -700,10 +808,10 @@ function renderTop10(title, picks) {
         document.getElementById('f_gender').value = saved.gender||'';
         document.getElementById('f_jmrank').value = saved.jmrank||'';
         document.getElementById('f_jarank').value = saved.jarank||'0';
-        document.getElementById('f_branch').value = saved.branch||'ALL';
+        MSel.set('f_branch', saved.branch);
         document.getElementById('f_state').value = saved.state||'ALL';
-        document.getElementById('f_round').value = saved.round||'1';
-        document.getElementById('f_collegeType').value = saved.collegeType||'ALL';
+        MSel.set('f_round', (saved.round && saved.round.length) ? saved.round : ['1']);
+        MSel.set('f_collegeType', saved.collegeType);
         setTimeout(()=>submitPredictor(), 300);
         return;
       }
