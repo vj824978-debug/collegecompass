@@ -413,7 +413,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   <p style="margin-top:8px;">
     <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6);">Privacy Policy</a> ·
     <a href="about.html" style="color:rgba(255,255,255,0.6);">About</a> ·
-    📧 <a href="/cdn-cgi/l/email-protection#50232520203f22247e333f3c3c3537352039203510373d31393c7e333f3d" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="ff8c8a8f8f908d8bd19c9093939a989a8f968f9abf98929e9693d19c9092">[email&#160;protected]</span></a>
+    📧 <a href="/cdn-cgi/l/email-protection#8efdfbfefee1fcfaa0ede1e2e2ebe9ebfee7feebcee9e3efe7e2a0ede1e3" style="color:rgba(255,255,255,0.6);"><span class="__cf_email__" data-cfemail="56252326263924227835393a3a333133263f263316313b373f3a7835393b">[email&#160;protected]</span></a>
   </p>
 </footer>
 
@@ -658,8 +658,8 @@ async function submitPredictor() {
     branch: MSel.get('f_branch'),
     state: document.getElementById('f_state').value,
     city: 'ALL',
-    round: document.getElementById('f_round').value,
-    collegeType: document.getElementById('f_collegeType').value,
+    round: MSel.get('f_round'),
+    collegeType: MSel.get('f_collegeType'),
     collegeTypeS:'ALL'
   };
   window._reportMeta = {name, rank:user.jmrank, cat:category, branch:MSel.label('f_branch'), state:user.state!=='ALL'?user.state:'', gender, round:MSel.label('f_round')||'All Rounds', jarank:user.jarank};
