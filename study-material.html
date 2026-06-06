@@ -226,7 +226,7 @@ async function loadFromDrive() {
     const examFolders = await driveList(DRIVE_FOLDER_ID,'folder');
     const files=[];
     for(const ef of examFolders) {
-      const exam=ef.name.toLowerCase();
+      const exam=ef.name.toLowerCase().trim(); console.log('exam folder:', ef.name, '→ matches:', ['jee','neet'].includes(ef.name.toLowerCase().trim()));
       if(!['jee','neet'].includes(exam)) continue;
       const subFolders=await driveList(ef.id,'folder');
       for(const sf of subFolders) {
