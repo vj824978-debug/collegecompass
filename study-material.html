@@ -216,35 +216,52 @@ const SUBJECTS={
 };
 
 // ── GOOGLE DRIVE LOADER ──
+// ── CACHE CONFIG ──
+const CACHE_KEY     = 'cp_materials_cache';
+const CACHE_TIME_KEY= 'cp_materials_time';
+const CACHE_TTL     = 24 * 60 * 60 * 1000; // 24 hours in ms
+
 async function loadFromDrive() {
   if (DRIVE_API_KEY==='YOUR_GOOGLE_API_KEY') {
     allFiles=getDemoFiles(); isLoading=false;
     document.getElementById('infoText').innerHTML='<strong>Demo mode:</strong> Showing sample cards. Add your Google API key to load live PDFs from Drive.';
     updateStats(); renderSubjects(); renderCards(); return;
   }
+
+  // ── Check cache first ──
   try {
-    // Level 1: root → finds "handwritten_notes"
+    const cachedTime = localStorage.getItem(CACHE_TIME_KEY);
+    const cachedData = localStorage.getItem(CACHE_KEY);
+    if (cachedTime && cachedData) {
+      const age = Date.now() - parseInt(cachedTime);
+      if (age < CACHE_TTL) {
+        // Cache is fresh — use it instantly ⚡
+        allFiles = JSON.parse(cachedData);
+        isLoading = false;
+        updateStats(); renderSubjects(); renderCards();
+        document.getElementById('infoText').innerHTML='<strong>Auto-updated:</strong> New notes appear here automatically when uploaded to Google Drive.';
+        return;
+      }
+    }
+  } catch(e) {}
+
+  // ── Cache expired or missing — fetch from Drive ──
+  try {
     const categoryFolders = await driveList(DRIVE_FOLDER_ID,'folder');
     const files=[];
     for(const catFolder of categoryFolders) {
-      // Level 2: inside "handwritten_notes" → finds "jee", "neet"
       const examFolders = await driveList(catFolder.id,'folder');
       for(const ef of examFolders) {
         const exam=ef.name.toLowerCase().trim();
-        console.log('exam folder:', ef.name, '→ matches:', ['jee','neet'].includes(exam));
         if(!['jee','neet'].includes(exam)) continue;
-        // Level 3: inside "jee" → finds "physics", "maths", "chemistry"
         const subFolders=await driveList(ef.id,'folder');
         for(const sf of subFolders) {
           const subject=sf.name.toLowerCase().trim();
-          // Level 4: inside "physics" → finds "class-11", "class-12"
           const clsFolders=await driveList(sf.id,'folder');
           for(const cf of clsFolders) {
             const m=cf.name.match(/(\d+)/); const cls=m?m[1]:'';
-            // Level 5: inside "class-11" → finds PDF files
             const pdfs=await driveList(cf.id,'pdf');
             for(const pdf of pdfs) {
-              console.log('Found PDF:', pdf.name, 'exam:', exam, 'subject:', subject, 'class:', cls);
               files.push({id:pdf.id,name:toTitle(pdf.name),exam,subject,classNum:cls,
                 url:`https://drive.google.com/file/d/${pdf.id}/view`,
                 downloadUrl:`https://drive.google.com/uc?export=download&id=${pdf.id}`});
@@ -253,11 +270,22 @@ async function loadFromDrive() {
         }
       }
     }
+    // ── Save to cache ──
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify(files));
+      localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+    } catch(e) {}
+
     allFiles=files; isLoading=false; updateStats(); renderSubjects(); renderCards();
+    document.getElementById('infoText').innerHTML='<strong>Auto-updated:</strong> New notes appear here automatically when uploaded to Google Drive.';
   } catch(err) {
-    console.error('Drive error:', err);
+    // Try stale cache as fallback
+    try {
+      const stale = localStorage.getItem(CACHE_KEY);
+      if (stale) { allFiles=JSON.parse(stale); isLoading=false; updateStats(); renderSubjects(); renderCards(); return; }
+    } catch(e) {}
     allFiles=getDemoFiles(); isLoading=false;
-    document.getElementById('infoText').innerHTML='<strong>Note:</strong> Could not load from Drive. Showing demo data. Check your API key and folder sharing settings.';
+    document.getElementById('infoText').innerHTML='<strong>Note:</strong> Could not load from Drive. Showing demo data.';
     updateStats(); renderSubjects(); renderCards();
   }
 }
