@@ -66,10 +66,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,31,61,0.9
 .sidebar-section{padding:18px 16px;border-bottom:1px solid var(--border);}
 .sidebar-section:last-child{border-bottom:none;}
 .sidebar-label{font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
-.exam-toggle{display:grid;grid-template-columns:1fr 1fr;background:var(--bg);border-radius:8px;padding:3px;gap:2px;}
-.exam-btn{padding:8px 0;font-family:var(--font-head);font-size:13px;font-weight:600;border:none;background:transparent;border-radius:6px;cursor:pointer;color:var(--muted);transition:all .15s;}
-.exam-btn.active-jee{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(34,85,196,0.3);}
-.exam-btn.active-neet{background:var(--rose);color:#fff;box-shadow:0 2px 8px rgba(244,63,94,0.3);}
+.exam-badges{display:flex;flex-wrap:wrap;gap:6px;}
+.exam-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-head);font-size:12px;font-weight:700;padding:6px 12px;border-radius:20px;letter-spacing:.02em;}
+.badge-jee{background:linear-gradient(135deg,#eff6ff,#e0f2fe);color:var(--blue);border:1.5px solid #bfdbfe;}
+.badge-gate{background:linear-gradient(135deg,#f0fdf4,#dcfce7);color:var(--green);border:1.5px solid #bbf7d0;}
+.badge-comedk{background:linear-gradient(135deg,#fff7ed,#ffedd5);color:#c2410c;border:1.5px solid #fed7aa;}
 .search-wrap{position:relative;}
 .search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none;}
 .search-input{width:100%;height:38px;padding:0 10px 0 32px;border:1.5px solid var(--border);border-radius:8px;font-size:13px;font-family:var(--font-body);color:var(--text);background:var(--bg);outline:none;transition:border-color .15s;}
@@ -156,9 +157,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,31,61,0.9
   <aside class="sidebar">
     <div class="sidebar-section">
       <div class="sidebar-label">Exam</div>
-      <div class="exam-toggle">
-        <button class="exam-btn active-jee" id="btn-jee" onclick="setExam('jee')">JEE</button>
-        <button class="exam-btn" id="btn-neet" onclick="setExam('neet')">NEET</button>
+      <div class="exam-badges">
+        <span class="exam-badge badge-jee">🎯 JEE / NEET</span>
       </div>
     </div>
     <div class="sidebar-section">
@@ -188,7 +188,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,31,61,0.9
       <div class="info-text" id="infoText"><strong>Auto-updated:</strong> New notes appear here automatically when uploaded to Google Drive. No refresh needed.</div>
     </div>
     <div class="content-top">
-      <span class="content-heading" id="contentHeading">JEE Study Material</span>
+      <span class="content-heading" id="contentHeading">Handwritten Notes</span>
       <span class="content-count" id="contentCount">Loading...</span>
     </div>
     <div id="cardsContainer">
@@ -207,13 +207,16 @@ const DRIVE_FOLDER_ID = '1ENA91p-AYasVd3DDIEOGvGk54oKvlenW';
 const DRIVE_API_KEY   = 'AIzaSyAy8KhLmN_2bMVKHgKYVokxs-3r2QrrlLU';
 
 // ── STATE ──
-let currentExam='jee', currentSubject='all', currentClass='all';
+let currentSubject='all', currentClass='all';
 let allFiles=[], isLoading=true;
 
-const SUBJECTS={
-  jee: [{id:'all',label:'All Subjects',icon:'📚'},{id:'physics',label:'Physics',icon:'⚡'},{id:'maths',label:'Maths',icon:'📐'},{id:'chemistry',label:'Chemistry',icon:'🧪'}],
-  neet:[{id:'all',label:'All Subjects',icon:'📚'},{id:'biology',label:'Biology',icon:'🧬'},{id:'chemistry',label:'Chemistry',icon:'🧪'},{id:'physics',label:'Physics',icon:'⚡'}]
-};
+const SUBJECTS=[
+  {id:'all',     label:'All Subjects', icon:'📚'},
+  {id:'physics', label:'Physics',      icon:'⚡'},
+  {id:'maths',   label:'Maths',        icon:'📐'},
+  {id:'chemistry',label:'Chemistry',   icon:'🧪'},
+  {id:'biology', label:'Biology',      icon:'🧬'}
+];
 
 // ── GOOGLE DRIVE LOADER ──
 // ── CACHE CONFIG ──
@@ -250,22 +253,18 @@ async function loadFromDrive() {
     const categoryFolders = await driveList(DRIVE_FOLDER_ID,'folder');
     const files=[];
     for(const catFolder of categoryFolders) {
-      const examFolders = await driveList(catFolder.id,'folder');
-      for(const ef of examFolders) {
-        const exam=ef.name.toLowerCase().trim();
-        if(!['jee','neet'].includes(exam)) continue;
-        const subFolders=await driveList(ef.id,'folder');
-        for(const sf of subFolders) {
-          const subject=sf.name.toLowerCase().trim();
-          const clsFolders=await driveList(sf.id,'folder');
-          for(const cf of clsFolders) {
-            const m=cf.name.match(/(\d+)/); const cls=m?m[1]:'';
-            const pdfs=await driveList(cf.id,'pdf');
-            for(const pdf of pdfs) {
-              files.push({id:pdf.id,name:toTitle(pdf.name),exam,subject,classNum:cls,
-                url:`https://drive.google.com/file/d/${pdf.id}/view`,
-                downloadUrl:`https://drive.google.com/uc?export=download&id=${pdf.id}`});
-            }
+      // subject folders directly inside category folder
+      const subFolders=await driveList(catFolder.id,'folder');
+      for(const sf of subFolders) {
+        const subject=sf.name.toLowerCase().trim();
+        const clsFolders=await driveList(sf.id,'folder');
+        for(const cf of clsFolders) {
+          const m=cf.name.match(/(\d+)/); const cls=m?m[1]:'';
+          const pdfs=await driveList(cf.id,'pdf');
+          for(const pdf of pdfs) {
+            files.push({id:pdf.id,name:toTitle(pdf.name),subject,classNum:cls,
+              url:`https://drive.google.com/file/d/${pdf.id}/view`,
+              downloadUrl:`https://drive.google.com/uc?export=download&id=${pdf.id}`});
           }
         }
       }
@@ -324,7 +323,6 @@ function getDemoFiles(){
 function getFiltered(){
   const q=document.getElementById('searchInput').value.toLowerCase().trim();
   return allFiles.filter(f=>{
-    if(f.exam!==currentExam) return false;
     if(currentSubject!=='all'&&f.subject!==currentSubject) return false;
     if(currentClass!=='all'&&f.classNum!==currentClass) return false;
     if(q&&!f.name.toLowerCase().includes(q)) return false;
@@ -332,14 +330,7 @@ function getFiltered(){
   });
 }
 
-function setExam(exam){
-  currentExam=exam; currentSubject='all';
-  document.getElementById('btn-jee').className='exam-btn'+(exam==='jee'?' active-jee':'');
-  document.getElementById('btn-neet').className='exam-btn'+(exam==='neet'?' active-neet':'');
-  document.getElementById('contentHeading').textContent=exam==='jee'?'JEE Study Material':'NEET Study Material';
-  document.getElementById('searchInput').value='';
-  renderSubjects(); renderCards();
-}
+
 
 function setClass(cls,el){
   currentClass=cls;
@@ -348,20 +339,18 @@ function setClass(cls,el){
 }
 
 function renderSubjects(){
-  const isNeet=currentExam==='neet';
-  document.getElementById('subjectList').innerHTML=SUBJECTS[currentExam].map(s=>{
-    const count=s.id==='all'?allFiles.filter(f=>f.exam===currentExam).length:allFiles.filter(f=>f.exam===currentExam&&f.subject===s.id).length;
+  document.getElementById('subjectList').innerHTML=SUBJECTS.map(s=>{
+    const count=s.id==='all'?allFiles.length:allFiles.filter(f=>f.subject===s.id).length;
     const isActive=currentSubject===s.id;
-    const cls=isActive?(isNeet?'subject-btn active neet':'subject-btn active'):'subject-btn';
+    const cls=isActive?'subject-btn active':'subject-btn';
     return `<button class="${cls}" onclick="setSubject('${s.id}',this)"><span class="subject-icon">${s.icon}</span><span>${s.label}</span><span class="subject-count">${count}</span></button>`;
   }).join('');
 }
 
 function setSubject(sub,el){
   currentSubject=sub;
-  const isNeet=currentExam==='neet';
-  document.querySelectorAll('.subject-btn').forEach(b=>b.classList.remove('active','neet'));
-  el.classList.add('active'); if(isNeet) el.classList.add('neet');
+  document.querySelectorAll('.subject-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
   renderCards();
 }
 
