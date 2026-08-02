@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Test — CollegePipe</title>
+<style>
+:root{--navy:#0d2347;--pri:#f59e0b;--pri-dark:#d97706;--pri-soft:#fff3dd;--ink:#101828;--mut:#667085;
+--line:#e4e7ec;--bg:#f6f7fb;--card:#fff;--green:#16a34a;--green-soft:#e8f7ee;--amber:#d97706;--amber-soft:#fef3e2;
+--sh:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.05)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+#hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
+display:flex;align-items:center;gap:18px;padding:12px 20px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px}
+.logo span{color:#fff}
+#hdr nav{display:flex;gap:6px;margin-left:auto}
+#hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
+#hdr nav a:hover,#hdr nav a.on{background:rgba(255,255,255,.12);color:#fff}
+main{max-width:1000px;margin:0 auto;padding:22px 16px 120px}
+h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:18px;margin-bottom:16px}
+.panel h2{font-size:15px;margin-bottom:12px}
+.quickrow{display:flex;gap:10px;flex-wrap:wrap}
+.qk{background:var(--pri-soft);color:var(--pri-dark);font-weight:700;font-size:13.5px;padding:10px 16px;border-radius:10px;transition:.15s}
+.qk:hover{background:var(--pri);color:var(--navy)}
+.srcrow{display:flex;gap:8px;flex-wrap:wrap}
+.src{padding:7px 16px;border-radius:999px;font-size:13px;font-weight:700;background:var(--card);color:var(--mut);border:1.5px solid var(--line)}
+.src.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.subtabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.stab{padding:8px 18px;border-radius:999px;font-size:14px;font-weight:700;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.stab.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.stab .n{font-weight:600;font-size:11.5px;opacity:.75;margin-left:5px}
+.chgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+.ch{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card);cursor:pointer;transition:.12s;font-size:13.5px}
+.ch:hover{border-color:#c6cbf5}
+.ch.on{border-color:var(--pri);background:var(--pri-soft)}
+.ch .box{flex:none;width:18px;height:18px;border-radius:5px;border:2px solid #c3c9d4;position:relative}
+.ch.on .box{border-color:var(--pri);background:var(--pri)}
+.ch.on .box::after{content:"✓";position:absolute;inset:0;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.ch .nm{flex:1;line-height:1.3}
+.ch .ct{color:var(--mut);font-size:11.5px;white-space:nowrap}
+.ch .old{font-size:10px;color:var(--amber);background:var(--amber-soft);padding:1px 7px;border-radius:8px}
+#bar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);
+box-shadow:0 -4px 16px rgba(16,24,40,.08);padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;z-index:30}
+#barinfo{font-size:13.5px;color:var(--mut)}
+#barinfo b{color:var(--ink)}
+#genbtn{margin-left:auto;background:var(--pri);color:var(--navy);font-weight:800;font-size:14.5px;padding:12px 26px;border-radius:12px;transition:.15s}
+#genbtn:hover{background:var(--pri-dark)}
+#genbtn:disabled{background:#c9cdd6;cursor:not-allowed}
+#loading{color:var(--mut);text-align:center;padding:60px 0}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="logo" href="index.html">College<span>PIPE</span></a>
+  <nav>
+    <a href="papers.html">Papers</a>
+    <a href="chapter-test.html" class="on">Chapter Tests</a>
+    <a href="library.html">My Tests</a>
+  </nav>
+</header>
+<main>
+  <h1>Create Your Test</h1>
+  <div class="sub">Pick chapters for a focused test, or generate a full-syllabus mock. Every test follows the JEE Main pattern: 20 MCQs + 5 numerical per subject, +4/−1.</div>
+
+  <div class="panel">
+    <h2>⚡ Quick generate — full syllabus mock (60 + 15, 3 hours)</h2>
+    <div class="quickrow">
+      <button class="qk" onclick="quickMock('pyq')">PYQ Mock — real past questions</button>
+      <button class="qk" onclick="quickMock('mock')">Practice Mock — new questions</button>
+      <button class="qk" onclick="quickMock('both')">Mixed Mock</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Question source</h2>
+    <div class="srcrow">
+      <button class="src on" data-s="pyq" onclick="setSrc('pyq')">PYQ only</button>
+      <button class="src" data-s="mock" onclick="setSrc('mock')">Practice only</button>
+      <button class="src" data-s="both" onclick="setSrc('both')">Both</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Choose chapters</h2>
+    <div class="subtabs" id="subtabs"></div>
+    <div class="chgrid" id="chgrid"><div id="loading">Loading…</div></div>
+  </div>
+</main>
+
+<div id="bar">
+  <span id="barinfo">No chapters selected</span>
+  <button id="genbtn" disabled onclick="generate()">Generate Test →</button>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const SUBJECTS=['Physics','Chemistry','Mathematics'];
+let IDX=null, subj='Physics', src='pyq', sel={};   // sel: {'Physics|Chapter':entry}
+
+fetch('data/index.json').then(r=>r.json()).then(d=>{
+  IDX=d; buildTabs(); renderChapters();
+}).catch(()=>{ $('chgrid').innerHTML='<div id="loading">Could not load data/index.json</div>'; });
+
+function poolOf(c){ return src==='pyq'?c.pyq : src==='mock'?c.mock : c.total; }
+
+function buildTabs(){
+  $('subtabs').innerHTML=SUBJECTS.map(s=>{
+    const n=Object.keys(sel).filter(k=>k.startsWith(s+'|')).length;
+    return '<button class="stab'+(s===subj?' on':'')+'" onclick="setSubj(\''+s+'\')">'+s+(n?'<span class="n">'+n+' ✓</span>':'')+'</button>';
+  }).join('');
+}
+function setSubj(s){ subj=s; buildTabs(); renderChapters(); }
+function setSrc(s){
+  src=s;
+  document.querySelectorAll('.src').forEach(b=>b.classList.toggle('on',b.dataset.s===s));
+  renderChapters(); updateBar();
+}
+function renderChapters(){
+  const chs=IDX.chapters.filter(c=>c.subject===subj).sort((a,b)=>b.total-a.total);
+  $('chgrid').innerHTML=chs.map(c=>{
+    const k=subj+'|'+c.chapter, on=!!sel[k], n=poolOf(c);
+    return '<div class="ch'+(on?' on':'')+'" onclick="toggle(\''+esc(k)+'\')">'+
+      '<span class="box"></span><span class="nm">'+esc(c.chapter)+(c.deleted_2026?' <span class="old">old syllabus</span>':'')+'</span>'+
+      '<span class="ct">'+n+' Qs</span></div>';
+  }).join('');
+}
+const esc=s=>s.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+function toggle(k){
+  if(sel[k])delete sel[k];
+  else{
+    const [s,ch]=k.split('|');
+    sel[k]=IDX.chapters.find(c=>c.subject===s&&c.chapter===ch);
+  }
+  buildTabs(); renderChapters(); updateBar();
+}
+function updateBar(){
+  const bySub={};
+  Object.keys(sel).forEach(k=>{const s=k.split('|')[0];(bySub[s]=bySub[s]||[]).push(sel[k]);});
+  const subs=Object.keys(bySub);
+  if(!subs.length){ $('barinfo').textContent='No chapters selected'; $('genbtn').disabled=true; return; }
+  const parts=subs.map(s=>{
+    const tot=bySub[s].reduce((a,c)=>a+poolOf(c),0);
+    return s+' ('+bySub[s].length+' ch, '+tot+' Qs)';
+  });
+  const nsub=subs.length;
+  $('barinfo').innerHTML='<b>'+(nsub*25)+' questions · '+(nsub*60)+' min</b> — '+parts.join(' · ');
+  $('genbtn').disabled=false;
+}
+
+/* ---------- generation ---------- */
+function usedSet(){
+  try{ return new Set(JSON.parse(localStorage.getItem('cp_used_qids')||'[]')); }catch(e){ return new Set(); }
+}
+function saveUsed(set){
+  let arr=[...set];
+  if(arr.length>6000)arr=arr.slice(-6000);
+  localStorage.setItem('cp_used_qids',JSON.stringify(arr));
+}
+function sample(pool,n,used){
+  // prefer unused questions; deterministic-free random
+  const fresh=pool.filter(q=>!used.has(q.id));
+  const base=fresh.length>=n?fresh:pool;
+  const out=[], idx=[...base.keys()];
+  for(let i=0;i<n&&idx.length;i++){
+    const j=Math.floor(Math.random()*idx.length);
+    out.push(base[idx[j]]);
+    idx.splice(j,1);
+  }
+  return out;
+}
+async function loadChapterQs(entries){
+  const all=[];
+  for(const c of entries){
+    const r=await fetch('data/chapters/'+c.subject.toLowerCase()+'/'+c.slug+'.json');
+    if(r.ok){ const d=await r.json(); all.push(...d.questions); }
+  }
+  return all;
+}
+function srcFilter(q){ return src==='both'||q.source===src; }
+
+async function generate(){
+  $('genbtn').disabled=true; $('genbtn').textContent='Generating…';
+  try{
+    const bySub={};
+    Object.keys(sel).forEach(k=>{const s=k.split('|')[0];(bySub[s]=bySub[s]||[]).push(sel[k]);});
+    const used=usedSet();
+    const sections=[]; let total=0; const chosenIds=[];
+    for(const s of SUBJECTS){
+      if(!bySub[s])continue;
+      let pool=(await loadChapterQs(bySub[s])).filter(srcFilter);
+      const mcq=sample(pool.filter(q=>q.type==='MCQ'),20,used);
+      const nvt=sample(pool.filter(q=>q.type==='NVT'),5,used);
+      if(mcq.length<20||nvt.length<5){
+        alert(s+': only '+mcq.length+' MCQs and '+nvt.length+' numericals available for this selection. The test will use what is available.');
+      }
+      sections.push({subject:s,A:mcq,B:nvt});
+      total+=mcq.length+nvt.length;
+      [...mcq,...nvt].forEach(q=>chosenIds.push(q.id));
+    }
+    if(!total){ alert('No questions available for this selection.'); resetBtn(); return; }
+    chosenIds.forEach(id=>used.add(id)); saveUsed(used);
+    const nsub=sections.length;
+    const srcName=src==='pyq'?'PYQ':'Practice';
+    const chNames=Object.keys(sel).map(k=>k.split('|')[1]);
+    const title=(nsub===3&&chNames.length>=20)?('Full Syllabus '+srcName+' Mock')
+      :(chNames.length<=2?chNames.join(' + '):nsub===1?sections[0].subject+' Chapter Test':'Custom Test')+' ('+srcName+')';
+    const paper={key:'custom',title:title,kind:'custom',date:null,session:null,year:null,
+      pattern:'60+15',duration_min:nsub*60,
+      marking:{correct:4,incorrect:-1,unattempted:0},
+      total_questions:total,max_marks:total*4,complete:true,sections:sections};
+    sessionStorage.setItem('cp_custom_paper',JSON.stringify(paper));
+    location.href='exam.html?paper=custom';
+  }catch(e){
+    alert('Something went wrong generating the test.');
+    resetBtn();
+  }
+}
+function resetBtn(){ $('genbtn').disabled=false; $('genbtn').textContent='Generate Test →'; }
+
+/* quick full-syllabus mock */
+async function quickMock(source){
+  src=source==='both'?'both':source;
+  document.querySelectorAll('.src').forEach(b=>b.classList.toggle('on',b.dataset.s===src));
+  sel={};
+  IDX.chapters.forEach(c=>{ if(!c.deleted_2026 && poolOf(c)>0) sel[c.subject+'|'+c.chapter]=c; });
+  buildTabs(); renderChapters(); updateBar();
+  generate();
+}
+</script>
+</body>
+</html>

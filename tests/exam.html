@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>CBT Exam — CollegePipe</title>
+<style>
+:root{
+  --navy:#0d2347;--pri:#f59e0b; --pri-dark:#d97706; --pri-soft:#fff3dd;
+  --green:#16a34a; --green-soft:#e8f7ee;
+  --red:#dc2626; --red-soft:#fdecec;
+  --violet:#8b5cf6; --violet-soft:#f1eaff;
+  --amber:#d97706; --amber-soft:#fef3e2;
+  --ink:#101828; --mut:#667085; --line:#e4e7ec;
+  --bg:#f6f7fb; --card:#ffffff;
+  --sh:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.05);
+  --sh2:0 8px 24px rgba(16,24,40,.10);
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.45}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.hidden{display:none!important}
+
+/* ============ header ============ */
+#hdr{position:sticky;top:0;z-index:30;background:var(--navy);border-bottom:1px solid #1b3a66;
+  display:flex;align-items:center;gap:14px;padding:10px 18px}
+#hdr .logo{font-weight:800;font-size:17px;color:var(--pri);letter-spacing:-.2px;white-space:nowrap}
+#hdr .logo span{color:#fff}
+#ptitle{font-weight:600;font-size:14.5px;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+#timerpill{display:flex;align-items:center;gap:7px;background:var(--pri);color:var(--navy);
+  font-weight:700;font-size:14.5px;padding:7px 14px;border-radius:999px;white-space:nowrap;font-variant-numeric:tabular-nums}
+#timerpill svg{width:15px;height:15px}
+#timerpill.low{background:var(--red-soft);color:var(--red)}
+
+/* ============ section chips ============ */
+#sections{display:flex;gap:8px;padding:12px 18px 4px;overflow-x:auto;scrollbar-width:none}
+#sections::-webkit-scrollbar{display:none}
+.sec-tab{flex:none;padding:7px 16px;border-radius:999px;font-size:13.5px;font-weight:600;
+  background:var(--card);color:var(--mut);border:1px solid var(--line);transition:.15s}
+.sec-tab.active{background:var(--pri);color:#fff;border-color:var(--pri);box-shadow:var(--sh)}
+
+/* ============ layout ============ */
+#main{display:flex;gap:14px;padding:10px 18px 18px;align-items:flex-start}
+#qcol{flex:1;min-width:0}
+#qcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+#qhead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 20px;border-bottom:1px solid var(--line)}
+#qno{font-weight:700;font-size:15.5px}
+.badge{font-size:12px;font-weight:600;color:var(--mut);background:var(--bg);border:1px solid var(--line);
+  padding:3px 10px;border-radius:999px;white-space:nowrap}
+#qbody{padding:20px;min-height:340px}
+#qtext{white-space:pre-wrap;font-size:15.5px;line-height:1.65;margin-bottom:14px}
+.nvt-note{display:inline-flex;align-items:center;gap:7px;background:var(--amber-soft);color:var(--amber);
+  border:1px solid #f3ddb8;font-size:13px;font-weight:600;padding:6px 12px;border-radius:8px;margin-bottom:14px}
+.img-btn{display:inline-flex;align-items:center;gap:7px;color:var(--pri);background:var(--pri-soft);
+  font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:8px;margin-bottom:14px;transition:.15s}
+.img-btn:hover{background:#e2e5ff}
+.qimg-wrap{margin:4px 0 16px}
+.qimg-wrap img{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
+.img-fail{color:var(--red);font-size:13px;padding:10px 14px;border:1px dashed #eab5b5;border-radius:8px;display:inline-block;background:var(--red-soft)}
+
+/* options */
+.opt{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;
+  padding:13px 16px;margin-bottom:10px;background:var(--card);cursor:pointer;transition:.15s}
+.opt:hover{border-color:#c6cbf5;background:#fafbff}
+.opt.selected{border-color:var(--pri);background:var(--pri-soft)}
+.opt input{display:none}
+.opt .ring{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #c3c9d4;margin-top:1px;position:relative;transition:.15s}
+.opt.selected .ring{border-color:var(--pri)}
+.opt.selected .ring::after{content:"";position:absolute;inset:3.5px;border-radius:50%;background:var(--pri)}
+.opt .lbl{font-weight:700;color:var(--mut);min-width:24px}
+.opt.selected .lbl{color:var(--pri-dark)}
+.opt .otext{white-space:pre-wrap;line-height:1.5}
+.opt-hint{color:var(--mut);font-size:13px;margin-bottom:10px}
+#optbox{display:block}
+#optbox:has(.opt.compact){display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#optbox:has(.opt.compact) .opt-hint{width:100%;margin-bottom:4px}
+.opt.compact{margin-bottom:0;padding:11px 18px;border-radius:999px}
+.opt.compact .lbl{min-width:0}
+
+/* NVT */
+#nvtbox{max-width:320px}
+#nvtin{width:100%;font-size:22px;font-weight:600;padding:10px 14px;text-align:right;letter-spacing:1px;
+  border:1.5px solid var(--line);border-radius:12px;background:#fbfcfe;font-variant-numeric:tabular-nums;outline:none;transition:.15s}
+#nvtin:focus{border-color:var(--pri);box-shadow:0 0 0 3px var(--pri-soft)}
+#keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+#keypad button{padding:12px 0;font-size:17px;font-weight:600;border:1px solid var(--line);background:var(--card);border-radius:10px;transition:.12s;box-shadow:var(--sh)}
+#keypad button:hover{background:var(--pri-soft);border-color:#c6cbf5}
+#keypad button:active{transform:scale(.96)}
+#keypad .wide{grid-column:span 3;color:var(--mut);font-size:14.5px}
+
+/* footer actions */
+#qfoot{display:flex;gap:10px;flex-wrap:wrap;padding:13px 20px;border-top:1px solid var(--line);background:#fbfcfe}
+.btn{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:10px;transition:.15s;border:1.5px solid transparent}
+.btn:active{transform:scale(.97)}
+.btn.save{background:var(--green);color:#fff}
+.btn.save:hover{background:#12813c}
+.btn.mark{background:var(--violet-soft);color:var(--violet);border-color:#dccbfa}
+.btn.mark:hover{background:#e9defc}
+.btn.ghost{background:var(--card);color:var(--mut);border-color:var(--line)}
+.btn.ghost:hover{color:var(--ink);border-color:#c3c9d4}
+.btn.submit{background:var(--red);color:#fff;margin-left:auto}
+.btn.submit:hover{background:#b91c1c}
+
+/* ============ palette ============ */
+#side{width:320px;flex:none;position:sticky;top:66px}
+.scard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;margin-bottom:12px}
+#pal-sec-label{padding:12px 16px 4px;font-weight:700;font-size:14px}
+#statchips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px 12px;border-bottom:1px solid var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--mut);
+  background:var(--bg);border-radius:999px;padding:4px 10px}
+.dot{width:9px;height:9px;border-radius:50%}
+.dot.g{background:var(--green)} .dot.r{background:var(--red)} .dot.v{background:var(--violet)}
+.dot.n{background:#fff;border:1.5px solid #c3c9d4} .dot.vg{background:var(--violet);box-shadow:2px 2px 0 -1px var(--green)}
+#palette{padding:14px 16px;display:grid;grid-template-columns:repeat(5,1fr);gap:9px;max-height:52vh;overflow-y:auto}
+.pbtn{aspect-ratio:1;border-radius:50%;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--line);background:var(--card);color:var(--mut);position:relative;transition:.12s}
+.pbtn:hover{transform:scale(1.07)}
+.pbtn.na{background:var(--red-soft);border-color:#f3b8b8;color:var(--red)}
+.pbtn.a{background:var(--green);border-color:var(--green);color:#fff}
+.pbtn.m{background:var(--violet);border-color:var(--violet);color:#fff}
+.pbtn.am{background:var(--violet);border-color:var(--violet);color:#fff}
+.pbtn.am::after{content:"";position:absolute;right:-1px;bottom:-1px;width:11px;height:11px;border-radius:50%;
+  background:var(--green);border:2px solid var(--card)}
+.pbtn.cur{outline:2.5px solid var(--pri);outline-offset:2px}
+
+/* ============ modals & screens ============ */
+.overlay{position:fixed;inset:0;background:rgba(16,24,40,.5);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;z-index:60;padding:16px}
+.modal{background:var(--card);border-radius:16px;max-width:520px;width:100%;padding:26px;max-height:92vh;overflow-y:auto;box-shadow:var(--sh2)}
+.modal h2{font-size:19px;margin-bottom:14px}
+.modal .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.modal .row b{font-variant-numeric:tabular-nums}
+.modal .actions{display:flex;gap:10px;margin-top:20px;justify-content:flex-end}
+
+#startscr{max-width:720px;margin:36px auto;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);padding:32px}
+#startscr h1{font-size:23px;letter-spacing:-.3px;margin-bottom:6px}
+#startscr .sub{color:var(--mut);margin-bottom:20px;font-size:14.5px}
+#startscr ul{margin:12px 0 22px 20px;line-height:1.8;font-size:14.5px;color:#333c4d}
+#startscr .legendline{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px;font-size:13px;color:var(--mut)}
+.leg{display:inline-flex;align-items:center;gap:7px}
+.btn.big{font-size:15px;padding:13px 28px;background:var(--pri);color:#fff;border-radius:12px}
+.btn.big:hover{background:var(--pri-dark)}
+
+#loadmsg{max-width:600px;margin:80px auto;text-align:center;color:var(--mut)}
+.spin{width:36px;height:36px;border:4px solid var(--line);border-top-color:var(--pri);border-radius:50%;margin:0 auto 16px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ============ result & review ============ */
+#resultscr{max-width:920px;margin:26px auto;padding:0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);padding:24px;margin-bottom:16px}
+.score-hero{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.score-big{font-size:46px;font-weight:800;letter-spacing:-1px;color:var(--pri)}
+.score-max{font-size:19px;color:var(--mut)}
+.statline{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.stat{font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px}
+.stat.ok{background:var(--green-soft);color:var(--green)}
+.stat.bad{background:var(--red-soft);color:var(--red)}
+.stat.skip{background:var(--bg);color:var(--mut)}
+.stat.acc{background:var(--pri-soft);color:var(--pri-dark)}
+.stat.bonus{background:var(--amber-soft);color:var(--amber)}
+table.breakup{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px}
+table.breakup th,table.breakup td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:center}
+table.breakup th{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+table.breakup td:first-child,table.breakup th:first-child{text-align:left}
+.rv-q{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px;box-shadow:var(--sh)}
+.rv-head{display:flex;justify-content:space-between;font-size:13px;margin-bottom:10px;color:var(--mut);flex-wrap:wrap;gap:6px}
+.tag{padding:3px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.tag.ok{background:var(--green-soft);color:var(--green)}
+.tag.bad{background:var(--red-soft);color:var(--red)}
+.tag.skip{background:var(--bg);color:var(--mut);border:1px solid var(--line)}
+.tag.bonus{background:var(--amber-soft);color:var(--amber)}
+.rv-ans{font-size:14px;margin:10px 0;line-height:1.6}
+.sol-text{white-space:pre-wrap;background:var(--green-soft);border:1px solid #cde9d6;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.6;margin-top:10px}
+#rvpal{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:8px;margin-bottom:16px}
+.rvp{aspect-ratio:1;border-radius:50%;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--line);background:var(--card);color:var(--mut);transition:.12s}
+.rvp:hover{transform:scale(1.1)}
+.rvp.dim{opacity:.22;pointer-events:none}
+.rvp.cur{outline:2.5px solid var(--pri);outline-offset:2px}
+#rvnav{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.rvp.ok{background:var(--green-soft);border-color:#b9e2c8;color:var(--green)}
+.rvp.bad{background:var(--red-soft);border-color:#f3b8b8;color:var(--red)}
+.rvp.bonus{background:var(--amber-soft);border-color:#f0d9ae;color:var(--amber)}
+.filterbar{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.fbtn{padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:13px;font-weight:600;color:var(--mut);transition:.15s}
+.fbtn.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+
+@media (max-width:920px){
+  #main{flex-direction:column}
+  #side{width:100%;position:static}
+  #palette{grid-template-columns:repeat(9,1fr);max-height:none}
+  #hdr{padding:10px 12px}
+  #ptitle{display:none}
+  #main{padding:8px 10px 14px}
+  #sections{padding:10px 10px 2px}
+  .btn.submit{margin-left:0}
+  #qbody{padding:16px;min-height:0}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="logo">College<span>PIPE</span></div>
+  <div id="ptitle">Loading…</div>
+  <div id="timerpill">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
+    <span id="timer">--:--:--</span>
+  </div>
+</header>
+
+<div id="loadmsg"><div class="spin"></div>Loading paper…</div>
+
+<!-- start screen -->
+<div id="startscr" class="hidden">
+  <h1 id="s-title"></h1>
+  <div class="sub" id="s-sub"></div>
+  <ul id="s-rules"></ul>
+  <div class="legendline">
+    <span class="leg"><span class="dot n"></span> Not Visited</span>
+    <span class="leg"><span class="dot r"></span> Not Answered</span>
+    <span class="leg"><span class="dot g"></span> Answered</span>
+    <span class="leg"><span class="dot v"></span> Marked for Review</span>
+    <span class="leg"><span class="dot vg"></span> Answered &amp; Marked</span>
+  </div>
+  <button class="btn big" onclick="startExam()">I am ready to begin →</button>
+</div>
+
+<!-- exam UI -->
+<div id="examui" class="hidden">
+  <nav id="sections"></nav>
+  <div id="main">
+    <div id="qcol">
+      <div id="qcard">
+        <div id="qhead">
+          <span id="qno"></span>
+          <span class="badge" id="qmeta"></span>
+        </div>
+        <div id="qbody">
+          <div id="nvtnote" class="nvt-note hidden"></div>
+          <div id="qtext"></div>
+          <button id="qimgbtn" class="img-btn hidden" onclick="toggleImg()">🖼 See image</button>
+          <div id="qimgwrap" class="qimg-wrap hidden"></div>
+          <div id="optbox"></div>
+          <div id="nvtbox" class="hidden">
+            <input id="nvtin" inputmode="decimal" autocomplete="off" placeholder="Your answer">
+            <div id="keypad"></div>
+          </div>
+        </div>
+        <div id="qfoot">
+          <button class="btn ghost" onclick="nav(-1)">← Previous</button>
+          <button class="btn ghost" onclick="clearResp()">Clear</button>
+          <button class="btn mark" onclick="markNext()">Mark for Review</button>
+          <button class="btn save" onclick="saveNext()">Save &amp; Next →</button>
+          <button class="btn submit" onclick="askSubmit()">Submit Test</button>
+        </div>
+      </div>
+    </div>
+    <aside id="side">
+      <div class="scard">
+        <div id="pal-sec-label"></div>
+        <div id="statchips"></div>
+        <div id="palette"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- submit modal -->
+<div id="submitmodal" class="overlay hidden">
+  <div class="modal">
+    <h2>Submit test?</h2>
+    <div id="summarybox"></div>
+    <div class="actions">
+      <button class="btn ghost" onclick="hideSubmit()">Go back</button>
+      <button class="btn submit" style="margin-left:0" onclick="doSubmit(false)">Yes, submit</button>
+    </div>
+  </div>
+</div>
+
+<div id="resultscr" class="hidden"></div>
+
+<script>
+/* ================= CONFIG ================= */
+const IMG_BASE = {
+  pyq : 'https://img.collegepipe.in/jm-pyq/',
+  mock: 'https://img.collegepipe.in/jm-mock/'
+};
+const DATA_BASE = 'data/';
+
+/* ================= STATE ================== */
+let P=null, Q=[], cur=0, state=[], secStarts=[], timeLeft=0, timerId=null, submitted=false;
+let qTime=[], lastSwitch=null, attemptIdx=null;
+
+const $=id=>document.getElementById(id);
+const esc=s=>(s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+/* light scientific-notation renderer: ^(..) ^{..} ^x -> sup, _(..) _{..} _x -> sub, arrows, sqrt */
+function sci(s){
+  let t=esc(s);
+  t=t.replace(/-&gt;/g,'→').replace(/&lt;-/g,'←').replace(/&lt;=&gt;|&lt;-&gt;/g,'⇌');
+  for(let p=0;p<3;p++){                       // few passes for nesting
+    t=t.replace(/\^\{([^{}]+)\}/g,'<sup>$1</sup>');
+    t=t.replace(/\^\(([^()]+)\)/g,'<sup>$1</sup>');
+    t=t.replace(/_\{([^{}]+)\}/g,'<sub>$1</sub>');
+    t=t.replace(/_\(([^()]+)\)/g,'<sub>$1</sub>');
+  }
+  t=t.replace(/\^([A-Za-z0-9+\-−°]{1,6})/g,'<sup>$1</sup>');
+  t=t.replace(/([A-Za-z\)\}])_([0-9+\-−]{1,6})/g,'$1<sub>$2</sub>');
+  t=t.replace(/sqrt\(([^()]+)\)/g,'√($1)');
+  return t;
+}
+const fmtTime=s=>{const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return [h,m,x].map(v=>String(v).padStart(2,'0')).join(':')};
+
+async function init(){
+  const key=new URLSearchParams(location.search).get('paper');
+  if(!key){ $('loadmsg').innerHTML='No paper specified. Open as exam.html?paper=&lt;key&gt;'; return; }
+  if(key==='custom'){
+    try{ P=JSON.parse(sessionStorage.getItem('cp_custom_paper')); }catch(e){ P=null; }
+    if(!P){ $('loadmsg').innerHTML='No generated test found. Please <a href="chapter-test.html">create a test</a> first.'; return; }
+  } else {
+    try{
+      const r=await fetch(DATA_BASE+'papers/'+key+'.json');
+      if(!r.ok) throw 0;
+      P=await r.json();
+    }catch(e){
+      $('loadmsg').innerHTML='Could not load paper "'+esc(key)+'". Check the paper key and data folder.';
+      return;
+    }
+  }
+  P.sections.forEach(sec=>{
+    ['A','B'].forEach(part=>{
+      if(sec[part].length) secStarts.push({label:sec.subject+' · '+part, full:sec.subject+' — Section '+part, idx:Q.length});
+      sec[part].forEach(q=>Q.push({...q,_sec:sec.subject,_part:part}));
+    });
+  });
+  state=Q.map(()=>({ans:null,status:'nv'}));
+  qTime=Q.map(()=>0);
+  timeLeft=(P.duration_min||180)*60;
+  $('ptitle').textContent=P.title;
+  $('loadmsg').classList.add('hidden');
+  showStart();
+}
+
+function showStart(){
+  $('s-title').textContent=P.title;
+  $('s-sub').textContent=(P.kind==='pyq'?'Previous Year Paper':'Mock Test')+' · '+P.total_questions+' questions · '+
+    (P.duration_min||180)+' min · Max marks '+P.max_marks+(P.complete?'':' · Note: '+P.total_questions+' of 75 questions available');
+  $('s-rules').innerHTML=[
+    'Each subject has Section A (20 MCQs) and Section B (5 numerical value questions). All questions are compulsory.',
+    'Marking: <b>+4</b> for a correct answer, <b>−1</b> for an incorrect answer, <b>0</b> if not attempted.',
+    'For numerical questions, enter your answer using the on-screen keypad and follow the rounding instruction shown with the question.',
+    'Use <b>Save &amp; Next</b> to record your answer before moving on.',
+    'The timer starts when you begin. The test auto-submits when time ends.'
+  ].map(r=>'<li>'+r+'</li>').join('');
+  $('startscr').classList.remove('hidden');
+}
+
+function startExam(){
+  $('startscr').classList.add('hidden');
+  $('examui').classList.remove('hidden');
+  buildSections(); buildPalette();
+  lastSwitch=Date.now();
+  go(0);
+  $('timer').textContent=fmtTime(timeLeft);
+  timerId=setInterval(()=>{
+    timeLeft--;
+    $('timer').textContent=fmtTime(Math.max(0,timeLeft));
+    if(timeLeft<=300)$('timerpill').classList.add('low');
+    if(timeLeft<=0){clearInterval(timerId);doSubmit(true);}
+  },1000);
+  window.addEventListener('beforeunload',warnLeave);
+}
+function warnLeave(e){ if(!submitted){e.preventDefault();e.returnValue='';} }
+
+function buildSections(){
+  $('sections').innerHTML=secStarts.map((s,i)=>
+    '<button class="sec-tab" id="sect'+i+'" onclick="go('+s.idx+')">'+esc(s.label)+'</button>').join('');
+}
+function currentSection(){let k=0;secStarts.forEach((s,i)=>{if(cur>=s.idx)k=i;});return k;}
+
+function buildPalette(){
+  $('palette').innerHTML=Q.map((q,i)=>'<button class="pbtn" id="pb'+i+'" onclick="go('+i+')">'+(i+1)+'</button>').join('');
+  refreshPalette();
+}
+const stClass={nv:'',na:'na',a:'a',m:'m',am:'am'};
+function refreshPalette(){
+  Q.forEach((q,i)=>{ $('pb'+i).className='pbtn '+stClass[state[i].status]+(i===cur?' cur':''); });
+  const k=currentSection();
+  secStarts.forEach((s,i)=>$('sect'+i).classList.toggle('active',i===k));
+  $('pal-sec-label').textContent=secStarts[k]?.full||'';
+  const c={a:0,na:0,nv:0,m:0,am:0};
+  state.forEach(s=>c[s.status]++);
+  $('statchips').innerHTML=
+    '<span class="chip"><span class="dot g"></span>'+(c.a+c.am)+' answered</span>'+
+    '<span class="chip"><span class="dot r"></span>'+c.na+' unanswered</span>'+
+    '<span class="chip"><span class="dot v"></span>'+(c.m+c.am)+' marked</span>'+
+    '<span class="chip"><span class="dot n"></span>'+c.nv+' not visited</span>';
+}
+
+/* ============== QUESTION VIEW ============= */
+function tickTime(){
+  if(lastSwitch!==null && !submitted){
+    qTime[cur]+=Math.round((Date.now()-lastSwitch)/1000);
+  }
+  lastSwitch=Date.now();
+}
+function go(i){
+  if(i<0||i>=Q.length)return;
+  commitNVT();
+  tickTime();
+  cur=i;
+  const q=Q[i],st=state[i];
+  if(st.status==='nv')st.status='na';
+  $('qno').textContent='Question '+(i+1);
+  $('qmeta').textContent=q._sec+' · '+(q.type==='MCQ'?'MCQ':'Numerical')+' · +4 / −1';
+  $('nvtnote').classList.toggle('hidden',!(q.type==='NVT'&&q.nvt_note));
+  if(q.nvt_note)$('nvtnote').textContent='ℹ '+q.nvt_note;
+  $('qimgwrap').innerHTML='';
+  $('qimgbtn').classList.add('hidden');
+  if(q.q_img){
+    $('qtext').classList.add('hidden');      // image is the question
+    showImg();
+  } else if(q.text){                          // fallback: text only
+    $('qtext').innerHTML=sci(q.text);$('qtext').classList.remove('hidden');
+    $('qimgwrap').classList.add('hidden');
+  } else {
+    $('qtext').innerHTML='<span class="img-fail">Question content unavailable.</span>';
+    $('qtext').classList.remove('hidden');
+  }
+  if(q.type==='MCQ')renderMCQ(q,st);else renderNVT(q,st);
+  refreshPalette();
+  window.scrollTo({top:0});
+  // preload next 2 question images
+  for(let d=1;d<=2;d++){
+    const nx=Q[i+d];
+    if(nx&&nx.q_img){const im=new Image();im.src=imgURL(nx);}
+  }
+}
+function imgURL(q,which){return (IMG_BASE[q.source]||IMG_BASE.pyq)+(which==='sol'?q.sol_img:q.q_img);}
+function showImg(){
+  const q=Q[cur],w=$('qimgwrap');
+  w.classList.remove('hidden');w.innerHTML='';
+  const im=new Image();im.src=imgURL(q);
+  im.onerror=()=>{w.innerHTML='<span class="img-fail">Image could not be loaded. Check your connection and tap See image to retry.</span>';};
+  w.appendChild(im);
+  $('qimgbtn').textContent='Hide image';
+}
+function toggleImg(){
+  const w=$('qimgwrap');
+  if(w.classList.contains('hidden'))showImg();
+  else{w.classList.add('hidden');$('qimgbtn').textContent='🖼 See image';}
+}
+
+function renderMCQ(q,st){
+  $('nvtbox').classList.add('hidden');
+  const ob=$('optbox');ob.classList.remove('hidden');
+  const useText=!q.q_img && q.options && q.options.some(o=>o!==null&&o!==undefined&&o!=='');
+  ob.innerHTML=(q.q_img?'<div class="opt-hint">Select your option:</div>':'')+
+    [1,2,3,4].map(n=>{
+      const t=useText?(q.options[n-1]??''):'';
+      return '<label class="opt'+(st.ans===n?' selected':'')+(useText?'':' compact')+'" onclick="pickOpt('+n+')">'+
+        '<span class="ring"></span><span class="lbl">('+n+')</span>'+(useText?'<span class="otext">'+sci(t)+'</span>':'')+'</label>';
+    }).join('');
+}
+function pickOpt(n){state[cur].ans=n;renderMCQ(Q[cur],state[cur]);}
+
+function renderNVT(q,st){
+  $('optbox').classList.add('hidden');
+  $('nvtbox').classList.remove('hidden');
+  $('nvtin').value=st.ans??'';
+  if(!$('keypad').childElementCount){
+    const keys=['7','8','9','4','5','6','1','2','3','0','.','-'];
+    $('keypad').innerHTML=keys.map(k=>'<button onclick="kp(\''+k+'\')">'+k+'</button>').join('')+
+      '<button class="wide" onclick="kp(\'BS\')">⌫ Backspace</button>';
+  }
+}
+function kp(k){
+  const inp=$('nvtin');
+  if(k==='BS'){inp.value=inp.value.slice(0,-1);return;}
+  if(k==='-'&&(inp.value.includes('-')||inp.value.length>0))return;
+  if(k==='.'&&inp.value.includes('.'))return;
+  inp.value+=k;
+}
+function commitNVT(){
+  const q=Q[cur];
+  if(q&&q.type==='NVT'){
+    const v=$('nvtin').value.trim();
+    state[cur].ans=v===''?null:v;
+    if(state[cur].ans!==null&&(state[cur].status==='na'||state[cur].status==='nv'))state[cur].status='a';
+    if(state[cur].ans===null&&state[cur].status==='a')state[cur].status='na';
+  }
+}
+
+/* ============== ACTIONS =================== */
+function saveNext(){
+  const st=state[cur],q=Q[cur];
+  if(q.type==='NVT')commitNVT();
+  if(st.ans!==null&&st.ans!=='')st.status=(st.status==='m'||st.status==='am')?'am':'a';
+  else st.status='na';
+  nav(1);
+}
+function markNext(){
+  const st=state[cur],q=Q[cur];
+  if(q.type==='NVT')commitNVT();
+  st.status=(st.ans!==null&&st.ans!=='')?'am':'m';
+  nav(1);
+}
+function clearResp(){
+  state[cur].ans=null;
+  if(Q[cur].type==='NVT')$('nvtin').value='';
+  state[cur].status='na';
+  go(cur);
+}
+function nav(d){
+  commitNVT();
+  let n=cur+d;
+  if(n>=Q.length)n=Q.length-1;
+  if(n<0)n=0;
+  go(n);
+}
+
+/* ============== SUBMIT ==================== */
+function askSubmit(){
+  commitNVT();
+  const c={a:0,na:0,nv:0,m:0,am:0};
+  state.forEach(s=>c[s.status]++);
+  $('summarybox').innerHTML=
+    '<div class="row"><span>Answered</span><b>'+(c.a+c.am)+'</b></div>'+
+    '<div class="row"><span>Not answered</span><b>'+c.na+'</b></div>'+
+    '<div class="row"><span>Marked for review</span><b>'+(c.m+c.am)+'</b></div>'+
+    '<div class="row"><span>Not visited</span><b>'+c.nv+'</b></div>'+
+    '<div class="row"><span>Time left</span><b>'+fmtTime(Math.max(0,timeLeft))+'</b></div>'+
+    '<p style="margin-top:12px;font-size:13px;color:var(--mut)">Marked questions with a saved answer are counted. After submitting you cannot return to the test.</p>';
+  $('submitmodal').classList.remove('hidden');
+}
+function hideSubmit(){$('submitmodal').classList.add('hidden');}
+
+function gradeOne(q,ans){
+  const g=q.grading||{};
+  if(g.kind==='bonus')return{res:'bonus',marks:4};
+  if(ans===null||ans===undefined||ans==='')return{res:'skip',marks:0};
+  if(g.kind==='mcq')return g.accept.includes(Number(ans))?{res:'ok',marks:4}:{res:'bad',marks:-1};
+  if(g.kind==='nvt'){
+    const v=parseFloat(ans);
+    if(Number.isNaN(v))return{res:'bad',marks:-1};
+    const f=Math.pow(10,g.decimals||0);
+    return g.accept.some(a=>Math.round(a*f)===Math.round(v*f))?{res:'ok',marks:4}:{res:'bad',marks:-1};
+  }
+  return{res:'skip',marks:0};
+}
+
+function doSubmit(auto){
+  if(submitted)return;
+  tickTime();
+  submitted=true;
+  clearInterval(timerId);
+  window.removeEventListener('beforeunload',warnLeave);
+  hideSubmit();commitNVT();
+  const per={},rows=[];let total=0,ok=0,bad=0,skip=0,bonus=0;
+  Q.forEach((q,i)=>{
+    const r=gradeOne(q,state[i].ans);
+    rows.push(r);total+=r.marks;
+    if(r.res==='ok')ok++;else if(r.res==='bad')bad++;else if(r.res==='bonus')bonus++;else skip++;
+    per[q._sec]=per[q._sec]||{marks:0,ok:0,bad:0,skip:0,bonus:0};
+    const p=per[q._sec];p.marks+=r.marks;
+    p[r.res==='ok'?'ok':r.res==='bad'?'bad':r.res==='bonus'?'bonus':'skip']++;
+  });
+  saveAttempt({total,ok,bad,skip,bonus,rows});
+  renderResult({total,ok,bad,skip,bonus,per,rows,auto});
+}
+
+function saveAttempt(R){
+  try{
+    const rec={
+      ts:Date.now(), key:P.key, title:P.title, kind:P.kind,
+      score:R.total, max:P.max_marks, ok:R.ok, bad:R.bad, skip:R.skip, bonus:R.bonus,
+      per:Q.map((q,i)=>({id:q.id, sub:q.subject, ch:q.chapter, type:q.type,
+        res:R.rows[i].res, ans:state[i].ans, time:qTime[i], tag:null,
+        q_img:q.q_img, sol_img:q.sol_img, sol_text:q.sol_text?1:0,
+        source:q.source, grading:q.grading, nvt_note:q.nvt_note||null}))
+    };
+    let arr=[];
+    try{arr=JSON.parse(localStorage.getItem('cp_attempts')||'[]');}catch(e){}
+    arr.push(rec);
+    if(arr.length>50)arr=arr.slice(-50);
+    localStorage.setItem('cp_attempts',JSON.stringify(arr));
+    attemptIdx=arr.length-1;
+  }catch(e){ /* storage full or blocked: attempt simply not saved */ }
+}
+function setTag(i,tag){
+  try{
+    const arr=JSON.parse(localStorage.getItem('cp_attempts')||'[]');
+    if(attemptIdx!==null&&arr[attemptIdx]){
+      arr[attemptIdx].per[i].tag = arr[attemptIdx].per[i].tag===tag? null : tag;
+      localStorage.setItem('cp_attempts',JSON.stringify(arr));
+      window._tags=window._tags||{};
+      window._tags[i]=arr[attemptIdx].per[i].tag;
+      renderRvDetail(i);
+    }
+  }catch(e){}
+}
+const TAGS=[['concept','Conceptual error'],['unknown','Concept unknown'],['silly','Silly / calculation'],['theory','Theory forgot'],['time','Ran out of time']];
+
+function renderResult(R){
+  $('examui').classList.add('hidden');
+  document.getElementById('hdr').style.position='static';
+  const attempted=R.ok+R.bad, acc=attempted?Math.round(R.ok/attempted*100):0;
+  $('resultscr').innerHTML=
+   '<div class="card">'+
+     (R.auto?'<p style="color:var(--red);font-weight:700;margin-bottom:10px">⏱ Time over — test auto-submitted.</p>':'')+
+     '<h2 style="margin-bottom:10px">'+esc(P.title)+'</h2>'+
+     '<div class="score-hero"><span class="score-big">'+R.total+'</span><span class="score-max">/ '+P.max_marks+'</span></div>'+
+     '<div class="statline">'+
+       '<span class="stat ok">'+R.ok+' correct</span>'+
+       '<span class="stat bad">'+R.bad+' incorrect</span>'+
+       '<span class="stat skip">'+R.skip+' unattempted</span>'+
+       (R.bonus?'<span class="stat bonus">'+R.bonus+' bonus</span>':'')+
+       '<span class="stat acc">'+acc+'% accuracy</span></div>'+
+     '<table class="breakup"><tr><th>Subject</th><th>Marks</th><th>Correct</th><th>Incorrect</th><th>Unattempted</th></tr>'+
+     Object.entries(R.per).map(([s,p])=>'<tr><td>'+s+'</td><td><b>'+p.marks+'</b></td><td>'+(p.ok+p.bonus)+'</td><td>'+p.bad+'</td><td>'+p.skip+'</td></tr>').join('')+
+     '</table>'+
+     '<p style="margin-top:14px;font-size:13px;color:var(--mut)">This attempt is saved in <a href="library.html" style="color:var(--pri);font-weight:700">My Tests</a>. Tag your mistakes below to build your Mistake Notebook.</p></div>'+
+   '<div class="card"><h2 style="font-size:17px;margin-bottom:12px">Solution review</h2>'+
+     '<div id="rvpal">'+R.rows.map((r,i)=>'<button class="rvp '+(r.res==='ok'?'ok':r.res==='bad'?'bad':r.res==='bonus'?'bonus':'')+'" data-i="'+i+'" onclick="renderRvDetail('+i+')">'+(i+1)+'</button>').join('')+'</div>'+
+     '<div class="filterbar">'+
+       ['all|All','bad|Incorrect','skip|Unattempted','ok|Correct'].map((f,i)=>{
+         const[k,l]=f.split('|');
+         return '<button class="fbtn'+(i===0?' on':'')+'" data-f="'+k+'" onclick="setFilter(this)">'+l+'</button>';
+       }).join('')+
+     '</div><div id="rvlist"></div></div>';
+  $('resultscr').classList.remove('hidden');
+  window._R=R;window._rvFilter='all';window._rvCur=null;
+  renderRvDetail(null);window.scrollTo(0,0);
+}
+function setFilter(btn){
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  window._rvFilter=btn.dataset.f;
+  const R=window._R;
+  R.rows.forEach((r,i)=>{
+    const el=document.querySelector('#rvpal .rvp[data-i="'+i+'"]');
+    if(el)el.classList.toggle('dim',window._rvFilter!=='all'&&r.res!==window._rvFilter);
+  });
+  if(window._rvCur!==null&&window._rvFilter!=='all'&&R.rows[window._rvCur].res!==window._rvFilter)
+    renderRvDetail(null);
+}
+const ansLabel=(q,a)=>(a===null||a===undefined||a==='')?'—':esc(String(a));
+function keyLabel(q){
+  const g=q.grading||{};
+  if(g.kind==='bonus')return'Bonus — full marks awarded to all';
+  if(g.kind==='mcq')return'Option '+g.accept.join(' or ');
+  if(g.kind==='nvt')return g.display??g.accept.join(' or ');
+  return'—';
+}
+function rvVisible(i){
+  const R=window._R;
+  return window._rvFilter==='all'||R.rows[i].res===window._rvFilter;
+}
+function rvStep(i,d){
+  let n=i+d;
+  while(n>=0&&n<Q.length&&!rvVisible(n))n+=d;
+  return (n>=0&&n<Q.length)?n:null;
+}
+function renderRvDetail(i){
+  const R=window._R;
+  window._rvCur=i;
+  document.querySelectorAll('#rvpal .rvp').forEach(b=>b.classList.toggle('cur',Number(b.dataset.i)===i));
+  if(i===null){
+    $('rvlist').innerHTML='<p style="color:var(--mut)">Tap a question number above to see its solution.</p>';
+    return;
+  }
+  const q=Q[i],r=R.rows[i];
+  const tag=r.res==='ok'?'<span class="tag ok">Correct +4</span>'
+    :r.res==='bad'?'<span class="tag bad">Incorrect −1</span>'
+    :r.res==='bonus'?'<span class="tag bonus">Bonus +4</span>'
+    :'<span class="tag skip">Unattempted</span>';
+  let sol='';
+  if(q.sol_img)sol='<div style="font-weight:700;font-size:13.5px;color:var(--green);margin-top:12px">Solution</div><div class="qimg-wrap"><img src="'+imgURL(q,'sol')+'" onerror="this.parentNode.innerHTML=\'<span class=img-fail>Solution image could not be loaded.</span>\'"></div>';
+  else if(q.sol_text)sol='<div class="sol-text">'+sci(q.sol_text)+'</div>';
+  let qb='';
+  if(q.q_img)qb='<div class="qimg-wrap"><img src="'+imgURL(q)+'" onerror="this.parentNode.innerHTML=\'<span class=img-fail>Question image could not be loaded.</span>\'"></div>';
+  else if(q.text)qb='<div style="white-space:pre-wrap;line-height:1.6;margin-bottom:10px">'+sci(q.text)+'</div>';
+  const pv=rvStep(i,-1),nx=rvStep(i,1);
+  const t=qTime[i]||0, tstr=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');
+  const curTag=(window._tags&&window._tags[i]!==undefined)?window._tags[i]:null;
+  let tagBar='';
+  if(r.res==='bad'||r.res==='skip'){
+    tagBar='<div style="margin-top:12px;font-size:12.5px;font-weight:700;color:var(--mut)">Why did this go wrong?</div>'+
+      '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">'+
+      TAGS.map(([k,l])=>'<button class="fbtn'+(curTag===k?' on':'')+'" onclick="setTag('+i+',\''+k+'\')">'+l+'</button>').join('')+
+      '</div>';
+  }
+  $('rvlist').innerHTML=
+    '<div class="rv-q"><div class="rv-head"><span><b>Q'+(i+1)+'</b> · '+q._sec+(q.chapter?' · '+esc(q.chapter):'')+
+    ' · <span style="color:var(--pri-dark)">⏱ '+tstr+'</span></span>'+tag+'</div>'+
+    qb+'<div class="rv-ans">Your answer: <b>'+ansLabel(q,state[i].ans)+'</b> &nbsp;·&nbsp; Correct answer: <b>'+keyLabel(q)+'</b></div>'+sol+tagBar+
+    '<div id="rvnav">'+
+      (pv!==null?'<button class="btn ghost" onclick="renderRvDetail('+pv+')">← Q'+(pv+1)+'</button>':'<span></span>')+
+      (nx!==null?'<button class="btn ghost" onclick="renderRvDetail('+nx+')">Q'+(nx+1)+' →</button>':'<span></span>')+
+    '</div></div>';
+}
+function rvImg(btn,i,which){
+  const q=Q[i],wrap=btn.nextElementSibling;
+  if(!wrap.classList.contains('hidden')){wrap.classList.add('hidden');btn.textContent=which==='q'?'🖼 See question image':'🖼 See solution image';return;}
+  wrap.classList.remove('hidden');
+  if(!wrap.childElementCount){
+    const im=new Image();
+    im.src=imgURL(q,which);
+    im.onerror=()=>{wrap.innerHTML='<span class="img-fail">Image could not be loaded.</span>';};
+    wrap.appendChild(im);
+  }
+  btn.textContent='Hide image';
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Tests — CollegePIPE</title>
+<style>
+:root{--navy:#0d2347;--pri:#f59e0b;--pri-dark:#d97706;--pri-soft:#fff3dd;--ink:#101828;--mut:#667085;
+--line:#e4e7ec;--bg:#f6f7fb;--card:#fff;--green:#16a34a;--green-soft:#e8f7ee;
+--red:#dc2626;--red-soft:#fdecec;--violet:#8b5cf6;--amber:#d97706;--amber-soft:#fef3e2;
+--sh:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.05)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.hidden{display:none!important}
+#hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
+display:flex;align-items:center;gap:18px;padding:12px 20px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px}
+.logo span{color:#fff}
+#hdr nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+#hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
+#hdr nav a:hover,#hdr nav a.on{background:rgba(255,255,255,.12);color:#fff}
+main{max-width:1000px;margin:0 auto;padding:22px 16px 80px}
+h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{padding:8px 18px;border-radius:999px;font-size:14px;font-weight:700;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.tab.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:18px;margin-bottom:12px}
+.att{display:flex;align-items:center;gap:14px;flex-wrap:wrap;cursor:pointer;transition:.12s}
+.att:hover{border-color:#c6cbf5}
+.att .sc{font-size:22px;font-weight:800;color:var(--pri);min-width:86px}
+.att .sc small{font-size:12px;color:var(--mut);font-weight:600}
+.att .t{font-weight:700;font-size:14.5px}
+.att .m{color:var(--mut);font-size:12.5px}
+.att .open{margin-left:auto;background:var(--pri-soft);color:var(--pri-dark);font-weight:700;font-size:12.5px;padding:7px 14px;border-radius:8px}
+.pillrow{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px}
+.pill{padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--mut)}
+.pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chhdr{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px;margin:16px 0 8px}
+.mq{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:8px;background:var(--card)}
+.mq img{width:130px;border:1px solid var(--line);border-radius:8px;cursor:zoom-in;flex:none}
+.mq .inf{font-size:12.5px;color:var(--mut);line-height:1.7;flex:1;min-width:0}
+.tagchip{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:8px;background:var(--amber-soft);color:var(--amber)}
+.res-bad{color:var(--red);font-weight:700}.res-skip{color:var(--mut);font-weight:700}
+.bigbtn{background:var(--pri);color:#fff;font-weight:800;font-size:14px;padding:12px 24px;border-radius:12px}
+.bigbtn:hover{background:var(--pri-dark)}
+.bigbtn:disabled{background:#c9cdd6;cursor:not-allowed}
+#empty{color:var(--mut);text-align:center;padding:60px 0;line-height:1.8}
+/* attempt review view */
+#rvpal{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:8px;margin-bottom:16px}
+.rvp{aspect-ratio:1;border-radius:50%;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--line);background:var(--card);color:var(--mut)}
+.rvp.ok{background:var(--green-soft);border-color:#b9e2c8;color:var(--green)}
+.rvp.bad{background:var(--red-soft);border-color:#f3b8b8;color:var(--red)}
+.rvp.bonus{background:var(--amber-soft);border-color:#f0d9ae;color:var(--amber)}
+.rvp.cur{outline:2.5px solid var(--pri);outline-offset:2px}
+.qimg-wrap{margin:8px 0}
+.qimg-wrap img{max-width:100%;border:1px solid var(--line);border-radius:10px;cursor:zoom-in}
+.tag{padding:3px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.tag.ok{background:var(--green-soft);color:var(--green)}
+.tag.bad{background:var(--red-soft);color:var(--red)}
+.tag.skip{background:var(--bg);color:var(--mut);border:1px solid var(--line)}
+.tag.bonus{background:var(--amber-soft);color:var(--amber)}
+.fbtn{padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12.5px;font-weight:600;color:var(--mut)}
+.fbtn.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+#lightbox{position:fixed;inset:0;background:rgba(12,16,24,.93);z-index:100;display:flex;flex-direction:column}
+#lb-bar{display:flex;justify-content:flex-end;gap:8px;padding:10px 14px}
+#lb-bar button{background:rgba(255,255,255,.14);color:#fff;font-size:14px;font-weight:700;padding:8px 14px;border-radius:8px}
+#lb-scroll{flex:1;overflow:auto;display:flex}
+#lb-scroll img{margin:auto;background:#fff;border-radius:6px}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="logo" href="index.html">College<span>PIPE</span></a>
+  <nav>
+    <a href="papers.html">Papers</a>
+    <a href="chapter-test.html">Chapter Tests</a>
+    <a href="library.html" class="on">My Tests</a>
+  </nav>
+</header>
+<main>
+  <h1>My Tests</h1>
+  <div class="sub">Your attempt history and mistake notebook — stored on this device.</div>
+  <div class="tabs">
+    <button class="tab on" id="tab-att" onclick="setTab('att')">Attempts</button>
+    <button class="tab" id="tab-nb" onclick="setTab('nb')">Mistake Notebook</button>
+  </div>
+  <div id="view"></div>
+</main>
+
+<div id="lightbox" class="hidden">
+  <div id="lb-bar">
+    <button onclick="lbZoom(-1)">−</button><button onclick="lbZoom(1)">+</button><button onclick="closeLB()">✕ Close</button>
+  </div>
+  <div id="lb-scroll"><img id="lb-img" alt=""></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>(s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const IMG_BASE={pyq:'https://img.collegepipe.in/jm-pyq/',mock:'https://img.collegepipe.in/jm-mock/'};
+const TAGS=[['concept','Conceptual error'],['unknown','Concept unknown'],['silly','Silly / calculation'],['theory','Theory forgot'],['time','Ran out of time']];
+const TAGNAME=Object.fromEntries(TAGS);
+let tab='att', ATT=[], curAtt=null, curQ=null, nbFilter={cause:'all',sub:'all'}, nbSel={};
+
+function load(){ try{ATT=JSON.parse(localStorage.getItem('cp_attempts')||'[]');}catch(e){ATT=[];} }
+function persist(){ localStorage.setItem('cp_attempts',JSON.stringify(ATT)); }
+load(); render();
+
+function setTab(t){ tab=t; curAtt=null;
+  $('tab-att').classList.toggle('on',t==='att');
+  $('tab-nb').classList.toggle('on',t==='nb');
+  render();
+}
+function fmtDate(ts){ const d=new Date(ts);
+  return d.getDate()+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()]+' '+d.getFullYear()+', '+
+  String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
+const tstr=t=>Math.floor((t||0)/60)+':'+String((t||0)%60).padStart(2,'0');
+
+function render(){
+  if(tab==='att') curAtt===null? renderAttList() : renderAttReview();
+  else renderNotebook();
+}
+
+/* ---------------- attempts ---------------- */
+function renderAttList(){
+  if(!ATT.length){ $('view').innerHTML='<div id="empty">No attempts yet.<br><a href="papers.html" style="color:var(--pri);font-weight:700">Attempt a paper</a> or <a href="chapter-test.html" style="color:var(--pri);font-weight:700">create a chapter test</a> to get started.</div>'; return; }
+  $('view').innerHTML=[...ATT].reverse().map((a,ri)=>{
+    const i=ATT.length-1-ri;
+    const att=a.ok+a.bad, acc=att?Math.round(a.ok/att*100):0;
+    return '<div class="card att" onclick="openAtt('+i+')">'+
+      '<span class="sc">'+a.score+'<small> / '+a.max+'</small></span>'+
+      '<span><div class="t">'+esc(a.title)+'</div>'+
+      '<div class="m">'+fmtDate(a.ts)+' · ✓ '+a.ok+' · ✗ '+a.bad+' · — '+a.skip+' · '+acc+'% accuracy</div></span>'+
+      '<span class="open">Review →</span></div>';
+  }).join('');
+}
+function openAtt(i){ curAtt=i; curQ=null; renderAttReview(); window.scrollTo(0,0); }
+
+function renderAttReview(){
+  const a=ATT[curAtt];
+  const grid=a.per.map((p,i)=>'<button class="rvp '+(p.res==='ok'?'ok':p.res==='bad'?'bad':p.res==='bonus'?'bonus':'')+(i===curQ?' cur':'')+'" onclick="curQ='+i+';renderAttReview()">'+(i+1)+'</button>').join('');
+  let detail='<p style="color:var(--mut)">Tap a question number to review it.</p>';
+  if(curQ!==null){
+    const p=a.per[curQ];
+    const tag=p.res==='ok'?'<span class="tag ok">Correct +4</span>':p.res==='bad'?'<span class="tag bad">Incorrect −1</span>':p.res==='bonus'?'<span class="tag bonus">Bonus +4</span>':'<span class="tag skip">Unattempted</span>';
+    const img=p.q_img?'<div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'"></div>':'';
+    const sol=p.sol_img?'<div style="font-weight:700;font-size:13px;color:var(--green);margin-top:8px">Solution</div><div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.sol_img+'"></div>':'';
+    const key=p.grading? (p.grading.kind==='bonus'?'Bonus':p.grading.kind==='mcq'?'Option '+p.grading.accept.join(' or '):(p.grading.display??p.grading.accept.join(' or '))) : '—';
+    let tagBar='';
+    if(p.res==='bad'||p.res==='skip'){
+      tagBar='<div style="margin-top:10px;font-size:12.5px;font-weight:700;color:var(--mut)">Cause of error</div>'+
+        '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">'+
+        TAGS.map(([k,l])=>'<button class="fbtn'+(p.tag===k?' on':'')+'" onclick="tagQ('+curQ+',\''+k+'\')">'+l+'</button>').join('')+'</div>';
+    }
+    detail='<div class="card"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:13px;color:var(--mut);margin-bottom:8px">'+
+      '<span><b>Q'+(curQ+1)+'</b> · '+p.sub+(p.ch?' · '+esc(p.ch):'')+' · ⏱ '+tstr(p.time)+'</span>'+tag+'</div>'+img+
+      '<div style="font-size:14px;margin:8px 0">Your answer: <b>'+(p.ans??'—')+'</b> · Correct: <b>'+key+'</b></div>'+sol+tagBar+'</div>';
+  }
+  const att=a.ok+a.bad, acc=att?Math.round(a.ok/att*100):0;
+  $('view').innerHTML='<div class="card"><button class="fbtn" onclick="curAtt=null;render()">← All attempts</button>'+
+    '<h2 style="font-size:17px;margin:10px 0 4px">'+esc(a.title)+'</h2>'+
+    '<div style="color:var(--mut);font-size:13px;margin-bottom:12px">'+fmtDate(a.ts)+' · <b style="color:var(--ink)">'+a.score+' / '+a.max+'</b> · '+acc+'% accuracy</div>'+
+    '<div id="rvpal">'+grid+'</div></div>'+detail;
+}
+function tagQ(i,k){
+  const p=ATT[curAtt].per[i];
+  p.tag = p.tag===k? null : k;
+  persist(); renderAttReview();
+}
+
+/* ---------------- notebook ---------------- */
+function notebookItems(){
+  // latest result per question id wins
+  const latest={};
+  ATT.forEach(a=>a.per.forEach(p=>{ latest[p.id]={...p, ts:a.ts}; }));
+  return Object.values(latest).filter(p=>p.res==='bad'||p.res==='skip');
+}
+function renderNotebook(){
+  const items=notebookItems().filter(p=>
+    (nbFilter.cause==='all'||p.tag===nbFilter.cause) &&
+    (nbFilter.sub==='all'||p.sub===nbFilter.sub));
+  const all=notebookItems();
+  if(!all.length){ $('view').innerHTML='<div id="empty">Your notebook is empty — it fills automatically with questions you get wrong or skip in any test.</div>'; return; }
+  const subs=['all','Physics','Chemistry','Mathematics'];
+  const causes=[['all','All causes'],...TAGS,[null,'Untagged']];
+  // group by subject > chapter
+  const bySub={};
+  items.forEach(p=>{ const s=p.sub||'Other'; (bySub[s]=bySub[s]||{}); const c=p.ch||'Untagged chapter'; (bySub[s][c]=bySub[s][c]||[]).push(p); });
+  let html='<div class="card">'+
+    '<div class="pillrow">'+subs.map(s=>'<button class="pill'+(nbFilter.sub===s?' on':'')+'" onclick="nbFilter.sub=\''+s+'\';render()">'+(s==='all'?'All subjects':s)+'</button>').join('')+'</div>'+
+    '<div class="pillrow">'+causes.map(([k,l])=>'<button class="pill'+(String(nbFilter.cause)===String(k)?' on':'')+'" onclick="nbFilter.cause='+(k===null?'null':k==='all'?'\'all\'':'\''+k+'\'')+';render()">'+l+'</button>').join('')+'</div>'+
+    '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">'+
+    '<span style="font-size:13.5px;color:var(--mut)"><b style="color:var(--ink)">'+items.length+'</b> questions in view · '+all.length+' total in notebook</span>'+
+    '<button class="bigbtn" style="margin-left:auto" '+(items.length?'':'disabled ')+'onclick="practice()">Practice these '+(items.length?'('+Math.min(items.length,75)+')':'')+' →</button></div></div>';
+  for(const s of Object.keys(bySub)){
+    for(const c of Object.keys(bySub[s])){
+      const qs=bySub[s][c];
+      html+='<div class="chhdr"><span>'+s+' · '+esc(c)+'</span><span style="color:var(--mut);font-size:12.5px">'+qs.length+' Qs</span></div>';
+      html+=qs.map(p=>'<div class="mq">'+
+        (p.q_img?'<img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'" loading="lazy">':'')+
+        '<div class="inf"><span class="res-'+(p.res==='bad'?'bad':'skip')+'">'+(p.res==='bad'?'Incorrect':'Unattempted')+'</span>'+
+        (p.tag?' · <span class="tagchip">'+TAGNAME[p.tag]+'</span>':' · untagged')+
+        '<br>⏱ '+tstr(p.time)+' · your answer: '+(p.ans??'—')+'</div></div>').join('');
+    }
+  }
+  $('view').innerHTML=html;
+}
+function practice(){
+  const items=notebookItems().filter(p=>
+    (nbFilter.cause==='all'||p.tag===nbFilter.cause) &&
+    (nbFilter.sub==='all'||p.sub===nbFilter.sub)).slice(0,75);
+  const bySub={};
+  items.forEach(p=>{(bySub[p.sub]=bySub[p.sub]||[]).push(p);});
+  const sections=[];
+  for(const s of ['Physics','Chemistry','Mathematics']){
+    if(!bySub[s])continue;
+    const qs=bySub[s].map(p=>({id:p.id,subject:p.sub,type:p.type,chapter:p.ch,year:null,
+      source:p.source,in_syllabus:true,text:null,options:null,
+      q_img:p.q_img,sol_img:p.sol_img,sol_text:null,grading:p.grading,nvt_note:p.nvt_note}));
+    sections.push({subject:s,A:qs.filter(q=>q.type==='MCQ'),B:qs.filter(q=>q.type==='NVT')});
+  }
+  const total=items.length;
+  const paper={key:'custom',title:'Mistake Practice ('+total+' Qs)',kind:'custom',
+    date:null,session:null,year:null,pattern:'custom',
+    duration_min:Math.max(10,Math.round(total*2.2)),
+    marking:{correct:4,incorrect:-1,unattempted:0},
+    total_questions:total,max_marks:total*4,complete:true,sections:sections};
+  sessionStorage.setItem('cp_custom_paper',JSON.stringify(paper));
+  location.href='exam.html?paper=custom';
+}
+
+/* ---------------- lightbox ---------------- */
+let lbScale=1,lbNat=0;
+function openLB(src){const im=$('lb-img');im.src=src;
+  im.onload=()=>{lbNat=im.naturalWidth;const vw=Math.min(innerWidth,innerHeight*1.3);
+    lbScale=Math.max(1,(vw<700?(vw*1.7)/lbNat:1));applyLB();};
+  $('lightbox').classList.remove('hidden');document.body.style.overflow='hidden';}
+function applyLB(){const im=$('lb-img');im.style.width=(lbNat*lbScale)+'px';im.style.maxWidth='none';}
+function lbZoom(d){lbScale=Math.min(6,Math.max(.4,lbScale*(d>0?1.35:.74)));applyLB();}
+function closeLB(){$('lightbox').classList.add('hidden');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();});
+document.addEventListener('click',e=>{
+  if(e.target.tagName==='IMG'&&(e.target.closest('.mq')||e.target.closest('.qimg-wrap')))openLB(e.target.src);
+  if(e.target.id==='lightbox'||e.target.id==='lb-scroll')closeLB();
+});
+</script>
+</body>
+</html>

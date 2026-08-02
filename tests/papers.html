@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papers — CollegePipe</title>
+<style>
+:root{--navy:#0d2347;--pri:#f59e0b;--pri-dark:#d97706;--pri-soft:#fff3dd;--ink:#101828;--mut:#667085;
+--line:#e4e7ec;--bg:#f6f7fb;--card:#fff;--green:#16a34a;
+--sh:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.05)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+#hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
+display:flex;align-items:center;gap:18px;padding:12px 20px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px}
+.logo span{color:#fff}
+#hdr nav{display:flex;gap:6px;margin-left:auto}
+#hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
+#hdr nav a:hover,#hdr nav a.on{background:rgba(255,255,255,.12);color:#fff}
+main{max-width:1000px;margin:0 auto;padding:22px 16px 60px}
+h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{padding:8px 18px;border-radius:999px;font-size:14px;font-weight:700;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.tab.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.datehdr{font-size:13px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin:18px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);
+padding:16px;display:flex;flex-direction:column;gap:8px;transition:.15s}
+.pcard:hover{transform:translateY(-2px);border-color:#c6cbf5}
+.pcard .t{font-weight:700;font-size:14.5px}
+.pcard .m{color:var(--mut);font-size:12.5px}
+.pcard .go{margin-top:auto;align-self:flex-start;background:var(--pri-soft);color:var(--pri-dark);
+font-weight:700;font-size:13px;padding:7px 14px;border-radius:8px}
+.pcard:hover .go{background:var(--pri);color:#fff}
+.note{font-size:11.5px;color:#b45309;background:#fef3e2;border-radius:6px;padding:2px 8px;display:inline-block}
+#loading{color:var(--mut);text-align:center;padding:60px 0}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="logo" href="index.html">College<span>PIPE</span></a>
+  <nav>
+    <a href="papers.html" class="on">Papers</a>
+    <a href="chapter-test.html">Chapter Tests</a>
+    <a href="library.html">My Tests</a>
+  </nav>
+</header>
+<main>
+  <h1>Practice Papers</h1>
+  <div class="sub">Attempt real JEE Main previous-year papers in the 60+15 pattern, or take full mock tests.</div>
+  <div class="tabs">
+    <button class="tab on" id="tab-pyq" onclick="setTab('pyq')">Previous Year Papers</button>
+    <button class="tab" id="tab-mock" onclick="setTab('mock')">Mock Tests</button>
+  </div>
+  <div class="chips hidden" id="yearchips"></div>
+  <div id="list"><div id="loading">Loading…</div></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let IDX=null, tab='pyq', year=null;
+const MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+fetch('data/index.json').then(r=>r.json()).then(d=>{
+  IDX=d;
+  const years=[...new Set(d.papers.filter(p=>p.kind==='pyq').map(p=>p.year))].sort((a,b)=>b-a);
+  year=years[0];
+  $('yearchips').innerHTML=years.map(y=>'<button class="chip" data-y="'+y+'" onclick="setYear('+y+')">'+y+'</button>').join('');
+  render();
+}).catch(()=>{ $('list').innerHTML='<div id="loading">Could not load data/index.json</div>'; });
+
+function setTab(t){ tab=t;
+  $('tab-pyq').classList.toggle('on',t==='pyq');
+  $('tab-mock').classList.toggle('on',t==='mock');
+  render();
+}
+function setYear(y){ year=y; render(); }
+
+function render(){
+  $('yearchips').classList.toggle('hidden', tab!=='pyq');
+  if(tab==='pyq'){
+    document.querySelectorAll('#yearchips .chip').forEach(c=>c.classList.toggle('on',Number(c.dataset.y)===year));
+    const papers=IDX.papers.filter(p=>p.kind==='pyq'&&p.year===year)
+      .sort((a,b)=>(a.date||'').localeCompare(b.date||'')||a.key.localeCompare(b.key));
+    // group by date
+    const byDate={};
+    papers.forEach(p=>{ (byDate[p.date||p.key]=byDate[p.date||p.key]||[]).push(p); });
+    $('list').innerHTML=Object.entries(byDate).map(([d,ps])=>{
+      let hdr=d;
+      if(/^\d{4}-\d{2}-\d{2}$/.test(d)){const[y,m,dd]=d.split('-');hdr=Number(dd)+' '+MON[Number(m)]+' '+y;}
+      return '<div class="datehdr">'+hdr+'</div><div class="grid">'+ps.map(card).join('')+'</div>';
+    }).join('');
+  } else {
+    const mocks=IDX.papers.filter(p=>p.kind==='mock').sort((a,b)=>a.key.localeCompare(b.key));
+    $('list').innerHTML='<div class="grid">'+mocks.map(card).join('')+'</div>';
+  }
+}
+function card(p){
+  const sess=p.session==='M'?'Morning':p.session==='E'?'Evening':'';
+  const title=p.kind==='pyq'?(sess?sess+' Shift':p.title.replace('JEE Main ','')):p.title;
+  return '<a class="pcard" href="exam.html?paper='+p.key+'">'+
+    '<span class="t">'+title+'</span>'+
+    '<span class="m">'+p.total_questions+' questions · 3 hours · 300 marks'+'</span>'+
+    (p.complete?'':'<span class="note">'+p.total_questions+'/75 available</span>')+
+    '<span class="go">Start Test →</span></a>';
+}
+</script>
+</body>
+</html>
