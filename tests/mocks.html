@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Papers — CollegePipe</title>
+<title>Mock Tests — CollegePIPE</title>
 <style>
 :root{--navy:#0d2347;--pri:#f59e0b;--pri-dark:#d97706;--pri-soft:#fff3dd;--ink:#101828;--mut:#667085;
 --line:#e4e7ec;--bg:#f6f7fb;--card:#fff;--green:#16a34a;
@@ -47,59 +47,32 @@ font-weight:700;font-size:13px;padding:7px 14px;border-radius:8px}
 <header id="hdr">
   <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
-    <a href="papers.html" class="on">Papers</a>
-    <a href="mocks.html">Mocks</a>
+    <a href="papers.html">Papers</a>
+    <a href="mocks.html" class="on">Mocks</a>
     <a href="chapter-test.html">Chapter Tests</a>
     <a href="practice.html">Practice PYQs</a>
     <a href="library.html">My Tests</a>
   </nav>
 </header>
 <main>
-  <h1>Practice Papers</h1>
-  <div class="sub">Attempt real JEE Main previous-year papers in the 60+15 pattern — exactly as they appeared, with official keys and solutions.</div>
+  <h1>Full Mock Tests</h1>
+  <div class="sub">Ready-made full-syllabus mock tests with fresh non-PYQ questions — 60+15 pattern, 3 hours, +4/−1, instant result with solutions.</div>
 
   <div class="chips" id="yearchips"></div>
   <div id="list"><div id="loading">Loading…</div></div>
 </main>
 <script>
 const $=id=>document.getElementById(id);
-let IDX=null, year=null;
-const MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
 fetch('data/index.json').then(r=>r.json()).then(d=>{
-  IDX=d;
-  const years=[...new Set(d.papers.filter(p=>p.kind==='pyq').map(p=>p.year))].sort((a,b)=>b-a);
-  year=years[0];
-  $('yearchips').innerHTML=years.map(y=>'<button class="chip" data-y="'+y+'" onclick="setYear('+y+')">'+y+'</button>').join('');
-  render();
-}).catch(()=>{ $('list').innerHTML='<div id="loading">Could not load data/index.json</div>'; });
-
-function setYear(y){ year=y; render(); }
-
-function render(){
-  {
-    document.querySelectorAll('#yearchips .chip').forEach(c=>c.classList.toggle('on',Number(c.dataset.y)===year));
-    const papers=IDX.papers.filter(p=>p.kind==='pyq'&&p.year===year)
-      .sort((a,b)=>(a.date||'').localeCompare(b.date||'')||a.key.localeCompare(b.key));
-    // group by date
-    const byDate={};
-    papers.forEach(p=>{ (byDate[p.date||p.key]=byDate[p.date||p.key]||[]).push(p); });
-    $('list').innerHTML=Object.entries(byDate).map(([d,ps])=>{
-      let hdr=d;
-      if(/^\d{4}-\d{2}-\d{2}$/.test(d)){const[y,m,dd]=d.split('-');hdr=Number(dd)+' '+MON[Number(m)]+' '+y;}
-      return '<div class="datehdr">'+hdr+'</div><div class="grid">'+ps.map(card).join('')+'</div>';
-    }).join('');
-  }
-}
-function card(p){
-  const sess=p.session==='M'?'Morning':p.session==='E'?'Evening':'';
-  const title=p.kind==='pyq'?(sess?sess+' Shift':p.title.replace('JEE Main ','')):p.title;
-  return '<a class="pcard" href="exam.html?paper='+p.key+'">'+
-    '<span class="t">'+title+'</span>'+
-    '<span class="m">'+p.total_questions+' questions · 3 hours · 300 marks'+'</span>'+
+  const mocks=d.papers.filter(p=>p.kind==='mock').sort((a,b)=>a.key.localeCompare(b.key,undefined,{numeric:true}));
+  document.getElementById('yearchips').style.display='none';
+  document.getElementById('list').innerHTML='<div class="grid">'+mocks.map(p=>
+    '<a class="pcard" href="exam.html?paper='+p.key+'">'+
+    '<span class="t">'+p.title+'</span>'+
+    '<span class="m">'+p.total_questions+' questions · 3 hours · 300 marks</span>'+
     (p.complete?'':'<span class="note">'+p.total_questions+'/75 available</span>')+
-    '<span class="go">Start Test →</span></a>';
-}
+    '<span class="go">Start Test →</span></a>').join('');
+}).catch(()=>{ document.getElementById('list').innerHTML='<div id="loading">Could not load data/index.json</div>'; });
 </script>
 </body>
 </html>

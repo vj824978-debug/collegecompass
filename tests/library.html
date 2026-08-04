@@ -77,6 +77,7 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
   <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
     <a href="papers.html">Papers</a>
+    <a href="mocks.html">Mocks</a>
     <a href="chapter-test.html">Chapter Tests</a>
     <a href="practice.html">Practice PYQs</a>
     <a href="library.html" class="on">My Tests</a>
@@ -105,7 +106,7 @@ const esc=s=>(s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>
 const IMG_BASE={pyq:'https://img.collegepipe.in/jm-pyq/',mock:'https://img.collegepipe.in/jm-mock/'};
 const TAGS=[['concept','Conceptual error'],['unknown','Concept unknown'],['silly','Silly / calculation'],['theory','Theory forgot'],['time','Ran out of time']];
 const TAGNAME=Object.fromEntries(TAGS);
-let tab='att', ATT=[], curAtt=null, curQ=null, nbFilter={cause:'all',sub:'all'}, nbSel={};
+let tab='att', ATT=[], curAtt=null, curQ=null, nbFilter={cause:'all',sub:'all',ch:'all'}, nbOpen={};
 
 function load(){ try{ATT=JSON.parse(localStorage.getItem('cp_attempts')||'[]');}catch(e){ATT=[];} }
 function persist(){ localStorage.setItem('cp_attempts',JSON.stringify(ATT)); }
@@ -167,6 +168,7 @@ function renderAttReview(){
     '<div style="color:var(--mut);font-size:13px;margin-bottom:12px">'+fmtDate(a.ts)+' · <b style="color:var(--ink)">'+a.score+' / '+a.max+'</b> · '+acc+'% accuracy</div>'+
     '<div id="rvpal">'+grid+'</div></div>'+detail;
 }
+function nbToggle(id){ nbOpen[id]=!nbOpen[id]; render(); }
 function tagQ(i,k){
   const p=ATT[curAtt].per[i];
   p.tag = p.tag===k? null : k;
@@ -180,10 +182,14 @@ function notebookItems(){
   ATT.forEach(a=>a.per.forEach(p=>{ latest[p.id]={...p, ts:a.ts}; }));
   return Object.values(latest).filter(p=>p.res==='bad'||p.res==='skip');
 }
+function nbMatch(p){
+  return (nbFilter.cause==='all'||p.tag===nbFilter.cause) &&
+         (nbFilter.sub==='all'||p.sub===nbFilter.sub) &&
+         (nbFilter.ch==='all'||p.ch===nbFilter.ch);
+}
+function setNbCh(c){ nbFilter.ch=c; render(); }
 function renderNotebook(){
-  const items=notebookItems().filter(p=>
-    (nbFilter.cause==='all'||p.tag===nbFilter.cause) &&
-    (nbFilter.sub==='all'||p.sub===nbFilter.sub));
+  const items=notebookItems().filter(nbMatch);
   const all=notebookItems();
   if(!all.length){ $('view').innerHTML='<div id="empty">Your notebook is empty — it fills automatically with questions you get wrong or skip in any test.</div>'; return; }
   const subs=['all','Physics','Chemistry','Mathematics'];
@@ -194,6 +200,14 @@ function renderNotebook(){
   let html='<div class="card">'+
     '<div class="pillrow">'+subs.map(s=>'<button class="pill'+(nbFilter.sub===s?' on':'')+'" onclick="nbFilter.sub=\''+s+'\';render()">'+(s==='all'?'All subjects':s)+'</button>').join('')+'</div>'+
     '<div class="pillrow">'+causes.map(([k,l])=>'<button class="pill'+(String(nbFilter.cause)===String(k)?' on':'')+'" onclick="nbFilter.cause='+(k===null?'null':k==='all'?'\'all\'':'\''+k+'\'')+';render()">'+l+'</button>').join('')+'</div>'+
+    (function(){
+      const pool=notebookItems().filter(p=>nbFilter.sub==='all'||p.sub===nbFilter.sub);
+      const chs=[...new Set(pool.map(p=>p.ch).filter(Boolean))].sort();
+      if(nbFilter.ch!=='all'&&!chs.includes(nbFilter.ch))nbFilter.ch='all';
+      if(chs.length<2)return '';
+      return '<div class="pillrow"><button class="pill'+(nbFilter.ch==='all'?' on':'')+'" onclick="setNbCh(\'all\')">All chapters</button>'+
+        chs.map(c=>'<button class="pill'+(nbFilter.ch===c?' on':'')+'" onclick="setNbCh(\''+c.replace(/'/g,"\\'")+'\')">'+esc(c)+'</button>').join('')+'</div>';
+    })()+
     '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">'+
     '<span style="font-size:13.5px;color:var(--mut)"><b style="color:var(--ink)">'+items.length+'</b> questions in view · '+all.length+' total in notebook</span>'+
     '<button class="bigbtn" style="margin-left:auto" '+(items.length?'':'disabled ')+'onclick="practice()">Practice these '+(items.length?'('+Math.min(items.length,75)+')':'')+' →</button></div></div>';
@@ -201,19 +215,32 @@ function renderNotebook(){
     for(const c of Object.keys(bySub[s])){
       const qs=bySub[s][c];
       html+='<div class="chhdr"><span>'+s+' · '+esc(c)+'</span><span style="color:var(--mut);font-size:12.5px">'+qs.length+' Qs</span></div>';
-      html+=qs.map(p=>'<div class="mq">'+
-        (p.q_img?'<img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'" loading="lazy">':'')+
-        '<div class="inf"><span class="res-'+(p.res==='bad'?'bad':'skip')+'">'+(p.res==='bad'?'Incorrect':'Unattempted')+'</span>'+
-        (p.tag?' · <span class="tagchip">'+TAGNAME[p.tag]+'</span>':' · untagged')+
-        '<br>⏱ '+tstr(p.time)+' · your answer: '+(p.ans??'—')+'</div></div>').join('');
+      html+=qs.map(p=>{
+        const open=!!nbOpen[p.id];
+        const key=p.grading? (p.grading.kind==='bonus'?'Bonus':p.grading.kind==='mcq'?'Option '+p.grading.accept.join(' or '):(p.grading.display??(p.grading.accept||[]).join(' or '))) : '—';
+        let detail='';
+        if(open){
+          detail='<div style="margin-top:12px;border-top:1px dashed var(--line);padding-top:12px">'+
+            (p.q_img?'<div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'"></div>':'')+
+            '<div style="font-size:14px;margin:8px 0">Your answer: <b>'+(p.ans??'—')+'</b> · Correct: <b>'+key+'</b></div>'+
+            (p.sol_img?'<div style="font-weight:700;font-size:13px;color:var(--green)">Solution</div><div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.sol_img+'"></div>':'<div style="color:var(--mut);font-size:13px">No solution image for this question.</div>')+
+            '</div>';
+        }
+        return '<div class="mq" style="flex-direction:column;cursor:pointer" onclick="nbToggle(\''+p.id+'\')">'+
+          '<div style="display:flex;gap:12px;align-items:flex-start;width:100%">'+
+          (p.q_img&&!open?'<img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'" loading="lazy">':'')+
+          '<div class="inf"><span class="res-'+(p.res==='bad'?'bad':'skip')+'">'+(p.res==='bad'?'Incorrect':'Unattempted')+'</span>'+
+          (p.tag?' · <span class="tagchip">'+TAGNAME[p.tag]+'</span>':' · untagged')+
+          '<br>⏱ '+tstr(p.time)+' · your answer: '+(p.ans??'—')+
+          '<br><span style="color:var(--pri-dark);font-weight:700;font-size:12px">'+(open?'▲ Tap to collapse':'▼ Tap to view question & solution')+'</span></div></div>'+
+          detail+'</div>';
+      }).join('');
     }
   }
   $('view').innerHTML=html;
 }
 function practice(){
-  const items=notebookItems().filter(p=>
-    (nbFilter.cause==='all'||p.tag===nbFilter.cause) &&
-    (nbFilter.sub==='all'||p.sub===nbFilter.sub)).slice(0,75);
+  const items=notebookItems().filter(nbMatch).slice(0,75);
   const bySub={};
   items.forEach(p=>{(bySub[p.sub]=bySub[p.sub]||[]).push(p);});
   const sections=[];
@@ -245,9 +272,11 @@ function lbZoom(d){lbScale=Math.min(6,Math.max(.4,lbScale*(d>0?1.35:.74)));apply
 function closeLB(){$('lightbox').classList.add('hidden');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();});
 document.addEventListener('click',e=>{
-  if(e.target.tagName==='IMG'&&(e.target.closest('.mq')||e.target.closest('.qimg-wrap')))openLB(e.target.src);
+  if(e.target.tagName==='IMG'&&(e.target.closest('.mq')||e.target.closest('.qimg-wrap'))){
+    e.stopPropagation(); openLB(e.target.src); return;
+  }
   if(e.target.id==='lightbox'||e.target.id==='lb-scroll')closeLB();
-});
+},true);
 </script>
 </body>
 </html>
