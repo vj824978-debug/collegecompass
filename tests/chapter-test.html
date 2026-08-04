@@ -14,8 +14,8 @@ a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 #hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
 display:flex;align-items:center;gap:18px;padding:12px 20px}
-.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px}
-.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:0}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px;margin-right:8px}
 .logo span{color:#fff}
 #hdr nav{display:flex;gap:6px;margin-left:auto}
 #hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
@@ -58,10 +58,11 @@ box-shadow:0 -4px 16px rgba(16,24,40,.08);padding:12px 18px;display:flex;align-i
 </head>
 <body>
 <header id="hdr">
-  <a class="logo" href="index.html">College<span>PIPE</span></a>
+  <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
     <a href="papers.html">Papers</a>
     <a href="chapter-test.html" class="on">Chapter Tests</a>
+    <a href="practice.html">Practice PYQs</a>
     <a href="library.html">My Tests</a>
   </nav>
 </header>
@@ -73,7 +74,7 @@ box-shadow:0 -4px 16px rgba(16,24,40,.08);padding:12px 18px;display:flex;align-i
     <h2>⚡ Quick generate — full syllabus mock (60 + 15, 3 hours)</h2>
     <div class="quickrow">
       <button class="qk" onclick="quickMock('pyq')">PYQ Mock — real past questions</button>
-      <button class="qk" onclick="quickMock('mock')">Practice Mock — new questions</button>
+      <button class="qk" onclick="quickMock('mock')">Non-PYQ Mock — new questions</button>
       <button class="qk" onclick="quickMock('both')">Mixed Mock</button>
     </div>
   </div>
@@ -82,7 +83,7 @@ box-shadow:0 -4px 16px rgba(16,24,40,.08);padding:12px 18px;display:flex;align-i
     <h2>Question source</h2>
     <div class="srcrow">
       <button class="src on" data-s="pyq" onclick="setSrc('pyq')">PYQ only</button>
-      <button class="src" data-s="mock" onclick="setSrc('mock')">Practice only</button>
+      <button class="src" data-s="mock" onclick="setSrc('mock')">Non-PYQs only</button>
       <button class="src" data-s="both" onclick="setSrc('both')">Both</button>
     </div>
   </div>
@@ -207,7 +208,7 @@ async function generate(){
     if(!total){ alert('No questions available for this selection.'); resetBtn(); return; }
     chosenIds.forEach(id=>used.add(id)); saveUsed(used);
     const nsub=sections.length;
-    const srcName=src==='pyq'?'PYQ':'Practice';
+    const srcName=src==='pyq'?'PYQ':'Non-PYQ';
     const chNames=Object.keys(sel).map(k=>k.split('|')[1]);
     const title=(nsub===3&&chNames.length>=20)?('Full Syllabus '+srcName+' Mock')
       :(chNames.length<=2?chNames.join(' + '):nsub===1?sections[0].subject+' Chapter Test':'Custom Test')+' ('+srcName+')';
@@ -231,7 +232,8 @@ async function quickMock(source){
   sel={};
   IDX.chapters.forEach(c=>{ if(!c.deleted_2026 && poolOf(c)>0) sel[c.subject+'|'+c.chapter]=c; });
   buildTabs(); renderChapters(); updateBar();
-  generate();
+  // selection only — student reviews and presses Generate Test himself
+  document.getElementById('genbtn').scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script>
 </body>

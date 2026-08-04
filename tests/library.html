@@ -16,8 +16,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hidden{display:none!important}
 #hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
 display:flex;align-items:center;gap:18px;padding:12px 20px}
-.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px}
-.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:0}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px;margin-right:8px}
 .logo span{color:#fff}
 #hdr nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
 #hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
@@ -74,10 +74,11 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
 </head>
 <body>
 <header id="hdr">
-  <a class="logo" href="index.html">College<span>PIPE</span></a>
+  <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
     <a href="papers.html">Papers</a>
     <a href="chapter-test.html">Chapter Tests</a>
+    <a href="practice.html">Practice PYQs</a>
     <a href="library.html" class="on">My Tests</a>
   </nav>
 </header>

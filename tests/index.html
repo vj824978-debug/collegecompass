@@ -14,8 +14,8 @@ body{font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;background:var(--b
 a{text-decoration:none;color:inherit}
 #hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
 display:flex;align-items:center;gap:18px;padding:12px 20px}
-.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px}
-.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:0}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px;margin-right:8px}
 .logo span{color:#fff}
 #hdr nav{display:flex;gap:6px;margin-left:auto}
 #hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
@@ -45,10 +45,11 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
 </head>
 <body>
 <header id="hdr">
-  <a class="logo" href="index.html">College<span>PIPE</span></a>
+  <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
     <a href="papers.html">Papers</a>
     <a href="chapter-test.html">Chapter Tests</a>
+    <a href="practice.html">Practice PYQs</a>
     <a href="library.html">My Tests</a>
   </nav>
 </header>
@@ -57,7 +58,8 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
     <h1>Crack JEE with <em>real questions</em>,<br>in the real exam interface.</h1>
     <p>Every JEE Main PYQ from 2019–2026, servable as full papers, chapter tests, and unlimited fresh mocks.</p>
     <div class="stats" id="stats">
-      <span class="stat"><b>13,000+</b> PYQs</span>
+      <span class="stat"><b>20,000+</b> PYQs</span>
+      <span class="stat"><b>4,000+</b> Non-PYQ Qs</span>
       <span class="stat"><b>130+</b> real papers</span>
       <span class="stat"><b>86</b> chapters</span>
       <span class="stat"><b>Free</b> forever</span>
@@ -76,11 +78,11 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
       <p>Finished a chapter? Test it under exam conditions. Pick any chapters, choose PYQ-only or practice questions, and get a timed test in JEE pattern instantly.</p>
       <span class="go">Create a Test →</span>
     </a>
-    <a class="mode m3" href="chapter-test.html">
-      <span class="ic">🎲</span>
-      <h2>Unlimited Mocks</h2>
-      <p>Generate a fresh full-syllabus mock anytime — built from real PYQs or new practice questions, weighted like the actual exam. Never the same paper twice.</p>
-      <span class="go">Generate Mock →</span>
+    <a class="mode m3" href="practice.html">
+      <span class="ic">⚡</span>
+      <h2>Chapter-wise PYQs</h2>
+      <p>Pick a subject and chapter, browse every PYQ year-by-year, solve at your own pace, and get instant right/wrong with the full solution — no timer, no pressure.</p>
+      <span class="go">Start Practicing →</span>
     </a>
   </div>
 </main>
@@ -89,7 +91,8 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
 fetch('data/index.json').then(r=>r.json()).then(d=>{
   const s=document.getElementById('stats');
   const pyqPapers=d.papers.filter(p=>p.kind==='pyq').length;
-  s.innerHTML='<span class="stat"><b>'+d.counts.pyq.toLocaleString()+'</b> PYQs</span>'+
+  s.innerHTML='<span class="stat"><b>20,000+</b> PYQs</span>'+
+    '<span class="stat"><b>4,000+</b> Non-PYQ Qs</span>'+
     '<span class="stat"><b>'+pyqPapers+'</b> real papers</span>'+
     '<span class="stat"><b>'+d.counts.chapters+'</b> chapters</span>'+
     '<span class="stat"><b>Free</b> forever</span>';

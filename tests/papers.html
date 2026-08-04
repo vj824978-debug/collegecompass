@@ -14,8 +14,8 @@ a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 #hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
 display:flex;align-items:center;gap:18px;padding:12px 20px}
-.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:8px}
-.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:0}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px;margin-right:8px}
 .logo span{color:#fff}
 #hdr nav{display:flex;gap:6px;margin-left:auto}
 #hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
@@ -45,26 +45,24 @@ font-weight:700;font-size:13px;padding:7px 14px;border-radius:8px}
 </head>
 <body>
 <header id="hdr">
-  <a class="logo" href="index.html">College<span>PIPE</span></a>
+  <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
     <a href="papers.html" class="on">Papers</a>
     <a href="chapter-test.html">Chapter Tests</a>
+    <a href="practice.html">Practice PYQs</a>
     <a href="library.html">My Tests</a>
   </nav>
 </header>
 <main>
   <h1>Practice Papers</h1>
-  <div class="sub">Attempt real JEE Main previous-year papers in the 60+15 pattern, or take full mock tests.</div>
-  <div class="tabs">
-    <button class="tab on" id="tab-pyq" onclick="setTab('pyq')">Previous Year Papers</button>
-    <button class="tab" id="tab-mock" onclick="setTab('mock')">Mock Tests</button>
-  </div>
-  <div class="chips hidden" id="yearchips"></div>
+  <div class="sub">Attempt real JEE Main previous-year papers in the 60+15 pattern — exactly as they appeared, with official keys and solutions.</div>
+
+  <div class="chips" id="yearchips"></div>
   <div id="list"><div id="loading">Loading…</div></div>
 </main>
 <script>
 const $=id=>document.getElementById(id);
-let IDX=null, tab='pyq', year=null;
+let IDX=null, year=null;
 const MON=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 fetch('data/index.json').then(r=>r.json()).then(d=>{
@@ -75,16 +73,10 @@ fetch('data/index.json').then(r=>r.json()).then(d=>{
   render();
 }).catch(()=>{ $('list').innerHTML='<div id="loading">Could not load data/index.json</div>'; });
 
-function setTab(t){ tab=t;
-  $('tab-pyq').classList.toggle('on',t==='pyq');
-  $('tab-mock').classList.toggle('on',t==='mock');
-  render();
-}
 function setYear(y){ year=y; render(); }
 
 function render(){
-  $('yearchips').classList.toggle('hidden', tab!=='pyq');
-  if(tab==='pyq'){
+  {
     document.querySelectorAll('#yearchips .chip').forEach(c=>c.classList.toggle('on',Number(c.dataset.y)===year));
     const papers=IDX.papers.filter(p=>p.kind==='pyq'&&p.year===year)
       .sort((a,b)=>(a.date||'').localeCompare(b.date||'')||a.key.localeCompare(b.key));
@@ -96,9 +88,6 @@ function render(){
       if(/^\d{4}-\d{2}-\d{2}$/.test(d)){const[y,m,dd]=d.split('-');hdr=Number(dd)+' '+MON[Number(m)]+' '+y;}
       return '<div class="datehdr">'+hdr+'</div><div class="grid">'+ps.map(card).join('')+'</div>';
     }).join('');
-  } else {
-    const mocks=IDX.papers.filter(p=>p.kind==='mock').sort((a,b)=>a.key.localeCompare(b.key));
-    $('list').innerHTML='<div class="grid">'+mocks.map(card).join('')+'</div>';
   }
 }
 function card(p){

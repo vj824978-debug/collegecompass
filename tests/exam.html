@@ -27,7 +27,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 /* ============ header ============ */
 #hdr{position:sticky;top:0;z-index:30;background:var(--navy);border-bottom:1px solid #1b3a66;
   display:flex;align-items:center;gap:14px;padding:10px 18px}
-#hdr .logo{font-weight:800;font-size:17px;color:var(--pri);letter-spacing:-.2px;white-space:nowrap}
+#hdr .logo{font-weight:800;font-size:17px;color:#fff;letter-spacing:-.2px;white-space:nowrap;display:flex;align-items:center;text-decoration:none}
+#hdr .logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:2px 5px;font-size:14px;margin-right:8px}
 #hdr .logo span{color:#fff}
 #ptitle{font-weight:600;font-size:14.5px;color:#e8edf5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
 #timerpill{display:flex;align-items:center;gap:7px;background:var(--pri);color:var(--navy);
@@ -202,7 +203,7 @@ table.breakup td:first-child,table.breakup th:first-child{text-align:left}
 <body>
 
 <header id="hdr">
-  <div class="logo">College<span>PIPE</span></div>
+  <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <div id="ptitle">Loading…</div>
   <div id="timerpill">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
@@ -292,6 +293,11 @@ const DATA_BASE = 'data/';
 /* ================= STATE ================== */
 let P=null, Q=[], cur=0, state=[], secStarts=[], timeLeft=0, timerId=null, submitted=false;
 let qTime=[], lastSwitch=null, attemptIdx=null;
+let SEEN=new Set(); try{SEEN=new Set(JSON.parse(localStorage.getItem('cp_seen')||'[]'));}catch(e){}
+let seenDirty=false;
+function markSeen(id){ if(!SEEN.has(id)){SEEN.add(id);seenDirty=true;} }
+setInterval(()=>{ if(seenDirty){ let a=[...SEEN]; if(a.length>20000)a=a.slice(-20000);
+  try{localStorage.setItem('cp_seen',JSON.stringify(a));}catch(e){} seenDirty=false; } },4000);
 
 const $=id=>document.getElementById(id);
 const esc=s=>(s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -413,7 +419,9 @@ function go(i){
   const q=Q[i],st=state[i];
   if(st.status==='nv')st.status='na';
   $('qno').textContent='Question '+(i+1);
-  $('qmeta').textContent=q._sec+' · '+(q.type==='MCQ'?'MCQ':'Numerical')+' · +4 / −1';
+  const seenTag = SEEN.has(q.id) ? ' · 👁 Seen before' : '';
+  $('qmeta').textContent=q._sec+' · '+(q.type==='MCQ'?'MCQ':'Numerical')+' · +4 / −1'+seenTag;
+  markSeen(q.id);
   $('nvtnote').classList.toggle('hidden',!(q.type==='NVT'&&q.nvt_note));
   if(q.nvt_note)$('nvtnote').textContent='ℹ '+q.nvt_note;
   $('qimgwrap').innerHTML='';
