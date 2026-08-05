@@ -594,6 +594,7 @@ function gradeOne(q,ans){
     return{res:'bad',marks:N};
   }
   if(g.kind==='mm'){
+    if(g.unkeyed)return{res:'skip',marks:0,unscored:true};
     const perRow=M/4; let got=0;
     for(const R of ['A','B','C','D']){
       const sel=(ans[R]||[]).join(''), key=(g.map[R]||[]).join('');
@@ -724,7 +725,7 @@ function keyLabel(q){
   if(g.kind==='bonus')return'Bonus — full marks awarded to all';
   if(g.kind==='scq')return'Option '+g.accept.join(' or ');
   if(g.kind==='msq')return'Options '+g.accept.join(', ');
-  if(g.kind==='mm')return ['A','B','C','D'].map(R=>R+'–'+(g.map[R]||[]).join('')).join('; ');
+  if(g.kind==='mm')return g.unkeyed?'Not auto-graded — verify your grid with the solution below':['A','B','C','D'].map(R=>R+'–'+(g.map[R]||[]).join('')).join('; ');
   if(g.kind==='nat')return g.display+(g.lo!==g.hi?' (accepted: '+g.lo+' to '+g.hi+')':'');
   if(g.kind==='nat_multi'||g.kind==='manual')return g.display;
   return'—';

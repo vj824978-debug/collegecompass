@@ -67,8 +67,8 @@ font-weight:700;font-size:13px;padding:7px 14px;border-radius:8px}
   <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
     <a href="papers.html">Papers</a>
-    <a href="ja-papers.html" class="on">JEE Advanced</a>
     <a href="mocks.html">Mocks</a>
+    <a href="ja-papers.html" class="on">JEE Advanced</a>
     <a href="chapter-test.html">Chapter Tests</a>
     <a href="practice.html">Practice PYQs</a>
     <a href="library.html">My Tests</a>
@@ -80,10 +80,25 @@ font-weight:700;font-size:13px;padding:7px 14px;border-radius:8px}
   <a href="index.html">🏠 Home</a>
   <a href="papers.html">📄 Papers</a>
   <a href="mocks.html">📝 Mocks</a>
+  <a href="ja-papers.html">🏆 JEE Advanced</a>
   <a href="chapter-test.html">📚 Chapter Tests</a>
   <a href="practice.html">⚡ Practice PYQs</a>
   <a href="library.html">🗂 My Tests</a>
 </div>
+<script>
+function closeMnav(){document.getElementById('mnav').classList.remove('open');document.getElementById('mscrim').classList.add('hidden')}
+(function(){var p=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a.classList.add('on');});})();
+</script>
+
+</header>
+<main>
+  <h1>JEE Advanced Papers</h1>
+  <div class="sub">Every JEE Advanced paper 2007–2026 in its original pattern — MSQs with partial marking, numericals, comprehensions and matrix match, exactly as they appeared.</div>
+
+  <div class="chips" id="yearchips"></div>
+  <div id="list"><div id="loading">Loading…</div></div>
+</main>
 <script>
 fetch('data/ja-index.json').then(r=>r.json()).then(d=>{
   document.getElementById('yearchips').style.display='none';
@@ -97,28 +112,6 @@ fetch('data/ja-index.json').then(r=>r.json()).then(d=>{
       '<span class="m">'+p.total_questions+' questions · 3 hours · '+p.max_marks+' marks</span>'+
       '<span class="go">Start Test →</span></a>').join('')+'</div>').join('');
 }).catch(()=>{ document.getElementById('list').innerHTML='<div id="loading">Could not load data/ja-index.json</div>'; });
-</script>
-
-</header>
-<main>
-  <h1>JEE Advanced Papers</h1>
-  <div class="sub">Every JEE Advanced paper 2007–2026 in its original pattern — MSQs with partial marking, numericals, comprehensions and matrix match, exactly as they appeared.</div>
-
-  <div class="chips" id="yearchips"></div>
-  <div id="list"><div id="loading">Loading…</div></div>
-</main>
-<script>
-const $=id=>document.getElementById(id);
-fetch('data/index.json').then(r=>r.json()).then(d=>{
-  const mocks=d.papers.filter(p=>p.kind==='mock').sort((a,b)=>a.key.localeCompare(b.key,undefined,{numeric:true}));
-  document.getElementById('yearchips').style.display='none';
-  document.getElementById('list').innerHTML='<div class="grid">'+mocks.map(p=>
-    '<a class="pcard" href="exam.html?paper='+p.key+'">'+
-    '<span class="t">'+p.title+'</span>'+
-    '<span class="m">'+p.total_questions+' questions · 3 hours · 300 marks</span>'+
-    (p.complete?'':'<span class="note">'+p.total_questions+'/75 available</span>')+
-    '<span class="go">Start Test →</span></a>').join('');
-}).catch(()=>{ document.getElementById('list').innerHTML='<div id="loading">Could not load data/index.json</div>'; });
 </script>
 </body>
 </html>
