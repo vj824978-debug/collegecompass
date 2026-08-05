@@ -465,12 +465,15 @@ function renderMCQ(q,st){
   $('nvtbox').classList.add('hidden');
   const ob=$('optbox');ob.classList.remove('hidden');
   const msq=q.grading.kind==='msq';
+  const hasText=q.options&&q.options.some(o=>o);
   const hint=msq?'Select <b>one or more</b> options:':'Select your option:';
   ob.innerHTML='<div class="opt-hint">'+hint+'</div>'+
-    ['A','B','C','D'].map(L=>{
+    ['A','B','C','D'].map((L,i)=>{
       const sel=msq?(st.ans||[]).includes(L):st.ans===L;
-      return '<label class="opt compact'+(sel?' selected':'')+'" onclick="pickOpt(\''+L+'\')">'+
-        '<span class="ring'+(msq?' sq':'')+'"></span><span class="lbl">('+L+')</span></label>';
+      const t=hasText?(q.options[i]||''):'';
+      return '<label class="opt'+(hasText?'':' compact')+(sel?' selected':'')+'" onclick="pickOpt(\''+L+'\')">'+
+        '<span class="ring'+(msq?' sq':'')+'"></span><span class="lbl">('+L+')</span>'+
+        (hasText?'<span class="otext">'+esc(t)+'</span>':'')+'</label>';
     }).join('');
 }
 function renderMM(q,st){
