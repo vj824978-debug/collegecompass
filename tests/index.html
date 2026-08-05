@@ -45,10 +45,21 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
 @media (max-width:680px){
   #hdr{padding:10px 12px;gap:10px}
   .logo{font-size:15px}
-  #hdr nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-left:auto}
-  #hdr nav::-webkit-scrollbar{display:none}
-  #hdr nav a{padding:6px 10px;font-size:12.5px;white-space:nowrap}
 }
+
+/* mobile hamburger menu */
+#menubtn{display:none;margin-left:auto;background:rgba(255,255,255,.12);color:#fff;font-size:20px;line-height:1;padding:8px 12px;border-radius:9px}
+#mnav{position:fixed;top:0;right:-280px;width:260px;height:100%;background:var(--navy);z-index:60;transition:right .25s;padding:18px 14px;display:flex;flex-direction:column;gap:4px;box-shadow:-8px 0 30px rgba(0,0,0,.35)}
+#mnav.open{right:0}
+#mnav a{color:#d7deea;font-size:15px;font-weight:600;padding:13px 14px;border-radius:10px;text-decoration:none}
+#mnav a.on,#mnav a:hover{background:rgba(255,255,255,.12);color:#fff}
+#mnav .mclose{align-self:flex-end;background:none;color:#b9c4d8;font-size:22px;padding:4px 10px;margin-bottom:6px}
+#mscrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:55}
+@media (max-width:680px){
+  #hdr nav{display:none}
+  #menubtn{display:block}
+}
+.hidden{display:none!important}
 </style>
 </head>
 <body>
@@ -61,6 +72,23 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
     <a href="practice.html">Practice PYQs</a>
     <a href="library.html">My Tests</a>
   </nav>
+<button id="menubtn" onclick="document.getElementById('mnav').classList.add('open');document.getElementById('mscrim').classList.remove('hidden')">☰</button>
+<div id="mscrim" class="hidden" onclick="closeMnav()"></div>
+<div id="mnav">
+  <button class="mclose" onclick="closeMnav()">✕</button>
+  <a href="index.html">🏠 Home</a>
+  <a href="papers.html">📄 Papers</a>
+  <a href="mocks.html">📝 Mocks</a>
+  <a href="chapter-test.html">📚 Chapter Tests</a>
+  <a href="practice.html">⚡ Practice PYQs</a>
+  <a href="library.html">🗂 My Tests</a>
+</div>
+<script>
+function closeMnav(){document.getElementById('mnav').classList.remove('open');document.getElementById('mscrim').classList.add('hidden')}
+(function(){var p=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a.classList.add('on');});})();
+</script>
+
 </header>
 <main>
   <div class="hero">
