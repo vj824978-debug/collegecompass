@@ -628,7 +628,11 @@ function renderResult(R){
      '<table class="breakup"><tr><th>Subject</th><th>Marks</th><th>Correct</th><th>Incorrect</th><th>Unattempted</th></tr>'+
      Object.entries(R.per).map(([s,p])=>'<tr><td>'+s+'</td><td><b>'+p.marks+'</b></td><td>'+(p.ok+p.bonus)+'</td><td>'+p.bad+'</td><td>'+p.skip+'</td></tr>').join('')+
      '</table>'+
-     '<p style="margin-top:14px;font-size:13px;color:var(--mut)">This attempt is saved in <a href="library.html" style="color:var(--pri);font-weight:700">My Tests</a>. Tag your mistakes below to build your Mistake Notebook.</p></div>'+
+     '<p style="margin-top:14px;font-size:13px;color:var(--mut)">This attempt is saved in <a href="library.html" style="color:var(--pri-dark);font-weight:700">My Tests</a>. Tag your mistakes below to build your Mistake Notebook.</p>'+
+     '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">'+
+       [['index.html','🏠 Home'],['papers.html','📄 Papers'],['mocks.html','📝 Mocks'],['chapter-test.html','📚 Chapter Tests'],['practice.html','⚡ Practice PYQs'],['library.html','🗂 My Tests']].map(x=>
+         '<a href="'+x[0]+'" style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:9px;text-decoration:none">'+x[1]+'</a>').join('')+
+     '</div></div>'+
    '<div class="card"><h2 style="font-size:17px;margin-bottom:12px">Solution review</h2>'+
      '<div id="rvpal">'+R.rows.map((r,i)=>'<button class="rvp '+(r.res==='ok'?'ok':r.res==='bad'?'bad':r.res==='bonus'?'bonus':'')+'" data-i="'+i+'" onclick="renderRvDetail('+i+')">'+(i+1)+'</button>').join('')+'</div>'+
      '<div class="filterbar">'+

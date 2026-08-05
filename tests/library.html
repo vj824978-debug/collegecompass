@@ -37,6 +37,7 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
 .att .m{color:var(--mut);font-size:12.5px}
 .att .open{margin-left:auto;background:var(--pri-soft);color:var(--pri-dark);font-weight:700;font-size:12.5px;padding:7px 14px;border-radius:8px}
 .pillrow{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px}
+.nbsel{font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;max-width:100%}
 .pill{padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:700;border:1px solid var(--line);background:var(--card);color:var(--mut)}
 .pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chhdr{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px;margin:16px 0 8px}
@@ -70,6 +71,14 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
 #lb-bar button{background:rgba(255,255,255,.14);color:#fff;font-size:14px;font-weight:700;padding:8px 14px;border-radius:8px}
 #lb-scroll{flex:1;overflow:auto;display:flex}
 #lb-scroll img{margin:auto;background:#fff;border-radius:6px}
+
+@media (max-width:680px){
+  #hdr{padding:10px 12px;gap:10px}
+  .logo{font-size:15px}
+  #hdr nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-left:auto}
+  #hdr nav::-webkit-scrollbar{display:none}
+  #hdr nav a{padding:6px 10px;font-size:12.5px;white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -142,9 +151,26 @@ function renderAttList(){
 }
 function openAtt(i){ curAtt=i; curQ=null; renderAttReview(); window.scrollTo(0,0); }
 
+let attSub='All';
 function renderAttReview(){
   const a=ATT[curAtt];
-  const grid=a.per.map((p,i)=>'<button class="rvp '+(p.res==='ok'?'ok':p.res==='bad'?'bad':p.res==='bonus'?'bonus':'')+(i===curQ?' cur':'')+'" onclick="curQ='+i+';renderAttReview()">'+(i+1)+'</button>').join('');
+  // subject-wise analysis
+  const subs={}; 
+  a.per.forEach(p=>{ const s=p.sub||'—'; subs[s]=subs[s]||{ok:0,bad:0,skip:0,bonus:0,marks:0};
+    subs[s][p.res==='ok'?'ok':p.res==='bad'?'bad':p.res==='bonus'?'bonus':'skip']++;
+    subs[s].marks += p.res==='ok'||p.res==='bonus'?4:p.res==='bad'?-1:0; });
+  const subTable='<table style="width:100%;border-collapse:collapse;font-size:13px;margin:10px 0 14px">'+
+    '<tr style="color:var(--mut);text-align:left"><th style="padding:6px 8px">Subject</th><th>Marks</th><th>✓</th><th>✗</th><th>—</th><th>Accuracy</th></tr>'+
+    Object.entries(subs).map(([s,v])=>{
+      const att=v.ok+v.bad, acc=att?Math.round(v.ok/att*100)+'%':'—';
+      return '<tr style="border-top:1px solid var(--line)"><td style="padding:6px 8px;font-weight:700">'+s+'</td><td>'+v.marks+'</td><td style="color:var(--green)">'+(v.ok+v.bonus)+'</td><td style="color:var(--red)">'+v.bad+'</td><td>'+v.skip+'</td><td>'+acc+'</td></tr>';
+    }).join('')+'</table>';
+  const subNames=['All',...Object.keys(subs)];
+  const subChips='<div class="pillrow">'+subNames.map(s=>'<button class="pill'+(attSub===s?' on':'')+'" onclick="attSub=\''+s+'\';renderAttReview()">'+s+'</button>').join('')+'</div>';
+  const grid=a.per.map((p,i)=>{
+    if(attSub!=='All'&&p.sub!==attSub)return '';
+    return '<button class="rvp '+(p.res==='ok'?'ok':p.res==='bad'?'bad':p.res==='bonus'?'bonus':'')+(i===curQ?' cur':'')+'" onclick="curQ='+i+';renderAttReview()">'+(i+1)+'</button>';
+  }).join('');
   let detail='<p style="color:var(--mut)">Tap a question number to review it.</p>';
   if(curQ!==null){
     const p=a.per[curQ];
@@ -166,6 +192,7 @@ function renderAttReview(){
   $('view').innerHTML='<div class="card"><button class="fbtn" onclick="curAtt=null;render()">← All attempts</button>'+
     '<h2 style="font-size:17px;margin:10px 0 4px">'+esc(a.title)+'</h2>'+
     '<div style="color:var(--mut);font-size:13px;margin-bottom:12px">'+fmtDate(a.ts)+' · <b style="color:var(--ink)">'+a.score+' / '+a.max+'</b> · '+acc+'% accuracy</div>'+
+    subTable+subChips+
     '<div id="rvpal">'+grid+'</div></div>'+detail;
 }
 function nbToggle(id){ nbOpen[id]=!nbOpen[id]; render(); }
@@ -198,16 +225,17 @@ function renderNotebook(){
   const bySub={};
   items.forEach(p=>{ const s=p.sub||'Other'; (bySub[s]=bySub[s]||{}); const c=p.ch||'Untagged chapter'; (bySub[s][c]=bySub[s][c]||[]).push(p); });
   let html='<div class="card">'+
-    '<div class="pillrow">'+subs.map(s=>'<button class="pill'+(nbFilter.sub===s?' on':'')+'" onclick="nbFilter.sub=\''+s+'\';render()">'+(s==='all'?'All subjects':s)+'</button>').join('')+'</div>'+
-    '<div class="pillrow">'+causes.map(([k,l])=>'<button class="pill'+(String(nbFilter.cause)===String(k)?' on':'')+'" onclick="nbFilter.cause='+(k===null?'null':k==='all'?'\'all\'':'\''+k+'\'')+';render()">'+l+'</button>').join('')+'</div>'+
+    '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">'+
+    '<select class="nbsel" onchange="nbFilter.sub=this.value;render()">'+subs.map(x=>'<option value="'+x+'"'+(nbFilter.sub===x?' selected':'')+'>'+(x==='all'?'All subjects':x)+'</option>').join('')+'</select>'+
+    '<select class="nbsel" onchange="nbFilter.cause=(this.value===\'null\'?null:this.value);render()">'+causes.map(([k,l])=>'<option value="'+k+'"'+(String(nbFilter.cause)===String(k)?' selected':'')+'>'+l+'</option>').join('')+'</select>'+
     (function(){
       const pool=notebookItems().filter(p=>nbFilter.sub==='all'||p.sub===nbFilter.sub);
       const chs=[...new Set(pool.map(p=>p.ch).filter(Boolean))].sort();
       if(nbFilter.ch!=='all'&&!chs.includes(nbFilter.ch))nbFilter.ch='all';
-      if(chs.length<2)return '';
-      return '<div class="pillrow"><button class="pill'+(nbFilter.ch==='all'?' on':'')+'" onclick="setNbCh(\'all\')">All chapters</button>'+
-        chs.map(c=>'<button class="pill'+(nbFilter.ch===c?' on':'')+'" onclick="setNbCh(\''+c.replace(/'/g,"\\'")+'\')">'+esc(c)+'</button>').join('')+'</div>';
+      return '<select class="nbsel" onchange="setNbCh(this.value)"><option value="all">All chapters</option>'+
+        chs.map(c=>'<option value="'+esc(c)+'"'+(nbFilter.ch===c?' selected':'')+'>'+esc(c)+'</option>').join('')+'</select>';
     })()+
+    '</div>'+
     '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">'+
     '<span style="font-size:13.5px;color:var(--mut)"><b style="color:var(--ink)">'+items.length+'</b> questions in view · '+all.length+' total in notebook</span>'+
     '<button class="bigbtn" style="margin-left:auto" '+(items.length?'':'disabled ')+'onclick="practice()">Practice these '+(items.length?'('+Math.min(items.length,75)+')':'')+' →</button></div></div>';
@@ -220,10 +248,10 @@ function renderNotebook(){
         const key=p.grading? (p.grading.kind==='bonus'?'Bonus':p.grading.kind==='mcq'?'Option '+p.grading.accept.join(' or '):(p.grading.display??(p.grading.accept||[]).join(' or '))) : '—';
         let detail='';
         if(open){
-          detail='<div style="margin-top:12px;border-top:1px dashed var(--line);padding-top:12px">'+
-            (p.q_img?'<div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'"></div>':'')+
+          detail='<div style="margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;width:100%">'+
+            (p.q_img?'<div class="qimg-wrap" style="width:100%"><img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'" style="width:100%;max-width:760px;display:block"></div>':'')+
             '<div style="font-size:14px;margin:8px 0">Your answer: <b>'+(p.ans??'—')+'</b> · Correct: <b>'+key+'</b></div>'+
-            (p.sol_img?'<div style="font-weight:700;font-size:13px;color:var(--green)">Solution</div><div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.sol_img+'"></div>':'<div style="color:var(--mut);font-size:13px">No solution image for this question.</div>')+
+            (p.sol_img?'<div style="font-weight:700;font-size:13px;color:var(--green)">Solution</div><div class="qimg-wrap" style="width:100%"><img src="'+IMG_BASE[p.source||'pyq']+p.sol_img+'" style="width:100%;max-width:760px;display:block"></div>':'<div style="color:var(--mut);font-size:13px">No solution image for this question.</div>')+
             '</div>';
         }
         return '<div class="mq" style="flex-direction:column;cursor:pointer" onclick="nbToggle(\''+p.id+'\')">'+

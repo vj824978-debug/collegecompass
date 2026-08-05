@@ -54,6 +54,14 @@ box-shadow:0 -4px 16px rgba(16,24,40,.08);padding:12px 18px;display:flex;align-i
 #genbtn:disabled{background:#c9cdd6;cursor:not-allowed}
 #loading{color:var(--mut);text-align:center;padding:60px 0}
 .hidden{display:none!important}
+
+@media (max-width:680px){
+  #hdr{padding:10px 12px;gap:10px}
+  .logo{font-size:15px}
+  #hdr nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-left:auto}
+  #hdr nav::-webkit-scrollbar{display:none}
+  #hdr nav a{padding:6px 10px;font-size:12.5px;white-space:nowrap}
+}
 </style>
 </head>
 <body>
