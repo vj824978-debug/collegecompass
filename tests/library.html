@@ -97,6 +97,7 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
   <nav>
     <a href="papers.html">Papers</a>
     <a href="mocks.html">Mocks</a>
+    <a href="ja-papers.html">JEE Advanced</a>
     <a href="chapter-test.html">Chapter Tests</a>
     <a href="practice.html">Practice PYQs</a>
     <a href="library.html" class="on">My Tests</a>
@@ -108,6 +109,7 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
   <a href="index.html">🏠 Home</a>
   <a href="papers.html">📄 Papers</a>
   <a href="mocks.html">📝 Mocks</a>
+  <a href="ja-papers.html">🏆 JEE Advanced</a>
   <a href="chapter-test.html">📚 Chapter Tests</a>
   <a href="practice.html">⚡ Practice PYQs</a>
   <a href="library.html">🗂 My Tests</a>
@@ -139,7 +141,7 @@ document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a
 <script>
 const $=id=>document.getElementById(id);
 const esc=s=>(s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const IMG_BASE={pyq:'https://img.collegepipe.in/jm-pyq/',mock:'https://img.collegepipe.in/jm-mock/'};
+const IMG_BASE={pyq:'https://img.collegepipe.in/jm-pyq/',mock:'https://img.collegepipe.in/jm-mock/',ja:'https://img.collegepipe.in/ja/'};
 const TAGS=[['concept','Conceptual error'],['unknown','Concept unknown'],['silly','Silly / calculation'],['theory','Theory forgot'],['time','Ran out of time']];
 const TAGNAME=Object.fromEntries(TAGS);
 let tab='att', ATT=[], curAtt=null, curQ=null, nbFilter={cause:'all',sub:'all',ch:'all'}, nbOpen={};
