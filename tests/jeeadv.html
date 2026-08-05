@@ -285,10 +285,7 @@ table.breakup td:first-child,table.breakup th:first-child{text-align:left}
 
 <script>
 /* ================= CONFIG ================= */
-const IMG_BASE = {
-  pyq : 'https://img.collegepipe.in/jm-pyq/',
-  mock: 'https://img.collegepipe.in/jm-mock/'
-};
+const IMG_BASE = { ja: 'https://img.collegepipe.in/ja/' };
 const DATA_BASE = 'data/';
 
 /* ================= STATE ================== */
@@ -336,7 +333,7 @@ async function init(){
     secStarts.push({label:sec.subject+' · S'+sec.section, full:sec.subject+' — Section '+sec.section+' · '+sec.type_label, idx:Q.length});
     sec.questions.forEach(q=>Q.push({...q,_sec:sec.subject,_part:'S'+sec.section}));
   });
-  state=Q.map(q=>({ans:(q.grading.kind==='msq'?[]:null),status:'nv'}));
+  state=Q.map(q=>({ans:(q.grading.kind==='msq'?[]:q.grading.kind==='mm'?{}:null),status:'nv'}));
   qTime=Q.map(()=>0);
   timeLeft=(P.duration_min||180)*60;
   $('ptitle').textContent=P.title;
@@ -433,7 +430,7 @@ function go(i){
     $('qtext').innerHTML='<span class="img-fail">Question content unavailable.</span>';
     $('qtext').classList.remove('hidden');
   }
-  if(isNat(q))renderNVT(q,st);else renderMCQ(q,st);
+  if(isNat(q))renderNVT(q,st);else if(q.grading.kind==='mm')renderMM(q,st);else renderMCQ(q,st);
   refreshPalette();
   window.scrollTo({top:0});
   // preload next 2 question images
@@ -476,6 +473,28 @@ function renderMCQ(q,st){
         '<span class="ring'+(msq?' sq':'')+'"></span><span class="lbl">('+L+')</span></label>';
     }).join('');
 }
+function renderMM(q,st){
+  $('nvtbox').classList.add('hidden');
+  const ob=$('optbox');ob.classList.remove('hidden');
+  const cols=q.grading.cols;
+  st.ans=st.ans||{};
+  let h='<div class="opt-hint">Match each entry — fill the bubbles (like the OMR grid):</div>';
+  h+='<table style="border-collapse:separate;border-spacing:6px">';
+  h+='<tr><td></td>'+cols.map(c=>'<td style="text-align:center;font-weight:800;color:var(--mut)">'+c+'</td>').join('')+'</tr>';
+  for(const R of ['A','B','C','D']){
+    h+='<tr><td style="font-weight:800;padding-right:6px">'+R+'</td>'+cols.map(c=>{
+      const on=(st.ans[R]||[]).includes(c);
+      return '<td><button type="button" onclick="mmToggle(\''+R+'\',\''+c+'\')" style="width:40px;height:40px;border-radius:50%;font-weight:700;border:2px solid '+(on?'var(--pri)':'var(--line)')+';background:'+(on?'var(--pri)':'var(--card)')+';color:'+(on?'var(--navy)':'var(--mut)')+'">'+c+'</button></td>';
+    }).join('')+'</tr>';
+  }
+  h+='</table>';
+  ob.innerHTML=h;
+}
+function mmToggle(R,c){
+  const st=state[cur]; st.ans=st.ans||{}; st.ans[R]=st.ans[R]||[];
+  st.ans[R]=st.ans[R].includes(c)?st.ans[R].filter(x=>x!==c):[...st.ans[R],c].sort();
+  renderMM(Q[cur],st);
+}
 function pickOpt(L){
   const st=state[cur],q=Q[cur];
   if(q.grading.kind==='msq'){
@@ -517,7 +536,7 @@ function commitNVT(){
 function saveNext(){
   const st=state[cur],q=Q[cur];
   if(isNat(q))commitNVT();
-  const has=Array.isArray(st.ans)?st.ans.length>0:(st.ans!==null&&st.ans!=='');
+  const has=Array.isArray(st.ans)?st.ans.length>0:(typeof st.ans==='object'&&st.ans)?Object.values(st.ans).some(v=>v&&v.length):(st.ans!==null&&st.ans!=='');
   if(has)st.status=(st.status==='m'||st.status==='am')?'am':'a';
   else st.status='na';
   nav(1);
@@ -525,11 +544,11 @@ function saveNext(){
 function markNext(){
   const st=state[cur],q=Q[cur];
   if(isNat(q))commitNVT();
-  st.status=((Array.isArray(st.ans)?st.ans.length>0:(st.ans!==null&&st.ans!==''))?'am':'m');
+  st.status=((Array.isArray(st.ans)?st.ans.length>0:(typeof st.ans==='object'&&st.ans)?Object.values(st.ans).some(v=>v&&v.length):(st.ans!==null&&st.ans!==''))?'am':'m');
   nav(1);
 }
 function clearResp(){
-  state[cur].ans=(Q[cur].grading.kind==='msq'?[]:null);
+  state[cur].ans=(Q[cur].grading.kind==='msq'?[]:Q[cur].grading.kind==='mm'?{}:null);
   if(Q[cur].type==='NVT')$('nvtin').value='';
   state[cur].status='na';
   go(cur);
@@ -561,7 +580,8 @@ function hideSubmit(){$('submitmodal').classList.add('hidden');}
 function gradeOne(q,ans){
   const g=q.grading||{}, M=q.marks, N=q.neg||0;
   if(g.kind==='bonus')return{res:'bonus',marks:M};
-  const empty = ans===null||ans===undefined||ans===''||(Array.isArray(ans)&&!ans.length);
+  const mmEmpty = (typeof ans==='object'&&ans&&!Array.isArray(ans)) ? !Object.values(ans).some(v=>v&&v.length) : false;
+  const empty = ans===null||ans===undefined||ans===''||(Array.isArray(ans)&&!ans.length)||mmEmpty;
   if(empty)return{res:'skip',marks:0};
   if(g.kind==='scq')return g.accept.includes(ans)?{res:'ok',marks:M}:{res:'bad',marks:N};
   if(g.kind==='msq'){
@@ -572,6 +592,16 @@ function gradeOne(q,ans){
     // partial (2019+ scheme): +1 per correct option chosen, only if no wrong
     if(q.partial)return{res:'ok',marks:sel.length,partial:true};
     return{res:'bad',marks:N};
+  }
+  if(g.kind==='mm'){
+    const perRow=M/4; let got=0;
+    for(const R of ['A','B','C','D']){
+      const sel=(ans[R]||[]).join(''), key=(g.map[R]||[]).join('');
+      if(key && sel===key)got++;
+    }
+    if(got===4)return{res:'ok',marks:M};
+    if(got>0)return{res:'ok',marks:Math.round(perRow*got*100)/100,partial:true};
+    return{res:'bad',marks:0};
   }
   if(g.kind==='nat'){
     const v=parseFloat(String(ans).replace('−','-'));
@@ -686,12 +716,15 @@ function setFilter(btn){
     renderRvDetail(null);
 }
 const ansLabel=(q,a)=>{ if(a===null||a===undefined||a==='')return '—';
-  if(Array.isArray(a))return a.length?a.join(', '):'—'; return esc(String(a)); };
+  if(Array.isArray(a))return a.length?a.join(', '):'—';
+  if(typeof a==='object')return ['A','B','C','D'].filter(R=>a[R]&&a[R].length).map(R=>R+'–'+a[R].join('')).join('; ')||'—';
+  return esc(String(a)); };
 function keyLabel(q){
   const g=q.grading||{};
   if(g.kind==='bonus')return'Bonus — full marks awarded to all';
   if(g.kind==='scq')return'Option '+g.accept.join(' or ');
   if(g.kind==='msq')return'Options '+g.accept.join(', ');
+  if(g.kind==='mm')return ['A','B','C','D'].map(R=>R+'–'+(g.map[R]||[]).join('')).join('; ');
   if(g.kind==='nat')return g.display+(g.lo!==g.hi?' (accepted: '+g.lo+' to '+g.hi+')':'');
   if(g.kind==='nat_multi'||g.kind==='manual')return g.display;
   return'—';
