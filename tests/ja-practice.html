@@ -154,6 +154,16 @@ const esc=x=>(x??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>
 const IMG='https://img.collegepipe.in/ja/';
 const SUBJECTS=['Physics','Chemistry','Mathematics'];
 let IDX=null, subj='Physics', POOL=[], VIEW=[], cur=0, typeF='all';
+const SRC=(new URLSearchParams(location.search).get('src')==='np')?'np':'pyq';
+const IMG_NP='https://img.collegepipe.in/ja-np/';
+if(SRC==='np'){
+  document.addEventListener('DOMContentLoaded',()=>{
+    document.querySelector('#pick h1').textContent='Advanced Question Bank — Practice';
+    const sub=document.querySelector('#pick .sub');
+    sub.innerHTML='Spotlight course questions, chapter-wise with type filters. <span style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px">PREMIUM · free during review</span>';
+  });
+}
+function imgBase(q){ return q.src==='np'?IMG_NP:IMG; }
 let att={};
 let SEEN=new Set(); try{SEEN=new Set(JSON.parse(localStorage.getItem('cp_seen')||'[]'));}catch(e){}
 let seenDirty=false;
@@ -169,17 +179,19 @@ function buildTabs(){
 }
 function setSubj(x){ subj=x; buildTabs(); renderChapters(); }
 function renderChapters(){
-  const chs=IDX.chapters.filter(c=>c.subject===subj);
+  const list=SRC==='np'?(IDX.np_chapters||[]):IDX.chapters;
+  const chs=list.filter(c=>c.subject===subj);
   $('chgrid').innerHTML=chs.map(c=>
     '<div class="ch" onclick="openChapter(\''+c.slug+'\')"><div class="nm">'+esc(c.chapter)+'</div>'+
     '<div class="ct">'+c.total+' Qs · '+Object.keys(c.types).length+' types</div></div>').join('');
 }
 async function openChapter(slug){
-  const r=await fetch('data/ja-chapters/'+subj.toLowerCase()+'--'+slug+'.json');
+  const dir=SRC==='np'?'ja-np-chapters':'ja-chapters';
+  const r=await fetch('data/'+dir+'/'+subj.toLowerCase()+'--'+slug+'.json');
   const d=await r.json();
   POOL=d.questions; att={}; typeF='all';
-  $('p-title').textContent=d.chapter+' — JEE Advanced';
-  $('p-sub').textContent=subj+' · '+POOL.length+' questions · 2007–2026';
+  $('p-title').textContent=d.chapter+(SRC==='np'?' — Advanced Practice':' — JEE Advanced');
+  $('p-sub').textContent=subj+' · '+POOL.length+' questions'+(SRC==='np'?'':' · 2007–2026');
   const types=[...new Set(POOL.map(q=>q.type_label))];
   $('yearchips').innerHTML='<button class="chip on" data-t="all" onclick="setTypeF(\'all\')">All types</button>'+
     types.map(t=>'<button class="chip" data-t="'+esc(t)+'" onclick="setTypeF(\''+esc(t)+'\')">'+esc(t)+'</button>').join('');
@@ -207,7 +219,11 @@ function pnav(d){ let n=cur+d; if(n<0||n>=VIEW.length)return; cur=n; renderStrip
 
 function widgetFor(q,a){
   const g=q.grading, hasText=q.options&&q.options.some(o=>o);
-  if(g.kind==='nat'||g.kind==='nat_multi'||g.kind==='manual'){
+  if(g.kind==='manual'){
+    return '<div class="sol-note">Subjective question — solve on paper, then compare.</div><br>'+
+      '<button class="btn pri" style="margin-top:8px" onclick="selfReveal()">Show Answer & Solution</button>';
+  }
+  if(g.kind==='nat'||g.kind==='nat_multi'){
     return '<div style="margin:12px 0 4px"><input id="nvtin" inputmode="decimal" placeholder="Answer" value="'+esc(a.ans??'')+'"></div>'+
       '<button class="btn pri" style="margin-top:8px" onclick="checkAns()">Submit Answer</button>';
   }
@@ -239,12 +255,16 @@ function verdictFor(q,a){
     pills='<div class="'+(hasText?'':'optrow')+'">'+pills+'</div>';
   }
   const yourAns=Array.isArray(a.ans)?a.ans.join(', '):(a.ans??'—');
+  if(a.self){
+    return '<div class="verdict ok">Answer: '+esc(g.display||'See solution')+'</div>'+
+      '<div class="solbox">'+(q.sol_img?'<div class="qimg-wrap"><img src="'+imgBase(q)+q.sol_img+'" loading="lazy"></div>':'<div style="color:var(--mut);font-size:13px">No solution image.</div>')+'</div>';
+  }
   return pills+
     '<div class="verdict '+(a.res?'ok':'bad')+'">'+(a.res?'✓ Correct!':'✗ Incorrect')+'</div>'+
     '<div style="font-size:14px;color:var(--mut)">Your answer: <b style="color:var(--ink)">'+esc(yourAns)+'</b> · Correct: <b style="color:var(--ink)">'+esc(key)+'</b></div>'+
     '<button class="btn ghost" style="margin-top:10px" onclick="toggleSol()">'+(a.sol?'Hide solution':'Check Solution')+'</button>'+
     (a.sol? '<div class="solbox">'+
-       (q.sol_img?'<div class="qimg-wrap"><img src="'+IMG+q.sol_img+'" loading="lazy"></div>':'<div style="color:var(--mut);font-size:13px">No solution image.</div>')+
+       (q.sol_img?'<div class="qimg-wrap"><img src="'+imgBase(q)+q.sol_img+'" loading="lazy"></div>':'<div style="color:var(--mut);font-size:13px">No solution image.</div>')+
      '</div>':'');
 }
 function renderQ(){
@@ -256,7 +276,7 @@ function renderQ(){
     '<div class="meta"><span>Q'+(cur+1)+' of '+VIEW.length+' · '+esc(q.paper)+' · '+esc(q.type_label)+'</span>'+
     (seen?'<span class="seen">👁 Seen before</span>':'')+'</div>'+
     (q.passage_img?'<div style="font-weight:700;font-size:13px;color:var(--pri-dark);margin-bottom:4px">Passage:</div><div class="qimg-wrap"><img src="'+IMG+q.passage_img+'" loading="eager"></div>':'')+
-    (q.q_img?'<div class="qimg-wrap"><img src="'+IMG+q.q_img+'" loading="eager"></div>':'')+
+    (q.q_img?'<div class="qimg-wrap"><img src="'+imgBase(q)+q.q_img+'" loading="eager"></div>':'')+
     (a.done?verdictFor(q,a):widgetFor(q,a));
 }
 function pick(L){
@@ -266,10 +286,15 @@ function pick(L){
   } else a.ans=L;
   renderQ();
 }
+function selfReveal(){
+  const q=VIEW[cur]; const a=att[q.id]=att[q.id]||{};
+  a.done=true; a.res=true; a.sol=true; a.self=true;
+  renderStrip(); renderQ();
+}
 function checkAns(){
   const q=VIEW[cur]; const a=att[q.id]=att[q.id]||{};
   const g=q.grading;
-  if(g.kind==='nat'||g.kind==='nat_multi'||g.kind==='manual'){
+  if(g.kind==='nat'||g.kind==='nat_multi'){
     const v=($('nvtin')?.value||'').trim(); if(v==='')return alert('Enter your answer first.'); a.ans=v;
   }
   const empty=a.ans===undefined||a.ans===null||a.ans===''||(Array.isArray(a.ans)&&!a.ans.length);

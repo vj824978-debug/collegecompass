@@ -319,7 +319,10 @@ const fmtTime=s=>{const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;retu
 async function init(){
   const key=new URLSearchParams(location.search).get('paper');
   if(!key){ $('loadmsg').innerHTML='No paper specified. Open as exam.html?paper=&lt;key&gt;'; return; }
-  {
+  if(key==='custom'){
+    try{ P=JSON.parse(sessionStorage.getItem('cp_ja_custom')); }catch(e){ P=null; }
+    if(!P){ $('loadmsg').innerHTML='No generated test found. Please <a href="ja-test.html">create a test</a> first.'; return; }
+  } else {
     try{
       const r=await fetch(DATA_BASE+'ja-papers/'+key+'.json');
       if(!r.ok) throw 0;
@@ -329,6 +332,7 @@ async function init(){
       return;
     }
   }
+  if(P.img_src==='np'){ IMG_BASE.ja='https://img.collegepipe.in/ja-np/'; }
   P.sections.forEach(sec=>{
     secStarts.push({label:sec.subject+' · S'+sec.section, full:sec.subject+' — Section '+sec.section+' · '+sec.type_label, idx:Q.length});
     sec.questions.forEach(q=>Q.push({...q,_sec:sec.subject,_part:'S'+sec.section}));

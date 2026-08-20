@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Advanced Test — CollegePIPE</title>
+<style>
+:root{--navy:#0d2347;--pri:#f59e0b;--pri-dark:#d97706;--pri-soft:#fff3dd;--ink:#101828;--mut:#667085;
+--line:#e4e7ec;--bg:#f6f7fb;--card:#fff;--green:#16a34a;--sh:0 1px 3px rgba(16,24,40,.07)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.hidden{display:none!important}
+#hdr{position:sticky;top:0;z-index:20;background:var(--navy);display:flex;align-items:center;gap:18px;padding:12px 20px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px;margin-right:8px}
+.logo span{color:#fff}
+#hdr nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+#hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
+#hdr nav a:hover,#hdr nav a.on{background:rgba(255,255,255,.12);color:#fff}
+main{max-width:960px;margin:0 auto;padding:22px 16px 120px}
+h1{font-size:22px;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:9px 20px;border-radius:999px;font-size:14px;font-weight:700;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.tab.on{background:var(--pri);color:var(--navy);border-color:var(--pri)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:18px;margin-bottom:16px}
+.panel h2{font-size:15px;margin-bottom:10px}
+.stab{padding:8px 18px;border-radius:999px;font-size:14px;font-weight:700;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.stab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.stab .n{font-size:11.5px;opacity:.75;margin-left:5px}
+.chgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:8px;margin-top:12px}
+.ch{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card);cursor:pointer;font-size:13.5px}
+.ch.on{border-color:var(--pri);background:var(--pri-soft)}
+.ch .box{flex:none;width:18px;height:18px;border-radius:5px;border:2px solid #c3c9d4;position:relative}
+.ch.on .box{border-color:var(--pri-dark);background:var(--pri)}
+.ch.on .box::after{content:"✓";position:absolute;inset:0;color:var(--navy);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.ch .nm{flex:1;line-height:1.3}
+.bp{color:var(--mut);font-size:13px;line-height:1.7}
+.bp b{color:var(--ink)}
+#bar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);
+box-shadow:0 -4px 16px rgba(16,24,40,.08);padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;z-index:30}
+#barinfo{font-size:13.5px;color:var(--mut)}
+#barinfo b{color:var(--ink)}
+.bigbtn{margin-left:auto;background:var(--pri);color:var(--navy);font-weight:800;font-size:14.5px;padding:12px 26px;border-radius:12px}
+.bigbtn:hover{background:var(--pri-dark);color:#fff}
+.bigbtn:disabled{background:#c9cdd6;cursor:not-allowed}
+#loading{color:var(--mut);text-align:center;padding:40px 0}
+.mockbtn{display:block;width:100%;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:18px;margin-bottom:10px;transition:.15s}
+.mockbtn:hover{border-color:var(--pri)}
+.mockbtn h3{font-size:15.5px;margin-bottom:4px}
+.mockbtn p{color:var(--mut);font-size:13px;line-height:1.6}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
+  <nav>
+    <a href="ja-hub.html">JEE Advanced</a>
+    <a href="ja-papers.html">Papers</a>
+    <a href="ja-practice.html">Practice</a>
+    <a href="library.html">My Tests</a>
+  </nav>
+</header>
+<main>
+  <h1>Create Advanced Test — Question Bank</h1>
+  <div class="sub"><span style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px">PREMIUM · free during review</span> &nbsp;Fresh Advanced-level questions (not from past papers). Authentic JEE Advanced marking: +3/−1 single correct, +4/−2 with partial marking for MSQs, +4/0 numericals, +3/0 comprehension.</div>
+
+  <div class="tabs">
+    <button class="tab on" id="tab-sy" onclick="setTab('sy')">Syllabus Test</button>
+    <button class="tab" id="tab-ch" onclick="setTab('ch')">Chapter Test</button>
+    <button class="tab" id="tab-fs" onclick="setTab('fs')">Full Syllabus Mock (2026 pattern)</button>
+  </div>
+
+  <!-- syllabus units -->
+  <div id="v-sy">
+    <div class="panel">
+      <h2>Test pattern</h2>
+      <div class="bp"><b>17 questions · ~59 marks · 60 min</b> — 5 Single Correct (+3/−1) · 4 One-or-More Correct (+4/−2, partial) · 4 Numerical (+4/0) · 2 Comprehension passages (+3/0 each Q). Built from one syllabus unit of the Spotlight course.</div>
+    </div>
+    <div class="panel">
+      <h2>Choose your syllabus</h2>
+      <div class="tabs" id="sytabs" style="margin-bottom:0"></div>
+      <div id="sylist" style="margin-top:12px"><div id="loading2" style="color:var(--mut);text-align:center;padding:30px 0">Loading…</div></div>
+    </div>
+  </div>
+
+  <!-- chapter test -->
+  <div id="v-ch">
+    <div class="panel">
+      <h2>Test pattern (per subject selected)</h2>
+      <div class="bp"><b>5</b> Single Correct (+3/−1) · <b>4</b> One-or-More Correct (+4/−2, partial) · <b>4</b> Numerical (+4/0) · <b>2</b> Comprehension passages (+3/0) — <b>17 questions · ~59 marks · 60 min</b> per subject. If a selection can't fill a slot, available types fill in.</div>
+    </div>
+    <div class="panel">
+      <h2>Choose chapters</h2>
+      <div class="tabs" id="subtabs" style="margin-bottom:0"></div>
+      <div class="chgrid" id="chgrid"><div id="loading">Loading…</div></div>
+    </div>
+  </div>
+
+  <!-- full syllabus -->
+  <div id="v-fs" class="hidden">
+    <div class="panel">
+      <h2>JEE Advanced 2026 Paper-2 pattern</h2>
+      <div class="bp">Per subject: <b>4</b> Single Correct + <b>5</b> One-or-More Correct + <b>5</b> Numerical + <b>2</b> Comprehension passages (2 Qs each) = <b>18 Qs</b>.<br>
+      Full paper: <b>54 questions · 192 marks · 3 hours</b>, all three subjects, fresh non-PYQ questions with a no-repeat memory across your generated mocks.</div>
+    </div>
+    <button class="mockbtn" onclick="genFull()">
+      <h3>🎲 Generate Full Syllabus Mock →</h3>
+      <p>A new 2026-pattern paper every time — about 20 completely fresh mocks possible before any question repeats.</p>
+    </button>
+  </div>
+</main>
+
+<div id="bar">
+  <span id="barinfo">No chapters selected</span>
+  <button class="bigbtn" id="genbtn" disabled onclick="genChapter()">Generate Test →</button>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>(s??'').toString().replace(/'/g,"\\'");
+const SUBJECTS=['Physics','Chemistry','Mathematics'];
+const MK={ 'SINGLE':[3,-1,false], 'MULTI':[4,-2,true], 'NVT':[4,0,false], 'COMPREHENSION':[3,0,false], 'MATRIX':[3,-1,false] };
+const TL={ 'SINGLE':'Single Correct','MULTI':'One or More Correct','NVT':'Numerical','COMPREHENSION':'Comprehension','MATRIX':'Matrix Match' };
+let IDX=null, subj='Physics', sel={}, tab='ch';
+
+fetch('data/ja-index.json').then(r=>r.json()).then(d=>{ IDX=d; buildTabs(); renderChapters(); buildSyTabs(); renderUnits(); })
+ .catch(()=>{ $('chgrid').innerHTML='<div id="loading">Could not load data.</div>'; });
+
+function setTab(t){ tab=t;
+  for(const x of ['sy','ch','fs']){
+    $('tab-'+x).classList.toggle('on',t===x);
+    $('v-'+x).classList.toggle('hidden',t!==x);
+  }
+  $('bar').style.display=t==='ch'?'flex':'none';
+}
+let sySubj='Physics';
+function buildSyTabs(){
+  $('sytabs').innerHTML=SUBJECTS.map(s=>'<button class="stab'+(s===sySubj?' on':'')+'" onclick="sySubj=\''+s+'\';buildSyTabs();renderUnits()">'+s+'</button>').join('');
+}
+function renderUnits(){
+  const units=(IDX.np_units&&IDX.np_units[sySubj])||[];
+  if(!units.length){ $('sylist').innerHTML='<div style="color:var(--mut)">No syllabus units.</div>'; return; }
+  $('sylist').innerHTML=units.map((u,i)=>
+    '<button class="mockbtn" onclick="genUnit('+i+')">'+
+    '<h3>'+u.chapters.join(' · ')+'</h3>'+
+    '<p>Phase '+u.phase+' syllabus · '+u.total+' questions in pool · 17-question Advanced pattern test</p></button>').join('');
+}
+async function genUnit(i){
+  const u=IDX.np_units[sySubj][i];
+  const entries=(IDX.np_chapters||[]).filter(c=>c.subject===sySubj&&u.chapters.includes(c.chapter));
+  let pool=(await loadChapters(entries)).filter(q=>q.grading.kind!=='manual'&&q.phase===u.phase&&q.day===u.day);
+  buildPattern17(pool, sySubj, u.chapters.join(', ')+' (Phase '+u.phase+')');
+}
+function buildPattern17(pool, subjName, label){
+  const used=usedSet();
+  const sc=sample(pool.filter(q=>q.type==='SINGLE'),5,used).map(mk);
+  const ms=sample(pool.filter(q=>q.type==='MULTI'),4,used).map(mk);
+  const nv=sample(pool.filter(q=>q.type==='NVT'),4,used).map(mk);
+  const cp=passageSets(pool,2,used).map(mk);
+  let got=sc.length+ms.length+nv.length+cp.length, fill=[];
+  if(got<17){
+    const chosen=new Set([...sc,...ms,...nv,...cp].map(q=>q.id));
+    fill=sample(pool.filter(q=>!chosen.has(q.id)&&q.type!=='COMPREHENSION'),17-got,used).map(mk);
+  }
+  const sections=[]; let n=1;
+  if(sc.length)sections.push(secOf(subjName,n++,'Single Correct',sc));
+  if(ms.length)sections.push(secOf(subjName,n++,'One or More Correct',ms));
+  if(nv.length)sections.push(secOf(subjName,n++,'Numerical',nv));
+  if(cp.length)sections.push(secOf(subjName,n++,'Comprehension',cp));
+  if(fill.length)sections.push(secOf(subjName,n++,'Mixed',fill));
+  launch(sections, label+' — Advanced Test', 60);
+}
+function buildTabs(){
+  $('subtabs').innerHTML=SUBJECTS.map(s=>{
+    const n=Object.keys(sel).filter(k=>k.startsWith(s+'|')).length;
+    return '<button class="stab'+(s===subj?' on':'')+'" onclick="setSubj(\''+s+'\')">'+s+(n?'<span class="n">'+n+' ✓</span>':'')+'</button>';
+  }).join('');
+}
+function setSubj(s){ subj=s; buildTabs(); renderChapters(); }
+function renderChapters(){
+  const chs=(IDX.np_chapters||[]).filter(c=>c.subject===subj);
+  $('chgrid').innerHTML=chs.map(c=>{
+    const k=subj+'|'+c.slug, on=!!sel[k];
+    return '<div class="ch'+(on?' on':'')+'" onclick="toggle(\''+esc(k)+'\')">'+
+      '<span class="box"></span><span class="nm">'+c.chapter+'</span></div>';
+  }).join('');
+}
+function toggle(k){
+  if(sel[k])delete sel[k];
+  else{
+    const [s,slug]=k.split('|');
+    sel[k]=(IDX.np_chapters||[]).find(c=>c.subject===s&&c.slug===slug);
+  }
+  buildTabs(); renderChapters(); updateBar();
+}
+function updateBar(){
+  const subs=[...new Set(Object.keys(sel).map(k=>k.split('|')[0]))];
+  if(!subs.length){ $('barinfo').textContent='No chapters selected'; $('genbtn').disabled=true; return; }
+  $('barinfo').innerHTML='<b>'+(subs.length*17)+' questions · '+(subs.length*60)+' min</b> — '+
+    subs.map(s=>s+' ('+Object.keys(sel).filter(k=>k.startsWith(s+'|')).length+' chapters)').join(' · ');
+  $('genbtn').disabled=false;
+}
+
+/* ---------- pools & sampling ---------- */
+function usedSet(){ try{return new Set(JSON.parse(localStorage.getItem('cp_ja_used')||'[]'));}catch(e){return new Set();} }
+function saveUsed(u){ let a=[...u]; if(a.length>5000)a=a.slice(-5000); localStorage.setItem('cp_ja_used',JSON.stringify(a)); }
+function sample(pool,n,used){
+  const fresh=pool.filter(q=>!used.has(q.id));
+  const base=fresh.length>=n?fresh:pool;
+  const out=[],idx=[...base.keys()];
+  for(let i=0;i<n&&idx.length;i++){ const j=Math.floor(Math.random()*idx.length); out.push(base[idx[j]]); idx.splice(j,1); }
+  return out;
+}
+async function loadChapters(entries){
+  const res=await Promise.all(entries.map(c=>
+    fetch('data/ja-np-chapters/'+c.subject.toLowerCase()+'--'+c.slug+'.json')
+      .then(r=>r.ok?r.json():{questions:[]}).catch(()=>({questions:[]}))));
+  return res.flatMap(d=>d.questions);
+}
+function mk(q){
+  const [m,neg,partial]=MK[q.type]||[3,0,false];
+  return {...q,q_num:0,section:0,marks:m,neg:neg,partial:partial&&q.grading.kind==='msq'};
+}
+function secOf(subjName,secNo,label,qs){
+  qs.forEach((q,i)=>{q.q_num=i+1;q.section=secNo;});
+  return {key:[subjName,secNo],subject:subjName,section:secNo,type_label:label,questions:qs};
+}
+function passageSets(pool,nsets,used){
+  const by={}; pool.filter(q=>q.type==='COMPREHENSION'&&q.passage_img).forEach(q=>{(by[q.passage_img]=by[q.passage_img]||[]).push(q);});
+  let sets=Object.values(by).filter(s=>s.length>=2).map(s=>s.slice(0,2));
+  const fresh=sets.filter(s=>s.every(q=>!used.has(q.id)));
+  if(fresh.length>=nsets)sets=fresh;
+  const out=[];
+  for(let i=0;i<nsets&&sets.length;i++){ const j=Math.floor(Math.random()*sets.length); out.push(...sets[j]); sets.splice(j,1); }
+  return out;
+}
+
+function launch(sections,title,duration){
+  let total=0,max=0; const ids=[];
+  sections.forEach(s=>s.questions.forEach(q=>{total++;max+=q.marks;ids.push(q.id);}));
+  if(!total){ alert('Not enough questions for this selection.'); return; }
+  const used=usedSet(); ids.forEach(id=>used.add(id)); saveUsed(used);
+  const paper={key:'custom',paper_id:'CUSTOM',title:title,year:null,paper_no:null,
+    duration_min:duration,total_questions:total,max_marks:max,sections:sections,img_src:'np'};
+  sessionStorage.setItem('cp_ja_custom',JSON.stringify(paper));
+  location.href='jeeadv.html?paper=custom';
+}
+
+async function genChapter(){
+  $('genbtn').disabled=true; $('genbtn').textContent='Generating…';
+  try{
+    const used=usedSet(); const sections=[];
+    for(const s of SUBJECTS){
+      const entries=Object.keys(sel).filter(k=>k.startsWith(s+'|')).map(k=>sel[k]);
+      if(!entries.length)continue;
+      const pool=(await loadChapters(entries)).filter(q=>q.grading.kind!=='manual');
+      const sc=sample(pool.filter(q=>q.type==='SINGLE'),5,used).map(mk);
+      const ms=sample(pool.filter(q=>q.type==='MULTI'),4,used).map(mk);
+      const nv=sample(pool.filter(q=>q.type==='NVT'),4,used).map(mk);
+      const cp=passageSets(pool,2,used).map(mk);
+      let got=sc.length+ms.length+nv.length+cp.length, fill=[];
+      if(got<17){
+        const chosen=new Set([...sc,...ms,...nv,...cp].map(q=>q.id));
+        fill=sample(pool.filter(q=>!chosen.has(q.id)&&q.type!=='COMPREHENSION'),17-got,used).map(mk);
+      }
+      let secNo=1;
+      if(sc.length)sections.push(secOf(s,secNo++,'Single Correct',sc));
+      if(ms.length)sections.push(secOf(s,secNo++,'One or More Correct',ms));
+      if(nv.length)sections.push(secOf(s,secNo++,'Numerical',nv));
+      if(cp.length)sections.push(secOf(s,secNo++,'Comprehension',cp));
+      if(fill.length)sections.push(secOf(s,secNo++,'Mixed',fill));
+    }
+    const subs=[...new Set(sections.map(x=>x.subject))];
+    const chn=Object.values(sel).map(c=>c.chapter);
+    launch(sections,(chn.length<=2?chn.join(' + '):'Advanced Chapter Test')+' (Non-PYQ)',subs.length*60);
+  }catch(e){ alert('Generation failed.'); }
+  $('genbtn').disabled=false; $('genbtn').textContent='Generate Test →';
+}
+
+async function genFull(){
+  const btn=event.currentTarget; btn.style.opacity=.6;
+  try{
+    const used=usedSet(); const sections=[];
+    for(const s of SUBJECTS){
+      const entries=(IDX.np_chapters||[]).filter(c=>c.subject===s);
+      const pool=(await loadChapters(entries)).filter(q=>q.grading.kind!=='manual');
+      const sc=sample(pool.filter(q=>q.type==='SINGLE'),4,used).map(mk);
+      const ms=sample(pool.filter(q=>q.type==='MULTI'),5,used).map(mk);
+      const nv=sample(pool.filter(q=>q.type==='NVT'),5,used).map(mk);
+      const cp=passageSets(pool,2,used).map(mk);
+      let secNo=1;
+      sections.push(secOf(s,secNo++,'Single Correct',sc));
+      sections.push(secOf(s,secNo++,'One or More Correct',ms));
+      sections.push(secOf(s,secNo++,'Numerical',nv));
+      if(cp.length)sections.push(secOf(s,secNo++,'Comprehension',cp));
+    }
+    launch(sections,'Advanced Full Mock — 2026 Pattern (Non-PYQ)',180);
+  }catch(e){ alert('Generation failed.'); }
+  btn.style.opacity=1;
+}
+setTab('sy');
+</script>
+</body>
+</html>
