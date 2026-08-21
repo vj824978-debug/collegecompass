@@ -95,11 +95,8 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
 <header id="hdr">
   <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
-    <a href="papers.html">Papers</a>
-    <a href="mocks.html">Mocks</a>
-    <a href="ja-papers.html">JEE Advanced</a>
-    <a href="chapter-test.html">Chapter Tests</a>
-    <a href="practice.html">Practice PYQs</a>
+    <a href="jm-hub.html">JEE Main</a>
+    <a href="ja-hub.html">JEE Advanced</a>
     <a href="library.html" class="on">My Tests</a>
   </nav>
 <button id="menubtn" onclick="document.getElementById('mnav').classList.add('open');document.getElementById('mscrim').classList.remove('hidden')">☰</button>
@@ -107,11 +104,8 @@ h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
 <div id="mnav">
   <button class="mclose" onclick="closeMnav()">✕</button>
   <a href="index.html">🏠 Home</a>
-  <a href="papers.html">📄 Papers</a>
-  <a href="mocks.html">📝 Mocks</a>
-  <a href="ja-papers.html">🏆 JEE Advanced</a>
-  <a href="chapter-test.html">📚 Chapter Tests</a>
-  <a href="practice.html">⚡ Practice PYQs</a>
+  <a href="jm-hub.html">📘 JEE Main</a>
+  <a href="ja-hub.html">🏆 JEE Advanced</a>
   <a href="library.html">🗂 My Tests</a>
 </div>
 <script>
@@ -127,6 +121,7 @@ document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a
   <div class="tabs">
     <button class="tab on" id="tab-att" onclick="setTab('att')">Attempts</button>
     <button class="tab" id="tab-nb" onclick="setTab('nb')">Mistake Notebook</button>
+    <button class="tab" id="tab-bm" onclick="setTab('bm')">Bookmarks</button>
   </div>
   <div id="view"></div>
 </main>
@@ -141,7 +136,7 @@ document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a
 <script>
 const $=id=>document.getElementById(id);
 const esc=s=>(s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const IMG_BASE={pyq:'https://img.collegepipe.in/jm-pyq/',mock:'https://img.collegepipe.in/jm-mock/',ja:'https://img.collegepipe.in/ja/'};
+const IMG_BASE={pyq:'https://img.collegepipe.in/jm-pyq/',mock:'https://img.collegepipe.in/jm-mock/',ja:'https://img.collegepipe.in/ja/',np:'https://img.collegepipe.in/ja-np/'};
 const TAGS=[['concept','Conceptual error'],['unknown','Concept unknown'],['silly','Silly / calculation'],['theory','Theory forgot'],['time','Ran out of time']];
 const TAGNAME=Object.fromEntries(TAGS);
 let tab='att', ATT=[], curAtt=null, curQ=null, nbFilter={cause:'all',sub:'all',ch:'all'}, nbOpen={};
@@ -153,6 +148,7 @@ load(); render();
 function setTab(t){ tab=t; curAtt=null;
   $('tab-att').classList.toggle('on',t==='att');
   $('tab-nb').classList.toggle('on',t==='nb');
+  $('tab-bm').classList.toggle('on',t==='bm');
   render();
 }
 function fmtDate(ts){ const d=new Date(ts);
@@ -162,6 +158,7 @@ const tstr=t=>Math.floor((t||0)/60)+':'+String((t||0)%60).padStart(2,'0');
 
 function render(){
   if(tab==='att') curAtt===null? renderAttList() : renderAttReview();
+  else if(tab==='bm') renderBookmarks();
   else renderNotebook();
 }
 
@@ -204,7 +201,8 @@ function renderAttReview(){
   if(curQ!==null){
     const p=a.per[curQ];
     const tag=p.res==='ok'?'<span class="tag ok">Correct +4</span>':p.res==='bad'?'<span class="tag bad">Incorrect −1</span>':p.res==='bonus'?'<span class="tag bonus">Bonus +4</span>':'<span class="tag skip">Unattempted</span>';
-    const img=p.q_img?'<div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'"></div>':'';
+    const psg=p.psg?'<div style="font-weight:700;font-size:13px;color:var(--pri-dark);margin-bottom:4px">Passage:</div><div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.psg+'"></div>':'';
+    const img=psg+(p.q_img?'<div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'"></div>':'');
     const sol=p.sol_img?'<div style="font-weight:700;font-size:13px;color:var(--green);margin-top:8px">Solution</div><div class="qimg-wrap"><img src="'+IMG_BASE[p.source||'pyq']+p.sol_img+'"></div>':'';
     const key=p.grading? (p.grading.kind==='bonus'?'Bonus':p.grading.kind==='mcq'?'Option '+p.grading.accept.join(' or '):(p.grading.display??p.grading.accept.join(' or '))) : '—';
     let tagBar='';
@@ -229,6 +227,57 @@ function tagQ(i,k){
   const p=ATT[curAtt].per[i];
   p.tag = p.tag===k? null : k;
   persist(); renderAttReview();
+}
+
+/* ---------------- bookmarks ---------------- */
+function bmIcon(on){
+  return '<svg width="15" height="19" viewBox="0 0 16 20" style="vertical-align:-4px"><path d="M2 1h12a1 1 0 0 1 1 1v17l-7-4.5L1 19V2a1 1 0 0 1 1-1z" '+
+    (on?'fill="#f59e0b" stroke="#d97706"':'fill="none" stroke="#98a2b3"')+' stroke-width="1.6"/></svg>';
+}
+function bmAll(){ try{return JSON.parse(localStorage.getItem('cp_bookmarks')||'[]');}catch(e){return [];} }
+function bmRemove(id){
+  localStorage.setItem('cp_bookmarks',JSON.stringify(bmAll().filter(b=>b.id!==id)));
+  render();
+}
+let bmOpen={}, bmSub='all';
+function renderBookmarks(){
+  const all=bmAll();
+  if(!all.length){ $('view').innerHTML='<div id="empty">No bookmarks yet.<br>Tap the '+bmIcon(false)+' icon on any question — in papers, mocks or practice — to save it here for revision.</div>'; return; }
+  const subs=['all',...new Set(all.map(b=>b.sub).filter(Boolean))];
+  const items=all.filter(b=>bmSub==='all'||b.sub===bmSub).sort((a,b)=>b.ts-a.ts);
+  const bySub={};
+  items.forEach(b=>{const s=b.sub||'Other';(bySub[s]=bySub[s]||{});const c=b.ch||'—';(bySub[s][c]=bySub[s][c]||[]).push(b);});
+  let html='<div class="card"><div class="pillrow" style="margin:0">'+
+    subs.map(x=>'<button class="pill'+(bmSub===x?' on':'')+'" onclick="bmSub=\''+x+'\';render()">'+(x==='all'?'All subjects':x)+'</button>').join('')+
+    '</div><div style="margin-top:10px;font-size:13.5px;color:var(--mut)"><b style="color:var(--ink)">'+items.length+'</b> bookmarked question'+(items.length===1?'':'s')+'</div></div>';
+  for(const s2 of Object.keys(bySub)){
+    for(const c of Object.keys(bySub[s2])){
+      const qs=bySub[s2][c];
+      html+='<div class="chhdr"><span>'+esc(s2)+' · '+esc(c)+'</span><span style="color:var(--mut);font-size:12.5px">'+qs.length+'</span></div>';
+      html+=qs.map(b=>{
+        const open=!!bmOpen[b.id];
+        const base=IMG_BASE[b.source||'pyq']||IMG_BASE.pyq;
+        const key=b.grading? (b.grading.kind==='bonus'?'Bonus':(b.grading.kind==='mcq'||b.grading.kind==='scq')?'Option '+(b.grading.accept||[]).join(' or '):b.grading.kind==='msq'?'Options '+(b.grading.accept||[]).join(', '):(b.grading.display??(b.grading.accept||[]).join(' or '))) : '—';
+        let detail='';
+        if(open){
+          detail='<div style="margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;width:100%">'+
+            (b.psg?'<div style="font-weight:700;font-size:13px;color:var(--pri-dark)">Passage:</div><div class="qimg-wrap" style="width:100%"><img src="'+base+b.psg+'" style="width:100%;max-width:760px;display:block"></div>':'')+
+            (b.q_img?'<div class="qimg-wrap" style="width:100%"><img src="'+base+b.q_img+'" style="width:100%;max-width:760px;display:block"></div>':'')+
+            '<div style="font-size:14px;margin:8px 0">Correct answer: <b>'+esc(key)+'</b></div>'+
+            (b.sol_img?'<div style="font-weight:700;font-size:13px;color:var(--green)">Solution</div><div class="qimg-wrap" style="width:100%"><img src="'+base+b.sol_img+'" style="width:100%;max-width:760px;display:block"></div>':'')+
+            '</div>';
+        }
+        return '<div class="mq" style="flex-direction:column;cursor:pointer" onclick="bmOpen[\''+b.id+'\']=!bmOpen[\''+b.id+'\'];render()">'+
+          '<div style="display:flex;gap:12px;align-items:flex-start;width:100%">'+
+          (b.q_img&&!open?'<img src="'+base+b.q_img+'" loading="lazy">':'')+
+          '<div class="inf">'+esc(b.type||'')+
+          '<br><span style="color:var(--pri-dark);font-weight:700;font-size:12px">'+(open?'▲ Tap to collapse':'▼ Tap to view question & solution')+'</span></div>'+
+          '<button class="fbtn" onclick="event.stopPropagation();bmRemove(\''+b.id+'\')" title="Remove bookmark">'+bmIcon(true)+' Remove</button></div>'+
+          detail+'</div>';
+      }).join('');
+    }
+  }
+  $('view').innerHTML=html;
 }
 
 /* ---------------- notebook ---------------- */
@@ -278,6 +327,7 @@ function renderNotebook(){
         let detail='';
         if(open){
           detail='<div style="margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;width:100%">'+
+            (p.psg?'<div style="font-weight:700;font-size:13px;color:var(--pri-dark)">Passage:</div><div class="qimg-wrap" style="width:100%"><img src="'+IMG_BASE[p.source||'pyq']+p.psg+'" style="width:100%;max-width:760px;display:block"></div>':'')+
             (p.q_img?'<div class="qimg-wrap" style="width:100%"><img src="'+IMG_BASE[p.source||'pyq']+p.q_img+'" style="width:100%;max-width:760px;display:block"></div>':'')+
             '<div style="font-size:14px;margin:8px 0">Your answer: <b>'+(p.ans??'—')+'</b> · Correct: <b>'+key+'</b></div>'+
             (p.sol_img?'<div style="font-weight:700;font-size:13px;color:var(--green)">Solution</div><div class="qimg-wrap" style="width:100%"><img src="'+IMG_BASE[p.source||'pyq']+p.sol_img+'" style="width:100%;max-width:760px;display:block"></div>':'<div style="color:var(--mut);font-size:13px">No solution image for this question.</div>')+

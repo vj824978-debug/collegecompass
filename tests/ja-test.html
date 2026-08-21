@@ -57,15 +57,14 @@ box-shadow:0 -4px 16px rgba(16,24,40,.08);padding:12px 18px;display:flex;align-i
 <header id="hdr">
   <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
-    <a href="ja-hub.html">JEE Advanced</a>
-    <a href="ja-papers.html">Papers</a>
-    <a href="ja-practice.html">Practice</a>
+    <a href="jm-hub.html">JEE Main</a>
+    <a href="ja-hub.html" class="on">JEE Advanced</a>
     <a href="library.html">My Tests</a>
   </nav>
 </header>
 <main>
-  <h1>Create Advanced Test — Question Bank</h1>
-  <div class="sub"><span style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px">PREMIUM · free during review</span> &nbsp;Fresh Advanced-level questions (not from past papers). Authentic JEE Advanced marking: +3/−1 single correct, +4/−2 with partial marking for MSQs, +4/0 numericals, +3/0 comprehension.</div>
+  <h1>Rankers' Question Bank — Create Tests</h1>
+  <div class="sub"><span style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px">PREMIUM · free during review</span> &nbsp;Unseen, exam-grade questions in authentic Advanced patterns. Authentic JEE Advanced marking: +3/−1 single correct, +4/−2 with partial marking for MSQs, +4/0 numericals, +3/0 comprehension.</div>
 
   <div class="tabs">
     <button class="tab on" id="tab-sy" onclick="setTab('sy')">Syllabus Test</button>
@@ -146,7 +145,7 @@ function renderUnits(){
   $('sylist').innerHTML=units.map((u,i)=>
     '<button class="mockbtn" onclick="genUnit('+i+')">'+
     '<h3>'+u.chapters.join(' · ')+'</h3>'+
-    '<p>Phase '+u.phase+' syllabus · '+u.total+' questions in pool · 17-question Advanced pattern test</p></button>').join('');
+    '</button>').join('');
 }
 async function genUnit(i){
   const u=IDX.np_units[sySubj][i];

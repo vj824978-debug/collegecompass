@@ -291,6 +291,22 @@ const DATA_BASE = 'data/';
 /* ================= STATE ================== */
 let P=null, Q=[], cur=0, state=[], secStarts=[], timeLeft=0, timerId=null, submitted=false;
 let qTime=[], lastSwitch=null, attemptIdx=null;
+
+/* ---- bookmarks ---- */
+function bmIcon(on){
+  return '<svg width="16" height="20" viewBox="0 0 16 20" style="vertical-align:-4px">'+
+    '<path d="M2 1h12a1 1 0 0 1 1 1v17l-7-4.5L1 19V2a1 1 0 0 1 1-1z" '+
+    (on?'fill="#f59e0b" stroke="#d97706"':'fill="none" stroke="#98a2b3"')+' stroke-width="1.6"/></svg>';
+}
+
+function bmAll(){ try{return JSON.parse(localStorage.getItem('cp_bookmarks')||'[]');}catch(e){return [];} }
+function bmHas(id){ return bmAll().some(b=>b.id===id); }
+function bmToggle(rec){
+  let a=bmAll();
+  if(a.some(b=>b.id===rec.id)) a=a.filter(b=>b.id!==rec.id);
+  else { a.push({...rec,ts:Date.now()}); if(a.length>500)a=a.slice(-500); }
+  localStorage.setItem('cp_bookmarks',JSON.stringify(a));
+}
 let SEEN=new Set(); try{SEEN=new Set(JSON.parse(localStorage.getItem('cp_seen')||'[]'));}catch(e){}
 let seenDirty=false;
 function markSeen(id){ if(!SEEN.has(id)){SEEN.add(id);seenDirty=true;} }
@@ -402,6 +418,12 @@ function refreshPalette(){
 }
 
 /* ============== QUESTION VIEW ============= */
+function bmCur(){
+  const q=Q[cur];
+  bmToggle({id:q.id,source:(P.img_src==='np'?'np':'ja'),sub:q.subject,ch:q.chapter,type:q.type_label,
+    q_img:q.q_img,sol_img:q.sol_img,psg:q.passage_img||null,grading:q.grading});
+  document.getElementById('bmbtn').innerHTML=bmIcon(bmHas(q.id));
+}
 function tickTime(){
   if(lastSwitch!==null && !submitted){
     qTime[cur]+=Math.round((Date.now()-lastSwitch)/1000);
@@ -417,7 +439,8 @@ function go(i){
   if(st.status==='nv')st.status='na';
   $('qno').textContent='Question '+(i+1);
   const seenTag = SEEN.has(q.id) ? ' · 👁 Seen before' : '';
-  $('qmeta').textContent=q._sec+' · '+q.type_label+' · +'+q.marks+' / '+(q.neg||0)+seenTag;
+  $('qmeta').innerHTML=esc(q._sec+' · '+q.type_label+' · +'+q.marks+' / '+(q.neg||0)+seenTag)+
+    ' &nbsp;<button onclick="bmCur()" id="bmbtn" style="cursor:pointer;background:none;border:none;padding:2px" '+(bmHas(q.id)?'⭐':'☆')+'</button>';
   markSeen(q.id);
   const mk='Marking: +'+q.marks+(q.neg?' / '+q.neg:' / 0')+(q.partial?' · partial marking applies':'');
   $('nvtnote').classList.remove('hidden');
@@ -651,8 +674,8 @@ function saveAttempt(R){
       score:R.total, max:P.max_marks, ok:R.ok, bad:R.bad, skip:R.skip, bonus:R.bonus,
       per:Q.map((q,i)=>({id:q.id, sub:q.subject, ch:q.chapter, type:q.type,
         res:R.rows[i].res, ans:state[i].ans, time:qTime[i], tag:null,
-        q_img:q.q_img, sol_img:q.sol_img, sol_text:0,
-        source:'ja', grading:q.grading, nvt_note:null}))
+        q_img:q.q_img, sol_img:q.sol_img, sol_text:0, psg:q.passage_img||null,
+        source:(P.img_src==='np'?'np':'ja'), grading:q.grading, nvt_note:null}))
     };
     let arr=[];
     try{arr=JSON.parse(localStorage.getItem('cp_attempts')||'[]');}catch(e){}
@@ -696,7 +719,7 @@ function renderResult(R){
      '</table>'+
      '<p style="margin-top:14px;font-size:13px;color:var(--mut)">This attempt is saved in <a href="library.html" style="color:var(--pri-dark);font-weight:700">My Tests</a>. Tag your mistakes below to build your Mistake Notebook.</p>'+
      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">'+
-       [['index.html','🏠 Home'],['papers.html','📄 Papers'],['mocks.html','📝 Mocks'],['chapter-test.html','📚 Chapter Tests'],['practice.html','⚡ Practice PYQs'],['library.html','🗂 My Tests']].map(x=>
+       [['index.html','🏠 Home'],['jm-hub.html','📘 JEE Main'],['ja-hub.html','🏆 JEE Advanced'],['library.html','🗂 My Tests']].map(x=>
          '<a href="'+x[0]+'" style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:9px;text-decoration:none">'+x[1]+'</a>').join('')+
      '</div></div>'+
    '<div class="card"><h2 style="font-size:17px;margin-bottom:12px">Solution review</h2>'+

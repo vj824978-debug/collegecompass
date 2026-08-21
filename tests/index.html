@@ -66,11 +66,8 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
 <header id="hdr">
   <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
   <nav>
-    <a href="papers.html">Papers</a>
-    <a href="mocks.html">Mocks</a>
-    <a href="ja-papers.html">JEE Advanced</a>
-    <a href="chapter-test.html">Chapter Tests</a>
-    <a href="practice.html">Practice PYQs</a>
+    <a href="jm-hub.html">JEE Main</a>
+    <a href="ja-hub.html">JEE Advanced</a>
     <a href="library.html">My Tests</a>
   </nav>
 <button id="menubtn" onclick="document.getElementById('mnav').classList.add('open');document.getElementById('mscrim').classList.remove('hidden')">☰</button>
@@ -78,11 +75,8 @@ footer{max-width:1000px;margin:0 auto;padding:20px 16px;color:var(--mut);font-si
 <div id="mnav">
   <button class="mclose" onclick="closeMnav()">✕</button>
   <a href="index.html">🏠 Home</a>
-  <a href="papers.html">📄 Papers</a>
-  <a href="mocks.html">📝 Mocks</a>
-  <a href="ja-papers.html">🏆 JEE Advanced</a>
-  <a href="chapter-test.html">📚 Chapter Tests</a>
-  <a href="practice.html">⚡ Practice PYQs</a>
+  <a href="jm-hub.html">📘 JEE Main</a>
+  <a href="ja-hub.html">🏆 JEE Advanced</a>
   <a href="library.html">🗂 My Tests</a>
 </div>
 <script>
@@ -105,35 +99,23 @@ document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a
     </div>
   </div>
   <div class="modes">
-    <a class="mode m1" href="papers.html">
-      <span class="ic">📄</span>
-      <h2>Previous Year Papers</h2>
-      <p>Attempt any real shift — like 24 Jan 2025 Morning — exactly as it appeared, with the official answer key and solutions. 2020 to 2026, all in the current 60+15 pattern.</p>
-      <span class="go">Browse Papers →</span>
-    </a>
-    <a class="mode m2" href="chapter-test.html">
-      <span class="ic">📚</span>
-      <h2>Chapter-wise Tests</h2>
-      <p>Finished a chapter? Test it under exam conditions. Pick any chapters, choose PYQ-only or practice questions, and get a timed test in JEE pattern instantly.</p>
-      <span class="go">Create a Test →</span>
+    <a class="mode m1" href="jm-hub.html">
+      <span class="ic">📘</span>
+      <h2>JEE Main</h2>
+      <p>Every PYQ 2019–2026 as full papers, chapter tests and practice — plus full-syllabus mocks. Real CBT interface, official keys, detailed solutions.</p>
+      <span class="go">Enter JEE Main →</span>
     </a>
     <a class="mode m2" href="ja-hub.html">
       <span class="ic">🏆</span>
-      <h2>JEE Advanced Papers</h2>
-      <p>Every Advanced paper from 2007 to 2026 in its original pattern — partial-marking MSQs, numericals, comprehensions with passages, matrix match. Very few platforms offer this free.</p>
-      <span class="go">Attempt Advanced →</span>
+      <h2>JEE Advanced</h2>
+      <p>Every Advanced paper 2007–2026 in its original pattern — partial-marking MSQs, numericals, comprehensions, matrix match — plus the Rankers' Question Bank.</p>
+      <span class="go">Enter JEE Advanced →</span>
     </a>
-    <a class="mode m1" href="mocks.html">
-      <span class="ic">📝</span>
-      <h2>Full Mock Tests</h2>
-      <p>47 ready-made full-syllabus mocks with fresh non-PYQ questions — sit a complete 3-hour paper anytime and see where you stand.</p>
-      <span class="go">Browse Mocks →</span>
-    </a>
-    <a class="mode m3" href="practice.html">
-      <span class="ic">⚡</span>
-      <h2>Chapter-wise PYQs</h2>
-      <p>Pick a subject and chapter, browse every PYQ year-by-year, solve at your own pace, and get instant right/wrong with the full solution — no timer, no pressure.</p>
-      <span class="go">Start Practicing →</span>
+    <a class="mode m3" href="library.html">
+      <span class="ic">🗂</span>
+      <h2>My Tests</h2>
+      <p>Your attempt history, per-question timings, error tags and the Mistake Notebook — everything you got wrong, chapter-wise, ready to re-practice.</p>
+      <span class="go">Open My Tests →</span>
     </a>
   </div>
 </main>
