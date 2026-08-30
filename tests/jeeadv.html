@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>CBT Exam — CollegePipe</title>
+<script>function cpPaid(){try{return localStorage.getItem("cp_premium")==="1";}catch(e){return false;}}</script>
 <style>
 :root{
   --navy:#0d2347;--pri:#f59e0b; --pri-dark:#d97706; --pri-soft:#fff3dd;
@@ -879,7 +880,6 @@ init();
 <script>
 const PREMIUM_API='https://script.google.com/macros/s/AKfycbzhrJNfN1HVKautQzCSfpjz6QI9mxTMlvWOn2L1q24Ervy6tc4bgczS8TaIltF51EKz/exec';
 const GOOGLE_CLIENT_ID='820315954425-5if3r5ea73q9m9nqrtegbt6ltnub4o3t.apps.googleusercontent.com';
-function cpPaid(){ try{return localStorage.getItem('cp_premium')==='1';}catch(e){return false;} }
 let _gsiDone=false;
 function pmShow(){
   document.getElementById('pmodal').classList.remove('hidden');
