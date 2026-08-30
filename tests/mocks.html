@@ -88,7 +88,7 @@ document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a
 </header>
 <main>
   <h1>Full Mock Tests</h1>
-  <div class="sub"><span style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px">PREMIUM · currently free</span> &nbsp;Ready-made full-syllabus mock tests with fresh, unseen questions — 60+15 pattern, 3 hours, +4/−1, instant result with solutions.</div>
+  <div class="sub"><span style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px">PREMIUM · ₹99 lifetime</span> &nbsp;Ready-made full-syllabus mock tests with fresh, unseen questions — 60+15 pattern, 3 hours, +4/−1, instant result with solutions.</div>
 
   <div class="chips" id="yearchips"></div>
   <div id="list"><div id="loading">Loading…</div></div>
@@ -105,6 +105,104 @@ fetch('data/index.json').then(r=>r.json()).then(d=>{
     (p.complete?'':'<span class="note">'+p.total_questions+'/75 available</span>')+
     '<span class="go">Start Test →</span></a>').join('');
 }).catch(()=>{ document.getElementById('list').innerHTML='<div id="loading">Could not load data/index.json</div>'; });
+
+document.addEventListener('click',function(e){
+  const card=e.target.closest('a.pcard');
+  if(card && !cpPaid()){ e.preventDefault(); pmShow(); }
+},true);
 </script>
+
+<!-- ===== CollegePIPE Premium ===== -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+#pmodal{position:fixed;inset:0;background:rgba(10,16,28,.62);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
+#pmodal.hidden{display:none}
+.pm-card{background:#fff;border-radius:18px;max-width:430px;width:100%;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.35);max-height:92vh;overflow:auto}
+.pm-badge{display:inline-block;background:#fff3dd;color:#d97706;font-weight:800;font-size:12px;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+.pm-card h3{font-size:19px;color:#0d2347;margin-bottom:4px}
+.pm-price{font-size:15px;color:#667085;margin-bottom:14px}
+.pm-price b{color:#16a34a;font-size:22px}
+.pm-list{margin:0 0 16px;padding:0;list-style:none}
+.pm-list li{padding:7px 0 7px 26px;position:relative;font-size:13.5px;color:#101828;border-bottom:1px solid #f0f2f5}
+.pm-list li::before{content:"✓";position:absolute;left:2px;color:#16a34a;font-weight:800}
+.pm-pay{display:block;text-align:center;background:#f59e0b;color:#0d2347;font-weight:800;font-size:15px;padding:13px;border-radius:12px;text-decoration:none;margin-bottom:6px}
+.pm-note{font-size:11.5px;color:#98a2b3;text-align:center;margin-bottom:14px}
+.pm-div{display:flex;align-items:center;gap:10px;color:#98a2b3;font-size:12px;margin:10px 0}
+.pm-div::before,.pm-div::after{content:"";flex:1;height:1px;background:#e4e7ec}
+.pm-verify{display:flex;gap:8px}
+.pm-verify input{flex:1;height:42px;border:1.5px solid #e4e7ec;border-radius:10px;padding:0 12px;font-size:14px;outline:none}
+.pm-verify button{background:#0d2347;color:#fff;font-weight:700;font-size:13px;padding:0 16px;border-radius:10px;border:none;cursor:pointer}
+.pm-msg{font-size:12.5px;margin-top:8px;min-height:16px}
+.pm-close{float:right;background:none;border:none;font-size:20px;color:#98a2b3;cursor:pointer}
+</style>
+<div id="pmodal" class="hidden">
+  <div class="pm-card">
+    <button class="pm-close" onclick="pmHide()">✕</button>
+    <span class="pm-badge">COLLEGEPIPE PREMIUM</span>
+    <h3>Unlock all premium content</h3>
+    <div class="pm-price"><b>₹99</b> &nbsp;one-time · lifetime access</div>
+    <ul class="pm-list">
+      <li><b>47 JEE Main full mocks</b> — fresh unseen questions, real CBT, instant results</li>
+      <li><b>Rankers' Question Bank</b> — unseen, exam-grade JEE Advanced questions</li>
+      <li><b>Syllabus &amp; chapter tests</b> in authentic Advanced pattern with partial marking</li>
+      <li><b>Full-syllabus Advanced mocks</b> in the exact 2026 paper structure</li>
+      <li>All solutions, analytics, mistake notebook &amp; bookmarks included</li>
+      <li>Every future premium addition — no extra payment, ever</li>
+    </ul>
+    <a class="pm-pay" href="https://pages.razorpay.com/pl_TVwLEAPGJ66fjT/view" target="_blank" rel="noopener">Pay ₹99 — Unlock Premium →</a>
+    <div class="pm-note">Secure payment via Razorpay · UPI / cards / netbanking</div>
+    <div class="pm-div">after paying, sign in to unlock</div>
+    <div id="pm-gbtn" style="display:flex;justify-content:center;margin:4px 0 2px"></div>
+    <div style="text-align:center;font-size:11.5px;color:#98a2b3;margin-top:6px">Sign in with the same Google account whose email you used at payment.<br><a href="#" onclick="document.getElementById('pm-manual').style.display='flex';return false" style="color:#667085">No Google account? Verify by email / mobile</a></div>
+    <div class="pm-verify" id="pm-manual" style="display:none;margin-top:10px">
+      <input id="pm-email" type="text" placeholder="Email or mobile used at payment">
+      <button onclick="pmVerify()">Verify</button>
+    </div>
+    <div class="pm-msg" id="pm-msg"></div>
+  </div>
+</div>
+<script>
+const PREMIUM_API='https://script.google.com/macros/s/AKfycbzhrJNfN1HVKautQzCSfpjz6QI9mxTMlvWOn2L1q24Ervy6tc4bgczS8TaIltF51EKz/exec';
+const GOOGLE_CLIENT_ID='820315954425-5if3r5ea73q9m9nqrtegbt6ltnub4o3t.apps.googleusercontent.com';
+function cpPaid(){ try{return localStorage.getItem('cp_premium')==='1';}catch(e){return false;} }
+let _gsiDone=false;
+function pmShow(){
+  document.getElementById('pmodal').classList.remove('hidden');
+  if(!_gsiDone && window.google && google.accounts){
+    _gsiDone=true;
+    google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:onGoogleCred});
+    google.accounts.id.renderButton(document.getElementById('pm-gbtn'),
+      {theme:'filled_blue',size:'large',text:'signin_with',shape:'pill',width:280});
+  }
+}
+async function onGoogleCred(resp){
+  const msg=document.getElementById('pm-msg');
+  msg.style.color='#667085'; msg.textContent='Checking your account…';
+  try{
+    const res=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams({action:'gverify',token:resp.credential})});
+    const d=await res.json();
+    if(d.paid){ localStorage.setItem('cp_premium','1'); localStorage.setItem('cp_premium_email',d.email||'');
+      msg.style.color='#16a34a'; msg.textContent='✓ Premium unlocked! Loading…'; setTimeout(()=>location.reload(),700); }
+    else{ msg.style.color='#dc2626'; msg.textContent='No payment found for '+(d.email||'this account')+'. If you paid with a different email, use the link above.'; }
+  }catch(e){ msg.style.color='#dc2626'; msg.textContent='Could not verify right now. Please retry.'; }
+}
+function pmHide(){ document.getElementById('pmodal').classList.add('hidden'); }
+async function pmVerify(){
+  const em=(document.getElementById('pm-email').value||'').trim().toLowerCase();
+  const msg=document.getElementById('pm-msg');
+  if(!em||(!em.includes('@')&&em.replace(/\D/g,'').length<10)){ msg.style.color='#dc2626'; msg.textContent='Enter the email or 10-digit mobile used while paying.'; return; }
+  msg.style.color='#667085'; msg.textContent='Checking…';
+  try{
+    const res=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams({action:'verify',email:em})});
+    const d=await res.json();
+    if(d.paid){ localStorage.setItem('cp_premium','1'); localStorage.setItem('cp_premium_email',em);
+      msg.style.color='#16a34a'; msg.textContent='✓ Premium unlocked! Loading…'; setTimeout(()=>location.reload(),700); }
+    else { msg.style.color='#dc2626'; msg.textContent='Payment not found for this email. If you just paid, wait a minute and retry — or contact us.'; }
+  }catch(e){ msg.style.color='#dc2626'; msg.textContent='Could not verify right now. Please try again.'; }
+}
+</script>
+
 </body>
 </html>
