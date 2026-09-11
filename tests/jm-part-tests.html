@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Part Tests — CollegePIPE</title>
+<script>function cpPaid(){try{return localStorage.getItem("cp_premium")==="1";}catch(e){return false;}}</script>
+<style>
+:root{--navy:#0d2347;--pri:#f59e0b;--pri-dark:#d97706;--pri-soft:#fff3dd;--ink:#101828;--mut:#667085;
+--line:#e4e7ec;--bg:#f6f7fb;--card:#fff;--green:#16a34a;
+--sh:0 1px 3px rgba(16,24,40,.07),0 1px 2px rgba(16,24,40,.05)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+#hdr{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #1b3a66;
+display:flex;align-items:center;gap:18px;padding:12px 20px}
+.logo{font-weight:800;font-size:17px;color:#fff;display:flex;align-items:center;gap:0}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px;margin-right:8px}
+.logo span{color:#fff}
+#hdr nav{display:flex;gap:6px;margin-left:auto}
+#hdr nav a{padding:7px 14px;border-radius:8px;font-size:13.5px;font-weight:600;color:#b9c4d8}
+#hdr nav a:hover,#hdr nav a.on{background:rgba(255,255,255,.12);color:#fff}
+main{max-width:1000px;margin:0 auto;padding:22px 16px 60px}
+h1{font-size:22px;letter-spacing:-.3px;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{padding:8px 18px;border-radius:999px;font-size:14px;font-weight:700;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.tab.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;background:var(--card);color:var(--mut);border:1px solid var(--line)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.datehdr{font-size:13px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin:18px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);
+padding:16px;display:flex;flex-direction:column;gap:8px;transition:.15s}
+.pcard:hover{transform:translateY(-2px);border-color:#c6cbf5}
+.pcard .t{font-weight:700;font-size:14.5px}
+.pcard .m{color:var(--mut);font-size:12.5px}
+.pcard .go{margin-top:auto;align-self:flex-start;background:var(--pri-soft);color:var(--pri-dark);
+font-weight:700;font-size:13px;padding:7px 14px;border-radius:8px}
+.pcard:hover .go{background:var(--pri);color:#fff}
+.note{font-size:11.5px;color:#b45309;background:#fef3e2;border-radius:6px;padding:2px 8px;display:inline-block}
+#loading{color:var(--mut);text-align:center;padding:60px 0}
+
+@media (max-width:680px){
+  #hdr{padding:10px 12px;gap:10px}
+  .logo{font-size:15px}
+}
+
+/* mobile hamburger menu */
+#menubtn{display:none;margin-left:auto;background:rgba(255,255,255,.12);color:#fff;font-size:20px;line-height:1;padding:8px 12px;border-radius:9px}
+#mnav{position:fixed;top:0;right:-280px;width:260px;height:100%;background:var(--navy);z-index:60;transition:right .25s;padding:18px 14px;display:flex;flex-direction:column;gap:4px;box-shadow:-8px 0 30px rgba(0,0,0,.35)}
+#mnav.open{right:0}
+#mnav a{color:#d7deea;font-size:15px;font-weight:600;padding:13px 14px;border-radius:10px;text-decoration:none}
+#mnav a.on,#mnav a:hover{background:rgba(255,255,255,.12);color:#fff}
+#mnav .mclose{align-self:flex-end;background:none;color:#b9c4d8;font-size:22px;padding:4px 10px;margin-bottom:6px}
+#mscrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:55}
+@media (max-width:680px){
+  #hdr nav{display:none}
+  #menubtn{display:block}
+}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="logo" href="https://collegepipe.in/">College<span>PIPE</span></a>
+  <nav>
+    <a href="jm-hub.html" class="on">JEE Main</a>
+    <a href="ja-hub.html">JEE Advanced</a>
+    <a href="library.html">My Tests</a>
+  </nav>
+<button id="menubtn" onclick="document.getElementById('mnav').classList.add('open');document.getElementById('mscrim').classList.remove('hidden')">☰</button>
+<div id="mscrim" class="hidden" onclick="closeMnav()"></div>
+<div id="mnav">
+  <button class="mclose" onclick="closeMnav()">✕</button>
+  <a href="index.html">🏠 Home</a>
+  <a href="jm-hub.html">📘 JEE Main</a>
+  <a href="ja-hub.html">🏆 JEE Advanced</a>
+  <a href="library.html">🗂 My Tests</a>
+</div>
+<script>
+function closeMnav(){document.getElementById('mnav').classList.remove('open');document.getElementById('mscrim').classList.add('hidden')}
+(function(){var p=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a.classList.add('on');});})();
+</script>
+
+</header>
+<main>
+  <h1>JEE Main Part Tests</h1>
+  <div class="sub"><span style="background:var(--pri-soft);color:var(--pri-dark);font-weight:700;padding:2px 10px;border-radius:999px;font-size:12px">PREMIUM · ₹99 lifetime</span> &nbsp;6 phase-wise part tests, plus 6 full-syllabus papers each for Class 11 and Class 12 — each a complete 75-question paper (20 MCQs + 5 numericals per subject, +4/−1, 3 hours) from fresh non-PYQ questions.</div>
+
+  <div class="chips" id="yearchips"></div>
+  <div id="list"><div id="loading">Loading…</div></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const PTS=[
+ {n:1,theme:"Foundations (XI · Part 1)",
+  Physics:["Units and Measurements","Motion in a Straight Line","Motion in a Plane","Laws of Motion"],
+  Chemistry:["Some Basic Concepts of Chemistry","Structure of Atom","Classification of Elements and Periodicity in Properties","Redox Reactions"],
+  Mathematics:["Sets","Relations and Functions","Trigonometric Functions","Complex Numbers and Quadratic Equations","Linear Inequalities"]},
+ {n:2,theme:"Mechanics & Bonding (XI · Part 2)",
+  Physics:["Work, Energy and Power","System of Particles and Rotational Motion","Gravitation","Mechanical Properties of Solids","Mechanical Properties of Fluids"],
+  Chemistry:["Chemical Bonding and Molecular Structure","Thermodynamics","Equilibrium"],
+  Mathematics:["Permutations and Combinations","Binomial Theorem","Sequences and Series","Straight Lines"]},
+ {n:3,theme:"Heat, Waves & Organic Basics (XI · Part 3)",
+  Physics:["Thermal Properties of Matter","Thermodynamics","Kinetic Theory","Oscillations","Waves"],
+  Chemistry:["Organic Chemistry – Some Basic Principles and Techniques","Hydrocarbons","The s-Block Elements","The p-Block Elements (Groups 13 and 14)"],
+  Mathematics:["Conic Sections","Introduction to Three Dimensional Geometry","Limits and Derivatives","Statistics"]},
+ {n:4,theme:"Electrostatics & Calculus (XII · Part 1)",
+  Physics:["Electric Charges and Fields","Electrostatic Potential and Capacitance","Current Electricity"],
+  Chemistry:["Solutions","Electrochemistry","Chemical Kinetics","The d- and f-Block Elements","d & f Block Elements"],
+  Mathematics:["Matrices","Determinants","Continuity and Differentiability","Application of Derivatives"]},
+ {n:5,theme:"Magnetism, EMI & Integrals (XII · Part 2)",
+  Physics:["Moving Charges and Magnetism","Magnetism and Matter","Electromagnetic Induction","Alternating Current","Electromagnetic Waves"],
+  Chemistry:["The p-Block Elements (Groups 15–18)","Coordination Compounds","General Principles and Processes of Isolation of Elements"],
+  Mathematics:["Integrals","Application of Integrals","Differential Equations"]},
+ {n:6,theme:"Optics, Modern Physics & Organic-XII (XII · Part 3)",
+  Physics:["Ray Optics and Optical Instruments","Wave Optics","Dual Nature of Radiation and Matter","Atoms","Nuclei","Semiconductor Electronics: Materials, Devices and Simple Circuits"],
+  Chemistry:["Haloalkanes and Haloarenes","Alcohols, Phenols and Ethers","Aldehydes, Ketones and Carboxylic Acids","Amines","Biomolecules"],
+  Mathematics:["Vector Algebra","Three Dimensional Geometry","Probability","Inverse Trigonometric Functions"]}
+];
+const SUBJECTS=['Physics','Chemistry','Mathematics'];
+let IDX=null;
+fetch('data/index.json').then(r=>r.json()).then(d=>{ IDX=d; render(); })
+ .catch(()=>{ $('list').innerHTML='<div id="loading">Could not load data.</div>'; });
+
+function chMeta(sub,name){
+  return IDX.chapters.find(c=>c.subject===sub && c.chapter===name && !c.deleted_2026);
+}
+function render(){
+  $('list').innerHTML=PTS.map(pt=>{
+    const rows=SUBJECTS.map(sub=>{
+      const names=pt[sub].filter(n=>chMeta(sub,n));
+      return '<div style="margin-top:8px"><b style="font-size:12.5px">'+sub+':</b> <span style="color:var(--mut);font-size:12.5px">'+names.join(' · ')+'</span></div>';
+    }).join('');
+    return '<div class="pcard" style="cursor:default">'+
+      '<span class="t">Part Test '+pt.n+' — '+pt.theme+'</span>'+
+      '<span class="m">75 questions · 3 hours · 300 marks · JEE Main pattern (20+5 per subject)</span>'+
+      rows+
+      '<button class="go" style="border:none;cursor:pointer;margin-top:12px" onclick="startPT('+pt.n+')">Start Part Test →</button></div>';
+  }).join('')
+  +classBlock(11)+classBlock(12);
+}
+function classBlock(cls){
+  const SUBS=cls===11?XI_SUBS:XII_SUBS;
+  const chCount=SUBJECTS.reduce((a,sub)=>a+SUBS[sub].filter(n=>chMeta(sub,n)).length,0);
+  let h='<div class="datehdr" style="margin-top:26px">Class '+cls+' — Full Syllabus Tests <span style="color:var(--mut);font-weight:600;font-size:12.5px">('+chCount+' chapters · 6 distinct fixed papers, no question repeats between them)</span></div><div class="grid">';
+  for(let k=1;k<=6;k++){
+    h+='<div class="pcard" style="cursor:default">'+
+      '<span class="t">Class '+cls+' · Test '+k+'</span>'+
+      '<span class="m">75 questions · 3 hours · 300 marks · complete Class '+cls+' syllabus</span>'+
+      '<button class="go" style="border:none;cursor:pointer" onclick="startClassTest('+cls+','+k+')">Start Test →</button></div>';
+  }
+  return h+'</div>';
+}
+/* deterministic RNG so every student gets the same fixed paper */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
+function seededSample(pool,n,rnd){
+  const idx=[...pool.keys()],out=[];
+  for(let i=0;i<n&&idx.length;i++){const j=Math.floor(rnd()*idx.length);out.push(pool[idx[j]]);idx.splice(j,1);}
+  return out;
+}
+async function loadCh(entries){
+  const res=await Promise.all(entries.map(c=>
+    fetch('data/chapters/'+c.subject.toLowerCase()+'/'+c.slug+'.json')
+      .then(r=>r.ok?r.json():{questions:[]}).catch(()=>({questions:[]}))));
+  return res.flatMap(d=>d.questions);
+}
+const XI_SUBS={}, XII_SUBS={};
+['Physics','Chemistry','Mathematics'].forEach(sub=>{
+  XI_SUBS[sub]=[...PTS[0][sub],...PTS[1][sub],...PTS[2][sub]];
+  XII_SUBS[sub]=[...PTS[3][sub],...PTS[4][sub],...PTS[5][sub]];
+});
+function seededShuffle(arr,rnd){
+  const a=arr.slice().sort((x,y)=>x.id<y.id?-1:1);
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+/* disjoint deterministic windows: test k of a class takes slice k across the class-shuffled pool */
+function windowPick(pool,per,k,rnd){ // pool shuffled with class seed BEFORE calling per type
+  const start=(k-1)*per;
+  let out=pool.slice(start,start+per);
+  return out;
+}
+async function startClassTest(cls,k){
+  if(!cpPaid()){ pmShow(); return; }
+  const SUBS=cls===11?XI_SUBS:XII_SUBS;
+  const classSeed=cls===11?20261100:20261200;
+  const sections=[]; let total=0;
+  for(const sub of SUBJECTS){
+    const entries=SUBS[sub].map(nm=>chMeta(sub,nm)).filter(Boolean);
+    const pool=await loadCh(entries);
+    const rndM=mulberry32(classSeed+1), rndN=mulberry32(classSeed+2), rndT=mulberry32(classSeed+k*7+3);
+    const mockMCQ=seededShuffle(pool.filter(q=>q.source==='mock'&&q.type==='MCQ'),rndM);
+    const mockNVT=seededShuffle(pool.filter(q=>q.source==='mock'&&q.type==='NVT'),rndN);
+    let A=windowPick(mockMCQ,20,k), B=windowPick(mockNVT,5,k);
+    if(A.length<20||B.length<5){ // top-up from PYQ deterministically per test
+      const have=new Set([...A,...B].map(q=>q.id));
+      const pyqMCQ=seededShuffle(pool.filter(q=>q.source==='pyq'&&q.type==='MCQ'&&!have.has(q.id)),rndT);
+      const pyqNVT=seededShuffle(pool.filter(q=>q.source==='pyq'&&q.type==='NVT'&&!have.has(q.id)),rndT);
+      A=A.concat(pyqMCQ.slice(0,20-A.length));
+      B=B.concat(pyqNVT.slice(0,5-B.length));
+    }
+    sections.push({subject:sub,A:A,B:B}); total+=A.length+B.length;
+  }
+  const paper={key:'custom',title:'Class '+cls+' Full Syllabus Test '+k,kind:'mock',date:null,session:null,year:null,
+    pattern:'60+15',duration_min:180,marking:{correct:4,incorrect:-1,unattempted:0},
+    total_questions:total,max_marks:total*4,complete:total===75,sections:sections};
+  sessionStorage.setItem('cp_custom_paper',JSON.stringify(paper));
+  location.href='exam.html?paper=custom';
+}
+async function startPT(n){
+  if(!cpPaid()){ pmShow(); return; }
+  const pt=PTS.find(p=>p.n===n);
+  const rnd=mulberry32(20260000+n);
+  const sections=[]; let total=0;
+  for(const sub of SUBJECTS){
+    const entries=pt[sub].map(nm=>chMeta(sub,nm)).filter(Boolean);
+    const pool=await loadCh(entries);
+    const mockP=pool.filter(q=>q.source==='mock'), pyqP=pool.filter(q=>q.source==='pyq');
+    function pick(type,count){
+      let out=seededSample(mockP.filter(q=>q.type===type),count,rnd);
+      if(out.length<count){
+        const have=new Set(out.map(q=>q.id));
+        out=out.concat(seededSample(pyqP.filter(q=>q.type===type&&!have.has(q.id)),count-out.length,rnd));
+      }
+      return out;
+    }
+    const A=pick('MCQ',20), B=pick('NVT',5);
+    sections.push({subject:sub,A:A,B:B}); total+=A.length+B.length;
+  }
+  const paper={key:'custom',title:'Part Test '+n+' — '+pt.theme,kind:'mock',date:null,session:null,year:null,
+    pattern:'60+15',duration_min:180,marking:{correct:4,incorrect:-1,unattempted:0},
+    total_questions:total,max_marks:total*4,complete:total===75,sections:sections};
+  sessionStorage.setItem('cp_custom_paper',JSON.stringify(paper));
+  location.href='exam.html?paper=custom';
+}
+</script>
+
+<!-- ===== CollegePIPE Premium ===== -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+#pmodal{position:fixed;inset:0;background:rgba(10,16,28,.62);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
+#pmodal.hidden{display:none}
+.pm-card{background:#fff;border-radius:18px;max-width:430px;width:100%;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.35);max-height:92vh;overflow:auto}
+.pm-badge{display:inline-block;background:#fff3dd;color:#d97706;font-weight:800;font-size:12px;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+.pm-card h3{font-size:19px;color:#0d2347;margin-bottom:4px}
+.pm-price{font-size:15px;color:#667085;margin-bottom:14px}
+.pm-price b{color:#16a34a;font-size:22px}
+.pm-list{margin:0 0 16px;padding:0;list-style:none}
+.pm-list li{padding:7px 0 7px 26px;position:relative;font-size:13.5px;color:#101828;border-bottom:1px solid #f0f2f5}
+.pm-list li::before{content:"✓";position:absolute;left:2px;color:#16a34a;font-weight:800}
+.pm-pay{display:block;text-align:center;background:#f59e0b;color:#0d2347;font-weight:800;font-size:15px;padding:13px;border-radius:12px;text-decoration:none;margin-bottom:6px}
+.pm-note{font-size:11.5px;color:#98a2b3;text-align:center;margin-bottom:14px}
+.pm-div{display:flex;align-items:center;gap:10px;color:#98a2b3;font-size:12px;margin:10px 0}
+.pm-div::before,.pm-div::after{content:"";flex:1;height:1px;background:#e4e7ec}
+.pm-verify{display:flex;gap:8px}
+.pm-verify input{flex:1;height:42px;border:1.5px solid #e4e7ec;border-radius:10px;padding:0 12px;font-size:14px;outline:none}
+.pm-verify button{background:#0d2347;color:#fff;font-weight:700;font-size:13px;padding:0 16px;border-radius:10px;border:none;cursor:pointer}
+.pm-msg{font-size:12.5px;margin-top:8px;min-height:16px}
+.pm-close{float:right;background:none;border:none;font-size:20px;color:#98a2b3;cursor:pointer}
+</style>
+<div id="pmodal" class="hidden">
+  <div class="pm-card">
+    <button class="pm-close" onclick="pmHide()">✕</button>
+    <span class="pm-badge">COLLEGEPIPE PREMIUM</span>
+    <h3>Unlock all premium content</h3>
+    <div class="pm-price"><b>₹99</b> &nbsp;one-time · lifetime access</div>
+    <ul class="pm-list">
+      <li><b>47 JEE Main full mocks</b> — fresh unseen questions, real CBT, instant results</li>
+      <li><b>Rankers' Question Bank</b> — unseen, exam-grade JEE Advanced questions</li>
+      <li><b>Syllabus &amp; chapter tests</b> in authentic Advanced pattern with partial marking</li>
+      <li><b>Full-syllabus Advanced mocks</b> in the exact 2026 paper structure</li>
+      <li>All solutions, analytics, mistake notebook &amp; bookmarks included</li>
+      <li>Every future premium addition — no extra payment, ever</li>
+    </ul>
+    <a class="pm-pay" href="https://pages.razorpay.com/pl_TVwLEAPGJ66fjT/view" target="_blank" rel="noopener">Pay ₹99 — Unlock Premium →</a>
+    <div class="pm-note">Secure payment via Razorpay · UPI / cards / netbanking</div>
+    <div class="pm-div">after paying, sign in to unlock</div>
+    <div id="pm-gbtn" style="display:flex;justify-content:center;margin:4px 0 2px"></div>
+    <div style="text-align:center;font-size:11.5px;color:#98a2b3;margin-top:6px">Sign in with the same Google account whose email you used at payment.<br><a href="#" onclick="document.getElementById('pm-manual').style.display='flex';return false" style="color:#667085">No Google account? Verify by email / mobile</a></div>
+    <div class="pm-verify" id="pm-manual" style="display:none;margin-top:10px">
+      <input id="pm-email" type="text" placeholder="Email or mobile used at payment">
+      <button onclick="pmVerify()">Verify</button>
+    </div>
+    <div class="pm-msg" id="pm-msg"></div>
+  </div>
+</div>
+<script>
+const PREMIUM_API='https://script.google.com/macros/s/AKfycbzhrJNfN1HVKautQzCSfpjz6QI9mxTMlvWOn2L1q24Ervy6tc4bgczS8TaIltF51EKz/exec';
+const GOOGLE_CLIENT_ID='820315954425-5if3r5ea73q9m9nqrtegbt6ltnub4o3t.apps.googleusercontent.com';
+let _gsiDone=false;
+function pmShow(){
+  document.getElementById('pmodal').classList.remove('hidden');
+  if(!_gsiDone && window.google && google.accounts){
+    _gsiDone=true;
+    google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:onGoogleCred});
+    google.accounts.id.renderButton(document.getElementById('pm-gbtn'),
+      {theme:'filled_blue',size:'large',text:'signin_with',shape:'pill',width:280});
+  }
+}
+async function onGoogleCred(resp){
+  const msg=document.getElementById('pm-msg');
+  msg.style.color='#667085'; msg.textContent='Checking your account…';
+  try{
+    const res=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams({action:'gverify',token:resp.credential})});
+    const d=await res.json();
+    if(d.paid){ localStorage.setItem('cp_premium','1'); localStorage.setItem('cp_premium_email',d.email||'');
+      msg.style.color='#16a34a'; msg.textContent='✓ Premium unlocked! Loading…'; setTimeout(()=>location.reload(),700); }
+    else{ msg.style.color='#dc2626'; msg.textContent='No payment found for '+(d.email||'this account')+'. If you paid with a different email, use the link above.'; }
+  }catch(e){ msg.style.color='#dc2626'; msg.textContent='Could not verify right now. Please retry.'; }
+}
+function pmHide(){ document.getElementById('pmodal').classList.add('hidden'); }
+async function pmVerify(){
+  const em=(document.getElementById('pm-email').value||'').trim().toLowerCase();
+  const msg=document.getElementById('pm-msg');
+  if(!em||(!em.includes('@')&&em.replace(/\D/g,'').length<10)){ msg.style.color='#dc2626'; msg.textContent='Enter the email or 10-digit mobile used while paying.'; return; }
+  msg.style.color='#667085'; msg.textContent='Checking…';
+  try{
+    const res=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams({action:'verify',email:em})});
+    const d=await res.json();
+    if(d.paid){ localStorage.setItem('cp_premium','1'); localStorage.setItem('cp_premium_email',em);
+      msg.style.color='#16a34a'; msg.textContent='✓ Premium unlocked! Loading…'; setTimeout(()=>location.reload(),700); }
+    else { msg.style.color='#dc2626'; msg.textContent='Payment not found for this email. If you just paid, wait a minute and retry — or contact us.'; }
+  }catch(e){ msg.style.color='#dc2626'; msg.textContent='Could not verify right now. Please try again.'; }
+}
+</script>
+
+</body>
+</html>
