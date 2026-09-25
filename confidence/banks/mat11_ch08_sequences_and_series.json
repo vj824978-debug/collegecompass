@@ -1,0 +1,3737 @@
+{
+  "meta": {
+    "chapter": "MAT11-CH08",
+    "chapter_name": "Sequences and Series",
+    "subject": "Mathematics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "KaTeX is used throughout for all mathematical notation; no raw Unicode math symbols appear anywhere in this file except the em dash."
+  },
+  "questions": [
+    {
+      "id": "MAT11-CH08-L1-001",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a = -7 \\) and common difference \\( d = 2 \\). Find its 14th term \\( a_{14} \\).",
+      "options": [
+        "17",
+        "19",
+        "-33",
+        "21"
+      ],
+      "correct_index": 1,
+      "explanation": "Using \\( a_n = a + (n-1)d \\): \\( a_{14} = -7 + (14-1)(2) = -7 + (13)(2) = 19 \\).",
+      "hint": "Substitute directly into \\( a_n = a + (n-1)d \\); don't use \\( n \\) in place of \\( n-1 \\).",
+      "distractor_logic": [
+        "uses \\( n-2 \\) instead of \\( n-1 \\), giving \\( 17 \\)",
+        "flips the sign of \\( d \\), giving \\( a-(n-1)d = -33 \\)",
+        "uses the exponent \\( n \\) instead of \\( n-1 \\), giving \\( a+nd = 21 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-002",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a = 20 \\) and common difference \\( d = -1 \\). Find its 6th term \\( a_{6} \\).",
+      "options": [
+        "25",
+        "14",
+        "15",
+        "16"
+      ],
+      "correct_index": 2,
+      "explanation": "Using \\( a_n = a + (n-1)d \\): \\( a_{6} = 20 + (6-1)(-1) = 20 + (5)(-1) = 15 \\).",
+      "hint": "Substitute directly into \\( a_n = a + (n-1)d \\); don't use \\( n \\) in place of \\( n-1 \\).",
+      "distractor_logic": [
+        "flips the sign of \\( d \\), giving \\( a-(n-1)d = 25 \\)",
+        "uses the exponent \\( n \\) instead of \\( n-1 \\), giving \\( a+nd = 14 \\)",
+        "uses \\( n-2 \\) instead of \\( n-1 \\), giving \\( 16 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-003",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a = -6 \\) and common difference \\( d = 4 \\). Find its 23th term \\( a_{23} \\).",
+      "options": [
+        "-94",
+        "78",
+        "86",
+        "82"
+      ],
+      "correct_index": 3,
+      "explanation": "Using \\( a_n = a + (n-1)d \\): \\( a_{23} = -6 + (23-1)(4) = -6 + (22)(4) = 82 \\).",
+      "hint": "Substitute directly into \\( a_n = a + (n-1)d \\); don't use \\( n \\) in place of \\( n-1 \\).",
+      "distractor_logic": [
+        "flips the sign of \\( d \\), giving \\( a-(n-1)d = -94 \\)",
+        "uses \\( n-2 \\) instead of \\( n-1 \\), giving \\( 78 \\)",
+        "uses the exponent \\( n \\) instead of \\( n-1 \\), giving \\( a+nd = 86 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-004",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "Consider the A.P. \\( 0, 6, 12, 18, \\ldots \\). Find the 17th term of this sequence.",
+      "options": [
+        "90",
+        "112",
+        "96",
+        "102"
+      ],
+      "correct_index": 2,
+      "explanation": "The common difference is \\( d = 6 \\) and the first term is \\( a = 0 \\). So \\( a_{17} = a+(n-1)d = 0+(17-1)(6) = 96 \\).",
+      "hint": "First read off \\( a \\) and \\( d \\) from the listed terms, then apply \\( a_n = a+(n-1)d \\).",
+      "distractor_logic": [
+        "is one common difference too far (an extra \\( +d \\)), giving \\( 90 \\)",
+        "uses a wrong common difference, giving \\( 112 \\)",
+        "uses \\( n \\) instead of \\( n-1 \\) as the multiplier, giving \\( 102 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-005",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "Consider the A.P. \\( 6, 2, -2, -6, \\ldots \\). Find the 19th term of this sequence.",
+      "options": [
+        "-48",
+        "-66",
+        "-70",
+        "-62"
+      ],
+      "correct_index": 1,
+      "explanation": "The common difference is \\( d = -4 \\) and the first term is \\( a = 6 \\). So \\( a_{19} = a+(n-1)d = 6+(19-1)(-4) = -66 \\).",
+      "hint": "First read off \\( a \\) and \\( d \\) from the listed terms, then apply \\( a_n = a+(n-1)d \\).",
+      "distractor_logic": [
+        "uses a wrong common difference, giving \\( -48 \\)",
+        "uses \\( n \\) instead of \\( n-1 \\) as the multiplier, giving \\( -70 \\)",
+        "is one common difference too far (an extra \\( +d \\)), giving \\( -62 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-006",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "Consider the A.P. \\( -4, 2, 8, 14, \\ldots \\). Find the 16th term of this sequence.",
+      "options": [
+        "101",
+        "92",
+        "80",
+        "86"
+      ],
+      "correct_index": 3,
+      "explanation": "The common difference is \\( d = 6 \\) and the first term is \\( a = -4 \\). So \\( a_{16} = a+(n-1)d = -4+(16-1)(6) = 86 \\).",
+      "hint": "First read off \\( a \\) and \\( d \\) from the listed terms, then apply \\( a_n = a+(n-1)d \\).",
+      "distractor_logic": [
+        "uses a wrong common difference, giving \\( 101 \\)",
+        "uses \\( n \\) instead of \\( n-1 \\) as the multiplier, giving \\( 92 \\)",
+        "is one common difference too far (an extra \\( +d \\)), giving \\( 80 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-007",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "In an A.P., the 7th term is \\( a_{7} = 23 \\) and the common difference is \\( d = 4 \\). Find the first term \\( a \\).",
+      "options": [
+        "3",
+        "-1",
+        "-5",
+        "47"
+      ],
+      "correct_index": 1,
+      "explanation": "From \\( a_n = a+(n-1)d \\), \\( a = a_n-(n-1)d = 23-(7-1)(4) = -1 \\).",
+      "hint": "Rearrange \\( a_n = a+(n-1)d \\) to solve for \\( a \\) first.",
+      "distractor_logic": [
+        "uses \\( (n-2)d \\) instead of \\( (n-1)d \\), giving \\( 3 \\)",
+        "subtracts \\( nd \\) instead of \\( (n-1)d \\), giving \\( -5 \\)",
+        "adds instead of subtracts \\( (n-1)d \\), giving \\( 47 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-008",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum of the first \\( 7 \\) terms of an A.P. with first term \\( a=0 \\) and common difference \\( d=7 \\).",
+      "options": [
+        "\\frac{245}{2}",
+        "147",
+        "\\frac{343}{2}",
+        "294"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( S_n = \\frac{n}{2}[2a+(n-1)d] = \\frac{7}{2}[2(0)+(7-1)(7)] = 147 \\).",
+      "hint": "Use \\( S_n = \\frac{n}{2}[2a+(n-1)d] \\); watch the \\( (n-1) \\), not \\( n \\).",
+      "distractor_logic": [
+        "uses \\( n-2 \\) instead of \\( n-1 \\) inside the bracket, giving \\( \\frac{245}{2} \\)",
+        "uses \\( n \\) instead of \\( n-1 \\) inside the bracket, giving \\( \\frac{343}{2} \\)",
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( 294 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-009",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum of the first \\( 8 \\) terms of an A.P. with first term \\( a=-9 \\) and common difference \\( d=2 \\).",
+      "options": [
+        "-24",
+        "-32",
+        "-16",
+        "-8"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( S_n = \\frac{n}{2}[2a+(n-1)d] = \\frac{8}{2}[2(-9)+(8-1)(2)] = -16 \\).",
+      "hint": "Use \\( S_n = \\frac{n}{2}[2a+(n-1)d] \\); watch the \\( (n-1) \\), not \\( n \\).",
+      "distractor_logic": [
+        "uses \\( n-2 \\) instead of \\( n-1 \\) inside the bracket, giving \\( -24 \\)",
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( -32 \\)",
+        "uses \\( n \\) instead of \\( n-1 \\) inside the bracket, giving \\( -8 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-010",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum of the first \\( 9 \\) terms of an A.P. with first term \\( a=-7 \\) and common difference \\( d=-4 \\).",
+      "options": [
+        "-189",
+        "-225",
+        "-207",
+        "-414"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( S_n = \\frac{n}{2}[2a+(n-1)d] = \\frac{9}{2}[2(-7)+(9-1)(-4)] = -207 \\).",
+      "hint": "Use \\( S_n = \\frac{n}{2}[2a+(n-1)d] \\); watch the \\( (n-1) \\), not \\( n \\).",
+      "distractor_logic": [
+        "uses \\( n-2 \\) instead of \\( n-1 \\) inside the bracket, giving \\( -189 \\)",
+        "uses \\( n \\) instead of \\( n-1 \\) inside the bracket, giving \\( -225 \\)",
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( -414 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-011",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 1,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a=8 \\) and last (i.e. 20th) term \\( l=27 \\). Find the sum \\( S_{20} \\) of these \\( 20 \\) terms.",
+      "options": [
+        "350",
+        "\\frac{665}{2}",
+        "351",
+        "700"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( S_n = \\frac{n}{2}(a+l) = \\frac{20}{2}(8+27) = 350 \\).",
+      "hint": "Use \\( S_n = \\frac{n}{2}(a+l) \\) directly — no need to know \\( d \\) separately.",
+      "distractor_logic": [
+        "uses \\( \\frac{n-1}{2} \\) instead of \\( \\frac{n}{2} \\), giving \\( \\frac{665}{2} \\)",
+        "adds a stray \\( d \\) to the correct sum, giving \\( 351 \\)",
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( 700 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-012",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 1,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a=8 \\) and last (i.e. 7th) term \\( l=26 \\). Find the sum \\( S_{7} \\) of these \\( 7 \\) terms.",
+      "options": [
+        "119",
+        "238",
+        "122",
+        "102"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( S_n = \\frac{n}{2}(a+l) = \\frac{7}{2}(8+26) = 119 \\).",
+      "hint": "Use \\( S_n = \\frac{n}{2}(a+l) \\) directly — no need to know \\( d \\) separately.",
+      "distractor_logic": [
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( 238 \\)",
+        "adds a stray \\( d \\) to the correct sum, giving \\( 122 \\)",
+        "uses \\( \\frac{n-1}{2} \\) instead of \\( \\frac{n}{2} \\), giving \\( 102 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-013",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 1,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a=7 \\) and last (i.e. 7th) term \\( l=31 \\). Find the sum \\( S_{7} \\) of these \\( 7 \\) terms.",
+      "options": [
+        "133",
+        "114",
+        "137",
+        "266"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( S_n = \\frac{n}{2}(a+l) = \\frac{7}{2}(7+31) = 133 \\).",
+      "hint": "Use \\( S_n = \\frac{n}{2}(a+l) \\) directly — no need to know \\( d \\) separately.",
+      "distractor_logic": [
+        "uses \\( \\frac{n-1}{2} \\) instead of \\( \\frac{n}{2} \\), giving \\( 114 \\)",
+        "adds a stray \\( d \\) to the correct sum, giving \\( 137 \\)",
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( 266 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-014",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the arithmetic mean (A.M.) of \\( 11 \\) and \\( 5 \\).",
+      "options": [
+        "8",
+        "\\frac{16}{3}",
+        "3",
+        "16"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\text{A.M.} = \\frac{x+y}{2} = \\frac{11+(5)}{2} = 8 \\).",
+      "hint": "The A.M. of two numbers \\( x,y \\) is \\( \\frac{x+y}{2} \\).",
+      "distractor_logic": [
+        "divides by 3 instead of 2, giving \\( \\frac{16}{3} \\)",
+        "subtracts instead of adds in the numerator, giving \\( 3 \\)",
+        "forgets to divide by 2, giving \\( 16 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-015",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "A G.P. has first term \\( a=-4 \\) and common ratio \\( r=-\\frac{1}{2} \\). Find its 6th term \\( a_{6} \\).",
+      "options": [
+        "-\\frac{1}{4}",
+        "\\frac{1}{8}",
+        "-\\frac{1}{16}",
+        "-\\frac{1}{8}"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( a_n=ar^{n-1} \\Rightarrow a_{6}=-4\\times(-\\frac{1}{2})^{5}=\\frac{1}{8} \\).",
+      "hint": "Use \\( a_n=ar^{n-1}\\); the exponent is \\( n-1 \\), not \\( n \\).",
+      "distractor_logic": [
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( -\\frac{1}{4} \\)",
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( -\\frac{1}{16} \\)",
+        "flips the sign of \\( r \\), giving \\( -\\frac{1}{8} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-016",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "A G.P. has first term \\( a=-5 \\) and common ratio \\( r=-3 \\). Find its 6th term \\( a_{6} \\).",
+      "options": [
+        "-1215",
+        "-3645",
+        "1215",
+        "-405"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( a_n=ar^{n-1} \\Rightarrow a_{6}=-5\\times(-3)^{5}=1215 \\).",
+      "hint": "Use \\( a_n=ar^{n-1}\\); the exponent is \\( n-1 \\), not \\( n \\).",
+      "distractor_logic": [
+        "flips the sign of \\( r \\), giving \\( -1215 \\)",
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( -3645 \\)",
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( -405 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-017",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "A G.P. has first term \\( a=-3 \\) and common ratio \\( r=3 \\). Find its 6th term \\( a_{6} \\).",
+      "options": [
+        "729",
+        "-2187",
+        "-729",
+        "-243"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( a_n=ar^{n-1} \\Rightarrow a_{6}=-3\\times(3)^{5}=-729 \\).",
+      "hint": "Use \\( a_n=ar^{n-1}\\); the exponent is \\( n-1 \\), not \\( n \\).",
+      "distractor_logic": [
+        "flips the sign of \\( r \\), giving \\( 729 \\)",
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( -2187 \\)",
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( -243 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-018",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "Consider the G.P. \\( 5, 15, 45, \\ldots \\). Find the 8th term.",
+      "options": [
+        "1215",
+        "32805",
+        "3645",
+        "10935"
+      ],
+      "correct_index": 3,
+      "explanation": "Here \\( a=5 \\), \\( r=3 \\), so \\( a_{8}=ar^{n-1}=5\\times(3)^{7}=10935 \\).",
+      "hint": "Read off \\( a \\) and \\( r \\) from the ratio of consecutive listed terms, then apply \\( a_n=ar^{n-1} \\).",
+      "distractor_logic": [
+        "is one extra factor of \\( r \\) too far, giving \\( 1215 \\)",
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( 32805 \\)",
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( 3645 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-019",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "Consider the G.P. \\( 5, \\frac{5}{2}, \\frac{5}{4}, \\ldots \\). Find the 7th term.",
+      "options": [
+        "\\frac{5}{128}",
+        "\\frac{5}{64}",
+        "\\frac{5}{32}",
+        "\\frac{5}{16}"
+      ],
+      "correct_index": 1,
+      "explanation": "Here \\( a=5 \\), \\( r=\\frac{1}{2} \\), so \\( a_{7}=ar^{n-1}=5\\times(\\frac{1}{2})^{6}=\\frac{5}{64} \\).",
+      "hint": "Read off \\( a \\) and \\( r \\) from the ratio of consecutive listed terms, then apply \\( a_n=ar^{n-1} \\).",
+      "distractor_logic": [
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( \\frac{5}{128} \\)",
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( \\frac{5}{32} \\)",
+        "is one extra factor of \\( r \\) too far, giving \\( \\frac{5}{16} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-020",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "Consider the G.P. \\( 2, 4, 8, \\ldots \\). Find the 7th term.",
+      "options": [
+        "32",
+        "64",
+        "256",
+        "128"
+      ],
+      "correct_index": 3,
+      "explanation": "Here \\( a=2 \\), \\( r=2 \\), so \\( a_{7}=ar^{n-1}=2\\times(2)^{6}=128 \\).",
+      "hint": "Read off \\( a \\) and \\( r \\) from the ratio of consecutive listed terms, then apply \\( a_n=ar^{n-1} \\).",
+      "distractor_logic": [
+        "is one extra factor of \\( r \\) too far, giving \\( 32 \\)",
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( 64 \\)",
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( 256 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-021",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the common ratio \\( r \\) of the G.P. \\( 1, 2, 4, 8, \\ldots \\).",
+      "options": [
+        "2",
+        "1",
+        "\\frac{1}{2}",
+        "3"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( r = \\dfrac{a_2}{a_1} = \\dfrac{2}{1} = 2 \\).",
+      "hint": "Divide any term by the term immediately before it: \\( r=\\frac{a_{k+1}}{a_k} \\).",
+      "distractor_logic": [
+        "subtracts consecutive terms instead of dividing (an A.P. mistake), giving \\( 1 \\)",
+        "reports the reciprocal of \\( r \\), giving \\( \\frac{1}{2} \\)",
+        "miscalculates the ratio, giving \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-022",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum of the first 6 terms of a G.P. with \\( a=5 \\) and \\( r=2 \\).",
+      "options": [
+        "315",
+        "105",
+        "635",
+        "155"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( S_n=\\dfrac{a(r^n-1)}{r-1}=\\dfrac{5((2)^{6}-1)}{2-1}=315 \\).",
+      "hint": "Use \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\) for \\( r\\neq 1 \\); the exponent is \\( n \\), not \\( n-1 \\).",
+      "distractor_logic": [
+        "uses \\( r+1 \\) instead of \\( r-1 \\) in the denominator, giving \\( 105 \\)",
+        "uses exponent \\( n+1 \\) instead of \\( n \\), giving \\( 635 \\)",
+        "uses exponent \\( n-1 \\) instead of \\( n \\), giving \\( 155 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-023",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum of the first 6 terms of a G.P. with \\( a=1 \\) and \\( r=-3 \\).",
+      "options": [
+        "-364",
+        "-182",
+        "61",
+        "547"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( S_n=\\dfrac{a(r^n-1)}{r-1}=\\dfrac{1((-3)^{6}-1)}{-3-1}=-182 \\).",
+      "hint": "Use \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\) for \\( r\\neq 1 \\); the exponent is \\( n \\), not \\( n-1 \\).",
+      "distractor_logic": [
+        "uses \\( r+1 \\) instead of \\( r-1 \\) in the denominator, giving \\( -364 \\)",
+        "uses exponent \\( n-1 \\) instead of \\( n \\), giving \\( 61 \\)",
+        "uses exponent \\( n+1 \\) instead of \\( n \\), giving \\( 547 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-024",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum of the first 5 terms of a G.P. with \\( a=1 \\) and \\( r=-3 \\).",
+      "options": [
+        "-182",
+        "61",
+        "122",
+        "-20"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( S_n=\\dfrac{a(r^n-1)}{r-1}=\\dfrac{1((-3)^{5}-1)}{-3-1}=61 \\).",
+      "hint": "Use \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\) for \\( r\\neq 1 \\); the exponent is \\( n \\), not \\( n-1 \\).",
+      "distractor_logic": [
+        "uses exponent \\( n+1 \\) instead of \\( n \\), giving \\( -182 \\)",
+        "uses \\( r+1 \\) instead of \\( r-1 \\) in the denominator, giving \\( 122 \\)",
+        "uses exponent \\( n-1 \\) instead of \\( n \\), giving \\( -20 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-025",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum to infinity of a G.P. with first term \\( a=1 \\) and common ratio \\( r=-\\frac{1}{2} \\).",
+      "options": [
+        "-2",
+        "\\frac{2}{3}",
+        "\\frac{3}{2}",
+        "2"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\( |r|<1 \\), \\( S_\\infty=\\dfrac{a}{1-r}=\\dfrac{1}{1-(-\\frac{1}{2})}=\\frac{2}{3} \\).",
+      "hint": "Use \\( S_\\infty=\\dfrac{a}{1-r} \\), valid only when \\( |r|<1 \\).",
+      "distractor_logic": [
+        "divides \\( a \\) by \\( r \\) instead of \\( 1-r \\), giving \\( -2 \\)",
+        "multiplies by \\( (1-r) \\) instead of dividing, giving \\( \\frac{3}{2} \\)",
+        "uses \\( 1+r \\) instead of \\( 1-r \\) in the denominator, giving \\( 2 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-026",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum to infinity of a G.P. with first term \\( a=8 \\) and common ratio \\( r=\\frac{1}{3} \\).",
+      "options": [
+        "\\frac{16}{3}",
+        "24",
+        "6",
+        "12"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\( |r|<1 \\), \\( S_\\infty=\\dfrac{a}{1-r}=\\dfrac{8}{1-(\\frac{1}{3})}=12 \\).",
+      "hint": "Use \\( S_\\infty=\\dfrac{a}{1-r} \\), valid only when \\( |r|<1 \\).",
+      "distractor_logic": [
+        "multiplies by \\( (1-r) \\) instead of dividing, giving \\( \\frac{16}{3} \\)",
+        "divides \\( a \\) by \\( r \\) instead of \\( 1-r \\), giving \\( 24 \\)",
+        "uses \\( 1+r \\) instead of \\( 1-r \\) in the denominator, giving \\( 6 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-027",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the sum to infinity of a G.P. with first term \\( a=19 \\) and common ratio \\( r=-\\frac{1}{2} \\).",
+      "options": [
+        "38",
+        "\\frac{38}{3}",
+        "-38",
+        "\\frac{57}{2}"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\( |r|<1 \\), \\( S_\\infty=\\dfrac{a}{1-r}=\\dfrac{19}{1-(-\\frac{1}{2})}=\\frac{38}{3} \\).",
+      "hint": "Use \\( S_\\infty=\\dfrac{a}{1-r} \\), valid only when \\( |r|<1 \\).",
+      "distractor_logic": [
+        "uses \\( 1+r \\) instead of \\( 1-r \\) in the denominator, giving \\( 38 \\)",
+        "divides \\( a \\) by \\( r \\) instead of \\( 1-r \\), giving \\( -38 \\)",
+        "multiplies by \\( (1-r) \\) instead of dividing, giving \\( \\frac{57}{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-028",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the geometric mean (G.M.) of \\( 3 \\) and \\( 108 \\).",
+      "options": [
+        "\\frac{111}{2}",
+        "105",
+        "324",
+        "18"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\text{G.M.}=\\sqrt{xy}=\\sqrt{3\\times108}=\\sqrt{324}=18 \\).",
+      "hint": "The G.M. of two positive numbers \\( x,y \\) is \\( \\sqrt{xy} \\).",
+      "distractor_logic": [
+        "uses the arithmetic mean \\( \\frac{x+y}{2} \\) instead, giving \\( \\frac{111}{2} \\)",
+        "computes \\( |x-y| \\) instead of \\( \\sqrt{xy} \\), giving \\( 105 \\)",
+        "reports the product \\( xy \\) itself instead of \\( \\sqrt{xy} \\), giving \\( 324 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-029",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( x=4 \\) and \\( y=64 \\), compute the A.M. and G.M. and state which is larger.",
+      "options": [
+        "A.M. = 34, G.M. = 16, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 16, G.M. = 34, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 34, G.M. = 256, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 34, G.M. = 16, and A.M. \\( < \\) G.M."
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\text{A.M.}=\\dfrac{x+y}{2}=\\dfrac{4+64}{2}=34 \\), \\( \\text{G.M.}=\\sqrt{xy}=\\sqrt{256}=16 \\). Since \\( 34\\geq16 \\), this confirms A.M. \\( \\geq \\) G.M., which always holds for positive reals.",
+      "hint": "Compute \\( \\text{A.M.}=\\frac{x+y}{2} \\) and \\( \\text{G.M.}=\\sqrt{xy} \\) separately, then compare — A.M. is never smaller.",
+      "distractor_logic": [
+        "swaps the A.M. and G.M. values with each other",
+        "reports the raw product \\( xy \\) as the G.M. instead of \\( \\sqrt{xy} \\)",
+        "flips the inequality direction, wrongly claiming A.M. is smaller than G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-030",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( x=1 \\) and \\( y=25 \\), compute the A.M. and G.M. and state which is larger.",
+      "options": [
+        "A.M. = 5, G.M. = 13, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 13, G.M. = 5, and A.M. \\( < \\) G.M.",
+        "A.M. = 13, G.M. = 25, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 13, G.M. = 5, and A.M. \\( \\geq \\) G.M."
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\text{A.M.}=\\dfrac{x+y}{2}=\\dfrac{1+25}{2}=13 \\), \\( \\text{G.M.}=\\sqrt{xy}=\\sqrt{25}=5 \\). Since \\( 13\\geq5 \\), this confirms A.M. \\( \\geq \\) G.M., which always holds for positive reals.",
+      "hint": "Compute \\( \\text{A.M.}=\\frac{x+y}{2} \\) and \\( \\text{G.M.}=\\sqrt{xy} \\) separately, then compare — A.M. is never smaller.",
+      "distractor_logic": [
+        "swaps the A.M. and G.M. values with each other",
+        "flips the inequality direction, wrongly claiming A.M. is smaller than G.M.",
+        "reports the raw product \\( xy \\) as the G.M. instead of \\( \\sqrt{xy} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-031",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( x=3 \\) and \\( y=75 \\), compute the A.M. and G.M. and state which is larger.",
+      "options": [
+        "A.M. = 15, G.M. = 39, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 39, G.M. = 15, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 39, G.M. = 225, and A.M. \\( \\geq \\) G.M.",
+        "A.M. = 39, G.M. = 15, and A.M. \\( < \\) G.M."
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\text{A.M.}=\\dfrac{x+y}{2}=\\dfrac{3+75}{2}=39 \\), \\( \\text{G.M.}=\\sqrt{xy}=\\sqrt{225}=15 \\). Since \\( 39\\geq15 \\), this confirms A.M. \\( \\geq \\) G.M., which always holds for positive reals.",
+      "hint": "Compute \\( \\text{A.M.}=\\frac{x+y}{2} \\) and \\( \\text{G.M.}=\\sqrt{xy} \\) separately, then compare — A.M. is never smaller.",
+      "distractor_logic": [
+        "swaps the A.M. and G.M. values with each other",
+        "reports the raw product \\( xy \\) as the G.M. instead of \\( \\sqrt{xy} \\)",
+        "flips the inequality direction, wrongly claiming A.M. is smaller than G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-032",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 1,
+      "type": "regular",
+      "question": "For two positive real numbers \\( x \\) and \\( y \\), under what condition does A.M. \\( = \\) G.M. hold?",
+      "options": [
+        "if and only if \\( x = y \\)",
+        "if and only if \\( x + y = 0 \\)",
+        "for all positive values of \\( x \\) and \\( y \\), always",
+        "if and only if \\( x = -y \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "A.M. \\( = \\) G.M. exactly when \\( x=y \\): then \\( \\text{A.M.}=\\frac{x+x}{2}=x \\) and \\( \\text{G.M.}=\\sqrt{x\\cdot x}=x \\), so both equal \\( x \\). For any \\( x\\neq y \\), A.M. is strictly greater than G.M.",
+      "hint": "Try \\( x=y \\) in both formulas and see what happens; this is the only equality case for positive reals.",
+      "distractor_logic": [
+        "mistakes the equality condition for \\( x+y=0 \\), which is also not possible for positive numbers",
+        "wrongly claims A.M. and G.M. are always equal, ignoring that A.M. \\( > \\) G.M. whenever \\( x\\neq y \\)",
+        "confuses the equality condition with a symmetric-but-wrong condition \\( x=-y \\), which isn't meaningful for positive numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-033",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 1,
+      "type": "regular",
+      "question": "For two positive real numbers \\( x \\) and \\( y \\), under what condition does A.M. \\( = \\) G.M. hold?",
+      "options": [
+        "if and only if \\( x = y \\)",
+        "if and only if \\( x + y = 0 \\)",
+        "for all positive values of \\( x \\) and \\( y \\), always",
+        "if and only if \\( x = -y \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "A.M. \\( = \\) G.M. exactly when \\( x=y \\): then \\( \\text{A.M.}=\\frac{x+x}{2}=x \\) and \\( \\text{G.M.}=\\sqrt{x\\cdot x}=x \\), so both equal \\( x \\). For any \\( x\\neq y \\), A.M. is strictly greater than G.M.",
+      "hint": "Try \\( x=y \\) in both formulas and see what happens; this is the only equality case for positive reals.",
+      "distractor_logic": [
+        "mistakes the equality condition for \\( x+y=0 \\), which is also not possible for positive numbers",
+        "wrongly claims A.M. and G.M. are always equal, ignoring that A.M. \\( > \\) G.M. whenever \\( x\\neq y \\)",
+        "confuses the equality condition with a symmetric-but-wrong condition \\( x=-y \\), which isn't meaningful for positive numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-034",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 1,
+      "type": "regular",
+      "question": "For two positive real numbers \\( x \\) and \\( y \\), under what condition does A.M. \\( = \\) G.M. hold?",
+      "options": [
+        "for all positive values of \\( x \\) and \\( y \\), always",
+        "if and only if \\( x = -y \\)",
+        "if and only if \\( x = y \\)",
+        "if and only if \\( x + y = 0 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "A.M. \\( = \\) G.M. exactly when \\( x=y \\): then \\( \\text{A.M.}=\\frac{x+x}{2}=x \\) and \\( \\text{G.M.}=\\sqrt{x\\cdot x}=x \\), so both equal \\( x \\). For any \\( x\\neq y \\), A.M. is strictly greater than G.M.",
+      "hint": "Try \\( x=y \\) in both formulas and see what happens; this is the only equality case for positive reals.",
+      "distractor_logic": [
+        "wrongly claims A.M. and G.M. are always equal, ignoring that A.M. \\( > \\) G.M. whenever \\( x\\neq y \\)",
+        "confuses the equality condition with a symmetric-but-wrong condition \\( x=-y \\), which isn't meaningful for positive numbers",
+        "mistakes the equality condition for \\( x+y=0 \\), which is also not possible for positive numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-035",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{38} k \\), the sum of the first 38 natural numbers.",
+      "options": [
+        "703",
+        "1482",
+        "741",
+        "760"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\sum_{k=1}^{n}k=\\dfrac{n(n+1)}{2}=\\dfrac{38\\times39}{2}=741 \\).",
+      "hint": "Use \\( \\sum_{k=1}^{n}k=\\dfrac{n(n+1)}{2} \\); the second factor is \\( n+1 \\), not \\( n-1 \\).",
+      "distractor_logic": [
+        "uses \\( n-1 \\) instead of \\( n+1 \\), giving \\( 703 \\)",
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( 1482 \\)",
+        "uses \\( n+2 \\) instead of \\( n+1 \\), giving \\( 760 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-036",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{43} k \\), the sum of the first 43 natural numbers.",
+      "options": [
+        "946",
+        "\\frac{1935}{2}",
+        "1892",
+        "903"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sum_{k=1}^{n}k=\\dfrac{n(n+1)}{2}=\\dfrac{43\\times44}{2}=946 \\).",
+      "hint": "Use \\( \\sum_{k=1}^{n}k=\\dfrac{n(n+1)}{2} \\); the second factor is \\( n+1 \\), not \\( n-1 \\).",
+      "distractor_logic": [
+        "uses \\( n+2 \\) instead of \\( n+1 \\), giving \\( \\frac{1935}{2} \\)",
+        "forgets the \\( \\frac{1}{2} \\) factor, giving \\( 1892 \\)",
+        "uses \\( n-1 \\) instead of \\( n+1 \\), giving \\( 903 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-037",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{8} k^2 \\), the sum of the squares of the first 8 natural numbers.",
+      "options": [
+        "204",
+        "180",
+        "408",
+        "1296"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sum_{k=1}^{n}k^2=\\dfrac{n(n+1)(2n+1)}{6}=\\dfrac{8\\times9\\times17}{6}=204 \\).",
+      "hint": "Use \\( \\sum_{k=1}^{n}k^2=\\dfrac{n(n+1)(2n+1)}{6} \\); careful with the \\( 2n+1 \\) factor's sign.",
+      "distractor_logic": [
+        "uses \\( 2n-1 \\) instead of \\( 2n+1 \\), giving \\( 180 \\)",
+        "uses \\( \\frac{1}{3} \\) instead of \\( \\frac{1}{6} \\), giving \\( 408 \\)",
+        "confuses this with the sum-of-cubes formula \\( \\left(\\frac{n(n+1)}{2}\\right)^2 \\), giving \\( 1296 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-038",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{8} k^2 \\), the sum of the squares of the first 8 natural numbers.",
+      "options": [
+        "204",
+        "1296",
+        "180",
+        "408"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sum_{k=1}^{n}k^2=\\dfrac{n(n+1)(2n+1)}{6}=\\dfrac{8\\times9\\times17}{6}=204 \\).",
+      "hint": "Use \\( \\sum_{k=1}^{n}k^2=\\dfrac{n(n+1)(2n+1)}{6} \\); careful with the \\( 2n+1 \\) factor's sign.",
+      "distractor_logic": [
+        "confuses this with the sum-of-cubes formula \\( \\left(\\frac{n(n+1)}{2}\\right)^2 \\), giving \\( 1296 \\)",
+        "uses \\( 2n-1 \\) instead of \\( 2n+1 \\), giving \\( 180 \\)",
+        "uses \\( \\frac{1}{3} \\) instead of \\( \\frac{1}{6} \\), giving \\( 408 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-039",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{7} k^3 \\), the sum of the cubes of the first 7 natural numbers.",
+      "options": [
+        "784",
+        "140",
+        "441",
+        "1568"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sum_{k=1}^{n}k^3=\\left[\\dfrac{n(n+1)}{2}\\right]^2=\\left[\\dfrac{7\\times8}{2}\\right]^2=784 \\).",
+      "hint": "Use \\( \\sum_{k=1}^{n}k^3=\\left[\\dfrac{n(n+1)}{2}\\right]^2 \\) — don't confuse this with the sum-of-squares formula.",
+      "distractor_logic": [
+        "confuses this with the sum-of-squares formula, giving \\( 140 \\)",
+        "uses \\( n-1 \\) instead of \\( n+1 \\) inside the square, giving \\( 441 \\)",
+        "forgets to divide by \\( 2^2=4 \\) before squaring correctly, giving \\( 1568 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L1-040",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{10} k^3 \\), the sum of the cubes of the first 10 natural numbers.",
+      "options": [
+        "2025",
+        "385",
+        "6050",
+        "3025"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sum_{k=1}^{n}k^3=\\left[\\dfrac{n(n+1)}{2}\\right]^2=\\left[\\dfrac{10\\times11}{2}\\right]^2=3025 \\).",
+      "hint": "Use \\( \\sum_{k=1}^{n}k^3=\\left[\\dfrac{n(n+1)}{2}\\right]^2 \\) — don't confuse this with the sum-of-squares formula.",
+      "distractor_logic": [
+        "uses \\( n-1 \\) instead of \\( n+1 \\) inside the square, giving \\( 2025 \\)",
+        "confuses this with the sum-of-squares formula, giving \\( 385 \\)",
+        "forgets to divide by \\( 2^2=4 \\) before squaring correctly, giving \\( 6050 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-001",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In an A.P. with first term \\( a = -9 \\) and common difference \\( d = 3 \\), which term of the sequence equals \\( 21 \\)?",
+      "options": [
+        "11",
+        "12",
+        "10",
+        "9"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( a_n = a+(n-1)d \\Rightarrow 21 = -9+(n-1)(3) \\Rightarrow n-1 = 30/3 = 10 \\Rightarrow n = 11 \\).",
+      "hint": "Set \\( a+(n-1)d \\) equal to the given value and solve the linear equation for \\( n \\).",
+      "distractor_logic": [
+        "off by one on the high side, giving \\( n=12 \\)",
+        "forgets to add 1 after dividing \\( (a_n-a)/d \\), giving \\( n=10 \\)",
+        "off by one on the low side (double-counted), giving \\( n=9 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-002",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In an A.P. with first term \\( a = -1 \\) and common difference \\( d = -2 \\), which term of the sequence equals \\( -15 \\)?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( a_n = a+(n-1)d \\Rightarrow -15 = -1+(n-1)(-2) \\Rightarrow n-1 = -14/-2 = 7 \\Rightarrow n = 8 \\).",
+      "hint": "Set \\( a+(n-1)d \\) equal to the given value and solve the linear equation for \\( n \\).",
+      "distractor_logic": [
+        "off by one on the low side (double-counted), giving \\( n=6 \\)",
+        "forgets to add 1 after dividing \\( (a_n-a)/d \\), giving \\( n=7 \\)",
+        "off by one on the high side, giving \\( n=9 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-003",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In an A.P. with first term \\( a = 5 \\) and common difference \\( d = -3 \\), which term of the sequence equals \\( -16 \\)?",
+      "options": [
+        "9",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( a_n = a+(n-1)d \\Rightarrow -16 = 5+(n-1)(-3) \\Rightarrow n-1 = -21/-3 = 7 \\Rightarrow n = 8 \\).",
+      "hint": "Set \\( a+(n-1)d \\) equal to the given value and solve the linear equation for \\( n \\).",
+      "distractor_logic": [
+        "off by one on the high side, giving \\( n=9 \\)",
+        "off by one on the low side (double-counted), giving \\( n=6 \\)",
+        "forgets to add 1 after dividing \\( (a_n-a)/d \\), giving \\( n=7 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-004",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In an A.P., the 9th term is \\( a_{9} = 22 \\) and the 13th term is \\( a_{13} = 34 \\). Find the common difference \\( d \\).",
+      "options": [
+        "\\frac{12}{5}",
+        "-3",
+        "4",
+        "3"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( a_q - a_p = (q-p)d \\Rightarrow d = \\frac{a_q-a_p}{q-p} = \\frac{34-(22)}{13-9} = 3 \\).",
+      "hint": "Subtract the two given terms and divide by the difference in their positions, \\( (q-p) \\).",
+      "distractor_logic": [
+        "divides by \\( (q-p+1) \\) instead of \\( (q-p) \\), giving \\( d=\\frac{12}{5} \\)",
+        "reverses the subtraction order in the numerator, giving \\( d=-3 \\)",
+        "gets the correct magnitude but the wrong sign, \\( d=4 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-005",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In an A.P., the 5th term is \\( a_{5} = 24 \\) and the 10th term is \\( a_{10} = 49 \\). Find the common difference \\( d \\).",
+      "options": [
+        "\\frac{25}{6}",
+        "\\frac{25}{4}",
+        "-5",
+        "5"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( a_q - a_p = (q-p)d \\Rightarrow d = \\frac{a_q-a_p}{q-p} = \\frac{49-(24)}{10-5} = 5 \\).",
+      "hint": "Subtract the two given terms and divide by the difference in their positions, \\( (q-p) \\).",
+      "distractor_logic": [
+        "divides by \\( (q-p+1) \\) instead of \\( (q-p) \\), giving \\( d=\\frac{25}{6} \\)",
+        "gets the correct magnitude but the wrong sign, \\( d=\\frac{25}{4} \\)",
+        "reverses the subtraction order in the numerator, giving \\( d=-5 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-006",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In an A.P., the 5th term is \\( a_{5} = 22 \\) and the 7th term is \\( a_{7} = 30 \\). Find the common difference \\( d \\).",
+      "options": [
+        "8",
+        "\\frac{8}{3}",
+        "4",
+        "-4"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( a_q - a_p = (q-p)d \\Rightarrow d = \\frac{a_q-a_p}{q-p} = \\frac{30-(22)}{7-5} = 4 \\).",
+      "hint": "Subtract the two given terms and divide by the difference in their positions, \\( (q-p) \\).",
+      "distractor_logic": [
+        "gets the correct magnitude but the wrong sign, \\( d=8 \\)",
+        "divides by \\( (q-p+1) \\) instead of \\( (q-p) \\), giving \\( d=\\frac{8}{3} \\)",
+        "reverses the subtraction order in the numerator, giving \\( d=-4 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-007",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "A hall has \\( 17 \\) seats in the first row, and each subsequent row has \\( 3 \\) more seats than the row before it. How many seats are in row 17?",
+      "options": [
+        "49",
+        "68",
+        "62",
+        "65"
+      ],
+      "correct_index": 3,
+      "explanation": "Row sizes form an A.P. with \\( a=17, d=3 \\). Seats in row \\( 17 \\): \\( a_{17} = a+(n-1)d = 17+(17-1)(3) = 65 \\).",
+      "hint": "Model the row sizes as an A.P. and apply \\( a_n = a+(n-1)d \\).",
+      "distractor_logic": [
+        "uses an increase of \\( d-1 \\) per row instead of \\( d \\), giving \\( 49 \\)",
+        "uses \\( n \\) instead of \\( n-1 \\) rows of increase, giving \\( 68 \\)",
+        "uses \\( n-2 \\) instead of \\( n-1 \\) rows of increase, giving \\( 62 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-008",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 2,
+      "type": "regular",
+      "question": "The sum of the first \\( n \\) terms of an A.P. with \\( a=6 \\) and \\( d=3 \\) is \\( S_n=312 \\). Find \\( n \\).",
+      "options": [
+        "14",
+        "15",
+        "13",
+        "11"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( S_n=\\frac{n}{2}[2a+(n-1)d] \\) gives a quadratic in \\( n \\); solving \\( \\frac{d}{2}n^2+\\left(a-\\frac{d}{2}\\right)n-S_n=0 \\) and rejecting the non-positive-integer root leaves \\( n=13 \\).",
+      "hint": "Substitute into \\( S_n=\\frac{n}{2}[2a+(n-1)d] \\) and solve the resulting quadratic for \\( n \\), keeping only the valid positive-integer root.",
+      "distractor_logic": [
+        "takes the next integer up, \\( n=14 \\)",
+        "takes an integer two above the true value, \\( n=15 \\)",
+        "takes an integer two below the true value, \\( n=11 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-009",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 2,
+      "type": "regular",
+      "question": "The sum of the first \\( n \\) terms of an A.P. with \\( a=0 \\) and \\( d=3 \\) is \\( S_n=273 \\). Find \\( n \\).",
+      "options": [
+        "14",
+        "12",
+        "15",
+        "16"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( S_n=\\frac{n}{2}[2a+(n-1)d] \\) gives a quadratic in \\( n \\); solving \\( \\frac{d}{2}n^2+\\left(a-\\frac{d}{2}\\right)n-S_n=0 \\) and rejecting the non-positive-integer root leaves \\( n=14 \\).",
+      "hint": "Substitute into \\( S_n=\\frac{n}{2}[2a+(n-1)d] \\) and solve the resulting quadratic for \\( n \\), keeping only the valid positive-integer root.",
+      "distractor_logic": [
+        "takes an integer two below the true value, \\( n=12 \\)",
+        "takes the next integer up, \\( n=15 \\)",
+        "takes an integer two above the true value, \\( n=16 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-010",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 2,
+      "type": "regular",
+      "question": "The sum of the first \\( n \\) terms of an A.P. with \\( a=6 \\) and \\( d=3 \\) is \\( S_n=510 \\). Find \\( n \\).",
+      "options": [
+        "18",
+        "19",
+        "17",
+        "15"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( S_n=\\frac{n}{2}[2a+(n-1)d] \\) gives a quadratic in \\( n \\); solving \\( \\frac{d}{2}n^2+\\left(a-\\frac{d}{2}\\right)n-S_n=0 \\) and rejecting the non-positive-integer root leaves \\( n=17 \\).",
+      "hint": "Substitute into \\( S_n=\\frac{n}{2}[2a+(n-1)d] \\) and solve the resulting quadratic for \\( n \\), keeping only the valid positive-integer root.",
+      "distractor_logic": [
+        "takes the next integer up, \\( n=18 \\)",
+        "takes an integer two above the true value, \\( n=19 \\)",
+        "takes an integer two below the true value, \\( n=15 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-011",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 2,
+      "type": "regular",
+      "question": "An A.P. has \\( a=2, d=6 \\). Find the sum of the terms from \\( a_{11} \\) to \\( a_{19} \\) inclusive.",
+      "options": [
+        "830",
+        "712",
+        "234",
+        "774"
+      ],
+      "correct_index": 3,
+      "explanation": "Sum from term \\( 11 \\) to \\( 19 \\) is \\( S_{19}-S_{10} = 1064-(290) = 774 \\).",
+      "hint": "The sum of terms from position \\( m+1 \\) to \\( n \\) is \\( S_n - S_m \\).",
+      "distractor_logic": [
+        "subtracts \\( S_{9} \\) instead of \\( S_{10} \\) (includes one extra term), giving \\( 830 \\)",
+        "subtracts \\( S_{11} \\) instead of \\( S_{10} \\) (drops one term), giving \\( 712 \\)",
+        "wrongly treats it as a fresh sum of \\( n-m \\) terms starting from \\( a \\), giving \\( 234 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-012",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 2,
+      "type": "regular",
+      "question": "An A.P. has \\( a=-6, d=3 \\). Find the sum of the terms from \\( a_{7} \\) to \\( a_{16} \\) inclusive.",
+      "options": [
+        "75",
+        "255",
+        "264",
+        "243"
+      ],
+      "correct_index": 1,
+      "explanation": "Sum from term \\( 7 \\) to \\( 16 \\) is \\( S_{16}-S_{6} = 264-(9) = 255 \\).",
+      "hint": "The sum of terms from position \\( m+1 \\) to \\( n \\) is \\( S_n - S_m \\).",
+      "distractor_logic": [
+        "wrongly treats it as a fresh sum of \\( n-m \\) terms starting from \\( a \\), giving \\( 75 \\)",
+        "subtracts \\( S_{5} \\) instead of \\( S_{6} \\) (includes one extra term), giving \\( 264 \\)",
+        "subtracts \\( S_{7} \\) instead of \\( S_{6} \\) (drops one term), giving \\( 243 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-013",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 2,
+      "type": "regular",
+      "question": "A machine's maintenance cost is ₹228 in year 1 and decreases by ₹10 each subsequent year (the decrease is constant). Find the total maintenance cost over the first 8 years.",
+      "options": [
+        "₹1544",
+        "₹1584",
+        "₹1504",
+        "₹1744"
+      ],
+      "correct_index": 0,
+      "explanation": "Yearly costs form an A.P. with \\( a=228, d=-10 \\). Total cost \\( =S_{8}=\\frac{n}{2}[2a+(n-1)d]=1544 \\) rupees.",
+      "hint": "Model the yearly costs as an A.P. and sum them with \\( S_n=\\frac{n}{2}[2a+(n-1)d] \\).",
+      "distractor_logic": [
+        "uses \\( n-2 \\) instead of \\( n-1 \\) inside the bracket, giving ₹1584",
+        "uses \\( n \\) instead of \\( n-1 \\) inside the bracket, giving ₹1504",
+        "drops the \\( \\frac{1}{2} \\) factor entirely, giving ₹1744"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-014",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 2,
+      "type": "regular",
+      "question": "A machine's maintenance cost is ₹788 in year 1 and decreases by ₹17 each subsequent year (the decrease is constant). Find the total maintenance cost over the first 12 years.",
+      "options": [
+        "₹8436",
+        "₹8334",
+        "₹8232",
+        "₹9252"
+      ],
+      "correct_index": 1,
+      "explanation": "Yearly costs form an A.P. with \\( a=788, d=-17 \\). Total cost \\( =S_{12}=\\frac{n}{2}[2a+(n-1)d]=8334 \\) rupees.",
+      "hint": "Model the yearly costs as an A.P. and sum them with \\( S_n=\\frac{n}{2}[2a+(n-1)d] \\).",
+      "distractor_logic": [
+        "uses \\( n-2 \\) instead of \\( n-1 \\) inside the bracket, giving ₹8436",
+        "uses \\( n \\) instead of \\( n-1 \\) inside the bracket, giving ₹8232",
+        "drops the \\( \\frac{1}{2} \\) factor entirely, giving ₹9252"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-015",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In a G.P. with \\( a=4 \\) and \\( r=-3 \\), which term equals \\( -108 \\)?",
+      "options": [
+        "4",
+        "6",
+        "5",
+        "3"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( a_n=ar^{n-1}=-108 \\Rightarrow r^{n-1} = -27 \\). Since \\( (-3)^{3} = -27 \\), we get \\( n-1=3 \\Rightarrow n=4 \\).",
+      "hint": "Divide the given term by \\( a \\) to isolate \\( r^{n-1} \\), then match powers of \\( r \\).",
+      "distractor_logic": [
+        "off by two on the high side, \\( n=6 \\)",
+        "off by one on the high side, \\( n=5 \\)",
+        "off by one on the low side, \\( n=3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-016",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In a G.P. with \\( a=2 \\) and \\( r=2 \\), which term equals \\( 32 \\)?",
+      "options": [
+        "7",
+        "5",
+        "4",
+        "6"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( a_n=ar^{n-1}=32 \\Rightarrow r^{n-1} = 16 \\). Since \\( (2)^{4} = 16 \\), we get \\( n-1=4 \\Rightarrow n=5 \\).",
+      "hint": "Divide the given term by \\( a \\) to isolate \\( r^{n-1} \\), then match powers of \\( r \\).",
+      "distractor_logic": [
+        "off by two on the high side, \\( n=7 \\)",
+        "off by one on the low side, \\( n=4 \\)",
+        "off by one on the high side, \\( n=6 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-017",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In a G.P. with \\( a=4 \\) and \\( r=-2 \\), which term equals \\( -512 \\)?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "10"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( a_n=ar^{n-1}=-512 \\Rightarrow r^{n-1} = -128 \\). Since \\( (-2)^{7} = -128 \\), we get \\( n-1=7 \\Rightarrow n=8 \\).",
+      "hint": "Divide the given term by \\( a \\) to isolate \\( r^{n-1} \\), then match powers of \\( r \\).",
+      "distractor_logic": [
+        "off by one on the low side, \\( n=7 \\)",
+        "off by one on the high side, \\( n=9 \\)",
+        "off by two on the high side, \\( n=10 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-018",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In a G.P., \\( a_{3}=4 \\) and \\( a_{5}=16 \\). Find the common ratio \\( r \\) (given it is real).",
+      "options": [
+        "3",
+        "-2",
+        "2",
+        "\\frac{1}{2}"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{a_q}{a_p}=r^{q-p} \\Rightarrow r^{2}=\\dfrac{16}{4}=4 \\Rightarrow r=2 \\).",
+      "hint": "Divide the two given terms to get \\( r^{q-p} \\), then take the appropriate root.",
+      "distractor_logic": [
+        "is off from the true ratio, \\( r=3 \\)",
+        "gets the correct magnitude but wrong sign, \\( r=-2 \\)",
+        "reports the reciprocal ratio, \\( r=\\frac{1}{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-019",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "In a G.P., \\( a_{3}=12 \\) and \\( a_{7}=192 \\). Find the common ratio \\( r \\) (given it is real).",
+      "options": [
+        "3",
+        "\\frac{1}{2}",
+        "2",
+        "-2"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{a_q}{a_p}=r^{q-p} \\Rightarrow r^{4}=\\dfrac{192}{12}=16 \\Rightarrow r=2 \\).",
+      "hint": "Divide the two given terms to get \\( r^{q-p} \\), then take the appropriate root.",
+      "distractor_logic": [
+        "is off from the true ratio, \\( r=3 \\)",
+        "reports the reciprocal ratio, \\( r=\\frac{1}{2} \\)",
+        "gets the correct magnitude but wrong sign, \\( r=-2 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-020",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "A bacteria culture starts with 109 bacteria and doubles every hour. How many bacteria are present after 4 hours?",
+      "options": [
+        "1090",
+        "3488",
+        "872",
+        "1744"
+      ],
+      "correct_index": 3,
+      "explanation": "This is a G.P. with \\( a=109, r=2 \\); the count after 4 hours is the 5th term \\( a_{5}=ar^{n-1}=109\\times 2^{4}=1744 \\).",
+      "hint": "The count is a G.P. term \\( a_n=ar^{n-1} \\), where \\( n \\) is (hours elapsed) + 1.",
+      "distractor_logic": [
+        "multiplies (treats growth as linear, an A.P. mistake), giving \\( 1090 \\)",
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( 3488 \\)",
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( 872 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-021",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 2,
+      "type": "regular",
+      "question": "A bacteria culture starts with 240 bacteria and doubles every hour. How many bacteria are present after 6 hours?",
+      "options": [
+        "15360",
+        "30720",
+        "7680",
+        "3360"
+      ],
+      "correct_index": 0,
+      "explanation": "This is a G.P. with \\( a=240, r=2 \\); the count after 6 hours is the 7th term \\( a_{7}=ar^{n-1}=240\\times 2^{6}=15360 \\).",
+      "hint": "The count is a G.P. term \\( a_n=ar^{n-1} \\), where \\( n \\) is (hours elapsed) + 1.",
+      "distractor_logic": [
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( 30720 \\)",
+        "uses exponent \\( n-2 \\) instead of \\( n-1 \\), giving \\( 7680 \\)",
+        "multiplies (treats growth as linear, an A.P. mistake), giving \\( 3360 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-022",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the sum of the first 6 terms of a G.P. with first term \\( a=2 \\) and common ratio \\( r=1 \\).",
+      "options": [
+        "2",
+        "12",
+        "13",
+        "10"
+      ],
+      "correct_index": 1,
+      "explanation": "When \\( r=1 \\), the standard formula \\( \\dfrac{a(r^n-1)}{r-1} \\) divides by zero and cannot be used. Instead every term equals \\( a \\), so \\( S_n = na = 6\\times2 = 12 \\).",
+      "hint": "The formula \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\) breaks down at \\( r=1 \\) (division by zero) — use \\( S_n=na \\) instead.",
+      "distractor_logic": [
+        "reports just the first term \\( a \\) as the whole sum, giving \\( 2 \\)",
+        "adds a stray \\( +1 \\) to the correct sum, giving \\( 13 \\)",
+        "uses \\( n-1 \\) terms instead of \\( n \\), giving \\( 10 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-023",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the sum of the first 8 terms of a G.P. with first term \\( a=15 \\) and common ratio \\( r=1 \\).",
+      "options": [
+        "105",
+        "15",
+        "120",
+        "121"
+      ],
+      "correct_index": 2,
+      "explanation": "When \\( r=1 \\), the standard formula \\( \\dfrac{a(r^n-1)}{r-1} \\) divides by zero and cannot be used. Instead every term equals \\( a \\), so \\( S_n = na = 8\\times15 = 120 \\).",
+      "hint": "The formula \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\) breaks down at \\( r=1 \\) (division by zero) — use \\( S_n=na \\) instead.",
+      "distractor_logic": [
+        "uses \\( n-1 \\) terms instead of \\( n \\), giving \\( 105 \\)",
+        "reports just the first term \\( a \\) as the whole sum, giving \\( 15 \\)",
+        "adds a stray \\( +1 \\) to the correct sum, giving \\( 121 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-024",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 2,
+      "type": "regular",
+      "question": "A G.P. with common ratio \\( r=-\\frac{1}{2} \\) has sum to infinity \\( S_\\infty=\\frac{4}{3} \\). Find its first term \\( a \\).",
+      "options": [
+        "2",
+        "\\frac{8}{9}",
+        "-\\frac{2}{3}",
+        "\\frac{2}{3}"
+      ],
+      "correct_index": 0,
+      "explanation": "From \\( S_\\infty=\\dfrac{a}{1-r} \\), \\( a=S_\\infty(1-r)=\\frac{4}{3}\\times(1-(-\\frac{1}{2}))=2 \\).",
+      "hint": "Rearrange \\( S_\\infty=\\dfrac{a}{1-r} \\) to solve for \\( a=S_\\infty(1-r) \\).",
+      "distractor_logic": [
+        "divides instead of multiplying by \\( (1-r) \\), giving \\( \\frac{8}{9} \\)",
+        "multiplies by \\( r \\) instead of \\( (1-r) \\), giving \\( -\\frac{2}{3} \\)",
+        "uses \\( (1+r) \\) instead of \\( (1-r) \\), giving \\( \\frac{2}{3} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-025",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 2,
+      "type": "regular",
+      "question": "A G.P. with common ratio \\( r=\\frac{1}{3} \\) has sum to infinity \\( S_\\infty=\\frac{21}{2} \\). Find its first term \\( a \\).",
+      "options": [
+        "7",
+        "\\frac{63}{4}",
+        "14",
+        "\\frac{7}{2}"
+      ],
+      "correct_index": 0,
+      "explanation": "From \\( S_\\infty=\\dfrac{a}{1-r} \\), \\( a=S_\\infty(1-r)=\\frac{21}{2}\\times(1-(\\frac{1}{3}))=7 \\).",
+      "hint": "Rearrange \\( S_\\infty=\\dfrac{a}{1-r} \\) to solve for \\( a=S_\\infty(1-r) \\).",
+      "distractor_logic": [
+        "divides instead of multiplying by \\( (1-r) \\), giving \\( \\frac{63}{4} \\)",
+        "uses \\( (1+r) \\) instead of \\( (1-r) \\), giving \\( 14 \\)",
+        "multiplies by \\( r \\) instead of \\( (1-r) \\), giving \\( \\frac{7}{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-026",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 2,
+      "type": "regular",
+      "question": "Two geometric means are inserted between \\( 3 \\) and \\( 81 \\), forming the G.P. \\( 3, g_1, g_2, 81 \\). Find the product \\( g_1 \\times g_2 \\).",
+      "options": [
+        "243",
+        "81",
+        "18",
+        "36"
+      ],
+      "correct_index": 0,
+      "explanation": "With common ratio \\( r=3 \\) (since \\( y=xr^3 \\)), \\( g_1=xr=9 \\) and \\( g_2=xr^2=27 \\), so \\( g_1g_2=9\\times27=243 \\). (Note this always equals \\( xy \\), since \\( g_1g_2 = xr\\cdot xr^2=x^2r^3=x\\cdot xr^3=xy \\).)",
+      "hint": "Find the common ratio from \\( y=xr^3 \\) first, then compute \\( g_1=xr \\) and \\( g_2=xr^2 \\).",
+      "distractor_logic": [
+        "squares only the first mean \\( g_1 \\) instead of multiplying \\( g_1g_2 \\), giving \\( 81 \\)",
+        "subtracts the smaller mean from the larger instead of multiplying, giving \\( 18 \\)",
+        "adds the two means instead of multiplying, giving \\( 36 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-027",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 2,
+      "type": "regular",
+      "question": "Two geometric means are inserted between \\( 1 \\) and \\( 8 \\), forming the G.P. \\( 1, g_1, g_2, 8 \\). Find the product \\( g_1 \\times g_2 \\).",
+      "options": [
+        "2",
+        "6",
+        "4",
+        "8"
+      ],
+      "correct_index": 3,
+      "explanation": "With common ratio \\( r=2 \\) (since \\( y=xr^3 \\)), \\( g_1=xr=2 \\) and \\( g_2=xr^2=4 \\), so \\( g_1g_2=2\\times4=8 \\). (Note this always equals \\( xy \\), since \\( g_1g_2 = xr\\cdot xr^2=x^2r^3=x\\cdot xr^3=xy \\).)",
+      "hint": "Find the common ratio from \\( y=xr^3 \\) first, then compute \\( g_1=xr \\) and \\( g_2=xr^2 \\).",
+      "distractor_logic": [
+        "subtracts the smaller mean from the larger instead of multiplying, giving \\( 2 \\)",
+        "adds the two means instead of multiplying, giving \\( 6 \\)",
+        "squares only the first mean \\( g_1 \\) instead of multiplying \\( g_1g_2 \\), giving \\( 4 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-028",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 2,
+      "type": "regular",
+      "question": "Two geometric means are inserted between \\( 3 \\) and \\( 192 \\), forming the G.P. \\( 3, g_1, g_2, 192 \\). Find the product \\( g_1 \\times g_2 \\).",
+      "options": [
+        "60",
+        "576",
+        "36",
+        "144"
+      ],
+      "correct_index": 1,
+      "explanation": "With common ratio \\( r=4 \\) (since \\( y=xr^3 \\)), \\( g_1=xr=12 \\) and \\( g_2=xr^2=48 \\), so \\( g_1g_2=12\\times48=576 \\). (Note this always equals \\( xy \\), since \\( g_1g_2 = xr\\cdot xr^2=x^2r^3=x\\cdot xr^3=xy \\).)",
+      "hint": "Find the common ratio from \\( y=xr^3 \\) first, then compute \\( g_1=xr \\) and \\( g_2=xr^2 \\).",
+      "distractor_logic": [
+        "adds the two means instead of multiplying, giving \\( 60 \\)",
+        "subtracts the smaller mean from the larger instead of multiplying, giving \\( 36 \\)",
+        "squares only the first mean \\( g_1 \\) instead of multiplying \\( g_1g_2 \\), giving \\( 144 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-029",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 2,
+      "type": "regular",
+      "question": "Two positive numbers have A.M. \\( =4 \\) and G.M. \\( =\\sqrt{15} \\). Find the two numbers.",
+      "options": [
+        "\\( 3 \\) and \\( 5 \\)",
+        "\\( 4 \\) and \\( 4 \\)",
+        "\\( 2 \\) and \\( 6 \\)",
+        "\\( 4 \\) and \\( 6 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "If the numbers are \\( p,q \\), then \\( p+q=2\\times\\text{A.M.}=8 \\) and \\( pq=\\text{G.M.}^2=15 \\). Solving \\( t^2-(8)t+15=0 \\) gives \\( t=3 \\) or \\( t=5 \\), so the numbers are \\( 3 \\) and \\( 5 \\).",
+      "hint": "Set up \\( p+q=2\\,\\text{A.M.} \\) and \\( pq=\\text{G.M.}^2 \\), then solve the resulting quadratic \\( t^2-(p+q)t+pq=0 \\).",
+      "distractor_logic": [
+        "wrongly reports the A.M. value itself, repeated, as if the two numbers were equal",
+        "shifts both numbers the other way, again breaking the sum/product conditions",
+        "shifts both numbers by one in a way that no longer matches the required sum and product"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-030",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 2,
+      "type": "regular",
+      "question": "Two positive numbers have A.M. \\( =4 \\) and G.M. \\( =\\sqrt{15} \\). Find the two numbers.",
+      "options": [
+        "\\( 4 \\) and \\( 6 \\)",
+        "\\( 4 \\) and \\( 4 \\)",
+        "\\( 2 \\) and \\( 6 \\)",
+        "\\( 3 \\) and \\( 5 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "If the numbers are \\( p,q \\), then \\( p+q=2\\times\\text{A.M.}=8 \\) and \\( pq=\\text{G.M.}^2=15 \\). Solving \\( t^2-(8)t+15=0 \\) gives \\( t=3 \\) or \\( t=5 \\), so the numbers are \\( 3 \\) and \\( 5 \\).",
+      "hint": "Set up \\( p+q=2\\,\\text{A.M.} \\) and \\( pq=\\text{G.M.}^2 \\), then solve the resulting quadratic \\( t^2-(p+q)t+pq=0 \\).",
+      "distractor_logic": [
+        "shifts both numbers by one in a way that no longer matches the required sum and product",
+        "wrongly reports the A.M. value itself, repeated, as if the two numbers were equal",
+        "shifts both numbers the other way, again breaking the sum/product conditions"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-031",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 2,
+      "type": "regular",
+      "question": "Two positive numbers have A.M. \\( =4 \\) and G.M. \\( =\\sqrt{15} \\). Find the two numbers.",
+      "options": [
+        "\\( 2 \\) and \\( 6 \\)",
+        "\\( 4 \\) and \\( 4 \\)",
+        "\\( 4 \\) and \\( 6 \\)",
+        "\\( 3 \\) and \\( 5 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "If the numbers are \\( p,q \\), then \\( p+q=2\\times\\text{A.M.}=8 \\) and \\( pq=\\text{G.M.}^2=15 \\). Solving \\( t^2-(8)t+15=0 \\) gives \\( t=3 \\) or \\( t=5 \\), so the numbers are \\( 3 \\) and \\( 5 \\).",
+      "hint": "Set up \\( p+q=2\\,\\text{A.M.} \\) and \\( pq=\\text{G.M.}^2 \\), then solve the resulting quadratic \\( t^2-(p+q)t+pq=0 \\).",
+      "distractor_logic": [
+        "shifts both numbers the other way, again breaking the sum/product conditions",
+        "wrongly reports the A.M. value itself, repeated, as if the two numbers were equal",
+        "shifts both numbers by one in a way that no longer matches the required sum and product"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-032",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\( x > 0 \\), find the minimum possible value of \\( x + \\dfrac{25}{x} \\).",
+      "options": [
+        "5",
+        "25",
+        "10",
+        "50"
+      ],
+      "correct_index": 2,
+      "explanation": "By A.M. \\( \\geq \\) G.M. on \\( x \\) and \\( \\frac{25}{x} \\): \\( \\dfrac{x+\\frac{25}{x}}{2}\\geq\\sqrt{x\\cdot\\frac{25}{x}}=\\sqrt{25}=5 \\), so \\( x+\\dfrac{25}{x}\\geq 10 \\), with equality when \\( x=\\sqrt{25}=5 \\). Minimum value \\( =10 \\).",
+      "hint": "Apply A.M. \\( \\geq \\) G.M. to the two terms \\( x \\) and \\( \\frac{25}{x} \\); the minimum occurs where they're equal.",
+      "distractor_logic": [
+        "reports \\( \\sqrt{k} \\) alone (forgets to double it), giving \\( 5 \\)",
+        "reports \\( k \\) itself as the minimum, giving \\( 25 \\)",
+        "doubles \\( k \\) instead of \\( \\sqrt{k} \\), giving \\( 50 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-033",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\( x > 0 \\), find the minimum possible value of \\( x + \\dfrac{9}{x} \\).",
+      "options": [
+        "18",
+        "3",
+        "6",
+        "9"
+      ],
+      "correct_index": 2,
+      "explanation": "By A.M. \\( \\geq \\) G.M. on \\( x \\) and \\( \\frac{9}{x} \\): \\( \\dfrac{x+\\frac{9}{x}}{2}\\geq\\sqrt{x\\cdot\\frac{9}{x}}=\\sqrt{9}=3 \\), so \\( x+\\dfrac{9}{x}\\geq 6 \\), with equality when \\( x=\\sqrt{9}=3 \\). Minimum value \\( =6 \\).",
+      "hint": "Apply A.M. \\( \\geq \\) G.M. to the two terms \\( x \\) and \\( \\frac{9}{x} \\); the minimum occurs where they're equal.",
+      "distractor_logic": [
+        "doubles \\( k \\) instead of \\( \\sqrt{k} \\), giving \\( 18 \\)",
+        "reports \\( \\sqrt{k} \\) alone (forgets to double it), giving \\( 3 \\)",
+        "reports \\( k \\) itself as the minimum, giving \\( 9 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-034",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\( x > 0 \\), find the minimum possible value of \\( x + \\dfrac{36}{x} \\).",
+      "options": [
+        "72",
+        "6",
+        "12",
+        "36"
+      ],
+      "correct_index": 2,
+      "explanation": "By A.M. \\( \\geq \\) G.M. on \\( x \\) and \\( \\frac{36}{x} \\): \\( \\dfrac{x+\\frac{36}{x}}{2}\\geq\\sqrt{x\\cdot\\frac{36}{x}}=\\sqrt{36}=6 \\), so \\( x+\\dfrac{36}{x}\\geq 12 \\), with equality when \\( x=\\sqrt{36}=6 \\). Minimum value \\( =12 \\).",
+      "hint": "Apply A.M. \\( \\geq \\) G.M. to the two terms \\( x \\) and \\( \\frac{36}{x} \\); the minimum occurs where they're equal.",
+      "distractor_logic": [
+        "doubles \\( k \\) instead of \\( \\sqrt{k} \\), giving \\( 72 \\)",
+        "reports \\( \\sqrt{k} \\) alone (forgets to double it), giving \\( 6 \\)",
+        "reports \\( k \\) itself as the minimum, giving \\( 36 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-035",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{18} k(k+1) \\).",
+      "options": [
+        "1938",
+        "2109",
+        "29241",
+        "2280"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sum k(k+1)=\\sum k^2+\\sum k = \\dfrac{n(n+1)(2n+1)}{6}+\\dfrac{n(n+1)}{2} = 2109+171=2280 \\), using \\( n=18 \\).",
+      "hint": "Expand \\( k(k+1)=k^2+k \\) and split into the known sums \\( \\sum k^2 \\) and \\( \\sum k \\).",
+      "distractor_logic": [
+        "subtracts \\( \\sum k \\) instead of adding it, giving \\( 1938 \\)",
+        "forgets the \\( \\sum k \\) part entirely, giving \\( 2109 \\)",
+        "wrongly multiplies the two sums instead of adding them, giving \\( 29241 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-036",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{9} k(k+1) \\).",
+      "options": [
+        "285",
+        "2025",
+        "240",
+        "330"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sum k(k+1)=\\sum k^2+\\sum k = \\dfrac{n(n+1)(2n+1)}{6}+\\dfrac{n(n+1)}{2} = 285+45=330 \\), using \\( n=9 \\).",
+      "hint": "Expand \\( k(k+1)=k^2+k \\) and split into the known sums \\( \\sum k^2 \\) and \\( \\sum k \\).",
+      "distractor_logic": [
+        "forgets the \\( \\sum k \\) part entirely, giving \\( 285 \\)",
+        "wrongly multiplies the two sums instead of adding them, giving \\( 2025 \\)",
+        "subtracts \\( \\sum k \\) instead of adding it, giving \\( 240 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-037",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{20} k(k+1) \\).",
+      "options": [
+        "3080",
+        "2660",
+        "44100",
+        "2870"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sum k(k+1)=\\sum k^2+\\sum k = \\dfrac{n(n+1)(2n+1)}{6}+\\dfrac{n(n+1)}{2} = 2870+210=3080 \\), using \\( n=20 \\).",
+      "hint": "Expand \\( k(k+1)=k^2+k \\) and split into the known sums \\( \\sum k^2 \\) and \\( \\sum k \\).",
+      "distractor_logic": [
+        "subtracts \\( \\sum k \\) instead of adding it, giving \\( 2660 \\)",
+        "wrongly multiplies the two sums instead of adding them, giving \\( 44100 \\)",
+        "forgets the \\( \\sum k \\) part entirely, giving \\( 2870 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-038",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=6}^{19} k^2 \\).",
+      "options": [
+        "2379",
+        "2330",
+        "819",
+        "2415"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sum_{k=6}^{19}k^2 = \\sum_{k=1}^{19}k^2 - \\sum_{k=1}^{5}k^2 = 2415 \\), using the standard formula for \\( \\sum_{k=1}^{n}k^2 \\) at \\( n=19 \\) and \\( n=5 \\).",
+      "hint": "Write \\( \\sum_{k=6}^{19}k^2 \\) as (sum up to 19) minus (sum up to 5) — mind the off-by-one on the lower limit.",
+      "distractor_logic": [
+        "subtracts the sum up to \\( 6 \\) instead of \\( 5 \\) (drops the 6th term), giving \\( 2379 \\)",
+        "subtracts the sum up to \\( 7 \\) instead of \\( 5 \\) (drops two terms), giving \\( 2330 \\)",
+        "wrongly treats it as a fresh sum from 1 to \\( 13 \\), giving \\( 819 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-039",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=4}^{19} k^2 \\).",
+      "options": [
+        "1240",
+        "2456",
+        "2415",
+        "2440"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\sum_{k=4}^{19}k^2 = \\sum_{k=1}^{19}k^2 - \\sum_{k=1}^{3}k^2 = 2456 \\), using the standard formula for \\( \\sum_{k=1}^{n}k^2 \\) at \\( n=19 \\) and \\( n=3 \\).",
+      "hint": "Write \\( \\sum_{k=4}^{19}k^2 \\) as (sum up to 19) minus (sum up to 3) — mind the off-by-one on the lower limit.",
+      "distractor_logic": [
+        "wrongly treats it as a fresh sum from 1 to \\( 15 \\), giving \\( 1240 \\)",
+        "subtracts the sum up to \\( 5 \\) instead of \\( 3 \\) (drops two terms), giving \\( 2415 \\)",
+        "subtracts the sum up to \\( 4 \\) instead of \\( 3 \\) (drops the 4th term), giving \\( 2440 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L2-040",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( \\displaystyle\\sum_{k=6}^{14} k^2 \\).",
+      "options": [
+        "960",
+        "875",
+        "204",
+        "924"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sum_{k=6}^{14}k^2 = \\sum_{k=1}^{14}k^2 - \\sum_{k=1}^{5}k^2 = 960 \\), using the standard formula for \\( \\sum_{k=1}^{n}k^2 \\) at \\( n=14 \\) and \\( n=5 \\).",
+      "hint": "Write \\( \\sum_{k=6}^{14}k^2 \\) as (sum up to 14) minus (sum up to 5) — mind the off-by-one on the lower limit.",
+      "distractor_logic": [
+        "subtracts the sum up to \\( 7 \\) instead of \\( 5 \\) (drops two terms), giving \\( 875 \\)",
+        "wrongly treats it as a fresh sum from 1 to \\( 8 \\), giving \\( 204 \\)",
+        "subtracts the sum up to \\( 6 \\) instead of \\( 5 \\) (drops the 6th term), giving \\( 924 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-001",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a=5 \\) and common difference \\( d=7 \\). Is \\( 124 \\) a term of this A.P., and if so, which term?",
+      "options": [
+        "Yes, it is the 16th term",
+        "Yes, it is the 18th term",
+        "Yes, it is the 19th term",
+        "No, it is not a term of this A.P."
+      ],
+      "correct_index": 1,
+      "explanation": "Solve \\( 5+(n-1)(7) = 124 \\Rightarrow n-1 = 119/7 = 17 \\Rightarrow n=18 \\), a positive integer, so \\( 124 \\) is the \\( 18 \\)th term.",
+      "hint": "Solve \\( a+(n-1)d = \\text{target} \\) for \\( n \\); it must come out a positive integer.",
+      "distractor_logic": [
+        "off by two term numbers (or the wrong side) from the true position",
+        "off by one term number from the true position",
+        "swaps the conclusion to 'not a term'"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-002",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a=2 \\) and common difference \\( d=2 \\). Is \\( 47 \\) a term of this A.P., and if so, which term?",
+      "options": [
+        "No, it is not a term of this A.P.",
+        "Yes, it is the 22th term",
+        "Yes, it is the 23th term",
+        "Yes, it is the 24th term"
+      ],
+      "correct_index": 0,
+      "explanation": "Solve \\( 2+(n-1)(2) = 47 \\Rightarrow n-1 = 45/2 = 45/2 \\), which is not a non-negative integer, so \\( 47 \\) is not a term of this A.P.",
+      "hint": "Solve \\( a+(n-1)d = \\text{target} \\) for \\( n \\); it must come out a positive integer.",
+      "distractor_logic": [
+        "off by two term numbers (or the wrong side) from the true position",
+        "claims the opposite membership status from the correct one",
+        "off by one term number from the true position"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-003",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "An A.P. has first term \\( a=2 \\) and common difference \\( d=6 \\). Is \\( 120 \\) a term of this A.P., and if so, which term?",
+      "options": [
+        "Yes, it is the 20th term",
+        "Yes, it is the 19th term",
+        "No, it is not a term of this A.P.",
+        "Yes, it is the 21th term"
+      ],
+      "correct_index": 2,
+      "explanation": "Solve \\( 2+(n-1)(6) = 120 \\Rightarrow n-1 = 118/6 = 59/3 \\), which is not a non-negative integer, so \\( 120 \\) is not a term of this A.P.",
+      "hint": "Solve \\( a+(n-1)d = \\text{target} \\) for \\( n \\); it must come out a positive integer.",
+      "distractor_logic": [
+        "claims the opposite membership status from the correct one",
+        "off by two term numbers (or the wrong side) from the true position",
+        "off by one term number from the true position"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-004",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "In an A.P., \\( a_{4} = 14 \\), \\( a_{8} = 38 \\), and \\( a_{4} = 14 \\). Given that \\( 4+8 = 4+8 \\), find \\( a_{8} \\).",
+      "options": [
+        "44",
+        "66",
+        "-38",
+        "38"
+      ],
+      "correct_index": 3,
+      "explanation": "For an A.P., if \\( m+n=p+q \\) then \\( a_m+a_n = a_p+a_q \\). So \\( a_{8} = a_{4}+a_{8}-a_{4} = 14+38-14 = 38 \\).",
+      "hint": "Use the A.P. property: \\( m+n=p+q \\Rightarrow a_m+a_n=a_p+a_q \\).",
+      "distractor_logic": [
+        "applies the property but adds a stray \\( d \\), giving \\( 44 \\)",
+        "adds all three terms instead of subtracting \\( a_p \\), giving \\( 66 \\)",
+        "reverses the property to \\( a_p-a_m-a_n \\), giving \\( -38 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-005",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "In an A.P., \\( a_{8} = -28 \\), \\( a_{13} = -53 \\), and \\( a_{3} = -3 \\). Given that \\( 8+13 = 3+18 \\), find \\( a_{18} \\).",
+      "options": [
+        "-84",
+        "-78",
+        "-83",
+        "78"
+      ],
+      "correct_index": 1,
+      "explanation": "For an A.P., if \\( m+n=p+q \\) then \\( a_m+a_n = a_p+a_q \\). So \\( a_{18} = a_{8}+a_{13}-a_{3} = -28+-53--3 = -78 \\).",
+      "hint": "Use the A.P. property: \\( m+n=p+q \\Rightarrow a_m+a_n=a_p+a_q \\).",
+      "distractor_logic": [
+        "adds all three terms instead of subtracting \\( a_p \\), giving \\( -84 \\)",
+        "applies the property but adds a stray \\( d \\), giving \\( -83 \\)",
+        "reverses the property to \\( a_p-a_m-a_n \\), giving \\( 78 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-006",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\( 5 \\) arithmetic means are inserted between \\( 5 \\) and \\( 19 \\), find the sum of these \\( 5 \\) inserted means.",
+      "options": [
+        "48",
+        "84",
+        "\\frac{173}{3}",
+        "60"
+      ],
+      "correct_index": 3,
+      "explanation": "Inserting \\( k \\) means makes an A.P. of \\( k+2 \\) terms from \\( 5 \\) to \\( 19 \\); the sum of just the \\( k \\) middle (inserted) terms is \\( k\\cdot\\frac{x+y}{2} = 5\\cdot\\frac{5+19}{2} = 60 \\), since the means pair up symmetrically around the A.M. of \\( 5 \\) and \\( 19 \\).",
+      "hint": "The \\( k \\) inserted arithmetic means are symmetric about \\( \\frac{x+y}{2} \\), so their sum is \\( k \\) times that A.M.",
+      "distractor_logic": [
+        "undercounts by one inserted mean, giving \\( 48 \\)",
+        "includes the two endpoints \\( x,y \\) in the count, giving \\( 84 \\)",
+        "drops one common difference from the true sum, giving \\( \\frac{173}{3} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-007",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\( 3 \\) arithmetic means are inserted between \\( -6 \\) and \\( 3 \\), find the sum of these \\( 3 \\) inserted means.",
+      "options": [
+        "-3",
+        "-\\frac{15}{2}",
+        "-\\frac{9}{2}",
+        "-\\frac{27}{4}"
+      ],
+      "correct_index": 2,
+      "explanation": "Inserting \\( k \\) means makes an A.P. of \\( k+2 \\) terms from \\( -6 \\) to \\( 3 \\); the sum of just the \\( k \\) middle (inserted) terms is \\( k\\cdot\\frac{x+y}{2} = 3\\cdot\\frac{-6+3}{2} = -\\frac{9}{2} \\), since the means pair up symmetrically around the A.M. of \\( -6 \\) and \\( 3 \\).",
+      "hint": "The \\( k \\) inserted arithmetic means are symmetric about \\( \\frac{x+y}{2} \\), so their sum is \\( k \\) times that A.M.",
+      "distractor_logic": [
+        "undercounts by one inserted mean, giving \\( -3 \\)",
+        "includes the two endpoints \\( x,y \\) in the count, giving \\( -\\frac{15}{2} \\)",
+        "drops one common difference from the true sum, giving \\( -\\frac{27}{4} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-008",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\( 6 \\) arithmetic means are inserted between \\( 3 \\) and \\( 10 \\), find the sum of these \\( 6 \\) inserted means.",
+      "options": [
+        "\\frac{65}{2}",
+        "52",
+        "39",
+        "38"
+      ],
+      "correct_index": 2,
+      "explanation": "Inserting \\( k \\) means makes an A.P. of \\( k+2 \\) terms from \\( 3 \\) to \\( 10 \\); the sum of just the \\( k \\) middle (inserted) terms is \\( k\\cdot\\frac{x+y}{2} = 6\\cdot\\frac{3+10}{2} = 39 \\), since the means pair up symmetrically around the A.M. of \\( 3 \\) and \\( 10 \\).",
+      "hint": "The \\( k \\) inserted arithmetic means are symmetric about \\( \\frac{x+y}{2} \\), so their sum is \\( k \\) times that A.M.",
+      "distractor_logic": [
+        "undercounts by one inserted mean, giving \\( \\frac{65}{2} \\)",
+        "includes the two endpoints \\( x,y \\) in the count, giving \\( 52 \\)",
+        "drops one common difference from the true sum, giving \\( 38 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-009",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 3,
+      "type": "regular",
+      "question": "For an A.P., the sum of the first \\( n \\) terms is given by \\( S_n = -1n^2 + 8n \\). Find the common difference \\( d \\) of this A.P.",
+      "options": [
+        "6",
+        "-1",
+        "-2",
+        "7"
+      ],
+      "correct_index": 2,
+      "explanation": "For an A.P., \\( S_n=An^2+Bn \\) always gives \\( d=2A \\) (since \\( a_1=A+B \\), \\( a_2=S_2-S_1=3A+B \\), so \\( d=a_2-a_1=2A \\)). Here \\( d=2(-1)=-2 \\).",
+      "hint": "For \\( S_n=An^2+Bn \\), the coefficient relationships give \\( d=2A \\) directly — no need to expand term by term.",
+      "distractor_logic": [
+        "computes \\( 2A+B \\) instead of \\( 2A \\), giving \\( 6 \\)",
+        "reports \\( A \\) itself as \\( d \\) instead of \\( 2A \\), giving \\( -1 \\)",
+        "reports the first term \\( a=A+B \\) instead of \\( d \\), giving \\( 7 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-010",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": 3,
+      "type": "regular",
+      "question": "For an A.P., the sum of the first \\( n \\) terms is given by \\( S_n = 5n^2 + -3n \\). Find the common difference \\( d \\) of this A.P.",
+      "options": [
+        "2",
+        "10",
+        "7",
+        "5"
+      ],
+      "correct_index": 1,
+      "explanation": "For an A.P., \\( S_n=An^2+Bn \\) always gives \\( d=2A \\) (since \\( a_1=A+B \\), \\( a_2=S_2-S_1=3A+B \\), so \\( d=a_2-a_1=2A \\)). Here \\( d=2(5)=10 \\).",
+      "hint": "For \\( S_n=An^2+Bn \\), the coefficient relationships give \\( d=2A \\) directly — no need to expand term by term.",
+      "distractor_logic": [
+        "reports the first term \\( a=A+B \\) instead of \\( d \\), giving \\( 2 \\)",
+        "computes \\( 2A+B \\) instead of \\( 2A \\), giving \\( 7 \\)",
+        "reports \\( A \\) itself as \\( d \\) instead of \\( 2A \\), giving \\( 5 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-011",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\( 1, x, \\frac{9}{4} \\) are three consecutive terms of a G.P. (with a common ratio consistent with these values), find \\( x \\).",
+      "options": [
+        "\\frac{5}{4}",
+        "\\frac{13}{8}",
+        "\\frac{9}{4}",
+        "\\frac{3}{2}"
+      ],
+      "correct_index": 3,
+      "explanation": "For a G.P., the middle term satisfies \\( x^2=ac \\), i.e. \\( x^2=1\\times\\frac{9}{4}=\\frac{9}{4} \\Rightarrow x=\\frac{3}{2} \\) (taking the value consistent with the progression \\( a, x, c \\) sharing a common ratio).",
+      "hint": "For three consecutive G.P. terms \\( a,x,c \\): \\( x^2=ac \\), so \\( x \\) is the geometric mean of \\( a \\) and \\( c \\).",
+      "distractor_logic": [
+        "subtracts instead of taking the geometric mean, giving \\( \\frac{5}{4} \\)",
+        "uses the arithmetic mean \\( \\frac{a+c}{2} \\) instead of the geometric mean, giving \\( \\frac{13}{8} \\)",
+        "reports \\( ac \\) itself rather than \\( \\sqrt{ac} \\), giving \\( \\frac{9}{4} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-012",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\( 4, x, 36 \\) are three consecutive terms of a G.P. (with a common ratio consistent with these values), find \\( x \\).",
+      "options": [
+        "32",
+        "144",
+        "20",
+        "12"
+      ],
+      "correct_index": 3,
+      "explanation": "For a G.P., the middle term satisfies \\( x^2=ac \\), i.e. \\( x^2=4\\times36=144 \\Rightarrow x=12 \\) (taking the value consistent with the progression \\( a, x, c \\) sharing a common ratio).",
+      "hint": "For three consecutive G.P. terms \\( a,x,c \\): \\( x^2=ac \\), so \\( x \\) is the geometric mean of \\( a \\) and \\( c \\).",
+      "distractor_logic": [
+        "subtracts instead of taking the geometric mean, giving \\( 32 \\)",
+        "reports \\( ac \\) itself rather than \\( \\sqrt{ac} \\), giving \\( 144 \\)",
+        "uses the arithmetic mean \\( \\frac{a+c}{2} \\) instead of the geometric mean, giving \\( 20 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-013",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\( 5, x, 45 \\) are three consecutive terms of a G.P. (with a common ratio consistent with these values), find \\( x \\).",
+      "options": [
+        "225",
+        "25",
+        "15",
+        "40"
+      ],
+      "correct_index": 2,
+      "explanation": "For a G.P., the middle term satisfies \\( x^2=ac \\), i.e. \\( x^2=5\\times45=225 \\Rightarrow x=15 \\) (taking the value consistent with the progression \\( a, x, c \\) sharing a common ratio).",
+      "hint": "For three consecutive G.P. terms \\( a,x,c \\): \\( x^2=ac \\), so \\( x \\) is the geometric mean of \\( a \\) and \\( c \\).",
+      "distractor_logic": [
+        "reports \\( ac \\) itself rather than \\( \\sqrt{ac} \\), giving \\( 225 \\)",
+        "uses the arithmetic mean \\( \\frac{a+c}{2} \\) instead of the geometric mean, giving \\( 25 \\)",
+        "subtracts instead of taking the geometric mean, giving \\( 40 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-014",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "A G.P. has \\( a=-1 \\) and \\( r=-\\frac{3}{2} \\) (note \\( r \\) is negative, so the terms alternate in sign). Find \\( a_{6} \\).",
+      "options": [
+        "-\\frac{243}{32}",
+        "-\\frac{81}{16}",
+        "-\\frac{729}{64}",
+        "\\frac{243}{32}"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( a_{6}=ar^{n-1}=(-1)(-\\frac{3}{2})^{5}=\\frac{243}{32} \\). Careful: \\( (-\\frac{3}{2})^{5} \\) is negative here since the exponent \\( 5 \\) is odd.",
+      "hint": "With a negative \\( r \\), track the sign of \\( r^{n-1} \\) carefully — it alternates with the parity of \\( n-1 \\).",
+      "distractor_logic": [
+        "drops the sign of \\( r \\) and uses \\( |r| \\), giving \\( -\\frac{243}{32} \\)",
+        "gets the right magnitude but the opposite sign, giving \\( -\\frac{81}{16} \\)",
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( -\\frac{729}{64} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-015",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": 3,
+      "type": "regular",
+      "question": "A G.P. has \\( a=6 \\) and \\( r=-\\frac{3}{2} \\) (note \\( r \\) is negative, so the terms alternate in sign). Find \\( a_{4} \\).",
+      "options": [
+        "\\frac{243}{8}",
+        "\\frac{27}{2}",
+        "\\frac{81}{4}",
+        "-\\frac{81}{4}"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( a_{4}=ar^{n-1}=(6)(-\\frac{3}{2})^{3}=-\\frac{81}{4} \\). Careful: \\( (-\\frac{3}{2})^{3} \\) is negative here since the exponent \\( 3 \\) is odd.",
+      "hint": "With a negative \\( r \\), track the sign of \\( r^{n-1} \\) carefully — it alternates with the parity of \\( n-1 \\).",
+      "distractor_logic": [
+        "uses exponent \\( n \\) instead of \\( n-1 \\), giving \\( \\frac{243}{8} \\)",
+        "gets the right magnitude but the opposite sign, giving \\( \\frac{27}{2} \\)",
+        "drops the sign of \\( r \\) and uses \\( |r| \\), giving \\( \\frac{81}{4} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-016",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 3,
+      "type": "regular",
+      "question": "A ball is dropped from a height of 160 m. Each time it hits the ground, it bounces back up to \\( r=\\frac{3}{4} \\) times the height it fell from, and this continues forever. Find the total distance the ball travels.",
+      "options": [
+        "640",
+        "1120",
+        "\\frac{2080}{7}",
+        "1280"
+      ],
+      "correct_index": 1,
+      "explanation": "Total distance \\( = h + 2\\left(\\dfrac{hr}{1-r}\\right) = 160 + 2\\left(\\dfrac{160\\times\\frac{3}{4}}{1-(\\frac{3}{4})}\\right) = 1120 \\) m. The initial drop \\( h \\) is counted once; every bounce height is counted twice (up and down), and the bounce heights form an infinite G.P. with first term \\( hr \\) and ratio \\( r \\).",
+      "hint": "Total distance = initial drop \\( h \\), plus twice the sum to infinity of the G.P. of bounce heights \\( hr, hr^2, \\ldots \\)",
+      "distractor_logic": [
+        "forgets to double the bounce-height sum (misses the 'up and down' double-count), giving \\( 640 \\)",
+        "uses \\( 1+r \\) instead of \\( 1-r \\) in the denominator, giving \\( \\frac{2080}{7} \\)",
+        "omits the bounce-ratio scaling on the numerator entirely, giving \\( 1280 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-017",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 3,
+      "type": "regular",
+      "question": "A ball is dropped from a height of 200 m. Each time it hits the ground, it bounces back up to \\( r=\\frac{2}{3} \\) times the height it fell from, and this continues forever. Find the total distance the ball travels.",
+      "options": [
+        "1200",
+        "360",
+        "1000",
+        "600"
+      ],
+      "correct_index": 2,
+      "explanation": "Total distance \\( = h + 2\\left(\\dfrac{hr}{1-r}\\right) = 200 + 2\\left(\\dfrac{200\\times\\frac{2}{3}}{1-(\\frac{2}{3})}\\right) = 1000 \\) m. The initial drop \\( h \\) is counted once; every bounce height is counted twice (up and down), and the bounce heights form an infinite G.P. with first term \\( hr \\) and ratio \\( r \\).",
+      "hint": "Total distance = initial drop \\( h \\), plus twice the sum to infinity of the G.P. of bounce heights \\( hr, hr^2, \\ldots \\)",
+      "distractor_logic": [
+        "omits the bounce-ratio scaling on the numerator entirely, giving \\( 1200 \\)",
+        "uses \\( 1+r \\) instead of \\( 1-r \\) in the denominator, giving \\( 360 \\)",
+        "forgets to double the bounce-height sum (misses the 'up and down' double-count), giving \\( 600 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-018",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 3,
+      "type": "regular",
+      "question": "A ball is dropped from a height of 160 m. Each time it hits the ground, it bounces back up to \\( r=\\frac{3}{4} \\) times the height it fell from, and this continues forever. Find the total distance the ball travels.",
+      "options": [
+        "1280",
+        "640",
+        "\\frac{2080}{7}",
+        "1120"
+      ],
+      "correct_index": 3,
+      "explanation": "Total distance \\( = h + 2\\left(\\dfrac{hr}{1-r}\\right) = 160 + 2\\left(\\dfrac{160\\times\\frac{3}{4}}{1-(\\frac{3}{4})}\\right) = 1120 \\) m. The initial drop \\( h \\) is counted once; every bounce height is counted twice (up and down), and the bounce heights form an infinite G.P. with first term \\( hr \\) and ratio \\( r \\).",
+      "hint": "Total distance = initial drop \\( h \\), plus twice the sum to infinity of the G.P. of bounce heights \\( hr, hr^2, \\ldots \\)",
+      "distractor_logic": [
+        "omits the bounce-ratio scaling on the numerator entirely, giving \\( 1280 \\)",
+        "forgets to double the bounce-height sum (misses the 'up and down' double-count), giving \\( 640 \\)",
+        "uses \\( 1+r \\) instead of \\( 1-r \\) in the denominator, giving \\( \\frac{2080}{7} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-019",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the sum of the first 4 terms of a G.P. with \\( a=2 \\) and \\( r=-2 \\) (note \\( r \\) is negative).",
+      "options": [
+        "10",
+        "-10",
+        "6",
+        "30"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( S_n=\\dfrac{a(r^n-1)}{r-1}=\\dfrac{2((-2)^{4}-1)}{-2-1}=-10 \\).",
+      "hint": "Use \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\); keep the sign of \\( r \\) throughout, don't switch to \\( |r| \\).",
+      "distractor_logic": [
+        "gets the right magnitude but the opposite sign, giving \\( 10 \\)",
+        "uses exponent \\( n-1 \\) instead of \\( n \\), giving \\( 6 \\)",
+        "drops the sign of \\( r \\) and uses \\( |r| \\) in the denominator, giving \\( 30 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-020",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the sum of the first 5 terms of a G.P. with \\( a=-7 \\) and \\( r=-\\frac{3}{2} \\) (note \\( r \\) is negative).",
+      "options": [
+        "\\frac{91}{8}",
+        "-\\frac{385}{16}",
+        "\\frac{385}{16}",
+        "\\frac{1925}{16}"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( S_n=\\dfrac{a(r^n-1)}{r-1}=\\dfrac{-7((-\\frac{3}{2})^{5}-1)}{-\\frac{3}{2}-1}=-\\frac{385}{16} \\).",
+      "hint": "Use \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\); keep the sign of \\( r \\) throughout, don't switch to \\( |r| \\).",
+      "distractor_logic": [
+        "uses exponent \\( n-1 \\) instead of \\( n \\), giving \\( \\frac{91}{8} \\)",
+        "gets the right magnitude but the opposite sign, giving \\( \\frac{385}{16} \\)",
+        "drops the sign of \\( r \\) and uses \\( |r| \\) in the denominator, giving \\( \\frac{1925}{16} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-021",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 3,
+      "type": "regular",
+      "question": "For the three positive numbers \\( 1, 4, 9 \\), what can be said about their A.M. and G.M.?",
+      "options": [
+        "A.M. \\( \\geq \\) G.M. only applies to two numbers, not three, so no comparison can be made here",
+        "A.M. \\( \\geq \\) G.M. still holds; here A.M. \\( = \\) \\frac{14}{3} and G.M. \\( = \\sqrt[3]{36} \\)",
+        "A.M. \\( < \\) G.M. for three numbers whenever the numbers are unequal, the reverse of the two-number case",
+        "A.M. \\( \\geq \\) G.M. holds only if all three numbers are equal; otherwise no general inequality applies"
+      ],
+      "correct_index": 1,
+      "explanation": "The A.M.\\(\\geq\\)G.M. inequality extends to any number of positive reals: \\( \\dfrac{x+y+z}{3}\\geq\\sqrt[3]{xyz} \\), with equality only when \\( x=y=z \\). Here A.M. \\( =\\dfrac{1+4+9}{3}=\\frac{14}{3} \\) and G.M. \\( =\\sqrt[3]{36} \\), and indeed A.M. \\( \\geq \\) G.M.",
+      "hint": "The A.M.-G.M. inequality isn't limited to two numbers — it holds for any set of positive reals, with equality only when they're all equal.",
+      "distractor_logic": [
+        "wrongly restricts the inequality to only two numbers at a time",
+        "wrongly reverses the inequality direction for three numbers",
+        "wrongly claims the inequality requires equal numbers to hold at all (it holds regardless; equality is just the boundary case)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-022",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 3,
+      "type": "regular",
+      "question": "For the three positive numbers \\( 2, 3, 9 \\), what can be said about their A.M. and G.M.?",
+      "options": [
+        "A.M. \\( \\geq \\) G.M. only applies to two numbers, not three, so no comparison can be made here",
+        "A.M. \\( \\geq \\) G.M. still holds; here A.M. \\( = \\) \\frac{14}{3} and G.M. \\( = \\sqrt[3]{54} \\)",
+        "A.M. \\( < \\) G.M. for three numbers whenever the numbers are unequal, the reverse of the two-number case",
+        "A.M. \\( \\geq \\) G.M. holds only if all three numbers are equal; otherwise no general inequality applies"
+      ],
+      "correct_index": 1,
+      "explanation": "The A.M.\\(\\geq\\)G.M. inequality extends to any number of positive reals: \\( \\dfrac{x+y+z}{3}\\geq\\sqrt[3]{xyz} \\), with equality only when \\( x=y=z \\). Here A.M. \\( =\\dfrac{2+3+9}{3}=\\frac{14}{3} \\) and G.M. \\( =\\sqrt[3]{54} \\), and indeed A.M. \\( \\geq \\) G.M.",
+      "hint": "The A.M.-G.M. inequality isn't limited to two numbers — it holds for any set of positive reals, with equality only when they're all equal.",
+      "distractor_logic": [
+        "wrongly restricts the inequality to only two numbers at a time",
+        "wrongly reverses the inequality direction for three numbers",
+        "wrongly claims the inequality requires equal numbers to hold at all (it holds regardless; equality is just the boundary case)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-023",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 3,
+      "type": "regular",
+      "question": "For the three positive numbers \\( 1, 4, 11 \\), what can be said about their A.M. and G.M.?",
+      "options": [
+        "A.M. \\( < \\) G.M. for three numbers whenever the numbers are unequal, the reverse of the two-number case",
+        "A.M. \\( \\geq \\) G.M. holds only if all three numbers are equal; otherwise no general inequality applies",
+        "A.M. \\( \\geq \\) G.M. still holds; here A.M. \\( = \\) \\frac{16}{3} and G.M. \\( = \\sqrt[3]{44} \\)",
+        "A.M. \\( \\geq \\) G.M. only applies to two numbers, not three, so no comparison can be made here"
+      ],
+      "correct_index": 2,
+      "explanation": "The A.M.\\(\\geq\\)G.M. inequality extends to any number of positive reals: \\( \\dfrac{x+y+z}{3}\\geq\\sqrt[3]{xyz} \\), with equality only when \\( x=y=z \\). Here A.M. \\( =\\dfrac{1+4+11}{3}=\\frac{16}{3} \\) and G.M. \\( =\\sqrt[3]{44} \\), and indeed A.M. \\( \\geq \\) G.M.",
+      "hint": "The A.M.-G.M. inequality isn't limited to two numbers — it holds for any set of positive reals, with equality only when they're all equal.",
+      "distractor_logic": [
+        "wrongly reverses the inequality direction for three numbers",
+        "wrongly claims the inequality requires equal numbers to hold at all (it holds regardless; equality is just the boundary case)",
+        "wrongly restricts the inequality to only two numbers at a time"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-024",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 3,
+      "type": "regular",
+      "question": "A rectangle has perimeter \\( 24 \\) units. Using A.M.-G.M. reasoning, find the maximum possible area.",
+      "options": [
+        "36",
+        "42",
+        "144",
+        "72"
+      ],
+      "correct_index": 0,
+      "explanation": "If sides are \\( x,y \\), then \\( x+y=\\dfrac{24}{2}=12 \\) is fixed. By A.M.-G.M., \\( \\sqrt{xy}\\leq\\dfrac{x+y}{2} \\), so the product \\( xy \\) (the area) is maximized when \\( x=y=\\dfrac{12}{2}=6 \\), giving maximum area \\( =6\\times6=36 \\) square units.",
+      "hint": "With \\( x+y \\) fixed, A.M.-G.M. tells you the product \\( xy \\) is largest when \\( x=y \\); that's the square case.",
+      "distractor_logic": [
+        "perturbs one side by 1 unit away from the true optimum, giving \\( 42 \\)",
+        "uses the full half-perimeter as if it were one side, giving \\( 144 \\)",
+        "doubles the correct maximum area, giving \\( 72 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-025",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Relationship Between A.M. and G.M.",
+      "level": 3,
+      "type": "regular",
+      "question": "A rectangle has perimeter \\( 28 \\) units. Using A.M.-G.M. reasoning, find the maximum possible area.",
+      "options": [
+        "49",
+        "56",
+        "196",
+        "98"
+      ],
+      "correct_index": 0,
+      "explanation": "If sides are \\( x,y \\), then \\( x+y=\\dfrac{28}{2}=14 \\) is fixed. By A.M.-G.M., \\( \\sqrt{xy}\\leq\\dfrac{x+y}{2} \\), so the product \\( xy \\) (the area) is maximized when \\( x=y=\\dfrac{14}{2}=7 \\), giving maximum area \\( =7\\times7=49 \\) square units.",
+      "hint": "With \\( x+y \\) fixed, A.M.-G.M. tells you the product \\( xy \\) is largest when \\( x=y \\); that's the square case.",
+      "distractor_logic": [
+        "perturbs one side by 1 unit away from the true optimum, giving \\( 56 \\)",
+        "uses the full half-perimeter as if it were one side, giving \\( 196 \\)",
+        "doubles the correct maximum area, giving \\( 98 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-026",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "Cans are stacked in a triangular pile: 1 can on top, 2 in the next row, 3 in the row after that, and so on down to 11 cans in the bottom row. How many cans are in the pile in total?",
+      "options": [
+        "121",
+        "55",
+        "66",
+        "\\frac{143}{2}"
+      ],
+      "correct_index": 2,
+      "explanation": "The row sizes are \\( 1,2,3,\\ldots,11 \\), so the total is \\( \\sum_{k=1}^{11}k=\\dfrac{n(n+1)}{2}=\\dfrac{11\\times12}{2}=66 \\) cans.",
+      "hint": "The row sizes form \\( 1,2,\\ldots,n \\), so the total is \\( \\sum_{k=1}^{n}k=\\dfrac{n(n+1)}{2} \\).",
+      "distractor_logic": [
+        "squares \\( n \\) instead of using the triangular-number formula, giving \\( 121 \\)",
+        "uses \\( n-1 \\) instead of \\( n+1 \\) in the formula, giving \\( 55 \\)",
+        "uses \\( n+2 \\) instead of \\( n+1 \\) in the formula, giving \\( \\frac{143}{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-027",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "Cans are stacked in a triangular pile: 1 can on top, 2 in the next row, 3 in the row after that, and so on down to 17 cans in the bottom row. How many cans are in the pile in total?",
+      "options": [
+        "153",
+        "289",
+        "136",
+        "\\frac{323}{2}"
+      ],
+      "correct_index": 0,
+      "explanation": "The row sizes are \\( 1,2,3,\\ldots,17 \\), so the total is \\( \\sum_{k=1}^{17}k=\\dfrac{n(n+1)}{2}=\\dfrac{17\\times18}{2}=153 \\) cans.",
+      "hint": "The row sizes form \\( 1,2,\\ldots,n \\), so the total is \\( \\sum_{k=1}^{n}k=\\dfrac{n(n+1)}{2} \\).",
+      "distractor_logic": [
+        "squares \\( n \\) instead of using the triangular-number formula, giving \\( 289 \\)",
+        "uses \\( n-1 \\) instead of \\( n+1 \\) in the formula, giving \\( 136 \\)",
+        "uses \\( n+2 \\) instead of \\( n+1 \\) in the formula, giving \\( \\frac{323}{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-028",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "Cans are stacked in a triangular pile: 1 can on top, 2 in the next row, 3 in the row after that, and so on down to 16 cans in the bottom row. How many cans are in the pile in total?",
+      "options": [
+        "120",
+        "144",
+        "256",
+        "136"
+      ],
+      "correct_index": 3,
+      "explanation": "The row sizes are \\( 1,2,3,\\ldots,16 \\), so the total is \\( \\sum_{k=1}^{16}k=\\dfrac{n(n+1)}{2}=\\dfrac{16\\times17}{2}=136 \\) cans.",
+      "hint": "The row sizes form \\( 1,2,\\ldots,n \\), so the total is \\( \\sum_{k=1}^{n}k=\\dfrac{n(n+1)}{2} \\).",
+      "distractor_logic": [
+        "uses \\( n-1 \\) instead of \\( n+1 \\) in the formula, giving \\( 120 \\)",
+        "uses \\( n+2 \\) instead of \\( n+1 \\) in the formula, giving \\( 144 \\)",
+        "squares \\( n \\) instead of using the triangular-number formula, giving \\( 256 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-029",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the sum of the squares of the first 15 odd natural numbers: \\( 1^2+3^2+5^2+\\cdots \\) (15 terms).",
+      "options": [
+        "4960",
+        "9455",
+        "\\frac{4495}{2}",
+        "4495"
+      ],
+      "correct_index": 3,
+      "explanation": "The sum of the squares of the first \\( n \\) odd numbers is \\( \\dfrac{n(2n-1)(2n+1)}{3} =\\dfrac{15\\times29\\times31}{3}=4495 \\), using \\( n=15 \\).",
+      "hint": "Write the \\( k \\)th odd number as \\( 2k-1 \\), and use the known closed form \\( \\sum_{k=1}^n(2k-1)^2=\\dfrac{n(2n-1)(2n+1)}{3} \\).",
+      "distractor_logic": [
+        "wrongly scales the sum-of-squares-of-first-n formula by 4, giving \\( 4960 \\)",
+        "wrongly sums squares of ALL numbers up to \\( 2n \\) (odd and even) instead of just the odd ones, giving \\( 9455 \\)",
+        "uses \\( \\frac{1}{6} \\) instead of \\( \\frac{1}{3} \\), giving \\( \\frac{4495}{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-L3-030",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the sum of the squares of the first 13 odd natural numbers: \\( 1^2+3^2+5^2+\\cdots \\) (13 terms).",
+      "options": [
+        "3276",
+        "2925",
+        "6201",
+        "\\frac{2925}{2}"
+      ],
+      "correct_index": 1,
+      "explanation": "The sum of the squares of the first \\( n \\) odd numbers is \\( \\dfrac{n(2n-1)(2n+1)}{3} =\\dfrac{13\\times25\\times27}{3}=2925 \\), using \\( n=13 \\).",
+      "hint": "Write the \\( k \\)th odd number as \\( 2k-1 \\), and use the known closed form \\( \\sum_{k=1}^n(2k-1)^2=\\dfrac{n(2n-1)(2n+1)}{3} \\).",
+      "distractor_logic": [
+        "wrongly scales the sum-of-squares-of-first-n formula by 4, giving \\( 3276 \\)",
+        "wrongly sums squares of ALL numbers up to \\( 2n \\) (odd and even) instead of just the odd ones, giving \\( 6201 \\)",
+        "uses \\( \\frac{1}{6} \\) instead of \\( \\frac{1}{3} \\), giving \\( \\frac{2925}{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-001",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In an A.P., the 4th term is \\( 15 \\) and the sum of the first 9 terms is \\( 162 \\). Find the common difference \\( d \\).",
+      "options": [
+        "-3",
+        "4",
+        "3",
+        "2"
+      ],
+      "correct_index": 2,
+      "explanation": "From \\( a_{4}=a+(4-1)d=15 \\) and \\( S_{9}=\\frac{9}{2}[2a+(9-1)d]=162 \\), solving the simultaneous linear system gives \\( a=6 \\) and \\( d=3 \\).",
+      "hint": "Write both conditions as linear equations in \\( a \\) and \\( d \\), then solve simultaneously.",
+      "distractor_logic": [
+        "has the correct magnitude but wrong sign, giving \\( -3 \\)",
+        "off by one from the true \\( d \\), giving \\( 4 \\)",
+        "off by one on the other side, giving \\( 2 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-002",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In an A.P., the 5th term is \\( 21 \\) and the sum of the first 15 terms is \\( 495 \\). Find the common difference \\( d \\).",
+      "options": [
+        "3",
+        "-4",
+        "5",
+        "4"
+      ],
+      "correct_index": 3,
+      "explanation": "From \\( a_{5}=a+(5-1)d=21 \\) and \\( S_{15}=\\frac{15}{2}[2a+(15-1)d]=495 \\), solving the simultaneous linear system gives \\( a=5 \\) and \\( d=4 \\).",
+      "hint": "Write both conditions as linear equations in \\( a \\) and \\( d \\), then solve simultaneously.",
+      "distractor_logic": [
+        "off by one on the other side, giving \\( 3 \\)",
+        "has the correct magnitude but wrong sign, giving \\( -4 \\)",
+        "off by one from the true \\( d \\), giving \\( 5 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-003",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In an A.P., the 7th term is \\( -19 \\) and the sum of the first 15 terms is \\( -345 \\). Find the common difference \\( d \\).",
+      "options": [
+        "-5",
+        "4",
+        "-4",
+        "-3"
+      ],
+      "correct_index": 2,
+      "explanation": "From \\( a_{7}=a+(7-1)d=-19 \\) and \\( S_{15}=\\frac{15}{2}[2a+(15-1)d]=-345 \\), solving the simultaneous linear system gives \\( a=5 \\) and \\( d=-4 \\).",
+      "hint": "Write both conditions as linear equations in \\( a \\) and \\( d \\), then solve simultaneously.",
+      "distractor_logic": [
+        "off by one on the other side, giving \\( -5 \\)",
+        "has the correct magnitude but wrong sign, giving \\( 4 \\)",
+        "off by one from the true \\( d \\), giving \\( -3 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-004",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a G.P., the 3rd term is \\( 27 \\) and the sum of the first 4 terms is \\( 120 \\). Find the common ratio \\( r \\) (given it is an integer).",
+      "options": [
+        "\\frac{1}{3}",
+        "3",
+        "-3",
+        "4"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( ar^2=27 \\) and \\( \\frac{a(r^4-1)}{r-1}=120 \\). Testing small integer values of \\( r \\) consistent with both equations gives \\( a=3 \\), \\( r=3 \\).",
+      "hint": "Use the 3rd-term equation to express \\( a \\) in terms of \\( r \\), then substitute into the sum equation.",
+      "distractor_logic": [
+        "reports the reciprocal ratio, giving \\( r=\\frac{1}{3} \\)",
+        "gets the right magnitude but wrong sign, giving \\( r=-3 \\)",
+        "is off by one from the true ratio, giving \\( r=4 \\)"
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-005",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a G.P., the 3rd term is \\( 18 \\) and the sum of the first 4 terms is \\( 80 \\). Find the common ratio \\( r \\) (given it is an integer).",
+      "options": [
+        "3",
+        "4",
+        "-3",
+        "\\frac{1}{3}"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( ar^2=18 \\) and \\( \\frac{a(r^4-1)}{r-1}=80 \\). Testing small integer values of \\( r \\) consistent with both equations gives \\( a=2 \\), \\( r=3 \\).",
+      "hint": "Use the 3rd-term equation to express \\( a \\) in terms of \\( r \\), then substitute into the sum equation.",
+      "distractor_logic": [
+        "is off by one from the true ratio, giving \\( r=4 \\)",
+        "gets the right magnitude but wrong sign, giving \\( r=-3 \\)",
+        "reports the reciprocal ratio, giving \\( r=\\frac{1}{3} \\)"
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-006",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a G.P., the 3rd term is \\( 4 \\) and the sum of the first 4 terms is \\( 15 \\). Find the common ratio \\( r \\) (given it is an integer).",
+      "options": [
+        "\\frac{1}{2}",
+        "2",
+        "3",
+        "-2"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( ar^2=4 \\) and \\( \\frac{a(r^4-1)}{r-1}=15 \\). Testing small integer values of \\( r \\) consistent with both equations gives \\( a=1 \\), \\( r=2 \\).",
+      "hint": "Use the 3rd-term equation to express \\( a \\) in terms of \\( r \\), then substitute into the sum equation.",
+      "distractor_logic": [
+        "reports the reciprocal ratio, giving \\( r=\\frac{1}{2} \\)",
+        "is off by one from the true ratio, giving \\( r=3 \\)",
+        "gets the right magnitude but wrong sign, giving \\( r=-2 \\)"
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-007",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Three positive numbers \\( 3, 4, 5 \\) are in A.P. Find their geometric mean (i.e. \\( \\sqrt[3]{t_1t_2t_3} \\)), leaving your answer as an exact cube root.",
+      "options": [
+        "\\( 4 \\) (their A.M.)",
+        "\\( 4 \\) (just the middle term)",
+        "\\( 60 \\) (their raw product)",
+        "\\( \\sqrt[3]{60} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Product \\( = 3\\times4\\times5=60 \\), so the G.M. of the three numbers is \\( \\sqrt[3]{60} \\); this is the exact value (it need not simplify to a whole number).",
+      "hint": "The G.M. of three numbers \\( t_1,t_2,t_3 \\) is \\( \\sqrt[3]{t_1t_2t_3} \\) — don't confuse it with their A.M., and it need not be a whole number.",
+      "distractor_logic": [
+        "computes the arithmetic mean of the three numbers instead, giving \\( 4 \\)",
+        "just reports the middle A.P. term \\( t_2 \\), giving \\( 4 \\)",
+        "reports the raw product instead of its cube root, giving \\( 60 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-008",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Three positive numbers \\( 7, 9, 11 \\) are in A.P. Find their geometric mean (i.e. \\( \\sqrt[3]{t_1t_2t_3} \\)), leaving your answer as an exact cube root.",
+      "options": [
+        "\\( 693 \\) (their raw product)",
+        "\\( 9 \\) (their A.M.)",
+        "\\( 9 \\) (just the middle term)",
+        "\\( \\sqrt[3]{693} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Product \\( = 7\\times9\\times11=693 \\), so the G.M. of the three numbers is \\( \\sqrt[3]{693} \\); this is the exact value (it need not simplify to a whole number).",
+      "hint": "The G.M. of three numbers \\( t_1,t_2,t_3 \\) is \\( \\sqrt[3]{t_1t_2t_3} \\) — don't confuse it with their A.M., and it need not be a whole number.",
+      "distractor_logic": [
+        "reports the raw product instead of its cube root, giving \\( 693 \\)",
+        "computes the arithmetic mean of the three numbers instead, giving \\( 9 \\)",
+        "just reports the middle A.P. term \\( t_2 \\), giving \\( 9 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-009",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Three positive numbers \\( 8, 12, 16 \\) are in A.P. Find their geometric mean (i.e. \\( \\sqrt[3]{t_1t_2t_3} \\)), leaving your answer as an exact cube root.",
+      "options": [
+        "\\( \\sqrt[3]{1536} \\)",
+        "\\( 1536 \\) (their raw product)",
+        "\\( 12 \\) (their A.M.)",
+        "\\( 12 \\) (just the middle term)"
+      ],
+      "correct_index": 0,
+      "explanation": "Product \\( = 8\\times12\\times16=1536 \\), so the G.M. of the three numbers is \\( \\sqrt[3]{1536} \\); this is the exact value (it need not simplify to a whole number).",
+      "hint": "The G.M. of three numbers \\( t_1,t_2,t_3 \\) is \\( \\sqrt[3]{t_1t_2t_3} \\) — don't confuse it with their A.M., and it need not be a whole number.",
+      "distractor_logic": [
+        "reports the raw product instead of its cube root, giving \\( 1536 \\)",
+        "computes the arithmetic mean of the three numbers instead, giving \\( 12 \\)",
+        "just reports the middle A.P. term \\( t_2 \\), giving \\( 12 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-010",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{6}\\left[(2k-1)+3^{k-1}\\right] \\).",
+      "options": [
+        "36",
+        "364",
+        "385",
+        "400"
+      ],
+      "correct_index": 3,
+      "explanation": "Split into two sums: \\( \\sum_{k=1}^{6}(2k-1)=6^2=36 \\) (sum of the first 6 odd numbers), and \\( \\sum_{k=1}^{6}3^{k-1}=\\dfrac{3^{6}-1}{3-1}=364 \\) (finite G.P. sum). Total \\( =36+364=400 \\).",
+      "hint": "Split the sum into its A.P.-type part (the odd numbers) and its G.P.-type part, and evaluate each with its own formula.",
+      "distractor_logic": [
+        "only computes the odd-number part and forgets the G.P. part, giving \\( 36 \\)",
+        "only computes the G.P. part and forgets the odd-number part, giving \\( 364 \\)",
+        "mistakenly sums \\( 1+2+\\cdots+n \\) instead of the odd numbers \\( 1,3,\\ldots \\) for the first part, giving \\( 385 \\)"
+      ],
+      "mixed_topics": [
+        "Sum to n Terms of Special Series and Applications",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-011",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{7}\\left[(2k-1)+2^{k-1}\\right] \\).",
+      "options": [
+        "176",
+        "155",
+        "127",
+        "49"
+      ],
+      "correct_index": 0,
+      "explanation": "Split into two sums: \\( \\sum_{k=1}^{7}(2k-1)=7^2=49 \\) (sum of the first 7 odd numbers), and \\( \\sum_{k=1}^{7}2^{k-1}=\\dfrac{2^{7}-1}{2-1}=127 \\) (finite G.P. sum). Total \\( =49+127=176 \\).",
+      "hint": "Split the sum into its A.P.-type part (the odd numbers) and its G.P.-type part, and evaluate each with its own formula.",
+      "distractor_logic": [
+        "mistakenly sums \\( 1+2+\\cdots+n \\) instead of the odd numbers \\( 1,3,\\ldots \\) for the first part, giving \\( 155 \\)",
+        "only computes the G.P. part and forgets the odd-number part, giving \\( 127 \\)",
+        "only computes the odd-number part and forgets the G.P. part, giving \\( 49 \\)"
+      ],
+      "mixed_topics": [
+        "Sum to n Terms of Special Series and Applications",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-012",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( \\displaystyle\\sum_{k=1}^{6}\\left[(2k-1)+2^{k-1}\\right] \\).",
+      "options": [
+        "63",
+        "84",
+        "36",
+        "99"
+      ],
+      "correct_index": 3,
+      "explanation": "Split into two sums: \\( \\sum_{k=1}^{6}(2k-1)=6^2=36 \\) (sum of the first 6 odd numbers), and \\( \\sum_{k=1}^{6}2^{k-1}=\\dfrac{2^{6}-1}{2-1}=63 \\) (finite G.P. sum). Total \\( =36+63=99 \\).",
+      "hint": "Split the sum into its A.P.-type part (the odd numbers) and its G.P.-type part, and evaluate each with its own formula.",
+      "distractor_logic": [
+        "only computes the G.P. part and forgets the odd-number part, giving \\( 63 \\)",
+        "mistakenly sums \\( 1+2+\\cdots+n \\) instead of the odd numbers \\( 1,3,\\ldots \\) for the first part, giving \\( 84 \\)",
+        "only computes the odd-number part and forgets the G.P. part, giving \\( 36 \\)"
+      ],
+      "mixed_topics": [
+        "Sum to n Terms of Special Series and Applications",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-013",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Plan A pays ₹1789 in year 1, increasing by ₹107 each year (constant increase). Plan B pays ₹651 in year 1, growing by a factor of \\( \\frac{11}{10} \\) each year. Find (total from Plan A) - (total from Plan B) over the first 5 years.",
+      "options": [
+        "₹\\frac{60405799}{10000}",
+        "₹-\\frac{60405799}{10000}",
+        "₹\\frac{139894201}{10000}",
+        "₹\\frac{61475799}{10000}"
+      ],
+      "correct_index": 0,
+      "explanation": "Plan A total (A.P. sum): \\( S_n=\\frac{n}{2}[2a_1+(n-1)d]=10015 \\). Plan B total (G.P. sum): \\( S_n=\\frac{a_2(r^n-1)}{r-1}=\\frac{39744201}{10000} \\). Difference \\( =10015-\\frac{39744201}{10000}=\\frac{60405799}{10000} \\).",
+      "hint": "Compute each plan's total with its own sum formula (A.P. sum for Plan A, G.P. sum for Plan B), then subtract.",
+      "distractor_logic": [
+        "subtracts in the reverse order (B - A instead of A - B), giving ₹-\\frac{60405799}{10000}",
+        "adds the two totals instead of subtracting, giving ₹\\frac{139894201}{10000}",
+        "adds a stray \\( d \\) to the correct difference, giving ₹\\frac{61475799}{10000}"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-014",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Plan A pays ₹862 in year 1, increasing by ₹56 each year (constant increase). Plan B pays ₹715 in year 1, growing by a factor of \\( \\frac{6}{5} \\) each year. Find (total from Plan A) - (total from Plan B) over the first 4 years.",
+      "options": [
+        "₹\\frac{1353}{25}",
+        "₹\\frac{47}{25}",
+        "₹\\frac{190553}{25}",
+        "₹-\\frac{1353}{25}"
+      ],
+      "correct_index": 3,
+      "explanation": "Plan A total (A.P. sum): \\( S_n=\\frac{n}{2}[2a_1+(n-1)d]=3784 \\). Plan B total (G.P. sum): \\( S_n=\\frac{a_2(r^n-1)}{r-1}=\\frac{95953}{25} \\). Difference \\( =3784-\\frac{95953}{25}=-\\frac{1353}{25} \\).",
+      "hint": "Compute each plan's total with its own sum formula (A.P. sum for Plan A, G.P. sum for Plan B), then subtract.",
+      "distractor_logic": [
+        "subtracts in the reverse order (B - A instead of A - B), giving ₹\\frac{1353}{25}",
+        "adds a stray \\( d \\) to the correct difference, giving ₹\\frac{47}{25}",
+        "adds the two totals instead of subtracting, giving ₹\\frac{190553}{25}"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-015",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Plan A pays ₹1203 in year 1, increasing by ₹87 each year (constant increase). Plan B pays ₹1275 in year 1, growing by a factor of \\( \\frac{6}{5} \\) each year. Find (total from Plan A) - (total from Plan B) over the first 4 years.",
+      "options": [
+        "₹\\frac{60891}{5}",
+        "₹-\\frac{7551}{5}",
+        "₹\\frac{7551}{5}",
+        "₹-\\frac{7116}{5}"
+      ],
+      "correct_index": 1,
+      "explanation": "Plan A total (A.P. sum): \\( S_n=\\frac{n}{2}[2a_1+(n-1)d]=5334 \\). Plan B total (G.P. sum): \\( S_n=\\frac{a_2(r^n-1)}{r-1}=\\frac{34221}{5} \\). Difference \\( =5334-\\frac{34221}{5}=-\\frac{7551}{5} \\).",
+      "hint": "Compute each plan's total with its own sum formula (A.P. sum for Plan A, G.P. sum for Plan B), then subtract.",
+      "distractor_logic": [
+        "adds the two totals instead of subtracting, giving ₹\\frac{60891}{5}",
+        "subtracts in the reverse order (B - A instead of A - B), giving ₹\\frac{7551}{5}",
+        "adds a stray \\( d \\) to the correct difference, giving ₹-\\frac{7116}{5}"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-016",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Three positive numbers \\( a,b,c \\) are simultaneously in A.P. and in G.P. If \\( a=17 \\), find \\( b+c \\).",
+      "options": [
+        "35",
+        "34",
+        "17",
+        "51"
+      ],
+      "correct_index": 1,
+      "explanation": "If \\( a,b,c \\) are in A.P., \\( 2b=a+c \\). If they're also in G.P., \\( b^2=ac \\). Substituting \\( b=\\frac{a+c}{2} \\) into \\( b^2=ac \\) and simplifying gives \\( (a-c)^2=0 \\), so \\( a=b=c \\). Thus \\( b+c=a+a=2a=2\\times17=34 \\).",
+      "hint": "Combine the A.P. condition \\( 2b=a+c \\) with the G.P. condition \\( b^2=ac \\) — the only way both hold for positive numbers is \\( a=b=c \\).",
+      "distractor_logic": [
+        "squares \\( a \\) instead of doubling it, giving \\( 35 \\)",
+        "reports just \\( a \\) itself instead of \\( b+c \\), giving \\( 17 \\)",
+        "wrongly includes \\( a \\) in the sum too (as if reporting \\( a+b+c \\)), giving \\( 51 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)",
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-017",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Three positive numbers \\( a,b,c \\) are simultaneously in A.P. and in G.P. If \\( a=13 \\), find \\( b+c \\).",
+      "options": [
+        "26",
+        "27",
+        "13",
+        "39"
+      ],
+      "correct_index": 0,
+      "explanation": "If \\( a,b,c \\) are in A.P., \\( 2b=a+c \\). If they're also in G.P., \\( b^2=ac \\). Substituting \\( b=\\frac{a+c}{2} \\) into \\( b^2=ac \\) and simplifying gives \\( (a-c)^2=0 \\), so \\( a=b=c \\). Thus \\( b+c=a+a=2a=2\\times13=26 \\).",
+      "hint": "Combine the A.P. condition \\( 2b=a+c \\) with the G.P. condition \\( b^2=ac \\) — the only way both hold for positive numbers is \\( a=b=c \\).",
+      "distractor_logic": [
+        "squares \\( a \\) instead of doubling it, giving \\( 27 \\)",
+        "reports just \\( a \\) itself instead of \\( b+c \\), giving \\( 13 \\)",
+        "wrongly includes \\( a \\) in the sum too (as if reporting \\( a+b+c \\)), giving \\( 39 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)",
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-018",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Three positive numbers \\( a,b,c \\) are simultaneously in A.P. and in G.P. If \\( a=14 \\), find \\( b+c \\).",
+      "options": [
+        "29",
+        "14",
+        "28",
+        "42"
+      ],
+      "correct_index": 2,
+      "explanation": "If \\( a,b,c \\) are in A.P., \\( 2b=a+c \\). If they're also in G.P., \\( b^2=ac \\). Substituting \\( b=\\frac{a+c}{2} \\) into \\( b^2=ac \\) and simplifying gives \\( (a-c)^2=0 \\), so \\( a=b=c \\). Thus \\( b+c=a+a=2a=2\\times14=28 \\).",
+      "hint": "Combine the A.P. condition \\( 2b=a+c \\) with the G.P. condition \\( b^2=ac \\) — the only way both hold for positive numbers is \\( a=b=c \\).",
+      "distractor_logic": [
+        "squares \\( a \\) instead of doubling it, giving \\( 29 \\)",
+        "reports just \\( a \\) itself instead of \\( b+c \\), giving \\( 14 \\)",
+        "wrongly includes \\( a \\) in the sum too (as if reporting \\( a+b+c \\)), giving \\( 42 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)",
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-019",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A single geometric mean \\( g=2 \\) is inserted between \\( x=1 \\) and \\( y=4 \\), so \\( x,g,y \\) form a G.P. Compare this G.M. to the A.M. of \\( x \\) and \\( y \\).",
+      "options": [
+        "A.M. of \\( x,y \\) is \\( 2 \\), which is \\( \\geq \\) the inserted G.M. \\( \\frac{5}{2} \\)",
+        "A.M. of \\( x,y \\) is \\( \\frac{5}{2} \\), which is \\( \\geq \\) the inserted G.M. \\( 2 \\)",
+        "A.M. of \\( x,y \\) is \\( \\frac{5}{2} \\), which is \\( < \\) the inserted G.M. \\( 2 \\)",
+        "A.M. of \\( x,y \\) is \\( \\frac{5}{2} \\), which always equals the inserted G.M."
+      ],
+      "correct_index": 1,
+      "explanation": "A.M. \\( =\\frac{x+y}{2}=\\frac{1+4}{2}=\\frac{5}{2} \\), while the inserted G.M. is \\( g=2 \\). Since A.M. \\( \\geq \\) G.M. always holds for positive numbers, \\( \\frac{5}{2}\\geq2 \\), confirming the general inequality.",
+      "hint": "Compute the A.M. of \\( x,y \\) directly and compare to the given G.M. — the A.M.-G.M. inequality guarantees the ordering.",
+      "distractor_logic": [
+        "swaps the A.M. and G.M. values with each other",
+        "flips the inequality direction, wrongly claiming A.M. is smaller",
+        "wrongly claims A.M. and G.M. are always equal, which only happens when \\( x=y \\)"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-020",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A single geometric mean \\( g=4 \\) is inserted between \\( x=2 \\) and \\( y=8 \\), so \\( x,g,y \\) form a G.P. Compare this G.M. to the A.M. of \\( x \\) and \\( y \\).",
+      "options": [
+        "A.M. of \\( x,y \\) is \\( 5 \\), which always equals the inserted G.M.",
+        "A.M. of \\( x,y \\) is \\( 4 \\), which is \\( \\geq \\) the inserted G.M. \\( 5 \\)",
+        "A.M. of \\( x,y \\) is \\( 5 \\), which is \\( \\geq \\) the inserted G.M. \\( 4 \\)",
+        "A.M. of \\( x,y \\) is \\( 5 \\), which is \\( < \\) the inserted G.M. \\( 4 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "A.M. \\( =\\frac{x+y}{2}=\\frac{2+8}{2}=5 \\), while the inserted G.M. is \\( g=4 \\). Since A.M. \\( \\geq \\) G.M. always holds for positive numbers, \\( 5\\geq4 \\), confirming the general inequality.",
+      "hint": "Compute the A.M. of \\( x,y \\) directly and compare to the given G.M. — the A.M.-G.M. inequality guarantees the ordering.",
+      "distractor_logic": [
+        "wrongly claims A.M. and G.M. are always equal, which only happens when \\( x=y \\)",
+        "swaps the A.M. and G.M. values with each other",
+        "flips the inequality direction, wrongly claiming A.M. is smaller"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-021",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A single geometric mean \\( g=4 \\) is inserted between \\( x=1 \\) and \\( y=16 \\), so \\( x,g,y \\) form a G.P. Compare this G.M. to the A.M. of \\( x \\) and \\( y \\).",
+      "options": [
+        "A.M. of \\( x,y \\) is \\( \\frac{17}{2} \\), which is \\( < \\) the inserted G.M. \\( 4 \\)",
+        "A.M. of \\( x,y \\) is \\( \\frac{17}{2} \\), which is \\( \\geq \\) the inserted G.M. \\( 4 \\)",
+        "A.M. of \\( x,y \\) is \\( \\frac{17}{2} \\), which always equals the inserted G.M.",
+        "A.M. of \\( x,y \\) is \\( 4 \\), which is \\( \\geq \\) the inserted G.M. \\( \\frac{17}{2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "A.M. \\( =\\frac{x+y}{2}=\\frac{1+16}{2}=\\frac{17}{2} \\), while the inserted G.M. is \\( g=4 \\). Since A.M. \\( \\geq \\) G.M. always holds for positive numbers, \\( \\frac{17}{2}\\geq4 \\), confirming the general inequality.",
+      "hint": "Compute the A.M. of \\( x,y \\) directly and compare to the given G.M. — the A.M.-G.M. inequality guarantees the ordering.",
+      "distractor_logic": [
+        "flips the inequality direction, wrongly claiming A.M. is smaller",
+        "wrongly claims A.M. and G.M. are always equal, which only happens when \\( x=y \\)",
+        "swaps the A.M. and G.M. values with each other"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-022",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For the G.P. \\( 1, \\frac{1}{2}, \\frac{1}{4} \\), is the middle term equal to the geometric mean of the first and third terms?",
+      "options": [
+        "No — the middle term equals the A.M. of the outer two terms instead",
+        "Yes — the middle term of a 3-term G.P. always equals the G.M. of the outer two terms",
+        "No — this only holds when the common ratio is a whole number",
+        "No — the middle term is unrelated to the G.M. of the outer two terms"
+      ],
+      "correct_index": 1,
+      "explanation": "G.M. of \\( 1 \\) and \\( \\frac{1}{4} \\) is \\( \\sqrt{1\\times\\frac{1}{4}} =\\sqrt{\\frac{1}{4}}=\\frac{1}{2} \\), which indeed equals the middle term \\( \\frac{1}{2} \\). This holds for any 3-term G.P., since \\( b^2=ac \\) by definition of a G.P.",
+      "hint": "Recall the defining property of a 3-term G.P.: the square of the middle term equals the product of the outer terms, \\( b^2=ac \\).",
+      "distractor_logic": [
+        "confuses the G.M. relationship with the A.M. relationship (which holds for A.P.s, not G.P.s)",
+        "wrongly restricts the always-true property to only integer ratios",
+        "denies a relationship that is in fact the defining algebraic property of a G.P."
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-023",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For the G.P. \\( 4, 8, 16 \\), is the middle term equal to the geometric mean of the first and third terms?",
+      "options": [
+        "Yes — the middle term of a 3-term G.P. always equals the G.M. of the outer two terms",
+        "No — the middle term equals the A.M. of the outer two terms instead",
+        "No — this only holds when the common ratio is a whole number",
+        "No — the middle term is unrelated to the G.M. of the outer two terms"
+      ],
+      "correct_index": 0,
+      "explanation": "G.M. of \\( 4 \\) and \\( 16 \\) is \\( \\sqrt{4\\times16} =\\sqrt{64}=8 \\), which indeed equals the middle term \\( 8 \\). This holds for any 3-term G.P., since \\( b^2=ac \\) by definition of a G.P.",
+      "hint": "Recall the defining property of a 3-term G.P.: the square of the middle term equals the product of the outer terms, \\( b^2=ac \\).",
+      "distractor_logic": [
+        "confuses the G.M. relationship with the A.M. relationship (which holds for A.P.s, not G.P.s)",
+        "wrongly restricts the always-true property to only integer ratios",
+        "denies a relationship that is in fact the defining algebraic property of a G.P."
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-024",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For the G.P. \\( 2, 4, 8 \\), is the middle term equal to the geometric mean of the first and third terms?",
+      "options": [
+        "No — the middle term is unrelated to the G.M. of the outer two terms",
+        "No — the middle term equals the A.M. of the outer two terms instead",
+        "Yes — the middle term of a 3-term G.P. always equals the G.M. of the outer two terms",
+        "No — this only holds when the common ratio is a whole number"
+      ],
+      "correct_index": 2,
+      "explanation": "G.M. of \\( 2 \\) and \\( 8 \\) is \\( \\sqrt{2\\times8} =\\sqrt{16}=4 \\), which indeed equals the middle term \\( 4 \\). This holds for any 3-term G.P., since \\( b^2=ac \\) by definition of a G.P.",
+      "hint": "Recall the defining property of a 3-term G.P.: the square of the middle term equals the product of the outer terms, \\( b^2=ac \\).",
+      "distractor_logic": [
+        "denies a relationship that is in fact the defining algebraic property of a G.P.",
+        "confuses the G.M. relationship with the A.M. relationship (which holds for A.P.s, not G.P.s)",
+        "wrongly restricts the always-true property to only integer ratios"
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-025",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The sum of the first 9 terms of a certain A.P. is \\( S_{9}=n(n+1)=90 \\) for this \\( n \\). Identify the A.P. (i.e. its \\( a \\) and \\( d \\)) that always gives \\( S_n=n(n+1) \\) for every \\( n \\).",
+      "options": [
+        "a=2, d=2 (the A.P. of even numbers \\( 2,4,6,\\ldots \\))",
+        "a=1, d=1 (the A.P. of natural numbers \\( 1,2,3,\\ldots \\))",
+        "a=1, d=2 (the A.P. of odd numbers \\( 1,3,5,\\ldots \\))",
+        "a=2, d=1"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( S_n=\\frac{n}{2}[2a+(n-1)d]=n(n+1) \\) must hold for all \\( n \\), which forces \\( a=2 \\) and \\( d=2 \\) — this is exactly the sum of the first \\( n \\) even numbers, \\( 2+4+\\cdots+2n=n(n+1) \\).",
+      "hint": "Compare \\( \\frac{n}{2}[2a+(n-1)d] \\) with \\( n(n+1) \\) term by term (in powers of \\( n \\)) to pin down \\( a \\) and \\( d \\).",
+      "distractor_logic": [
+        "matches this to the sum of natural numbers \\( \\frac{n(n+1)}{2} \\) instead (off by the missing factor of 2)",
+        "matches this to the sum of odd numbers \\( n^2 \\) instead, which has a different closed form",
+        "swaps the correct \\( a \\) and \\( d \\) values with each other"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+        "Sum to n Terms of Special Series and Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-026",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The sum of the first 15 terms of a certain A.P. is \\( S_{15}=n(n+1)=240 \\) for this \\( n \\). Identify the A.P. (i.e. its \\( a \\) and \\( d \\)) that always gives \\( S_n=n(n+1) \\) for every \\( n \\).",
+      "options": [
+        "a=1, d=2 (the A.P. of odd numbers \\( 1,3,5,\\ldots \\))",
+        "a=2, d=2 (the A.P. of even numbers \\( 2,4,6,\\ldots \\))",
+        "a=1, d=1 (the A.P. of natural numbers \\( 1,2,3,\\ldots \\))",
+        "a=2, d=1"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( S_n=\\frac{n}{2}[2a+(n-1)d]=n(n+1) \\) must hold for all \\( n \\), which forces \\( a=2 \\) and \\( d=2 \\) — this is exactly the sum of the first \\( n \\) even numbers, \\( 2+4+\\cdots+2n=n(n+1) \\).",
+      "hint": "Compare \\( \\frac{n}{2}[2a+(n-1)d] \\) with \\( n(n+1) \\) term by term (in powers of \\( n \\)) to pin down \\( a \\) and \\( d \\).",
+      "distractor_logic": [
+        "matches this to the sum of odd numbers \\( n^2 \\) instead, which has a different closed form",
+        "matches this to the sum of natural numbers \\( \\frac{n(n+1)}{2} \\) instead (off by the missing factor of 2)",
+        "swaps the correct \\( a \\) and \\( d \\) values with each other"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+        "Sum to n Terms of Special Series and Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-027",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The sum of the first 11 terms of a certain A.P. is \\( S_{11}=n(n+1)=132 \\) for this \\( n \\). Identify the A.P. (i.e. its \\( a \\) and \\( d \\)) that always gives \\( S_n=n(n+1) \\) for every \\( n \\).",
+      "options": [
+        "a=1, d=1 (the A.P. of natural numbers \\( 1,2,3,\\ldots \\))",
+        "a=2, d=1",
+        "a=2, d=2 (the A.P. of even numbers \\( 2,4,6,\\ldots \\))",
+        "a=1, d=2 (the A.P. of odd numbers \\( 1,3,5,\\ldots \\))"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( S_n=\\frac{n}{2}[2a+(n-1)d]=n(n+1) \\) must hold for all \\( n \\), which forces \\( a=2 \\) and \\( d=2 \\) — this is exactly the sum of the first \\( n \\) even numbers, \\( 2+4+\\cdots+2n=n(n+1) \\).",
+      "hint": "Compare \\( \\frac{n}{2}[2a+(n-1)d] \\) with \\( n(n+1) \\) term by term (in powers of \\( n \\)) to pin down \\( a \\) and \\( d \\).",
+      "distractor_logic": [
+        "matches this to the sum of natural numbers \\( \\frac{n(n+1)}{2} \\) instead (off by the missing factor of 2)",
+        "swaps the correct \\( a \\) and \\( d \\) values with each other",
+        "matches this to the sum of odd numbers \\( n^2 \\) instead, which has a different closed form"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+        "Sum to n Terms of Special Series and Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-028",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An A.P. has \\( a=-10, d=3 \\) and a G.P. has \\( a=1, r=2 \\). The 4th term of the G.P. is \\( 8 \\). Which term of the A.P. equals this value?",
+      "options": [
+        "11",
+        "7",
+        "4",
+        "8"
+      ],
+      "correct_index": 1,
+      "explanation": "G.P.'s 4th term \\( =2^{3}=8 \\). Setting \\( -10+(n-1)(3)=8 \\) gives \\( n-1=\\frac{8--10}{3}=6 \\Rightarrow n=7 \\).",
+      "hint": "First evaluate the G.P.'s given term as a number, then solve the A.P.'s \\( a_n \\) equation for \\( n \\).",
+      "distractor_logic": [
+        "off by one on the low side, \\( n=11 \\)",
+        "confuses the A.P.'s term number with the G.P.'s term number \\( m \\), giving \\( n=4 \\)",
+        "off by one on the high side, \\( n=8 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-029",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An A.P. has \\( a=1, d=3 \\) and a G.P. has \\( a=1, r=2 \\). The 3th term of the G.P. is \\( 4 \\). Which term of the A.P. equals this value?",
+      "options": [
+        "6",
+        "13",
+        "2",
+        "3"
+      ],
+      "correct_index": 2,
+      "explanation": "G.P.'s 3th term \\( =2^{2}=4 \\). Setting \\( 1+(n-1)(3)=4 \\) gives \\( n-1=\\frac{4-1}{3}=1 \\Rightarrow n=2 \\).",
+      "hint": "First evaluate the G.P.'s given term as a number, then solve the A.P.'s \\( a_n \\) equation for \\( n \\).",
+      "distractor_logic": [
+        "off by one on the low side, \\( n=6 \\)",
+        "confuses the A.P.'s term number with the G.P.'s term number \\( m \\), giving \\( n=13 \\)",
+        "off by one on the high side, \\( n=3 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-030",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An A.P. has \\( a=-5, d=3 \\) and a G.P. has \\( a=1, r=2 \\). The 3th term of the G.P. is \\( 4 \\). Which term of the A.P. equals this value?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "8"
+      ],
+      "correct_index": 2,
+      "explanation": "G.P.'s 3th term \\( =2^{2}=4 \\). Setting \\( -5+(n-1)(3)=4 \\) gives \\( n-1=\\frac{4--5}{3}=3 \\Rightarrow n=4 \\).",
+      "hint": "First evaluate the G.P.'s given term as a number, then solve the A.P.'s \\( a_n \\) equation for \\( n \\).",
+      "distractor_logic": [
+        "confuses the A.P.'s term number with the G.P.'s term number \\( m \\), giving \\( n=3 \\)",
+        "off by one on the high side, \\( n=5 \\)",
+        "off by one on the low side, \\( n=8 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-031",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For two consecutive terms \\( a=2 \\) and \\( b=1 \\) of a G.P. (with \\( r=\\frac{1}{2}\\neq 1 \\)), what can be said about their A.M. and G.M.?",
+      "options": [
+        "A.M. \\( \\geq \\) G.M. fails here because the numbers come from a G.P. rather than being arbitrary",
+        "A.M. \\( = \\) G.M. for any two consecutive terms of a G.P., regardless of \\( r \\)",
+        "A.M. \\( \\leq \\) G.M. for any two consecutive terms of a G.P. with \\( r>1 \\)",
+        "A.M. \\( \\geq \\) G.M. still holds for these two G.P. terms, with equality only if \\( r=1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The A.M.-G.M. inequality applies to any two positive real numbers, regardless of where they come from — so it applies to two G.P. terms just as it would to any pair. A.M. \\( \\geq \\) G.M. always, with equality only when the two numbers are equal, i.e. only if \\( r=1 \\) here.",
+      "hint": "The A.M.-G.M. inequality doesn't care about the source of the numbers — it applies to any two positive reals.",
+      "distractor_logic": [
+        "wrongly claims the inequality is specific to 'arbitrary' numbers and fails for G.P. terms",
+        "wrongly claims equality always holds, ignoring that equality needs \\( r=1 \\) specifically",
+        "wrongly reverses the inequality direction"
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-032",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For two consecutive terms \\( a=2 \\) and \\( b=1 \\) of a G.P. (with \\( r=\\frac{1}{2}\\neq 1 \\)), what can be said about their A.M. and G.M.?",
+      "options": [
+        "A.M. \\( \\leq \\) G.M. for any two consecutive terms of a G.P. with \\( r>1 \\)",
+        "A.M. \\( \\geq \\) G.M. still holds for these two G.P. terms, with equality only if \\( r=1 \\)",
+        "A.M. \\( = \\) G.M. for any two consecutive terms of a G.P., regardless of \\( r \\)",
+        "A.M. \\( \\geq \\) G.M. fails here because the numbers come from a G.P. rather than being arbitrary"
+      ],
+      "correct_index": 1,
+      "explanation": "The A.M.-G.M. inequality applies to any two positive real numbers, regardless of where they come from — so it applies to two G.P. terms just as it would to any pair. A.M. \\( \\geq \\) G.M. always, with equality only when the two numbers are equal, i.e. only if \\( r=1 \\) here.",
+      "hint": "The A.M.-G.M. inequality doesn't care about the source of the numbers — it applies to any two positive reals.",
+      "distractor_logic": [
+        "wrongly reverses the inequality direction",
+        "wrongly claims equality always holds, ignoring that equality needs \\( r=1 \\) specifically",
+        "wrongly claims the inequality is specific to 'arbitrary' numbers and fails for G.P. terms"
+      ],
+      "mixed_topics": [
+        "Geometric Progressions (G.P.)",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-033",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Town A's population grows arithmetically: \\( 2250 \\) in year 1, increasing by \\( 226 \\) each year. Town B's population grows geometrically: \\( 998 \\) in year 1, growing by a factor of \\( \\frac{11}{10} \\) each year. In which year does Town B's population first exceed Town A's (beyond year 2)?",
+      "options": [
+        "22",
+        "21",
+        "24",
+        "23"
+      ],
+      "correct_index": 0,
+      "explanation": "Compute both sequences year by year: Town A follows \\( a_n=a+(n-1)d \\), Town B follows \\( b_n=ar^{n-1} \\). Checking successive years shows \\( b_n \\) first overtakes \\( a_n \\) in year \\( 22 \\), since geometric growth eventually outpaces linear growth.",
+      "hint": "Tabulate both towns' populations year by year (or compare formulas) until the geometric one overtakes the arithmetic one.",
+      "distractor_logic": [
+        "stops checking one year too early, reporting year \\( 21 \\)",
+        "checks two years too late, reporting year \\( 24 \\)",
+        "checks one year too late, reporting year \\( 23 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-034",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Geometric Progressions (G.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Town A's population grows arithmetically: \\( 2973 \\) in year 1, increasing by \\( 283 \\) each year. Town B's population grows geometrically: \\( 1485 \\) in year 1, growing by a factor of \\( \\frac{11}{10} \\) each year. In which year does Town B's population first exceed Town A's (beyond year 2)?",
+      "options": [
+        "21",
+        "19",
+        "20",
+        "18"
+      ],
+      "correct_index": 1,
+      "explanation": "Compute both sequences year by year: Town A follows \\( a_n=a+(n-1)d \\), Town B follows \\( b_n=ar^{n-1} \\). Checking successive years shows \\( b_n \\) first overtakes \\( a_n \\) in year \\( 19 \\), since geometric growth eventually outpaces linear growth.",
+      "hint": "Tabulate both towns' populations year by year (or compare formulas) until the geometric one overtakes the arithmetic one.",
+      "distractor_logic": [
+        "checks two years too late, reporting year \\( 21 \\)",
+        "checks one year too late, reporting year \\( 20 \\)",
+        "stops checking one year too early, reporting year \\( 18 \\)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-035",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For the first 10 perfect squares \\( 1^2,2^2,\\ldots,10^2 \\), compute their A.M. using \\( \\sum k^2=\\frac{n(n+1)(2n+1)}{6} \\), and state how it compares to their G.M.",
+      "options": [
+        "A.M. = \\frac{77}{2}, and A.M. \\( \\geq \\) G.M. of the 10 squares \\( 1^2,2^2,\\ldots,10^2 \\)",
+        "A.M. = 55, and A.M. \\( \\geq \\) G.M. of the 10 squares",
+        "A.M. = \\frac{77}{2}, and A.M. \\( = \\) G.M. of the 10 squares",
+        "A.M. = \\frac{77}{2}, and A.M. \\( < \\) G.M. of the 10 squares"
+      ],
+      "correct_index": 0,
+      "explanation": "A.M. \\( =\\dfrac{1}{10}\\sum_{k=1}^{10}k^2=\\dfrac{10(n+1)(2n+1)}{6n}=\\frac{77}{2} \\) (using \\( n=10 \\)). Since these are 10 positive numbers, A.M. \\( \\geq \\) G.M. always holds, with equality only if all the squares were equal (which they aren't here).",
+      "hint": "Use \\( \\sum k^2=\\dfrac{n(n+1)(2n+1)}{6} \\) to get the A.M. directly, then apply the general A.M.-G.M. inequality.",
+      "distractor_logic": [
+        "mistakenly uses the sum-of-first-n-numbers formula instead of the sum-of-squares formula for the A.M.",
+        "wrongly claims equality, which would require all the squares to be identical",
+        "flips the inequality direction, wrongly claiming A.M. is smaller here"
+      ],
+      "mixed_topics": [
+        "Relationship Between A.M. and G.M.",
+        "Sum to n Terms of Special Series and Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-036",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum to n Terms of Special Series and Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For the first 4 perfect squares \\( 1^2,2^2,\\ldots,4^2 \\), compute their A.M. using \\( \\sum k^2=\\frac{n(n+1)(2n+1)}{6} \\), and state how it compares to their G.M.",
+      "options": [
+        "A.M. = 10, and A.M. \\( \\geq \\) G.M. of the 4 squares",
+        "A.M. = \\frac{15}{2}, and A.M. \\( = \\) G.M. of the 4 squares",
+        "A.M. = \\frac{15}{2}, and A.M. \\( < \\) G.M. of the 4 squares",
+        "A.M. = \\frac{15}{2}, and A.M. \\( \\geq \\) G.M. of the 4 squares \\( 1^2,2^2,\\ldots,4^2 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "A.M. \\( =\\dfrac{1}{4}\\sum_{k=1}^{4}k^2=\\dfrac{4(n+1)(2n+1)}{6n}=\\frac{15}{2} \\) (using \\( n=4 \\)). Since these are 4 positive numbers, A.M. \\( \\geq \\) G.M. always holds, with equality only if all the squares were equal (which they aren't here).",
+      "hint": "Use \\( \\sum k^2=\\dfrac{n(n+1)(2n+1)}{6} \\) to get the A.M. directly, then apply the general A.M.-G.M. inequality.",
+      "distractor_logic": [
+        "mistakenly uses the sum-of-first-n-numbers formula instead of the sum-of-squares formula for the A.M.",
+        "wrongly claims equality, which would require all the squares to be identical",
+        "flips the inequality direction, wrongly claiming A.M. is smaller here"
+      ],
+      "mixed_topics": [
+        "Relationship Between A.M. and G.M.",
+        "Sum to n Terms of Special Series and Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-037",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two geometric means \\( g_1,g_2 \\) are inserted between \\( 2 \\) and \\( 16 \\), forming the G.P. \\( 2,g_1,g_2,16 \\). Find \\( g_1+g_2 \\).",
+      "options": [
+        "4",
+        "13",
+        "12",
+        "32"
+      ],
+      "correct_index": 2,
+      "explanation": "With \\( r=2 \\) (from \\( b=ar^3 \\)), \\( g_1=ar=4 \\) and \\( g_2=ar^2=8 \\), so \\( g_1+g_2=4+8=12 \\). (Unlike inserted arithmetic means, this sum has no simple closed form purely in terms of \\( a \\) and \\( b \\) — you need \\( r \\) first.)",
+      "hint": "Find \\( r \\) from \\( b=ar^3 \\) first, then compute \\( g_1=ar \\) and \\( g_2=ar^2 \\) and add them.",
+      "distractor_logic": [
+        "subtracts instead of adding, giving \\( 4 \\)",
+        "wrongly assumes the sum has the same closed form as inserted A.M.s, giving \\( 13 \\)",
+        "multiplies \\( g_1 \\) and \\( g_2 \\) instead of adding, giving \\( 32 \\)"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-038",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two geometric means \\( g_1,g_2 \\) are inserted between \\( 3 \\) and \\( 81 \\), forming the G.P. \\( 3,g_1,g_2,81 \\). Find \\( g_1+g_2 \\).",
+      "options": [
+        "37",
+        "18",
+        "36",
+        "243"
+      ],
+      "correct_index": 2,
+      "explanation": "With \\( r=3 \\) (from \\( b=ar^3 \\)), \\( g_1=ar=9 \\) and \\( g_2=ar^2=27 \\), so \\( g_1+g_2=9+27=36 \\). (Unlike inserted arithmetic means, this sum has no simple closed form purely in terms of \\( a \\) and \\( b \\) — you need \\( r \\) first.)",
+      "hint": "Find \\( r \\) from \\( b=ar^3 \\) first, then compute \\( g_1=ar \\) and \\( g_2=ar^2 \\) and add them.",
+      "distractor_logic": [
+        "wrongly assumes the sum has the same closed form as inserted A.M.s, giving \\( 37 \\)",
+        "subtracts instead of adding, giving \\( 18 \\)",
+        "multiplies \\( g_1 \\) and \\( g_2 \\) instead of adding, giving \\( 243 \\)"
+      ],
+      "mixed_topics": [
+        "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+        "Relationship Between A.M. and G.M."
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-039",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Examine the sequence \\( 2, 6, 18, 54, \\ldots \\). Is it an A.P., a G.P., or neither?",
+      "options": [
+        "It is a G.P. with common ratio \\( r=4 \\)",
+        "It is an A.P. with common difference \\( d=4 \\)",
+        "It is a G.P. with common ratio \\( r=3\\)",
+        "It is neither an A.P. nor a G.P."
+      ],
+      "correct_index": 2,
+      "explanation": "Consecutive ratios are all \\( 3 \\) (constant), so it's a G.P. with \\( r=3 \\). The differences of consecutive terms are not constant, so it is not an A.P.",
+      "hint": "Check whether consecutive differences are constant (A.P.) or consecutive ratios are constant (G.P.).",
+      "distractor_logic": [
+        "identifies the correct type but miscalculates the constant (difference or ratio)",
+        "misidentifies the sequence type entirely (checks the wrong pattern)",
+        "wrongly concludes neither pattern holds, missing the one that actually does"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)"
+      ]
+    },
+    {
+      "id": "MAT11-CH08-B-040",
+      "chapter": "MAT11-CH08",
+      "chapter_name": "Sequences and Series",
+      "topic": "Sequences and Arithmetic Progressions (A.P.)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Examine the sequence \\( 1, 3, 9, 27, \\ldots \\). Is it an A.P., a G.P., or neither?",
+      "options": [
+        "It is a G.P. with common ratio \\( r=4 \\)",
+        "It is a G.P. with common ratio \\( r=3\\)",
+        "It is neither an A.P. nor a G.P.",
+        "It is an A.P. with common difference \\( d=2 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Consecutive ratios are all \\( 3 \\) (constant), so it's a G.P. with \\( r=3 \\). The differences of consecutive terms are not constant, so it is not an A.P.",
+      "hint": "Check whether consecutive differences are constant (A.P.) or consecutive ratios are constant (G.P.).",
+      "distractor_logic": [
+        "identifies the correct type but miscalculates the constant (difference or ratio)",
+        "wrongly concludes neither pattern holds, missing the one that actually does",
+        "misidentifies the sequence type entirely (checks the wrong pattern)"
+      ],
+      "mixed_topics": [
+        "Sequences and Arithmetic Progressions (A.P.)",
+        "Geometric Progressions (G.P.)"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "name": "Sequences and Arithmetic Progressions (A.P.)",
+      "summary": "A sequence is an ordered list of numbers that follows a definite rule, and each number in it is called a term. An Arithmetic Progression (A.P.) is a sequence in which every term after the first is obtained by adding a fixed number, called the common difference \\( d \\), to the term before it. If the first term is \\( a \\), the sequence looks like \\( a, a+d, a+2d, a+3d, \\ldots \\), and its general (nth) term is \\( a_n=a+(n-1)d \\). The common difference can be positive (an increasing A.P.), negative (a decreasing A.P.), or zero (a constant sequence). Given any two terms of an A.P., \\( d \\) can be recovered by subtracting one term from the other and dividing by the gap between their positions. A.P.s describe situations of constant, steady change — equal salary increments, evenly spaced seating rows, or simple linear growth patterns — and correctly identifying \\( a \\) and \\( d \\) from the problem statement is the essential first step before applying any A.P. formula.",
+      "key_formulas": [
+        "\\( a_n = a + (n-1)d \\)",
+        "\\( d = a_{n} - a_{n-1} \\) (constant for every consecutive pair)",
+        "If \\( m+n=p+q \\), then \\( a_m+a_n = a_p+a_q \\)"
+      ],
+      "worked_example": "Find the 12th term of the A.P. \\( 4, 9, 14, 19, \\ldots \\). Here \\( a=4 \\) and \\( d=9-4=5 \\). Using \\( a_n=a+(n-1)d \\): \\( a_{12}=4+(12-1)(5)=4+55=59 \\).",
+      "common_mistakes": [
+        "using the exponent/multiplier \\( n \\) instead of \\( n-1 \\) when applying \\( a_n=a+(n-1)d \\)",
+        "making sign errors when \\( d \\) is negative (e.g. flipping the sign of the whole \\( (n-1)d \\) term)",
+        "being off by one when solving \\( a+(n-1)d=\\text{target} \\) for \\( n \\) (forgetting the \\( +1 \\) after dividing)",
+        "assuming a number is a term of the A.P. without checking that \\( (n-1) \\) actually comes out to a non-negative integer"
+      ],
+      "question_count": 35
+    },
+    {
+      "name": "Sum of n Terms of an A.P., Arithmetic Mean, and A.P. Properties",
+      "summary": "The sum of the first \\( n \\) terms of an A.P., written \\( S_n \\), can be found in two equivalent ways: \\( S_n=\\frac{n}{2}[2a+(n-1)d] \\) when you know the first term and common difference, or \\( S_n=\\frac{n}{2}(a+l) \\) when you know the first term \\( a \\) and last term \\( l \\). Both formulas come from pairing the first and last terms, the second and second-last terms, and so on — each pair adds up to the same total. The arithmetic mean (A.M.) of two numbers \\( x \\) and \\( y \\) is \\( \\frac{x+y}{2} \\); more generally, inserting \\( k \\) evenly spaced arithmetic means between two numbers creates a longer A.P., and those \\( k \\) inserted means are symmetric about the A.M. of the two original numbers, so their sum is always \\( k \\) times that A.M. A useful property links sums and terms directly: if \\( S_n \\) is a quadratic expression \\( An^2+Bn \\) with no constant term, the underlying A.P. always has common difference \\( d=2A \\).",
+      "key_formulas": [
+        "\\( S_n = \\frac{n}{2}[2a+(n-1)d] \\)",
+        "\\( S_n = \\frac{n}{2}(a+l) \\)",
+        "A.M. of \\( x,y \\): \\( \\frac{x+y}{2} \\)",
+        "Sum of terms from position \\( m+1 \\) to \\( n \\): \\( S_n - S_m \\)"
+      ],
+      "worked_example": "Find the sum of the first 15 terms of the A.P. with \\( a=3, d=4 \\). \\( S_{15}=\\frac{15}{2}[2(3)+(15-1)(4)]=\\frac{15}{2}[6+56]=\\frac{15}{2}(62)=465 \\).",
+      "common_mistakes": [
+        "using \\( n \\) instead of \\( n-1 \\) inside the bracket of \\( S_n=\\frac{n}{2}[2a+(n-1)d] \\)",
+        "forgetting the \\( \\frac{1}{2} \\) factor entirely when computing \\( S_n \\)",
+        "subtracting the wrong partial sum when finding the total of a middle range of terms (an off-by-one on which \\( S_m \\) to subtract)",
+        "forgetting to divide by 2 when computing an arithmetic mean of two numbers"
+      ],
+      "question_count": 31
+    },
+    {
+      "name": "Geometric Progressions (G.P.)",
+      "summary": "A Geometric Progression (G.P.) is a sequence in which every term after the first is obtained by multiplying the previous term by a fixed, non-zero number called the common ratio \\( r \\). If the first term is \\( a \\), the sequence is \\( a, ar, ar^2, ar^3, \\ldots \\), and the general (nth) term is \\( a_n=ar^{n-1} \\). The ratio \\( r \\) can be found by dividing any term by the term immediately before it, and it stays constant throughout the whole sequence — unlike an A.P., where consecutive terms differ by a constant amount, consecutive G.P. terms differ by a constant factor. When \\( r \\) is negative, the terms alternate in sign, so it's important to track the sign of \\( r^{n-1} \\) carefully rather than working with \\( |r| \\). Three consecutive terms \\( a,b,c \\) of a G.P. always satisfy \\( b^2=ac \\) — the middle term is the geometric mean of the outer two — which is a defining algebraic property used throughout G.P. problems, from population growth to compound interest.",
+      "key_formulas": [
+        "\\( a_n = ar^{n-1} \\)",
+        "\\( r = \\dfrac{a_{k+1}}{a_k} \\) (constant for every consecutive pair)",
+        "For 3 consecutive G.P. terms \\( a,b,c \\): \\( b^2=ac \\)"
+      ],
+      "worked_example": "Find the 6th term of the G.P. \\( 3, 6, 12, 24, \\ldots \\). Here \\( a=3 \\) and \\( r=6/3=2 \\). Using \\( a_n=ar^{n-1} \\): \\( a_6=3\\times 2^{5}=3\\times 32=96 \\).",
+      "common_mistakes": [
+        "using the exponent \\( n \\) instead of \\( n-1 \\) when applying \\( a_n=ar^{n-1} \\)",
+        "dropping the sign of a negative common ratio and using \\( |r| \\) instead, which flips the sign of terms at odd positions",
+        "subtracting consecutive terms (an A.P. habit) instead of dividing them to find the common ratio",
+        "confusing the geometric mean of a G.P.'s outer terms with their arithmetic mean"
+      ],
+      "question_count": 37
+    },
+    {
+      "name": "Sum of n Terms of a G.P. (Finite and Infinite) and Geometric Mean",
+      "summary": "The sum of the first \\( n \\) terms of a G.P. is \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\) for \\( r\\neq 1 \\); this formula divides by zero when \\( r=1 \\), so in that special case every term equals \\( a \\) and the sum is simply \\( S_n=na \\) instead. When \\( |r|<1 \\), the terms shrink toward zero as \\( n \\) grows, and the sum of infinitely many terms converges to a finite value: \\( S_\\infty=\\dfrac{a}{1-r} \\), valid only under that \\( |r|<1 \\) condition. The geometric mean (G.M.) of two positive numbers \\( x,y \\) is \\( \\sqrt{xy} \\); inserting one or more geometric means between two numbers extends them into a longer G.P., though unlike inserted arithmetic means, the sum of several inserted geometric means has no simple closed form and must be worked out from the common ratio directly. Infinite G.P. sums show up naturally in repeated-halving situations, such as a bouncing ball's ever-shrinking rebound heights adding up to a finite total distance.",
+      "key_formulas": [
+        "\\( S_n = \\dfrac{a(r^n-1)}{r-1} \\), for \\( r \\neq 1 \\)",
+        "\\( S_n = na \\), for \\( r = 1 \\)",
+        "\\( S_\\infty = \\dfrac{a}{1-r} \\), valid only for \\( |r|<1 \\)",
+        "G.M. of \\( x,y \\): \\( \\sqrt{xy} \\)"
+      ],
+      "worked_example": "Find the sum to infinity of the G.P. with \\( a=8 \\) and \\( r=\\frac{1}{2} \\). Since \\( |r|<1 \\), \\( S_\\infty=\\dfrac{8}{1-\\frac{1}{2}}=\\dfrac{8}{\\frac{1}{2}}=16 \\).",
+      "common_mistakes": [
+        "applying \\( S_n=\\dfrac{a(r^n-1)}{r-1} \\) when \\( r=1 \\), causing division by zero, instead of switching to \\( S_n=na \\)",
+        "using the sum-to-infinity formula without first checking that \\( |r|<1 \\)",
+        "using \\( n-1 \\) instead of \\( n \\) as the exponent inside the finite G.P. sum formula",
+        "assuming the sum of several inserted geometric means has the same simple symmetric shortcut as inserted arithmetic means"
+      ],
+      "question_count": 33
+    },
+    {
+      "name": "Relationship Between A.M. and G.M.",
+      "summary": "For any two positive real numbers \\( x \\) and \\( y \\), the Arithmetic Mean \\( \\frac{x+y}{2} \\) is always greater than or equal to the Geometric Mean \\( \\sqrt{xy} \\); this is the A.M.-G.M. inequality, and equality holds only in the special case \\( x=y \\). The same idea extends to any number of positive reals — for three numbers \\( x,y,z \\), \\( \\frac{x+y+z}{3}\\geq\\sqrt[3]{xyz} \\), again with equality only when all the numbers are equal. This inequality is a powerful shortcut in optimization problems: whenever a sum of positive quantities is fixed, their product is maximized exactly when the quantities are all equal, and whenever a product is fixed, the sum is minimized under the same condition. This principle explains, for instance, why a square encloses the maximum area among all rectangles of a given perimeter, and why an expression like \\( x+\\frac{k}{x} \\) has a minimum value of \\( 2\\sqrt{k} \\), achieved exactly when \\( x=\\sqrt{k} \\).",
+      "key_formulas": [
+        "A.M. \\( \\geq \\) G.M.: \\( \\dfrac{x+y}{2} \\geq \\sqrt{xy} \\), for \\( x,y>0 \\)",
+        "Equality holds if and only if \\( x=y \\)",
+        "For \\( n \\) positive reals: \\( \\dfrac{x_1+x_2+\\cdots+x_n}{n} \\geq \\sqrt[n]{x_1x_2\\cdots x_n} \\)"
+      ],
+      "worked_example": "For \\( x=2 \\) and \\( y=8 \\): A.M. \\( =\\dfrac{2+8}{2}=5 \\), G.M. \\( =\\sqrt{2\\times 8}=\\sqrt{16}=4 \\). Indeed \\( 5 \\geq 4 \\), confirming A.M. \\( \\geq \\) G.M.",
+      "common_mistakes": [
+        "flipping the inequality direction and believing G.M. can exceed A.M. for positive numbers",
+        "assuming A.M. equals G.M. in general, rather than only when the numbers involved are equal",
+        "restricting the A.M.-G.M. inequality to just two numbers, forgetting it extends to any number of positive terms",
+        "forgetting to divide by \\( n \\) (or take the correct root) when computing an A.M. or G.M. of more than two numbers"
+      ],
+      "question_count": 32
+    },
+    {
+      "name": "Sum to n Terms of Special Series and Applications",
+      "summary": "Beyond A.P.s and G.P.s, three special series have their own standard closed-form sums: the sum of the first \\( n \\) natural numbers, \\( \\sum_{k=1}^{n}k=\\frac{n(n+1)}{2} \\); the sum of their squares, \\( \\sum_{k=1}^{n}k^2=\\frac{n(n+1)(2n+1)}{6} \\); and the sum of their cubes, \\( \\sum_{k=1}^{n}k^3=\\left[\\frac{n(n+1)}{2}\\right]^2 \\) — notice this last one is simply the square of the first formula. More complicated series, such as \\( \\sum k(k+1) \\), can usually be split into combinations of these three known sums using basic algebra. When a sum runs over a restricted range, such as \\( \\sum_{k=m}^{n}k \\) rather than starting at 1, it's computed as the difference of two full sums, \\( \\sum_{k=1}^{n}k - \\sum_{k=1}^{m-1}k \\) — and getting that lower limit exactly right (\\( m-1 \\), not \\( m \\)) is essential. These formulas also model real counting problems, like the total number of items in a triangular stack.",
+      "key_formulas": [
+        "\\( \\displaystyle\\sum_{k=1}^{n}k = \\frac{n(n+1)}{2} \\)",
+        "\\( \\displaystyle\\sum_{k=1}^{n}k^2 = \\frac{n(n+1)(2n+1)}{6} \\)",
+        "\\( \\displaystyle\\sum_{k=1}^{n}k^3 = \\left[\\frac{n(n+1)}{2}\\right]^2 \\)"
+      ],
+      "worked_example": "Find \\( \\sum_{k=1}^{10}k^2 \\). Using \\( \\frac{n(n+1)(2n+1)}{6} \\) with \\( n=10 \\): \\( \\frac{10\\times 11\\times 21}{6}=\\frac{2310}{6}=385 \\).",
+      "common_mistakes": [
+        "confusing the sum-of-squares formula \\( \\frac{n(n+1)(2n+1)}{6} \\) with the sum-of-cubes formula \\( \\left[\\frac{n(n+1)}{2}\\right]^2 \\)",
+        "using \\( 2n-1 \\) instead of \\( 2n+1 \\) in the sum-of-squares formula",
+        "getting an off-by-one wrong on the lower limit when computing a sum over a restricted range (using \\( m \\) instead of \\( m-1 \\))",
+        "forgetting one of the two parts when a series splits into a combination of standard sums, such as computing \\( \\sum k(k+1) \\) as just \\( \\sum k^2 \\) alone"
+      ],
+      "question_count": 25
+    }
+  ]
+}

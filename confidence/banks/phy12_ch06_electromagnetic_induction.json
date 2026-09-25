@@ -1,0 +1,3730 @@
+{
+  "meta": {
+    "chapter": "PHY12-CH06",
+    "chapter_name": "Electromagnetic Induction",
+    "subject": "Physics",
+    "class": 12,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "Magnetic flux \\( \\Phi \\), EMF \\( \\varepsilon \\), self-inductance \\( L \\), mutual inductance \\( M \\), angular frequency \\( \\omega \\) and all vectors (\\( \\vec B \\), \\( \\vec v \\), \\( \\vec l \\)) are single unnested KaTeX spans; no raw Unicode math symbols (including the arrow) appear anywhere outside KaTeX; every coupling coefficient \\( k \\) stays within the range 0 to 1; every numeric answer terminates cleanly (exact multiples of \\( \\pi \\) or square roots where stated) or is a clean power-of-ten value."
+  },
+  "topics": [
+    {
+      "name": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "summary": "Magnetic flux through a flat loop in a uniform field is \\( \\Phi=BA\\cos\\theta \\), where \\( \\theta \\) is the angle between \\( \\vec B \\) and the loop's normal; its unit is the weber (Wb). Flux is largest when the field is along the normal and zero when the field lies in the plane of the loop. Faraday's law says that an EMF is induced whenever the flux linked with a circuit changes: \\( \\varepsilon=-N\\dfrac{d\\Phi}{dt} \\) for a coil of \\( N \\) turns. The flux can change because \\( B \\) changes, because the area changes, or because the angle changes, as in a rotating coil. What matters is the rate of change, not the size of the flux: a huge steady flux induces nothing. Every turn of a coil contributes equally, so the total EMF scales with \\( N \\). The charge driven through a circuit, \\( q=\\dfrac{N\\Delta\\Phi}{R} \\), depends only on the total flux change, not on how quickly it happens. Flipping a coil through \\( 180^\\circ \\) changes its flux by \\( 2BA \\), not \\( BA \\).",
+      "key_formulas": [
+        "\\( \\Phi=BA\\cos\\theta \\)",
+        "\\( \\varepsilon=-N\\dfrac{d\\Phi}{dt} \\)",
+        "\\( q=\\dfrac{N\\Delta\\Phi}{R} \\)",
+        "Rotating loop: \\( \\varepsilon_{max}=NBA\\omega \\)"
+      ],
+      "worked_example": "A 100-turn coil has the flux through each turn change by 0.02 Wb in 0.1 s. Find the EMF.<br><br>\\( |\\varepsilon|=N\\dfrac{\\Delta\\Phi}{\\Delta t}=100\\times\\dfrac{0.02}{0.1}=20 \\) V.",
+      "common_mistakes": [
+        "Using the flux value instead of its rate of change to find the EMF.",
+        "Forgetting to multiply by the number of turns \\( N \\).",
+        "Measuring \\( \\theta \\) from the plane of the loop instead of from its normal.",
+        "Taking the flux change for a \\( 180^\\circ \\) flip as \\( BA \\) instead of \\( 2BA \\).",
+        "Thinking the charge that flows depends on how fast the flux changes."
+      ],
+      "question_count": 40
+    },
+    {
+      "name": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "summary": "Lenz's law fixes the direction of induced current: it always opposes the change in flux that causes it, not the flux itself. If the flux is increasing, the induced field points against it; if the flux is decreasing, the induced field points along it, trying to maintain it. This follows from energy conservation: an aiding current would create energy from nothing. A conductor moving through a field has a motional EMF \\( \\varepsilon=(\\vec v\\times\\vec B)\\cdot\\vec l \\), which reduces to \\( Blv \\) only when \\( \\vec B \\), the rod and \\( \\vec v \\) are mutually perpendicular; otherwise only the perpendicular component counts. The current in the moving rod feels a force \\( F=BIl=\\dfrac{B^2l^2v}{R} \\) that opposes the motion, so an external agent must push along the motion with an equal force to keep the velocity constant. In that steady state the mechanical power \\( Fv \\) equals the electrical power \\( I^2R \\) dissipated as heat. A rod rotating about one end gives \\( \\tfrac12B\\omega l^2 \\).",
+      "key_formulas": [
+        "\\( \\varepsilon=Blv \\) (mutually perpendicular)",
+        "\\( \\varepsilon=(\\vec v\\times\\vec B)\\cdot\\vec l \\)",
+        "\\( F=BIl=\\dfrac{B^2l^2v}{R} \\)",
+        "\\( P=Fv=I^2R=\\dfrac{B^2l^2v^2}{R} \\)",
+        "Rotating rod: \\( \\varepsilon=\\tfrac12B\\omega l^2 \\)"
+      ],
+      "worked_example": "A 0.5 m rod moves at 2 m/s through a 1 T field in a 0.5 Ω circuit. Find the power needed.<br><br>\\( \\varepsilon=1\\times0.5\\times2=1 \\) V, \\( I=2 \\) A.<br><br>\\( F=BIl=1 \\) N opposing motion, so \\( P=Fv=2 \\) W, which equals \\( I^2R=2 \\) W.",
+      "common_mistakes": [
+        "Making the induced current oppose the present flux instead of its change.",
+        "Using the full speed in \\( Blv \\) when the velocity is tilted relative to \\( \\vec B \\).",
+        "Having the magnetic force on the rod aid its motion.",
+        "Taking the mechanical power input as different from the \\( I^2R \\) dissipated in the steady state.",
+        "Forgetting the factor \\( \\tfrac12 \\) for a rotating rod."
+      ],
+      "question_count": 43
+    },
+    {
+      "name": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "summary": "Self-inductance \\( L \\) is the flux linkage of a coil per unit of its own current, \\( L=\\dfrac{N\\Phi}{I} \\), measured in henry (Wb per A). When the current changes, the coil develops a back-EMF \\( \\varepsilon=-L\\dfrac{dI}{dt} \\) that opposes the change in either direction: it holds back a rising current and sustains a falling one, so inductance acts like electrical inertia, the analogue of mass. For a long solenoid, \\( L=\\mu_0n^2Al \\), where \\( n=N/l \\) is the number of turns per unit length, not the total number of turns; equivalently \\( L=\\dfrac{\\mu_0N^2A}{l} \\). Filling the solenoid with a core of relative permeability \\( \\mu_r \\) multiplies \\( L \\) by \\( \\mu_r \\). The energy stored in the magnetic field is \\( U=\\tfrac12LI^2 \\). Inductors with no mutual coupling combine exactly like resistors: in series they add, and in parallel their reciprocals add. The back-EMF is also why a spark can jump when an inductive circuit is suddenly broken. Doubling the turns on a fixed length quadruples \\( L \\), while stretching a solenoid with fixed total turns lowers it.",
+      "key_formulas": [
+        "\\( L=\\dfrac{N\\Phi}{I} \\)",
+        "\\( \\varepsilon=-L\\dfrac{dI}{dt} \\)",
+        "\\( L=\\mu_0n^2Al \\), \\( n=\\dfrac{N}{l} \\)",
+        "\\( U=\\tfrac12LI^2 \\)",
+        "Series: \\( L_{eq}=L_1+L_2 \\); parallel: \\( \\dfrac{1}{L_{eq}}=\\dfrac{1}{L_1}+\\dfrac{1}{L_2} \\)"
+      ],
+      "worked_example": "A solenoid has 500 turns over 0.5 m and area \\( 10^{-3}\\ \\text{m}^2 \\). Find \\( L \\).<br><br>\\( n=1000 \\) per metre, so \\( L=4\\pi\\times10^{-7}\\times10^6\\times10^{-3}\\times0.5=2\\pi\\times10^{-4} \\) H \\( =0.2\\pi \\) mH.",
+      "common_mistakes": [
+        "Substituting the total turns \\( N \\) for \\( n=N/l \\) in \\( \\mu_0n^2Al \\).",
+        "Believing the back-EMF opposes only an increasing (or only a decreasing) current.",
+        "Combining inductors with the capacitor rules.",
+        "Dropping the \\( \\tfrac12 \\) or forgetting to square \\( I \\) in \\( \\tfrac12LI^2 \\).",
+        "Not converting mH to H before calculating."
+      ],
+      "question_count": 38
+    },
+    {
+      "name": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "summary": "Mutual inductance \\( M \\) links two circuits: the flux linkage in coil 2 due to a current in coil 1 is \\( N_2\\Phi_2=MI_1 \\), and a changing current in coil 1 induces \\( \\varepsilon_2=-M\\dfrac{dI_1}{dt} \\) in coil 2, even if coil 2 carries no current of its own. Mutual inductance is always reciprocal, \\( M_{12}=M_{21}=M \\), whatever the turns on each coil. \\( M \\) depends only on geometry (turns, size, separation, orientation) and the core material, not on the currents. For a short coil or inner solenoid inside a long solenoid, only the smaller area carries the shared flux: \\( M=\\mu_0n_1N_2A_2 \\) or \\( \\mu_0n_1n_2A_{inner}l \\). The coefficient of coupling \\( k=\\dfrac{M}{\\sqrt{L_1L_2}} \\) always lies between 0 and 1; \\( k=1 \\) means all flux of one coil links the other, and \\( k \\) near 0 occurs, for example, for coils with perpendicular axes. Winding both coils on a common core multiplies \\( M \\) by the core's relative permeability, and doubling the turns of one coil doubles \\( M \\) while leaving \\( k \\) unchanged.",
+      "key_formulas": [
+        "\\( N_2\\Phi_2=MI_1 \\)",
+        "\\( \\varepsilon_2=-M\\dfrac{dI_1}{dt} \\)",
+        "\\( M_{12}=M_{21}=M \\)",
+        "\\( k=\\dfrac{M}{\\sqrt{L_1L_2}} \\), \\( 0\\le k\\le1 \\)",
+        "Coaxial solenoids: \\( M=\\mu_0n_1n_2A_{inner}l \\)"
+      ],
+      "worked_example": "Two coils have \\( L_1=0.25 \\) H, \\( L_2=1 \\) H and \\( k=0.8 \\). The current in coil 1 changes at 10 A/s. Find the EMF in coil 2.<br><br>\\( M=0.8\\times\\sqrt{0.25}=0.4 \\) H, so \\( |\\varepsilon_2|=0.4\\times10=4 \\) V.",
+      "common_mistakes": [
+        "Treating \\( M_{12} \\) and \\( M_{21} \\) as different when the turns differ.",
+        "Reporting a coupling coefficient greater than 1 or negative.",
+        "Using the outer solenoid's area instead of the inner area for the shared flux.",
+        "Forgetting \\( k \\) when finding \\( M \\) from \\( L_1 \\) and \\( L_2 \\).",
+        "Thinking an open coil 2 has no induced EMF."
+      ],
+      "question_count": 37
+    },
+    {
+      "name": "Eddy Currents and the AC Generator",
+      "summary": "Eddy currents are loops of induced current in bulk conductors exposed to a changing flux or moving through a field. By Lenz's law they always oppose the relative motion or flux change that produces them, giving a braking force and dissipating energy as heat. This underlies electromagnetic damping (dead-beat galvanometers), electromagnetic brakes, induction furnaces and cooktops, speedometers and energy meters. Where eddy currents are unwanted, as in transformer and motor cores, thin insulated laminations raise the resistance of the eddy loops and so reduce the loss; slots in a swinging plate do the same. An AC generator rotates an \\( N \\)-turn coil of area \\( A \\) at constant \\( \\omega \\) in a field \\( B \\): the flux linkage is \\( NBA\\cos\\omega t \\) and the EMF is \\( \\varepsilon=\\varepsilon_0\\sin\\omega t \\) with peak \\( \\varepsilon_0=NBA\\omega \\). The EMF is largest when the flux is zero and zero when the flux is largest. A rotation rate \\( f \\) gives \\( \\omega=2\\pi f \\).",
+      "key_formulas": [
+        "\\( \\varepsilon=\\varepsilon_0\\sin\\omega t \\)",
+        "\\( \\varepsilon_0=NBA\\omega \\)",
+        "\\( \\omega=2\\pi f \\)",
+        "Half-cycle average: \\( \\dfrac{2\\varepsilon_0}{\\pi} \\)"
+      ],
+      "worked_example": "A 50-turn coil of area \\( 0.1\\ \\text{m}^2 \\) rotates at 600 rev/min in 0.2 T. Find the peak EMF.<br><br>\\( f=10 \\) rev/s, \\( \\omega=20\\pi \\) rad/s.<br><br>\\( \\varepsilon_0=50\\times0.2\\times0.1\\times20\\pi=20\\pi \\) V.",
+      "common_mistakes": [
+        "Reporting the peak flux linkage \\( NBA \\) as the peak EMF, dropping \\( \\omega \\).",
+        "Using \\( f \\) or \\( \\pi f \\) in place of \\( \\omega=2\\pi f \\).",
+        "Claiming eddy currents aid motion.",
+        "Claiming lamination increases eddy-current loss.",
+        "Placing the EMF maximum where the flux is maximum."
+      ],
+      "question_count": 34
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY12-CH06-L1-001",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the SI unit of magnetic flux \\( \\Phi \\)?",
+      "options": [
+        "weber (Wb), equal to \\( \\text{T m}^2 \\)",
+        "tesla (T)",
+        "henry (H)",
+        "\\( \\text{T m}^{-2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Magnetic flux is \\( \\Phi=BA\\cos\\theta \\), a field multiplied by an area.<br><br>So its unit is tesla times square metre, \\( \\text{T m}^2 \\), which is named the weber (Wb).",
+      "hint": "Flux is field times area.",
+      "distractor_logic": [
+        "Tesla is the unit of the magnetic field \\( \\vec B \\) itself; flux also multiplies by area.",
+        "Henry is the unit of inductance (flux linkage per ampere), not of flux.",
+        "Divides the field by area instead of multiplying, inverting the definition of flux."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-002",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "A uniform field of 2 T passes normally through a flat loop of area \\( 0.5\\ \\text{m}^2 \\). What is the magnetic flux through the loop?",
+      "options": [
+        "Zero",
+        "1 Wb",
+        "4 Wb",
+        "0.25 Wb"
+      ],
+      "correct_index": 1,
+      "explanation": "The field is along the normal, so \\( \\theta=0^\\circ \\).<br><br>\\( \\Phi=BA\\cos 0^\\circ=2\\times0.5\\times1=1 \\) Wb.",
+      "hint": "Use \\( \\Phi=BA\\cos\\theta \\) with \\( \\theta \\) measured from the normal.",
+      "distractor_logic": [
+        "Treats the field as lying along the plane of the loop; here \\( \\vec B \\) is along the normal, so \\( \\theta=0^\\circ \\) and \\( \\cos\\theta=1 \\).",
+        "Divides \\( B \\) by \\( A \\) (2/0.5) instead of multiplying them.",
+        "Divides \\( A \\) by \\( B \\) (0.5/2) instead of multiplying them."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-003",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "A square loop of area \\( A \\) lies with its plane parallel to a uniform field \\( \\vec B \\). The flux through it is:",
+      "options": [
+        "\\( BA \\)",
+        "\\( \\dfrac{BA}{2} \\)",
+        "Zero",
+        "\\( \\dfrac{BA}{\\sqrt{2}} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "If the plane is parallel to \\( \\vec B \\), the normal is perpendicular to \\( \\vec B \\), so \\( \\theta=90^\\circ \\).<br><br>\\( \\Phi=BA\\cos90^\\circ=0 \\): no field lines pass through the loop.",
+      "hint": "Find the angle between \\( \\vec B \\) and the loop's normal.",
+      "distractor_logic": [
+        "Assumes the maximum flux; that happens only when \\( \\vec B \\) is along the normal, not along the plane.",
+        "Picks a halfway value as if the loop were tilted at \\( 60^\\circ \\) to the field direction.",
+        "Uses \\( \\cos 45^\\circ \\), as though the loop were tilted halfway."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-004",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "Faraday's law of electromagnetic induction states that the induced EMF in a circuit is:",
+      "options": [
+        "proportional to the magnetic flux linked with the circuit",
+        "equal to the rate of change of current in the circuit multiplied by its resistance",
+        "proportional to the square of the magnetic field strength",
+        "equal to the negative rate of change of magnetic flux linked with the circuit"
+      ],
+      "correct_index": 3,
+      "explanation": "Faraday's law: \\( \\varepsilon=-\\dfrac{d\\Phi}{dt} \\) for a single loop, and \\( \\varepsilon=-N\\dfrac{d\\Phi}{dt} \\) for \\( N \\) turns.<br><br>Only a changing flux produces an EMF; the minus sign expresses Lenz's law.",
+      "hint": "Think about what must happen to the flux for an EMF to appear.",
+      "distractor_logic": [
+        "Ties EMF to the flux value rather than to how fast the flux changes; a large steady flux induces nothing.",
+        "Mixes Ohm's law with induction; induced EMF depends on flux change, not on resistance.",
+        "Invents a square-law dependence; induced EMF is linear in the rate of change of flux."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-005",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "A coil has \\( N=100 \\) turns. The flux through each turn changes by 0.02 Wb in 0.1 s. What is the magnitude of the average induced EMF?",
+      "options": [
+        "20 V",
+        "0.2 V",
+        "2 V",
+        "0.02 V"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( |\\varepsilon|=N\\dfrac{\\Delta\\Phi}{\\Delta t} \\).<br><br>\\( |\\varepsilon|=100\\times\\dfrac{0.02}{0.1}=100\\times0.2=20 \\) V.",
+      "hint": "Every turn contributes the same EMF, and they add.",
+      "distractor_logic": [
+        "Uses the flux change per turn but forgets to multiply by the 100 turns.",
+        "Multiplies by \\( N \\) but forgets to divide by the time interval.",
+        "Reports the flux change per turn as if it were the EMF."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-006",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "In which situation is NO EMF induced in a closed conducting loop?",
+      "options": [
+        "A bar magnet is pushed towards the loop",
+        "The loop is held at rest in a steady, uniform magnetic field",
+        "The loop is rotated in a steady, uniform magnetic field",
+        "The current in a nearby coil is switched off"
+      ],
+      "correct_index": 1,
+      "explanation": "An EMF needs a changing flux \\( \\Phi=BA\\cos\\theta \\): a change in \\( B \\), \\( A \\) or \\( \\theta \\).<br><br>For a loop at rest in a steady uniform field, none of these changes, so \\( \\dfrac{d\\Phi}{dt}=0 \\) and \\( \\varepsilon=0 \\).",
+      "hint": "Check whether \\( B \\), \\( A \\) or \\( \\theta \\) is changing.",
+      "distractor_logic": [
+        "Moving a magnet towards the loop increases the flux through it, so an EMF is induced.",
+        "Rotation changes the angle between \\( \\vec B \\) and the normal, so the flux changes.",
+        "Switching off the nearby current makes its flux through the loop fall to zero, which induces an EMF."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-007",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "A loop of area \\( 0.5\\ \\text{m}^2 \\) is in a uniform field of 0.4 T whose direction makes \\( 60^\\circ \\) with the loop's normal. The flux through the loop is:",
+      "options": [
+        "0.2 Wb",
+        "\\( 0.1\\sqrt{3} \\) Wb",
+        "0.1 Wb",
+        "0.8 Wb"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\Phi=BA\\cos\\theta \\) with \\( \\theta=60^\\circ \\) from the normal.<br><br>\\( \\Phi=0.4\\times0.5\\times\\tfrac12=0.1 \\) Wb.",
+      "hint": "The angle is measured from the normal, so use cosine.",
+      "distractor_logic": [
+        "Ignores the angle and uses \\( \\Phi=BA \\).",
+        "Uses \\( \\sin60^\\circ \\) instead of \\( \\cos60^\\circ \\); the angle given is with the normal.",
+        "Divides \\( B \\) by \\( A \\) instead of multiplying."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-008",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 1,
+      "type": "regular",
+      "question": "In Faraday's magnet-and-coil experiment, the galvanometer deflects while a magnet is pushed into a coil. If the magnet is then held stationary inside the coil, the galvanometer shows:",
+      "options": [
+        "a steady deflection in the same direction",
+        "a steady deflection in the opposite direction",
+        "its maximum deflection, since the flux is now largest",
+        "no deflection"
+      ],
+      "correct_index": 3,
+      "explanation": "With the magnet at rest, the flux through the coil is large but constant.<br><br>\\( \\dfrac{d\\Phi}{dt}=0 \\), so the induced EMF and current are zero.",
+      "hint": "Is the flux changing now?",
+      "distractor_logic": [
+        "Assumes the current continues once the flux stops changing; induction needs a changing flux.",
+        "A reverse deflection needs a decreasing flux, e.g. pulling the magnet out, not holding it still.",
+        "Links EMF to the size of the flux rather than to its rate of change."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-009",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "Lenz's law is a direct consequence of the conservation of:",
+      "options": [
+        "energy",
+        "charge",
+        "linear momentum",
+        "mass"
+      ],
+      "correct_index": 0,
+      "explanation": "If the induced current aided the change, it would increase the flux further, driving more current without any work being done.<br><br>That would create energy from nothing, so the induced current must oppose the change: this is Lenz's law, a statement of energy conservation.",
+      "hint": "What would go wrong if the induced current helped the change?",
+      "distractor_logic": [
+        "Charge conservation is the basis of Kirchhoff's junction rule, not of the direction of induced current.",
+        "Momentum conservation does not fix which way an induced current flows.",
+        "Mass plays no role in electromagnetic induction."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-010",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "A rod of length 0.5 m moves at 4 m/s in a 0.5 T field, with \\( \\vec B \\), the rod and \\( \\vec v \\) mutually perpendicular. The motional EMF across the rod is:",
+      "options": [
+        "2 V",
+        "1 V",
+        "0.25 V",
+        "16 V"
+      ],
+      "correct_index": 1,
+      "explanation": "For mutually perpendicular \\( \\vec B \\), \\( \\vec l \\), \\( \\vec v \\): \\( \\varepsilon=Blv \\).<br><br>\\( \\varepsilon=0.5\\times0.5\\times4=1 \\) V.",
+      "hint": "\\( \\varepsilon=Blv \\).",
+      "distractor_logic": [
+        "Leaves out \\( B \\), multiplying only \\( l \\) and \\( v \\).",
+        "Leaves out \\( v \\), multiplying only \\( B \\) and \\( l \\).",
+        "Divides \\( v \\) by \\( Bl \\) instead of multiplying."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-011",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "The north pole of a bar magnet is moved towards a closed coil. The face of the coil nearer the magnet behaves like:",
+      "options": [
+        "a south pole, attracting the approaching magnet",
+        "no pole at all, since current flows only once the magnet stops",
+        "a north pole, repelling the approaching magnet",
+        "a north pole, but only after the magnet has come to rest"
+      ],
+      "correct_index": 2,
+      "explanation": "The approach increases the flux through the coil.<br><br>The induced current opposes this change by making the near face a north pole, which repels the incoming north pole.",
+      "hint": "The coil opposes the approach.",
+      "distractor_logic": [
+        "Reverses Lenz's law; attraction would aid the approach and create energy from nothing.",
+        "Current flows while the flux is changing, i.e. while the magnet moves.",
+        "Once the magnet is at rest the flux stops changing and the induced current vanishes."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-012",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "The magnetic flux through a loop is directed into the page and is decreasing. The magnetic field produced by the induced current, inside the loop, points:",
+      "options": [
+        "out of the page, to oppose the flux that is present",
+        "nowhere, since a decreasing flux induces no current",
+        "along the plane of the loop",
+        "into the page, to oppose the decrease"
+      ],
+      "correct_index": 3,
+      "explanation": "Lenz's law opposes the change in flux, not the flux itself.<br><br>The into-page flux is decreasing, so the induced current tries to maintain it by producing its own field into the page.",
+      "hint": "Ask whether the flux is growing or shrinking.",
+      "distractor_logic": [
+        "Opposes the present flux direction instead of its change; for a decreasing flux the induced field supports the existing flux.",
+        "A decreasing flux is still a changing flux, so a current is induced.",
+        "The field of a current in a planar loop is along the normal inside the loop, not in its plane."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-013",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "A metal rod slides to the right along two rails in a magnetic field, completing a circuit. The magnetic force on the rod due to the induced current is directed:",
+      "options": [
+        "to the left, opposing the motion",
+        "to the right, aiding the motion",
+        "perpendicular to the rails, with no effect on the motion",
+        "zero, since the rod carries no net charge"
+      ],
+      "correct_index": 0,
+      "explanation": "The induced current flows through the rod, which lies in \\( \\vec B \\), so it feels \\( F=BIl \\).<br><br>By Lenz's law this force opposes the cause, the rod's motion to the right, so it points left.",
+      "hint": "Induced effects oppose their cause.",
+      "distractor_logic": [
+        "A force aiding the motion would speed the rod up and create energy from nothing, violating Lenz's law.",
+        "The force \\( I\\vec l\\times\\vec B \\) on the rod lies along the rails, opposite to the velocity.",
+        "The force acts on the current in the rod, not on net charge; a current-carrying rod in \\( \\vec B \\) feels \\( BIl \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-014",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "The motional EMF across a conducting rod moving through a magnetic field arises because:",
+      "options": [
+        "the magnetic field does work on the rod's free charges",
+        "the magnetic force \\( q\\vec v\\times\\vec B \\) pushes free charges towards one end of the rod",
+        "the flux inside the rod's material changes",
+        "an electric field from the magnet's poles acts on the rod"
+      ],
+      "correct_index": 1,
+      "explanation": "Each free charge in the rod moves with velocity \\( \\vec v \\) and feels \\( q\\vec v\\times\\vec B \\) along the rod.<br><br>Charges pile up at one end until the resulting electric field balances this force, giving the EMF \\( Blv \\).",
+      "hint": "Think of the Lorentz force on the charges in the rod.",
+      "distractor_logic": [
+        "The magnetic force is perpendicular to the charges' velocity, so on its own it does no work; the external agent supplies the energy.",
+        "A thin rod encloses no area; the EMF comes from the force on its moving charges.",
+        "A static magnet produces no electric field; the effect is purely magnetic."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-015",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "A rod of length \\( l \\) moves along its own length, perpendicular to a uniform field \\( \\vec B \\). The motional EMF across its ends is:",
+      "options": [
+        "\\( Blv \\)",
+        "\\( \\dfrac{Blv}{2} \\)",
+        "zero",
+        "\\( 2Blv \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\varepsilon=(\\vec v\\times\\vec B)\\cdot\\vec l \\).<br><br>\\( \\vec v\\times\\vec B \\) is perpendicular to \\( \\vec v \\), and \\( \\vec l \\) is along \\( \\vec v \\), so the dot product is zero.",
+      "hint": "Check the direction of \\( \\vec v\\times\\vec B \\) against the rod.",
+      "distractor_logic": [
+        "Uses \\( Blv \\) without checking the geometry; \\( \\vec v \\) is along \\( \\vec l \\), so \\( (\\vec v\\times\\vec B)\\cdot\\vec l=0 \\).",
+        "Halves the EMF with no basis; the rod-rotation factor of one half does not apply here.",
+        "Doubles the EMF with no basis."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-016",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 1,
+      "type": "regular",
+      "question": "A moving rod provides an EMF of 2 V to a circuit of total resistance 4 Ω. The electrical power dissipated is:",
+      "options": [
+        "0.5 W",
+        "8 W",
+        "0.25 W",
+        "1 W"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=\\dfrac{\\varepsilon^2}{R}=\\dfrac{2^2}{4}=1 \\) W.",
+      "hint": "\\( P=\\dfrac{\\varepsilon^2}{R} \\).",
+      "distractor_logic": [
+        "Reports the current \\( \\varepsilon/R=0.5 \\) A as the power.",
+        "Multiplies \\( \\varepsilon \\) by \\( R \\) instead of using \\( \\varepsilon^2/R \\).",
+        "Uses \\( R/\\varepsilon^2 \\), inverting the formula."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-017",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "The henry, the SI unit of inductance, is equivalent to:",
+      "options": [
+        "\\( \\text{Wb A}^{-1} \\)",
+        "\\( \\text{Wb A} \\)",
+        "\\( \\text{V A s}^{-1} \\)",
+        "\\( \\text{T m}^2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( L=\\dfrac{N\\Phi}{I} \\), so 1 H \\( = \\) 1 Wb per ampere.<br><br>Equivalently, from \\( \\varepsilon=L\\dfrac{dI}{dt} \\), 1 H \\( = \\) 1 V s per ampere.",
+      "hint": "Inductance is flux linkage per unit current.",
+      "distractor_logic": [
+        "Multiplies flux by current instead of dividing; \\( L=\\dfrac{N\\Phi}{I} \\).",
+        "From \\( \\varepsilon=L\\dfrac{dI}{dt} \\), \\( L \\) is V s per A; this puts \\( \\text{s} \\) and \\( \\text{A} \\) the wrong way round.",
+        "That is the weber, the unit of flux, not of inductance."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-018",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "The current in a 2 H inductor changes at 3 A/s. The magnitude of the self-induced EMF is:",
+      "options": [
+        "1.5 V",
+        "6 V",
+        "5 V",
+        "\\( \\dfrac{2}{3} \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( |\\varepsilon|=L\\dfrac{dI}{dt}=2\\times3=6 \\) V.",
+      "hint": "\\( \\varepsilon=-L\\dfrac{dI}{dt} \\).",
+      "distractor_logic": [
+        "Divides \\( dI/dt \\) by \\( L \\) instead of multiplying.",
+        "Adds \\( L \\) and \\( dI/dt \\) instead of multiplying.",
+        "Divides \\( L \\) by \\( dI/dt \\) instead of multiplying."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-019",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "A 4 H inductor carries a steady current of 2 A. The energy stored in its magnetic field is:",
+      "options": [
+        "16 J",
+        "4 J",
+        "8 J",
+        "32 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( U=\\tfrac12LI^2=\\tfrac12\\times4\\times2^2=8 \\) J.",
+      "hint": "\\( U=\\tfrac12LI^2 \\).",
+      "distractor_logic": [
+        "Uses \\( LI^2 \\) and drops the factor \\( \\tfrac12 \\).",
+        "Uses \\( \\tfrac12LI \\), forgetting to square the current.",
+        "Squares \\( L \\) instead of \\( I \\) and drops the \\( \\tfrac12 \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-020",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "The self-induced EMF in a coil:",
+      "options": [
+        "opposes the current only while the current is increasing",
+        "opposes the current only while the current is decreasing",
+        "always opposes the current itself, even when it is steady",
+        "opposes any change in the current, whether the current is increasing or decreasing"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\varepsilon=-L\\dfrac{dI}{dt} \\): the EMF depends on the rate of change of current.<br><br>It resists a rising current and sustains a falling one, acting like electrical inertia; for a steady current it is zero.",
+      "hint": "Look at the \\( dI/dt \\) in the formula.",
+      "distractor_logic": [
+        "Forgets that a falling current is also opposed; the back-EMF then tries to keep it flowing.",
+        "Forgets that a rising current is also opposed; the back-EMF then holds it back.",
+        "A steady current means \\( \\dfrac{dI}{dt}=0 \\), so there is no self-induced EMF at all."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-021",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "The self-inductance of a long solenoid of length \\( l \\), cross-sectional area \\( A \\) and \\( n \\) turns per unit length is:",
+      "options": [
+        "\\( \\mu_0n^2Al \\)",
+        "\\( \\mu_0nAl \\)",
+        "\\( \\mu_0N^2Al \\), with \\( N \\) the total number of turns",
+        "\\( \\dfrac{\\mu_0n^2A}{l} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Field inside: \\( B=\\mu_0nI \\). Flux linkage: \\( N\\Phi=(nl)(\\mu_0nI)A \\).<br><br>\\( L=\\dfrac{N\\Phi}{I}=\\mu_0n^2Al \\), where \\( n=N/l \\).",
+      "hint": "\\( n \\) is turns per unit length, not total turns.",
+      "distractor_logic": [
+        "Forgets to square \\( n \\); one factor comes from the field \\( \\mu_0nI \\), another from the number of turns linked.",
+        "Substitutes the total turns \\( N \\) for \\( n=N/l \\); this overstates \\( L \\) by a factor of \\( l^2 \\).",
+        "Divides by \\( l \\) instead of multiplying; with \\( n \\) fixed, a longer solenoid has more turns and more inductance."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-022",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "Inductors of 2 H and 3 H are connected in series, far apart so there is no mutual coupling. The equivalent inductance is:",
+      "options": [
+        "1.2 H",
+        "5 H",
+        "6 H",
+        "1 H"
+      ],
+      "correct_index": 1,
+      "explanation": "In series, the same current flows and the EMFs add: \\( L\\dfrac{dI}{dt}=L_1\\dfrac{dI}{dt}+L_2\\dfrac{dI}{dt} \\).<br><br>So \\( L_{eq}=L_1+L_2=5 \\) H, just like resistors.",
+      "hint": "Inductors combine like resistors.",
+      "distractor_logic": [
+        "Uses the reciprocal rule, which is how capacitors in series (or inductors in parallel) combine.",
+        "Multiplies the inductances instead of adding them.",
+        "Subtracts the inductances, as if their EMFs opposed."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-023",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "Inductors of 6 H and 3 H are connected in parallel with no mutual coupling. The equivalent inductance is:",
+      "options": [
+        "9 H",
+        "4.5 H",
+        "2 H",
+        "18 H"
+      ],
+      "correct_index": 2,
+      "explanation": "In parallel, \\( \\dfrac{1}{L_{eq}}=\\dfrac{1}{L_1}+\\dfrac{1}{L_2}=\\dfrac16+\\dfrac13=\\dfrac12 \\).<br><br>\\( L_{eq}=2 \\) H, exactly as for resistors in parallel.",
+      "hint": "Parallel inductors behave like parallel resistors.",
+      "distractor_logic": [
+        "Adds them as for series; that is the capacitor-style rule for parallel connection.",
+        "Takes the arithmetic mean, which has no basis.",
+        "Multiplies the inductances without dividing by their sum."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-024",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 1,
+      "type": "regular",
+      "question": "In the analogy between mechanical and electrical systems, self-inductance plays the role of:",
+      "options": [
+        "velocity",
+        "force",
+        "friction",
+        "mass (inertia)"
+      ],
+      "correct_index": 3,
+      "explanation": "Mass resists changes in velocity, and inductance resists changes in current: \\( \\varepsilon=L\\dfrac{dI}{dt} \\) mirrors \\( F=m\\dfrac{dv}{dt} \\).<br><br>Even the stored energies match: \\( \\tfrac12LI^2 \\) and \\( \\tfrac12mv^2 \\).",
+      "hint": "Compare \\( L\\dfrac{dI}{dt} \\) with \\( m\\dfrac{dv}{dt} \\).",
+      "distractor_logic": [
+        "Current is the analogue of velocity, not inductance.",
+        "Force corresponds to EMF, the cause of changes in current.",
+        "Friction dissipates energy, like resistance; inductance stores energy without loss."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-025",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "The mutual inductance \\( M \\) of two coils is defined by the relation:",
+      "options": [
+        "\\( N_2\\Phi_2=MI_1 \\)",
+        "\\( N_2\\Phi_2=\\dfrac{M}{I_1} \\)",
+        "\\( N_2\\Phi_2=MI_2 \\)",
+        "\\( N_2\\Phi_2=MI_1^2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The flux linked with coil 2 is proportional to the current in coil 1.<br><br>The constant of proportionality is \\( M \\): \\( N_2\\Phi_2=MI_1 \\).",
+      "hint": "Coil 2's flux is caused by coil 1's current.",
+      "distractor_logic": [
+        "Divides by the current instead of multiplying; flux linkage grows with current.",
+        "Uses coil 2's own current, which defines self-inductance, not mutual inductance.",
+        "Squares the current; flux linkage is linear in current."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-026",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "For a pair of coils, the mutual inductance of coil 2 with respect to coil 1 is 5 mH. The mutual inductance of coil 1 with respect to coil 2 is:",
+      "options": [
+        "5 mH only if the coils have equal numbers of turns",
+        "5 mH",
+        "0.2 mH",
+        "10 mH"
+      ],
+      "correct_index": 1,
+      "explanation": "Mutual inductance is reciprocal: \\( M_{12}=M_{21}=M \\).<br><br>So the answer is 5 mH.",
+      "hint": "Mutual inductance is a single shared quantity.",
+      "distractor_logic": [
+        "Reciprocity \\( M_{12}=M_{21} \\) holds for any pair of coils, whatever their turns.",
+        "Takes the reciprocal of 5, as if the reverse coupling were inverse.",
+        "Doubles the value, as if the two directions added."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-027",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "Two coils have a mutual inductance of 2 H. The current in coil 1 changes at 3 A/s. The EMF induced in coil 2 is:",
+      "options": [
+        "1.5 V",
+        "5 V",
+        "6 V",
+        "Zero, since coil 2 carries no current"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( |\\varepsilon_2|=M\\dfrac{dI_1}{dt}=2\\times3=6 \\) V.",
+      "hint": "\\( \\varepsilon_2=-M\\dfrac{dI_1}{dt} \\).",
+      "distractor_logic": [
+        "Divides the rate by \\( M \\) instead of multiplying.",
+        "Adds \\( M \\) and the rate.",
+        "The EMF in coil 2 arises from coil 1's changing current; coil 2 needs no current of its own."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-028",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following is a possible value of the coefficient of coupling \\( k \\) between two coils?",
+      "options": [
+        "1.4",
+        "\\( -0.5 \\)",
+        "2",
+        "0.6"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( k=\\dfrac{M}{\\sqrt{L_1L_2}} \\), and always \\( 0\\le k\\le1 \\).<br><br>Only 0.6 lies in this range.",
+      "hint": "\\( k \\) lies between 0 and 1.",
+      "distractor_logic": [
+        "Exceeds 1, which would need \\( M>\\sqrt{L_1L_2} \\), impossible.",
+        "\\( k \\) is a ratio of magnitudes and cannot be negative.",
+        "Exceeds 1, impossible for any real pair of coils."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-029",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "A coefficient of coupling \\( k=1 \\) means that:",
+      "options": [
+        "all the flux of one coil links the other coil",
+        "there is no magnetic coupling between the coils",
+        "the axes of the coils are perpendicular",
+        "\\( M=L_1+L_2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( k=1 \\) is perfect coupling: \\( M=\\sqrt{L_1L_2} \\).<br><br>It happens when every flux line of one coil passes through all turns of the other.",
+      "hint": "\\( k=1 \\) is the maximum possible coupling.",
+      "distractor_logic": [
+        "That is \\( k=0 \\), the other extreme.",
+        "Perpendicular axes give almost no coupling, \\( k \\) near 0.",
+        "Perfect coupling gives \\( M=\\sqrt{L_1L_2} \\), not the sum."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-030",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "The mutual inductance of two coils does NOT depend on:",
+      "options": [
+        "their numbers of turns",
+        "the currents flowing in them",
+        "their separation",
+        "their relative orientation"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( M \\) depends only on geometry (turns, size, separation, orientation) and the medium.<br><br>Currents change the flux, but \\( M=\\dfrac{N_2\\Phi_2}{I_1} \\) stays the same.",
+      "hint": "\\( M \\) is a property of the arrangement.",
+      "distractor_logic": [
+        "More turns link more flux, so \\( M \\) increases with turns.",
+        "Moving the coils apart reduces the flux shared, lowering \\( M \\).",
+        "Turning one coil changes how much flux links it, so \\( M \\) changes."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-031",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "For two small coils placed near each other, the mutual inductance is smallest when:",
+      "options": [
+        "they are coaxial and close together",
+        "one is wound directly over the other",
+        "their axes are perpendicular",
+        "their axes are parallel and they are side by side at small separation"
+      ],
+      "correct_index": 2,
+      "explanation": "With perpendicular axes, the field of one coil runs nearly parallel to the plane of the other.<br><br>Very little flux passes through it, so \\( M \\) is minimal.",
+      "hint": "Which arrangement shares the least flux?",
+      "distractor_logic": [
+        "Coaxial, close coils share much of their flux, giving large \\( M \\).",
+        "Winding one over the other gives nearly perfect coupling.",
+        "Parallel, close coils still share a significant fraction of flux."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-032",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 1,
+      "type": "regular",
+      "question": "Two coils have \\( L_1=4 \\) H, \\( L_2=9 \\) H and coefficient of coupling \\( k=0.5 \\). Their mutual inductance is:",
+      "options": [
+        "6.5 H",
+        "18 H",
+        "6 H",
+        "3 H"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( M=k\\sqrt{L_1L_2}=0.5\\times\\sqrt{36}=0.5\\times6=3 \\) H.",
+      "hint": "\\( M=k\\sqrt{L_1L_2} \\).",
+      "distractor_logic": [
+        "Multiplies \\( k \\) by \\( L_1+L_2 \\) instead of by \\( \\sqrt{L_1L_2} \\).",
+        "Multiplies \\( k \\) by \\( L_1L_2 \\) without taking the square root.",
+        "Finds \\( \\sqrt{L_1L_2} \\) but forgets to multiply by \\( k \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-033",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "The iron core of a transformer or motor is made of thin, insulated laminations in order to:",
+      "options": [
+        "reduce eddy-current losses by increasing the resistance of eddy-current paths",
+        "increase eddy-current losses so the core heats up faster",
+        "increase the magnetic flux through the core",
+        "make the core lighter, with no effect on losses"
+      ],
+      "correct_index": 0,
+      "explanation": "Eddy currents circulate in loops inside a solid core and waste energy as heat.<br><br>Thin insulated sheets restrict each loop to a tiny cross-section with high resistance, so the \\( I^2R \\) loss drops sharply.",
+      "hint": "What do the insulating layers do to the current loops?",
+      "distractor_logic": [
+        "Reverses the purpose; lamination reduces, not increases, eddy-current heating.",
+        "Lamination does not raise the flux; the core material does that.",
+        "Weight is not the point; the insulated layers break up the eddy-current loops."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-034",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "A copper plate swinging between the poles of a magnet comes to rest quickly. If several slots are cut in the plate, it will:",
+      "options": [
+        "stop even more quickly, since the slots increase the eddy currents",
+        "swing for longer, since the slots reduce the eddy currents",
+        "swing exactly as before, since copper is non-magnetic",
+        "be pulled towards the magnet and stick to it"
+      ],
+      "correct_index": 1,
+      "explanation": "The motion induces eddy currents, which by Lenz's law oppose the motion, damping the swing.<br><br>Slots interrupt the current loops, so the braking is much weaker and the plate swings longer.",
+      "hint": "Slots block the circulating currents.",
+      "distractor_logic": [
+        "Slots cut the paths of eddy currents, reducing them, not increasing them.",
+        "The damping comes from induced currents in the conductor, not from magnetism of copper.",
+        "Copper is not attracted by a magnet; the effect is a velocity-dependent braking force."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-035",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "An AC generator has a 100-turn coil of area \\( 0.02\\ \\text{m}^2 \\) rotating at \\( \\omega=50 \\) rad/s in a 0.1 T field. The peak EMF is:",
+      "options": [
+        "0.2 V",
+        "0.1 V",
+        "10 V",
+        "5 V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\varepsilon_0=NBA\\omega \\).<br><br>\\( \\varepsilon_0=100\\times0.1\\times0.02\\times50=10 \\) V.",
+      "hint": "\\( \\varepsilon_0=NBA\\omega \\).",
+      "distractor_logic": [
+        "Reports \\( NBA \\), the peak flux linkage, and drops the factor \\( \\omega \\).",
+        "Uses \\( BA\\omega \\), forgetting the 100 turns.",
+        "Halves the peak; the peak of \\( \\sin\\omega t \\) is 1."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-036",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following is an application of eddy currents?",
+      "options": [
+        "Electrolytic refining of copper",
+        "An incandescent lamp",
+        "A solar cell",
+        "An induction furnace"
+      ],
+      "correct_index": 3,
+      "explanation": "An induction furnace uses a rapidly alternating field to induce large eddy currents in a metal charge.<br><br>Their heating melts the metal.",
+      "hint": "Which device heats metal without contact?",
+      "distractor_logic": [
+        "Electrolysis is a chemical effect of current, not induction.",
+        "The filament is heated by a current supplied directly, not by induced eddy currents.",
+        "A solar cell converts light to electricity through the photovoltaic effect."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-037",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "An AC generator works on the principle of:",
+      "options": [
+        "electromagnetic induction, converting mechanical energy into electrical energy",
+        "the magnetic effect of current, converting electrical energy into mechanical energy",
+        "electrostatic induction, storing charge on plates",
+        "the heating effect of current"
+      ],
+      "correct_index": 0,
+      "explanation": "A coil rotated in a magnetic field has a changing flux, so an EMF is induced.<br><br>The mechanical work of turning the coil becomes electrical energy.",
+      "hint": "What makes the EMF appear in the rotating coil?",
+      "distractor_logic": [
+        "That describes a motor, the reverse process.",
+        "Electrostatic induction describes charging by induction, not generation of AC.",
+        "Heating is a consequence of current, not how a generator produces it."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-038",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "In an AC generator, the EMF is zero at the instant when the plane of the coil is:",
+      "options": [
+        "parallel to \\( \\vec B \\), so the flux through it is zero",
+        "perpendicular to \\( \\vec B \\), so the flux through it is maximum",
+        "at \\( 45^\\circ \\) to \\( \\vec B \\)",
+        "at \\( 30^\\circ \\) to \\( \\vec B \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\Phi=NBA\\cos\\omega t \\) and \\( \\varepsilon=NBA\\omega\\sin\\omega t \\).<br><br>When the flux is maximum (\\( \\cos\\omega t=1 \\)), \\( \\sin\\omega t=0 \\), so \\( \\varepsilon=0 \\).",
+      "hint": "At maximum flux, the flux is momentarily not changing.",
+      "distractor_logic": [
+        "That is the position of maximum EMF, where the flux changes fastest.",
+        "At \\( 45^\\circ \\) the EMF is \\( \\dfrac{\\varepsilon_0}{\\sqrt2} \\), not zero.",
+        "At this tilt the EMF is non-zero."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-039",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "Electromagnetic brakes in some trains work because the eddy currents induced in the wheels or rails:",
+      "options": [
+        "produce a force that aids the motion",
+        "only heat the rails, with no effect on motion",
+        "produce a force that opposes the relative motion",
+        "permanently reverse the field of the magnets"
+      ],
+      "correct_index": 2,
+      "explanation": "Relative motion between magnet and conductor induces eddy currents.<br><br>By Lenz's law these currents oppose the motion, giving a smooth braking force, and the kinetic energy becomes heat.",
+      "hint": "Induced effects always oppose their cause.",
+      "distractor_logic": [
+        "A force aiding motion would violate Lenz's law and energy conservation.",
+        "The heating comes along with a real retarding force on the moving part.",
+        "The magnets' fields are unaffected; the eddy currents produce their own opposing field."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L1-040",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 1,
+      "type": "regular",
+      "question": "A generator coil rotates at 50 revolutions per second. Its angular frequency \\( \\omega \\) is:",
+      "options": [
+        "50 rad/s",
+        "\\( 50\\pi \\) rad/s",
+        "100 rad/s",
+        "\\( 100\\pi \\) rad/s"
+      ],
+      "correct_index": 3,
+      "explanation": "Each revolution is \\( 2\\pi \\) radians.<br><br>\\( \\omega=2\\pi f=2\\pi\\times50=100\\pi \\) rad/s.",
+      "hint": "\\( \\omega=2\\pi f \\).",
+      "distractor_logic": [
+        "Uses the frequency in rev/s as if it were \\( \\omega \\).",
+        "Uses \\( \\pi f \\) instead of \\( 2\\pi f \\).",
+        "Uses \\( 2f \\) and drops the \\( \\pi \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-001",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "A single loop of area \\( 0.04\\ \\text{m}^2 \\) is placed normal to a field \\( B=(0.2+0.5t) \\) T, where \\( t \\) is in seconds. The induced EMF is:",
+      "options": [
+        "0.02 V",
+        "0.008 V",
+        "0.028 V",
+        "0.5 V"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\Phi=BA \\), so \\( \\varepsilon=A\\dfrac{dB}{dt} \\).<br><br>\\( \\dfrac{dB}{dt}=0.5 \\) T/s, so \\( \\varepsilon=0.04\\times0.5=0.02 \\) V.<br><br>The constant 0.2 T contributes no EMF because it does not change.",
+      "hint": "Only the changing part of \\( B \\) matters.",
+      "distractor_logic": [
+        "Multiplies the area by the constant 0.2 T term instead of by the rate \\( dB/dt=0.5 \\) T/s.",
+        "Adds both coefficients (0.7) as if the constant part of \\( B \\) also induced EMF.",
+        "Uses \\( dB/dt \\) but forgets to multiply by the area."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-002",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "A flexible loop lies normal to a steady uniform field of 0.6 T. Its area increases at a constant rate of \\( 0.05\\ \\text{m}^2 \\) per second. The induced EMF is:",
+      "options": [
+        "Zero",
+        "0.03 V",
+        "12 V",
+        "0.015 V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\Phi=BA \\) with \\( B \\) constant, so \\( \\varepsilon=B\\dfrac{dA}{dt} \\).<br><br>\\( \\varepsilon=0.6\\times0.05=0.03 \\) V.",
+      "hint": "Flux can change through area as well as field.",
+      "distractor_logic": [
+        "Assumes a steady field cannot induce EMF; a changing area changes the flux just as well.",
+        "Divides \\( B \\) by the area rate instead of multiplying.",
+        "Halves the result as though an average over the change were needed; the rate is constant."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-003",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "A coil of \\( N=50 \\) turns and area \\( 0.02\\ \\text{m}^2 \\) is in a 0.5 T field. It is turned from a position with its normal along \\( \\vec B \\) to one with its normal perpendicular to \\( \\vec B \\) in 0.1 s. The average induced EMF is:",
+      "options": [
+        "0.1 V",
+        "10 V",
+        "5 V",
+        "Zero"
+      ],
+      "correct_index": 2,
+      "explanation": "Initial flux per turn \\( =BA=0.5\\times0.02=0.01 \\) Wb; final flux \\( =0 \\).<br><br>\\( |\\varepsilon|=N\\dfrac{\\Delta\\Phi}{\\Delta t}=50\\times\\dfrac{0.01}{0.1}=5 \\) V.",
+      "hint": "Find the flux at the start and at the end.",
+      "distractor_logic": [
+        "Computes the per-turn EMF but forgets the factor of 50 turns.",
+        "Uses a flux change of \\( 2BA \\), which applies to a \\( 180^\\circ \\) flip, not a \\( 90^\\circ \\) turn.",
+        "Thinks the flux cannot change because the area is unchanged; the angle changes it."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-004",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "A 20-turn coil of area \\( 0.1\\ \\text{m}^2 \\) has its normal along a 0.5 T field. It is flipped through \\( 180^\\circ \\) in 0.5 s. The average induced EMF is:",
+      "options": [
+        "2 V",
+        "Zero",
+        "0.2 V",
+        "4 V"
+      ],
+      "correct_index": 3,
+      "explanation": "Flux per turn goes from \\( +BA=+0.05 \\) Wb to \\( -BA=-0.05 \\) Wb, a change of 0.1 Wb.<br><br>\\( |\\varepsilon|=20\\times\\dfrac{0.1}{0.5}=4 \\) V.",
+      "hint": "After a flip, the flux points the other way.",
+      "distractor_logic": [
+        "Takes the flux change as \\( BA \\); flipping reverses the flux, so the change is \\( 2BA \\).",
+        "Sees equal flux magnitudes at start and end and misses the sign reversal.",
+        "Uses the correct flux change per turn but forgets the 20 turns."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-005",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "The flux through a single loop rises uniformly from 0 to 6 Wb during 0 to 2 s, stays at 6 Wb from 2 s to 4 s, and falls uniformly to 0 from 4 s to 5 s. The EMF magnitudes during 2 to 4 s and during 4 to 5 s are:",
+      "options": [
+        "0 V and 6 V",
+        "3 V and 6 V",
+        "6 V and 0 V",
+        "0 V and 3 V"
+      ],
+      "correct_index": 0,
+      "explanation": "EMF equals the slope of the flux-time graph.<br><br>From 2 s to 4 s the flux is constant, so \\( \\varepsilon=0 \\).<br><br>From 4 s to 5 s, \\( |\\varepsilon|=\\dfrac{6}{1}=6 \\) V.",
+      "hint": "Look at the slope, not the height, of the graph.",
+      "distractor_logic": [
+        "Assumes the 3 V from the rising phase continues while the flux is steady.",
+        "Links EMF to the flux value (6 Wb) instead of its slope, and reads no EMF where the flux changes.",
+        "Uses 2 s for the fall instead of the actual 1 s."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-006",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "A 100-turn coil of total resistance 10 Ω is linked with a flux that changes by 0.01 Wb per turn. How much charge flows through the coil?",
+      "options": [
+        "0.001 C",
+        "0.1 C",
+        "10 C",
+        "It cannot be found without knowing the time taken"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I=\\dfrac{\\varepsilon}{R}=\\dfrac{N}{R}\\dfrac{d\\Phi}{dt} \\), so \\( q=\\int I\\,dt=\\dfrac{N\\Delta\\Phi}{R} \\).<br><br>\\( q=\\dfrac{100\\times0.01}{10}=0.1 \\) C.",
+      "hint": "Integrate the current over time; the time cancels.",
+      "distractor_logic": [
+        "Leaves out the factor of 100 turns in the flux linkage.",
+        "Multiplies the flux-linkage change by \\( R \\) instead of dividing.",
+        "Misses that \\( q=\\dfrac{N\\Delta\\Phi}{R} \\) is independent of how fast the change happens."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-007",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "The field through a 200-turn coil of area \\( 0.01\\ \\text{m}^2 \\) (normal to the field) falls uniformly from 0.8 T to 0.2 T in 0.3 s. The induced EMF is:",
+      "options": [
+        "0.02 V",
+        "1.2 V",
+        "4 V",
+        "400 V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\Delta B=0.6 \\) T, so \\( \\Delta\\Phi=0.6\\times0.01=0.006 \\) Wb per turn.<br><br>\\( |\\varepsilon|=200\\times\\dfrac{0.006}{0.3}=4 \\) V.",
+      "hint": "\\( \\varepsilon=NA\\dfrac{\\Delta B}{\\Delta t} \\).",
+      "distractor_logic": [
+        "Gets the per-turn EMF but forgets the 200 turns.",
+        "Finds the change in flux linkage but does not divide by the 0.3 s.",
+        "Leaves out the area, using only \\( N\\Delta B/\\Delta t \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-008",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 2,
+      "type": "regular",
+      "question": "A single loop of area \\( 0.05\\ \\text{m}^2 \\) rotates at \\( \\omega=100 \\) rad/s about an axis perpendicular to a 0.2 T field. The maximum induced EMF is:",
+      "options": [
+        "0.01 V",
+        "Zero",
+        "0.5 V",
+        "1 V"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\Phi=BA\\cos\\omega t \\), so \\( \\varepsilon=BA\\omega\\sin\\omega t \\).<br><br>Maximum EMF \\( =BA\\omega=0.2\\times0.05\\times100=1 \\) V.",
+      "hint": "Differentiate \\( BA\\cos\\omega t \\).",
+      "distractor_logic": [
+        "Reports the peak flux \\( BA \\) instead of the peak EMF \\( BA\\omega \\).",
+        "Picks the EMF at the instant of maximum flux, where the EMF is zero, not the maximum EMF.",
+        "Halves the peak value; the peak of \\( \\sin\\omega t \\) is 1."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-009",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "A rod of length 0.2 m moves at a constant 5 m/s on rails in a 0.5 T field (all mutually perpendicular). The total circuit resistance is 0.5 Ω. The magnetic force on the rod is:",
+      "options": [
+        "0.1 N, opposite to the velocity",
+        "0.1 N, along the velocity",
+        "0.2 N, opposite to the velocity",
+        "Zero, since the velocity is constant"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\varepsilon=Blv=0.5\\times0.2\\times5=0.5 \\) V and \\( I=\\dfrac{0.5}{0.5}=1 \\) A.<br><br>\\( F=BIl=0.5\\times1\\times0.2=0.1 \\) N, opposing the motion; the external agent pushes forward with an equal 0.1 N.",
+      "hint": "Find the current first, then \\( BIl \\).",
+      "distractor_logic": [
+        "Has the induced force aiding the motion, reversing Lenz's law.",
+        "Uses \\( F=Il \\) and forgets the factor \\( B \\).",
+        "Confuses the net force (zero, since the agent balances it) with the magnetic force alone."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-010",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "A rod of length 0.5 m is kept moving at a constant 2 m/s through a 1 T field (mutually perpendicular) in a purely resistive circuit of 0.5 Ω. The mechanical power supplied by the external agent is:",
+      "options": [
+        "0 W, since no net work is done at constant velocity",
+        "2 W",
+        "1 W",
+        "4 W"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\varepsilon=Blv=1\\times0.5\\times2=1 \\) V, \\( I=\\dfrac{1}{0.5}=2 \\) A.<br><br>Retarding force \\( F=BIl=1\\times2\\times0.5=1 \\) N, so \\( P=Fv=2 \\) W.<br><br>Check: \\( I^2R=4\\times0.5=2 \\) W, equal to the mechanical input.",
+      "hint": "Mechanical power in equals electrical power dissipated.",
+      "distractor_logic": [
+        "The net work is zero, but the agent still works against the magnetic retarding force.",
+        "Gives half the Joule heating; in steady state all the mechanical power becomes heat, not half of it.",
+        "Doubles the Joule heating; the input cannot exceed \\( I^2R \\) in this steady resistive case."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-011",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "A rod of length 1 m lies perpendicular to a 0.4 T field. It moves at 5 m/s in a direction perpendicular to the rod but making \\( 30^\\circ \\) with \\( \\vec B \\). The motional EMF is:",
+      "options": [
+        "2 V",
+        "\\( \\sqrt{3} \\) V",
+        "1 V",
+        "Zero"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( |\\vec v\\times\\vec B|=vB\\sin30^\\circ \\), and this is along the rod.<br><br>\\( \\varepsilon=Blv\\sin30^\\circ=0.4\\times1\\times5\\times\\tfrac12=1 \\) V.",
+      "hint": "Only the part of \\( \\vec v \\) perpendicular to \\( \\vec B \\) counts.",
+      "distractor_logic": [
+        "Uses the full speed; only the velocity component perpendicular to \\( \\vec B \\) contributes.",
+        "Uses \\( \\cos30^\\circ \\) instead of \\( \\sin30^\\circ \\); the velocity component along \\( \\vec B \\) gives nothing.",
+        "Assumes any tilt kills the EMF; only motion exactly along \\( \\vec B \\) would."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-012",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "A metal rod of length 1 m rotates at \\( \\omega=20 \\) rad/s about one end, in a plane perpendicular to a 0.5 T field. The EMF between its ends is:",
+      "options": [
+        "10 V",
+        "2.5 V",
+        "Zero",
+        "5 V"
+      ],
+      "correct_index": 3,
+      "explanation": "A point at distance \\( r \\) moves at \\( \\omega r \\), so \\( d\\varepsilon=B\\omega r\\,dr \\).<br><br>\\( \\varepsilon=\\int_0^lB\\omega r\\,dr=\\tfrac12B\\omega l^2=\\tfrac12\\times0.5\\times20\\times1=5 \\) V.",
+      "hint": "Average speed of the rod is \\( \\omega l/2 \\).",
+      "distractor_logic": [
+        "Uses \\( B\\omega l^2 \\) without the factor \\( \\tfrac12 \\); points nearer the pivot move more slowly.",
+        "Uses \\( \\tfrac14 B\\omega l^2 \\), halving the correct result.",
+        "Thinks a rod enclosing no area has no EMF; each element cuts field lines."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-013",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "A bar magnet, north pole down, falls through a horizontal ring. After it has passed through and is moving away below the ring, the induced current seen from above is:",
+      "options": [
+        "clockwise",
+        "anticlockwise",
+        "zero, since the magnet has already passed",
+        "alternating rapidly in direction"
+      ],
+      "correct_index": 0,
+      "explanation": "Below the ring, the magnet's field through the ring points downward (towards its south pole) and is decreasing.<br><br>The induced current opposes this decrease, so it makes a downward field inside the ring.<br><br>A downward field seen from above needs a clockwise current.",
+      "hint": "Is the downward flux increasing or decreasing?",
+      "distractor_logic": [
+        "Opposes the present downward flux instead of its decrease; this reverses the correct sense.",
+        "The flux through the ring keeps changing as the magnet moves away, so a current still flows.",
+        "The flux decreases steadily as the magnet recedes, so the current keeps one direction."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-014",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "A rod sliding on frictionless rails in a closed circuit in a uniform field is given a push and then released, with no external force afterwards. The rod:",
+      "options": [
+        "keeps moving at constant velocity, since the rails are frictionless",
+        "slows down, with its kinetic energy appearing as heat in the circuit",
+        "speeds up, since the induced current pushes it forward",
+        "stops instantly once released"
+      ],
+      "correct_index": 1,
+      "explanation": "The moving rod drives a current, and the field exerts \\( F=\\dfrac{B^2l^2v}{R} \\) on it, opposing motion.<br><br>The rod decelerates, and its kinetic energy becomes Joule heat \\( I^2R \\).",
+      "hint": "Which way does the induced force point?",
+      "distractor_logic": [
+        "Ignores the magnetic retarding force \\( BIl \\) on the current-carrying rod.",
+        "Reverses Lenz's law; an accelerating rod would create energy from nothing.",
+        "The retarding force \\( \\dfrac{B^2l^2v}{R} \\) shrinks with \\( v \\), so the rod slows gradually."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-015",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "Suppose, contrary to Lenz's law, an induced current always aided the change in flux that produced it. What would follow?",
+      "options": [
+        "Induced currents would simply be weaker than they are now",
+        "Nothing would change, since only the EMF's magnitude matters",
+        "A tiny change would grow without limit, producing energy without any work input",
+        "Induced currents would flow only in superconductors"
+      ],
+      "correct_index": 2,
+      "explanation": "An aiding current would increase the flux, which would induce more current, and so on.<br><br>This runaway would produce energy from nothing, so the induced current must oppose the change.",
+      "hint": "Follow the feedback loop.",
+      "distractor_logic": [
+        "The problem is not the size of the current; aiding the change creates runaway growth.",
+        "The direction decides whether energy is conserved, so it matters greatly.",
+        "The material has nothing to do with it; the issue is energy conservation."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-016",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 2,
+      "type": "regular",
+      "question": "A rod of length 0.4 m and resistance 1 Ω moves at 10 m/s in a 0.5 T field (mutually perpendicular) on rails joined by a 3 Ω resistor. The current in the circuit is:",
+      "options": [
+        "2 A",
+        "0.25 A",
+        "8 A",
+        "0.5 A"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\varepsilon=Blv=0.5\\times0.4\\times10=2 \\) V.<br><br>The rod and resistor are in series, total 4 Ω, so \\( I=\\dfrac{2}{4}=0.5 \\) A.",
+      "hint": "The rod's own resistance is in series with the external resistor.",
+      "distractor_logic": [
+        "Uses only the rod's 1 Ω and ignores the 3 Ω external resistor in series.",
+        "Halves the EMF as in the rotating-rod formula, which does not apply to translation.",
+        "Multiplies the EMF by the total resistance instead of dividing."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-017",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "A solenoid has 500 turns wound over a length of 0.5 m and a cross-sectional area of \\( 10^{-3}\\ \\text{m}^2 \\). Taking \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A, its self-inductance is:",
+      "options": [
+        "\\( 0.2\\pi \\) mH",
+        "\\( 0.05\\pi \\) mH",
+        "\\( 0.4\\pi \\) mH",
+        "\\( 0.8\\pi \\) mH"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( n=\\dfrac{500}{0.5}=1000 \\) per metre.<br><br>\\( L=\\mu_0n^2Al=4\\pi\\times10^{-7}\\times10^6\\times10^{-3}\\times0.5=2\\pi\\times10^{-4} \\) H.<br><br>That is \\( 0.2\\pi \\) mH.",
+      "hint": "First find \\( n=N/l \\).",
+      "distractor_logic": [
+        "Uses the total 500 turns in place of \\( n=N/l=1000 \\) per metre in \\( \\mu_0n^2Al \\).",
+        "Leaves out the length \\( l \\) in \\( \\mu_0n^2Al \\).",
+        "Divides by \\( l \\) instead of multiplying."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-018",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of turns on a solenoid is doubled while its length and cross-section stay the same. Its self-inductance becomes:",
+      "options": [
+        "2 times as large",
+        "4 times as large",
+        "unchanged",
+        "half as large"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( L=\\mu_0n^2Al \\), and doubling the turns at fixed length doubles \\( n \\).<br><br>So \\( L \\) grows by \\( 2^2=4 \\).",
+      "hint": "\\( L \\) depends on \\( n^2 \\).",
+      "distractor_logic": [
+        "Treats \\( L \\) as proportional to \\( n \\) instead of \\( n^2 \\).",
+        "Assumes inductance depends only on geometry, ignoring the number of turns.",
+        "Gets the direction of the effect wrong; more turns means more flux linkage per ampere."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-019",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "A 50 mH inductor carries a current of 4 A. The energy stored is:",
+      "options": [
+        "0.1 J",
+        "0.8 J",
+        "0.4 J",
+        "400 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( L=0.05 \\) H.<br><br>\\( U=\\tfrac12LI^2=\\tfrac12\\times0.05\\times16=0.4 \\) J.",
+      "hint": "Convert mH to H first.",
+      "distractor_logic": [
+        "Uses \\( \\tfrac12LI \\), not squaring the current.",
+        "Uses \\( LI^2 \\) and drops the \\( \\tfrac12 \\).",
+        "Uses 50 in place of 0.05, not converting mH to H."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-020",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "The current in a 0.5 H coil falls uniformly from 4 A to zero in 0.2 s. The self-induced EMF is:",
+      "options": [
+        "10 V, acting against the original direction of the current",
+        "0.4 V, acting to keep the current flowing in its original direction",
+        "Zero, since the current ends at zero",
+        "10 V, acting to keep the current flowing in its original direction"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( |\\varepsilon|=L\\dfrac{\\Delta I}{\\Delta t}=0.5\\times\\dfrac{4}{0.2}=10 \\) V.<br><br>The current is decreasing, so the back-EMF opposes the decrease by trying to keep the current flowing the same way.",
+      "hint": "The back-EMF opposes the change, not the current.",
+      "distractor_logic": [
+        "Makes the EMF oppose the current itself rather than its change; a falling current is sustained, not pushed back.",
+        "Multiplies by \\( \\Delta t \\) instead of dividing: \\( 0.5\\times4\\times0.2 \\).",
+        "The EMF depends on the rate of change during the fall, not on the final value."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-021",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "Three inductors of 2 H, 3 H and 6 H are connected in parallel with no mutual coupling. The equivalent inductance is:",
+      "options": [
+        "1 H",
+        "11 H",
+        "36 H",
+        "6 H"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac{1}{L_{eq}}=\\dfrac12+\\dfrac13+\\dfrac16=\\dfrac{3+2+1}{6}=1 \\).<br><br>\\( L_{eq}=1 \\) H.",
+      "hint": "Add the reciprocals.",
+      "distractor_logic": [
+        "Adds them as if in series.",
+        "Multiplies them together.",
+        "Takes the largest value as if it dominated."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-022",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "A 4 H inductor is connected in series with a parallel pair of 6 H and 12 H inductors, with no mutual coupling. The equivalent inductance is:",
+      "options": [
+        "22 H",
+        "8 H",
+        "2 H",
+        "13 H"
+      ],
+      "correct_index": 1,
+      "explanation": "Parallel pair: \\( \\dfrac{1}{L_p}=\\dfrac16+\\dfrac1{12}=\\dfrac14 \\), so \\( L_p=4 \\) H.<br><br>In series with 4 H: \\( L_{eq}=4+4=8 \\) H.",
+      "hint": "Combine the parallel pair first.",
+      "distractor_logic": [
+        "Adds all three as if they were in series.",
+        "Treats all three as if they were in parallel.",
+        "Adds 4 H to the average of 6 H and 12 H, which has no basis."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-023",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "At a certain instant, a 2 H inductor carries 3 A and the current is increasing at 4 A/s. The rate at which energy is being stored in the inductor is:",
+      "options": [
+        "8 W",
+        "6 W",
+        "24 W",
+        "72 W"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( U=\\tfrac12LI^2 \\), so \\( \\dfrac{dU}{dt}=LI\\dfrac{dI}{dt} \\).<br><br>\\( \\dfrac{dU}{dt}=2\\times3\\times4=24 \\) W.",
+      "hint": "Differentiate \\( \\tfrac12LI^2 \\).",
+      "distractor_logic": [
+        "Reports the back-EMF \\( L\\dfrac{dI}{dt}=8 \\) V as a power.",
+        "Multiplies only \\( L \\) and \\( I \\).",
+        "Squares the current: \\( LI^2\\dfrac{dI}{dt} \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-024",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 2,
+      "type": "regular",
+      "question": "An air-cored solenoid has an inductance of 2 mH. It is completely filled with a core of relative permeability 500. The new inductance is:",
+      "options": [
+        "2 mH",
+        "\\( 4\\times10^{-3} \\) mH",
+        "1000 H",
+        "1 H"
+      ],
+      "correct_index": 3,
+      "explanation": "Filling with a core replaces \\( \\mu_0 \\) by \\( \\mu_r\\mu_0 \\), so \\( L \\) is multiplied by \\( \\mu_r \\).<br><br>\\( L=500\\times2 \\) mH \\( =1000 \\) mH \\( =1 \\) H.",
+      "hint": "\\( L\\propto\\mu \\).",
+      "distractor_logic": [
+        "Assumes the core has no effect; it multiplies the flux by \\( \\mu_r \\).",
+        "Divides by \\( \\mu_r \\) instead of multiplying.",
+        "Multiplies correctly but forgets that 1000 mH is 1 H, not 1000 H."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-025",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "Two coaxial solenoids of length 0.5 m share the same axis. The inner has 1000 turns per metre and area \\( 10^{-3}\\ \\text{m}^2 \\); the outer has 500 turns per metre and area \\( 3\\times10^{-3}\\ \\text{m}^2 \\). Taking \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A, their mutual inductance is:",
+      "options": [
+        "\\( 0.1\\pi \\) mH",
+        "\\( 0.3\\pi \\) mH",
+        "\\( 0.025\\pi \\) mH",
+        "\\( 0.2\\pi \\) mH"
+      ],
+      "correct_index": 0,
+      "explanation": "Only the inner area carries the shared flux: \\( M=\\mu_0n_1n_2A_{inner}l \\).<br><br>\\( M=4\\pi\\times10^{-7}\\times1000\\times500\\times10^{-3}\\times0.5=10^{-4}\\pi \\) H \\( =0.1\\pi \\) mH.",
+      "hint": "Use the smaller (inner) area.",
+      "distractor_logic": [
+        "Uses the outer area; the flux shared lies only within the inner solenoid's area.",
+        "Uses the total turns of each coil in place of turns per metre.",
+        "Leaves out the length \\( l \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-026",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "The current in coil 1 rises uniformly from 0 to 5 A in 0.1 s, inducing 2 V in coil 2. The mutual inductance is:",
+      "options": [
+        "25 H",
+        "40 mH",
+        "0.4 H",
+        "100 H"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{dI_1}{dt}=\\dfrac{5}{0.1}=50 \\) A/s.<br><br>\\( M=\\dfrac{|\\varepsilon_2|}{dI_1/dt}=\\dfrac{2}{50}=0.04 \\) H \\( =40 \\) mH.",
+      "hint": "\\( M=\\dfrac{\\varepsilon_2}{dI_1/dt} \\).",
+      "distractor_logic": [
+        "Divides the current rate by the EMF instead of the other way round.",
+        "Divides the EMF by the current change and forgets the time.",
+        "Multiplies the EMF by the rate instead of dividing."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-027",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "Two coils have \\( L_1=2 \\) mH, \\( L_2=8 \\) mH and \\( M=2 \\) mH. The coefficient of coupling is:",
+      "options": [
+        "1",
+        "0.25",
+        "0.5",
+        "2"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( k=\\dfrac{M}{\\sqrt{L_1L_2}}=\\dfrac{2}{\\sqrt{16}}=\\dfrac24=0.5 \\).",
+      "hint": "Divide \\( M \\) by the geometric mean of the self-inductances.",
+      "distractor_logic": [
+        "Divides \\( M \\) by \\( L_1 \\) alone.",
+        "Divides \\( M \\) by \\( L_2 \\) alone.",
+        "Inverts the ratio, giving a value above 1, which is impossible."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-028",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "A current of 2 A in coil A produces a flux linkage of 0.01 Wb in coil B. If instead a current of 4 A flows in coil B, the flux linkage in coil A is:",
+      "options": [
+        "0.01 Wb",
+        "0.005 Wb",
+        "It cannot be found without the turns of each coil",
+        "0.02 Wb"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( M=\\dfrac{0.01}{2}=0.005 \\) H, and the same \\( M \\) works both ways.<br><br>Flux linkage in A \\( =MI_B=0.005\\times4=0.02 \\) Wb.",
+      "hint": "Use the same \\( M \\) in reverse.",
+      "distractor_logic": [
+        "Ignores the change in current from 2 A to 4 A.",
+        "Reports \\( M \\) (in henry) as the flux linkage.",
+        "Reciprocity \\( M_{AB}=M_{BA} \\) makes the turns unnecessary."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-029",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "Coil 2, of resistance 5 Ω, has mutual inductance 0.2 H with coil 1. The current in coil 1 changes at 50 A/s. The current induced in coil 2 is:",
+      "options": [
+        "2 A",
+        "10 A",
+        "0.5 A",
+        "0.04 A"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( |\\varepsilon_2|=M\\dfrac{dI_1}{dt}=0.2\\times50=10 \\) V.<br><br>\\( I_2=\\dfrac{10}{5}=2 \\) A.",
+      "hint": "Find the EMF, then use Ohm's law.",
+      "distractor_logic": [
+        "Reports the induced EMF of 10 V as the current.",
+        "Divides \\( R \\) by \\( \\varepsilon \\), inverting Ohm's law.",
+        "Divides \\( M \\) by \\( R \\), leaving out the rate of change."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-030",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "Two coils have self-inductances of 4 mH and 16 mH. The largest mutual inductance they could possibly have is:",
+      "options": [
+        "20 mH",
+        "8 mH",
+        "64 mH",
+        "10 mH"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( M=k\\sqrt{L_1L_2} \\) with \\( k\\le1 \\).<br><br>Maximum \\( M=\\sqrt{4\\times16}=8 \\) mH, at perfect coupling.",
+      "hint": "Set \\( k=1 \\).",
+      "distractor_logic": [
+        "Adds the self-inductances; \\( M \\) is limited by their geometric mean, not their sum.",
+        "Multiplies them without taking the square root.",
+        "Uses the arithmetic mean instead of the geometric mean."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-031",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "Coil 1 has 100 turns and coil 2 has 400 turns. A student claims that the mutual inductance of coil 2 due to coil 1 is four times that of coil 1 due to coil 2. The correct view is:",
+      "options": [
+        "The claim is right, since coil 2 has four times the turns",
+        "\\( M_{21} \\) is actually one quarter of \\( M_{12} \\)",
+        "\\( M_{21}=M_{12} \\) always; the turn ratio cannot make them unequal",
+        "\\( M_{21} \\) is sixteen times \\( M_{12} \\), since turns enter squared"
+      ],
+      "correct_index": 2,
+      "explanation": "Mutual inductance is reciprocal for any pair of coils: \\( M_{12}=M_{21}=M \\).<br><br>Turns affect the size of \\( M \\), not its symmetry.",
+      "hint": "Mutual inductance is symmetric.",
+      "distractor_logic": [
+        "More turns raise \\( M \\) for both directions equally; reciprocity still holds.",
+        "Reverses the student's error but keeps the false idea of asymmetry.",
+        "Squaring applies to self-inductance of one coil, and still would not break reciprocity."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-032",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 2,
+      "type": "regular",
+      "question": "Two coils wound on an air core have a mutual inductance of 2 mH. Both are then wound on a common core of relative permeability 100 that carries all their flux. The mutual inductance becomes:",
+      "options": [
+        "2 mH",
+        "0.02 mH",
+        "20 mH",
+        "200 mH"
+      ],
+      "correct_index": 3,
+      "explanation": "The core multiplies the field, and hence the shared flux, by \\( \\mu_r \\).<br><br>\\( M=100\\times2 \\) mH \\( =200 \\) mH.",
+      "hint": "\\( M\\propto\\mu \\), just like \\( L \\).",
+      "distractor_logic": [
+        "Assumes the core has no effect on the shared flux.",
+        "Divides by \\( \\mu_r \\) instead of multiplying.",
+        "Multiplies by \\( \\sqrt{\\mu_r} \\), as if only one coil benefited."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-033",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "A 50-turn generator coil of area \\( 0.1\\ \\text{m}^2 \\) rotates at 600 revolutions per minute in a 0.2 T field. The peak EMF is:",
+      "options": [
+        "\\( 20\\pi \\) V",
+        "1 V",
+        "600 V",
+        "\\( 10\\pi \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( f=\\dfrac{600}{60}=10 \\) rev/s, so \\( \\omega=2\\pi\\times10=20\\pi \\) rad/s.<br><br>\\( \\varepsilon_0=NBA\\omega=50\\times0.2\\times0.1\\times20\\pi=20\\pi \\) V.",
+      "hint": "Convert rev/min to rad/s.",
+      "distractor_logic": [
+        "Reports \\( NBA \\), the peak flux linkage, without the factor \\( \\omega \\).",
+        "Uses 600 rev/min directly as \\( \\omega \\) in rad/s.",
+        "Uses \\( \\omega=\\pi f \\) instead of \\( 2\\pi f \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-034",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "A generator's EMF is \\( \\varepsilon=\\varepsilon_0\\sin\\omega t \\) with \\( \\varepsilon_0=200 \\) V. At the instant when \\( \\omega t=30^\\circ \\), the EMF is:",
+      "options": [
+        "\\( 100\\sqrt3 \\) V",
+        "100 V",
+        "200 V",
+        "\\( 100\\sqrt2 \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\varepsilon=200\\sin30^\\circ=200\\times\\tfrac12=100 \\) V.",
+      "hint": "Substitute into \\( \\varepsilon_0\\sin\\omega t \\).",
+      "distractor_logic": [
+        "Uses \\( \\cos30^\\circ \\) instead of \\( \\sin30^\\circ \\).",
+        "Reports the peak value instead of the instantaneous value.",
+        "Uses \\( \\sin45^\\circ \\), the wrong angle."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-035",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "Identical magnets are dropped through a vertical copper tube and through a PVC tube of the same size. Compared with the PVC tube, the magnet in the copper tube:",
+      "options": [
+        "falls faster, because eddy currents pull it down",
+        "falls at the same rate, because copper is non-magnetic",
+        "falls more slowly, because eddy currents in the copper oppose its motion",
+        "stops and stays suspended inside the tube"
+      ],
+      "correct_index": 2,
+      "explanation": "The falling magnet changes the flux through rings of the copper tube, inducing eddy currents.<br><br>By Lenz's law these oppose the fall, so the magnet drops slowly; PVC is an insulator, so no current flows there.",
+      "hint": "Which tube can carry induced currents?",
+      "distractor_logic": [
+        "Eddy currents oppose the motion; they cannot aid it.",
+        "The braking comes from induced currents in a conductor, not from any magnetism of copper.",
+        "The braking force needs motion; it balances gravity only at a non-zero terminal speed."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-036",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "An induction cooktop heats a steel pan but not a glass dish placed on it. The reason is that:",
+      "options": [
+        "glass reflects the magnetic field back into the cooktop",
+        "the cooktop surface itself becomes hot and only steel conducts that heat",
+        "steel is attracted to the coil, and the friction produces heat",
+        "eddy currents are induced only in the conducting steel, heating it"
+      ],
+      "correct_index": 3,
+      "explanation": "The coil below makes a rapidly alternating field that passes into the pan.<br><br>In a conductor this induces eddy currents whose \\( I^2R \\) heating warms the pan; glass is an insulator, so no current flows.",
+      "hint": "Heating needs a current to be induced.",
+      "distractor_logic": [
+        "Glass does not reflect the field; it simply cannot carry induced currents.",
+        "The heat is generated in the pan by induced currents, not conducted from a hot surface.",
+        "There is no frictional heating; the heating is electrical, \\( I^2R \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-037",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "If the rotation speed of a generator coil is doubled, with everything else unchanged:",
+      "options": [
+        "the peak EMF doubles and the frequency doubles",
+        "the peak EMF stays the same and the frequency doubles",
+        "the peak EMF quadruples and the frequency doubles",
+        "the peak EMF doubles and the frequency stays the same"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\varepsilon_0=NBA\\omega \\), so doubling \\( \\omega \\) doubles \\( \\varepsilon_0 \\).<br><br>One cycle of EMF happens per revolution, so the frequency also doubles.",
+      "hint": "\\( \\omega \\) appears in both amplitude and frequency.",
+      "distractor_logic": [
+        "Treats the peak EMF as \\( NBA \\), without the factor \\( \\omega \\).",
+        "Squares the effect of \\( \\omega \\); \\( \\varepsilon_0 \\) is linear in \\( \\omega \\).",
+        "The frequency of the AC equals the rotation frequency, so it also doubles."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-038",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "A generator coil has a peak flux linkage \\( NBA=0.5 \\) Wb and rotates at \\( \\omega=100 \\) rad/s. Its peak EMF is:",
+      "options": [
+        "0.5 V",
+        "50 V",
+        "0.005 V",
+        "25 V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\varepsilon_0=NBA\\omega=0.5\\times100=50 \\) V.",
+      "hint": "Peak EMF is peak flux linkage times \\( \\omega \\).",
+      "distractor_logic": [
+        "Reports the peak flux linkage as the peak EMF, dropping \\( \\omega \\).",
+        "Divides by \\( \\omega \\) instead of multiplying.",
+        "Halves the peak, which has no basis."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-039",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "A generator produces a peak EMF of 100 V at a frequency of 50 Hz. Its EMF as a function of time is:",
+      "options": [
+        "\\( \\varepsilon=100\\sin(50t) \\) V",
+        "\\( \\varepsilon=100\\sin(50\\pi t) \\) V",
+        "\\( \\varepsilon=100\\sin(100\\pi t) \\) V",
+        "\\( \\varepsilon=50\\sin(100\\pi t) \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega=2\\pi f=100\\pi \\) rad/s.<br><br>So \\( \\varepsilon=\\varepsilon_0\\sin\\omega t=100\\sin(100\\pi t) \\) V.",
+      "hint": "Find \\( \\omega \\) from \\( f \\).",
+      "distractor_logic": [
+        "Uses the frequency directly as \\( \\omega \\).",
+        "Uses \\( \\omega=\\pi f \\) instead of \\( 2\\pi f \\).",
+        "Halves the peak value."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L2-040",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 2,
+      "type": "regular",
+      "question": "A moving-coil galvanometer whose coil is wound on a metallic frame comes to rest quickly after a deflection. This is because:",
+      "options": [
+        "the metal frame adds mass, which alone stops the coil",
+        "eddy currents in the frame push the pointer further",
+        "the frame shields the coil from the magnetic field",
+        "eddy currents induced in the metal frame oppose the coil's motion"
+      ],
+      "correct_index": 3,
+      "explanation": "As the coil swings, the metal frame moves through the field and eddy currents are induced in it.<br><br>These oppose the motion, damping the oscillations so the pointer settles quickly (dead-beat).",
+      "hint": "The frame is a conductor moving in a field.",
+      "distractor_logic": [
+        "Extra mass would make the coil swing longer, not stop sooner.",
+        "Eddy currents oppose the motion; they do not drive it further.",
+        "The coil still sits in the field; the frame provides damping, not shielding."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-001",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 3,
+      "type": "regular",
+      "question": "A 50-turn square coil of side 0.1 m and total resistance 5 Ω is placed normal to a field that increases at 0.4 T/s. The induced current is:",
+      "options": [
+        "0.04 A",
+        "0.4 A",
+        "0.0008 A",
+        "25 A"
+      ],
+      "correct_index": 0,
+      "explanation": "Area \\( =0.1^2=0.01\\ \\text{m}^2 \\).<br><br>\\( \\varepsilon=NA\\dfrac{dB}{dt}=50\\times0.01\\times0.4=0.2 \\) V.<br><br>\\( I=\\dfrac{\\varepsilon}{R}=\\dfrac{0.2}{5}=0.04 \\) A.",
+      "hint": "Square the side before using it.",
+      "distractor_logic": [
+        "Uses the side 0.1 m as the area instead of \\( 0.1^2=0.01\\ \\text{m}^2 \\).",
+        "Forgets the factor of 50 turns.",
+        "Inverts Ohm's law, dividing \\( R \\) by \\( \\varepsilon \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-002",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 3,
+      "type": "regular",
+      "question": "A 500-turn coil of area \\( 0.002\\ \\text{m}^2 \\) and resistance 20 Ω lies normal to a 0.4 T field. It is quickly pulled completely out of the field. The charge that flows is:",
+      "options": [
+        "0.04 C",
+        "0.02 C",
+        "\\( 4\\times10^{-5} \\) C",
+        "It depends on how quickly the coil is pulled out"
+      ],
+      "correct_index": 1,
+      "explanation": "Change in flux linkage \\( =NBA=500\\times0.4\\times0.002=0.4 \\) Wb.<br><br>\\( q=\\dfrac{N\\Delta\\Phi}{R}=\\dfrac{0.4}{20}=0.02 \\) C.",
+      "hint": "Charge depends on the total change in flux linkage, not on time.",
+      "distractor_logic": [
+        "Uses \\( 2NBA \\) as for a \\( 180^\\circ \\) flip; removing the coil takes the flux from \\( BA \\) to 0 only.",
+        "Leaves out the 500 turns.",
+        "The charge equals \\( \\dfrac{N\\Delta\\Phi}{R} \\), which does not depend on the speed of removal."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-003",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 3,
+      "type": "regular",
+      "question": "A 10-turn coil of area \\( 0.2\\ \\text{m}^2 \\) has its normal at \\( 60^\\circ \\) to a uniform field. The field grows uniformly from 0 to 0.5 T in 0.1 s. The average induced EMF is:",
+      "options": [
+        "10 V",
+        "\\( 5\\sqrt{3} \\) V",
+        "5 V",
+        "0.5 V"
+      ],
+      "correct_index": 2,
+      "explanation": "Final flux per turn \\( =BA\\cos60^\\circ=0.5\\times0.2\\times\\tfrac12=0.05 \\) Wb.<br><br>\\( |\\varepsilon|=N\\dfrac{\\Delta\\Phi}{\\Delta t}=10\\times\\dfrac{0.05}{0.1}=5 \\) V.",
+      "hint": "Only the component of \\( \\vec B \\) along the normal gives flux.",
+      "distractor_logic": [
+        "Ignores the \\( 60^\\circ \\) angle and uses the full area.",
+        "Uses \\( \\sin60^\\circ \\) in place of \\( \\cos60^\\circ \\).",
+        "Forgets the factor of 10 turns."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-004",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 3,
+      "type": "regular",
+      "question": "A copper ring and an identical wooden ring are placed in the same region where the magnetic flux through each is changing at the same rate. Which statement is correct?",
+      "options": [
+        "An EMF and a current appear only in the copper ring",
+        "Equal currents flow in both rings",
+        "No EMF is induced in the wooden ring because wood is non-magnetic",
+        "Equal EMFs are induced in both rings, but a current flows only in the copper ring"
+      ],
+      "correct_index": 3,
+      "explanation": "Faraday's law gives \\( \\varepsilon=-\\dfrac{d\\Phi}{dt} \\), which is the same for both rings.<br><br>Current \\( I=\\dfrac{\\varepsilon}{R} \\): copper has low resistance so a current flows; wood's resistance is huge, so there is essentially none.",
+      "hint": "Separate EMF from current.",
+      "distractor_logic": [
+        "EMF depends only on the rate of change of flux, not on the material; wood gets the same EMF.",
+        "Wood is an insulator, so its enormous resistance makes the current essentially zero.",
+        "Magnetic properties of the material play no role in the EMF; only \\( \\dfrac{d\\Phi}{dt} \\) matters."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-005",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 3,
+      "type": "regular",
+      "question": "A coil rotates at constant angular velocity in a uniform field about an axis perpendicular to the field. At which orientation is the induced EMF largest?",
+      "options": [
+        "When the plane of the coil is parallel to \\( \\vec B \\), so the flux through it is zero",
+        "When the plane of the coil is perpendicular to \\( \\vec B \\), so the flux through it is maximum",
+        "When the normal to the coil makes \\( 45^\\circ \\) with \\( \\vec B \\)",
+        "The EMF is the same at every orientation because \\( \\omega \\) is constant"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\Phi=NBA\\cos\\omega t \\), so \\( \\varepsilon=NBA\\omega\\sin\\omega t \\).<br><br>\\( \\varepsilon \\) is largest when \\( \\sin\\omega t=1 \\), i.e. when \\( \\cos\\omega t=0 \\): the flux is zero and changing fastest, with the coil's plane parallel to \\( \\vec B \\).",
+      "hint": "EMF is largest where the flux changes fastest.",
+      "distractor_logic": [
+        "Confuses maximum flux with maximum EMF; at maximum flux the flux is momentarily not changing.",
+        "At \\( 45^\\circ \\) the EMF is only \\( \\dfrac{1}{\\sqrt{2}} \\) of its peak.",
+        "Constant \\( \\omega \\) does not mean constant \\( \\dfrac{d\\Phi}{dt} \\); the flux varies sinusoidally."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-006",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": 3,
+      "type": "regular",
+      "question": "A 4-turn loop of resistance 2 Ω lies normal to a steady 1.5 T field. Its area shrinks uniformly from \\( 0.3\\ \\text{m}^2 \\) to \\( 0.1\\ \\text{m}^2 \\) in 0.5 s. The induced current is:",
+      "options": [
+        "0.3 A",
+        "1.2 A",
+        "2.4 A",
+        "1.8 A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\Delta A=0.2\\ \\text{m}^2 \\), so \\( \\Delta\\Phi=1.5\\times0.2=0.3 \\) Wb per turn.<br><br>\\( |\\varepsilon|=4\\times\\dfrac{0.3}{0.5}=2.4 \\) V.<br><br>\\( I=\\dfrac{2.4}{2}=1.2 \\) A.",
+      "hint": "Use the change in area, then Ohm's law.",
+      "distractor_logic": [
+        "Forgets the factor of 4 turns.",
+        "Reports the EMF of 2.4 V as the current, skipping the division by 2 Ω.",
+        "Uses the initial area \\( 0.3\\ \\text{m}^2 \\) instead of the change \\( 0.2\\ \\text{m}^2 \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-007",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 3,
+      "type": "regular",
+      "question": "A rod of length 0.4 m is pulled along rails by a constant 0.2 N force through a 0.5 T field (mutually perpendicular). The circuit resistance is 2 Ω and friction is absent. The terminal velocity is:",
+      "options": [
+        "2 m/s",
+        "2.5 m/s",
+        "10 m/s",
+        "There is none; the rod keeps accelerating"
+      ],
+      "correct_index": 2,
+      "explanation": "At terminal velocity the retarding force equals the applied force: \\( \\dfrac{B^2l^2v}{R}=F \\).<br><br>\\( v=\\dfrac{FR}{B^2l^2}=\\dfrac{0.2\\times2}{0.25\\times0.16}=\\dfrac{0.4}{0.04}=10 \\) m/s.",
+      "hint": "Set the magnetic drag equal to the pull.",
+      "distractor_logic": [
+        "Uses \\( v=\\dfrac{FR}{Bl} \\), forgetting that both \\( B \\) and \\( l \\) appear squared.",
+        "Puts \\( R \\) in the denominator, \\( v=\\dfrac{F}{B^2l^2R} \\).",
+        "Ignores the retarding force \\( \\dfrac{B^2l^2v}{R} \\), which grows with \\( v \\) until it balances \\( F \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-008",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 3,
+      "type": "regular",
+      "question": "Horizontal rails carry a rod of length 0.5 m moving at 2 m/s along the rails. A uniform 0.4 T field makes \\( 60^\\circ \\) with the vertical. The EMF across the rod is:",
+      "options": [
+        "0.4 V",
+        "\\( 0.2\\sqrt{3} \\) V",
+        "Zero",
+        "0.2 V"
+      ],
+      "correct_index": 3,
+      "explanation": "For a horizontal rod moving horizontally, \\( (\\vec v\\times\\vec B)\\cdot\\vec l \\) picks out only the vertical component \\( B\\cos60^\\circ=0.2 \\) T.<br><br>\\( \\varepsilon=0.2\\times0.5\\times2=0.2 \\) V.",
+      "hint": "Which component of \\( \\vec B \\) is perpendicular to both \\( \\vec v \\) and the rod?",
+      "distractor_logic": [
+        "Uses the full \\( B \\); only the vertical component contributes for a horizontal rod moving horizontally.",
+        "Takes the \\( \\sin60^\\circ \\) component, which is the horizontal part that gives no EMF here.",
+        "Assumes a tilted field gives no EMF; the vertical component still does."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-009",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 3,
+      "type": "regular",
+      "question": "An isolated rod lies along the \\( y \\)-axis and moves with velocity along \\( +x \\) in a uniform field along \\( +z \\). Which end is at the higher potential?",
+      "options": [
+        "The end towards \\( -y \\)",
+        "The end towards \\( +y \\)",
+        "Both ends are at equal potential, since no current can flow",
+        "The midpoint is higher than both ends"
+      ],
+      "correct_index": 0,
+      "explanation": "Force on a positive charge: \\( q\\vec v\\times\\vec B\\propto\\hat x\\times\\hat z=-\\hat y \\).<br><br>Positive charge accumulates at the \\( -y \\) end, making it the higher-potential end.",
+      "hint": "Work out \\( \\hat x\\times\\hat z \\).",
+      "distractor_logic": [
+        "Reverses the direction of \\( \\vec v\\times\\vec B \\); \\( \\hat x\\times\\hat z=-\\hat y \\).",
+        "An open rod still has an EMF; charges separate until the electric field balances the magnetic force.",
+        "The force on charges is uniform along the rod, so potential varies steadily from end to end."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-010",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 3,
+      "type": "regular",
+      "question": "A metal rod of length 0.5 m rotates at 40 rad/s about one end in a plane perpendicular to a 0.2 T field. A 2 Ω resistor is connected between the pivot and the rotating tip through a sliding contact. The current is:",
+      "options": [
+        "1 A",
+        "0.5 A",
+        "0.25 A",
+        "2 A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\varepsilon=\\tfrac12B\\omega l^2=\\tfrac12\\times0.2\\times40\\times0.25=1 \\) V.<br><br>\\( I=\\dfrac{1}{2}=0.5 \\) A.",
+      "hint": "Find the EMF of the rotating rod first.",
+      "distractor_logic": [
+        "Uses \\( B\\omega l^2 \\) without the factor \\( \\tfrac12 \\).",
+        "Halves the EMF once more after applying \\( \\tfrac12B\\omega l^2 \\).",
+        "Multiplies the EMF by the resistance instead of dividing."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-011",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 3,
+      "type": "regular",
+      "question": "A 0.1 kg rod moving at 4 m/s on frictionless rails in a closed circuit in a magnetic field is left to itself until it stops. The total heat produced in the circuit is:",
+      "options": [
+        "0.4 J",
+        "1.6 J",
+        "0.8 J",
+        "Zero, since no battery is present"
+      ],
+      "correct_index": 2,
+      "explanation": "The only energy available is the rod's kinetic energy, \\( \\tfrac12mv^2=\\tfrac12\\times0.1\\times16=0.8 \\) J.<br><br>The induced current slows the rod to rest, converting all of it into Joule heat.",
+      "hint": "Where does the rod's kinetic energy go?",
+      "distractor_logic": [
+        "Assumes only half the kinetic energy becomes heat; all of it does.",
+        "Uses \\( mv^2 \\), forgetting the \\( \\tfrac12 \\) in kinetic energy.",
+        "The rod itself is the source: its kinetic energy drives the current."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-012",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": 3,
+      "type": "regular",
+      "question": "A square loop of side 0.1 m and resistance 0.5 Ω is pulled out of a 1 T field at a constant 2 m/s, with its plane perpendicular to the field. The work done in pulling it completely out is:",
+      "options": [
+        "\\( 8\\times10^{-3} \\) J",
+        "\\( 4\\times10^{-2} \\) J",
+        "\\( 2\\times10^{-3} \\) J",
+        "\\( 4\\times10^{-3} \\) J"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\varepsilon=Blv=1\\times0.1\\times2=0.2 \\) V, \\( I=\\dfrac{0.2}{0.5}=0.4 \\) A.<br><br>\\( F=BIl=1\\times0.4\\times0.1=0.04 \\) N over a distance of 0.1 m, so \\( W=0.04\\times0.1=4\\times10^{-3} \\) J.<br><br>Check: \\( I^2Rt=0.16\\times0.5\\times0.05=4\\times10^{-3} \\) J.",
+      "hint": "Only one side of the loop is still in the field.",
+      "distractor_logic": [
+        "Doubles the work, as if both vertical sides produced opposing forces; only the side in the field does.",
+        "Reports the force 0.04 N in joules instead of multiplying by the 0.1 m distance.",
+        "Halves the correct answer, as if only half the input became heat."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-013",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 3,
+      "type": "regular",
+      "question": "A solenoid of 1000 turns, length 0.4 m and area \\( 2\\times10^{-4}\\ \\text{m}^2 \\) has its current raised uniformly from 0 to 2 A in 0.01 s. Taking \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A, the back-EMF is:",
+      "options": [
+        "\\( 0.04\\pi \\) V",
+        "\\( 0.0064\\pi \\) V",
+        "\\( 0.0002\\pi \\) V",
+        "\\( 0.02\\pi \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( n=\\dfrac{1000}{0.4}=2500 \\) per metre, so \\( L=\\mu_0n^2Al=4\\pi\\times10^{-7}\\times6.25\\times10^6\\times2\\times10^{-4}\\times0.4=2\\pi\\times10^{-4} \\) H.<br><br>\\( \\dfrac{dI}{dt}=\\dfrac{2}{0.01}=200 \\) A/s.<br><br>\\( |\\varepsilon|=2\\pi\\times10^{-4}\\times200=0.04\\pi \\) V.",
+      "hint": "Find \\( L \\) using \\( n=N/l \\), then \\( L\\dfrac{dI}{dt} \\).",
+      "distractor_logic": [
+        "Uses total turns \\( N \\) in place of \\( n \\) in \\( \\mu_0n^2Al \\), giving too small an \\( L \\).",
+        "Reports the inductance value as the EMF, forgetting to multiply by \\( \\dfrac{dI}{dt} \\).",
+        "Inserts a spurious \\( \\tfrac12 \\) borrowed from the energy formula."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-014",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 3,
+      "type": "regular",
+      "question": "To double the energy stored in an inductor, its current must be multiplied by:",
+      "options": [
+        "2",
+        "\\( \\sqrt{2} \\)",
+        "4",
+        "\\( \\dfrac12 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( U=\\tfrac12LI^2\\propto I^2 \\).<br><br>For \\( U \\) to double, \\( I^2 \\) must double, so \\( I \\) scales by \\( \\sqrt{2} \\).",
+      "hint": "Energy goes as current squared.",
+      "distractor_logic": [
+        "Treats energy as proportional to \\( I \\); it goes as \\( I^2 \\).",
+        "Inverts the relation, squaring 2 instead of taking a square root.",
+        "Reduces the current, which would lower the stored energy."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-015",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 3,
+      "type": "regular",
+      "question": "The current in a 0.2 H inductor is reduced from 5 A to 3 A. The energy released by the inductor is:",
+      "options": [
+        "0.4 J",
+        "3.2 J",
+        "1.6 J",
+        "3.4 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( U_1=\\tfrac12\\times0.2\\times25=2.5 \\) J and \\( U_2=\\tfrac12\\times0.2\\times9=0.9 \\) J.<br><br>Energy released \\( =2.5-0.9=1.6 \\) J.",
+      "hint": "Subtract the two stored energies.",
+      "distractor_logic": [
+        "Uses \\( \\tfrac12L(\\Delta I)^2 \\); the energy change is \\( \\tfrac12L(I_1^2-I_2^2) \\), not the square of the difference.",
+        "Drops the \\( \\tfrac12 \\).",
+        "Adds \\( I_1^2 \\) and \\( I_2^2 \\) instead of subtracting."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-016",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 3,
+      "type": "regular",
+      "question": "Three identical 6 mH inductors, with no mutual coupling, can be connected in various ways. The maximum and minimum equivalent inductances obtainable are:",
+      "options": [
+        "2 mH and 18 mH",
+        "18 mH and 6 mH",
+        "12 mH and 3 mH",
+        "18 mH and 2 mH"
+      ],
+      "correct_index": 3,
+      "explanation": "All in series gives the maximum: \\( 6+6+6=18 \\) mH.<br><br>All in parallel gives the minimum: \\( \\dfrac{6}{3}=2 \\) mH.",
+      "hint": "Series adds, parallel divides.",
+      "distractor_logic": [
+        "Swaps maximum and minimum, as happens when using the capacitor-style rules.",
+        "Takes the minimum as a single inductor, ignoring the all-parallel arrangement.",
+        "Uses only two of the three inductors in each case."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-017",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 3,
+      "type": "regular",
+      "question": "In a 0.5 H inductor the current rises uniformly from 0 to 4 A in 2 s, stays at 4 A for 2 s, then falls uniformly to 0 in 1 s. The magnitudes of the self-induced EMF in these three intervals are:",
+      "options": [
+        "1 V, 0 V and 2 V",
+        "1 V, 2 V and 2 V",
+        "1 V, 0 V and 1 V",
+        "2 V, 0 V and 1 V"
+      ],
+      "correct_index": 0,
+      "explanation": "Rise: \\( 0.5\\times\\dfrac{4}{2}=1 \\) V.<br><br>Steady: \\( \\dfrac{dI}{dt}=0 \\), so 0 V.<br><br>Fall: \\( 0.5\\times\\dfrac{4}{1}=2 \\) V, opposite in sign to the first interval.",
+      "hint": "EMF follows the slope of the current graph.",
+      "distractor_logic": [
+        "Gives an EMF in the steady interval, linking EMF to current rather than to its change.",
+        "Uses 2 s for the fall instead of 1 s.",
+        "Swaps the rise and fall rates."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-018",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": 3,
+      "type": "regular",
+      "question": "A solenoid's length is doubled while its total number of turns and cross-sectional area stay the same. Its self-inductance:",
+      "options": [
+        "doubles",
+        "halves",
+        "falls to one quarter",
+        "is unchanged"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( L=\\mu_0n^2Al=\\dfrac{\\mu_0N^2A}{l} \\) with \\( n=N/l \\).<br><br>With \\( N \\) and \\( A \\) fixed, \\( L\\propto\\dfrac1l \\), so doubling \\( l \\) halves \\( L \\).",
+      "hint": "Write \\( L \\) in terms of the total turns.",
+      "distractor_logic": [
+        "Reads \\( L=\\mu_0n^2Al \\) as proportional to \\( l \\) while forgetting that \\( n \\) halves.",
+        "Accounts for \\( n^2 \\) falling to one quarter but forgets the factor \\( l \\) doubling.",
+        "Assumes a fixed number of turns fixes the inductance."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-019",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 3,
+      "type": "regular",
+      "question": "Two coils have \\( L_1=0.25 \\) H, \\( L_2=1 \\) H and \\( k=0.8 \\). The current in coil 1 changes at 10 A/s. The EMF induced in coil 2 is:",
+      "options": [
+        "5 V",
+        "10 V",
+        "4 V",
+        "2.5 V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( M=k\\sqrt{L_1L_2}=0.8\\times\\sqrt{0.25}=0.8\\times0.5=0.4 \\) H.<br><br>\\( |\\varepsilon_2|=0.4\\times10=4 \\) V.",
+      "hint": "Find \\( M \\) from \\( k \\) first.",
+      "distractor_logic": [
+        "Uses \\( M=\\sqrt{L_1L_2} \\), ignoring \\( k \\).",
+        "Uses \\( L_2 \\) as if it were the mutual inductance.",
+        "Uses \\( L_1 \\) as if it were the mutual inductance."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-020",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 3,
+      "type": "regular",
+      "question": "Two coils have \\( L_1=0.2 \\) H, \\( M=0.3 \\) H and \\( k=0.75 \\). The self-inductance \\( L_2 \\) is:",
+      "options": [
+        "0.4 H",
+        "0.45 H",
+        "1.5 H",
+        "0.8 H"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sqrt{L_1L_2}=\\dfrac{M}{k}=\\dfrac{0.3}{0.75}=0.4 \\) H, so \\( L_1L_2=0.16 \\).<br><br>\\( L_2=\\dfrac{0.16}{0.2}=0.8 \\) H.",
+      "hint": "Rearrange \\( k=\\dfrac{M}{\\sqrt{L_1L_2}} \\).",
+      "distractor_logic": [
+        "Stops at \\( \\sqrt{L_1L_2}=0.4 \\) H without solving for \\( L_2 \\).",
+        "Uses \\( \\dfrac{M^2}{L_1} \\), which assumes \\( k=1 \\).",
+        "Divides \\( M \\) by \\( L_1 \\), which has no basis."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-021",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 3,
+      "type": "regular",
+      "question": "A student reports two coils with \\( L_1=4 \\) H, \\( L_2=4 \\) H and \\( M=5 \\) H. This result is:",
+      "options": [
+        "impossible, because it gives \\( k=1.25 \\), exceeding 1",
+        "possible, since \\( M \\) can exceed the self-inductances when coils have many turns",
+        "possible only if \\( M_{12}\\ne M_{21} \\)",
+        "impossible, because \\( M \\) must equal \\( L_1+L_2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( k=\\dfrac{M}{\\sqrt{L_1L_2}}=\\dfrac{5}{4}=1.25 \\).<br><br>Since \\( k \\) can never exceed 1, \\( M \\) cannot exceed 4 H here.",
+      "hint": "Compute \\( k \\).",
+      "distractor_logic": [
+        "Turns raise \\( L_1 \\) and \\( L_2 \\) too; \\( M \\) can never exceed \\( \\sqrt{L_1L_2} \\).",
+        "Reciprocity always holds, so this is no escape.",
+        "\\( M \\) has an upper limit of \\( \\sqrt{L_1L_2} \\), not a required value of \\( L_1+L_2 \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-022",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 3,
+      "type": "regular",
+      "question": "A short coil of 100 turns and area \\( 10^{-3}\\ \\text{m}^2 \\) is placed coaxially inside a long solenoid with 2000 turns per metre and area \\( 4\\times10^{-3}\\ \\text{m}^2 \\). Taking \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A, their mutual inductance is:",
+      "options": [
+        "\\( 0.32\\pi \\) mH",
+        "\\( 0.08\\pi \\) mH",
+        "\\( 0.04\\pi \\) mH",
+        "\\( 0.16\\pi \\) mH"
+      ],
+      "correct_index": 1,
+      "explanation": "Field inside the solenoid: \\( B=\\mu_0n_1I_1 \\). Flux linkage of the short coil: \\( N_2BA_2 \\).<br><br>\\( M=\\mu_0n_1N_2A_2=4\\pi\\times10^{-7}\\times2000\\times100\\times10^{-3}=8\\pi\\times10^{-5} \\) H \\( =0.08\\pi \\) mH.",
+      "hint": "The short coil's area sets the shared flux.",
+      "distractor_logic": [
+        "Uses the solenoid's area; only the flux through the short coil's smaller area links it.",
+        "Halves the result as if the coil sat at the solenoid's end.",
+        "Doubles the result by adding \\( M_{12} \\) and \\( M_{21} \\), which are one and the same."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-023",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 3,
+      "type": "regular",
+      "question": "When the current in coil 1 changes at 10 A/s, a self-induced EMF of 4 V appears in coil 1 and an EMF of 3 V appears in coil 2. If \\( L_2=0.9 \\) H, the coefficient of coupling is:",
+      "options": [
+        "0.75",
+        "\\( \\dfrac13 \\)",
+        "0.5",
+        "0.25"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( L_1=\\dfrac{4}{10}=0.4 \\) H and \\( M=\\dfrac{3}{10}=0.3 \\) H.<br><br>\\( k=\\dfrac{0.3}{\\sqrt{0.4\\times0.9}}=\\dfrac{0.3}{0.6}=0.5 \\).",
+      "hint": "Find \\( L_1 \\) and \\( M \\) from the two EMFs.",
+      "distractor_logic": [
+        "Divides \\( M \\) by \\( L_1 \\) alone.",
+        "Divides \\( M \\) by \\( L_2 \\) alone.",
+        "Reports \\( k^2 \\) instead of \\( k \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-024",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": 3,
+      "type": "regular",
+      "question": "For two coupled coils, the number of turns of coil 2 is doubled with everything else unchanged. Then:",
+      "options": [
+        "\\( M \\) doubles and \\( k \\) doubles",
+        "\\( M \\) quadruples and \\( k \\) doubles",
+        "\\( M \\) is unchanged and \\( k \\) halves",
+        "\\( M \\) doubles and \\( k \\) is unchanged"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( M\\propto N_2 \\), so \\( M \\) doubles; \\( L_2\\propto N_2^2 \\), so \\( L_2 \\) quadruples.<br><br>\\( k=\\dfrac{M}{\\sqrt{L_1L_2}} \\) becomes \\( \\dfrac{2M}{2\\sqrt{L_1L_2}} \\), unchanged.",
+      "hint": "Track how \\( M \\) and \\( L_2 \\) each scale.",
+      "distractor_logic": [
+        "Forgets that \\( L_2 \\) quadruples, so \\( \\sqrt{L_1L_2} \\) also doubles.",
+        "Squares the turns factor for \\( M \\); \\( M \\) is linear in each coil's turns.",
+        "\\( M \\) depends on the flux linkage of coil 2, which doubles with its turns."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-025",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 3,
+      "type": "regular",
+      "question": "A generator produces \\( \\varepsilon=\\varepsilon_0\\sin\\omega t \\) with \\( \\varepsilon_0=200 \\) V and frequency 50 Hz, starting from zero at \\( t=0 \\). The EMF at \\( t=\\dfrac{1}{600} \\) s is:",
+      "options": [
+        "100 V",
+        "\\( 100\\sqrt3 \\) V",
+        "200 V",
+        "Zero"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega=2\\pi\\times50=100\\pi \\) rad/s.<br><br>\\( \\omega t=\\dfrac{100\\pi}{600}=\\dfrac{\\pi}{6} \\), i.e. \\( 30^\\circ \\).<br><br>\\( \\varepsilon=200\\sin30^\\circ=100 \\) V.",
+      "hint": "Find the phase \\( \\omega t \\) first.",
+      "distractor_logic": [
+        "Uses \\( \\cos \\) in place of \\( \\sin \\) at the phase \\( 30^\\circ \\).",
+        "Reports the peak value without working out the phase.",
+        "Treats so short a time as negligible, ignoring that \\( \\omega \\) is large enough to make \\( \\omega t=30^\\circ \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-026",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 3,
+      "type": "regular",
+      "question": "A 100-turn coil of area \\( 0.01\\ \\text{m}^2 \\) rotates at 300 rev/min in a 0.5 T field. The coil's resistance is 2 Ω and it feeds an external 3 Ω resistor. The peak current is:",
+      "options": [
+        "\\( 2.5\\pi \\) A",
+        "\\( \\pi \\) A",
+        "\\( \\dfrac{5\\pi}{3} \\) A",
+        "0.1 A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f=\\dfrac{300}{60}=5 \\) rev/s, so \\( \\omega=10\\pi \\) rad/s.<br><br>\\( \\varepsilon_0=NBA\\omega=100\\times0.5\\times0.01\\times10\\pi=5\\pi \\) V.<br><br>\\( I_0=\\dfrac{5\\pi}{2+3}=\\pi \\) A.",
+      "hint": "Total resistance is coil plus external.",
+      "distractor_logic": [
+        "Divides by the coil's resistance only, ignoring the external resistor.",
+        "Divides by the external resistor only, ignoring the coil's own resistance.",
+        "Uses \\( NBA \\) instead of \\( NBA\\omega \\) as the peak EMF."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-027",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 3,
+      "type": "regular",
+      "question": "A copper disc spinning freely between the poles of a strong magnet slows down and stops. Its lost kinetic energy appears mainly as:",
+      "options": [
+        "energy stored in the magnet, strengthening it",
+        "gravitational potential energy of the disc",
+        "heat produced by eddy currents in the disc",
+        "electromagnetic radiation emitted by the magnet"
+      ],
+      "correct_index": 2,
+      "explanation": "The spinning disc cuts field lines, so eddy currents circulate in it.<br><br>They create a retarding torque (Lenz's law), and the kinetic energy is dissipated as \\( I^2R \\) heat in the disc.",
+      "hint": "Where do eddy currents deposit energy?",
+      "distractor_logic": [
+        "The magnet's field is unchanged; it only provides the field in which currents are induced.",
+        "The disc stays at the same height, so its gravitational energy does not change.",
+        "No significant radiation is produced; the energy is dissipated resistively."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-028",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 3,
+      "type": "regular",
+      "question": "Which of the following changes would reduce eddy-current loss in a motor's iron core the most?",
+      "options": [
+        "Replacing the laminated core with a solid block of the same iron",
+        "Increasing the frequency of the alternating flux",
+        "Using a core material with higher electrical conductivity",
+        "Using thinner, insulated laminations"
+      ],
+      "correct_index": 3,
+      "explanation": "Eddy-current loss grows with the induced EMF and falls as the path resistance rises.<br><br>Thinner insulated laminations confine the loops to narrower, higher-resistance paths, so the loss falls.",
+      "hint": "Aim for smaller EMF or higher path resistance.",
+      "distractor_logic": [
+        "A solid block offers large low-resistance loops, increasing the loss.",
+        "Faster flux changes induce larger EMFs and hence larger eddy currents.",
+        "Higher conductivity lets bigger eddy currents flow, increasing the loss."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-029",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 3,
+      "type": "regular",
+      "question": "Generator X has \\( N \\) turns and area \\( A \\), rotating at \\( \\omega \\) in field \\( B \\). Generator Y has \\( 2N \\) turns and area \\( A/2 \\), rotating at \\( 2\\omega \\) in the same field. The ratio of their peak EMFs \\( \\varepsilon_Y/\\varepsilon_X \\) is:",
+      "options": [
+        "2",
+        "1",
+        "4",
+        "0.5"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\varepsilon_0=NBA\\omega \\).<br><br>For Y: \\( (2N)\\,B\\,(A/2)\\,(2\\omega)=2NBA\\omega \\), so the ratio is 2.",
+      "hint": "Multiply the scaling factors of \\( N \\), \\( A \\) and \\( \\omega \\).",
+      "distractor_logic": [
+        "Ignores the doubled \\( \\omega \\), treating peak EMF as \\( NBA \\).",
+        "Forgets that the area is halved.",
+        "Halves instead of doubling, inverting the effect of \\( \\omega \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-L3-030",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Eddy Currents and the AC Generator",
+      "level": 3,
+      "type": "regular",
+      "question": "A generator's peak EMF is \\( 10\\pi \\) V. The average EMF over the half-cycle from \\( \\omega t=0 \\) to \\( \\omega t=\\pi \\) is:",
+      "options": [
+        "Zero",
+        "20 V",
+        "\\( 10\\pi \\) V",
+        "\\( 5\\sqrt2\\pi \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "Average of \\( \\sin\\omega t \\) over \\( 0 \\) to \\( \\pi \\) is \\( \\dfrac{2}{\\pi} \\).<br><br>\\( \\varepsilon_{avg}=\\dfrac{2}{\\pi}\\times10\\pi=20 \\) V.<br><br>Equivalently, the flux linkage changes by \\( 2NBA \\) in half a period.",
+      "hint": "The average of \\( \\sin \\) over half a cycle is \\( 2/\\pi \\).",
+      "distractor_logic": [
+        "That is the average over a full cycle; over this half-cycle the EMF keeps one sign.",
+        "Reports the peak instead of the average.",
+        "Uses the root-mean-square value, which is a different kind of average."
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-001",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A rod slides at 2 m/s along parallel rails 0.5 m apart, joined at one end, in a steady 0.4 T field normal to the plane of the rails. Using the rate of change of flux through the circuit, the induced EMF is:",
+      "options": [
+        "Zero, since the field is steady",
+        "0.8 V",
+        "0.4 V",
+        "0.2 V"
+      ],
+      "correct_index": 2,
+      "explanation": "The enclosed area grows at \\( lv=0.5\\times2=1\\ \\text{m}^2 \\) per second.<br><br>\\( \\varepsilon=B\\dfrac{dA}{dt}=0.4\\times1=0.4 \\) V, the same as \\( Blv \\): motional EMF is Faraday's law applied to a growing circuit.",
+      "hint": "Find how fast the enclosed area grows.",
+      "distractor_logic": [
+        "The field is steady, but the enclosed area grows, so the flux still changes.",
+        "Doubles the area growth rate as if both rails contributed separately.",
+        "Halves the result, as though averaging over the motion."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-002",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A zero-resistance rod of length 1 m is moved at a constant 4 m/s through a 0.5 T field (mutually perpendicular) on zero-resistance rails joined by a pure 0.5 H inductor. Starting from zero current, the current after 2 s is:",
+      "options": [
+        "4 A",
+        "2 A",
+        "Infinite at once, since there is no resistance",
+        "8 A"
+      ],
+      "correct_index": 3,
+      "explanation": "Motional EMF: \\( \\varepsilon=Blv=0.5\\times1\\times4=2 \\) V.<br><br>With no resistance, \\( L\\dfrac{dI}{dt}=\\varepsilon \\), so \\( \\dfrac{dI}{dt}=\\dfrac{2}{0.5}=4 \\) A/s.<br><br>After 2 s, \\( I=8 \\) A.",
+      "hint": "The back-EMF balances the motional EMF.",
+      "distractor_logic": [
+        "Reports the rate \\( \\dfrac{dI}{dt}=4 \\) A/s as the current.",
+        "Multiplies \\( \\varepsilon \\), \\( L \\) and \\( t \\) instead of using \\( \\dfrac{\\varepsilon t}{L} \\).",
+        "Ignores the inductor's back-EMF, which limits how fast the current can grow."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-003",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two coils with \\( L_1=1 \\) H and \\( L_2=4 \\) H are perfectly coupled (\\( k=1 \\)) and connected in series so their fluxes aid each other. The equivalent inductance is:",
+      "options": [
+        "9 H",
+        "5 H",
+        "7 H",
+        "1 H"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( M=k\\sqrt{L_1L_2}=\\sqrt{4}=2 \\) H.<br><br>Series aiding: \\( L=L_1+L_2+2M=1+4+4=9 \\) H.",
+      "hint": "Coupling adds \\( 2M \\) when fluxes aid.",
+      "distractor_logic": [
+        "Ignores the coupling, using the uncoupled series rule.",
+        "Adds \\( M \\) only once; each coil's flux links the other, so it enters as \\( 2M \\).",
+        "Uses the opposing connection, \\( L_1+L_2-2M \\)."
+      ],
+      "mixed_topics": [
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-004",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two coupled coils in series measure 14 H when their fluxes aid and 6 H when their fluxes oppose. Their mutual inductance is:",
+      "options": [
+        "4 H",
+        "2 H",
+        "8 H",
+        "10 H"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( L_{aid}=L_1+L_2+2M \\) and \\( L_{opp}=L_1+L_2-2M \\).<br><br>Subtracting: \\( 4M=14-6=8 \\), so \\( M=2 \\) H.",
+      "hint": "Subtract the two series formulas.",
+      "distractor_logic": [
+        "Divides the difference by 2 instead of 4.",
+        "Reports the difference itself as \\( M \\).",
+        "Takes the average of the two readings, which is \\( L_1+L_2 \\), not \\( M \\)."
+      ],
+      "mixed_topics": [
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-005",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 10-turn generator coil of area \\( 0.2\\ \\text{m}^2 \\) rotates at \\( \\omega=10 \\) rad/s in a 0.5 T field. At the instant when its flux linkage is \\( \\dfrac{\\sqrt3}{2} \\) of the maximum, the EMF is:",
+      "options": [
+        "\\( 5\\sqrt3 \\) V",
+        "10 V",
+        "5 V",
+        "0.5 V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( NBA=10\\times0.5\\times0.2=1 \\) Wb, so \\( \\varepsilon_0=NBA\\omega=10 \\) V.<br><br>Flux \\( \\propto\\cos\\omega t=\\dfrac{\\sqrt3}{2} \\) gives \\( \\omega t=30^\\circ \\).<br><br>\\( \\varepsilon=10\\sin30^\\circ=5 \\) V.",
+      "hint": "Flux goes as cosine, EMF as sine.",
+      "distractor_logic": [
+        "Assumes the EMF is in phase with the flux; it is \\( 90^\\circ \\) out of phase.",
+        "Reports the peak EMF.",
+        "Drops the factor \\( \\omega \\), using \\( NBA\\sin\\omega t \\)."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-006",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 0.05 kg magnet falls through a long vertical copper tube and reaches a steady speed of 0.2 m/s. Taking \\( g=10\\ \\text{m s}^{-2} \\), the rate at which heat is generated in the tube is:",
+      "options": [
+        "Zero, since the magnet never touches the tube",
+        "0.5 W",
+        "0.05 W",
+        "0.1 W"
+      ],
+      "correct_index": 3,
+      "explanation": "At steady speed the kinetic energy is constant, so all the lost gravitational energy becomes heat.<br><br>Power \\( =mgv=0.05\\times10\\times0.2=0.1 \\) W, dissipated by eddy currents that brake the magnet (Lenz's law).",
+      "hint": "Energy conservation at constant speed.",
+      "distractor_logic": [
+        "Heat comes from induced eddy currents, which need no contact.",
+        "Reports the weight in newtons as the power.",
+        "Assumes only half of the gravitational power becomes heat; at constant speed all of it does."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-007",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 200-turn coil carrying 4 A has a flux of 2 mWb through each turn due to its own current. Its self-inductance is:",
+      "options": [
+        "0.1 H",
+        "\\( 5\\times10^{-4} \\) H",
+        "1.6 H",
+        "0.4 H"
+      ],
+      "correct_index": 0,
+      "explanation": "Flux linkage \\( N\\Phi=200\\times0.002=0.4 \\) Wb.<br><br>\\( L=\\dfrac{N\\Phi}{I}=\\dfrac{0.4}{4}=0.1 \\) H.",
+      "hint": "\\( L \\) is flux linkage per ampere.",
+      "distractor_logic": [
+        "Leaves out the number of turns.",
+        "Multiplies the flux linkage by the current instead of dividing.",
+        "Reports the flux linkage without dividing by the current."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-008",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A current of 5 A in coil 1 produces a flux of 1 mWb through each turn of a 300-turn coil 2. If the current in coil 1 then changes at 50 A/s, the EMF in coil 2 is:",
+      "options": [
+        "0.01 V",
+        "3 V",
+        "0.3 V",
+        "15 V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( M=\\dfrac{N_2\\Phi_2}{I_1}=\\dfrac{300\\times0.001}{5}=0.06 \\) H.<br><br>\\( |\\varepsilon_2|=M\\dfrac{dI_1}{dt}=0.06\\times50=3 \\) V.",
+      "hint": "Find \\( M \\) from the flux linkage first.",
+      "distractor_logic": [
+        "Leaves out the 300 turns of coil 2.",
+        "Reports the flux linkage 0.3 Wb as an EMF.",
+        "Multiplies the flux linkage by the rate without first dividing by the 5 A."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-009",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An aluminium ring rests on the iron core of a coil. When the coil is switched on, the ring jumps up. Why?",
+      "options": [
+        "The ring is attracted to the coil and then bounces off it",
+        "Aluminium is strongly magnetised by the coil and repelled like a magnet",
+        "The growing flux induces a current in the ring that opposes the increase, so the ring is repelled",
+        "The ring is heated by the coil and rises by convection"
+      ],
+      "correct_index": 2,
+      "explanation": "The coil and ring are magnetically coupled: switching on makes the flux through the ring grow rapidly.<br><br>The induced current in the ring opposes this growth, so its field repels the coil's field and the ring is thrown up.",
+      "hint": "Which way does the induced current push?",
+      "distractor_logic": [
+        "An attractive force would aid the flux increase, reversing Lenz's law.",
+        "Aluminium is only very weakly magnetic; the force comes from the induced current.",
+        "The jump is almost instantaneous and mechanical, far too fast for convection."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-010",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A long straight wire carries an upward current that is decreasing. A square loop lies to its right, in the same plane. Viewed from the front, the induced current in the loop is:",
+      "options": [
+        "anticlockwise",
+        "zero, since the loop is at rest",
+        "alternating in direction",
+        "clockwise"
+      ],
+      "correct_index": 3,
+      "explanation": "To the right of an upward current, the field points into the page.<br><br>That into-page flux is decreasing, so the induced current tries to maintain it by making its own into-page field inside the loop.<br><br>An into-page field inside the loop needs a clockwise current.",
+      "hint": "Is the flux rising or falling?",
+      "distractor_logic": [
+        "Opposes the present into-page flux rather than its decrease; this reverses the true sense.",
+        "The loop is at rest, but the flux through it changes as the wire's current falls.",
+        "The current falls steadily, so the induced current keeps a single direction."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-011",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "When a switch carrying a large current through an inductive circuit is suddenly opened, a spark often jumps across the switch contacts. This happens because:",
+      "options": [
+        "the sudden fall in current induces a large EMF that tries to keep the current flowing",
+        "the induced EMF opposes the current and pushes charge backwards across the gap",
+        "the switch contacts become magnetised and attract each other",
+        "the stored energy disappears instantly, so no EMF is involved"
+      ],
+      "correct_index": 0,
+      "explanation": "Opening the switch makes \\( \\dfrac{dI}{dt} \\) very large, so \\( \\varepsilon=-L\\dfrac{dI}{dt} \\) is very large.<br><br>By Lenz's law this EMF opposes the decrease, driving current across the gap as a spark and releasing the stored energy \\( \\tfrac12LI^2 \\).",
+      "hint": "Think of inductance as electrical inertia.",
+      "distractor_logic": [
+        "Makes the EMF oppose the current rather than its decrease; it actually sustains the current.",
+        "Magnetisation of the contacts has nothing to do with the spark.",
+        "The stored energy \\( \\tfrac12LI^2 \\) must go somewhere; it drives the spark."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-012",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The inner solenoid of a coaxial pair exactly fills the outer one (same length and area), giving perfect coupling. If \\( L_1=0.4 \\) H and \\( L_2=0.9 \\) H, their mutual inductance is:",
+      "options": [
+        "0.65 H",
+        "0.6 H",
+        "0.36 H",
+        "1.3 H"
+      ],
+      "correct_index": 1,
+      "explanation": "With identical geometry, \\( L_1=\\mu_0n_1^2Al \\), \\( L_2=\\mu_0n_2^2Al \\) and \\( M=\\mu_0n_1n_2Al \\).<br><br>So \\( M=\\sqrt{L_1L_2}=\\sqrt{0.36}=0.6 \\) H, i.e. \\( k=1 \\).",
+      "hint": "Compare the solenoid formulas for \\( L_1 \\), \\( L_2 \\) and \\( M \\).",
+      "distractor_logic": [
+        "Uses the arithmetic mean of \\( L_1 \\) and \\( L_2 \\).",
+        "Multiplies \\( L_1 \\) and \\( L_2 \\) without taking the square root.",
+        "Adds \\( L_1 \\) and \\( L_2 \\)."
+      ],
+      "mixed_topics": [
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-013",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 50-turn generator coil of area \\( 0.05\\ \\text{m}^2 \\) rotates at 5 rev/s in a 0.4 T field. The average EMF over the quarter-turn from maximum flux to zero flux is:",
+      "options": [
+        "\\( 10\\pi \\) V",
+        "Zero",
+        "20 V",
+        "5 V"
+      ],
+      "correct_index": 2,
+      "explanation": "Change in flux linkage \\( =NBA=50\\times0.4\\times0.05=1 \\) Wb.<br><br>A quarter-turn takes \\( \\dfrac{1}{4}\\times\\dfrac{1}{5}=0.05 \\) s.<br><br>\\( \\varepsilon_{avg}=\\dfrac{1}{0.05}=20 \\) V.",
+      "hint": "Use Faraday's law with the quarter-period.",
+      "distractor_logic": [
+        "Reports the peak EMF \\( NBA\\omega \\) instead of the average.",
+        "That is the average over a whole cycle, not over a quarter-turn.",
+        "Divides by the full period 0.2 s instead of the quarter-period."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-014",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A copper disc of radius 0.2 m spins at 100 rad/s about its axis, which is parallel to a uniform 0.5 T field. Sliding contacts connect the axle and the rim. The EMF between them is:",
+      "options": [
+        "1 V, alternating sinusoidally",
+        "2 V, steady",
+        "Zero, since the flux through the disc is constant",
+        "1 V, steady (not alternating)"
+      ],
+      "correct_index": 3,
+      "explanation": "Each radius is a rod rotating about one end: \\( \\varepsilon=\\tfrac12B\\omega r^2=\\tfrac12\\times0.5\\times100\\times0.04=1 \\) V.<br><br>Its orientation relative to \\( \\vec B \\) never changes, so the EMF is steady, unlike the sinusoidal EMF of a rotating coil.",
+      "hint": "Treat a radius as a rotating rod.",
+      "distractor_logic": [
+        "Each radius cuts field lines in the same way at every instant, so the EMF does not reverse, unlike a rotating coil.",
+        "Drops the factor \\( \\tfrac12 \\) in \\( \\tfrac12B\\omega r^2 \\).",
+        "The flux through the disc is constant, but each radius sweeps area and acts as a rotating rod."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-015",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A solenoid of length 0.5 m has 1000 turns per metre and area \\( 5\\times10^{-4}\\ \\text{m}^2 \\), and carries 2 A. Taking \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A, the flux through each turn is:",
+      "options": [
+        "\\( 4\\pi\\times10^{-7} \\) Wb",
+        "\\( 2\\pi\\times10^{-7} \\) Wb",
+        "\\( 2\\pi\\times10^{-4} \\) Wb",
+        "\\( 8\\pi\\times10^{-4} \\) Wb"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( B=\\mu_0nI=4\\pi\\times10^{-7}\\times1000\\times2=8\\pi\\times10^{-4} \\) T.<br><br>\\( \\Phi=BA=8\\pi\\times10^{-4}\\times5\\times10^{-4}=4\\pi\\times10^{-7} \\) Wb per turn.<br><br>This flux per ampere, times all turns, is what gives \\( L=\\mu_0n^2Al \\).",
+      "hint": "Use turns per metre in \\( B=\\mu_0nI \\).",
+      "distractor_logic": [
+        "Uses the total 500 turns in place of 1000 turns per metre in \\( B=\\mu_0nI \\).",
+        "Reports the total flux linkage of all 500 turns instead of the flux per turn.",
+        "Reports the field \\( B \\) and forgets to multiply by the area."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-016",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A metal detector has a transmitter coil carrying alternating current and a separate receiver coil. How does a buried metal object change the receiver's signal?",
+      "options": [
+        "The metal blocks all flux, so the receiver EMF always drops to zero",
+        "Eddy currents induced in the metal create their own changing field, which induces an extra EMF in the receiver",
+        "The metal increases the transmitter current directly by contact",
+        "Eddy currents in the metal aid the transmitter's field, doubling it"
+      ],
+      "correct_index": 1,
+      "explanation": "The transmitter's changing field induces eddy currents in the metal.<br><br>These currents produce their own changing field, which is coupled (mutual inductance) to the receiver coil and alters the EMF it picks up.",
+      "hint": "The metal acts like a third coupled circuit.",
+      "distractor_logic": [
+        "The metal does not block flux entirely; it adds its own induced field.",
+        "There is no electrical contact; the effect is purely inductive.",
+        "Eddy currents oppose the changing field that creates them, rather than aiding it."
+      ],
+      "mixed_topics": [
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-017",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A square loop of side 0.2 m and resistance 1 Ω moves at 5 m/s into a region of uniform 0.5 T field much larger than the loop, with its plane perpendicular to the field. The EMF while entering and while fully inside is:",
+      "options": [
+        "0.5 V while entering, 0.5 V while fully inside",
+        "0 V while entering, 0.5 V while fully inside",
+        "0.5 V while entering, 0 V while fully inside",
+        "0.25 V while entering, 0 V while fully inside"
+      ],
+      "correct_index": 2,
+      "explanation": "While entering, the flux grows at \\( Blv=0.5\\times0.2\\times5=0.5 \\) V.<br><br>Fully inside, the flux is constant, so the net EMF is zero (both sides have equal, opposing motional EMFs).",
+      "hint": "When does the flux change?",
+      "distractor_logic": [
+        "Fully inside, the flux is constant; the EMFs in the two sides cancel.",
+        "Reverses the phases; only entry changes the flux.",
+        "Halves the EMF with no basis."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-018",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two coaxial rings face each other. The current in ring 1 is decreasing. The force between the rings is:",
+      "options": [
+        "repulsive",
+        "zero",
+        "repulsive at first, then attractive",
+        "attractive"
+      ],
+      "correct_index": 3,
+      "explanation": "Ring 2's flux (from ring 1) is decreasing, so its induced current flows in the same sense as ring 1's current to sustain it.<br><br>Parallel currents attract, so the rings pull together.",
+      "hint": "Decreasing flux: the induced current supports it.",
+      "distractor_logic": [
+        "Has the induced current opposing the present flux; for a decreasing flux it supports it, giving attraction.",
+        "The changing coupled flux induces a current in ring 2, so there is a force.",
+        "The current decreases steadily, so the force does not reverse."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-019",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 50-turn coil is wound around the middle of a long solenoid with 1000 turns per metre and area \\( 2\\times10^{-3}\\ \\text{m}^2 \\). The coil's own area is three times the solenoid's. Taking \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A, the mutual inductance is:",
+      "options": [
+        "\\( 0.04\\pi \\) mH",
+        "\\( 0.12\\pi \\) mH",
+        "Zero, since the coil lies outside the solenoid",
+        "\\( 0.02\\pi \\) mH"
+      ],
+      "correct_index": 0,
+      "explanation": "Flux through the outer coil is only the solenoid's flux: \\( \\Phi=\\mu_0n_1I_1A_{sol} \\).<br><br>\\( M=\\dfrac{N_2\\Phi}{I_1}=4\\pi\\times10^{-7}\\times1000\\times50\\times2\\times10^{-3}=4\\pi\\times10^{-5} \\) H \\( =0.04\\pi \\) mH.",
+      "hint": "Where does the solenoid's field exist?",
+      "distractor_logic": [
+        "Uses the coil's larger area; the solenoid's field is confined to its own cross-section.",
+        "The coil encloses the solenoid, so all the solenoid's flux passes through it.",
+        "Introduces a spurious \\( \\tfrac12 \\)."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-020",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A generator coil is kept rotating at a constant angular velocity while it supplies current to a lamp. Which statement is correct?",
+      "options": [
+        "No torque is needed at constant angular velocity",
+        "An external torque must supply mechanical power equal to the electrical power delivered, because the induced current produces an opposing torque",
+        "Torque is needed only when no load is connected",
+        "The induced current produces a torque that helps the rotation"
+      ],
+      "correct_index": 1,
+      "explanation": "The current in the coil sits in \\( \\vec B \\), so the coil feels a torque opposing its rotation (Lenz's law).<br><br>At constant \\( \\omega \\) the driving torque balances it, and the mechanical power input equals the electrical power output.",
+      "hint": "Energy delivered must come from somewhere.",
+      "distractor_logic": [
+        "Ignores the retarding torque from the current-carrying coil in the field.",
+        "With no load there is no current, so no retarding torque; the load is what demands the torque.",
+        "Reverses Lenz's law; an aiding torque would create energy from nothing."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-021",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A rod of length 0.5 m slides at 3 m/s on rails, completing a circuit. A uniform 0.8 T field makes \\( 60^\\circ \\) with the normal to the plane of the rails. The induced EMF is:",
+      "options": [
+        "1.2 V",
+        "\\( 0.6\\sqrt3 \\) V",
+        "0.6 V",
+        "Zero"
+      ],
+      "correct_index": 2,
+      "explanation": "Flux \\( =B\\cos60^\\circ\\times lx \\), so \\( \\varepsilon=B\\cos60^\\circ\\,lv \\).<br><br>\\( \\varepsilon=0.8\\times\\tfrac12\\times0.5\\times3=0.6 \\) V.",
+      "hint": "Only the normal component of \\( \\vec B \\) gives flux.",
+      "distractor_logic": [
+        "Ignores the tilt and uses the full field.",
+        "Uses \\( \\sin60^\\circ \\), the component lying in the plane, which gives no flux.",
+        "A tilted field still has a normal component that gives a changing flux."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-022",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "When the current in coil 1 changes at 100 A/s, its self-induced EMF is 1.6 V; the same rate in coil 2 gives 0.4 V in coil 2. The coils' mutual inductance is 6 mH. The coefficient of coupling is:",
+      "options": [
+        "0.375",
+        "1.5",
+        "0.5625",
+        "0.75"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( L_1=\\dfrac{1.6}{100}=16 \\) mH and \\( L_2=\\dfrac{0.4}{100}=4 \\) mH.<br><br>\\( k=\\dfrac{6}{\\sqrt{16\\times4}}=\\dfrac68=0.75 \\).",
+      "hint": "Find each self-inductance from its back-EMF.",
+      "distractor_logic": [
+        "Divides \\( M \\) by \\( L_1 \\) alone.",
+        "Divides \\( M \\) by \\( L_2 \\) alone, giving an impossible value above 1.",
+        "Reports \\( k^2 \\) instead of \\( k \\)."
+      ],
+      "mixed_topics": [
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-023",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The current in an ideal, zero-resistance inductor is raised from zero to \\( I \\). The work done against its back-EMF:",
+      "options": [
+        "is stored as magnetic field energy \\( \\tfrac12LI^2 \\)",
+        "is dissipated as heat in the coil",
+        "is zero, since the coil has no resistance",
+        "is radiated away as light"
+      ],
+      "correct_index": 0,
+      "explanation": "The back-EMF opposes the increase (Lenz's law), so the source does work \\( \\int L I\\,dI=\\tfrac12LI^2 \\).<br><br>This energy is stored in the magnetic field and returned when the current falls.",
+      "hint": "Back-EMF opposes the increase, so work is done.",
+      "distractor_logic": [
+        "A zero-resistance coil cannot dissipate heat.",
+        "The back-EMF opposes the rising current, so work must be done even without resistance.",
+        "No significant radiation occurs; the energy stays in the field."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-024",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A generator rotating at \\( \\omega=50 \\) rad/s produces a peak EMF of 100 V. The peak flux linkage \\( NBA \\) of its coil is:",
+      "options": [
+        "5000 Wb",
+        "2 Wb",
+        "100 Wb",
+        "0.5 Wb"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\varepsilon_0=NBA\\omega \\), so \\( NBA=\\dfrac{\\varepsilon_0}{\\omega}=\\dfrac{100}{50}=2 \\) Wb.",
+      "hint": "Peak EMF is peak flux linkage times \\( \\omega \\).",
+      "distractor_logic": [
+        "Multiplies the peak EMF by \\( \\omega \\) instead of dividing.",
+        "Equates peak flux linkage with peak EMF.",
+        "Divides \\( \\omega \\) by the peak EMF, inverting the relation."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-025",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A generator feeds a fixed resistor. If its rotation speed is doubled, the peak power dissipated in the resistor becomes:",
+      "options": [
+        "2 times as large",
+        "unchanged",
+        "4 times as large",
+        "8 times as large"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\varepsilon_0=NBA\\omega \\) doubles.<br><br>Peak power \\( =\\dfrac{\\varepsilon_0^2}{R} \\), so it rises by \\( 2^2=4 \\); the extra power comes from extra mechanical work against the stronger retarding torque.",
+      "hint": "Power goes as EMF squared.",
+      "distractor_logic": [
+        "Doubles the EMF but forgets that power goes as EMF squared.",
+        "Treats the peak EMF as \\( NBA \\), independent of \\( \\omega \\).",
+        "Cubes the factor with no basis."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-026",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "As the current in a coil rises from 2 A to 5 A in 0.1 s, the flux linked with the coil rises from 0.2 Wb to 0.5 Wb. The average self-induced EMF is:",
+      "options": [
+        "5 V",
+        "0.3 V",
+        "30 V",
+        "3 V"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( |\\varepsilon|=\\dfrac{\\Delta(N\\Phi)}{\\Delta t}=\\dfrac{0.3}{0.1}=3 \\) V.<br><br>Check: \\( L=\\dfrac{0.2}{2}=0.1 \\) H, and \\( L\\dfrac{\\Delta I}{\\Delta t}=0.1\\times30=3 \\) V.",
+      "hint": "Self-induction is Faraday's law for the coil's own flux.",
+      "distractor_logic": [
+        "Divides the final flux linkage by the time instead of the change.",
+        "Uses the change in flux linkage but forgets to divide by the time.",
+        "Reports the rate of change of current as the EMF."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-027",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 0.5 H inductor carrying 4 A is disconnected from its source and connected across a resistor. The total heat produced in the resistor is:",
+      "options": [
+        "4 J",
+        "8 J",
+        "2 J",
+        "It depends on the value of the resistance"
+      ],
+      "correct_index": 0,
+      "explanation": "The inductor's stored energy is \\( \\tfrac12LI^2=\\tfrac12\\times0.5\\times16=4 \\) J.<br><br>The back-EMF keeps the current flowing as it decays, and all this energy ends up as heat.",
+      "hint": "All stored energy becomes heat.",
+      "distractor_logic": [
+        "Drops the \\( \\tfrac12 \\) in \\( \\tfrac12LI^2 \\).",
+        "Uses \\( \\tfrac12LI \\) without squaring the current.",
+        "The resistance changes how fast the energy is released, not how much."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-028",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two coaxial coils are viewed from the same side. The current in coil 1 is clockwise and increasing. The induced current in coil 2 is:",
+      "options": [
+        "clockwise",
+        "anticlockwise",
+        "zero",
+        "alternating in direction"
+      ],
+      "correct_index": 1,
+      "explanation": "Coil 1's growing flux links coil 2 through their mutual inductance.<br><br>Coil 2's induced current opposes this growth, so it circulates in the opposite sense: anticlockwise.",
+      "hint": "Opposing an increase means reversing the sense.",
+      "distractor_logic": [
+        "A clockwise current would add to the growing flux, aiding the change.",
+        "Coil 2 shares coil 1's changing flux, so a current is induced.",
+        "The current grows steadily, so the induced current keeps one direction."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-029",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An \\( N \\)-turn coil of area \\( A \\) rotates at \\( \\omega \\) in a field \\( B \\), with its flux linkage \\( NBA\\cos\\omega t \\). The induced EMF is:",
+      "options": [
+        "\\( NBA\\cos\\omega t \\)",
+        "\\( NBA\\sin\\omega t \\)",
+        "\\( NBA\\omega\\sin\\omega t \\)",
+        "\\( NBA\\omega\\cos\\omega t \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\varepsilon=-\\dfrac{d}{dt}(NBA\\cos\\omega t)=NBA\\omega\\sin\\omega t \\).<br><br>Peak EMF \\( NBA\\omega \\) occurs when the flux is zero.",
+      "hint": "Differentiate the flux linkage.",
+      "distractor_logic": [
+        "Reports the flux linkage itself, not its rate of change.",
+        "Forgets the factor \\( \\omega \\) from differentiating \\( \\cos\\omega t \\).",
+        "Keeps the EMF in phase with the flux; differentiating \\( \\cos \\) gives \\( \\sin \\)."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-030",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two coaxial solenoids have the same length and area, with 500 and 1500 turns per metre. The first has \\( L_1=2 \\) mH. Their mutual inductance is:",
+      "options": [
+        "18 mH",
+        "2 mH",
+        "10 mH",
+        "6 mH"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( M=\\mu_0n_1n_2Al=L_1\\dfrac{n_2}{n_1}=2\\times3=6 \\) mH.<br><br>Check: \\( L_2=L_1\\left(\\dfrac{n_2}{n_1}\\right)^2=18 \\) mH and \\( \\sqrt{2\\times18}=6 \\), so \\( k=1 \\).",
+      "hint": "Compare \\( M \\) with \\( L_1 \\) using turns per metre.",
+      "distractor_logic": [
+        "Reports \\( L_2 \\) (which scales as \\( n_2^2 \\)) instead of \\( M \\).",
+        "Assumes \\( M \\) equals \\( L_1 \\).",
+        "Uses the arithmetic mean of \\( L_1 \\) and \\( L_2 \\)."
+      ],
+      "mixed_topics": [
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-031",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Pulling a solid aluminium sheet out of the gap of a strong magnet needs noticeably more force than pulling out a sheet with many slots cut across it. Why?",
+      "options": [
+        "Larger eddy currents in the solid sheet produce a stronger force opposing its motion",
+        "The solid sheet is magnetised and attracted by the magnet",
+        "The slotted sheet has eddy currents that help pull it out",
+        "The solid sheet is heavier, and that alone explains the difference"
+      ],
+      "correct_index": 0,
+      "explanation": "Each part of the moving sheet has a motional EMF, driving eddy currents.<br><br>These currents feel a force opposing the motion (Lenz's law); slots break the current loops, so the drag is much smaller.",
+      "hint": "Slots cut the current paths.",
+      "distractor_logic": [
+        "Aluminium is not appreciably magnetic; the force is from induced currents.",
+        "Eddy currents always oppose the motion; they never help it.",
+        "The force needed is felt only while the sheet moves in the field, so it is magnetic drag, not weight."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Eddy Currents and the AC Generator"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-032",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A loop is pulled out of a uniform field at speed \\( v \\). If it is instead pulled out at \\( 2v \\), the charge that flows through it and the heat produced become:",
+      "options": [
+        "both doubled",
+        "charge unchanged, heat doubled",
+        "charge doubled, heat quadrupled",
+        "both unchanged"
+      ],
+      "correct_index": 1,
+      "explanation": "Charge \\( q=\\dfrac{\\Delta\\Phi}{R} \\), independent of speed.<br><br>Heat \\( =I^2Rt \\) with \\( I\\propto v \\) and \\( t\\propto\\dfrac1v \\), so heat \\( \\propto v \\) and doubles.",
+      "hint": "Compare the charge formula with \\( I^2Rt \\).",
+      "distractor_logic": [
+        "Charge \\( =\\dfrac{\\Delta\\Phi}{R} \\) does not depend on speed.",
+        "Charge is fixed by the flux change; heat grows only in proportion to \\( v \\).",
+        "The heat depends on the speed, since a larger current flows for a shorter time."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-033",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An aircraft with a 20 m wingspan flies horizontally at 250 m/s where Earth's field has a vertical component of \\( 4\\times10^{-5} \\) T and a horizontal component of \\( 3\\times10^{-5} \\) T. The EMF between its wingtips is:",
+      "options": [
+        "0.15 V",
+        "0.25 V",
+        "0.2 V",
+        "Zero, since the wings form no closed circuit"
+      ],
+      "correct_index": 2,
+      "explanation": "The horizontal wings, moving horizontally, cut only the vertical field component.<br><br>\\( \\varepsilon=B_vlv=4\\times10^{-5}\\times20\\times250=0.2 \\) V.",
+      "hint": "Which field component do the wings sweep through?",
+      "distractor_logic": [
+        "Uses the horizontal component, which is along the plane of motion and is not cut by the horizontal wings.",
+        "Uses the total field \\( 5\\times10^{-5} \\) T instead of only the vertical component.",
+        "A motional EMF exists across an open conductor; only the current is absent."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-034",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An ideal 3 H inductor with no resistance is connected across a steady 12 V supply. The current in it:",
+      "options": [
+        "grows steadily at 36 A/s",
+        "grows steadily at 0.25 A/s",
+        "jumps instantly to an infinite value",
+        "grows steadily at 4 A/s"
+      ],
+      "correct_index": 3,
+      "explanation": "The back-EMF opposes the rising current and must balance the supply: \\( L\\dfrac{dI}{dt}=12 \\) V.<br><br>\\( \\dfrac{dI}{dt}=\\dfrac{12}{3}=4 \\) A/s, a steady ramp.",
+      "hint": "The back-EMF equals the supply voltage.",
+      "distractor_logic": [
+        "Multiplies \\( V \\) by \\( L \\) instead of dividing.",
+        "Divides \\( L \\) by \\( V \\), inverting the relation.",
+        "Ignores the back-EMF, which limits how fast the current can rise."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-035",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The current in coil 1 repeatedly ramps up from 0 to 2 A in 0.01 s and back down to 0 in 0.01 s. The mutual inductance with coil 2 is 0.05 H. The EMF in coil 2 is:",
+      "options": [
+        "a square wave of magnitude 10 V, reversing sign every 0.01 s",
+        "a triangular wave of peak 0.1 V",
+        "a constant 10 V that never changes sign",
+        "zero, since the current returns to zero"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\left|\\dfrac{dI_1}{dt}\\right|=\\dfrac{2}{0.01}=200 \\) A/s on each ramp.<br><br>\\( |\\varepsilon_2|=0.05\\times200=10 \\) V, with the sign flipping as the slope flips: a square wave.",
+      "hint": "EMF follows the slope of the current.",
+      "distractor_logic": [
+        "Uses \\( MI_1 \\), which is the flux linkage, rather than \\( M\\dfrac{dI_1}{dt} \\).",
+        "Misses that the slope reverses on the down-ramp, reversing the EMF.",
+        "The EMF depends on the rate of change, which is large even though the average current change over a cycle is zero."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-036",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Coils 1 and 2 have \\( L_1=0.1 \\) H, \\( L_2=0.4 \\) H and \\( M=0.15 \\) H. The current in coil 1 increases at 20 A/s while coil 2 is open. The self-induced EMF in coil 1 and the EMF in coil 2 are:",
+      "options": [
+        "2 V and 8 V",
+        "2 V and 3 V",
+        "3 V and 2 V",
+        "2 V and 0 V"
+      ],
+      "correct_index": 1,
+      "explanation": "Coil 1: \\( L_1\\dfrac{dI_1}{dt}=0.1\\times20=2 \\) V.<br><br>Coil 2: \\( M\\dfrac{dI_1}{dt}=0.15\\times20=3 \\) V.<br><br>Check: \\( k=\\dfrac{0.15}{\\sqrt{0.04}}=0.75 \\), within range.",
+      "hint": "Self uses \\( L_1 \\); mutual uses \\( M \\).",
+      "distractor_logic": [
+        "Uses \\( L_2 \\) instead of \\( M \\) for coil 2.",
+        "Swaps the roles of \\( L_1 \\) and \\( M \\).",
+        "An open coil still has an EMF induced in it; it just carries no current."
+      ],
+      "mixed_topics": [
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-037",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The steady current in a coil is doubled. Its self-inductance and stored energy become:",
+      "options": [
+        "inductance doubled, energy doubled",
+        "inductance doubled, energy eight times",
+        "inductance unchanged, energy four times",
+        "inductance unchanged, energy doubled"
+      ],
+      "correct_index": 2,
+      "explanation": "Doubling \\( I \\) doubles the flux linkage, so \\( L=\\dfrac{N\\Phi}{I} \\) stays the same.<br><br>\\( U=\\tfrac12LI^2 \\) becomes four times as large.",
+      "hint": "\\( L \\) is flux linkage per ampere.",
+      "distractor_logic": [
+        "Inductance depends on geometry, not current; and energy goes as \\( I^2 \\).",
+        "Doubles \\( L \\) wrongly, then compounds it.",
+        "Keeps \\( L \\) fixed correctly but treats energy as linear in current."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-038",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A long straight wire and a nearby rectangular loop have a mutual inductance of \\( 2\\ \\mu\\text{H} \\). The wire's current rises at 500 A/s. The induced EMF in the loop, and the direction of current in the loop's side nearest the wire, are:",
+      "options": [
+        "1 mV; in the same direction as the wire's current",
+        "1 V; opposite to the wire's current",
+        "zero, since the loop is not connected to the wire",
+        "1 mV; opposite to the wire's current"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( |\\varepsilon|=M\\dfrac{dI}{dt}=2\\times10^{-6}\\times500=10^{-3} \\) V \\( =1 \\) mV.<br><br>The flux through the loop is growing, so the induced current opposes it; the near side carries current opposite to the wire, and antiparallel currents repel.",
+      "hint": "Opposing an increase means repulsion.",
+      "distractor_logic": [
+        "Parallel currents attract and would aid the flux increase, reversing Lenz's law.",
+        "Treats microhenry as millihenry, a factor of 1000 too large.",
+        "Coupling is magnetic; no connection is needed."
+      ],
+      "mixed_topics": [
+        "Magnetic Flux and Faraday's Law of Electromagnetic Induction",
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-039",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two coaxial solenoids have the same length and turns per metre, but the outer has four times the cross-sectional area of the inner. The coefficient of coupling is:",
+      "options": [
+        "0.5",
+        "1",
+        "0.25",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( L_{in}=\\mu_0n^2Al \\), \\( L_{out}=4\\mu_0n^2Al \\), and \\( M=\\mu_0n^2Al \\) (shared inner area).<br><br>\\( k=\\dfrac{M}{\\sqrt{L_{in}L_{out}}}=\\dfrac{1}{\\sqrt4}=0.5 \\).",
+      "hint": "Write \\( L_{in} \\), \\( L_{out} \\) and \\( M \\) with the solenoid formula.",
+      "distractor_logic": [
+        "Assumes coaxial solenoids are always perfectly coupled; the outer's flux outside the inner is not shared.",
+        "Uses the area ratio directly instead of its square root.",
+        "Inverts the ratio, giving an impossible value above 1."
+      ],
+      "mixed_topics": [
+        "Self-Inductance: Definition, Inductance of a Solenoid, and Energy Stored in an Inductor",
+        "Mutual Inductance: Definition, Coefficient of Coupling, and Coupled Circuits"
+      ]
+    },
+    {
+      "id": "PHY12-CH06-B-040",
+      "chapter": "PHY12-CH06",
+      "chapter_name": "Electromagnetic Induction",
+      "topic": "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A bar magnet falls vertically through a closed copper ring. Its acceleration while approaching the ring and while leaving it is:",
+      "options": [
+        "less than \\( g \\) while approaching, greater than \\( g \\) while leaving",
+        "less than \\( g \\) in both cases",
+        "greater than \\( g \\) in both cases",
+        "exactly \\( g \\) in both cases"
+      ],
+      "correct_index": 1,
+      "explanation": "Approaching, the ring opposes the growing flux by repelling the magnet.<br><br>Leaving, the ring opposes the falling flux by attracting it back.<br><br>Either way the force is upward, so the acceleration is below \\( g \\); the lost energy becomes heat in the ring, as with eddy-current braking.",
+      "hint": "Induced effects oppose the relative motion.",
+      "distractor_logic": [
+        "The current reverses on leaving, but it then opposes the decrease, which still means pulling the magnet back.",
+        "Induced currents never speed the magnet up.",
+        "A closed ring carries induced currents that exert a retarding force."
+      ],
+      "mixed_topics": [
+        "Lenz's Law and Motional EMF: Direction, Induced Force, Power, and Energy Conservation",
+        "Eddy Currents and the AC Generator"
+      ]
+    }
+  ]
+}

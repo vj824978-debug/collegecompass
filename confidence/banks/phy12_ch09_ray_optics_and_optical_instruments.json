@@ -1,0 +1,3725 @@
+{
+  "meta": {
+    "chapter": "PHY12-CH09",
+    "chapter_name": "Ray Optics and Optical Instruments",
+    "subject": "Physics",
+    "class": 12,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "Refractive index is always written as \\( \\mu \\) inside a single KaTeX span, never as \\( n \\) or a raw Unicode character; no raw Unicode math symbols appear anywhere outside KaTeX; all sign-convention-dependent quantities (image distance, focal length, power, magnification) carry the correct Cartesian sign; and every numeric correct answer terminates cleanly."
+  },
+  "topics": [
+    {
+      "name": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "summary": "A plane mirror forms a virtual, erect, same-size image as far behind the mirror as the object is in front. Spherical mirrors are handled with the Cartesian sign convention: every distance is measured from the pole, and the direction of the incident light is positive. Objects are placed on the left, so \\( u \\) is negative. A concave mirror has its focus in front, so its \\( f \\) is negative; a convex mirror has its focus behind, so its \\( f \\) is positive. The focal length is half the radius of curvature. The mirror formula adds reciprocals, and the magnification carries a minus sign. A negative magnification means an inverted (real) image; a positive one means an erect (virtual) image. A concave mirror gives real images for objects beyond the focus and a magnified virtual image for objects inside it, while a convex mirror always gives a virtual, erect, diminished image, which is why it is used as a rear-view mirror. The mirror formula is not the lens formula: keep the two sign patterns separate.",
+      "key_formulas": [
+        "\\( f=\\dfrac{R}{2} \\)",
+        "\\( \\dfrac{1}{v}+\\dfrac{1}{u}=\\dfrac{1}{f} \\)",
+        "\\( m=\\dfrac{h'}{h}=-\\dfrac{v}{u} \\)"
+      ],
+      "worked_example": "An object is 20 cm in front of a concave mirror of focal length 15 cm. With \\( u=-20 \\) cm and \\( f=-15 \\) cm, \\( \\dfrac{1}{v}=-\\dfrac{1}{15}+\\dfrac{1}{20}=-\\dfrac{1}{60} \\), so \\( v=-60 \\) cm. Then \\( m=-\\dfrac{v}{u}=-3 \\): a real, inverted image three times the size, 60 cm in front of the mirror.",
+      "common_mistakes": [
+        "Using the lens formula \\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\) or the lens magnification \\( \\dfrac{v}{u} \\) for a mirror",
+        "Giving a concave mirror a positive focal length because a converging lens has one",
+        "Taking the focal length equal to the radius instead of half of it",
+        "Reading a negative magnification as a virtual image"
+      ],
+      "question_count": 34
+    },
+    {
+      "name": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "summary": "Refractive index is \\( \\mu=\\dfrac{c}{v} \\); since \\( \\mu\\gt1 \\) for any real medium, light always travels slower in the denser medium. Snell's law \\( \\mu_1\\sin i=\\mu_2\\sin r \\) says light bends toward the normal on entering a denser medium and away from it on entering a rarer one. An object under a liquid appears raised: apparent depth is real depth divided by \\( \\mu \\). When light goes from a denser to a rarer medium and the angle of incidence exceeds the critical angle \\( C \\), no light is refracted and total internal reflection occurs; here \\( \\sin C=\\dfrac{1}{\\mu} \\), with \\( \\mu \\) the denser medium's index relative to the rarer one. TIR can never happen going from rarer to denser. It explains optical fibres, sparkling diamonds and reflecting prisms. At a single spherical surface separating two media, the image follows the single-surface formula, with \\( R \\) signed by where the centre of curvature lies. This relation is the building block of the lens maker's formula.",
+      "key_formulas": [
+        "\\( \\mu=\\dfrac{c}{v} \\)",
+        "\\( \\mu_1\\sin i=\\mu_2\\sin r \\)",
+        "\\( \\sin C=\\dfrac{1}{\\mu} \\)",
+        "\\( \\text{apparent depth}=\\dfrac{\\text{real depth}}{\\mu} \\)",
+        "\\( \\dfrac{\\mu_2}{v}-\\dfrac{\\mu_1}{u}=\\dfrac{\\mu_2-\\mu_1}{R} \\)"
+      ],
+      "worked_example": "A medium has \\( \\mu=2 \\). Its critical angle with air satisfies \\( \\sin C=\\dfrac{1}{2} \\), so \\( C=30^\\circ \\). A ray inside this medium meeting the surface at \\( 40^\\circ \\) is totally reflected, but a ray in air entering it at any angle simply refracts in.",
+      "common_mistakes": [
+        "Writing \\( C=\\dfrac{1}{\\mu} \\) instead of \\( \\sin C=\\dfrac{1}{\\mu} \\)",
+        "Allowing TIR for light going from a rarer into a denser medium",
+        "Claiming light speeds up in a denser medium",
+        "Multiplying the real depth by the refractive index instead of dividing"
+      ],
+      "question_count": 40
+    },
+    {
+      "name": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "summary": "A thin lens is described with distances measured from its optical centre and incident light positive. A convex (converging) lens has positive \\( f \\); a concave (diverging) lens has negative \\( f \\), the opposite of how the words concave and convex map onto mirror signs. The lens formula subtracts reciprocals, and the magnification has no minus sign. The lens maker's formula links \\( f \\) to the material and shapes; in a surrounding medium, \\( \\mu \\) is replaced by the lens's index relative to that medium, so a lens weakens in water and can even diverge in a denser liquid. Power \\( P=\\dfrac{1}{f} \\) is measured in dioptres with \\( f \\) in metres. For two thin lenses in contact, powers add, which means reciprocals of focal lengths add, not the focal lengths themselves. For two lenses separated by \\( d \\), an extra correction term must be subtracted. Keep track of signs throughout: a wrong sign on a focal length or image distance changes a real image into a virtual one and a converging system into a diverging one.",
+      "key_formulas": [
+        "\\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\)",
+        "\\( m=\\dfrac{v}{u} \\)",
+        "\\( \\dfrac{1}{f}=(\\mu-1)\\left(\\dfrac{1}{R_1}-\\dfrac{1}{R_2}\\right) \\)",
+        "\\( P=\\dfrac{1}{f\\,(\\text{m})} \\)",
+        "\\( P=P_1+P_2 \\)",
+        "\\( \\dfrac{1}{F}=\\dfrac{1}{f_1}+\\dfrac{1}{f_2}-\\dfrac{d}{f_1f_2} \\)"
+      ],
+      "worked_example": "Convex lenses of focal lengths 20 cm and 30 cm are 10 cm apart. \\( \\dfrac{1}{F}=\\dfrac{1}{20}+\\dfrac{1}{30}-\\dfrac{10}{600}=\\dfrac{4}{60} \\), so \\( F=15 \\) cm. In contact, the same pair would give \\( \\dfrac{1}{F}=\\dfrac{5}{60} \\), \\( F=12 \\) cm, never \\( 20+30=50 \\) cm.",
+      "common_mistakes": [
+        "Adding focal lengths directly for lenses in contact",
+        "Using focal length in centimetres when computing power in dioptres",
+        "Dropping the \\( -\\dfrac{d}{f_1f_2} \\) term for separated lenses",
+        "Using the mirror formula or mirror magnification for a lens"
+      ],
+      "question_count": 47
+    },
+    {
+      "name": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "summary": "In a prism of angle \\( A \\), the refraction angles inside obey \\( r_1+r_2=A \\) and the deviation satisfies \\( A+\\delta=i+e \\). As the angle of incidence increases, the deviation first falls and then rises; at the minimum \\( D_m \\) the ray passes symmetrically, with \\( i=e \\) and \\( r_1=r_2=\\dfrac{A}{2} \\), which gives the prism formula for \\( \\mu \\). A thin prism deviates light by \\( (\\mu-1)A \\). When the angle at the second face exceeds the critical angle, the ray is totally reflected, and if \\( A\\gt2C \\) no ray can emerge at all. Because \\( \\mu \\) depends on wavelength, being largest for violet, white light is dispersed into a spectrum; dispersive power compares the angular spread with the mean deviation. Scattering by molecules is much stronger for short wavelengths (Rayleigh scattering), making the sky blue and the rising or setting Sun red, while large cloud droplets scatter all colours equally and look white. On the airless Moon, with nothing to scatter sunlight, the daytime sky looks black.",
+      "key_formulas": [
+        "\\( r_1+r_2=A \\)",
+        "\\( A+\\delta=i+e \\)",
+        "\\( \\mu=\\dfrac{\\sin\\left(\\frac{A+D_m}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)} \\)",
+        "\\( \\delta=(\\mu-1)A \\)",
+        "\\( \\omega=\\dfrac{\\mu_v-\\mu_r}{\\mu_y-1} \\)"
+      ],
+      "worked_example": "A prism with \\( A=60^\\circ \\) has \\( \\mu=\\sqrt{2} \\). At minimum deviation, \\( \\sin\\left(\\frac{60^\\circ+D_m}{2}\\right)=\\sqrt{2}\\times\\dfrac{1}{2} \\), so the half-angle is \\( 45^\\circ \\) and \\( D_m=30^\\circ \\); the angle of incidence is \\( 45^\\circ \\).",
+      "common_mistakes": [
+        "Using the full angles instead of half angles in the prism formula",
+        "Multiplying by \\( \\mu \\) instead of \\( (\\mu-1) \\) for a thin prism",
+        "Dividing by \\( \\mu_y \\) rather than \\( \\mu_y-1 \\) in dispersive power",
+        "Claiming red light is scattered or deviated more than blue"
+      ],
+      "question_count": 34
+    },
+    {
+      "name": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "summary": "A normal eye sees from about 25 cm (near point \\( D \\)) to infinity. Myopia (far point too close) is corrected by a concave lens that images distant objects at the far point; hypermetropia and presbyopia (near point too far) by a convex lens; astigmatism by a cylindrical lens. A simple magnifier has magnifying power \\( 1+\\dfrac{D}{f} \\) when the image is at the near point but only \\( \\dfrac{D}{f} \\) when it is at infinity for relaxed viewing. A compound microscope multiplies the objective's and eyepiece's magnifications; high power needs both focal lengths small. An astronomical telescope in normal adjustment has magnifying power \\( -\\dfrac{f_o}{f_e} \\) and length \\( f_o+f_e \\); high power needs a large objective focal length and a small eyepiece focal length, the opposite of a microscope. Reflecting telescopes avoid chromatic aberration and allow very large objectives. Unless stated, questions assume normal adjustment with the final image at infinity; any near-point variant is labelled explicitly, and corrective lens powers are always found with focal lengths in metres.",
+      "key_formulas": [
+        "\\( m=1+\\dfrac{D}{f} \\) (image at near point)",
+        "\\( m=\\dfrac{D}{f} \\) (image at infinity)",
+        "\\( m\\approx\\dfrac{L}{f_o}\\times\\dfrac{D}{f_e} \\) (compound microscope, normal adjustment)",
+        "\\( m=-\\dfrac{f_o}{f_e} \\), \\( L=f_o+f_e \\) (telescope, normal adjustment)"
+      ],
+      "worked_example": "A telescope with \\( f_o=100 \\) cm and \\( f_e=5 \\) cm has \\( m=-20 \\) in normal adjustment and a tube 105 cm long. If the final image is instead at the near point, \\( |m|=20\\left(1+\\dfrac{5}{25}\\right)=24 \\).",
+      "common_mistakes": [
+        "Adding '+1' to the magnifier formula when the image is at infinity, or dropping it at the near point",
+        "Applying the telescope's large-objective rule to a microscope",
+        "Correcting myopia with a convex lens",
+        "Using focal lengths in centimetres when finding lens power"
+      ],
+      "question_count": 37
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY12-CH09-L1-001",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "Using the Cartesian sign convention, which relation correctly connects the object distance \\( u \\), image distance \\( v \\) and focal length \\( f \\) of a spherical mirror?",
+      "options": [
+        "\\( \\dfrac{1}{v}+\\dfrac{1}{u}=\\dfrac{1}{f} \\)",
+        "\\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\)",
+        "\\( \\dfrac{1}{u}-\\dfrac{1}{v}=\\dfrac{1}{f} \\)",
+        "\\( v+u=f \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For a spherical mirror, with all distances measured from the pole and the incident-light direction taken positive, the mirror formula is \\( \\dfrac{1}{v}+\\dfrac{1}{u}=\\dfrac{1}{f} \\).<br><br>The minus sign version \\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\) belongs to thin lenses, not mirrors.",
+      "hint": "Mirrors add the two reciprocals; lenses subtract them.",
+      "distractor_logic": [
+        "This is the thin-lens formula; borrowing the lens sign pattern for a mirror is the classic mix-up",
+        "Reverses the order of the lens-style subtraction, which matches neither the mirror nor the lens relation",
+        "Adds the distances themselves instead of their reciprocals"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-002",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "A concave mirror has a radius of curvature of 30 cm. What is its focal length, with sign, in the Cartesian convention?",
+      "options": [
+        "\\( f=+15 \\) cm",
+        "\\( f=-15 \\) cm",
+        "\\( f=-30 \\) cm",
+        "\\( f=-60 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "For a spherical mirror, \\( f=\\dfrac{R}{2} \\), so the magnitude is 15 cm.<br><br>The focus of a concave mirror lies in front of it, against the incident-light direction, so \\( f=-15 \\) cm.",
+      "hint": "Focal length is half the radius; think about which side of the mirror the focus lies on.",
+      "distractor_logic": [
+        "Gives the concave mirror a positive sign, as if it followed a converging lens's convention",
+        "Takes the focal length equal to the radius of curvature instead of half of it",
+        "Doubles the radius instead of halving it"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-003",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "In the Cartesian sign convention, what is the sign of the focal length of a convex mirror, and why?",
+      "options": [
+        "Negative, because its focus is virtual",
+        "Positive only when the object lies beyond the centre of curvature",
+        "Positive, because its focus lies behind the mirror, along the direction of the incident light",
+        "Negative, because a convex mirror diverges the reflected rays"
+      ],
+      "correct_index": 2,
+      "explanation": "Signs depend on direction measured from the pole: along the incident light is positive.<br><br>A convex mirror's focus lies behind the reflecting surface, so its \\( f \\) is positive.",
+      "hint": "Locate the focus relative to the pole and compare with the direction of incident light.",
+      "distractor_logic": [
+        "Being virtual does not decide the sign; the side on which the focus lies does",
+        "Focal length is a property of the mirror and does not depend on where the object is placed",
+        "Assigns a sign from the diverging behaviour, the way a concave lens is treated, instead of from the position of the focus"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-004",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "An object is placed 12 cm in front of a plane mirror. What is the distance between the object and its image?",
+      "options": [
+        "12 cm",
+        "6 cm",
+        "0 cm",
+        "24 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "A plane mirror forms the image as far behind the mirror as the object is in front of it.<br><br>Image is 12 cm behind, object 12 cm in front, so the separation is \\( 12+12=24 \\) cm.",
+      "hint": "The image is as far behind the mirror as the object is in front.",
+      "distractor_logic": [
+        "That is only the image's distance from the mirror, not from the object",
+        "Halves the object distance, as if the image formed midway",
+        "Assumes the image forms on the mirror surface itself"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-005",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the expression for the linear magnification \\( m \\) produced by a spherical mirror in the Cartesian sign convention?",
+      "options": [
+        "\\( m=-\\dfrac{v}{u} \\)",
+        "\\( m=\\dfrac{v}{u} \\)",
+        "\\( m=-\\dfrac{u}{v} \\)",
+        "\\( m=\\dfrac{u}{v} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For a mirror, \\( m=\\dfrac{h'}{h}=-\\dfrac{v}{u} \\).<br><br>The lens relation \\( m=\\dfrac{v}{u} \\) has no minus sign, which is why the two must not be swapped.",
+      "hint": "The mirror magnification carries a minus sign that the lens version does not.",
+      "distractor_logic": [
+        "This is the lens magnification; the mirror version carries a minus sign",
+        "Inverts the ratio of image and object distances",
+        "Inverts the ratio and also drops the mirror's minus sign"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-006",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "For a real object, what kind of image does a convex mirror always form?",
+      "options": [
+        "Real, inverted and diminished",
+        "Virtual, erect and diminished",
+        "Virtual, erect and magnified",
+        "Real, erect and of the same size"
+      ],
+      "correct_index": 1,
+      "explanation": "Rays reflected from a convex mirror always diverge, so they only appear to meet behind the mirror.<br><br>The image is therefore virtual, erect and smaller than the object, for every object position.",
+      "hint": "Reflected rays from a convex mirror never actually meet.",
+      "distractor_logic": [
+        "This describes a concave mirror with the object beyond the centre of curvature",
+        "This is a concave mirror with the object between the pole and the focus",
+        "No mirror forms a real erect image of a real object"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-007",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "An object is placed at the centre of curvature of a concave mirror of focal length 15 cm. Where does the image form, and what is its nature?",
+      "options": [
+        "\\( v=+30 \\) cm; virtual, erect and of the same size",
+        "\\( v=-15 \\) cm; real, at the focus",
+        "\\( v=-30 \\) cm; real, inverted and of the same size",
+        "At infinity"
+      ],
+      "correct_index": 2,
+      "explanation": "Here \\( u=-30 \\) cm and \\( f=-15 \\) cm.<br><br>\\( \\dfrac{1}{v}=\\dfrac{1}{f}-\\dfrac{1}{u}=-\\dfrac{1}{15}+\\dfrac{1}{30}=-\\dfrac{1}{30} \\), so \\( v=-30 \\) cm.<br><br>\\( m=-\\dfrac{v}{u}=-1 \\): real, inverted, same size, at the centre of curvature.",
+      "hint": "The centre of curvature is at twice the focal length.",
+      "distractor_logic": [
+        "Sign slip: a positive image distance puts the image behind the mirror",
+        "An image at the focus arises only for an object at infinity",
+        "An image at infinity arises only when the object is at the focus"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-008",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 1,
+      "type": "regular",
+      "question": "A mirror forms an image with magnification \\( m=-2 \\). What does this tell you about the image?",
+      "options": [
+        "It is virtual, erect and twice the size of the object",
+        "It is real, inverted and half the size of the object",
+        "It is virtual, inverted and twice the size of the object",
+        "It is real, inverted and twice the size of the object"
+      ],
+      "correct_index": 3,
+      "explanation": "The sign of \\( m \\) gives orientation: negative means inverted.<br><br>\\( |m|=2 \\) means the image is twice as tall; an inverted image from a mirror with a real object is real.",
+      "hint": "Sign tells orientation; magnitude tells size.",
+      "distractor_logic": [
+        "A negative \\( m \\) means inverted, not erect",
+        "Reads the size factor as the reciprocal of \\( |m| \\)",
+        "For a single mirror and a real object, an inverted image is always real, not virtual"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-009",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "The refractive index of glass is \\( \\mu=1.5 \\). Taking \\( c=3\\times10^{8} \\) m/s, what is the speed of light in glass?",
+      "options": [
+        "\\( 2\\times10^{8} \\) m/s",
+        "\\( 4.5\\times10^{8} \\) m/s",
+        "\\( 3\\times10^{8} \\) m/s",
+        "\\( 1.5\\times10^{8} \\) m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\mu=\\dfrac{c}{v} \\), so \\( v=\\dfrac{c}{\\mu}=\\dfrac{3\\times10^{8}}{1.5}=2\\times10^{8} \\) m/s.<br><br>Since \\( \\mu\\gt1 \\), light always travels slower in the medium.",
+      "hint": "Refractive index is the ratio of speed in vacuum to speed in the medium.",
+      "distractor_logic": [
+        "Multiplies by the refractive index, so light would speed up in a denser medium, which never happens",
+        "Assumes light keeps its vacuum speed inside glass",
+        "Divides \\( c \\) by 2 instead of by \\( \\mu \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-010",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "Which pair of conditions is required for total internal reflection?",
+      "options": [
+        "Light goes from a rarer to a denser medium, and the angle of incidence exceeds the critical angle",
+        "Light goes from a denser to a rarer medium, and the angle of incidence exceeds the critical angle",
+        "Light goes from a denser to a rarer medium, and the angle of incidence is less than the critical angle",
+        "Light may go in either direction, provided the angle of incidence is \\( 90^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "TIR needs the refracted ray to bend away from the normal, which only happens going from denser to rarer.<br><br>It also needs the angle of incidence to exceed the critical angle \\( C \\).",
+      "hint": "Which way must light bend at the boundary for the refracted ray to disappear?",
+      "distractor_logic": [
+        "Going into a denser medium bends light toward the normal, so it can always refract; TIR is impossible",
+        "Below the critical angle the ray still refracts out",
+        "Direction matters: TIR never happens when entering a denser medium"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-011",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "A medium has refractive index \\( \\mu \\) relative to air. Which expression gives its critical angle \\( C \\)?",
+      "options": [
+        "\\( C=\\dfrac{1}{\\mu} \\)",
+        "\\( \\sin C=\\mu \\)",
+        "\\( \\sin C=\\dfrac{1}{\\mu} \\)",
+        "\\( \\cos C=\\dfrac{1}{\\mu} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "At the critical angle the refracted ray grazes the surface: \\( \\mu\\sin C=1\\times\\sin 90^\\circ \\).<br><br>So \\( \\sin C=\\dfrac{1}{\\mu} \\).",
+      "hint": "Apply Snell's law with the refracted angle equal to a right angle.",
+      "distractor_logic": [
+        "Treats the ratio as the angle itself instead of its sine",
+        "Inverts the ratio; since \\( \\mu\\gt1 \\), a sine greater than 1 is impossible",
+        "Uses cosine instead of sine"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-012",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "A transparent medium has \\( \\mu=2 \\). What is its critical angle with air?",
+      "options": [
+        "\\( 0.5 \\) rad",
+        "\\( 60^\\circ \\)",
+        "\\( 45^\\circ \\)",
+        "\\( 30^\\circ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sin C=\\dfrac{1}{\\mu}=\\dfrac{1}{2} \\).<br><br>So \\( C=30^\\circ \\).",
+      "hint": "Find the angle whose sine equals \\( \\dfrac{1}{\\mu} \\).",
+      "distractor_logic": [
+        "Uses \\( C=\\dfrac{1}{\\mu} \\) directly, treating the ratio as an angle",
+        "Uses \\( \\cos C=\\dfrac{1}{\\mu} \\)",
+        "This is the critical angle for \\( \\mu=\\sqrt{2} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-013",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "A ray in air strikes a glass surface (\\( \\mu=\\sqrt{3} \\)) at an angle of incidence of \\( 60^\\circ \\). What is the angle of refraction?",
+      "options": [
+        "\\( 30^\\circ \\)",
+        "\\( 60^\\circ \\)",
+        "\\( 45^\\circ \\)",
+        "\\( 90^\\circ \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( 1\\times\\sin 60^\\circ=\\sqrt{3}\\sin r \\).<br><br>\\( \\sin r=\\dfrac{\\sqrt{3}/2}{\\sqrt{3}}=\\dfrac{1}{2} \\), so \\( r=30^\\circ \\).",
+      "hint": "Use \\( \\mu_1\\sin i=\\mu_2\\sin r \\).",
+      "distractor_logic": [
+        "Assumes the ray passes into glass without bending",
+        "Guesses a standard angle without applying Snell's law",
+        "A ray entering a denser medium bends toward the normal, never to a right angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-014",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "A coin lies at the bottom of a tank of water 12 cm deep (\\( \\mu=\\dfrac{4}{3} \\)). Viewed from directly above, how deep does it appear?",
+      "options": [
+        "16 cm",
+        "9 cm",
+        "12 cm",
+        "3 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "Apparent depth \\( =\\dfrac{\\text{real depth}}{\\mu}=\\dfrac{12}{4/3} \\).<br><br>This gives 9 cm, so the coin appears raised by 3 cm.",
+      "hint": "Objects under water look shallower than they really are.",
+      "distractor_logic": [
+        "Multiplies by the refractive index; the coin appears raised, not lowered",
+        "Ignores refraction at the water surface",
+        "Gives the upward shift instead of the apparent depth"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-015",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "A ray passes obliquely from water into air. How does it bend?",
+      "options": [
+        "Towards the normal",
+        "It goes straight without bending",
+        "Away from the normal",
+        "It is always totally reflected"
+      ],
+      "correct_index": 2,
+      "explanation": "Water is denser than air, so light speeds up on entering air.<br><br>Going from denser to rarer, the ray bends away from the normal.",
+      "hint": "Is light entering a faster or slower medium?",
+      "distractor_logic": [
+        "Bending toward the normal happens when light enters a denser medium",
+        "An oblique ray changes direction whenever the refractive index changes",
+        "TIR occurs only when the angle of incidence exceeds the critical angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-016",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 1,
+      "type": "regular",
+      "question": "On what principle does an optical fibre carry light along its length?",
+      "options": [
+        "Repeated refraction from a rarer core into a denser cladding",
+        "Scattering of light by the glass molecules",
+        "Dispersion of light into its colours",
+        "Repeated total internal reflection at the boundary between the denser core and rarer cladding"
+      ],
+      "correct_index": 3,
+      "explanation": "The core has a higher refractive index than the cladding.<br><br>Light hitting the core-cladding boundary above the critical angle is totally reflected again and again.",
+      "hint": "The light must be trapped inside the core.",
+      "distractor_logic": [
+        "The core is the denser medium; light going into a denser cladding could not undergo TIR",
+        "Scattering would spread and lose light, not guide it",
+        "Dispersion separates colours; it does not trap light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-017",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "Using the Cartesian sign convention, which is the thin-lens formula?",
+      "options": [
+        "\\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\)",
+        "\\( \\dfrac{1}{v}+\\dfrac{1}{u}=\\dfrac{1}{f} \\)",
+        "\\( \\dfrac{1}{u}-\\dfrac{1}{v}=\\dfrac{1}{f} \\)",
+        "\\( \\dfrac{1}{v}+\\dfrac{1}{u}=-\\dfrac{1}{f} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For thin lenses, with distances from the optical centre and incident light positive: \\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\).<br><br>The mirror formula adds the reciprocals, so the two must not be interchanged.",
+      "hint": "Lenses subtract; mirrors add.",
+      "distractor_logic": [
+        "This is the mirror formula; the lens relation subtracts the reciprocals",
+        "Reverses the subtraction, which flips the sign of every focal length",
+        "An invented form mixing the mirror sum with a sign flip"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-018",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "A convex lens has focal length 50 cm. What is its power?",
+      "options": [
+        "\\( +0.02 \\) D",
+        "\\( +2 \\) D",
+        "\\( -2 \\) D",
+        "\\( +0.5 \\) D"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=\\dfrac{1}{f} \\) with \\( f \\) in metres: \\( f=+0.5 \\) m.<br><br>\\( P=\\dfrac{1}{0.5}=+2 \\) D.",
+      "hint": "Convert to metres before taking the reciprocal.",
+      "distractor_logic": [
+        "Uses the focal length in centimetres instead of metres",
+        "A converging lens has positive focal length and positive power",
+        "Takes power equal to the focal length in metres rather than its reciprocal"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-019",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "In the Cartesian sign convention, what is the sign of the focal length of a concave lens?",
+      "options": [
+        "Positive, because concave lenses converge light",
+        "Negative only when the object lies inside the focal length",
+        "Negative, because it is a diverging lens whose focus lies on the incident side",
+        "It depends on which side of the lens the object is placed"
+      ],
+      "correct_index": 2,
+      "explanation": "A concave lens spreads parallel rays so they seem to come from a focus on the incident side.<br><br>That focus lies against the incident direction, so \\( f \\) is negative.",
+      "hint": "Where do parallel rays appear to diverge from?",
+      "distractor_logic": [
+        "A concave lens diverges light; the converging one is convex",
+        "Focal length is fixed by the lens, not by the object position",
+        "The sign of focal length is a property of the lens alone"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-020",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "Two thin lenses of power \\( +2 \\) D and \\( -1 \\) D are placed in contact. What is the power of the combination?",
+      "options": [
+        "\\( +3 \\) D",
+        "\\( -2 \\) D",
+        "\\( +0.5 \\) D",
+        "\\( +1 \\) D"
+      ],
+      "correct_index": 3,
+      "explanation": "For lenses in contact, powers add: \\( P=P_1+P_2 \\).<br><br>\\( P=+2+(-1)=+1 \\) D.",
+      "hint": "Powers of lenses in contact simply add, with signs.",
+      "distractor_logic": [
+        "Ignores the negative sign of the diverging lens",
+        "Multiplies the powers instead of adding them",
+        "Averages the powers instead of adding them"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-021",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the expression for the linear magnification of a thin lens in the Cartesian convention?",
+      "options": [
+        "\\( m=\\dfrac{v}{u} \\)",
+        "\\( m=-\\dfrac{v}{u} \\)",
+        "\\( m=\\dfrac{u}{v} \\)",
+        "\\( m=-\\dfrac{u}{v} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For a lens, \\( m=\\dfrac{h'}{h}=\\dfrac{v}{u} \\).<br><br>The minus sign appears only in the mirror version \\( m=-\\dfrac{v}{u} \\).",
+      "hint": "The lens magnification has no minus sign.",
+      "distractor_logic": [
+        "This is the mirror magnification, which has a minus sign",
+        "Inverts the ratio",
+        "Inverts the ratio and adds the mirror's minus sign"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-022",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "An object is placed 20 cm in front of a convex lens of focal length 10 cm. Describe the image.",
+      "options": [
+        "\\( v=-20 \\) cm; virtual, erect, same size",
+        "\\( v=+20 \\) cm; real, inverted, same size",
+        "\\( v=+10 \\) cm; real, at the focus",
+        "At infinity"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{v}=\\dfrac{1}{f}+\\dfrac{1}{u}=\\dfrac{1}{10}-\\dfrac{1}{20}=\\dfrac{1}{20} \\), so \\( v=+20 \\) cm.<br><br>\\( m=\\dfrac{v}{u}=-1 \\): real, inverted, same size, at \\( 2F \\).",
+      "hint": "The object is at twice the focal length.",
+      "distractor_logic": [
+        "Sign slip that places the image on the object side",
+        "An image at the focus arises only for an object at infinity",
+        "An image at infinity arises only for an object at the focus"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-023",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "On which quantities does the focal length of a thin lens in air depend, according to the lens maker's formula?",
+      "options": [
+        "Only the object distance",
+        "Only the radii of curvature of the surfaces",
+        "The refractive index of the lens material and the radii of curvature of its two surfaces",
+        "Only the thickness of the lens at its centre"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{1}{f}=(\\mu-1)\\left(\\dfrac{1}{R_1}-\\dfrac{1}{R_2}\\right) \\).<br><br>So \\( f \\) depends on the material through \\( \\mu \\) and on the shape through \\( R_1 \\) and \\( R_2 \\).",
+      "hint": "Recall the lens maker's formula.",
+      "distractor_logic": [
+        "Focal length is a property of the lens and does not change with the object",
+        "Leaves out the \\( (\\mu-1) \\) factor from the material",
+        "Thin-lens theory neglects thickness; material and curvature decide focal length"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-024",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 1,
+      "type": "regular",
+      "question": "One dioptre is equal to which of these?",
+      "options": [
+        "\\( 1\\,\\text{cm}^{-1} \\)",
+        "\\( 1 \\) m",
+        "\\( 100\\,\\text{m}^{-1} \\)",
+        "\\( 1\\,\\text{m}^{-1} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Power \\( P=\\dfrac{1}{f} \\) with \\( f \\) in metres.<br><br>A lens of focal length 1 m has power 1 D, so \\( 1 \\) D \\( =1\\,\\text{m}^{-1} \\).",
+      "hint": "Power is one over focal length in metres.",
+      "distractor_logic": [
+        "Uses centimetres; the dioptre is defined with metres",
+        "Power is the reciprocal of a length, not a length",
+        "Confuses \\( 1\\,\\text{cm}^{-1} \\) with the dioptre"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-025",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "For refraction through a prism of angle \\( A \\), with angle of incidence \\( i \\), angle of emergence \\( e \\) and deviation \\( \\delta \\), which relation holds?",
+      "options": [
+        "\\( A+\\delta=i+e \\)",
+        "\\( A=i+e+\\delta \\)",
+        "\\( \\delta=A+i+e \\)",
+        "\\( i+e=A-\\delta \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Deviation \\( \\delta=(i-r_1)+(e-r_2) \\) and \\( r_1+r_2=A \\).<br><br>So \\( \\delta=i+e-A \\), i.e. \\( A+\\delta=i+e \\).",
+      "hint": "Deviation is the sum of the bending at the two faces.",
+      "distractor_logic": [
+        "Puts the deviation on the wrong side of the relation",
+        "Adds all angles together without geometric basis",
+        "Subtracts the deviation instead of adding it"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-026",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "Inside a prism of angle \\( A \\), the refraction angles at the two faces are \\( r_1 \\) and \\( r_2 \\). What is their relation?",
+      "options": [
+        "\\( r_1+r_2=\\delta \\)",
+        "\\( r_1+r_2=A \\)",
+        "\\( r_1-r_2=A \\)",
+        "\\( r_1+r_2=180^\\circ-A \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The normals at the two faces meet at an angle of \\( 180^\\circ-A \\).<br><br>In the triangle formed with the ray inside, \\( r_1+r_2+(180^\\circ-A)=180^\\circ \\), so \\( r_1+r_2=A \\).",
+      "hint": "Look at the triangle formed by the two normals and the ray inside the prism.",
+      "distractor_logic": [
+        "Confuses the internal angles with the deviation",
+        "Uses a difference instead of a sum",
+        "Confuses the angle between the two face normals with the sum of the refraction angles"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-027",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "At the position of minimum deviation through a prism, which statement is correct?",
+      "options": [
+        "\\( r_1=r_2=A \\)",
+        "\\( r_1=r_2=\\dfrac{D_m}{2} \\)",
+        "\\( r_1=r_2=\\dfrac{A}{2} \\)",
+        "\\( r_1=0 \\) and \\( r_2=A \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "At minimum deviation the ray passes symmetrically, so the angle of incidence equals the angle of emergence.<br><br>Then \\( r_1=r_2 \\), and since \\( r_1+r_2=A \\), each is \\( \\dfrac{A}{2} \\).",
+      "hint": "The ray passes symmetrically through the prism.",
+      "distractor_logic": [
+        "The two angles add up to \\( A \\), so each cannot equal \\( A \\)",
+        "Confuses the internal refraction angles with half the deviation",
+        "Describes normal incidence, which is not the minimum deviation setting"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-028",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "Which formula gives the refractive index \\( \\mu \\) of a prism of angle \\( A \\) and minimum deviation \\( D_m \\)?",
+      "options": [
+        "\\( \\mu=\\dfrac{\\sin\\left(\\frac{A}{2}\\right)}{\\sin\\left(\\frac{A+D_m}{2}\\right)} \\)",
+        "\\( \\mu=\\dfrac{\\sin(A+D_m)}{\\sin A} \\)",
+        "\\( \\mu=\\dfrac{\\sin\\left(\\frac{A-D_m}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)} \\)",
+        "\\( \\mu=\\dfrac{\\sin\\left(\\frac{A+D_m}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "At minimum deviation \\( i=\\dfrac{A+D_m}{2} \\) and \\( r=\\dfrac{A}{2} \\).<br><br>Snell's law \\( \\mu=\\dfrac{\\sin i}{\\sin r} \\) gives the prism formula.",
+      "hint": "Combine Snell's law with the symmetric-passage angles.",
+      "distractor_logic": [
+        "Inverted ratio, which would give \\( \\mu\\lt1 \\)",
+        "Uses the full angles instead of the half angles",
+        "Subtracts the deviation instead of adding it"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-029",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "Why does the clear daytime sky look blue?",
+      "options": [
+        "Air molecules scatter shorter (blue) wavelengths much more strongly than longer ones",
+        "Air molecules scatter red light much more strongly than blue",
+        "Light reflected from the oceans colours the sky",
+        "Raindrops disperse sunlight into its colours overhead"
+      ],
+      "correct_index": 0,
+      "explanation": "Rayleigh scattering by molecules is proportional to \\( \\dfrac{1}{\\lambda^{4}} \\).<br><br>Blue light, with its shorter wavelength, is scattered across the sky much more than red.",
+      "hint": "Scattering by tiny molecules depends strongly on wavelength.",
+      "distractor_logic": [
+        "Reverses the wavelength dependence of scattering",
+        "The sky is blue even over deserts; reflection is not the cause",
+        "Dispersion by droplets produces rainbows, not the everyday blue sky"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-030",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "When white light passes through a glass prism, which colour is deviated the most?",
+      "options": [
+        "Red",
+        "Violet",
+        "Yellow",
+        "All colours are deviated equally"
+      ],
+      "correct_index": 1,
+      "explanation": "The refractive index of glass is largest for violet light.<br><br>Deviation \\( \\delta\\approx(\\mu-1)A \\) is therefore greatest for violet.",
+      "hint": "Which colour has the largest refractive index in glass?",
+      "distractor_logic": [
+        "Red has the smallest refractive index and is deviated the least",
+        "Yellow lies in the middle of the spectrum",
+        "Equal deviation would mean no dispersion at all"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-031",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "A thin prism has angle \\( 6^\\circ \\) and \\( \\mu=1.5 \\). What is its deviation?",
+      "options": [
+        "\\( 9^\\circ \\)",
+        "\\( 4^\\circ \\)",
+        "\\( 3^\\circ \\)",
+        "\\( 6^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For a thin prism, \\( \\delta=(\\mu-1)A \\).<br><br>\\( \\delta=0.5\\times6^\\circ=3^\\circ \\).",
+      "hint": "Use the thin-prism approximation.",
+      "distractor_logic": [
+        "Multiplies by \\( \\mu \\) instead of \\( (\\mu-1) \\)",
+        "Divides the prism angle by \\( \\mu \\)",
+        "Assumes the deviation equals the prism angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-032",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 1,
+      "type": "regular",
+      "question": "Why does the Sun look reddish at sunrise and sunset?",
+      "options": [
+        "The Sun emits more red light in the morning and evening",
+        "Red light is scattered more than blue by air",
+        "The atmosphere refracts blue light into the ground at low angles",
+        "Its light crosses a much longer path of air, and most of the blue is scattered out before reaching us"
+      ],
+      "correct_index": 3,
+      "explanation": "Near the horizon, sunlight passes through a much thicker layer of atmosphere.<br><br>Shorter wavelengths are scattered away along this path, leaving mostly red light.",
+      "hint": "Think about the path length through the air.",
+      "distractor_logic": [
+        "The Sun's emission does not change through the day",
+        "Reverses which colours are scattered more",
+        "Refraction bends all colours nearly equally; it does not remove blue"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-033",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "A person can see nearby objects clearly but distant objects look blurred. Which lens corrects this defect?",
+      "options": [
+        "A concave (diverging) lens",
+        "A convex (converging) lens",
+        "A cylindrical lens",
+        "A plane glass sheet"
+      ],
+      "correct_index": 0,
+      "explanation": "This is myopia: the image of a distant object forms in front of the retina.<br><br>A diverging lens spreads the rays slightly so the eye focuses them on the retina.",
+      "hint": "Short-sightedness means the eye converges light too strongly.",
+      "distractor_logic": [
+        "Convex lenses correct hypermetropia, where near vision is poor",
+        "Cylindrical lenses correct astigmatism",
+        "A plane sheet has zero power and changes nothing"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-034",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "A person's near point has moved far from the eye, so reading at normal distance is difficult, while distant vision is fine. Which defect is this and what lens corrects it?",
+      "options": [
+        "Myopia, corrected by a concave lens",
+        "Hypermetropia, corrected by a convex lens",
+        "Hypermetropia, corrected by a concave lens",
+        "Astigmatism, corrected by a convex lens"
+      ],
+      "correct_index": 1,
+      "explanation": "In hypermetropia the eye cannot converge light enough for near objects.<br><br>A converging lens adds the missing power, bringing the image onto the retina.",
+      "hint": "The eye needs extra converging power.",
+      "distractor_logic": [
+        "Myopia affects distant vision, not near vision",
+        "A concave lens would make the eye's focusing even weaker",
+        "Astigmatism is a direction-dependent blur corrected by a cylindrical lens"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-035",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "A person sees vertical lines sharply but horizontal lines blurred at the same distance. What lens corrects this?",
+      "options": [
+        "A concave spherical lens",
+        "A convex spherical lens",
+        "A cylindrical lens",
+        "A bifocal lens"
+      ],
+      "correct_index": 2,
+      "explanation": "Direction-dependent blurring is astigmatism, from a cornea curved differently in different planes.<br><br>A cylindrical lens adds power in one plane only, correcting it.",
+      "hint": "The problem depends on direction.",
+      "distractor_logic": [
+        "Corrects myopia, which blurs all directions equally",
+        "Corrects hypermetropia, which blurs all directions equally",
+        "Corrects presbyopia by combining two spherical powers"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-036",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "A magnifying glass of focal length 5 cm is used with the final image at infinity (relaxed eye). Taking \\( D=25 \\) cm, what is its magnifying power?",
+      "options": [
+        "6",
+        "0.2",
+        "30",
+        "5"
+      ],
+      "correct_index": 3,
+      "explanation": "With the image at infinity, \\( m=\\dfrac{D}{f} \\).<br><br>\\( m=\\dfrac{25}{5}=5 \\).",
+      "hint": "Relaxed-eye viewing has no '+1' term.",
+      "distractor_logic": [
+        "Adds 1, which applies only when the image is at the near point",
+        "Inverts the ratio",
+        "Adds the distances instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-037",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "For a high magnifying power, what focal lengths should the objective and eyepiece of an astronomical telescope have?",
+      "options": [
+        "A large objective focal length and a small eyepiece focal length",
+        "A small objective focal length and a large eyepiece focal length",
+        "Both focal lengths small",
+        "Both focal lengths large"
+      ],
+      "correct_index": 0,
+      "explanation": "In normal adjustment, \\( m=-\\dfrac{f_o}{f_e} \\).<br><br>The ratio is largest when \\( f_o \\) is large and \\( f_e \\) is small.",
+      "hint": "Magnifying power is a ratio of the two focal lengths.",
+      "distractor_logic": [
+        "Reverses the requirement and would reduce magnification",
+        "This is the requirement for a compound microscope, not a telescope",
+        "Large values for both keep the ratio \\( \\dfrac{f_o}{f_e} \\) modest"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-038",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "An astronomical telescope in normal adjustment has an objective of focal length 100 cm and an eyepiece of focal length 5 cm. What is its magnifying power?",
+      "options": [
+        "\\( -\\dfrac{1}{20} \\)",
+        "\\( -20 \\)",
+        "\\( -500 \\)",
+        "\\( 105 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( m=-\\dfrac{f_o}{f_e}=-\\dfrac{100}{5} \\).<br><br>\\( m=-20 \\); the minus sign shows the image is inverted.",
+      "hint": "Divide objective focal length by eyepiece focal length.",
+      "distractor_logic": [
+        "Inverts the ratio of focal lengths",
+        "Multiplies the focal lengths",
+        "Gives the tube length in cm instead of the magnifying power"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-039",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "A telescope has objective focal length 80 cm and eyepiece focal length 4 cm. How long is the tube in normal adjustment?",
+      "options": [
+        "76 cm",
+        "20 cm",
+        "84 cm",
+        "320 cm"
+      ],
+      "correct_index": 2,
+      "explanation": "In normal adjustment, the objective's focus coincides with the eyepiece's focus.<br><br>Tube length \\( L=f_o+f_e=80+4=84 \\) cm.",
+      "hint": "The two foci must coincide.",
+      "distractor_logic": [
+        "Subtracts the focal lengths",
+        "Gives the magnifying power instead of the length",
+        "Multiplies the focal lengths"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L1-040",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 1,
+      "type": "regular",
+      "question": "For a normal human eye, what are the far point and the near point?",
+      "options": [
+        "Far point at 25 cm, near point at infinity",
+        "Far point at infinity, near point at about 2.5 cm",
+        "Far point at 100 cm, near point at 25 cm",
+        "Far point at infinity, near point at about 25 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "A relaxed normal eye focuses parallel rays, so the far point is at infinity.<br><br>With full accommodation it focuses objects as close as about 25 cm.",
+      "hint": "Think of the least distance of distinct vision.",
+      "distractor_logic": [
+        "Swaps the two points",
+        "2.5 cm is roughly the eye's lens-to-retina distance, not the near point",
+        "A far point at 100 cm indicates myopia"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-001",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "An object is placed 20 cm in front of a concave mirror of focal length 15 cm. Find the image distance.",
+      "options": [
+        "\\( v=-60 \\) cm",
+        "\\( v=+60 \\) cm",
+        "\\( v=-\\dfrac{60}{7} \\) cm",
+        "\\( v=-35 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( u=-20 \\) cm, \\( f=-15 \\) cm.<br><br>\\( \\dfrac{1}{v}=\\dfrac{1}{f}-\\dfrac{1}{u}=-\\dfrac{1}{15}+\\dfrac{1}{20}=-\\dfrac{1}{60} \\).<br><br>So \\( v=-60 \\) cm: a real image 60 cm in front of the mirror.",
+      "hint": "Rearrange the mirror formula and keep both given distances negative.",
+      "distractor_logic": [
+        "Drops the sign: a positive value would place the image behind the mirror",
+        "Uses the lens formula \\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\) on a mirror problem",
+        "Simply adds the object distance and the focal length"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-002",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "An object is 15 cm in front of a concave mirror of focal length 10 cm. What is the magnification?",
+      "options": [
+        "\\( m=+2 \\)",
+        "\\( m=-2 \\)",
+        "\\( m=-\\dfrac{1}{2} \\)",
+        "\\( m=+\\dfrac{1}{2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{v}=-\\dfrac{1}{10}+\\dfrac{1}{15}=-\\dfrac{1}{30} \\), so \\( v=-30 \\) cm.<br><br>\\( m=-\\dfrac{v}{u}=-\\dfrac{-30}{-15}=-2 \\): real, inverted, twice the size.",
+      "hint": "Find \\( v \\) first, then apply the mirror magnification formula.",
+      "distractor_logic": [
+        "Uses the lens magnification \\( m=\\dfrac{v}{u} \\), dropping the mirror's minus sign",
+        "Inverts the ratio, using \\( -\\dfrac{u}{v} \\)",
+        "Inverts the ratio and loses the sign as well"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-003",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "An object is placed 20 cm in front of a convex mirror of radius of curvature 40 cm. Where is the image?",
+      "options": [
+        "\\( v=-10 \\) cm, in front of the mirror",
+        "\\( v=+20 \\) cm, behind the mirror",
+        "\\( v=+10 \\) cm, behind the mirror",
+        "At infinity"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f=+\\dfrac{R}{2}=+20 \\) cm for a convex mirror; \\( u=-20 \\) cm.<br><br>\\( \\dfrac{1}{v}=\\dfrac{1}{20}+\\dfrac{1}{20}=\\dfrac{1}{10} \\), so \\( v=+10 \\) cm.<br><br>The image is virtual, erect and diminished, behind the mirror.",
+      "hint": "A convex mirror's focal length is positive.",
+      "distractor_logic": [
+        "Gives the convex mirror a negative focal length, as for a concave mirror",
+        "Takes the focal length as the full radius of curvature",
+        "Treats 20 cm as the focus of a concave mirror; a convex mirror never sends the image to infinity"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-004",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "An object is placed 10 cm in front of a concave mirror of focal length 20 cm. Describe the image.",
+      "options": [
+        "Real and inverted, 20 cm in front of the mirror, with \\( m=-2 \\)",
+        "Virtual and erect, 20 cm behind the mirror, with \\( m=+\\dfrac{1}{2} \\)",
+        "No image, because the object is at the focus",
+        "Virtual and erect, 20 cm behind the mirror, with \\( m=+2 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( u=-10 \\) cm, \\( f=-20 \\) cm: \\( \\dfrac{1}{v}=-\\dfrac{1}{20}+\\dfrac{1}{10}=\\dfrac{1}{20} \\), so \\( v=+20 \\) cm.<br><br>\\( m=-\\dfrac{v}{u}=-\\dfrac{20}{-10}=+2 \\): virtual, erect, magnified.",
+      "hint": "An object between the pole and focus of a concave mirror behaves like a shaving-mirror case.",
+      "distractor_logic": [
+        "Sign slip in the image distance turns a virtual image into a real one",
+        "Inverts the magnification ratio to \\( -\\dfrac{u}{v} \\)",
+        "The focus is 20 cm away; the object at 10 cm is inside the focus"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-005",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "A concave mirror forms a real image 60 cm in front of it when the object is 30 cm in front. What is its focal length?",
+      "options": [
+        "\\( f=-20 \\) cm",
+        "\\( f=+20 \\) cm",
+        "\\( f=+60 \\) cm",
+        "\\( f=-45 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( u=-30 \\) cm, \\( v=-60 \\) cm (both in front).<br><br>\\( \\dfrac{1}{f}=\\dfrac{1}{v}+\\dfrac{1}{u}=-\\dfrac{1}{60}-\\dfrac{1}{30}=-\\dfrac{3}{60} \\), so \\( f=-20 \\) cm.",
+      "hint": "Real images of a mirror lie in front, so both distances are negative.",
+      "distractor_logic": [
+        "Loses the sign; a concave mirror's focal length is negative",
+        "Uses the lens formula \\( \\dfrac{1}{f}=\\dfrac{1}{v}-\\dfrac{1}{u} \\) for a mirror",
+        "Averages the two distances instead of combining reciprocals"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-006",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "A 2 cm tall object stands 18 cm in front of a concave mirror of focal length 12 cm. What is the height of the image?",
+      "options": [
+        "\\( h'=+4 \\) cm",
+        "\\( h'=-4 \\) cm",
+        "\\( h'=-1 \\) cm",
+        "\\( h'=-6 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{v}=-\\dfrac{1}{12}+\\dfrac{1}{18}=-\\dfrac{1}{36} \\), so \\( v=-36 \\) cm.<br><br>\\( m=-\\dfrac{v}{u}=-\\dfrac{-36}{-18}=-2 \\), so \\( h'=-2\\times2=-4 \\) cm: inverted, 4 cm tall.",
+      "hint": "Get \\( m \\) from the distances, then multiply by the object height.",
+      "distractor_logic": [
+        "Uses the lens magnification \\( \\dfrac{v}{u} \\) on a mirror, so the sign comes out wrong",
+        "Inverts the ratio of distances",
+        "Uses the ratio of image distance to focal length instead of \\( -\\dfrac{v}{u} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-007",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "Where must an object be placed in front of a concave mirror to obtain a real, inverted image larger than the object?",
+      "options": [
+        "Between the pole and the focus",
+        "Beyond the centre of curvature",
+        "Between the focus and the centre of curvature",
+        "Exactly at the focus"
+      ],
+      "correct_index": 2,
+      "explanation": "With the object between F and C, the image forms beyond C.<br><br>An image beyond C is farther than the object, so it is real, inverted and magnified.",
+      "hint": "The image should form beyond the centre of curvature.",
+      "distractor_logic": [
+        "This gives a virtual, erect, magnified image, not a real one",
+        "This gives a real but diminished image",
+        "This sends the image to infinity"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-008",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 2,
+      "type": "regular",
+      "question": "Why are convex mirrors used as rear-view mirrors in vehicles?",
+      "options": [
+        "They form real, magnified images of vehicles behind",
+        "Their focal length is negative, so every image is magnified",
+        "They form all images at infinity, so the eye need not adjust",
+        "They always form an erect, diminished image and give a wide field of view"
+      ],
+      "correct_index": 3,
+      "explanation": "A convex mirror always gives a virtual, erect, diminished image.<br><br>Because the image is small, a large region behind the vehicle fits in the mirror.",
+      "hint": "Think about image size and how much of the road can be seen.",
+      "distractor_logic": [
+        "A convex mirror never forms real images of real objects",
+        "A convex mirror's focal length is positive in the Cartesian convention, and its images are diminished",
+        "The image of a convex mirror lies between the pole and the focus, not at infinity"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-009",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "The speed of light in a liquid is \\( 2.25\\times10^{8} \\) m/s. With \\( c=3\\times10^{8} \\) m/s, what is the refractive index of the liquid?",
+      "options": [
+        "\\( \\mu=\\dfrac{4}{3} \\)",
+        "\\( \\mu=\\dfrac{3}{4} \\)",
+        "\\( \\mu=5.25 \\)",
+        "\\( \\mu=\\dfrac{9}{16} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\mu=\\dfrac{c}{v}=\\dfrac{3\\times10^{8}}{2.25\\times10^{8}} \\).<br><br>\\( \\dfrac{3}{2.25}=\\dfrac{4}{3} \\).",
+      "hint": "Divide the vacuum speed by the speed in the medium.",
+      "distractor_logic": [
+        "Takes \\( \\dfrac{v}{c} \\); a refractive index below 1 would mean light moves faster than in vacuum",
+        "Adds the two speed coefficients instead of dividing",
+        "Squares the inverted ratio \\( \\dfrac{v}{c} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-010",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "Glass has \\( \\mu=\\dfrac{3}{2} \\) and water has \\( \\mu=\\dfrac{4}{3} \\). What is the refractive index of glass relative to water?",
+      "options": [
+        "\\( \\dfrac{8}{9} \\)",
+        "\\( \\dfrac{9}{8} \\)",
+        "\\( 2 \\)",
+        "\\( \\dfrac{1}{6} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( {}_{w}\\mu_{g}=\\dfrac{\\mu_g}{\\mu_w}=\\dfrac{3/2}{4/3} \\).<br><br>\\( =\\dfrac{9}{8} \\).",
+      "hint": "Relative index is a ratio, with the medium of interest on top.",
+      "distractor_logic": [
+        "Takes water relative to glass, giving a value below 1",
+        "Multiplies the two indices",
+        "Subtracts the two indices"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-011",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "A medium has a critical angle of \\( 45^\\circ \\) with air. What is its refractive index?",
+      "options": [
+        "\\( \\dfrac{1}{\\sqrt{2}} \\)",
+        "\\( \\dfrac{4}{\\pi} \\)",
+        "\\( \\sqrt{2} \\)",
+        "\\( 2 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\mu=\\dfrac{1}{\\sin C}=\\dfrac{1}{\\sin 45^\\circ} \\).<br><br>\\( =\\sqrt{2} \\).",
+      "hint": "Invert \\( \\sin C=\\dfrac{1}{\\mu} \\).",
+      "distractor_logic": [
+        "Takes \\( \\mu=\\sin C \\) instead of \\( \\dfrac{1}{\\sin C} \\); an index below 1 is impossible",
+        "Uses \\( C=\\dfrac{1}{\\mu} \\) with \\( C \\) in radians",
+        "This corresponds to a critical angle of \\( 30^\\circ \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-012",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "A mark at the bottom of a glass slab 30 cm thick (\\( \\mu=1.5 \\)) is viewed normally from above. By how much does the mark appear to be raised?",
+      "options": [
+        "20 cm",
+        "45 cm",
+        "15 cm",
+        "10 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "Apparent depth \\( =\\dfrac{30}{1.5}=20 \\) cm.<br><br>Shift \\( =30-20=10 \\) cm, i.e. \\( t\\left(1-\\dfrac{1}{\\mu}\\right) \\).",
+      "hint": "Shift is real depth minus apparent depth.",
+      "distractor_logic": [
+        "This is the apparent depth, not the shift",
+        "Multiplies the thickness by the refractive index",
+        "Simply halves the thickness"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-013",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "A point object in air is 30 cm from a convex spherical glass surface (\\( \\mu=1.5 \\)) of radius of curvature 10 cm. Where is the image formed?",
+      "options": [
+        "\\( v=+90 \\) cm, inside the glass",
+        "\\( v=-90 \\) cm",
+        "\\( v=+60 \\) cm",
+        "\\( v=+18 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( u=-30 \\) cm, \\( R=+10 \\) cm, \\( \\mu_1=1 \\), \\( \\mu_2=1.5 \\).<br><br>\\( \\dfrac{1.5}{v}-\\dfrac{1}{-30}=\\dfrac{0.5}{10} \\), so \\( \\dfrac{1.5}{v}=\\dfrac{1}{20}-\\dfrac{1}{30}=\\dfrac{1}{60} \\).<br><br>\\( v=90 \\) cm: a real image inside the glass.",
+      "hint": "Use \\( \\dfrac{\\mu_2}{v}-\\dfrac{\\mu_1}{u}=\\dfrac{\\mu_2-\\mu_1}{R} \\).",
+      "distractor_logic": [
+        "Sign slip: the image forms inside the glass, on the far side",
+        "Forgets the factor \\( \\mu_2 \\) in \\( \\dfrac{\\mu_2}{v} \\)",
+        "Adds the \\( \\dfrac{\\mu_1}{u} \\) term with the wrong sign"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-014",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "In which of these situations can total internal reflection never occur?",
+      "options": [
+        "Light travelling from glass (\\( \\mu=1.5 \\)) into air at an angle of incidence larger than the critical angle",
+        "Light travelling from air into glass at an angle of incidence of \\( 80^\\circ \\)",
+        "Light travelling from water (\\( \\mu=\\dfrac{4}{3} \\)) into air at an angle of incidence larger than the critical angle",
+        "Light travelling from a medium of \\( \\mu=2 \\) into air at an angle of incidence of \\( 40^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "TIR needs light to go from a denser to a rarer medium.<br><br>Air to glass is rarer to denser, so the ray always refracts in, whatever the angle.",
+      "hint": "Check the direction of travel first.",
+      "distractor_logic": [
+        "Denser to rarer and above the critical angle: TIR does occur here",
+        "Water to air above the critical angle is a standard TIR case",
+        "The critical angle is \\( 30^\\circ \\), so \\( 40^\\circ \\) exceeds it and TIR occurs"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-015",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "Light travels from medium A (\\( \\mu=2 \\)) into medium B (\\( \\mu=\\sqrt{2} \\)). What is the critical angle for this boundary?",
+      "options": [
+        "\\( 30^\\circ \\)",
+        "TIR is not possible, because B is not air",
+        "\\( 45^\\circ \\)",
+        "\\( 60^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\sin C=\\dfrac{\\mu_B}{\\mu_A}=\\dfrac{\\sqrt{2}}{2}=\\dfrac{1}{\\sqrt{2}} \\).<br><br>So \\( C=45^\\circ \\).",
+      "hint": "Use the index of the denser medium relative to the rarer one.",
+      "distractor_logic": [
+        "Uses only medium A's index against air, ignoring medium B",
+        "TIR only needs the second medium to be optically rarer, not vacuum or air",
+        "Uses the cosine instead of the sine"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-016",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 2,
+      "type": "regular",
+      "question": "How long does light take to cross 30 cm of glass (\\( \\mu=1.5 \\))? Take \\( c=3\\times10^{8} \\) m/s.",
+      "options": [
+        "\\( 1\\times10^{-9} \\) s",
+        "\\( \\dfrac{2}{3}\\times10^{-9} \\) s",
+        "\\( 1.5\\times10^{-7} \\) s",
+        "\\( 1.5\\times10^{-9} \\) s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v=\\dfrac{c}{\\mu}=2\\times10^{8} \\) m/s.<br><br>\\( t=\\dfrac{0.30}{2\\times10^{8}}=1.5\\times10^{-9} \\) s.",
+      "hint": "Find the speed in glass, then convert the distance to metres.",
+      "distractor_logic": [
+        "Uses the speed of light in vacuum",
+        "Divides the speed by \\( \\mu \\) twice over, making light effectively faster",
+        "Leaves the distance in centimetres while using a speed in m/s"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-017",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "An object is 10 cm in front of a convex lens of focal length 15 cm. Find the image distance.",
+      "options": [
+        "\\( v=-30 \\) cm",
+        "\\( v=+30 \\) cm",
+        "\\( v=+6 \\) cm",
+        "\\( v=-25 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac{1}{v}=\\dfrac{1}{f}+\\dfrac{1}{u}=\\dfrac{1}{15}-\\dfrac{1}{10}=-\\dfrac{1}{30} \\).<br><br>\\( v=-30 \\) cm: a virtual, erect image with \\( m=\\dfrac{v}{u}=+3 \\).",
+      "hint": "Rearrange \\( \\dfrac{1}{v}-\\dfrac{1}{u}=\\dfrac{1}{f} \\) with \\( u \\) negative.",
+      "distractor_logic": [
+        "Sign slip: the image of an object inside the focus is on the object's side",
+        "Uses the mirror formula on a lens problem",
+        "Adds the object distance and focal length"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-018",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "An object is 20 cm in front of a concave lens of focal length 20 cm. Describe the image.",
+      "options": [
+        "At infinity, because the object is at the focus",
+        "\\( v=-10 \\) cm; virtual, erect, \\( m=+\\dfrac{1}{2} \\)",
+        "\\( v=+10 \\) cm; real, inverted",
+        "\\( v=-10 \\) cm; virtual, \\( m=-\\dfrac{1}{2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f=-20 \\) cm, \\( u=-20 \\) cm: \\( \\dfrac{1}{v}=-\\dfrac{1}{20}-\\dfrac{1}{20}=-\\dfrac{1}{10} \\), \\( v=-10 \\) cm.<br><br>\\( m=\\dfrac{v}{u}=\\dfrac{-10}{-20}=+\\dfrac{1}{2} \\).",
+      "hint": "A concave lens has negative focal length.",
+      "distractor_logic": [
+        "Treats the diverging lens like a convex lens with the object at its focus",
+        "A concave lens never forms a real image of a real object",
+        "Uses the mirror magnification \\( -\\dfrac{v}{u} \\) for a lens"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-019",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "Two thin convex lenses of focal lengths 20 cm and 30 cm are placed in contact. What is the focal length of the combination?",
+      "options": [
+        "50 cm",
+        "25 cm",
+        "12 cm",
+        "10 cm"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{1}{F}=\\dfrac{1}{f_1}+\\dfrac{1}{f_2}=\\dfrac{1}{20}+\\dfrac{1}{30}=\\dfrac{5}{60} \\).<br><br>\\( F=12 \\) cm.",
+      "hint": "For lenses in contact, add reciprocals of focal lengths.",
+      "distractor_logic": [
+        "Adds focal lengths directly; it is the reciprocals (powers) that add",
+        "Averages the focal lengths",
+        "Subtracts one focal length from the other"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-020",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "A biconvex lens has both radii of curvature 20 cm and \\( \\mu=1.5 \\). What is its focal length?",
+      "options": [
+        "\\( +10 \\) cm",
+        "Infinite",
+        "\\( +40 \\) cm",
+        "\\( +20 \\) cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( R_1=+20 \\) cm, \\( R_2=-20 \\) cm.<br><br>\\( \\dfrac{1}{f}=0.5\\left(\\dfrac{1}{20}+\\dfrac{1}{20}\\right)=\\dfrac{1}{20} \\), so \\( f=+20 \\) cm.",
+      "hint": "The second surface of a biconvex lens has a negative radius.",
+      "distractor_logic": [
+        "Leaves out the \\( (\\mu-1) \\) factor",
+        "Takes both \\( R_1 \\) and \\( R_2 \\) as positive, so the bracket cancels to zero",
+        "Uses only one curved surface"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-021",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "A plano-convex lens of \\( \\mu=1.5 \\) has focal length 30 cm. What is the radius of curvature of its curved face?",
+      "options": [
+        "15 cm",
+        "30 cm",
+        "60 cm",
+        "45 cm"
+      ],
+      "correct_index": 0,
+      "explanation": "For the plane face \\( \\dfrac{1}{R}=0 \\), so \\( \\dfrac{1}{f}=\\dfrac{\\mu-1}{R} \\).<br><br>\\( R=(\\mu-1)f=0.5\\times30=15 \\) cm.",
+      "hint": "One face is flat, so only one curvature term survives.",
+      "distractor_logic": [
+        "Takes the radius equal to the focal length",
+        "Divides by \\( (\\mu-1) \\) instead of multiplying",
+        "Multiplies by \\( \\mu \\) instead of \\( (\\mu-1) \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-022",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "Two convex lenses of focal lengths 20 cm and 30 cm are placed 10 cm apart on a common axis. What is the equivalent focal length?",
+      "options": [
+        "12 cm",
+        "15 cm",
+        "50 cm",
+        "10 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{F}=\\dfrac{1}{f_1}+\\dfrac{1}{f_2}-\\dfrac{d}{f_1f_2}=\\dfrac{1}{20}+\\dfrac{1}{30}-\\dfrac{10}{600} \\).<br><br>\\( =\\dfrac{3+2-1}{60}=\\dfrac{4}{60} \\), so \\( F=15 \\) cm.",
+      "hint": "The lenses are separated, so the correction term matters.",
+      "distractor_logic": [
+        "Drops the \\( -\\dfrac{d}{f_1f_2} \\) term and uses the in-contact formula",
+        "Adds focal lengths directly",
+        "Adds the \\( \\dfrac{d}{f_1f_2} \\) term instead of subtracting it"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-023",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "A convex lens of focal length 25 cm is in contact with a concave lens of focal length 50 cm. What is the power of the combination?",
+      "options": [
+        "\\( +0.02 \\) D",
+        "\\( +6 \\) D",
+        "\\( +2 \\) D",
+        "\\( -25 \\) D"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( P_1=\\dfrac{1}{0.25}=+4 \\) D, \\( P_2=\\dfrac{1}{-0.5}=-2 \\) D.<br><br>\\( P=P_1+P_2=+2 \\) D.",
+      "hint": "Convert each focal length to metres, find each power, then add.",
+      "distractor_logic": [
+        "Works in centimetres instead of metres",
+        "Ignores the negative sign of the concave lens",
+        "Adds focal lengths in cm with signs and reports the result as a power"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-024",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 2,
+      "type": "regular",
+      "question": "A glass lens (\\( \\mu=1.5 \\)) has focal length 20 cm in air. What is its focal length when fully immersed in water (\\( \\mu=\\dfrac{4}{3} \\))?",
+      "options": [
+        "20 cm",
+        "5 cm",
+        "15 cm",
+        "80 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{f_w}{f_a}=\\dfrac{\\mu_g-1}{\\mu_g/\\mu_w-1}=\\dfrac{0.5}{9/8-1}=\\dfrac{0.5}{1/8}=4 \\).<br><br>\\( f_w=4\\times20=80 \\) cm.",
+      "hint": "In the lens maker's formula, replace \\( \\mu \\) by the index relative to water.",
+      "distractor_logic": [
+        "Assumes a lens's focal length does not depend on the surrounding medium",
+        "Divides by the factor instead of multiplying",
+        "Multiplies by the reciprocal of the water's index"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-025",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "A prism of angle \\( 60^\\circ \\) gives a minimum deviation of \\( 60^\\circ \\). What is its refractive index?",
+      "options": [
+        "\\( \\sqrt{3} \\)",
+        "\\( \\dfrac{1}{\\sqrt{3}} \\)",
+        "\\( 1 \\)",
+        "\\( \\dfrac{\\sqrt{3}}{2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\mu=\\dfrac{\\sin\\left(\\frac{60^\\circ+60^\\circ}{2}\\right)}{\\sin 30^\\circ}=\\dfrac{\\sin 60^\\circ}{\\sin 30^\\circ} \\).<br><br>\\( =\\dfrac{\\sqrt{3}/2}{1/2}=\\sqrt{3} \\).",
+      "hint": "Use half of the sum and half of the prism angle.",
+      "distractor_logic": [
+        "Inverts the ratio, giving \\( \\mu\\lt1 \\)",
+        "Uses full angles instead of half angles",
+        "Forgets to divide by \\( \\sin\\dfrac{A}{2} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-026",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "A prism of angle \\( 60^\\circ \\) has \\( \\mu=\\sqrt{2} \\). What is its angle of minimum deviation?",
+      "options": [
+        "\\( 45^\\circ \\)",
+        "\\( 30^\\circ \\)",
+        "\\( 90^\\circ \\)",
+        "\\( 60^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\sin\\left(\\frac{60^\\circ+D_m}{2}\\right)=\\sqrt{2}\\sin 30^\\circ=\\dfrac{1}{\\sqrt{2}} \\).<br><br>So \\( \\dfrac{60^\\circ+D_m}{2}=45^\\circ \\) and \\( D_m=30^\\circ \\).",
+      "hint": "Solve for the half-angle first, then subtract the prism angle.",
+      "distractor_logic": [
+        "Stops at \\( \\dfrac{A+D_m}{2}=45^\\circ \\) and reports that as \\( D_m \\)",
+        "Doubles \\( 45^\\circ \\) without subtracting \\( A \\)",
+        "Assumes the deviation equals the prism angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-027",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "For a glass, \\( \\mu_v=1.52 \\), \\( \\mu_r=1.48 \\) and \\( \\mu_y=1.50 \\). What is its dispersive power?",
+      "options": [
+        "\\( 0.04 \\)",
+        "\\( \\dfrac{2}{75} \\)",
+        "\\( 0.08 \\)",
+        "\\( 12.5 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega=\\dfrac{\\mu_v-\\mu_r}{\\mu_y-1}=\\dfrac{0.04}{0.50} \\).<br><br>\\( \\omega=0.08 \\).",
+      "hint": "The denominator is \\( \\mu_y-1 \\), not \\( \\mu_y \\).",
+      "distractor_logic": [
+        "Gives only the numerator \\( \\mu_v-\\mu_r \\)",
+        "Divides by \\( \\mu_y \\) instead of \\( \\mu_y-1 \\)",
+        "Inverts the ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-028",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "A thin prism of angle \\( 10^\\circ \\) has \\( \\mu_v=1.52 \\) and \\( \\mu_r=1.48 \\). What is the angular dispersion between violet and red?",
+      "options": [
+        "\\( 5^\\circ \\)",
+        "\\( 0.08^\\circ \\)",
+        "\\( 15.2^\\circ \\)",
+        "\\( 0.4^\\circ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\delta_v-\\delta_r=(\\mu_v-\\mu_r)A \\).<br><br>\\( =0.04\\times10^\\circ=0.4^\\circ \\).",
+      "hint": "Subtract the thin-prism deviations of violet and red.",
+      "distractor_logic": [
+        "Gives the mean deviation of yellow light, not the spread",
+        "Reports the dispersive power as if it were an angle",
+        "Multiplies \\( A \\) by \\( \\mu_v \\) alone"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-029",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "A prism has angle \\( A \\) and its material has critical angle \\( C \\). Under what condition will no ray emerge from the second face, whatever the angle of incidence?",
+      "options": [
+        "\\( A\\gt2C \\)",
+        "\\( A\\lt C \\)",
+        "\\( A=\\dfrac{C}{2} \\)",
+        "\\( A\\gt\\dfrac{C}{2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The largest possible \\( r_1 \\) is \\( C \\) (grazing incidence). Then \\( r_2=A-C \\).<br><br>If \\( A-C\\gt C \\), i.e. \\( A\\gt2C \\), every ray is totally reflected at the second face.",
+      "hint": "Consider the largest possible \\( r_1 \\).",
+      "distractor_logic": [
+        "Small prism angles let rays emerge easily",
+        "A prism this thin always lets light through",
+        "Uses half the critical angle instead of twice it"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-030",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "A prism of angle \\( 60^\\circ \\) is made of material with \\( \\mu=\\sqrt{2} \\). A ray emerges just grazing the second face. What is the refraction angle \\( r_1 \\) at the first face?",
+      "options": [
+        "\\( 45^\\circ \\)",
+        "\\( 15^\\circ \\)",
+        "\\( 30^\\circ \\)",
+        "\\( 75^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Grazing emergence means \\( r_2=C \\); \\( \\sin C=\\dfrac{1}{\\sqrt{2}} \\), so \\( C=45^\\circ \\).<br><br>\\( r_1=A-r_2=60^\\circ-45^\\circ=15^\\circ \\).",
+      "hint": "Grazing emergence fixes the angle at the second face.",
+      "distractor_logic": [
+        "Sets \\( r_1 \\) equal to the critical angle instead of \\( r_2 \\)",
+        "Uses the minimum-deviation value of half the prism angle",
+        "Gives the complement of the correct refraction angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-031",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "Why do clouds generally look white?",
+      "options": [
+        "Cloud droplets scatter only blue light",
+        "Clouds reflect the white colour of the ground",
+        "Cloud droplets are much larger than the wavelength of light and scatter all colours nearly equally",
+        "Cloud droplets absorb all colours except white"
+      ],
+      "correct_index": 2,
+      "explanation": "Rayleigh's strong wavelength dependence applies to particles much smaller than the wavelength.<br><br>Large droplets scatter all wavelengths about equally, so the scattered light is white.",
+      "hint": "Compare the droplet size with the wavelength.",
+      "distractor_logic": [
+        "Strongly colour-dependent scattering needs particles much smaller than the wavelength",
+        "Clouds look white even over dark sea",
+        "White is a mixture of all colours; absorbing colours would darken the cloud"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-032",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the basic cause of dispersion of white light by a prism?",
+      "options": [
+        "Light of every colour travels at the same speed in glass",
+        "The prism adds colour to white light",
+        "The refractive index of glass is larger for red than for violet",
+        "The refractive index of glass depends on wavelength, being larger for violet than for red"
+      ],
+      "correct_index": 3,
+      "explanation": "Different colours have different speeds in glass, hence different refractive indices.<br><br>They bend by different amounts, so white light spreads into a spectrum.",
+      "hint": "Why would different colours bend by different amounts?",
+      "distractor_logic": [
+        "Equal speeds would give equal bending and no dispersion",
+        "White light already contains all colours; the prism only separates them",
+        "Reverses the trend of refractive index with colour"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-033",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "A myopic person's far point is 50 cm. What power of lens is needed to see distant objects clearly?",
+      "options": [
+        "\\( -2 \\) D",
+        "\\( +2 \\) D",
+        "\\( -0.02 \\) D",
+        "\\( -0.5 \\) D"
+      ],
+      "correct_index": 0,
+      "explanation": "The lens must form a virtual image of a distant object at the far point: \\( f=-50 \\) cm.<br><br>\\( P=\\dfrac{1}{-0.5}=-2 \\) D.",
+      "hint": "The corrective lens images infinity at the far point.",
+      "distractor_logic": [
+        "A converging lens would worsen myopia",
+        "Uses the focal length in centimetres",
+        "Takes power equal to the focal length in metres"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-034",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "A hypermetropic person's near point is 100 cm. What lens power lets them read at 25 cm?",
+      "options": [
+        "\\( +1 \\) D",
+        "\\( +3 \\) D",
+        "\\( -3 \\) D",
+        "\\( +5 \\) D"
+      ],
+      "correct_index": 1,
+      "explanation": "The lens must image an object at \\( u=-25 \\) cm at \\( v=-100 \\) cm.<br><br>\\( \\dfrac{1}{f}=-\\dfrac{1}{100}+\\dfrac{1}{25}=\\dfrac{3}{100} \\) cm, so \\( P=+3 \\) D.",
+      "hint": "The image must form at the person's near point.",
+      "distractor_logic": [
+        "Uses the near point alone as the focal length",
+        "Loses the sign of the converging lens",
+        "Adds the reciprocals instead of using \\( \\dfrac{1}{v}-\\dfrac{1}{u} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-035",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "A magnifying glass of focal length 10 cm is used with the final image at the near point (\\( D=25 \\) cm). What is its magnifying power?",
+      "options": [
+        "2.5",
+        "1.4",
+        "3.5",
+        "35"
+      ],
+      "correct_index": 2,
+      "explanation": "Image at the near point: \\( m=1+\\dfrac{D}{f} \\).<br><br>\\( m=1+\\dfrac{25}{10}=3.5 \\).",
+      "hint": "Near-point viewing includes the '+1'.",
+      "distractor_logic": [
+        "Drops the '+1', which applies when the image is at the near point",
+        "Uses \\( 1+\\dfrac{f}{D} \\) instead of \\( 1+\\dfrac{D}{f} \\)",
+        "Adds the distances instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-036",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "For a compound microscope to have high magnifying power, what should the focal lengths of objective and eyepiece be?",
+      "options": [
+        "Large objective, small eyepiece",
+        "Small objective, large eyepiece",
+        "Both large",
+        "Both small"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( m\\approx\\dfrac{L}{f_o}\\times\\dfrac{D}{f_e} \\).<br><br>Both factors grow when \\( f_o \\) and \\( f_e \\) are small.",
+      "hint": "Both lenses contribute a factor with the focal length in the denominator.",
+      "distractor_logic": [
+        "This is the telescope requirement, not the microscope's",
+        "A large eyepiece focal length reduces the eyepiece's magnification",
+        "Large focal lengths give low magnification for both lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-037",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "A compound microscope in normal adjustment has tube length 16 cm, objective focal length 2 cm and eyepiece focal length 2.5 cm. What is the magnitude of its magnifying power? Take the near point as 25 cm.",
+      "options": [
+        "80",
+        "88",
+        "18",
+        "10"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( m=\\dfrac{L}{f_o}\\times\\dfrac{D}{f_e}=\\dfrac{16}{2}\\times\\dfrac{25}{2.5} \\).<br><br>\\( m=8\\times10=80 \\).",
+      "hint": "Multiply the objective's and the eyepiece's magnifications.",
+      "distractor_logic": [
+        "Adds '+1' to the eyepiece factor, which applies only for an image at the near point",
+        "Adds the two magnifications instead of multiplying",
+        "Leaves out the objective's magnification"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-038",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "A telescope with an objective of focal length 150 cm must give a magnifying power of magnitude 30 in normal adjustment. What eyepiece focal length is needed?",
+      "options": [
+        "4500 cm",
+        "5 cm",
+        "120 cm",
+        "180 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( |m|=\\dfrac{f_o}{f_e} \\), so \\( f_e=\\dfrac{f_o}{|m|} \\).<br><br>\\( f_e=\\dfrac{150}{30}=5 \\) cm.",
+      "hint": "Rearrange the ratio for the eyepiece.",
+      "distractor_logic": [
+        "Multiplies instead of dividing",
+        "Subtracts the magnification from the focal length",
+        "Adds the magnification to the focal length"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-039",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "An elderly person sees distant objects clearly but cannot read small print held close, because the eye's lens has lost flexibility. Identify the defect and the correction.",
+      "options": [
+        "Myopia; a concave lens",
+        "Presbyopia; a concave lens for reading",
+        "Presbyopia; a convex lens for reading",
+        "Astigmatism; a cylindrical lens"
+      ],
+      "correct_index": 2,
+      "explanation": "Age-related loss of accommodation is presbyopia; the near point recedes.<br><br>Converging (reading) lenses restore clear near vision.",
+      "hint": "The defect is linked to age and near vision.",
+      "distractor_logic": [
+        "Myopia affects distant vision, which is fine here",
+        "Near vision needs added converging power, not diverging",
+        "Nothing suggests a direction-dependent blur"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L2-040",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 2,
+      "type": "regular",
+      "question": "What is a major advantage of a reflecting telescope over a refracting one?",
+      "options": [
+        "It always forms an erect image",
+        "It needs no eyepiece",
+        "Light travels faster after reflection",
+        "Its mirror objective has no chromatic aberration, and a large mirror is easier to make and support"
+      ],
+      "correct_index": 3,
+      "explanation": "Mirrors reflect all colours to the same focus, avoiding colour fringes.<br><br>Large lenses are heavy and sag, while a mirror can be supported across its whole back.",
+      "hint": "Mirrors do not disperse light.",
+      "distractor_logic": [
+        "Astronomical telescopes of both kinds typically give inverted images",
+        "An eyepiece is still needed to view the image",
+        "Reflection does not change the speed of light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-001",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 3,
+      "type": "regular",
+      "question": "A concave mirror of focal length 15 cm must form a real image magnified 3 times. Where should the object be placed?",
+      "options": [
+        "\\( u=-20 \\) cm",
+        "\\( u=-10 \\) cm",
+        "\\( u=-60 \\) cm",
+        "\\( u=+20 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "Real and magnified means \\( m=-3 \\), so \\( -\\dfrac{v}{u}=-3 \\) and \\( v=3u \\).<br><br>\\( \\dfrac{1}{3u}+\\dfrac{1}{u}=\\dfrac{4}{3u}=-\\dfrac{1}{15} \\), so \\( u=-20 \\) cm and \\( v=-60 \\) cm.",
+      "hint": "A real image has negative magnification; express \\( v \\) in terms of \\( u \\).",
+      "distractor_logic": [
+        "This gives a virtual, erect image with \\( m=+3 \\), not a real one",
+        "Confuses the object distance with the image distance",
+        "Puts the object behind the mirror by dropping the sign"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-002",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 3,
+      "type": "regular",
+      "question": "A concave mirror has focal length 10 cm. An object is moved from 30 cm to 20 cm in front of the mirror. How does the image move?",
+      "options": [
+        "It shifts 5 cm towards the mirror",
+        "It shifts 5 cm away from the mirror",
+        "It shifts 10 cm away from the mirror",
+        "It shifts 10 cm towards the mirror"
+      ],
+      "correct_index": 1,
+      "explanation": "At \\( u=-30 \\): \\( \\dfrac{1}{v}=-\\dfrac{1}{10}+\\dfrac{1}{30}=-\\dfrac{1}{15} \\), \\( v=-15 \\) cm.<br><br>At \\( u=-20 \\): \\( \\dfrac{1}{v}=-\\dfrac{1}{10}+\\dfrac{1}{20}=-\\dfrac{1}{20} \\), \\( v=-20 \\) cm.<br><br>The image moves from 15 cm to 20 cm, i.e. 5 cm farther from the mirror.",
+      "hint": "Find the image position for both object positions and compare.",
+      "distractor_logic": [
+        "Gets the direction wrong: moving the object toward C pushes the image outward toward C",
+        "Assumes the image moves exactly as far as the object",
+        "Assumes equal shift and also the wrong direction"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-003",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 3,
+      "type": "regular",
+      "question": "A convex mirror of radius of curvature 24 cm is to form an image one-third the size of the object. Where must the object be placed?",
+      "options": [
+        "8 cm in front of the mirror (\\( u=-8 \\) cm)",
+        "12 cm in front of the mirror (\\( u=-12 \\) cm)",
+        "24 cm in front of the mirror (\\( u=-24 \\) cm)",
+        "24 cm behind the mirror (\\( u=+24 \\) cm)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f=+12 \\) cm. Erect image: \\( m=+\\dfrac{1}{3}=-\\dfrac{v}{u} \\), so \\( v=-\\dfrac{u}{3} \\).<br><br>\\( -\\dfrac{3}{u}+\\dfrac{1}{u}=-\\dfrac{2}{u}=\\dfrac{1}{12} \\), so \\( u=-24 \\) cm and \\( v=+8 \\) cm.",
+      "hint": "Convex mirror images are erect, so \\( m \\) is positive.",
+      "distractor_logic": [
+        "Swaps object and image distances",
+        "Places the object at the focus without solving",
+        "Drops the sign of the real object distance"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-004",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 3,
+      "type": "regular",
+      "question": "A concave mirror forms a real image twice the size of the object, and the object and image are 15 cm apart. What is the focal length?",
+      "options": [
+        "\\( f=+10 \\) cm",
+        "\\( f=+30 \\) cm",
+        "\\( f=-15 \\) cm",
+        "\\( f=-10 \\) cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( m=-2 \\) gives \\( v=2u \\); both in front, so \\( |v|-|u|=|u|=15 \\) cm.<br><br>\\( u=-15 \\) cm, \\( v=-30 \\) cm: \\( \\dfrac{1}{f}=-\\dfrac{1}{30}-\\dfrac{1}{15}=-\\dfrac{1}{10} \\), so \\( f=-10 \\) cm.",
+      "hint": "Use the magnification to relate the two distances, then use the gap.",
+      "distractor_logic": [
+        "Sign slip: a concave mirror's focal length is negative",
+        "Plugs the distances into the lens formula instead of the mirror formula",
+        "Takes the focal length equal to the object distance"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-005",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 3,
+      "type": "regular",
+      "question": "A ray strikes a plane mirror and the incident ray is kept fixed. If the mirror is rotated by \\( 15^\\circ \\), through what angle does the reflected ray turn?",
+      "options": [
+        "\\( 30^\\circ \\)",
+        "\\( 15^\\circ \\)",
+        "\\( 7.5^\\circ \\)",
+        "\\( 60^\\circ \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Rotating the mirror by \\( \\theta \\) rotates the normal by \\( \\theta \\), so the angle of incidence changes by \\( \\theta \\).<br><br>The angle between incident and reflected rays changes by \\( 2\\theta=30^\\circ \\).",
+      "hint": "Both the angle of incidence and the angle of reflection change.",
+      "distractor_logic": [
+        "Assumes the reflected ray turns by the same angle as the mirror",
+        "Halves the rotation instead of doubling it",
+        "Quadruples the rotation"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-006",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": 3,
+      "type": "regular",
+      "question": "An 8 cm tall object is 60 cm in front of a convex mirror of focal length 20 cm. What is the height of the image?",
+      "options": [
+        "\\( h'=-2 \\) cm",
+        "\\( h'=+2 \\) cm",
+        "\\( h'=-4 \\) cm",
+        "\\( h'=+32 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f=+20 \\) cm, \\( u=-60 \\) cm: \\( \\dfrac{1}{v}=\\dfrac{1}{20}+\\dfrac{1}{60}=\\dfrac{4}{60} \\), \\( v=+15 \\) cm.<br><br>\\( m=-\\dfrac{v}{u}=-\\dfrac{15}{-60}=+\\dfrac{1}{4} \\), so \\( h'=+2 \\) cm.",
+      "hint": "Find \\( v \\) with the mirror formula, then the magnification.",
+      "distractor_logic": [
+        "Wrong sign: a convex mirror's image of a real object is erect",
+        "Uses the lens formula and lens magnification on a mirror problem",
+        "Multiplies by the inverted magnification"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-007",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 3,
+      "type": "regular",
+      "question": "A small object is inside a glass block (\\( \\mu=1.5 \\)), 15 cm from a convex surface of radius 10 cm that bulges toward the observer in air. Where does the observer see the image?",
+      "options": [
+        "20 cm from the surface, out in the air (\\( v=+20 \\) cm)",
+        "10 cm from the surface, on the glass side (\\( v=-10 \\) cm)",
+        "20 cm from the surface, on the glass side (\\( v=-20 \\) cm)",
+        "15 cm from the surface, at the object itself (\\( v=-15 \\) cm)"
+      ],
+      "correct_index": 2,
+      "explanation": "Light goes from glass to air: \\( \\mu_1=1.5 \\), \\( \\mu_2=1 \\), \\( u=-15 \\) cm; the centre of curvature is inside the glass, so \\( R=-10 \\) cm.<br><br>\\( \\dfrac{1}{v}-\\dfrac{1.5}{-15}=\\dfrac{1-1.5}{-10} \\), so \\( \\dfrac{1}{v}=\\dfrac{1}{20}-\\dfrac{1}{10}=-\\dfrac{1}{20} \\).<br><br>\\( v=-20 \\) cm: a virtual image inside the glass.",
+      "hint": "Take the incident direction from glass toward air and locate the centre of curvature.",
+      "distractor_logic": [
+        "Sign slip: a positive image distance would mean a real image in air",
+        "Uses the flat-surface apparent-depth rule, ignoring curvature",
+        "Assumes a curved surface does not shift the image"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-008",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 3,
+      "type": "regular",
+      "question": "A point source is 12 cm below the surface of a liquid with \\( \\mu=\\sqrt{2} \\). What is the radius of the circular patch on the surface through which light escapes?",
+      "options": [
+        "\\( 12\\sqrt{2} \\) cm",
+        "6 cm",
+        "\\( 12\\sqrt{3} \\) cm",
+        "12 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sin C=\\dfrac{1}{\\sqrt{2}} \\), so \\( C=45^\\circ \\).<br><br>Rays beyond the critical angle are totally reflected, so the radius is \\( r=h\\tan C=12\\tan 45^\\circ=12 \\) cm.",
+      "hint": "Beyond the critical angle no light escapes.",
+      "distractor_logic": [
+        "Uses the slant distance to the edge instead of the horizontal radius",
+        "Uses a critical angle of \\( 30^\\circ \\)",
+        "Uses a critical angle of \\( 60^\\circ \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-009",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 3,
+      "type": "regular",
+      "question": "An optical fibre has a core with \\( \\mu=2 \\) and cladding with \\( \\mu=\\sqrt{3} \\). What is the minimum angle of incidence at the core-cladding boundary for TIR?",
+      "options": [
+        "\\( 60^\\circ \\)",
+        "\\( 30^\\circ \\)",
+        "TIR is impossible because the cladding is denser",
+        "\\( \\dfrac{\\sqrt{3}}{2} \\) rad"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sin C=\\dfrac{\\mu_{\\text{clad}}}{\\mu_{\\text{core}}}=\\dfrac{\\sqrt{3}}{2} \\).<br><br>So \\( C=60^\\circ \\); incidence above this is totally reflected.",
+      "hint": "Use the ratio of the two indices, rarer over denser.",
+      "distractor_logic": [
+        "Uses the core's index against air instead of against the cladding",
+        "The cladding has the lower index, so it is the rarer medium",
+        "Treats the sine value as the angle itself"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-010",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 3,
+      "type": "regular",
+      "question": "A coin lies under a glass slab 9 cm thick (\\( \\mu=1.5 \\)), on top of which is 12 cm of water (\\( \\mu=\\dfrac{4}{3} \\)). Viewed from directly above, how deep below the water surface does the coin appear?",
+      "options": [
+        "21 cm",
+        "15 cm",
+        "14 cm",
+        "29.5 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "Each layer contributes \\( \\dfrac{t}{\\mu} \\): water \\( \\dfrac{12}{4/3}=9 \\) cm, glass \\( \\dfrac{9}{1.5}=6 \\) cm.<br><br>Apparent depth = 9 + 6 = 15 cm.",
+      "hint": "Treat each layer separately and add.",
+      "distractor_logic": [
+        "Ignores refraction and gives the real depth",
+        "Divides the total depth by a single index of 1.5",
+        "Multiplies each layer by its index instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-011",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 3,
+      "type": "regular",
+      "question": "A ray in air strikes glass (\\( \\mu=\\sqrt{3} \\)) at an angle of incidence of \\( 60^\\circ \\). What is the angle between the reflected ray and the refracted ray?",
+      "options": [
+        "\\( 30^\\circ \\)",
+        "\\( 150^\\circ \\)",
+        "\\( 90^\\circ \\)",
+        "\\( 120^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Reflected ray makes \\( 60^\\circ \\) with the normal; \\( \\sin r=\\dfrac{\\sin 60^\\circ}{\\sqrt{3}}=\\dfrac{1}{2} \\), so \\( r=30^\\circ \\).<br><br>Angle between them \\( =180^\\circ-60^\\circ-30^\\circ=90^\\circ \\).",
+      "hint": "Find the refraction angle, then use the straight line of the surface.",
+      "distractor_logic": [
+        "Takes the difference between the reflection and refraction angles",
+        "Subtracts only the refraction angle from a straight angle",
+        "Subtracts only the reflection angle from a straight angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-012",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": 3,
+      "type": "regular",
+      "question": "Light travels at \\( 1.2\\times10^{8} \\) m/s in medium P and at \\( 2.4\\times10^{8} \\) m/s in medium Q. For which direction is TIR possible, and what is the critical angle?",
+      "options": [
+        "From Q into P, with \\( C=30^\\circ \\)",
+        "From P into Q, with \\( C=60^\\circ \\)",
+        "From P into Q, with \\( C=0.5 \\) rad",
+        "From P into Q, with \\( C=30^\\circ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The slower medium P is denser. \\( \\dfrac{\\mu_P}{\\mu_Q}=\\dfrac{v_Q}{v_P}=2 \\).<br><br>\\( \\sin C=\\dfrac{1}{2} \\), so \\( C=30^\\circ \\), for light going from P into Q.",
+      "hint": "Lower speed means higher refractive index.",
+      "distractor_logic": [
+        "Q is the faster, rarer medium; TIR cannot happen going into the denser P",
+        "Uses cosine instead of sine",
+        "Treats the ratio as the angle itself"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-013",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 3,
+      "type": "regular",
+      "question": "A convex lens of focal length 30 cm and a concave lens of focal length 20 cm are placed 10 cm apart. What is the equivalent focal length?",
+      "options": [
+        "Infinite; the pair behaves like a plane glass plate",
+        "\\( -60 \\) cm",
+        "\\( +10 \\) cm",
+        "\\( +12 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac{1}{F}=\\dfrac{1}{30}+\\dfrac{1}{-20}-\\dfrac{10}{30\\times(-20)}=-\\dfrac{1}{60}+\\dfrac{1}{60}=0 \\).<br><br>Zero power means infinite focal length: parallel light stays parallel.",
+      "hint": "Keep the sign of the concave focal length inside the correction term too.",
+      "distractor_logic": [
+        "Drops the separation term \\( -\\dfrac{d}{f_1f_2} \\)",
+        "Adds focal lengths directly",
+        "Ignores the negative sign of the concave lens"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-014",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 3,
+      "type": "regular",
+      "question": "An object and a screen are 90 cm apart. A convex lens of focal length 20 cm is moved between them. At what distances from the object does it form a sharp image on the screen?",
+      "options": [
+        "45 cm only",
+        "30 cm and 60 cm",
+        "20 cm and 70 cm",
+        "40 cm and 50 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "Let the object distance be \\( x \\); then \\( v=90-x \\) and \\( \\dfrac{1}{90-x}+\\dfrac{1}{x}=\\dfrac{1}{20} \\).<br><br>\\( x(90-x)=1800 \\), so \\( x^{2}-90x+1800=0 \\), giving \\( x=30 \\) or \\( 60 \\) cm.",
+      "hint": "Write the lens formula with the two distances adding to 90 cm.",
+      "distractor_logic": [
+        "Assumes the lens must be at the midpoint",
+        "Places the object at the focus, which sends the image to infinity",
+        "Guesses positions symmetric about the midpoint without solving"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-015",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 3,
+      "type": "regular",
+      "question": "A plano-concave lens of \\( \\mu=1.5 \\) has a curved face of radius 20 cm. What is its power?",
+      "options": [
+        "\\( +2.5 \\) D",
+        "\\( -0.025 \\) D",
+        "\\( -2.5 \\) D",
+        "\\( -5 \\) D"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{1}{f}=(\\mu-1)\\left(-\\dfrac{1}{20}\\right) \\), so \\( f=-40 \\) cm \\( =-0.4 \\) m.<br><br>\\( P=\\dfrac{1}{-0.4}=-2.5 \\) D.",
+      "hint": "A concave surface gives a negative focal length.",
+      "distractor_logic": [
+        "Loses the sign of a diverging lens",
+        "Keeps the focal length in centimetres",
+        "Leaves out the \\( (\\mu-1) \\) factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-016",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 3,
+      "type": "regular",
+      "question": "A convex lens of focal length 10 cm is in contact with a concave lens of focal length 30 cm. An object is 30 cm in front of the pair. Where is the image?",
+      "options": [
+        "\\( v=-12 \\) cm",
+        "\\( v=+10 \\) cm",
+        "\\( v=+15 \\) cm",
+        "\\( v=+30 \\) cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{1}{F}=\\dfrac{1}{10}-\\dfrac{1}{30}=\\dfrac{1}{15} \\), so \\( F=+15 \\) cm.<br><br>\\( \\dfrac{1}{v}=\\dfrac{1}{15}-\\dfrac{1}{30}=\\dfrac{1}{30} \\), so \\( v=+30 \\) cm.",
+      "hint": "Combine the lenses first, then apply the lens formula.",
+      "distractor_logic": [
+        "Adds the focal lengths to get a combined focal length of \\( -20 \\) cm",
+        "Ignores the concave lens's negative sign when combining",
+        "Places the image at the combined focus"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-017",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 3,
+      "type": "regular",
+      "question": "An equiconvex lens of focal length 20 cm is cut into two identical plano-convex halves by a plane perpendicular to its principal axis. What is the focal length of each half?",
+      "options": [
+        "40 cm",
+        "20 cm",
+        "10 cm",
+        "Infinite"
+      ],
+      "correct_index": 0,
+      "explanation": "The whole lens has two equal curved faces; each half keeps only one, so its power is half.<br><br>Half the power means double the focal length: 40 cm.",
+      "hint": "Each half keeps one curved surface.",
+      "distractor_logic": [
+        "Assumes each half keeps the whole lens's focal length",
+        "Halves the focal length instead of the power",
+        "Assumes a flat face removes all focusing power"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-018",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": 3,
+      "type": "regular",
+      "question": "A 4 cm tall object is 30 cm in front of a convex lens of focal length 20 cm. What is the height of the image?",
+      "options": [
+        "\\( +8 \\) cm",
+        "\\( -8 \\) cm",
+        "\\( -2 \\) cm",
+        "\\( -12 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{v}=\\dfrac{1}{20}-\\dfrac{1}{30}=\\dfrac{1}{60} \\), so \\( v=+60 \\) cm.<br><br>\\( m=\\dfrac{v}{u}=\\dfrac{60}{-30}=-2 \\), so \\( h'=-8 \\) cm.",
+      "hint": "Lens magnification is image distance over object distance.",
+      "distractor_logic": [
+        "Uses the mirror magnification \\( -\\dfrac{v}{u} \\) for a lens",
+        "Inverts the distance ratio",
+        "Uses \\( -\\dfrac{v}{f} \\) as the magnification"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-019",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 3,
+      "type": "regular",
+      "question": "An equilateral prism of \\( \\mu=\\sqrt{3} \\) is set for minimum deviation. What is the angle of incidence?",
+      "options": [
+        "\\( 30^\\circ \\)",
+        "\\( 120^\\circ \\)",
+        "\\( 60^\\circ \\)",
+        "\\( 45^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\sin\\left(\\frac{60^\\circ+D_m}{2}\\right)=\\sqrt{3}\\times\\dfrac{1}{2} \\), so \\( D_m=60^\\circ \\).<br><br>At minimum deviation \\( i=\\dfrac{A+D_m}{2}=60^\\circ \\).",
+      "hint": "Find the minimum deviation first.",
+      "distractor_logic": [
+        "Gives the internal refraction angle \\( \\dfrac{A}{2} \\)",
+        "Adds \\( A \\) and \\( D_m \\) without halving",
+        "Uses the result for \\( \\mu=\\sqrt{2} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-020",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 3,
+      "type": "regular",
+      "question": "A thin crown-glass prism (\\( A=6^\\circ \\), \\( \\mu=1.5 \\)) is combined with an inverted thin flint-glass prism (\\( \\mu=1.75 \\)) so that the pair produces no deviation. What is the flint prism's angle?",
+      "options": [
+        "\\( 6^\\circ \\)",
+        "\\( 9^\\circ \\)",
+        "\\( 2^\\circ \\)",
+        "\\( 4^\\circ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "No net deviation: \\( (\\mu_1-1)A_1=(\\mu_2-1)A_2 \\).<br><br>\\( 0.5\\times6^\\circ=0.75\\times A_2 \\), so \\( A_2=4^\\circ \\).",
+      "hint": "The two deviations must be equal and opposite.",
+      "distractor_logic": [
+        "Assumes equal angles cancel regardless of material",
+        "Inverts the ratio of the \\( (\\mu-1) \\) factors",
+        "Subtracts the angles instead of balancing the deviations"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-021",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the largest prism angle for which a ray can still emerge from a prism of material with \\( \\mu=2 \\)?",
+      "options": [
+        "\\( 60^\\circ \\)",
+        "\\( 30^\\circ \\)",
+        "\\( 90^\\circ \\)",
+        "\\( 120^\\circ \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\sin C=\\dfrac{1}{2} \\), so \\( C=30^\\circ \\).<br><br>Emergence needs \\( A\\le2C \\) in the limiting grazing case, so \\( A_{\\max}=60^\\circ \\).",
+      "hint": "Link the maximum prism angle to the critical angle.",
+      "distractor_logic": [
+        "Gives the critical angle instead of twice it",
+        "Assumes any angle up to a right angle works",
+        "Uses four times the critical angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-022",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 3,
+      "type": "regular",
+      "question": "For a prism, what happens to the deviation if the angle of incidence is increased beyond the value that gives minimum deviation?",
+      "options": [
+        "The deviation keeps decreasing",
+        "The deviation increases again",
+        "The deviation stays at its minimum value",
+        "The deviation becomes zero"
+      ],
+      "correct_index": 1,
+      "explanation": "The graph of \\( \\delta \\) against \\( i \\) is U-shaped, with its lowest point at \\( D_m \\).<br><br>Increasing \\( i \\) past that point makes the deviation rise.",
+      "hint": "Picture the \\( \\delta \\)-\\( i \\) curve.",
+      "distractor_logic": [
+        "Beyond the minimum, the deviation curve rises",
+        "Minimum deviation occurs at one angle only, not a range",
+        "A prism always deviates light toward its base"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-023",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 3,
+      "type": "regular",
+      "question": "A ray passes symmetrically through an equilateral prism of \\( \\mu=\\sqrt{2} \\). What are the angle of incidence and the deviation?",
+      "options": [
+        "\\( i=30^\\circ \\), \\( D_m=30^\\circ \\)",
+        "\\( i=45^\\circ \\), \\( D_m=45^\\circ \\)",
+        "\\( i=45^\\circ \\), \\( D_m=30^\\circ \\)",
+        "\\( i=60^\\circ \\), \\( D_m=60^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Symmetric passage: \\( r=30^\\circ \\), \\( \\sin i=\\sqrt{2}\\sin 30^\\circ=\\dfrac{1}{\\sqrt{2}} \\), so \\( i=45^\\circ \\).<br><br>\\( D_m=2i-A=90^\\circ-60^\\circ=30^\\circ \\).",
+      "hint": "Symmetric passage means minimum deviation.",
+      "distractor_logic": [
+        "Confuses the angle of incidence with the internal angle",
+        "Takes the deviation equal to the angle of incidence",
+        "Uses the values for \\( \\mu=\\sqrt{3} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-024",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": 3,
+      "type": "regular",
+      "question": "What colour would the daytime sky look to an astronaut standing on the Moon, which has no atmosphere?",
+      "options": [
+        "Blue",
+        "Red",
+        "White",
+        "Black"
+      ],
+      "correct_index": 3,
+      "explanation": "The sky's colour comes from sunlight scattered by the atmosphere.<br><br>With no atmosphere there is nothing to scatter light toward the eye, so the sky looks dark.",
+      "hint": "What produces the colour of the sky in the first place?",
+      "distractor_logic": [
+        "Blue needs air molecules to scatter sunlight",
+        "Red skies at sunset also come from scattering in air",
+        "White would need large particles to scatter all colours"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-025",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 3,
+      "type": "regular",
+      "question": "The objective of a compound microscope gives a magnification of magnitude 10. The eyepiece has focal length 5 cm, and the final image is at the near point (25 cm). What is the magnitude of the total magnifying power?",
+      "options": [
+        "60",
+        "50",
+        "16",
+        "15"
+      ],
+      "correct_index": 0,
+      "explanation": "Eyepiece at near point: \\( m_e=1+\\dfrac{D}{f_e}=1+5=6 \\).<br><br>\\( |m|=|m_o|\\times m_e=10\\times6=60 \\).",
+      "hint": "Near-point viewing keeps the '+1' in the eyepiece factor.",
+      "distractor_logic": [
+        "Drops the '+1' of the eyepiece, which applies here because the image is at the near point",
+        "Adds the two magnifications instead of multiplying",
+        "Adds magnifications and also drops the '+1'"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-026",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 3,
+      "type": "regular",
+      "question": "A telescope has objective focal length 100 cm and eyepiece focal length 5 cm. What is the magnitude of the magnifying power when the final image is at the near point (25 cm)?",
+      "options": [
+        "20",
+        "24",
+        "21",
+        "120"
+      ],
+      "correct_index": 1,
+      "explanation": "Near-point case: \\( |m|=\\dfrac{f_o}{f_e}\\left(1+\\dfrac{f_e}{D}\\right) \\).<br><br>\\( |m|=20\\times\\left(1+\\dfrac{5}{25}\\right)=20\\times1.2=24 \\).",
+      "hint": "The correction factor for a telescope is not the same as a magnifier's.",
+      "distractor_logic": [
+        "This is the normal-adjustment value with the image at infinity",
+        "Adds 1 to the normal-adjustment value",
+        "Uses the simple-magnifier factor \\( 1+\\dfrac{D}{f_e} \\) instead of \\( 1+\\dfrac{f_e}{D} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-027",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 3,
+      "type": "regular",
+      "question": "A myopic person has a far point of 100 cm and a near point of 20 cm. With the corrective lens for distant vision on, what is the new near point?",
+      "options": [
+        "20 cm",
+        "\\( \\dfrac{50}{3} \\) cm",
+        "25 cm",
+        "80 cm"
+      ],
+      "correct_index": 2,
+      "explanation": "Corrective lens: \\( f=-100 \\) cm. Object at \\( u \\) must be imaged at \\( v=-20 \\) cm.<br><br>\\( \\dfrac{1}{u}=\\dfrac{1}{v}-\\dfrac{1}{f}=-\\dfrac{1}{20}+\\dfrac{1}{100}=-\\dfrac{1}{25} \\), so the new near point is 25 cm.",
+      "hint": "The lens must image the new near point at the eye's own near point.",
+      "distractor_logic": [
+        "Assumes the lens leaves the near point unchanged",
+        "Makes a sign slip when combining the reciprocals",
+        "Subtracts near point from far point"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-028",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 3,
+      "type": "regular",
+      "question": "In a compound microscope, the objective has focal length 2 cm and the object is 2.5 cm from it; the eyepiece has focal length 5 cm and the final image is at infinity. What is the magnitude of the magnifying power? Take \\( D=25 \\) cm.",
+      "options": [
+        "24",
+        "9",
+        "1.25",
+        "20"
+      ],
+      "correct_index": 3,
+      "explanation": "Objective: \\( \\dfrac{1}{v}=\\dfrac{1}{2}-\\dfrac{1}{2.5}=\\dfrac{1}{10} \\), \\( v=10 \\) cm, \\( |m_o|=\\dfrac{10}{2.5}=4 \\).<br><br>Eyepiece at infinity: \\( m_e=\\dfrac{25}{5}=5 \\). Total \\( |m|=4\\times5=20 \\).",
+      "hint": "Find the objective's image first.",
+      "distractor_logic": [
+        "Adds '+1' to the eyepiece factor although the image is at infinity",
+        "Adds the two magnifications",
+        "Inverts the objective magnification to \\( \\dfrac{u}{v} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-029",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 3,
+      "type": "regular",
+      "question": "You have lenses of focal lengths 100 cm, 50 cm, 10 cm and 4 cm. Which pair makes the telescope with the highest magnifying power?",
+      "options": [
+        "Objective 100 cm, eyepiece 4 cm",
+        "Objective 4 cm, eyepiece 100 cm",
+        "Objective 4 cm, eyepiece 10 cm",
+        "Objective 100 cm, eyepiece 50 cm"
+      ],
+      "correct_index": 0,
+      "explanation": "For a telescope, \\( |m|=\\dfrac{f_o}{f_e} \\).<br><br>The largest ratio uses the longest objective and shortest eyepiece: \\( \\dfrac{100}{4}=25 \\).",
+      "hint": "Maximise the ratio of the two focal lengths.",
+      "distractor_logic": [
+        "Reverses the roles of objective and eyepiece",
+        "Applies the microscope rule of two short focal lengths",
+        "Uses two long focal lengths, giving a small ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-L3-030",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": 3,
+      "type": "regular",
+      "question": "A person has a near point of 50 cm and a far point of 200 cm. What lens powers are needed for distant vision and for reading at 25 cm?",
+      "options": [
+        "\\( +0.5 \\) D for distance and \\( -2 \\) D for reading",
+        "\\( -0.5 \\) D for distance and \\( +2 \\) D for reading",
+        "\\( -0.005 \\) D for distance and \\( +0.02 \\) D for reading",
+        "\\( -2 \\) D for distance and \\( +0.5 \\) D for reading"
+      ],
+      "correct_index": 1,
+      "explanation": "Distance: image infinity at the far point, \\( f=-200 \\) cm, \\( P=-0.5 \\) D.<br><br>Reading: \\( \\dfrac{1}{f}=-\\dfrac{1}{50}+\\dfrac{1}{25}=\\dfrac{1}{50} \\) cm, so \\( P=+2 \\) D.",
+      "hint": "Treat the two tasks separately.",
+      "distractor_logic": [
+        "Reverses the signs: distant vision needs a diverging lens",
+        "Uses focal lengths in centimetres",
+        "Swaps which power goes with which task"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-001",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A glass lens (\\( \\mu=1.5 \\)) of focal length 20 cm in air is immersed in a transparent liquid that also has \\( \\mu=1.5 \\). What happens to its focal length?",
+      "options": [
+        "It stays 20 cm, since the lens shape is unchanged",
+        "It halves to 10 cm",
+        "It becomes infinite; the lens stops bending light and becomes nearly invisible",
+        "It doubles to 40 cm"
+      ],
+      "correct_index": 2,
+      "explanation": "In a medium, \\( \\dfrac{1}{f}=\\left(\\dfrac{\\mu_g}{\\mu_m}-1\\right)\\left(\\dfrac{1}{R_1}-\\dfrac{1}{R_2}\\right) \\).<br><br>With \\( \\mu_g=\\mu_m \\), the first factor is zero, so \\( \\dfrac{1}{f}=0 \\): no refraction at either surface.",
+      "hint": "Refraction needs a difference in refractive index.",
+      "distractor_logic": [
+        "Focal length depends on the index relative to the surrounding medium, not on shape alone",
+        "No refraction happens at the surfaces, so the lens cannot get stronger",
+        "Guesses a finite change; with zero relative index difference there is no bending at all"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-002",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A biconvex glass lens (\\( \\mu=1.5 \\)) has focal length 20 cm in air. It is placed in a liquid with \\( \\mu=2 \\). What is its new focal length?",
+      "options": [
+        "\\( +40 \\) cm; it stays converging",
+        "\\( +20 \\) cm; unchanged",
+        "\\( -10 \\) cm; diverging",
+        "\\( -40 \\) cm; it now acts as a diverging lens"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{f_l}{f_a}=\\dfrac{\\mu_g-1}{\\mu_g/\\mu_l-1}=\\dfrac{0.5}{0.75-1}=-2 \\).<br><br>\\( f_l=-40 \\) cm: light now goes from a denser liquid into rarer glass, so the convex lens diverges.",
+      "hint": "Compare the lens's index with the liquid's.",
+      "distractor_logic": [
+        "Gets the size right but misses that the relative index is now below 1",
+        "Ignores the effect of the surrounding medium",
+        "Inverts the ratio of the focal lengths"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-003",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The plane face of a plano-convex lens (\\( \\mu=1.5 \\), curved radius 20 cm) is silvered. Light enters through the curved face. How does the system behave?",
+      "options": [
+        "As a concave mirror of focal length \\( -20 \\) cm",
+        "As a concave mirror of focal length \\( -40 \\) cm",
+        "As a convex mirror of focal length \\( +20 \\) cm",
+        "As a concave mirror of focal length \\( -10 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "The lens alone: \\( \\dfrac{1}{f_l}=0.5\\times\\dfrac{1}{20} \\), \\( f_l=40 \\) cm.<br><br>Light crosses the lens twice and reflects off a plane mirror: \\( P=2P_l \\), so the focal length is \\( \\dfrac{40}{2}=20 \\) cm, converging.<br><br>In mirror sign convention that is a concave mirror with \\( f=-20 \\) cm.",
+      "hint": "Light passes through the lens twice.",
+      "distractor_logic": [
+        "Uses the lens's focal length for a single pass, ignoring the double pass",
+        "Wrong mirror type: light is converged, so it behaves as a concave mirror",
+        "Halves the correct focal length again"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-004",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A concave mirror has focal length \\( -20 \\) cm in air. It is placed under water (\\( \\mu=\\dfrac{4}{3} \\)). What is its focal length now?",
+      "options": [
+        "\\( -80 \\) cm",
+        "\\( -20 \\) cm",
+        "\\( -15 \\) cm",
+        "\\( -\\dfrac{80}{3} \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "A mirror's focal length is \\( f=\\dfrac{R}{2} \\), set only by its shape.<br><br>Reflection does not depend on the medium, unlike refraction through a lens, so the focal length stays \\( -20 \\) cm.",
+      "hint": "Does a mirror's focal length involve any refractive index?",
+      "distractor_logic": [
+        "Applies the lens-in-water factor to a mirror",
+        "Divides by the refractive index of water",
+        "Multiplies by the refractive index of water"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-005",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A telescope objective of focal length 40 cm and an eyepiece of 4 cm are 44 cm apart (normal adjustment). Using the formula for two separated thin lenses, what is the equivalent focal length?",
+      "options": [
+        "\\( \\dfrac{40}{11} \\) cm",
+        "44 cm",
+        "Infinite; the telescope is afocal",
+        "10 cm"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{1}{F}=\\dfrac{1}{40}+\\dfrac{1}{4}-\\dfrac{44}{160}=0.025+0.25-0.275=0 \\).<br><br>Zero power: parallel light from a star leaves as parallel light, which is exactly normal adjustment.",
+      "hint": "The lenses are separated by their focal-length sum.",
+      "distractor_logic": [
+        "Uses the in-contact formula, dropping the \\( -\\dfrac{d}{f_1f_2} \\) term",
+        "Adds focal lengths directly",
+        "Gives the magnifying power as a length"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-006",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A myopic person with far point 40 cm wears the correcting lens. For close work, a \\( +1.5 \\) D lens is put in contact with it. What is the net power?",
+      "options": [
+        "\\( -4 \\) D",
+        "\\( +1 \\) D",
+        "\\( -0.01 \\) D",
+        "\\( -1 \\) D"
+      ],
+      "correct_index": 3,
+      "explanation": "Correcting lens: \\( f=-40 \\) cm, \\( P=\\dfrac{1}{-0.4}=-2.5 \\) D.<br><br>In contact: \\( P=-2.5+1.5=-1 \\) D.",
+      "hint": "Find the corrective power first, then add powers.",
+      "distractor_logic": [
+        "Treats both powers as negative and adds magnitudes",
+        "Loses the negative sign of the correcting lens",
+        "Uses focal lengths in centimetres"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-007",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A right-angled isosceles prism is used to turn light through 90 degrees by total internal reflection at its hypotenuse, with the ray entering normally. What is the minimum refractive index needed?",
+      "options": [
+        "\\( \\sqrt{2} \\)",
+        "\\( \\dfrac{1}{\\sqrt{2}} \\)",
+        "\\( 2 \\)",
+        "\\( \\dfrac{4}{\\pi} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The ray meets the hypotenuse at \\( 45^\\circ \\), so TIR needs \\( C\\le45^\\circ \\).<br><br>\\( \\sin C=\\dfrac{1}{\\mu}\\le\\dfrac{1}{\\sqrt{2}} \\), so \\( \\mu\\ge\\sqrt{2} \\).",
+      "hint": "The angle of incidence at the hypotenuse must reach the critical angle.",
+      "distractor_logic": [
+        "Takes \\( \\mu=\\sin C \\), giving an impossible value below 1",
+        "Corresponds to a critical angle of \\( 30^\\circ \\)",
+        "Uses \\( C=\\dfrac{1}{\\mu} \\) with \\( C \\) in radians"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-008",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A ray falls normally on one face of a prism of angle \\( 30^\\circ \\) and \\( \\mu=\\sqrt{2} \\). What is the deviation?",
+      "options": [
+        "\\( 45^\\circ \\)",
+        "\\( 15^\\circ \\)",
+        "\\( 30^\\circ \\)",
+        "The ray is totally reflected and does not emerge"
+      ],
+      "correct_index": 1,
+      "explanation": "Normal incidence: \\( r_1=0 \\), so \\( r_2=30^\\circ \\). \\( \\sin e=\\sqrt{2}\\sin 30^\\circ=\\dfrac{1}{\\sqrt{2}} \\), \\( e=45^\\circ \\).<br><br>\\( \\delta=i+e-A=0+45^\\circ-30^\\circ=15^\\circ \\).",
+      "hint": "Find the angle of emergence first.",
+      "distractor_logic": [
+        "Gives the angle of emergence, not the deviation",
+        "Assumes the deviation equals the prism angle",
+        "The critical angle is \\( 45^\\circ \\), larger than the \\( 30^\\circ \\) incidence, so the ray emerges"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-009",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A ray falls normally on one face of a prism of angle \\( 60^\\circ \\) and \\( \\mu=2 \\). What happens at the second face?",
+      "options": [
+        "It emerges at \\( 60^\\circ \\)",
+        "It emerges grazing the face",
+        "The ray is totally internally reflected",
+        "It emerges with a deviation of \\( 60^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( r_2=A=60^\\circ \\) since \\( r_1=0 \\).<br><br>\\( \\sin C=\\dfrac{1}{2} \\), \\( C=30^\\circ \\). Since \\( 60^\\circ\\gt30^\\circ \\) and light is going from glass to air, it is totally reflected.",
+      "hint": "Compare the incidence at the second face with the critical angle.",
+      "distractor_logic": [
+        "Ignores that the incidence exceeds the critical angle",
+        "Grazing emergence needs incidence exactly equal to \\( C \\)",
+        "Assumes emergence without checking the critical angle"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-010",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "White light inside glass meets a glass-air surface, and the angle of incidence is slowly increased. Which colour is the first to be totally internally reflected?",
+      "options": [
+        "Red",
+        "All colours at the same moment",
+        "None; white light cannot undergo TIR",
+        "Violet"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\sin C=\\dfrac{1}{\\mu} \\), and \\( \\mu \\) is largest for violet.<br><br>So violet has the smallest critical angle and is the first to be totally reflected.",
+      "hint": "Larger index means smaller critical angle.",
+      "distractor_logic": [
+        "Red has the smallest index and hence the largest critical angle",
+        "Different colours have different indices, so different critical angles",
+        "TIR happens for any colour going from denser to rarer beyond its critical angle"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-011",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why do the largest astronomical telescopes use a concave mirror rather than a lens as the objective?",
+      "options": [
+        "A mirror reflects all colours to the same focus, avoiding the colour fringes a lens produces by dispersion",
+        "A mirror disperses light more strongly, sharpening the image",
+        "A mirror has negative power, which magnifies more",
+        "A lens cannot form a real image of a star"
+      ],
+      "correct_index": 0,
+      "explanation": "A lens's focal length depends on \\( \\mu \\), which varies with colour, causing chromatic aberration.<br><br>A concave mirror's focal length depends only on its shape, so all colours focus together.",
+      "hint": "Which kind of element involves a colour-dependent refractive index?",
+      "distractor_logic": [
+        "Mirrors do not disperse light at all; that is the advantage",
+        "Magnifying power depends on the ratio of focal lengths, not on a sign",
+        "A convex objective lens does form a real image of distant objects"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-012",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A beam of white light parallel to the axis passes through a convex lens. Which colour comes to a focus closest to the lens?",
+      "options": [
+        "Red",
+        "Violet",
+        "All colours focus at the same point",
+        "Green"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{f}=(\\mu-1)\\left(\\dfrac{1}{R_1}-\\dfrac{1}{R_2}\\right) \\) grows with \\( \\mu \\).<br><br>Violet has the largest \\( \\mu \\), so the shortest focal length.",
+      "hint": "Larger index means stronger lens.",
+      "distractor_logic": [
+        "Red has the smallest index, so the longest focal length",
+        "That would require the index not to depend on colour",
+        "Green lies between; it focuses between violet and red"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-013",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A parallel beam enters a transparent sphere of radius 10 cm and \\( \\mu=2 \\). Where does refraction at the first surface alone bring it to a focus?",
+      "options": [
+        "10 cm from the first surface, at the centre",
+        "30 cm from the first surface, outside the sphere",
+        "20 cm from the first surface, exactly at the rear of the sphere",
+        "20 cm in front of the first surface, outside the sphere"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{2}{v}-\\dfrac{1}{\\infty}=\\dfrac{2-1}{10} \\), so \\( v=20 \\) cm.<br><br>The sphere's diameter is 20 cm, so the rays converge right on the back surface.",
+      "hint": "Use \\( u=\\infty \\) in the single-surface formula.",
+      "distractor_logic": [
+        "Leaves out \\( \\mu_2 \\) in \\( \\dfrac{\\mu_2}{v} \\)",
+        "Guesses a focus beyond the sphere without solving",
+        "Sign slip, placing a real image on the incident side"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-014",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Parallel light falls on an equiconvex lens (\\( R=30 \\) cm, \\( \\mu=1.5 \\)). Treating each surface in turn, where does the first surface alone form the image, and where is the final focus?",
+      "options": [
+        "First surface: 60 cm; final focus: 30 cm",
+        "First surface: 90 cm; final focus: 45 cm",
+        "First surface: 30 cm; final focus: 90 cm",
+        "First surface: 90 cm; final focus: 30 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "First surface: \\( \\dfrac{1.5}{v_1}=\\dfrac{0.5}{30} \\), so \\( v_1=90 \\) cm.<br><br>Second surface (\\( R=-30 \\) cm): \\( \\dfrac{1}{v}-\\dfrac{1.5}{90}=\\dfrac{-0.5}{-30} \\), so \\( \\dfrac{1}{v}=\\dfrac{1}{30} \\), \\( v=30 \\) cm.<br><br>This matches the lens maker's formula result.",
+      "hint": "The first image acts as the object for the second surface.",
+      "distractor_logic": [
+        "Leaves out \\( \\mu_2 \\) in the first-surface step",
+        "Treats the second surface wrongly, missing its converging effect",
+        "Swaps the intermediate and final images"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-015",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A convex lens of focal length 20 cm has a plane mirror placed just behind it. Where must an object be placed on the axis so that its final image coincides with it?",
+      "options": [
+        "20 cm from the lens",
+        "40 cm from the lens",
+        "10 cm from the lens",
+        "80 cm from the lens"
+      ],
+      "correct_index": 0,
+      "explanation": "For the rays to retrace their path, they must hit the mirror normally, i.e. travel parallel to the axis.<br><br>Parallel rays leave the lens only when the object is at its focus: 20 cm.",
+      "hint": "The rays must return along their own path.",
+      "distractor_logic": [
+        "Uses the 2F position, where an ordinary lens alone gives an equal-size image",
+        "Halves the focal length",
+        "Doubles the 2F distance"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-016",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An object is 30 cm from a concave mirror of focal length 20 cm, and separately 30 cm from a convex lens of focal length 20 cm. Where are the images?",
+      "options": [
+        "Both at \\( v=+60 \\) cm",
+        "Mirror: \\( v=-60 \\) cm (in front); lens: \\( v=+60 \\) cm (beyond the lens)",
+        "Both at \\( v=-60 \\) cm",
+        "Mirror: \\( v=+60 \\) cm; lens: \\( v=-60 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "Mirror: \\( f=-20 \\), \\( \\dfrac{1}{v}=-\\dfrac{1}{20}+\\dfrac{1}{30}=-\\dfrac{1}{60} \\), \\( v=-60 \\) cm.<br><br>Lens: \\( f=+20 \\), \\( \\dfrac{1}{v}=\\dfrac{1}{20}-\\dfrac{1}{30}=\\dfrac{1}{60} \\), \\( v=+60 \\) cm.<br><br>Both images are real; the mirror's is on the object side, the lens's on the far side.",
+      "hint": "Apply each device's own formula and sign for f.",
+      "distractor_logic": [
+        "Uses the lens sign pattern for the mirror too",
+        "Uses the mirror sign pattern for the lens too",
+        "Swaps the conventions between the mirror and the lens"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-017",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An object is 15 cm from a concave mirror of focal length 10 cm, and separately 15 cm from a convex lens of focal length 10 cm. What are the magnifications?",
+      "options": [
+        "Mirror \\( -2 \\), lens \\( +2 \\)",
+        "Mirror \\( +2 \\), lens \\( -2 \\)",
+        "Both \\( m=-2 \\)",
+        "Both \\( m=+2 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Mirror: \\( v=-30 \\) cm, \\( m=-\\dfrac{v}{u}=-\\dfrac{-30}{-15}=-2 \\).<br><br>Lens: \\( v=+30 \\) cm, \\( m=\\dfrac{v}{u}=\\dfrac{30}{-15}=-2 \\). Both images are real and inverted.",
+      "hint": "Different formulas, same physical result.",
+      "distractor_logic": [
+        "Applies the mirror's \\( -\\dfrac{v}{u} \\) to the lens",
+        "Applies the lens's \\( \\dfrac{v}{u} \\) to the mirror",
+        "Loses the sign for both"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-018",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The distance from the eye lens to the retina is 2.5 cm. What is the power of the eye lens when viewing an object at infinity, and when viewing one at 25 cm?",
+      "options": [
+        "0.4 D and 0.44 D",
+        "40 D and 36 D",
+        "44 D and 40 D",
+        "40 D at infinity and 44 D at 25 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "Infinity: \\( f=2.5 \\) cm \\( =0.025 \\) m, \\( P=40 \\) D.<br><br>At 25 cm: \\( \\dfrac{1}{f}=\\dfrac{1}{2.5}+\\dfrac{1}{25}=0.44\\,\\text{cm}^{-1} \\), i.e. 44 D. The eye accommodates by 4 D.",
+      "hint": "The image distance is fixed at the retina.",
+      "distractor_logic": [
+        "Uses centimetres instead of metres",
+        "Gets the sign of the object term wrong, so power drops for near objects",
+        "Swaps the two cases"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-019",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A \\( +20 \\) D lens is used as a simple magnifier with the final image at the near point (\\( D=25 \\) cm). What is its magnifying power?",
+      "options": [
+        "6",
+        "5",
+        "21",
+        "4"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( f=\\dfrac{1}{20} \\) m \\( =5 \\) cm.<br><br>\\( m=1+\\dfrac{D}{f}=1+5=6 \\).",
+      "hint": "Convert power to focal length in cm.",
+      "distractor_logic": [
+        "Drops the '+1', which is needed for the near-point image",
+        "Adds 1 to the power in dioptres",
+        "Uses \\( \\dfrac{D}{f}-1 \\)"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-020",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A person reads comfortably at 25 cm wearing \\( +2 \\) D glasses. What is their uncorrected near point?",
+      "options": [
+        "\\( \\dfrac{50}{3} \\) cm",
+        "50 cm",
+        "75 cm",
+        "25 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "The lens images an object at \\( u=-25 \\) cm at the near point: \\( \\dfrac{1}{v}=\\dfrac{1}{f}+\\dfrac{1}{u}=2-4=-2\\,\\text{m}^{-1} \\).<br><br>\\( v=-0.5 \\) m, so the near point is 50 cm.",
+      "hint": "Work in metres and dioptres.",
+      "distractor_logic": [
+        "Adds the reciprocals with the wrong sign",
+        "Adds the two distances",
+        "Assumes the glasses leave the near point unchanged"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-021",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How is a rainbow formed in a raindrop?",
+      "options": [
+        "Scattering of sunlight by air molecules",
+        "Reflection from the front surface of the drop only",
+        "Refraction with dispersion on entry, internal reflection at the back of the drop, and refraction on exit",
+        "Refraction on entry and exit with no reflection inside"
+      ],
+      "correct_index": 2,
+      "explanation": "Sunlight refracts into the drop and splits into colours because the index varies with wavelength.<br><br>It reflects internally at the back and refracts out again, spreading the colours further.",
+      "hint": "The Sun is behind the observer.",
+      "distractor_logic": [
+        "Molecular scattering gives the blue sky, not a rainbow",
+        "Surface reflection alone does not separate colours",
+        "Without the internal reflection the light could not come back toward the observer with the Sun behind"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-022",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A prism with \\( A=60^\\circ \\) gives minimum deviation \\( 60^\\circ \\). What is the speed of light inside it? Take \\( c=3\\times10^{8} \\) m/s.",
+      "options": [
+        "\\( 3\\sqrt{3}\\times10^{8} \\) m/s",
+        "\\( 1.5\\times10^{8} \\) m/s",
+        "\\( \\dfrac{\\sqrt{3}}{2}\\times10^{8} \\) m/s",
+        "\\( \\sqrt{3}\\times10^{8} \\) m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\mu=\\dfrac{\\sin 60^\\circ}{\\sin 30^\\circ}=\\sqrt{3} \\).<br><br>\\( v=\\dfrac{c}{\\mu}=\\dfrac{3\\times10^{8}}{\\sqrt{3}}=\\sqrt{3}\\times10^{8} \\) m/s.",
+      "hint": "Find the index, then the speed.",
+      "distractor_logic": [
+        "Multiplies by the index, so light would speed up in glass",
+        "Uses \\( \\mu=2 \\) instead of \\( \\sqrt{3} \\)",
+        "Divides by \\( 2\\sqrt{3} \\)"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-023",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A prism of angle \\( 60^\\circ \\) has minimum deviation \\( 30^\\circ \\). What is the critical angle of its material?",
+      "options": [
+        "\\( 45^\\circ \\)",
+        "\\( 30^\\circ \\)",
+        "\\( 0.71 \\) rad",
+        "\\( 60^\\circ \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\mu=\\dfrac{\\sin 45^\\circ}{\\sin 30^\\circ}=\\sqrt{2} \\).<br><br>\\( \\sin C=\\dfrac{1}{\\sqrt{2}} \\), so \\( C=45^\\circ \\).",
+      "hint": "Get the index from the prism formula.",
+      "distractor_logic": [
+        "Takes the minimum deviation as the critical angle",
+        "Treats \\( \\dfrac{1}{\\mu} \\) as the angle itself",
+        "Takes the prism angle as the critical angle"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-024",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A reflecting telescope's objective mirror has radius of curvature 2 m, and its eyepiece has focal length 5 cm. What is the magnitude of its magnifying power in normal adjustment?",
+      "options": [
+        "40",
+        "20",
+        "0.05",
+        "105"
+      ],
+      "correct_index": 1,
+      "explanation": "Mirror focal length \\( =\\dfrac{R}{2}=100 \\) cm.<br><br>\\( |m|=\\dfrac{f_o}{f_e}=\\dfrac{100}{5}=20 \\).",
+      "hint": "Halve the radius first.",
+      "distractor_logic": [
+        "Uses the radius instead of the focal length of the mirror",
+        "Inverts the ratio",
+        "Gives the tube length in cm"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-025",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A compound microscope has an objective of power \\( +50 \\) D and an eyepiece of power \\( +20 \\) D, with tube length 20 cm. What is the magnitude of its magnifying power in normal adjustment? Take the near point as 25 cm.",
+      "options": [
+        "60",
+        "15",
+        "50",
+        "1000"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f_o=2 \\) cm, \\( f_e=5 \\) cm.<br><br>\\( |m|=\\dfrac{L}{f_o}\\times\\dfrac{D}{f_e}=\\dfrac{20}{2}\\times\\dfrac{25}{5}=10\\times5=50 \\).",
+      "hint": "Convert each power to a focal length.",
+      "distractor_logic": [
+        "Adds '+1' to the eyepiece although the image is at infinity",
+        "Adds the two magnifications",
+        "Multiplies the powers directly"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-026",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An astronomical telescope uses an objective of power \\( +1 \\) D and an eyepiece of power \\( +20 \\) D. In normal adjustment, what are its magnifying power (magnitude) and tube length?",
+      "options": [
+        "0.05 and 21 cm",
+        "20 and 95 cm",
+        "21 and 105 cm",
+        "20 and 105 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f_o=100 \\) cm, \\( f_e=5 \\) cm.<br><br>\\( |m|=\\dfrac{100}{5}=20 \\); \\( L=f_o+f_e=105 \\) cm.",
+      "hint": "Low-power objective means long focal length.",
+      "distractor_logic": [
+        "Treats the powers as if they were focal lengths",
+        "Subtracts the focal lengths for the tube length",
+        "Adds 1 to the normal-adjustment magnification"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-027",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A plane mirror lies at the bottom of a tank of water 16 cm deep (\\( \\mu=\\dfrac{4}{3} \\)). A small mark on the water surface is viewed from directly above. How far below the surface does its reflected image appear?",
+      "options": [
+        "24 cm",
+        "32 cm",
+        "12 cm",
+        "\\( \\dfrac{128}{3} \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "The mirror forms an image 16 cm below itself, i.e. 32 cm below the surface, inside the water.<br><br>Seen from air, that depth appears as \\( \\dfrac{32}{4/3}=24 \\) cm.",
+      "hint": "Locate the mirror image first, then apply apparent depth.",
+      "distractor_logic": [
+        "Ignores refraction as light leaves the water",
+        "Applies apparent depth to the water depth only",
+        "Multiplies by the refractive index instead of dividing"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-028",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why do periscopes and binoculars often use right-angled glass prisms instead of plane mirrors to turn light?",
+      "options": [
+        "The prism refracts light from air into glass until TIR occurs at entry",
+        "Total internal reflection in the prism reflects nearly all the light, without the losses and tarnishing of a silvered mirror",
+        "Prisms disperse light to sharpen the image",
+        "Plane mirrors cannot turn light through 90 degrees"
+      ],
+      "correct_index": 1,
+      "explanation": "Light meets the prism's hypotenuse at \\( 45^\\circ \\), above the critical angle of glass, so it is totally reflected.<br><br>TIR loses essentially no light, while metal mirrors absorb some and tarnish.",
+      "hint": "Compare the two ways of reflecting light.",
+      "distractor_logic": [
+        "TIR cannot happen when light goes from air into glass",
+        "Dispersion would add colour fringes, not sharpen the image",
+        "A plane mirror at \\( 45^\\circ \\) turns light through 90 degrees easily"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-029",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A myopic person's far point is at distance \\( x \\). What must the corrective lens do with light from a very distant object?",
+      "options": [
+        "Form a real image of it on the retina directly, so its focal length is \\( +x \\)",
+        "Form a virtual image at the near point",
+        "Form a virtual image of it at the far point, so its focal length is \\( -x \\)",
+        "Leave the light parallel, so its power is zero"
+      ],
+      "correct_index": 2,
+      "explanation": "The eye can focus clearly on objects at its far point.<br><br>A diverging lens with \\( f=-x \\) makes parallel rays appear to come from that point.",
+      "hint": "The eye can see the far point clearly.",
+      "distractor_logic": [
+        "The eye itself focuses the lens's image; a converging lens would make myopia worse",
+        "The relaxed eye must view distant objects, so the image belongs at the far point",
+        "Unchanged parallel light is exactly what the myopic eye cannot focus"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-030",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How do the prisms placed between the objective and eyepiece of binoculars help?",
+      "options": [
+        "They increase the objective's focal length by refraction",
+        "They add dispersion to improve colour",
+        "They act as the eyepiece lens",
+        "They use total internal reflection to erect the inverted image and fold the long light path into a short body"
+      ],
+      "correct_index": 3,
+      "explanation": "A refracting telescope alone gives an inverted image and needs a long tube.<br><br>Totally reflecting prisms flip the image upright and send the light back and forth, shortening the instrument.",
+      "hint": "Binoculars need upright images in a compact case.",
+      "distractor_logic": [
+        "The prisms reflect light; they do not change the objective's focal length",
+        "Dispersion would harm the image",
+        "The eyepiece is a separate lens"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-031",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An object is 20 cm from a convex mirror of focal length 20 cm, and separately 20 cm from a concave lens of focal length 20 cm. Where are the images?",
+      "options": [
+        "Mirror: \\( v=+10 \\) cm (behind); lens: \\( v=-10 \\) cm (object side)",
+        "Both at \\( v=+10 \\) cm",
+        "Both at \\( v=-10 \\) cm",
+        "Mirror: \\( v=-10 \\) cm; lens: \\( v=+10 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "Mirror: \\( f=+20 \\), \\( \\dfrac{1}{v}=\\dfrac{1}{20}+\\dfrac{1}{20}=\\dfrac{1}{10} \\), \\( v=+10 \\) cm.<br><br>Lens: \\( f=-20 \\), \\( \\dfrac{1}{v}=-\\dfrac{1}{20}-\\dfrac{1}{20}=-\\dfrac{1}{10} \\), \\( v=-10 \\) cm. Both images are virtual.",
+      "hint": "A convex mirror has positive f; a concave lens has negative f.",
+      "distractor_logic": [
+        "Uses the mirror sign pattern for the lens too",
+        "Uses the lens sign pattern for the mirror too",
+        "Swaps the conventions between the two devices"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-032",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two \\( +10 \\) D lenses are placed in contact and used as a magnifier with the final image at the near point (\\( D=25 \\) cm). What is the magnifying power?",
+      "options": [
+        "2.25",
+        "6",
+        "5",
+        "3.5"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=10+10=20 \\) D, so \\( f=5 \\) cm.<br><br>\\( m=1+\\dfrac{25}{5}=6 \\).",
+      "hint": "Combine powers first.",
+      "distractor_logic": [
+        "Adds the focal lengths to get 20 cm instead of adding powers",
+        "Drops the '+1' needed for near-point viewing",
+        "Uses only one of the two lenses"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-033",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A thin glass prism (\\( \\mu=1.5 \\), \\( A=8^\\circ \\)) is immersed in water (\\( \\mu=\\dfrac{4}{3} \\)). What is its deviation?",
+      "options": [
+        "\\( 4^\\circ \\)",
+        "\\( \\left(\\dfrac{4}{3}\\right)^\\circ \\)",
+        "\\( 1^\\circ \\)",
+        "\\( 12^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Relative index \\( =\\dfrac{1.5}{4/3}=\\dfrac{9}{8} \\).<br><br>\\( \\delta=\\left(\\dfrac{9}{8}-1\\right)\\times8^\\circ=1^\\circ \\).",
+      "hint": "Use the index relative to the surrounding water.",
+      "distractor_logic": [
+        "Ignores the water and uses the value in air",
+        "Subtracts the indices instead of taking their ratio",
+        "Multiplies the prism angle by \\( \\mu \\)"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-034",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Light travels at \\( 2\\times10^{8} \\) m/s in a glass. An equiconvex lens of this glass has both radii 25 cm. What is its power? Take \\( c=3\\times10^{8} \\) m/s.",
+      "options": [
+        "\\( +0.04 \\) D",
+        "\\( +2 \\) D",
+        "\\( +12 \\) D",
+        "\\( +4 \\) D"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\mu=\\dfrac{c}{v}=1.5 \\).<br><br>\\( \\dfrac{1}{f}=0.5\\left(\\dfrac{1}{25}+\\dfrac{1}{25}\\right)=\\dfrac{1}{25} \\), \\( f=0.25 \\) m, \\( P=+4 \\) D.",
+      "hint": "Get the index from the speeds first.",
+      "distractor_logic": [
+        "Keeps the focal length in centimetres",
+        "Uses only one curved surface",
+        "Uses \\( \\mu \\) instead of \\( (\\mu-1) \\)"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-035",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A shaving mirror and a simple magnifier both give enlarged, erect, virtual images. Where must the object be in each case?",
+      "options": [
+        "Within the focal length in both cases",
+        "Between F and 2F in both cases",
+        "Beyond 2F for the mirror, within f for the magnifier",
+        "At the focus in both cases"
+      ],
+      "correct_index": 0,
+      "explanation": "A concave mirror gives an erect, magnified virtual image only with the object between pole and focus.<br><br>A convex lens used as a magnifier likewise needs the object inside its focal length.",
+      "hint": "Erect and magnified needs a virtual image.",
+      "distractor_logic": [
+        "That region gives real, inverted, magnified images",
+        "Beyond C a concave mirror gives a diminished real image",
+        "An object at the focus sends the image to infinity"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-036",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A telescope objective has focal length 200 cm. The Sun subtends about 0.01 rad. What is the diameter of the Sun's image formed by the objective?",
+      "options": [
+        "0.02 cm",
+        "2 cm",
+        "20 cm",
+        "0.5 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "The image of a distant object forms in the focal plane.<br><br>Its size is \\( f\\theta=200\\times0.01=2 \\) cm.",
+      "hint": "Image size equals focal length times angular size.",
+      "distractor_logic": [
+        "Uses the focal length in metres but reports the answer in centimetres",
+        "Misplaces a factor of 10",
+        "Divides the angle by the focal length"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-037",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Refraction Through a Prism, Dispersion, and Scattering of Light",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A right-angled isosceles prism of glass (\\( \\mu=1.5 \\)) receives a ray normally on its hypotenuse face. The ray is totally reflected at both short faces. What is the total deviation?",
+      "options": [
+        "\\( 90^\\circ \\)",
+        "\\( 45^\\circ \\)",
+        "\\( 180^\\circ \\)",
+        "\\( 0^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Inside, the ray meets each short face at \\( 45^\\circ \\), above the critical angle of glass, so it is totally reflected twice.<br><br>Each reflection turns it through 90 degrees, sending it back parallel to its original path: 180 degrees in all.",
+      "hint": "Count both reflections.",
+      "distractor_logic": [
+        "Counts only one reflection",
+        "Uses the prism's base angle as the deviation",
+        "Assumes the ray passes straight through"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Refraction Through a Prism, Dispersion, and Scattering of Light"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-038",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Half of a convex lens is covered with black paper. What happens to the image on the screen?",
+      "options": [
+        "Only half of the image forms",
+        "No image forms",
+        "The image forms at a different position",
+        "The full image still forms, but it is less bright"
+      ],
+      "correct_index": 3,
+      "explanation": "Each point of the object sends rays through all parts of the lens.<br><br>Blocking half the lens removes half of these rays, so the complete image is dimmer. A half-covered mirror behaves the same way.",
+      "hint": "Rays from each object point pass through all parts of the lens.",
+      "distractor_logic": [
+        "Every part of the lens receives light from every point of the object",
+        "The uncovered half still refracts light to form an image",
+        "Focal length depends on the lens's curvature and material, which are unchanged"
+      ],
+      "mixed_topics": [
+        "Reflection at Plane and Spherical Mirrors: Mirror Formula and Magnification",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-039",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why does an air bubble in water behave like a diverging lens, even though it is convex in shape?",
+      "options": [
+        "Light passes from a denser medium (water) into a rarer one (air), so the relative index is below 1",
+        "Air has a refractive index greater than water",
+        "Light travels slower in air than in water",
+        "Only concave shapes can diverge light"
+      ],
+      "correct_index": 0,
+      "explanation": "In the lens maker's formula the factor becomes \\( \\dfrac{\\mu_{\\text{air}}}{\\mu_{\\text{water}}}-1\\lt0 \\).<br><br>A convex shape with a negative factor gives a negative focal length: a diverging lens.",
+      "hint": "Which medium is the lens made of here?",
+      "distractor_logic": [
+        "Air's index is lower than water's",
+        "Light is faster in air, the rarer medium",
+        "Divergence depends on shape and on relative index together"
+      ],
+      "mixed_topics": [
+        "Refraction, Total Internal Reflection, and Refraction at a Spherical Surface",
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses"
+      ]
+    },
+    {
+      "id": "PHY12-CH09-B-040",
+      "chapter": "PHY12-CH09",
+      "chapter_name": "Ray Optics and Optical Instruments",
+      "topic": "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An eyepiece is made of two convex lenses, each of focal length 10 cm, placed 10 cm apart. What is its equivalent focal length?",
+      "options": [
+        "5 cm",
+        "10 cm",
+        "20 cm",
+        "Infinite"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{F}=\\dfrac{1}{10}+\\dfrac{1}{10}-\\dfrac{10}{100}=\\dfrac{1}{10} \\).<br><br>\\( F=10 \\) cm.",
+      "hint": "The lenses are separated, so use the full formula.",
+      "distractor_logic": [
+        "Drops the \\( -\\dfrac{d}{f_1f_2} \\) term and uses the in-contact formula",
+        "Adds focal lengths directly",
+        "Assumes a separation equal to the focal length makes the system afocal"
+      ],
+      "mixed_topics": [
+        "Thin Lenses: Lens Maker's Formula, Lens Formula, Power, and Combination of Lenses",
+        "Optical Instruments: Defects of Vision, Simple/Compound Microscope, and Telescope"
+      ]
+    }
+  ]
+}

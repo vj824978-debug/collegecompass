@@ -1,0 +1,3722 @@
+{
+ "meta": {
+  "chapter": "PHY12-CH02",
+  "chapter_name": "Electrostatic Potential and Capacitance",
+  "subject": "Physics",
+  "class": 12,
+  "total_questions": 150,
+  "level_breakdown": {
+   "L1": 40,
+   "L2": 40,
+   "L3": 30,
+   "Bonus": 40
+  },
+  "rendering_note": "All math is rendered as KaTeX via \\( ... \\) spans; units with exponents or Greek prefixes (e.g. \\( \\mu\\text{C} \\), \\( \\text{N m}^2\\,\\text{C}^{-2} \\)) sit inside KaTeX spans; no raw Unicode math symbols appear outside \\( ... \\) delimiters; explanation steps are separated by <br><br>. Minimal HTML (<b>) appears only in topics[].summary."
+ },
+ "topics": [
+  {
+   "name": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "summary": "Electric potential at a point is the work done by an external agent per unit positive test charge in bringing it slowly from infinity to that point, so its unit is the volt (\\( \\text{J C}^{-1} \\)). For a point charge, \\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q}{r} \\): positive near a positive charge, negative near a negative one, and falling as \\( 1/r \\). The most important fact is that potential is a <b>signed scalar</b>. For a system of charges you simply add the individual potentials algebraically, \\( V=\\sum\\dfrac{kq_i}{r_i} \\), keeping each sign and ignoring directions completely. There are no components and no angles as there would be for the field. So the potential can be zero where the field is not (midpoint of \\( +q \\) and \\( -q \\)), and nonzero where the field is zero (midpoint of two equal like charges). For a short dipole, the far-field potential is \\( V=\\dfrac{kp\\cos\\theta}{r^2} \\): maximum on the axis, zero everywhere on the equatorial line, negative on the side of the negative charge, and falling as \\( 1/r^2 \\).",
+   "key_formulas": [
+    "\\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q}{r} \\)",
+    "\\( V=\\sum_i\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q_i}{r_i} \\) (algebraic sum)",
+    "Dipole: \\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{p\\cos\\theta}{r^2} \\); axial \\( \\dfrac{kp}{r^2} \\), equatorial \\( 0 \\)",
+    "\\( W_{\\infty\\to P}=qV_P \\)"
+   ],
+   "worked_example": "Charges \\( +4\\ \\text{nC} \\) and \\( +3\\ \\text{nC} \\) are each \\( 0.3\\ \\text{m} \\) from P, along perpendicular lines. \\( V_P=\\dfrac{9\\times10^9\\times4\\times10^{-9}}{0.3}+\\dfrac{9\\times10^9\\times3\\times10^{-9}}{0.3}=120+90=210\\ \\text{V} \\). The right angle is irrelevant: potentials add as plain numbers.",
+   "common_mistakes": [
+    "Combining potentials like vectors, with components or \\( \\sqrt{V_1^2+V_2^2} \\), instead of adding them algebraically.",
+    "Dropping the negative sign of the potential due to a negative charge.",
+    "Using \\( 1/r^2 \\) (field law) instead of \\( 1/r \\) for a point charge, or \\( 1/r \\) instead of \\( 1/r^2 \\) for a dipole.",
+    "Assuming zero field means zero potential, or zero potential means zero field."
+   ],
+   "question_count": 36
+  },
+  {
+   "name": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "summary": "An equipotential surface is a surface on which the potential has the same value everywhere. For a point charge these are concentric spheres; for a uniform field they are parallel planes perpendicular to the field. The field is always <b>perpendicular</b> to equipotentials, and where the field is stronger, surfaces with equal steps of potential crowd <b>closer together</b>. Two equipotentials never intersect. The field and potential are linked by \\( E=-\\dfrac{dV}{dr} \\): the magnitude of E is the rate of change of V, and the minus sign means E points in the direction of <b>decreasing</b> potential. In a uniform field, \\( V=Ed \\) along the field. The work done by an external agent moving a charge q slowly from A to B is \\( W=q(V_B-V_A) \\), final minus initial, and it depends only on the end points, never on the path. Along an equipotential, or between two points on the same equipotential, this work is exactly zero. A free positive charge moves towards lower potential; a free negative charge moves towards higher potential.",
+   "key_formulas": [
+    "\\( E=-\\dfrac{dV}{dr} \\); \\( E_x=-\\dfrac{\\partial V}{\\partial x} \\)",
+    "Uniform field: \\( V=Ed \\) (d along the field)",
+    "\\( W_{\\text{ext}}=q(V_B-V_A) \\)",
+    "On an equipotential: \\( W=0 \\)"
+   ],
+   "worked_example": "A \\( +2\\ \\mu\\text{C} \\) charge is moved from A (\\( 10\\ \\text{V} \\)) to B (\\( 50\\ \\text{V} \\)). \\( W=q(V_B-V_A)=2\\times10^{-6}\\times(50-10)=8\\times10^{-5}\\ \\text{J} \\). If B were on the same equipotential as A, the work would be zero for any path.",
+   "common_mistakes": [
+    "Taking the field to point from low to high potential; it points towards decreasing potential.",
+    "Computing \\( q(V_A-V_B) \\) instead of \\( q(V_B-V_A) \\) for the external agent's work.",
+    "Claiming nonzero work for motion along an equipotential, or thinking the work depends on the path.",
+    "Forgetting the minus sign in \\( E=-dV/dx \\), or using the full distance instead of its component along the field."
+   ],
+   "question_count": 41
+  },
+  {
+   "name": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "summary": "The potential energy of two point charges is \\( U=\\dfrac{kq_1q_2}{r} \\): positive for like charges, negative for unlike charges. For a system of several charges, add one such term for <b>every distinct pair</b>: three charges give three pair terms (12, 13, 23), not three single-charge terms and not six. A charge q placed where external charges produce potential V has energy \\( U=qV \\), and a dipole in a uniform field has \\( U=-pE\\cos\\theta \\). Conductors in electrostatic equilibrium have zero field inside; any excess charge lies on the outer surface; the whole conductor, surface included, is one equipotential, so field lines meet the surface at right angles; and the field just outside is \\( \\sigma/\\epsilon_0 \\), normal to the surface. A charged conducting sphere has potential \\( kQ/R \\) everywhere inside, not zero. An empty cavity inside a conductor is shielded from outside fields. Connected conductors reach a common potential, so charge divides in proportion to radius and density is highest at sharp points.",
+   "key_formulas": [
+    "\\( U=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q_1q_2}{r} \\)",
+    "\\( U=\\sum_{\\text{all pairs}}\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q_iq_j}{r_{ij}} \\)",
+    "\\( U=qV \\); dipole: \\( U=-pE\\cos\\theta \\)",
+    "Conductor: \\( E_{\\text{inside}}=0 \\), \\( E_{\\text{surface}}=\\dfrac{\\sigma}{\\epsilon_0} \\)"
+   ],
+   "worked_example": "Three charges of \\( +1\\ \\mu\\text{C} \\) sit at the corners of an equilateral triangle of side \\( 0.1\\ \\text{m} \\). There are 3 pairs, each with \\( U=\\dfrac{9\\times10^9\\times10^{-12}}{0.1}=0.09\\ \\text{J} \\), so \\( U_{\\text{total}}=0.27\\ \\text{J} \\).",
+   "common_mistakes": [
+    "Counting only some pairs, or counting every pair twice.",
+    "Ignoring the signs of the charges in the pair products.",
+    "Assuming zero field inside a conductor means zero potential there.",
+    "Using \\( \\sigma/2\\epsilon_0 \\) for the field just outside a conductor instead of \\( \\sigma/\\epsilon_0 \\)."
+   ],
+   "question_count": 36
+  },
+  {
+   "name": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "summary": "A capacitor stores charge on two conductors separated by an insulator. Its capacitance \\( C=Q/V \\), in farad, depends only on geometry and the medium, never on Q or V separately. For a parallel plate capacitor \\( C=\\dfrac{\\epsilon_0A}{d} \\), and between the plates \\( E=\\sigma/\\epsilon_0=V/d \\). Filling the gap with a dielectric of constant K always increases the capacitance to \\( C=KC_0 \\), because polarisation charges reduce the field. What happens next depends on the <b>invariant</b>. If the capacitor is <b>isolated</b> (disconnected), Q stays fixed, so V and E fall by a factor K. If it stays <b>connected</b> to a battery, V stays fixed, so Q rises by K and E is unchanged. The same logic applies when the plate separation changes. A slab of thickness t fills only part of the gap: \\( C=\\dfrac{\\epsilon_0A}{d-t+t/K} \\), and a metal slab (K effectively infinite) simply removes t from the gap. Side-by-side dielectrics act in parallel; stacked layers act in series.",
+   "key_formulas": [
+    "\\( C=\\dfrac{Q}{V} \\); \\( C=\\dfrac{\\epsilon_0A}{d} \\)",
+    "Full dielectric: \\( C=KC_0 \\)",
+    "Isolated: \\( Q \\) fixed, \\( V=\\dfrac{V_0}{K} \\); connected: \\( V \\) fixed, \\( Q=KQ_0 \\)",
+    "Partial slab: \\( C=\\dfrac{\\epsilon_0A}{d-t+t/K} \\)"
+   ],
+   "worked_example": "A \\( 5\\ \\text{pF} \\) capacitor is charged to \\( 12\\ \\text{V} \\) (Q = 60 pC) and disconnected, then filled with K = 4. C becomes 20 pF with Q still 60 pC, so \\( V=60/20=3\\ \\text{V} \\). Had it stayed connected, V would stay 12 V and Q would become 240 pC.",
+   "common_mistakes": [
+    "Treating Q as fixed while the battery is still connected, or V as fixed after it has been disconnected.",
+    "Thinking capacitance depends on the charge or the voltage.",
+    "Multiplying by K when only part of the gap is filled.",
+    "Dividing the field by K even when the battery keeps the voltage fixed."
+   ],
+   "question_count": 42
+  },
+  {
+   "name": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "summary": "Capacitor combination rules are the <b>reverse</b> of resistor rules. In <b>series</b>, \\( \\dfrac{1}{C_{eq}}=\\sum\\dfrac{1}{C_i} \\), so the result is smaller than the smallest capacitor. Every capacitor carries the <b>same charge</b>, and the voltage divides as \\( V_i=Q/C_i \\), with the smallest capacitor taking the largest voltage. In <b>parallel</b>, \\( C_{eq}=\\sum C_i \\), larger than any one. Every capacitor has the <b>same voltage</b>, and the charge divides as \\( Q_i=C_iV \\). The energy stored is \\( U=\\dfrac12CV^2=\\dfrac{Q^2}{2C}=\\dfrac12QV \\), held in the field with energy density \\( u=\\tfrac12\\epsilon_0E^2 \\). A battery does work QV while charging, but only half is stored. When two capacitors charged to different voltages are connected, total charge is conserved and the common potential is \\( \\dfrac{Q_1+Q_2}{C_1+C_2} \\). Stored energy, however, always decreases unless they started at the same potential. Inserting a dielectric lowers the energy of an isolated capacitor (\\( U_0/K \\)) but raises that of a connected one (\\( KU_0 \\)).",
+   "key_formulas": [
+    "Series: \\( \\dfrac{1}{C_{eq}}=\\sum\\dfrac{1}{C_i} \\), same Q",
+    "Parallel: \\( C_{eq}=\\sum C_i \\), same V",
+    "\\( U=\\dfrac12CV^2=\\dfrac{Q^2}{2C}=\\dfrac12QV \\); \\( u=\\dfrac12\\epsilon_0E^2 \\)",
+    "\\( V_{common}=\\dfrac{Q_1+Q_2}{C_1+C_2} \\)"
+   ],
+   "worked_example": "\\( 3\\ \\mu\\text{F} \\) and \\( 6\\ \\mu\\text{F} \\) in series across \\( 90\\ \\text{V} \\): \\( C_{eq}=2\\ \\mu\\text{F} \\), \\( Q=180\\ \\mu\\text{C} \\) on each. \\( V_3=60\\ \\text{V} \\), \\( V_6=30\\ \\text{V} \\); energy in the \\( 6\\ \\mu\\text{F} \\) is \\( \\tfrac12\\times6\\times10^{-6}\\times30^2=2.7\\times10^{-3}\\ \\text{J} \\).",
+   "common_mistakes": [
+    "Using resistor formulas for capacitors: adding in series or adding reciprocals in parallel.",
+    "Swapping the common quantity: series capacitors share charge, parallel capacitors share voltage.",
+    "Assuming energy is conserved when charged capacitors are connected together; only charge is conserved.",
+    "Dropping the factor \\( \\tfrac12 \\) in the energy formulas."
+   ],
+   "question_count": 37
+  }
+ ],
+ "questions": [
+  {
+   "id": "PHY12-CH02-L1-001",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "Electric potential at a point is best described as which kind of quantity?",
+   "options": [
+    "A scalar, which can be positive or negative",
+    "A vector directed along the electric field",
+    "A vector directed opposite to the electric field",
+    "A scalar that is always positive"
+   ],
+   "correct_index": 0,
+   "explanation": "Potential is work done per unit charge, \\( V=W/q_0 \\), and work is a scalar, so potential has no direction.<br><br>Its sign follows the source: potential is positive near a positive charge and negative near a negative charge.",
+   "hint": "Recall how potential is defined: work per unit charge. Does work have a direction?",
+   "distractor_logic": [
+    "Treats potential like the electric field; potential is a scalar and has no direction.",
+    "Also treats potential as a vector; the minus sign in \\( E=-\\dfrac{dV}{dr} \\) links the field to the potential gradient, it does not give V a direction.",
+    "Forgets that a negative source charge produces a negative potential."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-002",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "The SI unit of electric potential, the volt, is equivalent to",
+   "options": [
+    "\\( \\text{N C}^{-1} \\)",
+    "\\( \\text{J C}^{-1} \\)",
+    "\\( \\text{J C} \\)",
+    "\\( \\text{C J}^{-1} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Potential is work per unit charge: \\( V=\\dfrac{W}{q} \\).<br><br>So \\( 1\\ \\text{V}=1\\ \\text{J}/1\\ \\text{C}=1\\ \\text{J C}^{-1} \\).",
+   "hint": "Potential = energy divided by charge.",
+   "distractor_logic": [
+    "\\( \\text{N C}^{-1} \\) is the unit of electric field, not potential.",
+    "Multiplies energy by charge instead of dividing.",
+    "Inverts the ratio: charge per unit energy."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-003",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "The electric potential at a distance \\( r \\) from a point charge \\( q \\) is",
+   "options": [
+    "\\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q}{r^2} \\)",
+    "\\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q^2}{r} \\)",
+    "\\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q}{r} \\)",
+    "\\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\,qr \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Bringing a unit positive charge from infinity to distance \\( r \\) against the field of \\( q \\) requires work \\( \\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q}{r} \\).<br><br>So potential falls off as \\( 1/r \\), not \\( 1/r^2 \\).",
+   "hint": "Potential falls off more slowly than the field does.",
+   "distractor_logic": [
+    "This is the field magnitude \\( E \\), which goes as \\( 1/r^2 \\); potential goes as \\( 1/r \\).",
+    "Squares the charge; potential is linear in the source charge.",
+    "Makes potential grow with distance; it must fall to zero at infinity."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-004",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "A point charge \\( q=+2\\ \\text{nC} \\) is fixed in air. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The electric potential at a point \\( 30\\ \\text{cm} \\) from it is",
+   "options": [
+    "\\( 200\\ \\text{V} \\)",
+    "\\( 18\\ \\text{V} \\)",
+    "\\( -60\\ \\text{V} \\)",
+    "\\( 60\\ \\text{V} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( V=\\dfrac{kq}{r}=\\dfrac{9\\times10^{9}\\times2\\times10^{-9}}{0.30} \\)<br><br>\\( V=\\dfrac{18}{0.30}=60\\ \\text{V} \\), positive because the charge is positive.",
+   "hint": "Use \\( V=kq/r \\) with \\( r \\) in metres.",
+   "distractor_logic": [
+    "Divides by \\( r^2 \\), which gives the field in V/m, not the potential.",
+    "Stops at \\( kq=18 \\) and forgets to divide by \\( r \\).",
+    "Gives a negative sign even though the source charge is positive."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-005",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "A point charge \\( q=-3\\ \\text{nC} \\) is fixed in air. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at a point \\( 30\\ \\text{cm} \\) from it is",
+   "options": [
+    "\\( -90\\ \\text{V} \\)",
+    "\\( +90\\ \\text{V} \\)",
+    "\\( -300\\ \\text{V} \\)",
+    "\\( -27\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( V=\\dfrac{kq}{r}=\\dfrac{9\\times10^{9}\\times(-3\\times10^{-9})}{0.30} \\)<br><br>\\( V=\\dfrac{-27}{0.30}=-90\\ \\text{V} \\). The sign of the charge is carried into the potential.",
+   "hint": "Keep the sign of the charge inside the formula.",
+   "distractor_logic": [
+    "Drops the negative sign; potential due to a negative charge is negative.",
+    "Divides by \\( r^2 \\) instead of \\( r \\).",
+    "Forgets to divide by \\( r \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-006",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "The electric potential at a point is defined as the",
+   "options": [
+    "force experienced by a unit positive charge placed at that point",
+    "work done by an external agent per unit positive test charge in bringing it from infinity to that point without acceleration",
+    "work done by an external agent in bringing any charge, of whatever size, from infinity to that point",
+    "work done per unit charge in moving a test charge from that point to the source charge"
+   ],
+   "correct_index": 1,
+   "explanation": "Potential is work per unit positive test charge, measured from the reference point at infinity where V = 0.<br><br>The charge is moved slowly (no acceleration) so that all the work goes into potential energy.",
+   "hint": "Two keys: per unit charge, and starting from infinity.",
+   "distractor_logic": [
+    "That is the definition of electric field, not potential.",
+    "Leaves out 'per unit charge'; that describes potential energy, not potential.",
+    "Uses the wrong reference point; potential is measured relative to infinity."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-007",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "Charges \\( +q \\) and \\( -q \\) are separated by a distance \\( d \\). The electric potential at the midpoint of the line joining them is",
+   "options": [
+    "\\( \\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{4q}{d} \\)",
+    "\\( \\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{8q}{d^2} \\)",
+    "\\( 0 \\)",
+    "\\( \\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2q}{d} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Each charge is \\( d/2 \\) away, so the contributions are \\( +\\dfrac{kq}{d/2} \\) and \\( -\\dfrac{kq}{d/2} \\).<br><br>Potential is a signed scalar, so they add algebraically to zero (even though the field there is not zero).",
+   "hint": "Add the two contributions with their signs.",
+   "distractor_logic": [
+    "Adds magnitudes and ignores the negative sign of one charge.",
+    "This is the magnitude of the electric field at the midpoint, not the potential.",
+    "Counts only one of the two charges."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-008",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 1,
+   "type": "regular",
+   "question": "Far from a short electric dipole (\\( r\\gg a \\)), the potential at a point on its axis varies with distance \\( r \\) as",
+   "options": [
+    "\\( \\dfrac{1}{r} \\)",
+    "\\( \\dfrac{1}{r^3} \\)",
+    "It is independent of r",
+    "\\( \\dfrac{1}{r^2} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "For a dipole, \\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{p\\cos\\theta}{r^2} \\).<br><br>The \\( +q \\) and \\( -q \\) contributions nearly cancel, leaving a \\( 1/r^2 \\) fall-off, faster than a single charge's \\( 1/r \\).",
+   "hint": "The two opposite charges almost cancel each other far away.",
+   "distractor_logic": [
+    "That is the fall-off for a single point charge, not a dipole.",
+    "That is how the dipole's field falls off, not its potential.",
+    "Potential of any finite charge system must fall off with distance."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-009",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "The equipotential surfaces of an isolated point charge are",
+   "options": [
+    "concentric spheres centred on the charge",
+    "parallel planes",
+    "coaxial cylinders around a line through the charge",
+    "straight lines radiating out from the charge"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( V=kq/r \\) depends only on \\( r \\), so every surface of constant \\( r \\), a sphere centred on the charge, is an equipotential.",
+   "hint": "Which points have the same distance r from the charge?",
+   "distractor_logic": [
+    "Planes are the equipotentials of a uniform field, not a point charge.",
+    "Cylinders are the equipotentials of a long line charge.",
+    "Radial lines are the field lines, which are perpendicular to the equipotentials."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-010",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "In a uniform electric field, the equipotential surfaces are",
+   "options": [
+    "planes parallel to the field lines",
+    "planes perpendicular to the field lines",
+    "concentric spheres",
+    "planes inclined at 45 degrees to the field lines"
+   ],
+   "correct_index": 1,
+   "explanation": "Potential changes only along the field: \\( \\Delta V=-E\\,\\Delta x \\).<br><br>Moving perpendicular to the field keeps V constant, so equipotentials are planes perpendicular to E.",
+   "hint": "Along which direction does the potential not change at all?",
+   "distractor_logic": [
+    "Moving along the field changes V, so planes containing the field cannot be equipotentials.",
+    "Spheres are the equipotentials of a point charge.",
+    "The field is always perpendicular to equipotentials, never at 45 degrees."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-011",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "At any point, the electric field is directed",
+   "options": [
+    "parallel (tangent) to the equipotential surface through that point",
+    "at an angle that depends on the charge distribution",
+    "perpendicular to the equipotential surface through that point",
+    "along the equipotential surface, towards higher potential"
+   ],
+   "correct_index": 2,
+   "explanation": "If the field had a component along an equipotential surface, moving a charge along the surface would need work, contradicting V = constant.<br><br>So E has no tangential component: it is normal to the surface.",
+   "hint": "Think about the work done moving along an equipotential.",
+   "distractor_logic": [
+    "A tangential field would do work along the surface, so V would not be constant there.",
+    "The perpendicular relation holds for every charge distribution.",
+    "Combines the tangent error with a direction error; the field points towards lower potential."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-012",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "A charge \\( q \\) is moved between two points on the same equipotential surface. The work done is",
+   "options": [
+    "\\( qV \\), where \\( V \\) is the potential of the surface",
+    "zero only if the path stays on the surface",
+    "positive or negative depending on the sign of q",
+    "zero, whatever path is taken"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( W=q(V_B-V_A) \\), and on an equipotential \\( V_B=V_A \\).<br><br>Since electrostatic work depends only on the end points, W = 0 for any path joining them.",
+   "hint": "Use \\( W=q(V_B-V_A) \\).",
+   "distractor_logic": [
+    "Uses the potential itself instead of the potential difference.",
+    "Electrostatic work is path-independent; only the end points matter.",
+    "The sign of q cannot matter when \\( V_B-V_A=0 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-013",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "The electric field always points in the direction in which the electric potential",
+   "options": [
+    "decreases most rapidly",
+    "increases most rapidly",
+    "remains constant",
+    "first increases and then decreases"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( E=-\\dfrac{dV}{dr} \\): the minus sign means E points towards decreasing potential, and the steepest decrease gives its magnitude.",
+   "hint": "Look at the minus sign in \\( E=-dV/dr \\).",
+   "distractor_logic": [
+    "Reverses the direction; the field points from high to low potential.",
+    "Along the directions of constant potential, the field has no component.",
+    "Along a field line, potential changes monotonically."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-014",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "The unit volt per metre is equivalent to",
+   "options": [
+    "\\( \\text{J C}^{-1} \\)",
+    "\\( \\text{N C}^{-1} \\)",
+    "\\( \\text{N m C}^{-1} \\)",
+    "\\( \\text{C N}^{-1} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( 1\\ \\text{V m}^{-1}=1\\ \\text{J C}^{-1}\\text{m}^{-1}=1\\ \\text{N m}\\,\\text{C}^{-1}\\text{m}^{-1}=1\\ \\text{N C}^{-1} \\).<br><br>So field can be expressed either as potential gradient or as force per unit charge.",
+   "hint": "Write the joule as newton times metre.",
+   "distractor_logic": [
+    "\\( \\text{J C}^{-1} \\) is the volt itself; the 'per metre' is missing.",
+    "Forgets to divide by the metre.",
+    "Inverts the ratio."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-015",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "Two different equipotential surfaces can never intersect because",
+   "options": [
+    "the field is zero wherever two surfaces meet",
+    "equipotential surfaces are always parallel planes",
+    "the point of intersection would have two different potentials",
+    "charge cannot exist on an equipotential surface"
+   ],
+   "correct_index": 2,
+   "explanation": "Each equipotential has a single value of V. A common point would need two values of V at once, which is impossible.<br><br>It would also need two different field directions (one normal to each surface).",
+   "hint": "Potential at a point has only one value.",
+   "distractor_logic": [
+    "There is no such rule; the real reason is the single-valued potential.",
+    "Equipotentials are planes only for a uniform field.",
+    "Charges can sit on equipotentials; a conductor surface is one."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-016",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 1,
+   "type": "regular",
+   "question": "In a region where the electric field is strong, equally spaced values of potential (for example 10 V, 20 V, 30 V) correspond to equipotential surfaces that are",
+   "options": [
+    "farther apart",
+    "exactly equally spaced everywhere",
+    "unaffected by the field strength",
+    "closer together"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( |E|=\\dfrac{|\\Delta V|}{\\Delta r} \\), so for a fixed \\( \\Delta V \\), a larger E means a smaller gap \\( \\Delta r \\).",
+   "hint": "Field = change in V per unit distance.",
+   "distractor_logic": [
+    "Reverses the relation; strong fields crowd the surfaces together.",
+    "Equal spacing happens only in a uniform field.",
+    "The spacing is set directly by the field strength."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-017",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "The electrostatic potential energy of two point charges \\( q_1 \\) and \\( q_2 \\) separated by distance \\( r \\) is",
+   "options": [
+    "\\( \\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q_1q_2}{r} \\)",
+    "\\( \\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q_1q_2}{r^2} \\)",
+    "\\( \\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q_1+q_2}{r} \\)",
+    "\\( \\dfrac{1}{4\\pi\\epsilon_0}\\,q_1q_2r \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Bring \\( q_1 \\) in first (no work). Then bring \\( q_2 \\) to distance \\( r \\): work \\( =q_2V_1=q_2\\cdot\\dfrac{kq_1}{r} \\).<br><br>So \\( U=\\dfrac{kq_1q_2}{r} \\), a product of charges over the first power of r.",
+   "hint": "Energy = charge times potential.",
+   "distractor_logic": [
+    "That is the Coulomb force, which goes as \\( 1/r^2 \\).",
+    "Energy involves the product of the charges, not their sum.",
+    "Energy must fall towards zero as the charges separate."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-018",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "Two positive point charges are pushed closer together. Their mutual electrostatic potential energy",
+   "options": [
+    "decreases",
+    "increases",
+    "stays the same",
+    "becomes zero"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( U=\\dfrac{kq_1q_2}{r} \\) is positive for like charges and grows as r shrinks.<br><br>Work must be done against the repulsion, and it is stored as potential energy.",
+   "hint": "Like charges repel; you must push to bring them together.",
+   "distractor_logic": [
+    "That is what happens for unlike charges, which attract.",
+    "U depends on r, so it must change.",
+    "U becomes zero only at infinite separation."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-019",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "Inside a conductor in electrostatic equilibrium, the electric field is",
+   "options": [
+    "uniform and nonzero",
+    "largest at the centre",
+    "zero everywhere",
+    "equal to the field just outside the surface"
+   ],
+   "correct_index": 2,
+   "explanation": "If there were a field inside, the free electrons would move. In equilibrium they have stopped moving, so the net field inside is zero.",
+   "hint": "What would free electrons do if a field existed inside?",
+   "distractor_logic": [
+    "Any nonzero field would keep driving a current, contradicting equilibrium.",
+    "There is no field at all inside, at the centre or elsewhere.",
+    "The field just outside is \\( \\sigma/\\epsilon_0 \\); inside it is zero."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-020",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "Any excess charge given to an isolated conductor resides",
+   "options": [
+    "uniformly throughout its volume",
+    "at its centre",
+    "partly inside and partly on the surface in equal amounts",
+    "on its outer surface"
+   ],
+   "correct_index": 3,
+   "explanation": "Since E = 0 inside, Gauss's law applied to any surface just inside the conductor encloses zero charge.<br><br>So the excess charge must sit on the outer surface.",
+   "hint": "Apply Gauss's law to a surface just inside the conductor.",
+   "distractor_logic": [
+    "Volume charge would create a field inside, which cannot exist in equilibrium.",
+    "Charge at the centre would produce a field inside the conductor.",
+    "No excess charge can remain in the interior."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-021",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "In electrostatic equilibrium, the surface of a conductor is",
+   "options": [
+    "an equipotential surface",
+    "a surface along which the field is tangential",
+    "a surface of zero potential",
+    "a surface where potential is highest at sharp points"
+   ],
+   "correct_index": 0,
+   "explanation": "The field has no tangential component at the surface (otherwise charges would move along it), so no work is done moving along the surface.<br><br>Hence the whole surface, and indeed the whole conductor, is at one potential.",
+   "hint": "No work is done moving a charge along the surface.",
+   "distractor_logic": [
+    "The field at the surface is normal, not tangential.",
+    "The potential is constant, but not necessarily zero.",
+    "Charge density may be higher at sharp points, but the potential is the same everywhere."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-022",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "Just outside the surface of a charged conductor with local surface charge density \\( \\sigma \\), the electric field is",
+   "options": [
+    "\\( \\dfrac{\\sigma}{2\\epsilon_0} \\), normal to the surface",
+    "\\( \\dfrac{\\sigma}{\\epsilon_0} \\), normal to the surface",
+    "\\( \\dfrac{\\sigma}{\\epsilon_0} \\), tangential to the surface",
+    "\\( 0 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "A small Gaussian pill-box with one face inside (E = 0) and one just outside gives \\( EA=\\dfrac{\\sigma A}{\\epsilon_0} \\).<br><br>So \\( E=\\dfrac{\\sigma}{\\epsilon_0} \\), directed normal to the surface.",
+   "hint": "Only one face of the pill-box has field through it.",
+   "distractor_logic": [
+    "\\( \\sigma/2\\epsilon_0 \\) is for an isolated thin sheet with field on both sides.",
+    "The field at a conductor surface has no tangential part.",
+    "The field is zero inside the conductor, not just outside it."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-023",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "A hollow conductor has an empty cavity inside. When the conductor is placed in an external electric field, the field inside the cavity is",
+   "options": [
+    "equal to the external field",
+    "half the external field",
+    "zero",
+    "directed opposite to the external field"
+   ],
+   "correct_index": 2,
+   "explanation": "Charges rearrange on the outer surface so that the field in the conductor, and in any empty cavity within it, is zero.<br><br>This is electrostatic shielding.",
+   "hint": "Think of electrostatic shielding.",
+   "distractor_logic": [
+    "The conductor shields the cavity completely.",
+    "There is no partial shielding in electrostatics.",
+    "The induced charges cancel the field; they do not reverse it."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-024",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 1,
+   "type": "regular",
+   "question": "Charges \\( +2\\ \\mu\\text{C} \\) and \\( +3\\ \\mu\\text{C} \\) are \\( 30\\ \\text{cm} \\) apart. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). Their electrostatic potential energy is",
+   "options": [
+    "\\( -0.18\\ \\text{J} \\)",
+    "\\( 0.054\\ \\text{J} \\)",
+    "\\( 0.6\\ \\text{J} \\)",
+    "\\( 0.18\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( U=\\dfrac{kq_1q_2}{r}=\\dfrac{9\\times10^9\\times2\\times10^{-6}\\times3\\times10^{-6}}{0.3} \\).<br><br>\\( U=\\dfrac{0.054}{0.3}=0.18\\ \\text{J} \\), positive for like charges.",
+   "hint": "\\( U=kq_1q_2/r \\).",
+   "distractor_logic": [
+    "Like charges have positive potential energy.",
+    "Forgets to divide by r.",
+    "Divides by \\( r^2 \\), as in Coulomb's law."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-025",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "The capacitance of a capacitor is defined as",
+   "options": [
+    "\\( C=\\dfrac{Q}{V} \\), measured in farad",
+    "\\( C=QV \\), measured in farad",
+    "\\( C=\\dfrac{V}{Q} \\), measured in farad",
+    "\\( C=\\dfrac{Q}{V} \\), measured in volt"
+   ],
+   "correct_index": 0,
+   "explanation": "Capacitance is charge stored per unit potential difference: \\( C=Q/V \\).<br><br>Its unit is \\( 1\\ \\text{F}=1\\ \\text{C V}^{-1} \\).",
+   "hint": "Charge stored per volt.",
+   "distractor_logic": [
+    "Multiplies instead of dividing.",
+    "Inverts the ratio.",
+    "The volt is the unit of potential, not capacitance."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-026",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "The capacitance of a parallel plate capacitor with plate area \\( A \\) and separation \\( d \\) in vacuum is",
+   "options": [
+    "\\( \\dfrac{\\epsilon_0d}{A} \\)",
+    "\\( \\dfrac{\\epsilon_0A}{d} \\)",
+    "\\( \\dfrac{A}{\\epsilon_0d} \\)",
+    "\\( \\epsilon_0Ad \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( E=\\dfrac{\\sigma}{\\epsilon_0}=\\dfrac{Q}{\\epsilon_0A} \\) and \\( V=Ed=\\dfrac{Qd}{\\epsilon_0A} \\).<br><br>\\( C=\\dfrac{Q}{V}=\\dfrac{\\epsilon_0A}{d} \\).",
+   "hint": "Bigger plates store more; wider gaps store less.",
+   "distractor_logic": [
+    "Inverts area and separation.",
+    "Puts \\( \\epsilon_0 \\) in the denominator.",
+    "Capacitance must decrease as d grows."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-027",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "A capacitor of capacitance \\( C_0 \\) (vacuum between plates) is completely filled with a dielectric of dielectric constant \\( K \\). Its new capacitance is",
+   "options": [
+    "\\( \\dfrac{C_0}{K} \\)",
+    "\\( C_0 \\)",
+    "\\( KC_0 \\)",
+    "\\( K^2C_0 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The dielectric reduces the field for a given charge by a factor K, so V falls by K for the same Q.<br><br>\\( C=\\dfrac{Q}{V}=KC_0 \\).",
+   "hint": "A dielectric always increases capacitance.",
+   "distractor_logic": [
+    "A dielectric increases capacitance; it does not reduce it.",
+    "The capacitance depends on the medium between the plates.",
+    "The factor is K, not its square."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-028",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "The capacitance of a parallel plate capacitor depends on",
+   "options": [
+    "the charge on the plates",
+    "the potential difference applied across it",
+    "both the charge on the plates and the applied voltage",
+    "the plate area, the plate separation and the medium between the plates"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( C=\\dfrac{K\\epsilon_0A}{d} \\) contains only geometry and the medium.<br><br>If Q doubles, V doubles too, and \\( Q/V \\) stays the same.",
+   "hint": "Look at what appears in the capacitance formula.",
+   "distractor_logic": [
+    "Changing Q changes V in proportion; C is unaffected.",
+    "Changing V changes Q in proportion; C is unaffected.",
+    "Neither Q nor V appears in the formula for C."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-029",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "A capacitor holds a charge of \\( 6\\ \\mu\\text{C} \\) when the potential difference across it is \\( 3\\ \\text{V} \\). Its capacitance is",
+   "options": [
+    "\\( 2\\ \\mu\\text{F} \\)",
+    "\\( 18\\ \\mu\\text{F} \\)",
+    "\\( 0.5\\ \\mu\\text{F} \\)",
+    "\\( 1\\ \\mu\\text{F} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( C=\\dfrac{Q}{V}=\\dfrac{6\\ \\mu\\text{C}}{3\\ \\text{V}}=2\\ \\mu\\text{F} \\).",
+   "hint": "\\( C=Q/V \\).",
+   "distractor_logic": [
+    "Multiplies Q by V.",
+    "Divides V by Q.",
+    "Adds a stray factor of one half, as in the energy formula."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-030",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "If the separation between the plates of a parallel plate capacitor is doubled (nothing else changed), its capacitance",
+   "options": [
+    "is doubled",
+    "is halved",
+    "is unchanged",
+    "becomes one quarter"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( C=\\dfrac{\\epsilon_0A}{d}\\propto\\dfrac1d \\), so doubling d halves C.",
+   "hint": "C varies inversely with d.",
+   "distractor_logic": [
+    "Treats C as proportional to d.",
+    "C depends on the geometry, including d.",
+    "C goes as \\( 1/d \\), not \\( 1/d^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-031",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "A capacitor carrying a fixed charge has a field \\( E_0 \\) between its plates. When the gap is filled with a dielectric of constant \\( K \\), the field becomes",
+   "options": [
+    "\\( KE_0 \\)",
+    "\\( E_0 \\)",
+    "\\( \\dfrac{E_0}{K} \\)",
+    "\\( 0 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The dielectric polarises, and its induced surface charges oppose the applied field.<br><br>With the free charge fixed, the net field is reduced to \\( E_0/K \\).",
+   "hint": "Polarisation charges partly cancel the field.",
+   "distractor_logic": [
+    "The induced charges oppose the field, so it cannot grow.",
+    "The dielectric does change the field when the charge is fixed.",
+    "A dielectric reduces the field but, unlike a conductor, does not cancel it."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-032",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 1,
+   "type": "regular",
+   "question": "A parallel plate capacitor has plates of area \\( 0.02\\ \\text{m}^2 \\) separated by \\( 1\\ \\text{mm} \\) of air. Take \\( \\epsilon_0=8.85\\times10^{-12}\\ \\text{C}^2\\,\\text{N}^{-1}\\text{m}^{-2} \\). Its capacitance is",
+   "options": [
+    "\\( 1.77\\times10^{-13}\\ \\text{F} \\)",
+    "\\( 3.54\\times10^{-10}\\ \\text{F} \\)",
+    "\\( 8.85\\times10^{-11}\\ \\text{F} \\)",
+    "\\( 1.77\\times10^{-10}\\ \\text{F} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( C=\\dfrac{\\epsilon_0A}{d}=\\dfrac{8.85\\times10^{-12}\\times0.02}{1\\times10^{-3}} \\).<br><br>\\( C=1.77\\times10^{-10}\\ \\text{F}=177\\ \\text{pF} \\).",
+   "hint": "Convert mm to m.",
+   "distractor_logic": [
+    "Takes d as 1 m, not 1 mm.",
+    "Introduces a stray factor of 2.",
+    "Introduces a stray factor of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-033",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "For capacitors \\( C_1,C_2,\\ldots \\) connected in series, the equivalent capacitance satisfies",
+   "options": [
+    "\\( \\dfrac{1}{C_{eq}}=\\dfrac{1}{C_1}+\\dfrac{1}{C_2}+\\ldots \\)",
+    "\\( C_{eq}=C_1+C_2+\\ldots \\)",
+    "\\( C_{eq}=\\dfrac{C_1C_2\\ldots}{C_1+C_2+\\ldots}\\ \\text{for any number of capacitors} \\)",
+    "\\( C_{eq}=\\sqrt{C_1C_2} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "In series each capacitor has the same Q, and the voltages add: \\( V=\\dfrac{Q}{C_1}+\\dfrac{Q}{C_2}+\\ldots \\).<br><br>Dividing by Q: \\( \\dfrac1{C_{eq}}=\\sum\\dfrac1{C_i} \\). This is the form of resistors in parallel.",
+   "hint": "Same charge, voltages add.",
+   "distractor_logic": [
+    "This is the parallel rule for capacitors (or series rule for resistors).",
+    "The product-over-sum shortcut is valid only for exactly two capacitors.",
+    "No such geometric-mean rule exists."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-034",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "For capacitors \\( C_1,C_2,\\ldots \\) connected in parallel, the equivalent capacitance is",
+   "options": [
+    "\\( \\dfrac{1}{C_{eq}}=\\dfrac{1}{C_1}+\\dfrac{1}{C_2}+\\ldots \\)",
+    "\\( C_{eq}=C_1+C_2+\\ldots \\)",
+    "\\( C_{eq}=\\dfrac{C_1+C_2+\\ldots}{n} \\)",
+    "\\( C_{eq}=\\text{the largest of }C_1,C_2,\\ldots \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "In parallel each capacitor has the same V, and the charges add: \\( Q=C_1V+C_2V+\\ldots \\).<br><br>So \\( C_{eq}=\\sum C_i \\), like resistors in series.",
+   "hint": "Same voltage, charges add.",
+   "distractor_logic": [
+    "This is the series rule for capacitors, borrowed from resistors in parallel.",
+    "Averaging would make the combination no better than one capacitor.",
+    "The combination stores more than any single capacitor."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-035",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "When capacitors are connected in series across a battery, the quantity that is the same for every capacitor is the",
+   "options": [
+    "potential difference",
+    "energy stored",
+    "charge",
+    "capacitance"
+   ],
+   "correct_index": 2,
+   "explanation": "Charge moves onto the outer plates and induces equal and opposite charges on each inner plate pair, so every capacitor carries the same Q.<br><br>The voltage then divides as V = Q/C.",
+   "hint": "Think about induction between neighbouring plates.",
+   "distractor_logic": [
+    "Common voltage is the property of a parallel connection.",
+    "Energy Q squared over 2C differs when C differs.",
+    "The capacitors may have any capacitances."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-036",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "When capacitors are connected in parallel across a battery, the quantity that is the same for every capacitor is the",
+   "options": [
+    "charge",
+    "energy stored",
+    "electric field between the plates",
+    "potential difference"
+   ],
+   "correct_index": 3,
+   "explanation": "Each capacitor is connected directly between the same two points, so each has the full battery voltage.<br><br>The charge then divides as Q = CV.",
+   "hint": "Each capacitor sits across the same two terminals.",
+   "distractor_logic": [
+    "Common charge is the property of a series connection.",
+    "Energy one half C V squared differs when C differs.",
+    "The field V/d differs if the plate separations differ."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-037",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "A capacitor of capacitance \\( C \\) has charge \\( Q \\) and potential difference \\( V \\). The energy stored in it is",
+   "options": [
+    "\\( \\dfrac12CV^2 \\)",
+    "\\( CV^2 \\)",
+    "\\( \\dfrac12CV \\)",
+    "\\( \\dfrac{Q^2}{C} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Charging from 0 to Q against a rising voltage: \\( U=\\displaystyle\\int_0^Q\\dfrac{q}{C}\\,dq=\\dfrac{Q^2}{2C}=\\dfrac12CV^2=\\dfrac12QV \\).",
+   "hint": "The average voltage during charging is half the final voltage.",
+   "distractor_logic": [
+    "Misses the factor one half.",
+    "V must be squared for units of energy.",
+    "Misses the factor one half in the charge form."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-038",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "Two capacitors of \\( 6\\ \\mu\\text{F} \\) each are connected in series. The equivalent capacitance is",
+   "options": [
+    "\\( 12\\ \\mu\\text{F} \\)",
+    "\\( 3\\ \\mu\\text{F} \\)",
+    "\\( 6\\ \\mu\\text{F} \\)",
+    "\\( 36\\ \\mu\\text{F} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\dfrac1{C_{eq}}=\\dfrac16+\\dfrac16=\\dfrac13 \\), so \\( C_{eq}=3\\ \\mu\\text{F} \\), smaller than either.",
+   "hint": "Series capacitance is less than the smallest one.",
+   "distractor_logic": [
+    "Adds them, which is the parallel rule.",
+    "Assumes identical capacitors in series change nothing.",
+    "Multiplies the capacitances."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-039",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "A \\( 4\\ \\mu\\text{F} \\) capacitor is charged to \\( 10\\ \\text{V} \\). The energy stored is",
+   "options": [
+    "\\( 4\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-5}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 1\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( U=\\dfrac12CV^2=\\dfrac12\\times4\\times10^{-6}\\times100=2\\times10^{-4}\\ \\text{J} \\).",
+   "hint": "\\( U=\\tfrac12CV^2 \\).",
+   "distractor_logic": [
+    "Forgets the factor one half.",
+    "Forgets to square V.",
+    "Uses one quarter instead of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L1-040",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 1,
+   "type": "regular",
+   "question": "The energy stored per unit volume in an electric field \\( E \\) in vacuum is",
+   "options": [
+    "\\( \\epsilon_0E^2 \\)",
+    "\\( \\dfrac12\\epsilon_0E \\)",
+    "\\( \\dfrac{E^2}{2\\epsilon_0} \\)",
+    "\\( \\dfrac12\\epsilon_0E^2 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "For a parallel plate capacitor, \\( U=\\dfrac12CV^2=\\dfrac12\\dfrac{\\epsilon_0A}{d}(Ed)^2=\\dfrac12\\epsilon_0E^2(Ad) \\).<br><br>Dividing by the volume Ad gives \\( u=\\dfrac12\\epsilon_0E^2 \\).",
+   "hint": "Divide the capacitor's energy by its volume.",
+   "distractor_logic": [
+    "Misses the factor one half.",
+    "E must be squared.",
+    "Puts \\( \\epsilon_0 \\) in the denominator."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-001",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "Charges \\( +4\\ \\text{nC} \\) and \\( +3\\ \\text{nC} \\) are fixed at points A and B. Point P is \\( 30\\ \\text{cm} \\) from each of them, with \\( \\angle APB=90^\\circ \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at P is",
+   "options": [
+    "\\( 210\\ \\text{V} \\)",
+    "\\( 150\\ \\text{V} \\)",
+    "\\( 30\\ \\text{V} \\)",
+    "\\( 500\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( V_A=\\dfrac{9\\times10^9\\times4\\times10^{-9}}{0.30}=120\\ \\text{V} \\) and \\( V_B=\\dfrac{9\\times10^9\\times3\\times10^{-9}}{0.30}=90\\ \\text{V} \\).<br><br>Potential is a scalar, so \\( V_P=120+90=210\\ \\text{V} \\). The \\( 90^\\circ \\) angle plays no role.",
+   "hint": "The angle between AP and BP is a distraction for potential.",
+   "distractor_logic": [
+    "Combines the two potentials like perpendicular vectors, \\( \\sqrt{120^2+90^2} \\); potential is not a vector.",
+    "Subtracts the contributions although both charges are positive.",
+    "Combines the field magnitudes \\( kq/r^2 \\) (400 and 300) as vectors; that is a field calculation, not potential."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-002",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "A charge \\( +5\\ \\text{nC} \\) is at \\( x=0 \\) and a charge \\( -3\\ \\text{nC} \\) is at \\( x=0.6\\ \\text{m} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at \\( x=0.3\\ \\text{m} \\) is",
+   "options": [
+    "\\( 240\\ \\text{V} \\)",
+    "\\( 60\\ \\text{V} \\)",
+    "\\( -60\\ \\text{V} \\)",
+    "\\( 0\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Both charges are \\( 0.3\\ \\text{m} \\) away: \\( V=\\dfrac{9\\times10^9}{0.3}\\left(5\\times10^{-9}-3\\times10^{-9}\\right) \\).<br><br>\\( V=150-90=60\\ \\text{V} \\).",
+   "hint": "Keep the sign of each charge and add.",
+   "distractor_logic": [
+    "Adds 150 V and 90 V, ignoring that the second charge is negative.",
+    "Reverses the signs of both contributions.",
+    "Assumes the midpoint of any two opposite charges is at zero potential; that holds only for equal magnitudes."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-003",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "A charge \\( +1\\ \\text{nC} \\) is at \\( x=0 \\) and \\( -3\\ \\text{nC} \\) is at \\( x=1.2\\ \\text{m} \\). At which point between them is the electric potential zero?",
+   "options": [
+    "\\( x=0.9\\ \\text{m} \\)",
+    "\\( x=0.6\\ \\text{m} \\)",
+    "\\( x=0.3\\ \\text{m} \\)",
+    "\\( x=0.4\\ \\text{m} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Set \\( \\dfrac{k(1)}{x}+\\dfrac{k(-3)}{1.2-x}=0 \\Rightarrow 1.2-x=3x \\).<br><br>\\( x=0.3\\ \\text{m} \\), closer to the smaller charge, as expected.",
+   "hint": "The zero-potential point lies closer to the smaller-magnitude charge.",
+   "distractor_logic": [
+    "Swaps the roles of the charges, placing the point near the larger charge.",
+    "Assumes V = 0 at the midpoint, which needs equal magnitudes.",
+    "Divides the separation by the charge ratio, 1.2/3, instead of splitting it in the ratio 1 : 3."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-004",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "A short dipole has dipole moment \\( p=4\\times10^{-9}\\ \\text{C m} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at an axial point \\( 0.6\\ \\text{m} \\) from its centre (\\( r\\gg a \\)) is",
+   "options": [
+    "\\( 60\\ \\text{V} \\)",
+    "\\( 200\\ \\text{V} \\)",
+    "\\( 0\\ \\text{V} \\)",
+    "\\( 100\\ \\text{V} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "On the axis, \\( V=\\dfrac{kp}{r^2}=\\dfrac{9\\times10^9\\times4\\times10^{-9}}{0.36} \\).<br><br>\\( V=\\dfrac{36}{0.36}=100\\ \\text{V} \\).",
+   "hint": "Dipole potential on the axis: \\( kp/r^2 \\).",
+   "distractor_logic": [
+    "Divides by \\( r \\) instead of \\( r^2 \\), as for a point charge.",
+    "Borrows the factor 2 from the axial field formula \\( 2kp/r^3 \\).",
+    "Zero is the potential on the equatorial line, not the axis."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-005",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "A short dipole of moment \\( p=2\\times10^{-9}\\ \\text{C m} \\) is at the origin. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at a point \\( 0.3\\ \\text{m} \\) away, on a line making \\( 60^\\circ \\) with the dipole axis, is",
+   "options": [
+    "\\( 100\\ \\text{V} \\)",
+    "\\( 100\\sqrt3\\ \\text{V} \\)",
+    "\\( 200\\ \\text{V} \\)",
+    "\\( 50\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( V=\\dfrac{kp\\cos\\theta}{r^2}=\\dfrac{9\\times10^9\\times2\\times10^{-9}\\times\\cos60^\\circ}{0.09} \\).<br><br>\\( V=200\\times\\dfrac12=100\\ \\text{V} \\).",
+   "hint": "The general formula uses \\( \\cos\\theta \\), where \\( \\theta \\) is measured from the axis.",
+   "distractor_logic": [
+    "Uses \\( \\sin\\theta \\) instead of \\( \\cos\\theta \\).",
+    "Ignores the \\( \\cos\\theta \\) factor altogether.",
+    "Uses \\( \\cos^2\\theta \\) instead of \\( \\cos\\theta \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-006",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "A short dipole of moment \\( p=2\\times10^{-9}\\ \\text{C m} \\) lies along the x-axis. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at a point on its equatorial line, \\( 0.5\\ \\text{m} \\) from its centre, is",
+   "options": [
+    "\\( 72\\ \\text{V} \\)",
+    "\\( 0\\ \\text{V} \\)",
+    "\\( 36\\ \\text{V} \\)",
+    "\\( 144\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Every equatorial point is equidistant from \\( +q \\) and \\( -q \\), so \\( \\dfrac{kq}{r'}-\\dfrac{kq}{r'}=0 \\).<br><br>Equivalently \\( \\theta=90^\\circ \\) gives \\( \\cos\\theta=0 \\) in \\( V=\\dfrac{kp\\cos\\theta}{r^2} \\).",
+   "hint": "On the equatorial line both charges are at the same distance.",
+   "distractor_logic": [
+    "Uses the axial value \\( kp/r^2 \\) at an equatorial point.",
+    "Takes half the axial value, borrowing the equatorial field's ratio to the axial field.",
+    "Doubles the axial value, mixing up potential with the axial field formula."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-007",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "Charges \\( +2\\ \\text{nC} \\), \\( +2\\ \\text{nC} \\) and \\( -1\\ \\text{nC} \\) sit at the vertices of an equilateral triangle. Each vertex is \\( 10\\ \\text{cm} \\) from the centroid. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at the centroid is",
+   "options": [
+    "\\( 450\\ \\text{V} \\)",
+    "\\( 0\\ \\text{V} \\)",
+    "\\( 270\\ \\text{V} \\)",
+    "\\( 360\\ \\text{V} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "All three charges are \\( 0.1\\ \\text{m} \\) from the centroid: \\( V=\\dfrac{k}{0.1}(2+2-1)\\times10^{-9} \\).<br><br>\\( V=\\dfrac{9\\times10^9\\times3\\times10^{-9}}{0.1}=270\\ \\text{V} \\).",
+   "hint": "Same distance for every charge, so just add the signed charges.",
+   "distractor_logic": [
+    "Adds the magnitudes 2 + 2 + 1, ignoring the negative sign.",
+    "Assumes a symmetric arrangement gives zero potential; that is true of the field in some cases, never automatically of V.",
+    "Leaves out the negative charge entirely."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-008",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 2,
+   "type": "regular",
+   "question": "A point charge \\( +5\\ \\text{nC} \\) is fixed. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The work needed to bring a charge \\( +2\\ \\mu\\text{C} \\) slowly from infinity to a point \\( 45\\ \\text{cm} \\) from it is",
+   "options": [
+    "\\( -2\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-2}\\ \\text{J} \\)",
+    "\\( 1\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Potential at the point: \\( V=\\dfrac{9\\times10^9\\times5\\times10^{-9}}{0.45}=100\\ \\text{V} \\).<br><br>Work \\( W=qV=2\\times10^{-6}\\times100=2\\times10^{-4}\\ \\text{J} \\), positive because like charges repel.",
+   "hint": "First find V at the point, then use \\( W=qV \\).",
+   "distractor_logic": [
+    "Wrong sign: pushing a positive charge towards a positive charge needs positive external work.",
+    "Uses \\( 1\\ \\mu\\text{C}=10^{-4}\\ \\text{C} \\) instead of \\( 10^{-6}\\ \\text{C} \\).",
+    "Introduces a spurious factor of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-009",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "Two large parallel plates are \\( 5\\ \\text{cm} \\) apart with a potential difference of \\( 100\\ \\text{V} \\) between them. The magnitude of the uniform field between them is",
+   "options": [
+    "\\( 2000\\ \\text{V m}^{-1} \\)",
+    "\\( 20\\ \\text{V m}^{-1} \\)",
+    "\\( 5\\ \\text{V m}^{-1} \\)",
+    "\\( 500\\ \\text{V m}^{-1} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( E=\\dfrac{V}{d}=\\dfrac{100}{0.05} \\).<br><br>\\( E=2000\\ \\text{V m}^{-1} \\).",
+   "hint": "Convert cm to m before dividing.",
+   "distractor_logic": [
+    "Divides by 5 without converting cm to m.",
+    "Multiplies V by d in metres instead of dividing.",
+    "Multiplies V by d in centimetres."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-010",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "Point A is at potential \\( 10\\ \\text{V} \\) and point B is at \\( 50\\ \\text{V} \\). The work done by an external agent in slowly moving a charge \\( +2\\ \\mu\\text{C} \\) from A to B is",
+   "options": [
+    "\\( -8\\times10^{-5}\\ \\text{J} \\)",
+    "\\( 8\\times10^{-5}\\ \\text{J} \\)",
+    "\\( 1.2\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 1\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( W=q(V_B-V_A)=2\\times10^{-6}\\times(50-10) \\).<br><br>\\( W=8\\times10^{-5}\\ \\text{J} \\), positive: the positive charge is pushed to higher potential.",
+   "hint": "Final minus initial: \\( V_B-V_A \\).",
+   "distractor_logic": [
+    "Uses \\( V_A-V_B \\), the wrong order.",
+    "Adds the two potentials instead of subtracting.",
+    "Uses only \\( qV_B \\), ignoring the starting potential."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-011",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "A charge \\( -3\\ \\mu\\text{C} \\) is moved slowly from point A (\\( V_A=20\\ \\text{V} \\)) to point B (\\( V_B=-10\\ \\text{V} \\)). The work done by the external agent is",
+   "options": [
+    "\\( -9\\times10^{-5}\\ \\text{J} \\)",
+    "\\( +3\\times10^{-5}\\ \\text{J} \\)",
+    "\\( +9\\times10^{-5}\\ \\text{J} \\)",
+    "\\( -3\\times10^{-5}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( W=q(V_B-V_A)=(-3\\times10^{-6})\\times(-10-20) \\).<br><br>\\( W=(-3\\times10^{-6})\\times(-30)=+9\\times10^{-5}\\ \\text{J} \\): a negative charge is being pushed to lower potential, against its natural tendency.",
+   "hint": "Carry both signs: the charge's and the potential difference's.",
+   "distractor_logic": [
+    "Uses \\( V_A-V_B \\), flipping the sign.",
+    "Uses only \\( qV_B \\), ignoring \\( V_A \\).",
+    "Adds \\( V_A \\) and \\( V_B \\) instead of subtracting."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-012",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "The potential along the x-axis is \\( V(x)=5x^2-3x \\) (V in volts, x in metres). The x-component of the electric field at \\( x=1\\ \\text{m} \\) is",
+   "options": [
+    "\\( +7\\ \\text{V m}^{-1} \\)",
+    "\\( -2\\ \\text{V m}^{-1} \\)",
+    "\\( -10\\ \\text{V m}^{-1} \\)",
+    "\\( -7\\ \\text{V m}^{-1} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( E_x=-\\dfrac{dV}{dx}=-(10x-3) \\).<br><br>At \\( x=1 \\): \\( E_x=-(10-3)=-7\\ \\text{V m}^{-1} \\).",
+   "hint": "Differentiate, then remember the minus sign.",
+   "distractor_logic": [
+    "Forgets the minus sign in \\( E=-dV/dx \\).",
+    "Uses the value of \\( -V(1) \\) rather than the derivative.",
+    "Differentiates only \\( 5x^2 \\) and drops the \\( -3x \\) term."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-013",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "A uniform field of \\( 200\\ \\text{V m}^{-1} \\) points along \\( +x \\). The potential at \\( x=0 \\) is \\( 50\\ \\text{V} \\). The potential at \\( x=0.2\\ \\text{m} \\) is",
+   "options": [
+    "\\( 10\\ \\text{V} \\)",
+    "\\( 90\\ \\text{V} \\)",
+    "\\( 50\\ \\text{V} \\)",
+    "\\( 40\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Moving along the field, potential falls: \\( \\Delta V=-E\\,\\Delta x=-200\\times0.2=-40\\ \\text{V} \\).<br><br>\\( V=50-40=10\\ \\text{V} \\).",
+   "hint": "Potential decreases in the direction of the field.",
+   "distractor_logic": [
+    "Adds the drop instead of subtracting; potential falls along the field.",
+    "Assumes potential stays constant in a uniform field.",
+    "Reports the size of the change instead of the new potential."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-014",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "Three parallel equipotential planes are at \\( 10\\ \\text{V} \\), \\( 20\\ \\text{V} \\) and \\( 30\\ \\text{V} \\), with adjacent planes \\( 0.5\\ \\text{cm} \\) apart. The electric field in this region is",
+   "options": [
+    "\\( 2000\\ \\text{V m}^{-1} \\), directed from the 10 V plane towards the 30 V plane",
+    "\\( 2000\\ \\text{V m}^{-1} \\), directed from the 30 V plane towards the 10 V plane",
+    "\\( 20\\ \\text{V m}^{-1} \\), directed from the 30 V plane towards the 10 V plane",
+    "\\( 6000\\ \\text{V m}^{-1} \\), directed from the 30 V plane towards the 10 V plane"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( |E|=\\dfrac{\\Delta V}{\\Delta x}=\\dfrac{10}{0.005}=2000\\ \\text{V m}^{-1} \\).<br><br>The field points towards decreasing potential: from 30 V towards 10 V, perpendicular to the planes.",
+   "hint": "Magnitude from the gradient; direction towards lower V.",
+   "distractor_logic": [
+    "Right magnitude, but the field points from low to high potential here; it must point towards lower V.",
+    "Divides by 0.5 without converting cm to m.",
+    "Uses the total 20 V difference across only one 0.5 cm gap."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-015",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "A charge \\( +5\\ \\mu\\text{C} \\) is carried halfway around a circle of radius \\( 20\\ \\text{cm} \\) centred on a fixed point charge \\( +10\\ \\text{nC} \\). The work done by the external agent is",
+   "options": [
+    "\\( 2.25\\times10^{-3}\\ \\text{J} \\)",
+    "\\( -2.25\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 0 \\)",
+    "\\( 4.5\\times10^{-3}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The circle is centred on the point charge, so every point on it has the same potential; it lies on an equipotential sphere.<br><br>\\( W=q(V_B-V_A)=0 \\).",
+   "hint": "Is the distance from the fixed charge changing along the path?",
+   "distractor_logic": [
+    "This is \\( qV \\) at the circle, the work to bring the charge in from infinity, not to move it along the circle.",
+    "Same as \\( qV \\) but with the wrong sign.",
+    "Doubles \\( qV \\), as if work accumulates along the arc."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-016",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 2,
+   "type": "regular",
+   "question": "A uniform field \\( E=500\\ \\text{V m}^{-1} \\) points along \\( +x \\). Point A is at \\( (0,0) \\) and B at \\( (0.4\\ \\text{m},\\,0.3\\ \\text{m}) \\). The potential difference \\( V_A-V_B \\) is",
+   "options": [
+    "\\( 250\\ \\text{V} \\)",
+    "\\( 150\\ \\text{V} \\)",
+    "\\( -200\\ \\text{V} \\)",
+    "\\( 200\\ \\text{V} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Only displacement along the field changes V: \\( V_A-V_B=E(x_B-x_A)=500\\times0.4 \\).<br><br>\\( V_A-V_B=200\\ \\text{V} \\); A is at the higher potential because B lies further along the field.",
+   "hint": "Only the component of displacement along the field matters.",
+   "distractor_logic": [
+    "Uses the full distance AB = 0.5 m instead of its component along the field.",
+    "Uses the y-displacement, which is perpendicular to the field.",
+    "Gets the sign wrong; potential falls along the field, so A is higher."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-017",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "Three charges, each \\( +1\\ \\mu\\text{C} \\), are at the corners of an equilateral triangle of side \\( 10\\ \\text{cm} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The total electrostatic potential energy of the system is",
+   "options": [
+    "\\( 0.27\\ \\text{J} \\)",
+    "\\( 0.09\\ \\text{J} \\)",
+    "\\( 0.54\\ \\text{J} \\)",
+    "\\( 0.18\\ \\text{J} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Count every pair once: 3 charges give 3 pairs (12, 23, 13).<br><br>Each pair: \\( \\dfrac{9\\times10^9\\times10^{-12}}{0.1}=0.09\\ \\text{J} \\).<br><br>\\( U=3\\times0.09=0.27\\ \\text{J} \\).",
+   "hint": "List the distinct pairs of charges.",
+   "distractor_logic": [
+    "Counts only one pair.",
+    "Counts each pair twice (6 ordered pairs instead of 3).",
+    "Counts only two of the three pairs."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-018",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "Charges \\( +1\\ \\mu\\text{C} \\), \\( -1\\ \\mu\\text{C} \\) and \\( +1\\ \\mu\\text{C} \\) are placed at \\( x=0 \\), \\( x=0.1\\ \\text{m} \\) and \\( x=0.2\\ \\text{m} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The electrostatic potential energy of the system is",
+   "options": [
+    "\\( -0.18\\ \\text{J} \\)",
+    "\\( -0.135\\ \\text{J} \\)",
+    "\\( +0.225\\ \\text{J} \\)",
+    "\\( -0.09\\ \\text{J} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Pairs: (1,2) \\( \\dfrac{k(1)(-1)\\times10^{-12}}{0.1}=-0.09\\ \\text{J} \\); (2,3) \\( -0.09\\ \\text{J} \\); (1,3) \\( \\dfrac{k(1)(1)\\times10^{-12}}{0.2}=+0.045\\ \\text{J} \\).<br><br>\\( U=-0.09-0.09+0.045=-0.135\\ \\text{J} \\).",
+   "hint": "Three pairs, including the two outer charges 0.2 m apart.",
+   "distractor_logic": [
+    "Forgets the pair formed by the two outer charges.",
+    "Ignores the signs of the charges.",
+    "Counts just one neighbouring pair."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-019",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "Two charges \\( +2\\ \\mu\\text{C} \\) and \\( +5\\ \\mu\\text{C} \\) are brought slowly from a separation of \\( 30\\ \\text{cm} \\) to \\( 10\\ \\text{cm} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The work done by the external agent is",
+   "options": [
+    "\\( -0.6\\ \\text{J} \\)",
+    "\\( 1.2\\ \\text{J} \\)",
+    "\\( 0.6\\ \\text{J} \\)",
+    "\\( 0.9\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( kq_1q_2=9\\times10^9\\times10^{-11}=0.09\\ \\text{J m} \\). \\( U_i=\\dfrac{0.09}{0.3}=0.3\\ \\text{J} \\), \\( U_f=\\dfrac{0.09}{0.1}=0.9\\ \\text{J} \\).<br><br>\\( W=U_f-U_i=0.6\\ \\text{J} \\).",
+   "hint": "Work by the agent = final PE minus initial PE.",
+   "distractor_logic": [
+    "Wrong sign; pushing like charges together needs positive work.",
+    "Adds the initial and final energies.",
+    "Uses only the final energy, as if starting from infinity."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-020",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "A solid conducting sphere of radius \\( 10\\ \\text{cm} \\) carries a charge \\( 2\\ \\text{nC} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at its centre is",
+   "options": [
+    "\\( 0\\ \\text{V} \\)",
+    "\\( 1800\\ \\text{V} \\)",
+    "\\( 360\\ \\text{V} \\)",
+    "\\( 180\\ \\text{V} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "The whole conductor is an equipotential, so the centre has the surface potential \\( \\dfrac{kQ}{R} \\).<br><br>\\( V=\\dfrac{9\\times10^9\\times2\\times10^{-9}}{0.1}=180\\ \\text{V} \\).",
+   "hint": "Zero field inside means constant potential, not zero potential.",
+   "distractor_logic": [
+    "Confuses zero field with zero potential.",
+    "Divides by \\( R^2 \\), giving the surface field in V/m.",
+    "Uses R/2 as if the centre were closer to the charge."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-021",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "The surface charge density at a point on a charged conductor is \\( 8.85\\times10^{-6}\\ \\text{C m}^{-2} \\). Take \\( \\epsilon_0=8.85\\times10^{-12}\\ \\text{C}^2\\,\\text{N}^{-1}\\text{m}^{-2} \\). The field just outside the conductor at that point is",
+   "options": [
+    "\\( 1\\times10^{6}\\ \\text{N C}^{-1} \\)",
+    "\\( 5\\times10^{5}\\ \\text{N C}^{-1} \\)",
+    "\\( 0 \\)",
+    "\\( 2\\times10^{6}\\ \\text{N C}^{-1} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( E=\\dfrac{\\sigma}{\\epsilon_0}=\\dfrac{8.85\\times10^{-6}}{8.85\\times10^{-12}}=1\\times10^{6}\\ \\text{N C}^{-1} \\).",
+   "hint": "Use \\( E=\\sigma/\\epsilon_0 \\) at a conductor surface.",
+   "distractor_logic": [
+    "Uses the thin-sheet result \\( \\sigma/2\\epsilon_0 \\).",
+    "Zero is the field inside, not outside.",
+    "Uses \\( 2\\sigma/\\epsilon_0 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-022",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "A point charge \\( +q \\) is placed inside a cavity in an uncharged, isolated conductor. The charges that appear on the cavity wall and on the outer surface are",
+   "options": [
+    "\\( +q \\) on the cavity wall and \\( -q \\) on the outer surface",
+    "\\( -q \\) on the cavity wall and \\( +q \\) on the outer surface",
+    "\\( -q \\) on the cavity wall and nothing on the outer surface",
+    "no charge on either surface"
+   ],
+   "correct_index": 1,
+   "explanation": "For E = 0 in the conductor, a Gaussian surface inside the metal must enclose zero net charge, so the cavity wall carries \\( -q \\).<br><br>The conductor is neutral overall, so \\( +q \\) appears on the outer surface.",
+   "hint": "Gauss's law inside the metal, plus overall neutrality.",
+   "distractor_logic": [
+    "Signs reversed; the wall must cancel the enclosed +q.",
+    "Violates charge conservation; the uncharged conductor must stay neutral.",
+    "Then the field in the metal would not be zero."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-023",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "On an irregularly shaped charged conductor, the surface charge density is greatest",
+   "options": [
+    "on the flattest regions",
+    "at the point farthest from the centre, whatever its shape",
+    "at the sharpest points, where the curvature is greatest",
+    "uniformly everywhere, since the surface is an equipotential"
+   ],
+   "correct_index": 2,
+   "explanation": "The surface is an equipotential. Regions of small radius of curvature need a larger charge density to hold the same potential.<br><br>So charge crowds at sharp points, where the field is also strongest.",
+   "hint": "Compare small and large spheres held at the same potential.",
+   "distractor_logic": [
+    "Flat regions have the lowest density.",
+    "Density depends on curvature, not distance from the centre.",
+    "Equal potential does not mean equal charge density."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-024",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 2,
+   "type": "regular",
+   "question": "A charge \\( -2\\ \\mu\\text{C} \\) is placed at a point where the potential due to external charges is \\( 300\\ \\text{V} \\). Its potential energy there is",
+   "options": [
+    "\\( +6\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -1.5\\times10^{8}\\ \\text{J} \\)",
+    "\\( -600\\ \\text{J} \\)",
+    "\\( -6\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( U=qV=(-2\\times10^{-6})\\times300=-6\\times10^{-4}\\ \\text{J} \\).",
+   "hint": "\\( U=qV \\), keeping the sign of q.",
+   "distractor_logic": [
+    "Drops the sign of the charge.",
+    "Divides V by q instead of multiplying.",
+    "Forgets the micro prefix."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-025",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "A capacitor is charged to potential difference \\( V_0 \\) and then disconnected from the battery. A dielectric slab of constant \\( K=3 \\) is now inserted to fill the gap. The new potential difference is",
+   "options": [
+    "\\( \\dfrac{V_0}{3} \\)",
+    "\\( V_0 \\)",
+    "\\( 3V_0 \\)",
+    "\\( \\dfrac{V_0}{9} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Disconnected: Q stays fixed. C becomes \\( 3C_0 \\).<br><br>\\( V=\\dfrac{Q}{3C_0}=\\dfrac{V_0}{3} \\).",
+   "hint": "Isolated capacitor: which quantity cannot change?",
+   "distractor_logic": [
+    "Treats V as fixed, which is true only while the battery is connected.",
+    "Makes V rise, as if C decreased.",
+    "Divides by K twice."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-026",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "A capacitor stays connected to a battery of voltage \\( V \\) while a dielectric slab of constant \\( K \\) is inserted to fill the gap. If its original charge was \\( Q_0 \\), the new charge is",
+   "options": [
+    "\\( Q_0 \\)",
+    "\\( KQ_0 \\)",
+    "\\( \\dfrac{Q_0}{K} \\)",
+    "\\( K^2Q_0 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Connected: V is held fixed by the battery. C becomes \\( KC_0 \\).<br><br>\\( Q=KC_0V=KQ_0 \\); the battery supplies the extra charge.",
+   "hint": "Connected capacitor: which quantity is fixed?",
+   "distractor_logic": [
+    "Treats Q as fixed, which applies only to an isolated capacitor.",
+    "C increases, so Q at fixed V must increase too.",
+    "The factor is K, not its square."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-027",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "A \\( 5\\ \\text{pF} \\) air capacitor is charged to \\( 12\\ \\text{V} \\), disconnected from the battery, and then completely filled with a dielectric of \\( K=4 \\). The new potential difference is",
+   "options": [
+    "\\( 48\\ \\text{V} \\)",
+    "\\( 12\\ \\text{V} \\)",
+    "\\( 3\\ \\text{V} \\)",
+    "\\( 0.75\\ \\text{V} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Q is fixed: \\( Q=5\\ \\text{pF}\\times12\\ \\text{V}=60\\ \\text{pC} \\). New \\( C=20\\ \\text{pF} \\).<br><br>\\( V=\\dfrac{60}{20}=3\\ \\text{V} \\).",
+   "hint": "Disconnected capacitor keeps its charge.",
+   "distractor_logic": [
+    "Multiplies V by K instead of dividing.",
+    "Keeps V fixed as if still connected.",
+    "Divides by \\( K^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-028",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "A \\( 10\\ \\mu\\text{F} \\) capacitor remains connected to a \\( 6\\ \\text{V} \\) battery while a dielectric of \\( K=2 \\) is inserted to fill the gap. The charge on the capacitor becomes",
+   "options": [
+    "\\( 60\\ \\mu\\text{C} \\)",
+    "\\( 30\\ \\mu\\text{C} \\)",
+    "\\( 240\\ \\mu\\text{C} \\)",
+    "\\( 120\\ \\mu\\text{C} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "V stays 6 V. New \\( C=20\\ \\mu\\text{F} \\).<br><br>\\( Q=CV=20\\times6=120\\ \\mu\\text{C} \\).",
+   "hint": "Battery connected: V is fixed.",
+   "distractor_logic": [
+    "Keeps Q fixed as if disconnected.",
+    "Divides the charge by K.",
+    "Multiplies by \\( K^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-029",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "A parallel plate capacitor remains connected to a battery while its plate separation is doubled. If its original charge was \\( Q \\), the new charge is",
+   "options": [
+    "\\( \\dfrac{Q}{2} \\)",
+    "\\( Q \\)",
+    "\\( 2Q \\)",
+    "\\( \\dfrac{Q}{4} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "C halves when d doubles, and V is fixed by the battery.<br><br>\\( Q'=\\dfrac{C}{2}V=\\dfrac{Q}{2} \\); charge flows back into the battery.",
+   "hint": "With the battery connected, V is the fixed quantity.",
+   "distractor_logic": [
+    "Holds Q fixed, which applies only to an isolated capacitor.",
+    "C decreases, so the charge cannot increase.",
+    "C goes as \\( 1/d \\), not \\( 1/d^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-030",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "A capacitor with plates \\( 2\\ \\text{mm} \\) apart is connected to a \\( 100\\ \\text{V} \\) battery. With the battery still connected, the gap is completely filled with a dielectric of \\( K=5 \\). The field in the dielectric is",
+   "options": [
+    "\\( 1\\times10^{4}\\ \\text{V m}^{-1} \\)",
+    "\\( 5\\times10^{4}\\ \\text{V m}^{-1} \\)",
+    "\\( 2.5\\times10^{5}\\ \\text{V m}^{-1} \\)",
+    "\\( 50\\ \\text{V m}^{-1} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The battery fixes V = 100 V across the same gap d = 2 mm.<br><br>\\( E=\\dfrac{V}{d}=\\dfrac{100}{2\\times10^{-3}}=5\\times10^{4}\\ \\text{V m}^{-1} \\), the same as before; the extra charge drawn in exactly compensates the polarisation.",
+   "hint": "With V and d both fixed, \\( E=V/d \\) is fixed.",
+   "distractor_logic": [
+    "Divides by K, which is correct only for an isolated (fixed-charge) capacitor.",
+    "Multiplies by K.",
+    "Leaves d in millimetres."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-031",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "The plates of an air capacitor carry surface charge densities \\( \\pm1.77\\times10^{-6}\\ \\text{C m}^{-2} \\) and are \\( 1\\ \\text{mm} \\) apart. Take \\( \\epsilon_0=8.85\\times10^{-12}\\ \\text{C}^2\\,\\text{N}^{-1}\\text{m}^{-2} \\). The potential difference between the plates is",
+   "options": [
+    "\\( 100\\ \\text{V} \\)",
+    "\\( 400\\ \\text{V} \\)",
+    "\\( 200\\ \\text{V} \\)",
+    "\\( 2\\times10^{5}\\ \\text{V} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( E=\\dfrac{\\sigma}{\\epsilon_0}=\\dfrac{1.77\\times10^{-6}}{8.85\\times10^{-12}}=2\\times10^{5}\\ \\text{V m}^{-1} \\).<br><br>\\( V=Ed=2\\times10^{5}\\times10^{-3}=200\\ \\text{V} \\).",
+   "hint": "Field between the plates is \\( \\sigma/\\epsilon_0 \\); then multiply by d.",
+   "distractor_logic": [
+    "Uses \\( \\sigma/2\\epsilon_0 \\), the field of one plate alone.",
+    "Uses \\( 2\\sigma/\\epsilon_0 \\).",
+    "Stops at the field and forgets to multiply by d."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-032",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 2,
+   "type": "regular",
+   "question": "Inserting a dielectric slab between the plates of a charged capacitor increases its capacitance mainly because",
+   "options": [
+    "the dielectric adds extra free charge to the plates",
+    "the dielectric reduces the effective plate area",
+    "the dielectric conducts charge between the plates",
+    "the induced (polarisation) charges on the slab reduce the field, so a smaller voltage holds the same charge"
+   ],
+   "correct_index": 3,
+   "explanation": "The slab's bound surface charges oppose the plates' field, lowering E and hence V for a given Q.<br><br>Since \\( C=Q/V \\), a smaller V for the same Q means a larger C.",
+   "hint": "Think about what happens to V for a fixed Q.",
+   "distractor_logic": [
+    "A dielectric has no free charge to add; only bound charges shift.",
+    "The plate area is unchanged; a smaller area would reduce C.",
+    "A dielectric is an insulator; conduction would discharge the capacitor."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-033",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "Capacitors of \\( 2\\ \\mu\\text{F} \\), \\( 3\\ \\mu\\text{F} \\) and \\( 6\\ \\mu\\text{F} \\) are connected in series. The equivalent capacitance is",
+   "options": [
+    "\\( 1\\ \\mu\\text{F} \\)",
+    "\\( 11\\ \\mu\\text{F} \\)",
+    "\\( 2\\ \\mu\\text{F} \\)",
+    "\\( 6\\ \\mu\\text{F} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\dfrac1{C_{eq}}=\\dfrac12+\\dfrac13+\\dfrac16=\\dfrac{3+2+1}{6}=1 \\).<br><br>\\( C_{eq}=1\\ \\mu\\text{F} \\), less than the smallest capacitor.",
+   "hint": "Add reciprocals.",
+   "distractor_logic": [
+    "Adds directly, borrowing the resistor-series rule.",
+    "Assumes the combination equals the smallest capacitor; it is always smaller.",
+    "Picks the largest capacitor."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-034",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "Capacitors of \\( 3\\ \\mu\\text{F} \\) and \\( 6\\ \\mu\\text{F} \\) are connected in series across a \\( 90\\ \\text{V} \\) supply. The potential difference across the \\( 3\\ \\mu\\text{F} \\) capacitor is",
+   "options": [
+    "\\( 30\\ \\text{V} \\)",
+    "\\( 60\\ \\text{V} \\)",
+    "\\( 45\\ \\text{V} \\)",
+    "\\( 90\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( C_{eq}=\\dfrac{3\\times6}{9}=2\\ \\mu\\text{F} \\), \\( Q=2\\times90=180\\ \\mu\\text{C} \\) on each.<br><br>\\( V_3=\\dfrac{180}{3}=60\\ \\text{V} \\); the smaller capacitor takes the larger voltage.",
+   "hint": "Same charge on both; V = Q/C.",
+   "distractor_logic": [
+    "Swaps the voltages, as if V divided in proportion to C.",
+    "Splits the voltage equally.",
+    "Gives each capacitor the full supply voltage, as in parallel."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-035",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "Capacitors of \\( 2\\ \\mu\\text{F} \\) and \\( 4\\ \\mu\\text{F} \\) are connected in parallel across a \\( 12\\ \\text{V} \\) battery. The charge on the \\( 4\\ \\mu\\text{F} \\) capacitor is",
+   "options": [
+    "\\( 24\\ \\mu\\text{C} \\)",
+    "\\( 72\\ \\mu\\text{C} \\)",
+    "\\( 48\\ \\mu\\text{C} \\)",
+    "\\( 16\\ \\mu\\text{C} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "In parallel both have 12 V.<br><br>\\( Q_4=4\\times12=48\\ \\mu\\text{C} \\).",
+   "hint": "Parallel: same voltage.",
+   "distractor_logic": [
+    "Gives the charge on the 2 microfarad capacitor.",
+    "Gives the total charge of the combination.",
+    "Uses the series-combination charge, as if both carried a common charge."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-036",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "A \\( 2\\ \\mu\\text{F} \\) and a \\( 4\\ \\mu\\text{F} \\) capacitor are connected in parallel, and this pair is connected in series with a \\( 3\\ \\mu\\text{F} \\) capacitor. The equivalent capacitance is",
+   "options": [
+    "\\( 9\\ \\mu\\text{F} \\)",
+    "\\( \\dfrac{13}{3}\\ \\mu\\text{F} \\)",
+    "\\( \\dfrac{12}{13}\\ \\mu\\text{F} \\)",
+    "\\( 2\\ \\mu\\text{F} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Parallel pair: \\( 2+4=6\\ \\mu\\text{F} \\).<br><br>In series with 3: \\( \\dfrac{6\\times3}{6+3}=2\\ \\mu\\text{F} \\).",
+   "hint": "Reduce the parallel pair first.",
+   "distractor_logic": [
+    "Adds all three as if in parallel.",
+    "Swaps the rules, using the resistor formulas: product-over-sum for the pair, then adding the 3.",
+    "Treats all three as in series."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-037",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "An \\( 8\\ \\mu\\text{F} \\) capacitor carries a charge of \\( 40\\ \\mu\\text{C} \\). The energy stored is",
+   "options": [
+    "\\( 1\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 5\\times10^{-5}\\ \\text{J} \\)",
+    "\\( 1.6\\times10^{-10}\\ \\text{J} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( U=\\dfrac{Q^2}{2C}=\\dfrac{(40\\times10^{-6})^2}{2\\times8\\times10^{-6}}=\\dfrac{1.6\\times10^{-9}}{1.6\\times10^{-5}}=1\\times10^{-4}\\ \\text{J} \\).",
+   "hint": "\\( U=Q^2/2C \\).",
+   "distractor_logic": [
+    "Forgets the factor one half.",
+    "Divides by 4C instead of 2C.",
+    "Multiplies Q by C instead of dividing Q squared by C."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-038",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "Two identical capacitors are connected first in parallel and then in series, each time across the same voltage V. The ratio \\( U_{\\text{parallel}}:U_{\\text{series}} \\) of total stored energies is",
+   "options": [
+    "1 : 4",
+    "4 : 1",
+    "2 : 1",
+    "1 : 1"
+   ],
+   "correct_index": 1,
+   "explanation": "Parallel: \\( C_{eq}=2C \\). Series: \\( C_{eq}=C/2 \\).<br><br>At the same V, \\( U=\\dfrac12C_{eq}V^2 \\), so the ratio is \\( 2C:\\dfrac C2=4:1 \\).",
+   "hint": "At fixed V, energy is proportional to \\( C_{eq} \\).",
+   "distractor_logic": [
+    "Inverts the ratio.",
+    "Compares with a single capacitor instead of the series pair.",
+    "Energy depends on the equivalent capacitance, which differs."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-039",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "The potential difference across a given capacitor is doubled. The energy stored becomes",
+   "options": [
+    "twice as large",
+    "unchanged",
+    "four times as large",
+    "half as large"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( U=\\dfrac12CV^2 \\) with C unchanged, so doubling V multiplies U by 4.",
+   "hint": "Energy goes as V squared.",
+   "distractor_logic": [
+    "Treats U as linear in V.",
+    "U depends on V.",
+    "U rises with V, not falls."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L2-040",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 2,
+   "type": "regular",
+   "question": "The electric field in a region of air is \\( 1\\times10^{6}\\ \\text{V m}^{-1} \\). Take \\( \\epsilon_0=8.85\\times10^{-12}\\ \\text{C}^2\\,\\text{N}^{-1}\\text{m}^{-2} \\). The energy density in the field is about",
+   "options": [
+    "\\( 8.85\\ \\text{J m}^{-3} \\)",
+    "\\( 4.43\\times10^{-6}\\ \\text{J m}^{-3} \\)",
+    "\\( 2.21\\ \\text{J m}^{-3} \\)",
+    "\\( 4.43\\ \\text{J m}^{-3} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( u=\\dfrac12\\epsilon_0E^2=\\dfrac12\\times8.85\\times10^{-12}\\times10^{12} \\).<br><br>\\( u\\approx4.43\\ \\text{J m}^{-3} \\).",
+   "hint": "\\( u=\\tfrac12\\epsilon_0E^2 \\).",
+   "distractor_logic": [
+    "Forgets the factor one half.",
+    "Forgets to square E.",
+    "Uses one quarter instead of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-001",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 3,
+   "type": "regular",
+   "question": "Charges \\( +3\\ \\text{nC} \\), \\( -4\\ \\text{nC} \\) and \\( +2\\ \\text{nC} \\) are at distances \\( 30\\ \\text{cm} \\), \\( 40\\ \\text{cm} \\) and \\( 50\\ \\text{cm} \\) respectively from a point P, in different directions. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at P is",
+   "options": [
+    "\\( 36\\ \\text{V} \\)",
+    "\\( 216\\ \\text{V} \\)",
+    "\\( -36\\ \\text{V} \\)",
+    "\\( 90\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Contributions: \\( \\dfrac{9\\times3}{0.3}=90\\ \\text{V} \\), \\( \\dfrac{9\\times(-4)}{0.4}=-90\\ \\text{V} \\), \\( \\dfrac{9\\times2}{0.5}=36\\ \\text{V} \\).<br><br>Sum algebraically: \\( 90-90+36=36\\ \\text{V} \\). The directions do not matter for a scalar.",
+   "hint": "Find each signed contribution separately, then add.",
+   "distractor_logic": [
+    "Adds all three magnitudes, ignoring the negative charge.",
+    "Reverses every sign.",
+    "Keeps only the nearest charge's contribution."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-002",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 3,
+   "type": "regular",
+   "question": "Charges \\( q \\) and \\( 2q \\) are at two vertices of an equilateral triangle. What charge \\( Q \\) must be placed at the third vertex so that the potential at the centroid is zero?",
+   "options": [
+    "\\( -\\sqrt3\\,q \\)",
+    "\\( -3q \\)",
+    "\\( +3q \\)",
+    "\\( -2q \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "All vertices are the same distance \\( r \\) from the centroid, so \\( V=\\dfrac{k}{r}(q+2q+Q) \\).<br><br>Setting \\( V=0 \\) gives \\( Q=-3q \\). No angles are involved because potential is a scalar.",
+   "hint": "Equal distances mean the charges themselves must sum to zero.",
+   "distractor_logic": [
+    "Treats the contributions as vectors at \\( 120^\\circ \\), finding a 'resultant' \\( \\sqrt3 q \\) to cancel; that is a field-style calculation.",
+    "Gets the magnitude right but the wrong sign; a positive charge would increase V.",
+    "Cancels only the larger charge 2q, forgetting q."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-003",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 3,
+   "type": "regular",
+   "question": "A charge \\( +4\\ \\mu\\text{C} \\) is at \\( x=0 \\) and \\( -1\\ \\mu\\text{C} \\) is at \\( x=0.3\\ \\text{m} \\). At which points on the x-axis (other than infinity) is the electric potential zero?",
+   "options": [
+    "Only at \\( x=0.24\\ \\text{m} \\)",
+    "Only at \\( x=0.40\\ \\text{m} \\)",
+    "At \\( x=0.24\\ \\text{m} \\) and at \\( x=0.40\\ \\text{m} \\)",
+    "Only at \\( x=0.60\\ \\text{m} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Between the charges: \\( \\dfrac{4}{x}=\\dfrac{1}{0.3-x}\\Rightarrow x=0.24\\ \\text{m} \\).<br><br>Beyond the negative charge: \\( \\dfrac{4}{x}=\\dfrac{1}{x-0.3}\\Rightarrow x=0.40\\ \\text{m} \\).<br><br>To the left of the +4 charge, it is always closer and larger, so V cannot vanish there.",
+   "hint": "Check both between the charges and outside them, near the smaller one.",
+   "distractor_logic": [
+    "Misses the second zero outside the charges, beyond the smaller charge.",
+    "Misses the zero between the charges.",
+    "Uses the field-zero condition \\( 4/x^2=1/(x-0.3)^2 \\); potential zeros use \\( 1/r \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-004",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 3,
+   "type": "regular",
+   "question": "The potential at a point on the axis of a short dipole, at distance \\( r \\) from its centre, is \\( V_0 \\). What is the potential at another point at the same distance \\( r \\), on a line making \\( 120^\\circ \\) with the dipole axis?",
+   "options": [
+    "\\( +\\dfrac{V_0}{2} \\)",
+    "\\( -\\dfrac{\\sqrt3\\,V_0}{2} \\)",
+    "\\( +\\dfrac{V_0}{4} \\)",
+    "\\( -\\dfrac{V_0}{2} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( V\\propto\\cos\\theta \\) at fixed \\( r \\), and \\( V_0 \\) corresponds to \\( \\cos0^\\circ=1 \\).<br><br>So \\( V=V_0\\cos120^\\circ=-\\dfrac{V_0}{2} \\); the point is nearer the negative charge.",
+   "hint": "Keep the sign of \\( \\cos120^\\circ \\).",
+   "distractor_logic": [
+    "Drops the sign of \\( \\cos120^\\circ \\).",
+    "Uses \\( \\sin120^\\circ \\) with a negative sign instead of \\( \\cos120^\\circ \\).",
+    "Uses \\( \\cos^2120^\\circ \\), which also loses the sign."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-005",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 3,
+   "type": "regular",
+   "question": "For a short dipole, the potential at a point on its axis \\( 2\\ \\text{m} \\) from the centre is \\( 20\\ \\text{V} \\). The potential at a point \\( 4\\ \\text{m} \\) from the centre, on a line making \\( 60^\\circ \\) with the axis, is",
+   "options": [
+    "\\( 2.5\\ \\text{V} \\)",
+    "\\( 5\\ \\text{V} \\)",
+    "\\( 1.25\\ \\text{V} \\)",
+    "\\( 2.5\\sqrt3\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( V=\\dfrac{kp\\cos\\theta}{r^2} \\), so \\( kp=20\\times2^2=80\\ \\text{V m}^2 \\).<br><br>At the new point: \\( V=\\dfrac{80\\times\\cos60^\\circ}{4^2}=\\dfrac{40}{16}=2.5\\ \\text{V} \\).",
+   "hint": "Scale by \\( \\cos\\theta \\) and by \\( 1/r^2 \\).",
+   "distractor_logic": [
+    "Applies the \\( 1/r^2 \\) scaling but drops \\( \\cos60^\\circ \\).",
+    "Scales with \\( 1/r^3 \\), as for the dipole field.",
+    "Uses \\( \\sin60^\\circ \\) in place of \\( \\cos60^\\circ \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-006",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": 3,
+   "type": "regular",
+   "question": "A total charge of \\( 6\\ \\text{nC} \\) is spread non-uniformly around a thin ring of radius \\( 30\\ \\text{cm} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at the centre of the ring is",
+   "options": [
+    "\\( 0\\ \\text{V} \\)",
+    "\\( 180\\ \\text{V} \\)",
+    "It cannot be found without knowing the charge distribution",
+    "\\( 600\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Every bit of charge \\( dq \\) is at the same distance \\( R \\) from the centre, so \\( V=\\sum\\dfrac{k\\,dq}{R}=\\dfrac{kQ}{R} \\), whatever the distribution.<br><br>\\( V=\\dfrac{9\\times10^9\\times6\\times10^{-9}}{0.3}=180\\ \\text{V} \\).",
+   "hint": "Potential adds as scalars, so only distances matter, not directions.",
+   "distractor_logic": [
+    "Confuses potential with field; field contributions may cancel, but scalar potentials of like charges cannot.",
+    "The non-uniformity would affect the field at the centre, not the potential.",
+    "Divides by \\( R^2 \\), as for a field."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-007",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 3,
+   "type": "regular",
+   "question": "In a region, the potential is \\( V=2x^2+3y \\) (V in volts, x and y in metres). The electric field at the point \\( (1\\ \\text{m},\\,2\\ \\text{m}) \\) is",
+   "options": [
+    "\\( (4\\hat i+3\\hat j)\\ \\text{V m}^{-1} \\)",
+    "\\( (-2\\hat i-3\\hat j)\\ \\text{V m}^{-1} \\)",
+    "\\( (-4\\hat i-3\\hat j)\\ \\text{V m}^{-1} \\)",
+    "\\( (-4\\hat i-6\\hat j)\\ \\text{V m}^{-1} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( E_x=-\\dfrac{\\partial V}{\\partial x}=-4x=-4 \\) at \\( x=1 \\).<br><br>\\( E_y=-\\dfrac{\\partial V}{\\partial y}=-3 \\), independent of y.<br><br>So \\( \\vec E=(-4\\hat i-3\\hat j)\\ \\text{V m}^{-1} \\), magnitude \\( 5\\ \\text{V m}^{-1} \\).",
+   "hint": "Differentiate with respect to each coordinate separately and apply the minus sign.",
+   "distractor_logic": [
+    "Drops the minus sign, giving a field that points towards higher potential.",
+    "Differentiates \\( 2x^2 \\) as \\( 2x \\), missing the factor 2 from the power.",
+    "Substitutes y = 2 into \\( 3y \\) instead of differentiating it."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-008",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 3,
+   "type": "regular",
+   "question": "Around an isolated point charge, the \\( 60\\ \\text{V} \\) equipotential surface has radius \\( 10\\ \\text{cm} \\). The radius of the \\( 20\\ \\text{V} \\) equipotential surface is",
+   "options": [
+    "\\( \\dfrac{10}{3}\\ \\text{cm} \\)",
+    "\\( 10\\sqrt3\\ \\text{cm} \\)",
+    "\\( 90\\ \\text{cm} \\)",
+    "\\( 30\\ \\text{cm} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( V=\\dfrac{kq}{r} \\), so \\( Vr \\) is constant: \\( 60\\times10=20\\times r \\).<br><br>\\( r=30\\ \\text{cm} \\). Lower potential lies farther out, and the spacing widens as the field weakens.",
+   "hint": "For a point charge, \\( V\\propto1/r \\).",
+   "distractor_logic": [
+    "Makes r proportional to V instead of inversely proportional.",
+    "Uses \\( r\\propto1/\\sqrt V \\), as if V went like \\( 1/r^2 \\) (the field law).",
+    "Uses \\( r\\propto1/V^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-009",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 3,
+   "type": "regular",
+   "question": "A particle with charge \\( +2\\ \\mu\\text{C} \\) is released from rest at a point where \\( V=100\\ \\text{V} \\) and moves, under electric forces alone, to a point where \\( V=40\\ \\text{V} \\). The change in its kinetic energy is",
+   "options": [
+    "a gain of \\( 1.2\\times10^{-4}\\ \\text{J} \\)",
+    "a loss of \\( 1.2\\times10^{-4}\\ \\text{J} \\)",
+    "a gain of \\( 2.8\\times10^{-4}\\ \\text{J} \\)",
+    "a gain of \\( 8\\times10^{-5}\\ \\text{J} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Energy conservation: \\( \\Delta K=-\\Delta U=-q(V_B-V_A) \\).<br><br>\\( \\Delta K=-2\\times10^{-6}\\times(40-100)=+1.2\\times10^{-4}\\ \\text{J} \\). A positive charge speeds up as it moves to lower potential.",
+   "hint": "A free positive charge moves towards lower potential and speeds up.",
+   "distractor_logic": [
+    "Gets the sign wrong; the field does positive work on a positive charge moving to lower V.",
+    "Adds the potentials instead of taking their difference.",
+    "Uses only \\( qV_B \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-010",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 3,
+   "type": "regular",
+   "question": "An electron is released from rest in a region where the potential increases steadily along +x. The electron",
+   "options": [
+    "moves along -x, towards lower potential, and its potential energy decreases",
+    "moves along +x, towards higher potential, and its potential energy decreases",
+    "moves along +x, towards higher potential, and its potential energy increases",
+    "stays at rest, because it cannot move against the potential gradient"
+   ],
+   "correct_index": 1,
+   "explanation": "The field points towards decreasing V, i.e. along -x. The force on the negative electron is opposite to E, i.e. along +x.<br><br>Its potential energy \\( U=qV=-eV \\) decreases as V rises, while its kinetic energy grows.",
+   "hint": "Force on a negative charge is opposite to the field.",
+   "distractor_logic": [
+    "Treats the electron like a positive charge.",
+    "Right direction, but \\( U=-eV \\) falls as V rises.",
+    "Any free charge in a nonzero field accelerates."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-011",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 3,
+   "type": "regular",
+   "question": "Points A and C lie on the same equipotential surface at \\( 25\\ \\text{V} \\); point B is at \\( 75\\ \\text{V} \\). A charge \\( +4\\ \\mu\\text{C} \\) is carried slowly from A to B and then from B to C. The total work done by the external agent is",
+   "options": [
+    "\\( 4\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 0 \\)",
+    "\\( -2\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "A to B: \\( 4\\times10^{-6}\\times(75-25)=+2\\times10^{-4}\\ \\text{J} \\). B to C: \\( 4\\times10^{-6}\\times(25-75)=-2\\times10^{-4}\\ \\text{J} \\).<br><br>Total \\( =q(V_C-V_A)=0 \\), since A and C are at the same potential.",
+   "hint": "Only the start and end points matter.",
+   "distractor_logic": [
+    "Adds the size of both legs, ignoring that the second leg has negative work.",
+    "Counts only the A to B leg.",
+    "Counts only the B to C leg."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-012",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform field \\( E=400\\ \\text{V m}^{-1} \\) exists in a region. A charge \\( +3\\ \\mu\\text{C} \\) is moved slowly through \\( 0.5\\ \\text{m} \\) along a line making \\( 60^\\circ \\) with the field direction. The work done by the external agent is",
+   "options": [
+    "\\( +3\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -3\\sqrt3\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -6\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -3\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( V_B-V_A=-Ed\\cos60^\\circ=-400\\times0.5\\times\\dfrac12=-100\\ \\text{V} \\).<br><br>\\( W=q(V_B-V_A)=3\\times10^{-6}\\times(-100)=-3\\times10^{-4}\\ \\text{J} \\); the field does the work, the agent only holds back.",
+   "hint": "Moving with the field lowers the potential.",
+   "distractor_logic": [
+    "Uses \\( V_A-V_B \\), flipping the sign.",
+    "Uses \\( \\sin60^\\circ \\) instead of \\( \\cos60^\\circ \\).",
+    "Ignores the angle and uses the full 0.5 m along the field."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-013",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 3,
+   "type": "regular",
+   "question": "Charges \\( +2\\ \\mu\\text{C} \\), \\( -1\\ \\mu\\text{C} \\) and \\( +1\\ \\mu\\text{C} \\) are placed at the vertices of an equilateral triangle of side \\( 30\\ \\text{cm} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The total potential energy of the system is",
+   "options": [
+    "\\( -0.03\\ \\text{J} \\)",
+    "\\( +0.15\\ \\text{J} \\)",
+    "\\( -0.06\\ \\text{J} \\)",
+    "\\( +0.03\\ \\text{J} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Three pairs, all at 0.3 m. Sum of pair products (in \\( \\mu\\text{C}^2 \\)): \\( (2)(-1)+(2)(1)+(-1)(1)=-1 \\).<br><br>\\( U=\\dfrac{9\\times10^9\\times(-1\\times10^{-12})}{0.3}=-0.03\\ \\text{J} \\).",
+   "hint": "Add the three signed pair products.",
+   "distractor_logic": [
+    "Uses magnitudes of all products, ignoring signs.",
+    "Double counts each pair.",
+    "Right magnitude, wrong sign."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-014",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 3,
+   "type": "regular",
+   "question": "Two charges, each \\( +3\\ \\mu\\text{C} \\), are fixed at \\( x=-0.3\\ \\text{m} \\) and \\( x=+0.3\\ \\text{m} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The work needed to bring a charge \\( +1\\ \\mu\\text{C} \\) slowly from infinity to the origin is",
+   "options": [
+    "\\( 0 \\)",
+    "\\( 0.18\\ \\text{J} \\)",
+    "\\( 0.09\\ \\text{J} \\)",
+    "\\( 0.6\\ \\text{J} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "At the origin the fields cancel, but potentials add: \\( V=2\\times\\dfrac{9\\times10^9\\times3\\times10^{-6}}{0.3}=1.8\\times10^5\\ \\text{V} \\).<br><br>\\( W=qV=10^{-6}\\times1.8\\times10^{5}=0.18\\ \\text{J} \\).",
+   "hint": "Zero field at a point does not mean zero potential there.",
+   "distractor_logic": [
+    "Assumes zero field at the origin means zero work; work depends on potential, which is not zero.",
+    "Counts only one of the fixed charges.",
+    "Uses \\( 1/r^2 \\), a field-style formula, for each charge."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-015",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 3,
+   "type": "regular",
+   "question": "Two conducting spheres of radii \\( 10\\ \\text{cm} \\) and \\( 20\\ \\text{cm} \\), far apart, are connected by a thin wire and charged. The ratio of surface charge densities, \\( \\sigma_{\\text{small}}:\\sigma_{\\text{large}} \\), is",
+   "options": [
+    "1 : 2",
+    "4 : 1",
+    "2 : 1",
+    "1 : 1"
+   ],
+   "correct_index": 2,
+   "explanation": "Connected conductors share one potential: \\( \\dfrac{kq_1}{r_1}=\\dfrac{kq_2}{r_2}\\Rightarrow q\\propto r \\).<br><br>\\( \\sigma=\\dfrac{q}{4\\pi r^2}\\propto\\dfrac{1}{r} \\), so \\( \\sigma_1:\\sigma_2=r_2:r_1=2:1 \\).",
+   "hint": "Equal potentials first, then divide by area.",
+   "distractor_logic": [
+    "This is the charge ratio, not the density ratio.",
+    "Uses \\( \\sigma\\propto1/r^2 \\), forgetting that q itself grows with r.",
+    "Assumes equal density, which would give unequal potentials."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-016",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 3,
+   "type": "regular",
+   "question": "A hollow conducting sphere of radius \\( 20\\ \\text{cm} \\) carries a charge \\( 4\\ \\text{nC} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The electric field and potential at a point \\( 10\\ \\text{cm} \\) from its centre are",
+   "options": [
+    "\\( E=0 \\) and \\( V=0 \\)",
+    "\\( E=0 \\) and \\( V=360\\ \\text{V} \\)",
+    "\\( E=900\\ \\text{N C}^{-1} \\) and \\( V=180\\ \\text{V} \\)",
+    "\\( E=0 \\) and \\( V=180\\ \\text{V} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Inside, E = 0, so V does not change from its surface value.<br><br>\\( V=\\dfrac{kQ}{R}=\\dfrac{9\\times10^9\\times4\\times10^{-9}}{0.2}=180\\ \\text{V} \\) throughout the inside.",
+   "hint": "\\( E=-dV/dr=0 \\) inside means V is constant.",
+   "distractor_logic": [
+    "Confuses zero field with zero potential.",
+    "Uses the distance of the interior point instead of R.",
+    "Uses the surface field \\( kQ/R^2 \\) inside, where the field is zero."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-017",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 3,
+   "type": "regular",
+   "question": "In a hydrogen atom, the electron and proton are about \\( 0.53\\times10^{-10}\\ \\text{m} \\) apart. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). With \\( e=1.6\\times10^{-19}\\ \\text{C} \\), the electrostatic potential energy of the system is about",
+   "options": [
+    "\\( -27.2\\ \\text{eV} \\)",
+    "\\( +27.2\\ \\text{eV} \\)",
+    "\\( -13.6\\ \\text{eV} \\)",
+    "\\( -54.4\\ \\text{eV} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( U=\\dfrac{k(-e)(e)}{r}=-\\dfrac{9\\times10^9\\times(1.6\\times10^{-19})^2}{0.53\\times10^{-10}}\\approx-4.35\\times10^{-18}\\ \\text{J} \\).<br><br>Dividing by \\( 1.6\\times10^{-19}\\ \\text{J/eV} \\): \\( U\\approx-27.2\\ \\text{eV} \\).",
+   "hint": "Opposite charges give negative potential energy.",
+   "distractor_logic": [
+    "Ignores that the charges are opposite.",
+    "13.6 eV is the total (kinetic plus potential) energy magnitude, not the potential energy.",
+    "Doubles the correct value."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-018",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": 3,
+   "type": "regular",
+   "question": "A point charge \\( +q \\) is placed off-centre inside a cavity in an uncharged, isolated spherical conductor. The charge on the outer surface of the conductor is",
+   "options": [
+    "\\( +q \\), crowded on the side nearest the point charge",
+    "\\( +q \\), distributed uniformly",
+    "\\( -q \\), distributed uniformly",
+    "zero, because the conductor is uncharged"
+   ],
+   "correct_index": 1,
+   "explanation": "The cavity wall carries \\( -q \\) (non-uniform), which together with \\( +q \\) produces zero field in the metal.<br><br>The outer \\( +q \\) feels no field from inside, so it spreads uniformly over the sphere, as if the inner arrangement did not exist.",
+   "hint": "The metal shields the outer surface from what happens inside.",
+   "distractor_logic": [
+    "Only the cavity-wall charge is non-uniform; the outer surface is shielded.",
+    "Wrong sign; the outer surface must carry +q for overall neutrality.",
+    "The conductor is neutral overall, but its outer surface is not."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-019",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 3,
+   "type": "regular",
+   "question": "An air capacitor has plate separation \\( 3\\ \\text{mm} \\) and capacitance \\( 12\\ \\text{pF} \\). A dielectric slab of \\( K=2 \\) and thickness \\( 2\\ \\text{mm} \\) is placed between the plates. The new capacitance is",
+   "options": [
+    "\\( 24\\ \\text{pF} \\)",
+    "\\( 12\\ \\text{pF} \\)",
+    "\\( 18\\ \\text{pF} \\)",
+    "\\( 7.2\\ \\text{pF} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( C=\\dfrac{\\epsilon_0A}{d-t+t/K} \\), with \\( d-t+\\dfrac tK=1+\\dfrac22=2\\ \\text{mm} \\).<br><br>Since \\( C_0=\\dfrac{\\epsilon_0A}{3\\ \\text{mm}}=12\\ \\text{pF} \\), \\( C=12\\times\\dfrac32=18\\ \\text{pF} \\).",
+   "hint": "Only part of the gap is filled: the slab acts like a thinner air gap.",
+   "distractor_logic": [
+    "Multiplies by K as if the slab filled the whole gap.",
+    "Ignores the slab.",
+    "Uses \\( d-t+tK \\) instead of \\( d-t+t/K \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-020",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 3,
+   "type": "regular",
+   "question": "A \\( 4\\ \\mu\\text{F} \\) parallel plate capacitor is charged to \\( 50\\ \\text{V} \\) and disconnected. Its plates are then pulled apart to twice the original separation. The new potential difference is",
+   "options": [
+    "\\( 25\\ \\text{V} \\)",
+    "\\( 50\\ \\text{V} \\)",
+    "\\( 200\\ \\text{V} \\)",
+    "\\( 100\\ \\text{V} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Isolated: \\( Q=4\\times50=200\\ \\mu\\text{C} \\) stays fixed. New \\( C=2\\ \\mu\\text{F} \\).<br><br>\\( V=\\dfrac{200}{2}=100\\ \\text{V} \\).",
+   "hint": "Fixed charge, smaller capacitance.",
+   "distractor_logic": [
+    "Halves V, as if C had doubled.",
+    "Holds V fixed, true only when connected.",
+    "Treats C as varying with \\( 1/d^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-021",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 3,
+   "type": "regular",
+   "question": "A capacitor carrying a free charge of \\( 60\\ \\mu\\text{C} \\) on each plate is completely filled with a dielectric of \\( K=3 \\). The magnitude of the induced (bound) charge on each face of the dielectric is",
+   "options": [
+    "\\( 40\\ \\mu\\text{C} \\)",
+    "\\( 20\\ \\mu\\text{C} \\)",
+    "\\( 180\\ \\mu\\text{C} \\)",
+    "\\( 60\\ \\mu\\text{C} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Net field is \\( E_0/K \\), so net charge seen \\( =Q/K=20\\ \\mu\\text{C} \\).<br><br>Induced charge \\( Q_b=Q-\\dfrac QK=Q\\left(1-\\dfrac1K\\right)=60\\times\\dfrac23=40\\ \\mu\\text{C} \\).",
+   "hint": "The bound charge cancels part of the free charge, leaving Q/K.",
+   "distractor_logic": [
+    "Reports Q/K, the net charge, not the induced charge.",
+    "Multiplies by K.",
+    "Assumes total cancellation, which would make the field zero."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-022",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 3,
+   "type": "regular",
+   "question": "A \\( 2\\ \\mu\\text{F} \\) air capacitor is connected to a \\( 10\\ \\text{V} \\) battery and a dielectric slab of \\( K=4 \\) is slid in to fill it. The battery is then disconnected and the slab is pulled out. The final potential difference across the capacitor is",
+   "options": [
+    "\\( 10\\ \\text{V} \\)",
+    "\\( 40\\ \\text{V} \\)",
+    "\\( 2.5\\ \\text{V} \\)",
+    "\\( 160\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "With the battery: \\( C=8\\ \\mu\\text{F} \\), \\( Q=8\\times10=80\\ \\mu\\text{C} \\).<br><br>Disconnected, Q = 80 \\( \\mu\\text{C} \\) stays. Removing the slab: \\( C=2\\ \\mu\\text{F} \\), so \\( V=\\dfrac{80}{2}=40\\ \\text{V} \\).",
+   "hint": "Track which quantity is fixed at each stage.",
+   "distractor_logic": [
+    "Assumes V stays at the battery value after disconnection.",
+    "Divides by K instead of multiplying.",
+    "Multiplies by K twice."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-023",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 3,
+   "type": "regular",
+   "question": "An air capacitor has capacitance \\( 10\\ \\text{pF} \\). Half of the plate area is filled with a dielectric of \\( K_1=2 \\) and the other half with \\( K_2=4 \\), each slab filling the full gap. The new capacitance is",
+   "options": [
+    "\\( \\dfrac{80}{3}\\ \\text{pF} \\)",
+    "\\( 60\\ \\text{pF} \\)",
+    "\\( 30\\ \\text{pF} \\)",
+    "\\( 80\\ \\text{pF} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Side-by-side slabs share the same plates and V: two capacitors in parallel, each of area A/2.<br><br>\\( C=\\dfrac{K_1C_0}{2}+\\dfrac{K_2C_0}{2}=10+20=30\\ \\text{pF} \\).",
+   "hint": "Side-by-side regions share the same voltage.",
+   "distractor_logic": [
+    "Combines the halves in series; side-by-side regions are in parallel.",
+    "Forgets that each dielectric covers only half the area.",
+    "Multiplies the dielectric constants."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-024",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": 3,
+   "type": "regular",
+   "question": "An air capacitor has capacitance \\( 10\\ \\text{pF} \\). The gap is filled with two slabs stacked one above the other, each of half the gap thickness, with \\( K_1=3 \\) and \\( K_2=6 \\). The new capacitance is",
+   "options": [
+    "\\( 45\\ \\text{pF} \\)",
+    "\\( 20\\ \\text{pF} \\)",
+    "\\( 90\\ \\text{pF} \\)",
+    "\\( 40\\ \\text{pF} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Stacked layers carry the same charge: two capacitors in series, each of gap d/2, i.e. \\( 2K_1C_0 \\) and \\( 2K_2C_0 \\): 60 pF and 120 pF.<br><br>\\( C=\\dfrac{60\\times120}{60+120}=40\\ \\text{pF} \\).",
+   "hint": "Stacked layers are in series.",
+   "distractor_logic": [
+    "Averages K as if the slabs were side by side (parallel).",
+    "Forgets that each layer has half the gap, which doubles its capacitance.",
+    "Adds the dielectric constants."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-025",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 3,
+   "type": "regular",
+   "question": "A \\( 2\\ \\mu\\text{F} \\) capacitor charged to \\( 100\\ \\text{V} \\) and a \\( 3\\ \\mu\\text{F} \\) capacitor charged to \\( 50\\ \\text{V} \\) are disconnected from their supplies and then joined, positive plate to positive plate. The common potential is",
+   "options": [
+    "\\( 70\\ \\text{V} \\)",
+    "\\( 75\\ \\text{V} \\)",
+    "\\( 10\\ \\text{V} \\)",
+    "\\( 150\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Total charge is conserved: \\( Q=2\\times100+3\\times50=350\\ \\mu\\text{C} \\). In parallel, \\( C=5\\ \\mu\\text{F} \\).<br><br>\\( V=\\dfrac{350}{5}=70\\ \\text{V} \\).",
+   "hint": "Conserve charge, not voltage.",
+   "distractor_logic": [
+    "Averages the voltages, ignoring the different capacitances.",
+    "Subtracts the charges, as if unlike plates were joined.",
+    "Adds the voltages, as if the capacitors were in series."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-026",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 3,
+   "type": "regular",
+   "question": "A \\( 4\\ \\mu\\text{F} \\) capacitor charged to \\( 20\\ \\text{V} \\) is connected across an identical uncharged \\( 4\\ \\mu\\text{F} \\) capacitor. The energy lost (as heat and radiation) in the process is",
+   "options": [
+    "\\( 0 \\)",
+    "\\( 4\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 8\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Initially \\( U_i=\\dfrac12\\times4\\times10^{-6}\\times20^2=8\\times10^{-4}\\ \\text{J} \\). Charge 80 \\( \\mu\\text{C} \\) spreads over 8 \\( \\mu\\text{F} \\): V = 10 V.<br><br>\\( U_f=\\dfrac12\\times8\\times10^{-6}\\times10^2=4\\times10^{-4}\\ \\text{J} \\), so \\( 4\\times10^{-4}\\ \\text{J} \\) is lost: half the original energy.",
+   "hint": "Charge is conserved; energy is not.",
+   "distractor_logic": [
+    "Assumes energy is conserved when charge redistributes.",
+    "Assumes all the original energy is lost.",
+    "Reports the final energy on one capacitor, not the loss."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-027",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 3,
+   "type": "regular",
+   "question": "A \\( 3\\ \\mu\\text{F} \\) capacitor is connected in series with a parallel combination of \\( 2\\ \\mu\\text{F} \\) and \\( 4\\ \\mu\\text{F} \\), across an \\( 18\\ \\text{V} \\) battery. The charge on the \\( 4\\ \\mu\\text{F} \\) capacitor is",
+   "options": [
+    "\\( 36\\ \\mu\\text{C} \\)",
+    "\\( 12\\ \\mu\\text{C} \\)",
+    "\\( 24\\ \\mu\\text{C} \\)",
+    "\\( 72\\ \\mu\\text{C} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Parallel pair = 6 \\( \\mu\\text{F} \\); with 3 in series, \\( C_{eq}=2\\ \\mu\\text{F} \\) and \\( Q=36\\ \\mu\\text{C} \\).<br><br>Voltage across the pair \\( =\\dfrac{36}{6}=6\\ \\text{V} \\), so \\( Q_4=4\\times6=24\\ \\mu\\text{C} \\).",
+   "hint": "The series charge splits between the parallel capacitors.",
+   "distractor_logic": [
+    "Gives the whole series charge to the 4 microfarad capacitor; in parallel the charge divides.",
+    "Gives the charge on the 2 microfarad capacitor.",
+    "Puts the full battery voltage across the 4 microfarad capacitor."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-028",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 3,
+   "type": "regular",
+   "question": "Capacitors of \\( 3\\ \\mu\\text{F} \\) and \\( 6\\ \\mu\\text{F} \\) are connected in series across a \\( 90\\ \\text{V} \\) supply. The energy stored in the \\( 6\\ \\mu\\text{F} \\) capacitor is",
+   "options": [
+    "\\( 5.4\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 2.43\\times10^{-2}\\ \\text{J} \\)",
+    "\\( 8.1\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 2.7\\times10^{-3}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( Q=C_{eq}V=2\\times90=180\\ \\mu\\text{C} \\), so \\( V_6=\\dfrac{180}{6}=30\\ \\text{V} \\).<br><br>\\( U_6=\\dfrac12\\times6\\times10^{-6}\\times30^2=2.7\\times10^{-3}\\ \\text{J} \\).",
+   "hint": "Find its own voltage first.",
+   "distractor_logic": [
+    "Gives the energy in the 3 microfarad capacitor.",
+    "Applies the full 90 V across the 6 microfarad capacitor.",
+    "Gives the total energy of the combination."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-029",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 3,
+   "type": "regular",
+   "question": "A capacitor stores \\( 0.02\\ \\text{J} \\) of energy when charged to \\( 200\\ \\text{V} \\). Its capacitance is",
+   "options": [
+    "\\( 1\\ \\mu\\text{F} \\)",
+    "\\( 0.5\\ \\mu\\text{F} \\)",
+    "\\( 200\\ \\mu\\text{F} \\)",
+    "\\( 100\\ \\mu\\text{F} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( U=\\dfrac12CV^2\\Rightarrow C=\\dfrac{2U}{V^2}=\\dfrac{0.04}{40000} \\).<br><br>\\( C=1\\times10^{-6}\\ \\text{F}=1\\ \\mu\\text{F} \\).",
+   "hint": "Rearrange \\( U=\\tfrac12CV^2 \\).",
+   "distractor_logic": [
+    "Drops the factor 2 when rearranging.",
+    "Divides by V instead of V squared.",
+    "Drops the factor 2 and divides by V instead of V squared."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-L3-030",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": 3,
+   "type": "regular",
+   "question": "Identical capacitors of \\( 1\\ \\mu\\text{F} \\) each can safely withstand at most \\( 400\\ \\text{V} \\). What is the minimum number needed to build a \\( 2\\ \\mu\\text{F} \\) combination that can be used across \\( 1000\\ \\text{V} \\)?",
+   "options": [
+    "6",
+    "18",
+    "3",
+    "8"
+   ],
+   "correct_index": 1,
+   "explanation": "Series rows share the voltage: need \\( 400n\\ge1000 \\), so n = 3 per row, giving \\( \\dfrac13\\ \\mu\\text{F} \\) per row.<br><br>Parallel rows add: m rows give \\( \\dfrac m3=2 \\), so m = 6. Total \\( 3\\times6=18 \\).",
+   "hint": "Series for voltage, parallel for capacitance.",
+   "distractor_logic": [
+    "Counts only the rows.",
+    "Counts only the capacitors in one row.",
+    "Uses 2 per row (rounding 2.5 down), which would overload each capacitor."
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-001",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Three charges, each \\( +2\\ \\text{nC} \\), sit at the vertices of an equilateral triangle, each \\( 30\\ \\text{cm} \\) from the centroid. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The work needed to bring a \\( +5\\ \\mu\\text{C} \\) charge slowly from infinity to the centroid is",
+   "options": [
+    "\\( 0 \\)",
+    "\\( 3\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 9\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -9\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Potential at the centroid (scalar sum): \\( V=3\\times\\dfrac{9\\times10^9\\times2\\times10^{-9}}{0.3}=180\\ \\text{V} \\).<br><br>\\( W=qV=5\\times10^{-6}\\times180=9\\times10^{-4}\\ \\text{J} \\).",
+   "hint": "The field at the centroid is zero, but the potential is not.",
+   "distractor_logic": [
+    "Uses zero field at the centroid to conclude zero work; work depends on potential.",
+    "Includes only one of the three charges.",
+    "Wrong sign; pushing a positive charge towards positive charges needs positive work."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-002",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "At a point near an isolated point charge, the potential is \\( 600\\ \\text{V} \\) and the field magnitude is \\( 200\\ \\text{V m}^{-1} \\). The distance of the point from the charge is",
+   "options": [
+    "\\( \\dfrac13\\ \\text{m} \\)",
+    "\\( \\sqrt3\\ \\text{m} \\)",
+    "\\( 9\\ \\text{m} \\)",
+    "\\( 3\\ \\text{m} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "For a point charge, \\( V=\\dfrac{kq}{r} \\) and \\( E=\\dfrac{kq}{r^2} \\), so \\( \\dfrac VE=r \\).<br><br>\\( r=\\dfrac{600}{200}=3\\ \\text{m} \\) (and \\( q=\\dfrac{Vr}{k}=2\\times10^{-7}\\ \\text{C} \\)).",
+   "hint": "Divide V by E for a point charge.",
+   "distractor_logic": [
+    "Takes E/V instead of V/E.",
+    "Takes the square root of V/E, as if V went like 1/r squared.",
+    "Squares V/E."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-003",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A parallel plate capacitor has \\( 100\\ \\text{V} \\) across plates \\( 2\\ \\text{mm} \\) apart. The work done by an external agent in slowly carrying a \\( +3\\ \\mu\\text{C} \\) charge from the negative plate to the positive plate is",
+   "options": [
+    "\\( 3\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -3\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 0 \\)",
+    "\\( 1.5\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( W=q(V_+-V_-)=3\\times10^{-6}\\times100 \\).<br><br>\\( W=3\\times10^{-4}\\ \\text{J} \\), positive because a positive charge is pushed to higher potential. The gap width does not enter.",
+   "hint": "Use \\( W=q(V_B-V_A) \\) between the plates.",
+   "distractor_logic": [
+    "Uses \\( V_A-V_B \\), the wrong order.",
+    "Treats the plates as one equipotential; each plate is an equipotential, but they differ from each other.",
+    "Uses the average potential between the plates instead of the full difference."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-004",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An isolated air capacitor has a field of \\( 3\\times10^{5}\\ \\text{V m}^{-1} \\) between its plates, which are \\( 2\\ \\text{mm} \\) apart. A dielectric slab of \\( K=3 \\) is inserted to fill the gap. The new potential difference is",
+   "options": [
+    "\\( 600\\ \\text{V} \\)",
+    "\\( 200\\ \\text{V} \\)",
+    "\\( 1800\\ \\text{V} \\)",
+    "\\( \\dfrac{200}{3}\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Isolated: charge fixed, so the field drops by K: \\( E=\\dfrac{3\\times10^5}{3}=1\\times10^5\\ \\text{V m}^{-1} \\).<br><br>\\( V=Ed=10^5\\times2\\times10^{-3}=200\\ \\text{V} \\).",
+   "hint": "Find the new field, then use \\( V=Ed \\).",
+   "distractor_logic": [
+    "Uses the original field, as if V stayed fixed.",
+    "Multiplies the field by K.",
+    "Divides by K twice."
+   ],
+   "mixed_topics": [
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-005",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The plates of an isolated parallel plate capacitor carry surface charge densities \\( +8.85\\times10^{-7}\\ \\text{C m}^{-2} \\) and \\( -8.85\\times10^{-7}\\ \\text{C m}^{-2} \\). Take \\( \\epsilon_0=8.85\\times10^{-12}\\ \\text{C}^2\\,\\text{N}^{-1}\\text{m}^{-2} \\). The fields between the plates and outside them are",
+   "options": [
+    "\\( 5\\times10^4\\ \\text{V m}^{-1} \\) between, \\( 5\\times10^4\\ \\text{V m}^{-1} \\) outside",
+    "\\( 1\\times10^5\\ \\text{V m}^{-1} \\) between, \\( 1\\times10^5\\ \\text{V m}^{-1} \\) outside",
+    "\\( 1\\times10^5\\ \\text{V m}^{-1} \\) between, zero outside",
+    "\\( 5\\times10^4\\ \\text{V m}^{-1} \\) between, zero outside"
+   ],
+   "correct_index": 2,
+   "explanation": "Each plate alone gives \\( \\sigma/2\\epsilon_0=5\\times10^4\\ \\text{V m}^{-1} \\). Between the plates these add; outside they cancel.<br><br>So \\( E=\\sigma/\\epsilon_0=1\\times10^5\\ \\text{V m}^{-1} \\) between and zero outside, matching the conductor-surface result \\( \\sigma/\\epsilon_0 \\).",
+   "hint": "Superpose the two plates' fields in each region.",
+   "distractor_logic": [
+    "Uses a single plate's field in both regions.",
+    "Outside, the two plates' fields cancel.",
+    "Uses \\( \\sigma/2\\epsilon_0 \\) between the plates, forgetting the second plate."
+   ],
+   "mixed_topics": [
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+    "Potential Energy of a System of Charges and Electrostatics of Conductors"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-006",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A \\( 6\\ \\mu\\text{F} \\) capacitor is charged to \\( 20\\ \\text{V} \\) and disconnected from the battery. A dielectric of \\( K=3 \\) is then inserted to fill the gap. The energy now stored is",
+   "options": [
+    "\\( 3.6\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 1.2\\times10^{-3}\\ \\text{J} \\)",
+    "\\( \\dfrac43\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 4\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Initially \\( U_0=\\dfrac12\\times6\\times10^{-6}\\times20^2=1.2\\times10^{-3}\\ \\text{J} \\).<br><br>Q is fixed and C triples, so \\( U=\\dfrac{Q^2}{2C}=\\dfrac{U_0}{3}=4\\times10^{-4}\\ \\text{J} \\).",
+   "hint": "Isolated: use the form of U that has Q in it.",
+   "distractor_logic": [
+    "Multiplies by K, using the fixed-voltage rule while the capacitor is isolated.",
+    "Assumes stored energy is unchanged.",
+    "Divides by K twice."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-007",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A \\( 2\\ \\mu\\text{F} \\) capacitor remains connected to a \\( 50\\ \\text{V} \\) battery while a dielectric of \\( K=4 \\) is inserted to fill the gap. The energy stored becomes",
+   "options": [
+    "\\( 1\\times10^{-2}\\ \\text{J} \\)",
+    "\\( 6.25\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 2.5\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 4\\times10^{-2}\\ \\text{J} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Initially \\( U_0=\\dfrac12\\times2\\times10^{-6}\\times50^2=2.5\\times10^{-3}\\ \\text{J} \\).<br><br>V fixed and C becomes \\( 8\\ \\mu\\text{F} \\): \\( U=\\dfrac12CV^2=4U_0=1\\times10^{-2}\\ \\text{J} \\).",
+   "hint": "Connected: use the form of U that has V in it.",
+   "distractor_logic": [
+    "Divides by K, using the fixed-charge rule while still connected.",
+    "Assumes stored energy is unchanged.",
+    "Multiplies by K twice."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-008",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two \\( 4\\ \\mu\\text{F} \\) air capacitors are in series across a \\( 12\\ \\text{V} \\) battery. With the battery connected, a dielectric of \\( K=3 \\) is inserted to fill one of them. The potential difference across the filled capacitor becomes",
+   "options": [
+    "\\( 6\\ \\text{V} \\)",
+    "\\( 3\\ \\text{V} \\)",
+    "\\( 9\\ \\text{V} \\)",
+    "\\( 2\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Now \\( C_1=12\\ \\mu\\text{F} \\), \\( C_2=4\\ \\mu\\text{F} \\): \\( C_{eq}=\\dfrac{12\\times4}{16}=3\\ \\mu\\text{F} \\), \\( Q=36\\ \\mu\\text{C} \\) on each.<br><br>\\( V_1=\\dfrac{36}{12}=3\\ \\text{V} \\) (and 9 V across the other).",
+   "hint": "Series capacitors share one charge; recompute it after the change.",
+   "distractor_logic": [
+    "Assumes the voltage split is unchanged.",
+    "Gives the voltage across the unfilled capacitor.",
+    "Divides the old 6 V by K, treating the capacitor as isolated."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-009",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An air capacitor of \\( 10\\ \\text{pF} \\) has half of its plate area filled (across the full gap) with a dielectric of \\( K=5 \\). It is charged to \\( 100\\ \\text{V} \\). The energy stored is",
+   "options": [
+    "\\( 5\\times10^{-8}\\ \\text{J} \\)",
+    "\\( 2.5\\times10^{-7}\\ \\text{J} \\)",
+    "\\( 1.5\\times10^{-7}\\ \\text{J} \\)",
+    "\\( 8.3\\times10^{-8}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The two halves act in parallel: \\( C=\\dfrac{10}{2}+\\dfrac{5\\times10}{2}=30\\ \\text{pF} \\).<br><br>\\( U=\\dfrac12CV^2=\\dfrac12\\times30\\times10^{-12}\\times10^4=1.5\\times10^{-7}\\ \\text{J} \\).",
+   "hint": "Side-by-side halves are in parallel.",
+   "distractor_logic": [
+    "Ignores the dielectric.",
+    "Applies K to the whole capacitor.",
+    "Combines the halves in series."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-010",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two equal charges \\( +q \\) are separated by \\( 2a \\). At the midpoint between them, the magnitudes of the electric field E and potential V are",
+   "options": [
+    "\\( E=0 \\), \\( V=0 \\)",
+    "\\( E=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2q}{a^2} \\), \\( V=0 \\)",
+    "\\( E=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2q}{a^2} \\), \\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2q}{a} \\)",
+    "\\( E=0 \\), \\( V=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2q}{a} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Fields are vectors: equal and opposite at the midpoint, so E = 0.<br><br>Potentials are scalars of the same sign: \\( V=\\dfrac{kq}{a}+\\dfrac{kq}{a}=\\dfrac{2kq}{a} \\). Zero field only means V has zero slope there, not zero value.",
+   "hint": "Vectors can cancel; positive scalars cannot.",
+   "distractor_logic": [
+    "Assumes zero field implies zero potential.",
+    "Swaps the roles: it is the fields that cancel, not the potentials.",
+    "Adds the fields as if they pointed the same way."
+   ],
+   "mixed_topics": [
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-011",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A charge is carried from a distant point to a point close to a short dipole, moving only along the dipole's equatorial line. The work done by the external agent is",
+   "options": [
+    "zero",
+    "positive",
+    "negative",
+    "positive or negative depending on how close it gets"
+   ],
+   "correct_index": 0,
+   "explanation": "Every equatorial point is equidistant from \\( +q \\) and \\( -q \\), so V = 0 all along it: the equatorial plane is an equipotential.<br><br>\\( W=q(V_B-V_A)=q(0-0)=0 \\), even though the field there is not zero.",
+   "hint": "What is the potential everywhere on the equatorial line?",
+   "distractor_logic": [
+    "Assumes a nonzero field forces nonzero work; motion along an equipotential needs none.",
+    "Same error with the opposite sign.",
+    "V = 0 at every equatorial point, near or far."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-012",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Electric field lines always meet the surface of a conductor in electrostatic equilibrium at right angles because",
+   "options": [
+    "the charge density is uniform over every conductor surface",
+    "the surface is an equipotential, and the field is always perpendicular to equipotential surfaces",
+    "the field inside the conductor is maximum at the surface",
+    "field lines are repelled by the free electrons"
+   ],
+   "correct_index": 1,
+   "explanation": "A tangential field component would push charges along the surface, so in equilibrium it must vanish: the surface is an equipotential.<br><br>Field lines are normal to equipotentials, hence normal to the conductor surface.",
+   "hint": "Link equilibrium, equipotential and field direction.",
+   "distractor_logic": [
+    "Density varies with curvature; the right-angle rule holds regardless.",
+    "The field inside is zero everywhere, including just inside the surface.",
+    "This is not the reason; the geometry follows from the equipotential condition."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-013",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A \\( 5\\ \\mu\\text{F} \\) capacitor is charged fully by a \\( 12\\ \\text{V} \\) battery. The work done by the battery and the energy finally stored in the capacitor are, respectively,",
+   "options": [
+    "\\( 3.6\\times10^{-4}\\ \\text{J} \\) and \\( 3.6\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 7.2\\times10^{-4}\\ \\text{J} \\) and \\( 7.2\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 7.2\\times10^{-4}\\ \\text{J} \\) and \\( 3.6\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 3.6\\times10^{-4}\\ \\text{J} \\) and \\( 7.2\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The battery moves \\( Q=CV=60\\ \\mu\\text{C} \\) through a fixed 12 V: \\( W=QV=7.2\\times10^{-4}\\ \\text{J} \\).<br><br>The capacitor's voltage rises from 0 to 12 V, so it stores \\( \\dfrac12QV=3.6\\times10^{-4}\\ \\text{J} \\); the other half is lost in the connecting wires.",
+   "hint": "Battery pushes all charge through the full voltage; the capacitor's voltage builds up gradually.",
+   "distractor_logic": [
+    "Assumes the battery supplies only what is stored.",
+    "Assumes the capacitor stores all the battery's work.",
+    "Reverses the two quantities; the stored energy cannot exceed the work supplied."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-014",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An isolated conducting sphere has radius \\( 9\\ \\text{cm} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). Its capacitance is",
+   "options": [
+    "\\( 0.9\\ \\text{pF} \\)",
+    "\\( 1000\\ \\text{pF} \\)",
+    "\\( 20\\ \\text{pF} \\)",
+    "\\( 10\\ \\text{pF} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( V=\\dfrac{kQ}{R} \\), so \\( C=\\dfrac QV=\\dfrac Rk=4\\pi\\epsilon_0R \\).<br><br>\\( C=\\dfrac{0.09}{9\\times10^9}=1\\times10^{-11}\\ \\text{F}=10\\ \\text{pF} \\).",
+   "hint": "Use the potential of a charged sphere, then C = Q/V.",
+   "distractor_logic": [
+    "Uses \\( R^2 \\) instead of R.",
+    "Uses R in cm instead of m.",
+    "Introduces a stray factor of 2."
+   ],
+   "mixed_topics": [
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-015",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two conducting spheres of radii \\( 5\\ \\text{cm} \\) and \\( 10\\ \\text{cm} \\), far apart, are connected by a thin wire and share a total charge of \\( 30\\ \\text{nC} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). Their common potential is",
+   "options": [
+    "\\( 1800\\ \\text{V} \\)",
+    "\\( 2700\\ \\text{V} \\)",
+    "\\( 5400\\ \\text{V} \\)",
+    "\\( 1350\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Equal potentials need \\( q\\propto r \\): \\( q_1=10\\ \\text{nC} \\), \\( q_2=20\\ \\text{nC} \\).<br><br>\\( V=\\dfrac{9\\times10^9\\times10\\times10^{-9}}{0.05}=1800\\ \\text{V} \\) (check: \\( \\dfrac{9\\times20}{0.1}=1800 \\)).",
+   "hint": "Connected conductors reach one potential; charge divides in proportion to radius.",
+   "distractor_logic": [
+    "Splits the charge equally and uses the small sphere's potential.",
+    "Puts all the charge on the small sphere.",
+    "Splits the charge equally and uses the large sphere's potential."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-016",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The plates of a parallel plate capacitor are \\( 6\\ \\text{mm} \\) apart; the negative plate is at \\( 0\\ \\text{V} \\) and the positive plate at \\( 120\\ \\text{V} \\). The potential at a point \\( 2\\ \\text{mm} \\) from the negative plate is",
+   "options": [
+    "\\( 80\\ \\text{V} \\)",
+    "\\( 40\\ \\text{V} \\)",
+    "\\( 60\\ \\text{V} \\)",
+    "\\( 120\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The field is uniform: \\( E=\\dfrac{120}{6\\times10^{-3}}=2\\times10^4\\ \\text{V m}^{-1} \\), pointing from + to -.<br><br>Rising 2 mm from the negative plate: \\( V=0+2\\times10^4\\times2\\times10^{-3}=40\\ \\text{V} \\).",
+   "hint": "Potential changes linearly across a uniform field.",
+   "distractor_logic": [
+    "Measures the 2 mm from the positive plate.",
+    "Assumes the midpoint value holds everywhere between the plates.",
+    "Treats the gap as a conductor at constant potential."
+   ],
+   "mixed_topics": [
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-017",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two \\( 5\\ \\mu\\text{F} \\) capacitors are connected in parallel, charged to \\( 10\\ \\text{V} \\), and disconnected from the battery. A dielectric of \\( K=3 \\) is then inserted to fill one of them. The new common potential difference is",
+   "options": [
+    "\\( 10\\ \\text{V} \\)",
+    "\\( \\dfrac{10}{3}\\ \\text{V} \\)",
+    "\\( 5\\ \\text{V} \\)",
+    "\\( \\dfrac{20}{3}\\ \\text{V} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Total charge fixed: \\( Q=10\\times10=100\\ \\mu\\text{C} \\). New total capacitance \\( 15+5=20\\ \\mu\\text{F} \\).<br><br>\\( V=\\dfrac{100}{20}=5\\ \\text{V} \\).",
+   "hint": "Disconnected: total charge is conserved across both capacitors.",
+   "distractor_logic": [
+    "Holds V fixed, although the battery is gone.",
+    "Divides by K, as if both capacitors were filled.",
+    "Uses only the filled capacitor's 15 microfarad with all the charge."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-018",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An air capacitor has plates of area \\( 0.02\\ \\text{m}^2 \\) separated by \\( 1\\ \\text{mm} \\), with a uniform field of \\( 1\\times10^{5}\\ \\text{V m}^{-1} \\) between them. Take \\( \\epsilon_0=8.85\\times10^{-12}\\ \\text{C}^2\\,\\text{N}^{-1}\\text{m}^{-2} \\). The energy stored in the field is",
+   "options": [
+    "\\( 1.77\\times10^{-6}\\ \\text{J} \\)",
+    "\\( 4.425\\times10^{-2}\\ \\text{J} \\)",
+    "\\( 8.85\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 8.85\\times10^{-7}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( u=\\dfrac12\\epsilon_0E^2=\\dfrac12\\times8.85\\times10^{-12}\\times10^{10}=4.425\\times10^{-2}\\ \\text{J m}^{-3} \\).<br><br>Volume \\( =Ad=2\\times10^{-5}\\ \\text{m}^3 \\), so \\( U=8.85\\times10^{-7}\\ \\text{J} \\) (same as \\( \\tfrac12CV^2 \\) with C = 177 pF, V = 100 V).",
+   "hint": "Energy density times the volume between the plates.",
+   "distractor_logic": [
+    "Forgets the factor one half.",
+    "Stops at the energy density.",
+    "Leaves d in millimetres when finding the volume."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-019",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Capacitors of \\( 2\\ \\mu\\text{F} \\) and \\( 4\\ \\mu\\text{F} \\) are in series across a \\( 60\\ \\text{V} \\) supply. The \\( 4\\ \\mu\\text{F} \\) capacitor has plates \\( 1\\ \\text{mm} \\) apart. The field between its plates is",
+   "options": [
+    "\\( 2\\times10^{4}\\ \\text{V m}^{-1} \\)",
+    "\\( 4\\times10^{4}\\ \\text{V m}^{-1} \\)",
+    "\\( 3\\times10^{4}\\ \\text{V m}^{-1} \\)",
+    "\\( 6\\times10^{4}\\ \\text{V m}^{-1} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( C_{eq}=\\dfrac43\\ \\mu\\text{F} \\), \\( Q=80\\ \\mu\\text{C} \\), so \\( V_4=\\dfrac{80}{4}=20\\ \\text{V} \\).<br><br>\\( E=\\dfrac{V_4}{d}=\\dfrac{20}{10^{-3}}=2\\times10^4\\ \\text{V m}^{-1} \\).",
+   "hint": "Find this capacitor's share of the voltage first.",
+   "distractor_logic": [
+    "Uses the 40 V across the 2 microfarad capacitor.",
+    "Splits the voltage equally.",
+    "Uses the full supply voltage."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-020",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Charges \\( +2\\ \\mu\\text{C} \\) and \\( +2\\ \\mu\\text{C} \\) are fixed at two vertices of an equilateral triangle of side \\( 20\\ \\text{cm} \\). Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The work needed to bring a \\( +1\\ \\mu\\text{C} \\) charge from infinity to the third vertex is",
+   "options": [
+    "\\( 0.36\\ \\text{J} \\)",
+    "\\( 0.18\\ \\text{J} \\)",
+    "\\( 0.09\\ \\text{J} \\)",
+    "\\( 0.09\\sqrt3\\ \\text{J} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Potential at the third vertex: \\( V=2\\times\\dfrac{9\\times10^9\\times2\\times10^{-6}}{0.2}=1.8\\times10^5\\ \\text{V} \\).<br><br>\\( W=qV=10^{-6}\\times1.8\\times10^5=0.18\\ \\text{J} \\). The existing pair's energy was already stored before this step.",
+   "hint": "Only the two new pairs formed by the moving charge count.",
+   "distractor_logic": [
+    "Adds the energy of the fixed pair, which is not part of this step.",
+    "Counts only one of the fixed charges.",
+    "Combines the two contributions as vectors at \\( 60^\\circ \\); potential terms add as scalars."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-021",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A \\( 4\\ \\mu\\text{F} \\) parallel plate capacitor is charged to \\( 50\\ \\text{V} \\) and disconnected. Its plate separation is then doubled. The energy stored becomes",
+   "options": [
+    "\\( 2.5\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 5\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 1\\times10^{-2}\\ \\text{J} \\)",
+    "\\( 2\\times10^{-2}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( Q=200\\ \\mu\\text{C} \\) stays fixed; C becomes \\( 2\\ \\mu\\text{F} \\).<br><br>\\( U=\\dfrac{Q^2}{2C}=\\dfrac{(200\\times10^{-6})^2}{4\\times10^{-6}}=1\\times10^{-2}\\ \\text{J} \\), double the original; the extra is work done pulling the plates apart.",
+   "hint": "Isolated: Q fixed, so use Q squared over 2C.",
+   "distractor_logic": [
+    "Uses \\( \\tfrac12CV^2 \\) with V held fixed, which applies only when connected.",
+    "Assumes energy stays the same.",
+    "Quadruples instead of doubling."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-022",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A \\( 4\\ \\mu\\text{F} \\) parallel plate capacitor stays connected to a \\( 50\\ \\text{V} \\) battery while its plate separation is doubled. The energy stored becomes",
+   "options": [
+    "\\( 1\\times10^{-2}\\ \\text{J} \\)",
+    "\\( 5\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 1.25\\times10^{-3}\\ \\text{J} \\)",
+    "\\( 2.5\\times10^{-3}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "V is fixed at 50 V; C becomes \\( 2\\ \\mu\\text{F} \\).<br><br>\\( U=\\dfrac12CV^2=\\dfrac12\\times2\\times10^{-6}\\times2500=2.5\\times10^{-3}\\ \\text{J} \\), half the original.",
+   "hint": "Connected: V fixed, so use one half C V squared.",
+   "distractor_logic": [
+    "Uses \\( Q^2/2C \\) with Q held fixed, which applies only when isolated.",
+    "Assumes energy stays the same.",
+    "Quarters instead of halving."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-023",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An air capacitor with plate separation \\( 3\\ \\text{mm} \\) has capacitance \\( 6\\ \\text{pF} \\). An uncharged metal slab of thickness \\( 1\\ \\text{mm} \\) is inserted parallel to the plates. The new capacitance is",
+   "options": [
+    "\\( 9\\ \\text{pF} \\)",
+    "\\( 4.5\\ \\text{pF} \\)",
+    "\\( 6\\ \\text{pF} \\)",
+    "infinite"
+   ],
+   "correct_index": 0,
+   "explanation": "The field inside the metal is zero, so the potential drop occurs only across the remaining \\( 3-1=2\\ \\text{mm} \\) of air.<br><br>\\( C=\\dfrac{\\epsilon_0A}{2\\ \\text{mm}}=6\\times\\dfrac32=9\\ \\text{pF} \\).",
+   "hint": "No field inside the metal: it simply shortens the air gap.",
+   "distractor_logic": [
+    "Adds the slab thickness to the gap instead of subtracting it.",
+    "Assumes a metal slab has no effect.",
+    "Only a slab filling the whole gap would short the plates."
+   ],
+   "mixed_topics": [
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+    "Potential Energy of a System of Charges and Electrostatics of Conductors"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-024",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Inside a charged hollow conducting sphere, the potential V and field E behave as follows:",
+   "options": [
+    "V = 0 and E = 0",
+    "V is constant and equal to its surface value, and E = 0",
+    "V is constant and E is nonzero",
+    "V decreases towards the centre and E is nonzero"
+   ],
+   "correct_index": 1,
+   "explanation": "Charge on a conductor sits on its outer surface, and E = 0 inside.<br><br>Since \\( E=-\\dfrac{dV}{dr}=0 \\), V cannot change inside: it stays at the surface value \\( kQ/R \\).",
+   "hint": "A zero gradient means a constant value.",
+   "distractor_logic": [
+    "Confuses zero field with zero potential.",
+    "A constant V means zero gradient, so E must be zero.",
+    "There is no field inside to cause any change in V."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-025",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Near an isolated negative point charge, as you move directly away from the charge, the potential",
+   "options": [
+    "decreases (becomes more negative), and the field points away from the charge",
+    "increases, and the field points away from the charge",
+    "increases (becomes less negative), and the field points back towards the charge",
+    "stays constant, since the charge is negative"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( V=\\dfrac{k(-q)}{r} \\) is negative and rises towards 0 as r increases.<br><br>The field points towards decreasing potential, i.e. back towards the charge, consistent with field lines ending on a negative charge.",
+   "hint": "Field points from higher to lower potential.",
+   "distractor_logic": [
+    "Reverses both the trend of V and the field direction.",
+    "Right about V, but the field must point towards lower V, which is towards the charge.",
+    "V depends on r, whatever the sign of the charge."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-026",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A short dipole of moment \\( 4\\times10^{-9}\\ \\text{C m} \\) is placed in a uniform field of \\( 5\\times10^{4}\\ \\text{N C}^{-1} \\) with its moment at \\( 60^\\circ \\) to the field. Its potential energy is",
+   "options": [
+    "\\( +1\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -\\sqrt3\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -2\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -1\\times10^{-4}\\ \\text{J} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( U=-pE\\cos\\theta=-(4\\times10^{-9})(5\\times10^4)\\cos60^\\circ \\).<br><br>\\( U=-2\\times10^{-4}\\times\\dfrac12=-1\\times10^{-4}\\ \\text{J} \\); it is lowest when p is along E.",
+   "hint": "\\( U=-\\vec p\\cdot\\vec E \\).",
+   "distractor_logic": [
+    "Drops the minus sign.",
+    "Uses \\( \\sin\\theta \\), which belongs in the torque, not the energy.",
+    "Ignores \\( \\cos\\theta \\)."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-027",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two equal positive point charges are some distance apart. Their equipotential surfaces are",
+   "options": [
+    "nearly spherical around each charge close to it, and nearly spherical around the midpoint far away from both",
+    "parallel planes perpendicular to the line joining them",
+    "a single set of spheres centred on the midpoint at all distances",
+    "spheres centred on each charge, unchanged at all distances"
+   ],
+   "correct_index": 0,
+   "explanation": "Very close to one charge its own potential dominates, so surfaces are small spheres around it.<br><br>Far away the pair looks like a single charge 2q at the midpoint, so surfaces become large spheres around the midpoint. In between they merge, since potentials add as scalars.",
+   "hint": "Think near one charge, then very far from both.",
+   "distractor_logic": [
+    "Planes belong to a uniform field.",
+    "Close to one charge, its own potential dominates.",
+    "Far away the two contributions merge into one effective charge."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-028",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two identical isolated conducting spheres of radius \\( 9\\ \\text{cm} \\) (capacitance \\( 10\\ \\text{pF} \\) each) are far apart. One is at \\( 1000\\ \\text{V} \\) and the other is uncharged. They are connected by a thin wire. The energy lost in the process is",
+   "options": [
+    "\\( 0 \\)",
+    "\\( 2.5\\times10^{-6}\\ \\text{J} \\)",
+    "\\( 5\\times10^{-6}\\ \\text{J} \\)",
+    "\\( 1.25\\times10^{-6}\\ \\text{J} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Initial: \\( Q=10\\ \\text{pF}\\times1000=10\\ \\text{nC} \\), \\( U_i=\\dfrac12\\times10^{-11}\\times10^6=5\\times10^{-6}\\ \\text{J} \\).<br><br>Equal spheres share charge equally: V = 500 V, \\( U_f=\\dfrac12\\times2\\times10^{-11}\\times500^2=2.5\\times10^{-6}\\ \\text{J} \\). Loss \\( =2.5\\times10^{-6}\\ \\text{J} \\).",
+   "hint": "Charge is conserved as the conductors reach a common potential; energy is not.",
+   "distractor_logic": [
+    "Assumes energy is conserved in charge sharing.",
+    "Reports the initial energy as the loss.",
+    "Reports the energy on one sphere after sharing."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-029",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron is released from rest near the negative plate of a capacitor whose plates differ in potential by \\( 100\\ \\text{V} \\). Using \\( e=1.6\\times10^{-19}\\ \\text{C} \\), the electron",
+   "options": [
+    "moves towards the negative plate and gains \\( 1.6\\times10^{-17}\\ \\text{J} \\) of kinetic energy",
+    "moves towards the positive plate and gains \\( 1.6\\times10^{-19}\\ \\text{J} \\) of kinetic energy",
+    "moves towards the positive plate and gains \\( 1.6\\times10^{-17}\\ \\text{J} \\) of kinetic energy",
+    "moves towards the positive plate and loses \\( 1.6\\times10^{-17}\\ \\text{J} \\) of kinetic energy"
+   ],
+   "correct_index": 2,
+   "explanation": "A negative charge is pushed opposite to E, i.e. towards higher potential (the positive plate).<br><br>\\( \\Delta K=-q\\Delta V=-(-1.6\\times10^{-19})(100)=1.6\\times10^{-17}\\ \\text{J} \\) = 100 eV.",
+   "hint": "Negative charges move towards higher potential.",
+   "distractor_logic": [
+    "Treats the electron like a positive charge.",
+    "Uses 1 V instead of 100 V.",
+    "Gets the direction right but the energy change backwards."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-030",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The charge on an isolated parallel plate capacitor is doubled (geometry unchanged). Its capacitance, potential difference and internal field become, respectively,",
+   "options": [
+    "doubled, unchanged, unchanged",
+    "unchanged, doubled, unchanged",
+    "halved, doubled, doubled",
+    "unchanged, doubled, doubled"
+   ],
+   "correct_index": 3,
+   "explanation": "C depends only on geometry and medium, so it is unchanged.<br><br>\\( V=Q/C \\) doubles, and \\( E=V/d \\) doubles too (equivalently \\( E=\\sigma/\\epsilon_0 \\) with \\( \\sigma \\) doubled).",
+   "hint": "Capacitance is a property of the device, not its charge.",
+   "distractor_logic": [
+    "C does not depend on Q.",
+    "E = V/d must double when V doubles and d is fixed.",
+    "C does not depend on Q."
+   ],
+   "mixed_topics": [
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-031",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An isolated charged parallel plate capacitor has its plate separation doubled. Using the idea of energy density, the stored energy doubles because",
+   "options": [
+    "\\( E=\\sigma/\\epsilon_0 \\) is unchanged (fixed charge), so the energy density is unchanged while the volume of field doubles",
+    "the field doubles, so the energy density doubles while the volume is unchanged",
+    "the field halves, so energy density falls but the volume quadruples",
+    "the charge doubles, so \\( U=Q^2/2C \\) doubles"
+   ],
+   "correct_index": 0,
+   "explanation": "The plates' charge, and hence \\( \\sigma \\), stay fixed, so \\( E=\\sigma/\\epsilon_0 \\) and \\( u=\\tfrac12\\epsilon_0E^2 \\) are unchanged.<br><br>The field now fills twice the volume Ad, so the energy doubles.",
+   "hint": "What sets the field between the plates of an isolated capacitor?",
+   "distractor_logic": [
+    "The field depends on sigma, not on the separation.",
+    "Neither the field nor the volume change like this.",
+    "The charge on an isolated capacitor cannot change."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Potential Energy of a System of Charges and Electrostatics of Conductors"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-032",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A conducting sphere of radius \\( 10\\ \\text{cm} \\) is at a potential of \\( 900\\ \\text{V} \\). The field just outside its surface is",
+   "options": [
+    "\\( 90\\ \\text{V m}^{-1} \\)",
+    "\\( 9000\\ \\text{V m}^{-1} \\)",
+    "\\( 900\\ \\text{V m}^{-1} \\)",
+    "\\( 0 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "At the surface \\( V=\\dfrac{kQ}{R} \\) and \\( E=\\dfrac{kQ}{R^2} \\), so \\( E=\\dfrac VR \\).<br><br>\\( E=\\dfrac{900}{0.1}=9000\\ \\text{V m}^{-1} \\).",
+   "hint": "Relate E and V at the surface of a sphere.",
+   "distractor_logic": [
+    "Multiplies V by R.",
+    "Takes the potential value as the field.",
+    "Zero is the field inside, not just outside."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-033",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A thin ring of radius \\( 30\\ \\text{cm} \\) carries \\( +6\\ \\text{nC} \\) uniformly. A \\( +2\\ \\mu\\text{C} \\) charge at its centre is moved slowly to infinity. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The work done by the external agent is",
+   "options": [
+    "\\( +3.6\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 0 \\)",
+    "\\( -3.6\\times10^{-4}\\ \\text{J} \\)",
+    "\\( -1.2\\times10^{-3}\\ \\text{J} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( V_{\\text{centre}}=\\dfrac{9\\times10^9\\times6\\times10^{-9}}{0.3}=180\\ \\text{V} \\), \\( V_\\infty=0 \\).<br><br>\\( W=q(V_\\infty-V_{\\text{centre}})=2\\times10^{-6}\\times(0-180)=-3.6\\times10^{-4}\\ \\text{J} \\); repulsion does the work.",
+   "hint": "Use \\( W=q(V_{\\text{final}}-V_{\\text{initial}}) \\).",
+   "distractor_logic": [
+    "Uses the reversed order of potentials.",
+    "Uses zero field at the centre to conclude zero work.",
+    "Uses \\( kQ/R^2 \\), a field-style expression, for V."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-034",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A very thin uncharged metal sheet is slid into a charged parallel plate capacitor, parallel to and midway between the plates. The capacitance",
+   "options": [
+    "doubles",
+    "halves",
+    "becomes zero",
+    "is unchanged"
+   ],
+   "correct_index": 3,
+   "explanation": "Induced charges appear on the two faces of the sheet, but the field between the plates is unchanged in the gaps and zero only inside the negligible thickness of metal.<br><br>The total potential difference is unchanged, so C = Q/V is unchanged (two d/2 gaps in series give the original C).",
+   "hint": "A slab of zero thickness removes no air gap.",
+   "distractor_logic": [
+    "The sheet removes no gap width.",
+    "Two half-gaps in series combine back to the original capacitance.",
+    "The sheet is insulated from both plates, so it does not short them."
+   ],
+   "mixed_topics": [
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics",
+    "Potential Energy of a System of Charges and Electrostatics of Conductors"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-035",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Three identical \\( 3\\ \\mu\\text{F} \\) capacitors are connected in series across a \\( 120\\ \\text{V} \\) battery whose negative terminal is at \\( 0\\ \\text{V} \\). The potential of the junction between the first and second capacitors, counting from the positive terminal, is",
+   "options": [
+    "\\( 80\\ \\text{V} \\)",
+    "\\( 40\\ \\text{V} \\)",
+    "\\( 60\\ \\text{V} \\)",
+    "\\( 120\\ \\text{V} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Identical capacitors in series share equal charge and so equal voltage: 40 V each.<br><br>From 120 V at the positive terminal, one 40 V drop gives \\( 80\\ \\text{V} \\) at the first junction.",
+   "hint": "Equal charge on identical capacitors means equal voltage drops.",
+   "distractor_logic": [
+    "Counts the potential from the wrong end.",
+    "Takes the midpoint of the battery voltage.",
+    "Ignores the drop across the first capacitor."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-036",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A thin non-conducting spherical shell of radius \\( 20\\ \\text{cm} \\) carries \\( +4\\ \\text{nC} \\) uniformly. A point charge \\( -2\\ \\text{nC} \\) is \\( 40\\ \\text{cm} \\) from the shell's centre, outside it. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The potential at the centre of the shell is",
+   "options": [
+    "\\( 180\\ \\text{V} \\)",
+    "\\( 135\\ \\text{V} \\)",
+    "\\( 225\\ \\text{V} \\)",
+    "\\( 0\\ \\text{V} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Shell: every bit of its charge is at 0.2 m from the centre, so it contributes \\( \\dfrac{9\\times4}{0.2}=180\\ \\text{V} \\).<br><br>Point charge: \\( \\dfrac{9\\times(-2)}{0.4}=-45\\ \\text{V} \\). Total \\( =135\\ \\text{V} \\).",
+   "hint": "Add each source's signed contribution at the centre.",
+   "distractor_logic": [
+    "Ignores the outside charge; potentials from all sources add.",
+    "Adds the magnitudes.",
+    "Takes zero field inside the shell to mean zero potential."
+   ],
+   "mixed_topics": [
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+    "Potential Energy of a System of Charges and Electrostatics of Conductors"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-037",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A charge \\( +1\\ \\mu\\text{C} \\) is carried along a spiral path from a point \\( 30\\ \\text{cm} \\) from a fixed \\( +5\\ \\text{nC} \\) charge to a point \\( 15\\ \\text{cm} \\) from it. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The work done by the external agent is",
+   "options": [
+    "\\( -1.5\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 3\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 1.5\\times10^{-4}\\ \\text{J} \\)",
+    "It cannot be found without knowing the path"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( V_A=\\dfrac{45}{0.3}=150\\ \\text{V} \\), \\( V_B=\\dfrac{45}{0.15}=300\\ \\text{V} \\).<br><br>\\( W=q(V_B-V_A)=10^{-6}\\times150=1.5\\times10^{-4}\\ \\text{J} \\), whatever the path.",
+   "hint": "Electrostatic work depends only on the end points.",
+   "distractor_logic": [
+    "Uses \\( V_A-V_B \\).",
+    "Uses only \\( qV_B \\), as if starting from infinity.",
+    "The electrostatic force is conservative, so the path does not matter."
+   ],
+   "mixed_topics": [
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-038",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A dielectric slab is brought near the edge of an isolated charged capacitor and is drawn into the gap. During this process,",
+   "options": [
+    "the stored energy increases, supplied by the work done by the field",
+    "the stored energy stays constant, because the capacitor is isolated",
+    "the stored energy decreases, and an external agent must push the slab in",
+    "the stored energy decreases, and the field does positive work pulling the slab in"
+   ],
+   "correct_index": 3,
+   "explanation": "Isolated: Q fixed, C rises, so \\( U=\\dfrac{Q^2}{2C} \\) falls.<br><br>The lost energy appears as work done by the fringing field pulling the slab in; the slab is attracted, not repelled.",
+   "hint": "Isolated capacitor: which form of U applies?",
+   "distractor_logic": [
+    "Energy increases only if the battery stays connected.",
+    "Being isolated fixes Q, not U.",
+    "The slab is pulled in; an agent would have to hold it back, not push."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-039",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Combination of Capacitors and Energy Stored in a Capacitor",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Air breaks down at a field of about \\( 3\\times10^{6}\\ \\text{V m}^{-1} \\). A \\( 10\\ \\text{pF} \\) air capacitor has plates \\( 2\\ \\text{mm} \\) apart. The maximum energy it can store before breakdown is",
+   "options": [
+    "\\( 1.8\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 3.6\\times10^{-4}\\ \\text{J} \\)",
+    "\\( 3\\times10^{-8}\\ \\text{J} \\)",
+    "\\( 1.8\\times10^{-10}\\ \\text{J} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( V_{max}=E_{max}d=3\\times10^6\\times2\\times10^{-3}=6000\\ \\text{V} \\).<br><br>\\( U_{max}=\\dfrac12CV_{max}^2=\\dfrac12\\times10^{-11}\\times3.6\\times10^7=1.8\\times10^{-4}\\ \\text{J} \\).",
+   "hint": "Maximum voltage from dielectric strength, then energy.",
+   "distractor_logic": [
+    "Forgets the factor one half.",
+    "Forgets to square V.",
+    "Leaves d in millimetres when finding V."
+   ],
+   "mixed_topics": [
+    "Combination of Capacitors and Energy Stored in a Capacitor",
+    "Capacitors, Capacitance, and Parallel Plate Capacitors with Dielectrics"
+   ]
+  },
+  {
+   "id": "PHY12-CH02-B-040",
+   "chapter": "PHY12-CH02",
+   "chapter_name": "Electrostatic Potential and Capacitance",
+   "topic": "Potential Energy of a System of Charges and Electrostatics of Conductors",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Charges \\( +2\\ \\mu\\text{C} \\) and \\( -2\\ \\mu\\text{C} \\) are \\( 20\\ \\text{cm} \\) apart. A third charge \\( +1\\ \\mu\\text{C} \\) is brought from infinity to a point on the perpendicular bisector of the line joining them. Take \\( k=\\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9}\\ \\text{N m}^2\\,\\text{C}^{-2} \\). The total potential energy of the three-charge system is",
+   "options": [
+    "\\( 0 \\)",
+    "\\( -0.18\\ \\text{J} \\)",
+    "\\( +0.18\\ \\text{J} \\)",
+    "\\( -0.09\\ \\text{J} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The bisector is an equipotential at V = 0, so the third charge's two pair terms cancel: \\( \\dfrac{kq_3(+2)}{r}+\\dfrac{kq_3(-2)}{r}=0 \\).<br><br>Only the original pair remains: \\( U=\\dfrac{9\\times10^9\\times(2)(-2)\\times10^{-12}}{0.2}=-0.18\\ \\text{J} \\).",
+   "hint": "Three pairs; two of them cancel on the bisector.",
+   "distractor_logic": [
+    "Assumes the whole system has zero energy because the third charge sits at V = 0; the original pair still has energy.",
+    "Drops the sign of the unlike pair.",
+    "Halves the pair energy."
+   ],
+   "mixed_topics": [
+    "Potential Energy of a System of Charges and Electrostatics of Conductors",
+    "Electric Potential: Due to a Point Charge, System of Charges, and an Electric Dipole",
+    "Equipotential Surfaces and the Relationship Between Electric Field and Potential"
+   ]
+  }
+ ]
+}

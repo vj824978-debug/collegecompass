@@ -1,0 +1,756 @@
+{
+  "manifest": "collegepipe Confidence Mode — chapter pipeline tracker",
+  "how_to_use": "One row per chapter. Flip 'status' as each chapter moves: queued -> built -> in_review -> fixed -> live. Fill 'file' with the bank JSON filename once built. This same file can later double as the chapter index your site loads.",
+  "status_values": [
+    "queued",
+    "built",
+    "in_review",
+    "fixed",
+    "live"
+  ],
+  "file_naming": "<sub><class>_ch<nn>_<slug>_bank_v<n>.json  e.g. che11_ch02_structure_of_atom_bank_v2.json",
+  "chapters": [
+    {
+      "id": "CHE11-CH01",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 1,
+      "name": "Some Basic Concepts of Chemistry",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE11-CH02",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 2,
+      "name": "Structure of Atom",
+      "status": "in_review",
+      "file": "structure_of_atom_confidence_bank_v2.json",
+      "notes": "pilot chapter; 150 Q; chained pairs L3-009/010 and B-031/032"
+    },
+    {
+      "id": "CHE11-CH03",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 3,
+      "name": "Classification of Elements and Periodicity in Properties",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE11-CH04",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 4,
+      "name": "Chemical Bonding and Molecular Structure",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE11-CH05",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 5,
+      "name": "Thermodynamics",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE11-CH06",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 6,
+      "name": "Equilibrium",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE11-CH07",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 7,
+      "name": "Redox Reactions",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE11-CH08",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 8,
+      "name": "Organic Chemistry: Some Basic Principles and Techniques",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE11-CH09",
+      "subject": "Chemistry",
+      "class": 11,
+      "n": 9,
+      "name": "Hydrocarbons",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH01",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 1,
+      "name": "Solutions",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH02",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 2,
+      "name": "Electrochemistry",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH03",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 3,
+      "name": "Chemical Kinetics",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH04",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 4,
+      "name": "The d- and f-Block Elements",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH05",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 5,
+      "name": "Coordination Compounds",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH06",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 6,
+      "name": "Haloalkanes and Haloarenes",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH07",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 7,
+      "name": "Alcohols, Phenols and Ethers",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH08",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 8,
+      "name": "Aldehydes, Ketones and Carboxylic Acids",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH09",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 9,
+      "name": "Amines",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "CHE12-CH10",
+      "subject": "Chemistry",
+      "class": 12,
+      "n": 10,
+      "name": "Biomolecules",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH01",
+      "subject": "Physics",
+      "class": 11,
+      "n": 1,
+      "name": "Units and Measurements",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH02",
+      "subject": "Physics",
+      "class": 11,
+      "n": 2,
+      "name": "Motion in a Straight Line",
+      "status": "queued",
+      "file": null,
+      "notes": "1455 one-liner bank exists — convert + top up instead of building fresh"
+    },
+    {
+      "id": "PHY11-CH03",
+      "subject": "Physics",
+      "class": 11,
+      "n": 3,
+      "name": "Motion in a Plane",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH04",
+      "subject": "Physics",
+      "class": 11,
+      "n": 4,
+      "name": "Laws of Motion",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH05",
+      "subject": "Physics",
+      "class": 11,
+      "n": 5,
+      "name": "Work, Energy and Power",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH06",
+      "subject": "Physics",
+      "class": 11,
+      "n": 6,
+      "name": "System of Particles and Rotational Motion",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH07",
+      "subject": "Physics",
+      "class": 11,
+      "n": 7,
+      "name": "Gravitation",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH08",
+      "subject": "Physics",
+      "class": 11,
+      "n": 8,
+      "name": "Mechanical Properties of Solids",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH09",
+      "subject": "Physics",
+      "class": 11,
+      "n": 9,
+      "name": "Mechanical Properties of Fluids",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH10",
+      "subject": "Physics",
+      "class": 11,
+      "n": 10,
+      "name": "Thermal Properties of Matter",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH11",
+      "subject": "Physics",
+      "class": 11,
+      "n": 11,
+      "name": "Thermodynamics",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH12",
+      "subject": "Physics",
+      "class": 11,
+      "n": 12,
+      "name": "Kinetic Theory",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH13",
+      "subject": "Physics",
+      "class": 11,
+      "n": 13,
+      "name": "Oscillations",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY11-CH14",
+      "subject": "Physics",
+      "class": 11,
+      "n": 14,
+      "name": "Waves",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH01",
+      "subject": "Physics",
+      "class": 12,
+      "n": 1,
+      "name": "Electric Charges and Fields",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH02",
+      "subject": "Physics",
+      "class": 12,
+      "n": 2,
+      "name": "Electrostatic Potential and Capacitance",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH03",
+      "subject": "Physics",
+      "class": 12,
+      "n": 3,
+      "name": "Current Electricity",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH04",
+      "subject": "Physics",
+      "class": 12,
+      "n": 4,
+      "name": "Moving Charges and Magnetism",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH05",
+      "subject": "Physics",
+      "class": 12,
+      "n": 5,
+      "name": "Magnetism and Matter",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH06",
+      "subject": "Physics",
+      "class": 12,
+      "n": 6,
+      "name": "Electromagnetic Induction",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH07",
+      "subject": "Physics",
+      "class": 12,
+      "n": 7,
+      "name": "Alternating Current",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH08",
+      "subject": "Physics",
+      "class": 12,
+      "n": 8,
+      "name": "Electromagnetic Waves",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH09",
+      "subject": "Physics",
+      "class": 12,
+      "n": 9,
+      "name": "Ray Optics and Optical Instruments",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH10",
+      "subject": "Physics",
+      "class": 12,
+      "n": 10,
+      "name": "Wave Optics",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH11",
+      "subject": "Physics",
+      "class": 12,
+      "n": 11,
+      "name": "Dual Nature of Radiation and Matter",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH12",
+      "subject": "Physics",
+      "class": 12,
+      "n": 12,
+      "name": "Atoms",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH13",
+      "subject": "Physics",
+      "class": 12,
+      "n": 13,
+      "name": "Nuclei",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "PHY12-CH14",
+      "subject": "Physics",
+      "class": 12,
+      "n": 14,
+      "name": "Semiconductor Electronics",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH01",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 1,
+      "name": "Sets",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH02",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 2,
+      "name": "Relations and Functions",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH03",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 3,
+      "name": "Trigonometric Functions",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH04",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 4,
+      "name": "Complex Numbers and Quadratic Equations",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH05",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 5,
+      "name": "Linear Inequalities",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH06",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 6,
+      "name": "Permutations and Combinations",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH07",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 7,
+      "name": "Binomial Theorem",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH08",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 8,
+      "name": "Sequences and Series",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH09",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 9,
+      "name": "Straight Lines",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH10",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 10,
+      "name": "Conic Sections",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH11",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 11,
+      "name": "Introduction to Three Dimensional Geometry",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH12",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 12,
+      "name": "Limits and Derivatives",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH13",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 13,
+      "name": "Statistics",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT11-CH14",
+      "subject": "Mathematics",
+      "class": 11,
+      "n": 14,
+      "name": "Probability",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH01",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 1,
+      "name": "Relations and Functions",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH02",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 2,
+      "name": "Inverse Trigonometric Functions",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH03",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 3,
+      "name": "Matrices",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH04",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 4,
+      "name": "Determinants",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH05",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 5,
+      "name": "Continuity and Differentiability",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH06",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 6,
+      "name": "Application of Derivatives",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH07",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 7,
+      "name": "Integrals",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH08",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 8,
+      "name": "Application of Integrals",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH09",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 9,
+      "name": "Differential Equations",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH10",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 10,
+      "name": "Vector Algebra",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH11",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 11,
+      "name": "Three Dimensional Geometry",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH12",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 12,
+      "name": "Linear Programming",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    },
+    {
+      "id": "MAT12-CH13",
+      "subject": "Mathematics",
+      "class": 12,
+      "n": 13,
+      "name": "Probability",
+      "status": "queued",
+      "file": null,
+      "notes": null
+    }
+  ],
+  "extend_later": "Biology rows can be appended in the same shape for NEET coverage.",
+  "maths_notation_note": "Maths chapters need richer notation than sup/sub HTML (fractions, integrals, limits, matrices). Lock a KaTeX-based rendering convention in the FIRST Maths build chat before bulk, mirroring how the nuclide/exponent HTML convention was locked for Chemistry."
+}

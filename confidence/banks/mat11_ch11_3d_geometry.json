@@ -1,0 +1,3721 @@
+{
+  "meta": {
+    "chapter": "MAT11-CH11",
+    "chapter_name": "Introduction to Three Dimensional Geometry",
+    "subject": "Mathematics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "KaTeX is used throughout for all mathematical notation, with no raw Unicode math beyond the em dash."
+  },
+  "questions": [
+    {
+      "id": "MAT11-CH11-L1-001",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A point \\( P(-5,-8,4) \\) is given. In which octant does \\( P \\) lie?",
+      "options": [
+        "Octant VII",
+        "Octant IV",
+        "Octant VIII",
+        "Octant III"
+      ],
+      "correct_index": 3,
+      "explanation": "The point is \\( P(-5,-8,4) \\), so its coordinate signs are (-,-,+) (i.e. \\( x \\) < 0, \\( y \\) < 0, \\( z \\) > 0). By the locked octant table this sign pattern corresponds to Octant III.",
+      "hint": "Read off the sign of each coordinate first, then match the \\( (\\pm,\\pm,\\pm) \\) pattern to the octant table.",
+      "distractor_logic": [
+        "corresponds to the sign pattern (-,-,-), i.e. misreading the sign of the \\( z \\)-coordinate",
+        "corresponds to the sign pattern (+,-,+), i.e. misreading the sign of the \\( x \\)-coordinate",
+        "corresponds to the sign pattern (+,-,-), i.e. misreading the sign of the \\( x \\)-coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-002",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A point has coordinate sign pattern \\( (+,-,+) \\) (in the order \\( x,y,z \\)). Which octant is this?",
+      "options": [
+        "Octant VIII",
+        "Octant IV",
+        "Octant VI",
+        "Octant III"
+      ],
+      "correct_index": 1,
+      "explanation": "By the locked octant table, sign pattern \\( (+,-,+) \\) is exactly Octant IV.",
+      "hint": "Match the sign triple directly against the locked octant table — don't rederive it from a picture.",
+      "distractor_logic": [
+        "is the octant for sign pattern \\( (+,-,-) \\), not \\( (+,-,+) \\)",
+        "is the octant for sign pattern \\( (-,+,-) \\), not \\( (+,-,+) \\)",
+        "is the octant for sign pattern \\( (-,-,+) \\), not \\( (+,-,+) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-003",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "The point \\( P(-3,0,0) \\) has one or more zero coordinates. On which of the following does \\( P \\) lie?",
+      "options": [
+        "the \\( z \\)-axis",
+        "the \\( yz \\)-plane",
+        "the \\( x \\)-axis",
+        "the \\( y \\)-axis"
+      ],
+      "correct_index": 2,
+      "explanation": "For \\( P(-3,0,0) \\): only the \\( x \\)-coordinate is nonzero, so \\( P \\) lies on the \\( x \\)-axis.",
+      "hint": "A point lies on an axis when two of its three coordinates are zero, and on a coordinate plane when exactly one coordinate is zero.",
+      "distractor_logic": [
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (-3,0,0) \\)",
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (-3,0,0) \\)",
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (-3,0,0) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-004",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(6,-15,8) \\) from the \\( x \\)-axis.",
+      "options": [
+        "289",
+        "17",
+        "15",
+        "6"
+      ],
+      "correct_index": 1,
+      "explanation": "Distance from the \\( x \\)-axis \\( =\\sqrt{y^{2}+z^{2}} =\\sqrt{(-15)^{2}+8^{2}}=\\sqrt{289}=17 \\).",
+      "hint": "Distance from the \\( x \\)-axis uses the *other two* coordinates: \\( \\sqrt{y^{2}+z^{2}} \\).",
+      "distractor_logic": [
+        "forgetting to take the square root of the sum of squares",
+        "dropping one of the two required coordinates and computing \\( \\sqrt{-15^{2}} \\) alone",
+        "the distance from the coordinate plane opposite the \\( x \\)-axis (using \\( |x| \\) instead of the axis-distance formula)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-005",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(-5,-9,12) \\) from the \\( yz \\)-plane.",
+      "options": [
+        "15",
+        "5",
+        "11",
+        "10"
+      ],
+      "correct_index": 1,
+      "explanation": "Distance from the \\( yz \\)-plane is the absolute value of the coordinate not appearing in that plane's name, i.e. \\( |x| \\). For \\( P(-5,-9,12) \\), \\( x=-5 \\), so the distance is \\( 5 \\).",
+      "hint": "Distance from a coordinate plane is just \\( |x| \\) — no square root needed.",
+      "distractor_logic": [
+        "the distance from the \\( x \\)-axis (using the other two coordinates), not from the \\( yz \\)-plane",
+        "an arithmetic slip in reading off the coordinate",
+        "an arithmetic slip in reading off the coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-006",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the coordinates of the foot of the perpendicular drawn from the point \\( P(-5,-8,-9) \\) to the \\( xy \\)-plane.",
+      "options": [
+        "(-5,-8,-9)",
+        "(-5,0,-9)",
+        "(-5,0,0)",
+        "(-5,-8,0)"
+      ],
+      "correct_index": 3,
+      "explanation": "The foot of the perpendicular to the \\( xy \\)-plane keeps the two coordinates that define that plane and sets the remaining coordinate to \\( 0 \\). For \\( P(-5,-8,-9) \\), this gives \\( (-5,-8,0) \\).",
+      "hint": "Dropping a perpendicular to the \\( xy \\)-plane only changes the one coordinate that plane's name omits.",
+      "distractor_logic": [
+        "is the point \\( P \\) itself — no coordinate was set to \\( 0 \\)",
+        "zeroes the wrong coordinate for the \\( xy \\)-plane",
+        "zeroes two coordinates instead of one, as if dropping a perpendicular to an axis rather than a plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-007",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the coordinates of the foot of the perpendicular drawn from the point \\( P(7,-8,-9) \\) to the \\( y \\)-axis.",
+      "options": [
+        "(0,-8,0)",
+        "(7,-8,0)",
+        "(7,-8,-9)",
+        "(7,0,-9)"
+      ],
+      "correct_index": 0,
+      "explanation": "The foot of the perpendicular to the \\( y \\)-axis keeps only the \\( y \\)-coordinate and sets the other two coordinates to \\( 0 \\). For \\( P(7,-8,-9) \\), this gives \\( (0,-8,0) \\).",
+      "hint": "Dropping a perpendicular to the \\( y \\)-axis keeps only the \\( y \\)-coordinate; the other two become \\( 0 \\).",
+      "distractor_logic": [
+        "only zeroes one of the two coordinates that should vanish, as if dropping to a plane instead of an axis",
+        "is the point \\( P \\) itself — no coordinate was set to \\( 0 \\)",
+        "zeroes the wrong coordinate(s) for the \\( y \\)-axis"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-008",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A survey drone is hovering at coordinates \\( (1,5,-2) \\) relative to a survey origin (in metres, positive \\( x \\) = east, positive \\( y \\) = north, positive \\( z \\) = up). Which octant does this position lie in?",
+      "options": [
+        "Octant VII",
+        "Octant IV",
+        "Octant I",
+        "Octant V"
+      ],
+      "correct_index": 3,
+      "explanation": "The coordinates \\( (1,5,-2) \\) have sign pattern \\( (+,+,-) \\), which is Octant V.",
+      "hint": "Strip away the word problem and just read the sign of each coordinate.",
+      "distractor_logic": [
+        "would require a different combination of signs than \\( (+,+,-) \\)",
+        "would require a different combination of signs than \\( (+,+,-) \\)",
+        "would require a different combination of signs than \\( (+,+,-) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-009",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance between the points \\( A(6,5,-1) \\) and \\( B(2,17,2) \\).",
+      "options": [
+        "20",
+        "13",
+        "169",
+        "15"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( AB=\\sqrt{(2-6)^{2}+(17-5)^{2}+(2-(-1))^{2}}=\\sqrt{16+144+9}=\\sqrt{169}=13 \\).",
+      "hint": "Apply \\( d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\) directly, one coordinate pair at a time.",
+      "distractor_logic": [
+        "an arithmetic slip while squaring or summing the coordinate differences",
+        "forgetting to take the square root of the sum of squared differences",
+        "an arithmetic slip while squaring or summing the coordinate differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-010",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(-1,-2,-2) \\) from the origin \\( O(0,0,0) \\).",
+      "options": [
+        "9",
+        "3",
+        "6",
+        "1"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( OP=\\sqrt{(-1)^{2}+(-2)^{2}+(-2)^{2}}=\\sqrt{9}=3 \\).",
+      "hint": "Distance from the origin is \\( \\sqrt{x^2+y^2+z^2} \\) — no need to subtract anything first.",
+      "distractor_logic": [
+        "forgetting to take the square root of \\( x^2+y^2+z^2 \\)",
+        "a slip while summing the three squared coordinates",
+        "a slip while summing the three squared coordinates"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-011",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "A survey drone starts at position \\( A(-4,7,5) \\) (metres) and flies in a straight line to position \\( B(-6,11,1) \\). What distance does it cover?",
+      "options": [
+        "10",
+        "14",
+        "6",
+        "36"
+      ],
+      "correct_index": 2,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(-6-(-4))^{2}+(11-7)^{2}+(1-5)^{2}}=\\sqrt{36}=6 \\) metres.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "an arithmetic slip while combining the squared differences",
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-012",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Two tracking satellites are momentarily at positions \\( A(-2,6,-4) \\) and \\( B(-4,2,0) \\) (km, relative to a ground station). What is the straight-line distance between them?",
+      "options": [
+        "2",
+        "6",
+        "36",
+        "13"
+      ],
+      "correct_index": 1,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(-4-(-2))^{2}+(2-6)^{2}+(0-(-4))^{2}}=\\sqrt{36}=6 \\) km.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end",
+        "an arithmetic slip while combining the squared differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-013",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the midpoint of the line segment joining \\( A(-6,-7,3) \\) and \\( B(6,-19,11) \\).",
+      "options": [
+        "(0,-26,14)",
+        "(1,-13,7)",
+        "(0,-13,7)",
+        "(6,-6,4)"
+      ],
+      "correct_index": 2,
+      "explanation": "Midpoint \\( =\\left(\\frac{-6+6}{2},\\frac{-7-19}{2},\\frac{3+11}{2}\\right)=(0,-13,7) \\).",
+      "hint": "Midpoint \\( =\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\).",
+      "distractor_logic": [
+        "adds the coordinates but forgets to divide by \\( 2 \\)",
+        "an arithmetic slip in one coordinate",
+        "subtracts the coordinates instead of adding them before halving"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-014",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A point \\( P(-7,-9,-8) \\) is given. In which octant does \\( P \\) lie?",
+      "options": [
+        "Octant VII",
+        "Octant III",
+        "Octant VIII",
+        "Octant V"
+      ],
+      "correct_index": 0,
+      "explanation": "The point is \\( P(-7,-9,-8) \\), so its coordinate signs are (-,-,-) (i.e. \\( x \\) < 0, \\( y \\) < 0, \\( z \\) < 0). By the locked octant table this sign pattern corresponds to Octant VII.",
+      "hint": "Read off the sign of each coordinate first, then match the \\( (\\pm,\\pm,\\pm) \\) pattern to the octant table.",
+      "distractor_logic": [
+        "corresponds to the sign pattern (-,-,+), i.e. misreading the sign of the \\( z \\)-coordinate",
+        "corresponds to the sign pattern (+,-,-), i.e. misreading the sign of the \\( x \\)-coordinate",
+        "corresponds to the sign pattern (+,+,-), i.e. misreading the sign of the \\( x \\)-coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-015",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A point has coordinate sign pattern \\( (+,-,+) \\) (in the order \\( x,y,z \\)). Which octant is this?",
+      "options": [
+        "Octant II",
+        "Octant IV",
+        "Octant I",
+        "Octant VIII"
+      ],
+      "correct_index": 1,
+      "explanation": "By the locked octant table, sign pattern \\( (+,-,+) \\) is exactly Octant IV.",
+      "hint": "Match the sign triple directly against the locked octant table — don't rederive it from a picture.",
+      "distractor_logic": [
+        "is the octant for sign pattern \\( (-,+,+) \\), not \\( (+,-,+) \\)",
+        "is the octant for sign pattern \\( (+,+,+) \\), not \\( (+,-,+) \\)",
+        "is the octant for sign pattern \\( (+,-,-) \\), not \\( (+,-,+) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-016",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "The point \\( P(9,8,0) \\) has one or more zero coordinates. On which of the following does \\( P \\) lie?",
+      "options": [
+        "the \\( yz \\)-plane",
+        "the \\( x \\)-axis",
+        "the \\( zx \\)-plane",
+        "the \\( xy \\)-plane"
+      ],
+      "correct_index": 3,
+      "explanation": "For \\( P(9,8,0) \\): the coordinate not appearing in the xy-plane is exactly the one that is zero, so \\( P \\) lies on the \\( xy \\)-plane.",
+      "hint": "A point lies on an axis when two of its three coordinates are zero, and on a coordinate plane when exactly one coordinate is zero.",
+      "distractor_logic": [
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (9,8,0) \\)",
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (9,8,0) \\)",
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (9,8,0) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-017",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(15,8,-8) \\) from the \\( z \\)-axis.",
+      "options": [
+        "15",
+        "289",
+        "8",
+        "17"
+      ],
+      "correct_index": 3,
+      "explanation": "Distance from the \\( z \\)-axis \\( =\\sqrt{x^{2}+y^{2}} =\\sqrt{15^{2}+8^{2}}=\\sqrt{289}=17 \\).",
+      "hint": "Distance from the \\( z \\)-axis uses the *other two* coordinates: \\( \\sqrt{x^{2}+y^{2}} \\).",
+      "distractor_logic": [
+        "dropping one of the two required coordinates and computing \\( \\sqrt{15^{2}} \\) alone",
+        "forgetting to take the square root of the sum of squares",
+        "the distance from the coordinate plane opposite the \\( z \\)-axis (using \\( |z| \\) instead of the axis-distance formula)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-018",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(-5,-12,-5) \\) from the \\( yz \\)-plane.",
+      "options": [
+        "5",
+        "10",
+        "13",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "Distance from the \\( yz \\)-plane is the absolute value of the coordinate not appearing in that plane's name, i.e. \\( |x| \\). For \\( P(-5,-12,-5) \\), \\( x=-5 \\), so the distance is \\( 5 \\).",
+      "hint": "Distance from a coordinate plane is just \\( |x| \\) — no square root needed.",
+      "distractor_logic": [
+        "an arithmetic slip in reading off the coordinate",
+        "the distance from the \\( x \\)-axis (using the other two coordinates), not from the \\( yz \\)-plane",
+        "an arithmetic slip in reading off the coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-019",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the coordinates of the foot of the perpendicular drawn from the point \\( P(5,-6,-1) \\) to the \\( xy \\)-plane.",
+      "options": [
+        "(5,-6,0)",
+        "(5,-6,-1)",
+        "(5,0,-1)",
+        "(5,0,0)"
+      ],
+      "correct_index": 0,
+      "explanation": "The foot of the perpendicular to the \\( xy \\)-plane keeps the two coordinates that define that plane and sets the remaining coordinate to \\( 0 \\). For \\( P(5,-6,-1) \\), this gives \\( (5,-6,0) \\).",
+      "hint": "Dropping a perpendicular to the \\( xy \\)-plane only changes the one coordinate that plane's name omits.",
+      "distractor_logic": [
+        "is the point \\( P \\) itself — no coordinate was set to \\( 0 \\)",
+        "zeroes the wrong coordinate for the \\( xy \\)-plane",
+        "zeroes two coordinates instead of one, as if dropping a perpendicular to an axis rather than a plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-020",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the coordinates of the foot of the perpendicular drawn from the point \\( P(-4,-1,-2) \\) to the \\( z \\)-axis.",
+      "options": [
+        "(0,0,-2)",
+        "(-4,-1,-2)",
+        "(0,-1,-2)",
+        "(-4,0,-2)"
+      ],
+      "correct_index": 0,
+      "explanation": "The foot of the perpendicular to the \\( z \\)-axis keeps only the \\( z \\)-coordinate and sets the other two coordinates to \\( 0 \\). For \\( P(-4,-1,-2) \\), this gives \\( (0,0,-2) \\).",
+      "hint": "Dropping a perpendicular to the \\( z \\)-axis keeps only the \\( z \\)-coordinate; the other two become \\( 0 \\).",
+      "distractor_logic": [
+        "is the point \\( P \\) itself — no coordinate was set to \\( 0 \\)",
+        "only zeroes one of the two coordinates that should vanish, as if dropping to a plane instead of an axis",
+        "zeroes the wrong coordinate(s) for the \\( z \\)-axis"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-021",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A tracking satellite is positioned at coordinates \\( (-4,-2,4) \\) relative to a survey origin (in km, positive \\( x \\) = east, positive \\( y \\) = north, positive \\( z \\) = up). Which octant does this position lie in?",
+      "options": [
+        "Octant I",
+        "Octant II",
+        "Octant III",
+        "Octant VI"
+      ],
+      "correct_index": 2,
+      "explanation": "The coordinates \\( (-4,-2,4) \\) have sign pattern \\( (-,-,+) \\), which is Octant III.",
+      "hint": "Strip away the word problem and just read the sign of each coordinate.",
+      "distractor_logic": [
+        "would require a different combination of signs than \\( (-,-,+) \\)",
+        "would require a different combination of signs than \\( (-,-,+) \\)",
+        "would require a different combination of signs than \\( (-,-,+) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-022",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance between the points \\( A(-7,3,2) \\) and \\( B(-8,1,4) \\).",
+      "options": [
+        "3",
+        "7",
+        "9",
+        "8"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=\\sqrt{(-8-(-7))^{2}+(1-3)^{2}+(4-2)^{2}}=\\sqrt{1+4+4}=\\sqrt{9}=3 \\).",
+      "hint": "Apply \\( d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\) directly, one coordinate pair at a time.",
+      "distractor_logic": [
+        "an arithmetic slip while squaring or summing the coordinate differences",
+        "forgetting to take the square root of the sum of squared differences",
+        "an arithmetic slip while squaring or summing the coordinate differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-023",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(4,-12,3) \\) from the origin \\( O(0,0,0) \\).",
+      "options": [
+        "13",
+        "169",
+        "16",
+        "9"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( OP=\\sqrt{4^{2}+(-12)^{2}+3^{2}}=\\sqrt{169}=13 \\).",
+      "hint": "Distance from the origin is \\( \\sqrt{x^2+y^2+z^2} \\) — no need to subtract anything first.",
+      "distractor_logic": [
+        "forgetting to take the square root of \\( x^2+y^2+z^2 \\)",
+        "a slip while summing the three squared coordinates",
+        "a slip while summing the three squared coordinates"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-024",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "A survey drone starts at position \\( A(-6,4,6) \\) (metres) and flies in a straight line to position \\( B(-14,5,10) \\). What distance does it cover?",
+      "options": [
+        "9",
+        "81",
+        "2",
+        "5"
+      ],
+      "correct_index": 0,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(-14-(-6))^{2}+(5-4)^{2}+(10-6)^{2}}=\\sqrt{81}=9 \\) metres.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "forgetting to take the square root at the end",
+        "an arithmetic slip while combining the squared differences",
+        "an arithmetic slip while combining the squared differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-025",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Two tracking satellites are momentarily at positions \\( A(6,2,-3) \\) and \\( B(7,-6,-7) \\) (km, relative to a ground station). What is the straight-line distance between them?",
+      "options": [
+        "15",
+        "9",
+        "5",
+        "81"
+      ],
+      "correct_index": 1,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(7-6)^{2}+(-6-2)^{2}+(-7-(-3))^{2}}=\\sqrt{81}=9 \\) km.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "an arithmetic slip while combining the squared differences",
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-026",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the midpoint of the line segment joining \\( A(-5,5,6) \\) and \\( B(-13,13,18) \\).",
+      "options": [
+        "(-9,9,12)",
+        "(-8,9,12)",
+        "(-18,18,24)",
+        "(-4,4,6)"
+      ],
+      "correct_index": 0,
+      "explanation": "Midpoint \\( =\\left(\\frac{-5-13}{2},\\frac{5+13}{2},\\frac{6+18}{2}\\right)=(-9,9,12) \\).",
+      "hint": "Midpoint \\( =\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "adds the coordinates but forgets to divide by \\( 2 \\)",
+        "subtracts the coordinates instead of adding them before halving"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-027",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A point \\( P(-2,2,-6) \\) is given. In which octant does \\( P \\) lie?",
+      "options": [
+        "Octant I",
+        "Octant VII",
+        "Octant VI",
+        "Octant V"
+      ],
+      "correct_index": 2,
+      "explanation": "The point is \\( P(-2,2,-6) \\), so its coordinate signs are (-,+,-) (i.e. \\( x \\) < 0, \\( y \\) > 0, \\( z \\) < 0). By the locked octant table this sign pattern corresponds to Octant VI.",
+      "hint": "Read off the sign of each coordinate first, then match the \\( (\\pm,\\pm,\\pm) \\) pattern to the octant table.",
+      "distractor_logic": [
+        "corresponds to the sign pattern (+,+,+), i.e. misreading the sign of the \\( x \\)-coordinate",
+        "corresponds to the sign pattern (-,-,-), i.e. misreading the sign of the \\( y \\)-coordinate",
+        "corresponds to the sign pattern (+,+,-), i.e. misreading the sign of the \\( x \\)-coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-028",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A point has coordinate sign pattern \\( (-,+,-) \\) (in the order \\( x,y,z \\)). Which octant is this?",
+      "options": [
+        "Octant V",
+        "Octant VI",
+        "Octant IV",
+        "Octant I"
+      ],
+      "correct_index": 1,
+      "explanation": "By the locked octant table, sign pattern \\( (-,+,-) \\) is exactly Octant VI.",
+      "hint": "Match the sign triple directly against the locked octant table — don't rederive it from a picture.",
+      "distractor_logic": [
+        "is the octant for sign pattern \\( (+,+,-) \\), not \\( (-,+,-) \\)",
+        "is the octant for sign pattern \\( (+,-,+) \\), not \\( (-,+,-) \\)",
+        "is the octant for sign pattern \\( (+,+,+) \\), not \\( (-,+,-) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-029",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "The point \\( P(0,3,0) \\) has one or more zero coordinates. On which of the following does \\( P \\) lie?",
+      "options": [
+        "the \\( y \\)-axis",
+        "the \\( x \\)-axis",
+        "the \\( zx \\)-plane",
+        "the \\( z \\)-axis"
+      ],
+      "correct_index": 0,
+      "explanation": "For \\( P(0,3,0) \\): only the \\( y \\)-coordinate is nonzero, so \\( P \\) lies on the \\( y \\)-axis.",
+      "hint": "A point lies on an axis when two of its three coordinates are zero, and on a coordinate plane when exactly one coordinate is zero.",
+      "distractor_logic": [
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (0,3,0) \\)",
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (0,3,0) \\)",
+        "would require a different coordinate (or pair of coordinates) to vanish than the ones that actually vanish for \\( (0,3,0) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-030",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(12,-5,-1) \\) from the \\( z \\)-axis.",
+      "options": [
+        "1",
+        "12",
+        "13",
+        "169"
+      ],
+      "correct_index": 2,
+      "explanation": "Distance from the \\( z \\)-axis \\( =\\sqrt{x^{2}+y^{2}} =\\sqrt{12^{2}+(-5)^{2}}=\\sqrt{169}=13 \\).",
+      "hint": "Distance from the \\( z \\)-axis uses the *other two* coordinates: \\( \\sqrt{x^{2}+y^{2}} \\).",
+      "distractor_logic": [
+        "the distance from the coordinate plane opposite the \\( z \\)-axis (using \\( |z| \\) instead of the axis-distance formula)",
+        "dropping one of the two required coordinates and computing \\( \\sqrt{12^{2}} \\) alone",
+        "forgetting to take the square root of the sum of squares"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-031",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(-6,12,-9) \\) from the \\( yz \\)-plane.",
+      "options": [
+        "15",
+        "11",
+        "14",
+        "6"
+      ],
+      "correct_index": 3,
+      "explanation": "Distance from the \\( yz \\)-plane is the absolute value of the coordinate not appearing in that plane's name, i.e. \\( |x| \\). For \\( P(-6,12,-9) \\), \\( x=-6 \\), so the distance is \\( 6 \\).",
+      "hint": "Distance from a coordinate plane is just \\( |x| \\) — no square root needed.",
+      "distractor_logic": [
+        "the distance from the \\( x \\)-axis (using the other two coordinates), not from the \\( yz \\)-plane",
+        "an arithmetic slip in reading off the coordinate",
+        "an arithmetic slip in reading off the coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-032",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the coordinates of the foot of the perpendicular drawn from the point \\( P(1,3,4) \\) to the \\( xy \\)-plane.",
+      "options": [
+        "(1,0,4)",
+        "(1,3,4)",
+        "(1,3,0)",
+        "(1,0,0)"
+      ],
+      "correct_index": 2,
+      "explanation": "The foot of the perpendicular to the \\( xy \\)-plane keeps the two coordinates that define that plane and sets the remaining coordinate to \\( 0 \\). For \\( P(1,3,4) \\), this gives \\( (1,3,0) \\).",
+      "hint": "Dropping a perpendicular to the \\( xy \\)-plane only changes the one coordinate that plane's name omits.",
+      "distractor_logic": [
+        "zeroes the wrong coordinate for the \\( xy \\)-plane",
+        "is the point \\( P \\) itself — no coordinate was set to \\( 0 \\)",
+        "zeroes two coordinates instead of one, as if dropping a perpendicular to an axis rather than a plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-033",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the coordinates of the foot of the perpendicular drawn from the point \\( P(-3,-2,-3) \\) to the \\( z \\)-axis.",
+      "options": [
+        "(0,-2,-3)",
+        "(-3,-2,-3)",
+        "(0,0,-3)",
+        "(-3,0,-3)"
+      ],
+      "correct_index": 2,
+      "explanation": "The foot of the perpendicular to the \\( z \\)-axis keeps only the \\( z \\)-coordinate and sets the other two coordinates to \\( 0 \\). For \\( P(-3,-2,-3) \\), this gives \\( (0,0,-3) \\).",
+      "hint": "Dropping a perpendicular to the \\( z \\)-axis keeps only the \\( z \\)-coordinate; the other two become \\( 0 \\).",
+      "distractor_logic": [
+        "only zeroes one of the two coordinates that should vanish, as if dropping to a plane instead of an axis",
+        "is the point \\( P \\) itself — no coordinate was set to \\( 0 \\)",
+        "zeroes the wrong coordinate(s) for the \\( z \\)-axis"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-034",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A survey marker is placed at coordinates \\( (8,3,-3) \\) relative to a survey origin (in m, positive \\( x \\) = east, positive \\( y \\) = north, positive \\( z \\) = up). Which octant does this position lie in?",
+      "options": [
+        "Octant II",
+        "Octant VIII",
+        "Octant V",
+        "Octant I"
+      ],
+      "correct_index": 2,
+      "explanation": "The coordinates \\( (8,3,-3) \\) have sign pattern \\( (+,+,-) \\), which is Octant V.",
+      "hint": "Strip away the word problem and just read the sign of each coordinate.",
+      "distractor_logic": [
+        "would require a different combination of signs than \\( (+,+,-) \\)",
+        "would require a different combination of signs than \\( (+,+,-) \\)",
+        "would require a different combination of signs than \\( (+,+,-) \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-035",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance between the points \\( A(-4,-4,-6) \\) and \\( B(-2,-1,-12) \\).",
+      "options": [
+        "3",
+        "49",
+        "10",
+        "7"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB=\\sqrt{(-2-(-4))^{2}+(-1-(-4))^{2}+(-12-(-6))^{2}}=\\sqrt{4+9+36}=\\sqrt{49}=7 \\).",
+      "hint": "Apply \\( d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\) directly, one coordinate pair at a time.",
+      "distractor_logic": [
+        "an arithmetic slip while squaring or summing the coordinate differences",
+        "forgetting to take the square root of the sum of squared differences",
+        "an arithmetic slip while squaring or summing the coordinate differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-036",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(-1,-2,2) \\) from the origin \\( O(0,0,0) \\).",
+      "options": [
+        "9",
+        "7",
+        "3",
+        "11"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( OP=\\sqrt{(-1)^{2}+(-2)^{2}+2^{2}}=\\sqrt{9}=3 \\).",
+      "hint": "Distance from the origin is \\( \\sqrt{x^2+y^2+z^2} \\) — no need to subtract anything first.",
+      "distractor_logic": [
+        "forgetting to take the square root of \\( x^2+y^2+z^2 \\)",
+        "a slip while summing the three squared coordinates",
+        "a slip while summing the three squared coordinates"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-037",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "A survey drone starts at position \\( A(7,-3,1) \\) (metres) and flies in a straight line to position \\( B(4,-5,7) \\). What distance does it cover?",
+      "options": [
+        "11",
+        "49",
+        "9",
+        "7"
+      ],
+      "correct_index": 3,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(4-7)^{2}+(-5-(-3))^{2}+(7-1)^{2}}=\\sqrt{49}=7 \\) metres.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end",
+        "an arithmetic slip while combining the squared differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-038",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 1,
+      "type": "regular",
+      "question": "Two tracking satellites are momentarily at positions \\( A(-1,1,-2) \\) and \\( B(-3,2,-4) \\) (km, relative to a ground station). What is the straight-line distance between them?",
+      "options": [
+        "1",
+        "7",
+        "3",
+        "9"
+      ],
+      "correct_index": 2,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(-3-(-1))^{2}+(2-1)^{2}+(-4-(-2))^{2}}=\\sqrt{9}=3 \\) km.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "an arithmetic slip while combining the squared differences",
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-039",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Find the midpoint of the line segment joining \\( A(8,3,9) \\) and \\( B(2,7,-5) \\).",
+      "options": [
+        "(-3,2,-7)",
+        "(5,5,2)",
+        "(6,5,2)",
+        "(10,10,4)"
+      ],
+      "correct_index": 1,
+      "explanation": "Midpoint \\( =\\left(\\frac{8+2}{2},\\frac{3+7}{2},\\frac{9-5}{2}\\right)=(5,5,2) \\).",
+      "hint": "Midpoint \\( =\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\).",
+      "distractor_logic": [
+        "subtracts the coordinates instead of adding them before halving",
+        "an arithmetic slip in one coordinate",
+        "adds the coordinates but forgets to divide by \\( 2 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L1-040",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 1,
+      "type": "regular",
+      "question": "A point \\( P(8,-1,5) \\) is given. In which octant does \\( P \\) lie?",
+      "options": [
+        "Octant II",
+        "Octant IV",
+        "Octant VI",
+        "Octant VII"
+      ],
+      "correct_index": 1,
+      "explanation": "The point is \\( P(8,-1,5) \\), so its coordinate signs are (+,-,+) (i.e. \\( x \\) > 0, \\( y \\) < 0, \\( z \\) > 0). By the locked octant table this sign pattern corresponds to Octant IV.",
+      "hint": "Read off the sign of each coordinate first, then match the \\( (\\pm,\\pm,\\pm) \\) pattern to the octant table.",
+      "distractor_logic": [
+        "corresponds to the sign pattern (-,+,+), i.e. misreading the sign of the \\( x \\)-coordinate",
+        "corresponds to the sign pattern (-,+,-), i.e. misreading the sign of the \\( x \\)-coordinate",
+        "corresponds to the sign pattern (-,-,-), i.e. misreading the sign of the \\( x \\)-coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-001",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(-15,4,8) \\) from the \\( y \\)-axis.",
+      "options": [
+        "17",
+        "4",
+        "289",
+        "15"
+      ],
+      "correct_index": 0,
+      "explanation": "Distance from the \\( y \\)-axis \\( =\\sqrt{x^{2}+z^{2}} =\\sqrt{(-15)^{2}+8^{2}}=\\sqrt{289}=17 \\).",
+      "hint": "Distance from the \\( y \\)-axis uses the *other two* coordinates: \\( \\sqrt{x^{2}+z^{2}} \\).",
+      "distractor_logic": [
+        "the distance from the coordinate plane opposite the \\( y \\)-axis (using \\( |y| \\) instead of the axis-distance formula)",
+        "forgetting to take the square root of the sum of squares",
+        "dropping one of the two required coordinates and computing \\( \\sqrt{-15^{2}} \\) alone"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-002",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(-15,-8,-5) \\) from the \\( xy \\)-plane.",
+      "options": [
+        "1",
+        "11",
+        "5",
+        "17"
+      ],
+      "correct_index": 2,
+      "explanation": "Distance from the \\( xy \\)-plane is the absolute value of the coordinate not appearing in that plane's name, i.e. \\( |z| \\). For \\( P(-15,-8,-5) \\), \\( z=-5 \\), so the distance is \\( 5 \\).",
+      "hint": "Distance from a coordinate plane is just \\( |z| \\) — no square root needed.",
+      "distractor_logic": [
+        "an arithmetic slip in reading off the coordinate",
+        "an arithmetic slip in reading off the coordinate",
+        "the distance from the \\( z \\)-axis (using the other two coordinates), not from the \\( xy \\)-plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-003",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers are placed at \\( A(5,6,2) \\) and \\( B(12,0,-4) \\) (metres) on a 3D site model. Find the straight-line distance between the markers.",
+      "options": [
+        "11",
+        "9",
+        "121",
+        "8"
+      ],
+      "correct_index": 0,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(12-5)^{2}+(0-6)^{2}+(-4-2)^{2}}=\\sqrt{121}=11 \\) m.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end",
+        "an arithmetic slip while combining the squared differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-004",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "A reference point is \\( R(-5,-2,-6) \\), with two other points \\( P(1,0,-3) \\) and \\( Q(-7,-3,-8) \\). Which of \\( P \\) or \\( Q \\) is farther from \\( R \\), and by how much?",
+      "options": [
+        "\\( Q \\), at distance \\( 7 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 7 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 3 \\) from \\( R \\)",
+        "\\( Q \\), at distance \\( 3 \\) from \\( R \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( RP=\\sqrt{36+4+9}=7 \\) and \\( RQ=\\sqrt{4+1+4}=3 \\), so \\( P \\) is farther, at distance \\( 7 \\).",
+      "hint": "Compute both distances from \\( R \\) independently, then compare.",
+      "distractor_logic": [
+        "picks the correct larger distance value but attaches it to the wrong point",
+        "picks the correct point but the wrong (swapped) distance value",
+        "identifies the nearer point instead of the farther one"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-005",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Points \\( A(3,-5,-2) \\), \\( B(5,-7,-1) \\), and \\( C(9,-11,1) \\) are given. Using the distance formula, what can be concluded about \\( A, B, C \\)?",
+      "options": [
+        "yes, the points are collinear",
+        "no — they form a right-angled triangle instead",
+        "no — they form an isosceles triangle instead",
+        "no — they form a scalene triangle instead"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=3 \\), \\( BC=6 \\), \\( AC=9 \\). Since \\( AB+BC=AC \\) (or a permutation of this), the points are collinear.",
+      "hint": "Compute all three pairwise distances first, then check whether one equals the sum of the other two (collinear) or compare their values (triangle type).",
+      "distractor_logic": [
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-006",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 2,
+      "type": "regular",
+      "question": "A relay drone flies in a straight line from \\( A(7,-3,3) \\) to \\( B(-9,5,-1) \\) (coordinates in km). Find the coordinates of the point that divides \\( AB \\) internally in the ratio \\( 1:3 \\).",
+      "options": [
+        "(15,-7,5)",
+        "(-5,3,0)",
+        "(3,-1,2)",
+        "(-1,1,1)"
+      ],
+      "correct_index": 2,
+      "explanation": "By the internal section formula, the required point is \\( \\left(\\frac{1\\cdot (-9)+21}{1+3},\\frac{1\\cdot 5-9}{1+3},\\frac{1\\cdot (-1)+9}{1+3}\\right)=(3,-1,2) \\).",
+      "hint": "Use \\( \\left(\\frac{mx_2+nx_1}{m+n},\\frac{my_2+ny_1}{m+n},\\frac{mz_2+nz_1}{m+n}\\right) \\) with \\( m:n=1:3 \\), taking \\( A \\) as \\( (x_1,y_1,z_1) \\) and \\( B \\) as \\( (x_2,y_2,z_2) \\).",
+      "distractor_logic": [
+        "uses the external-division formula in place of the internal-division formula",
+        "swaps \\( m \\) and \\( n \\) in the section formula",
+        "uses the midpoint formula (ratio \\( 1:1 \\)) instead of the given ratio"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-007",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the coordinates of the point which divides the line segment joining \\( A(-3,-2,3) \\) and \\( B(-3,1,-8) \\) externally in the ratio \\( 2:1 \\).",
+      "options": [
+        "(3,-4,19)",
+        "(-3,4,3)",
+        "(-3,-5,14)",
+        "(-3,4,-19)"
+      ],
+      "correct_index": 3,
+      "explanation": "By the external section formula, the required point is \\( \\left(\\frac{2\\cdot (-3)+3}{2-1},\\frac{2\\cdot 1+2}{2-1},\\frac{2\\cdot (-8)-3}{2-1}\\right)=(-3,4,-19) \\).",
+      "hint": "Use \\( \\left(\\frac{mx_2-nx_1}{m-n},\\frac{my_2-ny_1}{m-n},\\frac{mz_2-nz_1}{m-n}\\right) \\) with \\( m:n=2:1 \\) — note the minus signs, both in the numerator terms and the denominator.",
+      "distractor_logic": [
+        "flips the sign of every coordinate — a slip in simplifying the formula's negative denominator",
+        "drops the \\( z \\)-coordinate computation and just copies \\( z_1 \\)",
+        "swaps \\( m \\) and \\( n \\) in the external section formula"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-008",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers sit at \\( A(-7,-1,-2) \\) and \\( B(-15,1,-12) \\) (metres). A third marker is to be placed exactly halfway between them. Find its coordinates.",
+      "options": [
+        "(-10,0,-7)",
+        "(-22,0,-14)",
+        "(-11,0,-7)",
+        "(-4,1,-5)"
+      ],
+      "correct_index": 2,
+      "explanation": "Midpoint \\( =\\left(\\frac{-7-15}{2},\\frac{-1+1}{2},\\frac{-2-12}{2}\\right)=(-11,0,-7) \\).",
+      "hint": "Midpoint \\( =\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "adds the coordinates but forgets to divide by \\( 2 \\)",
+        "subtracts the coordinates instead of adding them before halving"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-009",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the centroid of the triangle with vertices \\( A(-2,6,9) \\), \\( B(8,-9,-8) \\), and \\( C(-24,-15,-10) \\).",
+      "options": [
+        "(-5,-6,-3)",
+        "(-7,-6,-3)",
+        "(-18,-18,-9)",
+        "(-6,-6,-3)"
+      ],
+      "correct_index": 3,
+      "explanation": "Centroid \\( =\\left(\\frac{-2+8-24}{3},\\frac{6-9-15}{3},\\frac{9-8-10}{3}\\right)=(-6,-6,-3) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "divides by \\( 2 \\) instead of \\( 3 \\)",
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "adds the three vertices but forgets to divide by \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-010",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Three drones hold position at \\( A(-7,-2,-8) \\), \\( B(-9,-4,2) \\), and \\( C(-2,9,3) \\) (metres). A fourth drone is to hover at the centroid of the triangle they form. Find its coordinates.",
+      "options": [
+        "(-6,1,-1)",
+        "(-5,1,-1)",
+        "(-8,-3,-3)",
+        "(-18,3,-3)"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( =\\left(\\frac{-7-9-2}{3},\\frac{-2-4+9}{3},\\frac{-8+2+3}{3}\\right)=(-6,1,-1) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "divides by \\( 2 \\) instead of \\( 3 \\)",
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "adds the three vertices but forgets to divide by \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-011",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(6,2,5) \\), \\( B(9,-10,1) \\), and \\( C(3,-10,9) \\) using the distance formula.",
+      "options": [
+        "a triangle with three unequal sides",
+        "a triangle with three equal sides",
+        "a triangle with precisely two equal sides",
+        "a triangle satisfying the Pythagorean relation"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB=13 \\), \\( BC=10 \\), \\( CA=13 \\). This side-length pattern identifies the triangle as: a triangle with precisely two equal sides.",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-012",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(5,-9,12) \\) from the \\( x \\)-axis.",
+      "options": [
+        "225",
+        "9",
+        "5",
+        "15"
+      ],
+      "correct_index": 3,
+      "explanation": "Distance from the \\( x \\)-axis \\( =\\sqrt{y^{2}+z^{2}} =\\sqrt{(-9)^{2}+12^{2}}=\\sqrt{225}=15 \\).",
+      "hint": "Distance from the \\( x \\)-axis uses the *other two* coordinates: \\( \\sqrt{y^{2}+z^{2}} \\).",
+      "distractor_logic": [
+        "forgetting to take the square root of the sum of squares",
+        "dropping one of the two required coordinates and computing \\( \\sqrt{-9^{2}} \\) alone",
+        "the distance from the coordinate plane opposite the \\( x \\)-axis (using \\( |x| \\) instead of the axis-distance formula)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-013",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Coordinate Axes, Coordinate Planes, and Octants",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the distance of the point \\( P(6,3,-4) \\) from the \\( yz \\)-plane.",
+      "options": [
+        "5",
+        "6",
+        "2",
+        "3"
+      ],
+      "correct_index": 1,
+      "explanation": "Distance from the \\( yz \\)-plane is the absolute value of the coordinate not appearing in that plane's name, i.e. \\( |x| \\). For \\( P(6,3,-4) \\), \\( x=6 \\), so the distance is \\( 6 \\).",
+      "hint": "Distance from a coordinate plane is just \\( |x| \\) — no square root needed.",
+      "distractor_logic": [
+        "the distance from the \\( x \\)-axis (using the other two coordinates), not from the \\( yz \\)-plane",
+        "an arithmetic slip in reading off the coordinate",
+        "an arithmetic slip in reading off the coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-014",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers are placed at \\( A(2,-5,-3) \\) and \\( B(8,1,-10) \\) (metres) on a 3D site model. Find the straight-line distance between the markers.",
+      "options": [
+        "15",
+        "121",
+        "17",
+        "11"
+      ],
+      "correct_index": 3,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(8-2)^{2}+(1-(-5))^{2}+(-10-(-3))^{2}}=\\sqrt{121}=11 \\) m.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end",
+        "an arithmetic slip while combining the squared differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-015",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "A reference point is \\( R(-5,5,4) \\), with two other points \\( P(-8,11,2) \\) and \\( Q(-2,-7,8) \\). Which of \\( P \\) or \\( Q \\) is farther from \\( R \\), and by how much?",
+      "options": [
+        "\\( Q \\), at distance \\( 7 \\) from \\( R \\)",
+        "\\( Q \\), at distance \\( 13 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 13 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 7 \\) from \\( R \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( RP=\\sqrt{9+36+4}=7 \\) and \\( RQ=\\sqrt{9+144+16}=13 \\), so \\( Q \\) is farther, at distance \\( 13 \\).",
+      "hint": "Compute both distances from \\( R \\) independently, then compare.",
+      "distractor_logic": [
+        "picks the correct point but the wrong (swapped) distance value",
+        "picks the correct larger distance value but attaches it to the wrong point",
+        "identifies the nearer point instead of the farther one"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-016",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Points \\( A(3,-4,3) \\), \\( B(0,-10,5) \\), and \\( C(-3,-16,7) \\) are given. Using the distance formula, what can be concluded about \\( A, B, C \\)?",
+      "options": [
+        "the points form a right-angled triangle",
+        "the points form an isosceles triangle",
+        "the points form a scalene triangle",
+        "all three points lie on a common straight line"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB=7 \\), \\( BC=7 \\), \\( AC=14 \\). Since \\( AB+BC=AC \\) (or a permutation of this), the points are collinear.",
+      "hint": "Compute all three pairwise distances first, then check whether one equals the sum of the other two (collinear) or compare their values (triangle type).",
+      "distractor_logic": [
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-017",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the coordinates of the point which divides the line segment joining \\( A(4,1,-3) \\) and \\( B(-2,8,2) \\) externally in the ratio \\( 2:3 \\).",
+      "options": [
+        "(-16,13,13)",
+        "(-14,22,12)",
+        "(16,-13,-13)",
+        "(16,-13,-3)"
+      ],
+      "correct_index": 2,
+      "explanation": "By the external section formula, the required point is \\( \\left(\\frac{2\\cdot (-2)-12}{2-3},\\frac{2\\cdot 8-3}{2-3},\\frac{2\\cdot 2+9}{2-3}\\right)=(16,-13,-13) \\).",
+      "hint": "Use \\( \\left(\\frac{mx_2-nx_1}{m-n},\\frac{my_2-ny_1}{m-n},\\frac{mz_2-nz_1}{m-n}\\right) \\) with \\( m:n=2:3 \\) — note the minus signs, both in the numerator terms and the denominator.",
+      "distractor_logic": [
+        "flips the sign of every coordinate — a slip in simplifying the formula's negative denominator",
+        "swaps \\( m \\) and \\( n \\) in the external section formula",
+        "drops the \\( z \\)-coordinate computation and just copies \\( z_1 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-018",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers sit at \\( A(3,2,-2) \\) and \\( B(-13,6,12) \\) (metres). A third marker is to be placed exactly halfway between them. Find its coordinates.",
+      "options": [
+        "(-10,8,10)",
+        "(-5,4,5)",
+        "(-8,2,7)",
+        "(-4,4,5)"
+      ],
+      "correct_index": 1,
+      "explanation": "Midpoint \\( =\\left(\\frac{3-13}{2},\\frac{2+6}{2},\\frac{-2+12}{2}\\right)=(-5,4,5) \\).",
+      "hint": "Midpoint \\( =\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\).",
+      "distractor_logic": [
+        "adds the coordinates but forgets to divide by \\( 2 \\)",
+        "subtracts the coordinates instead of adding them before halving",
+        "an arithmetic slip in one coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-019",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the centroid of the triangle with vertices \\( A(-1,8,5) \\), \\( B(-9,-4,8) \\), and \\( C(22,2,-22) \\).",
+      "options": [
+        "(5,2,-3)",
+        "(4,2,-3)",
+        "(3,2,-3)",
+        "(12,6,-9)"
+      ],
+      "correct_index": 1,
+      "explanation": "Centroid \\( =\\left(\\frac{-1-9+22}{3},\\frac{8-4+2}{3},\\frac{5+8-22}{3}\\right)=(4,2,-3) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "divides by \\( 2 \\) instead of \\( 3 \\)",
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "adds the three vertices but forgets to divide by \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-020",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Three drones hold position at \\( A(-2,6,5) \\), \\( B(1,6,-9) \\), and \\( C(-14,-21,22) \\) (metres). A fourth drone is to hover at the centroid of the triangle they form. Find its coordinates.",
+      "options": [
+        "(-6,-3,6)",
+        "(-5,-3,6)",
+        "(-15,-9,18)",
+        "(-4,-3,6)"
+      ],
+      "correct_index": 1,
+      "explanation": "Centroid \\( =\\left(\\frac{-2+1-14}{3},\\frac{6+6-21}{3},\\frac{5-9+22}{3}\\right)=(-5,-3,6) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "adds the three vertices but forgets to divide by \\( 3 \\)",
+        "divides by \\( 2 \\) instead of \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-021",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(5,5,-2) \\), \\( B(8,17,-6) \\), and \\( C(2,17,-6) \\) using the distance formula.",
+      "options": [
+        "isosceles \\(\\triangle ABC\\)",
+        "scalene \\(\\triangle ABC\\)",
+        "equilateral \\(\\triangle ABC\\)",
+        "right-angled \\(\\triangle ABC\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=13 \\), \\( BC=6 \\), \\( CA=13 \\). This side-length pattern identifies the triangle as: isosceles \\(\\triangle ABC\\).",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-022",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers are placed at \\( A(-2,-3,-6) \\) and \\( B(-4,0,-12) \\) (metres) on a 3D site model. Find the straight-line distance between the markers.",
+      "options": [
+        "49",
+        "10",
+        "13",
+        "7"
+      ],
+      "correct_index": 3,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(-4-(-2))^{2}+(0-(-3))^{2}+(-12-(-6))^{2}}=\\sqrt{49}=7 \\) m.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "forgetting to take the square root at the end",
+        "an arithmetic slip while combining the squared differences",
+        "an arithmetic slip while combining the squared differences"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-023",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "A reference point is \\( R(-6,-4,1) \\), with two other points \\( P(-2,-1,-11) \\) and \\( Q(-13,-10,7) \\). Which of \\( P \\) or \\( Q \\) is farther from \\( R \\), and by how much?",
+      "options": [
+        "\\( Q \\), at distance \\( 13 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 13 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 11 \\) from \\( R \\)",
+        "\\( Q \\), at distance \\( 11 \\) from \\( R \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( RP=\\sqrt{16+9+144}=13 \\) and \\( RQ=\\sqrt{49+36+36}=11 \\), so \\( P \\) is farther, at distance \\( 13 \\).",
+      "hint": "Compute both distances from \\( R \\) independently, then compare.",
+      "distractor_logic": [
+        "picks the correct larger distance value but attaches it to the wrong point",
+        "picks the correct point but the wrong (swapped) distance value",
+        "identifies the nearer point instead of the farther one"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-024",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Points \\( A(-5,2,-3) \\), \\( B(-3,0,-4) \\), and \\( C(1,-4,-6) \\) are given. Using the distance formula, what can be concluded about \\( A, B, C \\)?",
+      "options": [
+        "the three points lie along one straight line",
+        "the three points form a right-angled triangle",
+        "the three points form an isosceles triangle",
+        "the three points form a scalene triangle"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=3 \\), \\( BC=6 \\), \\( AC=9 \\). Since \\( AB+BC=AC \\) (or a permutation of this), the points are collinear.",
+      "hint": "Compute all three pairwise distances first, then check whether one equals the sum of the other two (collinear) or compare their values (triangle type).",
+      "distractor_logic": [
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-025",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the coordinates of the point which divides the line segment joining \\( A(4,2,-2) \\) and \\( B(-8,6,-8) \\) externally in the ratio \\( 1:2 \\).",
+      "options": [
+        "(16,-2,-2)",
+        "(16,-2,4)",
+        "(-16,2,-4)",
+        "(-20,10,-14)"
+      ],
+      "correct_index": 1,
+      "explanation": "By the external section formula, the required point is \\( \\left(\\frac{1\\cdot (-8)-8}{1-2},\\frac{1\\cdot 6-4}{1-2},\\frac{1\\cdot (-8)+4}{1-2}\\right)=(16,-2,4) \\).",
+      "hint": "Use \\( \\left(\\frac{mx_2-nx_1}{m-n},\\frac{my_2-ny_1}{m-n},\\frac{mz_2-nz_1}{m-n}\\right) \\) with \\( m:n=1:2 \\) — note the minus signs, both in the numerator terms and the denominator.",
+      "distractor_logic": [
+        "drops the \\( z \\)-coordinate computation and just copies \\( z_1 \\)",
+        "flips the sign of every coordinate — a slip in simplifying the formula's negative denominator",
+        "swaps \\( m \\) and \\( n \\) in the external section formula"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-026",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers sit at \\( A(-2,-1,8) \\) and \\( B(8,11,22) \\) (metres). A third marker is to be placed exactly halfway between them. Find its coordinates.",
+      "options": [
+        "(3,5,15)",
+        "(6,10,30)",
+        "(4,5,15)",
+        "(5,6,7)"
+      ],
+      "correct_index": 0,
+      "explanation": "Midpoint \\( =\\left(\\frac{-2+8}{2},\\frac{-1+11}{2},\\frac{8+22}{2}\\right)=(3,5,15) \\).",
+      "hint": "Midpoint \\( =\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\).",
+      "distractor_logic": [
+        "adds the coordinates but forgets to divide by \\( 2 \\)",
+        "an arithmetic slip in one coordinate",
+        "subtracts the coordinates instead of adding them before halving"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-027",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the centroid of the triangle with vertices \\( A(7,-5,6) \\), \\( B(4,-1,-4) \\), and \\( C(-17,-3,-17) \\).",
+      "options": [
+        "(-2,-3,-5)",
+        "(-3,-3,-5)",
+        "(-1,-3,-5)",
+        "(-6,-9,-15)"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( =\\left(\\frac{7+4-17}{3},\\frac{-5-1-3}{3},\\frac{6-4-17}{3}\\right)=(-2,-3,-5) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "divides by \\( 2 \\) instead of \\( 3 \\)",
+        "adds the three vertices but forgets to divide by \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-028",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Three drones hold position at \\( A(-1,1,-5) \\), \\( B(4,2,6) \\), and \\( C(21,12,-22) \\) (metres). A fourth drone is to hover at the centroid of the triangle they form. Find its coordinates.",
+      "options": [
+        "(7,5,-7)",
+        "(9,5,-7)",
+        "(8,5,-7)",
+        "(24,15,-21)"
+      ],
+      "correct_index": 2,
+      "explanation": "Centroid \\( =\\left(\\frac{-1+4+21}{3},\\frac{1+2+12}{3},\\frac{-5+6-22}{3}\\right)=(8,5,-7) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "divides by \\( 2 \\) instead of \\( 3 \\)",
+        "adds the three vertices but forgets to divide by \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-029",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(-4,-5,3) \\), \\( B(-10,-12,-3) \\), and \\( C(-10,2,-3) \\) using the distance formula.",
+      "options": [
+        "no two sides equal (scalene)",
+        "a right angle between two sides (right-angled)",
+        "exactly two sides equal (isosceles)",
+        "all three sides equal (equilateral)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB=11 \\), \\( BC=14 \\), \\( CA=11 \\). This side-length pattern identifies the triangle as: exactly two sides equal (isosceles).",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-030",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers are placed at \\( A(7,5,5) \\) and \\( B(4,1,-7) \\) (metres) on a 3D site model. Find the straight-line distance between the markers.",
+      "options": [
+        "5",
+        "11",
+        "13",
+        "169"
+      ],
+      "correct_index": 2,
+      "explanation": "Using the distance formula: \\( d=\\sqrt{(4-7)^{2}+(1-5)^{2}+(-7-5)^{2}}=\\sqrt{169}=13 \\) m.",
+      "hint": "This is a plain distance-formula computation once you read off the two sets of coordinates.",
+      "distractor_logic": [
+        "dropping the \\( z \\)-coordinate difference from the sum",
+        "an arithmetic slip while combining the squared differences",
+        "forgetting to take the square root at the end"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-031",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "A reference point is \\( R(-6,1,1) \\), with two other points \\( P(-9,-11,-3) \\) and \\( Q(-10,2,9) \\). Which of \\( P \\) or \\( Q \\) is farther from \\( R \\), and by how much?",
+      "options": [
+        "\\( Q \\), at distance \\( 9 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 13 \\) from \\( R \\)",
+        "\\( Q \\), at distance \\( 13 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 9 \\) from \\( R \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( RP=\\sqrt{9+144+16}=13 \\) and \\( RQ=\\sqrt{16+1+64}=9 \\), so \\( P \\) is farther, at distance \\( 13 \\).",
+      "hint": "Compute both distances from \\( R \\) independently, then compare.",
+      "distractor_logic": [
+        "identifies the nearer point instead of the farther one",
+        "picks the correct larger distance value but attaches it to the wrong point",
+        "picks the correct point but the wrong (swapped) distance value"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-032",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Points \\( A(2,3,4) \\), \\( B(3,5,2) \\), and \\( C(5,9,-2) \\) are given. Using the distance formula, what can be concluded about \\( A, B, C \\)?",
+      "options": [
+        "\\(A,B,C\\) form a triangle with a right angle at one vertex",
+        "\\(A,B,C\\) form a triangle with all sides unequal",
+        "\\(A,B,C\\) lie on a single straight line",
+        "\\(A,B,C\\) form a triangle with two equal sides"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB=3 \\), \\( BC=6 \\), \\( AC=9 \\). Since \\( AB+BC=AC \\) (or a permutation of this), the points are collinear.",
+      "hint": "Compute all three pairwise distances first, then check whether one equals the sum of the other two (collinear) or compare their values (triangle type).",
+      "distractor_logic": [
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-033",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the coordinates of the point which divides the line segment joining \\( A(3,5,4) \\) and \\( B(-2,4,-4) \\) externally in the ratio \\( 1:2 \\).",
+      "options": [
+        "(-8,-6,-12)",
+        "(8,6,4)",
+        "(8,6,12)",
+        "(-7,3,-12)"
+      ],
+      "correct_index": 2,
+      "explanation": "By the external section formula, the required point is \\( \\left(\\frac{1\\cdot (-2)-6}{1-2},\\frac{1\\cdot 4-10}{1-2},\\frac{1\\cdot (-4)-8}{1-2}\\right)=(8,6,12) \\).",
+      "hint": "Use \\( \\left(\\frac{mx_2-nx_1}{m-n},\\frac{my_2-ny_1}{m-n},\\frac{mz_2-nz_1}{m-n}\\right) \\) with \\( m:n=1:2 \\) — note the minus signs, both in the numerator terms and the denominator.",
+      "distractor_logic": [
+        "flips the sign of every coordinate — a slip in simplifying the formula's negative denominator",
+        "drops the \\( z \\)-coordinate computation and just copies \\( z_1 \\)",
+        "swaps \\( m \\) and \\( n \\) in the external section formula"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-034",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Two survey markers sit at \\( A(-8,2,8) \\) and \\( B(-16,-4,2) \\) (metres). A third marker is to be placed exactly halfway between them. Find its coordinates.",
+      "options": [
+        "(-12,-1,5)",
+        "(-24,-2,10)",
+        "(-11,-1,5)",
+        "(-4,-3,-3)"
+      ],
+      "correct_index": 0,
+      "explanation": "Midpoint \\( =\\left(\\frac{-8-16}{2},\\frac{2-4}{2},\\frac{8+2}{2}\\right)=(-12,-1,5) \\).",
+      "hint": "Midpoint \\( =\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\).",
+      "distractor_logic": [
+        "adds the coordinates but forgets to divide by \\( 2 \\)",
+        "an arithmetic slip in one coordinate",
+        "subtracts the coordinates instead of adding them before halving"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-035",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the centroid of the triangle with vertices \\( A(8,4,-2) \\), \\( B(-7,-8,4) \\), and \\( C(8,-2,-5) \\).",
+      "options": [
+        "(3,-2,-1)",
+        "(9,-6,-3)",
+        "(2,-2,-1)",
+        "(4,-2,-1)"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( =\\left(\\frac{8-7+8}{3},\\frac{4-8-2}{3},\\frac{-2+4-5}{3}\\right)=(3,-2,-1) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "adds the three vertices but forgets to divide by \\( 3 \\)",
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "divides by \\( 2 \\) instead of \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-036",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Three drones hold position at \\( A(-7,-6,-4) \\), \\( B(-3,9,-1) \\), and \\( C(-14,-24,-10) \\) (metres). A fourth drone is to hover at the centroid of the triangle they form. Find its coordinates.",
+      "options": [
+        "(-8,-7,-5)",
+        "(-9,-7,-5)",
+        "(-7,-7,-5)",
+        "(-24,-21,-15)"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( =\\left(\\frac{-7-3-14}{3},\\frac{-6+9-24}{3},\\frac{-4-1-10}{3}\\right)=(-8,-7,-5) \\).",
+      "hint": "Centroid \\( =\\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\).",
+      "distractor_logic": [
+        "averages only two of the three vertices, as if finding a midpoint instead of a centroid",
+        "divides by \\( 2 \\) instead of \\( 3 \\)",
+        "adds the three vertices but forgets to divide by \\( 3 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-037",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(-6,-6,-1) \\), \\( B(-4,-7,-3) \\), and \\( C(-4,-5,-3) \\) using the distance formula.",
+      "options": [
+        "a triangle with all three sides equal (equilateral)",
+        "a triangle with all sides different (scalene)",
+        "a triangle with exactly two equal sides (isosceles)",
+        "a right-angled triangle"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB=3 \\), \\( BC=2 \\), \\( CA=3 \\). This side-length pattern identifies the triangle as: a triangle with exactly two equal sides (isosceles).",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-038",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 2,
+      "type": "regular",
+      "question": "A reference point is \\( R(1,2,-6) \\), with two other points \\( P(-7,3,-10) \\) and \\( Q(0,4,-4) \\). Which of \\( P \\) or \\( Q \\) is farther from \\( R \\), and by how much?",
+      "options": [
+        "\\( P \\), at distance \\( 3 \\) from \\( R \\)",
+        "\\( Q \\), at distance \\( 9 \\) from \\( R \\)",
+        "\\( P \\), at distance \\( 9 \\) from \\( R \\)",
+        "\\( Q \\), at distance \\( 3 \\) from \\( R \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( RP=\\sqrt{64+1+16}=9 \\) and \\( RQ=\\sqrt{1+4+4}=3 \\), so \\( P \\) is farther, at distance \\( 9 \\).",
+      "hint": "Compute both distances from \\( R \\) independently, then compare.",
+      "distractor_logic": [
+        "picks the correct point but the wrong (swapped) distance value",
+        "picks the correct larger distance value but attaches it to the wrong point",
+        "identifies the nearer point instead of the farther one"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-039",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 2,
+      "type": "regular",
+      "question": "Points \\( A(-6,6,2) \\), \\( B(-2,10,4) \\), and \\( C(2,14,6) \\) are given. Using the distance formula, what can be concluded about \\( A, B, C \\)?",
+      "options": [
+        "the three points form a right-angled triangle",
+        "the three points are collinear",
+        "the three points form a scalene triangle",
+        "the three points form an isosceles triangle"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( AB=6 \\), \\( BC=6 \\), \\( AC=12 \\). Since \\( AB+BC=AC \\) (or a permutation of this), the points are collinear.",
+      "hint": "Compute all three pairwise distances first, then check whether one equals the sum of the other two (collinear) or compare their values (triangle type).",
+      "distractor_logic": [
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show",
+        "does not match what the three pairwise distances actually show"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L2-040",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the coordinates of the point which divides the line segment joining \\( A(-6,-5,2) \\) and \\( B(-3,-5,8) \\) internally in the ratio \\( 1:2 \\).",
+      "options": [
+        "(-5,-5,2)",
+        "(-5,-5,4)",
+        "(-4,-5,6)",
+        "(-9,-5,-4)"
+      ],
+      "correct_index": 1,
+      "explanation": "By the internal section formula, the required point is \\( \\left(\\frac{1\\cdot (-3)-12}{1+2},\\frac{1\\cdot (-5)-10}{1+2},\\frac{1\\cdot 8+4}{1+2}\\right)=(-5,-5,4) \\).",
+      "hint": "Use \\( \\left(\\frac{mx_2+nx_1}{m+n},\\frac{my_2+ny_1}{m+n},\\frac{mz_2+nz_1}{m+n}\\right) \\) with \\( m:n=1:2 \\), taking \\( A \\) as \\( (x_1,y_1,z_1) \\) and \\( B \\) as \\( (x_2,y_2,z_2) \\).",
+      "distractor_logic": [
+        "drops the \\( z \\)-coordinate computation and just copies \\( z_1 \\)",
+        "swaps \\( m \\) and \\( n \\) in the section formula",
+        "uses the external-division formula in place of the internal-division formula"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-001",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 3,
+      "type": "regular",
+      "question": "Points \\( A(4,-6,4) \\) and \\( B(2,0,k) \\) satisfy \\( AB=7 \\), with more than one value of \\( k \\) possible. Find the smaller possible value of \\( k \\).",
+      "options": [
+        "1",
+        "6",
+        "7",
+        "4"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB^{2}=(2-4)^{2}+(0-(-6))^{2}+(k-4)^{2}=7^{2} \\), so \\( 4+36+(k-(4))^{2}=49 \\), giving \\( (k-(4))^{2}=9 \\), so \\( k-(4)=\\pm 3 \\), meaning \\( k=7 \\) or \\( k=1 \\); the smaller of these is \\( k=1 \\).",
+      "hint": "Substitute into the distance formula, solve the resulting equation for both roots, then pick the one the question asks for.",
+      "distractor_logic": [
+        "mixes up the \\( z \\)-shift with the \\( x \\)-shift",
+        "is the larger of the two valid roots, not the smaller one asked for",
+        "leaves \\( z_2=z_1 \\), i.e. ignores that a \\( z \\)-shift is required at all"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-002",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(6,5,1) \\), \\( B(0,-2,7) \\), and \\( C(4,6,-1) \\) using the distance formula.",
+      "options": [
+        "isosceles (two sides equal)",
+        "equilateral (three sides equal)",
+        "scalene (no two sides equal)",
+        "right-angled (the Pythagorean relation holds among the sides)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB=11 \\), \\( BC=12 \\), \\( CA=3 \\). This side-length pattern identifies the triangle as: scalene (no two sides equal).",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-003",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Four points \\( A(3,-2,-3) \\), \\( B(-1,6,-2) \\), \\( C(3,5,6) \\), and \\( D(7,-3,5) \\) are given, taken in order. Using the distance formula on the sides and diagonals, what shape do they form?",
+      "options": [
+        "\\(ABCD\\) is not a parallelogram at all",
+        "\\(ABCD\\) is a parallelogram with unequal adjacent sides",
+        "\\(ABCD\\) is a square",
+        "\\(ABCD\\) is a rhombus that is not a square"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB=\\sqrt{81}=9 \\), \\( BC=\\sqrt{81}=9 \\), \\( CD=\\sqrt{81}=9 \\), \\( DA=\\sqrt{81}=9 \\), \\( AC=\\sqrt{130}=\\sqrt{130} \\), \\( BD=\\sqrt{194}=\\sqrt{194} \\). This pattern of side and diagonal lengths matches: \\(ABCD\\) is a rhombus that is not a square.",
+      "hint": "Compute all four sides first (equal opposite sides means a parallelogram), then compare adjacent sides (equal means a rhombus) and the two diagonals (equal means a square).",
+      "distractor_logic": [
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-004",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the point on the \\( z \\)-axis that is equidistant from \\( A(-4,8,-7) \\) and \\( B(-4,-4,-1) \\).",
+      "options": [
+        "(0,0,-8)",
+        "(0,-8,0)",
+        "(0,0,8)",
+        "(-4,2,-4)"
+      ],
+      "correct_index": 0,
+      "explanation": "Let the required point be \\( P \\), with only its \\( z \\)-coordinate \\( k \\) nonzero. Setting \\( PA^{2}=PB^{2} \\) and simplifying (the other two coordinates of \\( P \\) are \\( 0 \\)) gives \\( k=-8 \\), so \\( P=(0,0,-8) \\). Check: \\( PA=9=PB \\).",
+      "hint": "Let the unknown point be \\( (0,0,k) \\), then set \\( PA^2=PB^2 \\) and solve for \\( k \\).",
+      "distractor_logic": [
+        "places the point on the \\( y \\)-axis instead of the \\( z \\)-axis",
+        "flips the sign of the coordinate — check by direct substitution, not just algebra",
+        "is the midpoint of \\( AB \\), which is equidistant from \\( A \\) and \\( B \\) but generally does not lie on the required axis"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-005",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Two ground stations are at \\( A(6,4,1) \\) and \\( C(6,0,3) \\) (coordinates in km). A relay tower is installed at \\( T(4,2,2) \\). Is the tower equidistant from the two stations?",
+      "options": [
+        "cannot be determined without knowing the coordinates of a third station",
+        "no — \\( TA \\ne TC \\)",
+        "yes, but only because \\( T \\) is the midpoint of \\( AC \\)",
+        "yes — \\( TA=TC=3 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( TA=\\sqrt{9}=3 \\) and \\( TC=3 \\), so the tower is equidistant from the two stations.",
+      "hint": "Just compute \\( TA \\) and \\( TC \\) with the distance formula and compare.",
+      "distractor_logic": [
+        "is wrong — the two given stations are already enough to check equidistance from \\( T \\)",
+        "contradicts the actual computed distances \\( TA \\) and \\( TC \\)",
+        "is factually wrong — direct computation shows \\( T \\) is not the midpoint of \\( AC \\), yet the distances are still equal"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-006",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 3,
+      "type": "regular",
+      "question": "The \\( zx \\)-plane divides the line segment joining \\( A(-2,5,4) \\) and \\( B(-2,-15,4) \\) in some ratio \\( m:n \\). Find this ratio.",
+      "options": [
+        "\\( 2:3 \\)",
+        "\\( 1:4 \\)",
+        "\\( 1:3 \\)",
+        "\\( 3:1 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For the dividing point to lie on the \\( zx \\)-plane, its \\( y \\)-coordinate must be \\( 0 \\): \\( \\frac{m\\cdot(-15)+15}{m+n}=0 \\), which gives \\( m:n=1:3 \\).",
+      "hint": "Set the \\( y \\)-coordinate of the internal-division formula equal to \\( 0 \\) and solve for \\( m:n \\).",
+      "distractor_logic": [
+        "an arithmetic slip while solving for the ratio",
+        "an arithmetic slip while solving for the ratio",
+        "is the ratio with \\( m \\) and \\( n \\) swapped"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-007",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "The centroid of a triangle with vertices \\( A(-5,-2,1) \\), \\( B(-8,-2,-3) \\), and an unknown third vertex \\( C \\) is \\( G(-5,1,-4) \\). Find \\( C \\).",
+      "options": [
+        "(0,7,-10)",
+        "(2,-7,10)",
+        "(3,6,-6)",
+        "(-2,7,-10)"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\( G=\\left(\\frac{x_1+x_2+x_3}{3},\\ldots\\right) \\), we get \\( x_3=3\\cdot (-5)+5+8 \\), and similarly for \\( y_3,z_3 \\), giving \\( C=(-2,7,-10) \\).",
+      "hint": "Rearrange the centroid formula: \\( x_3=3x_G-x_1-x_2 \\) (and similarly for \\( y_3,z_3 \\)).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "flips the overall sign while rearranging the centroid formula",
+        "uses divisor \\( 2 \\) instead of \\( 3 \\) when isolating the missing vertex"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-008",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "A triangle has vertices \\( A(-5,6,-4) \\), \\( B(-8,-1,6) \\), and \\( C(-5,4,-20) \\). Find the distance of its centroid from the origin.",
+      "options": [
+        "9",
+        "81",
+        "17",
+        "18"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( G=\\left(\\frac{-5-8-5}{3},\\ldots\\right)=(-6,3,-6) \\). Distance from the origin \\( =\\sqrt{(-6)^{2}+3^{2}+(-6)^{2}}=\\sqrt{81}=9 \\).",
+      "hint": "First find the centroid \\( G \\), then apply the distance-from-origin formula \\( \\sqrt{x^2+y^2+z^2} \\) to \\( G \\).",
+      "distractor_logic": [
+        "forgets to take the square root of the sum of squares of the centroid's coordinates",
+        "an arithmetic slip while summing the squared centroid coordinates",
+        "an arithmetic slip while summing the squared centroid coordinates"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-009",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 3,
+      "type": "regular",
+      "question": "Points \\( A(4,5,-1) \\) and \\( B(2,1,k) \\) satisfy \\( AB=6 \\), with more than one value of \\( k \\) possible. Find the smaller possible value of \\( k \\).",
+      "options": [
+        "-5",
+        "-1",
+        "3",
+        "1"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB^{2}=(2-4)^{2}+(1-5)^{2}+(k-(-1))^{2}=6^{2} \\), so \\( 4+16+(k-(-1))^{2}=36 \\), giving \\( (k-(-1))^{2}=16 \\), so \\( k-(-1)=\\pm 4 \\), meaning \\( k=3 \\) or \\( k=-5 \\); the smaller of these is \\( k=-5 \\).",
+      "hint": "Substitute into the distance formula, solve the resulting equation for both roots, then pick the one the question asks for.",
+      "distractor_logic": [
+        "leaves \\( z_2=z_1 \\), i.e. ignores that a \\( z \\)-shift is required at all",
+        "is the larger of the two valid roots, not the smaller one asked for",
+        "mixes up the \\( z \\)-shift with the \\( x \\)-shift"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-010",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(-6,-3,-1) \\), \\( B(-10,1,1) \\), and \\( C(-2,1,1) \\) using the distance formula.",
+      "options": [
+        "a scalene triangle",
+        "an equilateral triangle",
+        "an isosceles triangle",
+        "a right-angled triangle"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB=6 \\), \\( BC=8 \\), \\( CA=6 \\). This side-length pattern identifies the triangle as: an isosceles triangle.",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-011",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Four points \\( A(6,1,-6) \\), \\( B(6,-2,-10) \\), \\( C(6,-6,-7) \\), and \\( D(6,-3,-3) \\) are given, taken in order. Using the distance formula on the sides and diagonals, what shape do they form?",
+      "options": [
+        "not even a parallelogram",
+        "a genuine square",
+        "a rhombus that is not a square",
+        "a parallelogram with unequal sides"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( AB=\\sqrt{25}=5 \\), \\( BC=\\sqrt{25}=5 \\), \\( CD=\\sqrt{25}=5 \\), \\( DA=\\sqrt{25}=5 \\), \\( AC=\\sqrt{50}=5\\sqrt{2} \\), \\( BD=\\sqrt{50}=5\\sqrt{2} \\). This pattern of side and diagonal lengths matches: a genuine square.",
+      "hint": "Compute all four sides first (equal opposite sides means a parallelogram), then compare adjacent sides (equal means a rhombus) and the two diagonals (equal means a square).",
+      "distractor_logic": [
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-012",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the point on the \\( z \\)-axis that is equidistant from \\( A(8,4,6) \\) and \\( B(-3,-6,-1) \\).",
+      "options": [
+        "(0,0,-5)",
+        "(5,0,0)",
+        "(0,0,5)",
+        "(0,0,6)"
+      ],
+      "correct_index": 2,
+      "explanation": "Let the required point be \\( P \\), with only its \\( z \\)-coordinate \\( k \\) nonzero. Setting \\( PA^{2}=PB^{2} \\) and simplifying (the other two coordinates of \\( P \\) are \\( 0 \\)) gives \\( k=5 \\), so \\( P=(0,0,5) \\). Check: \\( PA=9=PB \\).",
+      "hint": "Let the unknown point be \\( (0,0,k) \\), then set \\( PA^2=PB^2 \\) and solve for \\( k \\).",
+      "distractor_logic": [
+        "flips the sign of the coordinate — check by direct substitution, not just algebra",
+        "places the point on the \\( x \\)-axis instead of the \\( z \\)-axis",
+        "an arithmetic slip while solving the equidistance equation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-013",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Two ground stations are at \\( A(2,-2,-6) \\) and \\( C(10,4,-6) \\) (coordinates in km). A relay tower is installed at \\( T(6,1,6) \\). Is the tower equidistant from the two stations?",
+      "options": [
+        "cannot be determined without knowing the coordinates of a third station",
+        "yes — \\( TA=TC=13 \\)",
+        "yes, but only because \\( T \\) is the midpoint of \\( AC \\)",
+        "no — \\( TA \\ne TC \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( TA=\\sqrt{169}=13 \\) and \\( TC=13 \\), so the tower is equidistant from the two stations.",
+      "hint": "Just compute \\( TA \\) and \\( TC \\) with the distance formula and compare.",
+      "distractor_logic": [
+        "is wrong — the two given stations are already enough to check equidistance from \\( T \\)",
+        "is factually wrong — direct computation shows \\( T \\) is not the midpoint of \\( AC \\), yet the distances are still equal",
+        "contradicts the actual computed distances \\( TA \\) and \\( TC \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-014",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 3,
+      "type": "regular",
+      "question": "The \\( yz \\)-plane divides the line segment joining \\( A(-9,8,-2) \\) and \\( B(18,8,-2) \\) in some ratio \\( m:n \\). Find this ratio.",
+      "options": [
+        "\\( 2:1 \\)",
+        "\\( 1:2 \\)",
+        "\\( 2:2 \\)",
+        "\\( 1:3 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For the dividing point to lie on the \\( yz \\)-plane, its \\( x \\)-coordinate must be \\( 0 \\): \\( \\frac{m\\cdot(18)-18}{m+n}=0 \\), which gives \\( m:n=1:2 \\).",
+      "hint": "Set the \\( x \\)-coordinate of the internal-division formula equal to \\( 0 \\) and solve for \\( m:n \\).",
+      "distractor_logic": [
+        "is the ratio with \\( m \\) and \\( n \\) swapped",
+        "an arithmetic slip while solving for the ratio",
+        "an arithmetic slip while solving for the ratio"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-015",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 3,
+      "type": "regular",
+      "question": "The point \\( P(2,-3,7) \\) divides the line segment joining \\( A(-6,3,7) \\) and \\( B(6,-6,7) \\) internally. Find the ratio \\( m:n \\) in which \\( P \\) divides \\( AB \\).",
+      "options": [
+        "\\( 4:1 \\)",
+        "\\( 2:3 \\)",
+        "\\( 1:2 \\)",
+        "\\( 2:1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Let \\( P \\) divide \\( AB \\) in the ratio \\( m:n \\). Using the \\( x \\)-coordinate: \\( 2=\\frac{m\\cdot 6-6}{m+n} \\), which gives \\( m:n=2:1 \\); this is confirmed by the \\( y \\)- and \\( z \\)-coordinates as well.",
+      "hint": "Substitute \\( P \\) into the internal section formula and solve for \\( m:n \\); check with a second coordinate.",
+      "distractor_logic": [
+        "an arithmetic slip while solving the ratio equation componentwise",
+        "an arithmetic slip while solving the ratio equation componentwise",
+        "reads the ratio in which \\( B \\) divides \\( PA \\) instead of the ratio in which \\( P \\) divides \\( AB \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-016",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "The centroid of a triangle with vertices \\( A(7,-7,7) \\), \\( B(-7,-2,5) \\), and an unknown third vertex \\( C \\) is \\( G(2,-1,6) \\). Find \\( C \\).",
+      "options": [
+        "(6,6,6)",
+        "(4,7,0)",
+        "(-6,-6,-6)",
+        "(8,6,6)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\( G=\\left(\\frac{x_1+x_2+x_3}{3},\\ldots\\right) \\), we get \\( x_3=3\\cdot 2-7+7 \\), and similarly for \\( y_3,z_3 \\), giving \\( C=(6,6,6) \\).",
+      "hint": "Rearrange the centroid formula: \\( x_3=3x_G-x_1-x_2 \\) (and similarly for \\( y_3,z_3 \\)).",
+      "distractor_logic": [
+        "uses divisor \\( 2 \\) instead of \\( 3 \\) when isolating the missing vertex",
+        "flips the overall sign while rearranging the centroid formula",
+        "an arithmetic slip in one coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-017",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "A triangle has vertices \\( A(4,-1,-3) \\), \\( B(-1,2,5) \\), and \\( C(3,17,7) \\). Find the distance of its centroid from the origin.",
+      "options": [
+        "9",
+        "13",
+        "49",
+        "7"
+      ],
+      "correct_index": 3,
+      "explanation": "Centroid \\( G=\\left(\\frac{4-1+3}{3},\\ldots\\right)=(2,6,3) \\). Distance from the origin \\( =\\sqrt{2^{2}+6^{2}+3^{2}}=\\sqrt{49}=7 \\).",
+      "hint": "First find the centroid \\( G \\), then apply the distance-from-origin formula \\( \\sqrt{x^2+y^2+z^2} \\) to \\( G \\).",
+      "distractor_logic": [
+        "an arithmetic slip while summing the squared centroid coordinates",
+        "an arithmetic slip while summing the squared centroid coordinates",
+        "forgets to take the square root of the sum of squares of the centroid's coordinates"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-018",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 3,
+      "type": "regular",
+      "question": "Points \\( A(2,-7,-3) \\) and \\( B(8,0,k) \\) satisfy \\( AB=11 \\), with more than one value of \\( k \\) possible. Find the smaller possible value of \\( k \\).",
+      "options": [
+        "-3",
+        "1",
+        "-9",
+        "3"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB^{2}=(8-2)^{2}+(0-(-7))^{2}+(k-(-3))^{2}=11^{2} \\), so \\( 36+49+(k-(-3))^{2}=121 \\), giving \\( (k-(-3))^{2}=36 \\), so \\( k-(-3)=\\pm 6 \\), meaning \\( k=3 \\) or \\( k=-9 \\); the smaller of these is \\( k=-9 \\).",
+      "hint": "Substitute into the distance formula, solve the resulting equation for both roots, then pick the one the question asks for.",
+      "distractor_logic": [
+        "leaves \\( z_2=z_1 \\), i.e. ignores that a \\( z \\)-shift is required at all",
+        "an arithmetic slip while solving for the missing coordinate",
+        "is the larger of the two valid roots, not the smaller one asked for"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-019",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(1,5,-6) \\), \\( B(-1,2,0) \\), and \\( C(-1,8,0) \\) using the distance formula.",
+      "options": [
+        "it is scalene",
+        "it is right-angled",
+        "it is equilateral",
+        "it is isosceles"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB=7 \\), \\( BC=6 \\), \\( CA=7 \\). This side-length pattern identifies the triangle as: it is isosceles.",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-020",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Four points \\( A(3,-3,3) \\), \\( B(0,9,7) \\), \\( C(3,13,19) \\), and \\( D(6,1,15) \\) are given, taken in order. Using the distance formula on the sides and diagonals, what shape do they form?",
+      "options": [
+        "a rhombus only",
+        "a square",
+        "no parallelogram is formed",
+        "a parallelogram only"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=\\sqrt{169}=13 \\), \\( BC=\\sqrt{169}=13 \\), \\( CD=\\sqrt{169}=13 \\), \\( DA=\\sqrt{169}=13 \\), \\( AC=\\sqrt{512}=16\\sqrt{2} \\), \\( BD=\\sqrt{164}=2\\sqrt{41} \\). This pattern of side and diagonal lengths matches: a rhombus only.",
+      "hint": "Compute all four sides first (equal opposite sides means a parallelogram), then compare adjacent sides (equal means a rhombus) and the two diagonals (equal means a square).",
+      "distractor_logic": [
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-021",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Two ground stations are at \\( A(-1,0,6) \\) and \\( C(-7,-12,6) \\) (coordinates in km). A relay tower is installed at \\( T(-4,-6,4) \\). Is the tower equidistant from the two stations?",
+      "options": [
+        "no — \\( TA \\ne TC \\)",
+        "yes, but only because \\( T \\) is the midpoint of \\( AC \\)",
+        "cannot be determined without knowing the coordinates of a third station",
+        "yes — \\( TA=TC=7 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( TA=\\sqrt{49}=7 \\) and \\( TC=7 \\), so the tower is equidistant from the two stations.",
+      "hint": "Just compute \\( TA \\) and \\( TC \\) with the distance formula and compare.",
+      "distractor_logic": [
+        "contradicts the actual computed distances \\( TA \\) and \\( TC \\)",
+        "is factually wrong — direct computation shows \\( T \\) is not the midpoint of \\( AC \\), yet the distances are still equal",
+        "is wrong — the two given stations are already enough to check equidistance from \\( T \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-022",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 3,
+      "type": "regular",
+      "question": "The \\( yz \\)-plane divides the line segment joining \\( A(8,2,2) \\) and \\( B(-1,2,2) \\) in some ratio \\( m:n \\). Find this ratio.",
+      "options": [
+        "\\( 8:2 \\)",
+        "\\( 8:1 \\)",
+        "\\( 1:8 \\)",
+        "\\( 9:1 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For the dividing point to lie on the \\( yz \\)-plane, its \\( x \\)-coordinate must be \\( 0 \\): \\( \\frac{m\\cdot(-1)+8}{m+n}=0 \\), which gives \\( m:n=8:1 \\).",
+      "hint": "Set the \\( x \\)-coordinate of the internal-division formula equal to \\( 0 \\) and solve for \\( m:n \\).",
+      "distractor_logic": [
+        "an arithmetic slip while solving for the ratio",
+        "is the ratio with \\( m \\) and \\( n \\) swapped",
+        "an arithmetic slip while solving for the ratio"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-023",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "The centroid of a triangle with vertices \\( A(-1,-8,-7) \\), \\( B(1,6,-8) \\), and an unknown third vertex \\( C \\) is \\( G(-8,-2,3) \\). Find \\( C \\).",
+      "options": [
+        "(-22,-4,24)",
+        "(-24,-4,24)",
+        "(-16,-2,21)",
+        "(24,4,-24)"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\( G=\\left(\\frac{x_1+x_2+x_3}{3},\\ldots\\right) \\), we get \\( x_3=3\\cdot (-8)+1-1 \\), and similarly for \\( y_3,z_3 \\), giving \\( C=(-24,-4,24) \\).",
+      "hint": "Rearrange the centroid formula: \\( x_3=3x_G-x_1-x_2 \\) (and similarly for \\( y_3,z_3 \\)).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "uses divisor \\( 2 \\) instead of \\( 3 \\) when isolating the missing vertex",
+        "flips the overall sign while rearranging the centroid formula"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-024",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "A triangle has vertices \\( A(4,-7,4) \\), \\( B(-5,7,-8) \\), and \\( C(19,9,-2) \\). Find the distance of its centroid from the origin.",
+      "options": [
+        "7",
+        "2",
+        "49",
+        "5"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( G=\\left(\\frac{4-5+19}{3},\\ldots\\right)=(6,3,-2) \\). Distance from the origin \\( =\\sqrt{6^{2}+3^{2}+(-2)^{2}}=\\sqrt{49}=7 \\).",
+      "hint": "First find the centroid \\( G \\), then apply the distance-from-origin formula \\( \\sqrt{x^2+y^2+z^2} \\) to \\( G \\).",
+      "distractor_logic": [
+        "an arithmetic slip while summing the squared centroid coordinates",
+        "forgets to take the square root of the sum of squares of the centroid's coordinates",
+        "an arithmetic slip while summing the squared centroid coordinates"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-025",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": 3,
+      "type": "regular",
+      "question": "Points \\( A(-1,-2,2) \\) and \\( B(5,5,k) \\) satisfy \\( AB=11 \\), with more than one value of \\( k \\) possible. Find the larger possible value of \\( k \\).",
+      "options": [
+        "2",
+        "-4",
+        "4",
+        "8"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB^{2}=(5-(-1))^{2}+(5-(-2))^{2}+(k-2)^{2}=11^{2} \\), so \\( 36+49+(k-(2))^{2}=121 \\), giving \\( (k-(2))^{2}=36 \\), so \\( k-(2)=\\pm 6 \\), meaning \\( k=8 \\) or \\( k=-4 \\); the larger of these is \\( k=8 \\).",
+      "hint": "Substitute into the distance formula, solve the resulting equation for both roots, then pick the one the question asks for.",
+      "distractor_logic": [
+        "leaves \\( z_2=z_1 \\), i.e. ignores that a \\( z \\)-shift is required at all",
+        "is the smaller of the two valid roots, not the larger one asked for",
+        "an arithmetic slip while solving for the missing coordinate"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-026",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Classify the triangle formed by \\( A(-6,-1,-4) \\), \\( B(-8,5,-7) \\), and \\( C(-10,3,-6) \\) using the distance formula.",
+      "options": [
+        "scalene triangle",
+        "isosceles triangle",
+        "equilateral triangle",
+        "right-angled triangle"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=7 \\), \\( BC=3 \\), \\( CA=6 \\). This side-length pattern identifies the triangle as: scalene triangle.",
+      "hint": "Compute all three sides with the distance formula, then compare them (and check the Pythagorean relation for a right angle).",
+      "distractor_logic": [
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification",
+        "the computed side lengths do not match this classification"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-027",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Four points \\( A(3,-4,5) \\), \\( B(1,-6,6) \\), \\( C(-3,-2,8) \\), and \\( D(-1,0,7) \\) are given, taken in order. Using the distance formula on the sides and diagonals, what shape do they form?",
+      "options": [
+        "\\(ABCD\\) is a plain parallelogram",
+        "\\(ABCD\\) has no parallel opposite sides",
+        "\\(ABCD\\) is a rhombus but not a square",
+        "\\(ABCD\\) is a square"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=\\sqrt{9}=3 \\), \\( BC=\\sqrt{36}=6 \\), \\( CD=\\sqrt{9}=3 \\), \\( DA=\\sqrt{36}=6 \\), \\( AC=\\sqrt{49}=7 \\), \\( BD=\\sqrt{41}=\\sqrt{41} \\). This pattern of side and diagonal lengths matches: \\(ABCD\\) is a plain parallelogram.",
+      "hint": "Compute all four sides first (equal opposite sides means a parallelogram), then compare adjacent sides (equal means a rhombus) and the two diagonals (equal means a square).",
+      "distractor_logic": [
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out",
+        "the computed side and diagonal lengths rule this out"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-028",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": 3,
+      "type": "regular",
+      "question": "Two ground stations are at \\( A(-2,6,2) \\) and \\( C(6,2,2) \\) (coordinates in km). A relay tower is installed at \\( T(2,4,-2) \\). Is the tower equidistant from the two stations?",
+      "options": [
+        "no — \\( TA \\ne TC \\)",
+        "yes — \\( TA=TC=6 \\)",
+        "yes, but only because \\( T \\) is the midpoint of \\( AC \\)",
+        "cannot be determined without knowing the coordinates of a third station"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( TA=\\sqrt{36}=6 \\) and \\( TC=6 \\), so the tower is equidistant from the two stations.",
+      "hint": "Just compute \\( TA \\) and \\( TC \\) with the distance formula and compare.",
+      "distractor_logic": [
+        "contradicts the actual computed distances \\( TA \\) and \\( TC \\)",
+        "is factually wrong — direct computation shows \\( T \\) is not the midpoint of \\( AC \\), yet the distances are still equal",
+        "is wrong — the two given stations are already enough to check equidistance from \\( T \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-029",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": 3,
+      "type": "regular",
+      "question": "The \\( xy \\)-plane divides the line segment joining \\( A(-6,-4,2) \\) and \\( B(-6,-4,-5) \\) in some ratio \\( m:n \\). Find this ratio.",
+      "options": [
+        "\\( 2:6 \\)",
+        "\\( 2:5 \\)",
+        "\\( 3:5 \\)",
+        "\\( 5:2 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For the dividing point to lie on the \\( xy \\)-plane, its \\( z \\)-coordinate must be \\( 0 \\): \\( \\frac{m\\cdot(-5)+10}{m+n}=0 \\), which gives \\( m:n=2:5 \\).",
+      "hint": "Set the \\( z \\)-coordinate of the internal-division formula equal to \\( 0 \\) and solve for \\( m:n \\).",
+      "distractor_logic": [
+        "an arithmetic slip while solving for the ratio",
+        "an arithmetic slip while solving for the ratio",
+        "is the ratio with \\( m \\) and \\( n \\) swapped"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-L3-030",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "The centroid of a triangle with vertices \\( A(-7,-2,-2) \\), \\( B(7,6,-3) \\), and an unknown third vertex \\( C \\) is \\( G(7,-3,1) \\). Find \\( C \\).",
+      "options": [
+        "(-21,13,-8)",
+        "(21,-13,8)",
+        "(23,-13,8)",
+        "(14,-10,7)"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\( G=\\left(\\frac{x_1+x_2+x_3}{3},\\ldots\\right) \\), we get \\( x_3=3\\cdot 7+7-7 \\), and similarly for \\( y_3,z_3 \\), giving \\( C=(21,-13,8) \\).",
+      "hint": "Rearrange the centroid formula: \\( x_3=3x_G-x_1-x_2 \\) (and similarly for \\( y_3,z_3 \\)).",
+      "distractor_logic": [
+        "flips the overall sign while rearranging the centroid formula",
+        "an arithmetic slip in one coordinate",
+        "uses divisor \\( 2 \\) instead of \\( 3 \\) when isolating the missing vertex"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-001",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( M \\) is the midpoint of \\( A(2,8,6) \\) and \\( B(-10,10,18) \\). Find the distance of \\( M \\) from the \\( x \\)-axis.",
+      "options": [
+        "4",
+        "23",
+        "15",
+        "30"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( M=\\left(\\frac{2-10}{2},\\frac{8+10}{2},\\frac{6+18}{2}\\right)=(-4,9,12) \\). Distance from the \\( x \\)-axis \\( =\\sqrt{9^{2}+12^{2}}=\\sqrt{225}=15 \\).",
+      "hint": "First find the midpoint \\( M \\), then apply the distance-from-axis formula to \\( M \\).",
+      "distractor_logic": [
+        "is the distance from the coordinate plane opposite the \\( x \\)-axis, not from the axis itself",
+        "an arithmetic slip while computing the axis distance",
+        "forgets to halve the summed coordinates before computing the axis distance"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-002",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the octant containing the centroid of the triangle with vertices \\( A(6,-2,-5) \\), \\( B(-8,8,9) \\), \\( C(-1,3,8) \\).",
+      "options": [
+        "Octant II",
+        "Octant VI",
+        "Octant V",
+        "Octant I"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( =\\left(\\frac{6-8-1}{3},\\ldots\\right)=(-1,3,4) \\), sign pattern (-,+,+), which is Octant II.",
+      "hint": "Find the centroid first, then read off the sign of each of its coordinates.",
+      "distractor_logic": [
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-003",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The centroid of a triangle with vertices \\( A(4,-3,-5) \\), \\( B(5,2,-3) \\), and \\( C \\) is \\( G(1,3,-7) \\). Which octant does \\( C \\) lie in?",
+      "options": [
+        "Octant VII",
+        "Octant II",
+        "Octant III",
+        "Octant VI"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( C=(3\\cdot 1-4-5,3\\cdot 3+3-2,3\\cdot (-7)+5+3)=(-6,10,-13) \\), sign pattern (-,+,-), which is Octant VI.",
+      "hint": "Rearrange the centroid formula to isolate \\( C \\), then read off its coordinate signs.",
+      "distractor_logic": [
+        "is not the octant matching (-,+,-)",
+        "is not the octant matching (-,+,-)",
+        "is not the octant matching (-,+,-)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-004",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The \\( xy \\)-plane divides the segment joining \\( A(5,-2,7) \\) and \\( B(5,-2,-1) \\) at a point \\( P \\). Find the distance \\( AP \\).",
+      "options": [
+        "15",
+        "7",
+        "8",
+        "49"
+      ],
+      "correct_index": 1,
+      "explanation": "Setting the \\( z \\)-coordinate of the internal-division formula to \\( 0 \\) gives \\( m:n=7:1 \\), so \\( P=(5,-2,0) \\). Then \\( AP=\\sqrt{(5-5)^{2}+(-2-(-2))^{2}+(0-7)^{2}}=\\sqrt{49}=7 \\).",
+      "hint": "First find the ratio \\( m:n \\) (set the \\( z \\)-coordinate to \\( 0 \\)), then find \\( P \\), then apply the distance formula.",
+      "distractor_logic": [
+        "an arithmetic slip while computing \\( AP \\)",
+        "computes the full length \\( AB \\) instead of just \\( AP \\)",
+        "forgets to take the square root of the sum of squares"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-005",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( ABCD \\), with \\( A(1,-6,4) \\), \\( B(-3,2,5) \\), \\( C(-5,0,4) \\), \\( D(-1,-8,3) \\), is a parallelogram. Using the property that the diagonals of a parallelogram bisect each other, find the point where the diagonals meet.",
+      "options": [
+        "(-4,-6,8)",
+        "(-1,-2,4)",
+        "(-1,-3,4)",
+        "(-2,-3,4)"
+      ],
+      "correct_index": 3,
+      "explanation": "The diagonals \\( AC \\) and \\( BD \\) meet at their common midpoint: \\( \\left(\\frac{1-5}{2},\\frac{-6+0}{2},\\frac{4+4}{2}\\right)=(-2,-3,4) \\) (this matches the midpoint of \\( BD \\) as well, confirming \\( ABCD \\) is indeed a parallelogram).",
+      "hint": "The point where the diagonals of a parallelogram meet is the midpoint of either diagonal — use \\( AC \\) or \\( BD \\).",
+      "distractor_logic": [
+        "adds the coordinates of \\( A \\) and \\( C \\) but forgets to divide by \\( 2 \\)",
+        "finds the midpoint of side \\( AB \\) instead of diagonal \\( AC \\)",
+        "an arithmetic slip in one coordinate"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-006",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Triangle \\( ABC \\) has vertices \\( A(-3,2,-6) \\), \\( B(3,2,-6) \\), \\( C(3,-6,-6) \\). Verify (using the distance formula) that \\( ABC \\) is right-angled, and identify its hypotenuse.",
+      "options": [
+        "\\( BC \\)",
+        "none of the sides — the triangle is not right-angled",
+        "\\( AB \\)",
+        "\\( AC \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB=6 \\), \\( BC=8 \\), \\( AC=10 \\). Since \\( 36+64=100 \\), the Pythagorean relation holds, confirming a right angle opposite the longest side; the hypotenuse is \\( AC \\).",
+      "hint": "Compute all three sides, then check which combination satisfies \\( a^2+b^2=c^2 \\); the hypotenuse is opposite the right angle, i.e. the longest side.",
+      "distractor_logic": [
+        "is a leg, not the longest side, of this right triangle",
+        "is wrong — the side lengths do satisfy the Pythagorean relation",
+        "is a leg, not the longest side, of this right triangle"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-007",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A drone flies from \\( A(-5,6,1) \\) to \\( B(-8,10,-11) \\) and then to \\( C(-11,6,1) \\) (coordinates in km). How much longer is this two-leg path than flying straight from \\( A \\) to \\( C \\)?",
+      "options": [
+        "20",
+        "-20",
+        "29",
+        "26"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( AB=13 \\), \\( BC=13 \\), so the two-leg path is \\( 13+13=26 \\) km. Direct distance \\( AC=\\sqrt{36}=6 \\) km. Extra distance \\( =26-6=20 \\) km.",
+      "hint": "Compute \\( AB \\), \\( BC \\), and the direct distance \\( AC \\) separately, then subtract.",
+      "distractor_logic": [
+        "has the sign backwards",
+        "an arithmetic slip in the final subtraction",
+        "reports the full two-leg path length, not the extra distance over the direct route"
+      ],
+      "mixed_topics": [
+        "Distance Between Two Points — Formula and Direct Computation",
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-008",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Points \\( A(-5,-6,-3) \\), \\( P(-9,2,-11) \\), and \\( B(-11,6,-15) \\) are collinear (verify this using the distance formula). Find the ratio \\( AP:PB \\).",
+      "options": [
+        "\\( 3:1 \\)",
+        "\\( 1:2 \\)",
+        "\\( 2:1 \\)",
+        "\\( 2:2 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AP=\\sqrt{144}=12 \\), \\( PB=\\sqrt{36}=6 \\), and \\( AP+PB=18=18=AB \\), confirming collinearity. So \\( AP:PB=2:1 \\).",
+      "hint": "Compute \\( AP \\) and \\( PB \\) with the distance formula, confirm \\( AP+PB=AB \\), then form the ratio \\( AP:PB \\).",
+      "distractor_logic": [
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)",
+        "swaps which segment (\\( AP \\) or \\( PB \\)) comes first in the ratio",
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Section Formula — Internal and External Division"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-009",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Point \\( P \\) divides the segment joining \\( A(-1,6,1) \\) and \\( B(-1,6,-5) \\) internally in the ratio \\( 2:1 \\). In which octant does \\( P \\) lie?",
+      "options": [
+        "Octant VI",
+        "Octant VII",
+        "Octant I",
+        "Octant III"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( P=\\left(\\frac{2\\cdot (-1)-1}{2+1},\\frac{2\\cdot 6+6}{2+1},\\frac{2\\cdot (-5)+1}{2+1}\\right)=(-1,6,-3) \\), with sign pattern (-,+,-), which is Octant VI.",
+      "hint": "First find \\( P \\) with the internal section formula, then read off the sign of each coordinate.",
+      "distractor_logic": [
+        "is not the octant matching (-,+,-)",
+        "is not the octant matching (-,+,-)",
+        "is not the octant matching (-,+,-)"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-010",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the octant containing the centroid of the triangle with vertices \\( A(7,7,-4) \\), \\( B(-9,-1,-1) \\), \\( C(11,-21,14) \\).",
+      "options": [
+        "Octant IV",
+        "Octant I",
+        "Octant II",
+        "Octant III"
+      ],
+      "correct_index": 0,
+      "explanation": "Centroid \\( =\\left(\\frac{7-9+11}{3},\\ldots\\right)=(3,-5,3) \\), sign pattern (+,-,+), which is Octant IV.",
+      "hint": "Find the centroid first, then read off the sign of each of its coordinates.",
+      "distractor_logic": [
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-011",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The centroid of a triangle with vertices \\( A(5,6,-3) \\), \\( B(6,-7,-5) \\), and \\( C \\) is \\( G(7,-1,-1) \\). Which octant does \\( C \\) lie in?",
+      "options": [
+        "Octant IV",
+        "Octant II",
+        "Octant VII",
+        "Octant V"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( C=(3\\cdot 7-5-6,3\\cdot (-1)-6+7,3\\cdot (-1)+3+5)=(10,-2,5) \\), sign pattern (+,-,+), which is Octant IV.",
+      "hint": "Rearrange the centroid formula to isolate \\( C \\), then read off its coordinate signs.",
+      "distractor_logic": [
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-012",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The \\( yz \\)-plane divides the segment joining \\( A(2,-3,-8) \\) and \\( B(-1,-3,-8) \\) at a point \\( P \\). Find the distance \\( AP \\).",
+      "options": [
+        "3",
+        "11",
+        "4",
+        "2"
+      ],
+      "correct_index": 3,
+      "explanation": "Setting the \\( x \\)-coordinate of the internal-division formula to \\( 0 \\) gives \\( m:n=2:1 \\), so \\( P=(0,-3,-8) \\). Then \\( AP=\\sqrt{(0-2)^{2}+(-3-(-3))^{2}+(-8-(-8))^{2}}=\\sqrt{4}=2 \\).",
+      "hint": "First find the ratio \\( m:n \\) (set the \\( x \\)-coordinate to \\( 0 \\)), then find \\( P \\), then apply the distance formula.",
+      "distractor_logic": [
+        "computes the full length \\( AB \\) instead of just \\( AP \\)",
+        "an arithmetic slip while computing \\( AP \\)",
+        "forgets to take the square root of the sum of squares"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-013",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( ABCD \\), with \\( A(-2,-4,-6) \\), \\( B(-10,-8,-7) \\), \\( C(-6,-20,-10) \\), \\( D(2,-16,-9) \\), is a parallelogram. Using the property that the diagonals of a parallelogram bisect each other, find the point where the diagonals meet.",
+      "options": [
+        "(-3,-12,-8)",
+        "(-8,-24,-16)",
+        "(-6,-6,-6)",
+        "(-4,-12,-8)"
+      ],
+      "correct_index": 3,
+      "explanation": "The diagonals \\( AC \\) and \\( BD \\) meet at their common midpoint: \\( \\left(\\frac{-2-6}{2},\\frac{-4-20}{2},\\frac{-6-10}{2}\\right)=(-4,-12,-8) \\) (this matches the midpoint of \\( BD \\) as well, confirming \\( ABCD \\) is indeed a parallelogram).",
+      "hint": "The point where the diagonals of a parallelogram meet is the midpoint of either diagonal — use \\( AC \\) or \\( BD \\).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "adds the coordinates of \\( A \\) and \\( C \\) but forgets to divide by \\( 2 \\)",
+        "finds the midpoint of side \\( AB \\) instead of diagonal \\( AC \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-014",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A drone flies from \\( A(-6,1,6) \\) to \\( B(1,7,12) \\) and then to \\( C(8,1,6) \\) (coordinates in km). How much longer is this two-leg path than flying straight from \\( A \\) to \\( C \\)?",
+      "options": [
+        "22",
+        "-8",
+        "5",
+        "8"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB=11 \\), \\( BC=11 \\), so the two-leg path is \\( 11+11=22 \\) km. Direct distance \\( AC=\\sqrt{196}=14 \\) km. Extra distance \\( =22-14=8 \\) km.",
+      "hint": "Compute \\( AB \\), \\( BC \\), and the direct distance \\( AC \\) separately, then subtract.",
+      "distractor_logic": [
+        "reports the full two-leg path length, not the extra distance over the direct route",
+        "has the sign backwards",
+        "an arithmetic slip in the final subtraction"
+      ],
+      "mixed_topics": [
+        "Distance Between Two Points — Formula and Direct Computation",
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-015",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Points \\( A(3,-2,-6) \\), \\( P(6,-8,-12) \\), and \\( B(7,-10,-14) \\) are collinear (verify this using the distance formula). Find the ratio \\( AP:PB \\).",
+      "options": [
+        "\\( 4:1 \\)",
+        "\\( 1:3 \\)",
+        "\\( 3:1 \\)",
+        "\\( 3:2 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AP=\\sqrt{81}=9 \\), \\( PB=\\sqrt{9}=3 \\), and \\( AP+PB=12=12=AB \\), confirming collinearity. So \\( AP:PB=3:1 \\).",
+      "hint": "Compute \\( AP \\) and \\( PB \\) with the distance formula, confirm \\( AP+PB=AB \\), then form the ratio \\( AP:PB \\).",
+      "distractor_logic": [
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)",
+        "swaps which segment (\\( AP \\) or \\( PB \\)) comes first in the ratio",
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Section Formula — Internal and External Division"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-016",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Point \\( P \\) divides the segment joining \\( A(-1,-8,-4) \\) and \\( B(-7,4,8) \\) internally in the ratio \\( 1:5 \\). In which octant does \\( P \\) lie?",
+      "options": [
+        "Octant VIII",
+        "Octant VII",
+        "Octant II",
+        "Octant IV"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=\\left(\\frac{1\\cdot (-7)-5}{1+5},\\frac{1\\cdot 4-40}{1+5},\\frac{1\\cdot 8-20}{1+5}\\right)=(-2,-6,-2) \\), with sign pattern (-,-,-), which is Octant VII.",
+      "hint": "First find \\( P \\) with the internal section formula, then read off the sign of each coordinate.",
+      "distractor_logic": [
+        "is not the octant matching (-,-,-)",
+        "is not the octant matching (-,-,-)",
+        "is not the octant matching (-,-,-)"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-017",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( M \\) is the midpoint of \\( A(-8,5,4) \\) and \\( B(-16,13,2) \\). Find the distance of \\( M \\) from the \\( z \\)-axis.",
+      "options": [
+        "3",
+        "15",
+        "22",
+        "30"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( M=\\left(\\frac{-8-16}{2},\\frac{5+13}{2},\\frac{4+2}{2}\\right)=(-12,9,3) \\). Distance from the \\( z \\)-axis \\( =\\sqrt{(-12)^{2}+9^{2}}=\\sqrt{225}=15 \\).",
+      "hint": "First find the midpoint \\( M \\), then apply the distance-from-axis formula to \\( M \\).",
+      "distractor_logic": [
+        "is the distance from the coordinate plane opposite the \\( z \\)-axis, not from the axis itself",
+        "an arithmetic slip while computing the axis distance",
+        "forgets to halve the summed coordinates before computing the axis distance"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-018",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the octant containing the centroid of the triangle with vertices \\( A(-8,-5,1) \\), \\( B(-2,3,8) \\), \\( C(1,23,-3) \\).",
+      "options": [
+        "Octant VIII",
+        "Octant VII",
+        "Octant VI",
+        "Octant II"
+      ],
+      "correct_index": 3,
+      "explanation": "Centroid \\( =\\left(\\frac{-8-2+1}{3},\\ldots\\right)=(-3,7,2) \\), sign pattern (-,+,+), which is Octant II.",
+      "hint": "Find the centroid first, then read off the sign of each of its coordinates.",
+      "distractor_logic": [
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-019",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The centroid of a triangle with vertices \\( A(4,-3,-8) \\), \\( B(-1,6,6) \\), and \\( C \\) is \\( G(-3,6,5) \\). Which octant does \\( C \\) lie in?",
+      "options": [
+        "Octant IV",
+        "Octant III",
+        "Octant VII",
+        "Octant II"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( C=(3\\cdot (-3)-4+1,3\\cdot 6+3-6,3\\cdot 5+8-6)=(-12,15,17) \\), sign pattern (-,+,+), which is Octant II.",
+      "hint": "Rearrange the centroid formula to isolate \\( C \\), then read off its coordinate signs.",
+      "distractor_logic": [
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-020",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The \\( xy \\)-plane divides the segment joining \\( A(3,6,-2) \\) and \\( B(3,6,6) \\) at a point \\( P \\). Find the distance \\( AP \\).",
+      "options": [
+        "4",
+        "2",
+        "6",
+        "8"
+      ],
+      "correct_index": 1,
+      "explanation": "Setting the \\( z \\)-coordinate of the internal-division formula to \\( 0 \\) gives \\( m:n=1:3 \\), so \\( P=(3,6,0) \\). Then \\( AP=\\sqrt{(3-3)^{2}+(6-6)^{2}+(0-(-2))^{2}}=\\sqrt{4}=2 \\).",
+      "hint": "First find the ratio \\( m:n \\) (set the \\( z \\)-coordinate to \\( 0 \\)), then find \\( P \\), then apply the distance formula.",
+      "distractor_logic": [
+        "forgets to take the square root of the sum of squares",
+        "an arithmetic slip while computing \\( AP \\)",
+        "computes the full length \\( AB \\) instead of just \\( AP \\)"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-021",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( ABCD \\), with \\( A(2,1,-3) \\), \\( B(0,-5,-6) \\), \\( C(2,-3,-7) \\), \\( D(4,3,-4) \\), is a parallelogram. Using the property that the diagonals of a parallelogram bisect each other, find the point where the diagonals meet.",
+      "options": [
+        "(2,-1,-5)",
+        "(3,-1,-5)",
+        "(1,-2,-3)",
+        "(4,-2,-10)"
+      ],
+      "correct_index": 0,
+      "explanation": "The diagonals \\( AC \\) and \\( BD \\) meet at their common midpoint: \\( \\left(\\frac{2+2}{2},\\frac{1-3}{2},\\frac{-3-7}{2}\\right)=(2,-1,-5) \\) (this matches the midpoint of \\( BD \\) as well, confirming \\( ABCD \\) is indeed a parallelogram).",
+      "hint": "The point where the diagonals of a parallelogram meet is the midpoint of either diagonal — use \\( AC \\) or \\( BD \\).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "finds the midpoint of side \\( AB \\) instead of diagonal \\( AC \\)",
+        "adds the coordinates of \\( A \\) and \\( C \\) but forgets to divide by \\( 2 \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-022",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Points \\( A(-1,-2,5) \\), \\( P(-3,2,9) \\), and \\( B(-11,18,25) \\) are collinear (verify this using the distance formula). Find the ratio \\( AP:PB \\).",
+      "options": [
+        "\\( 1:5 \\)",
+        "\\( 4:1 \\)",
+        "\\( 1:4 \\)",
+        "\\( 2:4 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AP=\\sqrt{36}=6 \\), \\( PB=\\sqrt{576}=24 \\), and \\( AP+PB=30=30=AB \\), confirming collinearity. So \\( AP:PB=1:4 \\).",
+      "hint": "Compute \\( AP \\) and \\( PB \\) with the distance formula, confirm \\( AP+PB=AB \\), then form the ratio \\( AP:PB \\).",
+      "distractor_logic": [
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)",
+        "swaps which segment (\\( AP \\) or \\( PB \\)) comes first in the ratio",
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Section Formula — Internal and External Division"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-023",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Point \\( P \\) divides the segment joining \\( A(6,9,-6) \\) and \\( B(-6,-6,-6) \\) internally in the ratio \\( 2:1 \\). In which octant does \\( P \\) lie?",
+      "options": [
+        "Octant V",
+        "Octant VI",
+        "Octant VIII",
+        "Octant VII"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=\\left(\\frac{2\\cdot (-6)+6}{2+1},\\frac{2\\cdot (-6)+9}{2+1},\\frac{2\\cdot (-6)-6}{2+1}\\right)=(-2,-1,-6) \\), with sign pattern (-,-,-), which is Octant VII.",
+      "hint": "First find \\( P \\) with the internal section formula, then read off the sign of each coordinate.",
+      "distractor_logic": [
+        "is not the octant matching (-,-,-)",
+        "is not the octant matching (-,-,-)",
+        "is not the octant matching (-,-,-)"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-024",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the octant containing the centroid of the triangle with vertices \\( A(7,-5,5) \\), \\( B(8,-8,-7) \\), \\( C(-12,-8,11) \\).",
+      "options": [
+        "Octant VIII",
+        "Octant II",
+        "Octant IV",
+        "Octant VI"
+      ],
+      "correct_index": 2,
+      "explanation": "Centroid \\( =\\left(\\frac{7+8-12}{3},\\ldots\\right)=(1,-7,3) \\), sign pattern (+,-,+), which is Octant IV.",
+      "hint": "Find the centroid first, then read off the sign of each of its coordinates.",
+      "distractor_logic": [
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-025",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The centroid of a triangle with vertices \\( A(-2,-6,-8) \\), \\( B(4,-5,-5) \\), and \\( C \\) is \\( G(-5,2,-8) \\). Which octant does \\( C \\) lie in?",
+      "options": [
+        "Octant I",
+        "Octant VI",
+        "Octant IV",
+        "Octant II"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( C=(3\\cdot (-5)+2-4,3\\cdot 2+6+5,3\\cdot (-8)+8+5)=(-17,17,-11) \\), sign pattern (-,+,-), which is Octant VI.",
+      "hint": "Rearrange the centroid formula to isolate \\( C \\), then read off its coordinate signs.",
+      "distractor_logic": [
+        "is not the octant matching (-,+,-)",
+        "is not the octant matching (-,+,-)",
+        "is not the octant matching (-,+,-)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-026",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The \\( yz \\)-plane divides the segment joining \\( A(-3,-1,-6) \\) and \\( B(6,-1,-6) \\) at a point \\( P \\). Find the distance \\( AP \\).",
+      "options": [
+        "8",
+        "3",
+        "1",
+        "9"
+      ],
+      "correct_index": 1,
+      "explanation": "Setting the \\( x \\)-coordinate of the internal-division formula to \\( 0 \\) gives \\( m:n=1:2 \\), so \\( P=(0,-1,-6) \\). Then \\( AP=\\sqrt{(0-(-3))^{2}+(-1-(-1))^{2}+(-6-(-6))^{2}}=\\sqrt{9}=3 \\).",
+      "hint": "First find the ratio \\( m:n \\) (set the \\( x \\)-coordinate to \\( 0 \\)), then find \\( P \\), then apply the distance formula.",
+      "distractor_logic": [
+        "an arithmetic slip while computing \\( AP \\)",
+        "an arithmetic slip while computing \\( AP \\)",
+        "forgets to take the square root of the sum of squares"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-027",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( ABCD \\), with \\( A(-5,7,6) \\), \\( B(-11,0,12) \\), \\( C(-5,3,14) \\), \\( D(1,10,8) \\), is a parallelogram. Using the property that the diagonals of a parallelogram bisect each other, find the point where the diagonals meet.",
+      "options": [
+        "(-4,5,10)",
+        "(-10,10,20)",
+        "(-8,7,9)",
+        "(-5,5,10)"
+      ],
+      "correct_index": 3,
+      "explanation": "The diagonals \\( AC \\) and \\( BD \\) meet at their common midpoint: \\( \\left(\\frac{-5-5}{2},\\frac{7+3}{2},\\frac{6+14}{2}\\right)=(-5,5,10) \\) (this matches the midpoint of \\( BD \\) as well, confirming \\( ABCD \\) is indeed a parallelogram).",
+      "hint": "The point where the diagonals of a parallelogram meet is the midpoint of either diagonal — use \\( AC \\) or \\( BD \\).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "adds the coordinates of \\( A \\) and \\( C \\) but forgets to divide by \\( 2 \\)",
+        "finds the midpoint of side \\( AB \\) instead of diagonal \\( AC \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-028",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A drone flies from \\( A(-2,-3,-1) \\) to \\( B(-4,-4,-3) \\) and then to \\( C(-6,-1,3) \\) (coordinates in km). How much longer is this two-leg path than flying straight from \\( A \\) to \\( C \\)?",
+      "options": [
+        "-4",
+        "9",
+        "4",
+        "10"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( AB=3 \\), \\( BC=7 \\), so the two-leg path is \\( 3+7=10 \\) km. Direct distance \\( AC=\\sqrt{36}=6 \\) km. Extra distance \\( =10-6=4 \\) km.",
+      "hint": "Compute \\( AB \\), \\( BC \\), and the direct distance \\( AC \\) separately, then subtract.",
+      "distractor_logic": [
+        "has the sign backwards",
+        "an arithmetic slip in the final subtraction",
+        "reports the full two-leg path length, not the extra distance over the direct route"
+      ],
+      "mixed_topics": [
+        "Distance Between Two Points — Formula and Direct Computation",
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-029",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Points \\( A(-3,-5,-3) \\), \\( P(1,3,5) \\), and \\( B(2,5,7) \\) are collinear (verify this using the distance formula). Find the ratio \\( AP:PB \\).",
+      "options": [
+        "\\( 1:4 \\)",
+        "\\( 4:1 \\)",
+        "\\( 4:2 \\)",
+        "\\( 5:1 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( AP=\\sqrt{144}=12 \\), \\( PB=\\sqrt{9}=3 \\), and \\( AP+PB=15=15=AB \\), confirming collinearity. So \\( AP:PB=4:1 \\).",
+      "hint": "Compute \\( AP \\) and \\( PB \\) with the distance formula, confirm \\( AP+PB=AB \\), then form the ratio \\( AP:PB \\).",
+      "distractor_logic": [
+        "swaps which segment (\\( AP \\) or \\( PB \\)) comes first in the ratio",
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)",
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Section Formula — Internal and External Division"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-030",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( M \\) is the midpoint of \\( A(7,-1,-2) \\) and \\( B(9,-17,-10) \\). Find the distance of \\( M \\) from the \\( y \\)-axis.",
+      "options": [
+        "10",
+        "18",
+        "20",
+        "9"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( M=\\left(\\frac{7+9}{2},\\frac{-1-17}{2},\\frac{-2-10}{2}\\right)=(8,-9,-6) \\). Distance from the \\( y \\)-axis \\( =\\sqrt{8^{2}+(-6)^{2}}=\\sqrt{100}=10 \\).",
+      "hint": "First find the midpoint \\( M \\), then apply the distance-from-axis formula to \\( M \\).",
+      "distractor_logic": [
+        "an arithmetic slip while computing the axis distance",
+        "forgets to halve the summed coordinates before computing the axis distance",
+        "is the distance from the coordinate plane opposite the \\( y \\)-axis, not from the axis itself"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-031",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the octant containing the centroid of the triangle with vertices \\( A(8,-3,-8) \\), \\( B(9,-7,8) \\), \\( C(-2,-14,-12) \\).",
+      "options": [
+        "Octant I",
+        "Octant IV",
+        "Octant V",
+        "Octant VIII"
+      ],
+      "correct_index": 3,
+      "explanation": "Centroid \\( =\\left(\\frac{8+9-2}{3},\\ldots\\right)=(5,-8,-4) \\), sign pattern (+,-,-), which is Octant VIII.",
+      "hint": "Find the centroid first, then read off the sign of each of its coordinates.",
+      "distractor_logic": [
+        "is not the octant matching (+,-,-)",
+        "is not the octant matching (+,-,-)",
+        "is not the octant matching (+,-,-)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-032",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Point \\( P \\) divides the segment joining \\( A(4,-4,5) \\) and \\( B(-7,7,7) \\) externally in the ratio \\( 2:1 \\). Find the distance of \\( P \\) from the origin.",
+      "options": [
+        "19",
+        "729",
+        "18",
+        "27"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=\\left(\\frac{2\\cdot (-7)-4}{2-1},\\frac{2\\cdot 7+4}{2-1},\\frac{2\\cdot 7-5}{2-1}\\right)=(-18,18,9) \\). Distance from the origin \\( =\\sqrt{(-18)^{2}+18^{2}+9^{2}}=\\sqrt{729}=27 \\).",
+      "hint": "First find \\( P \\) with the external section formula, then apply \\( \\sqrt{x^2+y^2+z^2} \\) to it.",
+      "distractor_logic": [
+        "an arithmetic slip while summing the squared coordinates",
+        "forgets to take the square root of the sum of squares",
+        "an arithmetic slip while summing the squared coordinates"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-033",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The centroid of a triangle with vertices \\( A(-5,1,-3) \\), \\( B(1,-3,3) \\), and \\( C \\) is \\( G(3,-4,4) \\). Which octant does \\( C \\) lie in?",
+      "options": [
+        "Octant VI",
+        "Octant I",
+        "Octant VII",
+        "Octant IV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( C=(3\\cdot 3+5-1,3\\cdot (-4)-1+3,3\\cdot 4+3-3)=(13,-10,12) \\), sign pattern (+,-,+), which is Octant IV.",
+      "hint": "Rearrange the centroid formula to isolate \\( C \\), then read off its coordinate signs.",
+      "distractor_logic": [
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)",
+        "is not the octant matching (+,-,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-034",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The \\( zx \\)-plane divides the segment joining \\( A(-9,-4,2) \\) and \\( B(-9,2,2) \\) at a point \\( P \\). Find the distance \\( AP \\).",
+      "options": [
+        "4",
+        "7",
+        "16",
+        "6"
+      ],
+      "correct_index": 0,
+      "explanation": "Setting the \\( y \\)-coordinate of the internal-division formula to \\( 0 \\) gives \\( m:n=2:1 \\), so \\( P=(-9,0,2) \\). Then \\( AP=\\sqrt{(-9-(-9))^{2}+(0-(-4))^{2}+(2-2)^{2}}=\\sqrt{16}=4 \\).",
+      "hint": "First find the ratio \\( m:n \\) (set the \\( y \\)-coordinate to \\( 0 \\)), then find \\( P \\), then apply the distance formula.",
+      "distractor_logic": [
+        "an arithmetic slip while computing \\( AP \\)",
+        "forgets to take the square root of the sum of squares",
+        "computes the full length \\( AB \\) instead of just \\( AP \\)"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Coordinate Axes, Coordinate Planes, and Octants",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-035",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( ABCD \\), with \\( A(5,6,1) \\), \\( B(11,12,8) \\), \\( C(17,14,5) \\), \\( D(11,8,-2) \\), is a parallelogram. Using the property that the diagonals of a parallelogram bisect each other, find the point where the diagonals meet.",
+      "options": [
+        "(12,10,3)",
+        "(11,10,3)",
+        "(22,20,6)",
+        "(8,9,1)"
+      ],
+      "correct_index": 1,
+      "explanation": "The diagonals \\( AC \\) and \\( BD \\) meet at their common midpoint: \\( \\left(\\frac{5+17}{2},\\frac{6+14}{2},\\frac{1+5}{2}\\right)=(11,10,3) \\) (this matches the midpoint of \\( BD \\) as well, confirming \\( ABCD \\) is indeed a parallelogram).",
+      "hint": "The point where the diagonals of a parallelogram meet is the midpoint of either diagonal — use \\( AC \\) or \\( BD \\).",
+      "distractor_logic": [
+        "an arithmetic slip in one coordinate",
+        "adds the coordinates of \\( A \\) and \\( C \\) but forgets to divide by \\( 2 \\)",
+        "finds the midpoint of side \\( AB \\) instead of diagonal \\( AC \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-036",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Between Two Points — Formula and Direct Computation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A drone flies from \\( A(2,-6,-6) \\) to \\( B(-2,-4,-10) \\) and then to \\( C(4,-7,-8) \\) (coordinates in km). How much longer is this two-leg path than flying straight from \\( A \\) to \\( C \\)?",
+      "options": [
+        "2",
+        "13",
+        "-10",
+        "10"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AB=6 \\), \\( BC=7 \\), so the two-leg path is \\( 6+7=13 \\) km. Direct distance \\( AC=\\sqrt{9}=3 \\) km. Extra distance \\( =13-3=10 \\) km.",
+      "hint": "Compute \\( AB \\), \\( BC \\), and the direct distance \\( AC \\) separately, then subtract.",
+      "distractor_logic": [
+        "an arithmetic slip in the final subtraction",
+        "reports the full two-leg path length, not the extra distance over the direct route",
+        "has the sign backwards"
+      ],
+      "mixed_topics": [
+        "Distance Between Two Points — Formula and Direct Computation",
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-037",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Points \\( A(6,1,2) \\), \\( P(10,7,-10) \\), and \\( B(16,16,-28) \\) are collinear (verify this using the distance formula). Find the ratio \\( AP:PB \\).",
+      "options": [
+        "\\( 3:3 \\)",
+        "\\( 3:2 \\)",
+        "\\( 2:4 \\)",
+        "\\( 2:3 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( AP=\\sqrt{196}=14 \\), \\( PB=\\sqrt{441}=21 \\), and \\( AP+PB=35=35=AB \\), confirming collinearity. So \\( AP:PB=2:3 \\).",
+      "hint": "Compute \\( AP \\) and \\( PB \\) with the distance formula, confirm \\( AP+PB=AB \\), then form the ratio \\( AP:PB \\).",
+      "distractor_logic": [
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)",
+        "swaps which segment (\\( AP \\) or \\( PB \\)) comes first in the ratio",
+        "an arithmetic slip after computing \\( AP \\) and \\( PB \\)"
+      ],
+      "mixed_topics": [
+        "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+        "Section Formula — Internal and External Division"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-038",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( M \\) is the midpoint of \\( A(-4,-3,-3) \\) and \\( B(-2,-5,-19) \\). Find the distance of \\( M \\) from the \\( z \\)-axis.",
+      "options": [
+        "9",
+        "10",
+        "5",
+        "11"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( M=\\left(\\frac{-4-2}{2},\\frac{-3-5}{2},\\frac{-3-19}{2}\\right)=(-3,-4,-11) \\). Distance from the \\( z \\)-axis \\( =\\sqrt{(-3)^{2}+(-4)^{2}}=\\sqrt{25}=5 \\).",
+      "hint": "First find the midpoint \\( M \\), then apply the distance-from-axis formula to \\( M \\).",
+      "distractor_logic": [
+        "an arithmetic slip while computing the axis distance",
+        "forgets to halve the summed coordinates before computing the axis distance",
+        "is the distance from the coordinate plane opposite the \\( z \\)-axis, not from the axis itself"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-039",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the octant containing the centroid of the triangle with vertices \\( A(-5,3,8) \\), \\( B(7,-3,-9) \\), \\( C(-5,24,4) \\).",
+      "options": [
+        "Octant VIII",
+        "Octant I",
+        "Octant II",
+        "Octant III"
+      ],
+      "correct_index": 2,
+      "explanation": "Centroid \\( =\\left(\\frac{-5+7-5}{3},\\ldots\\right)=(-1,8,1) \\), sign pattern (-,+,+), which is Octant II.",
+      "hint": "Find the centroid first, then read off the sign of each of its coordinates.",
+      "distractor_logic": [
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)",
+        "is not the octant matching (-,+,+)"
+      ],
+      "mixed_topics": [
+        "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+        "Coordinate Axes, Coordinate Planes, and Octants"
+      ]
+    },
+    {
+      "id": "MAT11-CH11-B-040",
+      "chapter": "MAT11-CH11",
+      "chapter_name": "Introduction to Three Dimensional Geometry",
+      "topic": "Section Formula — Internal and External Division",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Point \\( P \\) divides the segment joining \\( A(-5,2,2) \\) and \\( B(-3,-4,3) \\) externally in the ratio \\( 4:3 \\). Find the distance of \\( P \\) from the origin.",
+      "options": [
+        "14",
+        "30",
+        "23",
+        "529"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( P=\\left(\\frac{4\\cdot (-3)+15}{4-3},\\frac{4\\cdot (-4)-6}{4-3},\\frac{4\\cdot 3-6}{4-3}\\right)=(3,-22,6) \\). Distance from the origin \\( =\\sqrt{3^{2}+(-22)^{2}+6^{2}}=\\sqrt{529}=23 \\).",
+      "hint": "First find \\( P \\) with the external section formula, then apply \\( \\sqrt{x^2+y^2+z^2} \\) to it.",
+      "distractor_logic": [
+        "an arithmetic slip while summing the squared coordinates",
+        "an arithmetic slip while summing the squared coordinates",
+        "forgets to take the square root of the sum of squares"
+      ],
+      "mixed_topics": [
+        "Section Formula — Internal and External Division",
+        "Distance Between Two Points — Formula and Direct Computation"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "name": "Coordinate Axes, Coordinate Planes, and Octants",
+      "summary": "In three dimensions, three mutually perpendicular lines through a fixed origin — the \\( x \\)-axis, \\( y \\)-axis, and \\( z \\)-axis — fix the position of every point by an ordered triple \\( (x,y,z) \\). Any two axes together determine a coordinate plane (the \\( xy \\)-, \\( yz \\)-, or \\( zx \\)-plane), and the three coordinate planes divide all of space into eight octants, numbered I-VIII by a locked, fixed correspondence with the sign pattern of \\( (x,y,z) \\) — this numbering never changes and should be memorised rather than re-derived each time. A point lies on a coordinate axis when two of its three coordinates are zero, and on a coordinate plane when exactly one coordinate is zero. The distance of a point from a coordinate axis uses the two coordinates *not* named by that axis (via a two-term square root); the distance from a coordinate plane is simply the absolute value of the one coordinate that plane's name omits — no square root needed. These two formulas are easy to confuse with each other, so always check whether the question asks for an axis or a plane before reaching for a formula.",
+      "key_formulas": [
+        "Octant numbering (locked): I \\( (+,+,+) \\), II \\( (-,+,+) \\), III \\( (-,-,+) \\), IV \\( (+,-,+) \\), V \\( (+,+,-) \\), VI \\( (-,+,-) \\), VII \\( (-,-,-) \\), VIII \\( (+,-,-) \\)",
+        "Distance of \\( (x,y,z) \\) from the \\( x \\)-axis: \\( \\sqrt{y^{2}+z^{2}} \\); from the \\( y \\)-axis: \\( \\sqrt{x^{2}+z^{2}} \\); from the \\( z \\)-axis: \\( \\sqrt{x^{2}+y^{2}} \\)",
+        "Distance of \\( (x,y,z) \\) from the \\( xy \\)-plane: \\( |z| \\); from the \\( yz \\)-plane: \\( |x| \\); from the \\( zx \\)-plane: \\( |y| \\)",
+        "Foot of perpendicular to a coordinate plane: keep the two coordinates naming that plane, set the third to \\( 0 \\)",
+        "Foot of perpendicular to a coordinate axis: keep only the coordinate naming that axis, set the other two to \\( 0 \\)"
+      ],
+      "worked_example": "Find the octant containing \\( P(-3,5,-2) \\), and its distance from the \\( y \\)-axis.\\nSign pattern of \\( P \\) is \\( (-,+,-) \\), which by the locked table is Octant VI. Distance from the \\( y \\)-axis uses the other two coordinates: \\( \\sqrt{(-3)^{2}+(-2)^{2}}=\\sqrt{9+4}=\\sqrt{13} \\).",
+      "common_mistakes": [
+        "Confusing the distance-from-an-axis formula (two coordinates, square root) with the distance-from-the-opposite-plane formula (one coordinate, absolute value)",
+        "Misreading or swapping the sign of one coordinate when matching a point to its octant",
+        "Zeroing the wrong coordinate(s) when finding the foot of a perpendicular to an axis or plane, or zeroing two coordinates instead of one (treating a plane like an axis)",
+        "Forgetting that a point can lie on an axis (two zero coordinates) rather than just a plane (one zero coordinate)"
+      ],
+      "question_count": 52
+    },
+    {
+      "name": "Distance Between Two Points — Formula and Direct Computation",
+      "summary": "The distance between two points \\( (x_1,y_1,z_1) \\) and \\( (x_2,y_2,z_2) \\) in space is a direct extension of the two-dimensional distance formula: square each of the three coordinate differences, add them, and take the square root. The special case of distance from the origin drops the subtraction entirely, since the origin's coordinates are all zero. The formula's biggest practical hazard is sign-handling: whenever a coordinate being subtracted is itself negative, the subtraction must be written with the negative value in parentheses — \\( (5-(-3))^{2} \\), never \\( (5--3)^{2} \\) — otherwise the arithmetic silently goes wrong. This formula underlies almost everything else in the chapter: collinearity and triangle-type checks, quadrilateral classification, and equidistance conditions are all just the distance formula applied two or more times and compared. Word problems (tracking drones, satellites, or survey markers) dress up the same computation in applied language but change nothing about the underlying algebra.",
+      "key_formulas": [
+        "Distance formula: \\( d=\\sqrt{(x_2-x_1)^{2}+(y_2-y_1)^{2}+(z_2-z_1)^{2}} \\)",
+        "Distance from the origin: \\( d=\\sqrt{x^{2}+y^{2}+z^{2}} \\)"
+      ],
+      "worked_example": "Find the distance between \\( A(2,-1,4) \\) and \\( B(-3,2,6) \\).\\n\\( AB=\\sqrt{(-3-2)^{2}+(2-(-1))^{2}+(6-4)^{2}}=\\sqrt{25+9+4}=\\sqrt{38} \\).",
+      "common_mistakes": [
+        "Dropping the \\( z \\)-coordinate difference entirely and computing only a two-dimensional distance",
+        "Writing a negative coordinate difference without parentheses before squaring, causing a sign error (e.g. treating \\( -4^{2} \\) as \\( -16 \\) instead of correctly evaluating \\( (-4)^{2}=16 \\))",
+        "Forgetting to take the final square root after summing the squared differences",
+        "In multi-step problems, reusing an intermediate (wrong) point instead of the actually-required one, e.g. finding \\( AB \\) when the question asks for \\( AP \\)"
+      ],
+      "question_count": 37
+    },
+    {
+      "name": "Distance Formula — Collinearity, Triangles, and Quadrilaterals",
+      "summary": "The distance formula becomes a powerful diagnostic tool once it is applied to three or four points at once and the resulting side lengths are compared. Three points are collinear exactly when one pairwise distance equals the sum of the other two; otherwise they form a genuine triangle, which can be further classified as scalene (all sides different), isosceles (exactly two sides equal), equilateral (all three equal), or right-angled (the Pythagorean relation holds among the three squared side lengths). Four points, taken in order, form a parallelogram when both pairs of opposite sides are equal; a rhombus additionally requires all four sides equal; and a square additionally requires the two diagonals to be equal as well — note that a genuine square's diagonal is always an irrational multiple of its side (side \\( \\times\\sqrt{2} \\)), so diagonals are often left as simplified surds rather than whole numbers. The same machinery also answers equidistance questions: a point equidistant from two others satisfies one distance-squared equation that can be solved directly.",
+      "key_formulas": [
+        "Collinearity test: \\( AB+BC=AC \\) (or a permutation) \\( \\Rightarrow A,B,C \\) collinear",
+        "Right-angle test: for sides \\( a\\le b\\le c \\), \\( a^{2}+b^{2}=c^{2} \\Rightarrow \\) right-angled, with \\( c \\) the hypotenuse",
+        "Parallelogram \\( ABCD \\): \\( AB=CD \\) and \\( BC=DA \\); rhombus additionally needs \\( AB=BC \\); square additionally needs \\( AC=BD \\)"
+      ],
+      "worked_example": "Are \\( A(1,2,3) \\), \\( B(2,4,5) \\), \\( C(4,8,9) \\) collinear?\\n\\( AB=\\sqrt{1+4+4}=3 \\), \\( BC=\\sqrt{4+16+16}=6 \\), \\( AC=\\sqrt{9+36+36}=9 \\). Since \\( AB+BC=3+6=9=AC \\), the points are collinear.",
+      "common_mistakes": [
+        "Checking only one pair of side sums for collinearity instead of confirming which permutation actually works (the largest distance must be the one equal to the sum of the other two)",
+        "Concluding a triangle is right-angled without first identifying which side is the longest (the Pythagorean relation only holds relative to the hypotenuse)",
+        "Assuming equal diagonals alone (without first confirming equal sides) is enough to prove a square, or expecting a square's diagonal to come out as a whole number",
+        "Confusing which two points' midpoints need to coincide when using the diagonals-bisect-each-other property of a parallelogram"
+      ],
+      "question_count": 38
+    },
+    {
+      "name": "Section Formula — Internal and External Division",
+      "summary": "The section formula finds the point that divides the segment joining two given points in a specified ratio \\( m:n \\). For internal division (the dividing point lies between the two given points), the formula averages the endpoints with weights \\( m \\) and \\( n \\) and divides by \\( m+n \\). For external division (the dividing point lies on the extension of the segment, beyond one of the endpoints), every plus sign in the internal formula becomes a minus sign, including in the denominator — this sign change is the single most common source of error in the whole topic. The same formula runs in reverse too: if a coordinate plane, a specific point, or a stated coordinate value is known to divide a segment somehow, substituting that condition into the section formula and solving recovers the ratio \\( m:n \\) itself. Midpoint and centroid (covered in the next topic) are simply the special ratio \\( 1:1 \\) and a three-point analogue of this same idea.",
+      "key_formulas": [
+        "Internal division of \\( (x_1,y_1,z_1) \\), \\( (x_2,y_2,z_2) \\) in ratio \\( m:n \\): \\( \\left(\\frac{mx_2+nx_1}{m+n},\\frac{my_2+ny_1}{m+n},\\frac{mz_2+nz_1}{m+n}\\right) \\)",
+        "External division in ratio \\( m:n \\): \\( \\left(\\frac{mx_2-nx_1}{m-n},\\frac{my_2-ny_1}{m-n},\\frac{mz_2-nz_1}{m-n}\\right) \\)",
+        "A coordinate plane divides a segment in the ratio found by setting the corresponding coordinate of the internal-division formula to \\( 0 \\) and solving for \\( m:n \\)"
+      ],
+      "worked_example": "Find the point dividing \\( A(2,-1,3) \\) and \\( B(-4,5,-3) \\) internally in the ratio \\( 1:2 \\).\\n\\( \\left(\\frac{1\\cdot(-4)+2\\cdot 2}{1+2},\\frac{1\\cdot 5+2\\cdot(-1)}{1+2},\\frac{1\\cdot(-3)+2\\cdot 3}{1+2}\\right)=\\left(\\frac{0}{3},\\frac{3}{3},\\frac{3}{3}\\right)=(0,1,1) \\).",
+      "common_mistakes": [
+        "Using the internal-division formula (all plus signs) when the question specifies external division, or vice versa",
+        "Swapping \\( m \\) and \\( n \\), which silently reverses which endpoint the ratio is measured from",
+        "Reading off the ratio backwards when reverse-solving — reporting the ratio in which the second point divides, instead of the ratio in which the stated dividing point divides the original segment",
+        "Dropping the \\( z \\)-coordinate calculation and simply copying \\( z_1 \\) or \\( z_2 \\) instead of applying the formula to all three coordinates"
+      ],
+      "question_count": 26
+    },
+    {
+      "name": "Midpoint, Centroid, and Combined Coordinate-Geometry Applications",
+      "summary": "The midpoint of a segment and the centroid of a triangle are both simple averages of coordinates: the midpoint averages two endpoints (dividing by \\( 2 \\)), and the centroid averages three vertices (dividing by \\( 3 \\)) — mixing up these two divisors is the single most common slip in this topic. Both formulas rearrange cleanly: given a centroid and two vertices, the third vertex can be recovered by isolating it algebraically. These formulas also combine naturally with earlier topics — a midpoint or centroid is just an ordinary point once found, so nothing stops a question from then asking for its octant, its distance from an axis or plane, or its distance from the origin. Word problems in this topic typically involve several tracked objects (drones, survey markers) whose \"balanced\" or \"average\" position is exactly the midpoint or centroid computation in applied dress.",
+      "key_formulas": [
+        "Midpoint of \\( (x_1,y_1,z_1) \\), \\( (x_2,y_2,z_2) \\): \\( \\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right) \\)",
+        "Centroid of a triangle with vertices \\( (x_1,y_1,z_1),(x_2,y_2,z_2),(x_3,y_3,z_3) \\): \\( \\left(\\frac{x_1+x_2+x_3}{3},\\frac{y_1+y_2+y_3}{3},\\frac{z_1+z_2+z_3}{3}\\right) \\)",
+        "Missing vertex from centroid: \\( x_3=3x_G-x_1-x_2 \\) (and similarly for \\( y_3,z_3 \\))"
+      ],
+      "worked_example": "The centroid of a triangle with vertices \\( A(2,1,-3) \\), \\( B(-1,4,2) \\) is \\( G(1,2,0) \\). Find the third vertex \\( C \\).\\n\\( x_3=3(1)-2-(-1)=2 \\), \\( y_3=3(2)-1-4=1 \\), \\( z_3=3(0)-(-3)-2=1 \\), so \\( C=(2,1,1) \\).",
+      "common_mistakes": [
+        "Dividing by \\( 2 \\) instead of \\( 3 \\) when computing a centroid (or vice versa when computing a midpoint), especially after several other formulas in the same problem",
+        "Adding the coordinates correctly but forgetting the final division by \\( 2 \\) or \\( 3 \\) altogether",
+        "Sign errors while isolating a missing vertex from the rearranged centroid formula",
+        "Stopping at the midpoint or centroid itself when the question asks a follow-up question about that point (its octant, or its distance from an axis, plane, or the origin)"
+      ],
+      "question_count": 42
+    }
+  ]
+}

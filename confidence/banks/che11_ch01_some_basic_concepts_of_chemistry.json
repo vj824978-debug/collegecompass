@@ -1,0 +1,3919 @@
+{
+  "meta": {
+    "subject": "Chemistry",
+    "class": 11,
+    "chapter": 1,
+    "chapter_name": "Some Basic Concepts of Chemistry",
+    "source_alignment": "NCERT Class 11 Chemistry Unit 1 (Reprint 2026-27)",
+    "mode": "confidence",
+    "counts": {
+      "level1": 40,
+      "level2": 40,
+      "level3": 30,
+      "bonus": 40,
+      "total": 150
+    },
+    "suggested_pass_mark": {
+      "level1": "6/10 per paper",
+      "level2": "6/10 per paper",
+      "level3": "6/10 per paper"
+    },
+    "notes": "Level 3 is NCERT-hard (constructed beyond textbook difficulty but strictly within syllabus), not JEE-hard. Bonus questions mix concepts across two or more topics of this chapter; unlock after Level 3 or as a challenge round. Each topic has a concept card in the 'topics' array (summary, key_formulas, worked_example, common_mistakes) shown via a 'See concept' button. Topic names in 'topics' match question 'topic' tags exactly for lookup. After a failed level, link weak topics to their drill + concept card. This chapter is mole-concept/stoichiometry heavy rather than nuclide-heavy: watch for significant-figures rules and unit-conversion slips as the dominant distractor pattern, alongside wrong molar mass and mole-ratio inversion traps.",
+    "rendering": "Question/option/explanation/hint text carries lightweight HTML and must be rendered with innerHTML (or dangerouslySetInnerHTML in React), never as plain text. Conventions used: <sup>/<sub> for exponents, subscripts and superscripts; &times; for multiplication; &minus; for a true minus sign (not a hyphen) in negative exponents such as 10<sup>&minus;24</sup>; &rarr; for reaction arrows; &radic; for square roots; &Aring; for angstrom where relevant; &middot; for the dot in hydrate formulas (e.g. CuSO<sub>4</sub>&middot;5H<sub>2</sub>O); &darr; for a precipitate arrow; &deg; for degrees; &asymp; for 'approximately equal to'; &rArr; for 'implies'; and Greek/other entities (&Delta; &alpha; etc.) where needed. No special CSS class is required for this chapter (no stacked nuclide notation, unlike Structure of Atom)."
+  },
+  "topics": [
+    {
+      "name": "Nature of Matter",
+      "summary": "Matter is anything that has mass and occupies space. It is broadly classified into <b>pure substances</b> (fixed composition) and <b>mixtures</b> (variable composition). Pure substances split further into <b>elements</b> (one kind of atom, cannot be simplified chemically, e.g. Na, O<sub>2</sub>) and <b>compounds</b> (two or more elements chemically combined in a fixed ratio, e.g. H<sub>2</sub>O, NaCl). Mixtures are either <b>homogeneous</b> (uniform composition throughout, e.g. sugar solution, brass, air) or <b>heterogeneous</b> (visibly non-uniform, e.g. sand in water). Physical properties (colour, density, melting point) can be measured without changing composition; chemical properties (reactivity, combustibility) describe how a substance transforms into new substances.",
+      "key_formulas": [],
+      "worked_example": "Classify brass: it is made of Cu and Zn atoms mixed in a variable ratio with uniform composition throughout &rarr; it is a <b>homogeneous mixture</b> (an alloy), not a compound, because its Cu:Zn ratio is not chemically fixed.",
+      "common_mistakes": [
+        "Calling an alloy (brass, steel) a compound just because it \"looks\" like one substance",
+        "Assuming all mixtures are heterogeneous and visibly separable",
+        "Forgetting that a solution (e.g. salt water) is still a mixture, not a compound"
+      ],
+      "question_count": 7
+    },
+    {
+      "name": "Measurement and Significant Figures",
+      "summary": "Chemistry uses the <b>SI system</b> of units (kilogram for mass, mole for amount of substance, kelvin for temperature, etc.). Every measurement carries some <b>uncertainty</b>, expressed through <b>significant figures</b>: all certain digits plus one estimated digit. Rules: non-zero digits are always significant; zeros between non-zero digits are significant; leading zeros are never significant; trailing zeros after a decimal point are significant. In <b>addition/subtraction</b>, the result keeps as many decimal places as the least precise number. In <b>multiplication/division</b>, the result keeps as many significant figures as the factor with the fewest. Large or small numbers are conveniently written in <b>scientific notation</b>, N &times; 10<sup>n</sup>, with exactly one non-zero digit before the decimal point.",
+      "key_formulas": [
+        "Addition/subtraction: match the fewest decimal places",
+        "Multiplication/division: match the fewest significant figures"
+      ],
+      "worked_example": "4.70 cm &times; 2.5 cm = 11.75 cm<sup>2</sup> on a calculator, but since 2.5 cm has only 2 significant figures, the answer must be rounded to 2 significant figures: <b>12 cm<sup>2</sup></b>.",
+      "common_mistakes": [
+        "Reporting every digit a calculator displays, ignoring the least precise input",
+        "Treating leading zeros in 0.0025 as significant (only 2 and 5 count)",
+        "Forgetting that the exponent in scientific notation (10<sup>n</sup>) never adds to the significant figure count"
+      ],
+      "question_count": 13
+    },
+    {
+      "name": "Laws of Chemical Combination",
+      "summary": "Several 18th/19th-century laws describe how elements combine. The <b>law of conservation of mass</b> (Lavoisier): mass is neither created nor destroyed in a chemical reaction. The <b>law of definite (constant) proportions</b> (Proust): a pure compound always contains the same elements combined in the same fixed mass ratio, regardless of its source. The <b>law of multiple proportions</b> (Dalton): when two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are always in a ratio of small whole numbers (e.g. O in CO and CO<sub>2</sub> is in ratio 1:2). <b>Gay Lussac's law of gaseous volumes</b>: gases react in volumes that are in a simple whole-number ratio to each other and to the product volumes, at the same temperature and pressure.",
+      "key_formulas": [],
+      "worked_example": "Carbon forms CO (12 g C : 16 g O) and CO<sub>2</sub> (12 g C : 32 g O). For the same fixed mass of carbon (12 g), the oxygen masses 16 g and 32 g are in the simple ratio <b>1:2</b> &mdash; the law of multiple proportions.",
+      "common_mistakes": [
+        "Confusing the law of definite proportions (one compound, fixed ratio) with the law of multiple proportions (two+ compounds, ratio between ratios)",
+        "Forgetting that Gay Lussac's law applies to gas volumes only, at the same T and P",
+        "Assuming conservation of mass means reactant and product masses must look \"equal\" per substance, rather than in total"
+      ],
+      "question_count": 12
+    },
+    {
+      "name": "Dalton's Atomic Theory",
+      "summary": "John Dalton (1808) proposed that: (1) matter consists of indivisible atoms; (2) atoms of a given element are identical in mass and properties; (3) atoms of different elements differ in mass and properties; (4) compounds form when atoms of different elements combine in simple whole-number ratios; (5) atoms can neither be created nor destroyed in a chemical reaction (explaining conservation of mass). The theory successfully explained the laws of definite and multiple proportions, but later discoveries required modification: atoms are divisible into subatomic particles, and <b>isotopes</b> show that atoms of the same element can have different masses. Avogadro's later distinction between atoms and molecules also resolved gas-volume observations Dalton's theory alone could not explain.",
+      "key_formulas": [],
+      "worked_example": "Dalton's theory explains why water always has an H:O mass ratio of 1:8, since water \"atoms\" (molecules) always contain the same fixed combination of H and O atoms.",
+      "common_mistakes": [
+        "Treating Dalton's postulates as still 100% accurate today without noting later modifications (isotopes, subatomic particles)",
+        "Forgetting that Avogadro's atom/molecule distinction, not Dalton's theory alone, explains simple whole-number gas volume ratios",
+        "Mixing up which postulate explains which law (identical atoms &rarr; definite proportions; simple ratios &rarr; multiple proportions)"
+      ],
+      "question_count": 8
+    },
+    {
+      "name": "Atomic Mass",
+      "summary": "The modern atomic mass scale is based on the <b>carbon-12 standard</b>: 1 atomic mass unit (amu or u) = 1/12th the mass of one <sup>12</sup>C atom &asymp; 1.66 &times; 10<sup>&minus;24</sup> g. Since most elements exist as a mixture of isotopes with different natural abundances, the value listed on the periodic table is the <b>average atomic mass</b>: a weighted average using each isotope's mass and its percentage (or fractional) abundance. If an element has isotopes of mass m<sub>1</sub> and m<sub>2</sub> with abundances (as decimals) x<sub>1</sub> and x<sub>2</sub> (x<sub>1</sub> + x<sub>2</sub> = 1), average atomic mass = m<sub>1</sub>x<sub>1</sub> + m<sub>2</sub>x<sub>2</sub>. This weighted-average equation can also be solved backward to find an unknown abundance if the average atomic mass is given.",
+      "key_formulas": [
+        "Average atomic mass = &Sigma; (isotope mass &times; fractional abundance)"
+      ],
+      "worked_example": "Chlorine: 75% <sup>35</sup>Cl and 25% <sup>37</sup>Cl. Average atomic mass = (0.75 &times; 35) + (0.25 &times; 37) = 26.25 + 9.25 = <b>35.5</b>.",
+      "common_mistakes": [
+        "Taking a simple (unweighted) average of the isotope masses instead of weighting by abundance",
+        "Forgetting that abundances must add up to 100% (or 1) when solving for an unknown abundance",
+        "Confusing mass number (a whole number, protons + neutrons) with the element's average atomic mass (a decimal)"
+      ],
+      "question_count": 12
+    },
+    {
+      "name": "Molecular Mass and Formula Mass",
+      "summary": "<b>Molecular mass</b> is the sum of the atomic masses of all atoms present in one molecule of a covalent substance (e.g. H<sub>2</sub>O = 2(1) + 16 = 18). For <b>ionic compounds</b>, which exist as an extended lattice rather than discrete molecules, the equivalent quantity is called the <b>formula mass</b> (e.g. NaCl = 23 + 35.5 = 58.5), calculated the same way from the formula unit. Both are usually expressed in amu (per particle) or as the numerically equal <b>molar mass</b> in g mol<sup>&minus;1</sup> (per mole). Hydrated salts (e.g. CuSO<sub>4</sub>&middot;5H<sub>2</sub>O) include the mass of their water of crystallisation in the total formula mass.",
+      "key_formulas": [
+        "Molecular/formula mass = &Sigma; (atomic mass &times; number of atoms of each element in the formula)"
+      ],
+      "worked_example": "H<sub>2</sub>SO<sub>4</sub>: 2(1) + 32 + 4(16) = 2 + 32 + 64 = <b>98</b>.",
+      "common_mistakes": [
+        "Forgetting to multiply an atom's mass by its subscript (e.g. using one O instead of four in H<sub>2</sub>SO<sub>4</sub>)",
+        "Calling an ionic compound's formula mass a \"molecular mass\" (technically incorrect, since no discrete molecule exists)",
+        "Leaving out the water of crystallisation's mass when calculating a hydrate's total formula mass"
+      ],
+      "question_count": 11
+    },
+    {
+      "name": "Mole Concept and Molar Mass",
+      "summary": "The <b>mole</b> is the SI unit for amount of substance: 1 mole of any entity (atoms, molecules, ions) contains exactly <b>Avogadro's number</b>, N<sub>A</sub> = 6.022 &times; 10<sup>23</sup>, of that entity. <b>Molar mass</b> is the mass in grams of one mole of a substance, numerically equal to its atomic/molecular/formula mass in amu. The three core conversions are: moles = mass &divide; molar mass; number of particles = moles &times; N<sub>A</sub>; and, for gases at STP (0&deg;C, 1 atm), volume = moles &times; 22.4 L mol<sup>&minus;1</sup>. These relationships form the computational backbone for almost every other topic in this chapter.",
+      "key_formulas": [
+        "Moles = mass / molar mass",
+        "Number of particles = moles &times; N<sub>A</sub> (6.022 &times; 10<sup>23</sup>)",
+        "Volume at STP = moles &times; 22.4 L mol<sup>&minus;1</sup>"
+      ],
+      "worked_example": "Moles in 9 g of water (molar mass 18): 9 &divide; 18 = <b>0.5 mol</b>, containing 0.5 &times; 6.022 &times; 10<sup>23</sup> = 3.011 &times; 10<sup>23</sup> molecules.",
+      "common_mistakes": [
+        "Inverting the mass/molar mass division (computing molar mass &divide; mass instead)",
+        "Forgetting to convert a gas volume from millilitres to litres before dividing by 22.4 L mol<sup>&minus;1</sup>",
+        "Multiplying by N<sub>A</sub> without first converting the given quantity into moles"
+      ],
+      "question_count": 14
+    },
+    {
+      "name": "Percentage Composition",
+      "summary": "Percentage composition expresses what fraction, by mass, of a compound's total molar mass comes from each constituent element: %element = (mass of that element in one mole of compound &divide; molar mass of compound) &times; 100. It is found either theoretically (from a known formula) or experimentally (from combustion/gravimetric analysis), and the experimental value is used to work out a compound's <b>empirical formula</b>. Percentage composition also underlies everyday quantities such as the nitrogen content of a fertiliser or the mass percentage of solute in a solution.",
+      "key_formulas": [
+        "% element = (mass of element in 1 mole of compound / molar mass of compound) &times; 100"
+      ],
+      "worked_example": "%N in NH<sub>3</sub> (molar mass 17): (14/17) &times; 100 = <b>82.4%</b>.",
+      "common_mistakes": [
+        "Dividing by the mass of just one atom of the element instead of the element's total contribution (all atoms of it in the formula)",
+        "Forgetting to multiply the final fraction by 100",
+        "Confusing an element's percentage with 100% minus a different element's percentage without recalculating"
+      ],
+      "question_count": 13
+    },
+    {
+      "name": "Empirical and Molecular Formula",
+      "summary": "The <b>empirical formula</b> gives the simplest whole-number ratio of atoms of each element in a compound; the <b>molecular formula</b> gives the actual number of atoms in one molecule, and is always a whole-number multiple, n, of the empirical formula: molecular formula = n &times; (empirical formula), where n = molecular mass &divide; empirical formula mass. To find an empirical formula from percentage composition: convert each percentage to moles (divide by atomic mass), then divide every value by the smallest one to get the simplest ratio. Combustion analysis of organic compounds (measuring CO<sub>2</sub> and H<sub>2</sub>O produced) is a classic experimental route to the empirical formula of hydrocarbons.",
+      "key_formulas": [
+        "n = molecular mass / empirical formula mass",
+        "Molecular formula = n &times; (empirical formula)"
+      ],
+      "worked_example": "Empirical formula CH<sub>2</sub>O (mass 30), molecular mass 180: n = 180/30 = 6, so molecular formula = (CH<sub>2</sub>O)<sub>6</sub> = <b>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></b>.",
+      "common_mistakes": [
+        "Stopping at the empirical formula when the molecular formula was actually asked for (forgetting to multiply by n)",
+        "Not fully simplifying the mole ratio to its lowest whole-number terms",
+        "In combustion analysis, forgetting that each mole of CO<sub>2</sub> gives 1 mole of C but each mole of H<sub>2</sub>O gives 2 moles of H"
+      ],
+      "question_count": 15
+    },
+    {
+      "name": "Stoichiometry",
+      "summary": "Stoichiometry is the calculation of quantitative (mole and mass) relationships between reactants and products in a <b>balanced chemical equation</b>. The coefficients of a balanced equation give the exact mole ratio in which substances react and form; to convert to mass, first convert the given mass to moles, apply the mole ratio from the equation, then convert back to mass (or volume, using 22.4 L mol<sup>&minus;1</sup> at STP for gases). Multi-step problems chain two or more reactions together, carrying the mole count (not the mass) through each step, and only converting to mass at the very end. Balancing itself rests on the law of conservation of mass: atoms of each element must be equal on both sides.",
+      "key_formulas": [
+        "Moles of product = moles of given reactant &times; (coefficient of product / coefficient of reactant)",
+        "Mass = moles &times; molar mass"
+      ],
+      "worked_example": "For N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, moles of NH<sub>3</sub> from 6 mol H<sub>2</sub>: 6 &times; (2/3) = <b>4 mol</b>.",
+      "common_mistakes": [
+        "Assuming a 1:1 mole ratio between reactant and product instead of reading the actual balanced coefficients",
+        "Converting mass to mass directly, skipping the essential intermediate step of moles",
+        "In multi-step problems, converting to mass after the first step instead of carrying moles through every step"
+      ],
+      "question_count": 17
+    },
+    {
+      "name": "Limiting Reagent",
+      "summary": "When reactants are not supplied in the exact mole ratio a balanced equation requires, one reactant runs out first: this is the <b>limiting reagent</b>, and it alone determines the maximum (theoretical) amount of product that can form. Whatever remains of the other reactant(s) once the limiting reagent is exhausted is the <b>excess reagent</b>. To identify the limiting reagent: convert every reactant's given amount to moles, then compare the mole ratio available against the ratio the equation requires (dividing available moles by the equation's coefficient for each reactant is a reliable shortcut &mdash; the smallest result identifies the limiting reagent). All product calculations must then be based only on the limiting reagent. <b>Percentage yield</b> = (actual yield &divide; theoretical yield) &times; 100 compares what was actually obtained in practice to this theoretical maximum.",
+      "key_formulas": [
+        "Compare (moles available / coefficient) for each reactant &mdash; the smallest ratio is limiting",
+        "% yield = (actual yield / theoretical yield) &times; 100"
+      ],
+      "worked_example": "For N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, with 1 mol N<sub>2</sub> and 2 mol H<sub>2</sub>: N<sub>2</sub> needs 3 mol H<sub>2</sub> but only 2 mol is available, so <b>H<sub>2</sub> is limiting</b>, and moles NH<sub>3</sub> = 2 &times; (2/3) = 1.33 mol.",
+      "common_mistakes": [
+        "Assuming the reactant with the smaller given mass (rather than the smaller mole-to-coefficient ratio) is automatically limiting",
+        "Basing product calculations on the excess reagent instead of the limiting reagent",
+        "Forgetting to subtract the amount of excess reagent actually consumed when asked how much is \"left over\""
+      ],
+      "question_count": 11
+    },
+    {
+      "name": "Concentration of Solutions",
+      "summary": "Several interrelated terms describe how concentrated a solution is. <b>Molarity (M)</b> = moles of solute &divide; volume of solution in litres (temperature-dependent, since volume changes slightly with temperature). <b>Molality (m)</b> = moles of solute &divide; mass of solvent in kilograms (temperature-independent). <b>Mole fraction (x)</b> = moles of one component &divide; total moles of all components. <b>Mass percentage</b> = (mass of solute &divide; mass of solution) &times; 100, and needs the solution's density to convert between mass and volume. <b>Dilution</b> follows M<sub>1</sub>V<sub>1</sub> = M<sub>2</sub>V<sub>2</sub>, since the moles of solute stay constant while only the volume changes. When two solutions of the same solute are mixed, total moles and total volumes are simply added (assuming additive volumes) to find the new molarity.",
+      "key_formulas": [
+        "Molarity = moles of solute / volume of solution (L)",
+        "Molality = moles of solute / mass of solvent (kg)",
+        "Mole fraction = moles of component / total moles",
+        "M<sub>1</sub>V<sub>1</sub> = M<sub>2</sub>V<sub>2</sub> (dilution)"
+      ],
+      "worked_example": "Diluting 50 mL of 4 M HCl to 200 mL: M<sub>1</sub>V<sub>1</sub> = M<sub>2</sub>V<sub>2</sub> &rarr; 4 &times; 50 = M<sub>2</sub> &times; 200 &rarr; M<sub>2</sub> = <b>1 M</b>.",
+      "common_mistakes": [
+        "Using solvent volume/mass for molarity instead of the total solution volume",
+        "Forgetting to include the solution's density when converting between mass percentage and molarity",
+        "Averaging two solutions' molarities directly instead of properly weighting by their respective volumes"
+      ],
+      "question_count": 17
+    }
+  ],
+  "questions": [
+    {
+      "id": "CHE11-CH01-L1-001",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Nature of Matter",
+      "level": 1,
+      "type": "regular",
+      "question": "A pure substance that cannot be broken down into simpler substances by ordinary chemical methods is called a(n):",
+      "options": [
+        "Compound",
+        "Solution",
+        "Mixture",
+        "Element"
+      ],
+      "correct_index": 3,
+      "explanation": "An element is made of only one kind of atom and cannot be split into simpler substances chemically; compounds and mixtures can be broken down further.",
+      "hint": "Think of the periodic table entries.",
+      "distractor_logic": [
+        "compounds CAN be broken down further",
+        "solutions are a type of mixture",
+        "mixtures are combinations, not pure substances"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-002",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Nature of Matter",
+      "level": 1,
+      "type": "regular",
+      "question": "A mixture whose composition and properties are uniform throughout is called a:",
+      "options": [
+        "Homogeneous mixture",
+        "Heterogeneous mixture",
+        "Element",
+        "Compound"
+      ],
+      "correct_index": 0,
+      "explanation": "In a homogeneous mixture (e.g. salt solution, air), the components are so thoroughly mixed that composition is the same at every point.",
+      "hint": "\"Homo\" means same.",
+      "distractor_logic": [
+        "heterogeneous means non-uniform, the opposite",
+        "an element is a single pure substance",
+        "a compound has a fixed formula, not a variable mix"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-003",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Nature of Matter",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following is a compound rather than a mixture?",
+      "options": [
+        "Air",
+        "Sea water",
+        "Brass",
+        "Water"
+      ],
+      "correct_index": 3,
+      "explanation": "Water (H<sub>2</sub>O) has a fixed composition held by chemical bonds, so it is a compound. Air, brass and sea water are all mixtures of variable composition.",
+      "hint": "Which one has a fixed chemical formula?",
+      "distractor_logic": [
+        "air is a mixture of gases",
+        "sea water is water with dissolved salts, a mixture",
+        "brass is an alloy (mixture) of Cu and Zn"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-004",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 1,
+      "type": "regular",
+      "question": "The SI unit of mass is the:",
+      "options": [
+        "Pound",
+        "Kilogram",
+        "Atomic mass unit",
+        "Gram"
+      ],
+      "correct_index": 1,
+      "explanation": "The kilogram (kg) is the SI base unit of mass; the gram is a smaller, non-base multiple of it.",
+      "hint": "SI base units are the 7 fundamental ones.",
+      "distractor_logic": [
+        "pound is an imperial unit, not SI",
+        "amu is used only for atomic-scale masses",
+        "gram is a sub-multiple, not the SI base unit"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-005",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 1,
+      "type": "regular",
+      "question": "The SI unit for the amount of substance is the:",
+      "options": [
+        "Gram",
+        "Litre",
+        "Mole",
+        "Kilogram"
+      ],
+      "correct_index": 2,
+      "explanation": "The mole is the SI base unit for amount of substance, defined so that 1 mole contains exactly 6.022 &times; 10<sup>23</sup> elementary entities.",
+      "hint": "This is the unit chemists use to count particles.",
+      "distractor_logic": [
+        "gram measures mass, not amount of substance",
+        "litre measures volume",
+        "kilogram measures mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-006",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 1,
+      "type": "regular",
+      "question": "The number of significant figures in the measurement 0.0025 g is:",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "2"
+      ],
+      "correct_index": 3,
+      "explanation": "Leading zeros (before the first non-zero digit) are never significant. Only 2 and 5 are significant, so 0.0025 has 2 significant figures.",
+      "hint": "Leading zeros just locate the decimal point.",
+      "distractor_logic": [
+        "off by one",
+        "counts every digit including leading zeros",
+        "overcounts by including the leading zeros"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-007",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 1,
+      "type": "regular",
+      "question": "The number 232.508 written correctly in scientific notation is:",
+      "options": [
+        "23.2508 &times; 10<sup>1</sup>",
+        "2.32508 &times; 10<sup>3</sup>",
+        "232.508 &times; 10<sup>0</sup>",
+        "2.32508 &times; 10<sup>2</sup>"
+      ],
+      "correct_index": 3,
+      "explanation": "Scientific notation requires exactly one non-zero digit before the decimal point; moving the decimal 2 places left gives 2.32508 &times; 10<sup>2</sup>.",
+      "hint": "Count how many places the decimal point moved.",
+      "distractor_logic": [
+        "not in standard form (2 digits before decimal)",
+        "wrong power (moved 2 places, not 3)",
+        "not in scientific notation at all"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-008",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 1,
+      "type": "regular",
+      "question": "The law stating that mass can neither be created nor destroyed in a chemical reaction is the:",
+      "options": [
+        "Law of conservation of mass",
+        "Gay Lussac's law of gaseous volumes",
+        "Law of definite proportions",
+        "Law of multiple proportions"
+      ],
+      "correct_index": 0,
+      "explanation": "Proposed by Lavoisier, the law of conservation of mass states that the total mass of reactants equals the total mass of products in a chemical change.",
+      "hint": "Named after what stays constant.",
+      "distractor_logic": [
+        "about gas volumes, not mass",
+        "about fixed composition of a compound, not total mass",
+        "about ratios between two compounds of the same elements"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-009",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 1,
+      "type": "regular",
+      "question": "The law of definite proportions (a pure compound always contains the same elements in the same mass ratio) was given by:",
+      "options": [
+        "Dalton",
+        "Proust",
+        "Gay Lussac",
+        "Lavoisier"
+      ],
+      "correct_index": 1,
+      "explanation": "Joseph Proust established the law of definite (constant) proportions after careful analysis of compounds from different sources.",
+      "hint": "Different scientist from the conservation-of-mass law.",
+      "distractor_logic": [
+        "Dalton proposed the atomic theory, not this law",
+        "Gay Lussac's law concerns gas volumes",
+        "Lavoisier is linked to conservation of mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-010",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 1,
+      "type": "regular",
+      "question": "According to the law of multiple proportions, when two elements combine to form two or more compounds, the masses of one element that combine with a fixed mass of the other are in a ratio of:",
+      "options": [
+        "Small whole numbers",
+        "Squares of whole numbers",
+        "Random decimals",
+        "Equal masses"
+      ],
+      "correct_index": 0,
+      "explanation": "The law of multiple proportions (Dalton) states this ratio is always a simple, small whole-number ratio, e.g. 1:2 for CO and CO<sub>2</sub>.",
+      "hint": "Think CO vs CO<sub>2</sub>.",
+      "distractor_logic": [
+        "not what the law states",
+        "the law is about simple, not random, ratios",
+        "would only apply if the compounds were identical"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-011",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 1,
+      "type": "regular",
+      "question": "Gay Lussac's law of gaseous volumes relates the:",
+      "options": [
+        "Volumes of gaseous reactants and products at the same temperature and pressure",
+        "Masses of reactants and products",
+        "Densities of gases",
+        "Mole fractions of gases in a mixture"
+      ],
+      "correct_index": 0,
+      "explanation": "Gay Lussac found that gases react in volumes that bear a simple whole-number ratio to each other and to the volume of the product, provided all volumes are measured at the same T and P.",
+      "hint": "It is specifically about gas volumes, not masses.",
+      "distractor_logic": [
+        "that would be the law of conservation of mass",
+        "density is not what the law addresses",
+        "mole fraction is a concentration term, unrelated here"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-012",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 1,
+      "type": "regular",
+      "question": "According to Dalton's original atomic theory, atoms of the same element are:",
+      "options": [
+        "Identical in mass and properties",
+        "Electrically charged",
+        "Always different isotopes",
+        "Infinitely subdivisible"
+      ],
+      "correct_index": 0,
+      "explanation": "Dalton postulated that all atoms of a given element are identical in mass and other properties (a postulate later modified by the discovery of isotopes).",
+      "hint": "This is the postulate isotopes eventually challenged.",
+      "distractor_logic": [
+        "Dalton considered atoms neutral, indivisible particles",
+        "the opposite of Dalton's postulate",
+        "atoms were held to be indivisible by Dalton"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-013",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 1,
+      "type": "regular",
+      "question": "Dalton's atomic theory could not originally explain the existence of:",
+      "options": [
+        "Molecules",
+        "Elements",
+        "Isotopes",
+        "Mixtures"
+      ],
+      "correct_index": 2,
+      "explanation": "Since Dalton assumed all atoms of an element are identical, the later discovery of isotopes (same element, different atomic mass) was a genuine gap in the theory.",
+      "hint": "Which discovery came after Dalton and revised his postulate?",
+      "distractor_logic": [
+        "molecules fit naturally as combinations of atoms",
+        "elements were the theory's basic subject",
+        "mixtures were never a problem for the theory"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-014",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 1,
+      "type": "regular",
+      "question": "According to Dalton's atomic theory, compounds are formed when atoms of different elements combine in:",
+      "options": [
+        "Simple whole-number ratios",
+        "Any arbitrary ratio",
+        "Random fractional ratios",
+        "Equal numbers only"
+      ],
+      "correct_index": 0,
+      "explanation": "Dalton proposed that atoms combine in simple whole-number ratios to form compound atoms (molecules), directly underpinning the law of definite proportions.",
+      "hint": "\"Simple\" and \"whole number\" are the key words.",
+      "distractor_logic": [
+        "contradicts the fixed-composition idea",
+        "fractional atoms don't exist",
+        "too restrictive; ratios need not be 1:1 (e.g. H<sub>2</sub>O is 2:1)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-015",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "The atomic mass unit (amu / u) is defined as exactly:",
+      "options": [
+        "1/12th the mass of a <sup>12</sup>C atom",
+        "The mass of one hydrogen atom",
+        "1/16th the mass of an oxygen atom",
+        "The mass of one proton"
+      ],
+      "correct_index": 0,
+      "explanation": "By international agreement, 1 amu = 1/12 of the mass of a carbon-12 atom, which fixes the modern atomic mass scale.",
+      "hint": "Carbon-12 is the reference isotope.",
+      "distractor_logic": [
+        "an older, abandoned hydrogen-based scale",
+        "an older, abandoned oxygen-based scale",
+        "a proton's mass is close but not the defined standard"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-016",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "1 atomic mass unit is approximately equal to:",
+      "options": [
+        "Both of the above",
+        "1.66 &times; 10<sup>&minus;27</sup> kg",
+        "6.022 &times; 10<sup>23</sup> g",
+        "1.66 &times; 10<sup>&minus;24</sup> g"
+      ],
+      "correct_index": 0,
+      "explanation": "1 amu = 1.66 &times; 10<sup>&minus;24</sup> g, which is the same quantity as 1.66 &times; 10<sup>&minus;27</sup> kg (just a unit conversion), so both statements are correct.",
+      "hint": "Convert grams to kilograms and check if it's the same number.",
+      "distractor_logic": [
+        "true, but so is the g value, making this incomplete",
+        "this is Avogadro's number, not an amu-to-gram conversion",
+        "true, but so is the kg value, making this incomplete"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-017",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "The average atomic mass of an element (as listed on the periodic table) is calculated as the:",
+      "options": [
+        "Weighted average of isotopic masses based on their percentage abundance",
+        "Mass of its single most abundant isotope",
+        "Arithmetic mean of all isotope masses, ignoring abundance",
+        "Simple sum of the masses of its isotopes"
+      ],
+      "correct_index": 0,
+      "explanation": "Average atomic mass accounts for how common each isotope is in nature, i.e. it is a weighted average using percentage abundance as the weight.",
+      "hint": "Rarer isotopes should count for less.",
+      "distractor_logic": [
+        "ignores the contribution of minor isotopes",
+        "gives every isotope equal weight, which is wrong",
+        "adding masses without weighting is meaningless"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-018",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "The molecular mass of a substance is defined as the:",
+      "options": [
+        "Average mass of all molecules in a sample",
+        "Mass of one mole of electrons in the molecule",
+        "Mass of one atom in the molecule",
+        "Sum of the atomic masses of all atoms present in one molecule"
+      ],
+      "correct_index": 3,
+      "explanation": "Molecular mass = sum of the atomic masses of every atom that appears in the molecular formula, expressed in amu (or the molar mass in g mol<sup>&minus;1</sup>).",
+      "hint": "Add up, don't average across a sample.",
+      "distractor_logic": [
+        "molecular mass is a fixed per-molecule value, not a sample average",
+        "electrons contribute negligible mass and aren't counted this way",
+        "that's an atomic mass, not molecular"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-019",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "The term \"formula mass\" (rather than \"molecular mass\") is used for compounds that:",
+      "options": [
+        "Contain only one element",
+        "Are covalent molecules",
+        "Are ionic and do not exist as discrete molecules",
+        "Are gases at room temperature"
+      ],
+      "correct_index": 2,
+      "explanation": "Ionic compounds like NaCl exist as a giant lattice of ions, not discrete molecules, so \"formula mass\" (mass of one formula unit) is the correct term instead of molecular mass.",
+      "hint": "Think of common salt's structure.",
+      "distractor_logic": [
+        "this has nothing to do with number of elements present",
+        "covalent molecules DO use \"molecular mass\"",
+        "physical state at room temperature is unrelated to the terminology"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-020",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "The molecular mass of water, H<sub>2</sub>O (H = 1, O = 16), is:",
+      "options": [
+        "20",
+        "17",
+        "16",
+        "18"
+      ],
+      "correct_index": 3,
+      "explanation": "Molecular mass = 2(1) + 16 = 2 + 16 = 18.",
+      "hint": "Two hydrogens plus one oxygen.",
+      "distractor_logic": [
+        "overcounted by 2",
+        "added only one hydrogen instead of two",
+        "forgot to add the hydrogen atoms"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-021",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "One mole of any substance contains how many elementary entities?",
+      "options": [
+        "6.022 &times; 10<sup>22</sup>",
+        "3.011 &times; 10<sup>23</sup>",
+        "6.022 &times; 10<sup>24</sup>",
+        "6.022 &times; 10<sup>23</sup>"
+      ],
+      "correct_index": 3,
+      "explanation": "This is the defined value of Avogadro's number, N<sub>A</sub> = 6.022 &times; 10<sup>23</sup> mol<sup>&minus;1</sup>.",
+      "hint": "This is the Avogadro constant.",
+      "distractor_logic": [
+        "off by a factor of 10 (too small)",
+        "this is half of Avogadro's number",
+        "off by a factor of 10 (too large)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-022",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "The mass of one mole of a substance, expressed in grams, is called its:",
+      "options": [
+        "Equivalent weight",
+        "Atomic number",
+        "Molar mass",
+        "Specific gravity"
+      ],
+      "correct_index": 2,
+      "explanation": "Molar mass is the mass (in grams) of exactly one mole (6.022 &times; 10<sup>23</sup> entities) of a substance, numerically equal to the atomic/molecular mass in amu.",
+      "hint": "\"Molar\" as in \"per mole\".",
+      "distractor_logic": [
+        "equivalent weight is a different, reaction-dependent quantity",
+        "atomic number is a count of protons, not a mass",
+        "specific gravity compares densities, unrelated to moles"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-023",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "The number 6.022 &times; 10<sup>23</sup> is known as:",
+      "options": [
+        "Universal gas constant",
+        "Planck's constant",
+        "Faraday's constant",
+        "Avogadro's number"
+      ],
+      "correct_index": 3,
+      "explanation": "6.022 &times; 10<sup>23</sup> per mole is Avogadro's number, the count of particles in one mole of any substance.",
+      "hint": "It defines how many particles are in a mole.",
+      "distractor_logic": [
+        "the gas constant R has units of energy per mole per kelvin",
+        "Planck's constant relates energy to frequency, unrelated",
+        "Faraday's constant relates charge to moles of electrons, a different number"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-024",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 1,
+      "type": "regular",
+      "question": "At STP (0&deg;C, 1 atm), one mole of any ideal gas occupies a volume of:",
+      "options": [
+        "24.0 L",
+        "11.2 L",
+        "22.4 L",
+        "22.7 L"
+      ],
+      "correct_index": 2,
+      "explanation": "The molar volume of an ideal gas at STP (0&deg;C, 1 atm) is 22.4 L mol<sup>&minus;1</sup>, a standard NCERT value used throughout this chapter.",
+      "hint": "This is a well-known standard value chemists memorise.",
+      "distractor_logic": [
+        "this is not the standard STP molar volume used here",
+        "this is half a mole's volume",
+        "this is the IUPAC value at 100 kPa, a different standard pressure"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-025",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 1,
+      "type": "regular",
+      "question": "The percentage composition of an element X in a compound is calculated as:",
+      "options": [
+        "(molar mass of compound / mass of X) &times; 100",
+        "(number of moles of X) &times; 100",
+        "(atomic mass of X) &times; 100",
+        "(mass of X in one mole of compound / molar mass of compound) &times; 100"
+      ],
+      "correct_index": 3,
+      "explanation": "Percentage composition expresses what fraction, by mass, of the compound's total molar mass is contributed by element X, scaled to 100.",
+      "hint": "It's a mass fraction of the total, times 100.",
+      "distractor_logic": [
+        "this is the ratio inverted",
+        "this alone is not a percentage without dividing by total mass",
+        "atomic mass alone ignores the compound's total mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-026",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 1,
+      "type": "regular",
+      "question": "Percentage composition data (from experimental analysis) is primarily used to determine a compound's:",
+      "options": [
+        "Molecular formula directly",
+        "Boiling point",
+        "Empirical formula",
+        "Physical state"
+      ],
+      "correct_index": 2,
+      "explanation": "Mass percentages give the simplest whole-number mole ratio of atoms, i.e. the empirical formula; the molecular formula additionally needs the molar mass.",
+      "hint": "This gives you the simplest ratio, not the exact molecule.",
+      "distractor_logic": [
+        "molecular formula needs the molar mass too, not just percentages",
+        "boiling point is unrelated to elemental composition",
+        "percentage composition carries no information about physical state"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-027",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 1,
+      "type": "regular",
+      "question": "If a compound's percentage composition and its molar mass are both known, one can determine its:",
+      "options": [
+        "Oxidation state of every atom",
+        "Bond angles",
+        "Molecular formula",
+        "Empirical formula only"
+      ],
+      "correct_index": 2,
+      "explanation": "Percentage composition alone gives only the empirical formula; adding the molar mass lets you find n (the whole-number multiple) and hence the actual molecular formula.",
+      "hint": "The extra piece of data (molar mass) upgrades what you can find.",
+      "distractor_logic": [
+        "oxidation states require electronegativity/structure knowledge, not just this data",
+        "bond angles need structural (VSEPR) data, not composition data",
+        "you already get the empirical formula without needing molar mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-028",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 1,
+      "type": "regular",
+      "question": "The empirical formula of a compound shows the:",
+      "options": [
+        "Only the metal content of the compound",
+        "Simplest whole-number ratio of atoms of each element",
+        "Actual number of atoms of each element in one molecule",
+        "Molecular mass of the compound"
+      ],
+      "correct_index": 1,
+      "explanation": "The empirical formula gives the smallest whole-number ratio of the different atoms present; the molecular formula gives the actual numbers.",
+      "hint": "\"Empirical\" = simplest ratio, not the real molecule.",
+      "distractor_logic": [
+        "empirical formula applies to all elements present, not just metals",
+        "that is the definition of the molecular formula",
+        "molecular mass is a separate, numerical quantity"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-029",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 1,
+      "type": "regular",
+      "question": "The molecular formula of a compound is always:",
+      "options": [
+        "A whole-number multiple (n) of its empirical formula",
+        "Unrelated to its empirical formula",
+        "Equal to its atomic mass",
+        "Smaller than its empirical formula"
+      ],
+      "correct_index": 0,
+      "explanation": "Molecular formula = n &times; (empirical formula), where n is a positive whole number (n = molecular mass / empirical formula mass).",
+      "hint": "n can be 1 or more, never a fraction.",
+      "distractor_logic": [
+        "the two are directly related by the factor n",
+        "atomic mass is a completely different quantity",
+        "the molecular formula is a multiple of, so never smaller than, the empirical formula"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-030",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 1,
+      "type": "regular",
+      "question": "For glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, the empirical formula is:",
+      "options": [
+        "C<sub>2</sub>H<sub>4</sub>O<sub>2</sub>",
+        "C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>",
+        "CH<sub>2</sub>O",
+        "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>"
+      ],
+      "correct_index": 2,
+      "explanation": "Dividing all subscripts (6, 12, 6) by their common factor 6 gives the simplest ratio 1:2:1, i.e. CH<sub>2</sub>O.",
+      "hint": "Divide every subscript by the highest common factor.",
+      "distractor_logic": [
+        "divided by 3 instead of 6, not fully simplified",
+        "divided by 2 instead of 6, not fully simplified",
+        "this is the molecular formula, not simplified"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-031",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 1,
+      "type": "regular",
+      "question": "Stoichiometry deals with the:",
+      "options": [
+        "Energy changes in a reaction only",
+        "Quantitative (mole/mass) relationships between reactants and products",
+        "Rate at which a reaction proceeds",
+        "Qualitative nature of a reaction only"
+      ],
+      "correct_index": 1,
+      "explanation": "Stoichiometry is the calculation of the relative quantities (moles, masses, volumes) of reactants and products involved in a chemical reaction.",
+      "hint": "\"Stoichio-\" relates to measuring quantities.",
+      "distractor_logic": [
+        "that describes thermochemistry, a different branch",
+        "that describes kinetics, a different branch",
+        "stoichiometry is quantitative, not qualitative"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-032",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 1,
+      "type": "regular",
+      "question": "In a balanced chemical equation, the numerical coefficients represent the ratio of the:",
+      "options": [
+        "Moles of reactants and products",
+        "Atomic numbers of the elements",
+        "Masses of reactants and products directly",
+        "Volumes of solids involved"
+      ],
+      "correct_index": 0,
+      "explanation": "Coefficients in a balanced equation give the mole ratio in which substances react and are produced; converting to mass requires multiplying by molar mass.",
+      "hint": "Coefficients count particles/moles, not grams directly.",
+      "distractor_logic": [
+        "atomic number is unrelated to reaction coefficients",
+        "mass ratios are NOT the same as the coefficient ratios (masses differ per mole)",
+        "solids don't have a meaningful \"volume ratio\" in this context"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-033",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 1,
+      "type": "regular",
+      "question": "A correctly balanced chemical equation must have equal numbers of, on both sides, the:",
+      "options": [
+        "Moles of gaseous species only",
+        "Total mass in grams on each side, ignoring atoms",
+        "Molecules of reactants and products",
+        "Atoms of each element"
+      ],
+      "correct_index": 3,
+      "explanation": "Balancing ensures the number of atoms of each individual element is conserved on both sides, consistent with the law of conservation of mass.",
+      "hint": "Atoms are conserved, not necessarily the number of molecules.",
+      "distractor_logic": [
+        "balancing applies to all species, not just gases",
+        "mass conservation follows from atom balance, but atoms are what you actually balance",
+        "the number of molecules on each side can differ (e.g. 2H<sub>2</sub> + O<sub>2</sub> vs 2H<sub>2</sub>O)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-034",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 1,
+      "type": "regular",
+      "question": "For the reaction N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, the mole ratio of H<sub>2</sub> to NH<sub>3</sub> is:",
+      "options": [
+        "2 : 3",
+        "1 : 1",
+        "1 : 2",
+        "3 : 2"
+      ],
+      "correct_index": 3,
+      "explanation": "Reading the balanced equation's coefficients directly: 3 mol H<sub>2</sub> produces 2 mol NH<sub>3</sub>, a ratio of 3:2.",
+      "hint": "Just read off the coefficients of H<sub>2</sub> and NH<sub>3</sub>.",
+      "distractor_logic": [
+        "this is the ratio inverted (NH<sub>3</sub> : H<sub>2</sub>)",
+        "ignores the actual coefficients (3 and 2)",
+        "confuses H<sub>2</sub> with N<sub>2</sub>'s coefficient"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-035",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 1,
+      "type": "regular",
+      "question": "The limiting reagent in a reaction is the reactant that:",
+      "options": [
+        "Is present in the largest excess",
+        "Is completely consumed first and thereby limits the amount of product formed",
+        "Has the highest molar mass among the reactants",
+        "Does not take part in the reaction"
+      ],
+      "correct_index": 1,
+      "explanation": "The limiting reagent runs out first; once it is used up, the reaction stops, so it determines (limits) the maximum amount of product that can form.",
+      "hint": "It's the one that \"runs out\" first.",
+      "distractor_logic": [
+        "an excess reagent is the opposite of limiting",
+        "molar mass has no bearing on which reagent limits the reaction",
+        "a reagent that doesn't react can't be limiting or excess"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-036",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 1,
+      "type": "regular",
+      "question": "The reactant left over (not fully consumed) after a reaction has gone to completion is called the:",
+      "options": [
+        "Catalyst",
+        "Limiting reagent",
+        "Product",
+        "Excess reagent"
+      ],
+      "correct_index": 3,
+      "explanation": "Once the limiting reagent is exhausted, whatever remains of the other reactant(s) is called the excess reagent.",
+      "hint": "This is the reagent you'd still find some of at the end.",
+      "distractor_logic": [
+        "a catalyst is not consumed and isn't a reactant in this sense",
+        "the limiting reagent is fully used up, not left over",
+        "a product is newly formed, not a leftover reactant"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-037",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 1,
+      "type": "regular",
+      "question": "Correctly identifying the limiting reagent is essential for accurately predicting the:",
+      "options": [
+        "Colour of the product formed",
+        "Theoretical (maximum possible) yield of product",
+        "Rate constant of the reaction",
+        "Temperature at which the reaction is carried out"
+      ],
+      "correct_index": 1,
+      "explanation": "Since the limiting reagent caps how much product can form, it directly determines the theoretical yield calculated from stoichiometry.",
+      "hint": "It sets the ceiling on how much product you can get.",
+      "distractor_logic": [
+        "colour is a chemical property, not tied to limiting reagent calculations",
+        "rate constant belongs to kinetics, a separate topic",
+        "temperature is an external condition, not derived from limiting reagent"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-038",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 1,
+      "type": "regular",
+      "question": "Molarity of a solution is defined as the number of moles of solute per:",
+      "options": [
+        "Litre of solution",
+        "Kilogram of solvent",
+        "Mole of solvent",
+        "Litre of solvent"
+      ],
+      "correct_index": 0,
+      "explanation": "Molarity (M) = moles of solute / volume of solution in litres. It is based on the total solution volume, not just the solvent.",
+      "hint": "Note: solution volume, not solvent mass or solvent volume.",
+      "distractor_logic": [
+        "that describes molality, not molarity",
+        "mole fraction, not molarity, uses moles of solvent",
+        "molarity uses total solution volume, not solvent volume alone"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-039",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 1,
+      "type": "regular",
+      "question": "Molality of a solution is defined as the number of moles of solute per:",
+      "options": [
+        "Litre of solution",
+        "Mole of solution",
+        "Mass of solution",
+        "Kilogram of solvent"
+      ],
+      "correct_index": 3,
+      "explanation": "Molality (m) = moles of solute / mass of solvent in kilograms. Unlike molarity, it does not depend on temperature since it uses mass, not volume.",
+      "hint": "This one is temperature-independent because it uses mass, not volume.",
+      "distractor_logic": [
+        "that describes molarity, not molality",
+        "mole fraction-style ratios don't define molality",
+        "this doesn't specify a unit of mass properly and isn't the definition"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L1-040",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 1,
+      "type": "regular",
+      "question": "The mole fraction of a component in a solution is the ratio of the:",
+      "options": [
+        "Mass of that component to the total mass of solution",
+        "Moles of that component to the moles of solvent only",
+        "Moles of that component to the total moles of all components",
+        "Volume of that component to the total volume"
+      ],
+      "correct_index": 2,
+      "explanation": "Mole fraction (x) = moles of a given component / total moles of all components in the solution (solute + solvent), and is a dimensionless quantity.",
+      "hint": "The denominator includes everything, not just the solvent.",
+      "distractor_logic": [
+        "that describes mass percentage, not mole fraction",
+        "the denominator should be total moles, not just solvent moles",
+        "volume ratios aren't how mole fraction is defined"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-001",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Nature of Matter",
+      "level": 2,
+      "type": "regular",
+      "question": "Which of the following is a mixture rather than a pure compound?",
+      "options": [
+        "NaCl",
+        "H<sub>2</sub>O",
+        "CO<sub>2</sub>",
+        "Bronze"
+      ],
+      "correct_index": 3,
+      "explanation": "Bronze is an alloy of copper and tin whose composition can vary, making it a mixture; CO<sub>2</sub>, NaCl and H<sub>2</sub>O are all pure compounds with fixed formulas.",
+      "hint": "Which one is a metal alloy?",
+      "distractor_logic": [
+        "NaCl is a pure compound",
+        "H<sub>2</sub>O is a pure compound",
+        "CO<sub>2</sub> is a pure compound"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-002",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Nature of Matter",
+      "level": 2,
+      "type": "regular",
+      "question": "Steel (an alloy of iron and carbon) is best classified as a:",
+      "options": [
+        "Heterogeneous mixture",
+        "Homogeneous mixture",
+        "Compound",
+        "Element"
+      ],
+      "correct_index": 1,
+      "explanation": "Steel has uniform composition throughout at the scale we observe it, and its Fe:C ratio can vary, so it is a homogeneous mixture (solid solution), not a compound.",
+      "hint": "Its composition can vary and it looks uniform throughout.",
+      "distractor_logic": [
+        "its components aren't visibly separated as in a heterogeneous mixture",
+        "a compound has one fixed formula, but steel's composition varies",
+        "steel contains more than one element"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-003",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of significant figures in 6.023 &times; 10<sup>23</sup> is:",
+      "options": [
+        "23",
+        "4",
+        "24",
+        "3"
+      ],
+      "correct_index": 1,
+      "explanation": "Only the digits in the coefficient count: 6, 0, 2, 3 — all four are significant. The power of ten (23) never adds to the significant figure count.",
+      "hint": "Look only at the coefficient before &times; 10<sup>n</sup>.",
+      "distractor_logic": [
+        "mistakes the exponent for a count of significant figures",
+        "adds 1 to the exponent by mistake",
+        "misses one digit of the coefficient"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-004",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 2,
+      "type": "regular",
+      "question": "6.658 rounded to 3 significant figures is:",
+      "options": [
+        "6.65",
+        "6.658",
+        "6.66",
+        "6.7"
+      ],
+      "correct_index": 2,
+      "explanation": "The first 3 significant digits are 6, 6, 5; the next digit (8) is &ge; 5, so the third digit rounds up from 5 to 6, giving 6.66.",
+      "hint": "Look at the digit right after the one you're keeping.",
+      "distractor_logic": [
+        "rounded down when the next digit (8) demands rounding up",
+        "kept an extra, unwanted digit",
+        "rounded to only 2 significant figures, too few"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-005",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 2,
+      "type": "regular",
+      "question": "Adding 12.11, 18.0 and 1.012 and reporting the sum to the correct number of decimal places gives:",
+      "options": [
+        "31.1",
+        "31",
+        "31.12",
+        "31.122"
+      ],
+      "correct_index": 0,
+      "explanation": "In addition, the result can only have as many decimal places as the least precise number: 18.0 has just 1 decimal place. The raw sum 31.122 must therefore be rounded to 31.1.",
+      "hint": "Find the number with the fewest decimal places first.",
+      "distractor_logic": [
+        "rounded to zero decimal places, too aggressive",
+        "kept one extra decimal place",
+        "kept all decimal places without rounding to the least precise term"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-006",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 2,
+      "type": "regular",
+      "question": "1.5 km expressed in metres, in correct scientific notation with 2 significant figures, is:",
+      "options": [
+        "1.5 &times; 10<sup>3</sup> m",
+        "1.5 &times; 10<sup>4</sup> m",
+        "1.5 &times; 10<sup>2</sup> m",
+        "15 &times; 10<sup>2</sup> m"
+      ],
+      "correct_index": 0,
+      "explanation": "1.5 km = 1500 m = 1.5 &times; 10<sup>3</sup> m; moving the decimal 3 places to reach a single leading digit fixes the power at 3.",
+      "hint": "1 km = 1000 m = 10<sup>3</sup> m.",
+      "distractor_logic": [
+        "exponent too large by one power of ten",
+        "exponent too small by one power of ten",
+        "not proper scientific notation (2 digits before the decimal)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-007",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 2,
+      "type": "regular",
+      "question": "3.0 g of carbon combines completely with 8.0 g of oxygen to form CO<sub>2</sub>. By the law of definite proportions, the mass of oxygen required to react completely with 6.0 g of carbon is:",
+      "options": [
+        "24.0 g",
+        "8.0 g",
+        "16.0 g",
+        "4.0 g"
+      ],
+      "correct_index": 2,
+      "explanation": "The C:O mass ratio is fixed at 3:8. For 6.0 g carbon (double the original), oxygen required is also doubled: 8.0 g &times; 2 = 16.0 g.",
+      "hint": "Keep the mass ratio 3:8 fixed and scale up.",
+      "distractor_logic": [
+        "tripled instead of doubled",
+        "forgot to scale up the oxygen mass along with carbon",
+        "halved instead of doubled"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-008",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 2,
+      "type": "regular",
+      "question": "Carbon forms CO and CO<sub>2</sub>. For a fixed mass of 12 g carbon, CO contains 16 g of oxygen and CO<sub>2</sub> contains 32 g of oxygen. The masses of oxygen combining with the fixed mass of carbon are in the simple ratio:",
+      "options": [
+        "1 : 2",
+        "3 : 4",
+        "1 : 1",
+        "2 : 3"
+      ],
+      "correct_index": 0,
+      "explanation": "16 g : 32 g simplifies to 1 : 2, a small whole-number ratio — this is a direct illustration of the law of multiple proportions.",
+      "hint": "Simplify 16:32.",
+      "distractor_logic": [
+        "doesn't correctly simplify 16:32",
+        "ignores that the two masses aren't equal",
+        "doesn't correctly simplify 16:32"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-009",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 2,
+      "type": "regular",
+      "question": "By Gay Lussac's law of gaseous volumes, for 2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O(g), 40 mL of hydrogen gas reacting completely requires how much oxygen gas (same T, P)?",
+      "options": [
+        "80 mL",
+        "20 mL",
+        "40 mL",
+        "10 mL"
+      ],
+      "correct_index": 1,
+      "explanation": "The volume ratio H<sub>2</sub> : O<sub>2</sub> = 2 : 1 from the coefficients, so 40 mL H<sub>2</sub> needs 40/2 = 20 mL O<sub>2</sub>.",
+      "hint": "Use the 2:1 coefficient ratio directly on volumes.",
+      "distractor_logic": [
+        "used a 2:1 ratio the wrong way round (multiplied instead of dividing)",
+        "used a 1:1 ratio instead of 2:1",
+        "divided by 4 instead of 2"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-010",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 2,
+      "type": "regular",
+      "question": "Pure water from a river and pure water obtained by electrolysing seawater both show the same hydrogen-to-oxygen mass ratio (1:8). This is best explained by Dalton's postulate that:",
+      "options": [
+        "Atoms can be created or destroyed during a reaction",
+        "Compound atoms (molecules) are always made of a fixed number and kind of constituent atoms",
+        "Atoms of different elements are identical",
+        "Elements are always mixtures of different atoms"
+      ],
+      "correct_index": 1,
+      "explanation": "Because Dalton held that a given compound's molecules always contain the same fixed combination of atoms, the H:O ratio in water must be constant regardless of its source.",
+      "hint": "The postulate about how compound molecules are built.",
+      "distractor_logic": [
+        "directly contradicts conservation of mass, a related but separate law",
+        "atoms of different elements are explicitly different, not identical",
+        "elements are pure single-atom-type substances, not mixtures, by definition"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-011",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 2,
+      "type": "regular",
+      "question": "4 g of hydrogen combines exactly with 32 g of oxygen to form water in every sample analysed. This constant ratio is direct evidence for Dalton's postulate that:",
+      "options": [
+        "All atoms of an element are indivisible",
+        "Atoms have negligible mass",
+        "Atoms cannot be created or destroyed",
+        "Compounds are formed when atoms combine in fixed, definite ratios"
+      ],
+      "correct_index": 3,
+      "explanation": "A constant 4:32 (i.e. 1:8) mass ratio across every sample of water reflects Dalton's idea that a compound's atoms always combine in one fixed whole-number ratio.",
+      "hint": "Focus on why the ratio never changes.",
+      "distractor_logic": [
+        "indivisibility explains atoms existing, not why the ratio is fixed",
+        "atoms clearly have measurable mass, contradicting this option",
+        "that postulate concerns reactions in general, not why the ratio is fixed"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-012",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "Chlorine occurs naturally as <sup>35</sup>Cl (75% abundance, mass 35) and <sup>37</sup>Cl (25% abundance, mass 37). Its average atomic mass is:",
+      "options": [
+        "36.0",
+        "35.0",
+        "35.5",
+        "36.5"
+      ],
+      "correct_index": 2,
+      "explanation": "Average atomic mass = (0.75 &times; 35) + (0.25 &times; 37) = 26.25 + 9.25 = 35.5.",
+      "hint": "Weight each isotope's mass by its fractional abundance.",
+      "distractor_logic": [
+        "a simple, unweighted rounding, not the weighted average",
+        "just the lighter isotope's mass, ignoring the heavier one",
+        "just the heavier isotope's mass, ignoring the lighter one"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-013",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "An element has two isotopes: mass 10 (20% abundance) and mass 11 (80% abundance). Its average atomic mass is:",
+      "options": [
+        "11.0",
+        "10.2",
+        "10.8",
+        "10.5"
+      ],
+      "correct_index": 2,
+      "explanation": "Average atomic mass = (0.20 &times; 10) + (0.80 &times; 11) = 2.0 + 8.8 = 10.8.",
+      "hint": "Multiply each mass by its own percentage abundance (as a decimal), then add.",
+      "distractor_logic": [
+        "just the heavier isotope's mass alone",
+        "the weights (20% and 80%) were swapped between the isotopes",
+        "an unweighted midpoint between 10 and 11"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-014",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "An element has isotopes of mass 24 (79% abundance) and mass 26 (21% abundance). Its average atomic mass, to 1 decimal place, is:",
+      "options": [
+        "25.0",
+        "24.4",
+        "24.8",
+        "24.0"
+      ],
+      "correct_index": 1,
+      "explanation": "Average atomic mass = (0.79 &times; 24) + (0.21 &times; 26) = 18.96 + 5.46 = 24.42, which rounds to 24.4.",
+      "hint": "Same weighted-average method as before, just with new numbers.",
+      "distractor_logic": [
+        "an unweighted midpoint between 24 and 26",
+        "rounding/arithmetic slip that overshoots to 24.8",
+        "just the lighter isotope's mass, ignoring the heavier one"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-015",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The molecular mass of NH<sub>3</sub> (N = 14, H = 1) is:",
+      "options": [
+        "17",
+        "16",
+        "18",
+        "15"
+      ],
+      "correct_index": 0,
+      "explanation": "Molecular mass = 14 (N) + 3 &times; 1 (H) = 14 + 3 = 17.",
+      "hint": "One nitrogen plus three hydrogens.",
+      "distractor_logic": [
+        "added only 2 hydrogens instead of 3",
+        "confused NH<sub>3</sub> with H<sub>2</sub>O's mass by coincidence",
+        "added only 1 hydrogen instead of 3"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-016",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The molecular mass of H<sub>2</sub>SO<sub>4</sub> (H = 1, S = 32, O = 16) is:",
+      "options": [
+        "100",
+        "98",
+        "96",
+        "82"
+      ],
+      "correct_index": 1,
+      "explanation": "Molecular mass = 2(1) + 32 + 4(16) = 2 + 32 + 64 = 98.",
+      "hint": "Two H, one S, four O — add them all.",
+      "distractor_logic": [
+        "overcounts by 2, e.g. from mis-adding the hydrogens",
+        "undercounts the oxygen contribution slightly",
+        "forgot to include the sulfur atom's mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-017",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The formula mass of CaCO<sub>3</sub> (Ca = 40, C = 12, O = 16) is:",
+      "options": [
+        "116",
+        "84",
+        "100",
+        "56"
+      ],
+      "correct_index": 2,
+      "explanation": "Formula mass = 40 (Ca) + 12 (C) + 3 &times; 16 (O) = 40 + 12 + 48 = 100.",
+      "hint": "One calcium, one carbon, three oxygens.",
+      "distractor_logic": [
+        "used 4 oxygens instead of 3",
+        "forgot to include the carbon atom's mass",
+        "forgot to include the calcium atom's mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-018",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of moles present in 9 g of water (molar mass = 18 g mol<sup>&minus;1</sup>) is:",
+      "options": [
+        "1 mol",
+        "0.25 mol",
+        "2 mol",
+        "0.5 mol"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles = mass / molar mass = 9 / 18 = 0.5 mol.",
+      "hint": "Divide the given mass by the molar mass.",
+      "distractor_logic": [
+        "used half the correct molar mass by mistake",
+        "used double the correct molar mass by mistake",
+        "inverted the division (molar mass / mass)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-019",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The mass of 2 moles of CO<sub>2</sub> (molar mass = 44 g mol<sup>&minus;1</sup>) is:",
+      "options": [
+        "44 g",
+        "176 g",
+        "22 g",
+        "88 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Mass = moles &times; molar mass = 2 &times; 44 = 88 g.",
+      "hint": "Multiply moles by molar mass.",
+      "distractor_logic": [
+        "used the mass of just 1 mole, forgetting to multiply by 2",
+        "multiplied by 4 instead of 2",
+        "divided instead of multiplied"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-020",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of O<sub>2</sub> molecules present in 0.5 mol of oxygen gas is:",
+      "options": [
+        "1.505 &times; 10<sup>23</sup>",
+        "6.022 &times; 10<sup>23</sup>",
+        "3.011 &times; 10<sup>23</sup>",
+        "3.011 &times; 10<sup>22</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "Number of molecules = moles &times; N<sub>A</sub> = 0.5 &times; 6.022 &times; 10<sup>23</sup> = 3.011 &times; 10<sup>23</sup>.",
+      "hint": "Multiply the number of moles by Avogadro's number.",
+      "distractor_logic": [
+        "divided by 4 instead of multiplying by 0.5",
+        "forgot to multiply by 0.5, used the full N<sub>A</sub> value",
+        "exponent slipped by one power of ten"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-021",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of moles present in 3.011 &times; 10<sup>23</sup> atoms of sodium is:",
+      "options": [
+        "0.5 mol",
+        "1 mol",
+        "0.25 mol",
+        "2 mol"
+      ],
+      "correct_index": 0,
+      "explanation": "Moles = number of particles / N<sub>A</sub> = 3.011 &times; 10<sup>23</sup> / 6.022 &times; 10<sup>23</sup> = 0.5 mol.",
+      "hint": "Divide the particle count by Avogadro's number.",
+      "distractor_logic": [
+        "treated the given number as if it already equalled N<sub>A</sub> (1 mol)",
+        "divided by 4 instead of by the correct factor of 2",
+        "multiplied by 2 instead of dividing"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-022",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 2,
+      "type": "regular",
+      "question": "The volume occupied by 0.5 mole of CH<sub>4</sub> gas at STP (22.4 L mol<sup>&minus;1</sup>) is:",
+      "options": [
+        "44.8 L",
+        "22.4 L",
+        "5.6 L",
+        "11.2 L"
+      ],
+      "correct_index": 3,
+      "explanation": "Volume = moles &times; molar volume at STP = 0.5 &times; 22.4 = 11.2 L.",
+      "hint": "Multiply moles by 22.4 L mol<sup>&minus;1</sup>.",
+      "distractor_logic": [
+        "doubled instead of halving",
+        "used the volume for 1 full mole, forgetting the 0.5 factor",
+        "used a quarter instead of half"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-023",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 2,
+      "type": "regular",
+      "question": "The percentage of nitrogen in NH<sub>3</sub> (molar mass = 17, N = 14) is closest to:",
+      "options": [
+        "70.0%",
+        "17.6%",
+        "94.1%",
+        "82.4%"
+      ],
+      "correct_index": 3,
+      "explanation": "%N = (14/17) &times; 100 = 82.35%, which rounds to 82.4%.",
+      "hint": "Nitrogen's mass over the total molar mass, times 100.",
+      "distractor_logic": [
+        "an unrelated guessed value, not from the actual calculation",
+        "this is the hydrogen percentage (100 &minus; 82.4), not nitrogen's",
+        "an unrelated guessed value, not from the actual calculation"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-024",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 2,
+      "type": "regular",
+      "question": "The percentage of oxygen in CO<sub>2</sub> (molar mass = 44, O = 16 &times; 2 = 32) is closest to:",
+      "options": [
+        "50.0%",
+        "27.3%",
+        "72.7%",
+        "36.4%"
+      ],
+      "correct_index": 2,
+      "explanation": "%O = (32/44) &times; 100 = 72.7%.",
+      "hint": "Total oxygen mass (both atoms) over the molar mass.",
+      "distractor_logic": [
+        "assumes equal mass contribution from C and O, which is false",
+        "this is the carbon percentage, not oxygen's (100 &minus; 72.7)",
+        "used only one oxygen atom's mass instead of both"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-025",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 2,
+      "type": "regular",
+      "question": "The percentage of calcium in CaCO<sub>3</sub> (molar mass = 100, Ca = 40) is:",
+      "options": [
+        "60%",
+        "40%",
+        "12%",
+        "48%"
+      ],
+      "correct_index": 1,
+      "explanation": "%Ca = (40/100) &times; 100 = 40%.",
+      "hint": "Calcium's atomic mass over the compound's formula mass.",
+      "distractor_logic": [
+        "this is 100% &minus; 40%, the non-calcium share",
+        "used carbon's mass (12) instead of calcium's",
+        "used oxygen's total mass (48) instead of calcium's"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-026",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 2,
+      "type": "regular",
+      "question": "A compound is 40.0% C, 6.7% H and 53.3% O by mass (C = 12, H = 1, O = 16). Its empirical formula is:",
+      "options": [
+        "CHO",
+        "CH<sub>2</sub>O",
+        "C<sub>2</sub>H<sub>4</sub>O<sub>2</sub>",
+        "C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles: C = 40.0/12 = 3.33, H = 6.7/1 = 6.7, O = 53.3/16 = 3.33. Dividing each by the smallest (3.33) gives C:H:O = 1:2:1, i.e. CH<sub>2</sub>O.",
+      "hint": "Convert each percentage to moles, then divide by the smallest value.",
+      "distractor_logic": [
+        "forgot to include hydrogen at its correct ratio of 2",
+        "didn't fully simplify the mole ratio (this is 2x the empirical formula)",
+        "didn't fully simplify (this is 3x the empirical formula)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-027",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 2,
+      "type": "regular",
+      "question": "A compound has empirical formula CH<sub>2</sub>O (empirical formula mass = 30) and a molecular mass of 180. Its molecular formula is:",
+      "options": [
+        "C<sub>2</sub>H<sub>4</sub>O<sub>2</sub>",
+        "C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>",
+        "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>",
+        "CH<sub>2</sub>O"
+      ],
+      "correct_index": 2,
+      "explanation": "n = molecular mass / empirical formula mass = 180/30 = 6, so molecular formula = (CH<sub>2</sub>O)<sub>6</sub> = C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>.",
+      "hint": "Find n first, then multiply every subscript by n.",
+      "distractor_logic": [
+        "used n = 2 instead of the correct n = 6",
+        "used n = 3 instead of the correct n = 6",
+        "forgot to multiply by n at all (left as empirical formula)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-028",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 2,
+      "type": "regular",
+      "question": "A compound has empirical formula CH<sub>2</sub> (empirical formula mass = 14) and a molecular mass of 42. Its molecular formula is:",
+      "options": [
+        "C<sub>3</sub>H<sub>6</sub>",
+        "C<sub>2</sub>H<sub>4</sub>",
+        "C<sub>4</sub>H<sub>8</sub>",
+        "CH<sub>2</sub>"
+      ],
+      "correct_index": 0,
+      "explanation": "n = 42/14 = 3, so molecular formula = (CH<sub>2</sub>)<sub>3</sub> = C<sub>3</sub>H<sub>6</sub>.",
+      "hint": "Divide the molecular mass by the empirical formula mass to get n.",
+      "distractor_logic": [
+        "used n = 2 instead of the correct n = 3",
+        "used n = 4 instead of the correct n = 3",
+        "forgot to multiply by n at all"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-029",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 2,
+      "type": "regular",
+      "question": "A compound has empirical formula NO<sub>2</sub> (empirical formula mass = 46) and a molecular mass of 92. Its molecular formula is:",
+      "options": [
+        "N<sub>4</sub>O<sub>8</sub>",
+        "N<sub>2</sub>O<sub>2</sub>",
+        "N<sub>2</sub>O<sub>4</sub>",
+        "NO<sub>2</sub>"
+      ],
+      "correct_index": 2,
+      "explanation": "n = 92/46 = 2, so molecular formula = (NO<sub>2</sub>)<sub>2</sub> = N<sub>2</sub>O<sub>4</sub>.",
+      "hint": "n = molecular mass &divide; empirical formula mass.",
+      "distractor_logic": [
+        "used n = 4 instead of the correct n = 2",
+        "multiplied only the oxygen subscript by n, not the nitrogen",
+        "forgot to multiply by n at all"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-030",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 2,
+      "type": "regular",
+      "question": "For N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, the moles of NH<sub>3</sub> produced from 6 mol of H<sub>2</sub> (with excess N<sub>2</sub>) is:",
+      "options": [
+        "4 mol",
+        "2 mol",
+        "6 mol",
+        "9 mol"
+      ],
+      "correct_index": 0,
+      "explanation": "Mole ratio H<sub>2</sub> : NH<sub>3</sub> = 3 : 2, so moles NH<sub>3</sub> = 6 &times; (2/3) = 4 mol.",
+      "hint": "Use the 3:2 ratio between H<sub>2</sub> and NH<sub>3</sub>.",
+      "distractor_logic": [
+        "used the H<sub>2</sub> amount unchanged, without converting via the ratio",
+        "assumed a 1:1 ratio between H<sub>2</sub> and NH<sub>3</sub>",
+        "inverted the ratio (multiplied by 3/2 instead of 2/3)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-031",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 2,
+      "type": "regular",
+      "question": "For 2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O, the moles of water formed from 5 mol of H<sub>2</sub> (with excess O<sub>2</sub>) is:",
+      "options": [
+        "2.5 mol",
+        "10 mol",
+        "5 mol",
+        "2 mol"
+      ],
+      "correct_index": 2,
+      "explanation": "Mole ratio H<sub>2</sub> : H<sub>2</sub>O = 2 : 2 = 1 : 1, so moles H<sub>2</sub>O = 5 mol.",
+      "hint": "H<sub>2</sub> and H<sub>2</sub>O have equal coefficients here.",
+      "distractor_logic": [
+        "incorrectly halved the H<sub>2</sub> amount",
+        "incorrectly doubled the H<sub>2</sub> amount",
+        "used the O<sub>2</sub> coefficient instead of the 1:1 H<sub>2</sub>:H<sub>2</sub>O ratio"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-032",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 2,
+      "type": "regular",
+      "question": "For C + O<sub>2</sub> &rarr; CO<sub>2</sub>, the mass of CO<sub>2</sub> (molar mass = 44) produced from the complete combustion of 12 g of carbon (molar mass = 12) is:",
+      "options": [
+        "12 g",
+        "88 g",
+        "44 g",
+        "22 g"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles of C = 12/12 = 1 mol; mole ratio C:CO<sub>2</sub> = 1:1, so 1 mol CO<sub>2</sub> is formed, with mass = 1 &times; 44 = 44 g.",
+      "hint": "1 mole of carbon gives exactly 1 mole of CO<sub>2</sub>.",
+      "distractor_logic": [
+        "reported the mass of carbon used, not of CO<sub>2</sub> formed",
+        "doubled the correct answer by mistake",
+        "halved the correct answer by mistake"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-033",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 2,
+      "type": "regular",
+      "question": "For CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub>, the moles of CO<sub>2</sub> produced when 2 mol of CaCO<sub>3</sub> fully decomposes is:",
+      "options": [
+        "0.5 mol",
+        "2 mol",
+        "4 mol",
+        "1 mol"
+      ],
+      "correct_index": 1,
+      "explanation": "The mole ratio CaCO<sub>3</sub> : CO<sub>2</sub> = 1 : 1, so 2 mol CaCO<sub>3</sub> gives 2 mol CO<sub>2</sub>.",
+      "hint": "This reaction has a 1:1 mole ratio between reactant and this product.",
+      "distractor_logic": [
+        "quartered the amount incorrectly",
+        "doubled the amount incorrectly",
+        "halved the amount, ignoring the 1:1 ratio"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-034",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 2,
+      "type": "regular",
+      "question": "For 4Al + 3O<sub>2</sub> &rarr; 2Al<sub>2</sub>O<sub>3</sub>, the moles of Al<sub>2</sub>O<sub>3</sub> formed from 2 mol of Al (with excess O<sub>2</sub>) is:",
+      "options": [
+        "2 mol",
+        "0.5 mol",
+        "1.5 mol",
+        "1 mol"
+      ],
+      "correct_index": 3,
+      "explanation": "Mole ratio Al : Al<sub>2</sub>O<sub>3</sub> = 4 : 2 = 2 : 1, so moles Al<sub>2</sub>O<sub>3</sub> = 2 &times; (1/2) = 1 mol.",
+      "hint": "Use the 4:2 (simplified 2:1) ratio between Al and Al<sub>2</sub>O<sub>3</sub>.",
+      "distractor_logic": [
+        "assumed a 1:1 ratio between Al and Al<sub>2</sub>O<sub>3</sub>",
+        "used the O<sub>2</sub> coefficient by mistake instead of Al's",
+        "used the Al amount unchanged without applying the ratio"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-035",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 2,
+      "type": "regular",
+      "question": "For a reaction A + B &rarr; C (1:1 mole ratio), 3 mol of A is mixed with 2 mol of B. The limiting reagent is:",
+      "options": [
+        "Both are limiting equally",
+        "Neither; there is no limiting reagent",
+        "B",
+        "A"
+      ],
+      "correct_index": 2,
+      "explanation": "With a 1:1 requirement, 3 mol A would need 3 mol B, but only 2 mol B is available — B runs out first and is the limiting reagent.",
+      "hint": "Compare what's needed against what's available, using the 1:1 ratio.",
+      "distractor_logic": [
+        "they aren't present in equal moles, so they can't limit equally",
+        "one reagent clearly runs out first here, so there must be a limiting reagent",
+        "A is present in the larger amount here, so it cannot be the one that runs out first"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-036",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 2,
+      "type": "regular",
+      "question": "For N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, 1 mol of N<sub>2</sub> is mixed with 2 mol of H<sub>2</sub>. The limiting reagent is:",
+      "options": [
+        "H<sub>2</sub>",
+        "Neither reagent is limiting",
+        "NH<sub>3</sub>",
+        "N<sub>2</sub>"
+      ],
+      "correct_index": 0,
+      "explanation": "1 mol N<sub>2</sub> needs 3 mol H<sub>2</sub> to react completely, but only 2 mol H<sub>2</sub> is available, so H<sub>2</sub> runs out first.",
+      "hint": "Check how much H<sub>2</sub> is actually needed for all the N<sub>2</sub> to react.",
+      "distractor_logic": [
+        "the amounts given are unequal, so one of them must be limiting",
+        "NH<sub>3</sub> is a product, not a reactant, so it cannot be limiting",
+        "N<sub>2</sub> is actually present in more than enough proportion here, not the limiting one"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-037",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 2,
+      "type": "regular",
+      "question": "For N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, with 1 mol N<sub>2</sub> and 2 mol H<sub>2</sub> mixed (H<sub>2</sub> is limiting), the moles of NH<sub>3</sub> formed is:",
+      "options": [
+        "3 mol",
+        "1.33 mol",
+        "0.67 mol",
+        "2 mol"
+      ],
+      "correct_index": 1,
+      "explanation": "Since H<sub>2</sub> is limiting, base the calculation on H<sub>2</sub>: mole ratio H<sub>2</sub>:NH<sub>3</sub> = 3:2, so moles NH<sub>3</sub> = 2 &times; (2/3) = 1.33 mol.",
+      "hint": "Base the calculation only on the limiting reagent, H<sub>2</sub>.",
+      "distractor_logic": [
+        "incorrectly based the calculation on the full N<sub>2</sub>:NH<sub>3</sub> ratio of 1:2 scaled up",
+        "halved the correct value by mistake",
+        "incorrectly based the calculation on N<sub>2</sub> (the excess reagent) instead of H<sub>2</sub>"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-038",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 2,
+      "type": "regular",
+      "question": "The molarity of a solution containing 0.5 mol of NaOH dissolved to make 500 mL of solution is:",
+      "options": [
+        "1 M",
+        "0.25 M",
+        "2 M",
+        "0.5 M"
+      ],
+      "correct_index": 0,
+      "explanation": "Molarity = moles / volume (L) = 0.5 / 0.5 = 1 M.",
+      "hint": "Convert 500 mL to 0.5 L before dividing.",
+      "distractor_logic": [
+        "used 2 L instead of the correct 0.5 L",
+        "inverted the ratio (volume/moles)",
+        "forgot to convert 500 mL to 0.5 L, effectively dividing by 1 instead"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-039",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of moles of HCl present in 250 mL of a 2 M HCl solution is:",
+      "options": [
+        "1 mol",
+        "0.5 mol",
+        "0.25 mol",
+        "2 mol"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles = Molarity &times; Volume (L) = 2 &times; 0.25 = 0.5 mol.",
+      "hint": "Convert 250 mL to 0.25 L, then multiply by molarity.",
+      "distractor_logic": [
+        "forgot to convert mL to L, effectively multiplying by 1 instead of 0.25",
+        "used the volume in mL directly without converting to litres",
+        "used the given molarity value directly as the answer, without multiplying by volume"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L2-040",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 2,
+      "type": "regular",
+      "question": "A solution contains 2 mol of solute and 8 mol of solvent. The mole fraction of the solute is:",
+      "options": [
+        "0.2",
+        "0.25",
+        "0.8",
+        "0.1"
+      ],
+      "correct_index": 0,
+      "explanation": "Mole fraction of solute = moles of solute / total moles = 2 / (2 + 8) = 2/10 = 0.2.",
+      "hint": "Divide by the total moles (solute + solvent), not just the solvent.",
+      "distractor_logic": [
+        "divided solute moles by solvent moles only (2/8), forgetting the total should include solute",
+        "this is the solvent's mole fraction (8/10), not the solute's",
+        "an arithmetic slip in dividing 2 by 10"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-001",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 3,
+      "type": "regular",
+      "question": "The result of (2.5 &times; 10<sup>3</sup>) &times; (1.20 &times; 10<sup>2</sup>) / (4.0 &times; 10<sup>1</sup>), expressed to the correct number of significant figures, is:",
+      "options": [
+        "7.5 &times; 10<sup>3</sup>",
+        "7.500 &times; 10<sup>3</sup>",
+        "75 &times; 10<sup>2</sup>",
+        "7.50 &times; 10<sup>3</sup>"
+      ],
+      "correct_index": 0,
+      "explanation": "The raw value is (2.5 &times; 1.20 / 4.0) &times; 10<sup>3+2&minus;1</sup> = 0.75 &times; 10<sup>4</sup> = 7.5 &times; 10<sup>3</sup>. In multiplication/division, the result keeps as many significant figures as the least precise factor — here, 2.5 and 4.0 both have only 2 significant figures, so the final answer is limited to 2 significant figures: 7.5 &times; 10<sup>3</sup>.",
+      "hint": "Find the factor with the fewest significant figures (2.5 and 4.0 both have 2) and match the answer to that.",
+      "distractor_logic": [
+        "kept two extra, unjustified significant figures",
+        "not written in standard scientific notation",
+        "kept one extra, unjustified significant figure"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-002",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 3,
+      "type": "regular",
+      "question": "A rectangle's measured length is 4.70 cm and width is 2.5 cm. Its area, reported to the correct number of significant figures, is:",
+      "options": [
+        "11.75 cm<sup>2</sup>",
+        "11.8 cm<sup>2</sup>",
+        "12.0 cm<sup>2</sup>",
+        "12 cm<sup>2</sup>"
+      ],
+      "correct_index": 3,
+      "explanation": "Raw area = 4.70 &times; 2.5 = 11.75 cm<sup>2</sup>. Since 2.5 cm has only 2 significant figures (fewer than 4.70's 3), the area must also be rounded to 2 significant figures: 12 cm<sup>2</sup>.",
+      "hint": "The width (2.5 cm) is the less precise measurement — let it control the final rounding.",
+      "distractor_logic": [
+        "kept the full unrounded calculator output",
+        "kept one significant figure too many (3 instead of 2)",
+        "looks rounded but still implies 3 significant figures, one too many"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-003",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 3,
+      "type": "regular",
+      "question": "Two samples of a compound X are analysed: Sample I has 3.0 g of X containing 1.8 g of element A; Sample II has 5.0 g of X containing 3.0 g of element A. Do the two samples obey the law of definite proportions, and what is the percentage of A in the compound?",
+      "options": [
+        "No, this instead illustrates the law of multiple proportions",
+        "Yes, 60% A in both samples",
+        "Yes, but only 40% A in both samples",
+        "No, the ratios differ between samples"
+      ],
+      "correct_index": 1,
+      "explanation": "%A in Sample I = (1.8/3.0) &times; 100 = 60%. %A in Sample II = (3.0/5.0) &times; 100 = 60%. Since both samples give an identical 60% composition, the law of definite proportions is confirmed.",
+      "hint": "Calculate the percentage of A independently for each sample, then compare.",
+      "distractor_logic": [
+        "multiple proportions applies to two different compounds of the same elements, not two samples of the same compound",
+        "100% &minus; 60% would give element B's share, not A's",
+        "the calculation actually shows the ratios match, not differ"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-004",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 3,
+      "type": "regular",
+      "question": "Nitrogen forms two oxides, N<sub>2</sub>O and NO<sub>2</sub>. For a fixed mass of 14 g nitrogen, N<sub>2</sub>O contains 8 g of oxygen and NO<sub>2</sub> contains 32 g of oxygen. The ratio of oxygen masses combining with the fixed mass of nitrogen is:",
+      "options": [
+        "1 : 2",
+        "4 : 1",
+        "2 : 1",
+        "1 : 4"
+      ],
+      "correct_index": 3,
+      "explanation": "8 g : 32 g simplifies to 1 : 4, a simple whole-number ratio, directly confirming the law of multiple proportions for these two nitrogen oxides.",
+      "hint": "Simplify 8:32 to its lowest terms.",
+      "distractor_logic": [
+        "doesn't correctly simplify 8:32",
+        "this is the ratio inverted and further wrong",
+        "this is the ratio inverted"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-005",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 3,
+      "type": "regular",
+      "question": "Gay Lussac observed that 1 volume of nitrogen combines with 3 volumes of hydrogen to give exactly 2 volumes of ammonia — not 4 volumes, as a naive reading of Dalton's indivisible-atom idea might suggest. This was correctly reconciled only after Avogadro proposed that:",
+      "options": [
+        "Equal volumes of gases at the same T and P contain equal numbers of molecules (not atoms), and molecules themselves can split into atoms during reaction",
+        "Atoms always combine in fixed mass ratios",
+        "Gases occupy negligible volume compared to solids",
+        "Atoms are completely indestructible under all conditions"
+      ],
+      "correct_index": 0,
+      "explanation": "Avogadro's hypothesis distinguished molecules from atoms: N<sub>2</sub> and H<sub>2</sub> molecules split into atoms during the reaction and recombine as 2 volumes of NH<sub>3</sub>, which correctly explains the observed 1:3:2 volume ratio — something Dalton's atom-only picture couldn't do.",
+      "hint": "The key new idea was separating the concept of \"molecule\" from \"atom\".",
+      "distractor_logic": [
+        "this restates the law of definite proportions, not what resolved the volume puzzle",
+        "this is about volume vs state of matter, unrelated to the ratio puzzle",
+        "this is a general Dalton postulate, not the specific resolving idea"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-006",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "An element M has two isotopes of mass numbers 20 and 22. If the average atomic mass of M is 20.2, the percentage abundance of the isotope with mass number 22 is:",
+      "options": [
+        "50%",
+        "10%",
+        "25%",
+        "20%"
+      ],
+      "correct_index": 1,
+      "explanation": "Let x = fraction of mass-22 isotope. 20(1&minus;x) + 22x = 20.2 &rArr; 20 + 2x = 20.2 &rArr; 2x = 0.2 &rArr; x = 0.1, i.e. 10% abundance for the mass-22 isotope.",
+      "hint": "Set up 20(1&minus;x) + 22x = 20.2 and solve for x.",
+      "distractor_logic": [
+        "assumed a 50:50 split without checking the given average mass",
+        "a rounding-based guess, not from solving the equation",
+        "doubled the correct fraction"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-007",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "Boron consists of two isotopes, <sup>10</sup>B and <sup>11</sup>B. Given that the average atomic mass of boron is 10.8, the percentage abundance of <sup>10</sup>B is:",
+      "options": [
+        "50%",
+        "20%",
+        "10%",
+        "80%"
+      ],
+      "correct_index": 1,
+      "explanation": "Let x = % abundance of <sup>10</sup>B. 10x + 11(100&minus;x) = 10.8 &times; 100 &rArr; 10x + 1100 &minus; 11x = 1080 &rArr; &minus;x = &minus;20 &rArr; x = 20, so <sup>10</sup>B is 20% abundant (and <sup>11</sup>B is 80%).",
+      "hint": "Set up the weighted-average equation using percentages directly (out of 100) and solve for x.",
+      "distractor_logic": [
+        "assumes an equal 50:50 split without solving the equation",
+        "an arithmetic slip that under-solves for x",
+        "this is <sup>11</sup>B's abundance, not <sup>10</sup>B's — the two isotopes were swapped"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-008",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "Silicon has three isotopes: <sup>28</sup>Si (92.2%), <sup>29</sup>Si (4.7%) and <sup>30</sup>Si (3.1%). The average atomic mass of silicon, to 1 decimal place, is:",
+      "options": [
+        "28.1",
+        "28.0",
+        "29.0",
+        "28.9"
+      ],
+      "correct_index": 0,
+      "explanation": "Average atomic mass = (0.922 &times; 28) + (0.047 &times; 29) + (0.031 &times; 30) = 25.816 + 1.363 + 0.930 = 28.109, which rounds to 28.1.",
+      "hint": "Multiply each isotope's mass by its own fractional abundance, then sum all three terms.",
+      "distractor_logic": [
+        "ignores the minor isotopes' contribution to the weighted sum",
+        "uses only the most abundant isotope's mass number",
+        "an arithmetic slip that overshoots the correctly weighted sum"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-009",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "The molar mass of hydrated copper sulfate, CuSO<sub>4</sub>&middot;5H<sub>2</sub>O (Cu = 63.5, S = 32, O = 16, H = 1), is:",
+      "options": [
+        "159.5",
+        "229.5",
+        "259.5",
+        "249.5"
+      ],
+      "correct_index": 3,
+      "explanation": "Molar mass of CuSO<sub>4</sub> = 63.5 + 32 + 4(16) = 159.5. Mass of 5H<sub>2</sub>O = 5 &times; 18 = 90. Total = 159.5 + 90 = 249.5.",
+      "hint": "Add the anhydrous salt's molar mass to the mass of its water of crystallisation.",
+      "distractor_logic": [
+        "only the anhydrous CuSO<sub>4</sub> mass, forgetting the water of crystallisation entirely",
+        "used 4 water molecules' worth of mass instead of 5",
+        "used 6 water molecules' worth of mass instead of 5"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-010",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "A hydrocarbon has the general formula C<sub>x</sub>H<sub>2x</sub> and a molecular mass of 42. The value of x is:",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "Molecular mass = 12x + 2x = 14x. Setting 14x = 42 gives x = 3 (this is C<sub>3</sub>H<sub>6</sub>, propene).",
+      "hint": "Combine the carbon and hydrogen contributions into a single expression in x, then solve.",
+      "distractor_logic": [
+        "substitutes x = 4 without verifying it satisfies 14x = 42",
+        "substitutes x = 6, roughly double the correct value",
+        "substitutes x = 2 without verifying it satisfies 14x = 42"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-011",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "The number of molecules present in 5.6 L of CO<sub>2</sub> gas at STP (22.4 L mol<sup>&minus;1</sup>) is:",
+      "options": [
+        "6.022 &times; 10<sup>23</sup>",
+        "1.506 &times; 10<sup>23</sup>",
+        "1.204 &times; 10<sup>23</sup>",
+        "3.011 &times; 10<sup>23</sup>"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles = 5.6 / 22.4 = 0.25 mol. Number of molecules = 0.25 &times; 6.022 &times; 10<sup>23</sup> = 1.506 &times; 10<sup>23</sup>.",
+      "hint": "First convert the volume to moles, then to molecules using N<sub>A</sub>.",
+      "distractor_logic": [
+        "used the full N<sub>A</sub> value, forgetting to first convert volume to 0.25 mol",
+        "used a quarter of the correct mole value before multiplying by N<sub>A</sub>",
+        "doubled the moles by mistake before multiplying by N<sub>A</sub>"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-012",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "A gas cylinder contains 8 g of O<sub>2</sub> (molar mass 32) and 14 g of N<sub>2</sub> (molar mass 28). The total number of moles of gas in the cylinder is:",
+      "options": [
+        "1.25 mol",
+        "1.0 mol",
+        "0.5 mol",
+        "0.75 mol"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles O<sub>2</sub> = 8/32 = 0.25 mol. Moles N<sub>2</sub> = 14/28 = 0.5 mol. Total = 0.25 + 0.5 = 0.75 mol.",
+      "hint": "Convert each gas's mass to moles separately, then add.",
+      "distractor_logic": [
+        "an arithmetic slip that overshoots the correct total",
+        "counted only one of the two gases, ignoring the other's contribution",
+        "rounded both individual mole values up before adding"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-013",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 3,
+      "type": "regular",
+      "question": "44.8 L of a gas at STP (22.4 L mol<sup>&minus;1</sup>) weighs 88 g. The molar mass of the gas is:",
+      "options": [
+        "22 g mol<sup>&minus;1</sup>",
+        "44 g mol<sup>&minus;1</sup>",
+        "176 g mol<sup>&minus;1</sup>",
+        "88 g mol<sup>&minus;1</sup>"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles = 44.8/22.4 = 2 mol. Molar mass = mass/moles = 88/2 = 44 g mol<sup>&minus;1</sup> (consistent with CO<sub>2</sub>).",
+      "hint": "Convert volume to moles first, then divide the given mass by that mole count.",
+      "distractor_logic": [
+        "forgot to divide by the mole count (used the raw volume-to-mass ratio wrong)",
+        "forgot to convert volume to moles at all, using 88 g / 0.5 mol",
+        "used the mass of 1 L rather than dividing total mass by total moles"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-014",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 3,
+      "type": "regular",
+      "question": "The percentage of water of crystallisation in hydrated copper sulfate, CuSO<sub>4</sub>&middot;5H<sub>2</sub>O (molar mass = 249.5, mass of 5H<sub>2</sub>O = 90), is closest to:",
+      "options": [
+        "18.0%",
+        "40.0%",
+        "36.1%",
+        "25.0%"
+      ],
+      "correct_index": 2,
+      "explanation": "% water = (90/249.5) &times; 100 = 36.07%, which rounds to 36.1%.",
+      "hint": "Divide the mass contributed by the water molecules by the total molar mass of the hydrate.",
+      "distractor_logic": [
+        "roughly half the correct percentage",
+        "an unrelated guessed round number, not from the actual calculation",
+        "an unrelated guessed round number, not from the actual calculation"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-015",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 3,
+      "type": "regular",
+      "question": "A 5.0 g sample of an oxide of iron contains 3.5 g of iron. Given Fe<sub>2</sub>O<sub>3</sub> has molar mass 160 (Fe = 56, O = 16), does the sample's iron percentage match the theoretical iron percentage in Fe<sub>2</sub>O<sub>3</sub>?",
+      "options": [
+        "No — the theoretical value is 63% Fe",
+        "Yes, but both are only 56% Fe",
+        "Yes — both are 70% Fe",
+        "No — the theoretical value is 77.8% Fe"
+      ],
+      "correct_index": 2,
+      "explanation": "Theoretical %Fe in Fe<sub>2</sub>O<sub>3</sub> = (2 &times; 56 / 160) &times; 100 = 112/160 &times; 100 = 70%. Experimental %Fe = (3.5/5.0) &times; 100 = 70%. The two values match exactly.",
+      "hint": "Compute both percentages independently, then compare them.",
+      "distractor_logic": [
+        "uses only one iron atom's mass (56) over the formula mass, forgetting the subscript 2",
+        "mistakes a single iron atom's mass (56) for the percentage figure",
+        "this is close to %O (48/160 &times; 100 &asymp; 30%) reasoning gone wrong, not %Fe"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-016",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "regular",
+      "question": "An organic compound containing only carbon and hydrogen is burnt completely; the products are 0.66 g of CO<sub>2</sub> and 0.36 g of H<sub>2</sub>O. The empirical formula of the compound is:",
+      "options": [
+        "C<sub>3</sub>H<sub>6</sub>",
+        "C<sub>2</sub>H<sub>6</sub>",
+        "CH<sub>4</sub>",
+        "C<sub>3</sub>H<sub>8</sub>"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles CO<sub>2</sub> = 0.66/44 = 0.015 mol &rArr; moles C = 0.015. Moles H<sub>2</sub>O = 0.36/18 = 0.02 mol &rArr; moles H = 0.04. Ratio C:H = 0.015:0.04 = 3:8, giving empirical formula C<sub>3</sub>H<sub>8</sub>.",
+      "hint": "Every mole of CO<sub>2</sub> traces back to 1 mole of C; every mole of H<sub>2</sub>O traces back to 2 moles of H.",
+      "distractor_logic": [
+        "doesn't match the actual 3:8 mole ratio found from the data",
+        "a close but incorrectly simplified C:H ratio",
+        "undercounts the hydrogen contribution from H<sub>2</sub>O"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-017",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "regular",
+      "question": "A compound contains 92.3% carbon and 7.7% hydrogen by mass and has a molar mass of 78. Its molecular formula is:",
+      "options": [
+        "C<sub>2</sub>H<sub>2</sub>",
+        "C<sub>6</sub>H<sub>12</sub>",
+        "C<sub>3</sub>H<sub>3</sub>",
+        "C<sub>6</sub>H<sub>6</sub>"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles: C = 92.3/12 = 7.69, H = 7.7/1 = 7.7 &rArr; ratio C:H &asymp; 1:1, empirical formula CH (mass 13). n = 78/13 = 6, so molecular formula = C<sub>6</sub>H<sub>6</sub> (benzene).",
+      "hint": "Find the empirical formula first, then scale it up using n = molar mass / empirical formula mass.",
+      "distractor_logic": [
+        "is C<sub>2</sub>H<sub>2</sub>, the empirical ratio doubled but not scaled to the given molar mass of 78",
+        "overcounts hydrogen relative to the actual 1:1 empirical ratio",
+        "is the empirical formula (CH) tripled instead of the correctly scaled molecular formula"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-018",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "regular",
+      "question": "A hydrated salt MgSO<sub>4</sub>&middot;xH<sub>2</sub>O contains 51.2% water by mass. Given the molar mass of MgSO<sub>4</sub> is 120 and of H<sub>2</sub>O is 18, the value of x is:",
+      "options": [
+        "4",
+        "7",
+        "6",
+        "5"
+      ],
+      "correct_index": 1,
+      "explanation": "Let total molar mass = 120 + 18x. Then 18x/(120 + 18x) = 0.512. Solving: 18x = 61.44 + 9.216x &rArr; 8.784x = 61.44 &rArr; x &asymp; 7 (MgSO<sub>4</sub>&middot;7H<sub>2</sub>O, Epsom salt).",
+      "hint": "Set up the percentage-water equation with x as the unknown number of water molecules and solve.",
+      "distractor_logic": [
+        "substantially underestimates x, inconsistent with 51.2% water content",
+        "underestimates x by guessing rather than solving the equation",
+        "underestimates x by guessing rather than solving the equation"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-019",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "regular",
+      "question": "An oxide of a metal M has the formula M<sub>2</sub>O<sub>3</sub> and contains 70% metal by mass (O = 16). The atomic mass of M is closest to:",
+      "options": [
+        "48",
+        "70",
+        "56",
+        "40"
+      ],
+      "correct_index": 2,
+      "explanation": "%M = 2A<sub>r</sub>/(2A<sub>r</sub> + 48) = 0.70. Solving: 2A<sub>r</sub> = 0.70(2A<sub>r</sub> + 48) &rArr; 2A<sub>r</sub> = 1.4A<sub>r</sub> + 33.6 &rArr; 0.6A<sub>r</sub> = 33.6 &rArr; A<sub>r</sub> = 56 (consistent with Fe in Fe<sub>2</sub>O<sub>3</sub>).",
+      "hint": "Set up the mass-percentage equation using A<sub>r</sub> as the unknown, then solve algebraically.",
+      "distractor_logic": [
+        "assumes the oxide is MO (1:1) rather than the given M<sub>2</sub>O<sub>3</sub> formula",
+        "mistakes the given 70% figure itself for the atomic mass",
+        "assumes the oxide is MO<sub>2</sub> rather than the given M<sub>2</sub>O<sub>3</sub> formula"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-020",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "regular",
+      "question": "Propane burns as C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> &rarr; 3CO<sub>2</sub> + 4H<sub>2</sub>O. The mass of CO<sub>2</sub> (molar mass 44) produced when 11 g of propane (molar mass 44) is burnt completely is:",
+      "options": [
+        "22 g",
+        "44 g",
+        "16.5 g",
+        "33 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles propane = 11/44 = 0.25 mol. Mole ratio C<sub>3</sub>H<sub>8</sub>:CO<sub>2</sub> = 1:3, so moles CO<sub>2</sub> = 0.25 &times; 3 = 0.75 mol. Mass = 0.75 &times; 44 = 33 g.",
+      "hint": "First find moles of propane, then apply the 1:3 mole ratio to CO<sub>2</sub>, then convert to mass.",
+      "distractor_logic": [
+        "halved the correct mole ratio's result",
+        "forgot to apply the 1:3 mole ratio, treating it as 1:1",
+        "used a 1:1.5 ratio instead of the correct 1:3"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-021",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "regular",
+      "question": "For 2Al + 3H<sub>2</sub>SO<sub>4</sub> &rarr; Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> + 3H<sub>2</sub>, the volume of H<sub>2</sub> gas (at STP, 22.4 L mol<sup>&minus;1</sup>) produced from 5.4 g of Al (molar mass 27) is:",
+      "options": [
+        "4.48 L",
+        "3.36 L",
+        "8.96 L",
+        "6.72 L"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles Al = 5.4/27 = 0.2 mol. Mole ratio Al:H<sub>2</sub> = 2:3, so moles H<sub>2</sub> = 0.2 &times; (3/2) = 0.3 mol. Volume = 0.3 &times; 22.4 = 6.72 L.",
+      "hint": "Convert Al's mass to moles, apply the 2:3 ratio to H<sub>2</sub>, then convert to volume via 22.4 L mol<sup>&minus;1</sup>.",
+      "distractor_logic": [
+        "assumed a 1:1 ratio between Al and H<sub>2</sub> instead of 2:3",
+        "used a 1:1.25 ratio in place of the correct 2:3 ratio",
+        "doubled the correct volume by mistake"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-022",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "regular",
+      "question": "For 2KClO<sub>3</sub> &rarr; 2KCl + 3O<sub>2</sub>, the mass of O<sub>2</sub> (molar mass 32) produced from 24.5 g of KClO<sub>3</sub> (molar mass 122.5) is:",
+      "options": [
+        "9.6 g",
+        "6.4 g",
+        "4.8 g",
+        "19.2 g"
+      ],
+      "correct_index": 0,
+      "explanation": "Moles KClO<sub>3</sub> = 24.5/122.5 = 0.2 mol. Mole ratio KClO<sub>3</sub>:O<sub>2</sub> = 2:3, so moles O<sub>2</sub> = 0.2 &times; (3/2) = 0.3 mol. Mass = 0.3 &times; 32 = 9.6 g.",
+      "hint": "Convert to moles of KClO<sub>3</sub> first, then apply the 2:3 ratio to O<sub>2</sub>.",
+      "distractor_logic": [
+        "used a 1:1 ratio between KClO<sub>3</sub> and O<sub>2</sub> instead of 2:3",
+        "used a 1:0.75 ratio in place of the correct 2:3 ratio",
+        "halved the correctly calculated mass of O<sub>2</sub>"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-023",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "regular",
+      "question": "Given the two-step sequence CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub> followed by CaO + H<sub>2</sub>O &rarr; Ca(OH)<sub>2</sub>, starting from 50 g of CaCO<sub>3</sub> (molar mass 100), the mass of Ca(OH)<sub>2</sub> (molar mass 74) ultimately obtainable is:",
+      "options": [
+        "18.5 g",
+        "50 g",
+        "37 g",
+        "74 g"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles CaCO<sub>3</sub> = 50/100 = 0.5 mol. Each step is a 1:1 mole ratio, so moles CaO = 0.5 mol, then moles Ca(OH)<sub>2</sub> = 0.5 mol. Mass = 0.5 &times; 74 = 37 g.",
+      "hint": "Carry the mole count of 0.5 mol through both 1:1 steps, then convert to mass only at the very end.",
+      "distractor_logic": [
+        "halved the correctly calculated final mass",
+        "reused the original CaCO<sub>3</sub> mass instead of recalculating via moles through both steps",
+        "used the molar mass of Ca(OH)<sub>2</sub> directly as the answer, without accounting for the 0.5 mol quantity"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-024",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 3,
+      "type": "regular",
+      "question": "For N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, 28 g of N<sub>2</sub> (molar mass 28) is reacted with 9 g of H<sub>2</sub> (molar mass 2). The limiting reagent and the mass of NH<sub>3</sub> (molar mass 17) formed are:",
+      "options": [
+        "N<sub>2</sub> limiting, 34 g NH<sub>3</sub>",
+        "N<sub>2</sub> limiting, 17 g NH<sub>3</sub>",
+        "H<sub>2</sub> limiting, 51 g NH<sub>3</sub>",
+        "H<sub>2</sub> limiting, 34 g NH<sub>3</sub>"
+      ],
+      "correct_index": 0,
+      "explanation": "Moles N<sub>2</sub> = 28/28 = 1 mol; moles H<sub>2</sub> = 9/2 = 4.5 mol. 1 mol N<sub>2</sub> needs only 3 mol H<sub>2</sub>, and 4.5 mol H<sub>2</sub> is available (excess), so N<sub>2</sub> is limiting. Moles NH<sub>3</sub> = 1 &times; 2 = 2 mol, mass = 2 &times; 17 = 34 g.",
+      "hint": "Check which reagent runs out first by comparing available moles against the 1:3 requirement.",
+      "distractor_logic": [
+        "correctly finds N<sub>2</sub> limiting but miscalculates the NH<sub>3</sub> mass (halved)",
+        "misidentifies H<sub>2</sub> as limiting when it is actually present in excess",
+        "misidentifies H<sub>2</sub> as limiting, and also computes the wrong NH<sub>3</sub> mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-025",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 3,
+      "type": "regular",
+      "question": "10 g of CaCO<sub>3</sub> (molar mass 100) reacts with 50 mL of 2 M HCl, as CaCO<sub>3</sub> + 2HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>. The limiting reagent is:",
+      "options": [
+        "CO<sub>2</sub>",
+        "HCl",
+        "Both are exactly sufficient for each other",
+        "CaCO<sub>3</sub>"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles CaCO<sub>3</sub> = 10/100 = 0.1 mol, requiring 0.2 mol HCl. Moles HCl available = 2 &times; 0.05 = 0.1 mol, which is less than the 0.2 mol required, so HCl is limiting.",
+      "hint": "Compare the HCl actually available with the amount CaCO<sub>3</sub> would demand for complete reaction.",
+      "distractor_logic": [
+        "CO<sub>2</sub> is a product, not a reactant, so it cannot be a limiting reagent",
+        "the amounts are unequal (0.1 mol HCl available vs 0.2 mol needed), so they are not exactly sufficient",
+        "CaCO<sub>3</sub>'s available amount actually exceeds what the available HCl can fully consume"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-026",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 3,
+      "type": "regular",
+      "question": "10 g of CaCO<sub>3</sub> (molar mass 100) reacts with 50 mL of 2 M HCl (0.1 mol HCl, the limiting reagent), as CaCO<sub>3</sub> + 2HCl &rarr; CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>. The mass of CO<sub>2</sub> (molar mass 44) produced is:",
+      "options": [
+        "4.4 g",
+        "1.1 g",
+        "2.2 g",
+        "2.0 g"
+      ],
+      "correct_index": 2,
+      "explanation": "Since HCl is limiting (0.1 mol) and the ratio HCl:CO<sub>2</sub> = 2:1, moles CO<sub>2</sub> = 0.1/2 = 0.05 mol. Mass = 0.05 &times; 44 = 2.2 g.",
+      "hint": "Base the calculation on the limiting reagent (HCl, 0.1 mol), applying the 2:1 ratio to CO<sub>2</sub>.",
+      "distractor_logic": [
+        "incorrectly based the calculation on all the CaCO<sub>3</sub> present (0.1 mol) as if it were 1:1 with CO<sub>2</sub>",
+        "halved the correctly calculated mass of CO<sub>2</sub>",
+        "an arithmetic slip that slightly undershoots the correct 2.2 g"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-027",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 3,
+      "type": "regular",
+      "question": "2.0 mol of SO<sub>2</sub> and 1.5 mol of O<sub>2</sub> react as 2SO<sub>2</sub> + O<sub>2</sub> &rarr; 2SO<sub>3</sub>, going to completion. The moles of excess reagent remaining after the reaction are:",
+      "options": [
+        "1.0 mol O<sub>2</sub>",
+        "0.5 mol O<sub>2</sub>",
+        "1.5 mol O<sub>2</sub>",
+        "0.5 mol SO<sub>2</sub>"
+      ],
+      "correct_index": 1,
+      "explanation": "2.0 mol SO<sub>2</sub> needs 1.0 mol O<sub>2</sub> (ratio 2:1). Since 1.5 mol O<sub>2</sub> is available, SO<sub>2</sub> is limiting, and 1.5 &minus; 1.0 = 0.5 mol O<sub>2</sub> remains unreacted.",
+      "hint": "First find how much O<sub>2</sub> the given SO<sub>2</sub> actually consumes, then subtract from the O<sub>2</sub> available.",
+      "distractor_logic": [
+        "forgot to subtract the O<sub>2</sub> actually consumed, reporting the total O<sub>2</sub> used instead of what's left",
+        "reports the full initial O<sub>2</sub> amount, ignoring that some of it reacted",
+        "incorrectly identifies SO<sub>2</sub> as the leftover reagent when it is fully consumed"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-028",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "regular",
+      "question": "50 mL of a 4 M HCl solution is diluted to 200 mL with water. The molarity of the diluted solution is:",
+      "options": [
+        "1 M",
+        "4 M",
+        "0.5 M",
+        "2 M"
+      ],
+      "correct_index": 0,
+      "explanation": "By the dilution law, M<sub>1</sub>V<sub>1</sub> = M<sub>2</sub>V<sub>2</sub>: 4 &times; 50 = M<sub>2</sub> &times; 200, so M<sub>2</sub> = 200/200 = 1 M.",
+      "hint": "Moles of HCl stay the same on dilution — only the volume changes.",
+      "distractor_logic": [
+        "forgets that dilution changes the molarity at all",
+        "an arithmetic slip in solving the dilution equation",
+        "assumes the molarity simply halves rather than solving M<sub>1</sub>V<sub>1</sub> = M<sub>2</sub>V<sub>2</sub>"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-029",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "regular",
+      "question": "A solution is 20% NaOH (molar mass 40) by mass, with density 1.20 g mL<sup>&minus;1</sup>. The molarity of the solution is:",
+      "options": [
+        "6 M",
+        "5 M",
+        "4.8 M",
+        "8 M"
+      ],
+      "correct_index": 0,
+      "explanation": "Consider 1 L (1000 mL) of solution: mass = 1000 &times; 1.20 = 1200 g. Mass of NaOH = 0.20 &times; 1200 = 240 g. Moles NaOH = 240/40 = 6 mol. Since this is for 1 L, molarity = 6 M.",
+      "hint": "Use the density to convert 1 L of solution into a mass, then apply the 20% figure to find the solute's mass.",
+      "distractor_logic": [
+        "overestimates by not correctly applying the 20% mass fraction",
+        "forgot to include the density, treating 1 L as if it weighed exactly 1000 g",
+        "used the wrong reference volume, offsetting the answer"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-L3-030",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "regular",
+      "question": "300 mL of 2 M HCl is mixed with 200 mL of 5 M HCl. Assuming the volumes are simply additive, the molarity of the resulting solution is:",
+      "options": [
+        "3.5 M",
+        "4.0 M",
+        "2.5 M",
+        "3.2 M"
+      ],
+      "correct_index": 3,
+      "explanation": "Total moles = (0.3 &times; 2) + (0.2 &times; 5) = 0.6 + 1.0 = 1.6 mol. Total volume = 0.3 + 0.2 = 0.5 L. Molarity = 1.6/0.5 = 3.2 M.",
+      "hint": "Add up the total moles from both solutions, then divide by the combined volume.",
+      "distractor_logic": [
+        "takes the simple average of 2 M and 5 M, ignoring that the volumes differ",
+        "overshoots further past the correct weighted average",
+        "an arithmetic slip that overshoots the correctly weighted average"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH01-B-001",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 3,
+      "type": "bonus",
+      "question": "12 g of magnesium reacts completely with oxygen to form 20 g of magnesium oxide (2Mg + O<sub>2</sub> &rarr; 2MgO), illustrating the law of conservation of mass. The mass of oxygen that combined with the magnesium was:",
+      "options": [
+        "12 g",
+        "20 g",
+        "8 g",
+        "32 g"
+      ],
+      "correct_index": 2,
+      "explanation": "By conservation of mass, mass of O<sub>2</sub> = mass of MgO &minus; mass of Mg = 20 &minus; 12 = 8 g (consistent with moles Mg = 12/24 = 0.5 mol needing 0.25 mol O<sub>2</sub> = 8 g).",
+      "hint": "Total mass in equals total mass out.",
+      "distractor_logic": [
+        "mistakes the magnesium's own mass for the oxygen combined",
+        "mistakes the product's mass for the oxygen combined",
+        "overshoots by adding rather than subtracting"
+      ],
+      "mixed_topics": [
+        "Laws of Chemical Combination",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-002",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "A 4.4 g sample of CO<sub>2</sub> (molar mass 44) is analysed. The number of moles of oxygen atoms present is:",
+      "options": [
+        "0.4 mol",
+        "0.2 mol",
+        "0.1 mol",
+        "0.05 mol"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles CO<sub>2</sub> = 4.4/44 = 0.1 mol. Each CO<sub>2</sub> molecule has 2 oxygen atoms, so moles O atoms = 0.1 &times; 2 = 0.2 mol.",
+      "hint": "First find moles of CO<sub>2</sub>, then multiply by 2 for the oxygen atoms per molecule.",
+      "distractor_logic": [
+        "doubled the CO<sub>2</sub> moles instead of the oxygen atom count",
+        "forgot to multiply by 2 for the two oxygen atoms per CO<sub>2</sub>",
+        "halved the correct answer by mistake"
+      ],
+      "mixed_topics": [
+        "Mole Concept and Molar Mass",
+        "Percentage Composition"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-003",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "bonus",
+      "question": "A compound has molecular mass 60 and empirical formula CH<sub>2</sub>O (empirical formula mass 30). Its molecular formula is:",
+      "options": [
+        "C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>",
+        "CH<sub>2</sub>O",
+        "C<sub>4</sub>H<sub>8</sub>O<sub>4</sub>",
+        "C<sub>2</sub>H<sub>4</sub>O<sub>2</sub>"
+      ],
+      "correct_index": 3,
+      "explanation": "n = 60/30 = 2, so molecular formula = (CH<sub>2</sub>O)<sub>2</sub> = C<sub>2</sub>H<sub>4</sub>O<sub>2</sub> (acetic acid).",
+      "hint": "Find n = molecular mass / empirical formula mass, then multiply every subscript by n.",
+      "distractor_logic": [
+        "used n = 3 instead of the correct n = 2",
+        "forgot to multiply by n = 2 at all",
+        "used n = 4 instead of the correct n = 2"
+      ],
+      "mixed_topics": [
+        "Empirical and Molecular Formula",
+        "Molecular Mass and Formula Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-004",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "Copper has an average atomic mass of 63.5. The number of moles of Cu atoms present in 12.7 g of copper is:",
+      "options": [
+        "2.0 mol",
+        "0.1 mol",
+        "0.2 mol",
+        "0.5 mol"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles = mass/molar mass = 12.7/63.5 = 0.2 mol.",
+      "hint": "Divide the given mass by copper's average atomic (molar) mass.",
+      "distractor_logic": [
+        "multiplied instead of divided",
+        "divided by roughly double the correct molar mass",
+        "inverted the division (molar mass/mass)"
+      ],
+      "mixed_topics": [
+        "Atomic Mass",
+        "Mole Concept and Molar Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-005",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Limiting Reagent",
+      "level": 3,
+      "type": "bonus",
+      "question": "6 g of H<sub>2</sub> (molar mass 2) and 32 g of O<sub>2</sub> (molar mass 32) react as 2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O. The limiting reagent and the mass of water (molar mass 18) formed are:",
+      "options": [
+        "O<sub>2</sub> limiting, 36 g H<sub>2</sub>O",
+        "O<sub>2</sub> limiting, 18 g H<sub>2</sub>O",
+        "H<sub>2</sub> limiting, 36 g H<sub>2</sub>O",
+        "H<sub>2</sub> limiting, 54 g H<sub>2</sub>O"
+      ],
+      "correct_index": 0,
+      "explanation": "Moles H<sub>2</sub> = 6/2 = 3 mol; moles O<sub>2</sub> = 32/32 = 1 mol. 3 mol H<sub>2</sub> needs 1.5 mol O<sub>2</sub>, but only 1 mol O<sub>2</sub> is available, so O<sub>2</sub> is limiting. Moles H<sub>2</sub>O = 1 &times; 2 = 2 mol, mass = 2 &times; 18 = 36 g.",
+      "hint": "Compare available O<sub>2</sub> against what the given H<sub>2</sub> would need at the 2:1 ratio.",
+      "distractor_logic": [
+        "correctly finds O<sub>2</sub> limiting but miscalculates the water mass (halved)",
+        "misidentifies H<sub>2</sub> as limiting, with the correct mass by coincidence",
+        "misidentifies H<sub>2</sub> as limiting when O<sub>2</sub> actually runs out first"
+      ],
+      "mixed_topics": [
+        "Stoichiometry",
+        "Limiting Reagent"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-006",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "100 mL of 0.5 M AgNO<sub>3</sub> is reacted with excess NaCl solution: AgNO<sub>3</sub> + NaCl &rarr; AgCl&darr; + NaNO<sub>3</sub>. The mass of AgCl (molar mass 143.5) precipitated is:",
+      "options": [
+        "14.35 g",
+        "7.18 g",
+        "1.435 g",
+        "3.59 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles AgNO<sub>3</sub> = 0.5 &times; 0.1 = 0.05 mol. Mole ratio AgNO<sub>3</sub>:AgCl = 1:1, so moles AgCl = 0.05 mol. Mass = 0.05 &times; 143.5 = 7.175 &asymp; 7.18 g.",
+      "hint": "Convert the AgNO<sub>3</sub> solution to moles first, then apply the 1:1 mole ratio to AgCl.",
+      "distractor_logic": [
+        "doubled the correctly calculated mass",
+        "used a tenth of the correctly calculated mass",
+        "halved the correctly calculated mass"
+      ],
+      "mixed_topics": [
+        "Concentration of Solutions",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-007",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 3,
+      "type": "bonus",
+      "question": "A hydrocarbon contains 85.7% carbon and 14.3% hydrogen by mass (C = 12, H = 1). Its empirical formula is:",
+      "options": [
+        "C<sub>2</sub>H<sub>4</sub>",
+        "CH<sub>4</sub>",
+        "CH<sub>2</sub>",
+        "CH<sub>3</sub>"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles: C = 85.7/12 = 7.14, H = 14.3/1 = 14.3. Dividing by the smaller value (7.14) gives C:H = 1:2, i.e. empirical formula CH<sub>2</sub>.",
+      "hint": "Convert both percentages to moles, then divide each by the smaller value.",
+      "distractor_logic": [
+        "this is the correct atom ratio but not simplified to the empirical formula",
+        "overcounts hydrogen relative to the correctly calculated 1:2 ratio",
+        "a plausible-looking ratio that doesn't match the actual 1:2 mole calculation"
+      ],
+      "mixed_topics": [
+        "Percentage Composition",
+        "Empirical and Molecular Formula"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-008",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 3,
+      "type": "bonus",
+      "question": "The mass of a sample of NaCl (molar mass 58.5) is measured as 11.70 g on a balance. The number of moles, reported to the correct number of significant figures, is:",
+      "options": [
+        "0.200 mol",
+        "0.2 mol",
+        "0.20 mol",
+        "0.2000 mol"
+      ],
+      "correct_index": 0,
+      "explanation": "Moles = 11.70/58.5 = 0.2000... mol. Since 11.70 g has 4 significant figures and 58.5 has 3, the answer is limited to 3 significant figures: 0.200 mol.",
+      "hint": "Match the significant figures of the answer to the least precise input value (58.5, 3 sig figs).",
+      "distractor_logic": [
+        "reports two fewer significant figures than justified",
+        "reports one fewer significant figure than justified",
+        "reports one extra, unjustified significant figure"
+      ],
+      "mixed_topics": [
+        "Measurement and Significant Figures",
+        "Mole Concept and Molar Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-009",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "bonus",
+      "question": "For N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>, the theoretical yield of NH<sub>3</sub> from 2 mol of N<sub>2</sub> (with excess H<sub>2</sub>) is 4 mol. If only 3 mol of NH<sub>3</sub> is actually obtained, the percentage yield is:",
+      "options": [
+        "75%",
+        "66.7%",
+        "50%",
+        "80%"
+      ],
+      "correct_index": 0,
+      "explanation": "Percentage yield = (actual yield / theoretical yield) &times; 100 = (3/4) &times; 100 = 75%.",
+      "hint": "Divide the actual amount obtained by the maximum theoretically possible amount.",
+      "distractor_logic": [
+        "a rough estimate that doesn't match 3/4 exactly",
+        "significantly undershoots the correctly calculated 75%",
+        "an unrelated guessed round number, not from the actual ratio"
+      ],
+      "mixed_topics": [
+        "Stoichiometry",
+        "Limiting Reagent"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-010",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 3,
+      "type": "bonus",
+      "question": "Carbon and oxygen combine in the mass ratio 3:8 in CO<sub>2</sub> and 3:4 in CO. This observation is best explained by combining which two ideas?",
+      "options": [
+        "Gay Lussac's law of gaseous volumes alone",
+        "Dalton's postulate that atoms combine in fixed, simple whole-number ratios, together with the law of multiple proportions",
+        "Avogadro's law alone, without any postulate about atoms",
+        "The law of conservation of mass alone, without any atomic postulate"
+      ],
+      "correct_index": 1,
+      "explanation": "Dalton's atomic postulate explains why each compound has one fixed atomic ratio, while the law of multiple proportions explains why the two compounds' O:C ratios (8:3 and 4:3) are themselves in a simple 2:1 relationship to each other.",
+      "hint": "One idea explains the fixed ratio within each compound; the other explains the simple relationship between the two compounds.",
+      "distractor_logic": [
+        "Gay Lussac's law concerns gas volumes, not the mass ratios described here",
+        "Avogadro's law concerns gas volumes and molecule counts, not this mass-ratio pattern",
+        "conservation of mass alone explains total mass, not why ratios are fixed and simply related"
+      ],
+      "mixed_topics": [
+        "Dalton's Atomic Theory",
+        "Laws of Chemical Combination"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-011",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Nature of Matter",
+      "level": 3,
+      "type": "bonus",
+      "question": "Brass is a homogeneous mixture (alloy) of copper and zinc containing 70% Cu and 30% Zn by mass. In 100 g of brass, the number of moles of Zn (molar mass 65) is closest to:",
+      "options": [
+        "1.54 mol",
+        "0.30 mol",
+        "0.46 mol",
+        "0.70 mol"
+      ],
+      "correct_index": 2,
+      "explanation": "Mass of Zn in 100 g brass = 30 g. Moles Zn = 30/65 = 0.4615 mol &asymp; 0.46 mol.",
+      "hint": "First find the mass of zinc from the given percentage, then convert to moles.",
+      "distractor_logic": [
+        "inverts the calculation (molar mass/mass) instead of mass/molar mass",
+        "uses the mass percentage figure directly as if it were moles",
+        "uses the copper percentage instead of the zinc percentage"
+      ],
+      "mixed_topics": [
+        "Nature of Matter",
+        "Mole Concept and Molar Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-012",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "20 g of NaOH (molar mass 40) is dissolved to make 500 mL of solution whose density is 1.04 g mL<sup>&minus;1</sup>. The mass percentage of NaOH in this solution is:",
+      "options": [
+        "4.16%",
+        "3.85%",
+        "3.65%",
+        "4.00%"
+      ],
+      "correct_index": 1,
+      "explanation": "Mass of solution = 500 &times; 1.04 = 520 g. Mass percentage = (20/520) &times; 100 = 3.85%.",
+      "hint": "Use the density to find the total mass of the solution, then divide the solute mass by it.",
+      "distractor_logic": [
+        "an arithmetic slip that slightly overshoots the correct 3.85%",
+        "an arithmetic slip that slightly undershoots the correct 3.85%",
+        "ignores the density, dividing by 500 (as if 1 mL = 1 g) instead of the actual 520 g"
+      ],
+      "mixed_topics": [
+        "Concentration of Solutions",
+        "Percentage Composition"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-013",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "One oxide of a metal M has the formula MO. If 16 g of oxygen (O = 16) combines with 24 g of the metal M in this oxide, the atomic mass of M is:",
+      "options": [
+        "48",
+        "16",
+        "12",
+        "24"
+      ],
+      "correct_index": 3,
+      "explanation": "In MO, the mole ratio M:O is 1:1. 16 g of oxygen is 1 mol O (16/16), so 24 g of M must also be 1 mol, giving atomic mass of M = 24/1 = 24 (magnesium).",
+      "hint": "Since MO has a 1:1 mole ratio, equal moles of M and O must be present.",
+      "distractor_logic": [
+        "double the correctly calculated atomic mass",
+        "mistakes oxygen's own atomic mass for M's atomic mass",
+        "half the correctly calculated atomic mass"
+      ],
+      "mixed_topics": [
+        "Atomic Mass",
+        "Laws of Chemical Combination"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-014",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "bonus",
+      "question": "50 mL of 1 M H<sub>2</sub>SO<sub>4</sub> is completely neutralised by NaOH solution: H<sub>2</sub>SO<sub>4</sub> + 2NaOH &rarr; Na<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O. The number of moles of NaOH required is:",
+      "options": [
+        "0.025 mol",
+        "0.05 mol",
+        "0.10 mol",
+        "0.20 mol"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles H<sub>2</sub>SO<sub>4</sub> = 1 &times; 0.05 = 0.05 mol. Mole ratio H<sub>2</sub>SO<sub>4</sub>:NaOH = 1:2, so moles NaOH = 0.05 &times; 2 = 0.10 mol.",
+      "hint": "Convert the acid's volume and molarity to moles, then apply the 1:2 mole ratio.",
+      "distractor_logic": [
+        "undershoots by halving the correct answer",
+        "forgot to apply the 1:2 ratio, treating it as 1:1",
+        "overshoots by using a 1:4 ratio instead of 1:2"
+      ],
+      "mixed_topics": [
+        "Stoichiometry",
+        "Concentration of Solutions"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-015",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "bonus",
+      "question": "A hydrocarbon with empirical formula CH<sub>2</sub> undergoes complete combustion per the equation 2CH<sub>2</sub> + 3O<sub>2</sub> &rarr; 2CO<sub>2</sub> + 2H<sub>2</sub>O (written per empirical unit). The moles of O<sub>2</sub> required to burn 0.4 mol of CH<sub>2</sub> units is:",
+      "options": [
+        "1.2 mol",
+        "0.6 mol",
+        "0.4 mol",
+        "0.3 mol"
+      ],
+      "correct_index": 1,
+      "explanation": "Mole ratio CH<sub>2</sub>:O<sub>2</sub> = 2:3, so moles O<sub>2</sub> = 0.4 &times; (3/2) = 0.6 mol.",
+      "hint": "Apply the 2:3 mole ratio between the hydrocarbon unit and O<sub>2</sub> to the given 0.4 mol.",
+      "distractor_logic": [
+        "doubled the correctly calculated answer",
+        "assumed a 1:1 ratio between CH<sub>2</sub> and O<sub>2</sub> instead of 2:3",
+        "halved the correctly calculated answer"
+      ],
+      "mixed_topics": [
+        "Empirical and Molecular Formula",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-016",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "A 0.1 M solution of glucose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, molar mass 180) is prepared. The mass of glucose dissolved per 250 mL of this solution is:",
+      "options": [
+        "9.0 g",
+        "18 g",
+        "4.5 g",
+        "2.25 g"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles glucose = 0.1 &times; 0.25 = 0.025 mol. Mass = 0.025 &times; 180 = 4.5 g.",
+      "hint": "Convert the given volume and molarity to moles, then multiply by the molar mass.",
+      "distractor_logic": [
+        "doubled the correctly calculated mass",
+        "forgot to account for the 250 mL volume, using the full 1 L amount instead",
+        "used a quarter of the correctly calculated mass"
+      ],
+      "mixed_topics": [
+        "Molecular Mass and Formula Mass",
+        "Concentration of Solutions"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-017",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "bonus",
+      "question": "10 g of CaCO<sub>3</sub> (molar mass 100) is heated as CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub>, but the decomposition is only 80% complete. The mass of CO<sub>2</sub> (molar mass 44) actually released is:",
+      "options": [
+        "3.20 g",
+        "3.52 g",
+        "4.00 g",
+        "4.40 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Theoretical moles CaCO<sub>3</sub> = 10/100 = 0.1 mol, giving a theoretical 0.1 mol (4.4 g) of CO<sub>2</sub> if complete. At 80% completion, actual CO<sub>2</sub> = 0.80 &times; 4.4 = 3.52 g.",
+      "hint": "First find the theoretical (100%) mass of CO<sub>2</sub>, then scale it by the given percentage completion.",
+      "distractor_logic": [
+        "applies 80% to the original CaCO<sub>3</sub> mass instead of to the CO<sub>2</sub> yield",
+        "applies 80% to the wrong base value, skipping the theoretical CO<sub>2</sub> calculation",
+        "reports the full theoretical yield, ignoring the 80% completion figure"
+      ],
+      "mixed_topics": [
+        "Stoichiometry",
+        "Limiting Reagent"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-018",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 3,
+      "type": "bonus",
+      "question": "The mass of CO<sub>2</sub> produced from 5.60 g of CaCO<sub>3</sub> (molar mass 100.0) is calculated as 2.464 g. Reported to the correct number of significant figures (matching the 3 significant figures of the given mass, 5.60 g), this should be written as:",
+      "options": [
+        "2.5 g",
+        "2.46 g",
+        "2.4 g",
+        "2.464 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Since 5.60 g has 3 significant figures, the final calculated mass must also be rounded to 3 significant figures: 2.464 g rounds to 2.46 g.",
+      "hint": "Round the raw calculator output to match the significant figures of the given data.",
+      "distractor_logic": [
+        "rounds to only 2 significant figures, too few",
+        "rounds to only 2 significant figures and rounds down incorrectly",
+        "reports the unrounded raw calculation, one significant figure too many"
+      ],
+      "mixed_topics": [
+        "Measurement and Significant Figures",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-019",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Dalton's Atomic Theory",
+      "level": 3,
+      "type": "bonus",
+      "question": "Natural chlorine is 75% <sup>35</sup>Cl and 25% <sup>37</sup>Cl, giving an average atomic mass of 35.5 &mdash; a value that Dalton's original postulate of identical atomic mass for every atom of an element cannot itself explain. Using this average atomic mass, 1 mole of natural chlorine gas, Cl<sub>2</sub>, has a mass of:",
+      "options": [
+        "74 g",
+        "70 g",
+        "35.5 g",
+        "71 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Molar mass of Cl<sub>2</sub> = 2 &times; 35.5 = 71 g mol<sup>&minus;1</sup>, so 1 mole of Cl<sub>2</sub> has a mass of 71 g.",
+      "hint": "Cl<sub>2</sub> is diatomic, so double the average atomic mass of Cl.",
+      "distractor_logic": [
+        "uses double an incorrect atomic mass value",
+        "a plausible-looking round number, not from doubling 35.5 correctly",
+        "forgot to double the atomic mass for the diatomic molecule"
+      ],
+      "mixed_topics": [
+        "Dalton's Atomic Theory",
+        "Mole Concept and Molar Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-020",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 3,
+      "type": "bonus",
+      "question": "Urea, CO(NH<sub>2</sub>)<sub>2</sub> (molar mass 60, containing 2 N atoms), is used as a nitrogen fertiliser. The mass of nitrogen (N = 14) present in a 500 g bag of pure urea is:",
+      "options": [
+        "280.0 g",
+        "140.0 g",
+        "233.3 g",
+        "466.7 g"
+      ],
+      "correct_index": 2,
+      "explanation": "%N in urea = (2 &times; 14 / 60) &times; 100 = 46.67%. Mass of N in 500 g urea = 0.4667 &times; 500 = 233.3 g.",
+      "hint": "First find the percentage of nitrogen in urea's formula, then apply it to the 500 g sample.",
+      "distractor_logic": [
+        "uses only one nitrogen atom's mass instead of both in the formula",
+        "an arithmetic slip that undershoots the correctly weighted mass",
+        "doubles the correctly calculated mass of nitrogen"
+      ],
+      "mixed_topics": [
+        "Percentage Composition",
+        "Mole Concept and Molar Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-021",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "7.45 g of KCl (K = 39, Cl = 35.5, molar mass 74.5) is dissolved to make 250 mL of solution. The number of moles of K<sup>+</sup> ions and the molarity of the solution are respectively:",
+      "options": [
+        "0.1 mol K<sup>+</sup>, 1.0 M",
+        "0.4 mol K<sup>+</sup>, 0.4 M",
+        "0.1 mol K<sup>+</sup>, 0.4 M",
+        "0.1 mol K<sup>+</sup>, 0.1 M"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles KCl = 7.45/74.5 = 0.1 mol, giving 0.1 mol K<sup>+</sup> (1 K<sup>+</sup> per formula unit). Molarity = 0.1/0.25 = 0.4 M.",
+      "hint": "Find moles of KCl first (which equals moles of K<sup>+</sup>), then divide by the volume in litres for molarity.",
+      "distractor_logic": [
+        "uses 250 mL directly as if it were 0.1 L when finding molarity",
+        "confuses the moles of formula units with the moles of K<sup>+</sup> and miscalculates molarity too",
+        "correctly finds the moles of K<sup>+</sup> but forgets to convert 250 mL to 0.25 L for molarity"
+      ],
+      "mixed_topics": [
+        "Concentration of Solutions",
+        "Atomic Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-022",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Atomic Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "Magnesium has an average atomic mass of 24.3. The percentage by mass of magnesium in MgO (O = 16) is:",
+      "options": [
+        "66.7%",
+        "60.3%",
+        "39.7%",
+        "50.0%"
+      ],
+      "correct_index": 1,
+      "explanation": "Molar mass of MgO = 24.3 + 16 = 40.3. %Mg = (24.3/40.3) &times; 100 = 60.3%.",
+      "hint": "Divide magnesium's atomic mass by the total molar mass of MgO.",
+      "distractor_logic": [
+        "an unrelated guessed round number, not from the actual calculation",
+        "this is oxygen's percentage (100 &minus; 60.3), not magnesium's",
+        "assumes equal mass contribution from Mg and O, which is false"
+      ],
+      "mixed_topics": [
+        "Atomic Mass",
+        "Percentage Composition"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-023",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "Zinc reacts with hydrochloric acid as Zn + 2HCl &rarr; ZnCl<sub>2</sub> + H<sub>2</sub>. 6.5 g of zinc (molar mass 65) is added to 200 mL of 1 M HCl. The volume of H<sub>2</sub> gas (STP, 22.4 L mol<sup>&minus;1</sup>) produced is:",
+      "options": [
+        "0.224 L",
+        "4.48 L",
+        "1.12 L",
+        "2.24 L"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles Zn = 6.5/65 = 0.1 mol, requiring 0.2 mol HCl. Moles HCl available = 1 &times; 0.2 = 0.2 mol, exactly enough. Moles H<sub>2</sub> = 0.1 mol (1:1 with Zn), volume = 0.1 &times; 22.4 = 2.24 L.",
+      "hint": "Check both reagents are exactly matched here (no excess), then base the H<sub>2</sub> calculation on the 1:1 Zn:H<sub>2</sub> ratio.",
+      "distractor_logic": [
+        "used a tenth of the correctly calculated volume",
+        "doubled the correctly calculated volume",
+        "halved the correctly calculated volume"
+      ],
+      "mixed_topics": [
+        "Stoichiometry",
+        "Concentration of Solutions"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-024",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "bonus",
+      "question": "An oxide of iron contains 77.8% Fe and 22.2% O by mass (Fe = 56, O = 16). Its empirical formula is:",
+      "options": [
+        "FeO",
+        "Fe<sub>3</sub>O<sub>4</sub>",
+        "Fe<sub>2</sub>O<sub>3</sub>",
+        "FeO<sub>2</sub>"
+      ],
+      "correct_index": 0,
+      "explanation": "Moles: Fe = 77.8/56 = 1.39, O = 22.2/16 = 1.39. The ratio Fe:O = 1:1, giving the empirical formula FeO.",
+      "hint": "Convert both percentages to moles and compare the resulting ratio.",
+      "distractor_logic": [
+        "this is a third, distinct iron oxide (magnetite) not matching this data",
+        "this is Fe<sub>2</sub>O<sub>3</sub>, a different, more oxygen-rich iron oxide not matching this data",
+        "reverses the actual 1:1 Fe:O mole ratio"
+      ],
+      "mixed_topics": [
+        "Empirical and Molecular Formula",
+        "Percentage Composition"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-025",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Mole Concept and Molar Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "3 mol of carbon and 3 mol of O<sub>2</sub> react as C + O<sub>2</sub> &rarr; CO<sub>2</sub>. Since the required mole ratio is 1:1 and both are present in equal moles, the reaction goes to completion with:",
+      "options": [
+        "Neither reagent in excess, 3 mol CO<sub>2</sub> formed",
+        "O<sub>2</sub> limiting, 1.5 mol CO<sub>2</sub> formed",
+        "Carbon limiting, 3 mol CO<sub>2</sub> formed",
+        "Both in excess, 6 mol CO<sub>2</sub> formed"
+      ],
+      "correct_index": 0,
+      "explanation": "Since C and O<sub>2</sub> are supplied in exactly the 1:1 ratio the equation requires, both are fully consumed together with none left over, giving 3 mol CO<sub>2</sub>.",
+      "hint": "Compare the given mole ratio (3:3, i.e. 1:1) with the equation's required ratio (also 1:1).",
+      "distractor_logic": [
+        "incorrectly identifies O<sub>2</sub> as limiting and understates the product amount",
+        "correctly identifies the product amount but wrongly claims carbon is limiting when neither reagent is in excess",
+        "overstates the product amount; moles of CO<sub>2</sub> cannot exceed the moles of C reacted"
+      ],
+      "mixed_topics": [
+        "Mole Concept and Molar Mass",
+        "Limiting Reagent"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-026",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 3,
+      "type": "bonus",
+      "question": "8 g of methane, CH<sub>4</sub> (molar mass 16), burns completely in oxygen as CH<sub>4</sub> + 2O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O. If 32 g of O<sub>2</sub> is consumed, the total mass of CO<sub>2</sub> and H<sub>2</sub>O produced, by the law of conservation of mass, is:",
+      "options": [
+        "44 g",
+        "40 g",
+        "36 g",
+        "22 g"
+      ],
+      "correct_index": 1,
+      "explanation": "By conservation of mass, total mass of products = total mass of reactants = 8 g CH<sub>4</sub> + 32 g O<sub>2</sub> = 40 g.",
+      "hint": "Total mass in must equal total mass out — no need to calculate each product separately.",
+      "distractor_logic": [
+        "mistakes the molar mass of CO<sub>2</sub> for the total product mass",
+        "an unrelated guessed value, not the sum of the reactant masses",
+        "half the correctly calculated total mass"
+      ],
+      "mixed_topics": [
+        "Laws of Chemical Combination",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-027",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "40 mL of 0.5 M BaCl<sub>2</sub> is mixed with 60 mL of 0.2 M Na<sub>2</sub>SO<sub>4</sub>, reacting as BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> &rarr; BaSO<sub>4</sub>&darr; + 2NaCl. The limiting reagent is:",
+      "options": [
+        "NaCl",
+        "BaSO<sub>4</sub>",
+        "BaCl<sub>2</sub>",
+        "Na<sub>2</sub>SO<sub>4</sub>"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles BaCl<sub>2</sub> = 0.5 &times; 0.04 = 0.02 mol. Moles Na<sub>2</sub>SO<sub>4</sub> = 0.2 &times; 0.06 = 0.012 mol. Since the reaction is 1:1 and 0.012 mol < 0.02 mol, Na<sub>2</sub>SO<sub>4</sub> is limiting.",
+      "hint": "Convert both solutions to moles, then compare against the 1:1 requirement.",
+      "distractor_logic": [
+        "NaCl is a product, not a reactant, so it cannot be limiting",
+        "BaSO<sub>4</sub> is a product, not a reactant, so it cannot be limiting",
+        "BaCl<sub>2</sub> is actually present in the larger amount, so it cannot be the one that runs out first"
+      ],
+      "mixed_topics": [
+        "Concentration of Solutions",
+        "Limiting Reagent"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-028",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "40 mL of 0.5 M BaCl<sub>2</sub> is mixed with 60 mL of 0.2 M Na<sub>2</sub>SO<sub>4</sub>, reacting as BaCl<sub>2</sub> + Na<sub>2</sub>SO<sub>4</sub> &rarr; BaSO<sub>4</sub>&darr; + 2NaCl, with Na<sub>2</sub>SO<sub>4</sub> (0.012 mol) as the limiting reagent. The mass of BaSO<sub>4</sub> (molar mass 233) precipitated is:",
+      "options": [
+        "4.66 g",
+        "2.33 g",
+        "1.40 g",
+        "2.80 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Since Na<sub>2</sub>SO<sub>4</sub> is limiting with 0.012 mol, and the ratio Na<sub>2</sub>SO<sub>4</sub>:BaSO<sub>4</sub> = 1:1, moles BaSO<sub>4</sub> = 0.012 mol. Mass = 0.012 &times; 233 = 2.796 &asymp; 2.80 g.",
+      "hint": "Base the calculation only on the limiting reagent's moles (0.012 mol), applying the 1:1 ratio.",
+      "distractor_logic": [
+        "incorrectly based the calculation on the excess BaCl<sub>2</sub>'s moles instead of the limiting Na<sub>2</sub>SO<sub>4</sub>",
+        "halved the correctly calculated mass",
+        "used a fifth of the correctly calculated mass"
+      ],
+      "mixed_topics": [
+        "Concentration of Solutions",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-029",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "Ammonia, NH<sub>3</sub> (molar mass 17), and hydrogen chloride, HCl (molar mass 36.5), react in a 1:1 mole ratio to form solid NH<sub>4</sub>Cl (molar mass 53.5). If 3.4 g of NH<sub>3</sub> reacts completely with 7.3 g of HCl, the mass of NH<sub>4</sub>Cl formed, consistent with the law of conservation of mass, is:",
+      "options": [
+        "21.4 g",
+        "10.7 g",
+        "17.0 g",
+        "5.35 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Moles NH<sub>3</sub> = 3.4/17 = 0.2 mol; moles HCl = 7.3/36.5 = 0.2 mol — an exact 1:1 match. Moles NH<sub>4</sub>Cl = 0.2 mol, mass = 0.2 &times; 53.5 = 10.7 g, which also equals the total reactant mass (3.4 + 7.3 = 10.7 g), confirming conservation of mass.",
+      "hint": "Check the reactant masses add up, and verify this matches the stoichiometric product mass too.",
+      "distractor_logic": [
+        "doubled the correctly calculated mass",
+        "reports only the molar mass of NH<sub>4</sub>Cl (for 1 mol) rather than the actual 0.2 mol produced",
+        "halved the correctly calculated mass"
+      ],
+      "mixed_topics": [
+        "Molecular Mass and Formula Mass",
+        "Laws of Chemical Combination"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-030",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 3,
+      "type": "bonus",
+      "question": "Concentrated sulfuric acid is 98% H<sub>2</sub>SO<sub>4</sub> (molar mass 98) by mass, with density 1.84 g mL<sup>&minus;1</sup>. The molarity of this concentrated acid is:",
+      "options": [
+        "18.4 M",
+        "20.0 M",
+        "16.0 M",
+        "17.4 M"
+      ],
+      "correct_index": 0,
+      "explanation": "For 1 L (1000 mL) of solution: mass = 1000 &times; 1.84 = 1840 g. Mass of H<sub>2</sub>SO<sub>4</sub> = 0.98 &times; 1840 = 1803.2 g. Moles = 1803.2/98 = 18.4 mol, so molarity = 18.4 M.",
+      "hint": "Use the density to convert 1 L to a mass, apply the 98% figure, then convert to moles.",
+      "distractor_logic": [
+        "an arithmetic slip that overshoots the correctly calculated 18.4 M",
+        "forgets the 98% mass fraction, effectively treating the solution as if it were pure water by volume",
+        "an arithmetic slip that slightly undershoots the correctly calculated 18.4 M"
+      ],
+      "mixed_topics": [
+        "Percentage Composition",
+        "Concentration of Solutions"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-031",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Empirical and Molecular Formula",
+      "level": 3,
+      "type": "bonus",
+      "question": "A compound with empirical formula CH<sub>2</sub>O (empirical formula mass 30) is found to have a molecular mass of 90. The mass of the compound corresponding to 0.5 mol of it is:",
+      "options": [
+        "15 g",
+        "45 g",
+        "22.5 g",
+        "90 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Mass = moles &times; molar mass = 0.5 &times; 90 = 45 g. (Note the molecular formula itself is (CH<sub>2</sub>O)<sub>3</sub> = C<sub>3</sub>H<sub>6</sub>O<sub>3</sub>, since n = 90/30 = 3, but the mass calculation uses the molecular mass directly.)",
+      "hint": "Use the compound's actual molecular mass (90), not the empirical formula mass, to convert moles to mass.",
+      "distractor_logic": [
+        "used a sixth of the correct mass by mistake",
+        "used the empirical formula mass (0.5 &times; 30) instead of the actual molecular mass",
+        "reported the full molar mass for 1 mole instead of scaling to 0.5 mol"
+      ],
+      "mixed_topics": [
+        "Empirical and Molecular Formula",
+        "Mole Concept and Molar Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-032",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Nature of Matter",
+      "level": 3,
+      "type": "bonus",
+      "question": "Sea water is a homogeneous mixture in which 1 litre (density 1.03 g mL<sup>&minus;1</sup>) contains 35 g of total dissolved salts, of which 85% is NaCl by mass. The mass of NaCl present in 1 litre of this sea water is:",
+      "options": [
+        "29.75 g",
+        "24.5 g",
+        "30.0 g",
+        "35.0 g"
+      ],
+      "correct_index": 0,
+      "explanation": "Mass of NaCl = 85% of the total dissolved salts = 0.85 &times; 35 = 29.75 g. (The density value describes the sea water itself and isn't needed for this particular calculation.)",
+      "hint": "Apply the 85% figure directly to the given 35 g of total dissolved salts.",
+      "distractor_logic": [
+        "applies the complementary 15% share (of a slightly different base) instead of 85%",
+        "an unrelated guessed round number, not from applying 85% to 35 g",
+        "uses the total dissolved salts figure directly, without applying the 85% NaCl share"
+      ],
+      "mixed_topics": [
+        "Nature of Matter",
+        "Percentage Composition"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-033",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Laws of Chemical Combination",
+      "level": 3,
+      "type": "bonus",
+      "question": "Sulfur and oxygen form SO<sub>2</sub> and SO<sub>3</sub>, an example of the law of multiple proportions. For a fixed mass of 32 g of sulfur (1 mol S), the masses of oxygen combining in SO<sub>2</sub> and SO<sub>3</sub> respectively are:",
+      "options": [
+        "32 g and 32 g (ratio 1:1)",
+        "32 g and 48 g (ratio 2:3)",
+        "64 g and 96 g (ratio 2:3)",
+        "16 g and 24 g (ratio 2:3)"
+      ],
+      "correct_index": 1,
+      "explanation": "In SO<sub>2</sub>, 1 mol S combines with 2 mol O = 32 g O. In SO<sub>3</sub>, 1 mol S combines with 3 mol O = 48 g O. The ratio of oxygen masses is 32:48 = 2:3, a simple whole-number ratio.",
+      "hint": "For each oxide, multiply the number of oxygen atoms per formula unit by oxygen's atomic mass (16).",
+      "distractor_logic": [
+        "incorrectly treats the two oxides as requiring equal oxygen mass",
+        "correctly gets the 2:3 ratio but reports masses that are double the correct values",
+        "correctly gets the 2:3 ratio but reports masses that are half the correct values"
+      ],
+      "mixed_topics": [
+        "Laws of Chemical Combination",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-034",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "7.45 g of KCl (molar mass 74.5) is dissolved to make 250 mL of solution. If the solution's molarity is 0.4 M, the mass of KCl (K = 39, Cl = 35.5) needed to make 1 litre of the same-molarity solution is:",
+      "options": [
+        "7.45 g",
+        "29.8 g",
+        "14.9 g",
+        "18.6 g"
+      ],
+      "correct_index": 1,
+      "explanation": "For 1 L at 0.4 M, moles required = 0.4 &times; 1 = 0.4 mol. Mass = 0.4 &times; 74.5 = 29.8 g (four times the 7.45 g used for the smaller 250 mL volume, since the volume is scaled up by a factor of 4).",
+      "hint": "Scale the original mass up by the same factor as the volume (250 mL &rarr; 1000 mL is &times;4).",
+      "distractor_logic": [
+        "reuses the original 250 mL sample's mass without scaling to the new 1 L volume",
+        "only doubles the mass instead of scaling by the correct factor of 4",
+        "scales by a factor of 2.5 instead of the correct factor of 4"
+      ],
+      "mixed_topics": [
+        "Concentration of Solutions",
+        "Mole Concept and Molar Mass"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-035",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 3,
+      "type": "bonus",
+      "question": "A 200 g sample of iron ore contains Fe<sub>2</sub>O<sub>3</sub> (molar mass 160, of which 70% by mass is Fe) as the only iron-bearing mineral, making up 80% of the ore's total mass. The mass of pure iron obtainable from this ore sample is:",
+      "options": [
+        "160 g",
+        "128 g",
+        "140 g",
+        "112 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Mass of Fe<sub>2</sub>O<sub>3</sub> in the ore = 0.80 &times; 200 = 160 g. Mass of Fe = 0.70 &times; 160 = 112 g.",
+      "hint": "First find the mass of Fe<sub>2</sub>O<sub>3</sub> in the ore, then apply the 70% iron content to that.",
+      "distractor_logic": [
+        "applies the 70% figure directly to the full 200 g ore, skipping the 80% Fe<sub>2</sub>O<sub>3</sub> step",
+        "an arithmetic slip that overshoots the correctly calculated 112 g",
+        "reports the mass of Fe<sub>2</sub>O<sub>3</sub> itself, not the pure iron extracted from it"
+      ],
+      "mixed_topics": [
+        "Percentage Composition",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-036",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Measurement and Significant Figures",
+      "level": 3,
+      "type": "bonus",
+      "question": "A compound is analysed to contain 40.00% carbon, 6.71% hydrogen and 53.29% oxygen by mass (values given to 4 significant figures; C = 12, H = 1, O = 16). Its empirical formula, from mole ratios rounded to the nearest whole number, is:",
+      "options": [
+        "CH<sub>2</sub>O",
+        "C<sub>2</sub>H<sub>4</sub>O<sub>2</sub>",
+        "CH<sub>3</sub>O",
+        "CHO"
+      ],
+      "correct_index": 0,
+      "explanation": "Moles: C = 40.00/12 = 3.333, H = 6.71/1 = 6.71, O = 53.29/16 = 3.331. Dividing each by the smallest (&asymp; 3.33) gives C:H:O &asymp; 1:2:1, so the empirical formula is CH<sub>2</sub>O.",
+      "hint": "Convert each precise percentage to moles, then divide by the smallest value and round sensibly.",
+      "distractor_logic": [
+        "this is double the correctly simplified empirical formula",
+        "overstates the hydrogen ratio relative to the correctly calculated 2",
+        "drops the hydrogen ratio down to 1 instead of the correctly calculated 2"
+      ],
+      "mixed_topics": [
+        "Measurement and Significant Figures",
+        "Empirical and Molecular Formula"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-037",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Stoichiometry",
+      "level": 3,
+      "type": "bonus",
+      "question": "Starting from 3 mol of carbon reacting with excess oxygen as C + O<sub>2</sub> &rarr; CO<sub>2</sub>, and applying Dalton's idea that atoms combine in one fixed ratio (here 1:1:1 for C:O<sub>2</sub>:CO<sub>2</sub>), the mass of CO<sub>2</sub> (molar mass 44) produced is:",
+      "options": [
+        "176 g",
+        "44 g",
+        "132 g",
+        "88 g"
+      ],
+      "correct_index": 2,
+      "explanation": "Since the mole ratio C:CO<sub>2</sub> is 1:1, 3 mol C gives 3 mol CO<sub>2</sub>. Mass = 3 &times; 44 = 132 g.",
+      "hint": "With excess O<sub>2</sub>, carbon's moles directly become CO<sub>2</sub>'s moles.",
+      "distractor_logic": [
+        "overstates the yield beyond what 3 mol of carbon can produce",
+        "reports the mass for only 1 mol CO<sub>2</sub>, ignoring the given 3 mol of carbon",
+        "reports the mass for only 2 mol CO<sub>2</sub> instead of the full 3 mol"
+      ],
+      "mixed_topics": [
+        "Dalton's Atomic Theory",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-038",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Percentage Composition",
+      "level": 3,
+      "type": "bonus",
+      "question": "A 10 g mixture of CaCO<sub>3</sub> and inert sand is heated completely, as CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub>. If 3.52 g of CO<sub>2</sub> (molar mass 44) is released, the percentage of CaCO<sub>3</sub> (molar mass 100) in the original mixture was:",
+      "options": [
+        "35.2%",
+        "88%",
+        "70%",
+        "80%"
+      ],
+      "correct_index": 3,
+      "explanation": "Moles CO<sub>2</sub> = 3.52/44 = 0.08 mol. Mole ratio CaCO<sub>3</sub>:CO<sub>2</sub> = 1:1, so moles CaCO<sub>3</sub> = 0.08 mol, mass = 0.08 &times; 100 = 8 g. % CaCO<sub>3</sub> in mixture = (8/10) &times; 100 = 80%.",
+      "hint": "Work back from the CO<sub>2</sub> released to the mass of CaCO<sub>3</sub> that must have decomposed, then find its share of the 10 g mixture.",
+      "distractor_logic": [
+        "confuses the mass of CO<sub>2</sub> released with the percentage of CaCO<sub>3</sub>, without properly relating the two",
+        "reports the mass of CaCO<sub>3</sub> (8 g) restated incorrectly as a percentage figure",
+        "an arithmetic slip that undershoots the correctly calculated 80%"
+      ],
+      "mixed_topics": [
+        "Percentage Composition",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-039",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Concentration of Solutions",
+      "level": 3,
+      "type": "bonus",
+      "question": "500 mL of 0.4 M CuSO<sub>4</sub> solution reacts completely with excess zinc metal, as CuSO<sub>4</sub> + Zn &rarr; ZnSO<sub>4</sub> + Cu. Given the molar mass of Cu is 63.5, the mass of copper deposited is:",
+      "options": [
+        "19.05 g",
+        "6.35 g",
+        "12.7 g",
+        "25.4 g"
+      ],
+      "correct_index": 2,
+      "explanation": "Moles CuSO<sub>4</sub> = 0.4 &times; 0.5 = 0.2 mol. Mole ratio CuSO<sub>4</sub>:Cu = 1:1, so moles Cu = 0.2 mol. Mass = 0.2 &times; 63.5 = 12.7 g.",
+      "hint": "Convert the CuSO<sub>4</sub> solution to moles first, then apply the 1:1 mole ratio to copper.",
+      "distractor_logic": [
+        "used one and a half times the correctly calculated mass",
+        "halved the correctly calculated mass",
+        "doubled the correctly calculated mass"
+      ],
+      "mixed_topics": [
+        "Concentration of Solutions",
+        "Stoichiometry"
+      ]
+    },
+    {
+      "id": "CHE11-CH01-B-040",
+      "chapter": 1,
+      "chapter_name": "Some Basic Concepts of Chemistry",
+      "topic": "Molecular Mass and Formula Mass",
+      "level": 3,
+      "type": "bonus",
+      "question": "Ethanol, C<sub>2</sub>H<sub>5</sub>OH (molar mass 46), contains oxygen as one of its constituent elements (O = 16). The percentage of oxygen by mass in ethanol is:",
+      "options": [
+        "17.4%",
+        "50.0%",
+        "34.8%",
+        "69.6%"
+      ],
+      "correct_index": 2,
+      "explanation": "%O = (16/46) &times; 100 = 34.8%.",
+      "hint": "Divide oxygen's atomic mass by ethanol's total molar mass.",
+      "distractor_logic": [
+        "roughly half the correctly calculated percentage",
+        "an unrelated guessed round number, not from the actual 16/46 calculation",
+        "double the correctly calculated percentage"
+      ],
+      "mixed_topics": [
+        "Molecular Mass and Formula Mass",
+        "Percentage Composition"
+      ]
+    }
+  ]
+}

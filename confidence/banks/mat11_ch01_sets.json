@@ -1,0 +1,3868 @@
+{
+  "meta": {
+    "subject": "Mathematics",
+    "class": 11,
+    "chapter": 1,
+    "chapter_name": "Sets",
+    "source_alignment": "NCERT Class 11 Mathematics, Chapter 1 (Sets) — Reprint 2026-27",
+    "mode": "confidence",
+    "counts": {
+      "level1": 40,
+      "level2": 40,
+      "level3": 30,
+      "bonus": 40,
+      "total": 150
+    },
+    "suggested_pass_mark": {
+      "level1": "6/10 per paper",
+      "level2": "6/10 per paper",
+      "level3": "6/10 per paper"
+    },
+    "notes": "Level 3 is NCERT-hard: self-constructed, multi-step, but strictly in-syllabus (no JEE-Advanced-style tricks). Bonus questions mix two or more topics from this chapter and are tagged via mixed_topics; unlock after Level 3 or serve as a standalone challenge round. Topic drill mode: filter questions by topic across all levels, order L1->L2->L3, serve in sets of ~6. Each topic has a concept card in the 'topics' array (summary, key_formulas, worked_example, common_mistakes) shown via a 'See concept' button. Topic names in 'topics' match question 'topic' tags exactly for lookup. After a failed level, link weak topics to their drill + concept card.",
+    "rendering": "All mathematical expressions in question/option/explanation/hint/concept text are plain KaTeX-compatible LaTeX wrapped in \\( ... \\) inline delimiters (e.g. \\(A \\cup B\\), \\(2^n\\), \\(\\{1,2,3\\}\\), \\(\\emptyset\\)). Plain HTML is used only for trivial non-math emphasis in the topics[].summary field (<b>, <br>, &mdash;, &ndash;) — never inside question/option/explanation/hint fields, which are pure text + \\( \\)-delimited LaTeX with no other markup. Render by first inserting each field's text via innerHTML/dangerouslySetInnerHTML (so the small amount of concept-card HTML displays), then calling KaTeX's renderMathInElement (auto-render extension) on the containing element so every \\( ... \\) span is typeset. Required includes (KaTeX 0.16.x from a CDN): <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">, <script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>, <script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>, then call renderMathInElement(el, {delimiters: [{left: \"\\\\(\", right: \"\\\\)\", display: false}]}) after each question/topic-card render. No display-mode ($$...$$) math is used anywhere in this bank — every expression is inline.",
+    "topic_drill": "Topic drill mode: filter questions by topic across all levels, order L1->L2->L3, serve in sets of ~6. Each topic has a concept card in the 'topics' array (summary, key_formulas, worked_example, common_mistakes) shown via a 'See concept' button. Topic names in 'topics' match question 'topic' tags exactly for lookup. After a failed level, link weak topics to their drill + concept card."
+  },
+  "questions": [
+    {
+      "id": "MAT11-CH01-L1-001",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following is the correct definition of a set?",
+      "options": [
+        "Any list of numbers written together",
+        "A well-defined collection of distinct objects",
+        "A group of related numbers only",
+        "A formula that relates two variables"
+      ],
+      "correct_index": 1,
+      "explanation": "A \\(set\\) is a well-defined collection of distinct objects — 'well-defined' means there is no ambiguity about whether a given object belongs to it or not.",
+      "hint": "Think about what makes a collection 'well-defined' rather than vague.",
+      "distractor_logic": [
+        "too vague — no 'well-defined' requirement",
+        "restricts sets to only numbers, which is false",
+        "confuses a set with a relation/function"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-002",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "The set \\(A=\\{2,4,6,8\\}\\) written in set-builder form is:",
+      "options": [
+        "\\(A=\\{x : x \\text{ is an odd number}, x<10\\}\\)",
+        "\\(A=\\{x : x \\text{ is an even number}, x\\le 8\\}\\)",
+        "\\(A=\\{x : x \\text{ is a multiple of } 4\\}\\)",
+        "\\(A=\\{x : x^2 = 8\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Every element of \\(A\\) is even and the largest is 8, so the defining rule is 'x is an even number, \\(x \\le 8\\)'.",
+      "hint": "Look for the property that is true for every listed element and false for numbers not in the list.",
+      "distractor_logic": [
+        "describes odd numbers, wrong parity",
+        "multiples of 4 would give {4,8,12,...}, missing 2 and 6",
+        "solving x²=8 gives no integer solutions at all"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-003",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of these is an example of the empty set \\(\\emptyset\\)?",
+      "options": [
+        "\\(\\{x : x \\text{ is a natural number}, x<1\\}\\)",
+        "\\(\\{0\\}\\)",
+        "\\(\\{x : x \\text{ is a whole number}, x<1\\}\\)",
+        "\\(\\{\\emptyset\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "There is no natural number less than 1 (natural numbers start at 1), so this set has no elements — it is \\(\\emptyset\\).",
+      "hint": "Check whether even one element can satisfy the condition.",
+      "distractor_logic": [
+        "{0} has one element (zero), so it is not empty",
+        "whole numbers start at 0, so x=0 satisfies x<1 — not empty",
+        "this is a set containing the empty set as its single element, so it has 1 element"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-004",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "Two sets \\(A\\) and \\(B\\) are called equal sets if:",
+      "options": [
+        "they have the same number of elements",
+        "every element of A is an element of B, and every element of B is an element of A",
+        "they are both finite sets",
+        "their power sets have the same cardinality"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A=B\\) means every element of \\(A\\) belongs to \\(B\\) and every element of \\(B\\) belongs to \\(A\\) — identical elements, not just identical size.",
+      "hint": "Equal sets must have exactly the same elements, not just the same count.",
+      "distractor_logic": [
+        "same size describes 'equivalent' sets, not 'equal' sets — a common mix-up",
+        "finiteness has nothing to do with equality of two specific sets",
+        "equal power-set size only implies equal size, not equal elements"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-005",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following sets is a finite set?",
+      "options": [
+        "\\(\\{x : x \\text{ is an integer}, x>0\\}\\)",
+        "\\(\\{x : x \\text{ is a prime number}\\}\\)",
+        "\\(\\{x : x \\text{ is a day of the week}\\}\\)",
+        "\\(\\{x : x \\in \\mathbb{N}\\}\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The days of the week form a set with exactly 7 elements — a finite set. Positive integers, primes, and natural numbers are all infinite.",
+      "hint": "Ask whether you could ever finish listing all the elements.",
+      "distractor_logic": [
+        "positive integers never end",
+        "there are infinitely many primes (a classical result)",
+        "natural numbers are infinite by definition"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-006",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3\\}\\), which symbol correctly relates the element 2 to the set \\(A\\)?",
+      "options": [
+        "\\(2 \\subset A\\)",
+        "\\(2 \\in A\\)",
+        "\\(\\{2\\} \\in A\\)",
+        "\\(2 = A\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "An individual element is related to a set using \\(\\in\\) ('belongs to'); \\(\\subset\\) is reserved for relating one set to another set.",
+      "hint": "Is 2 itself a set, or is it a member of the set \\(A\\)?",
+      "distractor_logic": [
+        "\\(\\subset\\) is used between two sets, not between an element and a set",
+        "\\(\\{2\\}\\) is a set, and while it IS a subset it is written \\(\\{2\\} \\subset A\\), not with \\(\\in\\) here",
+        "an element can never equal the whole set"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-007",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "Which pair of sets below are equivalent but NOT equal?",
+      "options": [
+        "\\(A=\\{1,2,3\\},\\ B=\\{1,2,3\\}\\)",
+        "\\(A=\\{a,b,c\\},\\ B=\\{1,2,3\\}\\)",
+        "\\(A=\\{1,2\\},\\ B=\\{1,2,2\\}\\)",
+        "\\(A=\\emptyset,\\ B=\\{0\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Equivalent sets have the same number of elements without needing identical elements. \\(A=\\{a,b,c\\}\\) and \\(B=\\{1,2,3\\}\\) both have 3 elements but different members, so they are equivalent, not equal.",
+      "hint": "Equivalent = same size; Equal = same elements. You need same size but different elements.",
+      "distractor_logic": [
+        "these sets are both equivalent AND equal (identical elements)",
+        "repeating 2 doesn't create a new element, so this is really the same 2-element set, i.e. equal",
+        "∅ has 0 elements and {0} has 1 element — not even equivalent"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-008",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "A set that has exactly one element, such as \\(\\{7\\}\\), is called a:",
+      "options": [
+        "null set",
+        "singleton set",
+        "power set",
+        "universal set"
+      ],
+      "correct_index": 1,
+      "explanation": "A set with exactly one element is called a singleton set. \\(\\{7\\}\\) contains only the element 7.",
+      "hint": "One element — a single-ton.",
+      "distractor_logic": [
+        "a null set has zero elements, the opposite case",
+        "a power set is the set of all subsets, unrelated here",
+        "a universal set is context-dependent and usually large, not size 1"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-009",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 1,
+      "type": "regular",
+      "question": "\\(A\\) is said to be a subset of \\(B\\), written \\(A \\subset B\\), when:",
+      "options": [
+        "A and B have no elements in common",
+        "every element of A is also an element of B",
+        "A has fewer elements than B",
+        "B is an element of A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A \\subset B\\) formally means: whenever \\(x \\in A\\), it follows that \\(x \\in B\\). It says nothing directly about relative sizes.",
+      "hint": "Subset is about membership passing through, not about counting elements.",
+      "distractor_logic": [
+        "that describes disjoint sets, a different relationship entirely",
+        "a subset can even be equal in size to B (A=B is allowed for ⊂ in the non-strict sense used here)",
+        "this reverses the relationship — confusing 'subset of' with 'element of'"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-010",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement about the empty set and subsets is always TRUE?",
+      "options": [
+        "\\(\\emptyset\\) is a subset of every set",
+        "\\(\\emptyset\\) is a subset of no set",
+        "\\(\\emptyset\\) is a subset only of finite sets",
+        "\\(\\emptyset\\) is an element of every set"
+      ],
+      "correct_index": 0,
+      "explanation": "By convention (vacuously true), \\(\\emptyset \\subset A\\) for every set \\(A\\), because there is no element in \\(\\emptyset\\) that could fail to be in \\(A\\).",
+      "hint": "There's no element in the empty set that could ever break the subset condition.",
+      "distractor_logic": [
+        "this is the exact opposite of the true rule",
+        "the rule holds for infinite sets too, not just finite ones",
+        "confuses 'subset of' with 'element of' — ∅ is not generally an element of a set"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-011",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 1,
+      "type": "regular",
+      "question": "For the interval \\((2,5]\\), which of the following is true?",
+      "options": [
+        "2 is included, 5 is excluded",
+        "2 is excluded, 5 is included",
+        "both 2 and 5 are included",
+        "both 2 and 5 are excluded"
+      ],
+      "correct_index": 1,
+      "explanation": "A round bracket excludes the endpoint and a square bracket includes it, so \\((2,5]\\) excludes 2 and includes 5.",
+      "hint": "Round = excluded (open), Square = included (closed).",
+      "distractor_logic": [
+        "swaps which bracket means what",
+        "square brackets on both ends would give [2,5], not (2,5]",
+        "this describes the fully open interval (2,5), missing the closed right end"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-012",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 1,
+      "type": "regular",
+      "question": "Every set is a subset of itself. This means for any set \\(A\\):",
+      "options": [
+        "\\(A \\subset A \\text{ is always true}\\)",
+        "\\(A \\subset A \\text{ is always false}\\)",
+        "\\(A \\subset A \\text{ only if } A=\\emptyset\\)",
+        "\\(A \\subset A \\text{ only if A is infinite}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Every element of \\(A\\) is trivially an element of \\(A\\), so \\(A \\subset A\\) holds for every set, without exception.",
+      "hint": "Does every element of A belong to A? Trivially, yes.",
+      "distractor_logic": [
+        "states the opposite of the true rule",
+        "this holds for every set, not just the empty set",
+        "finiteness/infiniteness is irrelevant to this basic property"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-013",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 1,
+      "type": "regular",
+      "question": "A subset \\(B\\) of \\(A\\) is called a proper subset (written \\(B \\subsetneq A\\)) when:",
+      "options": [
+        "\\(B\\) has no elements",
+        "\\(B\\) equals \\(A\\)",
+        "\\(B\\) is a subset of \\(A\\) but \\(B \\ne A\\)",
+        "\\(A\\) is a subset of \\(B\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "A proper subset must be contained in \\(A\\) while being strictly smaller — it cannot be equal to \\(A\\) itself.",
+      "hint": "Proper subsets leave at least one element out.",
+      "distractor_logic": [
+        "the empty set can be a proper subset, but B having no elements isn't the definition itself",
+        "if B=A it is a subset but NOT a proper subset",
+        "this reverses the containment direction entirely"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-014",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following correctly represents the interval notation for \\(\\{x \\in \\mathbb{R} : -3 \\le x < 4\\}\\)?",
+      "options": [
+        "\\((-3,4)\\)",
+        "\\([-3,4)\\)",
+        "\\((-3,4]\\)",
+        "\\([-3,4]\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(-3 \\le x\\) means \\(-3\\) is included (square bracket) and \\(x<4\\) means \\(4\\) is excluded (round bracket), giving \\([-3,4)\\).",
+      "hint": "Match each inequality symbol to its bracket: ≤ / ≥ → square, < / > → round.",
+      "distractor_logic": [
+        "excludes -3 even though ≤ requires it to be included",
+        "includes 4 even though the strict < requires it excluded",
+        "includes both endpoints, but 4 should be excluded"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-015",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 1,
+      "type": "regular",
+      "question": "The power set \\(P(A)\\) of a set \\(A\\) is defined as:",
+      "options": [
+        "the set of all elements of A raised to a power",
+        "the set of all possible subsets of A, including \\(\\emptyset\\) and A itself",
+        "the set of all elements NOT in A",
+        "the largest element of A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(P(A)\\) collects every possible subset of \\(A\\) as its elements — from the empty set up to \\(A\\) itself.",
+      "hint": "'Power set' = the set whose members are all the subsets.",
+      "distractor_logic": [
+        "'power' here has nothing to do with exponents of elements",
+        "this describes the complement, an unrelated concept",
+        "a power set is a collection of sets, not a single element"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-016",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 1,
+      "type": "regular",
+      "question": "If a set \\(A\\) has \\(n\\) elements, the number of elements in \\(P(A)\\) is:",
+      "options": [
+        "\\(2n\\)",
+        "\\(n^2\\)",
+        "\\(2^n\\)",
+        "\\(n!\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Each element can either be included or excluded from a subset — 2 choices per element, \\(n\\) elements — giving \\(2^n\\) total subsets.",
+      "hint": "Think 'in or out' for each element independently.",
+      "distractor_logic": [
+        "confuses doubling the count with the correct multiplicative rule",
+        "squares the count instead of using powers of 2",
+        "factorial counts arrangements/orderings, not subset selections"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-017",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 1,
+      "type": "regular",
+      "question": "\\(P(\\emptyset)\\), the power set of the empty set, equals:",
+      "options": [
+        "\\(\\emptyset\\)",
+        "\\(\\{\\emptyset\\}\\)",
+        "\\(\\{0\\}\\)",
+        "\\(\\{\\emptyset, 0\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The empty set has exactly one subset — itself. So \\(P(\\emptyset) = \\{\\emptyset\\}\\), a singleton set containing \\(\\emptyset\\).",
+      "hint": "How many subsets does a set with 0 elements have? Just one: itself.",
+      "distractor_logic": [
+        "\\(P(\\emptyset)\\) is NOT empty — it contains one element, \\(\\emptyset\\)",
+        "0 is a number, not related to this set-theoretic construction",
+        "P(∅) has exactly 1 element, not 2"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-018",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 1,
+      "type": "regular",
+      "question": "The universal set (usually denoted U) for a given discussion is:",
+      "options": [
+        "always the set of all real numbers",
+        "the set containing all objects relevant to that particular discussion",
+        "always an infinite set",
+        "the same as the power set"
+      ],
+      "correct_index": 1,
+      "explanation": "The universal set is context-dependent — it is simply the set that contains every object under consideration in a given problem, and can change from problem to problem.",
+      "hint": "Universal set = 'everything we care about right now', not a fixed universal constant.",
+      "distractor_logic": [
+        "ℝ is only one possible choice of U, not the definition itself",
+        "U can be finite (e.g. all students in a class)",
+        "the power set is built FROM a set; it is a different object entirely"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-019",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 1,
+      "type": "regular",
+      "question": "Is \\(\\emptyset\\) always an element of \\(P(A)\\) for any set \\(A\\)?",
+      "options": [
+        "Yes, because the empty set is a subset of every set",
+        "No, only if A itself is empty",
+        "No, ∅ can never belong to a power set",
+        "Yes, but only when A is finite"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\(\\emptyset \\subset A\\) for every set \\(A\\), and \\(P(A)\\) contains every subset of \\(A\\), \\(\\emptyset \\in P(A)\\) always — regardless of what \\(A\\) is.",
+      "hint": "Recall: \\(\\emptyset\\) is a subset of every set, without exception.",
+      "distractor_logic": [
+        "restricts the true statement incorrectly to only A=∅",
+        "contradicts the universally true subset property of ∅",
+        "finiteness is irrelevant here — the property holds for infinite A too"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-020",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 1,
+      "type": "regular",
+      "question": "If \\(A\\) has 4 elements, how many proper subsets does \\(A\\) have?",
+      "options": [
+        "\\(16\\)",
+        "\\(15\\)",
+        "\\(8\\)",
+        "\\(14\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A\\) has \\(2^4=16\\) subsets in total; removing \\(A\\) itself (the only subset that is not proper here, by the common NCERT convention) leaves \\(15\\) proper subsets.",
+      "hint": "Total subsets \\(2^n\\), then subtract 1 for \\(A\\) itself.",
+      "distractor_logic": [
+        "this is the total subset count \\(2^4\\), forgetting to exclude A itself",
+        "halves 16 incorrectly instead of subtracting 1",
+        "off-by-one error: \\(16-2\\) instead of \\(16-1\\)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-021",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 1,
+      "type": "regular",
+      "question": "In a Venn diagram, the universal set U is conventionally represented by:",
+      "options": [
+        "a small circle",
+        "a rectangle",
+        "a single point",
+        "a triangle"
+      ],
+      "correct_index": 1,
+      "explanation": "By convention, the universal set is drawn as a rectangle, and all other sets under discussion are drawn as circles (or ovals) inside it.",
+      "hint": "The 'outer boundary' shape is different from the shape used for individual sets.",
+      "distractor_logic": [
+        "circles represent the individual sets A, B, ... inside U, not U itself",
+        "a point cannot show membership regions",
+        "triangles are not the conventional shape used for U"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-022",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 1,
+      "type": "regular",
+      "question": "In a two-circle Venn diagram for sets \\(A\\) and \\(B\\) inside \\(U\\), the overlapping region of the two circles represents:",
+      "options": [
+        "\\(A \\cup B\\)",
+        "\\(A \\cap B\\)",
+        "\\(A - B\\)",
+        "\\(A'\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The region common to both circles — where both circles overlap — is exactly \\(A \\cap B\\), the elements belonging to both \\(A\\) and \\(B\\).",
+      "hint": "Overlap means 'in both' — that's intersection.",
+      "distractor_logic": [
+        "\\(A \\cup B\\) is the entire shaded region of both circles together, not just the overlap",
+        "\\(A - B\\) is the part of A's circle excluding the overlap",
+        "\\(A'\\) is everything outside A's circle, unrelated to the overlap"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-023",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 1,
+      "type": "regular",
+      "question": "In a Venn diagram, the region inside the rectangle \\(U\\) but outside both circles \\(A\\) and \\(B\\) represents:",
+      "options": [
+        "\\(A \\cap B\\)",
+        "\\(A \\cup B\\)",
+        "\\((A \\cup B)'\\)",
+        "\\(A - B\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Everything inside \\(U\\) that is not in \\(A\\) and not in \\(B\\) is, by definition, the complement of \\(A \\cup B\\), i.e. \\((A \\cup B)'\\).",
+      "hint": "Outside both circles = not in A and not in B.",
+      "distractor_logic": [
+        "\\(A \\cap B\\) is the overlap region, the opposite location",
+        "\\(A \\cup B\\) is the combined shaded area of both circles, not the outside",
+        "\\(A - B\\) is part of A's circle, still inside a circle"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-024",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 1,
+      "type": "regular",
+      "question": "If two circles representing sets \\(A\\) and \\(B\\) inside a Venn diagram do NOT touch or overlap at all, this shows that:",
+      "options": [
+        "\\(A\\) and \\(B\\) are equal sets",
+        "\\(A\\) and \\(B\\) are disjoint sets, i.e. \\(A \\cap B = \\emptyset\\)",
+        "\\(A\\) is a subset of \\(B\\)",
+        "\\(B\\) is the universal set"
+      ],
+      "correct_index": 1,
+      "explanation": "No overlap means there is no element common to both circles, which is exactly the definition of disjoint sets: \\(A \\cap B = \\emptyset\\).",
+      "hint": "No shared region drawn = no shared elements.",
+      "distractor_logic": [
+        "equal sets would be drawn as the exact same circle, not two separate non-overlapping ones",
+        "a subset relationship is shown by drawing one circle entirely inside the other, not separate circles",
+        "the universal set is the rectangle, never one of the inner circles"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-025",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "The union of two sets \\(A\\) and \\(B\\), written \\(A \\cup B\\), is the set of elements that belong to:",
+      "options": [
+        "both A and B",
+        "A or B or both",
+        "only A, not B",
+        "neither A nor B"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A \\cup B = \\{x : x \\in A \\text{ or } x \\in B\\}\\) — an element qualifies if it is in at least one of the two sets.",
+      "hint": "Union collects everything from either set, without needing overlap.",
+      "distractor_logic": [
+        "'both' describes intersection \\(A \\cap B\\), not union",
+        "this describes \\(A-B\\), only part of the union",
+        "this describes the complement of the union, the opposite region"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-026",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "The intersection of two sets \\(A\\) and \\(B\\), written \\(A \\cap B\\), is the set of elements that belong to:",
+      "options": [
+        "A or B or both",
+        "both A and B simultaneously",
+        "exactly one of A or B",
+        "U but not A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A \\cap B = \\{x : x \\in A \\text{ and } x \\in B\\}\\) — an element must belong to both sets at once.",
+      "hint": "Intersection needs membership in BOTH sets, not just one.",
+      "distractor_logic": [
+        "this describes union \\(A \\cup B\\), a broader set",
+        "describing exactly one set (symmetric difference) is a different, more restrictive idea than intersection",
+        "this describes \\(A'\\), unrelated to intersection"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-027",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "The set difference \\(A - B\\) consists of elements that are:",
+      "options": [
+        "in both A and B",
+        "in A but not in B",
+        "in B but not in A",
+        "in neither A nor B"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A-B = \\{x : x \\in A \\text{ and } x \\notin B\\}\\) — start from \\(A\\) and remove whatever also appears in \\(B\\).",
+      "hint": "A − B means 'A, with B's elements taken away'.",
+      "distractor_logic": [
+        "this describes \\(A \\cap B\\), not the difference",
+        "this is \\(B-A\\), the difference taken in the opposite order",
+        "this describes \\((A \\cup B)'\\), outside both sets entirely"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-028",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "If \\(A\\) and \\(B\\) are disjoint sets, then \\(A \\cap B\\) equals:",
+      "options": [
+        "\\(A\\)",
+        "\\(B\\)",
+        "\\(\\emptyset\\)",
+        "\\(U\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Disjoint sets share no common elements by definition, so their intersection has no elements — \\(A \\cap B = \\emptyset\\).",
+      "hint": "Disjoint literally means 'no overlap' in Venn-diagram terms.",
+      "distractor_logic": [
+        "A would only be the answer if \\(A \\subset B\\), not in general for disjoint sets",
+        "same reasoning error as with A — disjointness gives ∅, not B",
+        "the intersection is empty, the exact opposite of the entire universal set"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-029",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "Which property below correctly states the commutative law for union?",
+      "options": [
+        "\\(A \\cup B = B \\cup A\\)",
+        "\\(A \\cup B = A \\cap B\\)",
+        "\\(A \\cup \\emptyset = \\emptyset\\)",
+        "\\(A \\cup A = \\emptyset\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Commutativity means order doesn't matter: \\(A \\cup B = B \\cup A\\) for any two sets.",
+      "hint": "Commutative laws are always about swapping the order of the same operation.",
+      "distractor_logic": [
+        "equates two DIFFERENT operations (union and intersection), which are not generally equal",
+        "\\(A \\cup \\emptyset = A\\), not \\(\\emptyset\\) — this is the identity law, stated wrongly",
+        "\\(A \\cup A = A\\) (idempotent law), not \\(\\emptyset\\)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-030",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "The associative law for intersection states that for sets \\(A\\), \\(B\\), \\(C\\):",
+      "options": [
+        "\\((A \\cap B) \\cap C = A \\cap (B \\cap C)\\)",
+        "\\(A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\)",
+        "\\(A \\cap B = B \\cap A\\)",
+        "\\(A \\cap A = A\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Associativity allows regrouping of the same operation applied to three sets, without changing the result — the parentheses can shift without affecting the outcome.",
+      "hint": "Associative = regrouping brackets for the SAME operation applied three times.",
+      "distractor_logic": [
+        "this is the distributive law, mixing two different operations, not the associative law",
+        "this is the commutative law (swapping order of two sets), not associativity of three",
+        "this is the idempotent law, involving only one set, not associativity"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-031",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of these correctly states the distributive law of union over intersection?",
+      "options": [
+        "\\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\)",
+        "\\(A \\cup (B \\cap C) = (A \\cup B) \\cup C\\)",
+        "\\(A \\cup (B \\cap C) = A \\cap B \\cap C\\)",
+        "\\(A \\cup (B \\cap C) = A \\cup B \\cup C\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Distributing union over intersection works exactly like distributing multiplication over addition: \\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\).",
+      "hint": "Distribute the outer operation across each set inside the bracket, keeping the inner operation type on the right side too.",
+      "distractor_logic": [
+        "drops the intersection structure entirely, just regrouping unions (associative-looking but wrong)",
+        "incorrectly turns everything into one big intersection",
+        "ignores the bracket entirely, treating it as if it were already flat"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-032",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "For any set \\(A\\), which of these is always TRUE?",
+      "options": [
+        "\\(A \\cup A = \\emptyset\\)",
+        "\\(A \\cap A = A\\)",
+        "\\(A \\cup \\emptyset = \\emptyset\\)",
+        "\\(A \\cap \\emptyset = A\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The idempotent law states \\(A \\cup A = A\\) and \\(A \\cap A = A\\) — combining a set with itself, by either operation, just gives the set back.",
+      "hint": "Combining anything with itself (union or intersection) changes nothing.",
+      "distractor_logic": [
+        "\\(A \\cup A = A\\), not \\(\\emptyset\\) — a common sign confusion with intersection with ∅",
+        "\\(A \\cup \\emptyset = A\\) (identity law for union), not \\(\\emptyset\\)",
+        "\\(A \\cap \\emptyset = \\emptyset\\) (identity/annihilator law for intersection), not \\(A\\)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-033",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 1,
+      "type": "regular",
+      "question": "The complement of a set \\(A\\) with respect to the universal set \\(U\\), written \\(A'\\), is defined as:",
+      "options": [
+        "\\(A' = \\{x \\in U : x \\in A\\}\\)",
+        "\\(A' = \\{x \\in U : x \\notin A\\}\\)",
+        "\\(A' = A \\cap U\\)",
+        "\\(A' = \\emptyset\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A'\\) contains every element of \\(U\\) that is NOT in \\(A\\) — everything left over once \\(A\\) is removed from the universal set.",
+      "hint": "Complement = everything in U that A leaves out.",
+      "distractor_logic": [
+        "this describes \\(A\\) itself, not its complement",
+        "\\(A \\cap U = A\\) always (identity law), not the complement",
+        "\\(A'\\) equals \\(\\emptyset\\) only in the special case \\(A=U\\), not in general"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-034",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 1,
+      "type": "regular",
+      "question": "For any set \\(A\\) within universal set \\(U\\), \\(A \\cup A'\\) always equals:",
+      "options": [
+        "\\(\\emptyset\\)",
+        "\\(A\\)",
+        "\\(U\\)",
+        "\\(A'\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(A\\) and its complement together account for every element of \\(U\\) — nothing is left out and nothing overlaps, so \\(A \\cup A' = U\\).",
+      "hint": "A and 'not A' together should cover the whole universal set.",
+      "distractor_logic": [
+        "the union of A with everything outside A cannot be empty (unless U itself is empty)",
+        "\\(A\\) alone is only part of \\(U\\), missing the complement's elements",
+        "\\(A'\\) alone is missing A's own elements"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-035",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 1,
+      "type": "regular",
+      "question": "For any set \\(A\\) within universal set \\(U\\), \\(A \\cap A'\\) always equals:",
+      "options": [
+        "\\(U\\)",
+        "\\(A\\)",
+        "\\(\\emptyset\\)",
+        "\\(A'\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "No element can be both 'in \\(A\\)' and 'not in \\(A\\)' at the same time, so \\(A\\) and \\(A'\\) share no elements: \\(A \\cap A' = \\emptyset\\).",
+      "hint": "Can anything satisfy 'in A' and 'not in A' at once?",
+      "distractor_logic": [
+        "the intersection is empty, the opposite of the entire universe",
+        "A and its complement overlap in NO elements, not all of A's elements",
+        "same reasoning error mirrored for the complement side"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-036",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 1,
+      "type": "regular",
+      "question": "The complement of the universal set itself, \\(U'\\), equals:",
+      "options": [
+        "\\(U\\)",
+        "\\(\\emptyset\\)",
+        "\\(A\\)",
+        "\\(A'\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Every element under discussion is in \\(U\\), so there is nothing left outside \\(U\\) — hence \\(U' = \\emptyset\\).",
+      "hint": "What's left over once you remove everything?",
+      "distractor_logic": [
+        "\\(U'\\) is what's OUTSIDE U, which by definition is nothing — so it can't equal U itself",
+        "this brings in a specific unrelated set A",
+        "same issue — A' is a specific set's complement, not U's"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-037",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 1,
+      "type": "regular",
+      "question": "De Morgan's law relating union and intersection complements states:",
+      "options": [
+        "\\((A \\cup B)' = A' \\cap B'\\)",
+        "\\((A \\cup B)' = A' \\cup B'\\)",
+        "\\((A \\cup B)' = A \\cap B\\)",
+        "\\((A \\cup B)' = A \\cup B\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "De Morgan's law: \\((A \\cup B)' = A' \\cap B'\\) — 'not (A or B)' is the same as 'not A and not B'.",
+      "hint": "'Not (A or B)' logically becomes 'not A AND not B' — the operation flips.",
+      "distractor_logic": [
+        "flips the operation the wrong way — should become intersection of complements, not union of complements",
+        "drops the complement entirely, leaving an unrelated identity",
+        "this states the complement equals the original union, which is false in general"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-038",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "For any two finite sets \\(A\\) and \\(B\\), the correct formula for \\(n(A \\cup B)\\) is:",
+      "options": [
+        "\\(n(A)+n(B)\\)",
+        "\\(n(A)+n(B)-n(A\\cap B)\\)",
+        "\\(n(A)+n(B)+n(A\\cap B)\\)",
+        "\\(n(A)\\times n(B)\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Simply adding \\(n(A)+n(B)\\) double-counts the elements common to both sets, so the overlap \\(n(A \\cap B)\\) must be subtracted once: \\(n(A \\cup B)=n(A)+n(B)-n(A\\cap B)\\).",
+      "hint": "Adding the two counts double-counts the shared elements — remove that double-count once.",
+      "distractor_logic": [
+        "forgets to remove the double-counted overlap entirely",
+        "adds the overlap instead of subtracting it, over-correcting in the wrong direction",
+        "multiplying counts has no set-theoretic meaning here"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-039",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "If \\(A\\) and \\(B\\) are disjoint finite sets, then \\(n(A \\cup B)\\) equals:",
+      "options": [
+        "\\(n(A)+n(B)\\)",
+        "\\(n(A)+n(B)-n(A\\cap B)\\)",
+        "\\(n(A)-n(B)\\)",
+        "\\(\\max(n(A),n(B))\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For disjoint sets \\(n(A \\cap B)=0\\), so the general formula \\(n(A)+n(B)-n(A\\cap B)\\) simplifies to just \\(n(A)+n(B)\\).",
+      "hint": "With no overlap, there's nothing to subtract.",
+      "distractor_logic": [
+        "this is the general (non-disjoint) formula; here \\(n(A\\cap B)=0\\) so it reduces to simple addition",
+        "subtraction has no basis here — both sets contribute fully",
+        "taking the maximum ignores the smaller set's elements entirely"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L1-040",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 1,
+      "type": "regular",
+      "question": "For three finite sets \\(A\\), \\(B\\), \\(C\\), the inclusion–exclusion formula for \\(n(A \\cup B \\cup C)\\) requires subtracting:",
+      "options": [
+        "only the sum of the three pairwise intersections",
+        "the three pairwise intersections, then adding back the triple intersection",
+        "just the triple intersection once",
+        "nothing needs to be subtracted for three sets"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(n(A\\cup B\\cup C) = n(A)+n(B)+n(C) - n(A\\cap B)-n(B\\cap C)-n(A\\cap C) + n(A\\cap B\\cap C)\\): the pairwise overlaps are subtracted (each removed the double count), then the triple overlap — subtracted three times in the process — is added back once.",
+      "hint": "Every pairwise overlap gets subtracted; the triple overlap needs one correction to add back.",
+      "distractor_logic": [
+        "stops short — omits the crucial 'add back the triple intersection' correction, undercounting",
+        "ignores the pairwise overlaps completely",
+        "assumes no double counting occurs with three sets, which is generally false"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-001",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "The roster form of \\(\\{x : x \\in \\mathbb{N}, x^2 < 25\\}\\) is:",
+      "options": [
+        "\\(\\{1,2,3,4\\}\\)",
+        "\\(\\{1,2,3,4,5\\}\\)",
+        "\\(\\{0,1,2,3,4\\}\\)",
+        "\\(\\{1,2,3\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "We need natural numbers whose square is less than 25, i.e. \\(x<5\\) and \\(x \\ge 1\\), giving \\(x \\in \\{1,2,3,4\\}\\) (checked: \\(4^2=16<25\\) but \\(5^2=25\\) is NOT less than 25, so 5 is excluded).",
+      "hint": "Test each candidate: does its square stay strictly below 25?",
+      "distractor_logic": [
+        "includes 5, but \\(5^2=25\\) is not < 25 (boundary error)",
+        "0 is not a natural number under the standard NCERT convention (N starts at 1)",
+        "stops one short — 4 also satisfies the condition and was left out"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-002",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "The roster form of \\(\\{x : x \\in \\mathbb{Z}, -2 < x < 3\\}\\) is:",
+      "options": [
+        "\\(\\{-2,-1,0,1,2,3\\}\\)",
+        "\\(\\{-1,0,1,2\\}\\)",
+        "\\(\\{-1,0,1,2,3\\}\\)",
+        "\\(\\{-2,-1,0,1,2\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Strict inequalities exclude both endpoints, so integers strictly between \\(-2\\) and \\(3\\) are \\(\\{-1,0,1,2\\}\\).",
+      "hint": "Strict < and > exclude the endpoints themselves — list only what's strictly between.",
+      "distractor_logic": [
+        "wrongly includes both endpoints -2 and 3",
+        "includes 3, which fails the strict inequality x<3",
+        "includes -2, which fails the strict inequality -2<x"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-003",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A\\) is the set of distinct letters in the word 'MATHEMATICS', then \\(n(A)\\) equals:",
+      "options": [
+        "\\(11\\)",
+        "\\(9\\)",
+        "\\(8\\)",
+        "\\(7\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "M-A-T-H-E-M-A-T-I-C-S has 11 letters in total, but repeats: M, A, and T each appear twice. The distinct letters are M, A, T, H, E, I, C, S — exactly 8 of them.",
+      "hint": "Cross out repeated letters and count only the distinct ones.",
+      "distractor_logic": [
+        "counts every letter including repeats, rather than distinct ones",
+        "over-corrects the repeat removal by one",
+        "under-counts by missing one of the 8 distinct letters"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-004",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "The set-builder form of \\(\\{5,10,15,20,25\\}\\) is:",
+      "options": [
+        "\\(\\{x : x = 5n,\\ n \\in \\mathbb{N}, 1 \\le n \\le 5\\}\\)",
+        "\\(\\{x : x \\text{ is a multiple of } 5\\}\\)",
+        "\\(\\{x : x = 5n,\\ n \\in \\mathbb{N}, n \\le 4\\}\\)",
+        "\\(\\{x : x \\text{ is divisible by } 25\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Each element is 5 times a natural number from 1 to 5: \\(5(1)=5\\), \\(5(2)=10\\), ..., \\(5(5)=25\\) — exactly bounding the range needed.",
+      "hint": "Find the rule AND the bound that stops exactly at 25, not beyond.",
+      "distractor_logic": [
+        "true but unbounded — this describes an infinite set of ALL multiples of 5, not just these 5",
+        "stops at n=4, giving only {5,10,15,20}, missing 25",
+        "divisibility by 25 would only give {25}, far too restrictive"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-005",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "Given \\(A=\\{1,2,3\\}\\), \\(B=\\{3,2,1,2\\}\\), and \\(C=\\{1,1,2,3\\}\\), which statement is correct?",
+      "options": [
+        "\\(A=B\\) but \\(A \\ne C\\)",
+        "\\(A=B=C\\) (repeated listing doesn't create new elements)",
+        "\\(A \\ne B\\) because B lists an element twice",
+        "None of A, B, C are equal"
+      ],
+      "correct_index": 1,
+      "explanation": "A set is determined only by which elements it contains, not how many times each is listed or in what order. \\(B\\) and \\(C\\) both reduce to \\(\\{1,2,3\\}\\) once repeats are ignored, so \\(A=B=C\\).",
+      "hint": "Cross out duplicate entries in the listing — a set never 'remembers' repeats.",
+      "distractor_logic": [
+        "singles out C incorrectly — C also reduces to {1,2,3}",
+        "repeating an element does NOT change the set — this is a common misconception",
+        "misses that all three describe exactly the same 3-element set"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-006",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 2,
+      "type": "regular",
+      "question": "How many subsets does the set \\(A=\\{1,2,3\\}\\) have in total?",
+      "options": [
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(9\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "With 3 elements, the total number of subsets is \\(2^3=8\\): \\(\\emptyset, \\{1\\},\\{2\\},\\{3\\},\\{1,2\\},\\{1,3\\},\\{2,3\\},\\{1,2,3\\}\\).",
+      "hint": "Use \\(2^n\\) with \\(n=3\\), and don't forget to actually list them out to double-check.",
+      "distractor_logic": [
+        "forgets to count the empty set, undercounting by 1 (and also just arithmetically wrong for 2^3)",
+        "off by one above the correct total",
+        "overshoots — there is no ninth subset"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-007",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 2,
+      "type": "regular",
+      "question": "Given \\(A=\\{2,4,6\\}\\) and \\(B=\\{1,2,3,4,5,6\\}\\), which statement is TRUE?",
+      "options": [
+        "\\(A \\subset B\\)",
+        "\\(B \\subset A\\)",
+        "\\(A \\cap B = \\emptyset\\)",
+        "\\(A and B are disjoint\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Every element of \\(A\\) (2, 4, 6) is present in \\(B\\), so \\(A \\subset B\\) holds. \\(B\\) has elements (1,3,5) not in \\(A\\), so \\(B \\subset A\\) fails.",
+      "hint": "Check each element of the smaller-looking set against the larger one.",
+      "distractor_logic": [
+        "reverses the containment — B has extra elements (1,3,5) that A lacks",
+        "A and B actually share every element of A, so the intersection is A itself, not empty",
+        "disjoint means NO shared elements — here they share 2, 4, and 6"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-008",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 2,
+      "type": "regular",
+      "question": "The set-builder description of the interval \\([-4,2]\\) is:",
+      "options": [
+        "\\(\\{x \\in \\mathbb{R} : -4 < x < 2\\}\\)",
+        "\\(\\{x \\in \\mathbb{R} : -4 \\le x \\le 2\\}\\)",
+        "\\(\\{x \\in \\mathbb{R} : -4 \\le x < 2\\}\\)",
+        "\\(\\{x \\in \\mathbb{R} : -4 < x \\le 2\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Square brackets on both sides mean both endpoints are included, so the correct description uses \\(\\le\\) on both sides: \\(-4 \\le x \\le 2\\).",
+      "hint": "Square bracket = \\(\\le\\) or \\(\\ge\\) (included); round bracket = < or > (excluded). Match both ends.",
+      "distractor_logic": [
+        "uses strict inequalities on both ends, excluding both endpoints instead of including them",
+        "includes -4 but wrongly excludes 2",
+        "excludes -4 but wrongly includes... actually excludes -4, which should be included"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-009",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 2,
+      "type": "regular",
+      "question": "Which interval correctly represents \\(\\{x \\in \\mathbb{R} : 3 < x \\le 9\\}\\)?",
+      "options": [
+        "\\((3,9)\\)",
+        "\\([3,9]\\)",
+        "\\((3,9]\\)",
+        "\\([3,9)\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(3<x\\) excludes 3 (round bracket) and \\(x \\le 9\\) includes 9 (square bracket), giving \\((3,9]\\).",
+      "hint": "Round where the inequality is strict, square where it isn't — check each end separately.",
+      "distractor_logic": [
+        "excludes 9 as well, but \\(\\le\\) requires 9 to be included",
+        "wrongly includes 3, which the strict inequality excludes",
+        "swaps which end gets which bracket"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-010",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\(A=\\{x : x \\in \\mathbb{N}, x \\le 6\\}\\) and \\(B=\\{2,4,6\\}\\), is \\(B \\subset A\\) true, and why?",
+      "options": [
+        "True, because every element of B is a natural number at most 6",
+        "False, because B has fewer elements than A",
+        "True, but only because A and B share exactly 3 elements",
+        "False, because 6 is the boundary value and boundaries are always excluded"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(A=\\{1,2,3,4,5,6\\}\\) and every element of \\(B=\\{2,4,6\\}\\) (2, 4, 6) lies in that list, so \\(B \\subset A\\) is true — the reasoning is membership, not element count.",
+      "hint": "Subset-hood is about every element of B being found in A, not about the sizes.",
+      "distractor_logic": [
+        "true conclusion, but the SIZE comparison is not why a subset relation holds — this is the wrong justification",
+        "the correct answer is True, and the reasoning about 'sharing 3 elements' is coincidental, not the actual subset condition",
+        "A's defining inequality is \\(x \\le 6\\), so 6 IS included — boundaries aren't automatically excluded"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-011",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If a set \\(A\\) has \\(5\\) elements, the number of elements in \\(P(A)\\) is:",
+      "options": [
+        "\\(31\\)",
+        "\\(32\\)",
+        "\\(37\\)",
+        "\\(64\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "With \\(n=5\\), \\(n(P(A)) = 2^n = 2^{5} = 32\\).",
+      "hint": "Apply \\(2^n\\) directly with \\(n=5\\).",
+      "distractor_logic": [
+        "adds n instead of using it as an exponent",
+        "off by one below the correct power of 2",
+        "doubles the correct answer instead of computing 2^n from scratch"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-012",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If a set \\(A\\) has \\(6\\) elements, the number of elements in \\(P(A)\\) is:",
+      "options": [
+        "\\(63\\)",
+        "\\(64\\)",
+        "\\(70\\)",
+        "\\(128\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "With \\(n=6\\), \\(n(P(A)) = 2^n = 2^{6} = 64\\).",
+      "hint": "Apply \\(2^n\\) directly with \\(n=6\\).",
+      "distractor_logic": [
+        "adds n instead of using it as an exponent",
+        "off by one below the correct power of 2",
+        "doubles the correct answer instead of computing 2^n from scratch"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-013",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If a set \\(A\\) has \\(8\\) elements, the number of elements in \\(P(A)\\) is:",
+      "options": [
+        "\\(255\\)",
+        "\\(256\\)",
+        "\\(264\\)",
+        "\\(512\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "With \\(n=8\\), \\(n(P(A)) = 2^n = 2^{8} = 256\\).",
+      "hint": "Apply \\(2^n\\) directly with \\(n=8\\).",
+      "distractor_logic": [
+        "adds n instead of using it as an exponent",
+        "off by one below the correct power of 2",
+        "doubles the correct answer instead of computing 2^n from scratch"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-014",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(n(P(A)) = 128\\), how many elements does \\(A\\) have?",
+      "options": [
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(64\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(2^n = 128\\) means \\(n=7\\), since \\(2^7 = 128\\) (checked: \\(2^6=64\\) is too small, \\(2^8=256\\) is too big).",
+      "hint": "Find the power of 2 that equals 128 — try small exponents.",
+      "distractor_logic": [
+        "\\(2^6=64 \\ne 128\\), one short",
+        "\\(2^8=256 \\ne 128\\), one too many",
+        "confuses n(P(A)) itself with n(A) — 128 is the power-set size, not the answer"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-015",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{x,y\\}\\), which of the following correctly lists \\(P(A)\\)?",
+      "options": [
+        "\\(\\{\\{x\\},\\{y\\}\\}\\)",
+        "\\(\\{\\emptyset,\\{x\\},\\{y\\},\\{x,y\\}\\}\\)",
+        "\\(\\{\\emptyset,\\{x\\},\\{y\\}\\}\\)",
+        "\\(\\{x,y,\\{x,y\\}\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "P(A) must contain all 4 subsets of a 2-element set: the empty set, each singleton, and the full set A itself — \\(\\{\\emptyset,\\{x\\},\\{y\\},\\{x,y\\}\\}\\).",
+      "hint": "A 2-element set has \\(2^2=4\\) subsets — make sure the listed power set has exactly 4 members, including \\(\\emptyset\\) and A.",
+      "distractor_logic": [
+        "leaves out both \\(\\emptyset\\) and A itself, listing only the two singletons",
+        "leaves out A itself (the full set {x,y}), giving only 3 of the 4 required subsets",
+        "mixes up elements of A with subsets of A — x and y are elements, not subsets, so they shouldn't appear directly as members of P(A)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-016",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A\\) has 5 elements, how many subsets of \\(A\\) are neither the empty set nor A itself?",
+      "options": [
+        "\\(32\\)",
+        "\\(31\\)",
+        "\\(30\\)",
+        "\\(16\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Total subsets: \\(2^5=32\\). Removing only \\(\\emptyset\\) and \\(A\\) itself (2 specific subsets) leaves \\(32-2=30\\).",
+      "hint": "Start from the total 2^n, then subtract exactly the 2 excluded cases.",
+      "distractor_logic": [
+        "this is the total count, forgetting to remove \\(\\emptyset\\) and A",
+        "subtracts only 1 instead of both excluded subsets",
+        "incorrectly halves the total instead of subtracting 2"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-017",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 2,
+      "type": "regular",
+      "question": "In a Venn diagram, the region only in A contains 5 elements, the region only in B contains 7 elements, and the overlapping region contains 3 elements. What is \\(n(A \\cup B)\\)?",
+      "options": [
+        "\\(12\\)",
+        "\\(15\\)",
+        "\\(18\\)",
+        "\\(10\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The union counts every region that belongs to A or B at least once: \\(5+7+3=15\\) — 'only A', 'only B', and 'both' together, with no double-counting since these three regions are disjoint by construction.",
+      "hint": "Add up all three separate (non-overlapping) regions shown in the diagram: only A, only B, and both.",
+      "distractor_logic": [
+        "adds only the two 'only' regions, forgetting the overlap region entirely",
+        "double-counts the overlap region by adding it in twice",
+        "confuses this with n(A only) + n(B only) minus something, an unnecessary subtraction"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-018",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 2,
+      "type": "regular",
+      "question": "In a Venn diagram, \\(n(A)=12\\) and the overlapping region with B has 4 elements. How many elements lie in the 'only A' region?",
+      "options": [
+        "\\(16\\)",
+        "\\(12\\)",
+        "\\(8\\)",
+        "\\(4\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The 'only A' region is what remains of A once the shared part with B is removed: \\(n(A) - n(A \\cap B) = 12-4=8\\).",
+      "hint": "The full circle for A already includes its overlap with B — subtract that overlap to isolate 'only A'.",
+      "distractor_logic": [
+        "adds instead of subtracting the overlap",
+        "forgets to subtract the overlap at all, just restating n(A)",
+        "this is the overlap value itself, not the 'only A' region"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-019",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 2,
+      "type": "regular",
+      "question": "A Venn diagram is drawn inside a universal set with \\(n(U)=30\\) students. If \\(n(A \\cup B)=22\\) students are in circle A or circle B (or both), how many students lie outside both circles?",
+      "options": [
+        "\\(22\\)",
+        "\\(8\\)",
+        "\\(30\\)",
+        "\\(14\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Students outside both circles are exactly \\(n(U) - n(A \\cup B)\\) \\(= 30-22=8\\).",
+      "hint": "The 'outside both' region and the 'union' region together make up the whole universal set.",
+      "distractor_logic": [
+        "restates the union count instead of the region outside it",
+        "restates the total instead of subtracting the union from it",
+        "an arithmetic slip — not 30 minus 22 correctly"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-020",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 2,
+      "type": "regular",
+      "question": "In a Venn diagram, the region only in B has 11 elements and the overlapping region with A has 6 elements. What is \\(n(B)\\)?",
+      "options": [
+        "\\(11\\)",
+        "\\(6\\)",
+        "\\(17\\)",
+        "\\(5\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(n(B)\\) is made up of the 'only B' region plus the overlap with A: \\(11+6=17\\).",
+      "hint": "The full circle for B is 'only B' plus the shared overlap region — add them.",
+      "distractor_logic": [
+        "gives only the 'only B' part, ignoring the shared region that's still part of B",
+        "gives only the overlap, ignoring the 'only B' region",
+        "an arithmetic slip in combining the two regions"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-021",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3,4,5\\}\\) and \\(B=\\{4,5,6,7\\}\\), then \\(A \\cup B\\) equals:",
+      "options": [
+        "\\(\\{1,2,3,4,5,6,7\\}\\)",
+        "\\(\\{4,5\\}\\)",
+        "\\(\\{1,2,3,6,7\\}\\)",
+        "\\(\\{1,2,3,4,5,4,5,6,7\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Union collects every element appearing in A or B (each listed once): \\(\\{1,2,3,4,5,6,7\\}\\).",
+      "hint": "List everything from both sets, then remove duplicate listings.",
+      "distractor_logic": [
+        "this is \\(A \\cap B\\), the shared elements only, not the union",
+        "leaves out the shared elements 4 and 5 entirely",
+        "correct elements but wrongly lists the shared 4 and 5 twice — a set never repeats elements"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-022",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{2,3,5,7\\}\\) and \\(B=\\{1,2,3,4\\}\\), then \\(A \\cap B\\) equals:",
+      "options": [
+        "\\(\\{2,3\\}\\)",
+        "\\(\\{1,2,3,4,5,7\\}\\)",
+        "\\(\\{5,7\\}\\)",
+        "\\(\\emptyset\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The elements common to both lists are 2 and 3, so \\(A \\cap B = \\{2,3\\}\\).",
+      "hint": "Only keep numbers that show up in BOTH lists.",
+      "distractor_logic": [
+        "this is \\(A \\cup B\\), not the intersection",
+        "these are exactly the elements NOT shared — the A-only part",
+        "the sets do share elements (2 and 3), so the intersection is not empty"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-023",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3,4,5,6\\}\\) and \\(B=\\{2,4,6\\}\\), then \\(A-B\\) equals:",
+      "options": [
+        "\\(\\{2,4,6\\}\\)",
+        "\\(\\{1,3,5\\}\\)",
+        "\\(\\{1,2,3,4,5,6\\}\\)",
+        "\\(\\emptyset\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Removing B's elements (2, 4, 6) from A leaves \\(\\{1,3,5\\}\\).",
+      "hint": "Start with all of A, cross out anything that also appears in B.",
+      "distractor_logic": [
+        "this is B itself (also equal to \\(A \\cap B\\) here since \\(B \\subset A\\)), not A-B",
+        "forgets to remove anything at all — restates A unchanged",
+        "wrongly concludes nothing is left, but half of A survives the removal"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-024",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{a,b,c,d\\}\\) and \\(B=\\{c,d,e,f\\}\\), then \\(B-A\\) equals:",
+      "options": [
+        "\\(\\{a,b\\}\\)",
+        "\\(\\{c,d\\}\\)",
+        "\\(\\{e,f\\}\\)",
+        "\\(\\{a,b,e,f\\}\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Removing A's elements from B: B has \\(c,d,e,f\\), and \\(c, d\\) also appear in A, leaving \\(\\{e,f\\}\\).",
+      "hint": "This time subtract A's elements FROM B, not the other way round.",
+      "distractor_logic": [
+        "this is A-B, the subtraction done in the wrong order",
+        "these are exactly the elements that get removed, not what remains",
+        "wrongly keeps a and b, which belong to A and were never part of B in the first place"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-025",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{1,3,5,7,9\\}\\) and \\(B=\\{2,4,6,8\\}\\), then \\(A \\cap B\\) equals:",
+      "options": [
+        "\\(\\emptyset\\)",
+        "\\(\\{1,3,5,7,9\\}\\)",
+        "\\(\\{2,4,6,8\\}\\)",
+        "\\(\\{1,2,3,4,\\dots\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "A is all-odd and B is all-even numbers, so they share no elements: \\(A \\cap B = \\emptyset\\) — A and B are disjoint.",
+      "hint": "Check for any number appearing in both lists — odds versus evens never overlap.",
+      "distractor_logic": [
+        "mistakes the intersection (empty) for A itself",
+        "mistakes the intersection (empty) for B itself",
+        "this looks like a union-style listing, not an intersection, and is also not accurate"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-026",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3\\}\\), \\(B=\\{3,4,5\\}\\), \\(C=\\{5,6,7\\}\\), find \\((A \\cup B) \\cap C\\).",
+      "options": [
+        "\\(\\{5\\}\\)",
+        "\\(\\{3,5\\}\\)",
+        "\\(\\{1,2,3,4,5\\}\\)",
+        "\\(\\emptyset\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "First \\(A \\cup B = \\{1,2,3,4,5\\}\\), then intersect with \\(C=\\{5,6,7\\}\\): only 5 is common to both, so the result is \\(\\{5\\}\\).",
+      "hint": "Work in order — compute the bracket first, then apply the outer operation.",
+      "distractor_logic": [
+        "adds 3 as well, but 3 is not in C, so it cannot survive the final intersection",
+        "stops after computing the bracket only, forgetting the intersection with C entirely",
+        "wrongly concludes no overlap, missing that 5 is shared"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-027",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3,4\\}\\), \\(B=\\{2,3,5\\}\\), \\(C=\\{3,4,6\\}\\), find \\(A \\cap (B \\cup C)\\).",
+      "options": [
+        "\\(\\{3\\}\\)",
+        "\\(\\{2,3,4\\}\\)",
+        "\\(\\{1,2,3,4\\}\\)",
+        "\\(\\{2,3\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "First \\(B \\cup C = \\{2,3,4,5,6\\}\\), then intersect with \\(A=\\{1,2,3,4\\}\\): the common elements are \\(\\{2,3,4\\}\\).",
+      "hint": "Compute the union inside the bracket first, then intersect with A.",
+      "distractor_logic": [
+        "stops at only the double-shared element 3, missing 2 and 4 which are also common to A and \\(B \\cup C\\)",
+        "wrongly restates A entirely, ignoring that 1 is not in \\(B \\cup C\\)",
+        "misses 4, which IS common to A and \\(B \\cup C\\)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-028",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A\\) is the set of factors of 12 and \\(B\\) is the set of factors of 18, find \\(A \\cap B\\).",
+      "options": [
+        "\\(\\{1,2,3,6\\}\\)",
+        "\\(\\{1,2,3,4,6,12\\}\\)",
+        "\\(\\{1,2,3,6,9,18\\}\\)",
+        "\\(\\{6\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Factors of 12: \\(\\{1,2,3,4,6,12\\}\\); factors of 18: \\(\\{1,2,3,6,9,18\\}\\). Common factors (i.e. common divisors) are \\(\\{1,2,3,6\\}\\) — note 6 is their highest common factor.",
+      "hint": "List the factors of each number separately, then keep only what both lists share.",
+      "distractor_logic": [
+        "this is the full factor list of 12 (A itself), not the intersection with B",
+        "this is the full factor list of 18 (B itself), not the intersection with A",
+        "stops at only the HCF, missing the smaller common factors 1, 2, and 3"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-029",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{x : 1\\le x\\le 10, x \\text{ even}\\}\\) and \\(B=\\{x : 1\\le x\\le 10, x \\text{ a multiple of } 3\\}\\), find \\(A \\cap B\\).",
+      "options": [
+        "\\(\\{6\\}\\)",
+        "\\(\\{2,4,6,8,10\\}\\)",
+        "\\(\\{3,6,9\\}\\)",
+        "\\(\\{2,3,4,6,8,9,10\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(A=\\{2,4,6,8,10\\}\\) and \\(B=\\{3,6,9\\}\\); the only number even AND a multiple of 3 between 1 and 10 is \\(6\\) (a multiple of 6).",
+      "hint": "You need numbers satisfying BOTH conditions at once — look for multiples of 6.",
+      "distractor_logic": [
+        "this is A itself, all even numbers, not restricted to multiples of 3 too",
+        "this is B itself, all multiples of 3, not restricted to being even too",
+        "this is \\(A \\cup B\\) (everything satisfying either condition), not the stricter intersection"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-030",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2\\}\\), \\(B=\\{2,3\\}\\), \\(C=\\{1,3\\}\\), find \\(A \\cup (B \\cap C)\\).",
+      "options": [
+        "\\(\\{1,2,3\\}\\)",
+        "\\(\\{1,2\\}\\)",
+        "\\(\\{3\\}\\)",
+        "\\(\\{2,3\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "First \\(B \\cap C = \\{3\\}\\) (the only shared element of B and C), then \\(A \\cup \\{3\\} = \\{1,2,3\\}\\).",
+      "hint": "Evaluate the bracket \\(B \\cap C\\) first — it will be small — then union it with A.",
+      "distractor_logic": [
+        "forgets to union in the extra element 3 from \\(B \\cap C\\), just restating A",
+        "computes \\(B \\cap C\\) correctly but stops there, without unioning with A",
+        "computes \\(B \\cup C\\) by mistake instead of \\(B \\cap C\\), and never involves A at all"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-031",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(U=\\{1,2,\\dots,10\\}\\) and \\(A=\\{2,4,6,8,10\\}\\), then \\(A'\\) equals:",
+      "options": [
+        "\\(\\{1,3,5,7,9\\}\\)",
+        "\\(\\{2,4,6,8,10\\}\\)",
+        "\\(\\{1,2,\\dots,10\\}\\)",
+        "\\(\\emptyset\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Removing A's even numbers from U leaves exactly the odd numbers from 1 to 10: \\(\\{1,3,5,7,9\\}\\).",
+      "hint": "Complement = everything in U that isn't listed in A.",
+      "distractor_logic": [
+        "this restates A itself, not its complement",
+        "restates U itself, forgetting to remove A's elements at all",
+        "wrongly concludes nothing is left, but half of U survives"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-032",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(U=\\{1,2,\\dots,12\\}\\) and \\(A\\) is the set of multiples of 3 in U, then \\(A'\\) equals:",
+      "options": [
+        "\\(\\{3,6,9,12\\}\\)",
+        "\\(\\{1,2,4,5,7,8,10,11\\}\\)",
+        "\\(\\{1,2,\\dots,12\\}\\)",
+        "\\(\\{1,2,4,5,7,8,10,11,12\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Multiples of 3 in U: \\(\\{3,6,9,12\\}\\). Removing these from U leaves \\(\\{1,2,4,5,7,8,10,11\\}\\) — 8 numbers.",
+      "hint": "First list A (the multiples of 3), then remove exactly those from U.",
+      "distractor_logic": [
+        "this is A itself, not its complement",
+        "forgets to remove A's elements from U at all",
+        "accidentally leaves 12 in the answer, even though 12 is a multiple of 3 and belongs to A"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-033",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(U=\\{1,2,\\dots,8\\}\\), \\(A=\\{1,2,3,4\\}\\), \\(B=\\{3,4,5,6\\}\\), then \\((A \\cup B)'\\) equals:",
+      "options": [
+        "\\(\\{7,8\\}\\)",
+        "\\(\\{1,2,5,6\\}\\)",
+        "\\(\\{3,4\\}\\)",
+        "\\(\\{1,2,3,4,5,6\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(A \\cup B = \\{1,2,3,4,5,6\\}\\), so its complement in U is \\(\\{7,8\\}\\) — matching De Morgan's law, since \\(A' \\cap B' = \\{5,6,7,8\\} \\cap \\{1,2,7,8\\} = \\{7,8\\}\\) too.",
+      "hint": "Find \\(A \\cup B\\) first, then take what's left of U.",
+      "distractor_logic": [
+        "computes \\(A' \\cup B'\\) instead of the complement of \\(A \\cup B\\) — a De Morgan mix-up",
+        "this is \\(A \\cap B\\), unrelated to the complement of the union",
+        "restates \\(A \\cup B\\) itself, forgetting to complement it"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-034",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(U=\\{1,2,\\dots,9\\}\\) and \\(A=\\{1,3,5,7,9\\}\\), find \\(n(A')\\).",
+      "options": [
+        "\\(5\\)",
+        "\\(4\\)",
+        "\\(9\\)",
+        "\\(0\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(n(U)=9\\) and \\(n(A)=5\\), so \\(n(A') = n(U)-n(A) = 9-5=4\\) (the even numbers 2,4,6,8).",
+      "hint": "Complement count = total count minus A's own count.",
+      "distractor_logic": [
+        "restates n(A) instead of computing the complement's count",
+        "restates n(U), forgetting to subtract n(A) at all",
+        "wrongly assumes A' is empty, but 4 even numbers remain outside A"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-035",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "In a class of 50 students, 30 play cricket, 25 play football, and 10 play both games. How many students play at least one of the two games?",
+      "options": [
+        "\\(55\\)",
+        "\\(45\\)",
+        "\\(40\\)",
+        "\\(15\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(n(\\text{cricket} \\cup \\text{football}) = 30+25-10=45\\) students play at least one game.",
+      "hint": "Add the two group sizes, then subtract the double-counted overlap once.",
+      "distractor_logic": [
+        "forgets to subtract the overlap, simply adding 30+25",
+        "subtracts the overlap twice instead of once",
+        "confuses this with the overlap value itself"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-036",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "In a survey of 60 people, 35 drink tea, 30 drink coffee, and 15 drink both. How many people drink neither tea nor coffee?",
+      "options": [
+        "\\(50\\)",
+        "\\(10\\)",
+        "\\(15\\)",
+        "\\(5\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At least one drink: \\(35+30-15=50\\). Neither: \\(60-50=10\\).",
+      "hint": "First find how many drink at least one, then subtract that from the total surveyed.",
+      "distractor_logic": [
+        "stops after finding 'at least one', forgetting the final subtraction from the total",
+        "confuses this with the given overlap value",
+        "an arithmetic slip in the final subtraction"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-037",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(n(A)=20\\), \\(n(B)=15\\), and \\(n(A \\cup B)=28\\), find \\(n(A \\cap B)\\).",
+      "options": [
+        "\\(35\\)",
+        "\\(63\\)",
+        "\\(7\\)",
+        "\\(13\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Rearranging \\(n(A \\cup B)=n(A)+n(B)-n(A\\cap B)\\) gives \\(n(A\\cap B) = 20+15-28=7\\).",
+      "hint": "Rearrange the union formula to isolate the intersection term.",
+      "distractor_logic": [
+        "adds all three given numbers instead of rearranging the formula",
+        "multiplies 20 and 15 by mistake, with no basis in the formula",
+        "an arithmetic slip while rearranging (e.g. wrong sign)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-038",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(n(A \\cup B)=50\\), \\(n(A)=28\\), and \\(n(A \\cap B)=8\\), find \\(n(B)\\).",
+      "options": [
+        "\\(22\\)",
+        "\\(30\\)",
+        "\\(14\\)",
+        "\\(36\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "From \\(n(A \\cup B)=n(A)+n(B)-n(A\\cap B)\\): \\(n(B) = 50-28+8=30\\).",
+      "hint": "Rearrange the same union formula, this time solving for n(B).",
+      "distractor_logic": [
+        "computes 50-28 but forgets to add back the intersection term",
+        "subtracts the intersection instead of adding it back after isolating n(B)",
+        "an arithmetic slip in the final combination"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-039",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "In a survey of 100 students, 45 like Maths, 38 like Science, and 18 like both subjects. How many students like neither subject?",
+      "options": [
+        "\\(65\\)",
+        "\\(35\\)",
+        "\\(20\\)",
+        "\\(53\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At least one subject: \\(45+38-18=65\\). Neither: \\(100-65=35\\).",
+      "hint": "Find the 'at least one' count first using the union formula, then subtract from the total.",
+      "distractor_logic": [
+        "stops at the 'at least one' count, forgetting to subtract it from the total",
+        "confuses this with the given overlap value of 18",
+        "an arithmetic slip in the final subtraction from 100"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L2-040",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 2,
+      "type": "regular",
+      "question": "In a group of 50 people, 18 like only tennis and 22 like only badminton, with no one liking both. How many people like neither sport?",
+      "options": [
+        "\\(40\\)",
+        "\\(10\\)",
+        "\\(4\\)",
+        "\\(30\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Since no one likes both, the union is simply \\(18+22=40\\) people liking at least one sport, leaving \\(50-40=10\\) who like neither.",
+      "hint": "No overlap here, so just add the two groups directly before subtracting from the total.",
+      "distractor_logic": [
+        "restates the 'at least one' count, forgetting the final subtraction from 50",
+        "confuses this with an unrelated small value, not the neither-count",
+        "an arithmetic slip in the final subtraction"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-001",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(A=\\{x \\in \\mathbb{Z} : x^2 - 2x - 3 = 0\\}\\), the roster form of \\(A\\) is:",
+      "options": [
+        "\\(\\{1,3\\}\\)",
+        "\\(\\{-1,3\\}\\)",
+        "\\(\\{-1,-3\\}\\)",
+        "\\(\\{1,-3\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Factor: \\(x^2-2x-3=(x-3)(x+1)=0\\), so \\(x=3\\) or \\(x=-1\\). Both are integers, so \\(A=\\{-1,3\\}\\).",
+      "hint": "Factor the quadratic first, then check both roots are valid integers.",
+      "distractor_logic": [
+        "sign error on the negative root",
+        "sign error on the positive root, keeping the negative one wrong too",
+        "both signs flipped from the correct roots"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-002",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "regular",
+      "question": "Let \\(A=\\{x \\in \\mathbb{N} : x \\le 50,\\ x \\text{ is a perfect square},\\ x \\text{ is odd}\\}\\). Find \\(n(A)\\).",
+      "options": [
+        "\\(7\\)",
+        "\\(3\\)",
+        "\\(4\\)",
+        "\\(5\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Perfect squares up to 50: \\(1,4,9,16,25,36,49\\) (7 of them). Keeping only the odd ones: \\(1,9,25,49\\) — 4 elements.",
+      "hint": "First list all perfect squares up to 50, then filter that list down to only the odd ones.",
+      "distractor_logic": [
+        "counts every perfect square up to 50, forgetting the 'odd' filter entirely",
+        "drops one of the four valid odd squares",
+        "over-counts by including an even square by mistake"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-003",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "regular",
+      "question": "A set \\(A\\) has 5 elements, including a fixed element \\(e\\). How many subsets of \\(A\\) contain \\(e\\)?",
+      "options": [
+        "\\(32\\)",
+        "\\(16\\)",
+        "\\(8\\)",
+        "\\(31\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(e\\) is forced 'in', so only the remaining 4 elements are free to be in or out: \\(2^4=16\\) subsets contain \\(e\\).",
+      "hint": "Fix e as included, then count freely for the other n-1 elements.",
+      "distractor_logic": [
+        "this is the total subset count 2^5, ignoring the restriction that e must be included",
+        "under-counts by halving 16 again instead of using 2^(n-1) correctly",
+        "off by one below the correct count"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-004",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "regular",
+      "question": "A set \\(B\\) has 6 elements, including a fixed element \\(f\\). How many subsets of \\(B\\) do NOT contain \\(f\\)?",
+      "options": [
+        "\\(64\\)",
+        "\\(63\\)",
+        "\\(32\\)",
+        "\\(31\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(f\\) is forced 'out', leaving 5 free elements: \\(2^5=32\\) subsets exclude \\(f\\) (exactly half of all 64 subsets, by symmetry with the 'containing f' count).",
+      "hint": "Fix f as excluded, then count freely for the other n-1 elements.",
+      "distractor_logic": [
+        "this is the total subset count 2^6, ignoring the exclusion restriction",
+        "off by one below the total, not applying the restriction correctly",
+        "off by one above the correct restricted count"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-005",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "regular",
+      "question": "A set \\(A\\) has 5 elements, including two fixed elements \\(p\\) and \\(q\\). How many subsets of \\(A\\) contain BOTH \\(p\\) and \\(q\\)?",
+      "options": [
+        "\\(16\\)",
+        "\\(8\\)",
+        "\\(4\\)",
+        "\\(32\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Both \\(p\\) and \\(q\\) are forced 'in', leaving only the remaining 3 elements free: \\(2^3=8\\) subsets contain both.",
+      "hint": "Fix both required elements as included, then count freely for the rest.",
+      "distractor_logic": [
+        "only fixes one of the two elements (2^(5-1)) instead of both",
+        "over-restricts by fixing three elements instead of two",
+        "this is the unrestricted total 2^5, ignoring both required elements"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-006",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "regular",
+      "question": "How many of these four sets are subsets of \\(\\{1,2,\\dots,10\\}\\)? \\(A=\\{2,4,6\\},\\ B=\\{5,10,15\\},\\ C=\\{1,3,5,7,9\\},\\ D=\\{0,2,4\\}\\)",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A\\) and \\(C\\) have every element within 1–10, so they qualify. \\(B\\) fails (15 is outside the range) and \\(D\\) fails (0 is outside the range) — exactly 2 of the 4 sets qualify.",
+      "hint": "Check every single element of each set against the range 1 to 10 — one bad element disqualifies the whole set.",
+      "distractor_logic": [
+        "misses that C also qualifies, undercounting by one",
+        "wrongly counts B or D as valid despite an out-of-range element",
+        "wrongly assumes all four qualify without checking each element"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-007",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the smallest possible value of \\(n(A)\\) such that \\(n(P(A)) > 100\\)?",
+      "options": [
+        "\\(6\\)",
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(100\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(2^6=64\\) is not enough (64 < 100), but \\(2^7=128 > 100\\), so the smallest valid \\(n(A)\\) is 7.",
+      "hint": "Try successive powers of 2 until you first cross 100.",
+      "distractor_logic": [
+        "one short — 2^6=64 does not exceed 100",
+        "one too many — n=8 works but isn't the SMALLEST value that works",
+        "confuses the target value 100 with the answer n(A) itself"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-008",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(n(A) = 2\\), find \\(n(P(P(A)))\\) — the number of elements in the power set of the power set of \\(A\\).",
+      "options": [
+        "\\(4\\)",
+        "\\(8\\)",
+        "\\(16\\)",
+        "\\(2\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(P(A)\\) has \\(2^2=4\\) elements, so \\(P(P(A))\\) — the power set of THAT 4-element set — has \\(2^4=16\\) elements.",
+      "hint": "Apply the power-set formula twice in sequence: first to A, then to the result P(A).",
+      "distractor_logic": [
+        "stops after only one application, giving n(P(A)) instead of n(P(P(A)))",
+        "doubles n(P(A))=4 instead of using it as the new exponent's base count",
+        "restates n(A) itself, applying the formula zero times"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-009",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "regular",
+      "question": "A Venn diagram inside a universal set of \\(n(U)=60\\) shows \\(n(A)=25\\) and \\(n(B)=30\\). If 10 elements lie outside both circles, find \\(n(A \\cap B)\\).",
+      "options": [
+        "\\(15\\)",
+        "\\(5\\)",
+        "\\(45\\)",
+        "\\(10\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Outside both = 10, so \\(n(A \\cup B) = 60-10=50\\). Then \\(n(A\\cap B) = n(A)+n(B)-n(A\\cup B) = 25+30-50=5\\).",
+      "hint": "First find the union from the 'outside both' count, then rearrange the union formula for the overlap.",
+      "distractor_logic": [
+        "adds an extra unexplained step instead of the two clean subtractions needed",
+        "an arithmetic slip while rearranging the union formula",
+        "restates the 'outside both' count instead of computing the overlap"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-010",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "regular",
+      "question": "In a Venn diagram, the 'only A' region has \\(3x\\) elements, the 'only B' region has \\(2x\\) elements, and the overlap has \\(x\\) elements. If the total inside \\(A \\cup B\\) is 60, find \\(n(A)\\).",
+      "options": [
+        "\\(30\\)",
+        "\\(40\\)",
+        "\\(20\\)",
+        "\\(50\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Total: \\(3x+2x+x=6x=60\\), so \\(x=10\\). Then \\(n(A) = \\text{only A} + \\text{overlap} = 3(10)+10=40\\).",
+      "hint": "Solve for x from the total first, then combine only the two regions that belong to A.",
+      "distractor_logic": [
+        "reports n(B) instead of n(A)",
+        "reports only the overlap region alone, forgetting to add the 'only A' part",
+        "reports the total union instead of isolating A's own two regions"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-011",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "regular",
+      "question": "In a Venn diagram inside \\(n(U)=50\\), the 'only A' region has 15 elements and the overlap has 8. If 12 elements lie outside both circles, find the size of the 'only B' region.",
+      "options": [
+        "\\(15\\)",
+        "\\(23\\)",
+        "\\(30\\)",
+        "\\(7\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Union: \\(50-12=38\\). Removing 'only A' (15) and the overlap (8) leaves 'only B': \\(38-15-8=15\\).",
+      "hint": "Find the union first from the outside count, then subtract the two known regions to isolate the third.",
+      "distractor_logic": [
+        "forgets to subtract the overlap, only removing 'only A'",
+        "restates the union itself instead of isolating just the 'only B' part",
+        "an arithmetic slip while subtracting the two known regions"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-012",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "regular",
+      "question": "A Venn diagram shows two equally-sized circles with \\(n(A)=n(B)=20\\). If \\(n(A \\cup B)=35\\), find \\(n(A \\cap B)\\).",
+      "options": [
+        "\\(40\\)",
+        "\\(5\\)",
+        "\\(15\\)",
+        "\\(25\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(n(A\\cap B) = n(A)+n(B)-n(A\\cup B) = 20+20-35=5\\).",
+      "hint": "Rearrange the two-set union formula directly — no need for the individual regions here.",
+      "distractor_logic": [
+        "adds all given numbers together instead of rearranging the formula",
+        "an arithmetic slip while isolating the overlap term",
+        "confuses this with n(A) or n(B) minus the overlap, an unrelated combination"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-013",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "regular",
+      "question": "A three-set Venn diagram shows: only A = 4, only B = 6, only C = 5, A&B only = 2, B&C only = 3, A&C only = 1, all three = 2. Find \\(n(A \\cup B \\cup C)\\).",
+      "options": [
+        "\\(21\\)",
+        "\\(23\\)",
+        "\\(25\\)",
+        "\\(18\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Sum every one of the 7 distinct regions inside the three circles: \\(4+6+5+2+3+1+2=23\\).",
+      "hint": "Add up every region shown — all 7 are already non-overlapping, so no further correction is needed.",
+      "distractor_logic": [
+        "misses one region in the sum (off by 2)",
+        "accidentally adds the 'all three' region twice",
+        "misses two of the seven regions in the running total"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-014",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "regular",
+      "question": "A three-set Venn diagram shows: only A = 7, only B = 5, only C = 6, A&B only = 3, B&C only = 2, A&C only = 4, all three = 1. Find \\(n(A)\\).",
+      "options": [
+        "\\(15\\)",
+        "\\(11\\)",
+        "\\(19\\)",
+        "\\(22\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(n(A)\\) is the sum of every region that lies inside circle A: only A, A&B only, A&C only, and all three — \\(7+3+4+1=15\\).",
+      "hint": "Only sum the FOUR regions that fall inside circle A — ignore regions belonging only to B or C.",
+      "distractor_logic": [
+        "forgets to include the 'all three' region, which is still part of A",
+        "wrongly includes the B&C-only region, which lies outside circle A entirely",
+        "adds every region in the whole diagram, not just the ones inside A"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-015",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3,4,5,6\\}\\), \\(B=\\{4,5,6,7\\}\\), \\(C=\\{7,8,9\\}\\), find \\(A \\cap (B \\cup C)\\).",
+      "options": [
+        "\\(\\{4,5,6\\}\\)",
+        "\\(\\{4,5,6,7\\}\\)",
+        "\\(\\{7\\}\\)",
+        "\\(\\{1,2,3,4,5,6\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(B \\cup C = \\{4,5,6,7,8,9\\}\\); intersecting with \\(A\\) keeps only \\(\\{4,5,6\\}\\) (7, 8, 9 are not in A). This also matches \\((A\\cap B)\\cup(A\\cap C) = \\{4,5,6\\}\\cup\\emptyset = \\{4,5,6\\}\\) — confirming the distributive law.",
+      "hint": "Compute B∪C first, then keep only what A shares with it.",
+      "distractor_logic": [
+        "wrongly includes 7, which is in B∪C but not in A",
+        "stops after computing B∪C, forgetting to intersect with A at all",
+        "wrongly restates A itself, ignoring the intersection with B∪C"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-016",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3\\}\\), \\(B=\\{2,3,4\\}\\), \\(C=\\{3,4,5\\}\\), find \\((A \\cap B) \\cup (B \\cap C) \\cup (A \\cap C)\\).",
+      "options": [
+        "\\(\\{3\\}\\)",
+        "\\(\\{2,3,4\\}\\)",
+        "\\(\\{2,3,4,5\\}\\)",
+        "\\(\\{1,2,3,4,5\\}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A\\cap B=\\{2,3\\}\\), \\(B\\cap C=\\{3,4\\}\\), \\(A\\cap C=\\{3\\}\\); their union is \\(\\{2,3,4\\}\\).",
+      "hint": "Compute each of the three pairwise intersections separately first, then take their union.",
+      "distractor_logic": [
+        "stops at only the triple-shared element 3, missing 2 and 4",
+        "wrongly includes 5, which never appears in any of the three pairwise intersections",
+        "wrongly unions all three ORIGINAL sets instead of their pairwise intersections"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-017",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(A=\\{1,2,3,4\\}\\) and \\(B=\\{3,4,5,6\\}\\), find \\((A-B) \\cup (B-A)\\) — the elements that belong to exactly one of A or B.",
+      "options": [
+        "\\(\\{3,4\\}\\)",
+        "\\(\\{1,2,5,6\\}\\)",
+        "\\(\\{1,2,3,4,5,6\\}\\)",
+        "\\(\\emptyset\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A-B=\\{1,2\\}\\) and \\(B-A=\\{5,6\\}\\); their union is \\(\\{1,2,5,6\\}\\) — everything in exactly one of the two sets, excluding the shared elements 3 and 4.",
+      "hint": "Compute each one-sided difference separately, then union the two results.",
+      "distractor_logic": [
+        "gives the shared elements A∩B instead of the exactly-one-set elements",
+        "wrongly unions all of A and B together, including the shared elements",
+        "wrongly concludes there's no difference at all, though four elements qualify"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-018",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "Let \\(U=\\{1,2,3,4,5,6\\}\\), \\(A=\\{1,2,3,4\\}\\), \\(B=\\{3,4,5,6\\}\\), \\(C=\\{1,2\\}\\), \\(D=\\{5,6\\}\\). How many of the four pairs (A,B), (A,D), (C,D), (B,C) satisfy \\(X \\cup Y = U\\)?",
+      "options": [
+        "\\(1\\)",
+        "\\(2\\)",
+        "\\(3\\)",
+        "\\(4\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(A\\cup B=U\\) ✓, \\(A\\cup D=U\\) ✓, \\(C\\cup D=\\{1,2,5,6\\}\\ne U\\) ✗, \\(B\\cup C=U\\) ✓ — exactly 3 of the 4 pairs cover all of U.",
+      "hint": "Check each pair's union directly against U — a pair covers U only if together they contain every element from 1 to 6.",
+      "distractor_logic": [
+        "misses one of the three valid pairs",
+        "misses that (C,D) actually fails, since 3 and 4 are covered by neither C nor D",
+        "wrongly counts all four pairs as valid, missing the (C,D) failure"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-019",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(U=\\{1,2,\\dots,10\\}\\), \\(A=\\{1,2,3\\}\\), \\(B=\\{3,4,5\\}\\), \\(C=\\{5,6,7\\}\\), find \\((A \\cup B \\cup C)'\\).",
+      "options": [
+        "\\(\\{8,9,10\\}\\)",
+        "\\(\\{4,6,8,9,10\\}\\)",
+        "\\(\\{1,2,3,4,5,6,7\\}\\)",
+        "\\(\\emptyset\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(A\\cup B\\cup C = \\{1,2,3,4,5,6,7\\}\\), so its complement in U is everything left: \\(\\{8,9,10\\}\\).",
+      "hint": "Combine all three sets first (their union), then complement the result against U.",
+      "distractor_logic": [
+        "wrongly excludes 4 and 6 as well, even though they belong to the union and shouldn't be in the complement",
+        "restates the union itself, forgetting to take its complement",
+        "wrongly assumes the union already covers all of U"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-020",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(U=\\{1,2,\\dots,9\\}\\), \\(A=\\{1,2,3,4\\}\\), \\(B=\\{3,4,5,6\\}\\), find \\((A \\cap B)'\\).",
+      "options": [
+        "\\(\\{1,2,5,6,7,8,9\\}\\)",
+        "\\(\\{3,4\\}\\)",
+        "\\(\\{5,6,7,8,9\\}\\)",
+        "\\(\\{1,2,7,8,9\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(A\\cap B=\\{3,4\\}\\), so its complement in U is \\(\\{1,2,5,6,7,8,9\\}\\) — which indeed equals \\(A' \\cup B'\\) (De Morgan's law: complement of an intersection is the union of complements).",
+      "hint": "Find A∩B first, then remove exactly that from U.",
+      "distractor_logic": [
+        "this is A∩B itself, not its complement",
+        "this is only B' alone, missing the elements unique to A'",
+        "this is only A' alone, missing the elements unique to B'"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-021",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(n(U)=40\\), \\(n(A)=18\\), \\(n(B)=15\\), and \\(n(A \\cap B)=6\\), find \\(n((A \\cup B)')\\).",
+      "options": [
+        "\\(27\\)",
+        "\\(13\\)",
+        "\\(21\\)",
+        "\\(9\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(n(A\\cup B) = 18+15-6=27\\), so \\(n((A\\cup B)') = 40-27=13\\).",
+      "hint": "First find n(A∪B) with the usual formula, then subtract that from n(U).",
+      "distractor_logic": [
+        "stops after computing n(A∪B), forgetting the final subtraction from n(U)",
+        "an arithmetic slip in the final subtraction",
+        "wrongly subtracts the given overlap directly from n(U), skipping the union formula"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-022",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "In a survey of 100 people: 40 read newspaper A, 30 read B, 25 read C; 15 read both A and B, 12 read both A and C, 10 read both B and C; and 5 read all three. How many people read at least one of the three newspapers?",
+      "options": [
+        "\\(63\\)",
+        "\\(92\\)",
+        "\\(37\\)",
+        "\\(70\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(n(A\\cup B\\cup C) = 40+30+25-15-12-10+5=63\\) people read at least one newspaper.",
+      "hint": "Add the three totals, subtract every pairwise overlap once, then add the triple overlap back.",
+      "distractor_logic": [
+        "forgets to subtract the pairwise overlaps, just adding then subtracting the triple",
+        "confuses this with the 'neither' count instead of the union",
+        "adds the pairwise overlaps instead of subtracting them"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-023",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "Using the same survey (40/30/25 readers, 15/12/10 pairwise, 5 all three, 100 total), how many people read exactly two of the three newspapers?",
+      "options": [
+        "\\(27\\)",
+        "\\(22\\)",
+        "\\(32\\)",
+        "\\(17\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Exactly-two counts are each pairwise overlap minus the triple overlap: \\((15-5)+(12-5)+(10-5) = 10+7+5=22\\).",
+      "hint": "Each pairwise total includes the triple-overlap people — remove them once from each pair before adding.",
+      "distractor_logic": [
+        "forgets to subtract the triple overlap from each pairwise total, just adding 15+12+10 minus a stray 5",
+        "an arithmetic slip while combining the three adjusted pairwise values",
+        "subtracts the triple overlap only once from the total instead of from each pairwise value"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-024",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "Using the same survey, how many people read exactly one of the three newspapers?",
+      "options": [
+        "\\(63\\)",
+        "\\(41\\)",
+        "\\(36\\)",
+        "\\(30\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Only-A: \\(40-15-12+5=18\\); only-B: \\(30-15-10+5=10\\); only-C: \\(25-12-10+5=8\\). Total exactly-one: \\(18+10+8=36\\).",
+      "hint": "For each newspaper, remove both its pairwise overlaps but add back the triple overlap once (it was subtracted twice).",
+      "distractor_logic": [
+        "restates the full union, not just the exactly-one count",
+        "an arithmetic slip while summing the three only-regions",
+        "an arithmetic slip while computing one of the three only-regions"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-025",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "Using the same survey, how many people read none of the three newspapers?",
+      "options": [
+        "\\(63\\)",
+        "\\(37\\)",
+        "\\(22\\)",
+        "\\(5\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At least one: 63 (computed above). None: \\(100-63=37\\).",
+      "hint": "Subtract the 'at least one' count from the total surveyed.",
+      "distractor_logic": [
+        "restates the union count itself, not its complement",
+        "confuses this with the exactly-two count",
+        "confuses this with the given triple-overlap value"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-026",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "In a group of 80 students: 40 play football, 32 hockey, 30 cricket; 15 play both football and hockey, 12 both hockey and cricket, 10 both football and cricket; and 5 play none of the three sports. Find how many play all three sports.",
+      "options": [
+        "\\(5\\)",
+        "\\(10\\)",
+        "\\(15\\)",
+        "\\(13\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At least one sport: \\(80-5=75\\). By inclusion–exclusion, \\(40+32+30-15-12-10+x=75\\) gives \\(x=10\\) (checked: this keeps every individual pairwise-only region ≥ 0, e.g. football∩cricket-only = 10-10=0).",
+      "hint": "Find the 'at least one' count first, then solve the inclusion–exclusion equation for the unknown triple overlap.",
+      "distractor_logic": [
+        "restates the given 'none' count instead of solving for the triple overlap",
+        "sets up the equation correctly but makes an arithmetic slip solving for x",
+        "an arithmetic slip while combining terms on the way to isolating x"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-027",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "In a survey of 150 people about drinks: 130 people like at least one of tea, coffee, or juice; 70 like tea, 65 coffee, 55 juice; 30 like both tea and coffee, 25 both coffee and juice, 20 both tea and juice. How many people like exactly two of the three drinks?",
+      "options": [
+        "\\(15\\)",
+        "\\(45\\)",
+        "\\(30\\)",
+        "\\(60\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "First, all three: \\(70+65+55-30-25-20+x=130\\) gives \\(x=15\\). Exactly two: \\((30-15)+(25-15)+(20-15) = 15+10+5=30\\).",
+      "hint": "Solve for the triple overlap first, then subtract it once from each pairwise total before adding those up.",
+      "distractor_logic": [
+        "reports the triple-overlap value itself, not the exactly-two count",
+        "reports the raw sum of the three pairwise totals (30+25+20)/something miscombined, without removing the triple overlap",
+        "reports the sum of all three individual drink totals combined incorrectly"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-028",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "In a class, 25 students like exactly one of Physics/Chemistry/Maths, 18 like exactly two, 6 like all three, and 11 like none of the three subjects. How many students are in the class in total?",
+      "options": [
+        "\\(49\\)",
+        "\\(55\\)",
+        "\\(60\\)",
+        "\\(43\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "These four categories (exactly one, exactly two, all three, none) never overlap and together cover everyone: \\(25+18+6+11=60\\) students in total.",
+      "hint": "'Exactly one', 'exactly two', 'exactly three', and 'none' between them account for every single student exactly once.",
+      "distractor_logic": [
+        "leaves out the 'all three' group from the total",
+        "an arithmetic slip while adding the four category sizes",
+        "leaves out the 'none' group from the total"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-029",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "In a class of 60 students, the number who like ONLY Mathematics is twice the number who like ONLY Science. 12 students like both subjects, and 6 like neither. Find the number of students who like only Mathematics.",
+      "options": [
+        "\\(14\\)",
+        "\\(28\\)",
+        "\\(21\\)",
+        "\\(42\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Let only-Science = \\(y\\), so only-Maths = \\(2y\\). Total: \\(2y+y+12+6=60\\) gives \\(3y=42\\), \\(y=14\\), so only-Maths \\(=2(14)=28\\).",
+      "hint": "Set up one variable for 'only Science', express 'only Maths' in terms of it, then solve the total-students equation.",
+      "distractor_logic": [
+        "reports only-Science (y) instead of only-Maths (2y)",
+        "an arithmetic slip while solving the linear equation for y",
+        "doubles the correct answer instead of computing 2y directly from y=14"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-L3-030",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "regular",
+      "question": "In a survey of 90 people about magazines X, Y, Z: 85 read at least one; 50 read X, 40 read Y; 20 read both X and Y, 15 both Y and Z, 18 both X and Z; and 8 read all three. Find how many read magazine Z.",
+      "options": [
+        "\\(40\\)",
+        "\\(35\\)",
+        "\\(45\\)",
+        "\\(30\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "By inclusion–exclusion: \\(50+40+n(Z)-20-15-18+8=85\\) gives \\(45+n(Z)=85\\), so \\(n(Z)=40\\).",
+      "hint": "Plug every known value into the three-set union formula and solve for the one missing piece, n(Z).",
+      "distractor_logic": [
+        "an arithmetic slip while isolating n(Z) (off by 5)",
+        "an arithmetic slip in the opposite direction (off by 5 the other way)",
+        "an arithmetic slip further off from the correct value"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "MAT11-CH01-B-001",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=\\{1,2\\}\\) and \\(B=\\{2,3\\}\\), find \\(n(P(A \\cup B))\\).",
+      "options": [
+        "\\(4\\)",
+        "\\(8\\)",
+        "\\(16\\)",
+        "\\(6\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A \\cup B = \\{1,2,3\\}\\) has 3 elements, so \\(n(P(A\\cup B)) = 2^3=8\\).",
+      "hint": "Find A∪B first, then apply the power-set formula to its size.",
+      "distractor_logic": [
+        "uses n(A)=2 instead of n(A∪B)=3 as the exponent",
+        "doubles the correct answer instead of using 2^3",
+        "an arithmetic slip in computing 2^3"
+      ],
+      "mixed_topics": [
+        "Power Set and Universal Set",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-002",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Power Set and Universal Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(n(A)=3\\) and \\(n(B)=2\\) with \\(A\\) and \\(B\\) disjoint, find \\(n(P(A \\cup B))\\).",
+      "options": [
+        "\\(32\\)",
+        "\\(8\\)",
+        "\\(16\\)",
+        "\\(40\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Disjoint sets give \\(n(A\\cup B)=3+2=5\\) (no overlap to subtract), so \\(n(P(A\\cup B)) = 2^5=32\\).",
+      "hint": "Since they're disjoint, the union size is a simple sum — then apply 2^n.",
+      "distractor_logic": [
+        "computes n(P(A)) alone, ignoring B entirely",
+        "computes 2^4 by mistakenly subtracting 1 from the union size",
+        "adds instead of using the union size as an exponent (5+... miscombination)"
+      ],
+      "mixed_topics": [
+        "Power Set and Universal Set",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-003",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A \\subset B\\), \\(n(A)=3\\), \\(n(B)=5\\), how many subsets of \\(B\\) are NOT subsets of \\(A\\)?",
+      "options": [
+        "\\(32\\)",
+        "\\(8\\)",
+        "\\(24\\)",
+        "\\(29\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Since \\(A \\subset B\\), every subset of A is automatically a subset of B too. Total subsets of B: \\(2^5=32\\); subsets of A (all of which double as subsets of B): \\(2^3=8\\). So subsets of B that are NOT subsets of A: \\(32-8=24\\).",
+      "hint": "Every subset of A is also a subset of B — remove exactly those from B's total.",
+      "distractor_logic": [
+        "reports n(P(A)) alone, not the requested difference",
+        "reports n(P(B)) alone, forgetting to remove the subsets of A",
+        "an arithmetic slip in the final subtraction"
+      ],
+      "mixed_topics": [
+        "Power Set and Universal Set",
+        "Subsets and Intervals"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-004",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=\\{1,2,3,4\\}\\), how many subsets of \\(A\\) have 3 or more elements?",
+      "options": [
+        "\\(4\\)",
+        "\\(5\\)",
+        "\\(6\\)",
+        "\\(16\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Subsets with exactly 3 elements: \\(\\{1,2,3\\},\\{1,2,4\\},\\{1,3,4\\},\\{2,3,4\\}\\) (4 of them); with exactly 4 elements: \\(A\\) itself (1). Total: \\(4+1=5\\).",
+      "hint": "List the size-3 subsets first, then add the one size-4 subset (A itself).",
+      "distractor_logic": [
+        "counts only the size-3 subsets, forgetting A itself (size 4)",
+        "over-counts by including a size-3 subset that doesn't exist",
+        "restates the total subset count 2^4=16, ignoring the size restriction"
+      ],
+      "mixed_topics": [
+        "Power Set and Universal Set",
+        "Subsets and Intervals"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-005",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a Venn diagram inside \\(n(U)=50\\), \\(n(A)=20\\), \\(n(B)=15\\), \\(n(A \\cap B)=5\\). Find \\(n((A \\cup B)')\\) — the region outside both circles.",
+      "options": [
+        "\\(30\\)",
+        "\\(20\\)",
+        "\\(15\\)",
+        "\\(10\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(n(A\\cup B)=20+15-5=30\\), so \\(n((A\\cup B)') = 50-30=20\\).",
+      "hint": "Find the union size first, then subtract from n(U) to get the outside-both region.",
+      "distractor_logic": [
+        "restates the union itself instead of its complement",
+        "an arithmetic slip in the final subtraction",
+        "confuses this with the overlap region n(A∩B)=5, doubled by mistake"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Complement of a Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-006",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "A Venn diagram inside \\(n(U)=25\\) shows: only A = 6, only B = 4, both = 3. How many elements lie outside both circles?",
+      "options": [
+        "\\(13\\)",
+        "\\(12\\)",
+        "\\(9\\)",
+        "\\(15\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Inside the two circles: \\(6+4+3=13\\); outside both: \\(25-13=12\\).",
+      "hint": "Add the three drawn regions first, then subtract that total from n(U).",
+      "distractor_logic": [
+        "an arithmetic slip while adding the three regions before subtracting",
+        "restates the 'only A' + 'only B' sum, forgetting the overlap region and the final subtraction",
+        "confuses this with n(A∪B) minus something unrelated"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Complement of a Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-007",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "A three-set Venn diagram inside \\(n(U)=30\\) shows: only A=5, only B=4, only C=3, A&B only=2, B&C only=1, A&C only=2, all three=1. Find \\(n((A \\cup B \\cup C)')\\).",
+      "options": [
+        "\\(18\\)",
+        "\\(12\\)",
+        "\\(19\\)",
+        "\\(11\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Sum all 7 regions: \\(5+4+3+2+1+2+1=18\\) inside the union; outside: \\(30-18=12\\).",
+      "hint": "Add every one of the 7 regions first, then subtract that total from n(U).",
+      "distractor_logic": [
+        "restates the union total itself, forgetting to complement it",
+        "an arithmetic slip while summing the 7 regions before subtracting",
+        "an arithmetic slip in the final subtraction from n(U)"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Complement of a Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-008",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(U=\\{1,2,\\dots,12\\}\\), \\(A\\) is the set of multiples of 2, and \\(B\\) is the set of multiples of 3, find \\((A \\cup B)'\\).",
+      "options": [
+        "\\(\\{1,5,7,11\\}\\)",
+        "\\(\\{1,5,7,11,13\\}\\)",
+        "\\(\\{2,4,6,8,9,10,12\\}\\)",
+        "\\(\\{6,12\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(A=\\{2,4,6,8,10,12\\}\\), \\(B=\\{3,6,9,12\\}\\), so \\(A\\cup B=\\{2,3,4,6,8,9,10,12\\}\\) and its complement (numbers that are neither even nor multiples of 3) is \\(\\{1,5,7,11\\}\\).",
+      "hint": "List multiples of 2 and of 3 up to 12, union them, then take what's left of U.",
+      "distractor_logic": [
+        "includes 13, which is outside U=1..12 entirely",
+        "this is A∪B itself, not its complement",
+        "wrongly restricts to only multiples of 6 (the intersection A∩B), a different set entirely"
+      ],
+      "mixed_topics": [
+        "Complement of a Set",
+        "Sets and Representation"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-009",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=[2,9)\\) and \\(B=(5,12]\\), find \\(A \\cap B\\).",
+      "options": [
+        "\\((5,9)\\)",
+        "\\([2,12]\\)",
+        "\\([5,9]\\)",
+        "\\((2,5)\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Combine both restrictions: \\(x \\ge 2, x<9, x>5, x\\le 12\\). The tightest bounds are \\(5<x<9\\), giving \\((5,9)\\) (both endpoints excluded, since 5 is excluded by B and 9 is excluded by A).",
+      "hint": "Take the larger lower bound and the smaller upper bound, keeping whichever bracket type was strict.",
+      "distractor_logic": [
+        "this is A∪B, the combined span, not the overlap",
+        "wrongly includes both endpoints, ignoring that each is excluded by one of the two intervals",
+        "picks the wrong pair of bounds — the lower bound should come from B (5), not A (2)"
+      ],
+      "mixed_topics": [
+        "Subsets and Intervals",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-010",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=[1,10]\\) and \\(B=[4,15]\\), find \\(A \\cup B\\).",
+      "options": [
+        "\\([1,15]\\)",
+        "\\([4,10]\\)",
+        "\\([1,10]\\cup[4,15]\\)",
+        "\\([1,4]\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since the intervals overlap (both contain \\([4,10]\\)), their union is simply the full combined span: \\([1,15]\\).",
+      "hint": "When two intervals overlap, their union is just one continuous interval from the smallest to the largest endpoint.",
+      "distractor_logic": [
+        "this is A∩B, the overlap only, not the union",
+        "correct elements but written as an un-simplified overlapping pair rather than the single merged interval",
+        "this is only the small overlap region, far short of the full union"
+      ],
+      "mixed_topics": [
+        "Subsets and Intervals",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-011",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=(2,6]\\) and \\(B=[6,10)\\), find \\(A \\cup B\\).",
+      "options": [
+        "\\((2,10)\\)",
+        "\\((2,10]\\)",
+        "\\([2,10)\\)",
+        "\\(\\{6\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The two intervals meet exactly at 6 (included by both), joining into one continuous stretch. The union excludes 2 (excluded by A) and excludes 10 (excluded by B), giving \\((2,10)\\).",
+      "hint": "Check what happens right at the meeting point 6, then check each outer endpoint separately.",
+      "distractor_logic": [
+        "wrongly includes 10, but B excludes 10",
+        "wrongly includes 2, but A excludes 2",
+        "this is only the shared meeting point A∩B={6}, not the full union"
+      ],
+      "mixed_topics": [
+        "Subsets and Intervals",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-012",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=[1,3]\\) and \\(B=(5,8)\\), find \\(A \\cap B\\).",
+      "options": [
+        "\\(\\emptyset\\)",
+        "\\((3,5)\\)",
+        "\\([1,8)\\)",
+        "\\(\\{3,5\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Every value in A is at most 3, and every value in B is greater than 5 — the two intervals never meet, so \\(A \\cap B = \\emptyset\\).",
+      "hint": "Compare the upper bound of A with the lower bound of B — is there any overlap at all?",
+      "distractor_logic": [
+        "describes the gap BETWEEN the two intervals, which is not the same as their (empty) intersection",
+        "this is close to A∪B's span, not the intersection",
+        "picks the two boundary numbers instead of recognising there's no overlap at all"
+      ],
+      "mixed_topics": [
+        "Subsets and Intervals",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-013",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "bonus",
+      "question": "A club's membership set has a power set with exactly 128 elements. If 5 more members join, how many elements will the NEW power set have?",
+      "options": [
+        "\\(133\\)",
+        "\\(256\\)",
+        "\\(4096\\)",
+        "\\(640\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(2^n=128\\) gives \\(n=7\\) current members. With 5 more, \\(n=12\\), so the new power set has \\(2^{12}=4096\\) elements.",
+      "hint": "First find the current membership count from 128, then add 5 before reapplying the power-set formula.",
+      "distractor_logic": [
+        "adds 128 and 5 directly, treating the power-set size like a plain count",
+        "doubles 128 instead of recomputing 2^12 from the new member count",
+        "an arithmetic slip while computing 2^12"
+      ],
+      "mixed_topics": [
+        "Practical Problems on Sets",
+        "Power Set and Universal Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-014",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "bonus",
+      "question": "A study group has 5 students. A project team can be any non-empty group of these students. How many different project teams are possible?",
+      "options": [
+        "\\(32\\)",
+        "\\(31\\)",
+        "\\(25\\)",
+        "\\(120\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Total subsets: \\(2^5=32\\); removing the empty team (no students) leaves \\(31\\) valid non-empty teams.",
+      "hint": "Count all subsets first, then exclude the one 'empty team' case.",
+      "distractor_logic": [
+        "forgets to exclude the empty team case",
+        "confuses this with 5×5, unrelated to subset counting",
+        "confuses this with 5! (arrangements), not subset counting"
+      ],
+      "mixed_topics": [
+        "Practical Problems on Sets",
+        "Power Set and Universal Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-015",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Practical Problems on Sets",
+      "level": 3,
+      "type": "bonus",
+      "question": "A survey's 'music genre' interest set has a power set of size 64. The school adds one more genre to the set. Find the new power set's size.",
+      "options": [
+        "\\(65\\)",
+        "\\(64\\)",
+        "\\(128\\)",
+        "\\(32\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(2^n=64\\) gives \\(n=6\\) current genres; with one more, \\(n=7\\), so \\(2^7=128\\).",
+      "hint": "Find the current count from 64 first, add 1, then reapply the power-set formula.",
+      "distractor_logic": [
+        "adds 1 to 64 directly, treating the power-set size like a plain count",
+        "restates the old power-set size, ignoring the new genre entirely",
+        "halves 64 instead of computing 2^7 with the new count"
+      ],
+      "mixed_topics": [
+        "Practical Problems on Sets",
+        "Power Set and Universal Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-016",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a survey of 60 people, 35 like tea. Of the people who do NOT like tea, 10 like coffee. How many people like neither tea nor coffee?",
+      "options": [
+        "\\(25\\)",
+        "\\(15\\)",
+        "\\(10\\)",
+        "\\(45\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "People who don't like tea: \\(60-35=25\\) (this is the complement of the tea-drinkers). Of those 25, 10 like coffee, leaving \\(25-10=15\\) who like neither.",
+      "hint": "First find the complement of 'likes tea', then remove the coffee-drinkers from within that group.",
+      "distractor_logic": [
+        "stops at the complement of tea, forgetting to remove the coffee-drinkers within it",
+        "restates the given coffee-among-non-tea count directly",
+        "an arithmetic slip in the final subtraction"
+      ],
+      "mixed_topics": [
+        "Complement of a Set",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-017",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a school of 80 students, 50 like Physics. Of the students who do NOT like Physics, 18 like Chemistry. How many students dislike both Physics and Chemistry?",
+      "options": [
+        "\\(30\\)",
+        "\\(18\\)",
+        "\\(12\\)",
+        "\\(62\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Students who dislike Physics: \\(80-50=30\\). Of these, 18 like Chemistry, so those who dislike BOTH are \\(30-18=12\\).",
+      "hint": "Start from the complement of 'likes Physics', then remove the Chemistry-likers within that group.",
+      "distractor_logic": [
+        "restates the complement of Physics alone, without removing the Chemistry-likers",
+        "restates the given Chemistry-among-non-Physics count directly",
+        "an arithmetic slip combining the two given numbers incorrectly"
+      ],
+      "mixed_topics": [
+        "Complement of a Set",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-018",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a college of 200 students, 120 are in the Science club. Every student NOT in the Science club is offered a seat in the Arts club; 55 of them decline. How many join the Arts club?",
+      "options": [
+        "\\(80\\)",
+        "\\(55\\)",
+        "\\(25\\)",
+        "\\(145\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Not in Science club: \\(200-120=80\\) (the complement). Of these, 55 decline, so \\(80-55=25\\) join the Arts club.",
+      "hint": "First find the complement of the Science club, then subtract those who decline.",
+      "distractor_logic": [
+        "restates the complement of the Science club, forgetting to subtract the decliners",
+        "restates the given decline count directly",
+        "an arithmetic slip in the final subtraction"
+      ],
+      "mixed_topics": [
+        "Complement of a Set",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-019",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A\\) is the set of factors of 24 and \\(B\\) is the set of factors of 36, find \\(A \\cap B\\).",
+      "options": [
+        "\\(\\{1,2,3,4,6,12\\}\\)",
+        "\\(\\{1,2,3,4,6,8,12,24\\}\\)",
+        "\\(\\{1,2,3,4,6,9,12,18,36\\}\\)",
+        "\\(\\{12\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Factors of 24: \\(\\{1,2,3,4,6,8,12,24\\}\\); factors of 36: \\(\\{1,2,3,4,6,9,12,18,36\\}\\). Their common elements are \\(\\{1,2,3,4,6,12\\}\\) — the common factors, with 12 as the highest.",
+      "hint": "List both full factor sets, then keep only what's shared.",
+      "distractor_logic": [
+        "this is A itself (all factors of 24), not the intersection",
+        "this is B itself (all factors of 36), not the intersection",
+        "stops at only the highest common factor, missing the smaller shared factors"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-020",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=\\{x \\in \\mathbb{N}: x \\le 40, x \\text{ a multiple of } 4\\}\\) and \\(B=\\{x \\in \\mathbb{N}: x \\le 40, x \\text{ a multiple of } 6\\}\\), find \\(A \\cap B\\).",
+      "options": [
+        "\\(\\{12,24,36\\}\\)",
+        "\\(\\{4,8,12,\\dots,40\\}\\)",
+        "\\(\\{6,12,18,\\dots,36\\}\\)",
+        "\\(\\{24\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Numbers that are multiples of BOTH 4 and 6 (up to 40) are exactly the multiples of their LCM, 12: \\(\\{12,24,36\\}\\) (48 would be next, but exceeds 40).",
+      "hint": "A number in both lists must be a multiple of the LCM of 4 and 6.",
+      "distractor_logic": [
+        "this is A itself, all multiples of 4, not restricted to also being multiples of 6",
+        "this is B itself, all multiples of 6, not restricted to also being multiples of 4",
+        "stops at only one multiple of 12, missing 12 and 36"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-021",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=\\{x \\in \\mathbb{N}: x \\le 50, x \\text{ a perfect square}\\}\\) and \\(B=\\{x \\in \\mathbb{N}: x \\le 50, x \\text{ a perfect cube}\\}\\), find \\(A \\cap B\\).",
+      "options": [
+        "\\(\\{1\\}\\)",
+        "\\(\\{1,64\\}\\)",
+        "\\(\\emptyset\\)",
+        "\\(\\{1,8,9,16,27\\}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Squares up to 50: \\(1,4,9,16,25,36,49\\). Cubes up to 50: \\(1,8,27\\). The only number that's both a perfect square AND a perfect cube (a perfect sixth power) within this range is \\(1\\) (the next one, 64, exceeds 50).",
+      "hint": "List squares and cubes up to 50 separately, then find what's common to both short lists.",
+      "distractor_logic": [
+        "wrongly includes 64, which exceeds the x≤50 limit",
+        "wrongly assumes no perfect sixth power exists in range, but 1 itself always qualifies",
+        "mixes together numbers that are only squares OR only cubes, not both at once"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-022",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(A=\\{x \\in \\mathbb{Z}: x^2-5x+6=0\\}\\) and \\(B=\\{x : x \\text{ is a factor of } 6\\}\\), find \\(A \\cap B\\).",
+      "options": [
+        "\\(\\{2,3\\}\\)",
+        "\\(\\{1,2,3,6\\}\\)",
+        "\\(\\{6\\}\\)",
+        "\\(\\emptyset\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Solving \\(x^2-5x+6=(x-2)(x-3)=0\\) gives \\(A=\\{2,3\\}\\). Factors of 6: \\(B=\\{1,2,3,6\\}\\). Both 2 and 3 appear in B, so \\(A \\cap B=\\{2,3\\}\\).",
+      "hint": "Solve the quadratic first to get A explicitly, then check which of its roots are also factors of 6.",
+      "distractor_logic": [
+        "this is B itself, all factors of 6, not restricted to also being a root of the quadratic",
+        "wrongly picks only the factor 6 itself, which is not even a root of the quadratic",
+        "wrongly assumes no overlap, but both roots happen to be factors of 6"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-023",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a survey of 40 students about pets: 22 have a dog, 18 have a cat, and 10 have neither. How many have both a dog and a cat?",
+      "options": [
+        "\\(30\\)",
+        "\\(10\\)",
+        "\\(8\\)",
+        "\\(12\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At least one pet: \\(40-10=30\\). Then \\(n(\\text{both}) = 22+18-30=10\\).",
+      "hint": "Find the 'at least one' count from the total and the 'neither' count first, then rearrange the union formula.",
+      "distractor_logic": [
+        "restates the 'at least one' count, not the overlap",
+        "an arithmetic slip while rearranging the union formula",
+        "an arithmetic slip in the opposite direction"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-024",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a survey of 50 commuters: 28 use route A, 24 use route B, and 6 use neither route. How many use BOTH routes?",
+      "options": [
+        "\\(44\\)",
+        "\\(8\\)",
+        "\\(18\\)",
+        "\\(6\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At least one route: \\(50-6=44\\). Then \\(n(\\text{both}) = 28+24-44=8\\).",
+      "hint": "Find the 'at least one' count first, then rearrange the union formula for the overlap.",
+      "distractor_logic": [
+        "restates the 'at least one' count, not the overlap itself",
+        "confuses this with 'only A' minus 'only B' or a similar unrelated combination",
+        "restates the given 'neither' count directly"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-025",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a group of 120 students playing three sports: 55 play S1, 45 play S2, 40 play S3; 20 play S1&S2, 15 play S2&S3, 18 play S1&S3; 8 play all three. Find how many play AT LEAST two of the three sports.",
+      "options": [
+        "\\(37\\)",
+        "\\(95\\)",
+        "\\(53\\)",
+        "\\(25\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At-least-two = each pairwise-only region plus the triple region: \\((20-8)+(15-8)+(18-8)+8 = 12+7+10+8=37\\).",
+      "hint": "Adjust each pairwise total by removing the triple-count once, then add the triple region back in.",
+      "distractor_logic": [
+        "restates the full union (at least one), not just at-least-two",
+        "an arithmetic slip while combining the pairwise-only and triple regions",
+        "restates the 'none' count from a different calculation, unrelated to this question"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-026",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "Using the same 120-student, three-sport survey (55/45/40, pairwise 20/15/18, all three 8), find how many play AT MOST one sport.",
+      "options": [
+        "\\(37\\)",
+        "\\(83\\)",
+        "\\(95\\)",
+        "\\(25\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "'At most one' is everyone except those playing two or more: \\(120-37=83\\) (where 37 was the at-least-two count found earlier).",
+      "hint": "'At most one' and 'at least two' are complementary within the full group of 120 — subtract one from the total to get the other.",
+      "distractor_logic": [
+        "restates the at-least-two count instead of its complement within 120",
+        "restates the union (at least one) count, not at-most-one",
+        "restates an unrelated derived value from this scenario"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-027",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(U=\\{1,2,\\dots,15\\}\\), \\(A\\) is multiples of 3, and \\(B\\) is multiples of 5, find \\(n((A \\cup B)')\\).",
+      "options": [
+        "\\(7\\)",
+        "\\(8\\)",
+        "\\(9\\)",
+        "\\(6\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(A=\\{3,6,9,12,15\\}\\) (5 elements), \\(B=\\{5,10,15\\}\\) (3 elements), \\(A\\cap B=\\{15\\}\\) (1 element, since 15 is a multiple of both). So \\(n(A\\cup B)=5+3-1=7\\), and the complement has \\(15-7=8\\) elements.",
+      "hint": "Find n(A), n(B), and n(A∩B) first (watch for the shared multiple of 15), then use the union formula before complementing.",
+      "distractor_logic": [
+        "stops at n(A∪B)=7 itself, forgetting to complement it against n(U)=15",
+        "an arithmetic slip in computing n(A∪B) before complementing",
+        "an arithmetic slip in the final subtraction from 15"
+      ],
+      "mixed_topics": [
+        "Complement of a Set",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-028",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Complement of a Set",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(U=\\{1,2,\\dots,20\\}\\), \\(A\\) is even numbers, and \\(B\\) is multiples of 5, find \\(n(A' \\cap B')\\).",
+      "options": [
+        "\\(10\\)",
+        "\\(12\\)",
+        "\\(8\\)",
+        "\\(6\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "By De Morgan's law, \\(A' \\cap B' = (A \\cup B)'\\) — the numbers that are neither even nor a multiple of 5: \\(\\{1,3,7,9,11,13,17,19\\}\\), which has 8 elements.",
+      "hint": "Use De Morgan's law to turn this into the complement of a union, which is often easier to count directly.",
+      "distractor_logic": [
+        "restates n(A∪B)=12 itself, forgetting this question asks for its complement",
+        "an arithmetic slip while counting the numbers that are neither even nor a multiple of 5",
+        "restates n(A) alone (10 evens), ignoring the multiples-of-5 restriction entirely"
+      ],
+      "mixed_topics": [
+        "Complement of a Set",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-029",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "Let \\(A\\) be the set of distinct digits appearing in the number 122333. Find \\(n(P(A))\\).",
+      "options": [
+        "\\(6\\)",
+        "\\(8\\)",
+        "\\(64\\)",
+        "\\(36\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The distinct digits in 122333 are \\(\\{1,2,3\\}\\) — only 3 distinct digits despite the number having 6 digits total. So \\(n(P(A)) = 2^3=8\\).",
+      "hint": "First find how many DISTINCT digits there are (ignore repeats), then apply the power-set formula.",
+      "distractor_logic": [
+        "uses the total digit count (6) instead of the distinct digit count (3) as the exponent",
+        "an arithmetic slip in computing 2^3",
+        "squares the distinct digit count instead of using it as a power of 2"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Power Set and Universal Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-030",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "Let \\(A=\\{x \\in \\mathbb{Z}: -5 \\le x \\le 5, |x|=3\\}\\). Find \\(n(P(A))\\).",
+      "options": [
+        "\\(2\\)",
+        "\\(4\\)",
+        "\\(8\\)",
+        "\\(1\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(|x|=3\\) gives \\(x=3\\) or \\(x=-3\\), both within the range, so \\(A=\\{-3,3\\}\\) has 2 elements, and \\(n(P(A)) = 2^2=4\\).",
+      "hint": "First solve |x|=3 to find A explicitly (there are two solutions), then apply the power-set formula.",
+      "distractor_logic": [
+        "reports n(A) itself, forgetting to apply the power-set formula",
+        "an arithmetic slip in computing 2^2",
+        "wrongly assumes only one solution to |x|=3, missing the negative root"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Power Set and Universal Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-031",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "A coach has 4 available players. How many different subsets of AT LEAST 2 players can be chosen for a match?",
+      "options": [
+        "\\(16\\)",
+        "\\(11\\)",
+        "\\(6\\)",
+        "\\(4\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Total subsets of a 4-player set: \\(2^4=16\\). Removing the empty subset (1) and the four 1-player subsets (4) leaves \\(16-1-4=11\\) subsets with 2 or more players.",
+      "hint": "Start from all 16 subsets, then remove only the empty set and the 4 singleton subsets.",
+      "distractor_logic": [
+        "restates the total subset count, forgetting to exclude the small subsets",
+        "restates only the count of 2-player subsets, missing the 3-player and 4-player ones",
+        "restates n(A) itself, unrelated to the subset count being asked"
+      ],
+      "mixed_topics": [
+        "Subsets and Intervals",
+        "Power Set and Universal Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-032",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "A charity has 5 different fruit baskets available. How many different subsets of AT LEAST 3 baskets can be donated together?",
+      "options": [
+        "\\(32\\)",
+        "\\(10\\)",
+        "\\(16\\)",
+        "\\(26\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Total subsets: \\(2^5=32\\). Subtracting subsets with 0, 1, or 2 baskets (\\(1+5+10=16\\)) leaves \\(32-16=16\\) subsets with 3 or more baskets.",
+      "hint": "Total subsets minus the ones with fewer than 3 baskets (sizes 0, 1, and 2) gives the answer.",
+      "distractor_logic": [
+        "restates the total subset count, forgetting to exclude the smaller ones",
+        "restates only the count of exactly-2-basket subsets",
+        "an arithmetic slip while removing the small-subset counts from the total"
+      ],
+      "mixed_topics": [
+        "Subsets and Intervals",
+        "Power Set and Universal Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-033",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "Students are numbered 1 to 20. Let \\(A=\\{x : x \\le 20, x \\text{ is prime}\\}\\) — every prime-numbered student likes Chess. Separately, 12 students in total like Chess. How many non-prime-numbered students also like Chess?",
+      "options": [
+        "\\(8\\)",
+        "\\(12\\)",
+        "\\(4\\)",
+        "\\(20\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Primes up to 20: \\(\\{2,3,5,7,11,13,17,19\\}\\) — 8 students, all of whom like Chess. Of the 12 total Chess-likers, the remaining \\(12-8=4\\) must be non-prime-numbered.",
+      "hint": "First count the prime-numbered students (all guaranteed Chess-likers), then subtract that from the total Chess-likers.",
+      "distractor_logic": [
+        "restates the prime count itself, not the requested remainder",
+        "restates the total Chess-likers, forgetting to subtract the prime-numbered ones",
+        "restates the total number of students, unrelated to the Chess-liking count"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-034",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Sets and Representation",
+      "level": 3,
+      "type": "bonus",
+      "question": "People are numbered 1 to 30. Let \\(A=\\{x : x \\le 30, x \\text{ a multiple of } 7\\}\\) — everyone numbered a multiple of 7 prefers tea. Separately, 15 people in total prefer tea. How many people whose number is NOT a multiple of 7 also prefer tea?",
+      "options": [
+        "\\(4\\)",
+        "\\(11\\)",
+        "\\(15\\)",
+        "\\(26\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Multiples of 7 up to 30: \\(\\{7,14,21,28\\}\\) — 4 people, all guaranteed tea-preferrers. Of the 15 total tea-preferrers, \\(15-4=11\\) must be non-multiples of 7.",
+      "hint": "Count the multiple-of-7 people first (all guaranteed), then subtract from the total tea-preferrers.",
+      "distractor_logic": [
+        "restates the multiple-of-7 count itself, not the requested remainder",
+        "restates the total tea-preferrers, forgetting to subtract the multiples of 7",
+        "an arithmetic slip in the final subtraction"
+      ],
+      "mixed_topics": [
+        "Sets and Representation",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-035",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "If \\(n(A)=20\\), \\(n(B)=15\\), \\(n(A \\cap B)=5\\), find \\(n((A-B) \\cup (B-A))\\) — the number of elements in exactly one of the two circles.",
+      "options": [
+        "\\(35\\)",
+        "\\(30\\)",
+        "\\(25\\)",
+        "\\(10\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(n(A-B) = 20-5=15\\) and \\(n(B-A) = 15-5=10\\); since these two regions don't overlap, \\(n((A-B)\\cup(B-A)) = 15+10=25\\).",
+      "hint": "Find each one-sided 'only' region first (subtracting the overlap once from each), then add them.",
+      "distractor_logic": [
+        "adds n(A)+n(B) directly, forgetting to remove the shared region from each side first",
+        "an arithmetic slip while combining the two 'only' regions",
+        "restates the overlap region alone, not the exactly-one-set total"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-036",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "A three-set Venn diagram shows: only A=4, only B=6, only C=5, A&B only=2, B&C only=3, A&C only=1, all three=2. Find \\(n((A \\cup B) - C)\\) — elements in A or B, but not C.",
+      "options": [
+        "\\(12\\)",
+        "\\(23\\)",
+        "\\(6\\)",
+        "\\(15\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Any region touching C (only C, B&C only, A&C only, all three) must be excluded. What remains of \\(A \\cup B\\) is: only A + only B + A&B only = \\(4+6+2=12\\).",
+      "hint": "Start from A∪B's regions, then remove every region that also touches C.",
+      "distractor_logic": [
+        "restates the full n(A∪B∪C), forgetting to exclude anything touching C",
+        "restates only the 'only C' complement-style count, not the requested (A∪B)-C region",
+        "an arithmetic slip while combining the three valid regions"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Operations on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-037",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Venn Diagrams",
+      "level": 3,
+      "type": "bonus",
+      "question": "A Venn diagram inside \\(n(U)=30\\) shows only A=8, only B=5, both=3. Find \\(n(A' \\cap B')\\).",
+      "options": [
+        "\\(16\\)",
+        "\\(14\\)",
+        "\\(13\\)",
+        "\\(11\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "By De Morgan's law, \\(A' \\cap B' = (A \\cup B)'\\) — everything outside both circles. Inside the circles: \\(8+5+3=16\\); outside: \\(30-16=14\\).",
+      "hint": "This asks for the 'outside both circles' region — add the three drawn regions, then subtract from n(U).",
+      "distractor_logic": [
+        "an arithmetic slip while adding the three regions before subtracting",
+        "restates the 'both' region tripled by mistake, unrelated to the actual computation",
+        "an arithmetic slip in the final subtraction from n(U)"
+      ],
+      "mixed_topics": [
+        "Venn Diagrams",
+        "Complement of a Set"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-038",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 3,
+      "type": "bonus",
+      "question": "Of 45 students, 28 study French, 20 study German, and 10 study both. How many study French ONLY (and not German)?",
+      "options": [
+        "\\(28\\)",
+        "\\(18\\)",
+        "\\(10\\)",
+        "\\(8\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "French-only is French's total minus the overlap with German: \\(28-10=18\\).",
+      "hint": "Subtract the overlap from the French total to isolate 'French only'.",
+      "distractor_logic": [
+        "restates the full French total, forgetting to remove the overlap with German",
+        "restates the given overlap value directly",
+        "an arithmetic slip in the subtraction"
+      ],
+      "mixed_topics": [
+        "Operations on Sets",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-039",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Operations on Sets",
+      "level": 3,
+      "type": "bonus",
+      "question": "Of 60 employees, 35 know Excel, 25 know Python, and 12 know both. How many know EXACTLY ONE of the two tools?",
+      "options": [
+        "\\(48\\)",
+        "\\(36\\)",
+        "\\(60\\)",
+        "\\(23\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Excel-only: \\(35-12=23\\); Python-only: \\(25-12=13\\); exactly one: \\(23+13=36\\).",
+      "hint": "Find each 'only' group separately (removing the shared 12 from each), then add them.",
+      "distractor_logic": [
+        "adds the two raw totals without removing the shared 12 from each side first",
+        "restates the total number of employees, unrelated to the exactly-one count",
+        "restates only the Excel-only portion, forgetting to add the Python-only portion"
+      ],
+      "mixed_topics": [
+        "Operations on Sets",
+        "Practical Problems on Sets"
+      ]
+    },
+    {
+      "id": "MAT11-CH01-B-040",
+      "chapter": 1,
+      "chapter_name": "Sets",
+      "topic": "Subsets and Intervals",
+      "level": 3,
+      "type": "bonus",
+      "question": "A Venn diagram shows circle A entirely inside circle B (\\(A \\subset B\\)), with \\(n(A)=12\\) and \\(n(B)=30\\). Find \\(n(B-A)\\).",
+      "options": [
+        "\\(42\\)",
+        "\\(18\\)",
+        "\\(30\\)",
+        "\\(12\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Since A is entirely inside B, \\(A \\cap B = A\\), so \\(n(B-A) = n(B)-n(A) = 30-12=18\\) — the part of B lying outside A.",
+      "hint": "Because A is fully contained in B, removing A's elements from B is just a simple subtraction.",
+      "distractor_logic": [
+        "adds instead of subtracting",
+        "restates n(B) itself, forgetting to remove A's elements",
+        "restates n(A) itself, not the requested region of B outside A"
+      ],
+      "mixed_topics": [
+        "Subsets and Intervals",
+        "Venn Diagrams"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "name": "Sets and Representation",
+      "summary": "A <b>set</b> is a well-defined collection of distinct objects &mdash; 'well-defined' means there's never any doubt about whether something belongs. Sets are written two ways: <b>roster form</b> lists every element, e.g. \\(A=\\{1,2,3,4\\}\\); <b>set-builder form</b> states the defining property, e.g. \\(A=\\{x : x \\in \\mathbb{N}, x \\le 4\\}\\). An element's membership uses \\(\\in\\) (belongs to), never \\(\\subset\\) (which relates two sets). Special cases: the <b>empty set</b> \\(\\emptyset\\) has zero elements; a <b>singleton</b> has exactly one; a set is <b>finite</b> if counting its elements terminates, otherwise <b>infinite</b>. Two sets are <b>equal</b> (\\(A=B\\)) only if they contain exactly the same elements &mdash; repeating an element in a listing changes nothing. Two sets are merely <b>equivalent</b> if they simply have the same number of elements, regardless of what those elements are.",
+      "key_formulas": [
+        "\\(x \\in A\\) (membership) vs \\(A \\subset B\\) (containment) &mdash; never interchange them",
+        "\\(A=B\\) iff every element of A is in B AND every element of B is in A",
+        "Equivalent sets: \\(n(A)=n(B)\\); Equal sets: identical elements (equal \\(\\Rightarrow\\) equivalent, not the converse)"
+      ],
+      "worked_example": "Write \\(A=\\{x : x \\in \\mathbb{Z}, x^2=9\\}\\) in roster form. Solve \\(x^2=9\\): x = 3 or x = −3, both integers. So \\(A=\\{-3,3\\}\\) &mdash; a finite set with \\(n(A)=2\\).",
+      "common_mistakes": [
+        "Writing \\(2 \\subset A\\) for an element instead of \\(2 \\in A\\) (element-vs-subset confusion)",
+        "Treating {0} or {∅} as the empty set, when only \\(\\emptyset\\) itself has zero elements",
+        "Calling two sets 'equal' just because they have the same size (that's only 'equivalent')",
+        "Assuming a repeated element in a listing like \\(\\{1,1,2\\}\\) changes the set (it doesn't &mdash; it's still {1,2})"
+      ],
+      "question_count": 23
+    },
+    {
+      "name": "Subsets and Intervals",
+      "summary": "\\(A \\subset B\\) means every element of A is also in B &mdash; it says nothing about relative sizes, and A can even equal B. A <b>proper subset</b> (\\(B \\subsetneq A\\)) must be strictly smaller: contained but not equal. Two universal facts: every set is a subset of itself (\\(A \\subset A\\)), and the <b>empty set is a subset of every set</b> (\\(\\emptyset \\subset A\\)), because there's no element in \\(\\emptyset\\) that could ever violate the condition. Subsets of \\(\\mathbb{R}\\) are often written as <b>intervals</b>: a square bracket includes the endpoint (closed, from \\(\\le\\) or \\(\\ge\\)), a round bracket excludes it (open, from strict \\(<\\) or \\(>\\)). So \\([a,b]\\) includes both ends, \\((a,b)\\) excludes both, and \\([a,b)\\) or \\((a,b]\\) mix the two. Reading interval notation correctly &mdash; endpoint by endpoint &mdash; is essential for both algebra and Venn-diagram problems later in the syllabus.",
+      "key_formulas": [
+        "\\(A \\subset A\\) always; \\(\\emptyset \\subset A\\) for every set A",
+        "Bracket rule: \\([\\) / \\(]\\) = included (≤, ≥); \\((\\) / \\()\\) = excluded (<, >)",
+        "A set with n elements has \\(2^n\\) subsets in total, and \\(2^n-1\\) proper subsets"
+      ],
+      "worked_example": "Is \\(B=\\{2,4,6\\}\\) a subset of \\(A=\\{1,2,3,4,5,6\\}\\)? Check each element of B: 2, 4, and 6 are all in A. So \\(B \\subset A\\). Separately, \\(\\{x \\in \\mathbb{R}: -3 \\le x<4\\}\\) in interval form is \\([-3,4)\\) &mdash; closed at −3 (≤), open at 4 (strict <).",
+      "common_mistakes": [
+        "Reversing which set is the subset, e.g. writing \\(B \\subset A\\) as \\(A \\subset B\\)",
+        "Thinking \\(\\emptyset\\) is a subset of only finite or only some sets, instead of every set without exception",
+        "Swapping bracket meaning &mdash; treating round brackets as 'included' and square as 'excluded'",
+        "Confusing 'subset' (\\(\\subset\\), sizes can tie) with 'proper subset' (\\(\\subsetneq\\), must be strictly smaller)"
+      ],
+      "question_count": 24
+    },
+    {
+      "name": "Power Set and Universal Set",
+      "summary": "The <b>power set</b> \\(P(A)\\) is the set of ALL possible subsets of A, including the empty set and A itself as members. If \\(n(A)=n\\), then \\(n(P(A))=2^n\\), because each of the n elements independently is either 'in' or 'out' of a given subset &mdash; 2 choices per element. A useful special case: \\(P(\\emptyset) = \\{\\emptyset\\}\\), a set with exactly one element (the empty set has exactly one subset, itself). Since \\(\\emptyset \\subset A\\) always holds, \\(\\emptyset \\in P(A)\\) for every set A, without exception. The <b>universal set</b> \\(U\\) is a separate but related idea: it's simply whatever 'everything relevant to this problem' means in context &mdash; not a fixed mathematical object, and not the same thing as a power set. U might be all students in a school for one problem and all integers for another; every other set under discussion is then treated as a subset of that U.",
+      "key_formulas": [
+        "\\(n(P(A)) = 2^{n(A)}\\)",
+        "\\(P(\\emptyset) = \\{\\emptyset\\}\\) (has 1 element, is NOT itself empty)",
+        "\\(\\emptyset \\in P(A)\\) and \\(A \\in P(A)\\) for every set A"
+      ],
+      "worked_example": "If \\(A=\\{x,y,z\\}\\), then \\(n(A)=3\\) so \\(n(P(A))=2^3=8\\). Listed out: \\(P(A)=\\{\\emptyset,\\{x\\},\\{y\\},\\{z\\},\\{x,y\\},\\{y,z\\},\\{x,z\\},\\{x,y,z\\}\\}\\) &mdash; exactly 8 subsets.",
+      "common_mistakes": [
+        "Computing \\(2n\\) or \\(n^2\\) instead of \\(2^n\\) for the subset count",
+        "Forgetting to include \\(\\emptyset\\) or A itself when listing out a power set",
+        "Treating \\(P(\\emptyset)\\) as empty, when it actually contains one element",
+        "Confusing the universal set U (context-dependent, just 'everything relevant here') with a fixed set like \\(\\mathbb{R}\\)"
+      ],
+      "question_count": 16
+    },
+    {
+      "name": "Venn Diagrams",
+      "summary": "A <b>Venn diagram</b> is the standard picture for set relationships: the universal set U is drawn as a rectangle, and individual sets are circles (or ovals) inside it. The overlap of two circles is \\(A \\cap B\\); the two circles combined is \\(A \\cup B\\); the region inside the rectangle but outside every circle is \\((A \\cup B)'\\) (or \\((A \\cup B \\cup C)'\\) for three sets). Circles that don't touch at all represent <b>disjoint</b> sets (\\(A \\cap B=\\emptyset\\)). For two sets, the diagram naturally splits into 4 regions: only A, only B, both, and neither. For three sets it splits into 8: three 'only' regions, three 'pairwise-only' regions, one 'all three' region, and 'none'. Reading a labelled diagram is mostly arithmetic once the regions are identified correctly &mdash; e.g. \\(n(A) = \\) 'only A' + 'A & B only' + 'A & C only' + 'all three', since every one of those sub-regions lies inside circle A.",
+      "key_formulas": [
+        "2-set regions: only A, only B, both, neither (4 total, non-overlapping)",
+        "3-set regions: only A, only B, only C, A&B only, B&C only, A&C only, all three (7 total) + none",
+        "\\(n(A) = \\) sum of every region that lies inside circle A"
+      ],
+      "worked_example": "A 2-circle diagram shows only-A = 5, only-B = 7, both = 3. Then \\(n(A \\cup B)=5+7+3=15\\) (all three regions together), and if \\(n(U)=20\\), the 'neither' region is \\(20-15=5\\).",
+      "common_mistakes": [
+        "Reading the overlap region as \\(A \\cup B\\) instead of \\(A \\cap B\\)",
+        "Forgetting the overlap region entirely when adding up regions for the union",
+        "Double-counting the 'all three' region when summing a three-set diagram",
+        "Leaving out one of the seven regions when computing \\(n(A \\cup B \\cup C)\\) from a labelled diagram"
+      ],
+      "question_count": 24
+    },
+    {
+      "name": "Operations on Sets",
+      "summary": "Three core operations combine sets. <b>Union</b> \\(A \\cup B = \\{x : x \\in A \\text{ or } x \\in B\\}\\) collects everything from either set. <b>Intersection</b> \\(A \\cap B = \\{x : x \\in A \\text{ and } x \\in B\\}\\) keeps only what's shared. <b>Difference</b> \\(A-B\\) keeps A's elements after removing anything also in B (note \\(A-B\\) and \\(B-A\\) are generally different sets). If A and B are disjoint, \\(A \\cap B = \\emptyset\\). Several algebraic laws govern these operations: <b>commutative</b> (\\(A \\cup B = B \\cup A\\), \\(A \\cap B = B \\cap A\\)), <b>associative</b> (regrouping three sets under the same operation doesn't change the result), <b>distributive</b> (\\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\), and the mirror version swapping \\(\\cup\\) and \\(\\cap\\)), and <b>idempotent</b> (\\(A \\cup A = A \\cap A = A\\)). Multi-set expressions like \\(A \\cap (B \\cup C)\\) are always evaluated bracket-first, just like ordinary algebra.",
+      "key_formulas": [
+        "\\(A \\cup B, \\ A \\cap B, \\ A-B\\) (union, intersection, difference)",
+        "Commutative: \\(A \\cup B=B \\cup A\\); Distributive: \\(A \\cup (B\\cap C)=(A\\cup B)\\cap(A\\cup C)\\)",
+        "Idempotent: \\(A \\cup A = A \\cap A = A\\); Identity: \\(A \\cup \\emptyset=A\\), \\(A \\cap \\emptyset=\\emptyset\\)"
+      ],
+      "worked_example": "If \\(A=\\{1,2,3\\}\\), \\(B=\\{2,3,4\\}\\), \\(C=\\{3,4,5\\}\\), find \\(A \\cap (B \\cup C)\\). First \\(B \\cup C=\\{2,3,4,5\\}\\), then \\(A \\cap \\{2,3,4,5\\} = \\{2,3\\}\\).",
+      "common_mistakes": [
+        "Swapping union and intersection &mdash; treating 'or' (union) as 'and' (intersection) or vice versa",
+        "Computing \\(B-A\\) when the question asked for \\(A-B\\) (difference is not commutative)",
+        "Evaluating a compound expression left-to-right instead of bracket-first",
+        "Misstating the distributive law by dropping one of the two operations, e.g. writing \\(A \\cup (B\\cap C)=(A\\cup B)\\cup C\\)"
+      ],
+      "question_count": 24
+    },
+    {
+      "name": "Complement of a Set",
+      "summary": "The <b>complement</b> of A (relative to universal set U), written \\(A'\\), is \\(\\{x \\in U : x \\notin A\\}\\) &mdash; everything in U that A leaves out. Two elements can never satisfy 'in A' and 'not in A' simultaneously, so \\(A \\cap A' = \\emptyset\\); and together A and \\(A'\\) cover every element of U, so \\(A \\cup A' = U\\). Complementing twice returns the original set: \\((A')' = A\\). The complement of U itself is empty (\\(U' = \\emptyset\\)), and the complement of \\(\\emptyset\\) is U. <b>De Morgan's laws</b> connect complements with union and intersection: \\((A \\cup B)' = A' \\cap B'\\) ('not (A or B)' becomes 'not A and not B') and \\((A \\cap B)' = A' \\cup B'\\) ('not (A and B)' becomes 'not A or not B'). These extend naturally to three sets: \\((A \\cup B \\cup C)' = A' \\cap B' \\cap C'\\), found by complementing the whole union in one step, or by taking the complement of each set and intersecting.",
+      "key_formulas": [
+        "\\(A' = \\{x \\in U : x \\notin A\\}\\); \\(A \\cup A'=U\\); \\(A \\cap A'=\\emptyset\\)",
+        "De Morgan: \\((A \\cup B)'=A' \\cap B'\\) and \\((A \\cap B)'=A' \\cup B'\\)",
+        "\\((A')'=A\\); \\(U'=\\emptyset\\); \\(\\emptyset'=U\\)"
+      ],
+      "worked_example": "If \\(U=\\{1,\\dots,10\\}\\) and \\(A=\\{2,4,6,8,10\\}\\), then \\(A'=\\{1,3,5,7,9\\}\\) (the odd numbers). Checked against De Morgan with \\(B=\\{1,2,3\\}\\): \\((A\\cup B)'\\) and \\(A' \\cap B'\\) both work out to the same set.",
+      "common_mistakes": [
+        "Flipping the wrong operation in De Morgan's law, e.g. writing \\((A\\cup B)'=A'\\cup B'\\) instead of using \\(\\cap\\)",
+        "Believing \\(A \\cap A'\\) could be non-empty, forgetting no element can be both 'in' and 'not in' A",
+        "Treating \\(U'\\) as U itself instead of \\(\\emptyset\\)",
+        "Computing the complement of an intersection/union of THREE sets by complementing only one or two of them"
+      ],
+      "question_count": 18
+    },
+    {
+      "name": "Practical Problems on Sets",
+      "summary": "Practical (word) problems use the <b>cardinal number formulas</b> to count survey-style data without drawing every element. For two sets: \\(n(A \\cup B)=n(A)+n(B)-n(A \\cap B)\\) &mdash; simple addition double-counts the overlap, so it's subtracted once. If A and B are disjoint, this reduces to plain addition. For three sets, the same idea extends via <b>inclusion&ndash;exclusion</b>: \\(n(A\\cup B\\cup C)=n(A)+n(B)+n(C)-n(A\\cap B)-n(B\\cap C)-n(A\\cap C)+n(A\\cap B\\cap C)\\) &mdash; every pairwise overlap is subtracted once, but the triple overlap (removed three times by that subtraction) must be added back once. The best strategy for a multi-set word problem is to work from the INSIDE OUT: find the triple overlap first (if unknown), then each 'pairwise-only' region (pairwise total minus the triple), then each 'only-one' region, and finally 'none' as \\(n(U) - n(A\\cup B\\cup C)\\). Every derived region should stay non-negative &mdash; a negative region signals an arithmetic or setup error.",
+      "key_formulas": [
+        "\\(n(A \\cup B)=n(A)+n(B)-n(A \\cap B)\\)",
+        "\\(n(A\\cup B\\cup C)=n(A)+n(B)+n(C)-n(A\\cap B)-n(B\\cap C)-n(A\\cap C)+n(A\\cap B\\cap C)\\)",
+        "Disjoint case: \\(n(A \\cup B)=n(A)+n(B)\\); None \\(= n(U) - n(A\\cup B \\cup C)\\)"
+      ],
+      "worked_example": "In a class of 50, 30 play cricket, 25 play football, 10 play both. At least one game: \\(30+25-10=45\\). None: \\(50-45=5\\).",
+      "common_mistakes": [
+        "Adding n(A) and n(B) directly without subtracting the overlap, double-counting shared elements",
+        "For three sets, forgetting to add the triple overlap back after subtracting the three pairwise overlaps",
+        "Stopping at the 'at least one' (union) count when the question actually asked for 'none'",
+        "Building region values that come out negative and not noticing it as a red flag for a setup error"
+      ],
+      "question_count": 21
+    }
+  ]
+}

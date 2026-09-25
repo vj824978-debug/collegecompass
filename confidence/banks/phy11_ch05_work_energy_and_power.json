@@ -1,0 +1,3739 @@
+{
+ "meta": {
+  "chapter": "PHY11-CH05",
+  "chapter_name": "Work, Energy and Power",
+  "subject": "Physics",
+  "class": 11,
+  "total_questions": 150,
+  "level_breakdown": {
+   "L1": 40,
+   "L2": 40,
+   "L3": 30,
+   "Bonus": 40
+  },
+  "rendering_note": "All math is KaTeX inside \\( ... \\) spans, one unnested span per expression. Dot-product expressions such as \\(\\vec F\\cdot\\vec d\\) and \\(\\vec F\\cdot\\vec v\\) and every unit exponent, as in m/s\\(^2\\), are single KaTeX spans. No raw Unicode math symbols (including arrows) appear anywhere outside KaTeX, and every numeric answer terminates cleanly as an integer, a simple fraction, a terminating decimal or an exact surd. Explanation steps are separated by <br><br>."
+ },
+ "topics": [
+  {
+   "name": "Work Done by a Constant and a Variable Force",
+   "summary": "Work is done when a force acts on a body that undergoes a displacement. For a constant force it is the dot product \\(W=\\vec F\\cdot\\vec d=Fd\\cos\\theta\\), where \\(\\theta\\) is the angle between the force and the displacement. Work is a scalar, but it carries a sign. It is positive when \\(\\theta<90^\\circ\\) (a push along the motion), zero when \\(\\theta=90^\\circ\\), and negative when \\(\\theta>90^\\circ\\). So the normal force, the tension on a body in circular motion, and gravity during purely horizontal motion do no work however large they are, while friction and gravity on a rising body do negative work. When several forces act, find the work of each one separately using its own angle. For a force that changes with position, the work equals the area under the force-versus-displacement graph, with any area below the axis counted as negative. For a spring-type force \\(F=kx\\) the graph is a straight line, so the work from \\(x_1\\) to \\(x_2\\) is \\(\\tfrac12k\\left(x_2^2-x_1^2\\right)\\). The SI unit of work is the joule, equal to one newton metre.",
+   "key_formulas": [
+    "\\(W=\\vec F\\cdot\\vec d=Fd\\cos\\theta\\)",
+    "\\(W=F_xd_x+F_yd_y\\)",
+    "\\(W=\\text{area under the }F\\text{-}x\\text{ graph}\\)",
+    "\\(W=\\tfrac12k\\left(x_2^2-x_1^2\\right)\\) for \\(F=kx\\)",
+    "\\(1\\ \\text{J}=1\\ \\text{N m}=1\\ \\text{kg m}^2\\,\\text{s}^{-2}\\)"
+   ],
+   "worked_example": "A block is pulled 10 m along a rough floor by a 50 N force at \\(53^\\circ\\) above the horizontal (\\(\\cos53^\\circ=0.6\\)); friction is 10 N.<br><br>Pull: \\(W=50\\times10\\times0.6=300\\) J.<br><br>Friction: \\(W=10\\times10\\times\\cos180^\\circ=-100\\) J.<br><br>Normal force and gravity: \\(\\theta=90^\\circ\\), so \\(W=0\\).<br><br>Total work \\(=300-100=200\\) J.",
+   "common_mistakes": [
+    "Treating the work of an opposing force (friction, or gravity during lifting) as positive instead of negative.",
+    "Thinking work is zero only when the force is zero, and missing the perpendicular case \\(\\theta=90^\\circ\\).",
+    "Using the full force \\(F\\) instead of the component \\(F\\cos\\theta\\), or using \\(\\sin\\theta\\) in place of \\(\\cos\\theta\\).",
+    "Multiplying the final value of a variable force by the distance instead of taking the area under the graph.",
+    "Counting graph area below the displacement axis as positive work."
+   ],
+   "question_count": 38
+  },
+  {
+   "name": "Kinetic Energy and the Work-Energy Theorem",
+   "summary": "Kinetic energy is the energy a body has because of its motion: \\(KE=\\tfrac12mv^2\\). It is a scalar and can never be negative, because \\(v^2\\) is positive whichever way the body moves. Since it depends on the square of the speed, doubling the speed makes the kinetic energy four times as large. Kinetic energy and momentum are linked by \\(KE=\\dfrac{p^2}{2m}\\), so two bodies with equal momentum do not have equal kinetic energy unless their masses are equal. The work-energy theorem says that the NET work done on a body equals its change in kinetic energy: \\(W_{net}=\\tfrac12mv^2-\\tfrac12mu^2\\). The net work is the sum of the work of EVERY force acting, including friction, gravity and air resistance, each taken with its correct sign. Positive net work speeds a body up, negative net work slows it down, and zero net work (as in uniform circular motion or motion at constant velocity) leaves the speed unchanged. Because braking work must remove \\(\\tfrac12mu^2\\), the stopping distance under a fixed braking force grows as the square of the initial speed.",
+   "key_formulas": [
+    "\\(KE=\\tfrac12mv^2\\)",
+    "\\(KE=\\dfrac{p^2}{2m}\\)",
+    "\\(W_{net}=\\Delta KE=\\tfrac12mv^2-\\tfrac12mu^2\\)",
+    "\\(W_{net}=W_1+W_2+\\dots\\) (all forces, with signs)",
+    "\\(d_{stop}=\\dfrac{mu^2}{2F}\\)"
+   ],
+   "worked_example": "A block at rest on a rough floor is pushed through 5 m by a 10 N horizontal force; friction is 4 N.<br><br>Work by the push: \\(+10\\times5=50\\) J.<br><br>Work by friction: \\(-4\\times5=-20\\) J.<br><br>\\(W_{net}=50-20=30\\) J, so the block gains 30 J of kinetic energy, not 50 J.",
+   "common_mistakes": [
+    "Equating the work of one named force (usually the applied force) to \\(\\Delta KE\\) and ignoring friction or gravity.",
+    "Using \\(\\tfrac12m(v-u)^2\\) instead of \\(\\tfrac12m\\left(v^2-u^2\\right)\\).",
+    "Leaving out the factor \\(\\tfrac12\\), or forgetting the final square root when solving for the speed.",
+    "Writing a negative kinetic energy; only the change \\(\\Delta KE\\) can be negative.",
+    "Assuming equal momentum means equal kinetic energy."
+   ],
+   "question_count": 44
+  },
+  {
+   "name": "Potential Energy and Conservation of Mechanical Energy",
+   "summary": "Potential energy is stored energy that depends on position or shape. Near the Earth's surface the gravitational potential energy is \\(PE=mgh\\), measured from a chosen zero level; it increases when a body rises and decreases when it falls. A spring stretched or compressed by \\(x\\) stores \\(U=\\tfrac12kx^2\\), which is never negative because \\(x\\) is squared. Potential energy can be defined only for conservative forces such as gravity and the spring force. Their work depends only on the end points, is zero around any closed path, and satisfies \\(\\Delta PE=-W_{conservative}\\). Friction and air resistance are non-conservative: their work depends on the path length and turns mechanical energy into heat. The total mechanical energy \\(KE+PE\\) stays constant ONLY when every force doing work is conservative, which is why problems must say frictionless or smooth before you use \\(mgh=\\tfrac12mv^2\\). When friction is present, mechanical energy is not conserved, and the energy lost equals the initial mechanical energy minus the final mechanical energy. Always use the stated value of \\(g\\).",
+   "key_formulas": [
+    "\\(PE=mgh\\)",
+    "\\(U=\\tfrac12kx^2\\)",
+    "\\(\\Delta PE=-W_{conservative}\\)",
+    "\\(KE_1+PE_1=KE_2+PE_2\\) (conservative forces only)",
+    "\\(E_{lost}=\\left(KE_1+PE_1\\right)-\\left(KE_2+PE_2\\right)\\) when friction acts",
+    "\\(h=L(1-\\cos\\theta)\\) for a pendulum"
+   ],
+   "worked_example": "A 2 kg block starts from rest 5 m above the bottom of a rough incline and arrives with a speed of 8 m/s (\\(g=10\\) m/s\\(^2\\)).<br><br>Initial mechanical energy: \\(mgh=2\\times10\\times5=100\\) J.<br><br>Final mechanical energy: \\(\\tfrac12\\times2\\times8^2=64\\) J.<br><br>Energy lost to friction \\(=100-64=36\\) J. On a smooth incline the speed would have been 10 m/s.",
+   "common_mistakes": [
+    "Applying plain conservation of mechanical energy to a problem in which friction or air resistance is explicitly present.",
+    "Getting the sign of \\(\\Delta PE=mgh\\) backwards, for example saying potential energy decreases while a body rises.",
+    "Treating spring energy as negative for compression, or forgetting the factor \\(\\tfrac12\\) in \\(\\tfrac12kx^2\\).",
+    "Using the full height instead of the difference in height between two points.",
+    "Believing the final speed of a projectile depends on the launch angle when only gravity acts."
+   ],
+   "question_count": 42
+  },
+  {
+   "name": "Power",
+   "summary": "Power is the rate at which work is done or energy is transferred. The average power over a time \\(t\\) is \\(P_{avg}=\\dfrac Wt\\), and the instantaneous power delivered by a force is the dot product \\(P=\\vec F\\cdot\\vec v=Fv\\cos\\theta\\). Like work, power is a scalar with a sign: it is positive when the force has a component along the velocity, zero when the force is perpendicular to the velocity (a centripetal force, or gravity at the top of a projectile's path), and negative when the force opposes the motion, as friction does. A vehicle moving at constant velocity has zero NET power, yet its engine still delivers \\(P=Fv\\), where \\(F\\) balances the resistive forces. The SI unit is the watt, equal to one joule per second; one horsepower is about 746 W. The kilowatt-hour is a unit of ENERGY, not power: \\(1\\ \\text{kWh}=3.6\\times10^6\\) J. Real machines waste some energy, so efficiency is output power divided by input power, times 100%. The output is always smaller than the input, so the input is found by dividing the output by the efficiency.",
+   "key_formulas": [
+    "\\(P_{avg}=\\dfrac Wt\\)",
+    "\\(P=\\vec F\\cdot\\vec v=Fv\\cos\\theta\\)",
+    "\\(1\\ \\text{W}=1\\ \\text{J/s}\\), \\(1\\ \\text{hp}\\approx746\\ \\text{W}\\)",
+    "\\(1\\ \\text{kWh}=3.6\\times10^6\\ \\text{J}\\)",
+    "\\(\\text{efficiency}=\\dfrac{\\text{output power}}{\\text{input power}}\\times100\\%\\)",
+    "\\(W=Pt\\) for constant power"
+   ],
+   "worked_example": "A pump raises 200 kg of water through 9 m in 10 s and is 90% efficient (\\(g=10\\) m/s\\(^2\\)).<br><br>Useful work: \\(mgh=200\\times10\\times9=18000\\) J.<br><br>Output power: \\(\\dfrac{18000}{10}=1800\\) W.<br><br>Input power: \\(\\dfrac{1800}{0.9}=2000\\) W.",
+   "common_mistakes": [
+    "Multiplying the output by the efficiency to get the input, instead of dividing.",
+    "Ignoring \\(\\cos\\theta\\) in \\(P=Fv\\cos\\theta\\), or giving positive power to a force that opposes the velocity.",
+    "Saying the engine power is zero at constant velocity because the net force is zero.",
+    "Confusing average power \\(\\dfrac Wt\\) with the instantaneous power at the end of the interval.",
+    "Treating the kilowatt-hour as a unit of power."
+   ],
+   "question_count": 34
+  },
+  {
+   "name": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "summary": "A collision is a short, strong interaction between two bodies. If no external force acts, the total linear momentum is conserved in EVERY collision. What happens to kinetic energy decides the type. In an elastic collision both momentum and kinetic energy are conserved. In an inelastic collision only momentum is conserved; part of the kinetic energy becomes heat, sound and deformation. In a perfectly inelastic collision the bodies stick together and the loss is the largest possible. The coefficient of restitution \\(e\\) is the relative speed of separation divided by the relative speed of approach: \\(e=1\\) is elastic, \\(0<e<1\\) is partially inelastic and \\(e=0\\) is perfectly inelastic. A ball dropped from height \\(h\\) rebounds to \\(e^2h\\). In a one-dimensional elastic collision the velocities are simply exchanged ONLY when the masses are equal; for unequal masses the full formulas must be used. In two dimensions momentum is a vector, so it must be conserved separately along x and along y. When a body strikes an identical body at rest elastically and not head-on, the two move off at \\(90^\\circ\\) to each other.",
+   "key_formulas": [
+    "\\(m_1u_1+m_2u_2=m_1v_1'+m_2v_2'\\)",
+    "\\(v_1'=\\dfrac{(m_1-m_2)u_1+2m_2u_2}{m_1+m_2}\\)",
+    "\\(v_2'=\\dfrac{(m_2-m_1)u_2+2m_1u_1}{m_1+m_2}\\)",
+    "\\(v=\\dfrac{m_1u_1+m_2u_2}{m_1+m_2}\\) (perfectly inelastic)",
+    "\\(e=\\dfrac{v_2'-v_1'}{u_1-u_2}\\)",
+    "\\(h'=e^2h\\)",
+    "\\(p_x\\) and \\(p_y\\) conserved separately in two dimensions"
+   ],
+   "worked_example": "A 2 kg ball moving at 3 m/s makes a head-on elastic collision with a 1 kg ball at rest.<br><br>\\(v_1'=\\dfrac{(2-1)\\times3}{3}=1\\) m/s and \\(v_2'=\\dfrac{2\\times2\\times3}{3}=4\\) m/s.<br><br>Momentum check: \\(2\\times1+1\\times4=6\\) kg m/s, as before.<br><br>Energy check: \\(1+8=9\\) J, as before. A simple exchange (0 and 3 m/s) would conserve momentum but leave only 4.5 J, so it is wrong here.",
+   "common_mistakes": [
+    "Assuming kinetic energy is conserved in an inelastic or perfectly inelastic collision.",
+    "Using the velocities-exchange shortcut when the two masses are not equal.",
+    "Carrying energy conservation straight through a sticking collision (for example in a ballistic pendulum) instead of using momentum for that step.",
+    "In two dimensions, conserving only one component of momentum or adding momenta as plain scalars.",
+    "Forgetting to give opposite velocities opposite signs in the momentum equation.",
+    "Using \\(e\\) instead of \\(e^2\\) for the rebound height."
+   ],
+   "question_count": 36
+  }
+ ],
+ "questions": [
+  {
+   "id": "PHY11-CH05-L1-001",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A constant force of 10 N acts on a box and moves it 5 m in the direction of the force. The work done by the force is",
+   "options": [
+    "50 J",
+    "2 J",
+    "15 J",
+    "0 J"
+   ],
+   "correct_index": 0,
+   "explanation": "Force and displacement are along the same line, so \\(\\theta=0^\\circ\\) and \\(\\cos\\theta=1\\).<br><br>\\(W=Fd\\cos\\theta=10\\times5\\times1=50\\) J.",
+   "hint": "Use \\(W=Fd\\cos\\theta\\) with \\(\\theta=0^\\circ\\).",
+   "distractor_logic": [
+    "Divided force by displacement instead of multiplying",
+    "Added force and displacement instead of multiplying",
+    "Assumed no work is done even though force and displacement are parallel"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-002",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A porter carries a load of weight 200 N on his head and walks 10 m along a level road. The work done by gravity on the load is",
+   "options": [
+    "2000 J",
+    "0 J",
+    "\\(-2000\\) J",
+    "20 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Gravity acts vertically downward while the displacement is horizontal, so \\(\\theta=90^\\circ\\).<br><br>\\(W=Fd\\cos90^\\circ=200\\times10\\times0=0\\) J.<br><br>A force perpendicular to the displacement does no work, however large it is.",
+   "hint": "What is the angle between the weight and the horizontal displacement?",
+   "distractor_logic": [
+    "Multiplied weight by horizontal distance, ignoring that gravity is perpendicular to the displacement",
+    "Treated gravity as opposing the horizontal motion, although it is perpendicular to it",
+    "Divided weight by distance with no physical basis"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-003",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A block slides 3 m across a rough floor while a friction force of 4 N acts on it. The work done by friction on the block is",
+   "options": [
+    "12 J",
+    "0 J",
+    "\\(-12\\) J",
+    "7 J"
+   ],
+   "correct_index": 2,
+   "explanation": "Friction points opposite to the displacement, so \\(\\theta=180^\\circ\\) and \\(\\cos\\theta=-1\\).<br><br>\\(W=Fd\\cos180^\\circ=4\\times3\\times(-1)=-12\\) J.",
+   "hint": "Friction opposes the motion, so \\(\\theta=180^\\circ\\).",
+   "distractor_logic": [
+    "Ignored that friction opposes the displacement, so the sign must be negative",
+    "Assumed friction does no work, although it acts along the line of motion",
+    "Added force and distance instead of using the product with the cosine factor"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-004",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "Which statement about work is correct?",
+   "options": [
+    "Work is a vector pointing along the displacement",
+    "Work is a scalar that is always positive",
+    "Work is a vector pointing along the force",
+    "Work is a scalar that can be positive, negative or zero"
+   ],
+   "correct_index": 3,
+   "explanation": "Work is defined as \\(W=\\vec F\\cdot\\vec d=Fd\\cos\\theta\\), a dot product, so it is a scalar.<br><br>Its sign follows \\(\\cos\\theta\\): positive for \\(\\theta<90^\\circ\\), zero for \\(\\theta=90^\\circ\\), negative for \\(\\theta>90^\\circ\\).",
+   "hint": "Think about the sign of \\(\\cos\\theta\\) for different angles.",
+   "distractor_logic": [
+    "A dot product of two vectors gives a scalar, not a vector",
+    "Misses that work is negative when the force opposes the displacement and zero when perpendicular",
+    "A dot product of two vectors gives a scalar, not a vector along the force"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-005",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A force of 20 N acts at \\(60^\\circ\\) to the direction of motion of a trolley that moves 4 m. The work done by the force is",
+   "options": [
+    "40 J",
+    "80 J",
+    "\\(40\\sqrt3\\) J",
+    "20 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(W=Fd\\cos\\theta=20\\times4\\times\\cos60^\\circ\\).<br><br>\\(\\cos60^\\circ=\\tfrac12\\), so \\(W=20\\times4\\times\\tfrac12=40\\) J.",
+   "hint": "Only the component \\(F\\cos\\theta\\) along the displacement does work.",
+   "distractor_logic": [
+    "Ignored the \\(\\cos\\theta\\) factor and used the full force",
+    "Used the sine of the angle instead of the cosine",
+    "Multiplied the force component by 2 instead of by the 4 m displacement"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-006",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "One joule is equal to",
+   "options": [
+    "\\(1\\ \\text{kg m s}^{-2}\\)",
+    "\\(1\\ \\text{kg m}^2\\,\\text{s}^{-2}\\)",
+    "\\(1\\ \\text{kg m}^2\\,\\text{s}^{-3}\\)",
+    "\\(1\\ \\text{kg m s}^{-1}\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Work is force times displacement, so \\(1\\ \\text{J}=1\\ \\text{N}\\times1\\ \\text{m}\\).<br><br>Since \\(1\\ \\text{N}=1\\ \\text{kg m s}^{-2}\\), we get \\(1\\ \\text{J}=1\\ \\text{kg m}^2\\,\\text{s}^{-2}\\).",
+   "hint": "Joule is newton times metre.",
+   "distractor_logic": [
+    "This is the newton, the unit of force, not of work",
+    "This is the watt, the unit of power, not of work",
+    "This is the unit of momentum, not of work"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-007",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "For a force that varies with position, the area under the force-versus-displacement graph gives",
+   "options": [
+    "the power delivered by the force",
+    "the change in momentum",
+    "the work done by the force",
+    "the acceleration produced"
+   ],
+   "correct_index": 2,
+   "explanation": "For a small displacement \\(\\Delta x\\), the work is \\(F\\,\\Delta x\\), which is the area of a thin strip under the graph.<br><br>Adding all strips gives the total area, which is the total work done.",
+   "hint": "Area means force multiplied by displacement.",
+   "distractor_logic": [
+    "Power is work per unit time and needs a time axis",
+    "Change in momentum is the area under a force-versus-time graph, not force-versus-displacement",
+    "Acceleration is force divided by mass, not an area"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-008",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A 2 kg bucket is lifted straight up through 3 m at constant velocity. Taking \\(g=10\\) m/s\\(^2\\), the work done by gravity on the bucket is",
+   "options": [
+    "60 J",
+    "0 J",
+    "\\(-6\\) J",
+    "\\(-60\\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "Gravity \\(mg=2\\times10=20\\) N points down, displacement is up, so \\(\\theta=180^\\circ\\).<br><br>\\(W=20\\times3\\times\\cos180^\\circ=-60\\) J.",
+   "hint": "Gravity is opposite to the upward displacement.",
+   "distractor_logic": [
+    "Treated the work of gravity as positive although gravity points opposite to the upward displacement",
+    "Assumed constant velocity means every individual force does zero work",
+    "Left out \\(g\\) and used \\(-md\\) instead of \\(-mgd\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-009",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "The kinetic energy of a 2 kg body moving at 3 m/s is",
+   "options": [
+    "9 J",
+    "18 J",
+    "6 J",
+    "3 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(KE=\\tfrac12mv^2=\\tfrac12\\times2\\times3^2=9\\) J.",
+   "hint": "\\(KE=\\tfrac12mv^2\\).",
+   "distractor_logic": [
+    "Left out the factor \\(\\tfrac12\\)",
+    "Computed the momentum \\(mv\\) instead of kinetic energy",
+    "Used \\(\\tfrac12mv\\) without squaring the speed"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-010",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "If the speed of a body is doubled while its mass stays the same, its kinetic energy",
+   "options": [
+    "becomes twice the original value",
+    "becomes four times the original value",
+    "becomes half the original value",
+    "stays the same"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(KE=\\tfrac12mv^2\\), so \\(KE\\propto v^2\\).<br><br>Doubling \\(v\\) multiplies \\(KE\\) by \\(2^2=4\\).",
+   "hint": "Kinetic energy depends on \\(v^2\\).",
+   "distractor_logic": [
+    "Assumed kinetic energy is proportional to speed rather than speed squared",
+    "Inverted the relationship between speed and kinetic energy",
+    "Ignored the dependence of kinetic energy on speed"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-011",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "The work-energy theorem states that the change in kinetic energy of a body equals",
+   "options": [
+    "the work done by the applied force alone",
+    "the change in its potential energy",
+    "the net work done by all the forces acting on it",
+    "the change in its momentum"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(W_{net}=\\Delta KE=\\tfrac12mv^2-\\tfrac12mu^2\\).<br><br>\\(W_{net}\\) is the sum of the work done by every force acting on the body, not just one named force.",
+   "hint": "Which work appears in the theorem: one force or all forces?",
+   "distractor_logic": [
+    "Leaves out the work of friction, gravity or any other force that also acts",
+    "Confuses the theorem with energy conservation; potential energy change equals kinetic energy change only in magnitude and only for conservative forces",
+    "Change in momentum equals impulse, not work"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-012",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "Kinetic energy is",
+   "options": [
+    "a vector quantity along the velocity",
+    "a scalar that becomes negative when the body moves backwards",
+    "a vector quantity opposite to the velocity",
+    "a scalar quantity that is never negative"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(KE=\\tfrac12mv^2\\). Mass is positive and \\(v^2\\) is never negative.<br><br>So kinetic energy is a scalar with a minimum value of zero.",
+   "hint": "Look at the sign of \\(v^2\\).",
+   "distractor_logic": [
+    "Energy has no direction; only velocity and momentum are vectors",
+    "\\(v^2\\) is positive whichever way the body moves, so kinetic energy cannot be negative",
+    "Energy has no direction at all"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-013",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "A body has a kinetic energy of 5 J. If the net work done on it is 20 J, its final kinetic energy is",
+   "options": [
+    "25 J",
+    "15 J",
+    "20 J",
+    "100 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(W_{net}=KE_f-KE_i\\).<br><br>\\(KE_f=KE_i+W_{net}=5+20=25\\) J.",
+   "hint": "Net work is the change in kinetic energy.",
+   "distractor_logic": [
+    "Subtracted the net work instead of adding it",
+    "Took the net work itself as the final kinetic energy, ignoring the initial 5 J",
+    "Multiplied the two values instead of adding"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-014",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "A car moves along a straight level road at constant velocity. The net work done on the car is",
+   "options": [
+    "positive, because the engine is doing work",
+    "zero",
+    "negative, because friction is doing work",
+    "equal to the kinetic energy of the car"
+   ],
+   "correct_index": 1,
+   "explanation": "Constant velocity means \\(\\Delta KE=0\\).<br><br>By the work-energy theorem \\(W_{net}=\\Delta KE=0\\): the positive work of the engine is exactly cancelled by the negative work of the resistive forces.",
+   "hint": "What is \\(\\Delta KE\\) at constant velocity?",
+   "distractor_logic": [
+    "Counts only the engine's work and ignores the equal negative work of the resistive forces",
+    "Counts only the work of friction and ignores the engine's positive work",
+    "Net work equals the change in kinetic energy, not the kinetic energy itself"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-015",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "Body P has mass 1 kg and speed 4 m/s. Body Q has mass 4 kg and speed 1 m/s. Which statement is correct?",
+   "options": [
+    "Q has the greater kinetic energy",
+    "Both have the same kinetic energy",
+    "P has the greater kinetic energy",
+    "Their kinetic energies cannot be compared without knowing the direction of motion"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(KE_P=\\tfrac12\\times1\\times4^2=8\\) J.<br><br>\\(KE_Q=\\tfrac12\\times4\\times1^2=2\\) J.<br><br>P has four times the kinetic energy of Q even though their momenta are equal.",
+   "hint": "Compute \\(\\tfrac12mv^2\\) for each body.",
+   "distractor_logic": [
+    "Assumed the heavier body must carry more kinetic energy, ignoring the squared speed",
+    "They have equal momentum (4 kg m/s), not equal kinetic energy",
+    "Kinetic energy is a scalar and does not depend on direction"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-016",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 1,
+   "type": "regular",
+   "question": "If the net work done on a moving body is negative, then its",
+   "options": [
+    "kinetic energy increases",
+    "kinetic energy stays constant",
+    "kinetic energy becomes negative",
+    "kinetic energy decreases"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(W_{net}=\\Delta KE\\).<br><br>A negative \\(W_{net}\\) means \\(\\Delta KE<0\\): the body slows down. Its kinetic energy decreases but always stays non-negative.",
+   "hint": "Match the sign of \\(W_{net}\\) with the sign of \\(\\Delta KE\\).",
+   "distractor_logic": [
+    "Reversed the sign relation between net work and change in kinetic energy",
+    "Constant kinetic energy needs zero net work, not negative net work",
+    "Kinetic energy can fall to zero but can never be negative"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-017",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "The gravitational potential energy of a 2 kg body at a height of 5 m above the ground (taking the ground as the zero level and \\(g=10\\) m/s\\(^2\\)) is",
+   "options": [
+    "100 J",
+    "10 J",
+    "50 J",
+    "20 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(PE=mgh=2\\times10\\times5=100\\) J.",
+   "hint": "\\(PE=mgh\\).",
+   "distractor_logic": [
+    "Left out \\(g\\) and used \\(mh\\)",
+    "Inserted a factor \\(\\tfrac12\\) that belongs to kinetic energy, not to \\(mgh\\)",
+    "Left out the height and used \\(mg\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-018",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "A spring of constant \\(k=100\\) N/m is stretched by 0.2 m. The potential energy stored in it is",
+   "options": [
+    "4 J",
+    "2 J",
+    "20 J",
+    "10 J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(U=\\tfrac12kx^2=\\tfrac12\\times100\\times(0.2)^2=\\tfrac12\\times100\\times0.04=2\\) J.",
+   "hint": "\\(U=\\tfrac12kx^2\\).",
+   "distractor_logic": [
+    "Left out the factor \\(\\tfrac12\\)",
+    "Computed the spring force \\(kx\\) instead of the energy",
+    "Used \\(\\tfrac12kx\\) without squaring the extension"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-019",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "A ball is thrown vertically upward (ignore air resistance). While it rises,",
+   "options": [
+    "its potential energy decreases and its kinetic energy increases",
+    "both its potential and kinetic energies increase",
+    "its potential energy increases and its kinetic energy decreases",
+    "both its potential and kinetic energies decrease"
+   ],
+   "correct_index": 2,
+   "explanation": "As the height \\(h\\) grows, \\(PE=mgh\\) increases.<br><br>Gravity does negative work on the rising ball, so its speed and kinetic energy decrease.<br><br>The sum \\(KE+PE\\) stays constant.",
+   "hint": "Height is increasing, speed is decreasing.",
+   "distractor_logic": [
+    "Got the sign of \\(\\Delta PE=mgh\\) backwards; this describes the ball falling, not rising",
+    "Would make the total mechanical energy increase with no source",
+    "Would make the total mechanical energy decrease although no dissipative force acts"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-020",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "Which of the following is a non-conservative force?",
+   "options": [
+    "Gravity",
+    "The spring force",
+    "The electrostatic force",
+    "Friction"
+   ],
+   "correct_index": 3,
+   "explanation": "A conservative force does work that depends only on the end points, and zero work around a closed path.<br><br>Friction always opposes the motion, so its work depends on the path length and is never recovered. It is non-conservative.",
+   "hint": "Which force turns mechanical energy into heat?",
+   "distractor_logic": [
+    "Work done by gravity depends only on the end points, so it is conservative",
+    "Work done by an ideal spring depends only on the initial and final extensions, so it is conservative",
+    "Work done by the electrostatic force is path independent, so it is conservative"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-021",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "The total mechanical energy \\(KE+PE\\) of a body stays constant",
+   "options": [
+    "only when every force doing work on it is conservative",
+    "in every situation, whatever forces act",
+    "whenever the net force on it is zero",
+    "only when the body is at rest"
+   ],
+   "correct_index": 0,
+   "explanation": "Conservative forces (gravity, spring force) only convert energy between kinetic and potential forms.<br><br>If friction or another dissipative force does work, part of the mechanical energy becomes heat and \\(KE+PE\\) decreases.",
+   "hint": "What does friction do to mechanical energy?",
+   "distractor_logic": [
+    "Friction and air resistance remove mechanical energy as heat",
+    "A body pulled at constant velocity up a slope has zero net force but rising mechanical energy",
+    "A freely falling body is moving, yet its mechanical energy is conserved"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-022",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "A stone has 50 J of gravitational potential energy (relative to the ground) when released from rest. Ignoring air resistance, its kinetic energy just before hitting the ground is",
+   "options": [
+    "0 J",
+    "50 J",
+    "25 J",
+    "100 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Only gravity does work, so mechanical energy is conserved.<br><br>\\(KE_{bottom}+0=0+50\\) J, so \\(KE_{bottom}=50\\) J.",
+   "hint": "With no air resistance, all the potential energy becomes kinetic energy.",
+   "distractor_logic": [
+    "Assumed the energy disappears instead of converting into kinetic energy",
+    "Assumed only half of the potential energy is converted",
+    "Doubled the energy with no source for the extra 50 J"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-023",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "The work done by a conservative force on a body that moves around any closed path and returns to its starting point is",
+   "options": [
+    "always positive",
+    "always negative",
+    "zero",
+    "proportional to the length of the path"
+   ],
+   "correct_index": 2,
+   "explanation": "For a conservative force, work depends only on the initial and final positions.<br><br>On a closed path these coincide, so the change in potential energy is zero and the total work is zero.",
+   "hint": "Initial and final positions are the same.",
+   "distractor_logic": [
+    "A conservative force returns on the way back whatever work it took on the way out",
+    "Negative total work around a loop is the behaviour of friction, a non-conservative force",
+    "Path-length dependence is the mark of a non-conservative force"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-024",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "A spring is first stretched by a length \\(x\\) and later compressed by the same length \\(x\\). The elastic potential energy stored is",
+   "options": [
+    "negative when compressed",
+    "larger when stretched than when compressed",
+    "zero when compressed",
+    "the same positive value in both cases"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(U=\\tfrac12kx^2\\).<br><br>Because \\(x\\) is squared, stretching (\\(+x\\)) and compressing (\\(-x\\)) store the same, always non-negative, energy.",
+   "hint": "Look at how \\(x\\) appears in \\(U=\\tfrac12kx^2\\).",
+   "distractor_logic": [
+    "\\(x^2\\) is positive for either sign of \\(x\\), so the stored energy cannot be negative",
+    "The energy depends only on \\(x^2\\), not on the direction of deformation",
+    "Work must be done to compress a spring, so energy is stored"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-025",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "One watt is equal to",
+   "options": [
+    "1 J/s",
+    "1 J s",
+    "1 N/s",
+    "1 N m"
+   ],
+   "correct_index": 0,
+   "explanation": "Power is the rate of doing work: \\(P=\\dfrac{W}{t}\\).<br><br>So \\(1\\ \\text{W}=1\\ \\text{J/s}\\).",
+   "hint": "Power is work divided by time.",
+   "distractor_logic": [
+    "Multiplies energy by time instead of dividing by it",
+    "Force per unit time is not power",
+    "Newton metre is the joule, a unit of work, not power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-026",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "A machine does 600 J of work in 60 s. Its average power is",
+   "options": [
+    "36000 W",
+    "10 W",
+    "0.1 W",
+    "540 W"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(P_{avg}=\\dfrac{W}{t}=\\dfrac{600}{60}=10\\) W.",
+   "hint": "\\(P_{avg}=\\dfrac{W}{t}\\).",
+   "distractor_logic": [
+    "Multiplied work by time",
+    "Divided time by work",
+    "Subtracted the time from the work"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-027",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "One kilowatt-hour is equal to",
+   "options": [
+    "\\(3.6\\times10^3\\) J",
+    "\\(10^3\\) J",
+    "\\(3.6\\times10^6\\) J",
+    "\\(3.6\\times10^5\\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(1\\ \\text{kWh}=1000\\ \\text{W}\\times3600\\ \\text{s}\\).<br><br>\\(=3.6\\times10^6\\) J.",
+   "hint": "1 kW = 1000 W and 1 h = 3600 s.",
+   "distractor_logic": [
+    "Used 1 W instead of 1000 W",
+    "Used 1 s instead of 3600 s",
+    "Used 100 W instead of 1000 W"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-028",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "The kilowatt-hour is a unit of",
+   "options": [
+    "power",
+    "force",
+    "time",
+    "energy"
+   ],
+   "correct_index": 3,
+   "explanation": "Energy \\(=\\) power \\(\\times\\) time.<br><br>Kilowatt (power) multiplied by hour (time) therefore gives a unit of energy.",
+   "hint": "Power multiplied by time gives what quantity?",
+   "distractor_logic": [
+    "The kilowatt alone is the unit of power; multiplying by hours changes it",
+    "Force is measured in newtons",
+    "Hour alone is a unit of time, but kilowatt times hour is not"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-029",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "A force of 50 N acts on a body moving at 2 m/s in the direction of the force. The instantaneous power delivered by the force is",
+   "options": [
+    "100 W",
+    "25 W",
+    "52 W",
+    "0 W"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(P=Fv\\cos\\theta\\) with \\(\\theta=0^\\circ\\).<br><br>\\(P=50\\times2\\times1=100\\) W.",
+   "hint": "\\(P=Fv\\cos\\theta\\).",
+   "distractor_logic": [
+    "Divided force by speed",
+    "Added force and speed",
+    "Assumed no power although force and velocity are parallel"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-030",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "Instantaneous power delivered by a force is",
+   "options": [
+    "a vector pointing along the force",
+    "a scalar given by the dot product \\(\\vec F\\cdot\\vec v\\)",
+    "a vector pointing along the velocity",
+    "a scalar equal to the magnitude of the cross product of \\(\\vec F\\) and \\(\\vec v\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(P=\\dfrac{dW}{dt}=\\vec F\\cdot\\vec v=Fv\\cos\\theta\\).<br><br>A dot product is a scalar; it can be positive, zero or negative depending on \\(\\theta\\).",
+   "hint": "Work is a dot product; power is its rate.",
+   "distractor_logic": [
+    "A dot product is a scalar, so power has no direction",
+    "A dot product is a scalar, so power has no direction",
+    "The cross product would give zero power for parallel \\(\\vec F\\) and \\(\\vec v\\), which is exactly when power is greatest"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-031",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "One horsepower is approximately equal to",
+   "options": [
+    "1000 W",
+    "550 W",
+    "746 W",
+    "476 W"
+   ],
+   "correct_index": 2,
+   "explanation": "By definition, \\(1\\ \\text{hp}\\approx746\\) W, a little less than three-quarters of a kilowatt.",
+   "hint": "It is a little under 0.75 kW.",
+   "distractor_logic": [
+    "1000 W is one kilowatt, not one horsepower",
+    "550 is the value in foot-pounds per second, not in watts",
+    "Digits of 746 rearranged"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-032",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 1,
+   "type": "regular",
+   "question": "Asha and Bina each lift identical boxes through the same height. Asha takes 10 s and Bina takes 20 s. Which statement is correct?",
+   "options": [
+    "Bina develops twice the power of Asha",
+    "Both develop the same power because the work is the same",
+    "Asha develops half the power of Bina",
+    "Asha develops twice the power of Bina"
+   ],
+   "correct_index": 3,
+   "explanation": "Both do the same work \\(W=mgh\\).<br><br>\\(P=\\dfrac{W}{t}\\), so power is inversely proportional to time.<br><br>Asha takes half the time, so she develops twice the power.",
+   "hint": "Same work, less time means more power.",
+   "distractor_logic": [
+    "Inverted the dependence of power on time",
+    "Confused work with power; equal work in different times means different power",
+    "Inverted the dependence of power on time"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-033",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "In any collision between two bodies on which no external force acts, the quantity that is always conserved is",
+   "options": [
+    "the total linear momentum",
+    "the total kinetic energy",
+    "both the total kinetic energy and the speed of each body",
+    "neither momentum nor any form of energy"
+   ],
+   "correct_index": 0,
+   "explanation": "The collision forces are internal and equal and opposite, so the total momentum of the system does not change.<br><br>Kinetic energy is conserved only in the special case of an elastic collision.",
+   "hint": "Which conservation law holds for elastic and inelastic collisions alike?",
+   "distractor_logic": [
+    "Kinetic energy is conserved only in elastic collisions",
+    "Individual speeds change in a collision, and kinetic energy is conserved only if it is elastic",
+    "Momentum is always conserved when no external force acts"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-034",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "A collision in which the total kinetic energy is conserved along with the total momentum is called",
+   "options": [
+    "a perfectly inelastic collision",
+    "an elastic collision",
+    "a partially inelastic collision",
+    "an explosive collision"
+   ],
+   "correct_index": 1,
+   "explanation": "Elastic collision: momentum AND kinetic energy are both conserved.<br><br>Inelastic collision: only momentum is conserved; some kinetic energy is converted into other forms.",
+   "hint": "Which type of collision loses no kinetic energy?",
+   "distractor_logic": [
+    "The bodies stick together and the loss of kinetic energy is the largest possible",
+    "Some kinetic energy is lost as heat, sound or deformation",
+    "Kinetic energy increases in an explosion; it is not conserved"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-035",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "For a perfectly inelastic collision, the coefficient of restitution \\(e\\) is",
+   "options": [
+    "\\(1\\)",
+    "\\(0.5\\)",
+    "\\(0\\)",
+    "\\(\\infty\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(e=\\dfrac{\\text{relative speed of separation}}{\\text{relative speed of approach}}\\).<br><br>In a perfectly inelastic collision the bodies stick together, so the speed of separation is zero and \\(e=0\\).",
+   "hint": "The bodies move together after the collision.",
+   "distractor_logic": [
+    "\\(e=1\\) describes a perfectly elastic collision",
+    "\\(e=0.5\\) describes a partially inelastic collision in which the bodies still separate",
+    "The speed of separation can never exceed the speed of approach in a passive collision"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-036",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "A 2 kg trolley moving at 3 m/s collides with a stationary 1 kg trolley and the two stick together. Their common velocity after the collision is",
+   "options": [
+    "3 m/s",
+    "6 m/s",
+    "1 m/s",
+    "2 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "Momentum before: \\(2\\times3+1\\times0=6\\) kg m/s.<br><br>Momentum after: \\((2+1)v=6\\).<br><br>\\(v=2\\) m/s.",
+   "hint": "Total momentum before = total momentum after.",
+   "distractor_logic": [
+    "Assumed the velocity is unchanged, ignoring the added mass",
+    "Reported the total momentum value as the velocity",
+    "Divided the initial velocity by the total mass"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-037",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "A ball moving with speed \\(u\\) makes a head-on elastic collision with an identical ball at rest. After the collision,",
+   "options": [
+    "the moving ball stops and the ball that was at rest moves off with speed \\(u\\)",
+    "both balls move forward with speed \\(\\tfrac{u}{2}\\)",
+    "the moving ball rebounds with speed \\(u\\) and the other stays at rest",
+    "both balls come to rest"
+   ],
+   "correct_index": 0,
+   "explanation": "For equal masses in a one-dimensional elastic collision the velocities are exchanged.<br><br>Check: momentum \\(mu\\) and kinetic energy \\(\\tfrac12mu^2\\) are both the same before and after.",
+   "hint": "Equal masses in an elastic head-on collision exchange velocities.",
+   "distractor_logic": [
+    "This is the perfectly inelastic result; it conserves momentum but loses half the kinetic energy",
+    "This reverses the momentum of the system, so momentum is not conserved",
+    "This destroys all the momentum of the system"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-038",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "The coefficient of restitution is defined as the ratio of",
+   "options": [
+    "relative speed of approach to relative speed of separation",
+    "relative speed of separation to relative speed of approach",
+    "final kinetic energy to initial kinetic energy",
+    "the mass of the lighter body to the mass of the heavier body"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(e=\\dfrac{v_2'-v_1'}{u_1-u_2}\\).<br><br>It compares how fast the bodies separate with how fast they approached, and lies between 0 and 1.",
+   "hint": "Think of separation after compared with approach before.",
+   "distractor_logic": [
+    "This is the inverse of the definition",
+    "It is a ratio of relative speeds, not of energies",
+    "It depends on the materials of the bodies, not on their masses"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-039",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "In an inelastic collision, the kinetic energy that is lost",
+   "options": [
+    "is destroyed completely",
+    "is converted into extra momentum",
+    "is converted into heat, sound and deformation of the bodies",
+    "always becomes gravitational potential energy"
+   ],
+   "correct_index": 2,
+   "explanation": "Total energy is always conserved.<br><br>In an inelastic collision part of the kinetic energy changes into internal energy (heat), sound and permanent deformation, so the kinetic energy alone is not conserved.",
+   "hint": "Total energy is conserved even when kinetic energy is not.",
+   "distractor_logic": [
+    "Energy is never destroyed; only its form changes",
+    "Momentum and energy are different quantities, and the total momentum does not change",
+    "Height need not change at all during a collision"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L1-040",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 1,
+   "type": "regular",
+   "question": "In a two-dimensional collision with no external force, linear momentum is conserved",
+   "options": [
+    "only along the original direction of motion",
+    "only as a sum of the speeds multiplied by the masses, without regard to direction",
+    "only perpendicular to the original direction of motion",
+    "separately along each of the two perpendicular axes"
+   ],
+   "correct_index": 3,
+   "explanation": "Momentum is a vector, so \\(\\vec p_{before}=\\vec p_{after}\\) gives two independent equations.<br><br>One holds for the x-components and another for the y-components.",
+   "hint": "A vector equation in a plane gives two component equations.",
+   "distractor_logic": [
+    "Conserving one component alone leaves the other component unchecked",
+    "Momentum is a vector; adding magnitudes as scalars is wrong",
+    "The perpendicular component must balance, but so must the component along the original direction"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-001",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A force of 10 N acts at \\(37^\\circ\\) to the displacement of a crate, which moves 5 m. Taking \\(\\cos37^\\circ=0.8\\), the work done is",
+   "options": [
+    "40 J",
+    "30 J",
+    "50 J",
+    "\\(-40\\) J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(W=Fd\\cos\\theta=10\\times5\\times0.8\\).<br><br>\\(W=40\\) J, positive because \\(\\theta<90^\\circ\\).",
+   "hint": "Use \\(\\cos37^\\circ=0.8\\).",
+   "distractor_logic": [
+    "Used \\(\\sin37^\\circ=0.6\\) instead of \\(\\cos37^\\circ\\)",
+    "Ignored the angle and used \\(Fd\\)",
+    "Attached a negative sign although \\(\\theta<90^\\circ\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-002",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A force of 6 N makes an angle of \\(120^\\circ\\) with the displacement of a body that moves 4 m. The work done by this force is",
+   "options": [
+    "12 J",
+    "\\(-12\\) J",
+    "\\(-24\\) J",
+    "\\(12\\sqrt3\\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\cos120^\\circ=-\\tfrac12\\).<br><br>\\(W=Fd\\cos\\theta=6\\times4\\times\\left(-\\tfrac12\\right)=-12\\) J.<br><br>The angle exceeds \\(90^\\circ\\), so the work is negative.",
+   "hint": "\\(\\cos120^\\circ\\) is negative.",
+   "distractor_logic": [
+    "Dropped the negative sign of \\(\\cos120^\\circ\\)",
+    "Used \\(\\cos120^\\circ=-1\\) as if the force were exactly opposite",
+    "Used \\(\\sin120^\\circ\\) in place of \\(\\cos120^\\circ\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-003",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A force \\(F=4x\\) (in N, with \\(x\\) in m) acts on a particle along the x-axis. The work done by the force as the particle moves from \\(x=0\\) to \\(x=3\\) m is",
+   "options": [
+    "36 J",
+    "12 J",
+    "18 J",
+    "6 J"
+   ],
+   "correct_index": 2,
+   "explanation": "The force-versus-position graph is a straight line from 0 to \\(4\\times3=12\\) N.<br><br>Work is the triangular area: \\(W=\\tfrac12\\times3\\times12=18\\) J.<br><br>Equivalently \\(W=\\tfrac12kx^2=\\tfrac12\\times4\\times3^2=18\\) J.",
+   "hint": "Find the area of the triangle under the \\(F\\)-\\(x\\) line.",
+   "distractor_logic": [
+    "Multiplied the final force 12 N by 3 m as if the force were constant at its largest value",
+    "Took only the final force value 12 as the work without any displacement",
+    "Used half of the final force times one metre, mixing up the area formula"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-004",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A force on a body rises linearly from 0 to 10 N as the body moves from \\(x=0\\) to \\(x=4\\) m, and then stays constant at 10 N from \\(x=4\\) m to \\(x=6\\) m. The total work done is",
+   "options": [
+    "60 J",
+    "20 J",
+    "30 J",
+    "40 J"
+   ],
+   "correct_index": 3,
+   "explanation": "Triangle (0 to 4 m): \\(\\tfrac12\\times4\\times10=20\\) J.<br><br>Rectangle (4 m to 6 m): \\(10\\times2=20\\) J.<br><br>Total work \\(=20+20=40\\) J.",
+   "hint": "Split the graph into a triangle and a rectangle.",
+   "distractor_logic": [
+    "Treated the force as 10 N over the whole 6 m, ignoring the rising segment",
+    "Counted only the triangular part and forgot the rectangle",
+    "Halved the constant-force rectangle as well, treating both segments as triangles"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-005",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A force \\(\\vec F=(3\\hat i+4\\hat j)\\) N displaces a particle by \\(\\vec d=(2\\hat i+\\hat j)\\) m. The work done is",
+   "options": [
+    "10 J",
+    "11 J",
+    "24 J",
+    "2 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(W=\\vec F\\cdot\\vec d=F_xd_x+F_yd_y\\).<br><br>\\(W=3\\times2+4\\times1=6+4=10\\) J.",
+   "hint": "Dot product: multiply matching components and add.",
+   "distractor_logic": [
+    "Cross-multiplied the components (\\(3\\times1+4\\times2\\)) instead of matching x with x and y with y",
+    "Multiplied all four component values together",
+    "Subtracted the y-product from the x-product instead of adding"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-006",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A stone tied to a string is whirled in a horizontal circle of radius \\(r\\) at constant speed. If the tension is \\(T\\), the work done by the tension in one full revolution is",
+   "options": [
+    "\\(2\\pi rT\\)",
+    "zero",
+    "\\(\\pi r^2T\\)",
+    "\\(-2\\pi rT\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The tension points to the centre while the velocity is tangential, so at every instant \\(\\theta=90^\\circ\\).<br><br>Each small piece of work is \\(T\\,\\Delta s\\cos90^\\circ=0\\), so the total is zero even though \\(T\\) is not zero.",
+   "hint": "Compare the direction of tension with the direction of motion at each instant.",
+   "distractor_logic": [
+    "Multiplied tension by the circumference, ignoring that tension is always perpendicular to the motion",
+    "Multiplied tension by the area of the circle, which has no meaning as work",
+    "Multiplied tension by the circumference with a negative sign, still ignoring the perpendicular direction"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-007",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A box is pushed across a rough horizontal floor. Which force acting on the box does negative work?",
+   "options": [
+    "The normal force",
+    "The applied push",
+    "Kinetic friction",
+    "Gravity"
+   ],
+   "correct_index": 2,
+   "explanation": "Work is negative when \\(\\theta>90^\\circ\\).<br><br>Friction points opposite to the displacement (\\(\\theta=180^\\circ\\)), so its work is \\(-fd\\).<br><br>The normal force and gravity are at \\(90^\\circ\\) (zero work), and the push is at \\(0^\\circ\\) (positive work).",
+   "hint": "Which force points opposite to the displacement?",
+   "distractor_logic": [
+    "The normal force is perpendicular to the displacement, so it does zero work, not negative work",
+    "The push is along the motion, so its work is positive",
+    "Gravity is perpendicular to the horizontal displacement, so it does zero work"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-008",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A block attached to a spring of constant \\(k=200\\) N/m is pulled so that the spring stretches from its natural length by 0.1 m. The work done by the spring force on the block is",
+   "options": [
+    "1 J",
+    "\\(-2\\) J",
+    "\\(-20\\) J",
+    "\\(-1\\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "The spring force \\(F=-kx\\) opposes the displacement, so its work is negative.<br><br>\\(W=-\\tfrac12kx^2=-\\tfrac12\\times200\\times(0.1)^2=-1\\) J.",
+   "hint": "The spring pulls back while the block moves forward; magnitude is \\(\\tfrac12kx^2\\).",
+   "distractor_logic": [
+    "Ignored that the spring force opposes the stretching displacement",
+    "Used \\(kx^2\\) without the factor \\(\\tfrac12\\)",
+    "Used the final force \\(kx=20\\) N as if it were the work"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-009",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg body starts from rest and a net force of 4 N acts on it over a distance of 9 m. Its final speed is",
+   "options": [
+    "6 m/s",
+    "36 m/s",
+    "18 m/s",
+    "\\(3\\sqrt2\\) m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(W_{net}=4\\times9=36\\) J.<br><br>\\(\\tfrac12mv^2=36\\), so \\(v^2=\\dfrac{2\\times36}{2}=36\\).<br><br>\\(v=6\\) m/s.",
+   "hint": "Set the net work equal to \\(\\tfrac12mv^2\\).",
+   "distractor_logic": [
+    "Found \\(v^2=36\\) and forgot to take the square root",
+    "Divided the net work by the mass and stopped there",
+    "Used \\(W=mv^2\\), leaving out the factor \\(\\tfrac12\\) in kinetic energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-010",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "A block at rest on a rough floor is pushed with a horizontal force of 10 N through 5 m. The friction force is 4 N. The kinetic energy gained by the block is",
+   "options": [
+    "50 J",
+    "30 J",
+    "70 J",
+    "20 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Work by the push: \\(+10\\times5=50\\) J.<br><br>Work by friction: \\(-4\\times5=-20\\) J.<br><br>\\(\\Delta KE=W_{net}=50-20=30\\) J.",
+   "hint": "Use the net work: push plus friction.",
+   "distractor_logic": [
+    "Equated the work of the applied force alone to the change in kinetic energy, ignoring friction",
+    "Added the magnitude of friction's work instead of subtracting it",
+    "Used only the magnitude of friction's work"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-011",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "A car of mass 1000 kg moving at 20 m/s is brought to rest by its brakes on a level road. The work done by the braking force is",
+   "options": [
+    "\\(2\\times10^5\\) J",
+    "\\(-10^4\\) J",
+    "\\(-2\\times10^5\\) J",
+    "\\(-4\\times10^5\\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(W_{net}=KE_f-KE_i=0-\\tfrac12\\times1000\\times20^2\\).<br><br>\\(W=-2\\times10^5\\) J. The sign is negative because the braking force opposes the displacement.",
+   "hint": "Work by brakes equals final minus initial kinetic energy.",
+   "distractor_logic": [
+    "Gave a positive sign although the braking force removes kinetic energy",
+    "Used \\(\\tfrac12mv\\) without squaring the speed",
+    "Left out the factor \\(\\tfrac12\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-012",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "A car is stopped by a constant braking force. If its initial speed is doubled and the braking force is unchanged, the stopping distance is",
+   "options": [
+    "2 times the original distance",
+    "the same as the original distance",
+    "half the original distance",
+    "4 times the original distance"
+   ],
+   "correct_index": 3,
+   "explanation": "Work by brakes: \\(-Fd=0-\\tfrac12mu^2\\), so \\(d=\\dfrac{mu^2}{2F}\\).<br><br>\\(d\\propto u^2\\); doubling \\(u\\) makes \\(d\\) four times larger.",
+   "hint": "Braking work must equal the initial kinetic energy.",
+   "distractor_logic": [
+    "Assumed stopping distance is proportional to speed rather than to kinetic energy",
+    "Ignored the extra kinetic energy that must be removed",
+    "Inverted the dependence on speed"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-013",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg body has a kinetic energy of 16 J. The magnitude of its momentum is",
+   "options": [
+    "8 kg m/s",
+    "32 kg m/s",
+    "4 kg m/s",
+    "64 kg m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(KE=\\dfrac{p^2}{2m}\\), so \\(p=\\sqrt{2m\\,KE}\\).<br><br>\\(p=\\sqrt{2\\times2\\times16}=\\sqrt{64}=8\\) kg m/s.",
+   "hint": "Use \\(KE=\\dfrac{p^2}{2m}\\).",
+   "distractor_logic": [
+    "Multiplied mass and kinetic energy",
+    "Found the speed 4 m/s and reported it as the momentum",
+    "Found \\(p^2=64\\) and forgot the square root"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-014",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "The speed of a 4 kg body increases from 2 m/s to 3 m/s. The net work done on it is",
+   "options": [
+    "2 J",
+    "10 J",
+    "20 J",
+    "4 J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(W_{net}=\\tfrac12m\\left(v^2-u^2\\right)\\).<br><br>\\(W_{net}=\\tfrac12\\times4\\times(9-4)=10\\) J.",
+   "hint": "Use \\(v^2-u^2\\), not \\((v-u)^2\\).",
+   "distractor_logic": [
+    "Used \\(\\tfrac12m(\\Delta v)^2\\) instead of the difference of the squares",
+    "Left out the factor \\(\\tfrac12\\)",
+    "Computed the change in momentum \\(m\\,\\Delta v\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-015",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg block is given an initial speed of 4 m/s on a rough horizontal floor where the friction force is 4 N. The distance it travels before stopping is",
+   "options": [
+    "8 m",
+    "2 m",
+    "4 m",
+    "16 m"
+   ],
+   "correct_index": 2,
+   "explanation": "Initial \\(KE=\\tfrac12\\times2\\times4^2=16\\) J.<br><br>Friction is the only force doing work: \\(-f\\,d=0-16\\).<br><br>\\(d=\\dfrac{16}{4}=4\\) m.",
+   "hint": "Friction's negative work removes all the kinetic energy.",
+   "distractor_logic": [
+    "Used \\(mv^2\\) without the factor \\(\\tfrac12\\) for the kinetic energy",
+    "Used \\(\\tfrac12mv\\) instead of \\(\\tfrac12mv^2\\)",
+    "Reported the initial kinetic energy value 16 as the distance"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-016",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 2,
+   "type": "regular",
+   "question": "A 1 kg body at rest is pulled vertically upward through 2 m by a force of 15 N. Taking \\(g=10\\) m/s\\(^2\\), the kinetic energy it gains is",
+   "options": [
+    "30 J",
+    "20 J",
+    "50 J",
+    "10 J"
+   ],
+   "correct_index": 3,
+   "explanation": "Work by the upward force: \\(+15\\times2=30\\) J.<br><br>Work by gravity: \\(-mgh=-1\\times10\\times2=-20\\) J.<br><br>\\(\\Delta KE=W_{net}=30-20=10\\) J.",
+   "hint": "Gravity does negative work while the body rises.",
+   "distractor_logic": [
+    "Equated the work of the upward force alone to the change in kinetic energy, ignoring gravity",
+    "Used only the magnitude of gravity's work",
+    "Added gravity's work as positive instead of subtracting it"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-017",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A stone is dropped from rest from a height of 20 m. Ignoring air resistance and taking \\(g=10\\) m/s\\(^2\\), its speed just before reaching the ground is",
+   "options": [
+    "20 m/s",
+    "400 m/s",
+    "10 m/s",
+    "\\(10\\sqrt2\\) m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "Only gravity does work, so \\(mgh=\\tfrac12mv^2\\).<br><br>\\(v^2=2gh=2\\times10\\times20=400\\).<br><br>\\(v=20\\) m/s.",
+   "hint": "\\(mgh=\\tfrac12mv^2\\).",
+   "distractor_logic": [
+    "Found \\(v^2=400\\) and forgot the square root",
+    "Used \\(v^2=gh/2\\) with a misplaced factor",
+    "Used \\(v^2=gh\\), leaving out the factor 2"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-018",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A ball is thrown vertically upward at 10 m/s. Ignoring air resistance and taking \\(g=10\\) m/s\\(^2\\), the maximum height it reaches is",
+   "options": [
+    "10 m",
+    "5 m",
+    "0.5 m",
+    "50 m"
+   ],
+   "correct_index": 1,
+   "explanation": "At the top, all the kinetic energy has become potential energy: \\(\\tfrac12mv^2=mgh\\).<br><br>\\(h=\\dfrac{v^2}{2g}=\\dfrac{100}{20}=5\\) m.",
+   "hint": "Set \\(\\tfrac12mv^2=mgh\\).",
+   "distractor_logic": [
+    "Used \\(h=\\dfrac{v^2}{g}\\), leaving out the factor 2",
+    "Used \\(h=\\dfrac{v}{2g}\\) without squaring the speed",
+    "Used \\(h=\\tfrac12v^2\\), leaving out \\(g\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-019",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A spring of constant \\(k=400\\) N/m is compressed by 0.1 m and used to launch a 1 kg block along a smooth horizontal floor. The speed of the block as it leaves the spring is",
+   "options": [
+    "4 m/s",
+    "40 m/s",
+    "2 m/s",
+    "\\(2\\sqrt2\\) m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "The floor is smooth, so \\(\\tfrac12kx^2=\\tfrac12mv^2\\).<br><br>\\(\\tfrac12\\times400\\times0.01=2\\) J \\(=\\tfrac12\\times1\\times v^2\\).<br><br>\\(v^2=4\\), so \\(v=2\\) m/s.",
+   "hint": "Spring energy converts fully into kinetic energy on a smooth floor.",
+   "distractor_logic": [
+    "Found \\(v^2=4\\) and forgot the square root",
+    "Divided the spring force \\(kx\\) by the mass, which gives an acceleration, not a speed",
+    "Left out the factor \\(\\tfrac12\\) in the spring energy only"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-020",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A body is dropped from rest from a height of 20 m (no air resistance). At what height above the ground is its kinetic energy three times its potential energy?",
+   "options": [
+    "15 m",
+    "10 m",
+    "\\(\\tfrac{20}{3}\\) m",
+    "5 m"
+   ],
+   "correct_index": 3,
+   "explanation": "Total energy \\(=mg\\times20\\). At the required point \\(KE=3\\,PE\\), so \\(KE+PE=4\\,PE\\).<br><br>\\(4mgh=mg\\times20\\).<br><br>\\(h=5\\) m.",
+   "hint": "Write total energy as \\(PE+3PE\\).",
+   "distractor_logic": [
+    "Found the height where the potential energy is three times the kinetic energy instead",
+    "Found the height where kinetic and potential energies are equal",
+    "Divided the total height by 3 instead of by 4"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-021",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg block starts from rest at a height of 5 m and slides down a rough incline, reaching the bottom with a speed of 8 m/s. Taking \\(g=10\\) m/s\\(^2\\), the mechanical energy lost to friction is",
+   "options": [
+    "36 J",
+    "0 J",
+    "64 J",
+    "164 J"
+   ],
+   "correct_index": 0,
+   "explanation": "Initial mechanical energy: \\(mgh=2\\times10\\times5=100\\) J.<br><br>Final mechanical energy: \\(\\tfrac12mv^2=\\tfrac12\\times2\\times64=64\\) J.<br><br>Energy lost as heat \\(=100-64=36\\) J.",
+   "hint": "Energy lost = initial mechanical energy minus final mechanical energy.",
+   "distractor_logic": [
+    "Applied plain conservation of mechanical energy even though friction is present",
+    "Reported the final kinetic energy instead of the loss",
+    "Added the initial potential and final kinetic energies instead of subtracting"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-022",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A 0.5 kg ball thrown upward rises through 3 m. Taking \\(g=10\\) m/s\\(^2\\), the change in its gravitational potential energy is",
+   "options": [
+    "\\(-15\\) J",
+    "\\(+15\\) J",
+    "\\(+1.5\\) J",
+    "0 J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\Delta PE=mg\\,\\Delta h=0.5\\times10\\times3=+15\\) J.<br><br>The ball rises, so \\(\\Delta h\\) is positive and the potential energy increases.",
+   "hint": "\\(\\Delta PE=mg\\,\\Delta h\\), with \\(\\Delta h\\) positive for a rise.",
+   "distractor_logic": [
+    "Got the sign of \\(\\Delta PE\\) backwards; potential energy increases as a body rises",
+    "Left out \\(g\\)",
+    "Assumed potential energy does not change during the motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-023",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A roller-coaster car starts from rest at a height of 20 m on a frictionless track. Taking \\(g=10\\) m/s\\(^2\\), its speed as it passes over a hill of height 15 m is",
+   "options": [
+    "20 m/s",
+    "\\(10\\sqrt3\\) m/s",
+    "10 m/s",
+    "5 m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "The track is frictionless, so mechanical energy is conserved: \\(mg\\times20=mg\\times15+\\tfrac12mv^2\\).<br><br>\\(v^2=2g(20-15)=2\\times10\\times5=100\\).<br><br>\\(v=10\\) m/s.",
+   "hint": "Only the drop in height, 5 m, is converted into kinetic energy.",
+   "distractor_logic": [
+    "Used the full 20 m as the drop instead of the 5 m difference in height",
+    "Used the hill height 15 m as the drop",
+    "Reported the height difference 5 as the speed"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-024",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A ball is thrown vertically upward and air resistance is NOT negligible. Compared with its launch speed, the speed with which it returns to the thrower's hand is",
+   "options": [
+    "equal, because mechanical energy is always conserved",
+    "greater, because gravity speeds it up on the way down",
+    "equal, because gravity is a conservative force",
+    "smaller, because air resistance removes mechanical energy on the way up and on the way down"
+   ],
+   "correct_index": 3,
+   "explanation": "Over the round trip, gravity does zero total work because the ball returns to the same height.<br><br>Air resistance opposes the motion both ways and does negative work throughout.<br><br>So the final kinetic energy, and the speed, are smaller than at launch.",
+   "hint": "Is every force doing work here conservative?",
+   "distractor_logic": [
+    "Applied conservation of mechanical energy although a dissipative force is present",
+    "Ignored that gravity's total work over the round trip is zero",
+    "Gravity being conservative does not cancel the energy removed by air resistance"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-025",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "A motor lifts a 50 kg load through 10 m in 20 s at constant speed. Taking \\(g=10\\) m/s\\(^2\\), the power delivered to the load is",
+   "options": [
+    "250 W",
+    "25 W",
+    "5000 W",
+    "100000 W"
+   ],
+   "correct_index": 0,
+   "explanation": "Work done on the load: \\(mgh=50\\times10\\times10=5000\\) J.<br><br>\\(P=\\dfrac{W}{t}=\\dfrac{5000}{20}=250\\) W.",
+   "hint": "Find \\(mgh\\), then divide by the time.",
+   "distractor_logic": [
+    "Left out \\(g\\) when finding the work",
+    "Reported the work done without dividing by the time",
+    "Multiplied the work by the time instead of dividing"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-026",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "A force of 20 N acts on a body at \\(60^\\circ\\) to its velocity of 3 m/s. The instantaneous power delivered by the force is",
+   "options": [
+    "60 W",
+    "30 W",
+    "\\(30\\sqrt3\\) W",
+    "0 W"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(P=Fv\\cos\\theta=20\\times3\\times\\cos60^\\circ\\).<br><br>\\(P=60\\times\\tfrac12=30\\) W.",
+   "hint": "Only the force component along the velocity delivers power.",
+   "distractor_logic": [
+    "Ignored the \\(\\cos\\theta\\) factor",
+    "Used the sine of the angle instead of the cosine",
+    "Treated the force as perpendicular to the velocity"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-027",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "A satellite moves round the Earth in a circular orbit with speed \\(v\\). If the gravitational force on it is \\(F\\), the power delivered by gravity to the satellite is",
+   "options": [
+    "\\(Fv\\)",
+    "\\(-Fv\\)",
+    "zero",
+    "\\(\\tfrac12Fv\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "In a circular orbit the gravitational force points to the centre and the velocity is tangential, so \\(\\theta=90^\\circ\\).<br><br>\\(P=Fv\\cos90^\\circ=0\\). This is why the satellite's speed stays constant.",
+   "hint": "What is the angle between a centripetal force and the velocity?",
+   "distractor_logic": [
+    "Ignored that the force is perpendicular to the velocity",
+    "Ignored that the force is perpendicular, not opposite, to the velocity",
+    "Inserted a factor of one-half with no basis while still ignoring the right angle"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-028",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "An electric motor draws an input power of 500 W and has an efficiency of 80%. Its useful output power is",
+   "options": [
+    "625 W",
+    "100 W",
+    "580 W",
+    "400 W"
+   ],
+   "correct_index": 3,
+   "explanation": "Efficiency \\(=\\dfrac{\\text{output power}}{\\text{input power}}\\times100\\%\\).<br><br>Output \\(=0.80\\times500=400\\) W.",
+   "hint": "Output = efficiency times input.",
+   "distractor_logic": [
+    "Divided the input by the efficiency instead of multiplying",
+    "Reported the wasted power instead of the useful power",
+    "Added 80 to the input as if the efficiency were in watts"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-029",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "A car travels along a level road at a constant 20 m/s against a total resistive force of 500 N. The power developed by its engine is",
+   "options": [
+    "10 kW",
+    "25 W",
+    "0 W",
+    "5 kW"
+   ],
+   "correct_index": 0,
+   "explanation": "At constant velocity the driving force equals the resistive force: \\(F=500\\) N.<br><br>\\(P=Fv=500\\times20=10000\\) W \\(=10\\) kW.<br><br>The resistive force delivers \\(-10\\) kW, so the net power is zero and the kinetic energy stays constant.",
+   "hint": "Driving force balances the resistive force at constant velocity.",
+   "distractor_logic": [
+    "Divided the force by the speed",
+    "Argued that zero net force means zero engine power; the net power is zero, but the engine's own power is not",
+    "Inserted a factor \\(\\tfrac12\\) as in the kinetic energy formula"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-030",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "A 100 W bulb is switched on for 10 hours. The electrical energy it consumes is",
+   "options": [
+    "1000 kWh",
+    "1 kWh",
+    "10 kWh",
+    "0.1 kWh"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(100\\ \\text{W}=0.1\\) kW.<br><br>Energy \\(=P\\times t=0.1\\ \\text{kW}\\times10\\ \\text{h}=1\\) kWh.",
+   "hint": "Convert watts to kilowatts first.",
+   "distractor_logic": [
+    "Forgot to convert watts into kilowatts",
+    "Treated 100 W as 1 kW",
+    "Divided by an extra factor of 10"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-031",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "A block slides across a rough floor at 3 m/s while a friction force of 5 N acts on it. The instantaneous power delivered by friction to the block is",
+   "options": [
+    "15 W",
+    "0 W",
+    "\\(-15\\) W",
+    "\\(-\\tfrac53\\) W"
+   ],
+   "correct_index": 2,
+   "explanation": "Friction is opposite to the velocity, so \\(\\theta=180^\\circ\\).<br><br>\\(P=Fv\\cos180^\\circ=5\\times3\\times(-1)=-15\\) W.<br><br>Negative power means friction is removing energy from the block.",
+   "hint": "Friction and velocity point in opposite directions.",
+   "distractor_logic": [
+    "Ignored that friction is opposite to the velocity, so its power is negative",
+    "Assumed friction delivers no power although it acts along the line of motion",
+    "Divided force by speed instead of multiplying"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-032",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg body starts from rest and reaches a speed of 10 m/s in 5 s. The average power delivered by the net force is",
+   "options": [
+    "100 W",
+    "4 W",
+    "40 W",
+    "20 W"
+   ],
+   "correct_index": 3,
+   "explanation": "Net work \\(=\\Delta KE=\\tfrac12\\times2\\times10^2=100\\) J.<br><br>\\(P_{avg}=\\dfrac{W}{t}=\\dfrac{100}{5}=20\\) W.",
+   "hint": "Net work equals the gain in kinetic energy.",
+   "distractor_logic": [
+    "Reported the kinetic energy gained without dividing by the time",
+    "Divided the momentum \\(mv\\) by the time, which gives the force, not the power",
+    "Left out the factor \\(\\tfrac12\\) in the kinetic energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-033",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg ball moving at 3 m/s makes a head-on elastic collision with a 1 kg ball at rest. The velocities of the 2 kg and the 1 kg balls after the collision are respectively",
+   "options": [
+    "1 m/s and 4 m/s",
+    "0 m/s and 3 m/s",
+    "2 m/s and 2 m/s",
+    "\\(-1\\) m/s and 4 m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(v_1'=\\dfrac{(m_1-m_2)u_1}{m_1+m_2}=\\dfrac{(2-1)\\times3}{3}=1\\) m/s.<br><br>\\(v_2'=\\dfrac{2m_1u_1}{m_1+m_2}=\\dfrac{2\\times2\\times3}{3}=4\\) m/s.<br><br>Check: kinetic energy before \\(=9\\) J; after \\(=1+8=9\\) J.",
+   "hint": "The masses are unequal, so use the full elastic-collision formulas.",
+   "distractor_logic": [
+    "Assumed the velocities are simply exchanged, which holds only for equal masses",
+    "Used the perfectly inelastic result in which the balls stick together",
+    "Wrong sign for the heavier ball; this gives a total momentum of 2 kg m/s instead of 6 kg m/s"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-034",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "A 3 kg body moving at 4 m/s collides with a 1 kg body at rest and they stick together. The kinetic energy lost in the collision is",
+   "options": [
+    "0 J",
+    "6 J",
+    "18 J",
+    "24 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Common velocity: \\(v=\\dfrac{3\\times4}{3+1}=3\\) m/s.<br><br>Initial \\(KE=\\tfrac12\\times3\\times16=24\\) J; final \\(KE=\\tfrac12\\times4\\times9=18\\) J.<br><br>Loss \\(=24-18=6\\) J.",
+   "hint": "Find the common velocity from momentum first.",
+   "distractor_logic": [
+    "Assumed kinetic energy is conserved in an inelastic collision",
+    "Reported the final kinetic energy instead of the loss",
+    "Reported the initial kinetic energy instead of the loss"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-035",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "A ball is dropped from a height of 8 m onto a hard floor. If the coefficient of restitution is 0.5 (ignore air resistance), the height of the rebound is",
+   "options": [
+    "4 m",
+    "1 m",
+    "2 m",
+    "8 m"
+   ],
+   "correct_index": 2,
+   "explanation": "Rebound speed \\(=e\\times\\) impact speed.<br><br>Height is proportional to speed squared, so \\(h'=e^2h=(0.5)^2\\times8=2\\) m.",
+   "hint": "Height depends on the square of the speed.",
+   "distractor_logic": [
+    "Multiplied the height by \\(e\\) instead of \\(e^2\\)",
+    "Multiplied the height by \\(e^3\\)",
+    "Treated the collision as elastic with \\(e=1\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-036",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "A 3 kg body moving at 2 m/s to the right collides head-on with a 1 kg body moving at 2 m/s to the left, and they stick together. Their common velocity is",
+   "options": [
+    "2 m/s to the right",
+    "zero",
+    "4 m/s to the right",
+    "1 m/s to the right"
+   ],
+   "correct_index": 3,
+   "explanation": "Take right as positive: \\(p=3\\times2+1\\times(-2)=4\\) kg m/s.<br><br>\\(v=\\dfrac{4}{3+1}=1\\) m/s, to the right.",
+   "hint": "Momentum is a vector: give the leftward velocity a negative sign.",
+   "distractor_logic": [
+    "Added the magnitudes of the two momenta, ignoring their opposite directions",
+    "Assumed equal speeds means the momenta cancel, ignoring the unequal masses",
+    "Reported the total momentum value as the velocity"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-037",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "A light ball makes a head-on elastic collision with a very massive body that is at rest. After the collision the light ball",
+   "options": [
+    "rebounds with almost the same speed",
+    "comes to rest",
+    "continues forward with almost the same speed",
+    "sticks to the massive body"
+   ],
+   "correct_index": 0,
+   "explanation": "With \\(m_2\\gg m_1\\) and \\(u_2=0\\): \\(v_1'=\\dfrac{(m_1-m_2)u_1}{m_1+m_2}\\approx-u_1\\).<br><br>The light ball reverses direction with nearly the same speed, while the massive body hardly moves.",
+   "hint": "Put \\(m_2\\gg m_1\\) in the formula for \\(v_1'\\).",
+   "distractor_logic": [
+    "Coming to rest happens only when the two masses are equal",
+    "This is what a heavy body does on striking a light one, not the reverse",
+    "Sticking would make the collision perfectly inelastic, not elastic"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-038",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "Two bodies approach each other with a relative speed of 6 m/s and collide head-on. If the coefficient of restitution is 0.5, their relative speed of separation is",
+   "options": [
+    "12 m/s",
+    "3 m/s",
+    "6 m/s",
+    "0 m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "Speed of separation \\(=e\\times\\) speed of approach.<br><br>\\(=0.5\\times6=3\\) m/s.",
+   "hint": "Use the definition of \\(e\\).",
+   "distractor_logic": [
+    "Divided by \\(e\\) instead of multiplying",
+    "Treated the collision as elastic with \\(e=1\\)",
+    "Treated the collision as perfectly inelastic with \\(e=0\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-039",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "A puck sliding on smooth ice makes an elastic collision, not head-on, with an identical puck at rest. The angle between the velocities of the two pucks after the collision is",
+   "options": [
+    "\\(60^\\circ\\)",
+    "\\(45^\\circ\\)",
+    "\\(90^\\circ\\)",
+    "\\(180^\\circ\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Momentum: \\(\\vec u=\\vec v_1+\\vec v_2\\) (equal masses). Kinetic energy: \\(u^2=v_1^2+v_2^2\\).<br><br>Squaring the momentum equation gives \\(u^2=v_1^2+v_2^2+2\\vec v_1\\cdot\\vec v_2\\), so \\(\\vec v_1\\cdot\\vec v_2=0\\).<br><br>The two velocities are perpendicular.",
+   "hint": "Combine momentum conservation with kinetic energy conservation for equal masses.",
+   "distractor_logic": [
+    "No conservation law singles out this angle",
+    "Each puck may individually move at this angle to the original line, but the angle between them is larger",
+    "Moving in exactly opposite directions would need zero total momentum"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L2-040",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 2,
+   "type": "regular",
+   "question": "Two 2 kg balls move in the same direction along a line, the rear one at 5 m/s and the front one at 1 m/s. They collide elastically. The velocities of the rear ball and the front ball after the collision are respectively",
+   "options": [
+    "3 m/s and 3 m/s",
+    "5 m/s and 1 m/s",
+    "\\(-5\\) m/s and \\(-1\\) m/s",
+    "1 m/s and 5 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "The masses are equal and the collision is elastic, so the velocities are exchanged.<br><br>Check: momentum \\(2\\times5+2\\times1=12\\) kg m/s before and after; kinetic energy \\(25+1=26\\) J before and after.",
+   "hint": "Equal masses, elastic, one dimension.",
+   "distractor_logic": [
+    "Used the perfectly inelastic result of a common velocity",
+    "Left the velocities unchanged, as though no collision occurred",
+    "Reversed both velocities, which reverses the total momentum"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-001",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A block is pulled 10 m along a rough floor by a 50 N force directed \\(53^\\circ\\) above the horizontal (\\(\\cos53^\\circ=0.6\\)). The friction force is 10 N. The work done by the applied force and by friction are respectively",
+   "options": [
+    "300 J and \\(-100\\) J",
+    "500 J and \\(-100\\) J",
+    "300 J and 100 J",
+    "400 J and \\(-100\\) J"
+   ],
+   "correct_index": 0,
+   "explanation": "Applied force: \\(W_F=Fd\\cos53^\\circ=50\\times10\\times0.6=300\\) J.<br><br>Friction: \\(W_f=fd\\cos180^\\circ=10\\times10\\times(-1)=-100\\) J.",
+   "hint": "Treat each force separately with its own angle to the displacement.",
+   "distractor_logic": [
+    "Used the full 50 N for the applied force, ignoring \\(\\cos53^\\circ\\)",
+    "Gave the work of friction a positive sign although friction opposes the motion",
+    "Used \\(\\sin53^\\circ=0.8\\) instead of \\(\\cos53^\\circ\\) for the applied force"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-002",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A force acting along the x-axis stays constant at \\(+6\\) N from \\(x=0\\) to \\(x=4\\) m, and then decreases linearly from \\(+6\\) N at \\(x=4\\) m to \\(-6\\) N at \\(x=8\\) m. The total work done by the force from \\(x=0\\) to \\(x=8\\) m is",
+   "options": [
+    "36 J",
+    "24 J",
+    "48 J",
+    "30 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Rectangle (0 to 4 m): \\(6\\times4=24\\) J.<br><br>The line crosses zero at \\(x=6\\) m. Triangle above the axis (4 m to 6 m): \\(+\\tfrac12\\times2\\times6=+6\\) J.<br><br>Triangle below the axis (6 m to 8 m): \\(-\\tfrac12\\times2\\times6=-6\\) J.<br><br>Total \\(=24+6-6=24\\) J.",
+   "hint": "Area below the displacement axis counts as negative work.",
+   "distractor_logic": [
+    "Counted the area below the axis as positive instead of negative",
+    "Treated the force as a constant 6 N over all 8 m",
+    "Added the positive triangle but forgot to subtract the negative triangle"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-003",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A man lifts a 10 kg box through 2 m, carries it 5 m horizontally, and then lowers it 2 m back to the floor, all at constant speed. Taking \\(g=10\\) m/s\\(^2\\), the total work done by gravity on the box is",
+   "options": [
+    "400 J",
+    "\\(-200\\) J",
+    "0 J",
+    "900 J"
+   ],
+   "correct_index": 2,
+   "explanation": "Lifting: gravity opposes the displacement, \\(W=-mgh=-10\\times10\\times2=-200\\) J.<br><br>Horizontal carry: gravity is perpendicular to the displacement, \\(W=0\\).<br><br>Lowering: gravity is along the displacement, \\(W=+200\\) J.<br><br>Total \\(=-200+0+200=0\\) J.",
+   "hint": "Find the sign of gravity's work in each of the three stages.",
+   "distractor_logic": [
+    "Counted both the lifting and the lowering as positive work",
+    "Counted only the lifting stage and ignored the lowering stage",
+    "Multiplied the weight by the total path length of 9 m, ignoring directions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-004",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A spring obeys \\(F=kx\\) with \\(k=100\\) N/m. The work an external agent must do to stretch it slowly from an extension of 0.1 m to an extension of 0.3 m is",
+   "options": [
+    "2 J",
+    "8 J",
+    "4.5 J",
+    "4 J"
+   ],
+   "correct_index": 3,
+   "explanation": "Work equals the area under the \\(F\\)-\\(x\\) line between the two extensions: \\(W=\\tfrac12k\\left(x_2^2-x_1^2\\right)\\).<br><br>\\(W=\\tfrac12\\times100\\times(0.09-0.01)=50\\times0.08=4\\) J.",
+   "hint": "Use \\(\\tfrac12k(x_2^2-x_1^2)\\), not \\(\\tfrac12k(x_2-x_1)^2\\).",
+   "distractor_logic": [
+    "Used \\(\\tfrac12k(\\Delta x)^2\\) with \\(\\Delta x=0.2\\) m instead of the difference of squares",
+    "Left out the factor \\(\\tfrac12\\)",
+    "Computed the work from zero extension to 0.3 m, ignoring the initial 0.1 m stretch"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-005",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg block slides 5 m down a smooth incline that makes \\(30^\\circ\\) with the horizontal. Taking \\(g=10\\) m/s\\(^2\\), the work done by gravity on the block is",
+   "options": [
+    "50 J",
+    "100 J",
+    "\\(50\\sqrt3\\) J",
+    "0 J"
+   ],
+   "correct_index": 0,
+   "explanation": "The angle between gravity (vertically down) and the displacement (down the slope) is \\(90^\\circ-30^\\circ=60^\\circ\\).<br><br>\\(W=mgd\\cos60^\\circ=2\\times10\\times5\\times\\tfrac12=50\\) J.<br><br>Equivalently \\(W=mgh\\) with \\(h=5\\sin30^\\circ=2.5\\) m.",
+   "hint": "Gravity does work only through the vertical drop \\(h=d\\sin30^\\circ\\).",
+   "distractor_logic": [
+    "Used \\(mgd\\) as if the block fell vertically through 5 m",
+    "Used \\(\\cos30^\\circ\\), the angle of the incline, instead of the angle between gravity and the displacement",
+    "Confused gravity with the normal force, which is the force that does zero work here"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-006",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A force \\(\\vec F=(2\\hat i-3\\hat j)\\) N acts on a particle that moves from the point \\((1,\\,2)\\) m to the point \\((4,\\,0)\\) m. The work done by the force is",
+   "options": [
+    "0 J",
+    "12 J",
+    "8 J",
+    "\\(-4\\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "Displacement: \\(\\vec d=(4-1)\\hat i+(0-2)\\hat j=(3\\hat i-2\\hat j)\\) m.<br><br>\\(W=\\vec F\\cdot\\vec d=2\\times3+(-3)\\times(-2)=6+6=12\\) J.",
+   "hint": "First find the displacement vector, then take the dot product.",
+   "distractor_logic": [
+    "Lost the sign when multiplying the two negative y-values, giving 6 minus 6",
+    "Used the final position vector instead of the displacement",
+    "Used the initial position vector instead of the displacement"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-007",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg block starts from rest and slides 10 m down a rough incline at \\(37^\\circ\\) (\\(\\sin37^\\circ=0.6\\)). The friction force is 2 N and \\(g=10\\) m/s\\(^2\\). Its speed at the end of the 10 m is",
+   "options": [
+    "\\(2\\sqrt{30}\\) m/s",
+    "\\(6\\sqrt5\\) m/s",
+    "10 m/s",
+    "\\(5\\sqrt2\\) m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "Work by gravity: \\(mgd\\sin37^\\circ=2\\times10\\times10\\times0.6=120\\) J.<br><br>Work by friction: \\(-2\\times10=-20\\) J. The normal force does no work.<br><br>\\(W_{net}=100\\) J \\(=\\tfrac12\\times2\\times v^2\\), so \\(v^2=100\\) and \\(v=10\\) m/s.",
+   "hint": "Add the work of gravity and friction before using the theorem.",
+   "distractor_logic": [
+    "Ignored the negative work of friction and used gravity's work alone",
+    "Used \\(mgd\\) for gravity's work, leaving out \\(\\sin37^\\circ\\)",
+    "Wrote kinetic energy as \\(mv^2\\) without the factor \\(\\tfrac12\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-008",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 3,
+   "type": "regular",
+   "question": "The net force on a 3 kg body, initially at rest, rises linearly from 0 to 8 N as it moves from \\(x=0\\) to \\(x=2\\) m, and then falls linearly back to 0 at \\(x=6\\) m. The speed of the body at \\(x=6\\) m is",
+   "options": [
+    "16 m/s",
+    "\\(4\\sqrt2\\) m/s",
+    "8 m/s",
+    "4 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "Net work is the area of the triangle with base 6 m and height 8 N: \\(W_{net}=\\tfrac12\\times6\\times8=24\\) J.<br><br>\\(\\tfrac12\\times3\\times v^2=24\\), so \\(v^2=16\\).<br><br>\\(v=4\\) m/s.",
+   "hint": "The two segments form one triangle; its area is the net work.",
+   "distractor_logic": [
+    "Found \\(v^2=16\\) and forgot the square root",
+    "Used a rectangle of 48 J for the area instead of the triangle",
+    "Divided the work by the mass, using \\(mv\\) instead of \\(\\tfrac12mv^2\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-009",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 3,
+   "type": "regular",
+   "question": "A bullet moving at 100 m/s is just able to pierce one wooden plank. Assuming every plank exerts the same constant resisting force, the number of such planks a similar bullet moving at 200 m/s can just pierce is",
+   "options": [
+    "4",
+    "2",
+    "8",
+    "3"
+   ],
+   "correct_index": 0,
+   "explanation": "For one plank: \\(F\\,t=\\tfrac12mu^2\\), where \\(t\\) is the plank thickness.<br><br>Doubling the speed gives four times the kinetic energy.<br><br>The same force must act over four times the distance, that is 4 planks.",
+   "hint": "Each plank removes a fixed amount of kinetic energy.",
+   "distractor_logic": [
+    "Assumed the number of planks is proportional to speed instead of kinetic energy",
+    "Cubed the speed ratio instead of squaring it",
+    "Subtracted one plank from the correct count with no physical basis"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-010",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 3,
+   "type": "regular",
+   "question": "A 4 kg block at rest on a rough floor is pulled through 5 m by a 20 N force directed \\(37^\\circ\\) above the horizontal (\\(\\cos37^\\circ=0.8\\)). The friction force is 6 N. The speed of the block after 5 m is",
+   "options": [
+    "\\(2\\sqrt{10}\\) m/s",
+    "5 m/s",
+    "\\(\\sqrt{35}\\) m/s",
+    "25 m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "Work by the pull: \\(20\\times5\\times0.8=80\\) J.<br><br>Work by friction: \\(-6\\times5=-30\\) J. Gravity and the normal force do no work.<br><br>\\(W_{net}=50\\) J \\(=\\tfrac12\\times4\\times v^2\\), so \\(v^2=25\\) and \\(v=5\\) m/s.",
+   "hint": "Net work = work of the horizontal component of the pull + work of friction.",
+   "distractor_logic": [
+    "Ignored friction and equated the pull's work alone to the kinetic energy",
+    "Used the full 20 N for the pull instead of its horizontal component",
+    "Found \\(v^2=25\\) and forgot the square root"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-011",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 3,
+   "type": "regular",
+   "question": "A particle of mass \\(m\\) moves with constant speed \\(v\\) in a circle of radius \\(r\\). The net work done on it during half a revolution is",
+   "options": [
+    "\\(\\pi mv^2\\)",
+    "\\(2mv^2\\)",
+    "zero",
+    "\\(\\tfrac12mv^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The speed is constant, so \\(\\Delta KE=0\\).<br><br>By the work-energy theorem \\(W_{net}=\\Delta KE=0\\).<br><br>This agrees with the net (centripetal) force being perpendicular to the velocity at every instant.",
+   "hint": "Does the kinetic energy change when only the direction of velocity changes?",
+   "distractor_logic": [
+    "Multiplied the centripetal force \\(\\dfrac{mv^2}{r}\\) by the path length \\(\\pi r\\), ignoring that it is perpendicular to the motion",
+    "Confused the change in momentum \\(2mv\\) with a change in energy",
+    "Reported the kinetic energy itself rather than its change"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-012",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": 3,
+   "type": "regular",
+   "question": "A 1 kg ball is dropped from rest from a height of 5 m and reaches the ground with a speed of 8 m/s. Taking \\(g=10\\) m/s\\(^2\\), the work done by air resistance on the ball is",
+   "options": [
+    "18 J",
+    "\\(-32\\) J",
+    "\\(-82\\) J",
+    "\\(-18\\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(W_{net}=\\Delta KE=\\tfrac12\\times1\\times8^2-0=32\\) J.<br><br>Work by gravity: \\(+mgh=1\\times10\\times5=50\\) J.<br><br>\\(W_{air}=W_{net}-W_{gravity}=32-50=-18\\) J.",
+   "hint": "Net work = work by gravity + work by air resistance.",
+   "distractor_logic": [
+    "Gave a positive sign although air resistance opposes the motion",
+    "Reported the final kinetic energy with a negative sign",
+    "Added gravity's work and the final kinetic energy instead of taking the difference"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-013",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg block moving at 4 m/s on a smooth horizontal surface runs into a light spring of constant \\(k=800\\) N/m fixed to a wall. The maximum compression of the spring is",
+   "options": [
+    "0.2 m",
+    "0.04 m",
+    "0.01 m",
+    "0.02 m"
+   ],
+   "correct_index": 0,
+   "explanation": "The surface is smooth, so \\(\\tfrac12mv^2=\\tfrac12kx^2\\).<br><br>\\(\\tfrac12\\times2\\times16=16\\) J \\(=\\tfrac12\\times800\\times x^2\\).<br><br>\\(x^2=0.04\\), so \\(x=0.2\\) m.",
+   "hint": "At maximum compression all the kinetic energy is stored in the spring.",
+   "distractor_logic": [
+    "Found \\(x^2=0.04\\) and forgot the square root",
+    "Equated the spring force \\(kx\\) to the momentum \\(mv\\)",
+    "Halved \\(x^2=0.04\\) instead of taking its square root"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-014",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A pendulum of length 1.6 m is pulled aside until the string makes \\(60^\\circ\\) with the vertical and is released from rest. Ignoring air resistance and taking \\(g=10\\) m/s\\(^2\\), the speed of the bob at the lowest point is",
+   "options": [
+    "\\(4\\sqrt2\\) m/s",
+    "4 m/s",
+    "16 m/s",
+    "8 m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "Height fallen: \\(h=L(1-\\cos60^\\circ)=1.6\\times\\tfrac12=0.8\\) m.<br><br>The tension is perpendicular to the motion and does no work, so \\(mgh=\\tfrac12mv^2\\).<br><br>\\(v^2=2\\times10\\times0.8=16\\), so \\(v=4\\) m/s.",
+   "hint": "The vertical drop is \\(L(1-\\cos\\theta)\\).",
+   "distractor_logic": [
+    "Took the height fallen as the full string length 1.6 m",
+    "Found \\(v^2=16\\) and forgot the square root",
+    "Used \\(v=gh\\) instead of \\(v^2=2gh\\)"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-015",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A 1 kg block is pressed against a spring of constant \\(k=100\\) N/m, compressing it by 0.2 m, and released on a rough floor. It leaves the spring with a kinetic energy of 1.5 J. The energy dissipated by friction is",
+   "options": [
+    "0 J",
+    "3.5 J",
+    "0.5 J",
+    "2 J"
+   ],
+   "correct_index": 2,
+   "explanation": "Initial spring energy: \\(\\tfrac12kx^2=\\tfrac12\\times100\\times0.04=2\\) J.<br><br>Final kinetic energy \\(=1.5\\) J.<br><br>Energy dissipated \\(=2-1.5=0.5\\) J.",
+   "hint": "Compare the stored spring energy with the kinetic energy that actually appears.",
+   "distractor_logic": [
+    "Applied plain conservation of mechanical energy although the floor is rough",
+    "Added the spring energy and the kinetic energy instead of subtracting",
+    "Reported the initial spring energy instead of the loss"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-016",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A ball dropped from a height of 10 m loses 20% of its mechanical energy during its impact with the floor. Ignoring air resistance, the height to which it rebounds is",
+   "options": [
+    "2 m",
+    "10 m",
+    "6.4 m",
+    "8 m"
+   ],
+   "correct_index": 3,
+   "explanation": "Energy just before impact: \\(mg\\times10\\).<br><br>Energy after impact: \\(0.8\\times mg\\times10=mg\\times8\\).<br><br>On the way up, mechanical energy is conserved, so \\(mgh'=mg\\times8\\) and \\(h'=8\\) m.",
+   "hint": "80% of the energy remains after the bounce.",
+   "distractor_logic": [
+    "Used the 20% that was lost instead of the 80% that remains",
+    "Ignored the energy lost in the impact",
+    "Applied the 20% loss twice"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-017",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A stone is thrown at 20 m/s from the top of a 25 m high tower at some unknown angle to the horizontal. Ignoring air resistance and taking \\(g=10\\) m/s\\(^2\\), the speed with which it strikes the ground is",
+   "options": [
+    "30 m/s",
+    "impossible to find without the angle of projection",
+    "\\(10\\sqrt5\\) m/s",
+    "\\(\\left(20+10\\sqrt5\\right)\\) m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "Only gravity does work, so \\(\\tfrac12mu^2+mgh=\\tfrac12mv^2\\).<br><br>\\(v^2=u^2+2gh=400+2\\times10\\times25=900\\).<br><br>\\(v=30\\) m/s, whatever the launch angle.",
+   "hint": "Energy conservation does not care about the launch direction.",
+   "distractor_logic": [
+    "Energy is a scalar, so the final speed does not depend on the direction of launch",
+    "Counted only the energy gained in the fall and ignored the initial kinetic energy",
+    "Added the speeds instead of adding the energies"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-018",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A stone is thrown vertically upward (no air resistance). It passes a point at height \\(h\\) once on the way up and once on the way down. Which statement is correct?",
+   "options": [
+    "Its kinetic energy is greater on the way down",
+    "Its kinetic energy at height \\(h\\) is the same on the way up and on the way down",
+    "Its kinetic energy is greater on the way up",
+    "Its potential energy at height \\(h\\) is negative on the way down"
+   ],
+   "correct_index": 1,
+   "explanation": "Total mechanical energy \\(E\\) is conserved. At height \\(h\\), \\(PE=mgh\\) both times.<br><br>So \\(KE=E-mgh\\) is the same on the way up and on the way down; only the direction of the velocity differs.",
+   "hint": "Potential energy depends only on the height.",
+   "distractor_logic": [
+    "Assumed gravity adds net energy during the fall; it only returns what it took on the way up",
+    "Assumed energy is lost near the top although no dissipative force acts",
+    "Potential energy depends on position only, not on the direction of motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-019",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 3,
+   "type": "regular",
+   "question": "A pump raises 200 kg of water through 9 m in 10 s. The pump is 90% efficient and \\(g=10\\) m/s\\(^2\\). The input power drawn by the pump is",
+   "options": [
+    "1620 W",
+    "1800 W",
+    "2000 W",
+    "18000 W"
+   ],
+   "correct_index": 2,
+   "explanation": "Useful work: \\(mgh=200\\times10\\times9=18000\\) J, so output power \\(=\\dfrac{18000}{10}=1800\\) W.<br><br>Input \\(=\\dfrac{\\text{output}}{\\text{efficiency}}=\\dfrac{1800}{0.9}=2000\\) W.",
+   "hint": "Input power is larger than output power: divide by the efficiency.",
+   "distractor_logic": [
+    "Multiplied the output by the efficiency instead of dividing",
+    "Reported the useful output power as the input",
+    "Forgot to divide the work by the time"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-020",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 3,
+   "type": "regular",
+   "question": "A 1000 kg truck climbs a \\(30^\\circ\\) incline at a constant 10 m/s against a resistive force of 1000 N. Taking \\(g=10\\) m/s\\(^2\\), the power developed by its engine is",
+   "options": [
+    "50 kW",
+    "110 kW",
+    "10 kW",
+    "60 kW"
+   ],
+   "correct_index": 3,
+   "explanation": "At constant velocity the driving force balances the forces along the slope: \\(F=mg\\sin30^\\circ+1000=5000+1000=6000\\) N.<br><br>\\(P=Fv=6000\\times10=60000\\) W \\(=60\\) kW.",
+   "hint": "Two forces act down the slope: a component of gravity and the resistance.",
+   "distractor_logic": [
+    "Ignored the resistive force and balanced only the component of gravity",
+    "Used the full weight \\(mg\\) instead of \\(mg\\sin30^\\circ\\)",
+    "Balanced only the resistive force and ignored gravity along the slope"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-021",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg body starts from rest and is driven by an engine that delivers a constant power of 16 W, with no other force doing work. Its speed after 4 s is",
+   "options": [
+    "8 m/s",
+    "32 m/s",
+    "64 m/s",
+    "\\(4\\sqrt2\\) m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "Work done \\(=Pt=16\\times4=64\\) J.<br><br>\\(\\tfrac12mv^2=64\\), so \\(v^2=\\dfrac{2\\times64}{2}=64\\).<br><br>\\(v=8\\) m/s.",
+   "hint": "Work delivered is \\(Pt\\); equate it to the kinetic energy.",
+   "distractor_logic": [
+    "Divided the work \\(Pt\\) by the mass as if it were a momentum",
+    "Reported the work done, 64 J, as the speed",
+    "Left out the factor \\(\\tfrac12\\) in the kinetic energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-022",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg body falls freely from rest. Ignoring air resistance and taking \\(g=10\\) m/s\\(^2\\), the average power delivered by gravity during the first 3 s is",
+   "options": [
+    "600 W",
+    "300 W",
+    "900 W",
+    "60 W"
+   ],
+   "correct_index": 1,
+   "explanation": "Distance fallen: \\(h=\\tfrac12gt^2=\\tfrac12\\times10\\times9=45\\) m.<br><br>Work by gravity: \\(mgh=2\\times10\\times45=900\\) J.<br><br>\\(P_{avg}=\\dfrac{900}{3}=300\\) W, half of the final instantaneous power \\(mgv=600\\) W.",
+   "hint": "Average power is total work divided by total time.",
+   "distractor_logic": [
+    "Reported the instantaneous power at the end of 3 s instead of the average",
+    "Reported the work done without dividing by the time",
+    "Multiplied \\(mg\\) by the time instead of finding the work"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-023",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 3,
+   "type": "regular",
+   "question": "A man pulls a sled at a constant 2 m/s along level snow with a 100 N force directed \\(37^\\circ\\) above the horizontal (\\(\\cos37^\\circ=0.8\\)). The power delivered to the sled by friction is",
+   "options": [
+    "160 W",
+    "\\(-200\\) W",
+    "\\(-160\\) W",
+    "\\(-120\\) W"
+   ],
+   "correct_index": 2,
+   "explanation": "Constant velocity: friction balances the horizontal pull, \\(f=100\\times0.8=80\\) N.<br><br>Friction is opposite to the velocity: \\(P_f=-fv=-80\\times2=-160\\) W.<br><br>The man delivers \\(+160\\) W, so the net power is zero.",
+   "hint": "At constant velocity, friction equals the horizontal component of the pull.",
+   "distractor_logic": [
+    "Gave friction's power a positive sign although it opposes the velocity",
+    "Balanced friction against the full 100 N instead of its horizontal component",
+    "Used \\(\\sin37^\\circ=0.6\\) for the horizontal component"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-024",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": 3,
+   "type": "regular",
+   "question": "An engine receives 8000 J of energy every second from its fuel and is 75% efficient. It lifts a 300 kg load at constant speed. Taking \\(g=10\\) m/s\\(^2\\), the speed of the load is",
+   "options": [
+    "\\(\\tfrac83\\) m/s",
+    "20 m/s",
+    "\\(\\tfrac{32}{9}\\) m/s",
+    "2 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "Output power \\(=0.75\\times8000=6000\\) W.<br><br>Lifting at constant speed needs a force \\(mg=3000\\) N, so \\(P=mgv\\).<br><br>\\(v=\\dfrac{6000}{3000}=2\\) m/s.",
+   "hint": "Useful power \\(=mg\\times v\\).",
+   "distractor_logic": [
+    "Used the full input power, ignoring the efficiency",
+    "Left out \\(g\\) when finding the weight of the load",
+    "Divided the input by the efficiency instead of multiplying"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-025",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 3,
+   "type": "regular",
+   "question": "A 3 kg body moving at \\(+2\\) m/s makes a head-on elastic collision with a 1 kg body moving at \\(-2\\) m/s. The velocities of the 3 kg and the 1 kg bodies after the collision are respectively",
+   "options": [
+    "0 m/s and \\(+4\\) m/s",
+    "\\(-2\\) m/s and \\(+2\\) m/s",
+    "\\(+1\\) m/s and \\(+1\\) m/s",
+    "0 m/s and \\(-4\\) m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(v_1'=\\dfrac{(m_1-m_2)u_1+2m_2u_2}{m_1+m_2}=\\dfrac{(2)(2)+2(1)(-2)}{4}=0\\).<br><br>\\(v_2'=\\dfrac{(m_2-m_1)u_2+2m_1u_1}{m_1+m_2}=\\dfrac{(-2)(-2)+2(3)(2)}{4}=+4\\) m/s.<br><br>Check: momentum \\(6-2=4\\) kg m/s both times; kinetic energy \\(6+2=8\\) J both times.",
+   "hint": "Use the general elastic formulas with signed velocities.",
+   "distractor_logic": [
+    "Simply exchanged the velocities, which is valid only for equal masses",
+    "Used the perfectly inelastic common velocity",
+    "Wrong direction for the lighter body; this gives a total momentum of the wrong sign"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-026",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 3,
+   "type": "regular",
+   "question": "A ball moving at 10 m/s strikes an identical ball at rest. After the elastic collision the striking ball moves at \\(30^\\circ\\) to its original direction and the struck ball moves at \\(60^\\circ\\) on the other side. The speed of the struck ball is",
+   "options": [
+    "\\(5\\sqrt3\\) m/s",
+    "5 m/s",
+    "10 m/s",
+    "\\(\\tfrac{10}{\\sqrt3}\\) m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "y-axis: \\(v_1\\sin30^\\circ=v_2\\sin60^\\circ\\), so \\(v_1=\\sqrt3\\,v_2\\).<br><br>x-axis: \\(v_1\\cos30^\\circ+v_2\\cos60^\\circ=10\\), giving \\(\\tfrac32v_2+\\tfrac12v_2=10\\).<br><br>\\(v_2=5\\) m/s (and \\(v_1=5\\sqrt3\\) m/s).",
+   "hint": "Write momentum conservation separately along x and along y.",
+   "distractor_logic": [
+    "This is the speed of the striking ball; the two speeds were swapped",
+    "Assumed the struck ball takes the full original speed as in a head-on collision",
+    "Placed both balls at \\(30^\\circ\\) in the x-equation and ignored the y-equation"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-027",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 3,
+   "type": "regular",
+   "question": "A particle moving at 8 m/s strikes an identical particle at rest. After the collision both move with equal speeds, each at \\(45^\\circ\\) to the original direction, on opposite sides of it. The speed of each particle is",
+   "options": [
+    "4 m/s",
+    "8 m/s",
+    "\\(4\\sqrt2\\) m/s",
+    "\\(8\\sqrt2\\) m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "y-axis: the two equal and opposite y-components cancel, as required.<br><br>x-axis: \\(m\\times8=2mv\\cos45^\\circ\\).<br><br>\\(v=\\dfrac{8}{2\\cos45^\\circ}=\\dfrac{8}{\\sqrt2}=4\\sqrt2\\) m/s.",
+   "hint": "Only the x-components of the final momenta add up to the initial momentum.",
+   "distractor_logic": [
+    "Blended the momentum into a single scalar equation, adding the speeds without their x-components",
+    "Assumed each particle keeps the original speed",
+    "Divided by \\(\\cos45^\\circ\\) but forgot that two particles share the momentum"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-028",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg body moving at 6 m/s collides head-on with a 1 kg body at rest. The coefficient of restitution is 0.5. The velocities of the 2 kg and the 1 kg bodies after the collision are respectively",
+   "options": [
+    "2 m/s and 8 m/s",
+    "4 m/s and 4 m/s",
+    "5 m/s and 2 m/s",
+    "3 m/s and 6 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "Momentum: \\(2v_1'+v_2'=12\\).<br><br>Restitution: \\(v_2'-v_1'=e(u_1-u_2)=0.5\\times6=3\\).<br><br>Solving: \\(3v_1'+3=12\\), so \\(v_1'=3\\) m/s and \\(v_2'=6\\) m/s.",
+   "hint": "Two equations: momentum conservation and the definition of \\(e\\).",
+   "distractor_logic": [
+    "Treated the collision as elastic (\\(e=1\\))",
+    "Treated the collision as perfectly inelastic (\\(e=0\\))",
+    "Wrote the separation condition with the wrong sign, letting the rear body pass through the front one"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-029",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 3,
+   "type": "regular",
+   "question": "A body of mass \\(m\\) moving with speed \\(u\\) collides with an identical body at rest and sticks to it. The fraction of the initial kinetic energy lost in the collision is",
+   "options": [
+    "\\(\\tfrac12\\)",
+    "\\(0\\)",
+    "\\(\\tfrac14\\)",
+    "\\(1\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Common velocity: \\(v=\\dfrac{mu}{2m}=\\dfrac u2\\).<br><br>Final \\(KE=\\tfrac12(2m)\\left(\\dfrac u2\\right)^2=\\tfrac14mu^2\\), which is half of the initial \\(\\tfrac12mu^2\\).<br><br>Fraction lost \\(=\\tfrac12\\).",
+   "hint": "Find the common velocity, then compare kinetic energies.",
+   "distractor_logic": [
+    "Assumed kinetic energy is conserved in a perfectly inelastic collision",
+    "Squared the speed ratio one-half and reported it, ignoring that the moving mass has doubled",
+    "Assumed all the kinetic energy is lost, which would violate momentum conservation"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-L3-030",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": 3,
+   "type": "regular",
+   "question": "A 0.2 kg ball strikes a hard floor at 10 m/s. The coefficient of restitution is 0.5. The kinetic energy lost by the ball in the impact is",
+   "options": [
+    "2.5 J",
+    "7.5 J",
+    "5 J",
+    "0 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Rebound speed \\(=e\\times10=5\\) m/s.<br><br>\\(KE\\) before \\(=\\tfrac12\\times0.2\\times100=10\\) J; \\(KE\\) after \\(=\\tfrac12\\times0.2\\times25=2.5\\) J.<br><br>Loss \\(=10-2.5=7.5\\) J.",
+   "hint": "Rebound speed is \\(e\\) times the impact speed.",
+   "distractor_logic": [
+    "Reported the kinetic energy remaining after the bounce instead of the loss",
+    "Assumed the fraction of energy lost equals \\(e\\) rather than \\(1-e^2\\)",
+    "Assumed kinetic energy is conserved in a partially inelastic impact"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-001",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg block at rest on a smooth floor is pulled through 5 m by a 10 N force directed \\(60^\\circ\\) above the horizontal. Its speed at the end of the 5 m is",
+   "options": [
+    "\\(5\\sqrt2\\) m/s",
+    "25 m/s",
+    "5 m/s",
+    "\\(\\tfrac52\\) m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "The floor is smooth; gravity and the normal force are perpendicular to the motion, so only the pull does work.<br><br>\\(W=Fd\\cos60^\\circ=10\\times5\\times\\tfrac12=25\\) J.<br><br>\\(\\tfrac12\\times2\\times v^2=25\\), so \\(v=5\\) m/s.",
+   "hint": "Find the work with \\(\\cos60^\\circ\\), then use the work-energy theorem.",
+   "distractor_logic": [
+    "Used the full 10 N, ignoring \\(\\cos60^\\circ\\), so the work came out as 50 J",
+    "Found \\(v^2=25\\) and forgot the square root",
+    "Halved the speed instead of applying \\(\\cos60^\\circ\\) to the force"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-002",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg block starts from rest at the top of a rough incline of height 5 m and slope length 10 m. The friction force is 3.6 N and \\(g=10\\) m/s\\(^2\\). Its speed at the bottom is",
+   "options": [
+    "10 m/s",
+    "64 m/s",
+    "\\(2\\sqrt{34}\\) m/s",
+    "8 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "Potential energy at the top: \\(mgh=2\\times10\\times5=100\\) J.<br><br>Work by friction: \\(-3.6\\times10=-36\\) J, lost as heat.<br><br>\\(KE\\) at the bottom \\(=100-36=64\\) J \\(=\\tfrac12\\times2\\times v^2\\), so \\(v=8\\) m/s.",
+   "hint": "Friction is present: subtract \\(f\\times d\\) from \\(mgh\\) first.",
+   "distractor_logic": [
+    "Applied plain conservation of mechanical energy, ignoring the 36 J removed by friction",
+    "Found \\(v^2=64\\) and forgot the square root",
+    "Added friction's work as positive instead of subtracting it"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-003",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A pendulum bob is released from rest at a height of 0.8 m above its lowest point. At the lowest point it strikes an identical bob at rest and sticks to it. Taking \\(g=10\\) m/s\\(^2\\) and ignoring air resistance, the height to which the combined bobs rise is",
+   "options": [
+    "0.2 m",
+    "0.8 m",
+    "0.4 m",
+    "0.1 m"
+   ],
+   "correct_index": 0,
+   "explanation": "Before the collision: \\(v=\\sqrt{2gh}=\\sqrt{2\\times10\\times0.8}=4\\) m/s.<br><br>Perfectly inelastic collision (momentum only): \\(v'=\\dfrac{m\\times4}{2m}=2\\) m/s.<br><br>After the collision energy is conserved again: \\(h'=\\dfrac{v'^2}{2g}=\\dfrac{4}{20}=0.2\\) m.",
+   "hint": "Energy conservation, then momentum conservation, then energy conservation again.",
+   "distractor_logic": [
+    "Applied energy conservation straight through the inelastic collision",
+    "Halved the height because the speed halves, instead of using speed squared",
+    "Halved the correct answer once more with no basis"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-004",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1000 kg car accelerates from 10 m/s to 20 m/s in 5 s on a level road. The average power delivered by the net force is",
+   "options": [
+    "10 kW",
+    "30 kW",
+    "60 kW",
+    "40 kW"
+   ],
+   "correct_index": 1,
+   "explanation": "Net work \\(=\\Delta KE=\\tfrac12\\times1000\\times(400-100)=150000\\) J.<br><br>\\(P_{avg}=\\dfrac{150000}{5}=30000\\) W \\(=30\\) kW.",
+   "hint": "Net work is the change in kinetic energy; divide by the time.",
+   "distractor_logic": [
+    "Used \\(\\tfrac12m(\\Delta v)^2\\) instead of the difference of the squares",
+    "Left out the factor \\(\\tfrac12\\)",
+    "Used the final kinetic energy alone, ignoring the initial kinetic energy"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-005",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A crate is dragged 10 m along a floor in 5 s by a 40 N force directed \\(60^\\circ\\) above the horizontal. The average power delivered by this force is",
+   "options": [
+    "80 W",
+    "\\(40\\sqrt3\\) W",
+    "40 W",
+    "200 W"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(W=Fd\\cos60^\\circ=40\\times10\\times\\tfrac12=200\\) J.<br><br>\\(P_{avg}=\\dfrac{W}{t}=\\dfrac{200}{5}=40\\) W.",
+   "hint": "Work first (with the cosine), then divide by time.",
+   "distractor_logic": [
+    "Ignored the \\(\\cos60^\\circ\\) factor in the work",
+    "Used \\(\\sin60^\\circ\\) instead of \\(\\cos60^\\circ\\)",
+    "Reported the work done without dividing by the time"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-006",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 0.05 kg bullet moving at 100 m/s embeds itself in a 0.95 kg block at rest on a rough floor. The friction force on the block is 5 N. The distance the block (with the bullet) slides before stopping is",
+   "options": [
+    "50 m",
+    "5 m",
+    "1.25 m",
+    "2.5 m"
+   ],
+   "correct_index": 3,
+   "explanation": "Momentum: \\(0.05\\times100=(0.05+0.95)v\\), so \\(v=5\\) m/s.<br><br>\\(KE\\) just after the collision \\(=\\tfrac12\\times1\\times25=12.5\\) J.<br><br>Friction removes it: \\(5\\times d=12.5\\), so \\(d=2.5\\) m.",
+   "hint": "Kinetic energy is not conserved in the embedding; use momentum for that step.",
+   "distractor_logic": [
+    "Used the bullet's original kinetic energy of 250 J, as if none were lost in the inelastic collision",
+    "Left out the factor \\(\\tfrac12\\) in the kinetic energy after the collision",
+    "Halved the kinetic energy an extra time"
+   ],
+   "mixed_topics": [
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+    "Kinetic Energy and the Work-Energy Theorem"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-007",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Water falls through 20 m onto a turbine at the rate of 50 kg every second. The turbine is 80% efficient and \\(g=10\\) m/s\\(^2\\). The output power of the turbine is",
+   "options": [
+    "8 kW",
+    "10 kW",
+    "12.5 kW",
+    "0.8 kW"
+   ],
+   "correct_index": 0,
+   "explanation": "Potential energy lost per second: \\(mgh=50\\times10\\times20=10000\\) J, so the input power is 10 kW.<br><br>Output \\(=0.8\\times10=8\\) kW.",
+   "hint": "Input power is the potential energy lost per second.",
+   "distractor_logic": [
+    "Ignored the efficiency and reported the input power",
+    "Divided by the efficiency instead of multiplying",
+    "Left out \\(g\\) when finding the potential energy lost per second"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-008",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 3 kg box is lifted through 2 m. Taking \\(g=10\\) m/s\\(^2\\), the work done by gravity and the change in gravitational potential energy are respectively",
+   "options": [
+    "\\(+60\\) J and \\(+60\\) J",
+    "\\(-60\\) J and \\(+60\\) J",
+    "\\(-60\\) J and \\(-60\\) J",
+    "\\(+60\\) J and \\(-60\\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "Gravity is opposite to the displacement: \\(W_g=-mgh=-60\\) J.<br><br>\\(\\Delta PE=-W_g=+60\\) J; the potential energy rises as the box rises.",
+   "hint": "\\(\\Delta PE=-W_{conservative}\\).",
+   "distractor_logic": [
+    "Gave gravity's work a positive sign although gravity opposes the upward displacement",
+    "Made the potential energy decrease although the box rises",
+    "Both signs reversed; this describes the box being lowered"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-009",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1 kg ball is thrown vertically upward at 10 m/s and rises only 4 m because of air drag. Taking \\(g=10\\) m/s\\(^2\\), the work done by air drag during the ascent is",
+   "options": [
+    "10 J",
+    "0 J",
+    "\\(-10\\) J",
+    "\\(-40\\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(\\Delta KE=0-\\tfrac12\\times1\\times100=-50\\) J.<br><br>Work by gravity \\(=-mgh=-40\\) J.<br><br>\\(W_{drag}=\\Delta KE-W_g=-50-(-40)=-10\\) J.",
+   "hint": "Net work (gravity + drag) equals the change in kinetic energy.",
+   "distractor_logic": [
+    "Gave a positive sign although drag opposes the motion",
+    "Applied plain mechanical energy conservation although a dissipative force acts",
+    "Reported gravity's work instead of the work of air drag"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-010",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1 kg block slides from rest down a frictionless ramp of height 1.8 m and, on the smooth level floor, makes a head-on elastic collision with a 2 kg block at rest. Taking \\(g=10\\) m/s\\(^2\\), the height to which the 1 kg block climbs back up the ramp is",
+   "options": [
+    "0 m",
+    "1.8 m",
+    "0.8 m",
+    "0.2 m"
+   ],
+   "correct_index": 3,
+   "explanation": "Speed at the bottom: \\(v=\\sqrt{2\\times10\\times1.8}=6\\) m/s.<br><br>Elastic, unequal masses: \\(v_1'=\\dfrac{(1-2)\\times6}{1+2}=-2\\) m/s, so it rebounds at 2 m/s.<br><br>\\(h'=\\dfrac{2^2}{2\\times10}=0.2\\) m.",
+   "hint": "Unequal masses: use the elastic formula for \\(v_1'\\).",
+   "distractor_logic": [
+    "Assumed the velocities are exchanged so that the 1 kg block stops, which holds only for equal masses",
+    "Assumed it rebounds with its full speed, as from an immovable wall",
+    "Used the speed of the 2 kg block, 4 m/s, for the climb"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-011",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A force \\(F=9x\\) (N, with \\(x\\) in m) acts along the direction of motion on a 1 kg particle that starts from rest at \\(x=0\\). No other force does work. Its speed at \\(x=2\\) m is",
+   "options": [
+    "6 m/s",
+    "\\(6\\sqrt2\\) m/s",
+    "18 m/s",
+    "36 m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "Work is the triangular area under \\(F=9x\\): \\(W=\\tfrac12\\times2\\times18=18\\) J.<br><br>\\(\\tfrac12\\times1\\times v^2=18\\), so \\(v^2=36\\) and \\(v=6\\) m/s.",
+   "hint": "Work by a linearly growing force is the area of a triangle.",
+   "distractor_logic": [
+    "Used the final force 18 N times 2 m as the work, as if the force were constant",
+    "Reported the work done, 18 J, as the speed",
+    "Reported \\(v^2=36\\) without taking the square root"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-012",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An 800 kg car moving at 10 m/s is brought to rest in 4 s by its brakes on a level road. The average power delivered to the car by the braking force is",
+   "options": [
+    "10 kW",
+    "\\(-10\\) kW",
+    "\\(-20\\) kW",
+    "\\(-2\\) kW"
+   ],
+   "correct_index": 1,
+   "explanation": "Work by brakes \\(=\\Delta KE=0-\\tfrac12\\times800\\times100=-40000\\) J.<br><br>\\(P_{avg}=\\dfrac{-40000}{4}=-10000\\) W \\(=-10\\) kW.",
+   "hint": "The brakes do negative work equal to the loss in kinetic energy.",
+   "distractor_logic": [
+    "Gave a positive sign although the braking force removes energy from the car",
+    "Left out the factor \\(\\tfrac12\\) in the kinetic energy",
+    "Divided the momentum \\(mv\\) by the time, which gives the force"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-013",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1 kg block and a 2 kg block rest on a smooth floor with a compressed light spring between them storing 12 J. When released, the spring pushes them apart and falls away. The speed of the 1 kg block is",
+   "options": [
+    "\\(2\\sqrt6\\) m/s",
+    "\\(2\\sqrt3\\) m/s",
+    "4 m/s",
+    "2 m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "Momentum (initially zero): \\(1\\times v_1=2\\times v_2\\), so \\(v_1=2v_2\\).<br><br>Energy (smooth floor): \\(\\tfrac12(1)v_1^2+\\tfrac12(2)v_2^2=12\\), giving \\(2v_2^2+v_2^2=12\\).<br><br>\\(v_2=2\\) m/s and \\(v_1=4\\) m/s.",
+   "hint": "Use momentum conservation and energy conservation together.",
+   "distractor_logic": [
+    "Gave all 12 J to the 1 kg block, ignoring the other block",
+    "Split the energy equally instead of using momentum conservation",
+    "This is the speed of the 2 kg block"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-014",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A crane lifts a 500 kg load at a constant 2 m/s. Taking \\(g=10\\) m/s\\(^2\\), the work done by gravity on the load in 10 s is",
+   "options": [
+    "\\(10^5\\) J",
+    "\\(-10^4\\) J",
+    "0 J",
+    "\\(-10^5\\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "Power of gravity: \\(P=mgv\\cos180^\\circ=-500\\times10\\times2=-10^4\\) W.<br><br>Work in 10 s: \\(W=Pt=-10^4\\times10=-10^5\\) J.",
+   "hint": "Gravity is opposite to the velocity, so its power is negative.",
+   "distractor_logic": [
+    "Gave gravity's work a positive sign although the load moves upward",
+    "Forgot to multiply the power by the 10 s",
+    "Assumed constant speed means gravity does no work"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-015",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg block at rest is pushed 4 m up a smooth \\(30^\\circ\\) incline by a 30 N force parallel to the incline. Taking \\(g=10\\) m/s\\(^2\\), its kinetic energy at the end of the 4 m is",
+   "options": [
+    "80 J",
+    "120 J",
+    "160 J",
+    "40 J"
+   ],
+   "correct_index": 0,
+   "explanation": "Work by the push: \\(30\\times4=120\\) J.<br><br>Work by gravity: \\(-mgh=-2\\times10\\times(4\\sin30^\\circ)=-40\\) J, which is stored as potential energy.<br><br>\\(KE=W_{net}=120-40=80\\) J.",
+   "hint": "Gravity does negative work through the vertical rise of 2 m.",
+   "distractor_logic": [
+    "Equated the work of the push alone to the kinetic energy, ignoring gravity",
+    "Added gravity's work as positive instead of negative",
+    "Reported only the potential energy gained"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-016",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A motor that is 60% efficient draws 1000 W and lifts a 30 kg load at constant speed. Taking \\(g=10\\) m/s\\(^2\\), the height through which the load rises in 10 s is",
+   "options": [
+    "\\(\\tfrac{100}{3}\\) m",
+    "20 m",
+    "2 m",
+    "200 m"
+   ],
+   "correct_index": 1,
+   "explanation": "Output power \\(=0.6\\times1000=600\\) W, so useful work in 10 s \\(=6000\\) J.<br><br>This becomes potential energy: \\(mgh=30\\times10\\times h=6000\\).<br><br>\\(h=20\\) m.",
+   "hint": "Useful work = output power times time = gain in potential energy.",
+   "distractor_logic": [
+    "Used the full 1000 W, ignoring the efficiency",
+    "Forgot to multiply the output power by the time",
+    "Left out \\(g\\) in \\(mgh\\)"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-017",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 5 kg gun at rest fires a 0.05 kg bullet at 200 m/s. The kinetic energy of the recoiling gun is",
+   "options": [
+    "1000 J",
+    "5 J",
+    "10 J",
+    "20 J"
+   ],
+   "correct_index": 2,
+   "explanation": "Momentum: \\(5\\times V=0.05\\times200=10\\), so \\(V=2\\) m/s.<br><br>\\(KE_{gun}=\\tfrac12\\times5\\times2^2=10\\) J.<br><br>The bullet has \\(\\tfrac12\\times0.05\\times200^2=1000\\) J: equal momenta, very unequal kinetic energies.",
+   "hint": "Equal momentum does not mean equal kinetic energy.",
+   "distractor_logic": [
+    "Assumed the gun and the bullet share equal kinetic energy because they share equal momentum",
+    "Used \\(\\tfrac12MV\\) without squaring the recoil speed",
+    "Left out the factor \\(\\tfrac12\\)"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-018",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg box is moved from the floor to a shelf 3 m high by sliding it up a 5 m long ramp. Taking \\(g=10\\) m/s\\(^2\\), the work done by gravity on the box is",
+   "options": [
+    "\\(-100\\) J",
+    "\\(+60\\) J",
+    "0 J",
+    "\\(-60\\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "Gravity is conservative: its work depends only on the vertical rise, not on the path.<br><br>\\(W_g=-mgh=-2\\times10\\times3=-60\\) J, the same as for a straight vertical lift.",
+   "hint": "For a conservative force only the end points matter.",
+   "distractor_logic": [
+    "Multiplied the weight by the ramp length instead of the vertical rise",
+    "Gave the wrong sign; gravity opposes the upward part of the displacement",
+    "Assumed gravity does no work along a ramp"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-019",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A spring of constant \\(k=1000\\) N/m, compressed by 0.1 m, launches a 1 kg block. The surface under the spring is smooth, but beyond it the floor is rough with a friction force of 2 N. The distance the block slides on the rough floor before stopping is",
+   "options": [
+    "2.5 m",
+    "5 m",
+    "50 m",
+    "0.25 m"
+   ],
+   "correct_index": 0,
+   "explanation": "Spring energy: \\(\\tfrac12kx^2=\\tfrac12\\times1000\\times0.01=5\\) J, which becomes the block's kinetic energy on the smooth part.<br><br>On the rough floor friction removes it: \\(2\\times d=5\\).<br><br>\\(d=2.5\\) m.",
+   "hint": "Spring energy becomes kinetic energy, which friction's work then removes.",
+   "distractor_logic": [
+    "Left out the factor \\(\\tfrac12\\) in the spring energy",
+    "Divided the spring force \\(kx=100\\) N by the friction force",
+    "Misplaced the decimal point when dividing 5 J by 2 N"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-020",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A ball is dropped from a height of 4 m onto a floor for which \\(e=0.5\\). Ignoring air resistance, the height it reaches after its second bounce is",
+   "options": [
+    "1 m",
+    "0.25 m",
+    "2 m",
+    "0.5 m"
+   ],
+   "correct_index": 1,
+   "explanation": "Each bounce multiplies the speed by \\(e\\) and therefore the height (energy) by \\(e^2=\\tfrac14\\).<br><br>After two bounces: \\(h=4\\times\\tfrac14\\times\\tfrac14=0.25\\) m.",
+   "hint": "Height after each bounce is \\(e^2\\) times the previous height.",
+   "distractor_logic": [
+    "Stopped after the first bounce",
+    "Multiplied by \\(e\\) once instead of by \\(e^2\\) twice",
+    "Multiplied the height by \\(e\\) three times instead of by \\(e^2\\) twice"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-021",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A force \\(\\vec F=(2\\hat i+3\\hat j)\\) N acts on a particle moving with velocity \\(\\vec v=(4\\hat i-\\hat j)\\) m/s. The instantaneous power delivered by the force is",
+   "options": [
+    "11 W",
+    "10 W",
+    "5 W",
+    "\\(\\sqrt{13}\\sqrt{17}\\) W"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(P=\\vec F\\cdot\\vec v=F_xv_x+F_yv_y\\).<br><br>\\(P=2\\times4+3\\times(-1)=8-3=5\\) W.<br><br>The y-component of the force delivers negative power because it opposes the y-motion.",
+   "hint": "Power is a dot product, exactly like work.",
+   "distractor_logic": [
+    "Ignored the negative sign of the y-component of the velocity",
+    "Cross-multiplied the components instead of matching x with x and y with y",
+    "Multiplied the magnitudes, ignoring the angle between the vectors"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-022",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1 kg ball moving at 6 m/s makes a head-on elastic collision with a 2 kg ball at rest. The kinetic energy transferred to the 2 kg ball is",
+   "options": [
+    "18 J",
+    "4 J",
+    "9 J",
+    "16 J"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(v_2'=\\dfrac{2m_1u_1}{m_1+m_2}=\\dfrac{2\\times1\\times6}{3}=4\\) m/s.<br><br>\\(KE_2=\\tfrac12\\times2\\times4^2=16\\) J out of the initial 18 J.<br><br>The 1 kg ball rebounds at 2 m/s carrying the remaining 2 J.",
+   "hint": "Find \\(v_2'\\) from the unequal-mass elastic formula.",
+   "distractor_logic": [
+    "Assumed a complete exchange of velocities, which occurs only for equal masses",
+    "Used the perfectly inelastic common velocity of 2 m/s",
+    "Assumed the energy is shared equally"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-023",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 0.5 kg ball is thrown as a projectile. At the highest point of its path its speed is 8 m/s. Taking \\(g=10\\) m/s\\(^2\\), the instantaneous power delivered by gravity at that point is",
+   "options": [
+    "0 W",
+    "40 W",
+    "\\(-40\\) W",
+    "4 W"
+   ],
+   "correct_index": 0,
+   "explanation": "At the highest point the velocity is horizontal and gravity is vertical, so \\(\\theta=90^\\circ\\).<br><br>\\(P=mgv\\cos90^\\circ=0\\) W.",
+   "hint": "What is the direction of the velocity at the top of the path?",
+   "distractor_logic": [
+    "Used \\(mgv\\), ignoring that the velocity at the top is horizontal",
+    "Treated gravity as opposite to the velocity, although it is perpendicular to it",
+    "Left out \\(g\\)"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-024",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg block moving at 6 m/s on a smooth floor crosses a rough patch 3 m long on which the friction force is 4 N. Its kinetic energy on leaving the patch is",
+   "options": [
+    "48 J",
+    "24 J",
+    "36 J",
+    "12 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Initial \\(KE=\\tfrac12\\times2\\times36=36\\) J.<br><br>Work by friction: \\(-4\\times3=-12\\) J.<br><br>Final \\(KE=36-12=24\\) J.",
+   "hint": "Friction's work is negative.",
+   "distractor_logic": [
+    "Added friction's work as positive",
+    "Ignored friction completely",
+    "Reported the magnitude of friction's work instead of the remaining kinetic energy"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-025",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1 kg block moving at 6 m/s on a smooth floor strikes and sticks to a 2 kg block at rest. The combined block then compresses a light spring of constant \\(k=300\\) N/m fixed to a wall. The maximum compression is",
+   "options": [
+    "\\(\\tfrac{\\sqrt3}{5}\\) m",
+    "0.04 m",
+    "0.2 m",
+    "0.1 m"
+   ],
+   "correct_index": 2,
+   "explanation": "Momentum: \\(v=\\dfrac{1\\times6}{3}=2\\) m/s, so \\(KE\\) after the collision \\(=\\tfrac12\\times3\\times4=6\\) J.<br><br>Smooth floor: \\(\\tfrac12kx^2=6\\), so \\(x^2=\\dfrac{12}{300}=0.04\\).<br><br>\\(x=0.2\\) m.",
+   "hint": "Momentum for the collision, energy for the spring.",
+   "distractor_logic": [
+    "Used the original 18 J, as if no kinetic energy were lost in the sticking collision",
+    "Found \\(x^2=0.04\\) and forgot the square root",
+    "Halved the correct compression with no basis"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-026",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A car's engine delivers 20 kW when the car travels at its steady top speed of 25 m/s on a level road. The total resistive force on the car is",
+   "options": [
+    "500000 N",
+    "0 N",
+    "1250 N",
+    "800 N"
+   ],
+   "correct_index": 3,
+   "explanation": "Steady speed means \\(\\Delta KE=0\\), so the net work is zero and the driving force equals the resistive force.<br><br>\\(F=\\dfrac{P}{v}=\\dfrac{20000}{25}=800\\) N.",
+   "hint": "At steady speed, \\(P=Fv\\) with \\(F\\) equal to the resistance.",
+   "distractor_logic": [
+    "Multiplied power by speed instead of dividing",
+    "Argued that zero net force means no resistive force",
+    "Swapped the digits of the data, dividing 25000 by 20"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-027",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The force needed to stretch a spring is plotted against its extension and gives a straight line through the origin, reaching 20 N at an extension of 0.1 m. The elastic potential energy stored at this extension is",
+   "options": [
+    "1 J",
+    "2 J",
+    "200 J",
+    "0.5 J"
+   ],
+   "correct_index": 0,
+   "explanation": "Work done in stretching equals the area under the \\(F\\)-\\(x\\) line: \\(W=\\tfrac12\\times0.1\\times20=1\\) J.<br><br>This work is stored as potential energy, \\(U=\\tfrac12kx^2\\) with \\(k=200\\) N/m, which also gives 1 J.",
+   "hint": "Stored energy is the triangular area under the graph.",
+   "distractor_logic": [
+    "Took the area of the full rectangle instead of the triangle",
+    "Reported the spring constant \\(k=200\\) N/m as the energy",
+    "Halved the triangular area a second time"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-028",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 0.01 kg bullet moving at 300 m/s embeds in a 2.99 kg block hanging at rest from a long string. Taking \\(g=10\\) m/s\\(^2\\) and ignoring air resistance, the height to which the block rises is",
+   "options": [
+    "15 m",
+    "0.05 m",
+    "0.1 m",
+    "0.5 m"
+   ],
+   "correct_index": 1,
+   "explanation": "Embedding (momentum only): \\(0.01\\times300=3\\times v\\), so \\(v=1\\) m/s.<br><br>Swing (energy conserved): \\(h=\\dfrac{v^2}{2g}=\\dfrac{1}{20}=0.05\\) m.",
+   "hint": "Kinetic energy is not conserved while the bullet embeds.",
+   "distractor_logic": [
+    "Equated the bullet's kinetic energy of 450 J directly to the potential energy, ignoring the loss in the embedding",
+    "Used \\(h=\\dfrac{v^2}{g}\\), leaving out the factor 2",
+    "Misplaced the decimal point"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-029",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg ball is thrown vertically upward with a kinetic energy of 100 J. Ignoring air resistance and taking \\(g=10\\) m/s\\(^2\\), its kinetic energy at a height of 3 m is",
+   "options": [
+    "160 J",
+    "60 J",
+    "40 J",
+    "100 J"
+   ],
+   "correct_index": 2,
+   "explanation": "Potential energy gained: \\(mgh=2\\times10\\times3=60\\) J.<br><br>No air resistance, so \\(KE=100-60=40\\) J.",
+   "hint": "Kinetic energy lost equals potential energy gained.",
+   "distractor_logic": [
+    "Added the potential energy gained instead of subtracting it",
+    "Reported the potential energy gained instead of the remaining kinetic energy",
+    "Ignored the conversion of kinetic into potential energy"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-030",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg block starts from rest on a smooth floor under a constant net force of 4 N. The instantaneous power delivered by the force at \\(t=3\\) s is",
+   "options": [
+    "12 W",
+    "36 W",
+    "8 W",
+    "24 W"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(a=\\dfrac Fm=2\\) m/s\\(^2\\), so \\(v=at=6\\) m/s.<br><br>\\(P=Fv=4\\times6=24\\) W.<br><br>For comparison, the work done in 3 s is \\(\\tfrac12\\times2\\times36=36\\) J, so the average power is only 12 W.",
+   "hint": "Instantaneous power is \\(Fv\\) at that instant.",
+   "distractor_logic": [
+    "Reported the average power over the 3 s instead of the instantaneous power",
+    "Reported the kinetic energy at 3 s, in joules, as the power",
+    "Multiplied the force by the acceleration instead of the velocity"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-031",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Puck A (1 kg, 6 m/s) strikes puck B (2 kg, at rest) on smooth ice. After the collision A moves at \\(90^\\circ\\) to its original direction and B moves at \\(30^\\circ\\) to that direction. Which is correct?",
+   "options": [
+    "B moves at \\(2\\sqrt3\\) m/s and the collision is elastic",
+    "B moves at 3 m/s and the collision is inelastic",
+    "B moves at \\(2\\sqrt3\\) m/s and the collision is inelastic",
+    "B moves at 6 m/s and the collision is elastic"
+   ],
+   "correct_index": 0,
+   "explanation": "x-axis: \\(2v_B\\cos30^\\circ=1\\times6\\), so \\(v_B=\\dfrac{6}{\\sqrt3}=2\\sqrt3\\) m/s.<br><br>y-axis: \\(1\\times v_A=2v_B\\sin30^\\circ\\), so \\(v_A=2\\sqrt3\\) m/s.<br><br>\\(KE\\) after \\(=\\tfrac12(1)(12)+\\tfrac12(2)(12)=18\\) J, equal to \\(KE\\) before \\(=\\tfrac12(1)(36)=18\\) J, so the collision is elastic.",
+   "hint": "Conserve momentum along x and y separately, then compare kinetic energies.",
+   "distractor_logic": [
+    "Wrote a single scalar momentum equation, ignoring the components",
+    "Correct speed, but did not check that the final kinetic energy still equals 18 J",
+    "Gave B the full speed of A, ignoring the masses and the angles"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-032",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 5 kg load starting from rest is lowered through 2 m by a rope in which the tension is 40 N. Taking \\(g=10\\) m/s\\(^2\\), the work done by the tension and the kinetic energy gained by the load are respectively",
+   "options": [
+    "\\(+80\\) J and 180 J",
+    "\\(-80\\) J and 20 J",
+    "\\(-80\\) J and 100 J",
+    "\\(-100\\) J and 20 J"
+   ],
+   "correct_index": 1,
+   "explanation": "Tension is upward, displacement downward: \\(W_T=-40\\times2=-80\\) J.<br><br>Gravity: \\(W_g=+5\\times10\\times2=+100\\) J.<br><br>\\(\\Delta KE=W_{net}=100-80=20\\) J.",
+   "hint": "Find the sign of each force's work, then add.",
+   "distractor_logic": [
+    "Gave the tension's work a positive sign although the tension is opposite to the downward displacement",
+    "Equated gravity's work alone to the kinetic energy, ignoring the tension",
+    "Confused the magnitudes of the work of gravity and of the tension"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-033",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Potential Energy and Conservation of Mechanical Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg block slides down a smooth \\(30^\\circ\\) incline. Taking \\(g=10\\) m/s\\(^2\\), at the instant its speed is 3 m/s the rate at which its gravitational potential energy is being converted into kinetic energy is",
+   "options": [
+    "60 W",
+    "\\(30\\sqrt3\\) W",
+    "30 W",
+    "0 W"
+   ],
+   "correct_index": 2,
+   "explanation": "The incline is smooth, so the power of gravity equals the rate of conversion of potential into kinetic energy.<br><br>The angle between gravity and the velocity is \\(60^\\circ\\): \\(P=mgv\\cos60^\\circ=2\\times10\\times3\\times\\tfrac12=30\\) W.",
+   "hint": "Rate of energy conversion is the power of gravity, \\(mgv\\cos\\theta\\).",
+   "distractor_logic": [
+    "Used \\(mgv\\), ignoring the \\(60^\\circ\\) angle between gravity and the velocity",
+    "Used \\(\\cos30^\\circ\\) instead of the cosine of the angle between gravity and the velocity",
+    "Confused gravity with the normal force, which delivers no power"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-034",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg body moving at 3 m/s to the right collides head-on with a 3 kg body moving at 2 m/s to the left, and they stick together. The kinetic energy lost in the collision is",
+   "options": [
+    "0 J",
+    "3 J",
+    "7.5 J",
+    "15 J"
+   ],
+   "correct_index": 3,
+   "explanation": "Total momentum \\(=2\\times3+3\\times(-2)=0\\), so the combined body is at rest.<br><br>Initial \\(KE=\\tfrac12\\times2\\times9+\\tfrac12\\times3\\times4=9+6=15\\) J; final \\(KE=0\\).<br><br>All 15 J is lost, while momentum (zero) is still conserved.",
+   "hint": "Find the total momentum with signs first.",
+   "distractor_logic": [
+    "Assumed kinetic energy is conserved in a perfectly inelastic collision",
+    "Subtracted the two kinetic energies (9 J and 6 J) as if energy had direction",
+    "Assumed exactly half the kinetic energy is lost"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-035",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Work Done by a Constant and a Variable Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A crate is dragged across a rough floor from P to Q against a friction force of 5 N. The direct path is 4 m long; a roundabout path from P to Q is 6 m long. For the roundabout path the work done by friction is",
+   "options": [
+    "\\(-30\\) J, which differs from the direct-path value, so friction is non-conservative",
+    "\\(-20\\) J, the same as for the direct path, since work depends only on the end points",
+    "\\(+30\\) J, since more distance means more positive work",
+    "0 J, since the start and end points are the same as for the direct path"
+   ],
+   "correct_index": 0,
+   "explanation": "Friction always opposes the motion, so \\(W=-f\\times(\\text{path length})\\).<br><br>Direct: \\(-5\\times4=-20\\) J. Roundabout: \\(-5\\times6=-30\\) J.<br><br>The work depends on the path, so no potential energy can be defined for friction.",
+   "hint": "Friction's work depends on the distance actually travelled.",
+   "distractor_logic": [
+    "Treated friction as a conservative force whose work is path independent",
+    "Gave friction's work a positive sign although it always opposes the motion",
+    "Confused having the same end points with a closed loop, and ignored that friction's work is not zero even then"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-036",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Power",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 3 kg body starts from rest on a smooth floor under a constant net force of 6 N. At the instant its kinetic energy is 24 J, the power delivered by the force is",
+   "options": [
+    "12 W",
+    "24 W",
+    "48 W",
+    "144 W"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\tfrac12\\times3\\times v^2=24\\), so \\(v^2=16\\) and \\(v=4\\) m/s.<br><br>\\(P=Fv=6\\times4=24\\) W.",
+   "hint": "Get the speed from the kinetic energy, then use \\(P=Fv\\).",
+   "distractor_logic": [
+    "Used the acceleration value 2 m/s\\(^2\\) in place of the speed",
+    "Used a speed of 8 m/s, obtained by halving \\(v^2=16\\) instead of taking its square root",
+    "Multiplied the force by the kinetic energy"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Power"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-037",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Kinetic Energy and the Work-Energy Theorem",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1 kg block is released from rest at the top of a smooth curved ramp of height 1.25 m. At the bottom it moves onto a rough horizontal floor where the friction force is 2.5 N. Taking \\(g=10\\) m/s\\(^2\\), the distance it slides on the floor before stopping is",
+   "options": [
+    "10 m",
+    "2.5 m",
+    "5 m",
+    "1.25 m"
+   ],
+   "correct_index": 2,
+   "explanation": "Smooth ramp: \\(KE\\) at the bottom \\(=mgh=1\\times10\\times1.25=12.5\\) J.<br><br>Rough floor: friction's work \\(-2.5\\times d\\) removes this kinetic energy.<br><br>\\(d=\\dfrac{12.5}{2.5}=5\\) m.",
+   "hint": "Conservation on the smooth ramp, work-energy theorem on the rough floor.",
+   "distractor_logic": [
+    "Used \\(mv^2=25\\) J for the kinetic energy, leaving out the factor \\(\\tfrac12\\)",
+    "Halved the energy available at the bottom",
+    "Assumed the block slides a distance equal to the ramp height"
+   ],
+   "mixed_topics": [
+    "Work Done by a Constant and a Variable Force",
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Potential Energy and Conservation of Mechanical Energy"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-038",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A heavy truck moving at 10 m/s makes a head-on elastic collision with a light ball at rest. The mass of the truck is very much larger than that of the ball. Just after the collision the speed of the ball is nearly",
+   "options": [
+    "10 m/s",
+    "0 m/s",
+    "5 m/s",
+    "20 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(v_2'=\\dfrac{2m_1u_1}{m_1+m_2}\\). With \\(m_1\\gg m_2\\), \\(v_2'\\approx2u_1=20\\) m/s.<br><br>The truck's velocity is almost unchanged, and kinetic energy is still conserved because the ball's mass is tiny.",
+   "hint": "Put \\(m_1\\gg m_2\\) in the formula for \\(v_2'\\).",
+   "distractor_logic": [
+    "Assumed the velocities are exchanged, which applies only to equal masses",
+    "Assumed the ball stays at rest",
+    "Assumed the speed is shared, as in a sticking collision between equal masses"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-039",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg block slides from rest down a frictionless ramp of height 0.45 m and, on the smooth level floor, collides head-on with a 1 kg block at rest. The coefficient of restitution is 0.5 and \\(g=10\\) m/s\\(^2\\). The speed of the 1 kg block just after the collision is",
+   "options": [
+    "3 m/s",
+    "4 m/s",
+    "2 m/s",
+    "1.5 m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "Speed at the bottom: \\(u=\\sqrt{2\\times10\\times0.45}=3\\) m/s.<br><br>Momentum: \\(2v_1'+v_2'=6\\). Restitution: \\(v_2'-v_1'=0.5\\times3=1.5\\).<br><br>Solving: \\(v_1'=1.5\\) m/s and \\(v_2'=3\\) m/s.",
+   "hint": "Energy conservation on the ramp, then momentum and \\(e\\) for the collision.",
+   "distractor_logic": [
+    "Treated the collision as elastic (\\(e=1\\))",
+    "Treated the collision as perfectly inelastic (\\(e=0\\))",
+    "This is the speed of the 2 kg block after the collision"
+   ],
+   "mixed_topics": [
+    "Potential Energy and Conservation of Mechanical Energy",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  },
+  {
+   "id": "PHY11-CH05-B-040",
+   "chapter": "PHY11-CH05",
+   "chapter_name": "Work, Energy and Power",
+   "topic": "Collisions: Elastic and Inelastic, in One and Two Dimensions",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In a partially inelastic collision (\\(0<e<1\\)) between two bodies free of external forces, which statement is correct?",
+   "options": [
+    "Both total momentum and total kinetic energy are conserved",
+    "Total momentum is conserved, total kinetic energy decreases, and the bodies separate after the collision",
+    "Neither total momentum nor total kinetic energy is conserved",
+    "Total kinetic energy is conserved but total momentum is not"
+   ],
+   "correct_index": 1,
+   "explanation": "Momentum is conserved whenever no external force acts.<br><br>With \\(0<e<1\\) the bodies separate more slowly than they approached, so some kinetic energy has become heat, sound or deformation.<br><br>They still separate; sticking together happens only when \\(e=0\\).",
+   "hint": "Which quantity survives every collision?",
+   "distractor_logic": [
+    "This describes an elastic collision (\\(e=1\\))",
+    "Momentum is conserved in every collision free of external forces",
+    "Reversed the roles of momentum and kinetic energy"
+   ],
+   "mixed_topics": [
+    "Kinetic Energy and the Work-Energy Theorem",
+    "Collisions: Elastic and Inelastic, in One and Two Dimensions"
+   ]
+  }
+ ]
+}

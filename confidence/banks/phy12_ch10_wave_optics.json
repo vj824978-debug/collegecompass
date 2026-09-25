@@ -1,0 +1,3723 @@
+{
+ "meta": {
+  "chapter": "PHY12-CH10",
+  "chapter_name": "Wave Optics",
+  "subject": "Physics",
+  "class": 12,
+  "total_questions": 150,
+  "level_breakdown": {
+   "L1": 40,
+   "L2": 40,
+   "L3": 30,
+   "Bonus": 40
+  },
+  "rendering_note": "Refractive index \\( \\mu \\), fringe width \\( \\beta \\), wavelength \\( \\lambda \\) and Brewster's angle \\( \\theta_B \\) are always written as single KaTeX spans; no raw Unicode math symbols appear anywhere outside KaTeX; the microscope half-angle is written \\( \\alpha \\) so that \\( \\beta \\) stays reserved for fringe width; every numeric answer terminates cleanly."
+ },
+ "topics": [
+  {
+   "name": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "summary": "A wavefront is a surface on which every point oscillates in the same phase, and a ray is always perpendicular to it. A point source gives spherical wavefronts, a line source gives cylindrical ones, and a very distant source gives plane wavefronts. Huygens' principle says every point on a wavefront acts as a source of secondary wavelets that spread with the wave speed; the new wavefront a short time later is the common tangent (forward envelope) to all these wavelets. Applied at a boundary, the construction gives the law of reflection (equal speeds on both sides of the construction) and Snell's law of refraction, \\( \\sin i/\\sin r=v_1/v_2 \\). Light entering a denser medium slows down, \\( v=c/\\mu \\), so the wavelets inside cover less distance and the ray bends toward the normal. This is the opposite of the old corpuscular theory, which needed light to speed up in a denser medium. Frequency never changes on refraction; speed and wavelength both fall by the factor \\( \\mu \\).",
+   "key_formulas": [
+    "\\( \\mu=\\dfrac{c}{v} \\)",
+    "\\( \\dfrac{\\sin i}{\\sin r}=\\dfrac{v_1}{v_2}=\\dfrac{\\lambda_1}{\\lambda_2}=\\dfrac{\\mu_2}{\\mu_1} \\)",
+    "\\( \\lambda_\\text{medium}=\\dfrac{\\lambda_\\text{air}}{\\mu} \\)",
+    "Optical path \\( =\\mu t \\)"
+   ],
+   "worked_example": "Light of wavelength 600 nm in air enters glass with \\( \\mu=1.5 \\). Speed in glass: \\( v=\\dfrac{3\\times10^{8}}{1.5}=2\\times10^{8} \\) m/s. Wavelength in glass: \\( \\dfrac{600}{1.5}=400 \\) nm. The frequency is unchanged, and because the wave slows down, the ray bends toward the normal.",
+   "common_mistakes": [
+    "Saying light speeds up in a denser medium (the corpuscular-theory error)",
+    "Taking the new wavefront as the sum or average of the wavelets instead of their common tangent envelope",
+    "Thinking wavelength stays constant on refraction; it is frequency that stays constant",
+    "Inverting the speed ratio in Snell's law"
+   ],
+   "question_count": 39
+  },
+  {
+   "name": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "summary": "Interference is the superposition of light from two coherent sources, which have the same frequency and a constant phase difference. Independent lamps are incoherent because their phase difference changes randomly, so their fringes are never seen. In Young's double slit experiment, two slits lit by the same wavefront act as coherent sources. A bright fringe forms where the path difference is a whole number of wavelengths, \\( \\Delta=n\\lambda \\), and a dark fringe forms where \\( \\Delta=\\left(n+\\tfrac12\\right)\\lambda \\). The centre, with zero path difference, is always bright. Fringe width \\( \\beta=\\lambda D/d \\) increases with wavelength and screen distance and decreases as the slit separation increases, so red light gives wider fringes than blue. With two equal sources of intensity \\( I_0 \\), the bright fringes reach \\( 4I_0 \\) and the dark ones reach zero. In a medium, \\( \\beta \\) shrinks by the factor \\( \\mu \\). A thin sheet over one slit shifts the whole pattern toward that slit by \\( (\\mu-1)tD/d \\).",
+   "key_formulas": [
+    "Bright: \\( \\Delta=n\\lambda \\); dark: \\( \\Delta=\\left(n+\\tfrac12\\right)\\lambda \\)",
+    "\\( \\beta=\\dfrac{\\lambda D}{d} \\)",
+    "\\( y_n=n\\beta \\) (bright)",
+    "\\( I=4I_0\\cos^2\\dfrac{\\phi}{2} \\), \\( \\phi=\\dfrac{2\\pi}{\\lambda}\\Delta \\)",
+    "Shift \\( =\\dfrac{(\\mu-1)tD}{d} \\)"
+   ],
+   "worked_example": "With \\( \\lambda=600 \\) nm, \\( d=0.5 \\) mm and \\( D=1 \\) m: \\( \\beta=\\dfrac{600\\times10^{-9}\\times1}{0.5\\times10^{-3}}=1.2 \\) mm. The third bright fringe is at \\( 3\\beta=3.6 \\) mm from the centre, and the third dark fringe is at \\( 2.5\\beta=3 \\) mm.",
+   "common_mistakes": [
+    "Swapping the bright and dark conditions",
+    "Thinking a larger \\( d \\) gives wider fringes",
+    "Thinking red light gives narrower fringes than blue",
+    "Adding intensities (\\( 2I_0 \\)) instead of amplitudes (\\( 4I_0 \\)) at a bright fringe"
+   ],
+   "question_count": 41
+  },
+  {
+   "name": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "summary": "Diffraction is the bending of light into the geometrical shadow when it passes an edge or a narrow opening; it is noticeable when the opening is comparable to the wavelength. For a single slit of width \\( a \\), every point across the slit sends out secondary wavelets. Straight ahead they all arrive in phase, giving a bright central maximum. The condition \\( a\\sin\\theta=n\\lambda \\) with \\( n=\\pm1,\\pm2,\\ldots \\) gives the MINIMA, because the slit can then be split into parts whose wavelets cancel in pairs. This looks like Young's bright-fringe condition, but for a single slit it marks dark fringes. Secondary maxima lie roughly midway, at \\( a\\sin\\theta=\\left(n+\\tfrac12\\right)\\lambda \\), and are much dimmer. The central maximum spans from the first minimum on one side to the first minimum on the other, so its angular width is \\( 2\\lambda/a \\), twice the width \\( \\lambda/a \\) of each secondary maximum. A narrower slit or longer wavelength spreads the pattern out. Ray optics holds only well within the Fresnel distance \\( a^2/\\lambda \\).",
+   "key_formulas": [
+    "Minima: \\( a\\sin\\theta=n\\lambda \\), \\( n=\\pm1,\\pm2,\\ldots \\)",
+    "Secondary maxima: \\( a\\sin\\theta\\approx\\left(n+\\tfrac12\\right)\\lambda \\)",
+    "Central maximum angular width \\( =\\dfrac{2\\lambda}{a} \\)",
+    "Linear width \\( =\\dfrac{2\\lambda D}{a} \\)",
+    "\\( z_F=\\dfrac{a^2}{\\lambda} \\)"
+   ],
+   "worked_example": "For \\( \\lambda=500 \\) nm, \\( a=0.5 \\) mm and a screen 1 m away, the first minimum is at \\( \\dfrac{\\lambda D}{a}=1 \\) mm from the centre, so the central maximum is \\( 2 \\) mm wide, while each secondary maximum is about 1 mm wide.",
+   "common_mistakes": [
+    "Treating \\( a\\sin\\theta=n\\lambda \\) as the condition for maxima, by analogy with Young's formula",
+    "Taking the central maximum as the same width as a secondary maximum",
+    "Including \\( n=0 \\) as a minimum",
+    "Forgetting that a narrower slit gives a wider pattern"
+   ],
+   "question_count": 46
+  },
+  {
+   "name": "Resolving Power of Microscopes and Telescopes",
+   "summary": "Even a perfect lens cannot form a point image of a point source, because diffraction at its circular aperture spreads the light into a small disc. Rayleigh's criterion says two points are just resolved when the central maximum of one image falls on the first minimum of the other. For a telescope of objective diameter \\( D \\), this gives the limiting angle \\( \\Delta\\theta=1.22\\lambda/D \\); the factor 1.22 comes from the circular shape of the aperture. Resolving power is the reciprocal of the limit of resolution, so a larger aperture or a shorter wavelength always resolves better. For a microscope, the minimum resolvable distance is \\( d_\\text{min}=1.22\\lambda/(2\\,\\text{NA}) \\), where the numerical aperture \\( \\text{NA}=\\mu\\sin\\alpha \\) and \\( \\alpha \\) is the half-angle of the cone of light accepted by the objective. Oil immersion raises \\( \\mu \\) and so improves resolution. In air NA cannot exceed 1. Magnification by an eyepiece cannot resolve detail that the objective has already blurred.",
+   "key_formulas": [
+    "\\( \\Delta\\theta=\\dfrac{1.22\\lambda}{D} \\)",
+    "Resolving power (telescope) \\( =\\dfrac{D}{1.22\\lambda} \\)",
+    "\\( d_\\text{min}=\\dfrac{1.22\\lambda}{2\\,\\text{NA}} \\)",
+    "\\( \\text{NA}=\\mu\\sin\\alpha \\)"
+   ],
+   "worked_example": "A telescope with \\( D=2.44 \\) m observes at \\( \\lambda=500 \\) nm: \\( \\Delta\\theta=\\dfrac{1.22\\times500\\times10^{-9}}{2.44}=2.5\\times10^{-7} \\) rad, so its resolving power is \\( 4\\times10^{6} \\) rad\\( ^{-1} \\).",
+   "common_mistakes": [
+    "Thinking a larger aperture gives a larger limiting angle",
+    "Dropping the 1.22 factor or the factor 2 in the microscope formula",
+    "Confusing resolving power with magnifying power",
+    "Using the radius instead of the diameter of the objective"
+   ],
+   "question_count": 32
+  },
+  {
+   "name": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "summary": "Polarization shows that light is a transverse wave; longitudinal waves such as sound cannot be polarized. Unpolarized light has vibrations in all directions perpendicular to travel. An ideal polarizer passes only the component along its axis, so unpolarized light of intensity \\( I_0 \\) always emerges with \\( I_0/2 \\), whatever the orientation. Once the light is polarized, an analyzer at angle \\( \\theta \\) passes \\( I=I_0\\cos^2\\theta \\) (Malus's law): the amplitude component is \\( \\cos\\theta \\), and intensity goes as its square. Crossed polarizers transmit nothing, but a third polarizer placed between them at an angle lets some light through. When unpolarized light strikes a transparent surface at Brewster's angle, \\( \\tan\\theta_B=\\mu \\), the reflected ray is completely polarized perpendicular to the plane of incidence, while the refracted ray is only partially polarized. At this angle the reflected and refracted rays are exactly perpendicular, so \\( \\theta_B+\\theta_r=90^\\circ \\). Polaroid sunglasses use this to block glare reflected from roads and water.",
+   "key_formulas": [
+    "Unpolarized through one polarizer: \\( I=\\dfrac{I_0}{2} \\)",
+    "Malus's law: \\( I=I_0\\cos^2\\theta \\)",
+    "Brewster's law: \\( \\tan\\theta_B=\\mu \\)",
+    "\\( \\theta_B+\\theta_r=90^\\circ \\)"
+   ],
+   "worked_example": "Unpolarized light of intensity \\( I_0 \\) passes through a polarizer and then an analyzer at \\( 60^\\circ \\): after the polarizer, \\( \\dfrac{I_0}{2} \\); after the analyzer, \\( \\dfrac{I_0}{2}\\cos^260^\\circ=\\dfrac{I_0}{8} \\). For glass with \\( \\mu=\\sqrt3 \\), \\( \\theta_B=60^\\circ \\) and the refraction angle is \\( 30^\\circ \\).",
+   "common_mistakes": [
+    "Using \\( \\cos\\theta \\) instead of \\( \\cos^2\\theta \\) in Malus's law",
+    "Applying Malus's law directly to unpolarized light instead of first halving",
+    "Using \\( \\sin\\theta_B=\\mu \\) or \\( \\cos\\theta_B=\\mu \\) instead of \\( \\tan\\theta_B=\\mu \\)",
+    "Claiming the refracted ray at Brewster's angle is completely polarized"
+   ],
+   "question_count": 33
+  }
+ ],
+ "questions": [
+  {
+   "id": "PHY12-CH10-L1-001",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "What is a wavefront?",
+   "options": [
+    "The locus of all points that oscillate in the same phase",
+    "The straight line along which light energy travels",
+    "The locus of points having maximum amplitude only",
+    "The boundary surface separating two media"
+   ],
+   "correct_index": 0,
+   "explanation": "A wavefront is a surface on which every point has the same phase of oscillation.<br><br>The direction of energy flow (the ray) is perpendicular to this surface.",
+   "hint": "Think of the word 'phase': what do all points on a wavefront share?",
+   "distractor_logic": [
+    "That describes a ray, which is always perpendicular to the wavefront, not the wavefront itself",
+    "Confuses a wavefront with a crest; a wavefront is defined by equal phase, not by maximum displacement",
+    "Confuses a wavefront with the interface between two media, where refraction happens"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-002",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "A point source of light is placed close to an observer. What is the shape of the wavefront near the source?",
+   "options": [
+    "Plane",
+    "Spherical",
+    "Cylindrical",
+    "Elliptical"
+   ],
+   "correct_index": 1,
+   "explanation": "From a point source, light travels equally in all directions in a uniform medium.<br><br>So all points at the same distance \\( r \\) share the same phase, forming a sphere of radius \\( r \\).",
+   "hint": "In a uniform medium, light from a point spreads equally in every direction.",
+   "distractor_logic": [
+    "A plane wavefront appears only very far from the source, where a small part of a huge sphere looks flat",
+    "A cylindrical wavefront comes from a line source such as a slit, not from a point source",
+    "Light spreads equally in all directions from a point source in a uniform medium, so there is no reason for an elliptical shape"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-003",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "Light from a very distant star reaches the Earth. What type of wavefront arrives at a telescope?",
+   "options": [
+    "Spherical wavefront of small radius",
+    "Cylindrical wavefront",
+    "Plane wavefront",
+    "Conical wavefront"
+   ],
+   "correct_index": 2,
+   "explanation": "A star is a point source, so its wavefront starts spherical.<br><br>At a very large distance the radius is huge, and a small portion of a huge sphere is practically flat, so a plane wavefront reaches the telescope.",
+   "hint": "What does a small patch of a gigantic sphere look like?",
+   "distractor_logic": [
+    "The sphere has an enormous radius by the time it reaches Earth, so over a small aperture it is effectively flat",
+    "Cylindrical wavefronts come from line sources such as a long slit, not from a distant star",
+    "No standard source produces a conical wavefront in this situation"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-004",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "What is the angle between a ray of light and the wavefront at the point where they meet?",
+   "options": [
+    "\\( 0^\\circ \\)",
+    "\\( 45^\\circ \\)",
+    "It varies from point to point randomly",
+    "\\( 90^\\circ \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "The ray shows the direction in which the wavefront advances.<br><br>A wavefront advances along its normal, so the ray is perpendicular to it, making \\( 90^\\circ \\).",
+   "hint": "A wavefront moves forward along its own normal.",
+   "distractor_logic": [
+    "A ray lying along the wavefront would mean energy flows sideways along a surface of equal phase, which does not happen",
+    "There is no special role for \\( 45^\\circ \\); the ray is the normal to the wavefront",
+    "In an isotropic medium the ray is always along the normal to the wavefront, so the angle is fixed"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-005",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "According to Huygens' principle, how is the new position of a wavefront found after a short time \\( t \\)?",
+   "options": [
+    "As the common tangent (forward envelope) to all the secondary wavelets",
+    "As the sum of all the secondary wavelets added together",
+    "As the average position of all the secondary wavelets",
+    "As the backward envelope of the secondary wavelets"
+   ],
+   "correct_index": 0,
+   "explanation": "Every point on the wavefront acts as a source of secondary wavelets that spread out with the wave speed \\( v \\).<br><br>After time \\( t \\) each wavelet has radius \\( vt \\).<br><br>The surface that touches all these wavelets in the forward direction (the common tangent) is the new wavefront.",
+   "hint": "Imagine drawing small circles from every point and then a single surface just touching them all.",
+   "distractor_logic": [
+    "Adding the wavelets is not Huygens' construction; the new wavefront is the surface that touches all the wavelets",
+    "Averaging positions has no physical meaning here; the envelope (common tangent) is used",
+    "Huygens assumed the backward wave is absent, so only the forward envelope is taken"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-006",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "According to the wave theory of light, what happens to the speed of light when it passes from air into glass?",
+   "options": [
+    "It increases",
+    "It decreases",
+    "It stays the same",
+    "It becomes zero at the surface"
+   ],
+   "correct_index": 1,
+   "explanation": "In wave theory, the refractive index is \\( \\mu=\\dfrac{c}{v} \\).<br><br>Glass has \\( \\mu>1 \\), so \\( v<c \\): light slows down in the denser medium.<br><br>This slowing is exactly why the ray bends toward the normal.",
+   "hint": "Recall how refractive index is defined in terms of speeds.",
+   "distractor_logic": [
+    "This is the prediction of the old corpuscular theory, which was proved wrong by experiment",
+    "The speed depends on the medium; only the frequency stays unchanged",
+    "Light does not stop at the surface; it continues into the glass with a smaller speed"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-007",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "Which relation gives the absolute refractive index \\( \\mu \\) of a medium in which light travels with speed \\( v \\)?",
+   "options": [
+    "\\( \\mu=\\dfrac{v}{c} \\)",
+    "\\( \\mu=c\\,v \\)",
+    "\\( \\mu=\\dfrac{c}{v} \\)",
+    "\\( \\mu=c-v \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The refractive index compares the speed of light in vacuum with the speed in the medium.<br><br>\\( \\mu=\\dfrac{c}{v} \\), and since \\( v<c \\) in a material, \\( \\mu>1 \\).",
+   "hint": "The answer must be a pure number and must be larger than 1 for glass.",
+   "distractor_logic": [
+    "Inverted ratio; this would give a value less than 1 for every material medium",
+    "The product has units of speed squared, so it cannot be a pure number",
+    "A difference of speeds has units, while refractive index is dimensionless"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-008",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 1,
+   "type": "regular",
+   "question": "A long, narrow illuminated slit acts as a line source. What shape of wavefront does it produce?",
+   "options": [
+    "Spherical",
+    "Plane",
+    "No wavefront is formed",
+    "Cylindrical"
+   ],
+   "correct_index": 3,
+   "explanation": "Points at equal perpendicular distance from a line lie on a cylinder around it.<br><br>So a line source produces cylindrical wavefronts.",
+   "hint": "Which surface is at equal distance from a straight line?",
+   "distractor_logic": [
+    "A spherical wavefront comes from a point source, not a line source",
+    "A plane wavefront is produced only far away from the source",
+    "Any source of waves produces wavefronts; a line source is no exception"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-009",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "Two light sources are called coherent when they have:",
+   "options": [
+    "The same frequency and a constant phase difference",
+    "The same amplitude, whatever their phase relation",
+    "The same intensity but a randomly changing phase difference",
+    "Different frequencies but equal brightness"
+   ],
+   "correct_index": 0,
+   "explanation": "A steady interference pattern needs the phase difference between the two waves to stay constant.<br><br>That requires the same frequency and a fixed phase relation; such sources are coherent.",
+   "hint": "What must stay fixed for bright and dark fringes to stay in place?",
+   "distractor_logic": [
+    "Equal amplitude alone is not enough; the phase difference must stay fixed in time",
+    "A randomly changing phase difference washes out the fringes, which is exactly what incoherence means",
+    "Different frequencies make the phase difference change continuously, so no steady pattern forms"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-010",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "In Young's double slit experiment, a bright fringe is formed at points where the path difference \\( \\Delta \\) equals:",
+   "options": [
+    "\\( \\left(n+\\tfrac12\\right)\\lambda \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)",
+    "\\( n\\lambda \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)",
+    "\\( \\dfrac{n\\lambda}{4} \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)",
+    "\\( n^2\\lambda \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "For constructive interference the two waves must meet crest on crest.<br><br>That happens when the path difference is a whole number of wavelengths: \\( \\Delta=n\\lambda \\).",
+   "hint": "Crest meets crest when the extra distance is a whole number of wavelengths.",
+   "distractor_logic": [
+    "This is the condition for a dark fringe; the two conditions have been swapped",
+    "A quarter-wavelength path difference gives neither complete reinforcement nor complete cancellation",
+    "The bright-fringe condition is linear in \\( n \\), giving equally spaced fringes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-011",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "In Young's double slit experiment, a dark fringe is formed where the path difference \\( \\Delta \\) equals:",
+   "options": [
+    "\\( n\\lambda \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)",
+    "\\( (n+1)\\lambda \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)",
+    "\\( \\left(n+\\tfrac12\\right)\\lambda \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)",
+    "\\( 2n\\lambda \\), with \\( n=0,\\pm1,\\pm2,\\ldots \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "For destructive interference a crest must meet a trough.<br><br>That needs an odd number of half wavelengths: \\( \\Delta=\\left(n+\\tfrac12\\right)\\lambda \\).",
+   "hint": "Crest meets trough when the extra distance is half a wavelength more than a whole number.",
+   "distractor_logic": [
+    "This is the bright-fringe condition; the two conditions have been swapped",
+    "This is still a whole number of wavelengths, which gives reinforcement, not cancellation",
+    "Even multiples of \\( \\lambda \\) are whole wavelengths, which give bright fringes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-012",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "Which expression gives the fringe width \\( \\beta \\) in Young's double slit experiment? (\\( d \\) = slit separation, \\( D \\) = slit-to-screen distance)",
+   "options": [
+    "\\( \\beta=\\dfrac{\\lambda d}{D} \\)",
+    "\\( \\beta=\\dfrac{dD}{\\lambda} \\)",
+    "\\( \\beta=\\dfrac{\\lambda}{dD} \\)",
+    "\\( \\beta=\\dfrac{\\lambda D}{d} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Bright fringes lie at \\( y_n=\\dfrac{n\\lambda D}{d} \\).<br><br>The spacing between neighbours is \\( \\beta=y_{n+1}-y_n=\\dfrac{\\lambda D}{d} \\).",
+   "hint": "Fringes spread out more on a farther screen and with longer wavelength.",
+   "distractor_logic": [
+    "Swaps \\( d \\) and \\( D \\); a larger slit separation actually gives narrower fringes",
+    "Inverts the whole relation; longer wavelength must give wider fringes, not narrower",
+    "The units come out wrong; fringe width must be a length"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-013",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "In Young's experiment, red light is replaced by blue light, everything else unchanged. What happens to the fringes?",
+   "options": [
+    "They become narrower",
+    "They become wider",
+    "They stay the same width",
+    "They disappear completely"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\beta=\\dfrac{\\lambda D}{d} \\), so \\( \\beta \\) is proportional to \\( \\lambda \\).<br><br>\\( \\lambda_\\text{blue}<\\lambda_\\text{red} \\), so the fringes become narrower.",
+   "hint": "Which colour has the shorter wavelength?",
+   "distractor_logic": [
+    "Blue has a shorter wavelength, and \\( \\beta \\) is proportional to \\( \\lambda \\), so the fringes shrink",
+    "Fringe width depends directly on wavelength, so changing colour must change it",
+    "Blue light from the same arrangement is still coherent, so fringes still form"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-014",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "Two separate electric bulbs placed side by side do not produce an interference pattern. Why?",
+   "options": [
+    "Their combined intensity is too high for fringes to form",
+    "They are not coherent: the phase difference between their light changes randomly and very rapidly",
+    "Light from bulbs does not obey the principle of superposition",
+    "Each bulb emits only one wavelength"
+   ],
+   "correct_index": 1,
+   "explanation": "Each bulb emits from countless atoms at random times, so the phase difference changes about every \\( 10^{-8} \\) s or faster.<br><br>The fringes move so quickly that the eye sees only uniform illumination.",
+   "hint": "What must stay constant between two sources for steady fringes?",
+   "distractor_logic": [
+    "Brightness does not prevent interference; a fixed phase relation is what matters",
+    "Superposition always holds for light; the fringes shift too fast to be seen",
+    "Bulbs emit many wavelengths, and in any case a single wavelength would help rather than prevent fringes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-015",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "At the centre of the screen in Young's double slit experiment, where the path difference is zero, the fringe is:",
+   "options": [
+    "Dark",
+    "Bright for some wavelengths and dark for others",
+    "Bright",
+    "Neither bright nor dark, always half intensity"
+   ],
+   "correct_index": 2,
+   "explanation": "At the centre the two paths are equal, so \\( \\Delta=0=0\\cdot\\lambda \\).<br><br>That satisfies the bright-fringe condition with \\( n=0 \\), for any wavelength.",
+   "hint": "Put \\( \\Delta=0 \\) into the bright-fringe condition.",
+   "distractor_logic": [
+    "Zero path difference means the waves arrive in step, so they reinforce",
+    "\\( \\Delta=0 \\) is \\( n=0 \\) in \\( \\Delta=n\\lambda \\) for every wavelength, so it is always bright",
+    "Waves in step give full reinforcement, not half intensity"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-016",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 1,
+   "type": "regular",
+   "question": "In Young's experiment the separation \\( d \\) between the slits is increased. What happens to the fringe width?",
+   "options": [
+    "It increases",
+    "It stays the same",
+    "It doubles, whatever the change in \\( d \\)",
+    "It decreases"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\beta=\\dfrac{\\lambda D}{d} \\), so \\( \\beta \\) is inversely proportional to \\( d \\).<br><br>Increasing \\( d \\) therefore makes the fringes narrower.",
+   "hint": "Where does \\( d \\) appear in the fringe-width formula?",
+   "distractor_logic": [
+    "Reverses the dependence; \\( d \\) is in the denominator of \\( \\beta=\\lambda D/d \\)",
+    "Fringe width depends on \\( d \\), so it must change",
+    "The change depends on how much \\( d \\) changes, and the fringe width in fact goes down"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-017",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "What is diffraction of light?",
+   "options": [
+    "The bending of light around the edges of an obstacle or aperture into the region of geometrical shadow",
+    "The splitting of white light into its colours",
+    "The bending of light at the boundary between two media due to a change of speed",
+    "The bouncing back of light from a smooth surface"
+   ],
+   "correct_index": 0,
+   "explanation": "When a wave meets an edge or a small opening, the secondary wavelets from the unobstructed part spread into the shadow region.<br><br>This spreading and bending around edges is diffraction.",
+   "hint": "Think of waves spreading after passing through a narrow gap.",
+   "distractor_logic": [
+    "That is dispersion, caused by \\( \\mu \\) depending on wavelength",
+    "That is refraction, which happens at an interface, not at an edge",
+    "That is reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-018",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "For single slit diffraction with slit width \\( a \\), the condition \\( a\\sin\\theta=n\\lambda \\) (\\( n=\\pm1,\\pm2,\\ldots \\)) gives the positions of:",
+   "options": [
+    "Bright secondary maxima",
+    "Dark fringes (minima)",
+    "The central maximum",
+    "Points of maximum intensity, including \\( n=0 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Divide the slit into two halves. When \\( a\\sin\\theta=\\lambda \\), each point in the upper half pairs with a point in the lower half with path difference \\( \\lambda/2 \\), so all pairs cancel.<br><br>The same pairing works for \\( a\\sin\\theta=n\\lambda \\), so these angles are dark.",
+   "hint": "For a single slit, whole wavelengths across the slit lead to cancellation, not reinforcement.",
+   "distractor_logic": [
+    "False analogy with Young's formula \\( d\\sin\\theta=n\\lambda \\); for a single slit this same-looking condition gives minima",
+    "The central maximum is at \\( \\theta=0 \\), which is not given by this condition since \\( n\\neq0 \\) here",
+    "\\( n=0 \\) is excluded, and the condition marks minima, not maxima"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-019",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "In a single slit diffraction pattern, how does the width of the central maximum compare with the width of each secondary maximum?",
+   "options": [
+    "It is the same width",
+    "It is half as wide",
+    "It is twice as wide",
+    "It is four times as wide"
+   ],
+   "correct_index": 2,
+   "explanation": "Minima are at \\( \\theta=\\pm\\dfrac{\\lambda}{a},\\pm\\dfrac{2\\lambda}{a},\\ldots \\)<br><br>The central maximum lies between \\( -\\dfrac{\\lambda}{a} \\) and \\( +\\dfrac{\\lambda}{a} \\): width \\( \\dfrac{2\\lambda}{a} \\).<br><br>Each secondary maximum lies between neighbouring minima: width \\( \\dfrac{\\lambda}{a} \\).",
+   "hint": "Count how many minimum-to-minimum gaps the central maximum covers.",
+   "distractor_logic": [
+    "Ignores that the central maximum stretches from the first minimum on one side to the first minimum on the other",
+    "The central maximum is the widest, not the narrowest, part of the pattern",
+    "Overestimates; the central maximum spans \\( 2\\lambda/a \\) against \\( \\lambda/a \\) for each secondary maximum"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-020",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "Diffraction of light through a slit becomes clearly noticeable when the slit width is:",
+   "options": [
+    "Much larger than the wavelength of light",
+    "Exactly zero",
+    "Anything at all; the slit width has no effect",
+    "Comparable to the wavelength of light"
+   ],
+   "correct_index": 3,
+   "explanation": "The spreading angle is about \\( \\dfrac{\\lambda}{a} \\).<br><br>It becomes noticeable only when \\( a \\) is not much larger than \\( \\lambda \\).",
+   "hint": "Look at the angle \\( \\lambda/a \\): when is it large?",
+   "distractor_logic": [
+    "A very wide slit lets light pass almost as straight rays, so the spreading \\( \\lambda/a \\) is tiny",
+    "A slit of zero width lets no light through at all",
+    "The spreading angle \\( \\lambda/a \\) clearly depends on the slit width"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-021",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "Which part of a single slit diffraction pattern is the brightest?",
+   "options": [
+    "The central maximum",
+    "The first secondary maximum",
+    "All maxima are equally bright",
+    "The outermost maximum"
+   ],
+   "correct_index": 0,
+   "explanation": "At \\( \\theta=0 \\) all secondary wavelets from the slit arrive in phase and add fully.<br><br>At the secondary maxima only a fraction of the slit is left uncancelled, so they are much dimmer.",
+   "hint": "Where do all wavelets from the slit arrive in step?",
+   "distractor_logic": [
+    "Secondary maxima are much dimmer because most wavelets partly cancel there",
+    "Equal brightness is a feature of ideal double slit fringes, not single slit diffraction",
+    "Intensity falls off as we go outward, so the outermost maxima are the faintest"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-022",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "What is the angular width of the central maximum in single slit diffraction with slit width \\( a \\)?",
+   "options": [
+    "\\( \\dfrac{\\lambda}{a} \\)",
+    "\\( \\dfrac{2\\lambda}{a} \\)",
+    "\\( \\dfrac{\\lambda}{2a} \\)",
+    "\\( \\dfrac{a}{\\lambda} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The first minima are at \\( \\theta=\\pm\\dfrac{\\lambda}{a} \\).<br><br>The central maximum spans between them: \\( \\dfrac{\\lambda}{a}-\\left(-\\dfrac{\\lambda}{a}\\right)=\\dfrac{2\\lambda}{a} \\).",
+   "hint": "Measure from the first minimum on one side to the first minimum on the other.",
+   "distractor_logic": [
+    "That is the width of a secondary maximum, or the angle to the first minimum on one side only",
+    "Too small by a factor of 4; the central maximum spans from \\( -\\lambda/a \\) to \\( +\\lambda/a \\)",
+    "Inverted ratio; a wider slit must give a narrower pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-023",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "The width of a single slit is reduced, keeping the wavelength the same. What happens to the central maximum?",
+   "options": [
+    "It becomes narrower",
+    "It stays the same",
+    "It becomes wider",
+    "It disappears"
+   ],
+   "correct_index": 2,
+   "explanation": "Angular width of the central maximum \\( =\\dfrac{2\\lambda}{a} \\).<br><br>Smaller \\( a \\) gives a larger angle, so the central maximum spreads out.",
+   "hint": "\\( a \\) is in the denominator.",
+   "distractor_logic": [
+    "Reverses the dependence; the width \\( 2\\lambda/a \\) grows as \\( a \\) shrinks",
+    "The width depends on \\( a \\), so it must change",
+    "A narrower slit spreads light more, it does not remove the central maximum"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-024",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 1,
+   "type": "regular",
+   "question": "We can hear someone talking from behind a door, but we cannot see them. What is the main reason?",
+   "options": [
+    "Light travels much faster than sound",
+    "Sound is a longitudinal wave",
+    "Light cannot diffract at all",
+    "Sound wavelengths are comparable to the size of a doorway, while light wavelengths are far smaller"
+   ],
+   "correct_index": 3,
+   "explanation": "Diffraction is significant when the wavelength is comparable to the opening.<br><br>Sound wavelengths are around a metre, like a doorway; visible light wavelengths are about \\( 5\\times10^{-7} \\) m, so light hardly bends round the door.",
+   "hint": "Compare each wavelength with the width of the doorway.",
+   "distractor_logic": [
+    "Speed does not decide how much a wave bends round an edge; wavelength compared with opening size does",
+    "Longitudinal or transverse nature does not decide the amount of diffraction",
+    "Light does diffract, but only noticeably through very small openings"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-025",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "What is the limit of resolution (minimum resolvable angle) of a telescope with objective diameter \\( D \\)?",
+   "options": [
+    "\\( \\Delta\\theta=\\dfrac{1.22\\lambda}{D} \\)",
+    "\\( \\Delta\\theta=\\dfrac{D}{1.22\\lambda} \\)",
+    "\\( \\Delta\\theta=\\dfrac{1.22D}{\\lambda} \\)",
+    "\\( \\Delta\\theta=\\dfrac{\\lambda}{1.22D} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Diffraction at the circular objective spreads each star image into a disc whose first dark ring is at \\( \\dfrac{1.22\\lambda}{D} \\).<br><br>By Rayleigh's criterion this is the smallest angle between two resolvable stars.",
+   "hint": "The limiting angle must shrink as the lens gets bigger.",
+   "distractor_logic": [
+    "That is the resolving power, the reciprocal of the limiting angle",
+    "Inverted \\( \\lambda \\) and \\( D \\); a bigger lens would then resolve worse",
+    "The factor 1.22 multiplies \\( \\lambda \\); it is not in the denominator"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-026",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "The diameter of a telescope objective is increased. What happens to its resolution?",
+   "options": [
+    "It becomes worse: the limiting angle becomes larger",
+    "It improves: the limiting angle becomes smaller",
+    "It does not change; only the brightness changes",
+    "It improves only if the eyepiece is also changed"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\Delta\\theta=\\dfrac{1.22\\lambda}{D} \\), so a larger \\( D \\) gives a smaller \\( \\Delta\\theta \\).<br><br>A smaller limiting angle means finer detail can be separated.",
+   "hint": "Where is \\( D \\) in the limiting-angle formula?",
+   "distractor_logic": [
+    "Reverses the dependence; \\( D \\) is in the denominator of \\( 1.22\\lambda/D \\)",
+    "A bigger aperture also reduces diffraction spreading, so resolution changes too",
+    "Resolution is set by the objective aperture; the eyepiece only magnifies"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-027",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "How is the resolving power of an optical instrument defined?",
+   "options": [
+    "As its magnifying power",
+    "As equal to its limit of resolution",
+    "As the reciprocal of its limit of resolution",
+    "As the ratio of its focal lengths"
+   ],
+   "correct_index": 2,
+   "explanation": "Limit of resolution is the smallest separation (or angle) that can be distinguished.<br><br>Resolving power \\( =\\dfrac{1}{\\text{limit of resolution}} \\), so a smaller limit means a larger resolving power.",
+   "hint": "The better an instrument resolves, the smaller its limit and the larger its power.",
+   "distractor_logic": [
+    "Magnification enlarges the image but cannot separate details blurred by diffraction",
+    "A smaller limit of resolution means better resolving, so the two cannot be equal; they are reciprocals",
+    "The focal-length ratio gives magnifying power of a telescope, not resolving power"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-028",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "Why are research telescopes built with very large objectives?",
+   "options": [
+    "Only to increase magnification",
+    "Only to reduce the wavelength of incoming light",
+    "To make the diffraction pattern of each star wider",
+    "To reduce the limiting angle \\( \\dfrac{1.22\\lambda}{D} \\) and so increase resolving power, besides gathering more light"
+   ],
+   "correct_index": 3,
+   "explanation": "The limiting angle \\( \\dfrac{1.22\\lambda}{D} \\) falls as \\( D \\) increases.<br><br>A large objective therefore separates close stars better and also collects more light from faint objects.",
+   "hint": "Two benefits come from a large \\( D \\): light gathering and one more.",
+   "distractor_logic": [
+    "Magnification is set by focal lengths, not by the diameter of the objective",
+    "The lens cannot change the wavelength of starlight",
+    "A large objective makes the diffraction disc smaller, not wider"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-029",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "Blue light is used instead of red light in a microscope. What happens to its resolving power?",
+   "options": [
+    "It increases",
+    "It decreases",
+    "It stays the same",
+    "It becomes zero"
+   ],
+   "correct_index": 0,
+   "explanation": "Minimum resolvable distance \\( d_\\text{min}=\\dfrac{1.22\\lambda}{2\\,\\text{NA}} \\) is proportional to \\( \\lambda \\).<br><br>Blue has the shorter \\( \\lambda \\), so \\( d_\\text{min} \\) is smaller and the resolving power is larger.",
+   "hint": "Which colour has the shorter wavelength?",
+   "distractor_logic": [
+    "Reverses the dependence; shorter wavelength gives a smaller minimum resolvable distance",
+    "The minimum resolvable distance depends directly on \\( \\lambda \\), so a change of colour matters",
+    "Blue light still forms an image; it just resolves finer detail"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-030",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "What physical effect sets the ultimate limit to the resolving power of a lens?",
+   "options": [
+    "Dispersion of light by the glass",
+    "Diffraction of light at the lens aperture",
+    "Polarization of light by the lens surface",
+    "Total internal reflection inside the lens"
+   ],
+   "correct_index": 1,
+   "explanation": "Even a perfect lens spreads the light from a point into a small disc because of diffraction at its circular edge.<br><br>Two points closer than this disc size merge, so diffraction sets the limit.",
+   "hint": "A perfect lens still cannot make a point image of a point source. Why?",
+   "distractor_logic": [
+    "Dispersion causes coloured fringes, which can be corrected; the diffraction limit cannot be removed",
+    "Polarization does not blur point images into discs",
+    "Light passes through a lens; total internal reflection plays no role in image blurring here"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-031",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "In an oil-immersion microscope, oil of high refractive index fills the gap between the objective and the specimen. Why does this improve resolution?",
+   "options": [
+    "It increases the wavelength of light, improving resolution",
+    "It reduces the numerical aperture",
+    "It increases the numerical aperture, which reduces the minimum resolvable distance",
+    "It only increases the brightness of the image"
+   ],
+   "correct_index": 2,
+   "explanation": "Numerical aperture \\( \\text{NA}=\\mu\\sin\\alpha \\), where \\( \\alpha \\) is the half-angle of the cone of light accepted by the objective.<br><br>Oil raises \\( \\mu \\), so NA rises and \\( d_\\text{min}=\\dfrac{1.22\\lambda}{2\\,\\text{NA}} \\) falls.",
+   "hint": "Look at how \\( \\mu \\) enters the numerical aperture.",
+   "distractor_logic": [
+    "Oil actually shortens the wavelength, and a longer wavelength would make resolution worse anyway",
+    "Oil raises \\( \\mu \\) in \\( \\text{NA}=\\mu\\sin\\alpha \\), so the numerical aperture increases",
+    "The main purpose is a larger numerical aperture, which directly improves resolution"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-032",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 1,
+   "type": "regular",
+   "question": "According to Rayleigh's criterion, two point sources are just resolved when:",
+   "options": [
+    "The central maxima of the two images coincide exactly",
+    "The first minima of the two images coincide",
+    "The two images do not overlap at all",
+    "The central maximum of one image falls on the first minimum of the other"
+   ],
+   "correct_index": 3,
+   "explanation": "Rayleigh's criterion: the peak of one diffraction disc lies on the first dark ring of the other.<br><br>At this separation a slight dip in brightness appears between them, so the eye sees two points.",
+   "hint": "The criterion links one image's peak to the other image's first dark ring.",
+   "distractor_logic": [
+    "Coinciding centres would look like a single point",
+    "This condition does not correspond to the standard limit of resolution",
+    "That is well beyond the limit; images can overlap somewhat and still be resolved"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-033",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "The fact that light can be polarized shows that light is:",
+   "options": [
+    "A transverse wave",
+    "A longitudinal wave",
+    "A stream of particles only",
+    "A wave that needs a material medium"
+   ],
+   "correct_index": 0,
+   "explanation": "Polarization means restricting the vibrations to one direction perpendicular to travel.<br><br>This is possible only if the vibrations are perpendicular to the direction of travel, that is, for a transverse wave.",
+   "hint": "Which type of wave has a choice of vibration directions?",
+   "distractor_logic": [
+    "Longitudinal waves vibrate along the direction of travel and cannot be polarized",
+    "Polarization is a wave property linked to the direction of vibration",
+    "Polarization says nothing about needing a medium; light travels through vacuum"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-034",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "Unpolarized light of intensity \\( I_0 \\) passes through a single ideal polarizer. What is the transmitted intensity?",
+   "options": [
+    "\\( I_0 \\)",
+    "\\( \\dfrac{I_0}{2} \\)",
+    "\\( I_0\\cos^2\\theta \\), depending on the polarizer's orientation",
+    "Zero"
+   ],
+   "correct_index": 1,
+   "explanation": "Unpolarized light has vibrations equally spread over all directions.<br><br>The average of \\( \\cos^2\\theta \\) over all directions is \\( \\dfrac12 \\), so exactly half the intensity passes, whatever the orientation.",
+   "hint": "Average \\( \\cos^2\\theta \\) over all angles.",
+   "distractor_logic": [
+    "A polarizer blocks the vibration component perpendicular to its axis, so not all light passes",
+    "Malus's law applies only to light that is already polarized; unpolarized light always gives half",
+    "Only crossed polarizers can block all light; a single polarizer passes half"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-035",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "Polarized light of intensity \\( I_0 \\) falls on an analyzer whose axis makes angle \\( \\theta \\) with the polarization direction. What is the transmitted intensity by Malus's law?",
+   "options": [
+    "\\( I=I_0\\cos\\theta \\)",
+    "\\( I=I_0\\sin^2\\theta \\)",
+    "\\( I=I_0\\cos^2\\theta \\)",
+    "\\( I=I_0\\cos2\\theta \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The analyzer passes the component of the amplitude along its axis: \\( A\\cos\\theta \\).<br><br>Intensity is proportional to amplitude squared: \\( I=I_0\\cos^2\\theta \\).",
+   "hint": "Find the amplitude component first, then square it.",
+   "distractor_logic": [
+    "Dropped the square; \\( \\cos\\theta \\) applies to the amplitude, and intensity goes as amplitude squared",
+    "Uses the component perpendicular to the axis, which is the part that is blocked",
+    "Would give negative intensity for angles greater than \\( 45^\\circ \\), which is impossible"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-036",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "Two ideal polarizers are crossed (their axes at \\( 90^\\circ \\)). Unpolarized light falls on them. What intensity emerges from the second?",
+   "options": [
+    "\\( \\dfrac{I_0}{2} \\)",
+    "\\( I_0 \\)",
+    "\\( \\dfrac{I_0}{4} \\)",
+    "Zero"
+   ],
+   "correct_index": 3,
+   "explanation": "After the first polarizer: \\( \\dfrac{I_0}{2} \\).<br><br>Second polarizer at \\( 90^\\circ \\): \\( \\dfrac{I_0}{2}\\cos^290^\\circ=0 \\).",
+   "hint": "What is \\( \\cos 90^\\circ \\)?",
+   "distractor_logic": [
+    "That is the intensity after the first polarizer only",
+    "Polarizers can only reduce intensity, never keep all of it",
+    "That would need the axes at \\( 45^\\circ \\), not \\( 90^\\circ \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-037",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "Which relation is Brewster's law for light going from air into a medium of refractive index \\( \\mu \\)?",
+   "options": [
+    "\\( \\tan\\theta_B=\\mu \\)",
+    "\\( \\sin\\theta_B=\\mu \\)",
+    "\\( \\cos\\theta_B=\\mu \\)",
+    "\\( \\cot\\theta_B=\\mu \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "At Brewster's angle the reflected and refracted rays are perpendicular, so \\( r=90^\\circ-\\theta_B \\).<br><br>Snell's law: \\( \\mu=\\dfrac{\\sin\\theta_B}{\\sin(90^\\circ-\\theta_B)}=\\dfrac{\\sin\\theta_B}{\\cos\\theta_B}=\\tan\\theta_B \\).",
+   "hint": "Which trigonometric ratio can take any value greater than 1?",
+   "distractor_logic": [
+    "Would need \\( \\sin\\theta_B>1 \\) for glass, which is impossible",
+    "Would need \\( \\cos\\theta_B>1 \\) for glass, which is impossible",
+    "Inverted; \\( \\cot\\theta_B=\\mu \\) is the tangent condition flipped"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-038",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "When light is incident at Brewster's angle \\( \\theta_B \\), what is the relation between \\( \\theta_B \\) and the angle of refraction \\( \\theta_r \\)?",
+   "options": [
+    "\\( \\theta_B+\\theta_r=180^\\circ \\)",
+    "\\( \\theta_B+\\theta_r=90^\\circ \\)",
+    "\\( \\theta_B=\\theta_r \\)",
+    "\\( \\theta_B-\\theta_r=45^\\circ \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "At Brewster's angle the reflected and refracted rays are perpendicular.<br><br>Since the reflected ray makes \\( \\theta_B \\) with the normal, this gives \\( \\theta_B+\\theta_r=90^\\circ \\).",
+   "hint": "The reflected and refracted rays meet at a right angle.",
+   "distractor_logic": [
+    "Refraction angles are below \\( 90^\\circ \\), so their sum cannot be \\( 180^\\circ \\)",
+    "Equal angles would mean no bending, which happens only at normal incidence or with equal media",
+    "No such fixed difference exists"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-039",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "Why cannot sound waves in air be polarized?",
+   "options": [
+    "They travel too slowly",
+    "Their wavelengths are too long",
+    "They are longitudinal waves, vibrating along the direction of travel",
+    "They are transverse waves"
+   ],
+   "correct_index": 2,
+   "explanation": "Polarization selects one direction of vibration perpendicular to travel.<br><br>In a longitudinal wave the vibration is along the travel direction, so there is nothing to select.",
+   "hint": "Along or across the direction of travel?",
+   "distractor_logic": [
+    "Speed has nothing to do with whether a wave can be polarized",
+    "Wavelength does not decide polarization; the direction of vibration does",
+    "If they were transverse they could be polarized"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L1-040",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 1,
+   "type": "regular",
+   "question": "Why do polaroid sunglasses reduce glare from a wet road?",
+   "options": [
+    "Polaroids absorb all reflected light equally in every direction",
+    "Polaroids change the wavelength of the reflected light",
+    "Polaroids make the reflected light coherent",
+    "Light reflected from the road is largely polarized, and the polaroids are oriented to block that polarization"
+   ],
+   "correct_index": 3,
+   "explanation": "Reflection near Brewster's angle makes the reflected light strongly polarized, vibrating parallel to the road surface.<br><br>Sunglass polaroids are set to block that direction, cutting the glare.",
+   "hint": "What does reflection do to unpolarized light?",
+   "distractor_logic": [
+    "A polaroid blocks one direction of vibration only; the reduction works because glare is polarized",
+    "Polaroids do not change wavelength",
+    "Coherence is unrelated to reducing glare"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-001",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "Light travels from air into glass of refractive index \\( \\mu=1.5 \\). Taking \\( c=3\\times10^{8} \\) m/s, what is the speed of light in the glass?",
+   "options": [
+    "\\( 2\\times10^{8} \\) m/s",
+    "\\( 4.5\\times10^{8} \\) m/s",
+    "\\( 3\\times10^{8} \\) m/s",
+    "\\( 1.5\\times10^{8} \\) m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "Use \\( v=\\dfrac{c}{\\mu} \\).<br><br>\\( v=\\dfrac{3\\times10^{8}}{1.5}=2\\times10^{8} \\) m/s.<br><br>The speed is smaller in glass, as the wave theory predicts.",
+   "hint": "Refractive index is the factor by which light slows down.",
+   "distractor_logic": [
+    "Multiplied \\( c \\) by \\( \\mu \\), as if light sped up in a denser medium, which is the corpuscular-theory error",
+    "Assumed the speed is unchanged, but only the frequency stays the same on refraction",
+    "Divided \\( c \\) by 2 instead of by \\( \\mu=1.5 \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-002",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "Light of wavelength 600 nm in air enters water of refractive index \\( \\mu=\\dfrac{4}{3} \\). What is its wavelength in water?",
+   "options": [
+    "800 nm",
+    "450 nm",
+    "600 nm",
+    "400 nm"
+   ],
+   "correct_index": 1,
+   "explanation": "Frequency stays the same, and \\( v \\) drops by the factor \\( \\mu \\), so \\( \\lambda \\) also drops by \\( \\mu \\).<br><br>\\( \\lambda_w=\\dfrac{600}{4/3}=450 \\) nm.",
+   "hint": "Since \\( v=f\\lambda \\) and \\( f \\) is unchanged, \\( \\lambda \\) changes in the same ratio as \\( v \\).",
+   "distractor_logic": [
+    "Multiplied by \\( \\mu \\) instead of dividing; wavelength shrinks in a denser medium",
+    "Assumed wavelength is fixed; it is the frequency that stays constant",
+    "Divided by 1.5, the index of glass, instead of \\( 4/3 \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-003",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "When light passes from one medium into another, which quantity remains unchanged?",
+   "options": [
+    "Speed",
+    "Wavelength",
+    "Frequency",
+    "Direction of travel for every angle of incidence"
+   ],
+   "correct_index": 2,
+   "explanation": "The frequency is set by the source and the boundary cannot change how many waves arrive per second.<br><br>Speed and wavelength both change by the factor \\( \\mu \\), while frequency stays the same.",
+   "hint": "Waves arriving at the boundary per second must equal waves leaving it per second.",
+   "distractor_logic": [
+    "Speed changes with the medium, since \\( v=c/\\mu \\)",
+    "Wavelength changes in the same ratio as the speed",
+    "Direction changes whenever the angle of incidence is not zero; that is refraction"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-004",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "Using Huygens' construction, why does a ray bend toward the normal when light enters a denser medium from a rarer one?",
+   "options": [
+    "Secondary wavelets in the denser medium travel faster, so they get ahead of the rest of the wavefront",
+    "The frequency of the wavelets decreases in the denser medium",
+    "The surface of the denser medium attracts the wavelets toward itself",
+    "Secondary wavelets in the denser medium travel slower, covering a smaller distance \\( v_2t \\) than \\( v_1t \\) in the same time"
+   ],
+   "correct_index": 3,
+   "explanation": "While one edge of the incident wavefront still travels a distance \\( v_1t \\) in the rarer medium, the wavelet already inside spreads only to radius \\( v_2t \\), with \\( v_2<v_1 \\).<br><br>The tangent drawn to this smaller wavelet tilts the refracted wavefront, so the ray, normal to it, turns toward the normal.",
+   "hint": "Compare the distances covered in the same time in the two media.",
+   "distractor_logic": [
+    "This is the corpuscular-theory prediction; a faster wave would bend away from the normal",
+    "Frequency never changes on refraction; only speed and wavelength do",
+    "Attraction by the surface is the corpuscular explanation; wave theory uses a change of speed"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-005",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "Applying Huygens' construction to refraction at a plane surface gives which relation between the angle of incidence \\( i \\) and the angle of refraction \\( r \\)?",
+   "options": [
+    "\\( \\dfrac{\\sin i}{\\sin r}=\\dfrac{v_1}{v_2} \\)",
+    "\\( \\dfrac{\\sin i}{\\sin r}=\\dfrac{v_2}{v_1} \\)",
+    "\\( \\dfrac{\\cos i}{\\cos r}=\\dfrac{v_1}{v_2} \\)",
+    "\\( \\dfrac{\\sin i}{\\sin r}=\\dfrac{\\lambda_2}{\\lambda_1} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "In the construction, the incident edge travels \\( v_1t=AB\\sin i \\) and the refracted wavelet has radius \\( v_2t=AB\\sin r \\).<br><br>Dividing gives \\( \\dfrac{\\sin i}{\\sin r}=\\dfrac{v_1}{v_2}=\\mu_{21} \\), which is Snell's law.",
+   "hint": "The larger speed goes with the larger angle.",
+   "distractor_logic": [
+    "Inverted speed ratio; this would make light speed up when it bends toward the normal",
+    "Uses cosines; the geometry of the construction gives sines of the angles",
+    "Inverted wavelength ratio; the correct ratio is \\( \\lambda_1/\\lambda_2 \\), the same as \\( v_1/v_2 \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-006",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "In Huygens' construction for reflection from a plane mirror, why does the angle of reflection equal the angle of incidence?",
+   "options": [
+    "The reflected wavelets travel faster, which exactly compensates the change in direction",
+    "The incident and reflected wavelets travel in the same medium at the same speed, so they cover equal distances in equal times",
+    "The frequency doubles on reflection, keeping the angles equal",
+    "The mirror absorbs half of the wavefront, leaving a symmetric reflected part"
+   ],
+   "correct_index": 1,
+   "explanation": "Both the incident wavelet and the reflected wavelet move with the same speed \\( v \\).<br><br>So the two right-angled triangles in the construction are congruent, which gives \\( i=r \\).",
+   "hint": "What would have to differ between the two sides of the construction for the angles to differ?",
+   "distractor_logic": [
+    "Reflection keeps the wave in the same medium, so its speed cannot change",
+    "Frequency does not change on reflection",
+    "Absorption has nothing to do with the geometry of the reflected wavefront"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-007",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "A plane wavefront falls on a thin convex lens. What emerges from the lens?",
+   "options": [
+    "A diverging spherical wavefront",
+    "An unchanged plane wavefront",
+    "A converging spherical wavefront",
+    "A cylindrical wavefront"
+   ],
+   "correct_index": 2,
+   "explanation": "The central part of the wavefront passes through the thickest glass and is slowed the most.<br><br>The edges get ahead, so the wavefront curves inward and converges to the focus.",
+   "hint": "Which part of the wavefront spends the longest time in the slow glass?",
+   "distractor_logic": [
+    "A diverging wavefront is produced by a concave (diverging) lens",
+    "The lens is thicker at the centre, so the middle of the wavefront is delayed and the wavefront changes shape",
+    "A spherical lens has no preferred axis that would create a cylinder"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-008",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 2,
+   "type": "regular",
+   "question": "A plane wavefront passes through a thin prism. What happens to it?",
+   "options": [
+    "It emerges tilted because the part crossing the thicker base moves faster",
+    "It emerges as a converging spherical wavefront",
+    "It emerges completely unchanged",
+    "It emerges as a plane wavefront tilted toward the base, because the part crossing the thicker base is delayed more"
+   ],
+   "correct_index": 3,
+   "explanation": "Near the base the wavefront travels through more glass, where its speed \\( v=c/\\mu \\) is smaller.<br><br>That part lags behind, so the emerging plane wavefront is tilted and the ray is deviated toward the base.",
+   "hint": "More glass means more delay for that part of the wavefront.",
+   "distractor_logic": [
+    "Light moves slower in glass, so the thicker part delays the wavefront; it does not speed it up",
+    "A prism has flat faces, so it only tilts a plane wavefront rather than curving it",
+    "Different parts travel different thicknesses of glass, so the wavefront must tilt"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-009",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "In Young's experiment, \\( \\lambda=600 \\) nm, \\( d=0.5 \\) mm and \\( D=1 \\) m. What is the fringe width \\( \\beta \\)?",
+   "options": [
+    "1.2 mm",
+    "12 mm",
+    "0.12 mm",
+    "2.4 mm"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\beta=\\dfrac{\\lambda D}{d}=\\dfrac{600\\times10^{-9}\\times1}{0.5\\times10^{-3}} \\) m.<br><br>\\( \\beta=1.2\\times10^{-3} \\) m \\( =1.2 \\) mm.",
+   "hint": "Convert everything to metres before substituting.",
+   "distractor_logic": [
+    "Unit slip; a factor of 10 was lost in converting nm or mm to metres",
+    "Unit slip in the other direction by a factor of 10",
+    "Doubled the fringe width, perhaps taking the distance across a bright and a dark fringe twice"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-010",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "In a double slit experiment with \\( \\lambda=500 \\) nm and \\( D=2 \\) m, the fringe width is 1 mm. What is the slit separation \\( d \\)?",
+   "options": [
+    "2 mm",
+    "1 mm",
+    "0.5 mm",
+    "0.25 mm"
+   ],
+   "correct_index": 1,
+   "explanation": "Rearrange: \\( d=\\dfrac{\\lambda D}{\\beta} \\).<br><br>\\( d=\\dfrac{500\\times10^{-9}\\times2}{1\\times10^{-3}}=1\\times10^{-3} \\) m \\( =1 \\) mm.",
+   "hint": "Rearrange \\( \\beta=\\lambda D/d \\) for \\( d \\).",
+   "distractor_logic": [
+    "Multiplied the fringe width by \\( D \\) instead of using \\( d=\\lambda D/\\beta \\)",
+    "Forgot the factor \\( D=2 \\) m and used \\( D=1 \\) m",
+    "Divided by \\( D \\) instead of multiplying by it"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-011",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "Light of wavelength 500 nm is used in Young's experiment. At a point P on the screen the path difference between the two waves is 1500 nm. What is observed at P?",
+   "options": [
+    "A dark fringe, because 3 is an odd number",
+    "A bright fringe of order \\( n=1.5 \\)",
+    "A bright fringe of order \\( n=3 \\)",
+    "A dark fringe of order \\( n=3 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\dfrac{\\Delta}{\\lambda}=\\dfrac{1500}{500}=3 \\), a whole number.<br><br>So \\( \\Delta=3\\lambda \\): the waves reinforce and P is on the third bright fringe.",
+   "hint": "Find \\( \\Delta/\\lambda \\) and check whether it is whole or half-integer.",
+   "distractor_logic": [
+    "Odd or even does not matter; any whole number of wavelengths gives a bright fringe",
+    "Orders are whole numbers; dividing 1500 by 1000 instead of by 500 gave 1.5",
+    "A whole-number ratio \\( \\Delta/\\lambda \\) means reinforcement, so it is bright, not dark"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-012",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "With light of wavelength 500 nm, the path difference at a point on the screen is 1250 nm. What is seen there?",
+   "options": [
+    "A bright fringe",
+    "A bright fringe of order 2.5",
+    "Uniform intensity equal to the sum of the two intensities",
+    "A dark fringe"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\dfrac{\\Delta}{\\lambda}=\\dfrac{1250}{500}=2.5=2+\\tfrac12 \\).<br><br>So \\( \\Delta=\\left(n+\\tfrac12\\right)\\lambda \\) with \\( n=2 \\): crest meets trough and the point is dark.",
+   "hint": "Is \\( \\Delta/\\lambda \\) a whole number or a whole number plus one half?",
+   "distractor_logic": [
+    "\\( 1250/500=2.5 \\) is a half-integer, which is the dark-fringe condition",
+    "Fringe orders are whole numbers; 2.5 wavelengths means cancellation, not a bright fringe",
+    "That would be true only for incoherent sources; coherent waves cancel here"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-013",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "In a double slit pattern the fringe width is 0.6 mm. How far from the central bright fringe is the third bright fringe?",
+   "options": [
+    "1.8 mm",
+    "1.5 mm",
+    "2.1 mm",
+    "0.2 mm"
+   ],
+   "correct_index": 0,
+   "explanation": "Bright fringes are at \\( y_n=n\\beta \\).<br><br>For \\( n=3 \\): \\( y_3=3\\times0.6=1.8 \\) mm.",
+   "hint": "Bright fringes sit at whole multiples of \\( \\beta \\) from the centre.",
+   "distractor_logic": [
+    "That is \\( 2.5\\beta \\), the position of the third dark fringe",
+    "That is \\( 3.5\\beta \\), confusing the bright and dark fringe positions",
+    "Divided the fringe width by 3 instead of multiplying"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-014",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "A double slit arrangement gives a fringe width of 1.2 mm in air. The whole apparatus is then immersed in water (\\( \\mu=\\dfrac43 \\)). What is the new fringe width?",
+   "options": [
+    "1.6 mm",
+    "0.9 mm",
+    "1.2 mm",
+    "0.8 mm"
+   ],
+   "correct_index": 1,
+   "explanation": "In water the wavelength becomes \\( \\lambda/\\mu \\), so \\( \\beta \\) also becomes \\( \\beta/\\mu \\).<br><br>\\( \\beta_w=\\dfrac{1.2}{4/3}=0.9 \\) mm.",
+   "hint": "What happens to the wavelength inside water?",
+   "distractor_logic": [
+    "Multiplied by \\( \\mu \\); the wavelength shrinks in water, so the fringes shrink",
+    "Ignored the change of wavelength in water",
+    "Divided by 1.5, the index of glass, instead of by \\( 4/3 \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-015",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "In Young's experiment the fringe width is 0.8 mm with the screen 1 m away. The screen is moved to 2 m from the slits. What is the new fringe width?",
+   "options": [
+    "0.4 mm",
+    "0.8 mm",
+    "1.6 mm",
+    "3.2 mm"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\beta=\\dfrac{\\lambda D}{d} \\), so \\( \\beta \\) is proportional to \\( D \\).<br><br>Doubling \\( D \\) doubles \\( \\beta \\): \\( 2\\times0.8=1.6 \\) mm.",
+   "hint": "How does \\( \\beta \\) depend on \\( D \\)?",
+   "distractor_logic": [
+    "Treated \\( \\beta \\) as inversely proportional to \\( D \\); it is directly proportional",
+    "Assumed fringe width does not depend on screen distance",
+    "Treated \\( \\beta \\) as proportional to \\( D^2 \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-016",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 2,
+   "type": "regular",
+   "question": "The same double slit set-up is used with light of 400 nm and then with light of 600 nm. What is the ratio of fringe widths \\( \\beta_{400}:\\beta_{600} \\)?",
+   "options": [
+    "\\( 3:2 \\)",
+    "\\( 4:9 \\)",
+    "\\( 1:1 \\)",
+    "\\( 2:3 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "With \\( D \\) and \\( d \\) fixed, \\( \\beta \\) is proportional to \\( \\lambda \\).<br><br>\\( \\beta_{400}:\\beta_{600}=400:600=2:3 \\).",
+   "hint": "Only \\( \\lambda \\) changes; how does \\( \\beta \\) follow it?",
+   "distractor_logic": [
+    "Inverted the ratio; shorter wavelength gives narrower fringes",
+    "Squared the wavelength ratio; \\( \\beta \\) is proportional to \\( \\lambda \\), not \\( \\lambda^2 \\)",
+    "Assumed fringe width is independent of wavelength"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-017",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "Light of wavelength 500 nm falls on a slit of width 0.2 mm. At what angle does the first minimum occur? (Use the small-angle approximation.)",
+   "options": [
+    "\\( 2.5\\times10^{-3} \\) rad",
+    "\\( 5\\times10^{-3} \\) rad",
+    "\\( 1.25\\times10^{-3} \\) rad",
+    "\\( 2.5\\times10^{-6} \\) rad"
+   ],
+   "correct_index": 0,
+   "explanation": "First minimum: \\( a\\theta=\\lambda \\), so \\( \\theta=\\dfrac{\\lambda}{a} \\).<br><br>\\( \\theta=\\dfrac{500\\times10^{-9}}{0.2\\times10^{-3}}=2.5\\times10^{-3} \\) rad.",
+   "hint": "For the first minimum set \\( n=1 \\) in \\( a\\theta=n\\lambda \\).",
+   "distractor_logic": [
+    "That is \\( 2\\lambda/a \\), the full angular width of the central maximum, not the first-minimum angle",
+    "Halved the correct angle, as if the minimum were at \\( \\lambda/2a \\)",
+    "Unit slip; the slit width was not converted from mm to metres"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-018",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "Light of wavelength 600 nm passes through a slit of width 0.3 mm. What is the angular width of the central maximum?",
+   "options": [
+    "\\( 2\\times10^{-3} \\) rad",
+    "\\( 4\\times10^{-3} \\) rad",
+    "\\( 1\\times10^{-3} \\) rad",
+    "\\( 8\\times10^{-3} \\) rad"
+   ],
+   "correct_index": 1,
+   "explanation": "Central maximum width \\( =\\dfrac{2\\lambda}{a} \\).<br><br>\\( \\dfrac{2\\times600\\times10^{-9}}{0.3\\times10^{-3}}=4\\times10^{-3} \\) rad.",
+   "hint": "The central maximum is twice as wide as a secondary one.",
+   "distractor_logic": [
+    "Used \\( \\lambda/a \\), which is only the angle to the first minimum on one side, as wide as a secondary maximum",
+    "Used \\( \\lambda/2a \\)",
+    "Doubled the correct width"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-019",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "In single slit diffraction, \\( \\lambda=500 \\) nm, slit width 0.5 mm and the screen is 1 m away. What is the linear width of the central maximum on the screen?",
+   "options": [
+    "1 mm",
+    "4 mm",
+    "2 mm",
+    "20 mm"
+   ],
+   "correct_index": 2,
+   "explanation": "Linear width \\( =\\dfrac{2\\lambda D}{a} \\).<br><br>\\( \\dfrac{2\\times500\\times10^{-9}\\times1}{0.5\\times10^{-3}}=2\\times10^{-3} \\) m \\( =2 \\) mm.",
+   "hint": "Multiply the angular width \\( 2\\lambda/a \\) by the screen distance.",
+   "distractor_logic": [
+    "Gave \\( \\lambda D/a \\), the distance from the centre to the first minimum, not the full width",
+    "Doubled the correct width",
+    "Unit slip by a factor of 10 when converting mm to metres"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-020",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "In single slit diffraction, approximately where do the secondary maxima lie?",
+   "options": [
+    "At \\( a\\sin\\theta=n\\lambda \\), with \\( n=1,2,3,\\ldots \\)",
+    "At \\( a\\sin\\theta=2n\\lambda \\), with \\( n=1,2,3,\\ldots \\)",
+    "At \\( a\\sin\\theta=\\dfrac{n\\lambda}{2} \\), with \\( n=1,2,3,\\ldots \\)",
+    "At \\( a\\sin\\theta=\\left(n+\\tfrac12\\right)\\lambda \\), with \\( n=1,2,3,\\ldots \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Minima are at \\( a\\sin\\theta=n\\lambda \\).<br><br>Secondary maxima lie roughly midway between neighbouring minima, at \\( a\\sin\\theta=\\left(n+\\tfrac12\\right)\\lambda \\).",
+   "hint": "Maxima lie roughly halfway between minima.",
+   "distractor_logic": [
+    "False analogy with Young's bright-fringe condition; for a single slit \\( a\\sin\\theta=n\\lambda \\) gives minima",
+    "These are only the even-numbered minima",
+    "This gives \\( \\lambda/2,\\lambda,3\\lambda/2,\\ldots \\), which mixes minima with points that are not maxima"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-021",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "A single slit gives a central maximum of angular width \\( 3\\times10^{-3} \\) rad in air. The apparatus is immersed in water (\\( \\mu=\\dfrac43 \\)). What is the new angular width?",
+   "options": [
+    "\\( 2.25\\times10^{-3} \\) rad",
+    "\\( 4\\times10^{-3} \\) rad",
+    "\\( 3\\times10^{-3} \\) rad",
+    "\\( 1.5\\times10^{-3} \\) rad"
+   ],
+   "correct_index": 0,
+   "explanation": "In water, \\( \\lambda \\) becomes \\( \\dfrac{\\lambda}{\\mu} \\), so the width \\( \\dfrac{2\\lambda}{a} \\) also divides by \\( \\mu \\).<br><br>\\( \\dfrac{3\\times10^{-3}}{4/3}=2.25\\times10^{-3} \\) rad.",
+   "hint": "What happens to the wavelength in water?",
+   "distractor_logic": [
+    "Multiplied by \\( \\mu \\); the wavelength shrinks in water, so the pattern narrows",
+    "Ignored the change of wavelength in water",
+    "Halved the width, confusing it with the angle to the first minimum"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-022",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "Light of wavelength 500 nm falls on a slit of width 0.25 mm. At what angle is the second minimum?",
+   "options": [
+    "\\( 2\\times10^{-3} \\) rad",
+    "\\( 4\\times10^{-3} \\) rad",
+    "\\( 5\\times10^{-3} \\) rad",
+    "\\( 8\\times10^{-3} \\) rad"
+   ],
+   "correct_index": 1,
+   "explanation": "Minima: \\( a\\theta=n\\lambda \\). For \\( n=2 \\): \\( \\theta=\\dfrac{2\\lambda}{a} \\).<br><br>\\( \\theta=\\dfrac{2\\times500\\times10^{-9}}{0.25\\times10^{-3}}=4\\times10^{-3} \\) rad.",
+   "hint": "Use \\( n=2 \\) in the minima condition.",
+   "distractor_logic": [
+    "That is the first minimum (\\( n=1 \\))",
+    "That is \\( 2.5\\lambda/a \\), roughly the second secondary maximum",
+    "Doubled the second-minimum angle"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-023",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "In single slit diffraction with \\( \\lambda=600 \\) nm, slit width 0.6 mm and the screen 2 m away, how far from the centre is the first minimum?",
+   "options": [
+    "4 mm",
+    "1 mm",
+    "2 mm",
+    "3 mm"
+   ],
+   "correct_index": 2,
+   "explanation": "First minimum: \\( y=\\dfrac{\\lambda D}{a} \\).<br><br>\\( y=\\dfrac{600\\times10^{-9}\\times2}{0.6\\times10^{-3}}=2\\times10^{-3} \\) m \\( =2 \\) mm.",
+   "hint": "Angle \\( \\lambda/a \\) times distance \\( D \\).",
+   "distractor_logic": [
+    "That is the full width of the central maximum, from one first minimum to the other",
+    "Halved the correct distance",
+    "That is about \\( 1.5\\lambda D/a \\), the position of the first secondary maximum"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-024",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 2,
+   "type": "regular",
+   "question": "Which statement correctly contrasts the double slit interference pattern with the single slit diffraction pattern?",
+   "options": [
+    "Diffraction fringes are equally spaced and equally bright, while interference fringes fade rapidly",
+    "Both patterns have a dark centre",
+    "In both patterns the central fringe is twice as wide as the others",
+    "Ideal interference fringes are equally spaced with nearly equal brightness, while in diffraction the central maximum is twice as wide and far brighter than the rest"
+   ],
+   "correct_index": 3,
+   "explanation": "Ideal double slit fringes all have the same width \\( \\beta=\\dfrac{\\lambda D}{d} \\) and similar brightness.<br><br>Single slit diffraction has a central maximum of width \\( \\dfrac{2\\lambda D}{a} \\), twice the others, with intensity dropping sharply outward.",
+   "hint": "Which pattern has one special, extra-wide central band?",
+   "distractor_logic": [
+    "Reverses the two patterns",
+    "Both patterns have a bright centre, since all waves arrive in phase at \\( \\theta=0 \\)",
+    "Only the diffraction pattern has a double-width central maximum; ideal double slit fringes all have width \\( \\beta \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-025",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "A telescope has an objective of diameter 2.44 m. What is its limiting angle of resolution for light of wavelength 500 nm?",
+   "options": [
+    "\\( 2.5\\times10^{-7} \\) rad",
+    "\\( 5\\times10^{-7} \\) rad",
+    "\\( 4\\times10^{6} \\) rad",
+    "\\( 2.5\\times10^{-4} \\) rad"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\Delta\\theta=\\dfrac{1.22\\lambda}{D}=\\dfrac{1.22\\times500\\times10^{-9}}{2.44} \\).<br><br>\\( \\Delta\\theta=\\dfrac{500\\times10^{-9}}{2}=2.5\\times10^{-7} \\) rad.",
+   "hint": "Notice that 2.44 is exactly twice 1.22.",
+   "distractor_logic": [
+    "Used the radius 1.22 m instead of the diameter",
+    "Gave the resolving power \\( D/1.22\\lambda \\) instead of the limiting angle",
+    "Converted 500 nm as \\( 5\\times10^{-4} \\) m, a unit slip"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-026",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "A microscope has numerical aperture 1.22 and uses light of wavelength 500 nm. What is the minimum distance between two points it can resolve?",
+   "options": [
+    "500 nm",
+    "250 nm",
+    "305 nm",
+    "610 nm"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( d_\\text{min}=\\dfrac{1.22\\lambda}{2\\,\\text{NA}}=\\dfrac{1.22\\times500}{2\\times1.22} \\) nm.<br><br>\\( d_\\text{min}=250 \\) nm.",
+   "hint": "The 1.22 cancels neatly here.",
+   "distractor_logic": [
+    "Forgot the factor 2 in the denominator \\( 2\\,\\text{NA} \\)",
+    "Left out the numerical aperture, using \\( 1.22\\lambda/2 \\)",
+    "Gave just \\( 1.22\\lambda \\), ignoring the whole denominator"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-027",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "Two telescopes have objectives of diameters 20 cm and 10 cm. For the same wavelength, what is the ratio of their resolving powers?",
+   "options": [
+    "\\( 1:2 \\)",
+    "\\( 4:1 \\)",
+    "\\( 2:1 \\)",
+    "\\( 1:1 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Resolving power \\( =\\dfrac{D}{1.22\\lambda} \\), proportional to \\( D \\).<br><br>Ratio \\( =\\dfrac{20}{10}=2:1 \\).",
+   "hint": "Resolving power goes up in direct proportion to \\( D \\).",
+   "distractor_logic": [
+    "Inverted the ratio; the bigger lens has the larger resolving power",
+    "Squared the ratio; resolving power is proportional to \\( D \\), while light gathering goes as \\( D^2 \\)",
+    "Resolving power depends on \\( D \\), so the two cannot be equal"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-028",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "A telescope is used first with light of 600 nm and then with light of 400 nm. How does its resolving power change?",
+   "options": [
+    "It decreases by a factor of 1.5",
+    "It increases by a factor of 2.25",
+    "It does not change",
+    "It increases by a factor of 1.5"
+   ],
+   "correct_index": 3,
+   "explanation": "Resolving power \\( =\\dfrac{D}{1.22\\lambda} \\), inversely proportional to \\( \\lambda \\).<br><br>New/old \\( =\\dfrac{600}{400}=1.5 \\).",
+   "hint": "Resolving power varies as \\( 1/\\lambda \\).",
+   "distractor_logic": [
+    "Reversed the dependence; shorter wavelength gives better resolution",
+    "Squared the wavelength ratio",
+    "Resolving power depends on \\( \\lambda \\), so changing colour matters"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-029",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "What is the resolving power of a telescope with objective diameter 6.1 cm for light of wavelength 500 nm?",
+   "options": [
+    "\\( 1\\times10^{5} \\) rad\\( ^{-1} \\)",
+    "\\( 1\\times10^{-5} \\) rad\\( ^{-1} \\)",
+    "\\( 1.22\\times10^{5} \\) rad\\( ^{-1} \\)",
+    "\\( 5\\times10^{4} \\) rad\\( ^{-1} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Resolving power \\( =\\dfrac{D}{1.22\\lambda}=\\dfrac{0.061}{1.22\\times500\\times10^{-9}} \\).<br><br>\\( 1.22\\times500\\times10^{-9}=6.1\\times10^{-7} \\), so resolving power \\( =\\dfrac{6.1\\times10^{-2}}{6.1\\times10^{-7}}=1\\times10^{5} \\) rad\\( ^{-1} \\).",
+   "hint": "Resolving power is the reciprocal of \\( 1.22\\lambda/D \\).",
+   "distractor_logic": [
+    "Gave the limiting angle's value, not its reciprocal",
+    "Left out the 1.22 factor, computing \\( D/\\lambda \\)",
+    "Used a diameter of 3.05 cm, the radius, by mistake"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-030",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "A microscope objective accepts a cone of half-angle \\( \\alpha=30^\\circ \\) in a medium of refractive index \\( \\mu=1.5 \\). What is its numerical aperture?",
+   "options": [
+    "\\( 3.0 \\)",
+    "\\( 0.75 \\)",
+    "\\( 0.5 \\)",
+    "\\( 0.375 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\text{NA}=\\mu\\sin\\alpha=1.5\\times\\sin30^\\circ \\).<br><br>\\( \\text{NA}=1.5\\times0.5=0.75 \\).",
+   "hint": "Numerical aperture is \\( \\mu \\) times the sine of the half-angle.",
+   "distractor_logic": [
+    "Divided \\( \\mu \\) by \\( \\sin\\alpha \\) instead of multiplying",
+    "Used only \\( \\sin\\alpha \\), forgetting \\( \\mu \\)",
+    "Also divided by 2, mixing in the factor 2 from the resolving-distance formula"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-031",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "The human eye's pupil gives a limiting angle of \\( 2.5\\times10^{-4} \\) rad. What is the smallest separation between two points 10 m away that the eye can resolve?",
+   "options": [
+    "25 mm",
+    "0.25 mm",
+    "2.5 mm",
+    "5 mm"
+   ],
+   "correct_index": 2,
+   "explanation": "Small angles: separation \\( =\\text{distance}\\times\\Delta\\theta \\).<br><br>\\( 10\\times2.5\\times10^{-4}=2.5\\times10^{-3} \\) m \\( =2.5 \\) mm.",
+   "hint": "Arc length = radius times angle in radians.",
+   "distractor_logic": [
+    "Unit slip by a factor of 10 upward",
+    "Unit slip by a factor of 10 downward",
+    "Doubled the answer"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-032",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 2,
+   "type": "regular",
+   "question": "A telescope's objective diameter is doubled and, at the same time, the wavelength used is doubled. What happens to its resolving power?",
+   "options": [
+    "It doubles",
+    "It becomes four times",
+    "It halves",
+    "It stays the same"
+   ],
+   "correct_index": 3,
+   "explanation": "Resolving power \\( =\\dfrac{D}{1.22\\lambda} \\).<br><br>Doubling \\( D \\) doubles it, doubling \\( \\lambda \\) halves it, so overall it is unchanged.",
+   "hint": "Look at the ratio \\( D/\\lambda \\).",
+   "distractor_logic": [
+    "Considered only the change in \\( D \\)",
+    "Treated both changes as improvements, but a longer wavelength worsens resolution",
+    "Considered only the change in \\( \\lambda \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-033",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "Polarized light of intensity \\( I_0 \\) passes through an analyzer whose axis is at \\( 60^\\circ \\) to the polarization direction. What is the transmitted intensity?",
+   "options": [
+    "\\( \\dfrac{I_0}{4} \\)",
+    "\\( \\dfrac{I_0}{2} \\)",
+    "\\( \\dfrac{3I_0}{4} \\)",
+    "\\( \\dfrac{I_0}{8} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( I=I_0\\cos^260^\\circ=I_0\\left(\\dfrac12\\right)^2 \\).<br><br>\\( I=\\dfrac{I_0}{4} \\).",
+   "hint": "Square the cosine.",
+   "distractor_logic": [
+    "Used \\( \\cos\\theta \\) instead of \\( \\cos^2\\theta \\)",
+    "Used \\( \\sin^2\\theta \\) instead of \\( \\cos^2\\theta \\)",
+    "Halved again as if the light were unpolarized, but it is already polarized"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-034",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "Unpolarized light of intensity \\( I_0 \\) passes through a polarizer and then an analyzer whose axis is at \\( 45^\\circ \\) to the polarizer's. What emerges?",
+   "options": [
+    "\\( \\dfrac{I_0}{2} \\)",
+    "\\( \\dfrac{I_0}{4} \\)",
+    "\\( \\dfrac{I_0}{2\\sqrt2} \\)",
+    "Zero"
+   ],
+   "correct_index": 1,
+   "explanation": "After the polarizer: \\( \\dfrac{I_0}{2} \\).<br><br>After the analyzer: \\( \\dfrac{I_0}{2}\\cos^245^\\circ=\\dfrac{I_0}{2}\\times\\dfrac12=\\dfrac{I_0}{4} \\).",
+   "hint": "Halve first, then apply Malus's law.",
+   "distractor_logic": [
+    "Applied Malus's law directly to the unpolarized light, skipping the halving at the polarizer",
+    "Used \\( \\cos45^\\circ \\) instead of \\( \\cos^245^\\circ \\)",
+    "Zero needs crossed axes at \\( 90^\\circ \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-035",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "What is Brewster's angle for light going from air into a medium of refractive index \\( \\mu=\\sqrt3 \\)?",
+   "options": [
+    "\\( 30^\\circ \\)",
+    "\\( 45^\\circ \\)",
+    "\\( 60^\\circ \\)",
+    "\\( 90^\\circ \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\tan\\theta_B=\\mu=\\sqrt3 \\).<br><br>\\( \\tan60^\\circ=\\sqrt3 \\), so \\( \\theta_B=60^\\circ \\).",
+   "hint": "Which standard angle has tangent \\( \\sqrt3 \\)?",
+   "distractor_logic": [
+    "Used \\( \\cot\\theta_B=\\mu \\), inverting the relation",
+    "That is Brewster's angle only for \\( \\mu=1 \\), where there is no real boundary",
+    "Grazing incidence, which is not Brewster's angle"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-036",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "Light is incident on a glass surface at its Brewster angle of \\( 60^\\circ \\). What is the angle of refraction?",
+   "options": [
+    "\\( 60^\\circ \\)",
+    "\\( 45^\\circ \\)",
+    "\\( 120^\\circ \\)",
+    "\\( 30^\\circ \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "At Brewster's angle, \\( \\theta_B+\\theta_r=90^\\circ \\).<br><br>\\( \\theta_r=90^\\circ-60^\\circ=30^\\circ \\).",
+   "hint": "The reflected and refracted rays are perpendicular.",
+   "distractor_logic": [
+    "Assumed no bending, but light refracts toward the normal in glass",
+    "No reason for \\( 45^\\circ \\); the rule is \\( \\theta_B+\\theta_r=90^\\circ \\)",
+    "Added \\( 60^\\circ \\) to \\( \\theta_B \\) instead of subtracting from \\( 90^\\circ \\); a refraction angle cannot exceed \\( 90^\\circ \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-037",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "At what angle between the analyzer's axis and the polarization direction does an analyzer transmit three-quarters of the intensity of polarized light?",
+   "options": [
+    "\\( 30^\\circ \\)",
+    "\\( 60^\\circ \\)",
+    "\\( 45^\\circ \\)",
+    "\\( 15^\\circ \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Set \\( \\cos^2\\theta=\\dfrac34 \\), so \\( \\cos\\theta=\\dfrac{\\sqrt3}{2} \\).<br><br>\\( \\theta=30^\\circ \\).",
+   "hint": "Which angle has cosine \\( \\sqrt3/2 \\)?",
+   "distractor_logic": [
+    "Solved \\( \\sin^2\\theta=3/4 \\) instead of \\( \\cos^2\\theta=3/4 \\)",
+    "\\( \\cos^245^\\circ=1/2 \\), which passes only half",
+    "Halved the correct angle; \\( \\cos^215^\\circ \\) is not a clean \\( 3/4 \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-038",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "Unpolarized light falls on glass at Brewster's angle. What is the state of the refracted light?",
+   "options": [
+    "Completely polarized",
+    "Partially polarized",
+    "Completely unpolarized, exactly like the incident light",
+    "There is no refracted light at Brewster's angle"
+   ],
+   "correct_index": 1,
+   "explanation": "At Brewster's angle the reflected ray contains only the vibration perpendicular to the plane of incidence, so it is completely polarized.<br><br>The refracted ray has all of the other component plus the rest of this one, so it is only partially polarized.",
+   "hint": "Which ray loses some of one component?",
+   "distractor_logic": [
+    "Only the reflected ray is completely polarized; the refracted ray still carries both components",
+    "Since part of one component has been reflected away, the refracted light is no longer perfectly unpolarized",
+    "Most of the light is in fact refracted at Brewster's angle"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-039",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "A single polaroid is slowly rotated in a beam of unpolarized light. How does the transmitted intensity change?",
+   "options": [
+    "It varies as \\( \\cos^2\\theta \\) with the angle of rotation",
+    "It drops to zero twice per rotation",
+    "It stays constant at half the incident intensity",
+    "It doubles at certain angles"
+   ],
+   "correct_index": 2,
+   "explanation": "Unpolarized light has vibrations in all directions equally.<br><br>Whatever the polaroid's orientation, half the intensity passes, so rotation makes no difference.",
+   "hint": "Does unpolarized light have any preferred direction?",
+   "distractor_logic": [
+    "Malus's law applies only to already polarized light; unpolarized light has no preferred direction",
+    "Zero transmission needs polarized light and crossed axes",
+    "A polaroid can never transmit more light than falls on it"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L2-040",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 2,
+   "type": "regular",
+   "question": "An analyzer is rotated through a full \\( 360^\\circ \\) in a beam of plane-polarized light. How many times does the transmitted intensity become zero?",
+   "options": [
+    "Once",
+    "Four times",
+    "Never",
+    "Twice"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( I=I_0\\cos^2\\theta \\) is zero when \\( \\cos\\theta=0 \\).<br><br>In one full turn that happens at \\( 90^\\circ \\) and \\( 270^\\circ \\): twice.",
+   "hint": "Where is \\( \\cos\\theta=0 \\) between \\( 0^\\circ \\) and \\( 360^\\circ \\)?",
+   "distractor_logic": [
+    "\\( \\cos^2\\theta=0 \\) at both \\( 90^\\circ \\) and \\( 270^\\circ \\)",
+    "Zero occurs only at \\( 90^\\circ \\) and \\( 270^\\circ \\); four is the count of maxima plus minima",
+    "Plane-polarized light is fully blocked when the analyzer is crossed"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-001",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 3,
+   "type": "regular",
+   "question": "Light passes from medium A (\\( \\mu_A=1.5 \\)) into medium B (\\( \\mu_B=1.2 \\)). What is the ratio of speeds \\( v_B/v_A \\), and how does the ray bend?",
+   "options": [
+    "\\( 1.25 \\); the ray bends away from the normal",
+    "\\( 0.8 \\); the ray bends toward the normal",
+    "\\( 1.25 \\); the ray bends toward the normal",
+    "\\( 0.8 \\); the ray bends away from the normal"
+   ],
+   "correct_index": 0,
+   "explanation": "Since \\( v=c/\\mu \\), \\( \\dfrac{v_B}{v_A}=\\dfrac{\\mu_A}{\\mu_B}=\\dfrac{1.5}{1.2}=1.25 \\).<br><br>Light speeds up on entering B, so the secondary wavelets in B spread farther, and the ray bends away from the normal.",
+   "hint": "Speed is inversely proportional to refractive index.",
+   "distractor_logic": [
+    "Inverted the speed ratio and then paired it with the wrong bending direction",
+    "Speed ratio is right, but a faster wave in B means the wavelets outrun the rest, bending the ray away from the normal",
+    "The speed ratio is inverted; the bending direction happens to be right"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-002",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 3,
+   "type": "regular",
+   "question": "Light of wavelength 600 nm in air has a wavelength of 500 nm inside a transparent liquid. What is the refractive index \\( \\mu \\) of the liquid?",
+   "options": [
+    "\\( 5/6 \\)",
+    "\\( 1.2 \\)",
+    "\\( 1.5 \\)",
+    "\\( 1.0 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Frequency is unchanged, so \\( \\mu=\\dfrac{\\lambda_\\text{air}}{\\lambda_\\text{liquid}} \\).<br><br>\\( \\mu=\\dfrac{600}{500}=1.2 \\).",
+   "hint": "The wavelength shrinks by the same factor as the speed.",
+   "distractor_logic": [
+    "Inverted the ratio; any material medium must have \\( \\mu \\) at least 1",
+    "Assumed the typical value for glass instead of computing from the data",
+    "Would mean no change of wavelength, but the wavelength clearly changed"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-003",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 3,
+   "type": "regular",
+   "question": "How long does light take to cross a glass slab 9 cm thick with \\( \\mu=1.5 \\)? (Take \\( c=3\\times10^{8} \\) m/s.)",
+   "options": [
+    "\\( 2\\times10^{-10} \\) s",
+    "\\( 3\\times10^{-10} \\) s",
+    "\\( 4.5\\times10^{-10} \\) s",
+    "\\( 6.75\\times10^{-10} \\) s"
+   ],
+   "correct_index": 2,
+   "explanation": "Speed in glass: \\( v=\\dfrac{c}{\\mu}=2\\times10^{8} \\) m/s.<br><br>Time: \\( t=\\dfrac{0.09}{2\\times10^{8}}=4.5\\times10^{-10} \\) s.",
+   "hint": "First find the slower speed inside the glass.",
+   "distractor_logic": [
+    "Used \\( v=\\mu c \\), assuming light speeds up in glass, the corpuscular-theory error",
+    "Ignored the glass and used the speed in vacuum",
+    "Multiplied by \\( \\mu^2 \\) instead of \\( \\mu \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-004",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 3,
+   "type": "regular",
+   "question": "A layer of water (\\( \\mu=\\dfrac43 \\)) 12 cm thick is placed in the path of light. What thickness of air would take light the same time to cross (the equivalent optical path)?",
+   "options": [
+    "9 cm",
+    "12 cm",
+    "4 cm",
+    "16 cm"
+   ],
+   "correct_index": 3,
+   "explanation": "Time in water \\( =\\dfrac{t}{c/\\mu}=\\dfrac{\\mu t}{c} \\), so the equivalent air path is \\( \\mu t \\).<br><br>\\( \\mu t=\\dfrac43\\times12=16 \\) cm.",
+   "hint": "Light is slower in water, so which should be longer: the water path or the equivalent air path?",
+   "distractor_logic": [
+    "Divided by \\( \\mu \\); light is slower in water, so the equivalent air path must be longer",
+    "Ignored the slowing of light in water",
+    "Gave only the extra path \\( (\\mu-1)t \\) instead of the total optical path \\( \\mu t \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-005",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 3,
+   "type": "regular",
+   "question": "Measurements showed that light travels more slowly in water than in air. Which conclusion follows?",
+   "options": [
+    "It supports the wave theory, which explains bending toward the normal in water by a smaller speed there",
+    "It supports the corpuscular theory, which predicts a smaller speed in water",
+    "It supports the corpuscular theory, because friction slows the corpuscles",
+    "It contradicts both theories equally"
+   ],
+   "correct_index": 0,
+   "explanation": "Both theories explain bending toward the normal in water, but they disagree about why.<br><br>Wave theory needs \\( v_\\text{water}<v_\\text{air} \\); corpuscular theory needed the opposite.<br><br>The measured smaller speed therefore supports the wave theory.",
+   "hint": "Which theory needed light to go faster in the denser medium?",
+   "distractor_logic": [
+    "The corpuscular theory predicted a larger speed in the denser medium, the opposite of what was measured",
+    "Friction was never part of the corpuscular explanation of refraction; that theory needed the corpuscles to speed up",
+    "The measurement agrees with the wave theory, so it cannot contradict both"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-006",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": 3,
+   "type": "regular",
+   "question": "Light of wavelength 600 nm in air passes from glass (\\( \\mu=1.5 \\)) into water (\\( \\mu=\\dfrac43 \\)). Its wavelength in the glass is 400 nm. What is its wavelength in the water?",
+   "options": [
+    "400 nm",
+    "450 nm",
+    "600 nm",
+    "300 nm"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\lambda_w=\\dfrac{\\lambda_\\text{air}}{\\mu_w}=\\dfrac{600}{4/3}=450 \\) nm.<br><br>Check: \\( \\dfrac{\\lambda_w}{\\lambda_g}=\\dfrac{\\mu_g}{\\mu_w}=\\dfrac{1.5}{4/3}=\\dfrac98 \\), and \\( \\dfrac98\\times400=450 \\) nm.<br><br>Water is optically rarer than glass, so the wavelength grows.",
+   "hint": "Go through air: find the air wavelength, then divide by the water's index.",
+   "distractor_logic": [
+    "Assumed the wavelength stays the same across the boundary, but it is the frequency that stays the same",
+    "Took the wavelength in air, forgetting that water still slows the light",
+    "Divided the glass wavelength by \\( \\mu_w \\), treating it as if it were the wavelength in air"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-007",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 3,
+   "type": "regular",
+   "question": "Two coherent sources, each giving intensity \\( I_0 \\) on the screen, produce an interference pattern. What is the intensity at a bright fringe?",
+   "options": [
+    "\\( 2I_0 \\)",
+    "\\( I_0 \\)",
+    "\\( 4I_0 \\)",
+    "\\( 8I_0 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "At a bright fringe the amplitudes add: \\( A=a+a=2a \\).<br><br>Intensity is proportional to amplitude squared: \\( I=(2a)^2=4a^2=4I_0 \\).<br><br>Energy is conserved because dark fringes get zero, averaging to \\( 2I_0 \\).",
+   "hint": "Add amplitudes first, then square.",
+   "distractor_logic": [
+    "Added intensities directly, which is correct only for incoherent sources",
+    "That is the intensity from one source alone",
+    "Doubled the correct result; amplitudes add to \\( 2a \\), giving \\( (2a)^2=4a^2 \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-008",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 3,
+   "type": "regular",
+   "question": "In a double slit pattern formed by two equal coherent sources, the maximum intensity is \\( 4I_0 \\). What is the intensity at a point where the path difference is \\( \\dfrac{\\lambda}{3} \\)?",
+   "options": [
+    "\\( 2I_0 \\)",
+    "\\( 4I_0 \\)",
+    "\\( 3I_0 \\)",
+    "\\( I_0 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Phase difference: \\( \\phi=\\dfrac{2\\pi}{\\lambda}\\cdot\\dfrac{\\lambda}{3}=\\dfrac{2\\pi}{3} \\).<br><br>\\( I=4I_0\\cos^2\\dfrac{\\phi}{2}=4I_0\\cos^2\\dfrac{\\pi}{3}=4I_0\\times\\dfrac14 \\).<br><br>\\( I=I_0 \\).",
+   "hint": "Convert path difference to phase difference, then use \\( I=4I_0\\cos^2(\\phi/2) \\).",
+   "distractor_logic": [
+    "Used the incoherent average instead of the actual interference formula",
+    "Treated the point as a bright fringe; \\( \\lambda/3 \\) is not a whole number of wavelengths",
+    "Used \\( \\sin^2 \\) in place of \\( \\cos^2 \\) in the intensity formula"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-009",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 3,
+   "type": "regular",
+   "question": "In Young's experiment with \\( \\lambda=600 \\) nm, a thin glass sheet (\\( \\mu=1.5 \\)) is placed over one slit. The central bright fringe moves to where the fifth bright fringe was. What is the thickness of the sheet, and which way did the pattern move?",
+   "options": [
+    "6000 nm, toward the covered slit",
+    "6000 nm, away from the covered slit",
+    "2000 nm, toward the covered slit",
+    "3000 nm, toward the covered slit"
+   ],
+   "correct_index": 0,
+   "explanation": "The sheet adds an extra optical path \\( (\\mu-1)t \\) to one wave.<br><br>A shift of 5 fringes means \\( (\\mu-1)t=5\\lambda \\), so \\( t=\\dfrac{5\\times600}{0.5}=6000 \\) nm.<br><br>The point of zero path difference must now lie nearer the covered slit, so the pattern shifts that way.",
+   "hint": "The extra path added by the sheet is \\( (\\mu-1)t \\), not \\( \\mu t \\).",
+   "distractor_logic": [
+    "Thickness is right, but the sheet lengthens the optical path of that slit, so the centre moves toward it",
+    "Used \\( \\mu t=5\\lambda \\) instead of \\( (\\mu-1)t=5\\lambda \\)",
+    "Ignored the \\( (\\mu-1) \\) factor and set \\( t=5\\lambda \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-010",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 3,
+   "type": "regular",
+   "question": "A double slit with \\( d=1 \\) mm and \\( D=1 \\) m is lit with light containing 600 nm and 400 nm together. At what minimum distance from the centre do bright fringes of both wavelengths first coincide?",
+   "options": [
+    "0.6 mm",
+    "1.2 mm",
+    "0.4 mm",
+    "2.4 mm"
+   ],
+   "correct_index": 1,
+   "explanation": "Bright fringes coincide when \\( n_1\\lambda_1=n_2\\lambda_2 \\): \\( 600n_1=400n_2 \\), smallest \\( n_1=2, n_2=3 \\).<br><br>\\( y=\\dfrac{n_1\\lambda_1D}{d}=\\dfrac{2\\times600\\times10^{-9}\\times1}{1\\times10^{-3}}=1.2\\times10^{-3} \\) m.<br><br>So the distance is 1.2 mm.",
+   "hint": "Find the smallest whole numbers with \\( 600n_1=400n_2 \\).",
+   "distractor_logic": [
+    "That is just the first bright fringe of 600 nm; the 400 nm bright fringe is not there",
+    "That is just the first bright fringe of 400 nm",
+    "Took twice the true coincidence distance"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-011",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 3,
+   "type": "regular",
+   "question": "Young's experiment is done with white light. Which description of the pattern is correct?",
+   "options": [
+    "The central fringe is white; the nearest coloured fringes have red on the inner side and violet on the outer side",
+    "The central fringe is dark, surrounded by coloured fringes",
+    "The central fringe is white; the nearest coloured fringes have violet on the inner side and red on the outer side",
+    "All fringes are white and equally spaced"
+   ],
+   "correct_index": 2,
+   "explanation": "At the centre \\( \\Delta=0 \\) for all wavelengths, so every colour is bright and the fringe is white.<br><br>Away from the centre, \\( y=n\\lambda D/d \\): violet (small \\( \\lambda \\)) peaks closer in and red farther out.",
+   "hint": "Which colour has the smallest fringe width?",
+   "distractor_logic": [
+    "Reverses the order; red has a longer \\( \\lambda \\) and hence a wider \\( \\beta \\), so its first fringe lies farther out",
+    "At the centre \\( \\Delta=0 \\) for every colour, so all colours are bright there, giving white",
+    "Different colours have different fringe widths, so they separate beyond the centre"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-012",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": 3,
+   "type": "regular",
+   "question": "In a double slit pattern the fringe width is 0.4 mm. What is the distance between the second dark fringe on one side of the centre and the third bright fringe on the other side?",
+   "options": [
+    "0.6 mm",
+    "2.0 mm",
+    "1.4 mm",
+    "1.8 mm"
+   ],
+   "correct_index": 3,
+   "explanation": "Second dark fringe: \\( y=\\left(1+\\tfrac12\\right)\\beta=1.5\\beta \\). Third bright fringe: \\( y=3\\beta \\).<br><br>They are on opposite sides, so the distance is \\( 1.5\\beta+3\\beta=4.5\\beta \\).<br><br>\\( 4.5\\times0.4=1.8 \\) mm.",
+   "hint": "Dark fringe number \\( k \\) is at \\( (k-\\tfrac12)\\beta \\); opposite sides means you add.",
+   "distractor_logic": [
+    "Took both fringes on the same side and subtracted \\( 1.5\\beta \\) from \\( 3\\beta \\)",
+    "Placed the second dark fringe at \\( 2\\beta \\) instead of \\( 1.5\\beta \\)",
+    "Placed the second dark fringe at \\( 0.5\\beta \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-013",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 3,
+   "type": "regular",
+   "question": "Light of wavelength 600 nm falls on a single slit. On a screen 1.5 m away the central maximum is 3 mm wide. What is the slit width?",
+   "options": [
+    "0.6 mm",
+    "0.3 mm",
+    "1.2 mm",
+    "0.15 mm"
+   ],
+   "correct_index": 0,
+   "explanation": "Central width \\( w=\\dfrac{2\\lambda D}{a} \\), so \\( a=\\dfrac{2\\lambda D}{w} \\).<br><br>\\( a=\\dfrac{2\\times600\\times10^{-9}\\times1.5}{3\\times10^{-3}}=6\\times10^{-4} \\) m \\( =0.6 \\) mm.",
+   "hint": "Rearrange \\( w=2\\lambda D/a \\).",
+   "distractor_logic": [
+    "Used \\( \\lambda D/a \\) as the full width, treating the central maximum as no wider than a secondary one",
+    "Doubled the correct slit width",
+    "Used \\( \\lambda D/2w \\), dividing by 2 instead of multiplying by 2"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-014",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 3,
+   "type": "regular",
+   "question": "With a single slit, the third minimum for light of 400 nm falls at the same angle as the second minimum for another wavelength \\( \\lambda' \\). What is \\( \\lambda' \\)?",
+   "options": [
+    "800 nm",
+    "600 nm",
+    "1200 nm",
+    "400 nm"
+   ],
+   "correct_index": 1,
+   "explanation": "Same angle means same \\( a\\sin\\theta \\): \\( 3\\times400=2\\lambda' \\).<br><br>\\( \\lambda'=\\dfrac{1200}{2}=600 \\) nm.",
+   "hint": "Equate \\( n\\lambda \\) for the two minima.",
+   "distractor_logic": [
+    "Matched the second minimum of 400 nm with the first minimum of \\( \\lambda' \\)",
+    "Took \\( 3\\times400 \\) without dividing by the order of the second minimum",
+    "Assumed the two wavelengths must be equal"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-015",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 3,
+   "type": "regular",
+   "question": "For a slit of width 3 mm and light of wavelength 500 nm, what is the Fresnel distance \\( z_F=\\dfrac{a^2}{\\lambda} \\), beyond which diffraction spreading dominates over ray optics?",
+   "options": [
+    "36 m",
+    "9 m",
+    "18 m",
+    "6000 m"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( z_F=\\dfrac{a^2}{\\lambda}=\\dfrac{(3\\times10^{-3})^2}{500\\times10^{-9}} \\).<br><br>\\( z_F=\\dfrac{9\\times10^{-6}}{5\\times10^{-7}}=18 \\) m.",
+   "hint": "Square the slit width in metres first.",
+   "distractor_logic": [
+    "Used \\( 2a^2/\\lambda \\)",
+    "Used \\( a^2/2\\lambda \\)",
+    "Computed \\( a/\\lambda \\) and read it as metres; that ratio is a pure number"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-016",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 3,
+   "type": "regular",
+   "question": "A student says: 'In single slit diffraction, \\( a\\sin\\theta=\\lambda \\) must be the first bright fringe, just as \\( d\\sin\\theta=\\lambda \\) is in Young's experiment.' What is wrong?",
+   "options": [
+    "Nothing; \\( a\\sin\\theta=\\lambda \\) is indeed the first bright fringe",
+    "It is the first bright fringe only when the screen is far away",
+    "It is the central maximum, since \\( n=1 \\) is the first order",
+    "At \\( a\\sin\\theta=\\lambda \\) the slit splits into two halves whose wavelets cancel in pairs, so this angle is a minimum"
+   ],
+   "correct_index": 3,
+   "explanation": "Split the slit into two halves of width \\( a/2 \\).<br><br>When \\( a\\sin\\theta=\\lambda \\), a point in the top half and the matching point in the bottom half differ in path by \\( \\lambda/2 \\), so they cancel.<br><br>Every pair cancels, making this the first minimum; in Young's experiment there are only two sources, so \\( d\\sin\\theta=\\lambda \\) is a maximum.",
+   "hint": "Pair up wavelets from the two halves of the slit.",
+   "distractor_logic": [
+    "This is the central trap: the same-looking formula gives minima for a single slit",
+    "Screen distance does not change the pairing argument; the angle is always a minimum",
+    "The central maximum is at \\( \\theta=0 \\), not at \\( a\\sin\\theta=\\lambda \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-017",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 3,
+   "type": "regular",
+   "question": "A Young's double slit has \\( d=1 \\) mm. A single slit is to be chosen so that the angular width of its central maximum equals the angular fringe width of the double slit, with the same wavelength. What slit width is needed?",
+   "options": [
+    "2 mm",
+    "1 mm",
+    "0.5 mm",
+    "4 mm"
+   ],
+   "correct_index": 0,
+   "explanation": "Angular fringe width \\( =\\dfrac{\\lambda}{d} \\); central maximum angular width \\( =\\dfrac{2\\lambda}{a} \\).<br><br>\\( \\dfrac{2\\lambda}{a}=\\dfrac{\\lambda}{d} \\Rightarrow a=2d=2 \\) mm.",
+   "hint": "Set \\( 2\\lambda/a=\\lambda/d \\).",
+   "distractor_logic": [
+    "Took the central maximum width as \\( \\lambda/a \\), forgetting it is \\( 2\\lambda/a \\)",
+    "Inverted the factor of 2",
+    "Doubled the answer a second time"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-018",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": 3,
+   "type": "regular",
+   "question": "In a single slit experiment the wavelength is changed from 400 nm to 600 nm and at the same time the slit width is doubled. What happens to the angular width of the central maximum?",
+   "options": [
+    "It becomes 3 times its original value",
+    "It becomes \\( \\dfrac34 \\) of its original value",
+    "It becomes \\( \\dfrac43 \\) of its original value",
+    "It stays the same"
+   ],
+   "correct_index": 1,
+   "explanation": "Width \\( =\\dfrac{2\\lambda}{a} \\), proportional to \\( \\dfrac{\\lambda}{a} \\).<br><br>New/old \\( =\\dfrac{600}{400}\\times\\dfrac{1}{2}=\\dfrac34 \\).",
+   "hint": "Width is proportional to \\( \\lambda \\) and inversely proportional to \\( a \\).",
+   "distractor_logic": [
+    "Multiplied by the slit-width factor instead of dividing",
+    "Inverted the overall factor",
+    "Assumed the two changes cancel exactly, but they are a factor 1.5 and a factor 2"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-019",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 3,
+   "type": "regular",
+   "question": "Two stars have an angular separation of \\( 1\\times10^{-6} \\) rad. What is the smallest telescope objective diameter that can just resolve them at 500 nm?",
+   "options": [
+    "0.5 m",
+    "1.22 m",
+    "0.61 m",
+    "0.305 m"
+   ],
+   "correct_index": 2,
+   "explanation": "Just resolved: \\( \\dfrac{1.22\\lambda}{D}=\\Delta\\theta \\), so \\( D=\\dfrac{1.22\\lambda}{\\Delta\\theta} \\).<br><br>\\( D=\\dfrac{1.22\\times500\\times10^{-9}}{1\\times10^{-6}}=0.61 \\) m.",
+   "hint": "Rearrange the Rayleigh limit for \\( D \\).",
+   "distractor_logic": [
+    "Left out the 1.22 factor",
+    "Doubled the answer, perhaps treating 0.61 m as a radius",
+    "Halved the answer"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-020",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 3,
+   "type": "regular",
+   "question": "A microscope using light of wavelength 400 nm must resolve points 200 nm apart. What numerical aperture is needed, and what does that imply?",
+   "options": [
+    "\\( 2.44 \\); this needs an oil-immersion objective",
+    "\\( 0.61 \\); an ordinary objective in air will do",
+    "\\( 1.22 \\); an ordinary objective in air will do",
+    "\\( 1.22 \\); this needs an oil-immersion objective, since NA greater than 1 is impossible in air"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\text{NA}=\\dfrac{1.22\\lambda}{2d_\\text{min}}=\\dfrac{1.22\\times400}{2\\times200}=1.22 \\).<br><br>In air \\( \\text{NA}=\\sin\\alpha \\) cannot exceed 1, so a medium with \\( \\mu>1 \\), such as immersion oil, is needed.",
+   "hint": "Rearrange for NA, then ask whether air can provide it.",
+   "distractor_logic": [
+    "Forgot the factor 2 in \\( d_\\text{min}=1.22\\lambda/2\\,\\text{NA} \\)",
+    "Halved the required NA",
+    "Value is right, but in air \\( \\mu=1 \\) and \\( \\sin\\alpha \\) cannot exceed 1, so NA cannot exceed 1"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-021",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 3,
+   "type": "regular",
+   "question": "A car's two headlights are 1.2 m apart. The eye's pupil diameter is 3.05 mm and the light has wavelength 500 nm. Up to what maximum distance can the eye see the two headlights as separate?",
+   "options": [
+    "6 km",
+    "3 km",
+    "12 km",
+    "0.6 km"
+   ],
+   "correct_index": 0,
+   "explanation": "Eye's limit: \\( \\Delta\\theta=\\dfrac{1.22\\times500\\times10^{-9}}{3.05\\times10^{-3}}=2\\times10^{-4} \\) rad.<br><br>Maximum distance \\( =\\dfrac{1.2}{2\\times10^{-4}}=6000 \\) m \\( =6 \\) km.",
+   "hint": "Find the eye's limiting angle, then use separation over distance.",
+   "distractor_logic": [
+    "Used the pupil radius in place of its diameter",
+    "Doubled the answer, dividing by half the limiting angle",
+    "Converted the pupil diameter as 0.305 mm, a factor-of-10 slip that makes the limiting angle ten times too large"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-022",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 3,
+   "type": "regular",
+   "question": "Two stars are not resolved by a telescope. A student swaps in an eyepiece of much higher magnification. What happens?",
+   "options": [
+    "The stars become resolved because the image is larger",
+    "The stars are still not resolved; the blurred image is only enlarged, because resolution is fixed by the objective's diameter",
+    "The stars become resolved because magnification reduces the wavelength",
+    "The limiting angle doubles"
+   ],
+   "correct_index": 1,
+   "explanation": "The diffraction discs formed by the objective already overlap.<br><br>The eyepiece enlarges this image, including the overlap, so the stars stay unresolved.<br><br>Only a larger \\( D \\) or shorter \\( \\lambda \\) would help.",
+   "hint": "Which part of the telescope fixes \\( 1.22\\lambda/D \\)?",
+   "distractor_logic": [
+    "Magnifying a blurred image just gives a bigger blur; resolution depends on \\( D \\) and \\( \\lambda \\) only",
+    "Magnification has no effect on the wavelength of light",
+    "The eyepiece does not change the objective's limiting angle \\( 1.22\\lambda/D \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-023",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 3,
+   "type": "regular",
+   "question": "A microscope with a dry objective (\\( \\text{NA}=0.61 \\)) resolves 500 nm with a certain light. Oil of \\( \\mu=1.25 \\) is now placed between the objective and specimen, keeping the same cone angle. What is the new minimum resolvable distance?",
+   "options": [
+    "625 nm",
+    "500 nm",
+    "400 nm",
+    "320 nm"
+   ],
+   "correct_index": 2,
+   "explanation": "New \\( \\text{NA}=\\mu\\sin\\alpha=1.25\\times0.61 \\), so NA rises by the factor 1.25.<br><br>\\( d_\\text{min} \\) is inversely proportional to NA: \\( \\dfrac{500}{1.25}=400 \\) nm.",
+   "hint": "Find how the numerical aperture changes.",
+   "distractor_logic": [
+    "Multiplied by \\( \\mu \\); oil improves resolution, it does not worsen it",
+    "Ignored the change in numerical aperture",
+    "Divided by \\( \\mu^2 \\) instead of \\( \\mu \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-024",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": 3,
+   "type": "regular",
+   "question": "A telescope observes a double star first in red light (700 nm) and then in violet light (400 nm). Which gives better resolution, and what is the ratio of the limiting angles red : violet?",
+   "options": [
+    "Red; \\( 7:4 \\)",
+    "Violet; \\( 4:7 \\)",
+    "Red; \\( 4:7 \\)",
+    "Violet; \\( 7:4 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\Delta\\theta=\\dfrac{1.22\\lambda}{D} \\) is proportional to \\( \\lambda \\).<br><br>Red : violet \\( =700:400=7:4 \\).<br><br>Violet gives the smaller limiting angle, so it resolves better.",
+   "hint": "Smaller limiting angle means better resolution.",
+   "distractor_logic": [
+    "Ratio correct, but the larger limiting angle (red) means poorer resolution",
+    "Better colour is right, but the ratio is inverted",
+    "Both the colour and the ratio are reversed"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-025",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 3,
+   "type": "regular",
+   "question": "Unpolarized light of intensity \\( I_0 \\) passes through three polarizers. The second is at \\( 45^\\circ \\) to the first, and the third is at \\( 90^\\circ \\) to the first. What intensity emerges?",
+   "options": [
+    "\\( \\dfrac{I_0}{8} \\)",
+    "Zero",
+    "\\( \\dfrac{I_0}{4} \\)",
+    "\\( \\dfrac{I_0}{2} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "After P1: \\( \\dfrac{I_0}{2} \\).<br><br>After P2 (\\( 45^\\circ \\)): \\( \\dfrac{I_0}{2}\\times\\dfrac12=\\dfrac{I_0}{4} \\).<br><br>After P3 (\\( 45^\\circ \\) to P2): \\( \\dfrac{I_0}{4}\\times\\dfrac12=\\dfrac{I_0}{8} \\).",
+   "hint": "Each polarizer acts relative to the one just before it.",
+   "distractor_logic": [
+    "Ignored the middle polarizer and treated the first and third as crossed",
+    "Skipped the halving at the first polarizer",
+    "Stopped after the first polarizer"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-026",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 3,
+   "type": "regular",
+   "question": "Unpolarized light of intensity \\( I_0 \\) passes through three polarizers. The second is at \\( 30^\\circ \\) to the first, and the third is at \\( 90^\\circ \\) to the first. What intensity emerges?",
+   "options": [
+    "Zero",
+    "\\( \\dfrac{3I_0}{32} \\)",
+    "\\( \\dfrac{3I_0}{16} \\)",
+    "\\( \\dfrac{\\sqrt3I_0}{8} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "After P1: \\( \\dfrac{I_0}{2} \\).<br><br>After P2: \\( \\dfrac{I_0}{2}\\cos^230^\\circ=\\dfrac{I_0}{2}\\times\\dfrac34=\\dfrac{3I_0}{8} \\).<br><br>P3 is at \\( 60^\\circ \\) to P2: \\( \\dfrac{3I_0}{8}\\cos^260^\\circ=\\dfrac{3I_0}{8}\\times\\dfrac14=\\dfrac{3I_0}{32} \\).",
+   "hint": "The angle between P2 and P3 is \\( 90^\\circ-30^\\circ \\).",
+   "distractor_logic": [
+    "Treated the first and third as crossed, ignoring the middle one",
+    "Skipped the halving of unpolarized light at the first polarizer",
+    "Used \\( \\cos\\theta \\) instead of \\( \\cos^2\\theta \\) at each step"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-027",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 3,
+   "type": "regular",
+   "question": "Light inside glass meets a glass-to-air surface. The refractive index of air relative to the glass is \\( \\dfrac{1}{\\sqrt3} \\). What is Brewster's angle, and what is the angle of refraction in air?",
+   "options": [
+    "\\( \\theta_B=60^\\circ \\), refraction angle \\( 30^\\circ \\)",
+    "\\( \\theta_B=30^\\circ \\), refraction angle \\( 30^\\circ \\)",
+    "\\( \\theta_B=30^\\circ \\), refraction angle \\( 60^\\circ \\)",
+    "\\( \\theta_B=60^\\circ \\), refraction angle \\( 60^\\circ \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\tan\\theta_B=\\dfrac{1}{\\sqrt3} \\), so \\( \\theta_B=30^\\circ \\).<br><br>Reflected and refracted rays are perpendicular: \\( \\theta_r=90^\\circ-30^\\circ=60^\\circ \\).<br><br>The ray bends away from the normal going into air, as expected.",
+   "hint": "Use the index of the second medium relative to the first.",
+   "distractor_logic": [
+    "Used the air-to-glass value; for glass to air the relative index is \\( 1/\\sqrt3 \\)",
+    "Brewster's angle is right, but the refracted ray must make \\( 90^\\circ-\\theta_B \\) with the normal",
+    "Both angles use the wrong relative index and ignore \\( \\theta_B+\\theta_r=90^\\circ \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-028",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 3,
+   "type": "regular",
+   "question": "Light falls on a transparent medium at \\( 60^\\circ \\) incidence, and the reflected and refracted rays are found to be exactly perpendicular. What is the refractive index of the medium?",
+   "options": [
+    "\\( \\dfrac{\\sqrt3}{2} \\)",
+    "\\( 2 \\)",
+    "\\( \\dfrac{1}{\\sqrt3} \\)",
+    "\\( \\sqrt3 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Perpendicular reflected and refracted rays mean the incidence is at Brewster's angle.<br><br>\\( \\mu=\\tan60^\\circ=\\sqrt3 \\).",
+   "hint": "Perpendicular rays signal Brewster's angle.",
+   "distractor_logic": [
+    "Used \\( \\sin\\theta_B=\\mu \\); it gives a value below 1, impossible for a medium denser than air",
+    "Used \\( 1/\\cos\\theta_B \\) instead of \\( \\tan\\theta_B \\)",
+    "Used \\( \\cot\\theta_B \\); it gives a value below 1"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-029",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 3,
+   "type": "regular",
+   "question": "Polarized light passes through an analyzer set at \\( 60^\\circ \\) to its polarization, giving intensity \\( I \\). The analyzer is then turned back to \\( 30^\\circ \\). What is the new intensity in terms of \\( I \\)?",
+   "options": [
+    "\\( 3I \\)",
+    "\\( 2I \\)",
+    "\\( \\sqrt3I \\)",
+    "\\( I \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( I=I_0\\cos^260^\\circ=\\dfrac{I_0}{4} \\), so \\( I_0=4I \\).<br><br>New: \\( I_0\\cos^230^\\circ=4I\\times\\dfrac34=3I \\).",
+   "hint": "Express \\( I_0 \\) in terms of \\( I \\) first.",
+   "distractor_logic": [
+    "Took the ratio of the angles, \\( 60/30 \\)",
+    "Used \\( \\cos\\theta \\) instead of \\( \\cos^2\\theta \\)",
+    "Assumed intensity does not depend on the analyzer angle"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-L3-030",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Polarization of Light: Malus's Law and Polarization by Reflection",
+   "level": 3,
+   "type": "regular",
+   "question": "Unpolarized light of intensity \\( 32 \\) W m\\( ^{-2} \\) passes through two polarizers whose axes make \\( 60^\\circ \\) with each other. What emerges?",
+   "options": [
+    "\\( 8 \\) W m\\( ^{-2} \\)",
+    "\\( 4 \\) W m\\( ^{-2} \\)",
+    "\\( 16 \\) W m\\( ^{-2} \\)",
+    "\\( 12 \\) W m\\( ^{-2} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "After the first polarizer: \\( \\dfrac{32}{2}=16 \\) W m\\( ^{-2} \\).<br><br>After the second: \\( 16\\cos^260^\\circ=16\\times\\dfrac14=4 \\) W m\\( ^{-2} \\).",
+   "hint": "Halve, then multiply by \\( \\cos^2 \\).",
+   "distractor_logic": [
+    "Used \\( \\cos60^\\circ \\) instead of \\( \\cos^260^\\circ \\)",
+    "Stopped after the first polarizer",
+    "Used \\( \\sin^260^\\circ \\) instead of \\( \\cos^260^\\circ \\)"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-001",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In a double slit experiment each slit has width \\( a \\), and the slit separation is \\( d=5a \\). How many interference fringe widths fit inside the central diffraction maximum of each slit (angularly)?",
+   "options": [
+    "5",
+    "2.5",
+    "10",
+    "20"
+   ],
+   "correct_index": 2,
+   "explanation": "Central diffraction maximum width \\( =\\dfrac{2\\lambda}{a} \\); angular fringe width \\( =\\dfrac{\\lambda}{d} \\).<br><br>Ratio \\( =\\dfrac{2\\lambda/a}{\\lambda/d}=\\dfrac{2d}{a}=10 \\).",
+   "hint": "Divide the diffraction envelope width by the fringe width.",
+   "distractor_logic": [
+    "Took the central diffraction maximum as \\( \\lambda/a \\) wide instead of \\( 2\\lambda/a \\)",
+    "Divided by 2 instead of multiplying",
+    "Doubled the correct count"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-002",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A double slit gives a fringe width of 1.2 mm in air. When the whole set-up is immersed in a liquid, the fringe width becomes 0.9 mm. What is the refractive index of the liquid?",
+   "options": [
+    "\\( \\dfrac34 \\)",
+    "\\( 1.3 \\)",
+    "\\( 1.5 \\)",
+    "\\( \\dfrac43 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "In the liquid the wavefronts travel slower, so \\( \\lambda \\) becomes \\( \\lambda/\\mu \\) and \\( \\beta \\) becomes \\( \\beta/\\mu \\).<br><br>\\( \\mu=\\dfrac{\\beta_\\text{air}}{\\beta_\\text{liquid}}=\\dfrac{1.2}{0.9}=\\dfrac43 \\).",
+   "hint": "Fringe width shrinks by the same factor as the wavelength.",
+   "distractor_logic": [
+    "Inverted the ratio, giving a value below 1",
+    "Subtracted the widths and added 1, which has no physical basis",
+    "Guessed the typical value for glass"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-003",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Light travels in a medium with speed \\( \\sqrt3\\times10^{8} \\) m/s (taking \\( c=3\\times10^{8} \\) m/s). What is Brewster's angle for light going from air into this medium?",
+   "options": [
+    "\\( 60^\\circ \\)",
+    "\\( 30^\\circ \\)",
+    "\\( 45^\\circ \\)",
+    "\\( 0^\\circ \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\mu=\\dfrac{c}{v}=\\dfrac{3\\times10^{8}}{\\sqrt3\\times10^{8}}=\\sqrt3 \\).<br><br>\\( \\tan\\theta_B=\\sqrt3 \\), so \\( \\theta_B=60^\\circ \\).",
+   "hint": "Find \\( \\mu \\) from the speeds first.",
+   "distractor_logic": [
+    "Used \\( \\tan\\theta_B=v/c \\), inverting the refractive index",
+    "That would be Brewster's angle for \\( \\mu=1 \\)",
+    "Normal incidence; reflection there does not polarize the light at all"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-004",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Rayleigh's criterion for telescopes uses the angle \\( \\dfrac{1.22\\lambda}{D} \\). Where does this angle come from?",
+   "options": [
+    "It is the angle of the first secondary maximum of a slit of width \\( D \\)",
+    "It is the angle of the first diffraction minimum for a circular aperture, the circular counterpart of \\( \\lambda/a \\) for a single slit",
+    "It is the angular width of the central maximum of a slit of width \\( D \\)",
+    "It is the angle at which light is fully polarized by the lens"
+   ],
+   "correct_index": 1,
+   "explanation": "For a single slit the first minimum is at \\( \\lambda/a \\).<br><br>A circular aperture gives a slightly larger first-minimum angle, \\( \\dfrac{1.22\\lambda}{D} \\).<br><br>Rayleigh placed one image's centre on the other's first minimum, so this angle sets the limit.",
+   "hint": "Rayleigh's criterion involves a diffraction minimum.",
+   "distractor_logic": [
+    "Rayleigh's criterion uses the first minimum, not a maximum",
+    "The central maximum of a slit spans \\( 2\\lambda/D \\), a different quantity",
+    "Polarization has no role in the resolution limit"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-005",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In Young's experiment, each slit is covered with a polaroid, and the two polaroid axes are perpendicular to each other. What is seen on the screen?",
+   "options": [
+    "Normal fringes with the same fringe width",
+    "Fringes of half the usual width",
+    "No interference fringes; the screen is uniformly lit",
+    "A completely dark screen"
+   ],
+   "correct_index": 2,
+   "explanation": "Interference requires the two waves to vibrate in the same direction so that their displacements can add or cancel.<br><br>Perpendicular polarizations just add their intensities, giving uniform illumination.",
+   "hint": "Can a vertical vibration cancel a horizontal one?",
+   "distractor_logic": [
+    "Perpendicular vibrations cannot cancel or reinforce each other, so fringes vanish",
+    "There is no mechanism that would halve \\( \\beta \\); the fringes simply disappear",
+    "Each slit still transmits light, so the screen is lit"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-006",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "(Qualitative, diffraction grating) As the number of equally spaced slits is increased from 2 to many, keeping the spacing the same, how do the bright maxima change?",
+   "options": [
+    "They move farther apart",
+    "They become broader and dimmer",
+    "They turn into dark fringes",
+    "They stay at the same positions but become much sharper and brighter"
+   ],
+   "correct_index": 3,
+   "explanation": "Principal maxima still occur where the path difference between neighbouring slits is a whole number of wavelengths, so positions are unchanged.<br><br>With many slits, light is cancelled almost everywhere else, so each maximum becomes narrow and intense.",
+   "hint": "The positions depend on spacing; what do extra slits add?",
+   "distractor_logic": [
+    "Positions depend on the slit spacing, which is unchanged",
+    "More slits make the cancellation away from the maxima more complete, so maxima sharpen",
+    "The condition for reinforcement is unchanged, so they stay bright"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-007",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "How does Huygens' principle explain the first minimum of single slit diffraction?",
+   "options": [
+    "Each point of the slit emits secondary wavelets; at \\( a\\sin\\theta=\\lambda \\) wavelets from the two halves pair up with path difference \\( \\lambda/2 \\) and cancel",
+    "The slit edges reflect light, which cancels the wavelets at \\( a\\sin\\theta=\\lambda \\)",
+    "Wavelets from the two halves reinforce at \\( a\\sin\\theta=\\lambda \\), making it the first bright fringe",
+    "Only the two edges of the slit act as sources, just like Young's slits"
+   ],
+   "correct_index": 0,
+   "explanation": "Treat every point across the slit as a source of secondary wavelets.<br><br>At \\( a\\sin\\theta=\\lambda \\), pair each point in the upper half with the point \\( a/2 \\) below it; their path difference is \\( \\lambda/2 \\), so each pair cancels.",
+   "hint": "Divide the slit into two equal halves.",
+   "distractor_logic": [
+    "Diffraction comes from secondary wavelets across the opening, not from reflection at the edges",
+    "The pairing gives cancellation, so \\( a\\sin\\theta=\\lambda \\) is a minimum",
+    "Every point across the slit acts as a source, which is why the single slit differs from two sources"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-008",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Why does a very small eye pupil (for example in bright sunlight) slightly limit the eye's ability to see fine detail?",
+   "options": [
+    "A smaller aperture reduces diffraction, so fine detail is lost to glare",
+    "A smaller aperture diffracts light more, enlarging each point's image and increasing the limiting angle \\( 1.22\\lambda/D \\)",
+    "A smaller pupil changes the wavelength of light entering the eye",
+    "A smaller pupil makes the light polarized"
+   ],
+   "correct_index": 1,
+   "explanation": "Diffraction spreading is about \\( \\lambda/D \\), like \\( \\lambda/a \\) for a slit.<br><br>A smaller pupil means a larger spread and a larger limiting angle \\( 1.22\\lambda/D \\), so resolution worsens.",
+   "hint": "Smaller opening, more diffraction.",
+   "distractor_logic": [
+    "Reverses the dependence; diffraction spreading grows as the aperture shrinks",
+    "The pupil does not change the wavelength",
+    "The pupil does not polarize light"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-009",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In an oil-immersion microscope with oil of \\( \\mu=1.5 \\), light of wavelength 600 nm in air is used. What is its wavelength in the oil, which is one way to see why resolution improves?",
+   "options": [
+    "900 nm",
+    "600 nm",
+    "400 nm",
+    "300 nm"
+   ],
+   "correct_index": 2,
+   "explanation": "Frequency is fixed and speed falls by \\( \\mu \\), so \\( \\lambda_\\text{oil}=\\dfrac{600}{1.5}=400 \\) nm.<br><br>A shorter wavelength means less diffraction spreading, which is the same improvement expressed through \\( \\mu \\) in the numerical aperture.",
+   "hint": "Wavelength shrinks by the factor \\( \\mu \\).",
+   "distractor_logic": [
+    "Multiplied by \\( \\mu \\); light slows down in oil, so the wavelength shortens",
+    "Ignored the slowing of light in the oil",
+    "Divided by \\( 2\\mu \\), mixing in the factor 2 from the resolving formula"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-010",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In Young's experiment with \\( \\lambda=600 \\) nm, a sheet of thickness 4800 nm placed over one slit shifts the pattern by 4 fringes. What is the sheet's refractive index?",
+   "options": [
+    "\\( 0.5 \\)",
+    "\\( 2.0 \\)",
+    "\\( 1.25 \\)",
+    "\\( 1.5 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "The sheet delays one wave, adding optical path \\( (\\mu-1)t \\).<br><br>Shift of 4 fringes: \\( (\\mu-1)\\times4800=4\\times600=2400 \\).<br><br>\\( \\mu-1=0.5 \\), so \\( \\mu=1.5 \\).",
+   "hint": "Extra path \\( (\\mu-1)t \\) equals number of fringes times \\( \\lambda \\).",
+   "distractor_logic": [
+    "Found \\( \\mu-1 \\) and forgot to add 1; a refractive index below 1 is impossible here",
+    "Doubled the fringe shift, effectively setting \\( (\\mu-1)t=8\\lambda \\)",
+    "Used 2 fringes instead of 4"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-011",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A single slit gives a central maximum 3 mm wide on a screen in air. With the whole apparatus immersed in a liquid, the width becomes 2 mm. What is the refractive index of the liquid?",
+   "options": [
+    "\\( 1.5 \\)",
+    "\\( \\dfrac23 \\)",
+    "\\( 1 \\)",
+    "\\( 2.25 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "In the liquid, light slows and \\( \\lambda \\) becomes \\( \\lambda/\\mu \\), so the width \\( 2\\lambda D/a \\) also divides by \\( \\mu \\).<br><br>\\( \\mu=\\dfrac{3}{2}=1.5 \\).",
+   "hint": "Width is proportional to the wavelength in the medium.",
+   "distractor_logic": [
+    "Inverted the ratio, giving a value below 1",
+    "Would mean no change in width, but the width did change",
+    "Squared the ratio"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-012",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Unpolarized light falls on a medium at Brewster's angle, and the refracted ray makes \\( 30^\\circ \\) with the normal. What is the speed of light in the medium? (\\( c=3\\times10^{8} \\) m/s)",
+   "options": [
+    "\\( 3\\sqrt3\\times10^{8} \\) m/s",
+    "\\( \\sqrt3\\times10^{8} \\) m/s",
+    "\\( 1.5\\times10^{8} \\) m/s",
+    "\\( 3\\times10^{8} \\) m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\theta_B=90^\\circ-30^\\circ=60^\\circ \\), so \\( \\mu=\\tan60^\\circ=\\sqrt3 \\).<br><br>\\( v=\\dfrac{c}{\\mu}=\\dfrac{3\\times10^{8}}{\\sqrt3}=\\sqrt3\\times10^{8} \\) m/s.",
+   "hint": "First find \\( \\theta_B \\), then \\( \\mu \\), then \\( v \\).",
+   "distractor_logic": [
+    "Multiplied \\( c \\) by \\( \\mu \\), as if light speeds up in a denser medium",
+    "Used \\( \\mu=2 \\) from \\( 1/\\sin30^\\circ \\) instead of Brewster's law",
+    "Ignored the medium altogether"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-013",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A pattern on a screen shows a bright central band exactly twice as wide as all the other bright bands, with the outer bands much dimmer. Which arrangement produced it?",
+   "options": [
+    "Two narrow slits close together (Young's interference)",
+    "A polarizer and an analyzer",
+    "A single narrow slit (diffraction)",
+    "A plane mirror"
+   ],
+   "correct_index": 2,
+   "explanation": "A double-width central band is the signature of single slit diffraction: its width is \\( 2\\lambda D/a \\) against \\( \\lambda D/a \\) for the rest.<br><br>Young's fringes are equally spaced with equal width.",
+   "hint": "Which pattern has a central band that is special?",
+   "distractor_logic": [
+    "Ideal double slit fringes are all of equal width \\( \\beta \\)",
+    "Polarizers change intensity but do not produce bands",
+    "A plane mirror does not produce a banded pattern"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-014",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "For the same wavelength, compare the first-minimum angle of a circular aperture of diameter \\( D \\) with that of a single slit of width \\( a=D \\). What is the ratio circular : slit?",
+   "options": [
+    "\\( 1:1.22 \\)",
+    "\\( 2.44:1 \\)",
+    "\\( 1:1 \\)",
+    "\\( 1.22:1 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Circular aperture: \\( \\dfrac{1.22\\lambda}{D} \\). Single slit: \\( \\dfrac{\\lambda}{a}=\\dfrac{\\lambda}{D} \\).<br><br>Ratio \\( =1.22:1 \\).",
+   "hint": "Compare \\( 1.22\\lambda/D \\) with \\( \\lambda/a \\).",
+   "distractor_logic": [
+    "Inverted; the circular aperture's first minimum is slightly farther out",
+    "Compared with \\( \\lambda/2a \\) or doubled the 1.22 factor",
+    "Ignored the 1.22 factor that the circular geometry introduces"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-015",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Resolving Power of Microscopes and Telescopes",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A student fits a polarizing filter to a telescope to cut sky glare, hoping it will also resolve a close double star. Will it help resolution?",
+   "options": [
+    "No; the limiting angle \\( 1.22\\lambda/D \\) depends only on wavelength and aperture, and a polarizer only reduces intensity",
+    "Yes; the polarizer halves the limiting angle",
+    "Yes; polarized light has a shorter wavelength",
+    "No; the polarizer doubles the limiting angle"
+   ],
+   "correct_index": 0,
+   "explanation": "Resolution is set by diffraction at the aperture: \\( \\dfrac{1.22\\lambda}{D} \\).<br><br>A polarizer transmits part of the light (half of unpolarized light) but leaves \\( \\lambda \\) and \\( D \\) unchanged, so resolution is the same.",
+   "hint": "Which quantities appear in the limiting angle?",
+   "distractor_logic": [
+    "A polarizer does not appear in \\( 1.22\\lambda/D \\)",
+    "Polarization does not change wavelength",
+    "It does not make resolution worse either; the limit is simply unchanged"
+   ],
+   "mixed_topics": [
+    "Resolving Power of Microscopes and Telescopes",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-016",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In Young's experiment with an unpolarized source, a single polaroid is placed just in front of the screen, so both beams pass through it. What happens to the pattern?",
+   "options": [
+    "The fringes disappear",
+    "Fringe positions and width are unchanged, and all intensities are halved",
+    "The fringe width is halved",
+    "Intensities follow \\( I_0\\cos^2\\theta \\) and depend on the polaroid's orientation"
+   ],
+   "correct_index": 1,
+   "explanation": "Both beams pass the same polaroid and emerge with the same polarization, so they still interfere.<br><br>Each beam is unpolarized before the polaroid, so each is halved: every bright fringe drops to half, and \\( \\beta=\\dfrac{\\lambda D}{d} \\) is unchanged.",
+   "hint": "Does the polaroid change the path difference or the wavelength?",
+   "distractor_logic": [
+    "Both beams are polarized the same way, so they still interfere",
+    "The polaroid does not change \\( \\lambda \\), \\( D \\) or \\( d \\), so \\( \\beta \\) is unchanged",
+    "The light reaching the polaroid is unpolarized, so it always passes half, whatever the orientation"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-017",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Double slit fringes of width 0.05 mm are viewed with the unaided eye from 25 cm. The eye's limiting angle is \\( 2.5\\times10^{-4} \\) rad. Can the eye resolve the fringes?",
+   "options": [
+    "Yes; the fringes subtend \\( 2\\times10^{-4} \\) rad, which is larger than the eye's limit",
+    "Yes; the fringes subtend \\( 2\\times10^{-3} \\) rad",
+    "No; the fringes subtend \\( 2\\times10^{-4} \\) rad, which is smaller than the eye's limit",
+    "No; the fringes subtend \\( 2\\times10^{-5} \\) rad"
+   ],
+   "correct_index": 2,
+   "explanation": "Angle subtended by one fringe \\( =\\dfrac{\\beta}{\\text{distance}}=\\dfrac{0.05\\times10^{-3}}{0.25}=2\\times10^{-4} \\) rad.<br><br>This is less than \\( 2.5\\times10^{-4} \\) rad, so neighbouring fringes blur together.",
+   "hint": "Compare the angle one fringe subtends with the eye's limiting angle.",
+   "distractor_logic": [
+    "Angle is right, but \\( 2\\times10^{-4} \\) is smaller than \\( 2.5\\times10^{-4} \\), so the eye cannot separate them",
+    "Unit slip by a factor of 10 in converting mm or cm",
+    "Unit slip by a factor of 10 in the other direction"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-018",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In Young's experiment, why are the two slits coherent sources even though the original lamp is not coherent over large regions?",
+   "options": [
+    "Each slit makes its own light with random phase",
+    "The slits change the frequency of light to match each other",
+    "The slits polarize the light, which makes it coherent",
+    "Both slits lie on the same wavefront from a single narrow source, so their secondary wavelets start with a fixed phase relation"
+   ],
+   "correct_index": 3,
+   "explanation": "By Huygens' principle, each slit acts as a source of secondary wavelets from the wavefront that reaches it.<br><br>Both slits are illuminated by the same wavefront, so any phase change at the source reaches both together and their phase difference stays fixed.",
+   "hint": "Think of the slits as two points on one wavefront.",
+   "distractor_logic": [
+    "If each slit produced independent light there would be no fixed phase relation and no fringes",
+    "Slits do not change frequency",
+    "Polarization and coherence are different properties"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-019",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Which phenomenon shows that light waves are transverse, rather than just showing that light is a wave?",
+   "options": [
+    "Polarization",
+    "Diffraction",
+    "Interference",
+    "Refraction"
+   ],
+   "correct_index": 0,
+   "explanation": "Diffraction and interference prove that light is a wave, but longitudinal sound waves show them too.<br><br>Only transverse waves can be polarized, so polarization proves the transverse nature.",
+   "hint": "Which effect can sound never show?",
+   "distractor_logic": [
+    "Diffraction happens for both transverse and longitudinal waves, like sound bending round doors",
+    "Interference also happens for longitudinal waves such as sound",
+    "Refraction happens for all kinds of waves"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-020",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In deriving Brewster's law, which step turns Snell's law into \\( \\tan\\theta_B=\\mu \\)?",
+   "options": [
+    "Using that the refraction angle equals \\( \\theta_B \\)",
+    "Using that the reflected and refracted rays are perpendicular, so the refraction angle is \\( 90^\\circ-\\theta_B \\) and \\( \\sin(90^\\circ-\\theta_B)=\\cos\\theta_B \\)",
+    "Using that the refracted ray is completely polarized",
+    "Using that the speed of light increases in the denser medium"
+   ],
+   "correct_index": 1,
+   "explanation": "Snell's law: \\( \\mu=\\dfrac{\\sin\\theta_B}{\\sin\\theta_r} \\).<br><br>With \\( \\theta_r=90^\\circ-\\theta_B \\), \\( \\sin\\theta_r=\\cos\\theta_B \\), so \\( \\mu=\\tan\\theta_B \\).",
+   "hint": "What is special about the angle between reflected and refracted rays?",
+   "distractor_logic": [
+    "Equal angles would give \\( \\mu=1 \\), no refraction",
+    "The refracted ray is only partially polarized, and this plays no role in the derivation",
+    "Light slows in a denser medium; the derivation uses Snell's law with \\( \\mu=c/v>1 \\)"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-021",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In a double slit experiment, \\( d=3a \\), where \\( a \\) is the width of each slit. Which interference bright fringe order is the first to be missing?",
+   "options": [
+    "The first order",
+    "The second order",
+    "The third order",
+    "The sixth order"
+   ],
+   "correct_index": 2,
+   "explanation": "Interference maxima: \\( d\\sin\\theta=n\\lambda \\). First diffraction minimum: \\( a\\sin\\theta=\\lambda \\).<br><br>They coincide when \\( \\dfrac{n\\lambda}{d}=\\dfrac{\\lambda}{a} \\), so \\( n=\\dfrac{d}{a}=3 \\).<br><br>At that angle each slit sends no light, so the third bright fringe is missing.",
+   "hint": "Where does an interference maximum fall on a diffraction minimum?",
+   "distractor_logic": [
+    "The first order lies well inside the central diffraction maximum",
+    "The second order is still inside the central diffraction maximum",
+    "Doubled the answer, perhaps by using the central-maximum width \\( 2\\lambda/a \\) instead of the first-minimum angle"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-022",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A pinhole camera gives a sharper image as the hole is made smaller, but only up to a point; a very tiny hole makes the image blurry again. Why?",
+   "options": [
+    "A very small hole polarizes the light",
+    "A very small hole increases the wavelength of light",
+    "A very small hole makes light travel faster",
+    "A very small hole diffracts light strongly, spreading each point into a larger patch and lowering resolution"
+   ],
+   "correct_index": 3,
+   "explanation": "A large hole blurs because rays from one point arrive over a broad patch.<br><br>A very small hole blurs because diffraction spreads light by about \\( \\lambda/a \\), which grows as the hole shrinks.<br><br>So resolution is best at an intermediate size.",
+   "hint": "Two blurring effects compete as the hole shrinks.",
+   "distractor_logic": [
+    "A pinhole does not polarize light",
+    "The wavelength is fixed by the source",
+    "The speed of light in air is unaffected by the hole size"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-023",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Young's double slit fringes gradually become fainter away from the centre, even for the ideal pattern. What is the main reason?",
+   "options": [
+    "Each slit has a finite width, so the fringes lie under the single slit diffraction envelope, whose intensity falls away from the centre",
+    "The fringe width increases away from the centre",
+    "The light becomes polarized away from the centre",
+    "The two slits become incoherent away from the centre"
+   ],
+   "correct_index": 0,
+   "explanation": "The double slit pattern is really interference fringes multiplied by the diffraction pattern of one slit.<br><br>That envelope is brightest at the centre and falls off, so the fringes fade outward.",
+   "hint": "What pattern does each slit produce on its own?",
+   "distractor_logic": [
+    "The fringe width \\( \\beta=\\lambda D/d \\) is constant across the pattern",
+    "No polarization occurs in the arrangement",
+    "Coherence is set at the source and does not change across the screen"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-024",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Light of wavelength 600 nm in air falls on a slit of width 0.2 mm, and the whole set-up is inside water (\\( \\mu=\\dfrac43 \\)). At what angle is the first minimum?",
+   "options": [
+    "\\( 3\\times10^{-3} \\) rad",
+    "\\( 2.25\\times10^{-3} \\) rad",
+    "\\( 4\\times10^{-3} \\) rad",
+    "\\( 4.5\\times10^{-3} \\) rad"
+   ],
+   "correct_index": 1,
+   "explanation": "In water: \\( \\lambda_w=\\dfrac{600}{4/3}=450 \\) nm.<br><br>First minimum: \\( \\theta=\\dfrac{\\lambda_w}{a}=\\dfrac{450\\times10^{-9}}{0.2\\times10^{-3}}=2.25\\times10^{-3} \\) rad.",
+   "hint": "Use the wavelength inside water.",
+   "distractor_logic": [
+    "Ignored the water and used the air wavelength",
+    "Multiplied the wavelength by \\( \\mu \\) instead of dividing",
+    "Gave the full central-maximum width \\( 2\\lambda/a \\) in water"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-025",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A microscope objective accepts a cone of half-angle \\( \\alpha \\) with \\( \\sin\\alpha=0.8 \\), immersed in oil of \\( \\mu=1.5 \\). For light of 600 nm, what is the minimum resolvable distance?",
+   "options": [
+    "610 nm",
+    "457.5 nm",
+    "305 nm",
+    "366 nm"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\text{NA}=\\mu\\sin\\alpha=1.5\\times0.8=1.2 \\).<br><br>\\( d_\\text{min}=\\dfrac{1.22\\times600}{2\\times1.2}=\\dfrac{732}{2.4}=305 \\) nm.",
+   "hint": "Build the numerical aperture from \\( \\mu \\) and \\( \\sin\\alpha \\).",
+   "distractor_logic": [
+    "Forgot the factor 2 in \\( 2\\,\\text{NA} \\)",
+    "Left out the oil, using \\( \\text{NA}=\\sin\\alpha=0.8 \\)",
+    "Left out the numerical aperture entirely, using \\( 1.22\\lambda/2 \\)"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-026",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In a double slit set-up with \\( d=1 \\) mm, \\( D=1 \\) m and \\( \\lambda=500 \\) nm, each slit has width 0.2 mm. What is the ratio of the linear width of the central diffraction maximum to the fringe width?",
+   "options": [
+    "5",
+    "0.1",
+    "20",
+    "10"
+   ],
+   "correct_index": 3,
+   "explanation": "Fringe width: \\( \\beta=\\dfrac{500\\times10^{-9}\\times1}{1\\times10^{-3}}=0.5 \\) mm.<br><br>Central maximum: \\( \\dfrac{2\\lambda D}{a}=\\dfrac{2\\times500\\times10^{-9}\\times1}{0.2\\times10^{-3}}=5 \\) mm.<br><br>Ratio \\( =\\dfrac{5}{0.5}=10 \\).",
+   "hint": "Compute both widths in mm, then divide.",
+   "distractor_logic": [
+    "Used \\( \\lambda D/a \\) for the central-maximum width",
+    "Inverted the ratio, dividing the fringe width by the central-maximum width",
+    "Doubled the correct ratio"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-027",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A double slit and a single slit are used with the same wavelength. The first minimum of the single slit falls at the same angle as the second bright fringe of the double slit, whose separation is 0.8 mm. What is the single slit width?",
+   "options": [
+    "0.4 mm",
+    "0.8 mm",
+    "1.6 mm",
+    "0.2 mm"
+   ],
+   "correct_index": 0,
+   "explanation": "First single slit minimum: \\( \\theta=\\dfrac{\\lambda}{a} \\). Second double slit bright fringe: \\( \\theta=\\dfrac{2\\lambda}{d} \\).<br><br>\\( \\dfrac{\\lambda}{a}=\\dfrac{2\\lambda}{d} \\Rightarrow a=\\dfrac{d}{2}=0.4 \\) mm.",
+   "hint": "Equate \\( \\lambda/a \\) with \\( 2\\lambda/d \\).",
+   "distractor_logic": [
+    "Matched the first minimum with the first bright fringe",
+    "Inverted the relation between \\( a \\) and \\( d \\)",
+    "Divided \\( d \\) by 4 instead of by 2"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-028",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A photographer narrows a camera's lens aperture a great deal (a very high f-number). Why can fine detail become slightly less sharp?",
+   "options": [
+    "The smaller aperture reduces the wavelength of light",
+    "The smaller aperture increases diffraction, so the limiting angle \\( 1.22\\lambda/D \\) grows",
+    "The smaller aperture polarizes the light",
+    "The smaller aperture makes light bend toward the lens axis more by refraction"
+   ],
+   "correct_index": 1,
+   "explanation": "Diffraction at the circular opening spreads each point into a disc of angular size about \\( 1.22\\lambda/D \\).<br><br>A smaller \\( D \\) enlarges this disc, blurring the finest detail.",
+   "hint": "Smaller \\( D \\) in \\( 1.22\\lambda/D \\).",
+   "distractor_logic": [
+    "The wavelength is set by the source, not the aperture",
+    "An aperture does not polarize light",
+    "The loss of sharpness comes from diffraction at the opening, not extra refraction"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-029",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Sunlight reflects off a still lake at Brewster's angle. What is the angle between the reflected ray and the refracted ray going into the water?",
+   "options": [
+    "\\( 0^\\circ \\)",
+    "\\( 180^\\circ \\)",
+    "\\( 90^\\circ \\)",
+    "\\( 45^\\circ \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Reflection gives angle \\( \\theta_B \\) with the normal; refraction gives \\( \\theta_r \\).<br><br>At Brewster's angle \\( \\theta_B+\\theta_r=90^\\circ \\), which makes the reflected and refracted rays perpendicular.",
+   "hint": "This is the defining feature of Brewster's angle.",
+   "distractor_logic": [
+    "The two rays go in different directions, so they cannot be parallel",
+    "That would mean one ray retraces the other in the opposite direction",
+    "No rule gives \\( 45^\\circ \\); at Brewster's angle the rays are perpendicular"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-030",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Which pair of phenomena requires superposition of secondary wavelets from different parts of a wavefront, not just the envelope construction?",
+   "options": [
+    "Reflection and refraction",
+    "Reflection and interference",
+    "Refraction and diffraction",
+    "Interference and diffraction"
+   ],
+   "correct_index": 3,
+   "explanation": "Huygens' envelope construction explains reflection and refraction directly.<br><br>Interference and diffraction need the wavelets to be added with their phases, which gives bright and dark regions.",
+   "hint": "Which effects produce bright and dark bands?",
+   "distractor_logic": [
+    "Both follow from the envelope (common tangent) construction alone",
+    "Reflection needs only the envelope construction",
+    "Refraction needs only the envelope construction"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-031",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In Young's experiment with \\( \\lambda=500 \\) nm, \\( d=0.5 \\) mm and \\( D=1 \\) m, a glass sheet (\\( \\mu=1.5 \\)) 2000 nm thick covers one slit. How far does the central fringe shift?",
+   "options": [
+    "2 mm, toward the covered slit",
+    "2 mm, away from the covered slit",
+    "6 mm, toward the covered slit",
+    "4 mm, toward the covered slit"
+   ],
+   "correct_index": 0,
+   "explanation": "Extra path from the slower glass: \\( (\\mu-1)t=0.5\\times2000=1000 \\) nm.<br><br>Shift \\( =\\dfrac{(\\mu-1)tD}{d}=\\dfrac{1000\\times10^{-9}\\times1}{0.5\\times10^{-3}}=2\\times10^{-3} \\) m \\( =2 \\) mm, toward the covered slit.",
+   "hint": "Shift \\( =(\\mu-1)tD/d \\).",
+   "distractor_logic": [
+    "Size is right, but the extra optical path pulls the centre toward the covered slit",
+    "Used \\( \\mu t \\) instead of \\( (\\mu-1)t \\)",
+    "Ignored the \\( (\\mu-1) \\) factor, using \\( t \\) alone"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-032",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Polarized laser light passes through a single slit, and then through an analyzer at \\( 60^\\circ \\) to the laser's polarization before reaching the screen. What happens to the diffraction pattern?",
+   "options": [
+    "The minima move to angles four times larger",
+    "Minima stay at the same angles, and every intensity drops to one quarter",
+    "The pattern disappears",
+    "Every intensity drops to one half"
+   ],
+   "correct_index": 1,
+   "explanation": "Diffraction minima are fixed by \\( a\\sin\\theta=n\\lambda \\), which the analyzer does not change.<br><br>The light is already polarized, so Malus's law applies directly: \\( \\cos^260^\\circ=\\dfrac14 \\) of every intensity passes.",
+   "hint": "Diffraction sets where, Malus's law sets how much.",
+   "distractor_logic": [
+    "Minima positions depend on \\( \\lambda \\) and \\( a \\) only",
+    "Only an analyzer at \\( 90^\\circ \\) would block the light",
+    "Used \\( \\cos60^\\circ \\) instead of \\( \\cos^260^\\circ \\)"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-033",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A double slit gives fringes of width 0.6 mm. A single slit whose width equals the double slit's separation is used with the same wavelength and screen distance. What is the width of its central maximum?",
+   "options": [
+    "0.6 mm",
+    "0.3 mm",
+    "1.2 mm",
+    "2.4 mm"
+   ],
+   "correct_index": 2,
+   "explanation": "Fringe width \\( \\beta=\\dfrac{\\lambda D}{d} \\). Central maximum \\( =\\dfrac{2\\lambda D}{a} \\), and here \\( a=d \\).<br><br>So central maximum \\( =2\\beta=1.2 \\) mm.",
+   "hint": "Compare \\( 2\\lambda D/a \\) with \\( \\lambda D/d \\).",
+   "distractor_logic": [
+    "Treated the central maximum as the same width as one fringe",
+    "Halved instead of doubling",
+    "Doubled twice"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-034",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Using Huygens' principle, why is the intensity at the centre of a single slit diffraction pattern the largest?",
+   "options": [
+    "At \\( \\theta=0 \\) only the wavelets from the slit edges arrive",
+    "At \\( \\theta=0 \\) the wavelets arrive with path difference \\( \\lambda/2 \\)",
+    "At \\( \\theta=0 \\) the wavelets travel faster",
+    "At \\( \\theta=0 \\) all secondary wavelets from the slit travel equal distances and arrive in phase, adding fully"
+   ],
+   "correct_index": 3,
+   "explanation": "Straight ahead, every point across the slit is the same distance from the screen centre.<br><br>So all wavelets arrive in step and add up completely, giving the brightest point.",
+   "hint": "Compare the distances from each point of the slit to the centre of the screen.",
+   "distractor_logic": [
+    "All points across the slit contribute, not just the edges",
+    "A path difference of \\( \\lambda/2 \\) would cause cancellation",
+    "The speed of the wavelets does not depend on direction"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-035",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two identical coherent sources in Young's experiment each give intensity \\( I_0 \\). Both slits are then covered by polaroids with parallel axes, using an unpolarized source. What is the new maximum intensity?",
+   "options": [
+    "\\( 2I_0 \\)",
+    "\\( 4I_0 \\)",
+    "\\( I_0 \\)",
+    "Zero"
+   ],
+   "correct_index": 0,
+   "explanation": "Each polaroid passes half the unpolarized light: each beam gives \\( \\dfrac{I_0}{2} \\).<br><br>Both are polarized the same way, so they still interfere: \\( I_\\text{max}=4\\times\\dfrac{I_0}{2}=2I_0 \\).",
+   "hint": "Halve each source, then use the \\( 4\\times \\) rule.",
+   "distractor_logic": [
+    "Ignored that each polaroid halves unpolarized light",
+    "Halved the maximum twice",
+    "Parallel polaroids keep the waves able to interfere, so the fringes remain"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-036",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A plane wavefront passes through a narrow slit. Using Huygens' principle, what does the wavefront look like just beyond the slit?",
+   "options": [
+    "It stays perfectly plane and the same width as the slit",
+    "It becomes curved and spreads into the region behind the edges, because the slit acts like a line of secondary sources",
+    "It becomes a plane wavefront wider than the original",
+    "It stops completely"
+   ],
+   "correct_index": 1,
+   "explanation": "Only the wavelets from the opening survive, and without neighbours beyond the edges there is nothing to keep the envelope flat.<br><br>The envelope curves outward into the geometrical shadow, which is diffraction.",
+   "hint": "What happens to the envelope where there are no more wavelets beside it?",
+   "distractor_logic": [
+    "That would be pure ray optics, which fails for narrow slits",
+    "The wavefront curves rather than staying plane",
+    "Light does pass through the slit"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-037",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Each slit in Young's experiment is made narrower, keeping the separation the same. What happens to the pattern?",
+   "options": [
+    "Fringe width increases",
+    "Fringe width decreases and the envelope narrows",
+    "Fringe width stays the same, while the diffraction envelope widens so more fringes appear within it (though dimmer)",
+    "The fringes disappear"
+   ],
+   "correct_index": 2,
+   "explanation": "Fringe width depends on \\( d \\), not slit width, so it is unchanged.<br><br>The envelope's central maximum \\( 2\\lambda D/a \\) widens as \\( a \\) shrinks, so more fringes fit under it.",
+   "hint": "Which formula contains the slit width \\( a \\)?",
+   "distractor_logic": [
+    "\\( \\beta=\\lambda D/d \\) does not depend on slit width",
+    "Reverses the envelope dependence; narrower slits give a wider envelope",
+    "Narrower slits still give coherent light, so fringes remain"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-038",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In Young's experiment each slit is covered with a polaroid, with axes at \\( 60^\\circ \\) to each other, and the two beams have equal intensity. What happens to the fringes?",
+   "options": [
+    "Fringes disappear completely",
+    "Fringes are unchanged in every way",
+    "Fringe width becomes \\( \\cos^260^\\circ \\) times the original",
+    "Fringes remain at the same positions, but the dark fringes are no longer completely dark"
+   ],
+   "correct_index": 3,
+   "explanation": "Only the parallel parts of the two vibrations interfere.<br><br>The perpendicular parts add as a steady background, so minima no longer reach zero, while fringe positions stay the same.",
+   "hint": "Split one vibration into parts parallel and perpendicular to the other.",
+   "distractor_logic": [
+    "Only perpendicular axes remove the fringes; here parts of the vibrations are parallel",
+    "The perpendicular parts cannot interfere and add a uniform background",
+    "Positions depend on \\( \\lambda \\), \\( D \\), \\( d \\); the polaroids affect only intensity"
+   ],
+   "mixed_topics": [
+    "Interference of Light: Coherent Sources and Young's Double Slit Experiment",
+    "Polarization of Light: Malus's Law and Polarization by Reflection"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-039",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Ray optics works well when the distance from an aperture is much smaller than the Fresnel distance \\( a^2/\\lambda \\). For an aperture of 2 mm and light of 500 nm, what is this distance?",
+   "options": [
+    "8 m",
+    "4 m",
+    "16 m",
+    "4000 m"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( z_F=\\dfrac{(2\\times10^{-3})^2}{500\\times10^{-9}}=\\dfrac{4\\times10^{-6}}{5\\times10^{-7}}=8 \\) m.<br><br>Well within 8 m, light behaves like straight rays; far beyond it, diffraction spreading matters.",
+   "hint": "Square the aperture in metres.",
+   "distractor_logic": [
+    "Used \\( a^2/2\\lambda \\)",
+    "Used \\( 2a^2/\\lambda \\)",
+    "Computed \\( a/\\lambda \\) and read it in metres"
+   ],
+   "mixed_topics": [
+    "Huygens' Principle: Wavefronts, and Reflection and Refraction Using Wavefronts",
+    "Diffraction of Light: Single Slit Diffraction Pattern"
+   ]
+  },
+  {
+   "id": "PHY12-CH10-B-040",
+   "chapter": "PHY12-CH10",
+   "chapter_name": "Wave Optics",
+   "topic": "Diffraction of Light: Single Slit Diffraction Pattern",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A telescope's objective diameter is halved. What happens to the angular size of each star's diffraction disc and to the telescope's resolving power?",
+   "options": [
+    "The disc's angular size halves and the resolving power doubles",
+    "The disc's angular size doubles and the resolving power halves",
+    "Both double",
+    "The disc stays the same and resolving power halves"
+   ],
+   "correct_index": 1,
+   "explanation": "Disc angular radius \\( =\\dfrac{1.22\\lambda}{D} \\), so halving \\( D \\) doubles it.<br><br>Resolving power \\( =\\dfrac{D}{1.22\\lambda} \\) halves.",
+   "hint": "The disc size and the limiting angle are the same thing.",
+   "distractor_logic": [
+    "Reverses the dependence on \\( D \\)",
+    "Resolving power is the reciprocal of the limiting angle, so they cannot both double",
+    "The disc size \\( 1.22\\lambda/D \\) must change when \\( D \\) changes"
+   ],
+   "mixed_topics": [
+    "Diffraction of Light: Single Slit Diffraction Pattern",
+    "Resolving Power of Microscopes and Telescopes"
+   ]
+  }
+ ]
+}

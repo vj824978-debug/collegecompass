@@ -1,0 +1,3738 @@
+{
+  "meta": {
+    "chapter": "MAT11-CH07",
+    "chapter_name": "Binomial Theorem",
+    "subject": "Mathematics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "KaTeX is used throughout via \\( ... \\) delimiters; no raw Unicode math symbols appear anywhere except the em dash."
+  },
+  "questions": [
+    {
+      "id": "MAT11-CH07-L1-001",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{6} \\), what is the coefficient of the term containing \\( x^{4}y^{2} \\)?",
+      "options": [
+        "\\( 20 \\)",
+        "\\( 15 \\)",
+        "\\( 30 \\)",
+        "\\( 10 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The general term of \\( (x+y)^{6} \\) is \\( T_{r+1} = {}^{6}C_{r} x^{n-r}y^{r} \\). The term with \\( y^{2} \\) corresponds to \\( r=2 \\), so the coefficient is \\( {}^{6}C_{2} = 15 \\).",
+      "hint": "Match the power of y to r in the general term \\( T_{r+1}={}^{6}C_{r}x^{n-r}y^{r} \\).",
+      "distractor_logic": [
+        "\\( {}^{6}C_{3} \\) — using \\( r+1 \\) instead of \\( r \\), giving 20",
+        "\\( ^{6}P_{2} \\) — using the permutation count instead of the combination, giving 30",
+        "\\( {}^{5}C_{2} \\) — using \\( n-1 \\) instead of \\( n \\), giving 10"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-002",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{8} \\), what is the coefficient of the term containing \\( x^{5}y^{3} \\)?",
+      "options": [
+        "\\( 336 \\)",
+        "\\( 70 \\)",
+        "\\( 35 \\)",
+        "\\( 56 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The general term of \\( (x+y)^{8} \\) is \\( T_{r+1} = {}^{8}C_{r} x^{n-r}y^{r} \\). The term with \\( y^{3} \\) corresponds to \\( r=3 \\), so the coefficient is \\( {}^{8}C_{3} = 56 \\).",
+      "hint": "Match the power of y to r in the general term \\( T_{r+1}={}^{8}C_{r}x^{n-r}y^{r} \\).",
+      "distractor_logic": [
+        "\\( ^{8}P_{3} \\) — using the permutation count instead of the combination, giving 336",
+        "\\( {}^{8}C_{4} \\) — using \\( r+1 \\) instead of \\( r \\), giving 70",
+        "\\( {}^{7}C_{3} \\) — using \\( n-1 \\) instead of \\( n \\), giving 35"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-003",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{9} \\), what is the coefficient of the term containing \\( x^{6}y^{3} \\)?",
+      "options": [
+        "\\( 504 \\)",
+        "\\( 126 \\)",
+        "\\( 84 \\)",
+        "\\( 56 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The general term of \\( (x+y)^{9} \\) is \\( T_{r+1} = {}^{9}C_{r} x^{n-r}y^{r} \\). The term with \\( y^{3} \\) corresponds to \\( r=3 \\), so the coefficient is \\( {}^{9}C_{3} = 84 \\).",
+      "hint": "Match the power of y to r in the general term \\( T_{r+1}={}^{9}C_{r}x^{n-r}y^{r} \\).",
+      "distractor_logic": [
+        "\\( ^{9}P_{3} \\) — using the permutation count instead of the combination, giving 504",
+        "\\( {}^{9}C_{4} \\) — using \\( r+1 \\) instead of \\( r \\), giving 126",
+        "\\( {}^{8}C_{3} \\) — using \\( n-1 \\) instead of \\( n \\), giving 56"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-004",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "How many terms are there in the expansion of \\( (a+b)^{7} \\)?",
+      "options": [
+        "\\( 7 \\)",
+        "\\( 6 \\)",
+        "\\( 14 \\)",
+        "\\( 8 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The expansion of \\( (a+b)^n \\) runs from \\( r=0 \\) to \\( r=n \\), giving \\( n+1 \\) terms in total. For \\( n=7 \\), that is \\( 7+1=8 \\).",
+      "hint": "Count the values \\( r \\) can take, from \\( 0 \\) to \\( n \\), inclusive.",
+      "distractor_logic": [
+        "\\( n \\) — forgetting to add the \\( r=0 \\) term, giving 7",
+        "\\( n-1 \\) — an arithmetic slip while counting the terms, giving 6",
+        "\\( 2n \\) — mistakenly doubling \\( n \\) instead of adding \\( 1 \\), giving 14"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-005",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "How many terms are there in the expansion of \\( (a+b)^{10} \\)?",
+      "options": [
+        "\\( 9 \\)",
+        "\\( 11 \\)",
+        "\\( 10 \\)",
+        "\\( 20 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The expansion of \\( (a+b)^n \\) runs from \\( r=0 \\) to \\( r=n \\), giving \\( n+1 \\) terms in total. For \\( n=10 \\), that is \\( 10+1=11 \\).",
+      "hint": "Count the values \\( r \\) can take, from \\( 0 \\) to \\( n \\), inclusive.",
+      "distractor_logic": [
+        "\\( n-1 \\) — an arithmetic slip while counting the terms, giving 9",
+        "\\( n \\) — forgetting to add the \\( r=0 \\) term, giving 10",
+        "\\( 2n \\) — mistakenly doubling \\( n \\) instead of adding \\( 1 \\), giving 20"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-006",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "How many terms are there in the expansion of \\( (a+b)^{12} \\)?",
+      "options": [
+        "\\( 24 \\)",
+        "\\( 13 \\)",
+        "\\( 11 \\)",
+        "\\( 12 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The expansion of \\( (a+b)^n \\) runs from \\( r=0 \\) to \\( r=n \\), giving \\( n+1 \\) terms in total. For \\( n=12 \\), that is \\( 12+1=13 \\).",
+      "hint": "Count the values \\( r \\) can take, from \\( 0 \\) to \\( n \\), inclusive.",
+      "distractor_logic": [
+        "\\( 2n \\) — mistakenly doubling \\( n \\) instead of adding \\( 1 \\), giving 24",
+        "\\( n-1 \\) — an arithmetic slip while counting the terms, giving 11",
+        "\\( n \\) — forgetting to add the \\( r=0 \\) term, giving 12"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-007",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "Using Pascal's Triangle, what is the value of \\( {}^{6}C_{2} \\)?",
+      "options": [
+        "\\( 20 \\)",
+        "\\( 4 \\)",
+        "\\( 6 \\)",
+        "\\( 15 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Row \\( n=6 \\) of Pascal's Triangle gives the binomial coefficients \\( {}^{6}C_{0} \\) through \\( {}^{6}C_{6} \\). Reading off position \\( r=2 \\) gives \\( {}^{6}C_{2}=15 \\).",
+      "hint": "Row \\( n=6 \\) of Pascal's Triangle has entries \\( {}^{6}C_{0} \\), \\( {}^{6}C_{1} \\), ... \\( {}^{6}C_{6} \\).",
+      "distractor_logic": [
+        "\\( {}^{6}C_{3} \\) — reading one position too late in the row, giving 20",
+        "\\( n-r \\) — subtracting instead of reading the combination value, giving 4",
+        "\\( {}^{6}C_{1} \\) — reading one position too early in the row, giving 6"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-008",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 1,
+      "type": "regular",
+      "question": "Using Pascal's Triangle, what is the value of \\( {}^{8}C_{3} \\)?",
+      "options": [
+        "\\( 28 \\)",
+        "\\( 56 \\)",
+        "\\( 70 \\)",
+        "\\( 5 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Row \\( n=8 \\) of Pascal's Triangle gives the binomial coefficients \\( {}^{8}C_{0} \\) through \\( {}^{8}C_{8} \\). Reading off position \\( r=3 \\) gives \\( {}^{8}C_{3}=56 \\).",
+      "hint": "Row \\( n=8 \\) of Pascal's Triangle has entries \\( {}^{8}C_{0} \\), \\( {}^{8}C_{1} \\), ... \\( {}^{8}C_{8} \\).",
+      "distractor_logic": [
+        "\\( {}^{8}C_{2} \\) — reading one position too early in the row, giving 28",
+        "\\( {}^{8}C_{4} \\) — reading one position too late in the row, giving 70",
+        "\\( n-r \\) — subtracting instead of reading the combination value, giving 5"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-009",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the general term \\( T_{r+1} \\) in the expansion of \\( (x+y)^n \\)?",
+      "options": [
+        "\\( {}^{n}C_{r} x^{n-r-1}y^{r+1} \\)",
+        "\\( {}^{n}C_{r} x^{n-r}y^{r} \\)",
+        "\\( {}^{n}C_{r} x^{r}y^{n-r} \\)",
+        "\\( {}^{n}C_{r+1} x^{n-r}y^{r} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "By definition, the \\( (r+1)^{\\text{th}} \\) term of \\( (x+y)^n \\) is \\( T_{r+1}={}^{n}C_{r} x^{n-r}y^{r} \\): the binomial coefficient uses \\( r \\) directly, and the exponents of \\( x \\) and \\( y \\) are \\( n-r \\) and \\( r \\) respectively.",
+      "hint": "The exponent on the first term decreases as \\( n-r \\); the exponent on the second term increases as \\( r \\).",
+      "distractor_logic": [
+        "\\( {}^{n}C_{r} x^{n-r-1}y^{r+1} \\) — shifting the exponents by one term",
+        "\\( {}^{n}C_{r} x^{r}y^{n-r} \\) — swapping the exponents on the two terms",
+        "\\( {}^{n}C_{r+1} x^{n-r}y^{r} \\) — using \\( r+1 \\) instead of \\( r \\) in the binomial coefficient"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-010",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the general term \\( T_{r+1} \\) in the expansion of \\( (a+b)^n \\)?",
+      "options": [
+        "\\( {}^{n}C_{r} a^{n-r-1}b^{r+1} \\)",
+        "\\( {}^{n}C_{r} a^{n-r}b^{r} \\)",
+        "\\( {}^{n}C_{r+1} a^{n-r}b^{r} \\)",
+        "\\( {}^{n}C_{r} a^{r}b^{n-r} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "By definition, the \\( (r+1)^{\\text{th}} \\) term of \\( (a+b)^n \\) is \\( T_{r+1}={}^{n}C_{r} a^{n-r}b^{r} \\): the binomial coefficient uses \\( r \\) directly, and the exponents of \\( a \\) and \\( b \\) are \\( n-r \\) and \\( r \\) respectively.",
+      "hint": "The exponent on the first term decreases as \\( n-r \\); the exponent on the second term increases as \\( r \\).",
+      "distractor_logic": [
+        "\\( {}^{n}C_{r} a^{n-r-1}b^{r+1} \\) — shifting the exponents by one term",
+        "\\( {}^{n}C_{r+1} a^{n-r}b^{r} \\) — using \\( r+1 \\) instead of \\( r \\) in the binomial coefficient",
+        "\\( {}^{n}C_{r} a^{r}b^{n-r} \\) — swapping the exponents on the two terms"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-011",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the general term \\( T_{r+1} \\) in the expansion of \\( (p+q)^n \\)?",
+      "options": [
+        "\\( {}^{n}C_{r} p^{n-r-1}q^{r+1} \\)",
+        "\\( {}^{n}C_{r} p^{n-r}q^{r} \\)",
+        "\\( {}^{n}C_{r} p^{r}q^{n-r} \\)",
+        "\\( {}^{n}C_{r+1} p^{n-r}q^{r} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "By definition, the \\( (r+1)^{\\text{th}} \\) term of \\( (p+q)^n \\) is \\( T_{r+1}={}^{n}C_{r} p^{n-r}q^{r} \\): the binomial coefficient uses \\( r \\) directly, and the exponents of \\( p \\) and \\( q \\) are \\( n-r \\) and \\( r \\) respectively.",
+      "hint": "The exponent on the first term decreases as \\( n-r \\); the exponent on the second term increases as \\( r \\).",
+      "distractor_logic": [
+        "\\( {}^{n}C_{r} p^{n-r-1}q^{r+1} \\) — shifting the exponents by one term",
+        "\\( {}^{n}C_{r} p^{r}q^{n-r} \\) — swapping the exponents on the two terms",
+        "\\( {}^{n}C_{r+1} p^{n-r}q^{r} \\) — using \\( r+1 \\) instead of \\( r \\) in the binomial coefficient"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-012",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the general term \\( T_{r+1} \\) of a binomial expansion, if \\( r=5 \\), which term of the expansion is this?",
+      "options": [
+        "4th term",
+        "7th term",
+        "6th term",
+        "5th term"
+      ],
+      "correct_index": 2,
+      "explanation": "The general term \\( T_{r+1} \\) is, by its own label, the \\( (r+1)^{\\text{th}} \\) term. For \\( r=5 \\), this is the 6th term.",
+      "hint": "The subscript in \\( T_{r+1} \\) already tells you the term number — just add \\( 1 \\) to \\( r \\).",
+      "distractor_logic": [
+        "subtracting one too many, giving the 4th term",
+        "adding one too many, giving the 7th term",
+        "using \\( r \\) itself as the term number instead of \\( r+1 \\), giving the 5th term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-013",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the general term \\( T_{r+1} \\) of a binomial expansion, if \\( r=8 \\), which term of the expansion is this?",
+      "options": [
+        "9th term",
+        "7th term",
+        "8th term",
+        "10th term"
+      ],
+      "correct_index": 0,
+      "explanation": "The general term \\( T_{r+1} \\) is, by its own label, the \\( (r+1)^{\\text{th}} \\) term. For \\( r=8 \\), this is the 9th term.",
+      "hint": "The subscript in \\( T_{r+1} \\) already tells you the term number — just add \\( 1 \\) to \\( r \\).",
+      "distractor_logic": [
+        "subtracting one too many, giving the 7th term",
+        "using \\( r \\) itself as the term number instead of \\( r+1 \\), giving the 8th term",
+        "adding one too many, giving the 10th term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-014",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "For the general term \\( T_{r+1} \\), what value of \\( r \\) corresponds to the 8th term, \\( T_{8} \\)?",
+      "options": [
+        "r=9",
+        "r=6",
+        "r=8",
+        "r=7"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\( T_{r+1} \\) is the \\( (r+1)^{\\text{th}} \\) term, setting \\( r+1=8 \\) gives \\( r=7 \\).",
+      "hint": "Solve \\( r+1 \\) = the given term number for \\( r \\).",
+      "distractor_logic": [
+        "adding instead of subtracting one from the term number, giving \\( r=9 \\)",
+        "subtracting one too many from the term number, giving \\( r=6 \\)",
+        "using the term number itself as \\( r \\), giving \\( r=8 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-015",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "For the general term \\( T_{r+1} \\), what value of \\( r \\) corresponds to the 4th term, \\( T_{4} \\)?",
+      "options": [
+        "r=2",
+        "r=5",
+        "r=3",
+        "r=4"
+      ],
+      "correct_index": 2,
+      "explanation": "Since \\( T_{r+1} \\) is the \\( (r+1)^{\\text{th}} \\) term, setting \\( r+1=4 \\) gives \\( r=3 \\).",
+      "hint": "Solve \\( r+1 \\) = the given term number for \\( r \\).",
+      "distractor_logic": [
+        "subtracting one too many from the term number, giving \\( r=2 \\)",
+        "adding instead of subtracting one from the term number, giving \\( r=5 \\)",
+        "using the term number itself as \\( r \\), giving \\( r=4 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-016",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{6} \\) (where \\( n=6 \\) is even), which term is the single middle term?",
+      "options": [
+        "4th term",
+        "6th term",
+        "5th term",
+        "3rd term"
+      ],
+      "correct_index": 0,
+      "explanation": "For even \\( n \\), there is exactly one middle term, at position \\( \\left(\\frac{n}{2}+1\\right)^{\\text{th}} \\). For \\( n=6 \\), that is the \\( 3+1=4 \\)th term.",
+      "hint": "An even-degree expansion has \\( 7 \\) terms in total; the middle one sits at position \\( n/2+1 \\).",
+      "distractor_logic": [
+        "using \\( n \\) itself as the term number, giving the 6th term",
+        "overshooting by one position, giving the 5th term",
+        "forgetting the \\( +1 \\) and using \\( r=n/2 \\) as the term number directly, giving the 3rd term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-017",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{8} \\) (where \\( n=8 \\) is even), which term is the single middle term?",
+      "options": [
+        "6th term",
+        "4th term",
+        "8th term",
+        "5th term"
+      ],
+      "correct_index": 3,
+      "explanation": "For even \\( n \\), there is exactly one middle term, at position \\( \\left(\\frac{n}{2}+1\\right)^{\\text{th}} \\). For \\( n=8 \\), that is the \\( 4+1=5 \\)th term.",
+      "hint": "An even-degree expansion has \\( 9 \\) terms in total; the middle one sits at position \\( n/2+1 \\).",
+      "distractor_logic": [
+        "overshooting by one position, giving the 6th term",
+        "forgetting the \\( +1 \\) and using \\( r=n/2 \\) as the term number directly, giving the 4th term",
+        "using \\( n \\) itself as the term number, giving the 8th term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-018",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{10} \\) (where \\( n=10 \\) is even), which term is the single middle term?",
+      "options": [
+        "6th term",
+        "5th term",
+        "10th term",
+        "7th term"
+      ],
+      "correct_index": 0,
+      "explanation": "For even \\( n \\), there is exactly one middle term, at position \\( \\left(\\frac{n}{2}+1\\right)^{\\text{th}} \\). For \\( n=10 \\), that is the \\( 5+1=6 \\)th term.",
+      "hint": "An even-degree expansion has \\( 11 \\) terms in total; the middle one sits at position \\( n/2+1 \\).",
+      "distractor_logic": [
+        "forgetting the \\( +1 \\) and using \\( r=n/2 \\) as the term number directly, giving the 5th term",
+        "using \\( n \\) itself as the term number, giving the 10th term",
+        "overshooting by one position, giving the 7th term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-019",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{7} \\) (where \\( n=7 \\) is odd), which terms are the two middle terms?",
+      "options": [
+        "4th term only",
+        "5th and 6th terms",
+        "4th and 5th terms",
+        "3rd and 4th terms"
+      ],
+      "correct_index": 2,
+      "explanation": "For odd \\( n \\), there are two middle terms, at positions \\( \\left(\\frac{n+1}{2}\\right)^{\\text{th}} \\) and \\( \\left(\\frac{n+3}{2}\\right)^{\\text{th}} \\). For \\( n=7 \\), these are the 4th and 5th terms.",
+      "hint": "An odd-degree expansion has an even number of terms, so the two middle ones are \\( \\frac{n+1}{2} \\) and \\( \\frac{n+3}{2} \\).",
+      "distractor_logic": [
+        "assuming (as with even \\( n \\)) that there is a single middle term, giving only the 4th term",
+        "shifting both positions one term too late, giving the 5th and 6th terms",
+        "shifting both positions one term too early, giving the 3rd and 4th terms"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-020",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{9} \\) (where \\( n=9 \\) is odd), which terms are the two middle terms?",
+      "options": [
+        "5th and 6th terms",
+        "4th and 5th terms",
+        "5th term only",
+        "6th and 7th terms"
+      ],
+      "correct_index": 0,
+      "explanation": "For odd \\( n \\), there are two middle terms, at positions \\( \\left(\\frac{n+1}{2}\\right)^{\\text{th}} \\) and \\( \\left(\\frac{n+3}{2}\\right)^{\\text{th}} \\). For \\( n=9 \\), these are the 5th and 6th terms.",
+      "hint": "An odd-degree expansion has an even number of terms, so the two middle ones are \\( \\frac{n+1}{2} \\) and \\( \\frac{n+3}{2} \\).",
+      "distractor_logic": [
+        "shifting both positions one term too early, giving the 4th and 5th terms",
+        "assuming (as with even \\( n \\)) that there is a single middle term, giving only the 5th term",
+        "shifting both positions one term too late, giving the 6th and 7th terms"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-021",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x+y)^{11} \\) (where \\( n=11 \\) is odd), which terms are the two middle terms?",
+      "options": [
+        "5th and 6th terms",
+        "7th and 8th terms",
+        "6th term only",
+        "6th and 7th terms"
+      ],
+      "correct_index": 3,
+      "explanation": "For odd \\( n \\), there are two middle terms, at positions \\( \\left(\\frac{n+1}{2}\\right)^{\\text{th}} \\) and \\( \\left(\\frac{n+3}{2}\\right)^{\\text{th}} \\). For \\( n=11 \\), these are the 6th and 7th terms.",
+      "hint": "An odd-degree expansion has an even number of terms, so the two middle ones are \\( \\frac{n+1}{2} \\) and \\( \\frac{n+3}{2} \\).",
+      "distractor_logic": [
+        "shifting both positions one term too early, giving the 5th and 6th terms",
+        "shifting both positions one term too late, giving the 7th and 8th terms",
+        "assuming (as with even \\( n \\)) that there is a single middle term, giving only the 6th term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-022",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x^2+1/x)^n \\), the term independent of x is defined as:",
+      "options": [
+        "the term with the largest binomial coefficient",
+        "the term whose numeric coefficient equals 1",
+        "the last term in the expansion",
+        "the term whose net power of x is 0"
+      ],
+      "correct_index": 3,
+      "explanation": "The term independent of \\( x \\) (also called the constant term) is the term in the general expansion whose total power of \\( x \\) works out to \\( 0 \\) once the exponents from both parts of the bracket are combined.",
+      "hint": "Set the total exponent of \\( x \\) in the general term \\( T_{r+1} \\) equal to \\( 0 \\) and solve for \\( r \\).",
+      "distractor_logic": [
+        "the term with the largest binomial coefficient — confusing it with the middle term, which has the largest binomial coefficient",
+        "the term whose numeric coefficient equals 1 — confusing 'independent of x' with a coefficient of exactly 1",
+        "the last term in the expansion — confusing it with the final term, whose index is r=n"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-023",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (x^3-2/x^2)^n \\), the term independent of x is defined as:",
+      "options": [
+        "the last term in the expansion",
+        "the term whose net power of x is 0",
+        "the term whose numeric coefficient equals 1",
+        "the term with the largest binomial coefficient"
+      ],
+      "correct_index": 1,
+      "explanation": "The term independent of \\( x \\) (also called the constant term) is the term in the general expansion whose total power of \\( x \\) works out to \\( 0 \\) once the exponents from both parts of the bracket are combined.",
+      "hint": "Set the total exponent of \\( x \\) in the general term \\( T_{r+1} \\) equal to \\( 0 \\) and solve for \\( r \\).",
+      "distractor_logic": [
+        "the last term in the expansion — confusing it with the final term, whose index is r=n",
+        "the term whose numeric coefficient equals 1 — confusing 'independent of x' with a coefficient of exactly 1",
+        "the term with the largest binomial coefficient — confusing it with the middle term, which has the largest binomial coefficient"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-024",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 1,
+      "type": "regular",
+      "question": "In the expansion of \\( (2x+1/x^2)^n \\), the term independent of x is defined as:",
+      "options": [
+        "the last term in the expansion",
+        "the term whose numeric coefficient equals 1",
+        "the term with the largest binomial coefficient",
+        "the term whose net power of x is 0"
+      ],
+      "correct_index": 3,
+      "explanation": "The term independent of \\( x \\) (also called the constant term) is the term in the general expansion whose total power of \\( x \\) works out to \\( 0 \\) once the exponents from both parts of the bracket are combined.",
+      "hint": "Set the total exponent of \\( x \\) in the general term \\( T_{r+1} \\) equal to \\( 0 \\) and solve for \\( r \\).",
+      "distractor_logic": [
+        "the last term in the expansion — confusing it with the final term, whose index is r=n",
+        "the term whose numeric coefficient equals 1 — confusing 'independent of x' with a coefficient of exactly 1",
+        "the term with the largest binomial coefficient — confusing it with the middle term, which has the largest binomial coefficient"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-025",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 1,
+      "type": "regular",
+      "question": "In the general term of \\( (x^{3}+c/x^{2})^n \\), what is the exponent of x (in terms of n and r)?",
+      "options": [
+        "\\( 3n+5r \\)",
+        "\\( 3n-r \\)",
+        "\\( 5n-3r \\)",
+        "\\( 3n-5r \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T_{r+1}={}^{n}C_{r}(x^{3})^{n-r}(c/x^{2})^{r} \\) has exponent of \\( x \\) equal to \\( 3(n-r)-2r = 3n-5r \\).",
+      "hint": "Multiply out \\( 3(n-r) \\) and \\( -2r \\) and combine like terms in \\( n \\) and \\( r \\).",
+      "distractor_logic": [
+        "dropping the minus sign entirely, giving \\( 3n+5r \\)",
+        "flipping the sign on the second term's exponent, giving \\( 3n-r \\)",
+        "misplacing which coefficient multiplies \\( n \\) versus \\( r \\), giving \\( 5n-3r \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-026",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 1,
+      "type": "regular",
+      "question": "In the general term of \\( (x^{2}+c/x^{3})^n \\), what is the exponent of x (in terms of n and r)?",
+      "options": [
+        "\\( 5n-2r \\)",
+        "\\( 2n+r \\)",
+        "\\( 2n+5r \\)",
+        "\\( 2n-5r \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T_{r+1}={}^{n}C_{r}(x^{2})^{n-r}(c/x^{3})^{r} \\) has exponent of \\( x \\) equal to \\( 2(n-r)-3r = 2n-5r \\).",
+      "hint": "Multiply out \\( 2(n-r) \\) and \\( -3r \\) and combine like terms in \\( n \\) and \\( r \\).",
+      "distractor_logic": [
+        "misplacing which coefficient multiplies \\( n \\) versus \\( r \\), giving \\( 5n-2r \\)",
+        "flipping the sign on the second term's exponent, giving \\( 2n+r \\)",
+        "dropping the minus sign entirely, giving \\( 2n+5r \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-027",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 1,
+      "type": "regular",
+      "question": "In the general term of \\( (x+c/x^{2})^n \\), what is the exponent of x (in terms of n and r)?",
+      "options": [
+        "\\( n-3r \\)",
+        "\\( 3n-r \\)",
+        "\\( n+r \\)",
+        "\\( n+3r \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T_{r+1}={}^{n}C_{r}(x)^{n-r}(c/x^{2})^{r} \\) has exponent of \\( x \\) equal to \\( 1(n-r)-2r = n-3r \\).",
+      "hint": "Multiply out \\( 1(n-r) \\) and \\( -2r \\) and combine like terms in \\( n \\) and \\( r \\).",
+      "distractor_logic": [
+        "misplacing which coefficient multiplies \\( n \\) versus \\( r \\), giving \\( 3n-r \\)",
+        "flipping the sign on the second term's exponent, giving \\( n+r \\)",
+        "dropping the minus sign entirely, giving \\( n+3r \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-028",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\( {}^{n}C_{0}+{}^{n}C_{1}+{}^{n}C_{2}+\\cdots+{}^{n}C_{n} \\) for \\( n=5 \\)?",
+      "options": [
+        "\\( 10 \\)",
+        "\\( 32 \\)",
+        "\\( 120 \\)",
+        "\\( 25 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Putting \\( x=1 \\) in \\( (1+x)^n={}^{n}C_{0}+{}^{n}C_{1}x+\\cdots+{}^{n}C_{n}x^n \\) gives \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n}=2^n \\). For \\( n=5 \\), this is \\( 2^{5}=32 \\).",
+      "hint": "Substitute \\( x=1 \\) into the binomial expansion of \\( (1+x)^n \\).",
+      "distractor_logic": [
+        "computing \\( 2n \\) instead of \\( 2^n \\), giving 10",
+        "computing \\( n! \\) instead of \\( 2^n \\), giving 120",
+        "computing \\( n^2 \\) instead of \\( 2^n \\), giving 25"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-029",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\( {}^{n}C_{0}+{}^{n}C_{1}+{}^{n}C_{2}+\\cdots+{}^{n}C_{n} \\) for \\( n=6 \\)?",
+      "options": [
+        "\\( 12 \\)",
+        "\\( 36 \\)",
+        "\\( 720 \\)",
+        "\\( 64 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Putting \\( x=1 \\) in \\( (1+x)^n={}^{n}C_{0}+{}^{n}C_{1}x+\\cdots+{}^{n}C_{n}x^n \\) gives \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n}=2^n \\). For \\( n=6 \\), this is \\( 2^{6}=64 \\).",
+      "hint": "Substitute \\( x=1 \\) into the binomial expansion of \\( (1+x)^n \\).",
+      "distractor_logic": [
+        "computing \\( 2n \\) instead of \\( 2^n \\), giving 12",
+        "computing \\( n^2 \\) instead of \\( 2^n \\), giving 36",
+        "computing \\( n! \\) instead of \\( 2^n \\), giving 720"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-030",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\( {}^{n}C_{0}+{}^{n}C_{1}+{}^{n}C_{2}+\\cdots+{}^{n}C_{n} \\) for \\( n=7 \\)?",
+      "options": [
+        "\\( 14 \\)",
+        "\\( 5040 \\)",
+        "\\( 128 \\)",
+        "\\( 49 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Putting \\( x=1 \\) in \\( (1+x)^n={}^{n}C_{0}+{}^{n}C_{1}x+\\cdots+{}^{n}C_{n}x^n \\) gives \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n}=2^n \\). For \\( n=7 \\), this is \\( 2^{7}=128 \\).",
+      "hint": "Substitute \\( x=1 \\) into the binomial expansion of \\( (1+x)^n \\).",
+      "distractor_logic": [
+        "computing \\( 2n \\) instead of \\( 2^n \\), giving 14",
+        "computing \\( n! \\) instead of \\( 2^n \\), giving 5040",
+        "computing \\( n^2 \\) instead of \\( 2^n \\), giving 49"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-031",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( n=8 \\) and \\( r=3 \\), \\( {}^{8}C_{3} \\) equals which of the following?",
+      "options": [
+        "\\( {}^{3}C_{8} \\)",
+        "\\( {}^{8}C_{5} \\)",
+        "\\( {}^{8}C_{4} \\)",
+        "\\( {}^{8}C_{2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The symmetry identity \\( {}^{n}C_{r}={}^{n}C_{n-r} \\) gives \\( {}^{8}C_{3}={}^{8}C_{5} \\), i.e. \\( {}^{8}C_{5} \\).",
+      "hint": "Use the identity \\( {}^{n}C_{r}={}^{n}C_{n-r} \\).",
+      "distractor_logic": [
+        "\\( {}^{3}C_{8} \\) — swapping which number is on top and which is on the bottom, an invalid combination",
+        "\\( {}^{8}C_{4} \\) — reflecting to \\( n-r \\) but then shifting by one more",
+        "\\( {}^{8}C_{2} \\) — shifting the lower index by one instead of reflecting it, giving a different value in general"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-032",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( n=9 \\) and \\( r=4 \\), \\( {}^{9}C_{4} \\) equals which of the following?",
+      "options": [
+        "\\( {}^{9}C_{4} \\)",
+        "\\( {}^{9}C_{5} \\)",
+        "\\( {}^{4}C_{9} \\)",
+        "\\( {}^{9}C_{3} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The symmetry identity \\( {}^{n}C_{r}={}^{n}C_{n-r} \\) gives \\( {}^{9}C_{4}={}^{9}C_{5} \\), i.e. \\( {}^{9}C_{5} \\).",
+      "hint": "Use the identity \\( {}^{n}C_{r}={}^{n}C_{n-r} \\).",
+      "distractor_logic": [
+        "\\( {}^{9}C_{4} \\) — reflecting to \\( n-r \\) but then shifting by one more",
+        "\\( {}^{4}C_{9} \\) — swapping which number is on top and which is on the bottom, an invalid combination",
+        "\\( {}^{9}C_{3} \\) — shifting the lower index by one instead of reflecting it, giving a different value in general"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-033",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( n=7 \\) and \\( r=2 \\), \\( {}^{7}C_{2}+{}^{7}C_{3} \\) equals which of the following?",
+      "options": [
+        "\\( {}^{8}C_{2} \\)",
+        "\\( {}^{8}C_{3} \\)",
+        "\\( {}^{9}C_{3} \\)",
+        "\\( {}^{7}C_{3} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Pascal's Rule states \\( {}^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\). For \\( n=7 \\), \\( r=2 \\), this is \\( {}^{8}C_{3} \\).",
+      "hint": "Use Pascal's Rule: \\( {}^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\).",
+      "distractor_logic": [
+        "\\( {}^{8}C_{2} \\) — using \\( r \\) instead of \\( r+1 \\) in the combined coefficient",
+        "\\( {}^{9}C_{3} \\) — raising \\( n \\) by \\( 2 \\) instead of \\( 1 \\)",
+        "\\( {}^{7}C_{3} \\) — forgetting to raise \\( n \\) to \\( n+1 \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-034",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( n=8 \\) and \\( r=3 \\), \\( {}^{8}C_{3}+{}^{8}C_{4} \\) equals which of the following?",
+      "options": [
+        "\\( {}^{8}C_{4} \\)",
+        "\\( {}^{10}C_{4} \\)",
+        "\\( {}^{9}C_{3} \\)",
+        "\\( {}^{9}C_{4} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Pascal's Rule states \\( {}^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\). For \\( n=8 \\), \\( r=3 \\), this is \\( {}^{9}C_{4} \\).",
+      "hint": "Use Pascal's Rule: \\( {}^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\).",
+      "distractor_logic": [
+        "\\( {}^{8}C_{4} \\) — forgetting to raise \\( n \\) to \\( n+1 \\)",
+        "\\( {}^{10}C_{4} \\) — raising \\( n \\) by \\( 2 \\) instead of \\( 1 \\)",
+        "\\( {}^{9}C_{3} \\) — using \\( r \\) instead of \\( r+1 \\) in the combined coefficient"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-035",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 1,
+      "type": "regular",
+      "question": "Using the binomial theorem, evaluate \\( (100+3)^2 \\).",
+      "options": [
+        "\\( 10009 \\)",
+        "\\( 10309 \\)",
+        "\\( 9409 \\)",
+        "\\( 10609 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "By the binomial theorem, \\( (a+b)^2=a^2+2ab+b^2 \\). With \\( a=100 \\), \\( b=3 \\): \\( (100+3)^2 = 100^2+2(100)(3)+3^2 = 10609 \\).",
+      "hint": "Expand using \\( (a+b)^2=a^2+2ab+b^2 \\) rather than multiplying directly.",
+      "distractor_logic": [
+        "forgetting the cross term entirely and computing just \\( a^2+b^2 \\), giving 10009",
+        "using \\( ab \\) instead of \\( 2ab \\) for the cross term, giving 10309",
+        "getting the sign of the cross term wrong, giving 9409"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-036",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 1,
+      "type": "regular",
+      "question": "Using the binomial theorem, evaluate \\( (100-4)^2 \\).",
+      "options": [
+        "\\( 10816 \\)",
+        "\\( 9616 \\)",
+        "\\( 9216 \\)",
+        "\\( 10016 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "By the binomial theorem, \\( (a-b)^2=a^2-2ab+b^2 \\). With \\( a=100 \\), \\( b=4 \\): \\( (100-4)^2 = 100^2-2(100)(4)+4^2 = 9216 \\).",
+      "hint": "Expand using \\( (a-b)^2=a^2-2ab+b^2 \\) rather than multiplying directly.",
+      "distractor_logic": [
+        "getting the sign of the cross term wrong, giving 10816",
+        "using \\( ab \\) instead of \\( 2ab \\) for the cross term, giving 9616",
+        "forgetting the cross term entirely and computing just \\( a^2+b^2 \\), giving 10016"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-037",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 1,
+      "type": "regular",
+      "question": "Using the binomial theorem, evaluate \\( (100+6)^2 \\).",
+      "options": [
+        "\\( 8836 \\)",
+        "\\( 10036 \\)",
+        "\\( 10636 \\)",
+        "\\( 11236 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "By the binomial theorem, \\( (a+b)^2=a^2+2ab+b^2 \\). With \\( a=100 \\), \\( b=6 \\): \\( (100+6)^2 = 100^2+2(100)(6)+6^2 = 11236 \\).",
+      "hint": "Expand using \\( (a+b)^2=a^2+2ab+b^2 \\) rather than multiplying directly.",
+      "distractor_logic": [
+        "getting the sign of the cross term wrong, giving 8836",
+        "forgetting the cross term entirely and computing just \\( a^2+b^2 \\), giving 10036",
+        "using \\( ab \\) instead of \\( 2ab \\) for the cross term, giving 10636"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-038",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 1,
+      "type": "regular",
+      "question": "Writing \\( 7=1+6 \\), the expansion of \\( 7^{5} = (1+6)^{5} \\) begins with terms \\( {}^{5}C_{0} \\) and \\( {}^{5}C_{1}\\cdot6 \\). What is the sum of just these first two terms?",
+      "options": [
+        "\\( 30 \\)",
+        "\\( 391 \\)",
+        "\\( 31 \\)",
+        "\\( 7 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( {}^{5}C_{0}=1 \\) and \\( {}^{5}C_{1}\\cdot6 = 5\\cdot6 = 30 \\), so their sum is \\( 1+30 = 31 \\).",
+      "hint": "The first term (\\( r=0 \\)) is always \\( 1 \\); the second term (\\( r=1 \\)) is \\( n \\) times \\( 6 \\).",
+      "distractor_logic": [
+        "dropping the constant \\( 1 \\) from the first term, giving 30",
+        "including an unwanted third term \\( {}^{5}C_{2}d^2 \\), giving 391",
+        "forgetting to multiply by \\( n \\), giving 7"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-039",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 1,
+      "type": "regular",
+      "question": "Writing \\( 5=1+4 \\), the expansion of \\( 5^{7} = (1+4)^{7} \\) begins with terms \\( {}^{7}C_{0} \\) and \\( {}^{7}C_{1}\\cdot4 \\). What is the sum of just these first two terms?",
+      "options": [
+        "\\( 5 \\)",
+        "\\( 28 \\)",
+        "\\( 365 \\)",
+        "\\( 29 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( {}^{7}C_{0}=1 \\) and \\( {}^{7}C_{1}\\cdot4 = 7\\cdot4 = 28 \\), so their sum is \\( 1+28 = 29 \\).",
+      "hint": "The first term (\\( r=0 \\)) is always \\( 1 \\); the second term (\\( r=1 \\)) is \\( n \\) times \\( 4 \\).",
+      "distractor_logic": [
+        "forgetting to multiply by \\( n \\), giving 5",
+        "dropping the constant \\( 1 \\) from the first term, giving 28",
+        "including an unwanted third term \\( {}^{7}C_{2}d^2 \\), giving 365"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L1-040",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 1,
+      "type": "regular",
+      "question": "Writing \\( 4=1+3 \\), the expansion of \\( 4^{8} = (1+3)^{8} \\) begins with terms \\( {}^{8}C_{0} \\) and \\( {}^{8}C_{1}\\cdot3 \\). What is the sum of just these first two terms?",
+      "options": [
+        "\\( 4 \\)",
+        "\\( 25 \\)",
+        "\\( 277 \\)",
+        "\\( 24 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( {}^{8}C_{0}=1 \\) and \\( {}^{8}C_{1}\\cdot3 = 8\\cdot3 = 24 \\), so their sum is \\( 1+24 = 25 \\).",
+      "hint": "The first term (\\( r=0 \\)) is always \\( 1 \\); the second term (\\( r=1 \\)) is \\( n \\) times \\( 3 \\).",
+      "distractor_logic": [
+        "forgetting to multiply by \\( n \\), giving 4",
+        "including an unwanted third term \\( {}^{8}C_{2}d^2 \\), giving 277",
+        "dropping the constant \\( 1 \\) from the first term, giving 24"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-001",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 2,
+      "type": "regular",
+      "question": "In the expansion of \\( (2x+3)^{5} \\), what is the coefficient of \\( x^{3} \\)?",
+      "options": [
+        "\\( 1080 \\)",
+        "\\( 72 \\)",
+        "\\( 720 \\)",
+        "\\( 90 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The general term is \\( T_{r+1}={}^{5}C_{r}(ax)^{n-r}b^{r} \\). For \\( x^{3} \\) we need \\( n-r=3 \\), so \\( r=2 \\). The coefficient is \\( {}^{5}C_{2} a^{3} b^{2} = 720 \\).",
+      "hint": "Set the exponent of x, \\( n-r \\), equal to \\( 3 \\) to find \\( r \\) first.",
+      "distractor_logic": [
+        "swapping the exponents on \\( a \\) and \\( b \\), giving 1080",
+        "omitting the binomial coefficient \\( {}^{5}C_{2} \\) altogether, giving 72",
+        "dropping the power of \\( a \\) entirely, giving 90"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-002",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 2,
+      "type": "regular",
+      "question": "In the expansion of \\( (2x-1)^{5} \\), what is the coefficient of \\( x^{2} \\)?",
+      "options": [
+        "\\( -10 \\)",
+        "\\( 80 \\)",
+        "\\( -40 \\)",
+        "\\( -4 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The general term is \\( T_{r+1}={}^{5}C_{r}(ax)^{n-r}b^{r} \\). For \\( x^{2} \\) we need \\( n-r=2 \\), so \\( r=3 \\). The coefficient is \\( {}^{5}C_{3} a^{2} b^{3} = -40 \\).",
+      "hint": "Set the exponent of x, \\( n-r \\), equal to \\( 2 \\) to find \\( r \\) first.",
+      "distractor_logic": [
+        "dropping the power of \\( a \\) entirely, giving -10",
+        "swapping the exponents on \\( a \\) and \\( b \\), giving 80",
+        "omitting the binomial coefficient \\( {}^{5}C_{3} \\) altogether, giving -4"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-003",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 2,
+      "type": "regular",
+      "question": "In the expansion of \\( (3x+2)^{4} \\), what is the coefficient of \\( x^{1} \\)?",
+      "options": [
+        "\\( 32 \\)",
+        "\\( 216 \\)",
+        "\\( 96 \\)",
+        "\\( 24 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The general term is \\( T_{r+1}={}^{4}C_{r}(ax)^{n-r}b^{r} \\). For \\( x^{1} \\) we need \\( n-r=1 \\), so \\( r=3 \\). The coefficient is \\( {}^{4}C_{3} a^{1} b^{3} = 96 \\).",
+      "hint": "Set the exponent of x, \\( n-r \\), equal to \\( 1 \\) to find \\( r \\) first.",
+      "distractor_logic": [
+        "dropping the power of \\( a \\) entirely, giving 32",
+        "swapping the exponents on \\( a \\) and \\( b \\), giving 216",
+        "omitting the binomial coefficient \\( {}^{4}C_{3} \\) altogether, giving 24"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-004",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 2,
+      "type": "regular",
+      "question": "In the expansion of \\( (x-2)^{7} \\), what is the coefficient of \\( x^{2} \\) (with sign)?",
+      "options": [
+        "\\( -672 \\)",
+        "\\( 84 \\)",
+        "\\( 560 \\)",
+        "\\( 672 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Writing \\( (x-2)^n = (x+(-2))^n \\), the term with \\( x^{2} \\) has \\( r=5 \\), giving coefficient \\( {}^{7}C_{5}\\cdot(-2)^{5} = -672 \\).",
+      "hint": "Treat \\( -2 \\) as the second term and track its sign through \\( (-2)^{r} \\).",
+      "distractor_logic": [
+        "raising \\( (-2) \\) to the power \\( k \\) instead of \\( r \\), giving 84",
+        "using \\( r-1 \\) instead of \\( r \\) in the power, giving 560",
+        "dropping the negative sign from \\( (-2)^{r} \\), giving 672"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-005",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 2,
+      "type": "regular",
+      "question": "In the expansion of \\( (x-3)^{6} \\), what is the coefficient of \\( x^{1} \\) (with sign)?",
+      "options": [
+        "\\( 1458 \\)",
+        "\\( 1215 \\)",
+        "\\( -1458 \\)",
+        "\\( -18 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Writing \\( (x-3)^n = (x+(-3))^n \\), the term with \\( x^{1} \\) has \\( r=5 \\), giving coefficient \\( {}^{6}C_{5}\\cdot(-3)^{5} = -1458 \\).",
+      "hint": "Treat \\( -3 \\) as the second term and track its sign through \\( (-3)^{r} \\).",
+      "distractor_logic": [
+        "dropping the negative sign from \\( (-3)^{r} \\), giving 1458",
+        "using \\( r-1 \\) instead of \\( r \\) in the power, giving 1215",
+        "raising \\( (-3) \\) to the power \\( k \\) instead of \\( r \\), giving -18"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-006",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the sum of all the coefficients in the expansion of \\( (2x+3)^{4} \\)?",
+      "options": [
+        "\\( 97 \\)",
+        "\\( 20 \\)",
+        "\\( 625 \\)",
+        "\\( 1 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The sum of all coefficients of an expansion in \\( x \\) is obtained by substituting \\( x=1 \\), giving \\( (2+3)^{4} = 625 \\).",
+      "hint": "Substitute \\( x=1 \\) into the whole expression to collapse it to a single number.",
+      "distractor_logic": [
+        "adding \\( a^n+b^n \\) instead of expanding \\( (a+b)^n \\), giving 97",
+        "treating the sum as linear in \\( n \\) rather than as a power, giving 20",
+        "substituting \\( x=-1 \\) instead of \\( x=1 \\), giving 1"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-007",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the sum of all the coefficients in the expansion of \\( (x-4)^{5} \\)?",
+      "options": [
+        "\\( -1023 \\)",
+        "\\( -243 \\)",
+        "\\( -15 \\)",
+        "\\( 3125 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The sum of all coefficients of an expansion in \\( x \\) is obtained by substituting \\( x=1 \\), giving \\( (1-4)^{5} = -243 \\).",
+      "hint": "Substitute \\( x=1 \\) into the whole expression to collapse it to a single number.",
+      "distractor_logic": [
+        "adding \\( a^n+b^n \\) instead of expanding \\( (a+b)^n \\), giving -1023",
+        "treating the sum as linear in \\( n \\) rather than as a power, giving -15",
+        "substituting \\( x=-1 \\) instead of \\( x=1 \\), giving 3125"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-008",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the 4th term in the expansion of \\( (x+3)^{8} \\).",
+      "options": [
+        "\\( 5670x^{4} \\)",
+        "\\( x^{5} \\)",
+        "\\( 1512x^{3} \\)",
+        "\\( 1512x^{5} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "For the 4th term, \\( r=p-1=3 \\). The term is \\( T_{4}={}^{8}C_{3} x^{5}\\cdot3^{3} = 1512x^{5} \\).",
+      "hint": "First convert the term number \\( p \\) to \\( r=p-1 \\), then apply \\( T_{r+1}={}^{8}C_{r}x^{n-r}c^{r} \\).",
+      "distractor_logic": [
+        "using \\( r=p \\) instead of \\( r=p-1 \\), giving \\( 5670x^{4} \\)",
+        "omitting the factor \\( {}^{8}C_{3}\\cdot3^{r} \\) altogether, giving just \\( x^{5} \\)",
+        "writing the exponent of x as \\( r \\) instead of \\( n-r \\), giving \\( 1512x^{3} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-009",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the 5th term in the expansion of \\( (x+2)^{7} \\).",
+      "options": [
+        "\\( 560x^{4} \\)",
+        "\\( x^{3} \\)",
+        "\\( 560x^{3} \\)",
+        "\\( 672x^{2} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For the 5th term, \\( r=p-1=4 \\). The term is \\( T_{5}={}^{7}C_{4} x^{3}\\cdot2^{4} = 560x^{3} \\).",
+      "hint": "First convert the term number \\( p \\) to \\( r=p-1 \\), then apply \\( T_{r+1}={}^{7}C_{r}x^{n-r}c^{r} \\).",
+      "distractor_logic": [
+        "writing the exponent of x as \\( r \\) instead of \\( n-r \\), giving \\( 560x^{4} \\)",
+        "omitting the factor \\( {}^{7}C_{4}\\cdot2^{r} \\) altogether, giving just \\( x^{3} \\)",
+        "using \\( r=p \\) instead of \\( r=p-1 \\), giving \\( 672x^{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-010",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the 3rd term in the expansion of \\( (x+1)^{9} \\).",
+      "options": [
+        "\\( 36x^{2} \\)",
+        "\\( 36x^{7} \\)",
+        "\\( x^{7} \\)",
+        "\\( 84x^{6} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For the 3rd term, \\( r=p-1=2 \\). The term is \\( T_{3}={}^{9}C_{2} x^{7}\\cdot1^{2} = 36x^{7} \\).",
+      "hint": "First convert the term number \\( p \\) to \\( r=p-1 \\), then apply \\( T_{r+1}={}^{9}C_{r}x^{n-r}c^{r} \\).",
+      "distractor_logic": [
+        "writing the exponent of x as \\( r \\) instead of \\( n-r \\), giving \\( 36x^{2} \\)",
+        "omitting the factor \\( {}^{9}C_{2}\\cdot1^{r} \\) altogether, giving just \\( x^{7} \\)",
+        "using \\( r=p \\) instead of \\( r=p-1 \\), giving \\( 84x^{6} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-011",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the term containing \\( y^{3} \\) in the expansion of \\( (x-y)^{9} \\).",
+      "options": [
+        "\\( -84x^{3}y^{6} \\)",
+        "\\( 84x^{6}y^{3} \\)",
+        "\\( 126x^{5}y^{4} \\)",
+        "\\( -84x^{6}y^{3} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Writing \\( (x-y)^n=(x+(-y))^n \\), the term with \\( y^{3} \\) has \\( r=3 \\), giving \\( T_{4}={}^{9}C_{3}x^{6}(-y)^{3} = -84x^{6}y^{3} \\).",
+      "hint": "Match the power of y directly to \\( r \\), and don't drop the sign carried by \\( (-y)^{r} \\).",
+      "distractor_logic": [
+        "swapping the exponents on \\( x \\) and \\( y \\), giving \\( -84x^{3}y^{6} \\)",
+        "dropping the sign \\( (-1)^{r} \\) carried by the second term, giving \\( 84x^{6}y^{3} \\)",
+        "using \\( r=4 \\) instead of \\( r=3 \\), giving \\( 126x^{5}y^{4} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-012",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the term containing \\( y^{5} \\) in the expansion of \\( (x-y)^{8} \\).",
+      "options": [
+        "\\( -56x^{5}y^{3} \\)",
+        "\\( 28x^{2}y^{6} \\)",
+        "\\( -56x^{3}y^{5} \\)",
+        "\\( 56x^{3}y^{5} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Writing \\( (x-y)^n=(x+(-y))^n \\), the term with \\( y^{5} \\) has \\( r=5 \\), giving \\( T_{6}={}^{8}C_{5}x^{3}(-y)^{5} = -56x^{3}y^{5} \\).",
+      "hint": "Match the power of y directly to \\( r \\), and don't drop the sign carried by \\( (-y)^{r} \\).",
+      "distractor_logic": [
+        "swapping the exponents on \\( x \\) and \\( y \\), giving \\( -56x^{5}y^{3} \\)",
+        "using \\( r=6 \\) instead of \\( r=5 \\), giving \\( 28x^{2}y^{6} \\)",
+        "dropping the sign \\( (-1)^{r} \\) carried by the second term, giving \\( 56x^{3}y^{5} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-013",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of the 3rd term in the expansion of \\( (x+2)^{6} \\) at \\( x=2 \\)?",
+      "options": [
+        "\\( 60 \\)",
+        "\\( 1280 \\)",
+        "\\( 960 \\)",
+        "\\( 240 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For the 3rd term, \\( r=p-1=2 \\), giving \\( T_{3}={}^{6}C_{2} x^{4}\\cdot2^{2} \\). Substituting \\( x=2 \\) gives \\( 960 \\).",
+      "hint": "Find the general expression for \\( T_{3} \\) first, then substitute \\( x=2 \\).",
+      "distractor_logic": [
+        "dropping the power of \\( x \\) entirely, giving 60",
+        "using \\( r=p \\) instead of \\( r=p-1 \\), giving 1280",
+        "dropping the power of the constant term entirely, giving 240"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-014",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of the 4th term in the expansion of \\( (x+3)^{7} \\) at \\( x=2 \\)?",
+      "options": [
+        "\\( 15120 \\)",
+        "\\( 945 \\)",
+        "\\( 560 \\)",
+        "\\( 22680 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For the 4th term, \\( r=p-1=3 \\), giving \\( T_{4}={}^{7}C_{3} x^{4}\\cdot3^{3} \\). Substituting \\( x=2 \\) gives \\( 15120 \\).",
+      "hint": "Find the general expression for \\( T_{4} \\) first, then substitute \\( x=2 \\).",
+      "distractor_logic": [
+        "dropping the power of \\( x \\) entirely, giving 945",
+        "dropping the power of the constant term entirely, giving 560",
+        "using \\( r=p \\) instead of \\( r=p-1 \\), giving 22680"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-015",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (x+y)^{6} \\).",
+      "options": [
+        "\\( 15x^{4}y^{2} \\)",
+        "\\( x^{3}y^{3} \\)",
+        "\\( 15x^{2}y^{4} \\)",
+        "\\( 20x^{3}y^{3} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\( n=6 \\) is even, the middle term is \\( T_{4} \\), with \\( r=3 \\): \\( T_{4}={}^{6}C_{3}x^{3}y^{3} = 20x^{3}y^{3} \\).",
+      "hint": "The middle term has \\( r=n/2 \\), giving equal exponents on \\( x \\) and \\( y \\).",
+      "distractor_logic": [
+        "using \\( r=n/2-1 \\) instead of \\( r=n/2 \\), giving \\( 15x^{4}y^{2} \\)",
+        "omitting the binomial coefficient \\( {}^{6}C_{3} \\) altogether, giving just \\( x^{3}y^{3} \\)",
+        "using \\( r=n/2+1 \\) instead of \\( r=n/2 \\), giving \\( 15x^{2}y^{4} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-016",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (x+y)^{8} \\).",
+      "options": [
+        "\\( 70x^{4}y^{4} \\)",
+        "\\( x^{4}y^{4} \\)",
+        "\\( 56x^{5}y^{3} \\)",
+        "\\( 56x^{3}y^{5} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\( n=8 \\) is even, the middle term is \\( T_{5} \\), with \\( r=4 \\): \\( T_{5}={}^{8}C_{4}x^{4}y^{4} = 70x^{4}y^{4} \\).",
+      "hint": "The middle term has \\( r=n/2 \\), giving equal exponents on \\( x \\) and \\( y \\).",
+      "distractor_logic": [
+        "omitting the binomial coefficient \\( {}^{8}C_{4} \\) altogether, giving just \\( x^{4}y^{4} \\)",
+        "using \\( r=n/2-1 \\) instead of \\( r=n/2 \\), giving \\( 56x^{5}y^{3} \\)",
+        "using \\( r=n/2+1 \\) instead of \\( r=n/2 \\), giving \\( 56x^{3}y^{5} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-017",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (x+y)^{10} \\).",
+      "options": [
+        "\\( 252x^{5}y^{5} \\)",
+        "\\( 210x^{4}y^{6} \\)",
+        "\\( x^{5}y^{5} \\)",
+        "\\( 210x^{6}y^{4} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\( n=10 \\) is even, the middle term is \\( T_{6} \\), with \\( r=5 \\): \\( T_{6}={}^{10}C_{5}x^{5}y^{5} = 252x^{5}y^{5} \\).",
+      "hint": "The middle term has \\( r=n/2 \\), giving equal exponents on \\( x \\) and \\( y \\).",
+      "distractor_logic": [
+        "using \\( r=n/2+1 \\) instead of \\( r=n/2 \\), giving \\( 210x^{4}y^{6} \\)",
+        "omitting the binomial coefficient \\( {}^{10}C_{5} \\) altogether, giving just \\( x^{5}y^{5} \\)",
+        "using \\( r=n/2-1 \\) instead of \\( r=n/2 \\), giving \\( 210x^{6}y^{4} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-018",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (x-2)^{6} \\).",
+      "options": [
+        "\\( -160x^{3} \\)",
+        "\\( -8x^{3} \\)",
+        "\\( 240x^{2} \\)",
+        "\\( 160x^{3} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\( n=6 \\) is even, the middle term is \\( T_{4} \\), with \\( r=3 \\): \\( T_{4}={}^{6}C_{3}x^{3}(-2)^{3} = -160x^{3} \\).",
+      "hint": "Treat \\( -2 \\) as the second term and carry its sign through \\( (-2)^{r} \\).",
+      "distractor_logic": [
+        "omitting the binomial coefficient \\( {}^{6}C_{3} \\) altogether, giving \\( -8x^{3} \\)",
+        "using an off-by-one \\( r \\), giving \\( 240x^{2} \\)",
+        "dropping the sign carried by \\( (-c)^{r} \\), giving \\( 160x^{3} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-019",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (x-3)^{6} \\).",
+      "options": [
+        "\\( 1215x^{2} \\)",
+        "\\( -540x^{3} \\)",
+        "\\( -27x^{3} \\)",
+        "\\( 540x^{3} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\( n=6 \\) is even, the middle term is \\( T_{4} \\), with \\( r=3 \\): \\( T_{4}={}^{6}C_{3}x^{3}(-3)^{3} = -540x^{3} \\).",
+      "hint": "Treat \\( -3 \\) as the second term and carry its sign through \\( (-3)^{r} \\).",
+      "distractor_logic": [
+        "using an off-by-one \\( r \\), giving \\( 1215x^{2} \\)",
+        "omitting the binomial coefficient \\( {}^{6}C_{3} \\) altogether, giving \\( -27x^{3} \\)",
+        "dropping the sign carried by \\( (-c)^{r} \\), giving \\( 540x^{3} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-020",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( T_{\\frac{n+1}{2}} \\), the first of the two middle terms, in the expansion of \\( (x+y)^{7} \\).",
+      "options": [
+        "\\( 35x^{3}y^{4} \\)",
+        "\\( 35x^{4}y^{3} \\)",
+        "\\( 21x^{5}y^{2} \\)",
+        "\\( x^{4}y^{3} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\( n=7 \\) is odd, the two middle terms are \\( T_{4} \\) and \\( T_{5} \\). The first has \\( r=3 \\): \\( T_{4}={}^{7}C_{3}x^{4}y^{3} = 35x^{4}y^{3} \\).",
+      "hint": "The first of the two middle terms has \\( r=\\frac{n-1}{2} \\).",
+      "distractor_logic": [
+        "swapping the exponents on \\( x \\) and \\( y \\), giving \\( 35x^{3}y^{4} \\)",
+        "using \\( r=\\frac{n-3}{2} \\) instead of \\( r=\\frac{n-1}{2} \\), giving \\( 21x^{5}y^{2} \\)",
+        "omitting the binomial coefficient \\( {}^{7}C_{3} \\) altogether, giving just \\( x^{4}y^{3} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-021",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 2,
+      "type": "regular",
+      "question": "Find \\( T_{\\frac{n+1}{2}} \\), the first of the two middle terms, in the expansion of \\( (x+y)^{9} \\).",
+      "options": [
+        "\\( 126x^{5}y^{4} \\)",
+        "\\( 84x^{6}y^{3} \\)",
+        "\\( 126x^{4}y^{5} \\)",
+        "\\( x^{5}y^{4} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\( n=9 \\) is odd, the two middle terms are \\( T_{5} \\) and \\( T_{6} \\). The first has \\( r=4 \\): \\( T_{5}={}^{9}C_{4}x^{5}y^{4} = 126x^{5}y^{4} \\).",
+      "hint": "The first of the two middle terms has \\( r=\\frac{n-1}{2} \\).",
+      "distractor_logic": [
+        "using \\( r=\\frac{n-3}{2} \\) instead of \\( r=\\frac{n-1}{2} \\), giving \\( 84x^{6}y^{3} \\)",
+        "swapping the exponents on \\( x \\) and \\( y \\), giving \\( 126x^{4}y^{5} \\)",
+        "omitting the binomial coefficient \\( {}^{9}C_{4} \\) altogether, giving just \\( x^{5}y^{4} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-022",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the term independent of x in the expansion of \\( (x^{2}+3/x)^{9} \\).",
+      "options": [
+        "\\( 78732 \\)",
+        "\\( 61236 \\)",
+        "\\( 2268 \\)",
+        "\\( 729 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The general term has power of \\( x \\) equal to \\( 2(n-r)-1r \\). Setting this to \\( 0 \\) gives \\( r=6 \\), so the term independent of x is \\( T_{7}={}^{9}C_{6}\\cdot3^{6} = 61236 \\).",
+      "hint": "Set the total exponent of \\( x \\) in the general term to \\( 0 \\) and solve for \\( r \\) first.",
+      "distractor_logic": [
+        "solving the exponent equation with an off-by-one \\( r \\), giving 78732",
+        "solving the exponent equation with the roles of the two exponents reversed, giving 2268",
+        "omitting the binomial coefficient \\( {}^{9}C_{6} \\) altogether, giving 729"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-023",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the term independent of x in the expansion of \\( (x^{2}+2/x)^{6} \\).",
+      "options": [
+        "\\( 240 \\)",
+        "\\( 192 \\)",
+        "\\( 60 \\)",
+        "\\( 16 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The general term has power of \\( x \\) equal to \\( 2(n-r)-1r \\). Setting this to \\( 0 \\) gives \\( r=4 \\), so the term independent of x is \\( T_{5}={}^{6}C_{4}\\cdot2^{4} = 240 \\).",
+      "hint": "Set the total exponent of \\( x \\) in the general term to \\( 0 \\) and solve for \\( r \\) first.",
+      "distractor_logic": [
+        "solving the exponent equation with an off-by-one \\( r \\), giving 192",
+        "solving the exponent equation with the roles of the two exponents reversed, giving 60",
+        "omitting the binomial coefficient \\( {}^{6}C_{4} \\) altogether, giving 16"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-024",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the term independent of x in the expansion of \\( (x+3/x^{2})^{9} \\).",
+      "options": [
+        "\\( 27 \\)",
+        "\\( 61236 \\)",
+        "\\( 10206 \\)",
+        "\\( 2268 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The general term has power of \\( x \\) equal to \\( 1(n-r)-2r \\). Setting this to \\( 0 \\) gives \\( r=3 \\), so the term independent of x is \\( T_{4}={}^{9}C_{3}\\cdot3^{3} = 2268 \\).",
+      "hint": "Set the total exponent of \\( x \\) in the general term to \\( 0 \\) and solve for \\( r \\) first.",
+      "distractor_logic": [
+        "omitting the binomial coefficient \\( {}^{9}C_{3} \\) altogether, giving 27",
+        "solving the exponent equation with the roles of the two exponents reversed, giving 61236",
+        "solving the exponent equation with an off-by-one \\( r \\), giving 10206"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-025",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the term independent of x in the expansion of \\( (x-1/x^{2})^{9} \\).",
+      "options": [
+        "\\( 1 \\)",
+        "\\( -84 \\)",
+        "\\( 84 \\)",
+        "\\( 126 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The general term has power of \\( x \\) equal to \\( 1(n-r)-2r \\). Setting this to \\( 0 \\) gives \\( r=3 \\), so the term independent of x is \\( T_{4}={}^{9}C_{3}\\cdot(-1)^{3} = -84 \\).",
+      "hint": "Set the total exponent of \\( x \\) to \\( 0 \\), and remember to carry the negative sign through \\( (-c)^{r} \\).",
+      "distractor_logic": [
+        "omitting the binomial coefficient \\( {}^{9}C_{3} \\) and the sign together, giving 1",
+        "dropping the sign from \\( (-1)^{r} \\), giving 84",
+        "solving the exponent equation with an off-by-one \\( r \\), giving 126"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-026",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the term independent of x in the expansion of \\( (x^{2}-3/x^{2})^{10} \\).",
+      "options": [
+        "\\( 153090 \\)",
+        "\\( 243 \\)",
+        "\\( 61236 \\)",
+        "\\( -61236 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The general term has power of \\( x \\) equal to \\( 2(n-r)-2r \\). Setting this to \\( 0 \\) gives \\( r=5 \\), so the term independent of x is \\( T_{6}={}^{10}C_{5}\\cdot(-3)^{5} = -61236 \\).",
+      "hint": "Set the total exponent of \\( x \\) to \\( 0 \\), and remember to carry the negative sign through \\( (-c)^{r} \\).",
+      "distractor_logic": [
+        "solving the exponent equation with an off-by-one \\( r \\), giving 153090",
+        "omitting the binomial coefficient \\( {}^{10}C_{5} \\) and the sign together, giving 243",
+        "dropping the sign from \\( (-3)^{r} \\), giving 61236"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-027",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 2,
+      "type": "regular",
+      "question": "If the term independent of x in the expansion of \\( (x^{2}+c/x)^n \\) is the 7th term, find \\( n \\).",
+      "options": [
+        "\\( 7 \\)",
+        "\\( 9 \\)",
+        "\\( 6 \\)",
+        "\\( 12 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The 7th term has \\( r=6 \\). Independence from \\( x \\) requires \\( 2(n-r)=1r \\), so \\( n = r+\\frac{1r}{2} = 9 \\).",
+      "hint": "First convert the term number to \\( r \\), then use \\( a(n-r)=br \\) to solve for \\( n \\).",
+      "distractor_logic": [
+        "using the term number \\( p=7 \\) itself as \\( r \\) in the equation, giving 7",
+        "stopping at \\( r \\) itself instead of solving for \\( n \\), giving 6",
+        "doubling \\( r \\) instead of applying the exponent condition, giving 12"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-028",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 2,
+      "type": "regular",
+      "question": "If the term independent of x in the expansion of \\( (x+c/x^{2})^n \\) is the 6th term, find \\( n \\).",
+      "options": [
+        "\\( 5 \\)",
+        "\\( 10 \\)",
+        "\\( 15 \\)",
+        "\\( 6 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The 6th term has \\( r=5 \\). Independence from \\( x \\) requires \\( 1(n-r)=2r \\), so \\( n = r+\\frac{2r}{1} = 15 \\).",
+      "hint": "First convert the term number to \\( r \\), then use \\( a(n-r)=br \\) to solve for \\( n \\).",
+      "distractor_logic": [
+        "stopping at \\( r \\) itself instead of solving for \\( n \\), giving 5",
+        "doubling \\( r \\) instead of applying the exponent condition, giving 10",
+        "using the term number \\( p=6 \\) itself as \\( r \\) in the equation, giving 6"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-029",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the value of \\( {}^{n}C_{0}+{}^{n}C_{2}+{}^{n}C_{4}+\\cdots \\) (sum of even-indexed binomial coefficients) for \\( n=6 \\).",
+      "options": [
+        "\\( 64 \\)",
+        "\\( 96 \\)",
+        "\\( 31 \\)",
+        "\\( 32 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Adding \\( (1+x)^n \\) and \\( (1-x)^n \\) cancels the odd-indexed terms and leaves twice the even-indexed ones, giving \\( {}^{n}C_{0}+{}^{n}C_{2}+\\cdots=2^{n-1} \\). For \\( n=6 \\): \\( 2^{5}=32 \\).",
+      "hint": "Add the expansions of \\( (1+x)^n \\) and \\( (1-x)^n \\), then divide by \\( 2 \\).",
+      "distractor_logic": [
+        "using the full sum \\( 2^n \\) instead of just the even-indexed half, giving 64",
+        "computing \\( n \\cdot 2^{n-2} \\) instead of \\( 2^{n-1} \\), giving 96",
+        "subtracting \\( 1 \\) from \\( 2^{n-1} \\) by mistake, giving 31"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-030",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the value of \\( {}^{n}C_{0}+{}^{n}C_{2}+{}^{n}C_{4}+\\cdots \\) (sum of even-indexed binomial coefficients) for \\( n=8 \\).",
+      "options": [
+        "\\( 512 \\)",
+        "\\( 256 \\)",
+        "\\( 128 \\)",
+        "\\( 127 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Adding \\( (1+x)^n \\) and \\( (1-x)^n \\) cancels the odd-indexed terms and leaves twice the even-indexed ones, giving \\( {}^{n}C_{0}+{}^{n}C_{2}+\\cdots=2^{n-1} \\). For \\( n=8 \\): \\( 2^{7}=128 \\).",
+      "hint": "Add the expansions of \\( (1+x)^n \\) and \\( (1-x)^n \\), then divide by \\( 2 \\).",
+      "distractor_logic": [
+        "computing \\( n \\cdot 2^{n-2} \\) instead of \\( 2^{n-1} \\), giving 512",
+        "using the full sum \\( 2^n \\) instead of just the even-indexed half, giving 256",
+        "subtracting \\( 1 \\) from \\( 2^{n-1} \\) by mistake, giving 127"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-031",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the value of \\( {}^{n}C_{0}+{}^{n}C_{2}+{}^{n}C_{4}+\\cdots \\) (sum of even-indexed binomial coefficients) for \\( n=10 \\).",
+      "options": [
+        "\\( 512 \\)",
+        "\\( 2560 \\)",
+        "\\( 511 \\)",
+        "\\( 1024 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Adding \\( (1+x)^n \\) and \\( (1-x)^n \\) cancels the odd-indexed terms and leaves twice the even-indexed ones, giving \\( {}^{n}C_{0}+{}^{n}C_{2}+\\cdots=2^{n-1} \\). For \\( n=10 \\): \\( 2^{9}=512 \\).",
+      "hint": "Add the expansions of \\( (1+x)^n \\) and \\( (1-x)^n \\), then divide by \\( 2 \\).",
+      "distractor_logic": [
+        "computing \\( n \\cdot 2^{n-2} \\) instead of \\( 2^{n-1} \\), giving 2560",
+        "subtracting \\( 1 \\) from \\( 2^{n-1} \\) by mistake, giving 511",
+        "using the full sum \\( 2^n \\) instead of just the even-indexed half, giving 1024"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-032",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 2,
+      "type": "regular",
+      "question": "Evaluate \\( {}^{n}C_{0}-{}^{n}C_{1}+{}^{n}C_{2}-\\cdots\\pm{}^{n}C_{n} \\) for \\( n=5 \\).",
+      "options": [
+        "\\( 16 \\)",
+        "\\( -32 \\)",
+        "\\( 0 \\)",
+        "\\( 32 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Putting \\( x=-1 \\) in \\( (1+x)^n={}^{n}C_{0}+{}^{n}C_{1}x+\\cdots+{}^{n}C_{n}x^n \\) gives \\( (1-1)^n=0 \\), so \\( {}^{n}C_{0}-{}^{n}C_{1}+\\cdots\\pm{}^{n}C_{n}=0 \\), regardless of \\( n \\).",
+      "hint": "Substitute \\( x=-1 \\) into the binomial expansion of \\( (1+x)^n \\).",
+      "distractor_logic": [
+        "computing \\( 2^{n-1} \\) (the even-indexed sum) instead of the alternating sum, giving 16",
+        "getting the sign of \\( 2^n \\) wrong, giving -32",
+        "computing \\( 2^n \\) (the sum with all-positive signs) instead of the alternating sum, giving 32"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-033",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 2,
+      "type": "regular",
+      "question": "Evaluate \\( {}^{n}C_{0}-{}^{n}C_{1}+{}^{n}C_{2}-\\cdots\\pm{}^{n}C_{n} \\) for \\( n=6 \\).",
+      "options": [
+        "\\( 0 \\)",
+        "\\( 32 \\)",
+        "\\( 64 \\)",
+        "\\( -64 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Putting \\( x=-1 \\) in \\( (1+x)^n={}^{n}C_{0}+{}^{n}C_{1}x+\\cdots+{}^{n}C_{n}x^n \\) gives \\( (1-1)^n=0 \\), so \\( {}^{n}C_{0}-{}^{n}C_{1}+\\cdots\\pm{}^{n}C_{n}=0 \\), regardless of \\( n \\).",
+      "hint": "Substitute \\( x=-1 \\) into the binomial expansion of \\( (1+x)^n \\).",
+      "distractor_logic": [
+        "computing \\( 2^{n-1} \\) (the even-indexed sum) instead of the alternating sum, giving 32",
+        "computing \\( 2^n \\) (the sum with all-positive signs) instead of the alternating sum, giving 64",
+        "getting the sign of \\( 2^n \\) wrong, giving -64"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-034",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 2,
+      "type": "regular",
+      "question": "Evaluate \\( {}^{n}C_{0}-{}^{n}C_{1}+{}^{n}C_{2}-\\cdots\\pm{}^{n}C_{n} \\) for \\( n=7 \\).",
+      "options": [
+        "\\( 0 \\)",
+        "\\( 64 \\)",
+        "\\( 128 \\)",
+        "\\( -128 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Putting \\( x=-1 \\) in \\( (1+x)^n={}^{n}C_{0}+{}^{n}C_{1}x+\\cdots+{}^{n}C_{n}x^n \\) gives \\( (1-1)^n=0 \\), so \\( {}^{n}C_{0}-{}^{n}C_{1}+\\cdots\\pm{}^{n}C_{n}=0 \\), regardless of \\( n \\).",
+      "hint": "Substitute \\( x=-1 \\) into the binomial expansion of \\( (1+x)^n \\).",
+      "distractor_logic": [
+        "computing \\( 2^{n-1} \\) (the even-indexed sum) instead of the alternating sum, giving 64",
+        "computing \\( 2^n \\) (the sum with all-positive signs) instead of the alternating sum, giving 128",
+        "getting the sign of \\( 2^n \\) wrong, giving -128"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-035",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the remainder when \\( (7)^{9} \\) is divided by \\( 6 \\)?",
+      "options": [
+        "\\( 1 \\)",
+        "\\( 0 \\)",
+        "\\( 6 \\)",
+        "\\( 18 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Writing \\( 7^{n}=(1+6)^n \\), every term except \\( {}^{n}C_{0}=1 \\) carries a factor of \\( 6 \\) (since \\( {}^{n}C_{r}6^{r} \\) is a multiple of \\( 6 \\) for \\( r\\ge1 \\)). So the remainder on division by \\( 6 \\) is always \\( 1 \\), regardless of \\( n \\).",
+      "hint": "Write \\( 7 \\) as \\( 1+6 \\) and expand — only the \\( r=0 \\) term survives division by \\( 6 \\).",
+      "distractor_logic": [
+        "wrongly assuming \\( (d+1)^n \\) is exactly divisible by \\( d \\), giving 0",
+        "assuming the remainder equals \\( d \\) itself, giving 6",
+        "assuming the remainder involves the second term's contribution \\( nd \\), giving 18"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-036",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the remainder when \\( (6)^{7} \\) is divided by \\( 5 \\)?",
+      "options": [
+        "\\( 10 \\)",
+        "\\( 5 \\)",
+        "\\( 0 \\)",
+        "\\( 1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Writing \\( 6^{n}=(1+5)^n \\), every term except \\( {}^{n}C_{0}=1 \\) carries a factor of \\( 5 \\) (since \\( {}^{n}C_{r}5^{r} \\) is a multiple of \\( 5 \\) for \\( r\\ge1 \\)). So the remainder on division by \\( 5 \\) is always \\( 1 \\), regardless of \\( n \\).",
+      "hint": "Write \\( 6 \\) as \\( 1+5 \\) and expand — only the \\( r=0 \\) term survives division by \\( 5 \\).",
+      "distractor_logic": [
+        "assuming the remainder involves the second term's contribution \\( nd \\), giving 10",
+        "assuming the remainder equals \\( d \\) itself, giving 5",
+        "wrongly assuming \\( (d+1)^n \\) is exactly divisible by \\( d \\), giving 0"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-037",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the remainder when \\( (9)^{6} \\) is divided by \\( 8 \\)?",
+      "options": [
+        "\\( 48 \\)",
+        "\\( 8 \\)",
+        "\\( 1 \\)",
+        "\\( 0 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Writing \\( 9^{n}=(1+8)^n \\), every term except \\( {}^{n}C_{0}=1 \\) carries a factor of \\( 8 \\) (since \\( {}^{n}C_{r}8^{r} \\) is a multiple of \\( 8 \\) for \\( r\\ge1 \\)). So the remainder on division by \\( 8 \\) is always \\( 1 \\), regardless of \\( n \\).",
+      "hint": "Write \\( 9 \\) as \\( 1+8 \\) and expand — only the \\( r=0 \\) term survives division by \\( 8 \\).",
+      "distractor_logic": [
+        "assuming the remainder involves the second term's contribution \\( nd \\), giving 48",
+        "assuming the remainder equals \\( d \\) itself, giving 8",
+        "wrongly assuming \\( (d+1)^n \\) is exactly divisible by \\( d \\), giving 0"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-038",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 2,
+      "type": "regular",
+      "question": "Using the first three terms of the binomial expansion of \\( (1+h)^n \\), approximate \\( (1+\\frac{1}{50})^{6} \\).",
+      "options": [
+        "\\( \\frac{1403}{1250} \\)",
+        "\\( \\frac{563}{500} \\)",
+        "\\( \\frac{28}{25} \\)",
+        "\\( \\frac{443}{500} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( (1+h)^n \\approx 1+nh+{}^{n}C_{2}h^2 \\). With \\( h=\\frac{1}{50} \\), \\( n=6 \\): \\( 1+6\\cdot\\frac{1}{50}+{}^{6}C_{2}\\left(\\frac{1}{50}\\right)^2 = \\frac{563}{500} \\).",
+      "hint": "Use \\( (1+h)^n\\approx1+nh+{}^{n}C_{2}h^2 \\), keeping exactly three terms.",
+      "distractor_logic": [
+        "using \\( nh^2 \\) instead of \\( {}^{n}C_{2}h^2 \\) for the third term, giving \\( \\frac{1403}{1250} \\)",
+        "stopping after just two terms, \\( 1+nh \\), giving \\( \\frac{28}{25} \\)",
+        "getting the sign of the second term wrong, giving \\( \\frac{443}{500} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-039",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 2,
+      "type": "regular",
+      "question": "Using the first three terms of the binomial expansion of \\( (1+h)^n \\), approximate \\( (1+\\frac{1}{100})^{5} \\).",
+      "options": [
+        "\\( \\frac{21}{20} \\)",
+        "\\( \\frac{951}{1000} \\)",
+        "\\( \\frac{2101}{2000} \\)",
+        "\\( \\frac{1051}{1000} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( (1+h)^n \\approx 1+nh+{}^{n}C_{2}h^2 \\). With \\( h=\\frac{1}{100} \\), \\( n=5 \\): \\( 1+5\\cdot\\frac{1}{100}+{}^{5}C_{2}\\left(\\frac{1}{100}\\right)^2 = \\frac{1051}{1000} \\).",
+      "hint": "Use \\( (1+h)^n\\approx1+nh+{}^{n}C_{2}h^2 \\), keeping exactly three terms.",
+      "distractor_logic": [
+        "stopping after just two terms, \\( 1+nh \\), giving \\( \\frac{21}{20} \\)",
+        "getting the sign of the second term wrong, giving \\( \\frac{951}{1000} \\)",
+        "using \\( nh^2 \\) instead of \\( {}^{n}C_{2}h^2 \\) for the third term, giving \\( \\frac{2101}{2000} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L2-040",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 2,
+      "type": "regular",
+      "question": "Using the first three terms of the binomial expansion of \\( (1+h)^n \\), approximate \\( (1+\\frac{2}{100})^{4} \\).",
+      "options": [
+        "\\( \\frac{1153}{1250} \\)",
+        "\\( \\frac{27}{25} \\)",
+        "\\( \\frac{1353}{1250} \\)",
+        "\\( \\frac{676}{625} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( (1+h)^n \\approx 1+nh+{}^{n}C_{2}h^2 \\). With \\( h=\\frac{2}{100} \\), \\( n=4 \\): \\( 1+4\\cdot\\frac{2}{100}+{}^{4}C_{2}\\left(\\frac{2}{100}\\right)^2 = \\frac{1353}{1250} \\).",
+      "hint": "Use \\( (1+h)^n\\approx1+nh+{}^{n}C_{2}h^2 \\), keeping exactly three terms.",
+      "distractor_logic": [
+        "getting the sign of the second term wrong, giving \\( \\frac{1153}{1250} \\)",
+        "stopping after just two terms, \\( 1+nh \\), giving \\( \\frac{27}{25} \\)",
+        "using \\( nh^2 \\) instead of \\( {}^{n}C_{2}h^2 \\) for the third term, giving \\( \\frac{676}{625} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-001",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (2x^2 - 1/x)^{7} \\), what is the coefficient of \\( x^{-1} \\)?",
+      "options": [
+        "\\( 84 \\)",
+        "\\( 14 \\)",
+        "\\( -84 \\)",
+        "\\( 672 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T_{r+1}={}^{7}C_{r}(2x^2)^{n-r}\\left(-1/x\\right)^{r} \\), whose power of \\( x \\) is \\( 2(n-r)-r=2n-3r \\). Setting \\( 2n-3r=-1 \\) gives \\( r=5 \\), so the coefficient is \\( {}^{7}C_{5} \\cdot 2^{2}\\cdot(-1)^{5} = -84 \\).",
+      "hint": "Write the general term, simplify the total power of \\( x \\) to \\( 2n-3r \\), and solve for \\( r \\) first.",
+      "distractor_logic": [
+        "dropping the sign from the \\( (-1/x)^r \\) term, giving 84",
+        "solving the exponent equation for the wrong value of \\( r \\), giving 14",
+        "swapping the exponents on the two bracket terms, giving 672"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-002",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (x^2 - 3/x)^{8} \\), what is the coefficient of \\( x^{7} \\)?",
+      "options": [
+        "\\( -13608 \\)",
+        "\\( 5670 \\)",
+        "\\( 1512 \\)",
+        "\\( -1512 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T_{r+1}={}^{8}C_{r}(x^2)^{n-r}\\left(-3/x\\right)^{r} \\), whose power of \\( x \\) is \\( 2(n-r)-r=2n-3r \\). Setting \\( 2n-3r=7 \\) gives \\( r=3 \\), so the coefficient is \\( {}^{8}C_{3} \\cdot 1^{5}\\cdot(-3)^{3} = -1512 \\).",
+      "hint": "Write the general term, simplify the total power of \\( x \\) to \\( 2n-3r \\), and solve for \\( r \\) first.",
+      "distractor_logic": [
+        "swapping the exponents on the two bracket terms, giving -13608",
+        "solving the exponent equation for the wrong value of \\( r \\), giving 5670",
+        "dropping the sign from the \\( (-3/x)^r \\) term, giving 1512"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-003",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (2x^2 - 3/x)^{9} \\), what is the coefficient of \\( x^{-3} \\)?",
+      "options": [
+        "\\( 41472 \\)",
+        "\\( 314928 \\)",
+        "\\( -314928 \\)",
+        "\\( 118098 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T_{r+1}={}^{9}C_{r}(2x^2)^{n-r}\\left(-3/x\\right)^{r} \\), whose power of \\( x \\) is \\( 2(n-r)-r=2n-3r \\). Setting \\( 2n-3r=-3 \\) gives \\( r=7 \\), so the coefficient is \\( {}^{9}C_{7} \\cdot 2^{2}\\cdot(-3)^{7} = -314928 \\).",
+      "hint": "Write the general term, simplify the total power of \\( x \\) to \\( 2n-3r \\), and solve for \\( r \\) first.",
+      "distractor_logic": [
+        "swapping the exponents on the two bracket terms, giving 41472",
+        "dropping the sign from the \\( (-3/x)^r \\) term, giving 314928",
+        "solving the exponent equation for the wrong value of \\( r \\), giving 118098"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-004",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (1+3x^2)^{7} \\), what is the coefficient of \\( x^{6} \\)?",
+      "options": [
+        "\\( 5103 \\)",
+        "\\( 27 \\)",
+        "\\( 945 \\)",
+        "\\( 2835 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T_{r+1}={}^{7}C_{r} 1^{n-r}(3x^2)^{r} \\) contributes \\( x^{2r} \\). Setting \\( 2r=6 \\) gives \\( r=3 \\), so the coefficient is \\( {}^{7}C_{3}\\cdot1^{4}\\cdot3^{3}=945 \\).",
+      "hint": "Only even powers of \\( x \\) appear, since the second term contributes \\( x^{2r} \\).",
+      "distractor_logic": [
+        "using \\( r=k \\) directly instead of \\( r=k/2 \\), giving 5103",
+        "omitting the binomial coefficient \\( {}^{7}C_{3} \\) altogether, giving 27",
+        "swapping the exponents on \\( a \\) and \\( b \\), giving 2835"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-005",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (2+x^2)^{9} \\), what is the coefficient of \\( x^{8} \\)?",
+      "options": [
+        "\\( 18 \\)",
+        "\\( 2016 \\)",
+        "\\( 4032 \\)",
+        "\\( 32 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T_{r+1}={}^{9}C_{r} 2^{n-r}(x^2)^{r} \\) contributes \\( x^{2r} \\). Setting \\( 2r=8 \\) gives \\( r=4 \\), so the coefficient is \\( {}^{9}C_{4}\\cdot2^{5}\\cdot1^{4}=4032 \\).",
+      "hint": "Only even powers of \\( x \\) appear, since the second term contributes \\( x^{2r} \\).",
+      "distractor_logic": [
+        "using \\( r=k \\) directly instead of \\( r=k/2 \\), giving 18",
+        "swapping the exponents on \\( a \\) and \\( b \\), giving 2016",
+        "omitting the binomial coefficient \\( {}^{9}C_{4} \\) altogether, giving 32"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-006",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "If the coefficients of the 5th and 9th terms in the expansion of \\( (1+x)^n \\) are equal, find \\( n \\).",
+      "options": [
+        "\\( 4 \\)",
+        "\\( 16 \\)",
+        "\\( 12 \\)",
+        "\\( 14 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The 5th and 9th terms correspond to \\( r_1=4 \\) and \\( r_2=8 \\). Since \\( {}^{n}C_{r_1}={}^{n}C_{r_2} \\) with \\( r_1 \\neq r_2 \\), it must be that \\( r_1+r_2=n \\), so \\( n=4+8=12 \\).",
+      "hint": "Use the identity \\( {}^{n}C_{r}={}^{n}C_{n-r} \\): equal coefficients (at different indices) force the two indices to add to \\( n \\).",
+      "distractor_logic": [
+        "subtracting instead of adding the two \\( r \\) values, giving 4",
+        "doubling the larger \\( r \\) value instead of adding both, giving 16",
+        "adding the term numbers \\( 5 \\) and \\( 9 \\) directly instead of converting to \\( r \\) first, giving 14"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-007",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "If the coefficients of the 4th and 11th terms in the expansion of \\( (1+x)^n \\) are equal, find \\( n \\).",
+      "options": [
+        "\\( 20 \\)",
+        "\\( 15 \\)",
+        "\\( 7 \\)",
+        "\\( 13 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The 4th and 11th terms correspond to \\( r_1=3 \\) and \\( r_2=10 \\). Since \\( {}^{n}C_{r_1}={}^{n}C_{r_2} \\) with \\( r_1 \\neq r_2 \\), it must be that \\( r_1+r_2=n \\), so \\( n=3+10=13 \\).",
+      "hint": "Use the identity \\( {}^{n}C_{r}={}^{n}C_{n-r} \\): equal coefficients (at different indices) force the two indices to add to \\( n \\).",
+      "distractor_logic": [
+        "doubling the larger \\( r \\) value instead of adding both, giving 20",
+        "adding the term numbers \\( 4 \\) and \\( 11 \\) directly instead of converting to \\( r \\) first, giving 15",
+        "subtracting instead of adding the two \\( r \\) values, giving 7"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-008",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "If the coefficients of the 6th and 10th terms in the expansion of \\( (1+x)^n \\) are equal, find \\( n \\).",
+      "options": [
+        "\\( 14 \\)",
+        "\\( 4 \\)",
+        "\\( 18 \\)",
+        "\\( 16 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The 6th and 10th terms correspond to \\( r_1=5 \\) and \\( r_2=9 \\). Since \\( {}^{n}C_{r_1}={}^{n}C_{r_2} \\) with \\( r_1 \\neq r_2 \\), it must be that \\( r_1+r_2=n \\), so \\( n=5+9=14 \\).",
+      "hint": "Use the identity \\( {}^{n}C_{r}={}^{n}C_{n-r} \\): equal coefficients (at different indices) force the two indices to add to \\( n \\).",
+      "distractor_logic": [
+        "subtracting instead of adding the two \\( r \\) values, giving 4",
+        "doubling the larger \\( r \\) value instead of adding both, giving 18",
+        "adding the term numbers \\( 6 \\) and \\( 10 \\) directly instead of converting to \\( r \\) first, giving 16"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-009",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (x^{3}+1/x^{2})^{9} \\), which term contains \\( x^{7} \\)?",
+      "options": [
+        "4th term",
+        "6th term",
+        "5th term",
+        "7th term"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T_{r+1}={}^{9}C_{r}(x^{3})^{n-r}(x^{-2})^{r} \\) has power of \\( x \\) equal to \\( 3(n-r)-2r \\). Setting this to \\( 7 \\) and solving gives \\( r=4 \\), so it is \\( T_{5} \\), i.e. the 5th term.",
+      "hint": "Write the general term's exponent of \\( x \\) as a function of \\( r \\), solve for \\( r \\), then add \\( 1 \\) for the term number.",
+      "distractor_logic": [
+        "reporting \\( r \\) itself as the term number instead of \\( r+1 \\), giving the 4th term",
+        "solving the exponent equation off by one in \\( r \\), giving the 6th term",
+        "mistaking the target exponent \\( m \\) itself for the term number, giving the 7th term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-010",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (x^{2}+1/x^{3})^{8} \\), which term contains \\( x^{-4} \\)?",
+      "options": [
+        "-4th term",
+        "6th term",
+        "5th term",
+        "4th term"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T_{r+1}={}^{8}C_{r}(x^{2})^{n-r}(x^{-3})^{r} \\) has power of \\( x \\) equal to \\( 2(n-r)-3r \\). Setting this to \\( -4 \\) and solving gives \\( r=4 \\), so it is \\( T_{5} \\), i.e. the 5th term.",
+      "hint": "Write the general term's exponent of \\( x \\) as a function of \\( r \\), solve for \\( r \\), then add \\( 1 \\) for the term number.",
+      "distractor_logic": [
+        "mistaking the target exponent \\( m \\) itself for the term number, giving the -4th term",
+        "solving the exponent equation off by one in \\( r \\), giving the 6th term",
+        "reporting \\( r \\) itself as the term number instead of \\( r+1 \\), giving the 4th term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-011",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "In the expansion of \\( (x^{4}+1/x)^{6} \\), which term contains \\( x^{9} \\)?",
+      "options": [
+        "5th term",
+        "9th term",
+        "3rd term",
+        "4th term"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T_{r+1}={}^{6}C_{r}(x^{4})^{n-r}(x^{-1})^{r} \\) has power of \\( x \\) equal to \\( 4(n-r)-1r \\). Setting this to \\( 9 \\) and solving gives \\( r=3 \\), so it is \\( T_{4} \\), i.e. the 4th term.",
+      "hint": "Write the general term's exponent of \\( x \\) as a function of \\( r \\), solve for \\( r \\), then add \\( 1 \\) for the term number.",
+      "distractor_logic": [
+        "solving the exponent equation off by one in \\( r \\), giving the 5th term",
+        "mistaking the target exponent \\( m \\) itself for the term number, giving the 9th term",
+        "reporting \\( r \\) itself as the term number instead of \\( r+1 \\), giving the 3rd term"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-012",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (x - 2/x)^{6} \\).",
+      "options": [
+        "\\( 160 \\)",
+        "\\( -160x^{2} \\)",
+        "\\( -160 \\)",
+        "\\( 240 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Since \\( n=6 \\) is even, the middle term is \\( T_{4} \\), with \\( r=3 \\). Its power of \\( x \\) is \\( (n-r)-r=n-2r=0 \\), so it is a constant: \\( T_{4}={}^{6}C_{3}\\cdot1^{3}\\cdot(-2)^{3} = -160 \\).",
+      "hint": "Check the exponent of \\( x \\) in the middle term first — with \\( r=n/2 \\), the powers of \\( x \\) from the two factors cancel.",
+      "distractor_logic": [
+        "dropping the sign carried by \\( (-b/x)^{r} \\), giving 160",
+        "assuming the middle term still carries a power of \\( x \\) rather than being constant, giving \\( -160x^{2} \\)",
+        "using an off-by-one \\( r \\), giving 240"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-013",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (x - 3/x)^{6} \\).",
+      "options": [
+        "\\( -540 \\)",
+        "\\( -540x^{2} \\)",
+        "\\( 1215 \\)",
+        "\\( 540 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\( n=6 \\) is even, the middle term is \\( T_{4} \\), with \\( r=3 \\). Its power of \\( x \\) is \\( (n-r)-r=n-2r=0 \\), so it is a constant: \\( T_{4}={}^{6}C_{3}\\cdot1^{3}\\cdot(-3)^{3} = -540 \\).",
+      "hint": "Check the exponent of \\( x \\) in the middle term first — with \\( r=n/2 \\), the powers of \\( x \\) from the two factors cancel.",
+      "distractor_logic": [
+        "assuming the middle term still carries a power of \\( x \\) rather than being constant, giving \\( -540x^{2} \\)",
+        "using an off-by-one \\( r \\), giving 1215",
+        "dropping the sign carried by \\( (-b/x)^{r} \\), giving 540"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-014",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the middle term in the expansion of \\( (3x - 1/x)^{6} \\).",
+      "options": [
+        "\\( 540 \\)",
+        "\\( -540 \\)",
+        "\\( 135 \\)",
+        "\\( -540x^{2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\( n=6 \\) is even, the middle term is \\( T_{4} \\), with \\( r=3 \\). Its power of \\( x \\) is \\( (n-r)-r=n-2r=0 \\), so it is a constant: \\( T_{4}={}^{6}C_{3}\\cdot3^{3}\\cdot(-1)^{3} = -540 \\).",
+      "hint": "Check the exponent of \\( x \\) in the middle term first — with \\( r=n/2 \\), the powers of \\( x \\) from the two factors cancel.",
+      "distractor_logic": [
+        "dropping the sign carried by \\( (-b/x)^{r} \\), giving 540",
+        "using an off-by-one \\( r \\), giving 135",
+        "assuming the middle term still carries a power of \\( x \\) rather than being constant, giving \\( -540x^{2} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-015",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "For odd \\( n \\), the two middle terms of \\( (1+x)^{9} \\) have binomial coefficients \\( {}^{9}C_{r_1} \\) and \\( {}^{9}C_{r_2} \\). Find their sum.",
+      "options": [
+        "\\( 210 \\)",
+        "\\( 252 \\)",
+        "\\( 126 \\)",
+        "\\( 15876 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For odd \\( n \\), \\( r_1=\\frac{n-1}{2} \\) and \\( r_2=\\frac{n+1}{2} \\) satisfy \\( r_1+r_2=n \\), so by the symmetry \\( {}^{9}C_{r}={}^{9}C_{n-r} \\), \\( {}^{9}C_{r_1}={}^{9}C_{r_2} \\). For \\( n=9 \\): \\( {}^{9}C_{4}+{}^{9}C_{5} = 126+126 = 252 \\).",
+      "hint": "The two middle binomial coefficients in any row of Pascal's Triangle are always equal, by \\( {}^{9}C_{r}={}^{9}C_{n-r} \\).",
+      "distractor_logic": [
+        "using the wrong index for the second middle term, \\( {}^{9}C_{r_2+1} \\), giving 210",
+        "reporting only \\( {}^{9}C_{r_1} \\) and forgetting the two middle coefficients are equal and must both be counted, giving 126",
+        "multiplying the two coefficients instead of adding them, giving 15876"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-016",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": 3,
+      "type": "regular",
+      "question": "For odd \\( n \\), the two middle terms of \\( (1+x)^{11} \\) have binomial coefficients \\( {}^{11}C_{r_1} \\) and \\( {}^{11}C_{r_2} \\). Find their sum.",
+      "options": [
+        "\\( 462 \\)",
+        "\\( 792 \\)",
+        "\\( 924 \\)",
+        "\\( 213444 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For odd \\( n \\), \\( r_1=\\frac{n-1}{2} \\) and \\( r_2=\\frac{n+1}{2} \\) satisfy \\( r_1+r_2=n \\), so by the symmetry \\( {}^{11}C_{r}={}^{11}C_{n-r} \\), \\( {}^{11}C_{r_1}={}^{11}C_{r_2} \\). For \\( n=11 \\): \\( {}^{11}C_{5}+{}^{11}C_{6} = 462+462 = 924 \\).",
+      "hint": "The two middle binomial coefficients in any row of Pascal's Triangle are always equal, by \\( {}^{11}C_{r}={}^{11}C_{n-r} \\).",
+      "distractor_logic": [
+        "reporting only \\( {}^{11}C_{r_1} \\) and forgetting the two middle coefficients are equal and must both be counted, giving 462",
+        "using the wrong index for the second middle term, \\( {}^{11}C_{r_2+1} \\), giving 792",
+        "multiplying the two coefficients instead of adding them, giving 213444"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-017",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 3,
+      "type": "regular",
+      "question": "For which of the following values of \\( n \\) does the expansion of \\( (x^{2}+c/x)^n \\) contain a term independent of x?",
+      "options": [
+        "\\( 11 \\)",
+        "\\( 10 \\)",
+        "\\( 9 \\)",
+        "\\( 8 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Independence from \\( x \\) requires \\( 2(n-r)=1r \\), i.e. \\( r=\\frac{2n}{3} \\), which must be an integer with \\( 0\\le r\\le n \\). Among the options, only \\( n=9 \\) makes \\( \\frac{2n}{3} \\) a whole number in range.",
+      "hint": "The term independent of x needs \\( r=\\frac{2n}{2+1} \\) to come out as a whole number between \\( 0 \\) and \\( n \\).",
+      "distractor_logic": [
+        "\\( n=11 \\) fails: solving \\( 2(n-r)=1r \\) gives a non-integer or out-of-range \\( r \\)",
+        "\\( n=10 \\) fails: solving \\( 2(n-r)=1r \\) gives a non-integer or out-of-range \\( r \\)",
+        "\\( n=8 \\) fails: solving \\( 2(n-r)=1r \\) gives a non-integer or out-of-range \\( r \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-018",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 3,
+      "type": "regular",
+      "question": "For which of the following values of \\( n \\) does the expansion of \\( (x^{3}+c/x^{2})^n \\) contain a term independent of x?",
+      "options": [
+        "\\( 10 \\)",
+        "\\( 12 \\)",
+        "\\( 11 \\)",
+        "\\( 9 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Independence from \\( x \\) requires \\( 3(n-r)=2r \\), i.e. \\( r=\\frac{3n}{5} \\), which must be an integer with \\( 0\\le r\\le n \\). Among the options, only \\( n=10 \\) makes \\( \\frac{3n}{5} \\) a whole number in range.",
+      "hint": "The term independent of x needs \\( r=\\frac{3n}{3+2} \\) to come out as a whole number between \\( 0 \\) and \\( n \\).",
+      "distractor_logic": [
+        "\\( n=12 \\) fails: solving \\( 3(n-r)=2r \\) gives a non-integer or out-of-range \\( r \\)",
+        "\\( n=11 \\) fails: solving \\( 3(n-r)=2r \\) gives a non-integer or out-of-range \\( r \\)",
+        "\\( n=9 \\) fails: solving \\( 3(n-r)=2r \\) gives a non-integer or out-of-range \\( r \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-019",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 3,
+      "type": "regular",
+      "question": "For which of the following values of \\( n \\) does the expansion of \\( (x+c/x^{2})^n \\) contain a term independent of x?",
+      "options": [
+        "\\( 10 \\)",
+        "\\( 11 \\)",
+        "\\( 8 \\)",
+        "\\( 9 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Independence from \\( x \\) requires \\( 1(n-r)=2r \\), i.e. \\( r=\\frac{1n}{3} \\), which must be an integer with \\( 0\\le r\\le n \\). Among the options, only \\( n=9 \\) makes \\( \\frac{1n}{3} \\) a whole number in range.",
+      "hint": "The term independent of x needs \\( r=\\frac{1n}{1+2} \\) to come out as a whole number between \\( 0 \\) and \\( n \\).",
+      "distractor_logic": [
+        "\\( n=10 \\) fails: solving \\( 1(n-r)=2r \\) gives a non-integer or out-of-range \\( r \\)",
+        "\\( n=11 \\) fails: solving \\( 1(n-r)=2r \\) gives a non-integer or out-of-range \\( r \\)",
+        "\\( n=8 \\) fails: solving \\( 1(n-r)=2r \\) gives a non-integer or out-of-range \\( r \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-020",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the term independent of x in the expansion of \\( (\\frac{3}{2}x - \\frac{1}{3}/x^2)^{9} \\).",
+      "options": [
+        "\\( -\\frac{567}{16} \\)",
+        "\\( \\frac{189}{16} \\)",
+        "\\( \\frac{567}{16} \\)",
+        "\\( \\frac{7}{18} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The exponent of \\( x \\) in the general term is \\( (n-r)-2r=n-3r \\). Setting this to \\( 0 \\) gives \\( r=3 \\), so the term independent of x is \\( T_{4}={}^{9}C_{3}\\left(\\frac{3}{2}\\right)^{6}\\left(-\\frac{1}{3}\\right)^{3} = -\\frac{567}{16} \\).",
+      "hint": "Set \\( n-3r=0 \\) to find \\( r \\), then substitute the fractional coefficients carefully, tracking the sign.",
+      "distractor_logic": [
+        "solving the exponent equation with an off-by-one \\( r \\), giving \\( \\frac{189}{16} \\)",
+        "dropping the sign, giving \\( \\frac{567}{16} \\)",
+        "swapping the exponents on the two bracket terms, giving \\( \\frac{7}{18} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-021",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the term independent of x in the expansion of \\( (x - \\frac{1}{2}/x^2)^{15} \\).",
+      "options": [
+        "\\( \\frac{3003}{32} \\)",
+        "\\( \\frac{3003}{1024} \\)",
+        "\\( \\frac{5005}{64} \\)",
+        "\\( -\\frac{3003}{32} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The exponent of \\( x \\) in the general term is \\( (n-r)-2r=n-3r \\). Setting this to \\( 0 \\) gives \\( r=5 \\), so the term independent of x is \\( T_{6}={}^{15}C_{5}\\left(1\\right)^{10}\\left(-\\frac{1}{2}\\right)^{5} = -\\frac{3003}{32} \\).",
+      "hint": "Set \\( n-3r=0 \\) to find \\( r \\), then substitute the fractional coefficients carefully, tracking the sign.",
+      "distractor_logic": [
+        "dropping the sign, giving \\( \\frac{3003}{32} \\)",
+        "swapping the exponents on the two bracket terms, giving \\( \\frac{3003}{1024} \\)",
+        "solving the exponent equation with an off-by-one \\( r \\), giving \\( \\frac{5005}{64} \\)"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-022",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 3,
+      "type": "regular",
+      "question": "Evaluate \\( \\sum_{r=0}^{n} r\\cdot{}^{n}C_{r} \\) for \\( n=6 \\).",
+      "options": [
+        "\\( 192 \\)",
+        "\\( 384 \\)",
+        "\\( 64 \\)",
+        "\\( 80 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Using \\( r\\cdot{}^{n}C_{r}=n\\cdot{}^{n-1}C_{r-1} \\) and summing over \\( r \\) gives \\( n\\cdot2^{n-1} \\). For \\( n=6 \\): \\( 6\\cdot2^{5}=192 \\).",
+      "hint": "Use the identity \\( r\\cdot{}^{n}C_{r}=n\\cdot{}^{n-1}C_{r-1} \\), then sum the resulting binomial coefficients.",
+      "distractor_logic": [
+        "using \\( 2^n \\) instead of \\( 2^{n-1} \\), giving 384",
+        "computing just \\( 2^n \\) and forgetting the factor of \\( r \\), giving 64",
+        "using \\( (n-1)2^{n-2} \\) instead of \\( n \\cdot 2^{n-1} \\), giving 80"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-023",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 3,
+      "type": "regular",
+      "question": "Evaluate \\( \\sum_{r=0}^{n} r\\cdot{}^{n}C_{r} \\) for \\( n=7 \\).",
+      "options": [
+        "\\( 128 \\)",
+        "\\( 448 \\)",
+        "\\( 896 \\)",
+        "\\( 192 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Using \\( r\\cdot{}^{n}C_{r}=n\\cdot{}^{n-1}C_{r-1} \\) and summing over \\( r \\) gives \\( n\\cdot2^{n-1} \\). For \\( n=7 \\): \\( 7\\cdot2^{6}=448 \\).",
+      "hint": "Use the identity \\( r\\cdot{}^{n}C_{r}=n\\cdot{}^{n-1}C_{r-1} \\), then sum the resulting binomial coefficients.",
+      "distractor_logic": [
+        "computing just \\( 2^n \\) and forgetting the factor of \\( r \\), giving 128",
+        "using \\( 2^n \\) instead of \\( 2^{n-1} \\), giving 896",
+        "using \\( (n-1)2^{n-2} \\) instead of \\( n \\cdot 2^{n-1} \\), giving 192"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-024",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 3,
+      "type": "regular",
+      "question": "Evaluate \\( \\sum_{r=0}^{n} r\\cdot{}^{n}C_{r} \\) for \\( n=8 \\).",
+      "options": [
+        "\\( 448 \\)",
+        "\\( 1024 \\)",
+        "\\( 2048 \\)",
+        "\\( 256 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Using \\( r\\cdot{}^{n}C_{r}=n\\cdot{}^{n-1}C_{r-1} \\) and summing over \\( r \\) gives \\( n\\cdot2^{n-1} \\). For \\( n=8 \\): \\( 8\\cdot2^{7}=1024 \\).",
+      "hint": "Use the identity \\( r\\cdot{}^{n}C_{r}=n\\cdot{}^{n-1}C_{r-1} \\), then sum the resulting binomial coefficients.",
+      "distractor_logic": [
+        "using \\( (n-1)2^{n-2} \\) instead of \\( n \\cdot 2^{n-1} \\), giving 448",
+        "using \\( 2^n \\) instead of \\( 2^{n-1} \\), giving 2048",
+        "computing just \\( 2^n \\) and forgetting the factor of \\( r \\), giving 256"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-025",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 3,
+      "type": "regular",
+      "question": "Evaluate \\( {}^{n}C_{0}^2+{}^{n}C_{1}^2+\\cdots+{}^{n}C_{n}^2 \\) for \\( n=4 \\).",
+      "options": [
+        "\\( 256 \\)",
+        "\\( 56 \\)",
+        "\\( 70 \\)",
+        "\\( 257 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "By Vandermonde's identity, \\( \\sum_{r=0}^{n}{}{}^{n}C_{r}^2 = {}^{2n}C_n \\). For \\( n=4 \\): \\( ^{8}C_{4} = 70 \\).",
+      "hint": "Compare coefficients of \\( x^n \\) on both sides of \\( (1+x)^n(1+x)^n=(1+x)^{2n} \\).",
+      "distractor_logic": [
+        "computing \\( 4^n \\) (mistaking the sum of squares for the square of the full sum \\( 2^n \\)), giving 256",
+        "using \\( ^{2n}C_{n-1} \\) instead of \\( ^{2n}C_{n} \\), giving 56",
+        "computing \\( 2^{2n} \\) directly, giving 257"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-026",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": 3,
+      "type": "regular",
+      "question": "Evaluate \\( {}^{n}C_{0}^2+{}^{n}C_{1}^2+\\cdots+{}^{n}C_{n}^2 \\) for \\( n=5 \\).",
+      "options": [
+        "\\( 252 \\)",
+        "\\( 1025 \\)",
+        "\\( 1024 \\)",
+        "\\( 210 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "By Vandermonde's identity, \\( \\sum_{r=0}^{n}{}{}^{n}C_{r}^2 = {}^{2n}C_n \\). For \\( n=5 \\): \\( ^{10}C_{5} = 252 \\).",
+      "hint": "Compare coefficients of \\( x^n \\) on both sides of \\( (1+x)^n(1+x)^n=(1+x)^{2n} \\).",
+      "distractor_logic": [
+        "computing \\( 2^{2n} \\) directly, giving 1025",
+        "computing \\( 4^n \\) (mistaking the sum of squares for the square of the full sum \\( 2^n \\)), giving 1024",
+        "using \\( ^{2n}C_{n-1} \\) instead of \\( ^{2n}C_{n} \\), giving 210"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-027",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 3,
+      "type": "regular",
+      "question": "\\( (1+8)^n - 8n - 1 \\) is always divisible by which of the following?",
+      "options": [
+        "\\( 512 \\)",
+        "\\( 16 \\)",
+        "\\( 8 \\)",
+        "\\( 64 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( (1+8)^n={}^{n}C_{0}+{}^{n}C_{1}\\cdot8+{}^{n}C_{2}\\cdot8^2+\\cdots \\). Subtracting \\( 8n+1 \\) removes the first two terms exactly (since \\( {}^{n}C_{0}=1 \\) and \\( {}^{n}C_{1}\\cdot8=8n \\)), leaving \\( {}^{n}C_{2}8^2+{}^{n}C_{3}8^3+\\cdots \\), every term of which carries a factor of \\( 8^2 \\). So the expression is always divisible by \\( 64 \\).",
+      "hint": "Expand \\( (1+8)^n \\) fully, then check what remains after removing the \\( r=0 \\) and \\( r=1 \\) terms.",
+      "distractor_logic": [
+        "overshooting to \\( k^3 \\) by assuming an extra factor beyond what the third term guarantees, giving 512",
+        "combining the factor of \\( k \\) additively instead of multiplicatively, giving 16",
+        "stopping at \\( k \\) itself, missing that the next full term also carries a factor of \\( k \\), giving 8"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-028",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 3,
+      "type": "regular",
+      "question": "\\( (1+9)^n - 9n - 1 \\) is always divisible by which of the following?",
+      "options": [
+        "\\( 81 \\)",
+        "\\( 729 \\)",
+        "\\( 9 \\)",
+        "\\( 18 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( (1+9)^n={}^{n}C_{0}+{}^{n}C_{1}\\cdot9+{}^{n}C_{2}\\cdot9^2+\\cdots \\). Subtracting \\( 9n+1 \\) removes the first two terms exactly (since \\( {}^{n}C_{0}=1 \\) and \\( {}^{n}C_{1}\\cdot9=9n \\)), leaving \\( {}^{n}C_{2}9^2+{}^{n}C_{3}9^3+\\cdots \\), every term of which carries a factor of \\( 9^2 \\). So the expression is always divisible by \\( 81 \\).",
+      "hint": "Expand \\( (1+9)^n \\) fully, then check what remains after removing the \\( r=0 \\) and \\( r=1 \\) terms.",
+      "distractor_logic": [
+        "overshooting to \\( k^3 \\) by assuming an extra factor beyond what the third term guarantees, giving 729",
+        "stopping at \\( k \\) itself, missing that the next full term also carries a factor of \\( k \\), giving 9",
+        "combining the factor of \\( k \\) additively instead of multiplicatively, giving 18"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-029",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 3,
+      "type": "regular",
+      "question": "A student must choose at least one book from \\( 5 \\) distinct books on a shelf. In how many ways can the selection be made?",
+      "options": [
+        "\\( 16 \\)",
+        "\\( 5 \\)",
+        "\\( 31 \\)",
+        "\\( 32 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The total number of subsets (including the empty one) of \\( 5 \\) distinct books is \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n}=2^n \\). Excluding the empty selection gives \\( 2^{5}-1 = 31 \\).",
+      "hint": "Count all subsets of the \\( 5 \\) books using \\( 2^n \\), then subtract the one case where nothing is chosen.",
+      "distractor_logic": [
+        "using half the total count, \\( 2^{n-1} \\), giving 16",
+        "counting only single-item selections, giving 5",
+        "forgetting to exclude the case of selecting none, giving \\( 2^n \\) 32"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-L3-030",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": 3,
+      "type": "regular",
+      "question": "A student must choose at least one book from \\( 6 \\) distinct books on a shelf. In how many ways can the selection be made?",
+      "options": [
+        "\\( 32 \\)",
+        "\\( 63 \\)",
+        "\\( 6 \\)",
+        "\\( 64 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The total number of subsets (including the empty one) of \\( 6 \\) distinct books is \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n}=2^n \\). Excluding the empty selection gives \\( 2^{6}-1 = 63 \\).",
+      "hint": "Count all subsets of the \\( 6 \\) books using \\( 2^n \\), then subtract the one case where nothing is chosen.",
+      "distractor_logic": [
+        "using half the total count, \\( 2^{n-1} \\), giving 32",
+        "counting only single-item selections, giving 6",
+        "forgetting to exclude the case of selecting none, giving \\( 2^n \\) 64"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-001",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{8} \\), find the coefficient of the term containing \\( y^{3} \\), then add the term number of that term to it.",
+      "options": [
+        "\\( 224 \\)",
+        "\\( 4 \\)",
+        "\\( 56 \\)",
+        "\\( 60 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The term with \\( y^{3} \\) has \\( r=3 \\), so its coefficient is \\( {}^{8}C_{3}=56 \\) and it is the \\( T_{4} \\), i.e. the 4th term (\\( 4 \\)). Adding: \\( 56+4=60 \\).",
+      "hint": "First find \\( {}^{8}C_{3} \\) (topic: coefficients), then find the term number \\( r+1 \\) (topic: general term), and add.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 56 \\)\\times\\( 4 \\)=224",
+        "reporting only the term-number value, \\( 4 \\), and forgetting to add the coefficient value",
+        "reporting only the coefficient value, \\( 56 \\), and forgetting to add the term-number value"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "General Term in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-002",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{9} \\), find the coefficient of the term containing \\( y^{4} \\), then add the term number of that term to it.",
+      "options": [
+        "\\( 126 \\)",
+        "\\( 131 \\)",
+        "\\( 5 \\)",
+        "\\( 630 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The term with \\( y^{4} \\) has \\( r=4 \\), so its coefficient is \\( {}^{9}C_{4}=126 \\) and it is the \\( T_{5} \\), i.e. the 5th term (\\( 5 \\)). Adding: \\( 126+5=131 \\).",
+      "hint": "First find \\( {}^{9}C_{4} \\) (topic: coefficients), then find the term number \\( r+1 \\) (topic: general term), and add.",
+      "distractor_logic": [
+        "reporting only the coefficient value, \\( 126 \\), and forgetting to add the term-number value",
+        "reporting only the term-number value, \\( 5 \\), and forgetting to add the coefficient value",
+        "multiplying the two values instead of adding them, giving \\( 126 \\)\\times\\( 5 \\)=630"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "General Term in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-003",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{7} \\), find the coefficient of the term containing \\( y^{2} \\), then add the term number of that term to it.",
+      "options": [
+        "\\( 24 \\)",
+        "\\( 3 \\)",
+        "\\( 21 \\)",
+        "\\( 63 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The term with \\( y^{2} \\) has \\( r=2 \\), so its coefficient is \\( {}^{7}C_{2}=21 \\) and it is the \\( T_{3} \\), i.e. the 3rd term (\\( 3 \\)). Adding: \\( 21+3=24 \\).",
+      "hint": "First find \\( {}^{7}C_{2} \\) (topic: coefficients), then find the term number \\( r+1 \\) (topic: general term), and add.",
+      "distractor_logic": [
+        "reporting only the term-number value, \\( 3 \\), and forgetting to add the coefficient value",
+        "reporting only the coefficient value, \\( 21 \\), and forgetting to add the term-number value",
+        "multiplying the two values instead of adding them, giving \\( 21 \\)\\times\\( 3 \\)=63"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "General Term in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-004",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{8} \\), find the coefficient of the term with \\( r=3 \\), then add the position number of the single middle term.",
+      "options": [
+        "\\( 5 \\)",
+        "\\( 61 \\)",
+        "\\( 280 \\)",
+        "\\( 56 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( {}^{8}C_{3}=56 \\). Since \\( n=8 \\) is even, the middle term is at position \\( n/2+1=5 \\). Adding: \\( 56+5=61 \\).",
+      "hint": "Compute \\( {}^{8}C_{3} \\) (coefficients topic), and \\( n/2+1 \\) for the middle term's position (middle-term topic), then add.",
+      "distractor_logic": [
+        "reporting only the middle-term-position value, \\( 5 \\), and forgetting to add the coefficient value",
+        "multiplying the two values instead of adding them, giving \\( 56 \\)\\times\\( 5 \\)=280",
+        "reporting only the coefficient value, \\( 56 \\), and forgetting to add the middle-term-position value"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Middle Term(s) in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-005",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{10} \\), find the coefficient of the term with \\( r=4 \\), then add the position number of the single middle term.",
+      "options": [
+        "\\( 216 \\)",
+        "\\( 6 \\)",
+        "\\( 210 \\)",
+        "\\( 1260 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( {}^{10}C_{4}=210 \\). Since \\( n=10 \\) is even, the middle term is at position \\( n/2+1=6 \\). Adding: \\( 210+6=216 \\).",
+      "hint": "Compute \\( {}^{10}C_{4} \\) (coefficients topic), and \\( n/2+1 \\) for the middle term's position (middle-term topic), then add.",
+      "distractor_logic": [
+        "reporting only the middle-term-position value, \\( 6 \\), and forgetting to add the coefficient value",
+        "reporting only the coefficient value, \\( 210 \\), and forgetting to add the middle-term-position value",
+        "multiplying the two values instead of adding them, giving \\( 210 \\)\\times\\( 6 \\)=1260"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Middle Term(s) in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-006",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{6} \\), find the coefficient of the term with \\( r=2 \\), then add the position number of the single middle term.",
+      "options": [
+        "\\( 19 \\)",
+        "\\( 4 \\)",
+        "\\( 15 \\)",
+        "\\( 60 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( {}^{6}C_{2}=15 \\). Since \\( n=6 \\) is even, the middle term is at position \\( n/2+1=4 \\). Adding: \\( 15+4=19 \\).",
+      "hint": "Compute \\( {}^{6}C_{2} \\) (coefficients topic), and \\( n/2+1 \\) for the middle term's position (middle-term topic), then add.",
+      "distractor_logic": [
+        "reporting only the middle-term-position value, \\( 4 \\), and forgetting to add the coefficient value",
+        "reporting only the coefficient value, \\( 15 \\), and forgetting to add the middle-term-position value",
+        "multiplying the two values instead of adding them, giving \\( 15 \\)\\times\\( 4 \\)=60"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Middle Term(s) in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-007",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the coefficient of \\( x^{1} \\) in \\( (x+1)^{6} \\), then add the term independent of x in \\( (x^{2}+1/x^{1})^{6} \\).",
+      "options": [
+        "\\( 90 \\)",
+        "\\( 6 \\)",
+        "\\( 15 \\)",
+        "\\( 21 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "For the first part, \\( r=5 \\) gives \\( {}^{6}C_{5}\\cdot1^{5}=6 \\). For the second, independence from \\( x \\) needs \\( r=4 \\), giving \\( {}^{6}C_{4}=15 \\). Adding: \\( 6+15=21 \\).",
+      "hint": "Solve the two parts separately — a coefficient-extraction problem and a term-independent-of-x problem — then add.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 6 \\)\\times\\( 15 \\)=90",
+        "reporting only the coefficient value, \\( 6 \\), and forgetting to add the constant-term value",
+        "reporting only the constant-term value, \\( 15 \\), and forgetting to add the coefficient value"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-008",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the coefficient of \\( x^{3} \\) in \\( (x+1)^{6} \\), then add the term independent of x in \\( (x^{2}+1/x^{1})^{6} \\).",
+      "options": [
+        "\\( 300 \\)",
+        "\\( 20 \\)",
+        "\\( 15 \\)",
+        "\\( 35 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "For the first part, \\( r=3 \\) gives \\( {}^{6}C_{3}\\cdot1^{3}=20 \\). For the second, independence from \\( x \\) needs \\( r=4 \\), giving \\( {}^{6}C_{4}=15 \\). Adding: \\( 20+15=35 \\).",
+      "hint": "Solve the two parts separately — a coefficient-extraction problem and a term-independent-of-x problem — then add.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 20 \\)\\times\\( 15 \\)=300",
+        "reporting only the coefficient value, \\( 20 \\), and forgetting to add the constant-term value",
+        "reporting only the constant-term value, \\( 15 \\), and forgetting to add the coefficient value"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-009",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the coefficient of \\( x^{2} \\) in \\( (x+2)^{6} \\), then add the term independent of x in \\( (x^{1}+1/x^{2})^{6} \\).",
+      "options": [
+        "\\( 255 \\)",
+        "\\( 3600 \\)",
+        "\\( 15 \\)",
+        "\\( 240 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For the first part, \\( r=4 \\) gives \\( {}^{6}C_{4}\\cdot2^{4}=240 \\). For the second, independence from \\( x \\) needs \\( r=2 \\), giving \\( {}^{6}C_{2}=15 \\). Adding: \\( 240+15=255 \\).",
+      "hint": "Solve the two parts separately — a coefficient-extraction problem and a term-independent-of-x problem — then add.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 240 \\)\\times\\( 15 \\)=3600",
+        "reporting only the constant-term value, \\( 15 \\), and forgetting to add the coefficient value",
+        "reporting only the coefficient value, \\( 240 \\), and forgetting to add the constant-term value"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-010",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( {}^{8}C_{3} \\), then add the sum of all the binomial coefficients \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) for the same \\( n=8 \\).",
+      "options": [
+        "\\( 312 \\)",
+        "\\( 14336 \\)",
+        "\\( 56 \\)",
+        "\\( 256 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( {}^{8}C_{3}=56 \\), and \\( {}^{n}C_{0}+\\cdots+{}^{n}C_{n}=2^n=2^{8}=256 \\). Adding: \\( 56+256=312 \\).",
+      "hint": "Recall that \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) always equals \\( 2^n \\).",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 56 \\)\\times\\( 256 \\)=14336",
+        "reporting only the coefficient value, \\( 56 \\), and forgetting to add the sum-of-coefficients value",
+        "reporting only the sum-of-coefficients value, \\( 256 \\), and forgetting to add the coefficient value"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-011",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( {}^{9}C_{4} \\), then add the sum of all the binomial coefficients \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) for the same \\( n=9 \\).",
+      "options": [
+        "\\( 64512 \\)",
+        "\\( 126 \\)",
+        "\\( 512 \\)",
+        "\\( 638 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( {}^{9}C_{4}=126 \\), and \\( {}^{n}C_{0}+\\cdots+{}^{n}C_{n}=2^n=2^{9}=512 \\). Adding: \\( 126+512=638 \\).",
+      "hint": "Recall that \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) always equals \\( 2^n \\).",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 126 \\)\\times\\( 512 \\)=64512",
+        "reporting only the coefficient value, \\( 126 \\), and forgetting to add the sum-of-coefficients value",
+        "reporting only the sum-of-coefficients value, \\( 512 \\), and forgetting to add the coefficient value"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-012",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( {}^{7}C_{2} \\), then add the sum of all the binomial coefficients \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) for the same \\( n=7 \\).",
+      "options": [
+        "\\( 128 \\)",
+        "\\( 149 \\)",
+        "\\( 21 \\)",
+        "\\( 2688 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( {}^{7}C_{2}=21 \\), and \\( {}^{n}C_{0}+\\cdots+{}^{n}C_{n}=2^n=2^{7}=128 \\). Adding: \\( 21+128=149 \\).",
+      "hint": "Recall that \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) always equals \\( 2^n \\).",
+      "distractor_logic": [
+        "reporting only the sum-of-coefficients value, \\( 128 \\), and forgetting to add the coefficient value",
+        "reporting only the coefficient value, \\( 21 \\), and forgetting to add the sum-of-coefficients value",
+        "multiplying the two values instead of adding them, giving \\( 21 \\)\\times\\( 128 \\)=2688"
+      ],
+      "mixed_topics": [
+        "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-013",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{10} \\), \\( T_{r+1} \\) with \\( r=3 \\) is which term number? Add to this how many positions it sits away from the single middle term.",
+      "options": [
+        "\\( 2 \\)",
+        "\\( 6 \\)",
+        "\\( 4 \\)",
+        "\\( 8 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T_{r+1} \\) with \\( r=3 \\) is the 4th term (\\( 4 \\)). The middle term is at position \\( 6 \\), so the distance is \\( |4-6|=2 \\). Adding: \\( 4+2=6 \\).",
+      "hint": "Find the term number \\( r+1 \\) first, then compare it with the middle-term position \\( n/2+1 \\).",
+      "distractor_logic": [
+        "reporting only the distance-from-middle value, \\( 2 \\), and forgetting to add the term-number value",
+        "reporting only the term-number value, \\( 4 \\), and forgetting to add the distance-from-middle value",
+        "multiplying the two values instead of adding them, giving \\( 4 \\)\\times\\( 2 \\)=8"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Middle Term(s) in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-014",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{8} \\), \\( T_{r+1} \\) with \\( r=2 \\) is which term number? Add to this how many positions it sits away from the single middle term.",
+      "options": [
+        "\\( 3 \\)",
+        "\\( 6 \\)",
+        "\\( 5 \\)",
+        "\\( 2 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T_{r+1} \\) with \\( r=2 \\) is the 3rd term (\\( 3 \\)). The middle term is at position \\( 5 \\), so the distance is \\( |3-5|=2 \\). Adding: \\( 3+2=5 \\).",
+      "hint": "Find the term number \\( r+1 \\) first, then compare it with the middle-term position \\( n/2+1 \\).",
+      "distractor_logic": [
+        "reporting only the term-number value, \\( 3 \\), and forgetting to add the distance-from-middle value",
+        "multiplying the two values instead of adding them, giving \\( 3 \\)\\times\\( 2 \\)=6",
+        "reporting only the distance-from-middle value, \\( 2 \\), and forgetting to add the term-number value"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Middle Term(s) in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-015",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+y)^{12} \\), \\( T_{r+1} \\) with \\( r=4 \\) is which term number? Add to this how many positions it sits away from the single middle term.",
+      "options": [
+        "\\( 7 \\)",
+        "\\( 2 \\)",
+        "\\( 5 \\)",
+        "\\( 10 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T_{r+1} \\) with \\( r=4 \\) is the 5th term (\\( 5 \\)). The middle term is at position \\( 7 \\), so the distance is \\( |5-7|=2 \\). Adding: \\( 5+2=7 \\).",
+      "hint": "Find the term number \\( r+1 \\) first, then compare it with the middle-term position \\( n/2+1 \\).",
+      "distractor_logic": [
+        "reporting only the distance-from-middle value, \\( 2 \\), and forgetting to add the term-number value",
+        "reporting only the term-number value, \\( 5 \\), and forgetting to add the distance-from-middle value",
+        "multiplying the two values instead of adding them, giving \\( 5 \\)\\times\\( 2 \\)=10"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Middle Term(s) in the Binomial Expansion"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-016",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x^{2}+1/x)^{9} \\), which term number is independent of x, and what is its value? Add the two.",
+      "options": [
+        "\\( 84 \\)",
+        "\\( 588 \\)",
+        "\\( 91 \\)",
+        "\\( 7 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Independence needs \\( r=6 \\), so it is the 7th term (\\( 7 \\)), with value \\( {}^{9}C_{6}=84 \\). Adding: \\( 7+84=91 \\).",
+      "hint": "Solve the exponent condition for \\( r \\) (term-independent-of-x topic), convert to a term number (general-term topic), then add the value.",
+      "distractor_logic": [
+        "reporting only the constant-term-value value, \\( 84 \\), and forgetting to add the term-number value",
+        "multiplying the two values instead of adding them, giving \\( 7 \\)\\times\\( 84 \\)=588",
+        "reporting only the term-number value, \\( 7 \\), and forgetting to add the constant-term-value value"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-017",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x^{3}+1/x^{2})^{10} \\), which term number is independent of x, and what is its value? Add the two.",
+      "options": [
+        "\\( 1470 \\)",
+        "\\( 210 \\)",
+        "\\( 217 \\)",
+        "\\( 7 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Independence needs \\( r=6 \\), so it is the 7th term (\\( 7 \\)), with value \\( {}^{10}C_{6}=210 \\). Adding: \\( 7+210=217 \\).",
+      "hint": "Solve the exponent condition for \\( r \\) (term-independent-of-x topic), convert to a term number (general-term topic), then add the value.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 7 \\)\\times\\( 210 \\)=1470",
+        "reporting only the constant-term-value value, \\( 210 \\), and forgetting to add the term-number value",
+        "reporting only the term-number value, \\( 7 \\), and forgetting to add the constant-term-value value"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-018",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the expansion of \\( (x+1/x^{2})^{9} \\), which term number is independent of x, and what is its value? Add the two.",
+      "options": [
+        "\\( 88 \\)",
+        "\\( 84 \\)",
+        "\\( 336 \\)",
+        "\\( 4 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Independence needs \\( r=3 \\), so it is the 4th term (\\( 4 \\)), with value \\( {}^{9}C_{3}=84 \\). Adding: \\( 4+84=88 \\).",
+      "hint": "Solve the exponent condition for \\( r \\) (term-independent-of-x topic), convert to a term number (general-term topic), then add the value.",
+      "distractor_logic": [
+        "reporting only the constant-term-value value, \\( 84 \\), and forgetting to add the term-number value",
+        "multiplying the two values instead of adding them, giving \\( 4 \\)\\times\\( 84 \\)=336",
+        "reporting only the term-number value, \\( 4 \\), and forgetting to add the constant-term-value value"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-019",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the binomial coefficient of \\( T_{4} \\) in an expansion with \\( n=8 \\), then add \\( {}^{8}C_{3}+{}^{8}C_{4} \\).",
+      "options": [
+        "\\( 56 \\)",
+        "\\( 182 \\)",
+        "\\( 126 \\)",
+        "\\( 7056 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( {}^{8}C_{3}=56 \\). By Pascal's Rule, \\( {}^{8}C_{3}+{}^{8}C_{4}={}^{9}C_{4}=126 \\). Adding: \\( 56+126=182 \\).",
+      "hint": "Use \\( T_{r+1} \\) to identify \\( r \\) (general-term topic), then apply Pascal's Rule \\( {}^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\) (properties topic).",
+      "distractor_logic": [
+        "reporting only the term-coefficient value, \\( 56 \\), and forgetting to add the Pascal-sum value",
+        "reporting only the Pascal-sum value, \\( 126 \\), and forgetting to add the term-coefficient value",
+        "multiplying the two values instead of adding them, giving \\( 56 \\)\\times\\( 126 \\)=7056"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-020",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the binomial coefficient of \\( T_{5} \\) in an expansion with \\( n=9 \\), then add \\( {}^{9}C_{4}+{}^{9}C_{5} \\).",
+      "options": [
+        "\\( 31752 \\)",
+        "\\( 126 \\)",
+        "\\( 252 \\)",
+        "\\( 378 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( {}^{9}C_{4}=126 \\). By Pascal's Rule, \\( {}^{9}C_{4}+{}^{9}C_{5}={}^{10}C_{5}=252 \\). Adding: \\( 126+252=378 \\).",
+      "hint": "Use \\( T_{r+1} \\) to identify \\( r \\) (general-term topic), then apply Pascal's Rule \\( {}^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\) (properties topic).",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 126 \\)\\times\\( 252 \\)=31752",
+        "reporting only the term-coefficient value, \\( 126 \\), and forgetting to add the Pascal-sum value",
+        "reporting only the Pascal-sum value, \\( 252 \\), and forgetting to add the term-coefficient value"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-021",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the binomial coefficient of \\( T_{3} \\) in an expansion with \\( n=7 \\), then add \\( {}^{7}C_{2}+{}^{7}C_{3} \\).",
+      "options": [
+        "\\( 1176 \\)",
+        "\\( 77 \\)",
+        "\\( 21 \\)",
+        "\\( 56 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( {}^{7}C_{2}=21 \\). By Pascal's Rule, \\( {}^{7}C_{2}+{}^{7}C_{3}={}^{8}C_{3}=56 \\). Adding: \\( 21+56=77 \\).",
+      "hint": "Use \\( T_{r+1} \\) to identify \\( r \\) (general-term topic), then apply Pascal's Rule \\( {}^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\) (properties topic).",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 21 \\)\\times\\( 56 \\)=1176",
+        "reporting only the term-coefficient value, \\( 21 \\), and forgetting to add the Pascal-sum value",
+        "reporting only the Pascal-sum value, \\( 56 \\), and forgetting to add the term-coefficient value"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-022",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the middle term of \\( (x-2)^{6} \\), then add the term independent of x in \\( (x^{2}+1/x)^{9} \\).",
+      "options": [
+        "\\( 84 \\)",
+        "\\( -160 \\)",
+        "\\( -76 \\)",
+        "\\( -13440 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The middle term of \\( (x-2)^{6} \\) has \\( r=3 \\), giving \\( {}^{6}C_{3}(-2)^{3}=-160 \\). The constant term of the second expansion has \\( r=6 \\), giving \\( {}^{9}C_{6}=84 \\). Adding: \\( -160+84=-76 \\).",
+      "hint": "Solve the middle-term part and the term-independent-of-x part separately, then add.",
+      "distractor_logic": [
+        "reporting only the constant-term value, \\( 84 \\), and forgetting to add the middle-term value",
+        "reporting only the middle-term value, \\( -160 \\), and forgetting to add the constant-term value",
+        "multiplying the two values instead of adding them, giving \\( -160 \\)\\times\\( 84 \\)=-13440"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-023",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the middle term of \\( (x-1)^{8} \\), then add the term independent of x in \\( (x^{3}+1/x^{2})^{10} \\).",
+      "options": [
+        "\\( 14700 \\)",
+        "\\( 280 \\)",
+        "\\( 70 \\)",
+        "\\( 210 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The middle term of \\( (x-1)^{8} \\) has \\( r=4 \\), giving \\( {}^{8}C_{4}(-1)^{4}=70 \\). The constant term of the second expansion has \\( r=6 \\), giving \\( {}^{10}C_{6}=210 \\). Adding: \\( 70+210=280 \\).",
+      "hint": "Solve the middle-term part and the term-independent-of-x part separately, then add.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 70 \\)\\times\\( 210 \\)=14700",
+        "reporting only the middle-term value, \\( 70 \\), and forgetting to add the constant-term value",
+        "reporting only the constant-term value, \\( 210 \\), and forgetting to add the middle-term value"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-024",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the middle term of \\( (x-3)^{6} \\), then add the term independent of x in \\( (x+1/x^{2})^{9} \\).",
+      "options": [
+        "\\( -45360 \\)",
+        "\\( -540 \\)",
+        "\\( 84 \\)",
+        "\\( -456 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The middle term of \\( (x-3)^{6} \\) has \\( r=3 \\), giving \\( {}^{6}C_{3}(-3)^{3}=-540 \\). The constant term of the second expansion has \\( r=3 \\), giving \\( {}^{9}C_{3}=84 \\). Adding: \\( -540+84=-456 \\).",
+      "hint": "Solve the middle-term part and the term-independent-of-x part separately, then add.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( -540 \\)\\times\\( 84 \\)=-45360",
+        "reporting only the middle-term value, \\( -540 \\), and forgetting to add the constant-term value",
+        "reporting only the constant-term value, \\( 84 \\), and forgetting to add the middle-term value"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Term Independent of x and Specific-Term Problems"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-025",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the binomial coefficient of the middle term of \\( (1+x)^{8} \\), then add the sum of all \\( 9 \\) binomial coefficients of the same expansion.",
+      "options": [
+        "\\( 17920 \\)",
+        "\\( 256 \\)",
+        "\\( 70 \\)",
+        "\\( 326 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The middle term has \\( r=n/2=4 \\), so its coefficient is \\( {}^{8}C_{4}=70 \\). The sum of all coefficients is \\( 2^{8}=256 \\). Adding: \\( 70+256=326 \\).",
+      "hint": "Find \\( {}^{n}C_{n/2} \\) (middle-term topic), and \\( 2^n \\) (properties topic), then add.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 70 \\)\\times\\( 256 \\)=17920",
+        "reporting only the sum-of-coefficients value, \\( 256 \\), and forgetting to add the middle-coefficient value",
+        "reporting only the middle-coefficient value, \\( 70 \\), and forgetting to add the sum-of-coefficients value"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-026",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the binomial coefficient of the middle term of \\( (1+x)^{10} \\), then add the sum of all \\( 11 \\) binomial coefficients of the same expansion.",
+      "options": [
+        "\\( 252 \\)",
+        "\\( 1276 \\)",
+        "\\( 258048 \\)",
+        "\\( 1024 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The middle term has \\( r=n/2=5 \\), so its coefficient is \\( {}^{10}C_{5}=252 \\). The sum of all coefficients is \\( 2^{10}=1024 \\). Adding: \\( 252+1024=1276 \\).",
+      "hint": "Find \\( {}^{n}C_{n/2} \\) (middle-term topic), and \\( 2^n \\) (properties topic), then add.",
+      "distractor_logic": [
+        "reporting only the middle-coefficient value, \\( 252 \\), and forgetting to add the sum-of-coefficients value",
+        "multiplying the two values instead of adding them, giving \\( 252 \\)\\times\\( 1024 \\)=258048",
+        "reporting only the sum-of-coefficients value, \\( 1024 \\), and forgetting to add the middle-coefficient value"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-027",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Properties and Sums of Binomial Coefficients",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the binomial coefficient of the middle term of \\( (1+x)^{6} \\), then add the sum of all \\( 7 \\) binomial coefficients of the same expansion.",
+      "options": [
+        "\\( 64 \\)",
+        "\\( 84 \\)",
+        "\\( 1280 \\)",
+        "\\( 20 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The middle term has \\( r=n/2=3 \\), so its coefficient is \\( {}^{6}C_{3}=20 \\). The sum of all coefficients is \\( 2^{6}=64 \\). Adding: \\( 20+64=84 \\).",
+      "hint": "Find \\( {}^{n}C_{n/2} \\) (middle-term topic), and \\( 2^n \\) (properties topic), then add.",
+      "distractor_logic": [
+        "reporting only the sum-of-coefficients value, \\( 64 \\), and forgetting to add the middle-coefficient value",
+        "multiplying the two values instead of adding them, giving \\( 20 \\)\\times\\( 64 \\)=1280",
+        "reporting only the middle-coefficient value, \\( 20 \\), and forgetting to add the sum-of-coefficients value"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-028",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the term independent of x in \\( (x^{2}+3/x)^{9} \\), then add \\( {}^{n}C_{0}-{}^{n}C_{1}+{}^{n}C_{2}-\\cdots\\pm{}^{n}C_{n} \\) for the same \\( n \\).",
+      "options": [
+        "\\( 61236 \\)",
+        "\\( 61748 \\)",
+        "\\( 122472 \\)",
+        "\\( 61235 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The constant term has \\( r=6 \\), giving \\( {}^{9}C_{6}\\cdot3^{6}=61236 \\). The alternating sum of binomial coefficients is always \\( 0 \\) (put \\( x=-1 \\) in \\( (1+x)^n \\)). Adding: \\( 61236+0=61236 \\).",
+      "hint": "The alternating sum \\( {}^{n}C_{0}-{}^{n}C_{1}+\\cdots \\) is always \\( 0 \\) — so the answer is just the constant term itself.",
+      "distractor_logic": [
+        "adding \\( 2^n \\) instead of the (zero-valued) alternating sum, giving 61748",
+        "doubling the constant term instead of adding \\( 0 \\), giving 122472",
+        "making a small arithmetic slip on the constant term, giving a value one off from 61236"
+      ],
+      "mixed_topics": [
+        "Term Independent of x and Specific-Term Problems",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-029",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the term independent of x in \\( (x+1/x^{2})^{9} \\), then add \\( {}^{n}C_{0}-{}^{n}C_{1}+{}^{n}C_{2}-\\cdots\\pm{}^{n}C_{n} \\) for the same \\( n \\).",
+      "options": [
+        "\\( 84 \\)",
+        "\\( 83 \\)",
+        "\\( 168 \\)",
+        "\\( 596 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The constant term has \\( r=3 \\), giving \\( {}^{9}C_{3}\\cdot1^{3}=84 \\). The alternating sum of binomial coefficients is always \\( 0 \\) (put \\( x=-1 \\) in \\( (1+x)^n \\)). Adding: \\( 84+0=84 \\).",
+      "hint": "The alternating sum \\( {}^{n}C_{0}-{}^{n}C_{1}+\\cdots \\) is always \\( 0 \\) — so the answer is just the constant term itself.",
+      "distractor_logic": [
+        "making a small arithmetic slip on the constant term, giving a value one off from 84",
+        "doubling the constant term instead of adding \\( 0 \\), giving 168",
+        "adding \\( 2^n \\) instead of the (zero-valued) alternating sum, giving 596"
+      ],
+      "mixed_topics": [
+        "Term Independent of x and Specific-Term Problems",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-030",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the term independent of x in \\( (x^{3}+2/x^{2})^{10} \\), then add \\( {}^{n}C_{0}-{}^{n}C_{1}+{}^{n}C_{2}-\\cdots\\pm{}^{n}C_{n} \\) for the same \\( n \\).",
+      "options": [
+        "\\( 13440 \\)",
+        "\\( 26880 \\)",
+        "\\( 13439 \\)",
+        "\\( 14464 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The constant term has \\( r=6 \\), giving \\( {}^{10}C_{6}\\cdot2^{6}=13440 \\). The alternating sum of binomial coefficients is always \\( 0 \\) (put \\( x=-1 \\) in \\( (1+x)^n \\)). Adding: \\( 13440+0=13440 \\).",
+      "hint": "The alternating sum \\( {}^{n}C_{0}-{}^{n}C_{1}+\\cdots \\) is always \\( 0 \\) — so the answer is just the constant term itself.",
+      "distractor_logic": [
+        "doubling the constant term instead of adding \\( 0 \\), giving 26880",
+        "making a small arithmetic slip on the constant term, giving a value one off from 13440",
+        "adding \\( 2^n \\) instead of the (zero-valued) alternating sum, giving 14464"
+      ],
+      "mixed_topics": [
+        "Term Independent of x and Specific-Term Problems",
+        "Properties and Sums of Binomial Coefficients"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-031",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the term independent of x in \\( (x^{2}+3/x)^{9} \\), then add the remainder when \\( (7)^{9} \\) is divided by \\( 6 \\).",
+      "options": [
+        "\\( 61236 \\)",
+        "\\( 122473 \\)",
+        "\\( 61237 \\)",
+        "\\( 61242 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The constant term has \\( r=6 \\), giving \\( {}^{9}C_{6}\\cdot3^{6}=61236 \\). Since \\( 7 \\) \\( =1+6 \\), every term of \\( (1+6)^n \\) beyond the first is a multiple of \\( 6 \\), so the remainder is \\( 1 \\). Adding: \\( 61236+1=61237 \\).",
+      "hint": "Solve the two parts independently — a term-independent-of-x problem and a remainder problem — then add.",
+      "distractor_logic": [
+        "reporting only the constant-term value, \\( 61236 \\), and forgetting to add the remainder",
+        "doubling the constant term before adding the remainder, giving 122473",
+        "adding \\( d \\) instead of the actual remainder \\( 1 \\), giving 61242"
+      ],
+      "mixed_topics": [
+        "Term Independent of x and Specific-Term Problems",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-032",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Term Independent of x and Specific-Term Problems",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the term independent of x in \\( (x+1/x^{2})^{9} \\), then add the remainder when \\( (9)^{9} \\) is divided by \\( 8 \\).",
+      "options": [
+        "\\( 85 \\)",
+        "\\( 84 \\)",
+        "\\( 92 \\)",
+        "\\( 169 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The constant term has \\( r=3 \\), giving \\( {}^{9}C_{3}\\cdot1^{3}=84 \\). Since \\( 9 \\) \\( =1+8 \\), every term of \\( (1+8)^n \\) beyond the first is a multiple of \\( 8 \\), so the remainder is \\( 1 \\). Adding: \\( 84+1=85 \\).",
+      "hint": "Solve the two parts independently — a term-independent-of-x problem and a remainder problem — then add.",
+      "distractor_logic": [
+        "reporting only the constant-term value, \\( 84 \\), and forgetting to add the remainder",
+        "adding \\( d \\) instead of the actual remainder \\( 1 \\), giving 92",
+        "doubling the constant term before adding the remainder, giving 169"
+      ],
+      "mixed_topics": [
+        "Term Independent of x and Specific-Term Problems",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-033",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) for \\( n=5 \\), then add the number of ways to choose at least one item from \\( 5 \\) distinct items.",
+      "options": [
+        "\\( 32 \\)",
+        "\\( 31 \\)",
+        "\\( 992 \\)",
+        "\\( 63 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( {}^{n}C_{0}+\\cdots+{}^{n}C_{n}=2^n=2^{5}=32 \\). Choosing at least one item from \\( 5 \\) distinct items gives \\( 2^{5}-1=31 \\). Adding: \\( 32+31=63 \\).",
+      "hint": "Both parts reduce to \\( 2^n \\) — one directly, and one after subtracting the empty selection.",
+      "distractor_logic": [
+        "reporting only the coefficient-sum value, \\( 32 \\), and forgetting to add the selection-count value",
+        "reporting only the selection-count value, \\( 31 \\), and forgetting to add the coefficient-sum value",
+        "multiplying the two values instead of adding them, giving \\( 32 \\)\\times\\( 31 \\)=992"
+      ],
+      "mixed_topics": [
+        "Properties and Sums of Binomial Coefficients",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-034",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) for \\( n=6 \\), then add the number of ways to choose at least one item from \\( 6 \\) distinct items.",
+      "options": [
+        "\\( 127 \\)",
+        "\\( 63 \\)",
+        "\\( 4032 \\)",
+        "\\( 64 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( {}^{n}C_{0}+\\cdots+{}^{n}C_{n}=2^n=2^{6}=64 \\). Choosing at least one item from \\( 6 \\) distinct items gives \\( 2^{6}-1=63 \\). Adding: \\( 64+63=127 \\).",
+      "hint": "Both parts reduce to \\( 2^n \\) — one directly, and one after subtracting the empty selection.",
+      "distractor_logic": [
+        "reporting only the selection-count value, \\( 63 \\), and forgetting to add the coefficient-sum value",
+        "multiplying the two values instead of adding them, giving \\( 64 \\)\\times\\( 63 \\)=4032",
+        "reporting only the coefficient-sum value, \\( 64 \\), and forgetting to add the selection-count value"
+      ],
+      "mixed_topics": [
+        "Properties and Sums of Binomial Coefficients",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-035",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Applications and Word Problems on the Binomial Theorem",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find \\( {}^{n}C_{0}+{}^{n}C_{1}+\\cdots+{}^{n}C_{n} \\) for \\( n=7 \\), then add the number of ways to choose at least one item from \\( 7 \\) distinct items.",
+      "options": [
+        "\\( 255 \\)",
+        "\\( 16256 \\)",
+        "\\( 128 \\)",
+        "\\( 127 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( {}^{n}C_{0}+\\cdots+{}^{n}C_{n}=2^n=2^{7}=128 \\). Choosing at least one item from \\( 7 \\) distinct items gives \\( 2^{7}-1=127 \\). Adding: \\( 128+127=255 \\).",
+      "hint": "Both parts reduce to \\( 2^n \\) — one directly, and one after subtracting the empty selection.",
+      "distractor_logic": [
+        "multiplying the two values instead of adding them, giving \\( 128 \\)\\times\\( 127 \\)=16256",
+        "reporting only the coefficient-sum value, \\( 128 \\), and forgetting to add the selection-count value",
+        "reporting only the selection-count value, \\( 127 \\), and forgetting to add the coefficient-sum value"
+      ],
+      "mixed_topics": [
+        "Properties and Sums of Binomial Coefficients",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-036",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the coefficient in the 4th term of \\( (x+2)^{8} \\), then add the two-term approximation \\( 1+nh \\) of \\( (1+\\frac{1}{50})^{6} \\).",
+      "options": [
+        "\\( 448 \\)",
+        "\\( \\frac{11228}{25} \\)",
+        "\\( \\frac{28}{25} \\)",
+        "\\( 449 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For the 4th term, \\( r=p-1=3 \\), giving coefficient \\( {}^{8}C_{3}\\cdot2^{3}=448 \\). The approximation is \\( 1+6\\cdot\\frac{1}{50} = \\frac{28}{25} \\). Adding: \\( 448+\\frac{28}{25}=\\frac{11228}{25} \\).",
+      "hint": "Solve the term-coefficient part and the approximation part separately, then add.",
+      "distractor_logic": [
+        "reporting only the term coefficient \\( 448 \\) and forgetting the approximation part",
+        "reporting only the approximation \\( \\frac{28}{25} \\) and forgetting the term coefficient",
+        "making a small slip in the term coefficient, giving \\( 449 \\) instead of \\( 448 \\), before adding"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-037",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the coefficient in the 5th term of \\( (x+1)^{7} \\), then add the two-term approximation \\( 1+nh \\) of \\( (1+\\frac{1}{20})^{4} \\).",
+      "options": [
+        "\\( \\frac{6}{5} \\)",
+        "\\( \\frac{181}{5} \\)",
+        "\\( 36 \\)",
+        "\\( 35 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For the 5th term, \\( r=p-1=4 \\), giving coefficient \\( {}^{7}C_{4}\\cdot1^{4}=35 \\). The approximation is \\( 1+4\\cdot\\frac{1}{20} = \\frac{6}{5} \\). Adding: \\( 35+\\frac{6}{5}=\\frac{181}{5} \\).",
+      "hint": "Solve the term-coefficient part and the approximation part separately, then add.",
+      "distractor_logic": [
+        "reporting only the approximation \\( \\frac{6}{5} \\) and forgetting the term coefficient",
+        "making a small slip in the term coefficient, giving \\( 36 \\) instead of \\( 35 \\), before adding",
+        "reporting only the term coefficient \\( 35 \\) and forgetting the approximation part"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-038",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "General Term in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the coefficient in the 3rd term of \\( (x+3)^{9} \\), then add the two-term approximation \\( 1+nh \\) of \\( (1+\\frac{1}{100})^{5} \\).",
+      "options": [
+        "\\( 324 \\)",
+        "\\( \\frac{6501}{20} \\)",
+        "\\( \\frac{21}{20} \\)",
+        "\\( 325 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For the 3rd term, \\( r=p-1=2 \\), giving coefficient \\( {}^{9}C_{2}\\cdot3^{2}=324 \\). The approximation is \\( 1+5\\cdot\\frac{1}{100} = \\frac{21}{20} \\). Adding: \\( 324+\\frac{21}{20}=\\frac{6501}{20} \\).",
+      "hint": "Solve the term-coefficient part and the approximation part separately, then add.",
+      "distractor_logic": [
+        "reporting only the term coefficient \\( 324 \\) and forgetting the approximation part",
+        "reporting only the approximation \\( \\frac{21}{20} \\) and forgetting the term coefficient",
+        "making a small slip in the term coefficient, giving \\( 325 \\) instead of \\( 324 \\), before adding"
+      ],
+      "mixed_topics": [
+        "General Term in the Binomial Expansion",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-039",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the middle term of \\( (x-2)^{6} \\), then add the value of \\( (100-3)^2 \\) (computed via the binomial theorem).",
+      "options": [
+        "\\( 9249 \\)",
+        "\\( -160 \\)",
+        "\\( 9849 \\)",
+        "\\( 9409 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The middle term has \\( r=n/2=3 \\), giving \\( {}^{6}C_{3}(-2)^{3}=-160 \\). And \\( (100-3)^2=100^2-2(100)(3)+3^2=9409 \\). Adding: \\( -160+9409=9249 \\).",
+      "hint": "Solve the middle-term part and the square-expansion part separately, then add.",
+      "distractor_logic": [
+        "reporting only the middle-term value \\( -160 \\) and forgetting to add the squared-evaluation part",
+        "omitting the cross term in \\( (100-3)^2 \\), giving a value that's off by the missing cross term",
+        "reporting only the squared evaluation \\( 9409 \\) and forgetting the middle-term part"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    },
+    {
+      "id": "MAT11-CH07-B-040",
+      "chapter": "MAT11-CH07",
+      "chapter_name": "Binomial Theorem",
+      "topic": "Middle Term(s) in the Binomial Expansion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Find the middle term of \\( (x-1)^{8} \\), then add the value of \\( (100-4)^2 \\) (computed via the binomial theorem).",
+      "options": [
+        "\\( 9286 \\)",
+        "\\( 10086 \\)",
+        "\\( 70 \\)",
+        "\\( 9216 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The middle term has \\( r=n/2=4 \\), giving \\( {}^{8}C_{4}(-1)^{4}=70 \\). And \\( (100-4)^2=100^2-2(100)(4)+4^2=9216 \\). Adding: \\( 70+9216=9286 \\).",
+      "hint": "Solve the middle-term part and the square-expansion part separately, then add.",
+      "distractor_logic": [
+        "omitting the cross term in \\( (100-4)^2 \\), giving a value that's off by the missing cross term",
+        "reporting only the middle-term value \\( 70 \\) and forgetting to add the squared-evaluation part",
+        "reporting only the squared evaluation \\( 9216 \\) and forgetting the middle-term part"
+      ],
+      "mixed_topics": [
+        "Middle Term(s) in the Binomial Expansion",
+        "Applications and Word Problems on the Binomial Theorem"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "name": "Pascal's Triangle and Binomial Theorem for Positive Integral Index",
+      "summary": "Pascal's Triangle organizes the binomial coefficients \\( ^{n}C_{0}, ^{n}C_{1}, \\ldots, ^{n}C_{n} \\) row by row, each entry being the sum of the two entries above it. The Binomial Theorem states that for a positive integer \\( n \\), \\( (x+y)^n = \\sum_{r=0}^{n} {}^{n}C_{r}\\,x^{n-r}y^{r} \\), so the expansion has exactly \\( n+1 \\) terms, and the coefficient of \\( x^{n-r}y^{r} \\) is read straight off row \\( n \\) of the triangle. Replacing \\( y \\) with \\( -y \\) alternates the signs of successive terms. Putting \\( x=1 \\) collapses the whole expansion to a single number — the sum of all the coefficients — which is a fast way to check or evaluate an expansion without writing out every term. This foundational result underlies every other technique in the chapter: the general term, the middle term, and the search for a term independent of \\( x \\) are all just this same sum, examined for one particular value of \\( r \\).",
+      "key_formulas": [
+        "\\( (x+y)^n = \\sum_{r=0}^{n}{}^{n}C_{r}\\,x^{n-r}y^{r} \\)",
+        "Number of terms in \\( (x+y)^n \\): \\( n+1 \\)",
+        "Sum of all coefficients: put \\( x=1 \\), giving \\( (a+b)^n \\) for \\( (ax+b)^n \\)",
+        "\\( ^{n}C_{r} = \\dfrac{n!}{r!(n-r)!} \\)"
+      ],
+      "worked_example": "Find the coefficient of \\( x^{3}y^{2} \\) in \\( (x+y)^{5} \\). Here \\( n=5 \\) and the power of \\( y \\) tells us \\( r=2 \\), so the coefficient is \\( ^{5}C_{2}=10 \\).",
+      "common_mistakes": [
+        "Reading off the wrong row or position of Pascal's Triangle — shifting by one entry gives a completely different, but still plausible-looking, coefficient.",
+        "Confusing the combination \\( ^{n}C_{r} \\) with the permutation \\( ^{n}P_{r} \\), which overcounts by a factor of \\( r! \\).",
+        "Forgetting to add \\( 1 \\) when counting the number of terms, since \\( r \\) runs from \\( 0 \\) to \\( n \\) inclusive.",
+        "Dropping the sign when one of the two terms is negative, e.g. treating \\( (x-c)^n \\) as if every term were positive."
+      ],
+      "question_count": 32
+    },
+    {
+      "name": "General Term in the Binomial Expansion",
+      "summary": "The general term \\( T_{r+1} = {}^{n}C_{r}\\,x^{n-r}y^{r} \\) is the single formula that generates every term of a binomial expansion, and almost every other result in this chapter is obtained by choosing the right value of \\( r \\) inside it. Because the label is \\( T_{r+1} \\) and not \\( T_r \\), the term number is always one more than the index \\( r \\) — the very first term, \\( T_1 \\), corresponds to \\( r=0 \\). To find a specific named term (say, the 6th term), first convert the term number to \\( r \\) by subtracting \\( 1 \\); to find which term contains a given power of \\( x \\), set the general term's exponent of \\( x \\) equal to the target power and solve for \\( r \\) before converting back to a term number. The same idea, run in reverse, shows that two terms share a coefficient exactly when their two values of \\( r \\) add up to \\( n \\).",
+      "key_formulas": [
+        "General term: \\( T_{r+1} = {}^{n}C_{r}\\,x^{n-r}y^{r} \\)",
+        "Term number \\( \\leftrightarrow \\) index: term number \\( = r+1 \\)",
+        "For \\( (x-y)^n \\): \\( T_{r+1} = {}^{n}C_{r}\\,x^{n-r}(-y)^{r} \\)",
+        "Equal coefficients at two different indices \\( r_1 \\neq r_2 \\): \\( r_1+r_2=n \\)"
+      ],
+      "worked_example": "Find the 4th term of \\( (x+3)^{8} \\). The 4th term has \\( r=4-1=3 \\), so \\( T_4 = {}^{8}C_{3}\\,x^{5}\\cdot3^{3} = 56\\cdot27\\,x^{5} = 1512x^{5} \\).",
+      "common_mistakes": [
+        "Using the term number itself as \\( r \\), instead of subtracting \\( 1 \\) first (an off-by-one error).",
+        "Solving the exponent equation for \\( x \\) but forgetting to convert the resulting \\( r \\) back into a term number by adding \\( 1 \\).",
+        "Dropping the sign carried by \\( (-y)^r \\) when the expansion is of \\( (x-y)^n \\) rather than \\( (x+y)^n \\).",
+        "Swapping the exponents on the two bracket terms, writing \\( x^{r}y^{n-r}\\) instead of \\( x^{n-r}y^{r} \\)."
+      ],
+      "question_count": 35
+    },
+    {
+      "name": "Middle Term(s) in the Binomial Expansion",
+      "summary": "How many middle terms an expansion \\( (x+y)^n \\) has, and where they sit, depends entirely on the parity of \\( n \\). When \\( n \\) is even, there are \\( n+1 \\) terms in total — an odd count — so there is a single middle term, at position \\( \\frac{n}{2}+1 \\), found by setting \\( r=\\frac{n}{2} \\) in the general term. When \\( n \\) is odd, there are \\( n+1 \\) terms — an even count — so the middle position falls between two terms, at positions \\( \\frac{n+1}{2} \\) and \\( \\frac{n+3}{2} \\); by the symmetry of Pascal's Triangle, these two middle terms always share exactly the same binomial coefficient. A useful special case: in an expansion like \\( (ax+b/x)^n \\) with matching powers of \\( x \\) in both bracket terms, the middle term's powers of \\( x \\) cancel exactly, so the middle term turns out to be a plain constant.",
+      "key_formulas": [
+        "\\( n \\) even: single middle term at position \\( \\frac{n}{2}+1 \\), with \\( r=\\frac{n}{2} \\)",
+        "\\( n \\) odd: two middle terms at positions \\( \\frac{n+1}{2} \\) and \\( \\frac{n+3}{2} \\)",
+        "The two middle binomial coefficients (odd \\( n \\)) are always equal: \\( ^{n}C_{\\frac{n-1}{2}} = {}^{n}C_{\\frac{n+1}{2}} \\)"
+      ],
+      "worked_example": "Find the middle term of \\( (x+y)^{8} \\). Since \\( n=8 \\) is even, the middle term has \\( r=4 \\): \\( T_5 = {}^{8}C_{4}\\,x^{4}y^{4} = 70x^{4}y^{4} \\).",
+      "common_mistakes": [
+        "Applying the even-\\( n \\) rule (a single middle term) to an odd-\\( n \\) expansion, or vice versa.",
+        "Off-by-one errors in the middle term's index — using \\( r=\\frac{n}{2}+1 \\) or \\( r=\\frac{n}{2}-1 \\) instead of \\( r=\\frac{n}{2} \\).",
+        "For odd \\( n \\), assuming the two middle terms have different binomial coefficients rather than recognizing they are always equal.",
+        "Forgetting to track the sign when the expansion is of the form \\( (x-c)^n \\), especially when the middle index happens to be odd."
+      ],
+      "question_count": 32
+    },
+    {
+      "name": "Term Independent of x and Specific-Term Problems",
+      "summary": "The term independent of \\( x \\) (also called the constant term) is the one term in an expansion whose net power of \\( x \\) works out to zero once the exponents contributed by both bracket terms are combined. For an expansion like \\( (x^{a}+c/x^{b})^n \\), the general term's exponent of \\( x \\) is \\( a(n-r)-br \\); setting this equal to \\( 0 \\) and solving gives the specific \\( r \\) at which the constant term occurs. Because \\( r \\) must come out as a whole number between \\( 0 \\) and \\( n \\), a constant term does not always exist — for some combinations of \\( a \\), \\( b \\), and \\( n \\) the exponent equation has no valid solution. The same reasoning can run in reverse: if a problem states which term number is independent of \\( x \\), that pins down \\( r \\) directly, and the exponent condition can instead be solved for \\( n \\).",
+      "key_formulas": [
+        "Exponent of \\( x \\) in \\( T_{r+1} \\) of \\( (x^{a}+c/x^{b})^n \\): \\( a(n-r)-br \\)",
+        "Term independent of x: solve \\( a(n-r)-br=0 \\) for \\( r \\), requiring \\( 0\\le r\\le n \\) and \\( r \\) an integer",
+        "Value of the constant term: \\( {}^{n}C_{r}\\,c^{r} \\) (with sign, if \\( c \\) is negative)"
+      ],
+      "worked_example": "Find the term independent of \\( x \\) in \\( (x^{2}+3/x)^{9} \\). The exponent condition is \\( 2(9-r)-r=0 \\Rightarrow r=6 \\), so the term is \\( {}^{9}C_{6}\\cdot3^{6} = 84\\cdot729=61236 \\).",
+      "common_mistakes": [
+        "Solving the exponent equation with an off-by-one \\( r \\), often from mismatching which bracket term contributes the negative exponent.",
+        "Omitting the binomial coefficient \\( ^{n}C_{r} \\) and reporting just the constant's numeric power.",
+        "Dropping the sign when the second bracket term is negative, e.g. treating \\( (x^a-c/x^b)^n \\) as if \\( c \\) were positive throughout.",
+        "Assuming every such expansion has a constant term, without checking that the solved \\( r \\) is actually a whole number in range."
+      ],
+      "question_count": 32
+    },
+    {
+      "name": "Properties and Sums of Binomial Coefficients",
+      "summary": "Several useful identities fall out of the Binomial Theorem simply by substituting specific values of \\( x \\) into \\( (1+x)^n = \\sum_{r=0}^{n}{}^{n}C_{r}\\,x^{r} \\). Setting \\( x=1 \\) gives \\( ^{n}C_{0}+^{n}C_{1}+\\cdots+^{n}C_{n}=2^n \\): the sum of every binomial coefficient in a row of Pascal's Triangle. Setting \\( x=-1 \\) gives an alternating sum that always equals zero, and combining the two results shows that the even-indexed and odd-indexed coefficients each sum to exactly half of \\( 2^n \\), namely \\( 2^{n-1} \\). Beyond these substitution tricks, the coefficients also satisfy structural identities: the symmetry \\( ^{n}C_{r}={}^{n}C_{n-r} \\), Pascal's Rule \\( ^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\) (which is exactly how each row of the triangle is built from the row above), and less obvious sums such as \\( \\sum r\\cdot{}^{n}C_{r}=n\\cdot2^{n-1} \\) and \\( \\sum (^{n}C_{r})^2={}^{2n}C_{n} \\).",
+      "key_formulas": [
+        "\\( ^{n}C_{0}+^{n}C_{1}+\\cdots+^{n}C_{n}=2^n \\)",
+        "\\( ^{n}C_{0}-^{n}C_{1}+^{n}C_{2}-\\cdots\\pm{}^{n}C_{n}=0 \\)",
+        "Even/odd-indexed sums: each equals \\( 2^{n-1} \\)",
+        "Symmetry: \\( ^{n}C_{r}={}^{n}C_{n-r} \\); Pascal's Rule: \\( ^{n}C_{r}+{}^{n}C_{r+1}={}^{n+1}C_{r+1} \\)",
+        "\\( \\sum_{r=0}^{n} r\\cdot{}^{n}C_{r}=n\\cdot2^{n-1} \\); \\( \\sum_{r=0}^{n}(^{n}C_{r})^2={}^{2n}C_{n} \\)"
+      ],
+      "worked_example": "Find \\( ^{6}C_{0}+^{6}C_{1}+\\cdots+^{6}C_{6} \\). Putting \\( x=1 \\) in \\( (1+x)^6 \\) gives \\( 2^6=64 \\).",
+      "common_mistakes": [
+        "Computing \\( n^2 \\) or \\( 2n \\) in place of \\( 2^n \\) — a slip between exponential and polynomial growth.",
+        "Forgetting that the alternating sum is always exactly \\( 0 \\), and instead reporting \\( 2^n \\) or \\( 2^{n-1} \\).",
+        "Misapplying Pascal's Rule by using \\( r \\) instead of \\( r+1 \\) in the combined coefficient on the right-hand side.",
+        "Confusing \\( \\sum (^{n}C_{r})^2 \\) (which equals \\( ^{2n}C_n \\)) with the square of the full sum, \\( (2^n)^2=4^n \\)."
+      ],
+      "question_count": 33
+    },
+    {
+      "name": "Applications and Word Problems on the Binomial Theorem",
+      "summary": "The Binomial Theorem is a practical shortcut whenever a quantity can be written as \\( (a+b)^n \\) with a small, convenient \\( b \\). Squaring numbers near a round base, like \\( 98^2=(100-2)^2 \\), avoids long multiplication by expanding into just three terms. Writing a number as \\( (1+d)^n \\) — for instance \\( 7^n=(1+6)^n \\) — makes divisibility and remainder questions almost immediate: every term of the expansion beyond the very first carries a factor of \\( d \\), so the remainder on dividing by \\( d \\) is always \\( 1 \\), regardless of \\( n \\). The same idea, carried one term further, proves stronger divisibility results such as \\( (1+k)^n-kn-1 \\) always being divisible by \\( k^2 \\). Keeping just the first few terms of \\( (1+h)^n \\) for a small \\( h \\) gives a quick approximate value without a calculator, and the identity \\( ^{n}C_{0}+\\cdots+{}^{n}C_{n}=2^n \\) counts the number of ways to select any subset at all from \\( n \\) distinct objects — a natural translation for counting word problems.",
+      "key_formulas": [
+        "\\( (a\\pm b)^2 = a^2\\pm2ab+b^2 \\) — a fast route to squaring numbers near a round base",
+        "Remainder of \\( (d+1)^n \\) divided by \\( d \\): always \\( 1 \\)",
+        "\\( (1+k)^n-kn-1 \\) is always divisible by \\( k^2 \\)",
+        "Approximation: \\( (1+h)^n \\approx 1+nh+{}^{n}C_{2}h^2 \\) for small \\( h \\)",
+        "Subsets of \\( n \\) distinct objects: \\( 2^n \\) total, or \\( 2^n-1 \\) excluding the empty selection"
+      ],
+      "worked_example": "Find the remainder when \\( 9^{7} \\) is divided by \\( 8 \\). Writing \\( 9=1+8 \\), every term of \\( (1+8)^7 \\) beyond the first carries a factor of \\( 8 \\), so the remainder is \\( 1 \\).",
+      "common_mistakes": [
+        "Forgetting the cross term when squaring a binomial, computing \\( a^2+b^2 \\) instead of \\( a^2\\pm2ab+b^2 \\).",
+        "Assuming \\( (d+1)^n \\) divided by \\( d \\) leaves remainder \\( d \\) or \\( 0 \\), rather than reasoning through which terms actually carry a factor of \\( d \\).",
+        "Stopping an approximation after only two terms when three were required, or using \\( nh^2 \\) instead of \\( {}^{n}C_{2}h^2 \\) for the third term.",
+        "Forgetting to exclude the empty selection when a word problem asks for 'at least one' item chosen from a group, reporting \\( 2^n \\) instead of \\( 2^n-1 \\)."
+      ],
+      "question_count": 26
+    }
+  ]
+}

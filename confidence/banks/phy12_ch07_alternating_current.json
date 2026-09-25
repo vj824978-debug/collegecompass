@@ -1,0 +1,3728 @@
+{
+  "meta": {
+    "chapter": "PHY12-CH07",
+    "chapter_name": "Alternating Current",
+    "subject": "Physics",
+    "class": 12,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "All math is KaTeX in single unnested \\( ... \\) spans: the phase angle \\( \\phi \\), angular frequency \\( \\omega \\), resonant angular frequency \\( \\omega_0 \\), reactances \\( X_L \\) and \\( X_C \\), impedance \\( Z \\) and the micro-prefix \\( \\mu \\) are each a single KaTeX span; no raw Unicode math symbols appear anywhere outside KaTeX (plain-text unit labels such as Ω, H, V, A, Hz stay as ordinary text); explanations use <br><br> between steps; every numeric answer terminates cleanly or is a clean order-of-magnitude value."
+  },
+  "topics": [
+    {
+      "name": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "summary": "When a sinusoidal voltage \\( v=V_0\\sin\\omega t \\) is applied to a single ideal element, the current is also sinusoidal at the same frequency, but its phase depends on the element. In a resistor, voltage and current are exactly in phase. In an inductor, voltage leads current by \\( 90^\\circ \\); in a capacitor, current leads voltage by \\( 90^\\circ \\) — remembered as 'ELI the ICE man'. Inductors and capacitors oppose AC through reactance: \\( X_L=\\omega L \\) grows with frequency, while \\( X_C=\\dfrac{1}{\\omega C} \\) falls with frequency, so a capacitor blocks DC completely and an inductor passes it freely. Because the plain average of a full sine wave is zero, AC is described by RMS values, \\( I_{rms}=\\dfrac{I_0}{\\sqrt2} \\) and \\( V_{rms}=\\dfrac{V_0}{\\sqrt2} \\), which give the same heating as an equal steady DC. Mains ratings and AC meters always quote RMS values. Phasors — rotating arrows whose projections give the instantaneous values — show these phase relationships at a glance and set up the analysis of combined circuits.",
+      "key_formulas": [
+        "\\( I_{rms}=\\dfrac{I_0}{\\sqrt2} \\), \\( V_{rms}=\\dfrac{V_0}{\\sqrt2} \\)",
+        "\\( X_L=\\omega L=2\\pi fL \\)",
+        "\\( X_C=\\dfrac{1}{\\omega C}=\\dfrac{1}{2\\pi fC} \\)",
+        "\\( I_{rms}=\\dfrac{V_{rms}}{X_L} \\) or \\( \\dfrac{V_{rms}}{X_C} \\)"
+      ],
+      "worked_example": "A \\( 100 \\) \\( \\mu \\)F capacitor is connected to \\( 200 \\) V (RMS) at \\( \\omega=100 \\) rad/s.<br><br>\\( X_C=\\dfrac{1}{100\\times10^{-4}}=100 \\) Ω.<br><br>\\( I_{rms}=\\dfrac{200}{100}=2 \\) A, leading the voltage by \\( 90^\\circ \\).",
+      "common_mistakes": [
+        "Using a factor of \\( 2 \\) instead of \\( \\sqrt2 \\) between peak and RMS values",
+        "Plugging peak values into heating or power formulas",
+        "Taking the plain average of AC (zero) when the RMS value is needed",
+        "Swapping which of V or I leads in an inductor or a capacitor",
+        "Swapping the frequency trends of \\( X_L \\) and \\( X_C \\)"
+      ],
+      "question_count": 40
+    },
+    {
+      "name": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "summary": "In a series LCR circuit the same current flows through every element, so the current phasor is the natural reference. The resistor's voltage \\( V_R \\) is in phase with the current, \\( V_L \\) leads it by \\( 90^\\circ \\) and \\( V_C \\) lags it by \\( 90^\\circ \\). Since \\( V_L \\) and \\( V_C \\) point in opposite directions, they partly cancel, and the net reactive voltage \\( V_L-V_C \\) is perpendicular to \\( V_R \\). The supply voltage is therefore the hypotenuse of a right triangle, not a plain sum. Dividing every side by the current gives the impedance triangle: \\( Z=\\sqrt{R^2+(X_L-X_C)^2} \\) and \\( \\tan\\phi=\\dfrac{X_L-X_C}{R} \\). When \\( X_L>X_C \\) the circuit is inductive and \\( \\phi \\) is positive (voltage leads); when \\( X_C>X_L \\) it is capacitive and \\( \\phi \\) is negative (current leads). Individual element voltages can exceed the supply voltage because of this vector addition. The RMS current is \\( I=\\dfrac{V}{Z} \\), and each element voltage is \\( I \\) times its own resistance or reactance.",
+      "key_formulas": [
+        "\\( Z=\\sqrt{R^2+(X_L-X_C)^2} \\)",
+        "\\( \\tan\\phi=\\dfrac{X_L-X_C}{R} \\)",
+        "\\( V=\\sqrt{V_R^2+(V_L-V_C)^2} \\)",
+        "\\( I_{rms}=\\dfrac{V_{rms}}{Z} \\)"
+      ],
+      "worked_example": "\\( R=30 \\) Ω, \\( X_L=80 \\) Ω, \\( X_C=40 \\) Ω on \\( 100 \\) V (RMS).<br><br>\\( Z=\\sqrt{30^2+40^2}=50 \\) Ω, so \\( I=2 \\) A.<br><br>\\( \\tan\\phi=\\dfrac{40}{30} \\), positive: the circuit is inductive and voltage leads.",
+      "common_mistakes": [
+        "Adding \\( R \\), \\( X_L \\), \\( X_C \\) as a plain sum instead of combining them vectorially",
+        "Adding voltmeter readings directly to get the supply voltage",
+        "Dropping the sign of \\( \\phi \\) for a capacitive circuit",
+        "Inverting the ratio in \\( \\tan\\phi \\)",
+        "Assuming no element voltage can exceed the supply"
+      ],
+      "question_count": 37
+    },
+    {
+      "name": "Resonance in a Series LCR Circuit and Quality Factor",
+      "summary": "As the driving frequency of a series LCR circuit changes, \\( X_L \\) rises and \\( X_C \\) falls. At exactly one frequency they are equal; this is resonance. There the reactances cancel, the impedance drops to its minimum value \\( Z=R \\), the current reaches its maximum \\( \\dfrac{V}{R} \\), and voltage and current are in phase (\\( \\phi=0 \\)). Setting \\( \\omega L=\\dfrac{1}{\\omega C} \\) gives \\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\), which depends only on \\( L \\) and \\( C \\), never on \\( R \\). Below resonance the circuit is capacitive; above it, inductive. At resonance \\( V_L \\) and \\( V_C \\) are equal and opposite and can each be many times the supply voltage. The sharpness of the resonance peak is measured by the quality factor \\( Q=\\dfrac{\\omega_0L}{R}=\\dfrac{1}{\\omega_0RC}=\\dfrac{\\omega_0}{\\Delta\\omega} \\), where \\( \\Delta\\omega \\) is the bandwidth between the half-power points. A smaller \\( R \\) gives a larger \\( Q \\) and a sharper, narrower peak; this is what lets a radio tuning circuit pick out one station from many.",
+      "key_formulas": [
+        "\\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\), \\( f_0=\\dfrac{1}{2\\pi\\sqrt{LC}} \\)",
+        "At resonance: \\( X_L=X_C \\), \\( Z=R \\), \\( \\phi=0 \\)",
+        "\\( Q=\\dfrac{\\omega_0L}{R}=\\dfrac{1}{\\omega_0RC}=\\dfrac{\\omega_0}{\\Delta\\omega} \\)",
+        "\\( V_L=V_C=QV \\) at resonance"
+      ],
+      "worked_example": "\\( L=0.1 \\) H, \\( C=10 \\) \\( \\mu \\)F, \\( R=10 \\) Ω.<br><br>\\( \\omega_0=\\dfrac{1}{\\sqrt{10^{-6}}}=1000 \\) rad/s.<br><br>\\( Q=\\dfrac{1000\\times0.1}{10}=10 \\), so \\( \\Delta\\omega=100 \\) rad/s.",
+      "common_mistakes": [
+        "Making \\( \\omega_0 \\) depend on \\( R \\)",
+        "Forgetting the square root in \\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\)",
+        "Thinking impedance is zero or maximum at resonance",
+        "Linking a sharper resonance to larger \\( R \\)",
+        "Adding \\( V_L \\) and \\( V_C \\) at resonance instead of cancelling them"
+      ],
+      "question_count": 40
+    },
+    {
+      "name": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "summary": "Instantaneous power \\( vi \\) in an AC circuit changes throughout each cycle, so what matters is its average. Only the part of the current in phase with the voltage delivers net energy, giving \\( P=V_{rms}I_{rms}\\cos\\phi \\), where \\( \\cos\\phi \\) is the power factor. In a series circuit \\( \\cos\\phi=\\dfrac{R}{Z} \\), and the power is also simply \\( I_{rms}^2R \\), because only the resistor turns electrical energy into heat. For a pure resistor \\( \\cos\\phi=1 \\); at resonance it is also \\( 1 \\). For a pure inductor or capacitor \\( \\phi=90^\\circ \\), so \\( \\cos\\phi=0 \\) and the average power is zero: energy stored in one quarter-cycle is returned in the next. The current in such a circuit is real and measurable but does no net work; it is called wattless current. This is why a choke coil, not a resistor, is used to limit current in lamp circuits, and why industries add capacitors to raise a low power factor. Always use RMS values, never peak values, in these formulas.",
+      "key_formulas": [
+        "\\( P=V_{rms}I_{rms}\\cos\\phi \\)",
+        "\\( \\cos\\phi=\\dfrac{R}{Z} \\)",
+        "\\( P=I_{rms}^2R \\)",
+        "Pure L or C: \\( \\phi=90^\\circ \\), \\( P=0 \\)"
+      ],
+      "worked_example": "\\( R=30 \\) Ω, \\( X_C=40 \\) Ω on \\( 200 \\) V (RMS).<br><br>\\( Z=50 \\) Ω, \\( I=4 \\) A, \\( \\cos\\phi=0.6 \\).<br><br>\\( P=200\\times4\\times0.6=480 \\) W, matching \\( I^2R=16\\times30 \\).",
+      "common_mistakes": [
+        "Dropping \\( \\cos\\phi \\) and using \\( V_{rms}I_{rms} \\) as the power",
+        "Using peak values in the power formula",
+        "Claiming a pure inductor or capacitor dissipates \\( I^2X \\)",
+        "Thinking wattless current means no current flows",
+        "Treating power factor as always \\( 1 \\)"
+      ],
+      "question_count": 44
+    },
+    {
+      "name": "LC Oscillations and the Transformer",
+      "summary": "When a charged capacitor is connected across an ideal inductor, charge flows back and forth and energy shuttles between the capacitor's electric field and the inductor's magnetic field. When the capacitor is fully charged the current is zero; when it is fully discharged the current is maximum. This is exactly like a spring-mass system: charge corresponds to displacement, current to velocity, \\( L \\) to mass and \\( \\dfrac{1}{C} \\) to the spring constant. The oscillation has \\( \\omega=\\dfrac{1}{\\sqrt{LC}} \\) and period \\( T=2\\pi\\sqrt{LC} \\), and with no resistance the total energy stays constant; any resistance damps it, like friction. The transformer uses mutual induction: an alternating primary current creates a changing flux that induces an emf in the secondary, so it works only with AC. For an ideal transformer \\( \\dfrac{V_s}{V_p}=\\dfrac{N_s}{N_p} \\), while power conservation \\( V_pI_p=V_sI_s \\) makes the current ratio the inverse, \\( \\dfrac{I_s}{I_p}=\\dfrac{N_p}{N_s} \\). Stepping up voltage steps down current, which cuts \\( I^2R \\) losses in power transmission.",
+      "key_formulas": [
+        "\\( \\omega=\\dfrac{1}{\\sqrt{LC}} \\), \\( T=2\\pi\\sqrt{LC} \\)",
+        "\\( \\dfrac{q^2}{2C}+\\dfrac{1}{2}Li^2=\\dfrac{Q_0^2}{2C} \\)",
+        "\\( \\dfrac{V_s}{V_p}=\\dfrac{N_s}{N_p} \\)",
+        "\\( \\dfrac{I_s}{I_p}=\\dfrac{N_p}{N_s} \\), \\( V_pI_p=V_sI_s \\)"
+      ],
+      "worked_example": "An ideal transformer with \\( N_p:N_s=10:1 \\) has \\( 2200 \\) V on the primary and an \\( 11 \\) Ω load.<br><br>\\( V_s=220 \\) V, \\( I_s=20 \\) A.<br><br>\\( I_p=\\dfrac{20}{10}=2 \\) A; power \\( 4400 \\) W on both sides.",
+      "common_mistakes": [
+        "Applying the turns ratio to current in the same direction as voltage",
+        "Thinking a transformer changes power, or works on DC",
+        "Halving the charge instead of the energy when energy is shared equally",
+        "Swapping the analogues: \\( L \\) is mass, \\( \\dfrac{1}{C} \\) is the spring constant",
+        "Forgetting \\( 2\\pi \\) or the square root in \\( T=2\\pi\\sqrt{LC} \\)"
+      ],
+      "question_count": 32
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY12-CH07-L1-001",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "In an AC circuit containing only a resistor, what is the phase relationship between the voltage across it and the current through it?",
+      "options": [
+        "They are exactly in phase",
+        "Voltage leads current by \\( 90^\\circ \\)",
+        "Current leads voltage by \\( 90^\\circ \\)",
+        "They are \\( 180^\\circ \\) out of phase"
+      ],
+      "correct_index": 0,
+      "explanation": "For a resistor, \\( v=Ri \\) holds at every instant.<br><br>With \\( v=V_0\\sin\\omega t \\), the current is \\( i=\\dfrac{V_0}{R}\\sin\\omega t \\), the same sine function.<br><br>So voltage and current are exactly in phase, \\( \\phi=0 \\).",
+      "hint": "Ohm's law \\( v=Ri \\) applies at every instant, not just on average.",
+      "distractor_logic": [
+        "This is the pure-inductor behaviour, not the resistor's",
+        "This is the pure-capacitor behaviour, not the resistor's",
+        "Imagines the resistor opposing the voltage; Ohm's law makes \\( v \\) and \\( i \\) rise and fall together"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-002",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "For an ideal inductor connected to an AC source, which statement about phase is correct?",
+      "options": [
+        "Current leads voltage by \\( 90^\\circ \\)",
+        "Voltage leads current by \\( 90^\\circ \\)",
+        "Voltage and current are in phase",
+        "Voltage leads current by \\( 45^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The inductor's back-emf opposes changes in current, so the current builds up a quarter-cycle after the voltage.<br><br>Mathematically, \\( v=V_0\\sin\\omega t \\) gives \\( i=I_0\\sin\\left(\\omega t-\\dfrac{\\pi}{2}\\right) \\).<br><br>So voltage leads current by \\( 90^\\circ \\) — 'ELI': E (voltage) before I in L.",
+      "hint": "Remember 'ELI the ICE man' — in L, E comes before I.",
+      "distractor_logic": [
+        "Swaps the ELI rule; current leading is the capacitor (ICE) case",
+        "That is true only for a pure resistor",
+        "\\( 45^\\circ \\) needs a resistor with \\( R=X_L \\); a pure inductor gives a full \\( 90^\\circ \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-003",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "For an ideal capacitor connected to an AC source, which statement about phase is correct?",
+      "options": [
+        "Voltage leads current by \\( 90^\\circ \\)",
+        "Current and voltage are in phase",
+        "Current leads voltage by \\( 90^\\circ \\)",
+        "Current lags voltage by \\( 180^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Current must flow onto the capacitor before its charge, and hence its voltage, can build up.<br><br>With \\( v=V_0\\sin\\omega t \\), \\( i=C\\dfrac{dv}{dt}=I_0\\sin\\left(\\omega t+\\dfrac{\\pi}{2}\\right) \\).<br><br>So current leads voltage by \\( 90^\\circ \\) — 'ICE': I before E in C.",
+      "hint": "Remember 'ELI the ICE man' — in C, I comes before E.",
+      "distractor_logic": [
+        "Swaps the ICE rule; voltage leading is the inductor (ELI) case",
+        "That is true only for a pure resistor",
+        "No single ideal element produces a \\( 180^\\circ \\) shift between its own \\( v \\) and \\( i \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-004",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "An inductor of \\( 0.5 \\) H is connected to an AC source of angular frequency \\( \\omega=100 \\) rad/s. What is its inductive reactance?",
+      "options": [
+        "\\( 0.005 \\) Ω",
+        "\\( 0.02 \\) Ω",
+        "\\( 200 \\) Ω",
+        "\\( 50 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "Inductive reactance is \\( X_L=\\omega L \\).<br><br>\\( X_L=100\\times0.5=50 \\) Ω.",
+      "hint": "Inductive reactance grows directly with both \\( \\omega \\) and \\( L \\).",
+      "distractor_logic": [
+        "Divided \\( L \\) by \\( \\omega \\) instead of multiplying",
+        "Used the capacitor-style form \\( \\dfrac{1}{\\omega L} \\)",
+        "Computed \\( \\dfrac{\\omega}{L} \\) instead of \\( \\omega L \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-005",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "As the frequency of the AC source across a capacitor is increased, its capacitive reactance \\( X_C \\):",
+      "options": [
+        "Decreases, because \\( X_C=\\dfrac{1}{\\omega C} \\)",
+        "Increases, because \\( X_C \\) is proportional to \\( \\omega \\)",
+        "Stays constant, since it depends only on \\( C \\)",
+        "First increases and then decreases"
+      ],
+      "correct_index": 0,
+      "explanation": "Capacitive reactance is \\( X_C=\\dfrac{1}{\\omega C} \\).<br><br>\\( \\omega \\) sits in the denominator, so raising the frequency lowers \\( X_C \\).<br><br>Physically, at high frequency the capacitor has little time to charge up, so it opposes the current less.",
+      "hint": "Look at where \\( \\omega \\) sits in the formula for \\( X_C \\).",
+      "distractor_logic": [
+        "Swaps the frequency trend of \\( X_C \\) with that of \\( X_L \\)",
+        "Forgets that \\( \\omega \\) appears in the reactance formula",
+        "Invents a peak; \\( X_C \\) falls steadily as \\( \\omega \\) rises"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-006",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "An AC current has a peak value \\( I_0=10\\sqrt2 \\) A. What is its RMS value?",
+      "options": [
+        "\\( 10\\sqrt2 \\) A",
+        "\\( 10 \\) A",
+        "\\( 5\\sqrt2 \\) A",
+        "\\( 20 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "For a sinusoid, \\( I_{rms}=\\dfrac{I_0}{\\sqrt2} \\).<br><br>\\( I_{rms}=\\dfrac{10\\sqrt2}{\\sqrt2}=10 \\) A.",
+      "hint": "The RMS value of a sinusoid is its peak divided by \\( \\sqrt2 \\), not by \\( 2 \\).",
+      "distractor_logic": [
+        "Quoted the peak value as the RMS value",
+        "Divided the peak by \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Multiplied by \\( \\sqrt2 \\) instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-007",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the simple time-average of the current \\( i=I_0\\sin\\omega t \\) taken over one complete cycle?",
+      "options": [
+        "\\( \\dfrac{I_0}{\\sqrt2} \\)",
+        "\\( \\dfrac{I_0}{2} \\)",
+        "Zero",
+        "\\( I_0 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Over a full cycle the positive half and the negative half of the sine wave are identical in size.<br><br>They cancel, so the plain average is exactly zero.<br><br>This is precisely why the RMS value is used as the meaningful 'effective' value of AC.",
+      "hint": "Compare the area of the positive half-cycle with the negative half-cycle.",
+      "distractor_logic": [
+        "That is the RMS value, not the plain average",
+        "Guesses a half-peak average; the positive and negative halves cancel exactly",
+        "Confuses the peak with the average"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-008",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the reactance offered by an ideal capacitor to a steady DC voltage (\\( \\omega=0 \\))?",
+      "options": [
+        "Zero, so it behaves like a plain wire",
+        "Equal to \\( \\dfrac{1}{C} \\)",
+        "The same as at any AC frequency",
+        "Infinite, so no steady current flows"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X_C=\\dfrac{1}{\\omega C} \\).<br><br>For DC, \\( \\omega=0 \\), so \\( X_C \\) becomes infinitely large.<br><br>Once charged, the capacitor blocks steady DC completely.",
+      "hint": "Put \\( \\omega=0 \\) into \\( X_C=\\dfrac{1}{\\omega C} \\).",
+      "distractor_logic": [
+        "This is the inductor's behaviour on DC, not the capacitor's",
+        "Dropped \\( \\omega \\) from \\( X_C=\\dfrac{1}{\\omega C} \\), effectively taking \\( \\omega=1 \\)",
+        "Ignores that \\( X_C \\) depends on frequency"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-009",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "Which expression gives the impedance of a series LCR circuit?",
+      "options": [
+        "\\( Z=\\sqrt{R^2+(X_L-X_C)^2} \\)",
+        "\\( Z=R+X_L+X_C \\)",
+        "\\( Z=\\sqrt{R^2+X_L^2+X_C^2} \\)",
+        "\\( Z=R+X_L-X_C \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( V_R \\) is along the current; \\( V_L \\) and \\( V_C \\) are perpendicular to it and opposite to each other.<br><br>Net reactive voltage is \\( I(X_L-X_C) \\), at right angles to \\( IR \\).<br><br>Pythagoras gives \\( Z=\\sqrt{R^2+(X_L-X_C)^2} \\).",
+      "hint": "Think of a right triangle with \\( R \\) along one side.",
+      "distractor_logic": [
+        "Adds all three as a plain sum, ignoring their phase differences",
+        "Squares each separately, ignoring that \\( X_L \\) and \\( X_C \\) oppose each other",
+        "Combines algebraically instead of as perpendicular phasors"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-010",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "In a series LCR circuit, the phase angle \\( \\phi \\) between voltage and current is given by:",
+      "options": [
+        "\\( \\tan\\phi=\\dfrac{R}{X_L-X_C} \\)",
+        "\\( \\tan\\phi=\\dfrac{X_L-X_C}{R} \\)",
+        "\\( \\tan\\phi=\\dfrac{X_L+X_C}{R} \\)",
+        "\\( \\tan\\phi=\\dfrac{X_L-X_C}{Z} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "In the impedance triangle, \\( R \\) is the adjacent side and \\( X_L-X_C \\) is the opposite side.<br><br>So \\( \\tan\\phi=\\dfrac{X_L-X_C}{R} \\).",
+      "hint": "Opposite side over adjacent side in the impedance triangle.",
+      "distractor_logic": [
+        "Inverted the ratio in the impedance triangle",
+        "Added the reactances although they oppose each other",
+        "That ratio is \\( \\sin\\phi \\), not \\( \\tan\\phi \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-011",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "In a series LCR circuit with \\( X_L>X_C \\), the circuit is:",
+      "options": [
+        "Capacitive, with current leading voltage",
+        "Purely resistive, with voltage and current in phase",
+        "Inductive, with voltage leading current",
+        "Inductive, with current leading voltage"
+      ],
+      "correct_index": 2,
+      "explanation": "With \\( X_L>X_C \\), \\( \\tan\\phi=\\dfrac{X_L-X_C}{R}>0 \\).<br><br>A positive \\( \\phi \\) means the circuit behaves inductively and voltage leads current.",
+      "hint": "Check the sign of \\( X_L-X_C \\).",
+      "distractor_logic": [
+        "Swapped which reactance dominates",
+        "That happens only when \\( X_L=X_C \\)",
+        "Right label but wrong phase; ELI says voltage leads in an inductive circuit"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-012",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "A series circuit has \\( R=3 \\) Ω and \\( X_L=4 \\) Ω (no capacitor). What is its impedance?",
+      "options": [
+        "\\( 7 \\) Ω",
+        "\\( 1 \\) Ω",
+        "\\( 25 \\) Ω",
+        "\\( 5 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( Z=\\sqrt{R^2+X_L^2}=\\sqrt{9+16}=\\sqrt{25}=5 \\) Ω.",
+      "hint": "A 3-4-? right triangle.",
+      "distractor_logic": [
+        "Added \\( R \\) and \\( X_L \\) as a plain sum",
+        "Subtracted \\( R \\) from \\( X_L \\)",
+        "Forgot to take the square root"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-013",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "A \\( 6 \\) Ω resistor is in series with a \\( 125 \\) \\( \\mu \\)F capacitor across a source of \\( \\omega=1000 \\) rad/s. What is the impedance?",
+      "options": [
+        "\\( 10 \\) Ω",
+        "\\( 14 \\) Ω",
+        "\\( 6 \\) Ω",
+        "\\( 2 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( X_C=\\dfrac{1}{\\omega C}=\\dfrac{1}{1000\\times1.25\\times10^{-4}}=8 \\) Ω.<br><br>\\( Z=\\sqrt{6^2+8^2}=10 \\) Ω.",
+      "hint": "Find \\( X_C \\) first, then combine with \\( R \\) like perpendicular sides.",
+      "distractor_logic": [
+        "Added \\( R \\) and \\( X_C \\) as a plain sum",
+        "Ignored the capacitor, as if it offered no opposition to AC",
+        "Subtracted \\( R \\) from \\( X_C \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-014",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "In a series RC circuit on AC, how does the current compare in phase with the supply voltage?",
+      "options": [
+        "Current lags voltage by an angle between \\( 0^\\circ \\) and \\( 90^\\circ \\)",
+        "Current leads voltage by an angle between \\( 0^\\circ \\) and \\( 90^\\circ \\)",
+        "Current leads voltage by exactly \\( 90^\\circ \\)",
+        "Current and voltage are in phase"
+      ],
+      "correct_index": 1,
+      "explanation": "The capacitor pulls the current ahead of the voltage, while the resistor keeps them in step.<br><br>The combination gives \\( \\phi \\) negative with magnitude between \\( 0^\\circ \\) and \\( 90^\\circ \\): current leads by less than \\( 90^\\circ \\).",
+      "hint": "It sits between the pure-R and pure-C extremes.",
+      "distractor_logic": [
+        "That is the RL behaviour; ICE says current leads in capacitive circuits",
+        "Exactly \\( 90^\\circ \\) needs a pure capacitor with no resistance",
+        "Ignores the capacitor's phase shift entirely"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-015",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "In a series RL circuit, voltmeters read \\( 30 \\) V across the resistor and \\( 40 \\) V across the inductor. What is the supply voltage?",
+      "options": [
+        "\\( 70 \\) V",
+        "\\( 10 \\) V",
+        "\\( 50 \\) V",
+        "\\( 2500 \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( V_R \\) and \\( V_L \\) are \\( 90^\\circ \\) apart.<br><br>\\( V=\\sqrt{V_R^2+V_L^2}=\\sqrt{900+1600}=50 \\) V.",
+      "hint": "The two voltages are perpendicular phasors.",
+      "distractor_logic": [
+        "Added the voltmeter readings as a plain sum",
+        "Subtracted the readings",
+        "Forgot to take the square root"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-016",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 1,
+      "type": "regular",
+      "question": "In a series LCR circuit, which quantity is the same for all three elements at every instant?",
+      "options": [
+        "The voltage",
+        "The phase of the voltage",
+        "The reactance",
+        "The current"
+      ],
+      "correct_index": 3,
+      "explanation": "In a series circuit there is only one path, so the same current flows through \\( R \\), \\( L \\) and \\( C \\) at every instant.<br><br>That is why the current phasor is used as the reference in LCR phasor diagrams.",
+      "hint": "There is only one path for charge in a series circuit.",
+      "distractor_logic": [
+        "Equal voltage is a property of parallel elements, not series",
+        "Each element's voltage has a different phase relative to the current",
+        "The resistor has no reactance, and \\( X_L \\), \\( X_C \\) generally differ"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-017",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the condition for resonance in a series LCR circuit?",
+      "options": [
+        "\\( X_L=X_C \\)",
+        "\\( R=X_L \\)",
+        "\\( X_L=2X_C \\)",
+        "\\( R=0 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At resonance the inductive and capacitive reactances cancel exactly: \\( X_L=X_C \\).<br><br>Then \\( Z=R \\) and the circuit is purely resistive.",
+      "hint": "What makes the reactive part of \\( Z \\) vanish?",
+      "distractor_logic": [
+        "Confuses resonance with the \\( 45^\\circ \\) condition",
+        "Invents a factor; the reactances must cancel exactly",
+        "Resonance does not require zero resistance"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-018",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "The resonant angular frequency of a series LCR circuit is:",
+      "options": [
+        "\\( \\omega_0=\\dfrac{1}{LC} \\)",
+        "\\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\)",
+        "\\( \\omega_0=\\sqrt{LC} \\)",
+        "\\( \\omega_0=\\dfrac{R}{\\sqrt{LC}} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Set \\( \\omega_0L=\\dfrac{1}{\\omega_0C} \\).<br><br>Then \\( \\omega_0^2=\\dfrac{1}{LC} \\), so \\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\).<br><br>\\( R \\) does not appear.",
+      "hint": "Equate \\( X_L \\) and \\( X_C \\) and solve for \\( \\omega \\).",
+      "distractor_logic": [
+        "Forgot the square root",
+        "Inverted the expression",
+        "Made \\( \\omega_0 \\) depend on \\( R \\); it depends only on \\( L \\) and \\( C \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-019",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "At resonance, the impedance of a series LCR circuit is:",
+      "options": [
+        "Zero, since everything cancels",
+        "Maximum, equal to \\( R+X_L+X_C \\)",
+        "Equal to \\( R \\), its minimum possible value",
+        "Equal to \\( X_L \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "With \\( X_L=X_C \\), \\( Z=\\sqrt{R^2+0}=R \\).<br><br>Since \\( (X_L-X_C)^2\\geq0 \\) always, \\( Z \\) can never be smaller than \\( R \\), so this is the minimum.",
+      "hint": "Put \\( X_L-X_C=0 \\) in the impedance formula.",
+      "distractor_logic": [
+        "Only the reactances cancel; \\( R \\) remains",
+        "Series resonance minimises \\( Z \\); a plain sum is never correct",
+        "Forgets that \\( X_L \\) is cancelled by \\( X_C \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-020",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the phase angle \\( \\phi \\) between voltage and current in a series LCR circuit at resonance?",
+      "options": [
+        "\\( 90^\\circ \\)",
+        "\\( -90^\\circ \\)",
+        "\\( 45^\\circ \\)",
+        "\\( 0^\\circ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "At resonance \\( \\tan\\phi=\\dfrac{X_L-X_C}{R}=0 \\).<br><br>So \\( \\phi=0 \\): voltage and current are in phase.",
+      "hint": "At resonance the circuit behaves like a pure resistor.",
+      "distractor_logic": [
+        "That is the pure-inductor value",
+        "That is the pure-capacitor value",
+        "That occurs when \\( |X_L-X_C|=R \\), at the half-power points"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-021",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "A series LCR circuit has \\( L=1 \\) H and \\( C=100 \\) \\( \\mu \\)F. What is its resonant angular frequency?",
+      "options": [
+        "\\( 100 \\) rad/s",
+        "\\( 10^4 \\) rad/s",
+        "\\( 0.01 \\) rad/s",
+        "\\( 1000 \\) rad/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( LC=1\\times10^{-4} \\).<br><br>\\( \\omega_0=\\dfrac{1}{\\sqrt{10^{-4}}}=\\dfrac{1}{10^{-2}}=100 \\) rad/s.",
+      "hint": "Convert microfarads to farads first.",
+      "distractor_logic": [
+        "Used \\( \\dfrac{1}{LC} \\) without the square root",
+        "Used \\( \\sqrt{LC} \\) instead of its reciprocal",
+        "Took \\( C=10^{-6} \\) F, dropping the \\( 100 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-022",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "The quality factor \\( Q \\) of a series LCR circuit is defined as:",
+      "options": [
+        "\\( Q=\\dfrac{R}{\\omega_0L} \\)",
+        "\\( Q=\\dfrac{\\omega_0L}{R} \\)",
+        "\\( Q=\\omega_0LR \\)",
+        "\\( Q=\\dfrac{\\omega_0}{R} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( Q=\\dfrac{\\omega_0L}{R}=\\dfrac{1}{\\omega_0RC}=\\dfrac{\\omega_0}{\\Delta\\omega} \\).<br><br>It compares the reactance at resonance with the resistance, and is dimensionless.",
+      "hint": "\\( Q \\) is a ratio of two quantities measured in ohms.",
+      "distractor_logic": [
+        "Inverted the ratio",
+        "Multiplied by \\( R \\); a larger \\( R \\) should lower \\( Q \\)",
+        "Dropped \\( L \\); \\( Q \\) must be dimensionless"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-023",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "The resonance curve of a series LCR circuit becomes sharper when:",
+      "options": [
+        "The resistance \\( R \\) is increased",
+        "Sharpness is independent of \\( R \\)",
+        "The resistance \\( R \\) is decreased",
+        "The source voltage is increased"
+      ],
+      "correct_index": 2,
+      "explanation": "Sharpness is measured by \\( Q=\\dfrac{\\omega_0L}{R} \\).<br><br>Smaller \\( R \\) gives larger \\( Q \\) and a narrower bandwidth \\( \\Delta\\omega=\\dfrac{\\omega_0}{Q} \\), so the peak is sharper.",
+      "hint": "Look at where \\( R \\) sits in the formula for \\( Q \\).",
+      "distractor_logic": [
+        "Reverses the trend; more \\( R \\) flattens the peak",
+        "Ignores that \\( Q=\\dfrac{\\omega_0L}{R} \\) depends on \\( R \\)",
+        "Raising voltage scales the whole curve up but does not change its relative sharpness"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-024",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 1,
+      "type": "regular",
+      "question": "If the resistance in a series LCR circuit is doubled while \\( L \\) and \\( C \\) are unchanged, the resonant frequency:",
+      "options": [
+        "Is halved",
+        "Is doubled",
+        "Becomes \\( \\sqrt2 \\) times",
+        "Remains unchanged"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\) contains only \\( L \\) and \\( C \\).<br><br>Changing \\( R \\) alters the height and sharpness of the peak, but not where it occurs.",
+      "hint": "Which quantities appear in \\( \\omega_0 \\)?",
+      "distractor_logic": [
+        "Treats \\( \\omega_0 \\) as inversely dependent on \\( R \\)",
+        "Treats \\( \\omega_0 \\) as proportional to \\( R \\)",
+        "Invents a square-root dependence on \\( R \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-025",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "The average power consumed in an AC circuit is:",
+      "options": [
+        "\\( P=V_{rms}I_{rms}\\cos\\phi \\)",
+        "\\( P=V_{rms}I_{rms} \\)",
+        "\\( P=V_0I_0\\cos\\phi \\)",
+        "\\( P=V_{rms}I_{rms}\\sin\\phi \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Only the component of current in phase with the voltage delivers net energy.<br><br>That component is \\( I_{rms}\\cos\\phi \\), giving \\( P=V_{rms}I_{rms}\\cos\\phi \\).",
+      "hint": "Power needs both RMS values and the power factor.",
+      "distractor_logic": [
+        "Dropped the power factor \\( \\cos\\phi \\)",
+        "Used peak values instead of RMS values",
+        "Used \\( \\sin\\phi \\); that relates to the non-working reactive part"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-026",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the average power consumed by a pure inductor connected to an AC source?",
+      "options": [
+        "\\( V_{rms}I_{rms} \\)",
+        "Zero",
+        "\\( I_{rms}^2X_L \\)",
+        "\\( \\dfrac{V_{rms}I_{rms}}{2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "For a pure inductor, \\( \\phi=90^\\circ \\), so \\( \\cos\\phi=0 \\).<br><br>\\( P=V_{rms}I_{rms}\\times0=0 \\): energy taken in one quarter-cycle is returned in the next.",
+      "hint": "What is \\( \\cos90^\\circ \\)?",
+      "distractor_logic": [
+        "Dropped \\( \\cos\\phi \\), which is zero for a pure inductor",
+        "Treated reactance as if it dissipated heat like resistance",
+        "Invented a half-power value"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-027",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the power factor of a purely resistive AC circuit?",
+      "options": [
+        "\\( 0 \\)",
+        "\\( 0.5 \\)",
+        "\\( 1 \\)",
+        "\\( \\dfrac{1}{\\sqrt2} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "In a pure resistor \\( \\phi=0 \\).<br><br>Power factor \\( \\cos\\phi=\\cos0=1 \\).",
+      "hint": "Voltage and current are in phase in a resistor.",
+      "distractor_logic": [
+        "That is the value for a pure inductor or capacitor",
+        "Guesses a middle value",
+        "Confuses power factor with the RMS conversion factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-028",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "What is meant by 'wattless current'?",
+      "options": [
+        "A current too small to be measured",
+        "A current that exists only at resonance",
+        "The current through a pure resistor",
+        "A current that flows in a pure inductor or capacitor but consumes zero average power"
+      ],
+      "correct_index": 3,
+      "explanation": "In a pure L or C, \\( \\phi=90^\\circ \\) and \\( \\cos\\phi=0 \\).<br><br>A real, measurable current flows, yet the average power is zero — hence 'wattless'.",
+      "hint": "'Watt-less' means no power, not no current.",
+      "distractor_logic": [
+        "Wattless current can be large; it simply does no net work",
+        "At resonance the power factor is \\( 1 \\), the opposite of wattless",
+        "A resistor's current is fully in phase and dissipates power"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-029",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the power factor of a series LCR circuit at resonance?",
+      "options": [
+        "\\( 1 \\)",
+        "\\( 0 \\)",
+        "It depends on the quality factor",
+        "\\( \\dfrac{1}{\\sqrt2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At resonance \\( Z=R \\) and \\( \\phi=0 \\).<br><br>Power factor \\( =\\cos\\phi=\\dfrac{R}{Z}=1 \\).",
+      "hint": "At resonance the circuit acts like a pure resistor.",
+      "distractor_logic": [
+        "Thinks cancelling reactances cancel the power too",
+        "\\( Q \\) affects sharpness, not the power factor at the peak",
+        "That is the value at the half-power points"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-030",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "A device draws \\( 5 \\) A (RMS) from a \\( 220 \\) V (RMS) supply at a power factor of \\( 0.5 \\). What average power does it consume?",
+      "options": [
+        "\\( 1100 \\) W",
+        "\\( 550 \\) W",
+        "\\( 275 \\) W",
+        "\\( 2200 \\) W"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=V_{rms}I_{rms}\\cos\\phi=220\\times5\\times0.5=550 \\) W.",
+      "hint": "Multiply by the power factor.",
+      "distractor_logic": [
+        "Dropped the power factor",
+        "Applied an extra factor of one-half, treating the RMS values as peak",
+        "Divided by the power factor instead of multiplying"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-031",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "A series circuit has \\( R=6 \\) Ω and impedance \\( Z=10 \\) Ω. What is its power factor?",
+      "options": [
+        "\\( \\dfrac{5}{3} \\)",
+        "\\( 0.8 \\)",
+        "\\( 0.6 \\)",
+        "\\( 0.75 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Power factor \\( \\cos\\phi=\\dfrac{R}{Z}=\\dfrac{6}{10}=0.6 \\).",
+      "hint": "Adjacent side over hypotenuse in the impedance triangle.",
+      "distractor_logic": [
+        "Inverted the ratio to \\( \\dfrac{Z}{R} \\); a power factor cannot exceed \\( 1 \\)",
+        "Used \\( \\dfrac{X}{Z} \\), which is \\( \\sin\\phi \\)",
+        "Used \\( \\dfrac{R}{X} \\) with \\( X=8 \\) Ω"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-032",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 1,
+      "type": "regular",
+      "question": "An RMS current of \\( 2 \\) A flows through a \\( 100 \\) Ω resistor. What is the average power dissipated?",
+      "options": [
+        "\\( 200 \\) W",
+        "\\( 800 \\) W",
+        "\\( 0 \\) W",
+        "\\( 400 \\) W"
+      ],
+      "correct_index": 3,
+      "explanation": "With the RMS value given directly: \\( P=I_{rms}^2R=4\\times100=400 \\) W.",
+      "hint": "RMS values plug straight into \\( I^2R \\).",
+      "distractor_logic": [
+        "Treated the RMS value as peak and halved the power",
+        "Doubled the power by an unnecessary conversion",
+        "Used the zero plain average of the current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-033",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "In an ideal LC circuit, a charged capacitor is connected across an inductor. What happens to the energy?",
+      "options": [
+        "It oscillates between the capacitor's electric field and the inductor's magnetic field",
+        "It is dissipated as heat in the inductor",
+        "It stays in the capacitor; only charge moves",
+        "It is stored only in the inductor throughout"
+      ],
+      "correct_index": 0,
+      "explanation": "As the capacitor discharges, current builds a magnetic field in the inductor.<br><br>Then the inductor drives current to recharge the capacitor the other way.<br><br>Energy keeps shuttling between electric and magnetic forms.",
+      "hint": "Think of a swinging pendulum trading potential and kinetic energy.",
+      "distractor_logic": [
+        "An ideal inductor has no resistance, so nothing is dissipated",
+        "When current flows, energy builds up in the inductor's magnetic field",
+        "At the instants of maximum charge, the inductor's energy is zero"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-034",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "In an LC oscillation, at the instant the capacitor is fully charged, the current in the circuit is:",
+      "options": [
+        "Maximum",
+        "Zero",
+        "Half its maximum value",
+        "Equal to \\( \\dfrac{Q_0}{C} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At full charge all the energy is in the capacitor's electric field.<br><br>The magnetic energy \\( \\dfrac{1}{2}Li^2 \\) is zero, so \\( i=0 \\).",
+      "hint": "Where is all the energy at full charge?",
+      "distractor_logic": [
+        "Maximum current occurs when the capacitor charge is zero",
+        "Guesses an in-between value",
+        "That expression is a voltage, not a current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-035",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "In the analogy between LC oscillations and a spring-mass system, the inductance \\( L \\) corresponds to:",
+      "options": [
+        "The spring constant \\( k \\)",
+        "The displacement \\( x \\)",
+        "The mass \\( m \\)",
+        "The velocity \\( v \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Inductance opposes changes in current just as mass opposes changes in velocity.<br><br>Magnetic energy \\( \\dfrac{1}{2}Li^2 \\) matches kinetic energy \\( \\dfrac{1}{2}mv^2 \\).",
+      "hint": "Match \\( \\dfrac{1}{2}Li^2 \\) with a mechanical energy.",
+      "distractor_logic": [
+        "The spring constant corresponds to \\( \\dfrac{1}{C} \\)",
+        "Displacement corresponds to the charge \\( q \\)",
+        "Velocity corresponds to the current \\( i \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-036",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "In the spring-mass analogy of LC oscillations, the quantity \\( \\dfrac{1}{C} \\) corresponds to:",
+      "options": [
+        "The mass \\( m \\)",
+        "The displacement \\( x \\)",
+        "The damping force",
+        "The spring constant \\( k \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Capacitor energy \\( \\dfrac{q^2}{2C} \\) matches spring energy \\( \\dfrac{1}{2}kx^2 \\) with \\( q\\leftrightarrow x \\).<br><br>So \\( \\dfrac{1}{C} \\) plays the role of \\( k \\).",
+      "hint": "Compare \\( \\dfrac{q^2}{2C} \\) with \\( \\dfrac{1}{2}kx^2 \\).",
+      "distractor_logic": [
+        "The mass corresponds to \\( L \\)",
+        "Displacement corresponds to charge \\( q \\)",
+        "Damping corresponds to resistance, which is absent in an ideal LC circuit"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-037",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "A transformer works on the principle of:",
+      "options": [
+        "Mutual induction, which needs a changing (AC) current",
+        "Self-induction alone, working equally on DC",
+        "Electrostatic induction between the coils",
+        "Direct conduction of current from primary to secondary"
+      ],
+      "correct_index": 0,
+      "explanation": "The alternating primary current creates a changing magnetic flux in the core.<br><br>This changing flux links the secondary and induces an emf in it — mutual induction.",
+      "hint": "What must change to induce an emf?",
+      "distractor_logic": [
+        "A steady DC gives no changing flux, so nothing is induced",
+        "The coupling is magnetic, not electrostatic",
+        "The two coils are electrically insulated from each other"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-038",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "In a step-up transformer:",
+      "options": [
+        "The secondary has fewer turns than the primary",
+        "The secondary has more turns than the primary",
+        "Both coils have the same number of turns",
+        "The turns ratio depends on the current drawn"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{V_s}{V_p}=\\dfrac{N_s}{N_p} \\).<br><br>To raise the voltage, \\( N_s>N_p \\).",
+      "hint": "Voltage ratio equals turns ratio.",
+      "distractor_logic": [
+        "That describes a step-down transformer",
+        "Equal turns give no change in voltage",
+        "The turns are fixed by construction"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-039",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "An ideal transformer has \\( N_p:N_s=1:10 \\). If \\( 220 \\) V AC is applied to the primary, the secondary voltage is:",
+      "options": [
+        "\\( 22 \\) V",
+        "\\( 220 \\) V",
+        "\\( 2200 \\) V",
+        "\\( 22000 \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( V_s=V_p\\times\\dfrac{N_s}{N_p}=220\\times10=2200 \\) V.",
+      "hint": "More secondary turns means higher secondary voltage.",
+      "distractor_logic": [
+        "Inverted the turns ratio",
+        "Assumed a transformer does not change voltage",
+        "Multiplied by \\( 100 \\), squaring the ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L1-040",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 1,
+      "type": "regular",
+      "question": "In an ideal step-up transformer, the secondary current is:",
+      "options": [
+        "Larger than the primary, in the same ratio as the voltage",
+        "Equal to the primary current",
+        "Zero, since only voltage is transferred",
+        "Smaller than the primary current"
+      ],
+      "correct_index": 3,
+      "explanation": "Power is conserved: \\( V_pI_p=V_sI_s \\).<br><br>If \\( V_s>V_p \\), then \\( I_s<I_p \\); indeed \\( \\dfrac{I_s}{I_p}=\\dfrac{N_p}{N_s} \\).",
+      "hint": "If voltage goes up and power stays the same, what must current do?",
+      "distractor_logic": [
+        "Applied the turns ratio to current in the same direction as voltage",
+        "Ignores that power, not current, is conserved",
+        "Energy is transferred, so current does flow in the secondary"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-001",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the capacitive reactance of a \\( 100 \\) \\( \\mu \\)F capacitor at \\( \\omega=100 \\) rad/s.",
+      "options": [
+        "\\( 100 \\) Ω",
+        "\\( 0.01 \\) Ω",
+        "\\( 10^4 \\) Ω",
+        "\\( \\dfrac{50}{\\pi} \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( C=100 \\) \\( \\mu \\)F \\( =10^{-4} \\) F.<br><br>\\( X_C=\\dfrac{1}{\\omega C}=\\dfrac{1}{100\\times10^{-4}}=\\dfrac{1}{10^{-2}}=100 \\) Ω.",
+      "hint": "Convert microfarads to farads before using \\( X_C=\\dfrac{1}{\\omega C} \\).",
+      "distractor_logic": [
+        "Used \\( \\omega C \\) instead of \\( \\dfrac{1}{\\omega C} \\)",
+        "Dropped the \\( 100 \\) in \\( 100 \\) \\( \\mu \\)F, using \\( C=10^{-6} \\) F",
+        "Treated \\( 100 \\) as a frequency \\( f \\) and used \\( 2\\pi f \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-002",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "A pure inductor of \\( 0.2 \\) H is connected to a \\( 200 \\) V (RMS) source of angular frequency \\( \\omega=500 \\) rad/s. What RMS current flows?",
+      "options": [
+        "\\( 2\\sqrt2 \\) A",
+        "\\( 2 \\) A",
+        "\\( 0 \\) A",
+        "\\( 1 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( X_L=\\omega L=500\\times0.2=100 \\) Ω.<br><br>\\( I_{rms}=\\dfrac{V_{rms}}{X_L}=\\dfrac{200}{100}=2 \\) A.",
+      "hint": "Find \\( X_L \\) first, then use it in place of \\( R \\) in Ohm's law.",
+      "distractor_logic": [
+        "Gave the peak current instead of the RMS current",
+        "Thinks no current flows because a pure inductor uses no power; wattless current is still real current",
+        "Wrongly halved the RMS voltage as if converting from peak"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-003",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "An inductor has a reactance of \\( 30 \\) Ω at frequency \\( f \\). What is its reactance at frequency \\( 2f \\)?",
+      "options": [
+        "\\( 15 \\) Ω",
+        "\\( 30 \\) Ω",
+        "\\( 60 \\) Ω",
+        "\\( 120 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( X_L=\\omega L=2\\pi fL \\), directly proportional to \\( f \\).<br><br>Doubling \\( f \\) doubles \\( X_L \\): \\( 2\\times30=60 \\) Ω.",
+      "hint": "Is \\( X_L \\) proportional or inversely proportional to frequency?",
+      "distractor_logic": [
+        "Applied the capacitor's inverse trend to the inductor",
+        "Assumed reactance does not depend on frequency",
+        "Assumed \\( X_L \\) grows with the square of frequency"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-004",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "A capacitor has a reactance of \\( 40 \\) Ω at frequency \\( f \\). What is its reactance at frequency \\( 2f \\)?",
+      "options": [
+        "\\( 80 \\) Ω",
+        "\\( 10 \\) Ω",
+        "\\( 40 \\) Ω",
+        "\\( 20 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X_C=\\dfrac{1}{2\\pi fC} \\), inversely proportional to \\( f \\).<br><br>Doubling \\( f \\) halves \\( X_C \\): \\( \\dfrac{40}{2}=20 \\) Ω.",
+      "hint": "\\( f \\) sits in the denominator of \\( X_C \\).",
+      "distractor_logic": [
+        "Applied the inductor's direct trend to the capacitor",
+        "Assumed \\( X_C \\) varies inversely with the square of frequency",
+        "Assumed reactance does not depend on frequency"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-005",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "Household mains in India is rated \\( 220 \\) V (RMS). What is its peak voltage?",
+      "options": [
+        "\\( 220\\sqrt2 \\) V, about \\( 311 \\) V",
+        "\\( 440 \\) V",
+        "\\( 110\\sqrt2 \\) V",
+        "\\( \\dfrac{220}{\\sqrt2} \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( V_{rms}=\\dfrac{V_0}{\\sqrt2} \\), so \\( V_0=\\sqrt2\\,V_{rms} \\).<br><br>\\( V_0=220\\sqrt2 \\) V, about \\( 311 \\) V.",
+      "hint": "Peak is always larger than RMS for a sinusoid, by a factor of \\( \\sqrt2 \\).",
+      "distractor_logic": [
+        "Used a factor of \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Divided instead of multiplying when going from RMS to peak",
+        "Applied the peak-to-RMS conversion in the wrong direction"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-006",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "A voltage \\( v=100\\sin(100t) \\) V is applied across a \\( 50 \\) Ω resistor. What is the RMS current?",
+      "options": [
+        "\\( 2 \\) A",
+        "\\( \\sqrt2 \\) A",
+        "\\( 1 \\) A",
+        "\\( 0 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "Peak voltage \\( V_0=100 \\) V, so peak current \\( I_0=\\dfrac{100}{50}=2 \\) A.<br><br>\\( I_{rms}=\\dfrac{I_0}{\\sqrt2}=\\dfrac{2}{\\sqrt2}=\\sqrt2 \\) A.",
+      "hint": "The coefficient of the sine is the peak value, not the RMS value.",
+      "distractor_logic": [
+        "Gave the peak current \\( \\dfrac{V_0}{R} \\) as the RMS value",
+        "Divided the peak current by \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Took the plain average of the sine wave, which is zero"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-007",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "In a circuit with a single ideal element, \\( v=V_0\\sin\\omega t \\) and \\( i=I_0\\sin\\left(\\omega t+\\dfrac{\\pi}{2}\\right) \\). The element is:",
+      "options": [
+        "A pure inductor",
+        "A pure resistor",
+        "A pure capacitor",
+        "A resistor in series with an inductor"
+      ],
+      "correct_index": 2,
+      "explanation": "The current has an extra \\( +\\dfrac{\\pi}{2} \\), so it leads the voltage by \\( 90^\\circ \\).<br><br>Current leading voltage by exactly \\( 90^\\circ \\) is the signature of a pure capacitor (ICE).",
+      "hint": "Which element makes current reach its peak a quarter-cycle before the voltage?",
+      "distractor_logic": [
+        "Swaps ELI and ICE; in an inductor the current lags",
+        "A resistor gives zero phase difference",
+        "That is not a single element, and it would make current lag by less than \\( 90^\\circ \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-008",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 2,
+      "type": "regular",
+      "question": "A \\( 0.1 \\) H inductor is connected to an AC source of frequency \\( f=\\dfrac{50}{\\pi} \\) Hz. Find its reactance.",
+      "options": [
+        "\\( \\dfrac{5}{\\pi} \\) Ω",
+        "\\( 0.1 \\) Ω",
+        "\\( 20 \\) Ω",
+        "\\( 10 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\omega=2\\pi f=2\\pi\\times\\dfrac{50}{\\pi}=100 \\) rad/s.<br><br>\\( X_L=\\omega L=100\\times0.1=10 \\) Ω.",
+      "hint": "Convert \\( f \\) to \\( \\omega \\) first using \\( \\omega=2\\pi f \\).",
+      "distractor_logic": [
+        "Used \\( f \\) directly in place of \\( \\omega=2\\pi f \\)",
+        "Used \\( \\dfrac{1}{\\omega L} \\), the capacitor-style form",
+        "Took \\( \\omega=4\\pi f \\), doubling the conversion factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-009",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit has \\( R=30 \\) Ω, \\( X_L=80 \\) Ω and \\( X_C=40 \\) Ω. Find its impedance.",
+      "options": [
+        "\\( 50 \\) Ω",
+        "\\( 150 \\) Ω",
+        "\\( 70 \\) Ω",
+        "\\( 40 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "Net reactance \\( X_L-X_C=80-40=40 \\) Ω.<br><br>\\( Z=\\sqrt{30^2+40^2}=50 \\) Ω.",
+      "hint": "Net reactance first, then Pythagoras with \\( R \\).",
+      "distractor_logic": [
+        "Added \\( R \\), \\( X_L \\) and \\( X_C \\) as a plain sum",
+        "Used the algebraic sum \\( R+X_L-X_C \\)",
+        "Kept only the net reactance and ignored \\( R \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-010",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit has \\( R=10 \\) Ω, \\( X_L=20 \\) Ω and \\( X_C=10 \\) Ω. What is the phase angle of voltage relative to current?",
+      "options": [
+        "\\( \\phi=-45^\\circ \\), current leads voltage",
+        "\\( \\phi=+45^\\circ \\), voltage leads current",
+        "\\( \\phi=+45^\\circ \\), current leads voltage",
+        "\\( \\phi=+90^\\circ \\), voltage leads current"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\tan\\phi=\\dfrac{X_L-X_C}{R}=\\dfrac{20-10}{10}=1 \\).<br><br>So \\( \\phi=+45^\\circ \\).<br><br>Positive \\( \\phi \\) means inductive: voltage leads current.",
+      "hint": "Compute \\( \\tan\\phi \\) and check its sign.",
+      "distractor_logic": [
+        "Flipped the sign; \\( X_L>X_C \\) makes the circuit inductive",
+        "Correct angle but wrong ELI reading of a positive \\( \\phi \\)",
+        "Treated the circuit as a pure inductor because \\( X_L \\) is largest"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-011",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "In a series LCR circuit, the RMS voltages are \\( V_R=40 \\) V, \\( V_L=80 \\) V and \\( V_C=50 \\) V. What is the supply RMS voltage?",
+      "options": [
+        "\\( 170 \\) V",
+        "\\( 70 \\) V",
+        "\\( 50 \\) V",
+        "\\( 30 \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( V_L-V_C=30 \\) V, perpendicular to \\( V_R \\).<br><br>\\( V=\\sqrt{40^2+30^2}=50 \\) V.",
+      "hint": "\\( V_L \\) and \\( V_C \\) cancel partly; the remainder is perpendicular to \\( V_R \\).",
+      "distractor_logic": [
+        "Added the three voltmeter readings",
+        "Used \\( V_R+V_L-V_C \\) algebraically",
+        "Kept only the net reactive voltage and ignored \\( V_R \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-012",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "A series circuit has \\( R=100 \\) Ω, \\( L=1 \\) H and \\( C=50 \\) \\( \\mu \\)F, driven at \\( \\omega=100 \\) rad/s. What is the phase angle \\( \\phi \\) of voltage relative to current?",
+      "options": [
+        "\\( +45^\\circ \\)",
+        "\\( 0^\\circ \\)",
+        "\\( -90^\\circ \\)",
+        "\\( -45^\\circ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X_L=\\omega L=100 \\) Ω; \\( X_C=\\dfrac{1}{100\\times5\\times10^{-5}}=200 \\) Ω.<br><br>\\( \\tan\\phi=\\dfrac{100-200}{100}=-1 \\).<br><br>\\( \\phi=-45^\\circ \\): the circuit is capacitive and current leads.",
+      "hint": "Compute both reactances; the sign of \\( X_L-X_C \\) sets the sign of \\( \\phi \\).",
+      "distractor_logic": [
+        "Lost the sign; \\( X_C>X_L \\) makes \\( \\phi \\) negative",
+        "Assumed the circuit is at resonance",
+        "Treated the circuit as purely capacitive, ignoring \\( R \\) and \\( L \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-013",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "A \\( 200 \\) V (RMS) source drives a series circuit with \\( R=60 \\) Ω, \\( X_L=100 \\) Ω and \\( X_C=20 \\) Ω. Find the RMS current.",
+      "options": [
+        "\\( 2 \\) A",
+        "\\( 2\\sqrt2 \\) A",
+        "\\( 2.5 \\) A",
+        "\\( \\dfrac{10}{3} \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( Z=\\sqrt{60^2+(100-20)^2}=\\sqrt{3600+6400}=100 \\) Ω.<br><br>\\( I_{rms}=\\dfrac{200}{100}=2 \\) A.",
+      "hint": "Current equals \\( V_{rms} \\) divided by the full impedance.",
+      "distractor_logic": [
+        "Gave the peak current instead of the RMS current",
+        "Divided by the net reactance \\( 80 \\) Ω and ignored \\( R \\)",
+        "Divided by \\( R \\) alone, ignoring the reactances"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-014",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "A series RL circuit has \\( R=10\\sqrt3 \\) Ω and \\( X_L=10 \\) Ω. By what angle does the voltage lead the current?",
+      "options": [
+        "\\( 60^\\circ \\)",
+        "\\( 30^\\circ \\)",
+        "\\( 45^\\circ \\)",
+        "\\( 90^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\tan\\phi=\\dfrac{X_L}{R}=\\dfrac{10}{10\\sqrt3}=\\dfrac{1}{\\sqrt3} \\).<br><br>So \\( \\phi=30^\\circ \\).",
+      "hint": "Which standard angle has \\( \\tan\\phi=\\dfrac{1}{\\sqrt3} \\)?",
+      "distractor_logic": [
+        "Inverted the ratio, using \\( \\dfrac{R}{X_L} \\)",
+        "Assumed equal \\( R \\) and \\( X_L \\)",
+        "Treated it as a pure inductor, ignoring \\( R \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-015",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "An inductive series LCR circuit has \\( R=5 \\) Ω, \\( X_C=4 \\) Ω and \\( Z=13 \\) Ω. Find \\( X_L \\).",
+      "options": [
+        "\\( 8 \\) Ω",
+        "\\( 12 \\) Ω",
+        "\\( 16 \\) Ω",
+        "\\( 17 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( (X_L-X_C)^2=Z^2-R^2=169-25=144 \\), so \\( X_L-X_C=12 \\) Ω (positive since inductive).<br><br>\\( X_L=12+4=16 \\) Ω.",
+      "hint": "Get the net reactance from the impedance triangle, then add back \\( X_C \\).",
+      "distractor_logic": [
+        "Subtracted \\( X_C \\) from the net reactance instead of adding it",
+        "Used the linear sum \\( Z=R+X_L-X_C \\)",
+        "Added \\( X_C \\) to \\( Z \\), ignoring \\( R \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-016",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 2,
+      "type": "regular",
+      "question": "A series RC circuit with \\( R=40 \\) Ω and \\( X_C=30 \\) Ω is connected to a \\( 100 \\) V (RMS) supply. What is the RMS voltage across the capacitor?",
+      "options": [
+        "\\( 100 \\) V",
+        "\\( 20 \\) V",
+        "\\( 75 \\) V",
+        "\\( 60 \\) V"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( Z=\\sqrt{40^2+30^2}=50 \\) Ω, so \\( I=\\dfrac{100}{50}=2 \\) A.<br><br>\\( V_C=IX_C=2\\times30=60 \\) V.<br><br>Check: \\( \\sqrt{80^2+60^2}=100 \\) V.",
+      "hint": "Find the current first, then multiply by \\( X_C \\).",
+      "distractor_logic": [
+        "Assumed the full supply appears across each element",
+        "Found \\( V_R=80 \\) V then subtracted algebraically from \\( 100 \\) V",
+        "Split the voltage using the ratio \\( \\dfrac{X_C}{R} \\) directly"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-017",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "Find the resonant angular frequency of a series circuit with \\( L=0.1 \\) H and \\( C=10 \\) \\( \\mu \\)F.",
+      "options": [
+        "\\( 1000 \\) rad/s",
+        "\\( 10^6 \\) rad/s",
+        "\\( 100 \\) rad/s",
+        "\\( \\dfrac{500}{\\pi} \\) rad/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( LC=0.1\\times10^{-5}=10^{-6} \\).<br><br>\\( \\omega_0=\\dfrac{1}{\\sqrt{10^{-6}}}=10^3 \\) rad/s.",
+      "hint": "\\( LC \\) comes out as a neat power of ten.",
+      "distractor_logic": [
+        "Used \\( \\dfrac{1}{LC} \\) without the square root",
+        "Power-of-ten slip in converting microfarads",
+        "Converted to \\( f_0 \\) but kept the rad/s unit"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-018",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit with \\( R=44 \\) Ω is connected to a \\( 220 \\) V (RMS) source tuned to resonance. What is the RMS current?",
+      "options": [
+        "\\( 5\\sqrt2 \\) A",
+        "\\( 5 \\) A",
+        "\\( 0 \\) A",
+        "\\( 2.5 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "At resonance \\( Z=R=44 \\) Ω.<br><br>\\( I_{rms}=\\dfrac{220}{44}=5 \\) A — the maximum possible current.",
+      "hint": "At resonance only \\( R \\) limits the current.",
+      "distractor_logic": [
+        "Gave the peak current",
+        "Thinks the cancellation of reactances stops the current",
+        "Halved the current, using \\( 2 \\) instead of \\( \\sqrt2 \\) in some conversion"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-019",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit has \\( L=0.5 \\) H, \\( R=10 \\) Ω and resonates at \\( \\omega_0=100 \\) rad/s. Find the quality factor.",
+      "options": [
+        "\\( 0.2 \\)",
+        "\\( 500 \\)",
+        "\\( 5 \\)",
+        "\\( 50 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( Q=\\dfrac{\\omega_0L}{R}=\\dfrac{100\\times0.5}{10}=5 \\).",
+      "hint": "\\( Q \\) is the reactance at resonance divided by \\( R \\).",
+      "distractor_logic": [
+        "Inverted the formula to \\( \\dfrac{R}{\\omega_0L} \\)",
+        "Multiplied by \\( R \\) instead of dividing",
+        "Stopped at \\( \\omega_0L \\) without dividing by \\( R \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-020",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit resonates at \\( \\omega_0=1000 \\) rad/s and has \\( Q=20 \\). What is its bandwidth \\( \\Delta\\omega \\)?",
+      "options": [
+        "\\( 20000 \\) rad/s",
+        "\\( 0.02 \\) rad/s",
+        "\\( 100 \\) rad/s",
+        "\\( 50 \\) rad/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( Q=\\dfrac{\\omega_0}{\\Delta\\omega} \\), so \\( \\Delta\\omega=\\dfrac{\\omega_0}{Q}=\\dfrac{1000}{20}=50 \\) rad/s.",
+      "hint": "Higher \\( Q \\) means a narrower band.",
+      "distractor_logic": [
+        "Multiplied \\( \\omega_0 \\) by \\( Q \\)",
+        "Computed \\( \\dfrac{Q}{\\omega_0} \\)",
+        "Used \\( \\dfrac{2\\omega_0}{Q} \\), doubling the bandwidth"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-021",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit resonates at \\( 400 \\) rad/s. If \\( L \\) is made four times larger with \\( C \\) unchanged, the new resonant frequency is:",
+      "options": [
+        "\\( 200 \\) rad/s",
+        "\\( 100 \\) rad/s",
+        "\\( 800 \\) rad/s",
+        "\\( 400 \\) rad/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega_0\\propto\\dfrac{1}{\\sqrt L} \\).<br><br>Multiplying \\( L \\) by \\( 4 \\) divides \\( \\omega_0 \\) by \\( \\sqrt4=2 \\): \\( \\dfrac{400}{2}=200 \\) rad/s.",
+      "hint": "\\( \\omega_0 \\) varies as one over the square root of \\( L \\).",
+      "distractor_logic": [
+        "Took \\( \\omega_0 \\) inversely proportional to \\( L \\), not \\( \\sqrt L \\)",
+        "Assumed \\( \\omega_0 \\) increases with \\( L \\)",
+        "Assumed \\( \\omega_0 \\) is unaffected by \\( L \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-022",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit has \\( \\omega_0=1000 \\) rad/s. What is its resonant frequency \\( f_0 \\) in hertz?",
+      "options": [
+        "\\( 1000 \\) Hz",
+        "\\( \\dfrac{500}{\\pi} \\) Hz",
+        "\\( 2000\\pi \\) Hz",
+        "\\( 500 \\) Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f_0=\\dfrac{\\omega_0}{2\\pi}=\\dfrac{1000}{2\\pi}=\\dfrac{500}{\\pi} \\) Hz.",
+      "hint": "\\( \\omega=2\\pi f \\).",
+      "distractor_logic": [
+        "Confused \\( \\omega_0 \\) with \\( f_0 \\)",
+        "Multiplied by \\( 2\\pi \\) instead of dividing",
+        "Divided by \\( 2 \\) but forgot \\( \\pi \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-023",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit is at resonance on a \\( 100 \\) V (RMS) supply. What is the RMS voltage across the resistor?",
+      "options": [
+        "Less than \\( 100 \\) V, since \\( L \\) and \\( C \\) take a share",
+        "\\( 50 \\) V",
+        "\\( 100 \\) V, the full supply voltage",
+        "\\( 100\\sqrt2 \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "At resonance \\( Z=R \\), so \\( I=\\dfrac{V}{R} \\).<br><br>\\( V_R=IR=V=100 \\) V.<br><br>\\( V_L \\) and \\( V_C \\) are equal and opposite, so they sum to zero.",
+      "hint": "At resonance the circuit is purely resistive.",
+      "distractor_logic": [
+        "At resonance \\( V_L \\) and \\( V_C \\) cancel exactly, leaving all of it on \\( R \\)",
+        "Split the supply equally, ignoring the phasor picture",
+        "Converted to a peak value unnecessarily"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-024",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit at resonance has \\( R=10 \\) Ω and \\( X_L=X_C=100 \\) Ω, on a \\( 10 \\) V (RMS) supply. What is the RMS voltage across the inductor?",
+      "options": [
+        "\\( 10 \\) V",
+        "\\( 0 \\) V",
+        "\\( 1 \\) V",
+        "\\( 100 \\) V"
+      ],
+      "correct_index": 3,
+      "explanation": "At resonance \\( I=\\dfrac{10}{10}=1 \\) A.<br><br>\\( V_L=IX_L=1\\times100=100 \\) V — ten times the supply, which equals \\( Q=10 \\).",
+      "hint": "Find the current, then multiply by \\( X_L \\).",
+      "distractor_logic": [
+        "Assumed no element can have more than the supply voltage",
+        "Confused the inductor alone with the L and C pair together",
+        "Divided \\( X_L \\) into the voltage instead of multiplying by the current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-025",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "In an AC circuit the peak voltage is \\( 200 \\) V, the peak current is \\( 10 \\) A and \\( \\phi=60^\\circ \\). Find the average power.",
+      "options": [
+        "\\( 500 \\) W",
+        "\\( 1000 \\) W",
+        "\\( 500\\sqrt3 \\) W",
+        "\\( 0 \\) W"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( V_{rms}I_{rms}=\\dfrac{V_0}{\\sqrt2}\\cdot\\dfrac{I_0}{\\sqrt2}=\\dfrac{2000}{2}=1000 \\) W.<br><br>\\( P=1000\\times\\cos60^\\circ=500 \\) W.",
+      "hint": "\\( V_{rms}I_{rms}=\\dfrac{V_0I_0}{2} \\).",
+      "distractor_logic": [
+        "Plugged the peak values straight into \\( VI\\cos\\phi \\)",
+        "Used \\( \\sin60^\\circ \\) instead of \\( \\cos60^\\circ \\)",
+        "Thinks any nonzero phase angle means zero power"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-026",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "A series RC circuit with \\( R=30 \\) Ω and \\( X_C=40 \\) Ω is connected to a \\( 200 \\) V (RMS) supply. Find the average power consumed.",
+      "options": [
+        "\\( 800 \\) W",
+        "\\( 480 \\) W",
+        "\\( 640 \\) W",
+        "\\( 1120 \\) W"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( Z=50 \\) Ω, \\( I=\\dfrac{200}{50}=4 \\) A.<br><br>Only \\( R \\) dissipates: \\( P=I^2R=16\\times30=480 \\) W.<br><br>Check: \\( 200\\times4\\times0.6=480 \\) W.",
+      "hint": "Only the resistor converts electrical energy to heat.",
+      "distractor_logic": [
+        "Used \\( V_{rms}I_{rms} \\) without the power factor",
+        "Computed \\( I^2X_C \\), as if the capacitor dissipated power",
+        "Computed \\( I^2(R+X_C) \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-027",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "A pure \\( 0.1 \\) H inductor is connected to a \\( 220 \\) V (RMS) source with \\( \\omega=100 \\) rad/s. What average power does it draw?",
+      "options": [
+        "\\( 4840 \\) W",
+        "\\( 2420 \\) W",
+        "\\( 0 \\) W",
+        "\\( 48.4 \\) W"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( X_L=10 \\) Ω, so \\( I_{rms}=22 \\) A flows.<br><br>But \\( \\phi=90^\\circ \\), \\( \\cos\\phi=0 \\), so \\( P=0 \\).<br><br>The \\( 22 \\) A is a wattless current.",
+      "hint": "Current flows, but what is the power factor?",
+      "distractor_logic": [
+        "Multiplied \\( V_{rms} \\) and \\( I_{rms}=22 \\) A, dropping \\( \\cos\\phi=0 \\)",
+        "Dropped \\( \\cos\\phi \\) and added a spurious factor of one-half",
+        "Used \\( I^2L \\), treating the inductance as a resistance"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-028",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "A series LCR circuit has \\( R=40 \\) Ω, \\( X_L=50 \\) Ω and \\( X_C=20 \\) Ω. What is its power factor?",
+      "options": [
+        "\\( 0.6 \\)",
+        "\\( 1.25 \\)",
+        "\\( 1 \\)",
+        "\\( 0.8 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( Z=\\sqrt{40^2+30^2}=50 \\) Ω.<br><br>\\( \\cos\\phi=\\dfrac{R}{Z}=\\dfrac{40}{50}=0.8 \\).",
+      "hint": "Find \\( Z \\) first, then \\( \\dfrac{R}{Z} \\).",
+      "distractor_logic": [
+        "Computed \\( \\dfrac{X_L-X_C}{Z} \\), which is \\( \\sin\\phi \\)",
+        "Inverted to \\( \\dfrac{Z}{R} \\); a power factor cannot exceed \\( 1 \\)",
+        "Assumed the circuit is at resonance"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-029",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "A pure \\( 50 \\) \\( \\mu \\)F capacitor is connected to a \\( 100 \\) V (RMS), \\( \\omega=100 \\) rad/s source. Which describes the current and average power?",
+      "options": [
+        "\\( I_{rms}=0.5 \\) A, \\( P=0 \\) W",
+        "\\( I_{rms}=0.5 \\) A, \\( P=50 \\) W",
+        "\\( I_{rms}=0 \\) A, \\( P=0 \\) W",
+        "\\( I_{rms}=\\dfrac{1}{\\sqrt2} \\) A, \\( P=0 \\) W"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( X_C=\\dfrac{1}{100\\times5\\times10^{-5}}=200 \\) Ω.<br><br>\\( I_{rms}=\\dfrac{100}{200}=0.5 \\) A.<br><br>\\( \\phi=-90^\\circ \\), \\( \\cos\\phi=0 \\), so \\( P=0 \\).",
+      "hint": "Current is real; power is zero.",
+      "distractor_logic": [
+        "Dropped \\( \\cos\\phi=0 \\) and used \\( V_{rms}I_{rms} \\)",
+        "Thinks 'wattless' means no current flows",
+        "Multiplied the RMS current by \\( \\sqrt2 \\), giving the peak"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-030",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "An appliance draws \\( 2 \\) A (RMS) from a \\( 220 \\) V (RMS) line at power factor \\( 0.5 \\). How much energy does it use in \\( 1 \\) hour?",
+      "options": [
+        "\\( 0.44 \\) kWh",
+        "\\( 0.22 \\) kWh",
+        "\\( 0.11 \\) kWh",
+        "\\( 220 \\) kWh"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=220\\times2\\times0.5=220 \\) W \\( =0.22 \\) kW.<br><br>Energy \\( =0.22\\times1=0.22 \\) kWh.",
+      "hint": "Find the true power first, then multiply by time.",
+      "distractor_logic": [
+        "Dropped the power factor",
+        "Applied an extra factor of one-half",
+        "Forgot to convert watts to kilowatts"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-031",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "To reduce the current in an AC lamp circuit, which is preferred and why: a resistor or a choke coil (large inductance, tiny resistance)?",
+      "options": [
+        "The resistor, because a resistor dissipates no power",
+        "The choke, because no current flows through it",
+        "The choke, because its power factor is nearly zero so it wastes almost no energy",
+        "Either one, since both waste equal energy"
+      ],
+      "correct_index": 2,
+      "explanation": "A choke limits current through its reactance \\( X_L \\).<br><br>With \\( \\phi \\) close to \\( 90^\\circ \\), \\( \\cos\\phi \\) is close to zero, so almost no power is lost.<br><br>A resistor would limit current too, but waste \\( I^2R \\) as heat.",
+      "hint": "Which one limits current without turning energy into heat?",
+      "distractor_logic": [
+        "Reversed: resistors dissipate \\( I^2R \\), a choke dissipates almost nothing",
+        "The same current flows through the choke; it is just wattless",
+        "Ignores the difference in power factor between them"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-032",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 2,
+      "type": "regular",
+      "question": "A \\( 60 \\) W bulb operates on \\( 120 \\) V (RMS) AC. What is the peak current through it?",
+      "options": [
+        "\\( 1 \\) A",
+        "\\( 0.5 \\) A",
+        "\\( \\dfrac{1}{2\\sqrt2} \\) A",
+        "\\( \\dfrac{1}{\\sqrt2} \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I_{rms}=\\dfrac{P}{V_{rms}}=\\dfrac{60}{120}=0.5 \\) A.<br><br>\\( I_0=\\sqrt2\\times0.5=\\dfrac{1}{\\sqrt2} \\) A.",
+      "hint": "Find the RMS current, then convert to peak.",
+      "distractor_logic": [
+        "Used a factor of \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Gave the RMS current, not the peak",
+        "Divided by \\( \\sqrt2 \\) instead of multiplying"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-033",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "An LC circuit has \\( L=10 \\) mH and \\( C=100 \\) \\( \\mu \\)F. What is the period of its oscillations?",
+      "options": [
+        "\\( 2\\pi\\times10^{-3} \\) s",
+        "\\( 10^{-3} \\) s",
+        "\\( \\dfrac{10^{-3}}{2\\pi} \\) s",
+        "\\( 2\\pi\\times10^{-6} \\) s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( LC=10^{-2}\\times10^{-4}=10^{-6} \\) \\( \\text{s}^2 \\).<br><br>\\( T=2\\pi\\sqrt{LC}=2\\pi\\times10^{-3} \\) s.",
+      "hint": "\\( T=2\\pi\\sqrt{LC} \\).",
+      "distractor_logic": [
+        "Gave \\( \\sqrt{LC} \\) and forgot the \\( 2\\pi \\)",
+        "Divided by \\( 2\\pi \\) instead of multiplying",
+        "Used \\( LC \\) without taking the square root"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-034",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "An LC circuit has \\( L=10 \\) mH and \\( C=1 \\) \\( \\mu \\)F. What is the angular frequency of its oscillations?",
+      "options": [
+        "\\( 10^8 \\) rad/s",
+        "\\( 10^4 \\) rad/s",
+        "\\( 10^{-4} \\) rad/s",
+        "\\( \\dfrac{10^4}{2\\pi} \\) rad/s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( LC=10^{-2}\\times10^{-6}=10^{-8} \\).<br><br>\\( \\omega=\\dfrac{1}{\\sqrt{LC}}=10^4 \\) rad/s.",
+      "hint": "Same formula as the resonant frequency of an LCR circuit.",
+      "distractor_logic": [
+        "Used \\( \\dfrac{1}{LC} \\) without the square root",
+        "Used \\( \\sqrt{LC} \\), which has units of time",
+        "Converted to hertz but kept the rad/s unit"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-035",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "An ideal transformer has \\( N_p:N_s=1:4 \\). If the primary current is \\( 8 \\) A, what is the secondary current?",
+      "options": [
+        "\\( 32 \\) A",
+        "\\( 8 \\) A",
+        "\\( 2 \\) A",
+        "\\( 0.5 \\) A"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{I_s}{I_p}=\\dfrac{N_p}{N_s}=\\dfrac{1}{4} \\).<br><br>\\( I_s=\\dfrac{8}{4}=2 \\) A.",
+      "hint": "Current ratio is the inverse of the turns ratio.",
+      "distractor_logic": [
+        "Applied the turns ratio to current in the same direction as voltage",
+        "Assumed current is unchanged by a transformer",
+        "Divided by \\( 16 \\), squaring the turns ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-036",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "An ideal transformer steps \\( 220 \\) V down to \\( 11 \\) V. What is the turns ratio \\( N_p:N_s \\)?",
+      "options": [
+        "\\( 1:20 \\)",
+        "\\( 1:1 \\)",
+        "\\( 400:1 \\)",
+        "\\( 20:1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{N_p}{N_s}=\\dfrac{V_p}{V_s}=\\dfrac{220}{11}=20 \\).<br><br>So \\( N_p:N_s=20:1 \\).",
+      "hint": "Turns ratio equals voltage ratio.",
+      "distractor_logic": [
+        "Inverted the ratio; step-down needs more primary turns",
+        "Ignores the voltage change",
+        "Squared the voltage ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-037",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "An ideal transformer steps \\( 11000 \\) V down to \\( 220 \\) V and delivers \\( 50 \\) A on the secondary. What is the primary current?",
+      "options": [
+        "\\( 1 \\) A",
+        "\\( 2500 \\) A",
+        "\\( 50 \\) A",
+        "\\( 0 \\) A, since an ideal transformer draws nothing"
+      ],
+      "correct_index": 0,
+      "explanation": "Power out \\( =220\\times50=11000 \\) W.<br><br>Power in is the same: \\( I_p=\\dfrac{11000}{11000}=1 \\) A.",
+      "hint": "Equate input and output power.",
+      "distractor_logic": [
+        "Applied the voltage ratio to current without inverting it",
+        "Assumed the same current on both sides",
+        "Power must be supplied by the primary"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-038",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "In an LC circuit the maximum charge on the capacitor is \\( Q_0 \\). What is the charge when the energy is shared equally between the capacitor and the inductor?",
+      "options": [
+        "\\( \\dfrac{Q_0}{2} \\)",
+        "\\( \\dfrac{Q_0}{\\sqrt2} \\)",
+        "\\( \\dfrac{Q_0}{4} \\)",
+        "\\( Q_0 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Capacitor energy should be half the total: \\( \\dfrac{q^2}{2C}=\\dfrac{1}{2}\\cdot\\dfrac{Q_0^2}{2C} \\).<br><br>\\( q^2=\\dfrac{Q_0^2}{2} \\), so \\( q=\\dfrac{Q_0}{\\sqrt2} \\).",
+      "hint": "Energy depends on \\( q^2 \\), not \\( q \\).",
+      "distractor_logic": [
+        "Halved the charge instead of the energy; energy goes as \\( q^2 \\)",
+        "Divided by the square of \\( 2 \\)",
+        "At \\( Q_0 \\) all the energy is in the capacitor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-039",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "An LC circuit with \\( LC=10^{-6} \\) \\( \\text{s}^2 \\) oscillates with maximum capacitor charge \\( 2 \\) mC. What is the maximum current?",
+      "options": [
+        "\\( 2\\times10^{-6} \\) A",
+        "\\( 2\\sqrt2 \\) A",
+        "\\( 2 \\) A",
+        "\\( \\dfrac{1}{\\pi} \\) A"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega=\\dfrac{1}{\\sqrt{LC}}=10^3 \\) rad/s.<br><br>\\( I_0=\\omega Q_0=10^3\\times2\\times10^{-3}=2 \\) A.",
+      "hint": "Like SHM: maximum velocity equals \\( \\omega \\) times amplitude.",
+      "distractor_logic": [
+        "Multiplied the charge by \\( \\sqrt{LC} \\) instead of dividing",
+        "Added a spurious factor of \\( \\sqrt2 \\)",
+        "Multiplied the charge by \\( f \\) instead of \\( \\omega \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L2-040",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 2,
+      "type": "regular",
+      "question": "An ideal step-up transformer with \\( N_p:N_s=1:5 \\) draws \\( 2 \\) A from a \\( 230 \\) V supply. What power does it deliver to its load?",
+      "options": [
+        "\\( 2300 \\) W",
+        "\\( 92 \\) W",
+        "\\( 11500 \\) W",
+        "\\( 460 \\) W"
+      ],
+      "correct_index": 3,
+      "explanation": "Input power \\( =230\\times2=460 \\) W.<br><br>An ideal transformer has no losses, so output power is also \\( 460 \\) W — only V and I change.",
+      "hint": "A transformer changes voltage, not power.",
+      "distractor_logic": [
+        "Multiplied the power by the turns ratio",
+        "Divided the power by the turns ratio",
+        "Multiplied by the square of the turns ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-001",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 3,
+      "type": "regular",
+      "question": "An alternating current of peak value \\( 4 \\) A flows through a \\( 10 \\) Ω resistor. How much heat is produced in \\( 10 \\) s (a whole number of cycles)?",
+      "options": [
+        "\\( 800 \\) J",
+        "\\( 1600 \\) J",
+        "\\( 400 \\) J",
+        "\\( 0 \\) J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I_{rms}=\\dfrac{4}{\\sqrt2}=2\\sqrt2 \\) A, so \\( I_{rms}^2=8 \\) \\( \\text{A}^2 \\).<br><br>Power \\( P=I_{rms}^2R=8\\times10=80 \\) W.<br><br>Heat \\( H=Pt=80\\times10=800 \\) J.",
+      "hint": "Heating uses \\( I_{rms}^2R \\), and \\( I_{rms}^2=\\dfrac{I_0^2}{2} \\).",
+      "distractor_logic": [
+        "Plugged the peak current \\( I_0 \\) into \\( I^2Rt \\) instead of \\( I_{rms} \\)",
+        "Took \\( I_{rms}=\\dfrac{I_0}{2}=2 \\) A, using \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Used the zero plain average of the current; heating depends on \\( I^2 \\), which is never negative"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-002",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 3,
+      "type": "regular",
+      "question": "At angular frequency \\( \\omega \\), an inductor and a capacitor each have a reactance of \\( 20 \\) Ω. At \\( 2\\omega \\), what is the ratio \\( \\dfrac{X_L}{X_C} \\)?",
+      "options": [
+        "\\( 1 \\)",
+        "\\( 4 \\)",
+        "\\( 2 \\)",
+        "\\( \\dfrac{1}{4} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At \\( 2\\omega \\): \\( X_L=2\\times20=40 \\) Ω, since \\( X_L\\propto\\omega \\).<br><br>\\( X_C=\\dfrac{20}{2}=10 \\) Ω, since \\( X_C\\propto\\dfrac{1}{\\omega} \\).<br><br>\\( \\dfrac{X_L}{X_C}=\\dfrac{40}{10}=4 \\).",
+      "hint": "One reactance doubles and the other halves.",
+      "distractor_logic": [
+        "Assumed both reactances scale the same way with frequency",
+        "Changed \\( X_L \\) correctly but kept \\( X_C \\) fixed",
+        "Swapped the frequency trends of \\( X_L \\) and \\( X_C \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-003",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 3,
+      "type": "regular",
+      "question": "A voltage \\( v=200\\sin(100t) \\) V is applied across a \\( 50 \\) \\( \\mu \\)F capacitor. Which expression gives the current?",
+      "options": [
+        "\\( i=\\sin\\left(100t-\\dfrac{\\pi}{2}\\right) \\) A",
+        "\\( i=\\sin(100t) \\) A",
+        "\\( i=\\sin\\left(100t+\\dfrac{\\pi}{2}\\right) \\) A",
+        "\\( i=4\\times10^4\\sin\\left(100t+\\dfrac{\\pi}{2}\\right) \\) A"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( X_C=\\dfrac{1}{\\omega C}=\\dfrac{1}{100\\times5\\times10^{-5}}=200 \\) Ω.<br><br>Peak current \\( I_0=\\dfrac{200}{200}=1 \\) A.<br><br>In a capacitor current leads voltage by \\( \\dfrac{\\pi}{2} \\), so \\( i=\\sin\\left(100t+\\dfrac{\\pi}{2}\\right) \\) A.",
+      "hint": "Find both the amplitude (via \\( X_C \\)) and the phase (ICE).",
+      "distractor_logic": [
+        "Made current lag voltage, which is the inductor case",
+        "Put current in phase with voltage, which is the resistor case",
+        "Used \\( \\omega C \\) as the reactance instead of \\( \\dfrac{1}{\\omega C} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-004",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 3,
+      "type": "regular",
+      "question": "A voltage \\( v=100\\sqrt2\\sin(100t) \\) V is applied across a pure \\( 0.5 \\) H inductor. What RMS current flows?",
+      "options": [
+        "\\( 2\\sqrt2 \\) A",
+        "\\( \\sqrt2 \\) A",
+        "\\( 0 \\) A",
+        "\\( 2 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X_L=\\omega L=100\\times0.5=50 \\) Ω.<br><br>\\( V_{rms}=\\dfrac{100\\sqrt2}{\\sqrt2}=100 \\) V.<br><br>\\( I_{rms}=\\dfrac{100}{50}=2 \\) A.",
+      "hint": "Convert the peak voltage to RMS first, then divide by \\( X_L \\).",
+      "distractor_logic": [
+        "Gave the peak current instead of the RMS current",
+        "Divided the peak current by \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Confused zero average power in an inductor with zero current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-005",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 3,
+      "type": "regular",
+      "question": "A current is given by \\( i=3\\sin\\omega t+4\\cos\\omega t \\) (in A). What is its RMS value?",
+      "options": [
+        "\\( \\dfrac{5}{\\sqrt2} \\) A",
+        "\\( \\dfrac{7}{\\sqrt2} \\) A",
+        "\\( 5 \\) A",
+        "\\( \\dfrac{5}{2} \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "Sine and cosine are \\( 90^\\circ \\) apart, so they combine like perpendicular phasors.<br><br>Peak \\( I_0=\\sqrt{3^2+4^2}=5 \\) A.<br><br>\\( I_{rms}=\\dfrac{5}{\\sqrt2} \\) A.",
+      "hint": "Treat the sine and cosine parts as two perpendicular phasors.",
+      "distractor_logic": [
+        "Added the amplitudes \\( 3+4 \\) directly; the two terms are \\( 90^\\circ \\) out of phase",
+        "Found the correct peak but quoted it as the RMS value",
+        "Divided the peak by \\( 2 \\) instead of \\( \\sqrt2 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-006",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": 3,
+      "type": "regular",
+      "question": "A bulb is connected in series with an ideal inductor across an AC source of fixed RMS voltage. If the source frequency is increased, the bulb:",
+      "options": [
+        "Glows brighter, because \\( X_L \\) decreases",
+        "Glows dimmer, because \\( X_L \\) increases and the current falls",
+        "Glows the same, because the inductor dissipates no power",
+        "Goes out completely at any frequency above zero"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( X_L=\\omega L \\) rises as frequency rises.<br><br>Larger total opposition means less current through the series bulb.<br><br>Less current means less \\( I^2R \\) heating in the filament, so it glows dimmer.",
+      "hint": "How does the inductor's opposition change as \\( \\omega \\) goes up?",
+      "distractor_logic": [
+        "Swapped the frequency trend of \\( X_L \\) with that of \\( X_C \\)",
+        "The inductor takes no power but still limits the current through the bulb",
+        "\\( X_L \\) grows steadily, not to infinity; some current still flows"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-007",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 3,
+      "type": "regular",
+      "question": "A series LCR circuit is driven at a frequency where \\( X_L>X_C \\). If the frequency is increased slightly, what happens?",
+      "options": [
+        "Impedance decreases and \\( \\phi \\) decreases",
+        "Impedance increases but \\( \\phi \\) decreases",
+        "Impedance increases and the phase angle \\( \\phi \\) increases",
+        "Both stay the same, since \\( R \\) is unchanged"
+      ],
+      "correct_index": 2,
+      "explanation": "Raising \\( \\omega \\) increases \\( X_L \\) and decreases \\( X_C \\), so \\( X_L-X_C \\) grows further.<br><br>\\( Z=\\sqrt{R^2+(X_L-X_C)^2} \\) increases.<br><br>\\( \\tan\\phi=\\dfrac{X_L-X_C}{R} \\) also increases, so \\( \\phi \\) increases.",
+      "hint": "Track what happens to \\( X_L-X_C \\) when \\( \\omega \\) rises.",
+      "distractor_logic": [
+        "Thinks the circuit moves toward resonance; it is already above it",
+        "Gets \\( Z \\) right but ignores that \\( X_L-X_C \\) also grows",
+        "Ignores that both reactances depend on frequency"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-008",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 3,
+      "type": "regular",
+      "question": "In an inductive series LCR circuit on a \\( 100 \\) V (RMS) supply, the voltage across the resistor is \\( 60 \\) V and across the capacitor is \\( 30 \\) V. What is the voltage across the inductor?",
+      "options": [
+        "\\( 10 \\) V",
+        "\\( 80 \\) V",
+        "\\( 50 \\) V",
+        "\\( 110 \\) V"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( (V_L-V_C)^2=V^2-V_R^2=10000-3600=6400 \\), so \\( V_L-V_C=80 \\) V (inductive).<br><br>\\( V_L=80+30=110 \\) V.<br><br>Note \\( V_L \\) can exceed the supply voltage.",
+      "hint": "First the net reactive voltage from the voltage triangle, then add \\( V_C \\).",
+      "distractor_logic": [
+        "Subtracted the readings as if voltages add algebraically",
+        "Found the net reactive voltage but forgot to add back \\( V_C \\)",
+        "Subtracted \\( V_C \\) from the net reactive voltage instead of adding"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-009",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 3,
+      "type": "regular",
+      "question": "A coil draws \\( 4 \\) A from a \\( 12 \\) V DC supply, and \\( 2.4 \\) A from a \\( 12 \\) V (RMS) AC supply of \\( \\omega=100 \\) rad/s. What is its inductance?",
+      "options": [
+        "\\( 40 \\) mH",
+        "\\( 50 \\) mH",
+        "\\( 30 \\) mH",
+        "\\( 20 \\) mH"
+      ],
+      "correct_index": 0,
+      "explanation": "DC: \\( R=\\dfrac{12}{4}=3 \\) Ω (the inductor has no effect on DC).<br><br>AC: \\( Z=\\dfrac{12}{2.4}=5 \\) Ω, so \\( X_L=\\sqrt{25-9}=4 \\) Ω.<br><br>\\( L=\\dfrac{X_L}{\\omega}=\\dfrac{4}{100}=0.04 \\) H \\( =40 \\) mH.",
+      "hint": "DC reveals \\( R \\); AC reveals \\( Z \\).",
+      "distractor_logic": [
+        "Used the full impedance \\( Z \\) as if it were \\( X_L \\)",
+        "Used the DC resistance \\( R \\) as if it were \\( X_L \\)",
+        "Took \\( X_L=Z-R \\), subtracting instead of using Pythagoras"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-010",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 3,
+      "type": "regular",
+      "question": "In a series LCR circuit, \\( v=V_0\\sin\\omega t \\) and \\( i=I_0\\sin\\left(\\omega t-\\dfrac{\\pi}{3}\\right) \\). If \\( R=10 \\) Ω, what is \\( X_L-X_C \\)?",
+      "options": [
+        "\\( -10\\sqrt3 \\) Ω",
+        "\\( +10\\sqrt3 \\) Ω",
+        "\\( \\dfrac{10}{\\sqrt3} \\) Ω",
+        "\\( 20 \\) Ω"
+      ],
+      "correct_index": 1,
+      "explanation": "Current lags voltage by \\( \\dfrac{\\pi}{3} \\), so \\( \\phi=+60^\\circ \\) (inductive).<br><br>\\( X_L-X_C=R\\tan\\phi=10\\times\\sqrt3=10\\sqrt3 \\) Ω.",
+      "hint": "Lagging current means a positive \\( \\phi \\).",
+      "distractor_logic": [
+        "Current lags here, so the circuit is inductive; the negative sign is wrong",
+        "Used \\( \\tan30^\\circ \\) instead of \\( \\tan60^\\circ \\)",
+        "Found the impedance \\( Z=\\dfrac{R}{\\cos\\phi} \\) instead of the net reactance"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-011",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 3,
+      "type": "regular",
+      "question": "A \\( 100 \\) V (RMS) source drives a series circuit with \\( R=40 \\) Ω, \\( X_L=50 \\) Ω and \\( X_C=20 \\) Ω. What would a voltmeter connected across the inductor-capacitor pair read?",
+      "options": [
+        "\\( 140 \\) V",
+        "\\( 100 \\) V",
+        "\\( 60 \\) V",
+        "\\( 80 \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( Z=\\sqrt{40^2+30^2}=50 \\) Ω, so \\( I=2 \\) A.<br><br>\\( V_L=100 \\) V and \\( V_C=40 \\) V are exactly opposite.<br><br>Across the pair: \\( |V_L-V_C|=60 \\) V.",
+      "hint": "\\( V_L \\) and \\( V_C \\) point in opposite directions on the phasor diagram.",
+      "distractor_logic": [
+        "Added \\( V_L=100 \\) V and \\( V_C=40 \\) V, though they are \\( 180^\\circ \\) apart",
+        "Assumed the full supply appears across the reactive pair",
+        "Gave \\( V_R \\) instead of the reactive-pair voltage"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-012",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": 3,
+      "type": "regular",
+      "question": "A series RL circuit has \\( R=10 \\) Ω and \\( X_L=10\\sqrt3 \\) Ω, so \\( \\phi=60^\\circ \\). If the frequency is reduced to one-third, what is the new phase angle?",
+      "options": [
+        "\\( 20^\\circ \\)",
+        "\\( 60^\\circ \\)",
+        "\\( 45^\\circ \\)",
+        "\\( 30^\\circ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X_L\\propto\\omega \\), so the new \\( X_L=\\dfrac{10\\sqrt3}{3}=\\dfrac{10}{\\sqrt3} \\) Ω.<br><br>\\( \\tan\\phi=\\dfrac{10/\\sqrt3}{10}=\\dfrac{1}{\\sqrt3} \\), so \\( \\phi=30^\\circ \\).",
+      "hint": "Reduce \\( X_L \\), not \\( \\phi \\), by the factor of 3.",
+      "distractor_logic": [
+        "Divided the angle itself by \\( 3 \\)",
+        "Assumed the phase angle does not depend on frequency",
+        "Guessed an intermediate standard angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-013",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 3,
+      "type": "regular",
+      "question": "What capacitance must be placed in series with a \\( 0.2 \\) H inductor so that the circuit resonates at \\( \\omega=500 \\) rad/s?",
+      "options": [
+        "\\( 20 \\) \\( \\mu \\)F",
+        "\\( 10^4 \\) \\( \\mu \\)F",
+        "\\( 2 \\) \\( \\mu \\)F",
+        "No value works unless \\( R \\) is also given"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega_0^2=\\dfrac{1}{LC} \\), so \\( C=\\dfrac{1}{\\omega^2L} \\).<br><br>\\( C=\\dfrac{1}{250000\\times0.2}=\\dfrac{1}{50000}=2\\times10^{-5} \\) F \\( =20 \\) \\( \\mu \\)F.",
+      "hint": "Rearrange \\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\) for \\( C \\).",
+      "distractor_logic": [
+        "Used \\( C=\\dfrac{1}{\\omega L} \\) instead of \\( \\dfrac{1}{\\omega^2L} \\)",
+        "Power-of-ten slip in the final conversion",
+        "Resonance depends only on \\( L \\) and \\( C \\), never on \\( R \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-014",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 3,
+      "type": "regular",
+      "question": "A series LCR circuit has \\( L=0.4 \\) H, \\( C=10 \\) \\( \\mu \\)F and \\( R=20 \\) Ω. Find its quality factor.",
+      "options": [
+        "\\( 200 \\)",
+        "\\( 10 \\)",
+        "\\( 0.1 \\)",
+        "\\( 4000 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\omega_0=\\dfrac{1}{\\sqrt{0.4\\times10^{-5}}}=\\dfrac{1}{\\sqrt{4\\times10^{-6}}}=500 \\) rad/s.<br><br>\\( Q=\\dfrac{\\omega_0L}{R}=\\dfrac{500\\times0.4}{20}=10 \\).",
+      "hint": "Find \\( \\omega_0 \\) first, or use \\( Q=\\dfrac{1}{R}\\sqrt{\\dfrac{L}{C}} \\).",
+      "distractor_logic": [
+        "Found \\( \\sqrt{\\dfrac{L}{C}} \\) but forgot to divide by \\( R \\)",
+        "Inverted the quality factor",
+        "Multiplied by \\( R \\) instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-015",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 3,
+      "type": "regular",
+      "question": "A radio's tuning circuit (series LC with small R) must be retuned to half its present resonant frequency, keeping \\( L \\) fixed. What should be done to \\( C \\)?",
+      "options": [
+        "Reduce \\( C \\) to one-fourth",
+        "Double \\( C \\)",
+        "Increase \\( C \\) to four times its value",
+        "Increase \\( R \\) four times instead"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega_0\\propto\\dfrac{1}{\\sqrt C} \\).<br><br>To halve \\( \\omega_0 \\), \\( \\sqrt C \\) must double, so \\( C \\) must become \\( 4 \\) times.",
+      "hint": "Square the frequency ratio.",
+      "distractor_logic": [
+        "Got the factor right but the direction wrong",
+        "Forgot that \\( \\omega_0 \\) depends on \\( \\sqrt C \\)",
+        "\\( R \\) has no effect on the resonant frequency"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-016",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 3,
+      "type": "regular",
+      "question": "A series LCR circuit is driven at a frequency below its resonant frequency. Which statement is correct?",
+      "options": [
+        "It is inductive, and voltage leads current",
+        "It is purely resistive",
+        "It is capacitive, and voltage leads current",
+        "It is capacitive, and current leads voltage"
+      ],
+      "correct_index": 3,
+      "explanation": "For \\( \\omega<\\omega_0 \\), \\( X_L=\\omega L \\) is smaller and \\( X_C=\\dfrac{1}{\\omega C} \\) is larger than at resonance.<br><br>So \\( X_C>X_L \\), \\( \\phi<0 \\): the circuit is capacitive and current leads.",
+      "hint": "Which reactance is larger at low frequency?",
+      "distractor_logic": [
+        "Below resonance \\( X_C \\) is larger, not \\( X_L \\)",
+        "That holds only exactly at resonance",
+        "Right label but the wrong ICE reading"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-017",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 3,
+      "type": "regular",
+      "question": "Two series LCR circuits have the same \\( L \\) and \\( C \\) but resistances \\( 10 \\) Ω and \\( 40 \\) Ω. What is the ratio of their bandwidths \\( \\Delta\\omega_1:\\Delta\\omega_2 \\)?",
+      "options": [
+        "\\( 1:4 \\)",
+        "\\( 4:1 \\)",
+        "\\( 1:1 \\)",
+        "\\( 1:16 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Same \\( L,C \\) means same \\( \\omega_0 \\).<br><br>\\( \\Delta\\omega=\\dfrac{\\omega_0}{Q}=\\dfrac{R}{L} \\), proportional to \\( R \\).<br><br>Ratio \\( =10:40=1:4 \\).",
+      "hint": "Bandwidth equals \\( \\dfrac{R}{L} \\) for a series LCR circuit.",
+      "distractor_logic": [
+        "Reversed the ratio; lower \\( R \\) gives a narrower band",
+        "Assumed bandwidth depends only on \\( L \\) and \\( C \\)",
+        "Squared the resistance ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-018",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": 3,
+      "type": "regular",
+      "question": "A series LCR circuit with \\( R=25 \\) Ω is at resonance on a \\( 50 \\) V (RMS) supply, with \\( X_L=X_C=50 \\) Ω. A voltmeter is connected across the inductor and capacitor together. What does it read?",
+      "options": [
+        "\\( 200 \\) V",
+        "\\( 0 \\) V",
+        "\\( 100 \\) V",
+        "\\( 50 \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I=\\dfrac{50}{25}=2 \\) A, so \\( V_L=V_C=100 \\) V.<br><br>These are \\( 180^\\circ \\) apart, so across the pair \\( V_L-V_C=0 \\).<br><br>All \\( 50 \\) V appears across \\( R \\).",
+      "hint": "\\( V_L \\) and \\( V_C \\) are equal and opposite at resonance.",
+      "distractor_logic": [
+        "Added \\( V_L \\) and \\( V_C \\), which are exactly opposite",
+        "Gave the voltage across one element instead of the pair",
+        "Assumed the whole supply appears across the reactive pair"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-019",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 3,
+      "type": "regular",
+      "question": "A coil of resistance \\( 30 \\) Ω and inductive reactance \\( 40 \\) Ω at \\( \\omega=250 \\) rad/s has a power factor of \\( 0.6 \\). What capacitance, placed in series, raises the power factor to \\( 1 \\)?",
+      "options": [
+        "\\( 80 \\) \\( \\mu \\)F",
+        "\\( 10 \\) \\( \\mu \\)F",
+        "\\( 100 \\) \\( \\mu \\)F",
+        "No capacitance can do this; the power factor is fixed at \\( 0.6 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Unity power factor needs \\( X_C=X_L=40 \\) Ω.<br><br>\\( C=\\dfrac{1}{\\omega X_C}=\\dfrac{1}{250\\times40}=10^{-4} \\) F \\( =100 \\) \\( \\mu \\)F.",
+      "hint": "Power factor \\( 1 \\) means the circuit is at resonance.",
+      "distractor_logic": [
+        "Set \\( X_C \\) equal to \\( Z=50 \\) Ω instead of to \\( X_L \\)",
+        "Power-of-ten slip in converting to microfarads",
+        "Treats power factor as fixed; adding \\( X_C=X_L \\) makes the circuit resonant"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-020",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 3,
+      "type": "regular",
+      "question": "A resistor is connected first to a \\( 10 \\) V DC supply, then to an AC supply of peak voltage \\( 10 \\) V. What is the ratio of average power \\( P_{DC}:P_{AC} \\)?",
+      "options": [
+        "\\( 1:1 \\)",
+        "\\( \\sqrt2:1 \\)",
+        "The AC power is zero, so the ratio is undefined",
+        "\\( 2:1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( V_{rms}=\\dfrac{10}{\\sqrt2} \\), so \\( V_{rms}^2=50 \\), half of \\( 10^2=100 \\).<br><br>\\( P\\propto V^2 \\), so \\( P_{DC}:P_{AC}=100:50=2:1 \\).",
+      "hint": "Power goes as the square of the effective voltage.",
+      "distractor_logic": [
+        "Treated the AC peak as if it were the effective value",
+        "Applied \\( \\sqrt2 \\) to power instead of to voltage",
+        "Used the zero plain average of the voltage"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-021",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 3,
+      "type": "regular",
+      "question": "A series LCR circuit on a \\( 200 \\) V (RMS) supply has \\( R=50 \\) Ω and \\( Z=100 \\) Ω. Find the average power.",
+      "options": [
+        "\\( 200 \\) W",
+        "\\( 400 \\) W",
+        "\\( 100 \\) W",
+        "\\( 200\\sqrt3 \\) W"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I=\\dfrac{200}{100}=2 \\) A; \\( \\cos\\phi=\\dfrac{50}{100}=0.5 \\).<br><br>\\( P=200\\times2\\times0.5=200 \\) W.<br><br>Check: \\( I^2R=4\\times50=200 \\) W.",
+      "hint": "\\( P=I_{rms}^2R \\) is a quick cross-check.",
+      "distractor_logic": [
+        "Used \\( V_{rms}I_{rms} \\) without the power factor",
+        "Multiplied by \\( \\cos^2\\phi \\) instead of \\( \\cos\\phi \\)",
+        "Used \\( \\sin\\phi \\) instead of \\( \\cos\\phi \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-022",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 3,
+      "type": "regular",
+      "question": "An ideal capacitor is connected across an AC source. Over one complete cycle, how much net energy does the source deliver to it?",
+      "options": [
+        "\\( \\dfrac{1}{2}CV_0^2 \\) per cycle",
+        "Zero",
+        "\\( CV_{rms}^2 \\) per cycle",
+        "\\( V_{rms}I_{rms}T \\) per cycle"
+      ],
+      "correct_index": 1,
+      "explanation": "Energy flows into the capacitor while it charges and flows back while it discharges.<br><br>Over a full cycle these are equal, so the net energy is zero, consistent with \\( \\cos\\phi=0 \\).",
+      "hint": "The capacitor stores and returns energy; it does not burn it.",
+      "distractor_logic": [
+        "That is the maximum stored energy, which is returned to the source each cycle",
+        "Treats stored energy as consumed",
+        "Drops \\( \\cos\\phi=0 \\), treating the current as doing work"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-023",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 3,
+      "type": "regular",
+      "question": "A coil connected to a \\( 100 \\) V (RMS) supply dissipates \\( 40 \\) W at power factor \\( 0.8 \\). What is its resistance?",
+      "options": [
+        "\\( 200 \\) Ω",
+        "\\( 250 \\) Ω",
+        "\\( 160 \\) Ω",
+        "\\( 120 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I=\\dfrac{P}{V\\cos\\phi}=\\dfrac{40}{100\\times0.8}=0.5 \\) A.<br><br>\\( Z=\\dfrac{100}{0.5}=200 \\) Ω; \\( R=Z\\cos\\phi=160 \\) Ω.<br><br>Check: \\( I^2R=0.25\\times160=40 \\) W.",
+      "hint": "Find the current from the power equation first.",
+      "distractor_logic": [
+        "Gave the impedance \\( Z \\) instead of \\( R \\)",
+        "Used \\( \\dfrac{V^2}{P} \\), which ignores the power factor",
+        "Used \\( Z\\sin\\phi \\), which gives the reactance"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-024",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": 3,
+      "type": "regular",
+      "question": "A series LCR circuit with \\( R=20 \\) Ω is on a \\( 100 \\) V (RMS) supply. At resonance it draws power \\( P_1 \\); at another frequency where \\( Z=40 \\) Ω it draws \\( P_2 \\). Find \\( \\dfrac{P_1}{P_2} \\).",
+      "options": [
+        "\\( 2 \\)",
+        "\\( 1 \\)",
+        "\\( 16 \\)",
+        "\\( 4 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P_1=\\dfrac{V^2}{R}=\\dfrac{10^4}{20}=500 \\) W.<br><br>At \\( Z=40 \\) Ω: \\( I=2.5 \\) A, \\( P_2=I^2R=6.25\\times20=125 \\) W.<br><br>\\( \\dfrac{P_1}{P_2}=4 \\).",
+      "hint": "Use \\( P=I^2R \\) at both frequencies.",
+      "distractor_logic": [
+        "Compared only power factors, forgetting the current also changes",
+        "Assumed power depends only on \\( V \\) and \\( R \\)",
+        "Squared the correct ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-025",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 3,
+      "type": "regular",
+      "question": "A \\( 10 \\) \\( \\mu \\)F capacitor charged to \\( 100 \\) V is connected across an ideal \\( 0.1 \\) H inductor. What is the maximum current?",
+      "options": [
+        "\\( 1 \\) A",
+        "\\( \\sqrt2 \\) A",
+        "\\( \\dfrac{1}{\\sqrt2} \\) A",
+        "\\( 0 \\) A, since the energy stays in the capacitor"
+      ],
+      "correct_index": 0,
+      "explanation": "Initial energy \\( =\\dfrac{1}{2}CV^2=\\dfrac{1}{2}\\times10^{-5}\\times10^4=0.05 \\) J.<br><br>At maximum current all of it is magnetic: \\( \\dfrac{1}{2}LI_0^2=0.05 \\).<br><br>\\( I_0^2=1 \\), so \\( I_0=1 \\) A.",
+      "hint": "Equate maximum electric energy with maximum magnetic energy.",
+      "distractor_logic": [
+        "Dropped the one-half in the capacitor energy only",
+        "Dropped the one-half in the inductor energy only",
+        "Ignores that the capacitor discharges through the inductor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-026",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 3,
+      "type": "regular",
+      "question": "In an LC circuit with \\( L=0.1 \\) H and \\( C=10 \\) \\( \\mu \\)F, the capacitor is fully charged at \\( t=0 \\). When does the current first reach its maximum?",
+      "options": [
+        "\\( \\pi\\times10^{-3} \\) s",
+        "\\( \\dfrac{\\pi}{2}\\times10^{-3} \\) s",
+        "\\( 2\\pi\\times10^{-3} \\) s",
+        "\\( \\dfrac{\\pi}{4}\\times10^{-3} \\) s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T=2\\pi\\sqrt{LC}=2\\pi\\times10^{-3} \\) s.<br><br>Current is maximum when the capacitor is fully discharged, a quarter-period later.<br><br>\\( t=\\dfrac{T}{4}=\\dfrac{\\pi}{2}\\times10^{-3} \\) s.",
+      "hint": "Full charge to zero charge is a quarter of the cycle.",
+      "distractor_logic": [
+        "Used \\( \\dfrac{T}{2} \\), when the capacitor is fully charged again in reverse",
+        "Used a full period",
+        "Used \\( \\dfrac{T}{8} \\), when energy is only shared equally"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-027",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 3,
+      "type": "regular",
+      "question": "Two ideal transformers are connected in cascade: the first has \\( N_p:N_s=1:2 \\), the second \\( 1:5 \\). If \\( 20 \\) V and \\( 10 \\) A are fed to the first, what current flows from the second's output?",
+      "options": [
+        "\\( 100 \\) A",
+        "\\( 10 \\) A",
+        "\\( 1 \\) A",
+        "\\( 0.1 \\) A"
+      ],
+      "correct_index": 2,
+      "explanation": "Overall voltage ratio \\( =2\\times5=10 \\): output \\( 200 \\) V.<br><br>Power in \\( =20\\times10=200 \\) W \\( = \\) power out.<br><br>\\( I_{out}=\\dfrac{200}{200}=1 \\) A.",
+      "hint": "Combine the ratios, then conserve power.",
+      "distractor_logic": [
+        "Applied both turns ratios to current in the voltage direction",
+        "Assumed current is unchanged through transformers",
+        "Divided by the overall ratio twice"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-028",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 3,
+      "type": "regular",
+      "question": "An ideal transformer with \\( N_p:N_s=10:1 \\) has \\( 2200 \\) V on its primary and an \\( 11 \\) Ω resistive load on its secondary. What is the primary current?",
+      "options": [
+        "\\( 200 \\) A",
+        "\\( 20 \\) A",
+        "\\( 0.2 \\) A",
+        "\\( 2 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( V_s=\\dfrac{2200}{10}=220 \\) V, so \\( I_s=\\dfrac{220}{11}=20 \\) A.<br><br>\\( I_p=I_s\\times\\dfrac{N_s}{N_p}=\\dfrac{20}{10}=2 \\) A.<br><br>Check: \\( 2200\\times2=220\\times20 \\).",
+      "hint": "Find the secondary side first, then invert the turns ratio for current.",
+      "distractor_logic": [
+        "Multiplied the secondary current by the turns ratio instead of dividing",
+        "Gave the secondary current",
+        "Divided by the turns ratio twice"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-029",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 3,
+      "type": "regular",
+      "question": "In an LC circuit the charge oscillates at frequency \\( f \\). At what frequency does the energy stored in the capacitor oscillate?",
+      "options": [
+        "\\( 2f \\)",
+        "\\( f \\)",
+        "\\( \\dfrac{f}{2} \\)",
+        "\\( 4f \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( U_E=\\dfrac{q^2}{2C} \\) with \\( q=Q_0\\cos\\omega t \\).<br><br>\\( \\cos^2\\omega t=\\dfrac{1+\\cos2\\omega t}{2} \\), which oscillates at \\( 2\\omega \\).<br><br>The energy peaks at both \\( +Q_0 \\) and \\( -Q_0 \\), twice per charge cycle.",
+      "hint": "Energy is the same for \\( +q \\) and \\( -q \\).",
+      "distractor_logic": [
+        "Ignores that energy depends on \\( q^2 \\)",
+        "Halved instead of doubled",
+        "Doubled twice"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-L3-030",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "LC Oscillations and the Transformer",
+      "level": 3,
+      "type": "regular",
+      "question": "An LC circuit has period \\( T \\). If \\( L \\) is doubled and \\( C \\) is halved, the new period is:",
+      "options": [
+        "\\( 2T \\)",
+        "\\( T \\), unchanged",
+        "\\( \\dfrac{T}{2} \\)",
+        "\\( \\sqrt2\\,T \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T=2\\pi\\sqrt{LC} \\).<br><br>The product \\( (2L)\\left(\\dfrac{C}{2}\\right)=LC \\) is unchanged, so \\( T \\) is unchanged.",
+      "hint": "Only the product \\( LC \\) matters.",
+      "distractor_logic": [
+        "Treated \\( T \\) as directly proportional to \\( L \\) and ignored the change in \\( C \\)",
+        "Treated \\( T \\) as directly proportional to \\( C \\) and ignored the change in \\( L \\)",
+        "Applied the square root to \\( L \\) but ignored the change in \\( C \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-001",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A \\( 100 \\) \\( \\mu \\)F capacitor is connected to a \\( 200 \\) V (RMS) source of \\( \\omega=100 \\) rad/s. Which statement is correct?",
+      "options": [
+        "\\( I_{rms}=2 \\) A lagging the voltage by \\( 90^\\circ \\); average power is zero",
+        "\\( I_{rms}=2 \\) A leading the voltage by \\( 90^\\circ \\); average power is \\( 400 \\) W",
+        "\\( I_{rms}=2 \\) A leading the voltage by \\( 90^\\circ \\); average power is zero",
+        "No current flows, so average power is zero"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( X_C=\\dfrac{1}{100\\times10^{-4}}=100 \\) Ω, so \\( I_{rms}=2 \\) A.<br><br>Current leads by \\( 90^\\circ \\) (ICE), so \\( \\cos\\phi=0 \\).<br><br>\\( P=200\\times2\\times0=0 \\): a real but wattless current.",
+      "hint": "Find the current from \\( X_C \\), the phase from ICE, then the power.",
+      "distractor_logic": [
+        "Swapped ICE: in a capacitor current leads",
+        "Dropped \\( \\cos\\phi=0 \\) and used \\( V_{rms}I_{rms} \\)",
+        "Confuses wattless current with zero current"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-002",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series RL circuit with \\( R=8 \\) Ω and \\( X_L=6 \\) Ω is connected to a \\( 100 \\) V (RMS) supply. What average power does it consume?",
+      "options": [
+        "\\( 1000 \\) W",
+        "\\( 1400 \\) W",
+        "\\( 600 \\) W",
+        "\\( 800 \\) W"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( Z=\\sqrt{64+36}=10 \\) Ω, \\( I=10 \\) A.<br><br>\\( \\cos\\phi=\\dfrac{8}{10}=0.8 \\).<br><br>\\( P=100\\times10\\times0.8=800 \\) W \\( =I^2R \\).",
+      "hint": "Impedance first, then \\( P=I^2R \\).",
+      "distractor_logic": [
+        "Used \\( V_{rms}I_{rms} \\) without the power factor",
+        "Used \\( I^2(R+X_L) \\), adding reactance as if it dissipated",
+        "Used \\( I^2X_L \\), the inductor, which dissipates nothing"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-003",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series circuit has \\( L=1 \\) H, \\( C=100 \\) \\( \\mu \\)F and \\( R=200 \\) Ω, driven at \\( \\omega=50 \\) rad/s. Which describes it?",
+      "options": [
+        "\\( Z=250 \\) Ω and the circuit is capacitive",
+        "\\( Z=250 \\) Ω and the circuit is inductive",
+        "\\( Z=450 \\) Ω and the circuit is capacitive",
+        "\\( Z=200 \\) Ω and the circuit is at resonance"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( X_L=50 \\) Ω and \\( X_C=\\dfrac{1}{50\\times10^{-4}}=200 \\) Ω.<br><br>\\( Z=\\sqrt{200^2+150^2}=250 \\) Ω.<br><br>Since \\( \\omega<\\omega_0=100 \\) rad/s, \\( X_C>X_L \\): capacitive.",
+      "hint": "Compare the driving \\( \\omega \\) with \\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\).",
+      "distractor_logic": [
+        "At \\( \\omega<\\omega_0=100 \\) rad/s, \\( X_C \\) dominates",
+        "Added \\( R \\), \\( X_L \\) and \\( X_C \\) as a plain sum",
+        "The circuit resonates at \\( 100 \\) rad/s, not \\( 50 \\) rad/s"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-004",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit with \\( R=50 \\) Ω is driven at resonance by a \\( 100 \\) V (RMS) source. What average power does it consume?",
+      "options": [
+        "\\( 100 \\) W",
+        "\\( 200 \\) W",
+        "\\( 0 \\) W",
+        "\\( 200\\sqrt2 \\) W"
+      ],
+      "correct_index": 1,
+      "explanation": "At resonance \\( Z=R \\) and \\( \\cos\\phi=1 \\).<br><br>\\( P=\\dfrac{V_{rms}^2}{R}=\\dfrac{10^4}{50}=200 \\) W.",
+      "hint": "At resonance the power factor is \\( 1 \\).",
+      "distractor_logic": [
+        "Treated \\( 100 \\) V as a peak value and converted",
+        "Thinks the reactive elements make the power zero",
+        "Multiplied by \\( \\sqrt2 \\) in the wrong direction"
+      ],
+      "mixed_topics": [
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-005",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit with \\( L=0.1 \\) H resonates at \\( \\omega_0=1000 \\) rad/s. What is the capacitive reactance at resonance?",
+      "options": [
+        "\\( 0 \\) Ω",
+        "\\( 200 \\) Ω",
+        "\\( 100 \\) Ω",
+        "\\( 0.01 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "At resonance \\( X_C=X_L=\\omega_0L=1000\\times0.1=100 \\) Ω.<br><br>They cancel each other, but each is individually \\( 100 \\) Ω.",
+      "hint": "At resonance the two reactances are equal, not zero.",
+      "distractor_logic": [
+        "Thinks the reactances cancel by each becoming zero",
+        "Added \\( X_L \\) and \\( X_C \\)",
+        "Used \\( \\dfrac{1}{\\omega_0L} \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-006",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An ideal \\( 1:10 \\) step-up transformer has \\( 100 \\) V on its primary and a \\( 1000 \\) Ω resistor across its secondary. What is the primary current?",
+      "options": [
+        "\\( 0.1 \\) A",
+        "\\( 1 \\) A",
+        "\\( 100 \\) A",
+        "\\( 10 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( V_s=1000 \\) V, so \\( I_s=\\dfrac{1000}{1000}=1 \\) A and \\( P=1000 \\) W.<br><br>Ideal: \\( V_pI_p=1000 \\), so \\( I_p=10 \\) A.",
+      "hint": "Load power on the secondary equals input power on the primary.",
+      "distractor_logic": [
+        "Applied the turns ratio to current in the same direction as voltage",
+        "Gave the secondary current",
+        "Multiplied the secondary current by the square of the ratio"
+      ],
+      "mixed_topics": [
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-007",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An LC circuit with \\( L=0.4 \\) H and \\( C=2.5 \\) \\( \\mu \\)F oscillates freely. The same \\( L \\) and \\( C \\) are put in series with a resistor and driven by AC. Which is correct?",
+      "options": [
+        "Both the free oscillation and the resonance occur at \\( 1000 \\) rad/s",
+        "Free oscillation at \\( 1000 \\) rad/s, but the resonance shifts because of \\( R \\)",
+        "Both occur at \\( 10^6 \\) rad/s",
+        "The driven circuit has no resonance because \\( R \\) absorbs it"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( LC=0.4\\times2.5\\times10^{-6}=10^{-6} \\), so \\( \\dfrac{1}{\\sqrt{LC}}=1000 \\) rad/s.<br><br>Natural LC frequency and LCR resonant frequency are the same expression, independent of \\( R \\).",
+      "hint": "Compare the two formulas.",
+      "distractor_logic": [
+        "Makes \\( \\omega_0 \\) depend on \\( R \\); it does not",
+        "Used \\( \\dfrac{1}{LC} \\) without the square root",
+        "\\( R \\) only broadens and lowers the peak"
+      ],
+      "mixed_topics": [
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-008",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A voltage \\( v=100\\sin\\omega t \\) V is applied across a \\( 50 \\) Ω resistor. What is the average power dissipated?",
+      "options": [
+        "\\( 200 \\) W",
+        "\\( 100 \\) W",
+        "\\( 0 \\) W",
+        "\\( 100\\sqrt2 \\) W"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( V_{rms}=\\dfrac{100}{\\sqrt2} \\), so \\( V_{rms}^2=5000 \\).<br><br>\\( P=\\dfrac{5000}{50}=100 \\) W.",
+      "hint": "Use \\( \\dfrac{V_{rms}^2}{R} \\), with \\( V_{rms}^2=\\dfrac{V_0^2}{2} \\).",
+      "distractor_logic": [
+        "Used the peak voltage directly in \\( \\dfrac{V^2}{R} \\)",
+        "Used the zero plain average of the voltage",
+        "Divided by \\( \\sqrt2 \\) once instead of converting both \\( V \\) and \\( I \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-009",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series RC circuit has a power factor of \\( 0.5 \\). What is the phase relationship?",
+      "options": [
+        "Voltage leads current by \\( 60^\\circ \\)",
+        "Current leads voltage by \\( 30^\\circ \\)",
+        "Current leads voltage by \\( 60^\\circ \\)",
+        "Current leads voltage by \\( 90^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\cos\\phi=0.5 \\) gives \\( |\\phi|=60^\\circ \\).<br><br>An RC circuit is capacitive, so \\( \\phi=-60^\\circ \\): current leads by \\( 60^\\circ \\).",
+      "hint": "Which angle has cosine \\( 0.5 \\)?",
+      "distractor_logic": [
+        "An RC circuit is capacitive; ICE says current leads",
+        "Took \\( \\cos\\phi=0.5 \\) as \\( \\phi=30^\\circ \\)",
+        "That needs a power factor of zero"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-010",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit has \\( \\omega_0=1000 \\) rad/s and \\( Q=10 \\). At which angular frequencies is the power half its maximum?",
+      "options": [
+        "\\( 900 \\) rad/s and \\( 1100 \\) rad/s",
+        "\\( 990 \\) rad/s and \\( 1010 \\) rad/s",
+        "Only at \\( 1000 \\) rad/s",
+        "\\( 950 \\) rad/s and \\( 1050 \\) rad/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\Delta\\omega=\\dfrac{\\omega_0}{Q}=100 \\) rad/s.<br><br>The half-power points sit \\( \\dfrac{\\Delta\\omega}{2}=50 \\) rad/s on each side: \\( 950 \\) and \\( 1050 \\) rad/s.",
+      "hint": "The bandwidth is the gap between the two half-power points.",
+      "distractor_logic": [
+        "Put the full bandwidth on each side of \\( \\omega_0 \\)",
+        "Used \\( Q \\) itself as the bandwidth",
+        "That is where power is maximum, not half"
+      ],
+      "mixed_topics": [
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-011",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A resistor and a capacitor in series are connected to a steady DC battery. After a long time, the current is:",
+      "options": [
+        "Zero",
+        "\\( \\dfrac{V}{R} \\)",
+        "Very large, since \\( X_C=0 \\) for DC",
+        "\\( \\dfrac{V}{\\sqrt{R^2+X_C^2}} \\) with a finite \\( X_C \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For DC, \\( \\omega=0 \\), so \\( X_C=\\dfrac{1}{\\omega C} \\) is infinite.<br><br>\\( Z \\) is infinite, so the steady current is zero once the capacitor is charged.",
+      "hint": "Put \\( \\omega=0 \\) in \\( X_C \\).",
+      "distractor_logic": [
+        "Ignored the capacitor",
+        "Swapped: \\( X_C \\) is infinite for DC; \\( X_L \\) is zero",
+        "Treated DC as if it had a finite frequency"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-012",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a series LCR circuit, \\( X_L=X_C=40 \\) Ω at \\( \\omega_0 \\), and \\( R=80 \\) Ω. What is the impedance at \\( 2\\omega_0 \\)?",
+      "options": [
+        "\\( 180 \\) Ω",
+        "\\( 100 \\) Ω",
+        "\\( 80 \\) Ω",
+        "\\( 140 \\) Ω"
+      ],
+      "correct_index": 1,
+      "explanation": "At \\( 2\\omega_0 \\): \\( X_L=80 \\) Ω, \\( X_C=20 \\) Ω, net \\( 60 \\) Ω.<br><br>\\( Z=\\sqrt{80^2+60^2}=100 \\) Ω.",
+      "hint": "One reactance doubles, the other halves.",
+      "distractor_logic": [
+        "Added \\( R \\), \\( X_L \\) and \\( X_C \\) as a plain sum",
+        "Assumed the reactances still cancel off resonance",
+        "Added \\( R \\) and the net reactance linearly"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-013",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Power is transmitted along a line of fixed resistance. If an ideal transformer raises the transmission voltage \\( 10 \\) times for the same power, the line's heat loss becomes:",
+      "options": [
+        "\\( \\dfrac{1}{10} \\) of its earlier value",
+        "\\( 100 \\) times its earlier value",
+        "\\( \\dfrac{1}{100} \\) of its earlier value",
+        "Unchanged, since the same power flows"
+      ],
+      "correct_index": 2,
+      "explanation": "Same power at \\( 10 \\) times the voltage means \\( \\dfrac{1}{10} \\) the current.<br><br>Loss \\( =I^2R \\) falls to \\( \\dfrac{1}{100} \\).",
+      "hint": "Line loss goes as current squared.",
+      "distractor_logic": [
+        "Reduced loss in proportion to current, not current squared",
+        "Applied the turns ratio to current in the voltage direction",
+        "Loss depends on \\( I^2R \\), not on the power delivered"
+      ],
+      "mixed_topics": [
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-014",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What steady DC current produces the same heating in a resistor as an AC of peak value \\( 5\\sqrt2 \\) A?",
+      "options": [
+        "\\( 5\\sqrt2 \\) A",
+        "\\( 10 \\) A",
+        "\\( 0 \\) A",
+        "\\( 5 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "The DC that heats equally is by definition the RMS value.<br><br>\\( I_{rms}=\\dfrac{5\\sqrt2}{\\sqrt2}=5 \\) A.",
+      "hint": "RMS is defined by equal heating.",
+      "distractor_logic": [
+        "Used the peak value as the effective value",
+        "Multiplied by \\( \\sqrt2 \\) instead of dividing",
+        "Used the zero average of the AC"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-015",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit draws \\( 5 \\) A (RMS) from \\( 200 \\) V (RMS) and consumes \\( 600 \\) W. What is its resistance?",
+      "options": [
+        "\\( 24 \\) Ω",
+        "\\( 40 \\) Ω",
+        "\\( 32 \\) Ω",
+        "\\( 120 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( R=\\dfrac{P}{I^2}=\\dfrac{600}{25}=24 \\) Ω.<br><br>Check: \\( Z=40 \\) Ω, \\( \\cos\\phi=\\dfrac{24}{40}=0.6=\\dfrac{600}{1000} \\).",
+      "hint": "Only \\( R \\) dissipates power.",
+      "distractor_logic": [
+        "Gave the impedance \\( \\dfrac{V}{I} \\)",
+        "Gave the net reactance",
+        "Computed \\( \\dfrac{P}{I} \\) instead of \\( \\dfrac{P}{I^2} \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-016",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Graphs of \\( X_L \\) and \\( X_C \\) against \\( \\omega \\) are drawn for a series LCR circuit. What does their intersection point represent?",
+      "options": [
+        "The frequency of minimum current",
+        "The resonant frequency \\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\), where \\( Z=R \\)",
+        "A frequency that shifts whenever \\( R \\) changes",
+        "The frequency at which the power factor is zero"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( X_L=\\omega L \\) rises and \\( X_C=\\dfrac{1}{\\omega C} \\) falls with \\( \\omega \\).<br><br>They are equal at exactly one point, \\( \\omega_0=\\dfrac{1}{\\sqrt{LC}} \\): resonance.",
+      "hint": "Where are the two reactances equal?",
+      "distractor_logic": [
+        "At the crossing the current is maximum",
+        "Neither \\( X_L \\) nor \\( X_C \\) contains \\( R \\)",
+        "At the crossing the power factor is \\( 1 \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-017",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At resonance, the resistance of a series LCR circuit is doubled, keeping the supply voltage fixed. What happens?",
+      "options": [
+        "Power doubles and the resonance becomes sharper",
+        "Power is unchanged and the resonant frequency falls",
+        "Power at resonance halves and the resonance becomes less sharp",
+        "Power falls to one-quarter and \\( Q \\) is unchanged"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( P=\\dfrac{V^2}{R} \\) at resonance, so doubling \\( R \\) halves \\( P \\).<br><br>\\( Q=\\dfrac{\\omega_0L}{R} \\) halves, so the peak is broader.<br><br>\\( \\omega_0 \\) is unchanged.",
+      "hint": "Track \\( P \\), \\( Q \\) and \\( \\omega_0 \\) separately.",
+      "distractor_logic": [
+        "Reverses both trends; more \\( R \\) lowers \\( Q \\)",
+        "\\( \\omega_0 \\) does not depend on \\( R \\)",
+        "Squared the effect on power and ignored \\( Q=\\dfrac{\\omega_0L}{R} \\)"
+      ],
+      "mixed_topics": [
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-018",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why must the primary of a transformer never be connected to a DC battery?",
+      "options": [
+        "It would work as a normal step-up transformer",
+        "The primary's reactance becomes infinite, so no current flows",
+        "The secondary would give a steady DC voltage in the turns ratio",
+        "On DC, \\( X_L=0 \\), so only the coil's small resistance limits the current, which can burn it; nothing is induced in the secondary"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X_L=\\omega L=0 \\) at \\( \\omega=0 \\); the primary is just a low-resistance wire.<br><br>A large current flows and heats the coil.<br><br>Steady flux induces no emf in the secondary.",
+      "hint": "Put \\( \\omega=0 \\) in \\( X_L \\), and ask whether the flux changes.",
+      "distractor_logic": [
+        "Steady DC gives no changing flux, so no emf is induced",
+        "Infinite reactance on DC belongs to a capacitor, not an inductor",
+        "Induction needs a changing flux"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-019",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "During LC oscillations, how is the current \\( i \\) related in phase to the charge \\( q \\) on the capacitor (and hence to the capacitor voltage)?",
+      "options": [
+        "Current leads the charge by \\( 90^\\circ \\)",
+        "Current and charge are in phase",
+        "Current lags the charge by \\( 90^\\circ \\)",
+        "Current is \\( 180^\\circ \\) out of phase with the charge"
+      ],
+      "correct_index": 0,
+      "explanation": "With \\( q=Q_0\\cos\\omega t \\), \\( i=\\dfrac{dq}{dt} \\) peaks a quarter-cycle earlier.<br><br>So current leads charge (and capacitor voltage) by \\( 90^\\circ \\), the ICE rule.",
+      "hint": "Current is the rate of change of charge.",
+      "distractor_logic": [
+        "Current is maximum when the charge is zero",
+        "Contradicts ICE: for a capacitor current leads voltage",
+        "The shift between \\( q \\) and \\( i=\\dfrac{dq}{dt} \\) is a quarter-cycle"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-020",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit with \\( R=110 \\) Ω is driven at its resonant frequency by a \\( 220 \\) V (RMS) source. What average power does it consume?",
+      "options": [
+        "\\( 0 \\) W",
+        "\\( 440 \\) W",
+        "\\( 220 \\) W",
+        "\\( 440\\sqrt2 \\) W"
+      ],
+      "correct_index": 1,
+      "explanation": "At resonance \\( Z=R=110 \\) Ω, \\( \\phi=0 \\), \\( \\cos\\phi=1 \\).<br><br>\\( I=2 \\) A; \\( P=220\\times2\\times1=440 \\) W.",
+      "hint": "At resonance only \\( R \\) matters.",
+      "distractor_logic": [
+        "Thinks the L and C make the power zero",
+        "Applied an extra factor of one-half",
+        "Used a peak current in the power formula"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-021",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a series RC circuit, the voltmeter readings across the resistor and capacitor are equal. What is the phase angle \\( \\phi \\) of voltage relative to current?",
+      "options": [
+        "\\( +45^\\circ \\), with voltage leading",
+        "\\( -90^\\circ \\)",
+        "\\( -45^\\circ \\), with current leading",
+        "\\( 0^\\circ \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( V_R=V_C \\) means \\( R=X_C \\).<br><br>\\( \\tan\\phi=\\dfrac{0-X_C}{R}=-1 \\), so \\( \\phi=-45^\\circ \\).",
+      "hint": "Equal readings mean equal \\( R \\) and \\( X_C \\).",
+      "distractor_logic": [
+        "Got the magnitude but the wrong sign for a capacitive circuit",
+        "Treated the circuit as a pure capacitor",
+        "Equal voltages do not mean zero phase"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-022",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A small resistance is added to an ideal LC oscillating circuit. What happens to the oscillations?",
+      "options": [
+        "Their frequency becomes infinite",
+        "They grow in amplitude",
+        "They continue unchanged forever",
+        "They gradually die out as energy is dissipated, like a spring-mass system with friction"
+      ],
+      "correct_index": 3,
+      "explanation": "The resistor converts some energy to heat each cycle.<br><br>The amplitude decays — damped oscillations, the electrical version of friction.",
+      "hint": "What does a resistor do to energy?",
+      "distractor_logic": [
+        "\\( R \\) does not affect \\( \\dfrac{1}{\\sqrt{LC}} \\) in this way",
+        "A resistor removes energy; it cannot add it",
+        "Ignores \\( I^2R \\) losses"
+      ],
+      "mixed_topics": [
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-023",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A \\( 1000 \\) W heater runs on \\( 250 \\) V (RMS). What is the peak current through it?",
+      "options": [
+        "\\( 4\\sqrt2 \\) A",
+        "\\( 4 \\) A",
+        "\\( 8 \\) A",
+        "\\( 2\\sqrt2 \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I_{rms}=\\dfrac{1000}{250}=4 \\) A.<br><br>\\( I_0=\\sqrt2\\times4=4\\sqrt2 \\) A.",
+      "hint": "Find \\( I_{rms} \\) first, then convert to peak.",
+      "distractor_logic": [
+        "Gave the RMS current",
+        "Multiplied by \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Divided by \\( \\sqrt2 \\) instead of multiplying"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-024",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A coil with \\( R=30 \\) Ω and \\( X_L=40 \\) Ω is on a \\( 150 \\) V (RMS) supply. A capacitor with \\( X_C=40 \\) Ω is added in series. What are the new current and power factor?",
+      "options": [
+        "\\( 3 \\) A, power factor \\( 0.6 \\)",
+        "\\( 5 \\) A, power factor \\( 1 \\)",
+        "\\( 3 \\) A, power factor \\( 1 \\)",
+        "\\( 5 \\) A, power factor \\( 0.6 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Before: \\( Z=50 \\) Ω, \\( I=3 \\) A, \\( \\cos\\phi=0.6 \\).<br><br>After: \\( X_L-X_C=0 \\), \\( Z=30 \\) Ω, \\( I=5 \\) A, \\( \\cos\\phi=1 \\).",
+      "hint": "Equal reactances cancel.",
+      "distractor_logic": [
+        "Ignored the capacitor's effect",
+        "Updated the power factor but not the current",
+        "Updated the current but not the power factor"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-025",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What capacitance resonates with a \\( 0.5 \\) H inductor in a series circuit driven at \\( \\omega=200 \\) rad/s?",
+      "options": [
+        "\\( 10^4 \\) \\( \\mu \\)F",
+        "\\( 5 \\) \\( \\mu \\)F",
+        "\\( 50 \\) \\( \\mu \\)F",
+        "\\( 200 \\) \\( \\mu \\)F"
+      ],
+      "correct_index": 2,
+      "explanation": "Resonance needs \\( \\dfrac{1}{\\omega C}=\\omega L \\), so \\( C=\\dfrac{1}{\\omega^2L} \\).<br><br>\\( C=\\dfrac{1}{40000\\times0.5}=5\\times10^{-5} \\) F \\( =50 \\) \\( \\mu \\)F.",
+      "hint": "Set \\( X_C=X_L \\) at the given \\( \\omega \\).",
+      "distractor_logic": [
+        "Used \\( C=\\dfrac{1}{\\omega L} \\), forgetting to square \\( \\omega \\)",
+        "Power-of-ten slip",
+        "Squared \\( 200 \\) as \\( 10^4 \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-026",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An ideal step-down transformer converts \\( 220 \\) V to \\( 11 \\) V to run a \\( 110 \\) W lamp. What is the primary current?",
+      "options": [
+        "\\( 10 \\) A",
+        "\\( 200 \\) A",
+        "\\( 0.025 \\) A",
+        "\\( 0.5 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I_s=\\dfrac{110}{11}=10 \\) A.<br><br>Power in \\( =110 \\) W: \\( I_p=\\dfrac{110}{220}=0.5 \\) A.",
+      "hint": "Power is the same on both sides.",
+      "distractor_logic": [
+        "Gave the secondary current",
+        "Applied the turns ratio to current in the voltage direction",
+        "Applied the ratio twice"
+      ],
+      "mixed_topics": [
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-027",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A hot-wire ammeter is in a circuit carrying \\( i=4\\sin\\omega t \\) A. What does it read?",
+      "options": [
+        "\\( 2\\sqrt2 \\) A",
+        "\\( 4 \\) A",
+        "\\( 2 \\) A",
+        "\\( 0 \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "A hot-wire meter responds to heating, \\( \\propto I^2 \\), so it reads RMS.<br><br>\\( I_{rms}=\\dfrac{4}{\\sqrt2}=2\\sqrt2 \\) A.",
+      "hint": "Hot-wire instruments measure the heating effect.",
+      "distractor_logic": [
+        "Read the peak value",
+        "Divided by \\( 2 \\) instead of \\( \\sqrt2 \\)",
+        "Took the plain average"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-028",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "As the driving frequency of a series LCR circuit is swept from well below to well above resonance, how does the phase angle \\( \\phi \\) change?",
+      "options": [
+        "From positive, through zero, to negative",
+        "From negative, through zero at resonance, to positive",
+        "It stays zero throughout",
+        "It stays negative throughout"
+      ],
+      "correct_index": 1,
+      "explanation": "Below \\( \\omega_0 \\): \\( X_C>X_L \\), \\( \\phi<0 \\).<br><br>At \\( \\omega_0 \\): \\( \\phi=0 \\).<br><br>Above \\( \\omega_0 \\): \\( X_L>X_C \\), \\( \\phi>0 \\).",
+      "hint": "Track the sign of \\( X_L-X_C \\).",
+      "distractor_logic": [
+        "Swapped: below resonance the circuit is capacitive",
+        "\\( \\phi=0 \\) only at resonance",
+        "Above resonance \\( X_L>X_C \\), making \\( \\phi \\) positive"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-029",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Resonance in a Series LCR Circuit and Quality Factor",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit resonates at \\( 5000 \\) rad/s with a half-power bandwidth of \\( 250 \\) rad/s. What is its quality factor?",
+      "options": [
+        "\\( \\dfrac{1}{20} \\)",
+        "\\( 1.25\\times10^6 \\)",
+        "\\( 20 \\)",
+        "\\( 4750 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( Q=\\dfrac{\\omega_0}{\\Delta\\omega}=\\dfrac{5000}{250}=20 \\).",
+      "hint": "\\( Q \\) is resonant frequency over bandwidth.",
+      "distractor_logic": [
+        "Inverted the ratio",
+        "Multiplied instead of dividing",
+        "Subtracted the bandwidth from \\( \\omega_0 \\)"
+      ],
+      "mixed_topics": [
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-030",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a series RL circuit on a \\( 100 \\) V (RMS) supply, the voltage across the resistor is \\( 80 \\) V and across the inductor is \\( 60 \\) V. What is the power factor?",
+      "options": [
+        "\\( 0.6 \\)",
+        "\\( \\dfrac{4}{3} \\)",
+        "\\( 0.75 \\)",
+        "\\( 0.8 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The voltage triangle mirrors the impedance triangle.<br><br>\\( \\cos\\phi=\\dfrac{V_R}{V}=\\dfrac{80}{100}=0.8 \\).",
+      "hint": "Adjacent over hypotenuse in the voltage triangle.",
+      "distractor_logic": [
+        "Used \\( \\dfrac{V_L}{V} \\), which is \\( \\sin\\phi \\)",
+        "Used \\( \\dfrac{V_R}{V_L} \\); a power factor cannot exceed \\( 1 \\)",
+        "Used \\( \\dfrac{V_L}{V_R} \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-031",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series circuit of \\( R=40 \\) Ω and an inductor with \\( X_L=30 \\) Ω is modified by replacing the inductor with a capacitor of \\( X_C=30 \\) Ω. What happens?",
+      "options": [
+        "\\( Z \\) stays \\( 50 \\) Ω, but \\( \\phi \\) changes sign",
+        "\\( Z \\) becomes \\( 10 \\) Ω",
+        "\\( Z \\) doubles",
+        "\\( Z \\) stays \\( 50 \\) Ω and \\( \\phi \\) is unchanged"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( Z=\\sqrt{40^2+30^2}=50 \\) Ω either way, since the reactance is squared.<br><br>But \\( X_L-X_C \\) changes from \\( +30 \\) to \\( -30 \\): voltage-leading becomes current-leading.",
+      "hint": "The square hides the sign; the phase does not.",
+      "distractor_logic": [
+        "Subtracted the reactance from \\( R \\)",
+        "No reason for the magnitude to change",
+        "Ignores ELI versus ICE: the lead switches"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-032",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a series LCR circuit, \\( X_L=X_C=30 \\) Ω at \\( \\omega_0 \\). What are \\( X_L \\) and \\( X_C \\) at \\( \\dfrac{\\omega_0}{2} \\)?",
+      "options": [
+        "\\( X_L=60 \\) Ω and \\( X_C=15 \\) Ω",
+        "\\( X_L=15 \\) Ω and \\( X_C=60 \\) Ω",
+        "Both \\( 15 \\) Ω",
+        "Both \\( 30 \\) Ω"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( X_L\\propto\\omega \\): \\( 30\\times\\dfrac{1}{2}=15 \\) Ω.<br><br>\\( X_C\\propto\\dfrac{1}{\\omega} \\): \\( 30\\times2=60 \\) Ω.<br><br>Below resonance the circuit is capacitive.",
+      "hint": "One halves, the other doubles.",
+      "distractor_logic": [
+        "Swapped the frequency trends",
+        "Assumed both reactances fall with frequency",
+        "Assumed reactances are fixed at their resonance values"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-033",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How does the instantaneous power delivered to a pure inductor vary with time?",
+      "options": [
+        "It is a constant positive value \\( V_{rms}I_{rms} \\)",
+        "It is zero at every instant",
+        "It oscillates at \\( 2\\omega \\) between positive and negative values, averaging zero",
+        "It oscillates at \\( \\omega \\), averaging \\( \\dfrac{V_{rms}I_{rms}}{2} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( p=vi=V_0I_0\\sin\\omega t\\cos\\omega t=\\dfrac{V_0I_0}{2}\\sin2\\omega t \\).<br><br>This swings positive and negative at \\( 2\\omega \\); its average is zero.",
+      "hint": "Multiply two sinusoids that are \\( 90^\\circ \\) apart.",
+      "distractor_logic": [
+        "Dropped \\( \\cos\\phi \\) and ignored the energy returned",
+        "Only the average is zero; energy flows in and out",
+        "Wrong frequency, and invents a nonzero average"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-034",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An ideal \\( 1:2 \\) step-up transformer is fed with \\( 220 \\) V (RMS) mains. What is the peak voltage on its secondary?",
+      "options": [
+        "\\( 440 \\) V",
+        "\\( 220\\sqrt2 \\) V",
+        "\\( 880 \\) V",
+        "\\( 440\\sqrt2 \\) V"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( V_{s,rms}=2\\times220=440 \\) V.<br><br>Peak \\( =\\sqrt2\\times440=440\\sqrt2 \\) V.",
+      "hint": "Apply the turns ratio, then convert RMS to peak.",
+      "distractor_logic": [
+        "Gave the secondary RMS voltage, not the peak",
+        "Converted to peak but ignored the turns ratio",
+        "Used a factor of \\( 2 \\) instead of \\( \\sqrt2 \\) for the peak"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-035",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit with \\( R=10 \\) Ω and \\( Q=5 \\) is at resonance on a \\( 20 \\) V (RMS) supply. What is the RMS voltage across the capacitor?",
+      "options": [
+        "\\( 100 \\) V",
+        "\\( 20 \\) V",
+        "\\( 4 \\) V",
+        "\\( 0 \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "At resonance \\( I=\\dfrac{20}{10}=2 \\) A and \\( X_C=\\omega_0L=QR=50 \\) Ω.<br><br>\\( V_C=2\\times50=100 \\) V \\( =Q\\times V \\).",
+      "hint": "At resonance \\( V_C=V_L=QV \\).",
+      "distractor_logic": [
+        "Assumed no element exceeds the supply voltage",
+        "Divided the supply by \\( Q \\)",
+        "Confused the capacitor alone with the L-C pair"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-036",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A series LCR circuit with \\( R=50 \\) Ω on a \\( 200 \\) V (RMS) supply is driven off resonance, where \\( |X_L-X_C|=50\\sqrt3 \\) Ω. What are the current and the phase magnitude?",
+      "options": [
+        "\\( 4 \\) A, with \\( \\phi=0 \\)",
+        "\\( 2 \\) A, with \\( |\\phi|=60^\\circ \\)",
+        "\\( 2 \\) A, with \\( |\\phi|=30^\\circ \\)",
+        "\\( \\dfrac{4}{\\sqrt3} \\) A, with \\( |\\phi|=60^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( Z=\\sqrt{2500+7500}=100 \\) Ω, so \\( I=2 \\) A (half the resonant \\( 4 \\) A).<br><br>\\( \\tan|\\phi|=\\sqrt3 \\), so \\( |\\phi|=60^\\circ \\).",
+      "hint": "Build the impedance triangle.",
+      "distractor_logic": [
+        "Assumed resonance conditions",
+        "Inverted the tangent ratio",
+        "Divided by the net reactance alone, ignoring \\( R \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-037",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Setting \\( X_L=X_C \\) gives the resonance condition. Which form is equivalent?",
+      "options": [
+        "\\( \\omega LC=1 \\)",
+        "\\( \\omega^2LC=R \\)",
+        "\\( \\omega^2LC=1 \\)",
+        "\\( \\omega L=\\omega C \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega L=\\dfrac{1}{\\omega C} \\).<br><br>Multiply by \\( \\omega C \\): \\( \\omega^2LC=1 \\).",
+      "hint": "Cross-multiply \\( \\omega L=\\dfrac{1}{\\omega C} \\).",
+      "distractor_logic": [
+        "Forgot the second factor of \\( \\omega \\)",
+        "Brought \\( R \\) into the resonance condition",
+        "Wrote \\( X_C \\) as \\( \\omega C \\)"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Resonance in a Series LCR Circuit and Quality Factor"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-038",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At a half-power frequency of a series LCR circuit, which is correct?",
+      "options": [
+        "\\( |\\phi|=90^\\circ \\) and the power factor is \\( 0 \\)",
+        "\\( |\\phi|=60^\\circ \\) and the power factor is \\( \\dfrac{1}{2} \\)",
+        "\\( \\phi=0 \\) and the power factor is \\( 1 \\)",
+        "\\( |\\phi|=45^\\circ \\) and the power factor is \\( \\dfrac{1}{\\sqrt2} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Half power: \\( I^2=\\dfrac{I_{max}^2}{2} \\), so \\( Z=\\sqrt2R \\).<br><br>\\( |X_L-X_C|=R \\), \\( |\\phi|=45^\\circ \\), \\( \\cos\\phi=\\dfrac{1}{\\sqrt2} \\).",
+      "hint": "Power \\( \\propto I^2 \\), so current drops by \\( \\sqrt2 \\).",
+      "distractor_logic": [
+        "Zero power factor means zero power, not half",
+        "Thinks half power means a power factor of one-half",
+        "That is resonance, the maximum-power point"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Series LCR Circuit: Impedance and Phase Angle",
+        "Resonance in a Series LCR Circuit and Quality Factor",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-039",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In an ideal LC circuit (no resistance), which quantity stays constant during the oscillations?",
+      "options": [
+        "The total energy \\( \\dfrac{q^2}{2C}+\\dfrac{1}{2}Li^2 \\)",
+        "The total energy, but it decreases a little every cycle",
+        "The total energy, doubling every half cycle",
+        "The total energy, which is zero whenever \\( i=0 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Neither ideal L nor ideal C dissipates power (both have \\( \\cos\\phi=0 \\)).<br><br>So the total energy \\( \\dfrac{q^2}{2C}+\\dfrac{1}{2}Li^2 \\) is conserved.",
+      "hint": "Which element could dissipate energy?",
+      "distractor_logic": [
+        "Only a resistor dissipates energy; there is none here",
+        "Energy cannot grow without a source",
+        "When \\( i=0 \\) all the energy is in the capacitor"
+      ],
+      "mixed_topics": [
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+        "LC Oscillations and the Transformer"
+      ]
+    },
+    {
+      "id": "PHY12-CH07-B-040",
+      "chapter": "PHY12-CH07",
+      "chapter_name": "Alternating Current",
+      "topic": "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An ideal transformer's primary is connected to AC with the secondary open (no load). How does the primary current relate to the voltage?",
+      "options": [
+        "It leads the voltage by \\( 90^\\circ \\)",
+        "It lags the voltage by nearly \\( 90^\\circ \\), so almost no power is drawn",
+        "It is in phase, drawing the full \\( V_{rms}I_{rms} \\)",
+        "It is exactly zero"
+      ],
+      "correct_index": 1,
+      "explanation": "With no load, the primary behaves as a nearly pure inductor.<br><br>Current lags by about \\( 90^\\circ \\), \\( \\cos\\phi\\approx0 \\): a wattless current.",
+      "hint": "What element is an unloaded primary coil?",
+      "distractor_logic": [
+        "The primary is an inductor: ELI, not ICE",
+        "Treats the primary as a resistor",
+        "A small magnetising current still flows"
+      ],
+      "mixed_topics": [
+        "AC Voltage Applied to a Resistor, an Inductor, and a Capacitor: Phasors and Reactance",
+        "Power in AC Circuits: Average Power, Power Factor, and Wattless Current",
+        "LC Oscillations and the Transformer"
+      ]
+    }
+  ]
+}

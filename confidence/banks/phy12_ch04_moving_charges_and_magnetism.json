@@ -1,0 +1,3724 @@
+{
+ "meta": {
+  "chapter": "PHY12-CH04",
+  "chapter_name": "Moving Charges and Magnetism",
+  "subject": "Physics",
+  "class": 12,
+  "total_questions": 150,
+  "level_breakdown": {
+   "L1": 40,
+   "L2": 40,
+   "L3": 30,
+   "Bonus": 40
+  },
+  "rendering_note": "All math is KaTeX via single unnested inline spans; every cross product (e.g. \\( \\vec F=q\\vec v\\times\\vec B \\)), every \\( \\mu_0 \\) and every \\( \\theta \\) sits inside a KaTeX span, no raw Unicode math symbols (including arrows) appear anywhere outside KaTeX, and every numeric answer terminates cleanly or is a clean order-of-magnitude value."
+ },
+ "topics": [
+  {
+   "name": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "summary": "A charge \\( q \\) moving with velocity \\( \\vec v \\) in a magnetic field \\( \\vec B \\) feels the force \\( \\vec F=q\\vec v\\times\\vec B \\), of magnitude \\( qvB\\sin\\theta \\). Its direction follows the right-hand (cross-product) rule, and it reverses for a negative charge. Because the force is always perpendicular to the velocity, it does no work: a magnetic field can bend a particle's path but can never change its speed or kinetic energy. When an electric field is also present, the total Lorentz force is \\( q(\\vec E+\\vec v\\times\\vec B) \\). In a velocity selector, crossed fields balance when \\( qE=qvB \\), so only particles with speed \\( v=\\dfrac{E}{B} \\) pass straight through, whatever their charge or mass. A current-carrying conductor is a stream of moving charges, so it feels \\( \\vec F=I\\vec L\\times\\vec B \\), where \\( \\vec L \\) points along the current. In a uniform field, a bent wire feels the same force as a straight wire joining its ends, and any closed loop feels zero net force.",
+   "key_formulas": [
+    "\\( \\vec F=q\\vec v\\times\\vec B \\)",
+    "\\( F=qvB\\sin\\theta \\)",
+    "\\( \\vec F=q(\\vec E+\\vec v\\times\\vec B) \\)",
+    "\\( v=\\dfrac{E}{B} \\) (velocity selector)",
+    "\\( \\vec F=I\\vec L\\times\\vec B \\)"
+   ],
+   "worked_example": "An electron moves along \\( +\\hat i \\) in a field along \\( +\\hat j \\). Direction of force?<br><br>\\( \\hat i\\times\\hat j=+\\hat k \\), but the charge is negative, so the force is along \\( -\\hat k \\).",
+   "common_mistakes": [
+    "Using a left-hand rule or reversing the cross-product order.",
+    "Forgetting to flip the direction for a negative charge.",
+    "Claiming a magnetic field speeds up, slows down, or does work on a charge.",
+    "Dropping the \\( \\sin\\theta \\) factor for oblique motion."
+   ],
+   "question_count": 40
+  },
+  {
+   "name": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "summary": "When a charged particle moves perpendicular to a uniform magnetic field, the magnetic force supplies the centripetal force: \\( qvB=\\dfrac{mv^2}{r} \\). The radius is therefore \\( r=\\dfrac{mv}{qB} \\), which grows with speed. The period \\( T=\\dfrac{2\\pi m}{qB} \\) and the cyclotron frequency \\( f=\\dfrac{qB}{2\\pi m} \\), however, depend only on \\( m \\), \\( q \\) and \\( B \\): a faster particle travels a proportionally bigger circle in exactly the same time. If the velocity has a component along the field, that component is unaffected and the path becomes a helix of pitch \\( v\\cos\\theta\\cdot\\dfrac{2\\pi m}{qB} \\). A cyclotron exploits the speed-independence of \\( f \\): particles spiral outward inside two D-shaped dees, gaining energy each time they cross the gap, where an oscillator running at one fixed frequency supplies the electric field. The magnetic field only bends the path. The maximum kinetic energy is set by the dee radius: \\( K=\\dfrac{q^2B^2R^2}{2m} \\).",
+   "key_formulas": [
+    "\\( r=\\dfrac{mv}{qB} \\)",
+    "\\( T=\\dfrac{2\\pi m}{qB} \\)",
+    "\\( f=\\dfrac{qB}{2\\pi m} \\)",
+    "\\( \\text{pitch}=\\dfrac{2\\pi mv\\cos\\theta}{qB} \\)",
+    "\\( K_{\\max}=\\dfrac{q^2B^2R^2}{2m} \\)"
+   ],
+   "worked_example": "A particle with \\( \\dfrac{q}{m}=10^{8} \\) C/kg moves in \\( B=2 \\) T. Frequency?<br><br>\\( f=\\dfrac{qB}{2\\pi m}=\\dfrac{2\\times10^{8}}{2\\pi}=\\dfrac{10^{8}}{\\pi} \\) Hz, whatever its speed.",
+   "common_mistakes": [
+    "Thinking the period or frequency changes as the particle speeds up.",
+    "Thinking the magnetic field, rather than the gap electric field, accelerates particles in a cyclotron.",
+    "Using \\( \\sin\\theta \\) instead of \\( \\cos\\theta \\) for the pitch of a helix.",
+    "Forgetting the one-half in \\( K_{\\max} \\)."
+   ],
+   "question_count": 39
+  },
+  {
+   "name": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "summary": "The Biot-Savart law gives the field of a small current element: \\( d\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,d\\vec l\\times\\hat r}{r^2} \\), with \\( \\dfrac{\\mu_0}{4\\pi}=10^{-7} \\) T m/A. Unlike Coulomb's law, the field is not radial: the cross product makes \\( d\\vec B \\) perpendicular to both \\( d\\vec l \\) and \\( \\hat r \\), and it vanishes at points along the line of the element. Adding up elements of a straight wire gives \\( B=\\dfrac{\\mu_0I}{4\\pi d}(\\sin\\theta_1+\\sin\\theta_2) \\), which becomes \\( \\dfrac{\\mu_0I}{2\\pi d} \\) for an infinite wire. For a circular loop of radius \\( R \\), every element contributes in the same direction at the centre, giving \\( B=\\dfrac{\\mu_0I}{2R} \\) (times \\( N \\) for a coil). On the axis at distance \\( x \\), \\( B=\\dfrac{\\mu_0IR^2}{2(R^2+x^2)^{3/2}} \\), which correctly reduces to the centre value at \\( x=0 \\) and falls to one-eighth of it at \\( x=\\sqrt3R \\). The direction at the centre follows the right-hand curl rule.",
+   "key_formulas": [
+    "\\( d\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,d\\vec l\\times\\hat r}{r^2} \\)",
+    "\\( B=\\dfrac{\\mu_0I}{4\\pi d}(\\sin\\theta_1+\\sin\\theta_2) \\)",
+    "\\( B_{\\text{centre}}=\\dfrac{\\mu_0NI}{2R} \\)",
+    "\\( B_{\\text{axis}}=\\dfrac{\\mu_0IR^2}{2(R^2+x^2)^{3/2}} \\)"
+   ],
+   "worked_example": "A loop of radius 0.1 m carries 5 A. Centre field?<br><br>\\( B=\\dfrac{\\mu_0I}{2R}=\\dfrac{4\\pi\\times10^{-7}\\times5}{0.2}=\\pi\\times10^{-5} \\) T.",
+   "common_mistakes": [
+    "Treating the field direction as radial, as in Coulomb's law.",
+    "Misremembering the \\( 3/2 \\) power in the axial formula.",
+    "Using the straight-wire formula for the centre of a loop.",
+    "Forgetting the number of turns \\( N \\) for a coil."
+   ],
+   "question_count": 34
+  },
+  {
+   "name": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "summary": "Ampere's circuital law states \\( \\oint\\vec B\\cdot d\\vec l=\\mu_0I_{\\text{enc}} \\): the line integral of \\( \\vec B \\) around a closed loop equals \\( \\mu_0 \\) times the net current threading it, counted with sign. Currents outside the loop do not contribute. With enough symmetry it gives fields quickly. For an infinite straight wire, a circle of radius \\( r \\) gives \\( B=\\dfrac{\\mu_0I}{2\\pi r} \\), falling as \\( 1/r \\), not \\( 1/r^2 \\). For a long ideal solenoid, a rectangular loop gives \\( B=\\mu_0nI \\), where \\( n=\\dfrac{N}{L} \\) is turns per unit length; this field is uniform everywhere inside and falls to half at the ends. For an ideal toroid, a circle inside the core encloses \\( NI \\), giving \\( B=\\dfrac{\\mu_0NI}{2\\pi r} \\). A circle in the central hollow encloses no current, and one outside encloses \\( NI-NI=0 \\), so the field is exactly zero in both regions. Inside a thick wire with uniform current, only the enclosed fraction counts, giving \\( B=\\dfrac{\\mu_0Ir}{2\\pi a^2} \\).",
+   "key_formulas": [
+    "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0I_{\\text{enc}} \\)",
+    "\\( B=\\dfrac{\\mu_0I}{2\\pi r} \\)",
+    "\\( B=\\mu_0nI \\), with \\( n=\\dfrac{N}{L} \\)",
+    "\\( B=\\dfrac{\\mu_0NI}{2\\pi r} \\) (toroid core only)"
+   ],
+   "worked_example": "A solenoid 0.5 m long has 500 turns and carries 2 A. Field inside?<br><br>\\( n=1000 \\) per metre, \\( B=\\mu_0nI=8\\pi\\times10^{-4} \\) T, uniform inside.",
+   "common_mistakes": [
+    "Using \\( 1/r^2 \\) for a long straight wire.",
+    "Substituting total turns \\( N \\) for \\( n \\).",
+    "Claiming the ideal solenoid's interior field varies with position.",
+    "Giving a nonzero toroid field outside or in the central hollow."
+   ],
+   "question_count": 41
+  },
+  {
+   "name": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "summary": "Two long parallel wires each sit in the other's field, so they exert forces \\( \\dfrac{F}{L}=\\dfrac{\\mu_0I_1I_2}{2\\pi d} \\) on each other. Same-direction currents attract and opposite currents repel, the reverse of the electrostatic rule. The classical ampere is the current giving \\( 2\\times10^{-7} \\) N/m between wires 1 m apart. A current loop in a uniform field feels zero net force but a torque \\( \\tau=NIAB\\sin\\theta \\), where \\( \\theta \\) is the angle between the loop's normal and \\( \\vec B \\). The torque is maximum when the loop's plane is parallel to \\( \\vec B \\) and zero when the plane is perpendicular. The magnetic moment is \\( m=NIA \\). A moving-coil galvanometer uses a radial field so the coil's plane always lies along the field, giving \\( \\tau=NIAB \\) at every deflection; balancing \\( k\\phi=NIAB \\) makes deflection proportional to current with no \\( \\sin\\theta \\) factor. A small parallel shunt converts it into an ammeter; a large series resistance converts it into a voltmeter.",
+   "key_formulas": [
+    "\\( \\dfrac{F}{L}=\\dfrac{\\mu_0I_1I_2}{2\\pi d} \\)",
+    "\\( \\tau=NIAB\\sin\\theta \\)",
+    "\\( m=NIA \\)",
+    "\\( \\phi=\\dfrac{NAB}{k}I \\)",
+    "\\( S=\\dfrac{I_gG}{I-I_g} \\)",
+    "\\( R=\\dfrac{V}{I_g}-G \\)"
+   ],
+   "worked_example": "A galvanometer of \\( 99\\,\\Omega \\) gives full scale at 10 mA. Shunt for a 0-1 A ammeter?<br><br>\\( S=\\dfrac{0.01\\times99}{0.99}=1\\,\\Omega \\), connected in parallel.",
+   "common_mistakes": [
+    "Thinking parallel currents repel.",
+    "Swapping the orientations of maximum and zero torque.",
+    "Putting a \\( \\sin\\theta \\) factor into the galvanometer's torque.",
+    "Using a series resistor for an ammeter or a shunt for a voltmeter."
+   ],
+   "question_count": 36
+  }
+ ],
+ "questions": [
+  {
+   "id": "PHY12-CH04-L1-001",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "Which expression correctly gives the magnetic force on a charge \\( q \\) moving with velocity \\( \\vec v \\) in a magnetic field \\( \\vec B \\)?",
+   "options": [
+    "\\( \\vec F=q\\vec v\\times\\vec B \\)",
+    "\\( \\vec F=q\\vec B\\times\\vec v \\)",
+    "\\( \\vec F=q\\,\\vec v\\cdot\\vec B \\)",
+    "\\( \\vec F=q(\\vec v+\\vec B) \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "The magnetic part of the Lorentz force is \\( \\vec F=q\\vec v\\times\\vec B \\).<br><br>The order matters: \\( \\vec v \\) first, then \\( \\vec B \\). Swapping them reverses the direction.",
+   "hint": "The force must be a vector perpendicular to both \\( \\vec v \\) and \\( \\vec B \\).",
+   "distractor_logic": [
+    "Reverses the order of the cross product, which flips the force to the opposite direction.",
+    "Uses a dot product, which gives a scalar, not a force vector.",
+    "Adds velocity and field as if they were like quantities; dimensionally meaningless."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-002",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "How much work does the magnetic force do on a charged particle moving through a uniform magnetic field?",
+   "options": [
+    "\\( qvB \\) multiplied by the distance travelled",
+    "Zero, always",
+    "Positive work, so the particle keeps speeding up",
+    "Negative work, so the particle gradually slows down"
+   ],
+   "correct_index": 1,
+   "explanation": "The force \\( \\vec F=q\\vec v\\times\\vec B \\) is always perpendicular to \\( \\vec v \\).<br><br>Power \\( \\vec F\\cdot\\vec v=0 \\) at every instant, so the work done is zero.<br><br>Speed and kinetic energy stay constant; only the direction of motion changes.",
+   "hint": "Work needs a force component along the motion.",
+   "distractor_logic": [
+    "Treats the magnetic force as acting along the displacement, but it is always perpendicular to it.",
+    "Believes a magnetic field can increase kinetic energy; it cannot.",
+    "Believes a magnetic field acts like friction; it never changes speed."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-003",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A charged particle moves exactly parallel to a uniform magnetic field. The magnetic force on it is:",
+   "options": [
+    "\\( qvB \\), the maximum possible value",
+    "\\( \\dfrac{qvB}{2} \\)",
+    "Zero",
+    "Along \\( \\vec B \\), with magnitude \\( qvB \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Magnitude is \\( F=qvB\\sin\\theta \\) where \\( \\theta \\) is the angle between \\( \\vec v \\) and \\( \\vec B \\).<br><br>For parallel motion \\( \\theta=0^\\circ \\), so \\( \\sin\\theta=0 \\) and \\( F=0 \\).",
+   "hint": "Check the angle between \\( \\vec v \\) and \\( \\vec B \\).",
+   "distractor_logic": [
+    "Confuses the parallel case (\\( \\sin 0^\\circ \\)) with the perpendicular case (\\( \\sin 90^\\circ \\)).",
+    "Invents a half factor; for parallel motion the sine factor is exactly zero.",
+    "Thinks the force points along the field; magnetic force is never along \\( \\vec B \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-004",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "The force on a straight conductor of length vector \\( \\vec L \\) carrying current \\( I \\) in a uniform field \\( \\vec B \\) is:",
+   "options": [
+    "\\( \\vec F=I\\vec B\\times\\vec L \\)",
+    "\\( \\vec F=\\dfrac{IL}{B} \\)",
+    "\\( \\vec F=I\\,\\vec L\\cdot\\vec B \\)",
+    "\\( \\vec F=I\\vec L\\times\\vec B \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Each moving charge feels \\( q\\vec v\\times\\vec B \\); summing over the wire gives \\( \\vec F=I\\vec L\\times\\vec B \\).<br><br>\\( \\vec L \\) points along the current direction.",
+   "hint": "Replace \\( q\\vec v \\) by \\( I\\vec L \\).",
+   "distractor_logic": [
+    "Reversed cross-product order gives the opposite direction.",
+    "Divides by the field instead of multiplying; force grows with \\( B \\).",
+    "A dot product is a scalar and cannot represent a force."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-005",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A proton moves along \\( +\\hat i \\) in a magnetic field along \\( +\\hat j \\). The magnetic force on it points along:",
+   "options": [
+    "\\( +\\hat k \\)",
+    "\\( -\\hat k \\)",
+    "\\( +\\hat j \\)",
+    "\\( +\\hat i \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\vec F=q\\vec v\\times\\vec B \\) with \\( q>0 \\).<br><br>\\( \\hat i\\times\\hat j=\\hat k \\), so the force is along \\( +\\hat k \\).",
+   "hint": "Use the right-hand (cross-product) rule: \\( \\hat i\\times\\hat j \\).",
+   "distractor_logic": [
+    "Uses a left-hand rule or reverses the cross-product order.",
+    "Assumes the force points along the field.",
+    "Assumes the force points along the velocity."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-006",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "An electron moves along \\( +\\hat i \\) in a magnetic field along \\( +\\hat j \\). The magnetic force on it points along:",
+   "options": [
+    "\\( +\\hat k \\)",
+    "\\( -\\hat k \\)",
+    "\\( -\\hat j \\)",
+    "\\( -\\hat i \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\vec v\\times\\vec B \\) is along \\( \\hat i\\times\\hat j=+\\hat k \\).<br><br>The electron's charge is negative, so \\( \\vec F=q\\vec v\\times\\vec B \\) points along \\( -\\hat k \\).",
+   "hint": "Find \\( \\vec v\\times\\vec B \\) first, then account for the sign of the charge.",
+   "distractor_logic": [
+    "Forgets to reverse the direction for a negative charge.",
+    "Thinks the force is opposite to the field.",
+    "Thinks the force opposes the velocity like a drag force."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-007",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A uniform magnetic field acting alone on a moving charged particle can change its:",
+   "options": [
+    "Speed only",
+    "Kinetic energy",
+    "Direction of motion only",
+    "Both speed and direction"
+   ],
+   "correct_index": 2,
+   "explanation": "The magnetic force is perpendicular to velocity at every instant.<br><br>It bends the path but does no work, so speed and kinetic energy stay fixed.",
+   "hint": "A force always at right angles to motion only steers.",
+   "distractor_logic": [
+    "Thinks the field accelerates along the path; it never changes speed.",
+    "Kinetic energy depends on speed, which the magnetic force cannot change.",
+    "Only the direction changes because the force does no work."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-008",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 1,
+   "type": "regular",
+   "question": "A charge \\( 2\\times10^{-6} \\) C moves at \\( 10^{5} \\) m/s perpendicular to a field of 0.5 T. The magnitude of the magnetic force is:",
+   "options": [
+    "0 N",
+    "0.2 N",
+    "0.05 N",
+    "0.1 N"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( F=qvB\\sin 90^\\circ \\).<br><br>\\( F=(2\\times10^{-6})(10^{5})(0.5)=0.1 \\) N.",
+   "hint": "Perpendicular means \\( \\sin\\theta=1 \\).",
+   "distractor_logic": [
+    "Treats the motion as parallel to the field; here it is perpendicular.",
+    "Forgets to multiply by \\( B=0.5 \\) T.",
+    "Introduces an extra factor of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-009",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "The radius of the circular path of a charge \\( q \\), mass \\( m \\), speed \\( v \\), moving perpendicular to a uniform field \\( B \\) is:",
+   "options": [
+    "\\( r=\\dfrac{mv}{qB} \\)",
+    "\\( r=\\dfrac{qB}{mv} \\)",
+    "\\( r=\\dfrac{mv^2}{qB} \\)",
+    "\\( r=\\dfrac{m}{qvB} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "The magnetic force supplies the centripetal force: \\( qvB=\\dfrac{mv^2}{r} \\).<br><br>Solving gives \\( r=\\dfrac{mv}{qB} \\).",
+   "hint": "Equate \\( qvB \\) to \\( \\dfrac{mv^2}{r} \\).",
+   "distractor_logic": [
+    "Inverts the formula; radius must grow with momentum.",
+    "Squares the speed; the magnetic force \\( qvB \\) already contains one \\( v \\).",
+    "Puts speed in the denominator; faster particles make bigger circles."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-010",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "The time period of a charged particle in circular motion in a uniform magnetic field is:",
+   "options": [
+    "\\( T=\\dfrac{2\\pi mv}{qB} \\)",
+    "\\( T=\\dfrac{2\\pi m}{qB} \\)",
+    "\\( T=\\dfrac{qB}{2\\pi m} \\)",
+    "\\( T=\\dfrac{2\\pi qB}{m} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( T=\\dfrac{2\\pi r}{v} \\) with \\( r=\\dfrac{mv}{qB} \\).<br><br>The \\( v \\) cancels: \\( T=\\dfrac{2\\pi m}{qB} \\).",
+   "hint": "Divide the circumference by the speed and see what cancels.",
+   "distractor_logic": [
+    "Includes the speed; the period is independent of speed.",
+    "This is the cyclotron frequency, not the period.",
+    "Inverts the \\( q \\), \\( m \\) and \\( B \\) dependence."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-011",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "As a charged particle gains speed inside a cyclotron, its time period of revolution:",
+   "options": [
+    "Increases, because the path gets longer",
+    "Decreases, because the particle moves faster",
+    "Stays the same",
+    "Increases in proportion to the radius"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( T=\\dfrac{2\\pi m}{qB} \\) contains neither \\( v \\) nor \\( r \\).<br><br>This is why the cyclotron oscillator can run at a single fixed frequency.",
+   "hint": "Which quantities appear in \\( T=\\dfrac{2\\pi m}{qB} \\)?",
+   "distractor_logic": [
+    "Ignores that speed rises in exact proportion to radius.",
+    "Ignores that the radius grows in exact proportion to speed.",
+    "Treats \\( T \\) as depending on \\( r \\); it depends only on \\( m \\), \\( q \\), \\( B \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-012",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "The cyclotron frequency of a particle of charge \\( q \\) and mass \\( m \\) in a field \\( B \\) is:",
+   "options": [
+    "\\( f=\\dfrac{2\\pi m}{qB} \\)",
+    "\\( f=\\dfrac{qBv}{2\\pi m} \\)",
+    "\\( f=\\dfrac{qB}{2\\pi mr} \\)",
+    "\\( f=\\dfrac{qB}{2\\pi m} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( f=\\dfrac{1}{T} \\) and \\( T=\\dfrac{2\\pi m}{qB} \\).<br><br>So \\( f=\\dfrac{qB}{2\\pi m} \\), fixed for a given particle and field.",
+   "hint": "Frequency is the reciprocal of the period.",
+   "distractor_logic": [
+    "This is the period, not the frequency.",
+    "Includes speed; the frequency is independent of speed.",
+    "Includes radius; the frequency is independent of radius."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-013",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "A charged particle enters a uniform magnetic field moving exactly along the field direction. Its path is:",
+   "options": [
+    "A straight line",
+    "A circle",
+    "A helix",
+    "A parabola"
+   ],
+   "correct_index": 0,
+   "explanation": "For \\( \\vec v \\) parallel to \\( \\vec B \\), \\( \\vec v\\times\\vec B=0 \\).<br><br>No force acts, so the particle continues in a straight line at constant speed.",
+   "hint": "What is \\( \\sin 0^\\circ \\)?",
+   "distractor_logic": [
+    "Circular motion needs a velocity component perpendicular to \\( \\vec B \\).",
+    "A helix needs both parallel and perpendicular velocity components.",
+    "Parabolas arise from a constant force, not from a magnetic field."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-014",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "A charged particle enters a uniform magnetic field with its velocity at \\( 60^\\circ \\) to the field. Its path is:",
+   "options": [
+    "A circle in a plane perpendicular to the field",
+    "A helix with its axis along the field",
+    "A straight line",
+    "A parabola bending along the field"
+   ],
+   "correct_index": 1,
+   "explanation": "The perpendicular component \\( v\\sin 60^\\circ \\) gives circular motion.<br><br>The parallel component \\( v\\cos 60^\\circ \\) is unaffected and moves the particle along \\( \\vec B \\).<br><br>Together they form a helix.",
+   "hint": "Split \\( \\vec v \\) into components along and perpendicular to \\( \\vec B \\).",
+   "distractor_logic": [
+    "Ignores the velocity component along the field, which carries the particle forward.",
+    "Only happens when the velocity is exactly parallel to the field.",
+    "Treats the magnetic force as constant in direction."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-015",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "In a cyclotron, what actually increases the speed of the particle?",
+   "options": [
+    "The magnetic field inside the dees",
+    "Both the electric and magnetic fields equally",
+    "The electric field in the gap between the dees",
+    "Nothing; the speed stays constant throughout"
+   ],
+   "correct_index": 2,
+   "explanation": "Inside the dees the magnetic field only bends the path into semicircles.<br><br>Each time the particle crosses the gap, the electric field accelerates it.",
+   "hint": "Which field can do work on a charge?",
+   "distractor_logic": [
+    "The magnetic force does no work and cannot change speed.",
+    "Only the electric field does work on the particle.",
+    "The oscillating gap voltage adds energy at each crossing."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-016",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 1,
+   "type": "regular",
+   "question": "The speed of a charged particle moving in a circle in a uniform field is doubled. What happens to its radius and period?",
+   "options": [
+    "Radius doubles; period doubles",
+    "Radius doubles; period halves",
+    "Radius unchanged; period halves",
+    "Radius doubles; period unchanged"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( r=\\dfrac{mv}{qB} \\), so doubling \\( v \\) doubles \\( r \\).<br><br>\\( T=\\dfrac{2\\pi m}{qB} \\) has no \\( v \\), so the period is unchanged.",
+   "hint": "Compare the formulas for \\( r \\) and \\( T \\).",
+   "distractor_logic": [
+    "Thinks the period depends on speed.",
+    "Thinks a faster particle completes the circle sooner despite the larger path.",
+    "Forgets that \\( r \\) is proportional to \\( v \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-017",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "The Biot-Savart law for the field of a current element \\( I\\,d\\vec l \\) at a point with position vector \\( \\vec r \\) from it is:",
+   "options": [
+    "\\( d\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,d\\vec l\\times\\hat r}{r^2} \\)",
+    "\\( d\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,dl}{r^2}\\hat r \\)",
+    "\\( d\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,d\\vec l\\times\\hat r}{r} \\)",
+    "\\( d\\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,d\\vec l\\cdot\\hat r}{r^2} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "The Biot-Savart law uses a cross product: \\( d\\vec B \\) is perpendicular to both \\( d\\vec l \\) and \\( \\hat r \\).<br><br>Its magnitude falls as \\( 1/r^2 \\) for a single element.",
+   "hint": "The field direction comes from a cross product.",
+   "distractor_logic": [
+    "Points the field radially, like Coulomb's law; the field is perpendicular to \\( \\hat r \\).",
+    "Uses \\( 1/r \\) instead of \\( 1/r^2 \\) for a current element.",
+    "A dot product gives a scalar, not a field vector."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-018",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "The direction of the field \\( d\\vec B \\) produced by a current element \\( I\\,d\\vec l \\) at a point is:",
+   "options": [
+    "Along \\( \\hat r \\), from the element to the point",
+    "Perpendicular to both \\( d\\vec l \\) and \\( \\hat r \\)",
+    "Along \\( d\\vec l \\)",
+    "In the plane containing \\( d\\vec l \\) and \\( \\hat r \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( d\\vec B \\) is proportional to \\( d\\vec l\\times\\hat r \\).<br><br>A cross product is perpendicular to both vectors, so \\( d\\vec B \\) is normal to the plane containing \\( d\\vec l \\) and \\( \\hat r \\).",
+   "hint": "Think of the direction of a cross product.",
+   "distractor_logic": [
+    "Coulomb's-law intuition; the magnetic field is not radial.",
+    "The field is perpendicular to the current element, not along it.",
+    "A cross product is perpendicular to that plane, not in it."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-019",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "The magnetic field at the centre of a circular loop of radius \\( R \\) carrying current \\( I \\) is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0I}{2\\pi R} \\)",
+    "\\( \\dfrac{\\mu_0I}{4R} \\)",
+    "\\( \\dfrac{\\mu_0I}{2R} \\)",
+    "\\( \\dfrac{\\mu_0I}{2R^2} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Every element is at distance \\( R \\) and perpendicular to \\( \\hat r \\), and all contributions point the same way.<br><br>\\( B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I(2\\pi R)}{R^2}=\\dfrac{\\mu_0I}{2R} \\).",
+   "hint": "Add \\( \\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,dl}{R^2} \\) around the whole circumference.",
+   "distractor_logic": [
+    "This is the field of a long straight wire at distance \\( R \\).",
+    "This is the field at the centre of a semicircle, not a full loop.",
+    "Dimensionally wrong; the centre field varies as \\( 1/R \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-020",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "The magnetic field on the axis of a circular loop (radius \\( R \\), current \\( I \\)) at distance \\( x \\) from its centre is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0IR^2}{2(R^2+x^2)^{2}} \\)",
+    "\\( \\dfrac{\\mu_0IR^2}{2(R^2+x^2)^{1/2}} \\)",
+    "\\( \\dfrac{\\mu_0I}{2\\pi(R^2+x^2)^{1/2}} \\)",
+    "\\( \\dfrac{\\mu_0IR^2}{2(R^2+x^2)^{3/2}} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "The axial formula is \\( B=\\dfrac{\\mu_0IR^2}{2(R^2+x^2)^{3/2}} \\).<br><br>Check: at \\( x=0 \\) it gives \\( \\dfrac{\\mu_0IR^2}{2R^3}=\\dfrac{\\mu_0I}{2R} \\).",
+   "hint": "Set \\( x=0 \\) in each choice and see which gives the centre field.",
+   "distractor_logic": [
+    "Wrong power in the denominator; the correct power is \\( 3/2 \\).",
+    "Wrong power; this would not reduce to \\( \\dfrac{\\mu_0I}{2R} \\) at \\( x=0 \\).",
+    "Borrows the straight-wire form; not the loop's axial field."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-021",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "What is the magnetic field produced by a current element at a point lying on the line of the element itself?",
+   "options": [
+    "Zero",
+    "Maximum",
+    "\\( \\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,dl}{r^2} \\)",
+    "Infinite"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( dB=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,dl\\sin\\theta}{r^2} \\).<br><br>On the line of the element \\( \\theta=0^\\circ \\), so \\( dB=0 \\).",
+   "hint": "What is the angle between \\( d\\vec l \\) and \\( \\hat r \\) here?",
+   "distractor_logic": [
+    "The field is maximum at \\( 90^\\circ \\) to the element, not along it.",
+    "This is the value at \\( 90^\\circ \\); along the line the sine factor is zero.",
+    "Only at the element itself does the formula break down."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-022",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "The value of the permeability of free space \\( \\mu_0 \\) is:",
+   "options": [
+    "\\( 10^{-7} \\) T m/A",
+    "\\( 4\\pi\\times10^{-7} \\) T m/A",
+    "\\( 8.85\\times10^{-12} \\) T m/A",
+    "\\( 4\\pi\\times10^{7} \\) T m/A"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.<br><br>So \\( \\dfrac{\\mu_0}{4\\pi}=10^{-7} \\) T m/A, a handy constant in the Biot-Savart law.",
+   "hint": "Remember the combination \\( \\dfrac{\\mu_0}{4\\pi} \\).",
+   "distractor_logic": [
+    "This is \\( \\dfrac{\\mu_0}{4\\pi} \\), not \\( \\mu_0 \\) itself.",
+    "This is the numerical value of \\( \\varepsilon_0 \\), the permittivity.",
+    "Wrong sign on the exponent."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-023",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "For a single small current element, how does the magnitude of its field depend on distance \\( r \\) (at a fixed angle)?",
+   "options": [
+    "As \\( \\dfrac{1}{r} \\)",
+    "As \\( \\dfrac{1}{r^3} \\)",
+    "As \\( \\dfrac{1}{r^2} \\)",
+    "Independent of \\( r \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The Biot-Savart law has \\( r^2 \\) in the denominator.<br><br>Adding up an infinite wire's elements changes the overall dependence to \\( \\dfrac{1}{r} \\), but a single element goes as \\( \\dfrac{1}{r^2} \\).",
+   "hint": "Look at the denominator of the Biot-Savart law.",
+   "distractor_logic": [
+    "This is the behaviour of an infinite straight wire, not a single element.",
+    "This is the far-field behaviour of a whole loop, not a single element.",
+    "The field weakens with distance."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-024",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 1,
+   "type": "regular",
+   "question": "A circular loop lies in the plane of the page and carries a counterclockwise current as seen by the reader. The field at its centre points:",
+   "options": [
+    "Into the page, away from the reader",
+    "In the plane of the page, toward the loop's centre",
+    "In the plane of the page, tangent to the wire",
+    "Out of the page, toward the reader"
+   ],
+   "correct_index": 3,
+   "explanation": "Curl the fingers of the right hand along the current; the thumb gives the field at the centre.<br><br>Counterclockwise current gives a field out of the page.",
+   "hint": "Right-hand thumb rule for a loop.",
+   "distractor_logic": [
+    "Reverses the right-hand curl rule.",
+    "Radial thinking; the field at the centre is along the axis.",
+    "The field at the centre is perpendicular to the loop's plane."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-025",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "Ampere's circuital law states that:",
+   "options": [
+    "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0I_{\\text{enc}} \\)",
+    "\\( \\oint\\vec B\\cdot d\\vec l=\\dfrac{I_{\\text{enc}}}{\\mu_0} \\)",
+    "\\( \\oint\\vec B\\times d\\vec l=\\mu_0I_{\\text{enc}} \\)",
+    "\\( \\oint\\vec B\\cdot d\\vec A=\\mu_0I_{\\text{enc}} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "The line integral of \\( \\vec B \\) around any closed loop equals \\( \\mu_0 \\) times the net current threading the loop.",
+   "hint": "It is a closed line integral with a dot product.",
+   "distractor_logic": [
+    "Puts \\( \\mu_0 \\) in the denominator, like Gauss's law with \\( \\varepsilon_0 \\).",
+    "Uses a cross product; the line integral uses a dot product.",
+    "A closed surface integral of \\( \\vec B \\) is always zero; Ampere's law is a line integral."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-026",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "The magnetic field at distance \\( r \\) from an infinitely long straight wire carrying current \\( I \\) is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0I}{2\\pi r^2} \\)",
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\)",
+    "\\( \\dfrac{\\mu_0I}{2r} \\)",
+    "\\( \\dfrac{\\mu_0I}{4\\pi r^2} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Take a circular Amperian loop of radius \\( r \\): \\( B(2\\pi r)=\\mu_0I \\).<br><br>So \\( B=\\dfrac{\\mu_0I}{2\\pi r} \\), falling off as \\( 1/r \\).",
+   "hint": "The Amperian loop has length \\( 2\\pi r \\).",
+   "distractor_logic": [
+    "False analogy with a point charge's \\( 1/r^2 \\) field.",
+    "This is the form of the centre field of a loop, not a wire.",
+    "Uses the single-element Biot-Savart form for a whole wire."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-027",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "The distance from a long straight current-carrying wire is doubled. The magnetic field becomes:",
+   "options": [
+    "One-quarter as large",
+    "Twice as large",
+    "Half as large",
+    "Unchanged"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( B=\\dfrac{\\mu_0I}{2\\pi r} \\) is proportional to \\( 1/r \\).<br><br>Doubling \\( r \\) halves \\( B \\).",
+   "hint": "How does \\( B \\) scale with \\( r \\) for a long wire?",
+   "distractor_logic": [
+    "Uses \\( 1/r^2 \\), which applies to point charges, not long wires.",
+    "The field weakens with distance.",
+    "The field of a wire depends on distance."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-028",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "The magnetic field inside a long ideal solenoid carrying current \\( I \\) is:",
+   "options": [
+    "\\( \\mu_0NI \\), where \\( N \\) is the total number of turns",
+    "\\( \\dfrac{\\mu_0nI}{2} \\), where \\( n \\) is the number of turns per unit length",
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\), where \\( r \\) is the distance from the axis",
+    "\\( \\mu_0nI \\), where \\( n \\) is the number of turns per unit length"
+   ],
+   "correct_index": 3,
+   "explanation": "Ampere's law on a rectangular loop gives \\( BL=\\mu_0(nL)I \\).<br><br>So \\( B=\\mu_0nI \\) with \\( n=\\dfrac{N}{L} \\).",
+   "hint": "The density of windings, not the total count, matters.",
+   "distractor_logic": [
+    "Uses total turns instead of turns per unit length.",
+    "This is the value at the ends, not inside.",
+    "Borrows the straight-wire result."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-029",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "Inside a long ideal solenoid, the magnetic field:",
+   "options": [
+    "Is uniform, the same at every point inside",
+    "Is strongest on the axis and weaker near the windings",
+    "Is strongest at the middle and falls to zero at the ends",
+    "Increases steadily toward the windings"
+   ],
+   "correct_index": 0,
+   "explanation": "Ampere's law with a rectangular loop gives \\( B=\\mu_0nI \\) regardless of where the inner side of the loop sits.<br><br>So the interior field is uniform.",
+   "hint": "Does position appear in \\( B=\\mu_0nI \\)?",
+   "distractor_logic": [
+    "The ideal solenoid's interior field does not vary across the cross-section.",
+    "Only at the ends does it drop, and then to half, not zero.",
+    "No such variation exists inside an ideal solenoid."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-030",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "For an ideal toroid, the magnetic field in the central hollow region (the space encircled by the toroid) is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0NI}{2\\pi r} \\)",
+    "Zero",
+    "\\( \\mu_0nI \\), as in a solenoid",
+    "Maximum, because all the turns surround it"
+   ],
+   "correct_index": 1,
+   "explanation": "An Amperian circle inside the hollow encloses no current.<br><br>So \\( B(2\\pi r)=0 \\) and \\( B=0 \\).",
+   "hint": "How much current does a loop in the hollow enclose?",
+   "distractor_logic": [
+    "Applies the core formula to a region that encloses no current.",
+    "The central hollow is not inside the windings.",
+    "An Amperian loop there encloses zero net current."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-031",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "For an ideal toroid, the magnetic field at a point outside the toroid is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0NI}{2\\pi r} \\) with \\( r \\) measured from the centre",
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\), as for a single wire",
+    "Zero",
+    "Equal to the field inside the core"
+   ],
+   "correct_index": 2,
+   "explanation": "An Amperian circle outside threads each turn twice, once each way.<br><br>Net enclosed current is \\( NI-NI=0 \\), so \\( B=0 \\).",
+   "hint": "Count the enclosed current with signs.",
+   "distractor_logic": [
+    "Applies the core formula outside; outside the net enclosed current is zero.",
+    "Each turn crosses the loop twice in opposite directions, so the currents cancel.",
+    "The field is confined to the core."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-032",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 1,
+   "type": "regular",
+   "question": "The magnetic field inside the core of an ideal toroid with \\( N \\) turns, at distance \\( r \\) from its centre, is:",
+   "options": [
+    "\\( \\mu_0NI \\)",
+    "\\( \\dfrac{\\mu_0NI}{2\\pi r^2} \\)",
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\)",
+    "\\( \\dfrac{\\mu_0NI}{2\\pi r} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "An Amperian circle of radius \\( r \\) in the core encloses current \\( NI \\).<br><br>\\( B(2\\pi r)=\\mu_0NI \\), so \\( B=\\dfrac{\\mu_0NI}{2\\pi r} \\).",
+   "hint": "The loop passes through all \\( N \\) turns.",
+   "distractor_logic": [
+    "Leaves out the Amperian loop length \\( 2\\pi r \\).",
+    "Uses \\( 1/r^2 \\); Ampere's law gives \\( 1/r \\).",
+    "Forgets that the loop encloses all \\( N \\) turns."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-033",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "The force per unit length between two long parallel wires carrying currents \\( I_1 \\) and \\( I_2 \\) a distance \\( d \\) apart is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0I_1I_2}{2\\pi d} \\)",
+    "\\( \\dfrac{\\mu_0I_1I_2}{2\\pi d^2} \\)",
+    "\\( \\dfrac{\\mu_0I_1I_2}{4\\pi d} \\)",
+    "\\( \\dfrac{\\mu_0I_1I_2d}{2\\pi} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Wire 1 produces \\( B_1=\\dfrac{\\mu_0I_1}{2\\pi d} \\) at wire 2.<br><br>Force per length on wire 2 is \\( I_2B_1=\\dfrac{\\mu_0I_1I_2}{2\\pi d} \\).",
+   "hint": "Multiply the field of one wire by the current of the other.",
+   "distractor_logic": [
+    "Uses an inverse-square law; the wire field varies as \\( 1/d \\).",
+    "Uses the wrong numerical constant.",
+    "Makes the force grow with separation."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-034",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "Two long parallel wires carry currents in the same direction. The wires:",
+   "options": [
+    "Repel each other",
+    "Attract each other",
+    "Exert no force on each other",
+    "Push each other along their lengths"
+   ],
+   "correct_index": 1,
+   "explanation": "The field of one wire at the other, crossed with the current, points toward the first wire.<br><br>Parallel currents attract; antiparallel currents repel.",
+   "hint": "Opposite of the electrostatic rule.",
+   "distractor_logic": [
+    "Carries over the electrostatic 'like repels like' idea; parallel currents attract.",
+    "Each wire sits in the other's field and feels \\( I\\vec L\\times\\vec B \\).",
+    "The force is perpendicular to the wires, not along them."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-035",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "According to the classical definition, one ampere is the steady current which, in each of two infinitely long parallel wires 1 m apart in vacuum, produces a force per metre of length equal to:",
+   "options": [
+    "\\( 10^{-7} \\) N/m",
+    "\\( 4\\pi\\times10^{-7} \\) N/m",
+    "\\( 2\\times10^{-7} \\) N/m",
+    "1 N/m"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\dfrac{F}{L}=\\dfrac{\\mu_0I_1I_2}{2\\pi d}=\\dfrac{4\\pi\\times10^{-7}\\times1\\times1}{2\\pi\\times1} \\).<br><br>This equals \\( 2\\times10^{-7} \\) N/m.",
+   "hint": "Put \\( I_1=I_2=1 \\) A and \\( d=1 \\) m.",
+   "distractor_logic": [
+    "This is the value of \\( \\dfrac{\\mu_0}{4\\pi} \\), missing the factor 2.",
+    "This is the numerical value of \\( \\mu_0 \\) itself.",
+    "Assumes the definition uses a unit force."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-036",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "The torque \\( \\tau=NIAB\\sin\\theta \\) on a current loop in a uniform field is maximum when:",
+   "options": [
+    "The plane of the loop is perpendicular to \\( \\vec B \\)",
+    "The plane of the loop is at \\( 45^\\circ \\) to \\( \\vec B \\)",
+    "The torque is the same at every orientation",
+    "The plane of the loop is parallel to \\( \\vec B \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\theta \\) is the angle between the loop's normal and \\( \\vec B \\).<br><br>Maximum torque needs \\( \\theta=90^\\circ \\), which means the plane of the loop is parallel to \\( \\vec B \\).",
+   "hint": "\\( \\theta \\) is measured from the normal, not the plane.",
+   "distractor_logic": [
+    "Swaps the orientations; in this position the torque is zero.",
+    "At \\( 45^\\circ \\) the torque is only \\( \\sin 45^\\circ \\) of maximum.",
+    "Torque varies with the angle between the normal and \\( \\vec B \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-037",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "The magnetic moment of a coil of \\( N \\) turns, each of area \\( A \\), carrying current \\( I \\) is:",
+   "options": [
+    "\\( NIA \\), directed along the normal to the coil",
+    "\\( \\dfrac{NI}{A} \\), directed along the normal to the coil",
+    "\\( NIAB \\), directed along the normal to the coil",
+    "\\( \\dfrac{IA}{N} \\), directed along the normal to the coil"
+   ],
+   "correct_index": 0,
+   "explanation": "Each turn contributes \\( IA \\), so \\( m=NIA \\).<br><br>Its direction follows the right-hand rule along the normal.",
+   "hint": "Moment is current times area, per turn.",
+   "distractor_logic": [
+    "Divides by area; the moment grows with area.",
+    "Includes the field; that is the maximum torque, not the moment.",
+    "Divides by the number of turns; each turn adds to the moment."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-038",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "Why does a moving-coil galvanometer use a radial magnetic field?",
+   "options": [
+    "To make the field zero at the coil so it can rotate freely",
+    "To keep the coil's plane parallel to the field at every deflection, so torque is proportional to current",
+    "To make the torque depend on \\( \\sin\\theta \\) so the scale is non-linear",
+    "To make the field point in one fixed direction across the gap"
+   ],
+   "correct_index": 1,
+   "explanation": "In a radial field the coil's plane always lies along the field lines, so \\( \\theta=90^\\circ \\) at every position.<br><br>Then \\( \\tau=NIAB \\) at all deflections and deflection is proportional to \\( I \\).",
+   "hint": "Think about what happens to \\( \\sin\\theta \\).",
+   "distractor_logic": [
+    "The coil needs a field to experience torque.",
+    "A radial field removes the \\( \\sin\\theta \\) factor, making the scale linear.",
+    "That describes a uniform field, which is what a radial field avoids."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-039",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "To convert a galvanometer into an ammeter, one should connect:",
+   "options": [
+    "A high resistance in series with it",
+    "A low resistance in series with it",
+    "A low resistance in parallel with it",
+    "A high resistance in parallel with it"
+   ],
+   "correct_index": 2,
+   "explanation": "Most of the current must bypass the delicate coil through a shunt.<br><br>A small resistance in parallel carries the excess current and keeps the ammeter's total resistance low.",
+   "hint": "An ammeter must have very low resistance.",
+   "distractor_logic": [
+    "That converts it into a voltmeter.",
+    "Series resistance does not divert extra current around the coil.",
+    "A high shunt would carry very little current, giving almost no range increase."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L1-040",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 1,
+   "type": "regular",
+   "question": "The current sensitivity (deflection per unit current) of a moving-coil galvanometer with \\( N \\) turns, area \\( A \\), radial field \\( B \\) and torsion constant \\( k \\) is:",
+   "options": [
+    "\\( \\dfrac{k}{NAB} \\)",
+    "\\( \\dfrac{NAB\\sin\\theta}{k} \\)",
+    "\\( NABk \\)",
+    "\\( \\dfrac{NAB}{k} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "At equilibrium \\( NIAB=k\\phi \\).<br><br>So \\( \\dfrac{\\phi}{I}=\\dfrac{NAB}{k} \\), with no \\( \\sin\\theta \\) because the field is radial.",
+   "hint": "Balance deflecting torque against restoring torque \\( k\\phi \\).",
+   "distractor_logic": [
+    "Inverts the ratio; a stiffer spring reduces sensitivity.",
+    "Reinserts \\( \\sin\\theta \\); the radial field makes \\( \\theta=90^\\circ \\) always.",
+    "Multiplies by the torsion constant instead of dividing."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-001",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A proton (charge \\( 1.6\\times10^{-19} \\) C) moves at \\( 10^{6} \\) m/s at \\( 30^\\circ \\) to a field of 2 T. The magnitude of the magnetic force is:",
+   "options": [
+    "\\( 1.6\\times10^{-13} \\) N",
+    "\\( 3.2\\times10^{-13} \\) N",
+    "\\( 1.6\\sqrt3\\times10^{-13} \\) N",
+    "\\( 0.8\\times10^{-13} \\) N"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( F=qvB\\sin\\theta=(1.6\\times10^{-19})(10^{6})(2)\\sin 30^\\circ \\).<br><br>\\( F=3.2\\times10^{-13}\\times0.5=1.6\\times10^{-13} \\) N.",
+   "hint": "Only the velocity component perpendicular to \\( \\vec B \\) matters.",
+   "distractor_logic": [
+    "Drops the \\( \\sin 30^\\circ \\) factor, treating the motion as perpendicular.",
+    "Uses \\( \\cos 30^\\circ \\) instead of \\( \\sin 30^\\circ \\).",
+    "Applies an extra factor of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-002",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A straight wire 0.5 m long carries 4 A perpendicular to a field of 0.2 T. The force on it is:",
+   "options": [
+    "0 N",
+    "0.4 N",
+    "10 N",
+    "0.1 N"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( F=ILB\\sin 90^\\circ=(4)(0.5)(0.2) \\).<br><br>\\( F=0.4 \\) N.",
+   "hint": "Use \\( F=ILB\\sin\\theta \\).",
+   "distractor_logic": [
+    "Treats the wire as parallel to the field.",
+    "Divides by \\( B \\) instead of multiplying: \\( \\dfrac{IL}{B} \\).",
+    "Divides the current by the length instead of multiplying."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-003",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A wire 2 m long carrying 5 A lies at \\( 60^\\circ \\) to a uniform field of 0.1 T. The magnitude of the force on it is:",
+   "options": [
+    "1 N",
+    "0.5 N",
+    "\\( \\dfrac{\\sqrt3}{2} \\) N",
+    "\\( \\sqrt3 \\) N"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( ILB=(5)(2)(0.1)=1 \\) N.<br><br>\\( F=ILB\\sin 60^\\circ=\\dfrac{\\sqrt3}{2} \\) N.",
+   "hint": "Angle between \\( \\vec L \\) and \\( \\vec B \\) is \\( 60^\\circ \\).",
+   "distractor_logic": [
+    "Drops the \\( \\sin 60^\\circ \\) factor.",
+    "Uses \\( \\cos 60^\\circ \\) instead of \\( \\sin 60^\\circ \\).",
+    "Multiplies by \\( 2\\sin 60^\\circ \\) instead of \\( \\sin 60^\\circ \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-004",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "In a velocity selector, crossed fields \\( E=10^{4} \\) V/m and \\( B=0.5 \\) T are applied. The speed of particles passing undeflected is:",
+   "options": [
+    "\\( 5\\times10^{3} \\) m/s",
+    "\\( 5\\times10^{-5} \\) m/s",
+    "\\( 4\\times10^{4} \\) m/s",
+    "\\( 2\\times10^{4} \\) m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "Balance: \\( qE=qvB \\), so \\( v=\\dfrac{E}{B} \\).<br><br>\\( v=\\dfrac{10^{4}}{0.5}=2\\times10^{4} \\) m/s.",
+   "hint": "Set the electric and magnetic forces equal.",
+   "distractor_logic": [
+    "Multiplies \\( E \\) and \\( B \\) instead of dividing.",
+    "Computes \\( \\dfrac{B}{E} \\) instead of \\( \\dfrac{E}{B} \\).",
+    "Adds an unjustified factor of 2."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-005",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "Which particles pass undeflected through a velocity selector with crossed fields \\( E \\) and \\( B \\)?",
+   "options": [
+    "Any charged particle with speed \\( \\dfrac{E}{B} \\), whatever its charge or mass",
+    "Only particles with a particular charge-to-mass ratio",
+    "Only positively charged particles with speed \\( \\dfrac{E}{B} \\)",
+    "Only particles heavier than a certain mass"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( qE=qvB \\) gives \\( v=\\dfrac{E}{B} \\).<br><br>\\( q \\) cancels and \\( m \\) never appears, so only speed decides.",
+   "hint": "Which quantities survive the balance equation?",
+   "distractor_logic": [
+    "\\( q \\) cancels in \\( qE=qvB \\) and mass never enters the balance.",
+    "For a negative charge both forces reverse together, so they still cancel.",
+    "Mass does not appear in the balance condition."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-006",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "An electron moves along \\( +\\hat j \\) in a magnetic field along \\( +\\hat k \\). The magnetic force on it points along:",
+   "options": [
+    "\\( +\\hat i \\)",
+    "\\( -\\hat i \\)",
+    "\\( +\\hat k \\)",
+    "\\( -\\hat j \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\hat j\\times\\hat k=+\\hat i \\).<br><br>For a negative charge the force is reversed: \\( -\\hat i \\).",
+   "hint": "Cross product first, then the sign of the charge.",
+   "distractor_logic": [
+    "Uses \\( \\hat j\\times\\hat k \\) but forgets the electron's negative charge.",
+    "Assumes the force points along the field.",
+    "Assumes the force opposes the velocity."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-007",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A wire carries current along \\( +\\hat k \\) in a uniform field along \\( +\\hat i \\). The force on the wire is along:",
+   "options": [
+    "\\( -\\hat j \\)",
+    "\\( +\\hat i \\)",
+    "\\( +\\hat j \\)",
+    "\\( -\\hat k \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\vec F=I\\vec L\\times\\vec B \\) with \\( \\vec L \\) along \\( \\hat k \\) and \\( \\vec B \\) along \\( \\hat i \\).<br><br>\\( \\hat k\\times\\hat i=+\\hat j \\).",
+   "hint": "Cyclic order: \\( \\hat i\\to\\hat j\\to\\hat k\\to\\hat i \\) gives positive products.",
+   "distractor_logic": [
+    "Left-hand rule or reversed cross-product order.",
+    "Assumes the force is along the field.",
+    "Assumes the force opposes the current."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-008",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 2,
+   "type": "regular",
+   "question": "A charged particle enters a region containing only a uniform magnetic field with kinetic energy 8 J. After moving inside for a while, its kinetic energy is:",
+   "options": [
+    "16 J",
+    "4 J",
+    "0 J",
+    "8 J"
+   ],
+   "correct_index": 3,
+   "explanation": "The magnetic force is perpendicular to velocity and does no work.<br><br>By the work-energy theorem the kinetic energy stays 8 J.",
+   "hint": "Work-energy theorem with zero work.",
+   "distractor_logic": [
+    "Assumes the field does positive work on the particle.",
+    "Assumes the field slows the particle down.",
+    "Assumes the field eventually stops the particle."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-009",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "A particle of mass \\( 1.6\\times10^{-27} \\) kg and charge \\( 1.6\\times10^{-19} \\) C moves at \\( 10^{6} \\) m/s perpendicular to a field of 0.1 T. The radius of its path is:",
+   "options": [
+    "0.1 m",
+    "10 m",
+    "0.01 m",
+    "1 m"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( r=\\dfrac{mv}{qB}=\\dfrac{(1.6\\times10^{-27})(10^{6})}{(1.6\\times10^{-19})(0.1)} \\).<br><br>\\( r=\\dfrac{1.6\\times10^{-21}}{1.6\\times10^{-20}}=0.1 \\) m.",
+   "hint": "Use \\( r=\\dfrac{mv}{qB} \\).",
+   "distractor_logic": [
+    "Inverts the formula to \\( \\dfrac{qB}{mv} \\).",
+    "Omits the field \\( B \\) from the denominator.",
+    "Misplaces one power of ten in the calculation."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-010",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "The particle of mass \\( 1.6\\times10^{-27} \\) kg and charge \\( 1.6\\times10^{-19} \\) C in a field of 0.1 T has its speed doubled from \\( 10^{6} \\) m/s to \\( 2\\times10^{6} \\) m/s. Its new period is:",
+   "options": [
+    "\\( 4\\pi\\times10^{-7} \\) s",
+    "\\( 2\\pi\\times10^{-7} \\) s",
+    "\\( \\pi\\times10^{-7} \\) s",
+    "\\( 2\\pi\\times10^{-6} \\) s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( T=\\dfrac{2\\pi m}{qB}=\\dfrac{2\\pi(1.6\\times10^{-27})}{(1.6\\times10^{-19})(0.1)}=2\\pi\\times10^{-7} \\) s.<br><br>The speed does not appear, so doubling it changes nothing.",
+   "hint": "Does \\( T \\) depend on \\( v \\)?",
+   "distractor_logic": [
+    "Thinks the period doubles with speed.",
+    "Thinks the period halves as the particle moves faster.",
+    "Misplaces a power of ten in \\( \\dfrac{m}{qB} \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-011",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "A particle with charge-to-mass ratio \\( 10^{8} \\) C/kg moves in a field of 2 T. Its cyclotron frequency is:",
+   "options": [
+    "\\( 2\\times10^{8} \\) Hz",
+    "\\( 4\\pi\\times10^{8} \\) Hz",
+    "\\( \\dfrac{10^{8}}{\\pi} \\) Hz",
+    "\\( \\dfrac{10^{8}}{2\\pi} \\) Hz"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( f=\\dfrac{qB}{2\\pi m}=\\dfrac{(10^{8})(2)}{2\\pi} \\).<br><br>\\( f=\\dfrac{10^{8}}{\\pi} \\) Hz.",
+   "hint": "\\( f=\\dfrac{1}{2\\pi}\\dfrac{q}{m}B \\).",
+   "distractor_logic": [
+    "Gives the angular frequency \\( \\omega=\\dfrac{qB}{m} \\) in hertz, forgetting to divide by \\( 2\\pi \\).",
+    "Multiplies by \\( 2\\pi \\) instead of dividing.",
+    "Leaves out the field value of 2 T."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-012",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "A particle with charge-to-mass ratio \\( 5\\times10^{7} \\) C/kg moves in a field of 0.2 T. Its angular frequency of revolution is:",
+   "options": [
+    "\\( 2.5\\times10^{8} \\) rad/s",
+    "\\( \\dfrac{10^{7}}{2\\pi} \\) rad/s",
+    "\\( 10^{-7} \\) rad/s",
+    "\\( 10^{7} \\) rad/s"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\omega=\\dfrac{qB}{m}=(5\\times10^{7})(0.2) \\).<br><br>\\( \\omega=10^{7} \\) rad/s.",
+   "hint": "\\( \\omega=2\\pi f=\\dfrac{qB}{m} \\).",
+   "distractor_logic": [
+    "Divides by \\( B \\) instead of multiplying.",
+    "Divides by \\( 2\\pi \\), confusing angular frequency with frequency.",
+    "Inverts the expression to \\( \\dfrac{m}{qB} \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-013",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "A cyclotron has dees of radius \\( R \\) and field \\( B \\). The maximum kinetic energy of particles of charge \\( q \\) and mass \\( m \\) it can deliver is:",
+   "options": [
+    "\\( \\dfrac{q^2B^2R^2}{2m} \\)",
+    "\\( \\dfrac{q^2B^2R^2}{m} \\)",
+    "\\( \\dfrac{qB^2R^2}{2m} \\)",
+    "\\( \\dfrac{q^2B^2R}{2m} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "At the edge, \\( R=\\dfrac{mv}{qB} \\), so \\( v=\\dfrac{qBR}{m} \\).<br><br>\\( K=\\dfrac{1}{2}mv^2=\\dfrac{q^2B^2R^2}{2m} \\).",
+   "hint": "Find the maximum speed from the dee radius first.",
+   "distractor_logic": [
+    "Forgets the one-half in \\( \\dfrac{1}{2}mv^2 \\).",
+    "Fails to square the charge when squaring \\( v=\\dfrac{qBR}{m} \\).",
+    "Fails to square the radius."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-014",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "A proton and an alpha particle have the same kinetic energy and move perpendicular to the same uniform field. The ratio of their radii \\( r_p:r_\\alpha \\) is:",
+   "options": [
+    "1 : 2",
+    "1 : 1",
+    "2 : 1",
+    "1 : 4"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( r=\\dfrac{\\sqrt{2mK}}{qB} \\).<br><br>Proton: \\( \\dfrac{\\sqrt{2mK}}{eB} \\). Alpha: \\( \\dfrac{\\sqrt{2(4m)K}}{2eB}=\\dfrac{\\sqrt{2mK}}{eB} \\).<br><br>The radii are equal.",
+   "hint": "Write momentum as \\( \\sqrt{2mK} \\).",
+   "distractor_logic": [
+    "Uses the equal-speed result instead of equal kinetic energy.",
+    "Inverts the mass dependence.",
+    "Uses the mass ratio alone and ignores the charge."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-015",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "A proton and an alpha particle move in circles in the same uniform field. The ratio of their periods \\( T_p:T_\\alpha \\) is:",
+   "options": [
+    "2 : 1",
+    "1 : 4",
+    "1 : 2",
+    "4 : 1"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( T=\\dfrac{2\\pi m}{qB} \\) is proportional to \\( \\dfrac{m}{q} \\).<br><br>Proton: \\( \\dfrac{m}{e} \\). Alpha: \\( \\dfrac{4m}{2e}=\\dfrac{2m}{e} \\).<br><br>Ratio 1 : 2, whatever their speeds.",
+   "hint": "Compare \\( \\dfrac{m}{q} \\) for the two particles.",
+   "distractor_logic": [
+    "Inverts the \\( \\dfrac{m}{q} \\) dependence.",
+    "Uses the mass ratio but ignores the doubled charge of the alpha particle.",
+    "Inverts the mass ratio and ignores the charge."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-016",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 2,
+   "type": "regular",
+   "question": "A particle moves with speed \\( v \\) at angle \\( \\theta \\) to a uniform field \\( B \\). The pitch of its helical path is:",
+   "options": [
+    "\\( \\dfrac{2\\pi mv\\sin\\theta}{qB} \\)",
+    "\\( \\dfrac{2\\pi mv}{qB} \\)",
+    "\\( \\dfrac{mv\\cos\\theta}{qB} \\)",
+    "\\( \\dfrac{2\\pi mv\\cos\\theta}{qB} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Pitch = (velocity component along \\( \\vec B \\)) times (period).<br><br>Pitch \\( =v\\cos\\theta\\cdot\\dfrac{2\\pi m}{qB} \\).",
+   "hint": "Which component carries the particle along the field?",
+   "distractor_logic": [
+    "Uses the perpendicular component for motion along the field.",
+    "Uses the full speed instead of its component along \\( \\vec B \\).",
+    "Forgets the factor \\( 2\\pi \\) from the period."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-017",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "A circular loop of radius 0.1 m carries 5 A. The field at its centre is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( \\pi\\times10^{-5} \\) T",
+    "\\( 10^{-5} \\) T",
+    "\\( 2\\pi\\times10^{-5} \\) T",
+    "\\( \\dfrac{\\pi}{2}\\times10^{-5} \\) T"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( B=\\dfrac{\\mu_0I}{2R}=\\dfrac{4\\pi\\times10^{-7}\\times5}{0.2} \\).<br><br>\\( B=\\pi\\times10^{-5} \\) T.",
+   "hint": "Use \\( B=\\dfrac{\\mu_0I}{2R} \\).",
+   "distractor_logic": [
+    "Uses the straight-wire formula \\( \\dfrac{\\mu_0I}{2\\pi R} \\).",
+    "Uses \\( \\dfrac{\\mu_0I}{R} \\), missing the factor 2.",
+    "Uses the semicircle formula \\( \\dfrac{\\mu_0I}{4R} \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-018",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "A coil of 100 turns and radius 0.1 m carries 1 A. The field at its centre is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 2\\pi\\times10^{-6} \\) T",
+    "\\( 2\\pi\\times10^{-4} \\) T",
+    "\\( 2\\times10^{-4} \\) T",
+    "\\( 4\\pi\\times10^{-4} \\) T"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( B=\\dfrac{\\mu_0NI}{2R}=\\dfrac{4\\pi\\times10^{-7}\\times100\\times1}{0.2} \\).<br><br>\\( B=2\\pi\\times10^{-4} \\) T.",
+   "hint": "Each turn adds \\( \\dfrac{\\mu_0I}{2R} \\).",
+   "distractor_logic": [
+    "Forgets to multiply by the number of turns.",
+    "Uses the straight-wire formula for each turn.",
+    "Uses \\( \\dfrac{\\mu_0NI}{R} \\), missing the factor 2."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-019",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "The field at the centre of a loop is \\( 8\\times10^{-5} \\) T. The field on its axis at distance \\( \\sqrt3R \\) from the centre is:",
+   "options": [
+    "\\( 4\\times10^{-5} \\) T",
+    "\\( 5\\times10^{-6} \\) T",
+    "\\( 10^{-5} \\) T",
+    "\\( 8\\times10^{-5} \\) T"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\dfrac{B_{\\text{axis}}}{B_{\\text{centre}}}=\\dfrac{R^3}{(R^2+x^2)^{3/2}} \\).<br><br>With \\( x=\\sqrt3R \\): \\( R^2+x^2=4R^2 \\), so the ratio is \\( \\dfrac{R^3}{8R^3}=\\dfrac{1}{8} \\).<br><br>\\( B=\\dfrac{8\\times10^{-5}}{8}=10^{-5} \\) T.",
+   "hint": "Compute \\( (R^2+x^2)^{3/2} \\) carefully.",
+   "distractor_logic": [
+    "Uses power \\( 1/2 \\) instead of \\( 3/2 \\) in the axial formula.",
+    "Uses power 2 instead of \\( 3/2 \\) in the axial formula.",
+    "Assumes the field is the same all along the axis."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-020",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "A straight wire segment carries 10 A. A point is 0.1 m from the wire, and the ends subtend \\( \\theta_1=\\theta_2=30^\\circ \\) (measured from the perpendicular). The field there is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 2\\times10^{-5} \\) T",
+    "\\( \\sqrt3\\times10^{-5} \\) T",
+    "\\( 5\\times10^{-6} \\) T",
+    "\\( 10^{-5} \\) T"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( B=\\dfrac{\\mu_0I}{4\\pi d}(\\sin\\theta_1+\\sin\\theta_2)=\\dfrac{10^{-7}\\times10}{0.1}(0.5+0.5) \\).<br><br>\\( B=10^{-5} \\) T.",
+   "hint": "\\( \\dfrac{\\mu_0}{4\\pi}=10^{-7} \\) T m/A.",
+   "distractor_logic": [
+    "Uses the infinite-wire formula, ignoring the finite length.",
+    "Uses cosines instead of sines of the angles.",
+    "Counts only one of the two angles."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-021",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "In the finite-wire result \\( B=\\dfrac{\\mu_0I}{4\\pi d}(\\sin\\theta_1+\\sin\\theta_2) \\), putting \\( \\theta_1=\\theta_2=90^\\circ \\) gives:",
+   "options": [
+    "\\( \\dfrac{\\mu_0I}{2\\pi d} \\)",
+    "\\( \\dfrac{\\mu_0I}{4\\pi d} \\)",
+    "\\( \\dfrac{\\mu_0I}{2\\pi d^2} \\)",
+    "\\( \\dfrac{\\mu_0I}{2d} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\sin 90^\\circ+\\sin 90^\\circ=2 \\).<br><br>\\( B=\\dfrac{\\mu_0I}{4\\pi d}\\times2=\\dfrac{\\mu_0I}{2\\pi d} \\), the infinite-wire result.",
+   "hint": "Both ends go to infinity.",
+   "distractor_logic": [
+    "Uses only one of the two sine terms.",
+    "Introduces an extra power of \\( d \\).",
+    "Confuses with the centre field of a loop."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-022",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "A very long wire carrying 5 A ends at a point O. The field at a point 0.05 m from O along the perpendicular to the wire at O is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 2\\times10^{-5} \\) T",
+    "\\( 10^{-5} \\) T",
+    "0 T",
+    "\\( 5\\times10^{-6} \\) T"
+   ],
+   "correct_index": 1,
+   "explanation": "Here \\( \\theta_1=0^\\circ \\) and \\( \\theta_2=90^\\circ \\).<br><br>\\( B=\\dfrac{\\mu_0I}{4\\pi d}(0+1)=\\dfrac{10^{-7}\\times5}{0.05}=10^{-5} \\) T.",
+   "hint": "A semi-infinite wire gives half the infinite-wire field.",
+   "distractor_logic": [
+    "Uses the full infinite-wire value.",
+    "Thinks a point level with the end of a wire gets no field.",
+    "Introduces an extra factor of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-023",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "Two concentric coplanar loops of radii 0.1 m and 0.2 m each carry 2 A in opposite directions. The net field at the common centre is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 6\\pi\\times10^{-6} \\) T",
+    "0 T",
+    "\\( 2\\pi\\times10^{-6} \\) T",
+    "\\( 4\\pi\\times10^{-6} \\) T"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( B_1=\\dfrac{\\mu_0(2)}{2(0.1)}=4\\pi\\times10^{-6} \\) T and \\( B_2=\\dfrac{\\mu_0(2)}{2(0.2)}=2\\pi\\times10^{-6} \\) T.<br><br>Opposite currents give opposite fields: \\( B=4\\pi\\times10^{-6}-2\\pi\\times10^{-6}=2\\pi\\times10^{-6} \\) T.",
+   "hint": "Opposite currents mean subtract.",
+   "distractor_logic": [
+    "Adds the two fields as if the currents were in the same direction.",
+    "Assumes equal currents cancel regardless of radius.",
+    "Takes only the smaller loop's field."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-024",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 2,
+   "type": "regular",
+   "question": "A long straight wire lies along the \\( y \\)-axis with current along \\( +\\hat j \\). The field it produces at a point on the positive \\( z \\)-axis points along:",
+   "options": [
+    "\\( +\\hat k \\)",
+    "\\( -\\hat i \\)",
+    "\\( +\\hat j \\)",
+    "\\( +\\hat i \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( d\\vec B \\) is along \\( d\\vec l\\times\\hat r \\) with \\( d\\vec l \\) along \\( \\hat j \\) and \\( \\hat r \\) along \\( \\hat k \\).<br><br>\\( \\hat j\\times\\hat k=+\\hat i \\).",
+   "hint": "Evaluate \\( \\hat j\\times\\hat k \\).",
+   "distractor_logic": [
+    "Radial, Coulomb-style thinking: points from the wire toward the point.",
+    "Reverses the cross product \\( d\\vec l\\times\\hat r \\).",
+    "Assumes the field runs along the current."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-025",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "A long straight wire carries 10 A. The field at 0.1 m from it is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 2\\times10^{-5} \\) T",
+    "\\( 2\\times10^{-4} \\) T",
+    "\\( 10^{-5} \\) T",
+    "\\( 2\\pi\\times10^{-5} \\) T"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( B=\\dfrac{\\mu_0I}{2\\pi r}=\\dfrac{2\\times10^{-7}\\times10}{0.1} \\).<br><br>\\( B=2\\times10^{-5} \\) T.",
+   "hint": "\\( \\dfrac{\\mu_0}{2\\pi}=2\\times10^{-7} \\) T m/A.",
+   "distractor_logic": [
+    "Uses \\( 1/r^2 \\) instead of \\( 1/r \\).",
+    "Uses \\( \\dfrac{\\mu_0I}{4\\pi r} \\), the semi-infinite value.",
+    "Uses \\( \\dfrac{\\mu_0I}{2r} \\), a loop-style formula."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-026",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "The field of a long straight wire is \\( B_0 \\) at 5 cm from it. At 20 cm from the wire the field is:",
+   "options": [
+    "\\( \\dfrac{B_0}{16} \\)",
+    "\\( \\dfrac{B_0}{4} \\)",
+    "\\( 4B_0 \\)",
+    "\\( \\dfrac{B_0}{2} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( B \\) is proportional to \\( \\dfrac{1}{r} \\).<br><br>The distance is 4 times larger, so the field is \\( \\dfrac{B_0}{4} \\).",
+   "hint": "How many times farther is the new point?",
+   "distractor_logic": [
+    "Uses inverse-square fall-off.",
+    "Makes the field grow with distance.",
+    "Takes the square root of the distance ratio."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-027",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "A solenoid 0.5 m long has 500 turns and carries 2 A. The field well inside it is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 4\\pi\\times10^{-4} \\) T, the same everywhere inside",
+    "\\( 8\\pi\\times10^{-7} \\) T, the same everywhere inside",
+    "\\( 8\\pi\\times10^{-4} \\) T, the same everywhere inside",
+    "\\( 8\\pi\\times10^{-4} \\) T on the axis, weaker near the windings"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( n=\\dfrac{500}{0.5}=1000 \\) turns per metre.<br><br>\\( B=\\mu_0nI=4\\pi\\times10^{-7}\\times1000\\times2=8\\pi\\times10^{-4} \\) T, uniform inside.",
+   "hint": "Find \\( n=\\dfrac{N}{L} \\) first.",
+   "distractor_logic": [
+    "Uses the total turns \\( N=500 \\) in place of \\( n=\\dfrac{N}{L}=1000 \\) per metre.",
+    "Leaves out the turn density \\( n \\) entirely.",
+    "Treats the interior field of an ideal solenoid as non-uniform."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-028",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "A solenoid 0.5 m long with 1000 turns has a field of \\( 4\\pi\\times10^{-3} \\) T inside. The current in it is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "10 A",
+    "2.5 A",
+    "0.5 A",
+    "5 A"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( n=\\dfrac{1000}{0.5}=2000 \\) per metre.<br><br>\\( I=\\dfrac{B}{\\mu_0n}=\\dfrac{4\\pi\\times10^{-3}}{4\\pi\\times10^{-7}\\times2000}=5 \\) A.",
+   "hint": "Rearrange \\( B=\\mu_0nI \\).",
+   "distractor_logic": [
+    "Uses the total turns 1000 in place of \\( n=2000 \\) per metre.",
+    "Uses \\( n=\\dfrac{L}{N} \\) incorrectly and halves the answer.",
+    "Misplaces a power of ten."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-029",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "A toroid has 1000 turns and carries 1 A. The field in its core at 0.1 m from its centre is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 2\\times10^{-3} \\) T",
+    "\\( 2\\times10^{-2} \\) T",
+    "\\( 4\\pi\\times10^{-4} \\) T",
+    "\\( 2\\times10^{-6} \\) T"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( B=\\dfrac{\\mu_0NI}{2\\pi r}=\\dfrac{2\\times10^{-7}\\times1000\\times1}{0.1} \\).<br><br>\\( B=2\\times10^{-3} \\) T.",
+   "hint": "Amperian circle of radius \\( r \\) encloses \\( NI \\).",
+   "distractor_logic": [
+    "Uses \\( r^2 \\) in the denominator.",
+    "Uses \\( \\mu_0NI \\) and ignores the loop length \\( 2\\pi r \\).",
+    "Forgets the factor \\( N \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-030",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "A toroid of 1000 turns carrying 1 A has inner radius 0.08 m and outer radius 0.12 m. The field at 0.05 m from its centre is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 4\\times10^{-3} \\) T",
+    "0 T",
+    "\\( 2\\times10^{-3} \\) T",
+    "\\( 8\\times10^{-2} \\) T"
+   ],
+   "correct_index": 1,
+   "explanation": "0.05 m is less than the inner radius, so the point lies in the central hollow.<br><br>An Amperian circle there encloses no current, so \\( B=0 \\).",
+   "hint": "Is the point inside the windings?",
+   "distractor_logic": [
+    "Applies \\( \\dfrac{\\mu_0NI}{2\\pi r} \\) at \\( r=0.05 \\) m, a point in the hollow.",
+    "Uses the core value at the mean radius.",
+    "Applies the core formula in the hollow with \\( 1/r^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-031",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "A toroid of mean radius \\( r \\) has \\( N \\) turns. Its core field can be written as \\( \\mu_0nI \\) where:",
+   "options": [
+    "\\( n=\\dfrac{N}{r} \\)",
+    "\\( n=\\dfrac{N}{\\pi r^2} \\)",
+    "\\( n=\\dfrac{N}{2\\pi r} \\)",
+    "\\( n=N \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( B=\\dfrac{\\mu_0NI}{2\\pi r} \\).<br><br>The winding length is \\( 2\\pi r \\), so \\( n=\\dfrac{N}{2\\pi r} \\) and \\( B=\\mu_0nI \\), like a bent solenoid.",
+   "hint": "A toroid is a solenoid bent into a circle.",
+   "distractor_logic": [
+    "Uses the radius instead of the circumference as the length.",
+    "Divides by an area instead of a length.",
+    "Uses total turns instead of turns per unit length."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-032",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 2,
+   "type": "regular",
+   "question": "A closed loop encloses a wire with 3 A upward and a wire with 5 A downward. A third wire with 7 A upward lies outside the loop. Taking upward as positive, \\( \\oint\\vec B\\cdot d\\vec l \\) is:",
+   "options": [
+    "\\( 8\\mu_0 \\) T m",
+    "\\( 5\\mu_0 \\) T m",
+    "0 T m",
+    "\\( -2\\mu_0 \\) T m"
+   ],
+   "correct_index": 3,
+   "explanation": "Only enclosed currents count: \\( I_{\\text{enc}}=3-5=-2 \\) A.<br><br>\\( \\oint\\vec B\\cdot d\\vec l=-2\\mu_0 \\) T m.",
+   "hint": "Only currents threading the loop count, with signs.",
+   "distractor_logic": [
+    "Adds the magnitudes, ignoring the opposite directions.",
+    "Includes the current outside the loop.",
+    "Assumes the integral vanishes whenever currents flow both ways."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-033",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "Two long parallel wires 0.1 m apart carry 10 A and 5 A in the same direction. The force per unit length between them is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 10^{-4} \\) N/m, attractive",
+    "\\( 10^{-4} \\) N/m, repulsive",
+    "\\( 10^{-3} \\) N/m, attractive",
+    "\\( 5\\times10^{-5} \\) N/m, attractive"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\dfrac{F}{L}=\\dfrac{\\mu_0I_1I_2}{2\\pi d}=\\dfrac{2\\times10^{-7}\\times10\\times5}{0.1}=10^{-4} \\) N/m.<br><br>Same-direction currents attract.",
+   "hint": "Magnitude and then direction.",
+   "distractor_logic": [
+    "Uses the electrostatic 'like repels' intuition.",
+    "Uses \\( d^2 \\) in the denominator.",
+    "Uses \\( \\dfrac{\\mu_0}{4\\pi} \\) in place of \\( \\dfrac{\\mu_0}{2\\pi} \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-034",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "Two long parallel wires 0.2 m apart each carry 4 A in opposite directions. The force per unit length is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 1.6\\times10^{-5} \\) N/m, attractive",
+    "\\( 1.6\\times10^{-5} \\) N/m, repulsive",
+    "\\( 8\\times10^{-5} \\) N/m, repulsive",
+    "\\( 8\\times10^{-6} \\) N/m, repulsive"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\dfrac{F}{L}=\\dfrac{2\\times10^{-7}\\times4\\times4}{0.2}=1.6\\times10^{-5} \\) N/m.<br><br>Opposite currents repel.",
+   "hint": "Antiparallel currents push apart.",
+   "distractor_logic": [
+    "Reverses the rule: antiparallel currents repel.",
+    "Uses \\( d^2 \\) in the denominator.",
+    "Uses \\( \\dfrac{\\mu_0}{4\\pi} \\) in place of \\( \\dfrac{\\mu_0}{2\\pi} \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-035",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "A coil of 50 turns and area \\( 10^{-2} \\) \\( \\text{m}^2 \\) carries 2 A in a field of 0.5 T, with its plane parallel to the field. The torque on it is:",
+   "options": [
+    "0 N m",
+    "0.25 N m",
+    "0.5 N m",
+    "1 N m"
+   ],
+   "correct_index": 2,
+   "explanation": "Plane parallel to \\( \\vec B \\) means the normal is at \\( 90^\\circ \\) to \\( \\vec B \\).<br><br>\\( \\tau=NIAB=50\\times2\\times10^{-2}\\times0.5=0.5 \\) N m.",
+   "hint": "\\( \\theta \\) is between the normal and \\( \\vec B \\).",
+   "distractor_logic": [
+    "Swaps orientations: zero torque is when the plane is perpendicular to \\( \\vec B \\).",
+    "Introduces an extra factor of one half.",
+    "Doubles the result by counting both sides twice."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-036",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "A coil of 20 turns and area 0.05 \\( \\text{m}^2 \\) carries 1 A in a field of 0.2 T, with its plane perpendicular to the field. The torque on it is:",
+   "options": [
+    "0.2 N m",
+    "0.1 N m",
+    "\\( 0.1\\sqrt2 \\) N m",
+    "0 N m"
+   ],
+   "correct_index": 3,
+   "explanation": "Plane perpendicular to \\( \\vec B \\) means the normal is along \\( \\vec B \\), so \\( \\theta=0^\\circ \\).<br><br>\\( \\tau=NIAB\\sin 0^\\circ=0 \\).",
+   "hint": "Where does the normal point?",
+   "distractor_logic": [
+    "Swaps orientations and gives the maximum torque.",
+    "Uses a factor of one half for no reason.",
+    "Treats the orientation as \\( 45^\\circ \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-037",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "A coil of 10 turns and area 0.1 \\( \\text{m}^2 \\) carries 2 A in a field of 0.5 T. Its normal makes \\( 30^\\circ \\) with the field. The torque is:",
+   "options": [
+    "0.5 N m",
+    "\\( \\dfrac{\\sqrt3}{2} \\) N m",
+    "1 N m",
+    "0 N m"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( NIAB=10\\times2\\times0.1\\times0.5=1 \\) N m.<br><br>\\( \\tau=1\\times\\sin 30^\\circ=0.5 \\) N m.",
+   "hint": "\\( \\theta \\) is the normal-to-field angle.",
+   "distractor_logic": [
+    "Uses \\( \\cos 30^\\circ \\), confusing the normal angle with the plane angle.",
+    "Drops the \\( \\sin\\theta \\) factor.",
+    "Thinks torque vanishes unless the plane is exactly parallel to \\( \\vec B \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-038",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "A galvanometer of resistance \\( 99\\,\\Omega \\) gives full-scale deflection at 10 mA. The shunt needed to make it a 0-1 A ammeter is:",
+   "options": [
+    "\\( 0.99\\,\\Omega \\) in parallel",
+    "\\( 1\\,\\Omega \\) in parallel",
+    "\\( 1\\,\\Omega \\) in series",
+    "\\( 99\\,\\Omega \\) in parallel"
+   ],
+   "correct_index": 1,
+   "explanation": "Shunt current \\( =I-I_g=1-0.01=0.99 \\) A.<br><br>\\( S=\\dfrac{I_gG}{I-I_g}=\\dfrac{0.01\\times99}{0.99}=1\\,\\Omega \\), in parallel.",
+   "hint": "Coil and shunt share the same voltage.",
+   "distractor_logic": [
+    "Divides by the total current \\( I \\) instead of \\( I-I_g \\).",
+    "Right value but wrong connection; a shunt goes in parallel.",
+    "Equal shunt would only double the range."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-039",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "A galvanometer of resistance \\( 50\\,\\Omega \\) gives full-scale deflection at \\( 2\\times10^{-3} \\) A. To use it as a 0-10 V voltmeter, one needs:",
+   "options": [
+    "\\( 5000\\,\\Omega \\) in series",
+    "\\( 4950\\,\\Omega \\) in parallel",
+    "\\( 4950\\,\\Omega \\) in series",
+    "\\( 5050\\,\\Omega \\) in series"
+   ],
+   "correct_index": 2,
+   "explanation": "Total resistance needed \\( =\\dfrac{V}{I_g}=\\dfrac{10}{2\\times10^{-3}}=5000\\,\\Omega \\).<br><br>Series resistance \\( =5000-50=4950\\,\\Omega \\).",
+   "hint": "Total resistance at full scale is \\( \\dfrac{V}{I_g} \\).",
+   "distractor_logic": [
+    "Forgets to subtract the galvanometer's own resistance.",
+    "Right value but wrong connection; a voltmeter resistor goes in series.",
+    "Adds the galvanometer resistance instead of subtracting."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L2-040",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 2,
+   "type": "regular",
+   "question": "A galvanometer coil has 100 turns, area \\( 2\\times10^{-3} \\) \\( \\text{m}^2 \\), radial field 0.5 T and torsion constant \\( 10^{-4} \\) N m/rad. Its current sensitivity is:",
+   "options": [
+    "\\( 10^{-3} \\) rad/A",
+    "\\( 1000\\sin\\theta \\) rad/A",
+    "10 rad/A",
+    "1000 rad/A"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\dfrac{\\phi}{I}=\\dfrac{NAB}{k}=\\dfrac{100\\times2\\times10^{-3}\\times0.5}{10^{-4}} \\).<br><br>\\( =\\dfrac{0.1}{10^{-4}}=1000 \\) rad/A.",
+   "hint": "Use \\( \\dfrac{NAB}{k} \\).",
+   "distractor_logic": [
+    "Inverts the ratio to \\( \\dfrac{k}{NAB} \\).",
+    "Reinserts \\( \\sin\\theta \\); a radial field removes it.",
+    "Misplaces powers of ten in \\( NAB \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-001",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A charge of 1 C moves with \\( \\vec v=(2\\hat i+3\\hat j) \\) m/s in a field \\( \\vec B=4\\hat k \\) T. The magnetic force on it is:",
+   "options": [
+    "\\( (12\\hat i-8\\hat j) \\) N",
+    "\\( (-12\\hat i+8\\hat j) \\) N",
+    "\\( (8\\hat i-12\\hat j) \\) N",
+    "\\( (12\\hat i+8\\hat j) \\) N"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\vec v\\times\\vec B=2\\hat i\\times4\\hat k+3\\hat j\\times4\\hat k \\).<br><br>\\( \\hat i\\times\\hat k=-\\hat j \\) and \\( \\hat j\\times\\hat k=\\hat i \\).<br><br>\\( \\vec F=q(-8\\hat j+12\\hat i)=(12\\hat i-8\\hat j) \\) N.",
+   "hint": "Expand term by term and use \\( \\hat i\\times\\hat k=-\\hat j \\).",
+   "distractor_logic": [
+    "Computes \\( \\vec B\\times\\vec v \\) instead of \\( \\vec v\\times\\vec B \\).",
+    "Pairs the components with the wrong unit vectors.",
+    "Gets \\( \\hat i\\times\\hat k \\) wrong; it equals \\( -\\hat j \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-002",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A particle of charge \\( -2 \\) C moves with \\( \\vec v=3\\hat i \\) m/s in \\( \\vec B=2\\hat j \\) T. The magnetic force on it is:",
+   "options": [
+    "\\( +12\\hat k \\) N",
+    "\\( -12\\hat k \\) N",
+    "\\( -12\\hat j \\) N",
+    "0 N"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\vec v\\times\\vec B=3\\hat i\\times2\\hat j=6\\hat k \\).<br><br>\\( \\vec F=q\\vec v\\times\\vec B=(-2)(6\\hat k)=-12\\hat k \\) N.",
+   "hint": "Multiply by the signed charge at the end.",
+   "distractor_logic": [
+    "Forgets the negative sign of the charge.",
+    "Points the force along the field direction.",
+    "Thinks the force vanishes because the charge is negative."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-003",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A proton moves along \\( +\\hat i \\) at \\( 2\\times10^{5} \\) m/s in a field of 0.1 T along \\( +\\hat k \\). For it to pass undeflected, the electric field must be:",
+   "options": [
+    "\\( 2\\times10^{4} \\) V/m along \\( -\\hat j \\)",
+    "\\( 2\\times10^{6} \\) V/m along \\( +\\hat j \\)",
+    "\\( 2\\times10^{4} \\) V/m along \\( +\\hat j \\)",
+    "\\( 2\\times10^{4} \\) V/m along \\( +\\hat k \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Magnetic force: \\( q\\vec v\\times\\vec B \\) is along \\( \\hat i\\times\\hat k=-\\hat j \\).<br><br>The electric force must point along \\( +\\hat j \\), so \\( \\vec E \\) is along \\( +\\hat j \\) for a proton.<br><br>Magnitude \\( E=vB=2\\times10^{5}\\times0.1=2\\times10^{4} \\) V/m.",
+   "hint": "Find the magnetic force direction first, then oppose it.",
+   "distractor_logic": [
+    "Points \\( \\vec E \\) along the magnetic force instead of against it.",
+    "Divides \\( v \\) by \\( B \\) instead of multiplying.",
+    "Puts \\( \\vec E \\) along \\( \\vec B \\), where it cannot cancel the magnetic force."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-004",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A wire bent into a semicircle of radius 0.1 m carries 2 A. It lies in a plane perpendicular to a uniform field of 0.5 T. The magnitude of the net force on it is:",
+   "options": [
+    "\\( 0.1\\pi \\) N",
+    "0 N",
+    "0.4 N",
+    "0.2 N"
+   ],
+   "correct_index": 3,
+   "explanation": "In a uniform field, a curved wire feels the same force as a straight wire joining its ends.<br><br>Effective length \\( =2R=0.2 \\) m, so \\( F=ILB=2\\times0.2\\times0.5=0.2 \\) N.",
+   "hint": "Only the straight line between the endpoints matters in a uniform field.",
+   "distractor_logic": [
+    "Uses the arc length \\( \\pi R \\) instead of the straight chord \\( 2R \\).",
+    "Thinks the forces on a curved wire cancel completely.",
+    "Uses \\( 4R \\) as the effective length."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-005",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A rectangular loop 0.2 m by 0.1 m carries 3 A in a uniform field of 0.5 T lying in the plane of the loop. The net force on the loop is:",
+   "options": [
+    "0 N",
+    "0.3 N",
+    "0.9 N",
+    "0.15 N"
+   ],
+   "correct_index": 0,
+   "explanation": "For a closed loop the effective length (end-to-end vector) is zero.<br><br>In a uniform field the forces on opposite sides cancel, so the net force is zero (there can still be a torque).",
+   "hint": "What is the end-to-end vector of a closed loop?",
+   "distractor_logic": [
+    "Counts the force on only one long side.",
+    "Uses the whole perimeter as the effective length.",
+    "Counts the force on only one short side."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-006",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": 3,
+   "type": "regular",
+   "question": "A charge of 2 C moves at 3 m/s perpendicular to a field of 4 T. The rate at which the magnetic force does work on it is:",
+   "options": [
+    "72 W",
+    "0 W",
+    "24 W",
+    "6 W"
+   ],
+   "correct_index": 1,
+   "explanation": "Power \\( P=\\vec F\\cdot\\vec v \\).<br><br>The magnetic force (24 N here) is perpendicular to \\( \\vec v \\), so \\( P=0 \\) W.",
+   "hint": "Power is a dot product.",
+   "distractor_logic": [
+    "Multiplies force by speed as if they were parallel.",
+    "Quotes the force magnitude as if it were power.",
+    "Multiplies charge and speed only."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-007",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 3,
+   "type": "regular",
+   "question": "In a cyclotron, particles with charge-to-mass ratio \\( 10^{8} \\) C/kg move in a field of 1 T with dee radius 0.5 m. Their maximum speed is:",
+   "options": [
+    "\\( 2\\times10^{8} \\) m/s",
+    "\\( 10^{8} \\) m/s",
+    "\\( 5\\times10^{7} \\) m/s",
+    "\\( 2.5\\times10^{7} \\) m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( v=\\dfrac{qBR}{m}=10^{8}\\times1\\times0.5 \\).<br><br>\\( v=5\\times10^{7} \\) m/s.",
+   "hint": "Rearrange \\( R=\\dfrac{mv}{qB} \\).",
+   "distractor_logic": [
+    "Divides by the radius instead of multiplying.",
+    "Leaves out the radius.",
+    "Introduces an extra factor of one half."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-008",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 3,
+   "type": "regular",
+   "question": "For the cyclotron with charge-to-mass ratio \\( 10^{8} \\) C/kg and field 1 T, the oscillator frequency needed is:",
+   "options": [
+    "\\( \\dfrac{10^{8}}{\\pi} \\) Hz, constant throughout",
+    "\\( \\dfrac{5\\times10^{7}}{\\pi} \\) Hz at first, rising as the particles speed up",
+    "\\( 2\\pi\\times10^{8} \\) Hz, constant throughout",
+    "\\( \\dfrac{5\\times10^{7}}{\\pi} \\) Hz, constant throughout"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( f=\\dfrac{qB}{2\\pi m}=\\dfrac{10^{8}\\times1}{2\\pi}=\\dfrac{5\\times10^{7}}{\\pi} \\) Hz.<br><br>It contains neither \\( v \\) nor \\( r \\), so one fixed frequency works for the whole acceleration.",
+   "hint": "The resonance condition is a single fixed frequency.",
+   "distractor_logic": [
+    "Divides by \\( \\pi \\) instead of \\( 2\\pi \\).",
+    "Believes the cyclotron frequency depends on speed.",
+    "Multiplies by \\( 2\\pi \\) instead of dividing."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-009",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 3,
+   "type": "regular",
+   "question": "A cyclotron with field 1 T and dee radius 0.1 m accelerates particles of mass \\( 1.6\\times10^{-27} \\) kg and charge \\( 1.6\\times10^{-19} \\) C. The maximum kinetic energy is:",
+   "options": [
+    "\\( 8\\times10^{-14} \\) J",
+    "\\( 1.6\\times10^{-13} \\) J",
+    "\\( 8\\times10^{-13} \\) J",
+    "\\( 4\\times10^{-14} \\) J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( K=\\dfrac{q^2B^2R^2}{2m}=\\dfrac{(1.6\\times10^{-19})^2(1)^2(0.1)^2}{2\\times1.6\\times10^{-27}} \\).<br><br>\\( =\\dfrac{2.56\\times10^{-40}}{3.2\\times10^{-27}}=8\\times10^{-14} \\) J.",
+   "hint": "Square \\( q \\), \\( B \\) and \\( R \\).",
+   "distractor_logic": [
+    "Forgets the factor one half.",
+    "Does not square the radius.",
+    "Divides by \\( 4m \\) instead of \\( 2m \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-010",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 3,
+   "type": "regular",
+   "question": "In a cyclotron each gap crossing adds the same energy. The ratio of the orbit radius after 4 crossings to that after 1 crossing is:",
+   "options": [
+    "4 : 1",
+    "2 : 1",
+    "1 : 1",
+    "16 : 1"
+   ],
+   "correct_index": 1,
+   "explanation": "After \\( n \\) crossings \\( K=n\\,qV \\), and \\( r=\\dfrac{\\sqrt{2mK}}{qB} \\) is proportional to \\( \\sqrt n \\).<br><br>\\( \\dfrac{r_4}{r_1}=\\sqrt4=2 \\).",
+   "hint": "Radius depends on momentum, which goes as \\( \\sqrt K \\).",
+   "distractor_logic": [
+    "Takes the radius proportional to kinetic energy instead of its square root.",
+    "Thinks the radius stays fixed like the period.",
+    "Squares the energy ratio instead of taking the square root."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-011",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 3,
+   "type": "regular",
+   "question": "Two identical protons enter a field region perpendicular to \\( \\vec B \\) with speeds \\( v \\) and \\( 3v \\), complete semicircles and exit. The ratio of their times inside the field is:",
+   "options": [
+    "1 : 3",
+    "3 : 1",
+    "1 : 1",
+    "1 : 9"
+   ],
+   "correct_index": 2,
+   "explanation": "Time for a semicircle \\( =\\dfrac{T}{2}=\\dfrac{\\pi m}{qB} \\).<br><br>This is independent of speed, so the times are equal.",
+   "hint": "Half the period, which does not depend on \\( v \\).",
+   "distractor_logic": [
+    "Thinks the faster proton, on a bigger arc, takes proportionally longer.",
+    "Thinks the faster proton finishes sooner.",
+    "Uses a square-law dependence on speed."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-012",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": 3,
+   "type": "regular",
+   "question": "Ions pass undeflected through a velocity selector (fields \\( E \\) and \\( B_1 \\)), then enter a field \\( B_2 \\) alone. The radius of their path in \\( B_2 \\) is:",
+   "options": [
+    "\\( \\dfrac{mB_1}{qEB_2} \\)",
+    "\\( \\dfrac{qB_1B_2}{mE} \\)",
+    "\\( \\dfrac{mE}{qB_2} \\)",
+    "\\( \\dfrac{mE}{qB_1B_2} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Selected speed \\( v=\\dfrac{E}{B_1} \\).<br><br>Radius in \\( B_2 \\): \\( r=\\dfrac{mv}{qB_2}=\\dfrac{mE}{qB_1B_2} \\).",
+   "hint": "Get \\( v \\) from the selector, then use \\( r=\\dfrac{mv}{qB} \\).",
+   "distractor_logic": [
+    "Uses \\( v=\\dfrac{B_1}{E} \\) instead of \\( \\dfrac{E}{B_1} \\).",
+    "Inverts the whole radius formula.",
+    "Replaces \\( v \\) by \\( E \\), forgetting to divide by \\( B_1 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-013",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 3,
+   "type": "regular",
+   "question": "A square loop of side \\( a \\) carries current \\( I \\). The magnetic field at its centre is:",
+   "options": [
+    "\\( \\dfrac{2\\sqrt2\\mu_0I}{\\pi a} \\)",
+    "\\( \\dfrac{4\\mu_0I}{\\pi a} \\)",
+    "\\( \\dfrac{\\sqrt2\\mu_0I}{2\\pi a} \\)",
+    "\\( \\dfrac{2\\sqrt2\\mu_0I}{\\pi a^2} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Each side is at \\( d=\\dfrac{a}{2} \\) with \\( \\theta_1=\\theta_2=45^\\circ \\).<br><br>One side: \\( \\dfrac{\\mu_0I}{4\\pi(a/2)}(2\\sin 45^\\circ)=\\dfrac{\\sqrt2\\mu_0I}{2\\pi a} \\).<br><br>Four sides add: \\( B=\\dfrac{2\\sqrt2\\mu_0I}{\\pi a} \\).",
+   "hint": "Use the finite-wire formula for each side.",
+   "distractor_logic": [
+    "Treats each side as an infinite wire.",
+    "Counts only one side.",
+    "Adds an extra power of \\( a \\); dimensionally wrong."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-014",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 3,
+   "type": "regular",
+   "question": "At what distance along the axis of a circular loop of radius \\( R \\) does the field fall to one-eighth of its value at the centre?",
+   "options": [
+    "\\( 2R \\)",
+    "\\( \\sqrt3R \\)",
+    "\\( \\sqrt7R \\)",
+    "\\( 3R \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\dfrac{B_x}{B_0}=\\dfrac{R^3}{(R^2+x^2)^{3/2}}=\\dfrac{1}{8} \\).<br><br>So \\( (R^2+x^2)^{3/2}=8R^3 \\), giving \\( R^2+x^2=4R^2 \\) and \\( x=\\sqrt3R \\).",
+   "hint": "Raise both sides to the power \\( 2/3 \\).",
+   "distractor_logic": [
+    "Assumes a pure \\( \\dfrac{1}{x^3} \\) fall-off measured from the centre.",
+    "Uses power 1 instead of \\( 3/2 \\) on \\( (R^2+x^2) \\).",
+    "Confuses \\( \\sqrt3 \\) with 3."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-015",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 3,
+   "type": "regular",
+   "question": "A current element points along \\( +\\hat i \\) at the origin. The field it produces at a point on the positive \\( y \\)-axis is along:",
+   "options": [
+    "\\( +\\hat j \\)",
+    "\\( -\\hat k \\)",
+    "\\( +\\hat k \\)",
+    "\\( +\\hat i \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( d\\vec B \\) is along \\( d\\vec l\\times\\hat r=\\hat i\\times\\hat j \\).<br><br>\\( \\hat i\\times\\hat j=+\\hat k \\).",
+   "hint": "Evaluate \\( \\hat i\\times\\hat j \\).",
+   "distractor_logic": [
+    "Radial, Coulomb-style direction toward the point.",
+    "Reverses the cross product.",
+    "Puts the field along the current element."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-016",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 3,
+   "type": "regular",
+   "question": "A current element points along \\( +\\hat k \\) at the origin. The field it produces at a point on the positive \\( x \\)-axis is along:",
+   "options": [
+    "\\( -\\hat j \\)",
+    "\\( +\\hat i \\)",
+    "\\( +\\hat k \\)",
+    "\\( +\\hat j \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( d\\vec B \\) is along \\( d\\vec l\\times\\hat r=\\hat k\\times\\hat i \\).<br><br>\\( \\hat k\\times\\hat i=+\\hat j \\).",
+   "hint": "Cyclic order \\( \\hat k\\to\\hat i\\to\\hat j \\) gives a positive product.",
+   "distractor_logic": [
+    "Reverses the order of the cross product.",
+    "Radial, Coulomb-style direction toward the point.",
+    "Puts the field along the current element."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-017",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 3,
+   "type": "regular",
+   "question": "A current element of length \\( 10^{-2} \\) m carries 10 A along \\( +\\hat i \\) at the origin. The field magnitude it produces at the point (0, 0.5 m, 0) is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 4\\times10^{-8} \\) T",
+    "\\( 2\\times10^{-8} \\) T",
+    "0 T",
+    "\\( 1.6\\pi\\times10^{-7} \\) T"
+   ],
+   "correct_index": 0,
+   "explanation": "The angle between \\( d\\vec l \\) and \\( \\hat r \\) is \\( 90^\\circ \\).<br><br>\\( dB=\\dfrac{\\mu_0}{4\\pi}\\dfrac{I\\,dl}{r^2}=\\dfrac{10^{-7}\\times10\\times10^{-2}}{0.25}=4\\times10^{-8} \\) T.",
+   "hint": "\\( r=0.5 \\) m, so \\( r^2=0.25 \\) \\( \\text{m}^2 \\).",
+   "distractor_logic": [
+    "Uses \\( \\dfrac{1}{r} \\) instead of \\( \\dfrac{1}{r^2} \\).",
+    "Thinks the point lies along the element; it is perpendicular to it.",
+    "Uses \\( \\mu_0 \\) instead of \\( \\dfrac{\\mu_0}{4\\pi} \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-018",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": 3,
+   "type": "regular",
+   "question": "A long straight wire carrying current \\( I \\) has a circular loop of radius \\( R \\) formed in it, arranged so that at the loop's centre the straight parts and the loop give fields in the same direction. The field at the centre is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0I}{2R}\\left(1-\\dfrac{1}{\\pi}\\right) \\)",
+    "\\( \\dfrac{\\mu_0I}{2R}\\left(1+\\dfrac{1}{\\pi}\\right) \\)",
+    "\\( \\dfrac{\\mu_0I}{2R} \\)",
+    "\\( \\dfrac{\\mu_0I}{2R}\\left(1+\\dfrac{1}{2\\pi}\\right) \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Loop: \\( \\dfrac{\\mu_0I}{2R} \\). Long straight wire at distance \\( R \\): \\( \\dfrac{\\mu_0I}{2\\pi R} \\).<br><br>Adding: \\( \\dfrac{\\mu_0I}{2R}\\left(1+\\dfrac{1}{\\pi}\\right) \\).",
+   "hint": "Superpose the loop and the long wire.",
+   "distractor_logic": [
+    "Subtracts the two contributions though they point the same way.",
+    "Ignores the straight wire's contribution.",
+    "Uses half the infinite-wire field for the straight part."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-019",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 3,
+   "type": "regular",
+   "question": "A long straight wire of radius \\( a \\) carries current \\( I \\) uniformly spread over its cross-section. The field at distance \\( r \\) from the axis, with \\( r \\) less than \\( a \\), is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\)",
+    "0",
+    "\\( \\dfrac{\\mu_0Ir}{2\\pi a^2} \\)",
+    "\\( \\dfrac{\\mu_0Ir^2}{2\\pi a^3} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Enclosed current: \\( I\\dfrac{r^2}{a^2} \\).<br><br>\\( B(2\\pi r)=\\mu_0I\\dfrac{r^2}{a^2} \\), so \\( B=\\dfrac{\\mu_0Ir}{2\\pi a^2} \\).",
+   "hint": "Only the fraction of current inside radius \\( r \\) counts.",
+   "distractor_logic": [
+    "Uses the outside formula, as if all the current were enclosed.",
+    "Assumes the field inside vanishes, like the electric field inside a conductor.",
+    "Encloses current proportional to \\( r^3 \\) instead of \\( r^2 \\)."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-020",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 3,
+   "type": "regular",
+   "question": "A wire of radius 2 cm carries 10 A uniformly. The ratio of the field at 1 cm from the axis to that at 4 cm from the axis is:",
+   "options": [
+    "4 : 1",
+    "1 : 4",
+    "16 : 1",
+    "1 : 1"
+   ],
+   "correct_index": 3,
+   "explanation": "Inside (1 cm): \\( B=\\dfrac{\\mu_0Ir}{2\\pi a^2}=\\dfrac{2\\times10^{-7}\\times10\\times0.01}{4\\times10^{-4}}=5\\times10^{-5} \\) T.<br><br>Outside (4 cm): \\( B=\\dfrac{2\\times10^{-7}\\times10}{0.04}=5\\times10^{-5} \\) T.<br><br>Ratio 1 : 1.",
+   "hint": "One point is inside, the other outside.",
+   "distractor_logic": [
+    "Uses the outside \\( \\dfrac{1}{r} \\) law at both points.",
+    "Uses the inside linear law at both points.",
+    "Uses an inverse-square law at both points."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-021",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 3,
+   "type": "regular",
+   "question": "A solenoid 1 m long with 1000 turns and radius 2 cm carries 2 A. Near its middle, the field at 1 cm from the axis is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 8\\pi\\times10^{-4} \\) T",
+    "\\( 4\\pi\\times10^{-4} \\) T",
+    "0 T",
+    "\\( 16\\pi\\times10^{-4} \\) T"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( n=1000 \\) per metre.<br><br>Inside an ideal solenoid the field is uniform: \\( B=\\mu_0nI=4\\pi\\times10^{-7}\\times1000\\times2=8\\pi\\times10^{-4} \\) T at every interior point.",
+   "hint": "Does the interior field depend on distance from the axis?",
+   "distractor_logic": [
+    "Thinks the field halves away from the axis.",
+    "Thinks only the axis carries field.",
+    "Doubles the value, as if nearer windings added extra field."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-022",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 3,
+   "type": "regular",
+   "question": "A toroid of 3000 turns carries 0.5 A. Its core runs from \\( r=0.1 \\) m to \\( r=0.2 \\) m. The fields at \\( r=0.15 \\) m and at \\( r=0.25 \\) m are:",
+   "options": [
+    "\\( 2\\times10^{-3} \\) T and \\( 1.2\\times10^{-3} \\) T",
+    "\\( 2\\times10^{-3} \\) T and 0",
+    "0 and 0",
+    "\\( 2\\times10^{-3} \\) T and \\( 2\\times10^{-3} \\) T"
+   ],
+   "correct_index": 1,
+   "explanation": "Core: \\( B=\\dfrac{\\mu_0NI}{2\\pi r}=\\dfrac{2\\times10^{-7}\\times1500}{0.15}=2\\times10^{-3} \\) T.<br><br>Outside (\\( r=0.25 \\) m): enclosed net current is zero, so \\( B=0 \\).",
+   "hint": "Which point lies inside the windings?",
+   "distractor_logic": [
+    "Applies the core formula outside the toroid.",
+    "Thinks the toroid's field cancels everywhere.",
+    "Treats the field as uniform everywhere."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-023",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 3,
+   "type": "regular",
+   "question": "A coaxial cable carries current \\( I \\) along its inner conductor and \\( I \\) back along its outer shell. The field is:",
+   "options": [
+    "Zero between the conductors and \\( \\dfrac{\\mu_0I}{2\\pi r} \\) outside",
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\) between the conductors and \\( \\dfrac{\\mu_0I}{\\pi r} \\) outside",
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\) between the conductors and zero outside the cable",
+    "\\( \\dfrac{\\mu_0I}{2\\pi r} \\) both between the conductors and outside"
+   ],
+   "correct_index": 2,
+   "explanation": "Between: an Amperian circle encloses only the inner current \\( I \\), so \\( B=\\dfrac{\\mu_0I}{2\\pi r} \\).<br><br>Outside: it encloses \\( I-I=0 \\), so \\( B=0 \\).",
+   "hint": "Count enclosed current with direction.",
+   "distractor_logic": [
+    "Swaps the regions; outside, the enclosed currents cancel.",
+    "Adds the return current instead of subtracting it.",
+    "Ignores the return current entirely."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-024",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": 3,
+   "type": "regular",
+   "question": "A long solenoid is stretched to twice its length, keeping the same number of turns and the same current. The field inside becomes:",
+   "options": [
+    "Twice as large",
+    "Unchanged, since \\( N \\) and \\( I \\) are unchanged",
+    "One-quarter as large",
+    "Half as large"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( B=\\mu_0nI \\) with \\( n=\\dfrac{N}{L} \\).<br><br>Doubling \\( L \\) halves \\( n \\), so \\( B \\) halves.",
+   "hint": "What happens to \\( n \\)?",
+   "distractor_logic": [
+    "Inverts the dependence on length.",
+    "Uses total turns \\( N \\) instead of turns per unit length \\( n \\).",
+    "Squares the length change."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-025",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 3,
+   "type": "regular",
+   "question": "Three long parallel wires A, B, C lie in a plane with A 0.1 m from B and B 0.1 m from C. Each carries 2 A in the same direction. The net force per unit length on wire A is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 1.2\\times10^{-5} \\) N/m, toward the other wires",
+    "\\( 1.2\\times10^{-5} \\) N/m, away from the other wires",
+    "\\( 1.6\\times10^{-5} \\) N/m, toward the other wires",
+    "\\( 4\\times10^{-6} \\) N/m, toward the other wires"
+   ],
+   "correct_index": 0,
+   "explanation": "From B: \\( \\dfrac{2\\times10^{-7}\\times2\\times2}{0.1}=8\\times10^{-6} \\) N/m. From C: \\( \\dfrac{2\\times10^{-7}\\times4}{0.2}=4\\times10^{-6} \\) N/m.<br><br>Both attract A toward B and C: total \\( 1.2\\times10^{-5} \\) N/m.",
+   "hint": "A is attracted by both B and C.",
+   "distractor_logic": [
+    "Thinks parallel currents repel.",
+    "Places wire C at 0.1 m from A instead of 0.2 m.",
+    "Subtracts the two forces although both pull the same way."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-026",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 3,
+   "type": "regular",
+   "question": "A rectangular loop has sides 0.2 m parallel to a long wire carrying 10 A; the near side is 0.1 m and the far side 0.2 m from the wire. The loop carries 2 A, with the near side's current parallel to the wire's. The net force on the loop is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 8\\times10^{-6} \\) N, toward the wire",
+    "\\( 4\\times10^{-6} \\) N, toward the wire",
+    "\\( 1.2\\times10^{-5} \\) N, toward the wire",
+    "0 N"
+   ],
+   "correct_index": 1,
+   "explanation": "Near side: \\( \\dfrac{2\\times10^{-7}\\times10\\times2}{0.1}\\times0.2=8\\times10^{-6} \\) N toward (parallel currents).<br><br>Far side: \\( \\dfrac{2\\times10^{-7}\\times20}{0.2}\\times0.2=4\\times10^{-6} \\) N away (antiparallel).<br><br>Short sides cancel. Net: \\( 4\\times10^{-6} \\) N toward the wire.",
+   "hint": "The wire's field is not uniform, so the two long sides feel different forces.",
+   "distractor_logic": [
+    "Counts only the near side.",
+    "Adds the far side's force though it points away.",
+    "Treats the loop as if it were in a uniform field."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-027",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 3,
+   "type": "regular",
+   "question": "A moving-coil galvanometer deflects 10 divisions for 2 mA. For 5 mA it deflects:",
+   "options": [
+    "Fewer than 25 divisions, because torque falls as \\( \\sin\\theta \\)",
+    "62.5 divisions",
+    "25 divisions",
+    "20 divisions"
+   ],
+   "correct_index": 2,
+   "explanation": "With a radial field, \\( k\\phi=NIAB \\), so \\( \\phi \\) is proportional to \\( I \\).<br><br>\\( \\phi=10\\times\\dfrac{5}{2}=25 \\) divisions.",
+   "hint": "Deflection is linear in current.",
+   "distractor_logic": [
+    "Reinserts \\( \\sin\\theta \\); the radial field keeps torque proportional to current.",
+    "Takes deflection proportional to the square of current.",
+    "Adds a fixed 10 divisions per extra current step."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-028",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 3,
+   "type": "regular",
+   "question": "A galvanometer of resistance \\( 49\\,\\Omega \\) has full-scale current \\( 2\\times10^{-2} \\) A. It is converted to a 0-1 A ammeter. The resistance of the resulting ammeter is:",
+   "options": [
+    "\\( 1\\,\\Omega \\)",
+    "\\( 50\\,\\Omega \\)",
+    "\\( 49\\,\\Omega \\)",
+    "\\( 0.98\\,\\Omega \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( S=\\dfrac{I_gG}{I-I_g}=\\dfrac{0.02\\times49}{0.98}=1\\,\\Omega \\).<br><br>Parallel combination: \\( \\dfrac{49\\times1}{49+1}=0.98\\,\\Omega \\).",
+   "hint": "Galvanometer and shunt are in parallel.",
+   "distractor_logic": [
+    "Quotes only the shunt, ignoring the parallel galvanometer.",
+    "Adds the shunt and galvanometer as if in series.",
+    "Quotes only the galvanometer resistance."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-029",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 3,
+   "type": "regular",
+   "question": "A voltmeter of resistance \\( 1000\\,\\Omega \\) reads up to 5 V. To extend its range to 20 V, one should add:",
+   "options": [
+    "\\( 3000\\,\\Omega \\) in series",
+    "\\( 4000\\,\\Omega \\) in series",
+    "\\( 3000\\,\\Omega \\) in parallel",
+    "\\( \\dfrac{1000}{3}\\,\\Omega \\) in parallel"
+   ],
+   "correct_index": 0,
+   "explanation": "Full-scale current \\( =\\dfrac{5}{1000}=5\\times10^{-3} \\) A.<br><br>Total needed \\( =\\dfrac{20}{5\\times10^{-3}}=4000\\,\\Omega \\), so add \\( 3000\\,\\Omega \\) in series.",
+   "hint": "Keep the full-scale current the same.",
+   "distractor_logic": [
+    "Forgets to subtract the meter's own \\( 1000\\,\\Omega \\).",
+    "Right value but a parallel resistor lowers, not raises, the range.",
+    "Uses the ammeter shunt logic for a voltmeter."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-L3-030",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer",
+   "level": 3,
+   "type": "regular",
+   "question": "A circular coil of 100 turns and radius 0.1 m carries 1 A in a field of 0.2 T. The plane of the coil makes \\( 30^\\circ \\) with the field. The torque on it is:",
+   "options": [
+    "\\( 0.1\\pi \\) N m",
+    "\\( 0.1\\sqrt3\\pi \\) N m",
+    "\\( 0.2\\pi \\) N m",
+    "0 N m"
+   ],
+   "correct_index": 1,
+   "explanation": "Area \\( A=\\pi(0.1)^2=0.01\\pi \\) \\( \\text{m}^2 \\); \\( NIAB=100\\times1\\times0.01\\pi\\times0.2=0.2\\pi \\) N m.<br><br>The normal makes \\( 60^\\circ \\) with \\( \\vec B \\): \\( \\tau=0.2\\pi\\sin 60^\\circ=0.1\\sqrt3\\pi \\) N m.",
+   "hint": "Convert the plane angle to the normal angle.",
+   "distractor_logic": [
+    "Puts the plane angle \\( 30^\\circ \\) into \\( \\sin\\theta \\) instead of the normal angle \\( 60^\\circ \\).",
+    "Uses the maximum torque, ignoring orientation.",
+    "Thinks torque exists only when the plane is exactly parallel to the field."
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-001",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A proton moves in a circle in a uniform magnetic field. Which statement is correct?",
+   "options": [
+    "Its kinetic energy rises a little on every revolution",
+    "Its kinetic energy is constant but its period is proportional to its radius",
+    "Its kinetic energy is constant and its period \\( \\dfrac{2\\pi m}{qB} \\) does not depend on its speed",
+    "Its period grows as it speeds up"
+   ],
+   "correct_index": 2,
+   "explanation": "The force is perpendicular to velocity (no work), so speed and kinetic energy are constant.<br><br>\\( T=\\dfrac{2\\pi r}{v}=\\dfrac{2\\pi m}{qB} \\) is independent of speed.",
+   "hint": "Link 'no work' with 'constant speed'.",
+   "distractor_logic": [
+    "The magnetic force does no work, so energy cannot grow.",
+    "Period is independent of radius.",
+    "Faster motion is exactly offset by a larger circle."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-002",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron and a proton enter the same uniform field with the same velocity, perpendicular to the field. Which is true?",
+   "options": [
+    "The forces point in the same direction, and the electron's circle is much smaller",
+    "The forces point in opposite directions, and the electron's circle is much larger",
+    "The forces point in opposite directions, and the circles are equal",
+    "The forces on them point in opposite directions, and the electron's circle is much smaller"
+   ],
+   "correct_index": 3,
+   "explanation": "Opposite charges give opposite \\( q\\vec v\\times\\vec B \\).<br><br>\\( r=\\dfrac{mv}{qB} \\) with the same \\( v \\) and \\( |q| \\), so the far lighter electron has the smaller radius.",
+   "hint": "Force sign from \\( q \\); radius from \\( m \\).",
+   "distractor_logic": [
+    "Ignores the sign of the charge.",
+    "Inverts \\( r=\\dfrac{mv}{qB} \\); the lighter electron curves more tightly.",
+    "Equal \\( v \\) and \\( |q| \\) but very different mass give different radii."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-003",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Ions pass undeflected through crossed fields \\( E=10^{4} \\) V/m and \\( B_1=0.1 \\) T, then enter a field \\( B_2=0.1 \\) T alone and move in a circle of radius 0.01 m. Their charge-to-mass ratio is:",
+   "options": [
+    "\\( 10^{8} \\) C/kg",
+    "\\( 10^{6} \\) C/kg",
+    "\\( 10^{7} \\) C/kg",
+    "\\( 10^{-2} \\) C/kg"
+   ],
+   "correct_index": 0,
+   "explanation": "Selector: \\( v=\\dfrac{E}{B_1}=10^{5} \\) m/s.<br><br>Circle: \\( \\dfrac{q}{m}=\\dfrac{v}{B_2r}=\\dfrac{10^{5}}{0.1\\times0.01}=10^{8} \\) C/kg.",
+   "hint": "First the speed from the balance, then the radius formula.",
+   "distractor_logic": [
+    "Takes the selected speed as \\( EB_1 \\) instead of \\( \\dfrac{E}{B_1} \\).",
+    "Forgets to divide by \\( B_2 \\).",
+    "Takes the selected speed as \\( \\dfrac{B_1}{E} \\)."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-004",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A loop of radius 0.1 m carries 5 A. A particle with charge-to-mass ratio \\( 10^{8} \\) C/kg circulates near its centre, where the field is that at the loop's centre. Its cyclotron frequency is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 1000\\pi \\) Hz",
+    "500 Hz",
+    "1000 Hz",
+    "250 Hz"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( B=\\dfrac{\\mu_0I}{2R}=\\pi\\times10^{-5} \\) T.<br><br>\\( f=\\dfrac{qB}{2\\pi m}=\\dfrac{10^{8}\\times\\pi\\times10^{-5}}{2\\pi}=500 \\) Hz.",
+   "hint": "Find \\( B \\) from the loop, then \\( f \\).",
+   "distractor_logic": [
+    "Reports the angular frequency \\( \\dfrac{qB}{m} \\) as a frequency.",
+    "Takes the loop's centre field as \\( \\dfrac{\\mu_0I}{R} \\).",
+    "Takes the loop's centre field as \\( \\dfrac{\\mu_0I}{4R} \\)."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-005",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron is fired along the axis of a long current-carrying solenoid. Its motion inside is:",
+   "options": [
+    "A circle about the axis",
+    "A helix around the axis",
+    "A straight line at constant speed",
+    "Accelerated along the axis"
+   ],
+   "correct_index": 2,
+   "explanation": "Inside the solenoid \\( \\vec B \\) is along the axis.<br><br>\\( \\vec v \\) parallel to \\( \\vec B \\) gives \\( \\vec v\\times\\vec B=0 \\): no force.",
+   "hint": "Angle between \\( \\vec v \\) and \\( \\vec B \\)?",
+   "distractor_logic": [
+    "Needs a velocity component perpendicular to \\( \\vec B \\).",
+    "Needs a component perpendicular to the axis.",
+    "A magnetic field cannot change speed."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-006",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A proton moves parallel to a long straight wire carrying 10 A, in the same direction as the current, 0.1 m from it at \\( 10^{5} \\) m/s. The magnetic force on it is: (charge \\( 1.6\\times10^{-19} \\) C; Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 3.2\\times10^{-19} \\) N, away from the wire",
+    "\\( 3.2\\times10^{-18} \\) N, toward the wire",
+    "Zero, since the proton moves parallel to the current",
+    "\\( 3.2\\times10^{-19} \\) N, toward the wire"
+   ],
+   "correct_index": 3,
+   "explanation": "Wire field: \\( B=\\dfrac{\\mu_0I}{2\\pi r}=2\\times10^{-5} \\) T, circling the wire.<br><br>\\( F=qvB=1.6\\times10^{-19}\\times10^{5}\\times2\\times10^{-5}=3.2\\times10^{-19} \\) N.<br><br>Like parallel currents, a positive charge moving with the current is pulled toward the wire.",
+   "hint": "The field lines circle the wire, so \\( \\vec v \\) is perpendicular to \\( \\vec B \\).",
+   "distractor_logic": [
+    "Reverses the cross-product direction.",
+    "Uses \\( \\dfrac{1}{r^2} \\) for the wire's field.",
+    "Moving parallel to the wire is perpendicular to its circular field lines."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-007",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron moves in a circle perpendicular to the axis inside a long solenoid (\\( n \\) turns per metre, current \\( I \\)). Its period is:",
+   "options": [
+    "\\( \\dfrac{2\\pi m}{e\\mu_0nI} \\)",
+    "\\( \\dfrac{2\\pi m}{e\\mu_0NI} \\)",
+    "\\( \\dfrac{2\\pi mv}{e\\mu_0nI} \\)",
+    "\\( \\dfrac{e\\mu_0nI}{2\\pi m} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Field: \\( B=\\mu_0nI \\).<br><br>Period: \\( T=\\dfrac{2\\pi m}{eB}=\\dfrac{2\\pi m}{e\\mu_0nI} \\).",
+   "hint": "Substitute the solenoid field into \\( T=\\dfrac{2\\pi m}{qB} \\).",
+   "distractor_logic": [
+    "Uses total turns \\( N \\) in the solenoid field.",
+    "Makes the period depend on speed.",
+    "This is the frequency, not the period."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-008",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron circulates inside a long solenoid. The solenoid current is doubled, with the electron's speed unchanged. Then:",
+   "options": [
+    "Radius halves but period stays the same",
+    "Both radius and period become half",
+    "Both radius and period double",
+    "Radius stays the same but period halves"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( B=\\mu_0nI \\) doubles.<br><br>\\( r=\\dfrac{mv}{eB} \\) and \\( T=\\dfrac{2\\pi m}{eB} \\) both halve.",
+   "hint": "Both formulas have \\( B \\) in the denominator.",
+   "distractor_logic": [
+    "The period is independent of speed and radius, but not of \\( B \\).",
+    "Inverts the dependence on field.",
+    "Radius also depends on \\( B \\)."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-009",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The same current \\( I \\) flows in a circular loop of radius \\( R \\) and in a long straight wire. The ratio of the field at the loop's centre to the field at distance \\( R \\) from the wire is:",
+   "options": [
+    "1",
+    "\\( 2\\pi \\)",
+    "\\( \\pi \\)",
+    "\\( \\dfrac{1}{\\pi} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Loop: \\( \\dfrac{\\mu_0I}{2R} \\). Wire: \\( \\dfrac{\\mu_0I}{2\\pi R} \\).<br><br>Ratio \\( =\\pi \\).",
+   "hint": "Compare \\( \\dfrac{\\mu_0I}{2R} \\) with \\( \\dfrac{\\mu_0I}{2\\pi R} \\).",
+   "distractor_logic": [
+    "Assumes both fields have the same form.",
+    "Doubles the ratio.",
+    "Inverts the ratio."
+   ],
+   "mixed_topics": [
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-010",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A small coil (10 turns, area \\( 10^{-4} \\) \\( \\text{m}^2 \\), 1 A) sits at the centre of a large loop (radius 0.1 m, 5 A), with the planes of the two perpendicular. The torque on the small coil is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "0 N m",
+    "\\( 10^{-8} \\) N m",
+    "\\( \\pi\\times10^{-9} \\) N m",
+    "\\( \\pi\\times10^{-8} \\) N m"
+   ],
+   "correct_index": 3,
+   "explanation": "Large loop field: \\( B=\\dfrac{\\mu_0I}{2R}=\\pi\\times10^{-5} \\) T, along its axis.<br><br>The small coil's plane contains this axis, so \\( \\theta=90^\\circ \\).<br><br>\\( \\tau=NIAB=10\\times1\\times10^{-4}\\times\\pi\\times10^{-5}=\\pi\\times10^{-8} \\) N m.",
+   "hint": "Field from the big loop, torque on the small one.",
+   "distractor_logic": [
+    "Swaps orientation: with planes perpendicular, the small coil's plane is parallel to the field.",
+    "Uses the straight-wire formula for the large loop's field.",
+    "Forgets the 10 turns of the small coil."
+   ],
+   "mixed_topics": [
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-011",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Which combination correctly gives the force per unit length between two long parallel wires?",
+   "options": [
+    "Ampere's-law field of one wire, \\( \\dfrac{\\mu_0I_1}{2\\pi d} \\), times the current \\( I_2 \\) of the other",
+    "A field \\( \\dfrac{\\mu_0I_1}{2\\pi d^2} \\) of one wire times the current \\( I_2 \\) of the other",
+    "Coulomb's law applied to the charges in the two wires",
+    "The solenoid field \\( \\mu_0nI_1 \\) times the current \\( I_2 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Ampere's law gives the field of wire 1 at wire 2: \\( \\dfrac{\\mu_0I_1}{2\\pi d} \\).<br><br>\\( \\dfrac{F}{L}=I_2B=\\dfrac{\\mu_0I_1I_2}{2\\pi d} \\).",
+   "hint": "Field of one wire, force on the other.",
+   "distractor_logic": [
+    "Uses an inverse-square field for a long wire.",
+    "The wires are neutral; the force is magnetic.",
+    "A single wire is not a solenoid."
+   ],
+   "mixed_topics": [
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-012",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Why do two parallel wires carrying currents in the same direction attract, even though 'like' things repel in electrostatics?",
+   "options": [
+    "The currents act like like charges, so the wires actually repel",
+    "Each wire lies in the other's magnetic field, and \\( I\\vec L\\times\\vec B \\) on each points toward the other wire",
+    "The electrons in the two wires attract each other electrostatically",
+    "Wires attract only when the currents are opposite"
+   ],
+   "correct_index": 1,
+   "explanation": "Wire 1's field at wire 2 circles wire 1.<br><br>\\( I_2\\vec L\\times\\vec B_1 \\) points toward wire 1, and by symmetry wire 2 pulls wire 1 the same way.",
+   "hint": "Apply \\( I\\vec L\\times\\vec B \\) with the other wire's field.",
+   "distractor_logic": [
+    "Treats currents as charges; the force is magnetic, not electrostatic.",
+    "Electrons repel electrostatically; the wires are neutral overall.",
+    "Reverses the rule."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-013",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A straight wire carrying current runs exactly along the axis of a long current-carrying solenoid. The force on the wire is:",
+   "options": [
+    "\\( IL\\mu_0nI_s \\), perpendicular to the axis",
+    "\\( \\dfrac{IL\\mu_0nI_s}{2} \\), perpendicular to the axis",
+    "Zero",
+    "Repulsive, pushing the wire out of the solenoid"
+   ],
+   "correct_index": 2,
+   "explanation": "Inside, \\( \\vec B \\) is along the axis, parallel to the wire.<br><br>\\( \\vec F=I\\vec L\\times\\vec B=0 \\).",
+   "hint": "Parallel vectors have zero cross product.",
+   "distractor_logic": [
+    "Uses the full field without noting it is parallel to the wire.",
+    "Uses the end field value.",
+    "No force arises for a current parallel to \\( \\vec B \\)."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-014",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "At the geometric centre of a toroid (in its hollow) and at the centre of a single circular loop of radius \\( r \\), both carrying current \\( I \\), the fields are:",
+   "options": [
+    "\\( \\dfrac{\\mu_0NI}{2\\pi r} \\) for the toroid and \\( \\dfrac{\\mu_0I}{2r} \\) for the loop",
+    "\\( \\dfrac{\\mu_0NI}{2r} \\) for the toroid and \\( \\dfrac{\\mu_0I}{2r} \\) for the loop",
+    "Zero for both",
+    "Zero for the toroid and \\( \\dfrac{\\mu_0I}{2r} \\) for the loop"
+   ],
+   "correct_index": 3,
+   "explanation": "Toroid hollow: Amperian loop encloses no current, so \\( B=0 \\).<br><br>Single loop: Biot-Savart gives \\( \\dfrac{\\mu_0I}{2r} \\).",
+   "hint": "The toroid's turns are wound around the core, not around the hollow.",
+   "distractor_logic": [
+    "Applies the core formula in the hollow.",
+    "Treats the toroid as \\( N \\) stacked flat loops.",
+    "A single loop has a nonzero field at its centre."
+   ],
+   "mixed_topics": [
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-015",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A straight current-carrying wire is placed completely outside an ideal toroid. The magnetic force on it due to the toroid is:",
+   "options": [
+    "Zero",
+    "\\( IL\\dfrac{\\mu_0NI_t}{2\\pi r} \\)",
+    "Attractive toward the toroid",
+    "Repulsive away from the toroid"
+   ],
+   "correct_index": 0,
+   "explanation": "An ideal toroid has zero field outside.<br><br>With \\( \\vec B=0 \\), \\( I\\vec L\\times\\vec B=0 \\).",
+   "hint": "What is the field outside a toroid?",
+   "distractor_logic": [
+    "Applies the core field outside the toroid.",
+    "There is no field outside to act on the wire.",
+    "There is no field outside to act on the wire."
+   ],
+   "mixed_topics": [
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-016",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A particle with charge-to-mass ratio \\( 10^{8} \\) C/kg enters a field of 0.1 T at \\( 10^{6} \\) m/s perpendicular to it, makes a semicircle and exits. The distance between entry and exit points and its exit speed are:",
+   "options": [
+    "0.1 m and \\( 10^{6} \\) m/s",
+    "0.2 m and \\( 10^{6} \\) m/s",
+    "0.2 m and less than \\( 10^{6} \\) m/s",
+    "\\( 0.1\\pi \\) m and \\( 10^{6} \\) m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( r=\\dfrac{v}{(q/m)B}=\\dfrac{10^{6}}{10^{8}\\times0.1}=0.1 \\) m, so the separation is \\( 2r=0.2 \\) m.<br><br>The magnetic force does no work, so the speed stays \\( 10^{6} \\) m/s.",
+   "hint": "Diameter, and no change in speed.",
+   "distractor_logic": [
+    "Uses the radius instead of the diameter.",
+    "Thinks the field slows the particle.",
+    "Uses the arc length instead of the straight-line separation."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-017",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "For the same particle (charge-to-mass ratio \\( 10^{8} \\) C/kg, field 0.1 T), the time spent completing the semicircle is:",
+   "options": [
+    "\\( 2\\pi\\times10^{-7} \\) s",
+    "\\( \\pi\\times10^{-6} \\) s",
+    "\\( \\pi\\times10^{-7} \\) s",
+    "\\( \\dfrac{\\pi}{2}\\times10^{-7} \\) s"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\dfrac{T}{2}=\\dfrac{\\pi m}{qB}=\\dfrac{\\pi}{10^{8}\\times0.1}=\\pi\\times10^{-7} \\) s.<br><br>The speed does not enter.",
+   "hint": "Half of \\( \\dfrac{2\\pi m}{qB} \\).",
+   "distractor_logic": [
+    "Uses the full period instead of half.",
+    "Misplaces a power of ten.",
+    "Uses a quarter period."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-018",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A circular loop of radius \\( R \\) has magnetic moment \\( m \\). The field at its centre, in terms of \\( m \\), is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0m}{4\\pi R^3} \\)",
+    "\\( \\dfrac{\\mu_0m}{2\\pi R^2} \\)",
+    "\\( \\dfrac{\\mu_0m}{2R^3} \\)",
+    "\\( \\dfrac{\\mu_0m}{2\\pi R^3} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( m=I\\pi R^2 \\), so \\( I=\\dfrac{m}{\\pi R^2} \\).<br><br>\\( B=\\dfrac{\\mu_0I}{2R}=\\dfrac{\\mu_0m}{2\\pi R^3} \\).",
+   "hint": "Express \\( I \\) through \\( m \\).",
+   "distractor_logic": [
+    "Loses a factor of 2.",
+    "Wrong power of \\( R \\).",
+    "Forgets the \\( \\pi \\) from the area."
+   ],
+   "mixed_topics": [
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-019",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Far from a small loop of magnetic moment \\( m \\), at distance \\( x \\) along its axis (with \\( x \\) much larger than \\( R \\)), the field is approximately:",
+   "options": [
+    "\\( \\dfrac{\\mu_0m}{2\\pi x^3} \\)",
+    "\\( \\dfrac{\\mu_0m}{2\\pi x^2} \\)",
+    "\\( \\dfrac{\\mu_0m}{2\\pi x^{3/2}} \\)",
+    "\\( \\dfrac{\\mu_0m}{2x^3} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "For \\( x \\) much larger than \\( R \\): \\( B\\approx\\dfrac{\\mu_0IR^2}{2x^3} \\).<br><br>With \\( IR^2=\\dfrac{m}{\\pi} \\): \\( B\\approx\\dfrac{\\mu_0m}{2\\pi x^3} \\).",
+   "hint": "Neglect \\( R^2 \\) next to \\( x^2 \\).",
+   "distractor_logic": [
+    "Uses an inverse-square fall-off.",
+    "Misapplies the \\( 3/2 \\) power to \\( x \\) alone.",
+    "Drops the \\( \\pi \\) from \\( m=I\\pi R^2 \\)."
+   ],
+   "mixed_topics": [
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-020",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron (charge \\( e \\)) moves at speed \\( v \\) in a circular orbit of radius \\( r \\). The magnetic field it produces at the orbit's centre is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0ev}{2\\pi r^2} \\)",
+    "\\( \\dfrac{\\mu_0ev}{4\\pi r^2} \\)",
+    "\\( \\dfrac{\\mu_0ev}{4\\pi r} \\)",
+    "\\( \\dfrac{\\mu_0e}{2r} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Equivalent current \\( I=\\dfrac{e}{T}=\\dfrac{ev}{2\\pi r} \\).<br><br>\\( B=\\dfrac{\\mu_0I}{2r}=\\dfrac{\\mu_0ev}{4\\pi r^2} \\).",
+   "hint": "Current = charge per revolution time.",
+   "distractor_logic": [
+    "Takes the current as \\( \\dfrac{ev}{\\pi r} \\), doubling it.",
+    "Wrong power of \\( r \\).",
+    "Uses the charge directly as if it were a current."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-021",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A particle of mass \\( m \\) and kinetic energy \\( K \\) circulates in a uniform field \\( B \\). The magnetic moment \\( M \\) of its orbit is:",
+   "options": [
+    "\\( \\dfrac{2K}{B} \\)",
+    "\\( KB \\)",
+    "\\( \\dfrac{K}{B} \\)",
+    "\\( \\dfrac{K}{2B} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( I=\\dfrac{q}{T}=\\dfrac{q^2B}{2\\pi m} \\) and \\( A=\\pi r^2=\\dfrac{\\pi m^2v^2}{q^2B^2} \\).<br><br>\\( M=IA=\\dfrac{mv^2}{2B}=\\dfrac{K}{B} \\).",
+   "hint": "Build \\( I \\) and \\( A \\) from the circular-motion formulas.",
+   "distractor_logic": [
+    "Drops the one-half in the kinetic energy.",
+    "Multiplies by the field instead of dividing.",
+    "Introduces an extra factor of one half."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-022",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron is fired into a long solenoid with its velocity at \\( 45^\\circ \\) to the axis. Its path inside is:",
+   "options": [
+    "A circle perpendicular to the solenoid's axis",
+    "A straight line at \\( 45^\\circ \\) to the axis",
+    "A spiral that spreads outward as it gains energy",
+    "A helix whose axis is parallel to the solenoid's axis"
+   ],
+   "correct_index": 3,
+   "explanation": "Solenoid field is uniform and axial.<br><br>The component along \\( \\vec B \\) is unchanged; the perpendicular component gives circular motion. Together: a helix.",
+   "hint": "Split \\( \\vec v \\) along and across the axis.",
+   "distractor_logic": [
+    "Ignores the velocity component along the field.",
+    "Ignores the perpendicular component, which is deflected.",
+    "The field does no work; the radius stays fixed."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-023",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Replacing \\( I\\,d\\vec l \\) by \\( q\\vec v \\) in the Biot-Savart law, the field of a slowly moving point charge is:",
+   "options": [
+    "\\( \\dfrac{\\mu_0}{4\\pi}\\dfrac{q\\vec v\\times\\hat r}{r^2} \\)",
+    "\\( \\dfrac{\\mu_0}{4\\pi}\\dfrac{qv}{r^2}\\hat r \\)",
+    "\\( \\dfrac{\\mu_0}{4\\pi}\\dfrac{q\\vec v\\times\\hat r}{r} \\)",
+    "\\( \\dfrac{1}{4\\pi\\varepsilon_0}\\dfrac{q\\vec v\\times\\hat r}{r^2} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "A moving charge is a current element with \\( I\\,d\\vec l=q\\vec v \\).<br><br>So \\( \\vec B=\\dfrac{\\mu_0}{4\\pi}\\dfrac{q\\vec v\\times\\hat r}{r^2} \\), perpendicular to \\( \\vec v \\) and \\( \\hat r \\).",
+   "hint": "Substitute \\( q\\vec v \\) for \\( I\\,d\\vec l \\).",
+   "distractor_logic": [
+    "Radial, Coulomb-style direction.",
+    "Wrong power of \\( r \\).",
+    "Uses the electric constant instead of \\( \\mu_0 \\)."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-024",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two parallel wires 1 m apart carrying 1 A each feel \\( 2\\times10^{-7} \\) N/m. If both currents become 2 A and the separation 0.5 m, the force per unit length is:",
+   "options": [
+    "\\( 3.2\\times10^{-6} \\) N/m",
+    "\\( 1.6\\times10^{-6} \\) N/m",
+    "\\( 8\\times10^{-7} \\) N/m",
+    "\\( 4\\times10^{-7} \\) N/m"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\dfrac{F}{L} \\) is proportional to \\( \\dfrac{I_1I_2}{d} \\).<br><br>Factor \\( =\\dfrac{2\\times2}{0.5}=8 \\), so \\( 8\\times2\\times10^{-7}=1.6\\times10^{-6} \\) N/m.",
+   "hint": "Scale by \\( \\dfrac{I_1I_2}{d} \\).",
+   "distractor_logic": [
+    "Uses \\( \\dfrac{1}{d^2} \\).",
+    "Doubles only one current.",
+    "Accounts for only one of the changes."
+   ],
+   "mixed_topics": [
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-025",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two long parallel wires 0.2 m apart carry 10 A each in opposite directions. The field midway between them is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "0 T",
+    "\\( 2\\times10^{-5} \\) T",
+    "\\( 4\\times10^{-5} \\) T",
+    "\\( 4\\times10^{-4} \\) T"
+   ],
+   "correct_index": 2,
+   "explanation": "Each wire at 0.1 m: \\( \\dfrac{2\\times10^{-7}\\times10}{0.1}=2\\times10^{-5} \\) T.<br><br>For opposite currents the fields midway point the same way: total \\( 4\\times10^{-5} \\) T.",
+   "hint": "Use the right-hand rule for each wire at the midpoint.",
+   "distractor_logic": [
+    "Assumes the fields cancel, which happens for same-direction currents.",
+    "Counts only one wire.",
+    "Uses \\( \\dfrac{1}{r^2} \\) for each wire."
+   ],
+   "mixed_topics": [
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-026",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two long parallel wires carry equal currents in the same direction. Which describes the midpoint field and the force between them?",
+   "options": [
+    "The midpoint field is zero, and the wires repel",
+    "The midpoint field is doubled, and the wires attract",
+    "The midpoint field is doubled, and the wires repel",
+    "The midpoint field is zero, and the wires attract"
+   ],
+   "correct_index": 3,
+   "explanation": "At the midpoint the two fields are equal and opposite, so \\( B=0 \\).<br><br>Each wire still sits in the other's field and parallel currents attract.",
+   "hint": "Zero field at the midpoint does not mean zero field at the wires.",
+   "distractor_logic": [
+    "Reverses the parallel-current rule.",
+    "For same-direction currents the fields oppose at the midpoint.",
+    "Gets both the field and force wrong."
+   ],
+   "mixed_topics": [
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-027",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A charged particle turns through a quarter circle in a magnetic field, its velocity changing from \\( v\\hat i \\) to \\( v\\hat j \\). The changes in its kinetic energy and momentum magnitude are:",
+   "options": [
+    "\\( \\Delta K=0 \\) and \\( |\\Delta\\vec p|=\\sqrt2\\,mv \\)",
+    "\\( \\Delta K=0 \\) and \\( |\\Delta\\vec p|=0 \\)",
+    "\\( \\Delta K=\\dfrac{1}{2}mv^2 \\) and \\( |\\Delta\\vec p|=\\sqrt2\\,mv \\)",
+    "\\( \\Delta K=0 \\) and \\( |\\Delta\\vec p|=2mv \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Speed unchanged, so \\( \\Delta K=0 \\).<br><br>\\( \\Delta\\vec p=mv(\\hat j-\\hat i) \\), magnitude \\( \\sqrt2\\,mv \\).",
+   "hint": "Momentum is a vector; kinetic energy is not.",
+   "distractor_logic": [
+    "Confuses constant speed with constant momentum.",
+    "Thinks the field did work.",
+    "Treats the turn as a full reversal."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-028",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A charged particle moves inside the central hollow region of a current-carrying ideal toroid. Its path is:",
+   "options": [
+    "A circle of radius \\( \\dfrac{mv}{qB} \\) with \\( B=\\dfrac{\\mu_0NI}{2\\pi r} \\)",
+    "A straight line at constant speed",
+    "A helix around the toroid's axis",
+    "A path that gradually slows down"
+   ],
+   "correct_index": 1,
+   "explanation": "The field in the hollow of an ideal toroid is zero.<br><br>No force acts, so the particle moves in a straight line.",
+   "hint": "What is \\( B \\) in the hollow?",
+   "distractor_logic": [
+    "Applies the core field in the hollow.",
+    "There is no field in the hollow.",
+    "No field acts, and a magnetic field could not slow it anyway."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-029",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A current loop in a uniform field feels zero net force but can feel a torque. Why?",
+   "options": [
+    "The net force is not zero; it pushes the loop along the field",
+    "The forces on all four sides point the same way",
+    "Forces on opposite sides are equal and opposite but act along different lines, forming a couple",
+    "The field does work on the loop, producing torque"
+   ],
+   "correct_index": 2,
+   "explanation": "Each side feels \\( I\\vec L\\times\\vec B \\); opposite sides have opposite \\( \\vec L \\), so forces cancel in sum.<br><br>If their lines of action are separated, they form a couple, giving torque \\( NIAB\\sin\\theta \\).",
+   "hint": "Equal and opposite forces need not share a line of action.",
+   "distractor_logic": [
+    "In a uniform field forces on a closed loop cancel.",
+    "Opposite sides carry opposite currents, so their forces are opposite.",
+    "Torque arises from a couple, not from work done by the field."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-030",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In a moving-coil galvanometer with a radial field \\( B \\), a coil of \\( N \\) turns and area \\( A \\) carries current \\( I \\). The deflecting torque is:",
+   "options": [
+    "\\( NIAB\\sin\\theta \\), falling as the coil turns",
+    "\\( \\dfrac{NIAB}{2} \\), the same at every deflection",
+    "Zero, because a radial field has no fixed direction",
+    "\\( NIAB \\), the same at every deflection"
+   ],
+   "correct_index": 3,
+   "explanation": "The vertical sides always cut radial field lines at right angles, each feeling \\( NIlB \\).<br><br>Torque \\( =NIlB\\times b=NIAB \\) at every angle.",
+   "hint": "Force on each side times the arm.",
+   "distractor_logic": [
+    "Reinserts \\( \\sin\\theta \\); the radial field keeps \\( \\theta=90^\\circ \\).",
+    "Counts only one of the two vertical sides.",
+    "The field at each vertical side is perpendicular to the current, giving maximum force."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-031",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A particle of charge \\( q \\) and mass \\( m \\) is accelerated from rest through potential difference \\( V \\) and then enters a field \\( B \\) perpendicularly. The radius of its path is:",
+   "options": [
+    "\\( \\dfrac{1}{B}\\sqrt{\\dfrac{2mV}{q}} \\)",
+    "\\( \\dfrac{1}{B}\\sqrt{\\dfrac{2qV}{m}} \\)",
+    "\\( \\dfrac{2mV}{qB} \\)",
+    "\\( \\dfrac{1}{B}\\sqrt{\\dfrac{mV}{2q}} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( qV=\\dfrac{1}{2}mv^2 \\) gives \\( v=\\sqrt{\\dfrac{2qV}{m}} \\).<br><br>\\( r=\\dfrac{mv}{qB}=\\dfrac{1}{B}\\sqrt{\\dfrac{2mV}{q}} \\).",
+   "hint": "Energy from the voltage, then the radius formula.",
+   "distractor_logic": [
+    "This is \\( \\dfrac{v}{B} \\), not the radius.",
+    "Forgets the square root.",
+    "Puts the factor 2 in the wrong place."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-032",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A particle of charge \\( q \\) and mass \\( m \\) circulates in a uniform field \\( B \\). The equivalent current of its orbit is:",
+   "options": [
+    "\\( \\dfrac{q^2Bv}{2\\pi m} \\), proportional to its speed",
+    "\\( \\dfrac{q^2B}{2\\pi m} \\), independent of its speed",
+    "\\( \\dfrac{qB}{2\\pi m} \\), independent of its speed",
+    "\\( \\dfrac{q^2B}{2\\pi mr} \\), falling as the orbit grows"
+   ],
+   "correct_index": 1,
+   "explanation": "Current = charge times frequency: \\( I=q\\cdot\\dfrac{qB}{2\\pi m} \\).<br><br>Neither \\( v \\) nor \\( r \\) appears.",
+   "hint": "\\( I=qf \\).",
+   "distractor_logic": [
+    "Makes the orbital frequency depend on speed.",
+    "This is the frequency; current needs another factor of \\( q \\).",
+    "Makes the frequency depend on radius."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-033",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The field at the very end of a long solenoid, on its axis, compared with the field deep inside is:",
+   "options": [
+    "Equal, \\( \\mu_0nI \\)",
+    "Zero",
+    "Half, \\( \\dfrac{\\mu_0nI}{2} \\)",
+    "\\( \\dfrac{\\mu_0NI}{2} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "A point deep inside has 'loops' on both sides; at an end there are loops on only one side.<br><br>By superposing loop fields, the end value is half: \\( \\dfrac{\\mu_0nI}{2} \\).",
+   "hint": "Think of the solenoid as a stack of loops.",
+   "distractor_logic": [
+    "Treats the interior uniformity as extending to the end.",
+    "Thinks the field stops abruptly at the end.",
+    "Uses total turns instead of turns per unit length."
+   ],
+   "mixed_topics": [
+    "Biot-Savart Law and the Magnetic Field Due to a Straight Wire and a Circular Current Loop",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-034",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A large current is passed through a flexible, spring-like solenoid. The coil tends to:",
+   "options": [
+    "Stretch along its length",
+    "Stay the same, since the forces cancel",
+    "Twist about its axis",
+    "Contract along its length"
+   ],
+   "correct_index": 3,
+   "explanation": "Neighbouring turns carry current in the same direction.<br><br>Parallel currents attract, so the turns pull together.",
+   "hint": "Adjacent turns are parallel currents.",
+   "distractor_logic": [
+    "Adjacent turns carry parallel currents, which attract.",
+    "The forces between neighbouring turns add up.",
+    "The forces are along the axis, not tangential."
+   ],
+   "mixed_topics": [
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-035",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron and a proton enter the same uniform field perpendicularly with equal momenta. Then:",
+   "options": [
+    "Their radii are equal and they circle in opposite senses",
+    "The electron's radius is smaller and they circle in opposite senses",
+    "Their radii are equal and they circle in the same sense",
+    "The proton's radius is smaller and they circle in opposite senses"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( r=\\dfrac{p}{qB} \\) with equal \\( p \\) and \\( |q| \\): equal radii.<br><br>Opposite charges feel opposite forces, so opposite senses.",
+   "hint": "Write \\( r \\) using momentum.",
+   "distractor_logic": [
+    "Radius depends on momentum, not mass alone.",
+    "Opposite charges circle oppositely.",
+    "Radius depends on momentum, not mass alone."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-036",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A long wire along \\( +\\hat k \\) carries current. A proton at a point on the \\( +x \\)-axis moves toward the wire (along \\( -\\hat i \\)). The magnetic force on it is:",
+   "options": [
+    "Parallel to the current in the wire",
+    "Antiparallel to the current in the wire",
+    "Toward the wire",
+    "Away from the wire"
+   ],
+   "correct_index": 1,
+   "explanation": "At a point on the \\( +x \\)-axis the wire's field is along \\( \\hat k\\times\\hat i=+\\hat j \\).<br><br>\\( \\vec F=q\\vec v\\times\\vec B \\) is along \\( (-\\hat i)\\times\\hat j=-\\hat k \\), opposite to the current.",
+   "hint": "Find the field direction first, then \\( \\vec v\\times\\vec B \\).",
+   "distractor_logic": [
+    "Reverses the cross product.",
+    "Assumes the force is along the velocity.",
+    "Assumes the force opposes the velocity."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-037",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An electron circulates in a solenoid with radius \\( r \\). The solenoid is rewound with the same wire and number of turns into half the length, with the same current and electron speed. The new radius is:",
+   "options": [
+    "\\( 2r \\)",
+    "\\( r \\)",
+    "\\( \\dfrac{r}{2} \\)",
+    "\\( \\dfrac{r}{4} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Half the length doubles \\( n \\), so \\( B=\\mu_0nI \\) doubles.<br><br>\\( r=\\dfrac{mv}{eB} \\) halves.",
+   "hint": "What happens to \\( n=\\dfrac{N}{L} \\)?",
+   "distractor_logic": [
+    "Inverts the field change.",
+    "Thinks the field depends on total turns, not turn density.",
+    "Squares the change in field."
+   ],
+   "mixed_topics": [
+    "Motion of a Charged Particle in a Magnetic Field: Circular Motion and the Cyclotron",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-038",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A galvanometer coil has 100 turns, vertical sides 0.02 m long, width 0.01 m, and carries \\( 10^{-3} \\) A in a radial field of 0.5 T. The torque on it is:",
+   "options": [
+    "\\( 2\\times10^{-5} \\) N m",
+    "\\( 10^{-3} \\) N m",
+    "\\( 5\\times10^{-6} \\) N m",
+    "\\( 10^{-5} \\) N m"
+   ],
+   "correct_index": 3,
+   "explanation": "Force on each vertical side: \\( NIlB=100\\times10^{-3}\\times0.02\\times0.5=10^{-3} \\) N.<br><br>Each side's arm is \\( \\dfrac{b}{2} \\), so \\( \\tau=2\\times10^{-3}\\times0.005=10^{-5} \\) N m (\\( =NIAB \\)).",
+   "hint": "Two forces, each with arm half the width.",
+   "distractor_logic": [
+    "Uses the full width as the arm for both sides.",
+    "Quotes the force on one side as the torque.",
+    "Counts only one side."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-039",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A solenoid 0.5 m long with 5000 turns carries 1 A. A wire 0.05 m long carrying 2 A lies inside it perpendicular to the axis. The force on the wire is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "\\( 4\\pi\\times10^{-4} \\) N",
+    "\\( 2\\pi\\times10^{-4} \\) N",
+    "\\( 4\\pi\\times10^{-5} \\) N",
+    "0 N"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( n=\\dfrac{5000}{0.5}=10^{4} \\) per metre, \\( B=\\mu_0nI_s=4\\pi\\times10^{-3} \\) T.<br><br>\\( F=ILB=2\\times0.05\\times4\\pi\\times10^{-3}=4\\pi\\times10^{-4} \\) N.",
+   "hint": "Solenoid field first, then \\( ILB \\).",
+   "distractor_logic": [
+    "Uses the end-of-solenoid field \\( \\dfrac{\\mu_0nI_s}{2} \\) instead of the interior value.",
+    "Slips a power of ten when computing \\( n=\\dfrac{N}{L} \\).",
+    "Assumes the wire is parallel to the field."
+   ],
+   "mixed_topics": [
+    "Magnetic Force on a Moving Charge and a Current-Carrying Conductor: The Lorentz Force",
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid"
+   ]
+  },
+  {
+   "id": "PHY12-CH04-B-040",
+   "chapter": "PHY12-CH04",
+   "chapter_name": "Moving Charges and Magnetism",
+   "topic": "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two long parallel wires 0.1 m apart carry equal currents and feel a force of \\( 2\\times10^{-4} \\) N/m. Each current is: (Take \\( \\mu_0=4\\pi\\times10^{-7} \\) T m/A.)",
+   "options": [
+    "100 A",
+    "10 A",
+    "\\( \\sqrt{10} \\) A",
+    "5 A"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\dfrac{F}{L}=\\dfrac{\\mu_0I^2}{2\\pi d} \\), so \\( I^2=\\dfrac{2\\times10^{-4}\\times0.1}{2\\times10^{-7}}=100 \\).<br><br>\\( I=10 \\) A.",
+   "hint": "Solve for \\( I^2 \\) then take the root.",
+   "distractor_logic": [
+    "Forgets to take the square root.",
+    "Uses \\( d^2 \\) in the denominator.",
+    "Halves the correct value."
+   ],
+   "mixed_topics": [
+    "Ampere's Circuital Law: Straight Wire, Solenoid, and Toroid",
+    "Force Between Parallel Currents, Torque on a Current Loop, and the Moving Coil Galvanometer"
+   ]
+  }
+ ]
+}

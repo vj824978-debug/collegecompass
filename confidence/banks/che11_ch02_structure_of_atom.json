@@ -1,0 +1,3968 @@
+{
+  "meta": {
+    "subject": "Chemistry",
+    "class": 11,
+    "chapter": 2,
+    "chapter_name": "Structure of Atom",
+    "source_alignment": "NCERT Class 11 Chemistry Unit 2 (Reprint 2026-27)",
+    "mode": "confidence",
+    "counts": {
+      "level1": 40,
+      "level2": 40,
+      "level3": 30,
+      "bonus": 40,
+      "total": 150
+    },
+    "suggested_pass_mark": {
+      "level1": "6/10 per paper",
+      "level2": "6/10 per paper",
+      "level3": "6/10 per paper"
+    },
+    "notes": "Level 3 is NCERT-hard (constructed beyond textbook difficulty but within syllabus), not JEE-hard. Bonus questions mix concepts across topics; unlock after Level 3 or as challenge round.",
+    "rendering": "Text fields contain lightweight HTML (<sup>, <sub>, entities, and <span class=\"nuc\"> for stacked isotope notation). Render with innerHTML/dangerouslySetInnerHTML. Required CSS: .nuc{display:inline-block;text-align:right;line-height:1;vertical-align:-0.35em;} .nuc span{display:block;font-size:0.62em;}",
+    "topic_drill": "Topic drill mode: filter questions by topic across all levels, order L1->L2->L3, serve in sets of ~6. Each topic has a concept card in the 'topics' array (summary, key_formulas, worked_example, common_mistakes) shown via a 'See concept' button. Topic names in 'topics' match question 'topic' tags exactly for lookup. After a failed level, link weak topics to their drill + concept card."
+  },
+  "questions": [
+    {
+      "id": "CHE11-CH02-L1-001",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "In a cathode ray discharge tube, the rays travel from:",
+      "options": [
+        "Both electrodes simultaneously",
+        "They do not move",
+        "Cathode to anode",
+        "Anode to cathode"
+      ],
+      "correct_index": 2,
+      "explanation": "Cathode rays are streams of electrons; they start at the negative electrode (cathode) and move toward the positive anode.",
+      "hint": "The rays are named after where they start.",
+      "distractor_logic": [
+        "confused with canal rays",
+        "non-answer",
+        "reversed direction"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-002",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "Cathode rays consist of:",
+      "options": [
+        "Positive gaseous ions",
+        "Electrons",
+        "Neutrons",
+        "Protons"
+      ],
+      "correct_index": 1,
+      "explanation": "Their deflection in electric/magnetic fields matches negatively charged particles — electrons.",
+      "hint": "They bend toward the positive plate.",
+      "distractor_logic": [
+        "canal ray confusion",
+        "neutral particle",
+        "positive particle confusion"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-003",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "The charge-to-mass ratio (e/m) of the electron was determined by:",
+      "options": [
+        "Thomson",
+        "Rutherford",
+        "Chadwick",
+        "Millikan"
+      ],
+      "correct_index": 0,
+      "explanation": "J.J. Thomson (1897) measured e/m = 1.758820 &times; 10<sup>11</sup> C/kg by balancing electric and magnetic deflections in a cathode ray tube.",
+      "hint": "Cathode ray tube with crossed fields.",
+      "distractor_logic": [
+        "gold foil scientist",
+        "neutron scientist",
+        "oil drop scientist"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-004",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "The charge on the electron was determined by Millikan using the:",
+      "options": [
+        "Oil drop experiment",
+        "Cathode ray experiment",
+        "Photoelectric experiment",
+        "Gold foil experiment"
+      ],
+      "correct_index": 0,
+      "explanation": "Millikan's oil drop experiment (1906-14) showed the charge on any droplet is always n x e, giving e = -1.602 &times; 10<sup>&minus;19</sup> C.",
+      "hint": "Tiny charged droplets balanced against gravity.",
+      "distractor_logic": [
+        "Thomson's expt",
+        "Hertz's expt",
+        "Rutherford's expt"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-005",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "The accepted charge on an electron is:",
+      "options": [
+        "-1.602 &times; 10<sup>&minus;19</sup> C",
+        "-9.109 &times; 10<sup>&minus;31</sup> C",
+        "-1.675 &times; 10<sup>&minus;27</sup> C",
+        "-6.626 &times; 10<sup>&minus;34</sup> C"
+      ],
+      "correct_index": 0,
+      "explanation": "e = -1.602176 &times; 10<sup>&minus;19</sup> C. The other numbers are the electron's mass, the neutron's mass, and Planck's constant — different quantities entirely.",
+      "hint": "It's a charge, measured in coulombs.",
+      "distractor_logic": [
+        "electron mass value",
+        "neutron mass value",
+        "Planck constant value"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-006",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "The mass of an electron is approximately:",
+      "options": [
+        "9.11 &times; 10<sup>&minus;31</sup> kg",
+        "1.67 &times; 10<sup>&minus;27</sup> kg",
+        "6.63 &times; 10<sup>&minus;34</sup> kg",
+        "1.60 &times; 10<sup>&minus;19</sup> kg"
+      ],
+      "correct_index": 0,
+      "explanation": "m<sub>e</sub> = 9.1094 &times; 10<sup>&minus;31</sup> kg, about 1/1836 of a proton's mass.",
+      "hint": "It is far lighter than a proton.",
+      "distractor_logic": [
+        "proton mass",
+        "Planck constant",
+        "charge value used as mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-007",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "Neutrons were discovered by Chadwick by bombarding a thin sheet of beryllium with:",
+      "options": [
+        "Protons",
+        "Alpha particles",
+        "Electrons",
+        "X-rays"
+      ],
+      "correct_index": 1,
+      "explanation": "Chadwick (1932) bombarded beryllium with &alpha; particles; electrically neutral particles slightly heavier than protons were emitted — neutrons.",
+      "hint": "The same particles Rutherford used for scattering.",
+      "distractor_logic": [
+        "canal ray particle",
+        "cathode ray particle",
+        "radiation not particle"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-008",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "The proton was obtained as the smallest and lightest positive ion from:",
+      "options": [
+        "Nitrogen",
+        "Helium",
+        "Oxygen",
+        "Hydrogen"
+      ],
+      "correct_index": 3,
+      "explanation": "Ionizing hydrogen gives H<sup>+</sup>, the lightest positive ion — the proton, characterised in 1919.",
+      "hint": "The simplest atom.",
+      "distractor_logic": [
+        "random gas",
+        "&alpha; source confusion",
+        "random gas"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-009",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "Which fundamental particle has no charge?",
+      "options": [
+        "Electron",
+        "Proton",
+        "Alpha particle",
+        "Neutron"
+      ],
+      "correct_index": 3,
+      "explanation": "The neutron has zero charge; electron is -1, proton +1, and an &alpha; particle carries +2.",
+      "hint": "Its name gives it away.",
+      "distractor_logic": [
+        "negative particle",
+        "positive particle",
+        "+2 particle"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-010",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 1,
+      "type": "regular",
+      "question": "The approximate mass of a proton in atomic mass units (u) is:",
+      "options": [
+        "2",
+        "1/1836",
+        "0",
+        "1"
+      ],
+      "correct_index": 3,
+      "explanation": "Proton mass is about 1.00727 u; 1/1836 u is roughly the electron's mass relative to a proton.",
+      "hint": "Protons and neutrons each count as about one unit.",
+      "distractor_logic": [
+        "doubled",
+        "electron/proton ratio misplaced",
+        "electron approx mass"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-011",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Models",
+      "level": 1,
+      "type": "regular",
+      "question": "Thomson's model of the atom is popularly called the:",
+      "options": [
+        "Plum pudding model",
+        "Planetary model",
+        "Nuclear model",
+        "Quantum model"
+      ],
+      "correct_index": 0,
+      "explanation": "Thomson pictured a uniform sphere of positive charge with electrons embedded like plums in a pudding (or seeds in a watermelon).",
+      "hint": "Think of fruit in a dessert.",
+      "distractor_logic": [
+        "Rutherford analogy",
+        "Rutherford's model name",
+        "modern model"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-012",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Models",
+      "level": 1,
+      "type": "regular",
+      "question": "In Thomson's model, the mass of the atom is assumed to be:",
+      "options": [
+        "Concentrated at the centre",
+        "Present outside the atom",
+        "Present only on electrons",
+        "Uniformly distributed over the atom"
+      ],
+      "correct_index": 3,
+      "explanation": "Thomson assumed mass and positive charge spread evenly over the whole atomic sphere — exactly what Rutherford's experiment later disproved.",
+      "hint": "Opposite of the nuclear picture.",
+      "distractor_logic": [
+        "Rutherford's conclusion",
+        "nonsense option",
+        "electrons are light"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-013",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Models",
+      "level": 1,
+      "type": "regular",
+      "question": "Rutherford's famous scattering experiment used a thin foil of:",
+      "options": [
+        "Copper",
+        "Gold",
+        "Silver",
+        "Aluminium"
+      ],
+      "correct_index": 1,
+      "explanation": "A ~100 nm thick gold foil was bombarded with &alpha; particles; gold can be beaten extremely thin.",
+      "hint": "The most malleable metal.",
+      "distractor_logic": [
+        "plausible metal",
+        "plausible metal",
+        "light metal alternative"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-014",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Models",
+      "level": 1,
+      "type": "regular",
+      "question": "In Rutherford's experiment, roughly what fraction of &alpha; particles bounced back by nearly 180&deg;?",
+      "options": [
+        "1 in 100",
+        "None",
+        "1 in 20,000",
+        "Half of them"
+      ],
+      "correct_index": 2,
+      "explanation": "Only ~1 in 20,000 bounced back — showing that the positive charge occupies a very tiny volume (the nucleus).",
+      "hint": "It was an extremely rare event.",
+      "distractor_logic": [
+        "overestimate",
+        "Thomson's prediction",
+        "overestimate"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-015",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Models",
+      "level": 1,
+      "type": "regular",
+      "question": "The radius of an atom is about 10<sup>&minus;10</sup> m. The radius of its nucleus is about:",
+      "options": [
+        "10<sup>&minus;20</sup> m",
+        "10<sup>&minus;8</sup> m",
+        "10<sup>&minus;10</sup> m",
+        "10<sup>&minus;15</sup> m"
+      ],
+      "correct_index": 3,
+      "explanation": "Nucleus ~10<sup>&minus;15</sup> m vs atom ~10<sup>&minus;10</sup> m — 100,000 times smaller. If the nucleus were a cricket ball, the atom would be ~5 km wide.",
+      "hint": "Five orders of magnitude smaller than the atom.",
+      "distractor_logic": [
+        "too small",
+        "larger than atom",
+        "same as atom"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-016",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Models",
+      "level": 1,
+      "type": "regular",
+      "question": "According to Rutherford's model, electrons and the nucleus are held together by:",
+      "options": [
+        "Electrostatic forces of attraction",
+        "Gravitational forces",
+        "Nuclear forces",
+        "Magnetic forces"
+      ],
+      "correct_index": 0,
+      "explanation": "The negative electrons are attracted to the positive nucleus by coulombic (electrostatic) attraction.",
+      "hint": "Opposite charges attract.",
+      "distractor_logic": [
+        "solar-system analogy taken literally",
+        "binds nucleons not electrons",
+        "field confusion"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-017",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Models",
+      "level": 1,
+      "type": "regular",
+      "question": "Rutherford's model could NOT explain:",
+      "options": [
+        "Existence of the nucleus",
+        "Why most &alpha; particles pass undeflected",
+        "The positive charge of the nucleus",
+        "The stability of the atom"
+      ],
+      "correct_index": 3,
+      "explanation": "Per Maxwell's theory, an accelerating electron should radiate energy and spiral into the nucleus in ~10<sup>&minus;8</sup> s — so the model can't explain why atoms are stable.",
+      "hint": "An orbiting charge should radiate energy.",
+      "distractor_logic": [
+        "it did establish this",
+        "it explained this",
+        "it explained this"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-018",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 1,
+      "type": "regular",
+      "question": "The atomic number (Z) of an element equals the number of:",
+      "options": [
+        "Neutrons",
+        "Neutrons + electrons",
+        "Nucleons",
+        "Protons"
+      ],
+      "correct_index": 3,
+      "explanation": "Z = number of protons in the nucleus (= number of electrons in a neutral atom).",
+      "hint": "The count that defines the element.",
+      "distractor_logic": [
+        "neutron confusion",
+        "invalid sum",
+        "that's mass number"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-019",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 1,
+      "type": "regular",
+      "question": "The mass number (A) of an atom equals:",
+      "options": [
+        "Protons only",
+        "Protons + electrons",
+        "Protons + neutrons",
+        "Neutrons - protons"
+      ],
+      "correct_index": 2,
+      "explanation": "A = protons (Z) + neutrons (n). Protons and neutrons together are called nucleons.",
+      "hint": "Count everything in the nucleus.",
+      "distractor_logic": [
+        "that's atomic number",
+        "electrons are nearly massless",
+        "that's neutron count formula"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-020",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 1,
+      "type": "regular",
+      "question": "Protons and neutrons present in the nucleus are collectively called:",
+      "options": [
+        "Ions",
+        "Isotopes",
+        "Nucleons",
+        "Quanta"
+      ],
+      "correct_index": 2,
+      "explanation": "Particles residing in the nucleus — protons and neutrons — are nucleons; their total is the mass number.",
+      "hint": "Named after where they live.",
+      "distractor_logic": [
+        "charged species",
+        "same-element atoms",
+        "energy packets"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-021",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Isotopes & Isobars",
+      "level": 1,
+      "type": "regular",
+      "question": "Atoms with the same atomic number but different mass numbers are called:",
+      "options": [
+        "Ions",
+        "Isotopes",
+        "Isobars",
+        "Isotones"
+      ],
+      "correct_index": 1,
+      "explanation": "Isotopes: same Z (same element), different A due to different neutron counts — e.g. <sup>12</sup>C, <sup>13</sup>C, <sup>14</sup>C.",
+      "hint": "Same element, different mass.",
+      "distractor_logic": [
+        "charge difference not mass",
+        "same A different Z",
+        "same neutrons"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-022",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Isotopes & Isobars",
+      "level": 1,
+      "type": "regular",
+      "question": "<sup>14</sup>C (Z=6) and <sup>14</sup>N (Z=7) are examples of:",
+      "options": [
+        "Isotones",
+        "Isobars",
+        "Allotropes",
+        "Isotopes"
+      ],
+      "correct_index": 1,
+      "explanation": "Same mass number (14) but different atomic numbers — that is the definition of isobars.",
+      "hint": "Compare their mass numbers.",
+      "distractor_logic": [
+        "neutron count differs too",
+        "different concept entirely",
+        "same Z needed for isotopes"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-023",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Isotopes & Isobars",
+      "level": 1,
+      "type": "regular",
+      "question": "The isotope of hydrogen containing 1 proton and 2 neutrons is:",
+      "options": [
+        "Protium",
+        "Deuterium",
+        "Helium-3",
+        "Tritium"
+      ],
+      "correct_index": 3,
+      "explanation": "Tritium (<sup>3</sup>T): 1 proton + 2 neutrons, A = 3. Deuterium has 1 neutron; protium has none.",
+      "hint": "Its mass number is 3.",
+      "distractor_logic": [
+        "0 neutrons",
+        "1 neutron",
+        "different element"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-024",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Isotopes & Isobars",
+      "level": 1,
+      "type": "regular",
+      "question": "All isotopes of a given element show the same chemical behaviour because they have the same number of:",
+      "options": [
+        "Neutrons",
+        "Electrons",
+        "Mass units",
+        "Nucleons"
+      ],
+      "correct_index": 1,
+      "explanation": "Chemical properties are controlled by electrons (determined by protons); neutron count has almost no effect on chemistry.",
+      "hint": "Chemistry happens in the electron cloud.",
+      "distractor_logic": [
+        "that's what differs",
+        "mass differs",
+        "mass differs"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-025",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 1,
+      "type": "regular",
+      "question": "The speed of all electromagnetic radiations in vacuum is:",
+      "options": [
+        "It depends on the wavelength",
+        "9.1 &times; 10<sup>8</sup> m/s",
+        "3.0 &times; 10<sup>8</sup> m/s",
+        "3.0 &times; 10<sup>6</sup> m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "In vacuum every EM wave — radio to gamma — travels at c = 3.0 &times; 10<sup>8</sup> m/s regardless of wavelength.",
+      "hint": "Same speed for all of them.",
+      "distractor_logic": [
+        "true in a medium, not vacuum",
+        "random large number",
+        "wrong power of ten"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-026",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 1,
+      "type": "regular",
+      "question": "Frequency (&nu;), wavelength (&lambda;) and the speed of light (c) are related by:",
+      "options": [
+        "c = &nu; / &lambda;",
+        "c = &nu; x &lambda;",
+        "c = &lambda; / &nu;",
+        "c = &nu; + &lambda;"
+      ],
+      "correct_index": 1,
+      "explanation": "c = &nu; x &lambda;: waves per second times length per wave gives distance per second.",
+      "hint": "Multiply how many waves pass per second by each wave's length.",
+      "distractor_logic": [
+        "inverted",
+        "inverted",
+        "dimensionally invalid"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-027",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 1,
+      "type": "regular",
+      "question": "The SI unit of frequency is:",
+      "options": [
+        "cm<sup>&minus;1</sup>",
+        "Hertz (s<sup>&minus;1</sup>)",
+        "m/s",
+        "Metre"
+      ],
+      "correct_index": 1,
+      "explanation": "Frequency is waves passing a point per second — hertz (Hz = s<sup>&minus;1</sup>), named after Heinrich Hertz.",
+      "hint": "Named after a physicist.",
+      "distractor_logic": [
+        "wavenumber unit",
+        "speed unit",
+        "wavelength unit"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-028",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 1,
+      "type": "regular",
+      "question": "Wavenumber is defined as:",
+      "options": [
+        "Number of wavelengths per unit length",
+        "Speed divided by amplitude",
+        "Energy of one wave",
+        "Number of waves passing a point per second"
+      ],
+      "correct_index": 0,
+      "explanation": "Wavenumber = 1/&lambda;, the number of wavelengths per unit length; common unit cm<sup>&minus;1</sup>.",
+      "hint": "It is the reciprocal of wavelength.",
+      "distractor_logic": [
+        "meaningless ratio",
+        "that's a quantum",
+        "that's frequency"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-029",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 1,
+      "type": "regular",
+      "question": "Unlike sound waves, electromagnetic waves:",
+      "options": [
+        "Travel slower than sound",
+        "Do not require a medium and can travel in vacuum",
+        "Cannot travel in air",
+        "Always require water"
+      ],
+      "correct_index": 1,
+      "explanation": "EM waves are oscillating electric and magnetic fields; they need no medium — light from the Sun crosses vacuum to reach us.",
+      "hint": "Sunlight reaches Earth through empty space.",
+      "distractor_logic": [
+        "much faster",
+        "false",
+        "false"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-030",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 1,
+      "type": "regular",
+      "question": "The smallest quantity of energy that can be emitted or absorbed as electromagnetic radiation is called a:",
+      "options": [
+        "Quantum",
+        "Photon shell",
+        "Orbital",
+        "Node"
+      ],
+      "correct_index": 0,
+      "explanation": "Planck named the smallest discrete packet of EM energy a 'quantum'; for light, the quantum is called a photon.",
+      "hint": "Planck coined the term in 1900.",
+      "distractor_logic": [
+        "invented term",
+        "electron wave function",
+        "zero-probability region"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-031",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 1,
+      "type": "regular",
+      "question": "According to Planck, the energy of a quantum of radiation is:",
+      "options": [
+        "E = h / &nu;",
+        "E = &nu; / h",
+        "E = h x &nu;",
+        "E = h x &lambda;"
+      ],
+      "correct_index": 2,
+      "explanation": "E = h &nu;: energy is directly proportional to frequency, with Planck's constant h as the proportionality constant.",
+      "hint": "Higher frequency, higher energy.",
+      "distractor_logic": [
+        "inverted",
+        "inverted",
+        "wavelength gives inverse relation"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-032",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 1,
+      "type": "regular",
+      "question": "The value of Planck's constant h is:",
+      "options": [
+        "9.109 &times; 10<sup>&minus;31</sup> J s",
+        "1.602 &times; 10<sup>&minus;19</sup> J s",
+        "3.0 &times; 10<sup>8</sup> J s",
+        "6.626 &times; 10<sup>&minus;34</sup> J s"
+      ],
+      "correct_index": 3,
+      "explanation": "h = 6.626 &times; 10<sup>&minus;34</sup> J s. The others are the electron charge, electron mass, and speed of light — wrong quantities and wrong units.",
+      "hint": "The smallest of these numbers.",
+      "distractor_logic": [
+        "electron mass",
+        "electron charge",
+        "speed of light"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-033",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "The photoelectric effect is the ejection of ______ when light of suitable frequency strikes a metal surface.",
+      "options": [
+        "Neutrons",
+        "Electrons",
+        "Alpha particles",
+        "Protons"
+      ],
+      "correct_index": 1,
+      "explanation": "Hertz (1887) observed electrons ejected from metals like K, Rb, Cs when exposed to light — the photoelectric effect.",
+      "hint": "The lightest particle leaves first.",
+      "distractor_logic": [
+        "neutral, in nucleus",
+        "nuclear particle",
+        "too heavy, bound in nucleus"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-034",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "The minimum frequency below which no photoelectric effect occurs is called the:",
+      "options": [
+        "Work frequency",
+        "Threshold frequency",
+        "Resonance frequency",
+        "Rydberg frequency"
+      ],
+      "correct_index": 1,
+      "explanation": "Threshold frequency &&nu;;<sub>0</sub>: below it, no electrons are ejected no matter how intense the light.",
+      "hint": "The 'doorstep' the light must cross.",
+      "distractor_logic": [
+        "mixed with work function",
+        "unrelated term",
+        "spectral constant"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-035",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 1,
+      "type": "regular",
+      "question": "Line emission spectra can identify unknown elements just like ______ identify people.",
+      "options": [
+        "Voices",
+        "Signatures",
+        "Fingerprints",
+        "Photographs"
+      ],
+      "correct_index": 2,
+      "explanation": "Each element has a unique line spectrum — the NCERT compares them to fingerprints. Bunsen first used line spectra to identify elements.",
+      "hint": "Unique to each individual.",
+      "distractor_logic": [
+        "not the analogy used",
+        "the textbook's exact analogy is different",
+        "not unique enough"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-036",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 1,
+      "type": "regular",
+      "question": "Which element was discovered in the Sun by spectroscopic methods?",
+      "options": [
+        "Sodium",
+        "Rubidium",
+        "Helium",
+        "Hydrogen"
+      ],
+      "correct_index": 2,
+      "explanation": "Helium ('helios' = Sun) was detected in the solar spectrum before being found on Earth. Rb, Cs, Tl, In, Ga, Sc were found via spectroscopy of minerals.",
+      "hint": "Its name comes from the Greek word for Sun.",
+      "distractor_logic": [
+        "found on Earth",
+        "found in minerals, not the Sun",
+        "known earlier"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-037",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 1,
+      "type": "regular",
+      "question": "The Balmer series of the hydrogen spectrum lies in the ______ region.",
+      "options": [
+        "Visible",
+        "Ultraviolet",
+        "Infrared",
+        "Microwave"
+      ],
+      "correct_index": 0,
+      "explanation": "Balmer lines (n<sub>2</sub> &rarr; n<sub>1</sub>=2) are the only hydrogen lines in the visible region; Lyman is UV, Paschen/Brackett/Pfund are IR.",
+      "hint": "It's the series our eyes can see.",
+      "distractor_logic": [
+        "that's Lyman",
+        "that's Paschen onward",
+        "no H series here"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-038",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "According to Bohr, the angular momentum of an electron in a stationary state is:",
+      "options": [
+        "Any continuous value",
+        "Equal to h x &nu;",
+        "An integral multiple of h/2&pi;",
+        "Always zero"
+      ],
+      "correct_index": 2,
+      "explanation": "Bohr's quantisation condition: m<sub>e</sub> v r = n(h/2&pi;), n = 1, 2, 3... Only orbits satisfying this are allowed.",
+      "hint": "It is quantised in units of h/2&pi;.",
+      "distractor_logic": [
+        "classical view",
+        "that's photon energy",
+        "forbidden"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-039",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 1,
+      "type": "regular",
+      "question": "The de Broglie relation connecting wavelength and momentum is:",
+      "options": [
+        "&lambda; = h x p",
+        "&lambda; = h / p",
+        "&lambda; = p / h",
+        "&lambda; = h + p"
+      ],
+      "correct_index": 1,
+      "explanation": "&lambda; = h/mv = h/p: every moving particle has an associated wavelength inversely proportional to its momentum.",
+      "hint": "Heavier and faster means shorter wavelength.",
+      "distractor_logic": [
+        "inverted",
+        "inverted",
+        "dimensionally invalid"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L1-040",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Orbitals & Shapes",
+      "level": 1,
+      "type": "regular",
+      "question": "The shape of an s orbital is:",
+      "options": [
+        "Spherical",
+        "Double dumbbell",
+        "Circular ring",
+        "Dumbbell"
+      ],
+      "correct_index": 0,
+      "explanation": "All s orbitals are spherically symmetric — the probability of finding the electron at a given distance is equal in all directions.",
+      "hint": "Same in every direction.",
+      "distractor_logic": [
+        "d orbital shape",
+        "confuses orbit with orbital",
+        "p orbital shape"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-001",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of protons and neutrons in <span class=\"nuc\"><span>80</span><span>35</span></span>Br are respectively:",
+      "options": [
+        "80 and 35",
+        "45 and 35",
+        "35 and 80",
+        "35 and 45"
+      ],
+      "correct_index": 3,
+      "explanation": "Z = 35 protons; neutrons = A - Z = 80 - 35 = 45.",
+      "hint": "Subtract the atomic number from the mass number.",
+      "distractor_logic": [
+        "A and Z swapped",
+        "values swapped",
+        "A used as neutrons"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-002",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 2,
+      "type": "regular",
+      "question": "A species has 18 electrons, 16 protons and 16 neutrons. It is:",
+      "options": [
+        "Ar atom",
+        "O<sup>2&minus;</sup> ion",
+        "S (neutral atom)",
+        "S<sup>2&minus;</sup> ion"
+      ],
+      "correct_index": 3,
+      "explanation": "16 protons = sulphur. Electrons (18) exceed protons by 2, so it is the anion S<sup>2&minus;</sup> with mass number 32.",
+      "hint": "Compare electron and proton counts first.",
+      "distractor_logic": [
+        "matched electron count to element",
+        "wrong Z",
+        "ignores charge"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-003",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 2,
+      "type": "regular",
+      "question": "Which pair is isoelectronic (same number of electrons)?",
+      "options": [
+        "K<sup>+</sup> and Mg<sup>2+</sup>",
+        "Na<sup>+</sup> and S<sup>2&minus;</sup>",
+        "Na<sup>+</sup> and K<sup>+</sup>",
+        "Na<sup>+</sup> and Mg<sup>2+</sup>"
+      ],
+      "correct_index": 3,
+      "explanation": "Na<sup>+</sup> = 11-1 = 10 e; Mg<sup>2+</sup> = 12-2 = 10 e. K<sup>+</sup> has 18 e and S<sup>2&minus;</sup> has 18 e, so those pair with each other, not with Na<sup>+</sup>.",
+      "hint": "Subtract the charge from Z for each ion.",
+      "distractor_logic": [
+        "18 vs 10",
+        "10 vs 18",
+        "10 vs 18"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-004",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 2,
+      "type": "regular",
+      "question": "Yellow light from a sodium lamp has wavelength 580 nm. Its frequency is about:",
+      "options": [
+        "1.72 &times; 10<sup>6</sup> Hz",
+        "5.17 &times; 10<sup>17</sup> Hz",
+        "1.93 &times; 10<sup>14</sup> Hz",
+        "5.17 &times; 10<sup>14</sup> Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "&nu; = c/&lambda; = (3.0 &times; 10<sup>8</sup>)/(580 &times; 10<sup>&minus;9</sup>) = 5.17 &times; 10<sup>14</sup> Hz.",
+      "hint": "Divide c by the wavelength in metres.",
+      "distractor_logic": [
+        "that's the wavenumber value",
+        "nm not converted to m",
+        "inverted ratio scaled"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-005",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 2,
+      "type": "regular",
+      "question": "The wavenumber of yellow radiation of wavelength 5800 &Aring; is about:",
+      "options": [
+        "5.8 &times; 10<sup>&minus;7</sup> m<sup>&minus;1</sup>",
+        "1.72 &times; 10<sup>4</sup> m<sup>&minus;1</sup>",
+        "5.17 &times; 10<sup>14</sup> m<sup>&minus;1</sup>",
+        "1.72 &times; 10<sup>6</sup> m<sup>&minus;1</sup>"
+      ],
+      "correct_index": 3,
+      "explanation": "wavenumber = 1/&lambda; = 1/(5800 &times; 10<sup>&minus;10</sup> m) = 1.724 &times; 10<sup>6</sup> m<sup>&minus;1</sup> (= 1.724 &times; 10<sup>4</sup> cm<sup>&minus;1</sup>).",
+      "hint": "Take the reciprocal of the wavelength in metres.",
+      "distractor_logic": [
+        "wavelength itself",
+        "the cm<sup>&minus;1</sup> value mislabelled",
+        "that's the frequency"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-006",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 2,
+      "type": "regular",
+      "question": "The energy of one photon of radiation with frequency 5 &times; 10<sup>14</sup> Hz is:",
+      "options": [
+        "3.31 &times; 10<sup>&minus;20</sup> J",
+        "3.31 &times; 10<sup>&minus;19</sup> J",
+        "1.33 &times; 10<sup>&minus;48</sup> J",
+        "6.63 &times; 10<sup>&minus;34</sup> J"
+      ],
+      "correct_index": 1,
+      "explanation": "E = h &nu; = (6.626 &times; 10<sup>&minus;34</sup>)(5 &times; 10<sup>14</sup>) = 3.313 &times; 10<sup>&minus;19</sup> J.",
+      "hint": "Multiply Planck's constant by the frequency.",
+      "distractor_logic": [
+        "power-of-ten slip",
+        "h divided by &nu;",
+        "forgot to multiply by &nu;"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-007",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 2,
+      "type": "regular",
+      "question": "The energy of one MOLE of photons of frequency 5 &times; 10<sup>14</sup> Hz is about:",
+      "options": [
+        "6.02 &times; 10<sup>23</sup> kJ",
+        "3.31 &times; 10<sup>&minus;19</sup> kJ",
+        "199.5 kJ",
+        "33.1 kJ"
+      ],
+      "correct_index": 2,
+      "explanation": "Per photon E = 3.313 &times; 10<sup>&minus;19</sup> J; per mole = 3.313 &times; 10<sup>&minus;19</sup> &times; 6.022 &times; 10<sup>23</sup> = 1.995 &times; 10<sup>5</sup> J = 199.5 kJ.",
+      "hint": "Multiply the single-photon energy by Avogadro's number.",
+      "distractor_logic": [
+        "used Avogadro alone",
+        "forgot Avogadro",
+        "power-of-ten slip"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-008",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 2,
+      "type": "regular",
+      "question": "The visible spectrum in frequency terms extends approximately from:",
+      "options": [
+        "4.0 &times; 10<sup>12</sup> to 7.5 &times; 10<sup>12</sup> Hz",
+        "4.0 &times; 10<sup>16</sup> to 7.5 &times; 10<sup>16</sup> Hz",
+        "400 to 750 Hz",
+        "4.0 &times; 10<sup>14</sup> to 7.5 &times; 10<sup>14</sup> Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "Violet 400 nm gives 7.5 &times; 10<sup>14</sup> Hz and red 750 nm gives 4.0 &times; 10<sup>14</sup> Hz.",
+      "hint": "Convert 400-750 nm using &nu; = c/&lambda;.",
+      "distractor_logic": [
+        "wrong power of ten",
+        "UV range",
+        "wavelengths in nm quoted as Hz"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-009",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "Intense red light shone on potassium for hours ejects no electrons, but weak yellow light works instantly, because:",
+      "options": [
+        "Yellow light is more intense",
+        "Red light carries no energy",
+        "Potassium absorbs only yellow",
+        "Red light's frequency is below the threshold frequency of potassium"
+      ],
+      "correct_index": 3,
+      "explanation": "For K, &&nu;;<sub>0</sub> = 5.0 &times; 10<sup>14</sup> Hz. Red light (4.3-4.6 &times; 10<sup>14</sup> Hz) is below threshold; no single photon has enough energy, and intensity cannot compensate.",
+      "hint": "It's about energy per photon, not total energy.",
+      "distractor_logic": [
+        "intensity is irrelevant below threshold",
+        "it does carry energy",
+        "colour-absorption confusion"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-010",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "In the photoelectric effect, the NUMBER of electrons ejected is proportional to the:",
+      "options": [
+        "Frequency of light",
+        "Intensity (brightness) of light",
+        "Wavelength of light",
+        "Threshold frequency"
+      ],
+      "correct_index": 1,
+      "explanation": "More photons (higher intensity) eject more electrons; frequency instead controls the kinetic energy of each ejected electron.",
+      "hint": "More photons means more ejections.",
+      "distractor_logic": [
+        "controls KE, not number",
+        "inverse of frequency",
+        "a metal property"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-011",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "The kinetic energy of an ejected photoelectron equals:",
+      "options": [
+        "h &nu; + h &&nu;;<sub>0</sub>",
+        "h &&nu;;<sub>0</sub>",
+        "h &nu; - h &&nu;;<sub>0</sub>",
+        "h &nu;"
+      ],
+      "correct_index": 2,
+      "explanation": "KE = h &nu; - h &&nu;;<sub>0</sub>: photon energy minus the work function (minimum energy to eject the electron).",
+      "hint": "Photon energy minus the escape cost.",
+      "distractor_logic": [
+        "energies can't add this way",
+        "that's the work function itself",
+        "ignores work function"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-012",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "The threshold frequency of potassium is 5.0 &times; 10<sup>14</sup> Hz. Its work function is about:",
+      "options": [
+        "5.0 &times; 10<sup>14</sup> J",
+        "1.33 &times; 10<sup>&minus;48</sup> J",
+        "6.63 &times; 10<sup>&minus;34</sup> J",
+        "3.31 &times; 10<sup>&minus;19</sup> J"
+      ],
+      "correct_index": 3,
+      "explanation": "W<sub>0</sub> = h &&nu;;<sub>0</sub> = (6.626 &times; 10<sup>&minus;34</sup>)(5.0 &times; 10<sup>14</sup>) = 3.31 &times; 10<sup>&minus;19</sup> J (about 2.07 eV).",
+      "hint": "Work function is h times threshold frequency.",
+      "distractor_logic": [
+        "frequency quoted as energy",
+        "h/&&nu;;<sub>0</sub>",
+        "just h"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-013",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "In the HYDROGEN atom, the energy of an orbital depends only on:",
+      "options": [
+        "n, l and m<sub>l</sub>",
+        "n only",
+        "n and l",
+        "l only"
+      ],
+      "correct_index": 1,
+      "explanation": "For H (and one-electron ions), energy depends only on the principal quantum number n; 2s and 2p are degenerate. In multi-electron atoms it depends on n and l.",
+      "hint": "One-electron systems are special.",
+      "distractor_logic": [
+        "overcounting",
+        "true for multi-electron atoms",
+        "shape doesn't decide energy here"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-014",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Orbitals & Shapes",
+      "level": 2,
+      "type": "regular",
+      "question": "Orbitals having the same energy are called:",
+      "options": [
+        "Degenerate orbitals",
+        "Nodal orbitals",
+        "Identical orbitals",
+        "Symmetric orbitals"
+      ],
+      "correct_index": 0,
+      "explanation": "Degenerate = equal energy, e.g. the three 2p orbitals, or 2s and 2p in the hydrogen atom.",
+      "hint": "A specific technical term from the chapter.",
+      "distractor_logic": [
+        "refers to nodes",
+        "not a term",
+        "not the term"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-015",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 2,
+      "type": "regular",
+      "question": "In the Balmer series formula, the lines correspond to transitions ending at n<sub>1</sub> =",
+      "options": [
+        "2",
+        "4",
+        "1",
+        "3"
+      ],
+      "correct_index": 0,
+      "explanation": "Balmer: electron falls to n = 2 from n = 3, 4, 5... These are hydrogen's visible lines. n<sub>1</sub> = 1 is Lyman, n<sub>1</sub> = 3 is Paschen.",
+      "hint": "The visible series.",
+      "distractor_logic": [
+        "Brackett",
+        "Lyman",
+        "Paschen"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-016",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 2,
+      "type": "regular",
+      "question": "The value 109,677 cm<sup>&minus;1</sup> is known as the:",
+      "options": [
+        "Rydberg constant for hydrogen",
+        "Bohr radius",
+        "Work function of hydrogen",
+        "Planck constant"
+      ],
+      "correct_index": 0,
+      "explanation": "The Rydberg constant appears in wavenumber = 109677(1/n<sub>1</sub><sup>2</sup> - 1/n<sub>2</sub><sup>2</sup>) cm<sup>&minus;1</sup>, describing all hydrogen line series.",
+      "hint": "It appears in the hydrogen spectrum formula.",
+      "distractor_logic": [
+        "52.9 pm",
+        "different concept",
+        "6.626e-34 J s"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-017",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 2,
+      "type": "regular",
+      "question": "When an excited electron of a hydrogen atom in n = 6 drops to the ground state, the maximum number of emission lines is:",
+      "options": [
+        "15",
+        "5",
+        "6",
+        "30"
+      ],
+      "correct_index": 0,
+      "explanation": "Number of lines = n(n-1)/2 = 6 &times; 5/2 = 15, counting every possible downward transition among the levels.",
+      "hint": "Count all possible pairs of levels.",
+      "distractor_logic": [
+        "only direct drops to each level",
+        "just n",
+        "forgot to halve"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-018",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "The energy of the hydrogen electron in n = 2 is (E<sub>1</sub> = -2.18 &times; 10<sup>&minus;18</sup> J):",
+      "options": [
+        "-1.09 &times; 10<sup>&minus;18</sup> J",
+        "-0.545 &times; 10<sup>&minus;18</sup> J",
+        "-4.36 &times; 10<sup>&minus;18</sup> J",
+        "+0.545 &times; 10<sup>&minus;18</sup> J"
+      ],
+      "correct_index": 1,
+      "explanation": "E<sub>n</sub> = -2.18 &times; 10<sup>&minus;18</sup> / n<sup>2</sup> = -2.18 &times; 10<sup>&minus;18</sup> / 4 = -0.545 &times; 10<sup>&minus;18</sup> J.",
+      "hint": "Divide the ground state energy by n squared.",
+      "distractor_logic": [
+        "divided by 2 not 4",
+        "multiplied by 2",
+        "sign flipped — bound states are negative"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-019",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "The radius of Bohr's second orbit for hydrogen (a<sub>0</sub> = 52.9 pm) is:",
+      "options": [
+        "105.8 pm",
+        "211.6 pm",
+        "52.9 pm",
+        "26.45 pm"
+      ],
+      "correct_index": 1,
+      "explanation": "r<sub>n</sub> = n<sup>2</sup> a<sub>0</sub> = 4 &times; 52.9 = 211.6 pm.",
+      "hint": "Radius grows as n squared.",
+      "distractor_logic": [
+        "multiplied by 2 not 4",
+        "first orbit",
+        "divided instead"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-020",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "Bohr's model could NOT explain:",
+      "options": [
+        "The line spectrum of hydrogen",
+        "The stability of the hydrogen atom",
+        "The spectrum of the helium atom",
+        "The energy of hydrogen orbits"
+      ],
+      "correct_index": 2,
+      "explanation": "Bohr works only for one-electron systems (H, He<sup>+</sup>, Li<sup>2+</sup>). It fails for multi-electron atoms like neutral He, and for the Zeeman and Stark effects.",
+      "hint": "Count the electrons in each option.",
+      "distractor_logic": [
+        "its main success",
+        "it fixed this problem",
+        "it computed these"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-021",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "Bohr's theory applies to He<sup>+</sup> and Li<sup>2+</sup> because they:",
+      "options": [
+        "Contain only one electron",
+        "Have complete octets",
+        "Are isotopes of hydrogen",
+        "Are noble gas ions"
+      ],
+      "correct_index": 0,
+      "explanation": "He<sup>+</sup> and Li<sup>2+</sup> are hydrogen-like: one electron around the nucleus, so E_n = -2.18 &times; 10<sup>&minus;18</sup> (Z<sup>2</sup>/n<sup>2</sup>) J applies.",
+      "hint": "What do they share with the hydrogen atom?",
+      "distractor_logic": [
+        "opposite is true",
+        "different concept",
+        "irrelevant property"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-022",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "The energy of the first orbit of He<sup>+</sup> is (Z = 2):",
+      "options": [
+        "-8.72 &times; 10<sup>&minus;18</sup> J",
+        "-4.36 &times; 10<sup>&minus;18</sup> J",
+        "-1.09 &times; 10<sup>&minus;18</sup> J",
+        "-2.18 &times; 10<sup>&minus;18</sup> J"
+      ],
+      "correct_index": 0,
+      "explanation": "E<sub>n</sub> = -2.18 &times; 10<sup>&minus;18</sup> x Z<sup>2</sup>/n<sup>2</sup> = -2.18 &times; 10<sup>&minus;18</sup> &times; 4 = -8.72 &times; 10<sup>&minus;18</sup> J.",
+      "hint": "Energy scales with Z squared.",
+      "distractor_logic": [
+        "multiplied by Z not Z<sup>2</sup>",
+        "divided by Z",
+        "forgot Z"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-023",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "The radius of the first orbit of He<sup>+</sup> is:",
+      "options": [
+        "52.9 pm",
+        "13.2 pm",
+        "26.45 pm",
+        "105.8 pm"
+      ],
+      "correct_index": 2,
+      "explanation": "r<sub>n</sub> = 52.9 n<sup>2</sup>/Z pm = 52.9/2 = 26.45 pm — higher nuclear charge pulls the electron closer.",
+      "hint": "Radius shrinks with increasing Z.",
+      "distractor_logic": [
+        "forgot Z",
+        "divided by Z<sup>2</sup>",
+        "multiplied by Z instead"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-024",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 2,
+      "type": "regular",
+      "question": "The de Broglie wavelength of a 0.1 kg ball moving at 10 m/s is about:",
+      "options": [
+        "6.6 &times; 10<sup>&minus;10</sup> m",
+        "6.6 &times; 10<sup>&minus;31</sup> m",
+        "6.6 &times; 10<sup>&minus;25</sup> m",
+        "6.6 &times; 10<sup>&minus;34</sup> m"
+      ],
+      "correct_index": 3,
+      "explanation": "&lambda; = h/mv = 6.626 &times; 10<sup>&minus;34</sup>/(0.1 &times; 10) = 6.626 &times; 10<sup>&minus;34</sup> m — absurdly small, which is why big objects show no wave behaviour.",
+      "hint": "mv = 1 kg m/s here, so &lambda; = h numerically.",
+      "distractor_logic": [
+        "atomic-scale answer for macro object",
+        "power slip",
+        "power slip"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-025",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 2,
+      "type": "regular",
+      "question": "Wave properties of ordinary objects (a cricket ball, a car) cannot be detected because:",
+      "options": [
+        "They absorb their own waves",
+        "They are electrically neutral",
+        "They move too slowly",
+        "Their large mass makes the wavelength immeasurably short"
+      ],
+      "correct_index": 3,
+      "explanation": "&lambda; = h/mv: large m gives wavelengths ~10<sup>&minus;34</sup> m, far smaller than anything measurable. Electrons, with tiny mass, show detectable wavelengths.",
+      "hint": "Look at where mass sits in the de Broglie equation.",
+      "distractor_logic": [
+        "not a real mechanism",
+        "charge is irrelevant",
+        "speed alone isn't the issue"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-026",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 2,
+      "type": "regular",
+      "question": "An electron moving at 2.05 &times; 10<sup>7</sup> m/s has a de Broglie wavelength of about:",
+      "options": [
+        "3.55 &times; 10<sup>&minus;11</sup> m",
+        "6.6 &times; 10<sup>&minus;34</sup> m",
+        "3.55 &times; 10<sup>&minus;8</sup> m",
+        "2.8 &times; 10<sup>10</sup> m"
+      ],
+      "correct_index": 0,
+      "explanation": "&lambda; = h/mv = 6.626 &times; 10<sup>&minus;34</sup>/(9.1 &times; 10<sup>&minus;31</sup> &times; 2.05 &times; 10<sup>7</sup>) = 3.55 &times; 10<sup>&minus;11</sup> m.",
+      "hint": "Divide h by (mass x velocity).",
+      "distractor_logic": [
+        "forgot the mass",
+        "power slip",
+        "inverted ratio"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-027",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "The total number of orbitals associated with n = 3 is:",
+      "options": [
+        "6",
+        "18",
+        "3",
+        "9"
+      ],
+      "correct_index": 3,
+      "explanation": "Orbitals = n<sup>2</sup> = 9: one 3s + three 3p + five 3d.",
+      "hint": "Add 1 + 3 + 5, or square n.",
+      "distractor_logic": [
+        "2n",
+        "2n<sup>2</sup> is electrons, not orbitals",
+        "just n"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-028",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "For n = 3, the possible values of l are:",
+      "options": [
+        "0 only",
+        "1, 2, 3",
+        "0, 1, 2",
+        "0, 1, 2, 3"
+      ],
+      "correct_index": 2,
+      "explanation": "l runs from 0 to n-1, so for n = 3: l = 0 (3s), 1 (3p), 2 (3d).",
+      "hint": "l never reaches n.",
+      "distractor_logic": [
+        "that's n = 1",
+        "skipped l = 0",
+        "included l = n"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-029",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "For l = 2, the possible values of m<sub>l</sub> are:",
+      "options": [
+        "-1, 0, +1",
+        "-2 and +2 only",
+        "0, 1, 2",
+        "-2, -1, 0, +1, +2"
+      ],
+      "correct_index": 3,
+      "explanation": "m<sub>l</sub> = -l ... 0 ... +l, giving 2l+1 = 5 values — the five d orbitals.",
+      "hint": "There are 2l + 1 of them, symmetric about zero.",
+      "distractor_logic": [
+        "that's l = 1",
+        "skipped middle values",
+        "only non-negative"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-030",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "The orbital with n = 4 and l = 0 is designated:",
+      "options": [
+        "4f",
+        "4d",
+        "4s",
+        "4p"
+      ],
+      "correct_index": 2,
+      "explanation": "l = 0 is always s; with n = 4 it is the 4s orbital. (l = 1: p, l = 2: d, l = 3: f.)",
+      "hint": "l = 0 has a one-letter name.",
+      "distractor_logic": [
+        "l = 3",
+        "l = 2",
+        "l = 1"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-031",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "Which of the following orbitals CANNOT exist?",
+      "options": [
+        "1p and 3f",
+        "2s and 3p",
+        "3s and 4f",
+        "2p and 3d"
+      ],
+      "correct_index": 0,
+      "explanation": "1p needs l = 1 with n = 1 (impossible, l max = n-1 = 0); 3f needs l = 3 with n = 3 (impossible, l max = 2). The other pairs are all valid.",
+      "hint": "Check l &le; n - 1 for each.",
+      "distractor_logic": [
+        "both valid",
+        "both valid",
+        "both valid"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-032",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "The maximum number of electrons in a shell with principal quantum number n is:",
+      "options": [
+        "2n<sup>2</sup>",
+        "2n",
+        "2l + 1",
+        "n<sup>2</sup>"
+      ],
+      "correct_index": 0,
+      "explanation": "Each of the n<sup>2</sup> orbitals holds 2 electrons (Pauli), so the shell holds 2n<sup>2</sup> — e.g. 32 electrons for n = 4.",
+      "hint": "Orbitals in the shell times two.",
+      "distractor_logic": [
+        "too few",
+        "orbitals per subshell",
+        "that's orbital count"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-033",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Orbitals & Shapes",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of radial nodes in a 3p orbital is:",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "0"
+      ],
+      "correct_index": 2,
+      "explanation": "Radial nodes = n - l - 1 = 3 - 1 - 1 = 1. (Angular nodes = l = 1; total nodes = n - 1 = 2.)",
+      "hint": "Use n - l - 1.",
+      "distractor_logic": [
+        "that's n",
+        "that's total nodes",
+        "that's 2p"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-034",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Orbitals & Shapes",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of angular nodes in any d orbital is:",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "5"
+      ],
+      "correct_index": 2,
+      "explanation": "Angular nodes = l. For d orbitals l = 2, so two nodal planes pass through the nucleus (e.g. the two planes in dxy).",
+      "hint": "Angular nodes equal l.",
+      "distractor_logic": [
+        "p orbital",
+        "s orbital",
+        "that's the number of d orbitals"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-035",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 2,
+      "type": "regular",
+      "question": "The 4s orbital is filled before 3d because:",
+      "options": [
+        "4s holds more electrons",
+        "4s has a lower (n + l) value",
+        "3d does not exist in potassium",
+        "4s is closer to the nucleus"
+      ],
+      "correct_index": 1,
+      "explanation": "(n+l): 4s = 4+0 = 4; 3d = 3+2 = 5. Lower (n+l) means lower energy, so 4s fills first — K's valence electron sits in 4s, not 3d.",
+      "hint": "Apply the (n + l) rule.",
+      "distractor_logic": [
+        "both hold per-orbital limits",
+        "3d exists, just higher in energy",
+        "not the stated rule"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-036",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 2,
+      "type": "regular",
+      "question": "Immediately after 3p is filled, the next electron enters:",
+      "options": [
+        "3f",
+        "4s",
+        "4p",
+        "3d"
+      ],
+      "correct_index": 1,
+      "explanation": "Order: ...3p, 4s, 3d, 4p... 4s (n+l = 4) comes before 3d (n+l = 5). 3f doesn't exist at all.",
+      "hint": "The (n + l) rule decides.",
+      "distractor_logic": [
+        "impossible orbital",
+        "fills after 3d",
+        "fills after 4s"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-037",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 2,
+      "type": "regular",
+      "question": "The observed valence configuration of chromium (Z = 24) is:",
+      "options": [
+        "3d<sup>6</sup> 4s<sup>0</sup>",
+        "3d<sup>3</sup> 4s<sup>3</sup>",
+        "3d<sup>5</sup> 4s<sup>1</sup>",
+        "3d<sup>4</sup> 4s<sup>2</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "An electron shifts from 4s to 3d to give the extra-stable half-filled 3d<sup>5</sup> — so Cr is [Ar]3d<sup>5</sup> 4s<sup>1</sup>, not 3d<sup>4</sup> 4s<sup>2</sup>.",
+      "hint": "Half-filled subshells have extra stability.",
+      "distractor_logic": [
+        "overshoots the shift",
+        "4s can't hold 3",
+        "naive aufbau filling"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-038",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 2,
+      "type": "regular",
+      "question": "Copper (Z = 29) adopts 3d<sup>10</sup> 4s<sup>1</sup> instead of 3d<sup>9</sup> 4s<sup>2</sup> because:",
+      "options": [
+        "4s cannot hold two electrons",
+        "Fully filled d subshells have extra stability",
+        "3d and 4s merge into one subshell",
+        "Copper is a metal"
+      ],
+      "correct_index": 1,
+      "explanation": "Completely filled (d<sup>10</sup>) and half-filled (d<sup>5</sup>) subshells gain stability from symmetrical distribution and maximum exchange energy.",
+      "hint": "Same reason as chromium's exception.",
+      "distractor_logic": [
+        "it can (e.g. in Zn)",
+        "subshells stay distinct",
+        "irrelevant"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-039",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 2,
+      "type": "regular",
+      "question": "The number of unpaired electrons in phosphorus (Z = 15) is:",
+      "options": [
+        "3",
+        "5",
+        "1",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "P: [Ne]3s<sup>2</sup> 3p<sup>3</sup>. By Hund's rule the three 3p electrons occupy separate orbitals with parallel spins — 3 unpaired.",
+      "hint": "Apply Hund's rule to 3p<sup>3</sup>.",
+      "distractor_logic": [
+        "counted all valence electrons",
+        "assumed pairing",
+        "paired one prematurely"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L2-040",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 2,
+      "type": "regular",
+      "question": "Hund's rule states that pairing of electrons in orbitals of the same subshell does not begin until:",
+      "options": [
+        "All spins become opposite",
+        "Each orbital of the subshell is singly occupied",
+        "The subshell is completely full",
+        "The next shell begins filling"
+      ],
+      "correct_index": 1,
+      "explanation": "Electrons first spread out one per degenerate orbital with parallel spins; pairing starts only after each orbital has one electron (4th electron in p, 6th in d).",
+      "hint": "Spread out first, pair later.",
+      "distractor_logic": [
+        "opposite of the rule",
+        "pairing IS filling up",
+        "order confusion"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-001",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "regular",
+      "question": "The wavelength of light emitted when the hydrogen electron falls from n = 4 to n = 2 is about:",
+      "options": [
+        "486 nm",
+        "434 nm",
+        "656 nm",
+        "972 nm"
+      ],
+      "correct_index": 0,
+      "explanation": "&Delta;E = 2.18 &times; 10<sup>&minus;18</sup> (1/4 - 1/16) = 4.09 &times; 10<sup>&minus;19</sup> J; &lambda; = hc/E = 1.986 &times; 10<sup>&minus;25</sup>/4.09 &times; 10<sup>&minus;19</sup> = 4.86 &times; 10<sup>&minus;7</sup> m = 486 nm (Balmer, blue-green).",
+      "hint": "Compute &Delta;E first, then &lambda; = hc/&Delta;E.",
+      "distractor_logic": [
+        "that's 5 to 2",
+        "that's 3 to 2",
+        "doubled wavelength"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-002",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "regular",
+      "question": "The frequency of the photon emitted in the n = 5 to n = 2 transition of hydrogen is about:",
+      "options": [
+        "6.91 &times; 10<sup>14</sup> Hz",
+        "1.06 &times; 10<sup>14</sup> Hz",
+        "3.29 &times; 10<sup>15</sup> Hz",
+        "4.58 &times; 10<sup>14</sup> Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "&Delta;E = 2.18 &times; 10<sup>&minus;18</sup> (1/4 - 1/25) = 4.58 &times; 10<sup>&minus;19</sup> J; &nu; = E/h = 6.91 &times; 10<sup>14</sup> Hz (&lambda; = 434 nm, visible Balmer line).",
+      "hint": "&nu; = &Delta;E / h.",
+      "distractor_logic": [
+        "bracket term inverted",
+        "full Rydberg frequency without bracket",
+        "the energy value's digits reused as frequency"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-003",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "regular",
+      "question": "The wavenumber of the LONGEST wavelength transition in the Balmer series is:",
+      "options": [
+        "5,331 cm<sup>&minus;1</sup>",
+        "15,233 cm<sup>&minus;1</sup>",
+        "27,419 cm<sup>&minus;1</sup>",
+        "109,677 cm<sup>&minus;1</sup>"
+      ],
+      "correct_index": 1,
+      "explanation": "Longest wavelength = smallest energy jump = n = 3 to 2: 109677(1/4 - 1/9) = 109677 &times; 5/36 = 15,233 cm<sup>&minus;1</sup> (656 nm, the red H-&alpha; line).",
+      "hint": "The smallest jump into n = 2 gives the longest wavelength.",
+      "distractor_logic": [
+        "arithmetic on wrong fractions",
+        "used n = 4 to 2",
+        "series limit (n = &infin;)"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-004",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "The energy needed to ionise a hydrogen atom whose electron occupies n = 5, compared to ionisation from n = 1, is:",
+      "options": [
+        "The same",
+        "1/25 as much",
+        "25 times as much",
+        "1/5 as much"
+      ],
+      "correct_index": 1,
+      "explanation": "Ionisation energy from level n is 2.18 &times; 10<sup>&minus;18</sup>/n<sup>2</sup>. From n = 5 it is 1/25 of the ground-state value (8.72 &times; 10<sup>&minus;20</sup> J vs 2.18 &times; 10<sup>&minus;18</sup> J).",
+      "hint": "Binding energy falls off as 1/n<sup>2</sup>.",
+      "distractor_logic": [
+        "ignores n dependence",
+        "inverted the ratio",
+        "used 1/n not 1/n<sup>2</sup>"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-005",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "Which transition in the HYDROGEN spectrum has the same wavelength as the n = 4 to n = 2 Balmer transition of He<sup>+</sup>?",
+      "options": [
+        "n = 3 to n = 1",
+        "n = 4 to n = 1",
+        "n = 2 to n = 1",
+        "n = 4 to n = 2"
+      ],
+      "correct_index": 2,
+      "explanation": "For He<sup>+</sup>: wavenumber proportional to Z<sup>2</sup>(1/4 - 1/16) = 4 &times; 3/16 = 3/4. For H (Z = 1): need 1/n<sub>1</sub><sup>2</sup> - 1/n<sub>2</sub><sup>2</sup> = 3/4, which is 1/1 - 1/4 — the n = 2 to 1 transition.",
+      "hint": "Set Z<sup>2</sup> (1/n<sub>1</sub><sup>2</sup> - 1/n<sub>2</sub><sup>2</sup>) equal for both species.",
+      "distractor_logic": [
+        "gives 8/9, not 3/4",
+        "gives 15/16",
+        "forgot the Z<sup>2</sup> factor"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-006",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "The energy required for He<sup>+</sup>(g) &rarr; He<sup>2+</sup>(g) + e<sup>&minus;</sup> is (IE of H = 2.18 &times; 10<sup>&minus;18</sup> J/atom):",
+      "options": [
+        "2.18 &times; 10<sup>&minus;18</sup> J",
+        "1.09 &times; 10<sup>&minus;18</sup> J",
+        "4.36 &times; 10<sup>&minus;18</sup> J",
+        "8.72 &times; 10<sup>&minus;18</sup> J"
+      ],
+      "correct_index": 3,
+      "explanation": "Ionising hydrogen-like He<sup>+</sup> from its ground state costs Z<sup>2</sup> times hydrogen's IE = 4 &times; 2.18 &times; 10<sup>&minus;18</sup> = 8.72 &times; 10<sup>&minus;18</sup> J.",
+      "hint": "One-electron ion: scale by Z squared.",
+      "distractor_logic": [
+        "forgot Z<sup>2</sup>",
+        "divided by Z",
+        "used Z not Z<sup>2</sup>"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-007",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 3,
+      "type": "regular",
+      "question": "The number of photons of wavelength 4000 pm needed to provide 1 J of energy is about:",
+      "options": [
+        "2.0 &times; 10<sup>19</sup>",
+        "2.0 &times; 10<sup>16</sup>",
+        "5.0 &times; 10<sup>&minus;17</sup>",
+        "6.0 &times; 10<sup>23</sup>"
+      ],
+      "correct_index": 1,
+      "explanation": "E per photon = hc/&lambda; = 1.986 &times; 10<sup>&minus;25</sup>/4 &times; 10<sup>&minus;9</sup> = 4.97 &times; 10<sup>&minus;17</sup> J; N = 1/4.97 &times; 10<sup>&minus;17</sup> = 2.01 &times; 10<sup>16</sup> photons.",
+      "hint": "Find one photon's energy, then divide 1 J by it.",
+      "distractor_logic": [
+        "pm misconverted",
+        "the per-photon energy itself",
+        "Avogadro reflex"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-008",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 3,
+      "type": "regular",
+      "question": "A 100 W bulb emits monochromatic light of wavelength 400 nm. The number of photons emitted per second is about:",
+      "options": [
+        "4.0 &times; 10<sup>20</sup>",
+        "2.5 &times; 10<sup>17</sup>",
+        "2.0 &times; 10<sup>20</sup>",
+        "5.0 &times; 10<sup>&minus;19</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "E per photon = hc/&lambda; = 4.97 &times; 10<sup>&minus;19</sup> J; photons/s = 100 J s<sup>&minus;1</sup> / 4.97 &times; 10<sup>&minus;19</sup> J = 2.012 &times; 10<sup>20</sup>.",
+      "hint": "Watts are joules per second — divide by one photon's energy.",
+      "distractor_logic": [
+        "doubled",
+        "power slip",
+        "one photon's energy digits"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-009",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "Radiation of 300 nm on sodium ejects electrons with kinetic energy 1.68 &times; 10<sup>5</sup> J/mol. The minimum energy needed to remove a mole of electrons from sodium is about:",
+      "options": [
+        "2.31 &times; 10<sup>5</sup> J/mol",
+        "1.68 &times; 10<sup>5</sup> J/mol",
+        "3.99 &times; 10<sup>5</sup> J/mol",
+        "5.67 &times; 10<sup>5</sup> J/mol"
+      ],
+      "correct_index": 0,
+      "explanation": "Energy of a mole of 300 nm photons = 3.99 &times; 10<sup>5</sup> J. Minimum (work function) = photon energy - KE = 3.99 - 1.68 = 2.31 &times; 10<sup>5</sup> J/mol.",
+      "hint": "Work function = photon energy minus kinetic energy.",
+      "distractor_logic": [
+        "KE mistaken for work function",
+        "total photon energy, not the minimum",
+        "added instead of subtracting"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-010",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "Continuing the previous data (minimum energy 2.31 &times; 10<sup>5</sup> J/mol), the maximum wavelength that can still eject a photoelectron from sodium is about:",
+      "options": [
+        "233 nm",
+        "300 nm",
+        "652 nm",
+        "517 nm"
+      ],
+      "correct_index": 3,
+      "explanation": "Per electron: 2.31 &times; 10<sup>5</sup>/6.022 &times; 10<sup>23</sup> = 3.84 &times; 10<sup>&minus;19</sup> J; &lambda;_max = hc/E = 1.986 &times; 10<sup>&minus;25</sup>/3.84 &times; 10<sup>&minus;19</sup> = 5.17 &times; 10<sup>&minus;7</sup> m = 517 nm (green).",
+      "hint": "Threshold wavelength corresponds to exactly the work function.",
+      "distractor_logic": [
+        "shorter, would still work",
+        "the given wavelength",
+        "arithmetic slip"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-011",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "A metal has threshold frequency 7.0 &times; 10<sup>14</sup> Hz. When radiation of 1.0 &times; 10<sup>15</sup> Hz hits it, the kinetic energy of an emitted electron is:",
+      "options": [
+        "1.99 &times; 10<sup>&minus;19</sup> J",
+        "1.99 &times; 10<sup>&minus;18</sup> J",
+        "4.64 &times; 10<sup>&minus;19</sup> J",
+        "6.63 &times; 10<sup>&minus;19</sup> J"
+      ],
+      "correct_index": 0,
+      "explanation": "KE = h(&nu; - &&nu;;<sub>0</sub>) = 6.626 &times; 10<sup>&minus;34</sup> x (10.0 - 7.0) x 10<sup>14</sup> = 6.626 &times; 10<sup>&minus;34</sup> &times; 3.0 &times; 10<sup>14</sup> = 1.988 &times; 10<sup>&minus;19</sup> J.",
+      "hint": "Multiply h by the frequency EXCESS over threshold.",
+      "distractor_logic": [
+        "power slip",
+        "used &&nu;;<sub>0</sub>",
+        "used full &nu;, not the difference"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-012",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 3,
+      "type": "regular",
+      "question": "An electron (m = 9.1 &times; 10<sup>&minus;31</sup> kg) has kinetic energy 3.0 &times; 10<sup>&minus;25</sup> J. Its de Broglie wavelength is about:",
+      "options": [
+        "897 nm",
+        "8967 nm",
+        "0.897 nm",
+        "89.7 nm"
+      ],
+      "correct_index": 0,
+      "explanation": "v = &radic;(2KE/m) = &radic;(2 &times; 3.0 &times; 10<sup>&minus;25</sup>/9.1 &times; 10<sup>&minus;31</sup>) = 812 m/s; &lambda; = h/mv = 6.626 &times; 10<sup>&minus;34</sup>/(9.1 &times; 10<sup>&minus;31</sup> &times; 812) = 8.967 &times; 10<sup>&minus;7</sup> m = 897 nm.",
+      "hint": "First get v from KE = (1/2)mv<sup>2</sup>, then &lambda; = h/mv.",
+      "distractor_logic": [
+        "power slip",
+        "assumed X-ray scale",
+        "power slip"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-013",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Heisenberg Uncertainty",
+      "level": 3,
+      "type": "regular",
+      "question": "A golf ball (40 g) moves at 45 m/s, speed known to 2%. The minimum uncertainty in its position is about:",
+      "options": [
+        "1.46 &times; 10<sup>&minus;33</sup> m",
+        "5.79 &times; 10<sup>6</sup> m",
+        "0.9 m",
+        "1.46 &times; 10<sup>&minus;23</sup> m"
+      ],
+      "correct_index": 0,
+      "explanation": "&Delta;v = 0.9 m/s; &Delta;x = h/(4 &pi; m &Delta;v) = 6.626 &times; 10<sup>&minus;34</sup>/(4 &times; 3.14 &times; 0.040 &times; 0.9) = 1.46 &times; 10<sup>&minus;33</sup> m — ~10<sup>18</sup> times smaller than a nucleus, so meaningless for macroscopic objects.",
+      "hint": "Use &Delta;x = h/(4 &pi; m &Delta;v) with mass in kg.",
+      "distractor_logic": [
+        "that's the electron answer",
+        "that's &Delta;v itself",
+        "grams not converted"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-014",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Heisenberg Uncertainty",
+      "level": 3,
+      "type": "regular",
+      "question": "If an electron's position is known within 0.1 &Aring;, the minimum uncertainty in its velocity is about:",
+      "options": [
+        "3.0 &times; 10<sup>8</sup> m/s",
+        "5.79 &times; 10<sup>6</sup> m/s",
+        "5.79 &times; 10<sup>3</sup> m/s",
+        "1.46 &times; 10<sup>&minus;33</sup> m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "&Delta;v = h/(4 &pi; m &Delta;x) = 6.626 &times; 10<sup>&minus;34</sup>/(4 &times; 3.14 &times; 9.11 &times; 10<sup>&minus;31</sup> &times; 10<sup>&minus;11</sup>) = 5.79 &times; 10<sup>6</sup> m/s — enormous, so electron trajectories are meaningless.",
+      "hint": "Same relation, solved for &Delta;v.",
+      "distractor_logic": [
+        "speed of light reflex",
+        "power slip",
+        "golf-ball answer units swapped"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-015",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Heisenberg Uncertainty",
+      "level": 3,
+      "type": "regular",
+      "question": "The Bohr model contradicts the Heisenberg uncertainty principle because it:",
+      "options": [
+        "Assumes the electron has mass",
+        "Applies only to hydrogen",
+        "Specifies an exact, fixed path (orbit) requiring exact position AND momentum simultaneously",
+        "Uses quantised energies"
+      ],
+      "correct_index": 2,
+      "explanation": "A defined circular orbit means position and velocity are both known exactly at every instant — precisely what the uncertainty principle forbids for an electron. Bohr also ignores the electron's wave character.",
+      "hint": "What information does a fixed circular path assume you have?",
+      "distractor_logic": [
+        "mass isn't the issue",
+        "a limitation, not a contradiction",
+        "quantisation itself is fine"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-016",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 3,
+      "type": "regular",
+      "question": "The circumference of the nth Bohr orbit equals:",
+      "options": [
+        "Half a wavelength",
+        "The de Broglie wavelength divided by n",
+        "n times the de Broglie wavelength of the electron",
+        "n<sup>2</sup> wavelengths"
+      ],
+      "correct_index": 2,
+      "explanation": "From mvr = nh/2&pi;: 2 &pi; r = n(h/mv) = n &lambda;. The orbit fits a whole number of electron wavelengths — a standing wave picture of quantisation.",
+      "hint": "Rearrange Bohr's angular momentum condition using &lambda; = h/mv.",
+      "distractor_logic": [
+        "standing wave needs whole wavelengths",
+        "inverted",
+        "confused with r proportional to n<sup>2</sup>"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-017",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Orbitals & Shapes",
+      "level": 3,
+      "type": "regular",
+      "question": "The total number of nodes in a 4d orbital is:",
+      "options": [
+        "3",
+        "4",
+        "2",
+        "1"
+      ],
+      "correct_index": 0,
+      "explanation": "Total nodes = n - 1 = 3: angular nodes = l = 2, radial nodes = n - l - 1 = 1.",
+      "hint": "Total is n - 1; split it into angular (l) and radial (n - l - 1).",
+      "distractor_logic": [
+        "used n itself",
+        "angular only",
+        "radial only"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-018",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 3,
+      "type": "regular",
+      "question": "How many electrons in an atom can have n = 4 and m<sub>s</sub> = -1/2?",
+      "options": [
+        "4",
+        "32",
+        "8",
+        "16"
+      ],
+      "correct_index": 3,
+      "explanation": "The n = 4 shell has n<sup>2</sup> = 16 orbitals holding 32 electrons; exactly half of them (one per orbital) have m<sub>s</sub> = -1/2, i.e. 16.",
+      "hint": "Half the shell's capacity.",
+      "distractor_logic": [
+        "subshell count doubled",
+        "full shell capacity",
+        "orbital count halved again"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-019",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "regular",
+      "question": "An atom contains 29 electrons and 35 neutrons. Its electronic configuration is:",
+      "options": [
+        "[Ar] 4s<sup>2</sup> 4p<sup>7</sup>",
+        "[Ar] 3d<sup>10</sup> 4s<sup>1</sup>",
+        "[Kr] 4s<sup>1</sup>",
+        "[Ar] 3d<sup>9</sup> 4s<sup>2</sup>"
+      ],
+      "correct_index": 1,
+      "explanation": "29 electrons = copper. Cu takes the exceptional configuration [Ar]3d<sup>10</sup> 4s<sup>1</sup> for full-d stability. (Z = 29, A = 64.)",
+      "hint": "Identify the element first, then recall its exceptional configuration.",
+      "distractor_logic": [
+        "p can't hold 7",
+        "wrong core",
+        "naive aufbau for Cu"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-020",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 3,
+      "type": "regular",
+      "question": "The lowest value of n that allows g orbitals (l = 4) to exist is:",
+      "options": [
+        "4",
+        "9",
+        "6",
+        "5"
+      ],
+      "correct_index": 3,
+      "explanation": "l max = n - 1, so l = 4 first becomes possible at n = 5 (the 5g subshell).",
+      "hint": "l can go up to n - 1.",
+      "distractor_logic": [
+        "would need l = n",
+        "2l + 1 confusion",
+        "one too high"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-021",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 3,
+      "type": "regular",
+      "question": "An element with mass number 81 contains 31.7% more neutrons than protons. The element is:",
+      "options": [
+        "<sup>81</sup>Kr",
+        "<sup>81</sup>Se",
+        "<sup>79</sup>Br",
+        "<sup>81</sup>Br"
+      ],
+      "correct_index": 3,
+      "explanation": "n = 1.317p and p + n = 81 gives 2.317p = 81, p = 35 (Br), n = 46. So the nuclide is <sup>81</sup>Br.",
+      "hint": "Set n = 1.317p and solve p + n = 81.",
+      "distractor_logic": [
+        "p = 36 doesn't satisfy the ratio",
+        "p = 34 doesn't either",
+        "wrong mass number"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-022",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 3,
+      "type": "regular",
+      "question": "An ion with mass number 37 has one unit of negative charge and 11.1% more neutrons than electrons. The ion is:",
+      "options": [
+        "<sup>35</sup>Cl<sup>&minus;</sup>",
+        "<sup>37</sup>S<sup>&minus;</sup>",
+        "<sup>37</sup>Cl<sup>&minus;</sup>",
+        "<sup>37</sup>Ar<sup>&minus;</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "Let electrons = e; neutrons = 1.111e; protons = e - 1. Then (e-1) + 1.111e = 37 gives e = 18, n = 20, p = 17 — chlorine, so <sup>37</sup>Cl<sup>&minus;</sup>.",
+      "hint": "For a -1 ion, protons = electrons - 1.",
+      "distractor_logic": [
+        "wrong mass number",
+        "p = 16 fails the equations",
+        "p = 18 fails"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-023",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 3,
+      "type": "regular",
+      "question": "An ion with mass number 56 carries 3 units of positive charge and has 30.4% more neutrons than electrons. The ion is:",
+      "options": [
+        "<sup>56</sup>Fe<sup>3+</sup>",
+        "<sup>56</sup>Mn<sup>3+</sup>",
+        "<sup>56</sup>Co<sup>3+</sup>",
+        "<sup>56</sup>Fe<sup>2+</sup>"
+      ],
+      "correct_index": 0,
+      "explanation": "Electrons = e; neutrons = 1.304e; protons = e + 3. (e+3) + 1.304e = 56 gives e = 23, n = 30, p = 26 — iron, so <sup>56</sup>Fe<sup>3+</sup>.",
+      "hint": "For a +3 ion, protons = electrons + 3.",
+      "distractor_logic": [
+        "p = 25 fails",
+        "p = 27 fails",
+        "charge given is +3"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-024",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 3,
+      "type": "regular",
+      "question": "The diameter of a zinc atom is 2.6 &Aring;. The number of zinc atoms arranged side by side lengthwise in 1.6 cm is about:",
+      "options": [
+        "6.2 &times; 10<sup>7</sup>",
+        "6.2 &times; 10<sup>9</sup>",
+        "1.6 &times; 10<sup>8</sup>",
+        "3.1 &times; 10<sup>7</sup>"
+      ],
+      "correct_index": 0,
+      "explanation": "N = length/diameter = 1.6 &times; 10<sup>&minus;2</sup> m / 2.6 &times; 10<sup>&minus;10</sup> m = 6.15 &times; 10<sup>7</sup> atoms. (Radius = 130 pm.)",
+      "hint": "Divide total length by one atom's DIAMETER.",
+      "distractor_logic": [
+        "&Aring; conversion slip",
+        "cm not converted",
+        "divided by 2r twice"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-025",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 3,
+      "type": "regular",
+      "question": "2 &times; 10<sup>8</sup> carbon atoms arranged side by side span 2.4 cm. The radius of a carbon atom is:",
+      "options": [
+        "0.12 nm",
+        "0.24 nm",
+        "0.06 nm",
+        "1.2 nm"
+      ],
+      "correct_index": 2,
+      "explanation": "Diameter = 2.4 &times; 10<sup>&minus;2</sup>/2 &times; 10<sup>8</sup> = 1.2 &times; 10<sup>&minus;10</sup> m = 0.12 nm; radius = 0.06 nm (60 pm).",
+      "hint": "Length over count gives the diameter — halve it.",
+      "distractor_logic": [
+        "forgot to halve",
+        "doubled instead",
+        "power slip"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-026",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle carries 2.5 &times; 10<sup>&minus;16</sup> C of static charge. The number of electrons on it is about:",
+      "options": [
+        "2.5 &times; 10<sup>3</sup>",
+        "6250",
+        "156",
+        "1560"
+      ],
+      "correct_index": 3,
+      "explanation": "N = q/e = 2.5 &times; 10<sup>&minus;16</sup>/1.602 &times; 10<sup>&minus;19</sup> = 1560 electrons — an integer multiple, as Millikan's q = ne demands.",
+      "hint": "Divide the total charge by the electron's charge.",
+      "distractor_logic": [
+        "rounded the exponent",
+        "divided by 4 &times; 10<sup>&minus;20</sup>",
+        "power slip"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-027",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 3,
+      "type": "regular",
+      "question": "In Millikan's experiment an oil drop carries -1.282 &times; 10<sup>&minus;18</sup> C. The number of electrons on the drop is:",
+      "options": [
+        "10",
+        "8",
+        "6",
+        "12.82"
+      ],
+      "correct_index": 1,
+      "explanation": "N = 1.282 &times; 10<sup>&minus;18</sup>/1.602 &times; 10<sup>&minus;19</sup> = 8.00 — exactly 8 electrons. A non-integer answer would signal an arithmetic error, since charge comes only in whole multiples of e.",
+      "hint": "The answer must be a whole number.",
+      "distractor_logic": [
+        "division slip",
+        "division slip",
+        "forgot charge is quantised"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-028",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "regular",
+      "question": "Among 3p, 3d and 4s in a multi-electron atom, the orbital with the LOWEST energy is:",
+      "options": [
+        "All equal",
+        "3d",
+        "3p",
+        "4s"
+      ],
+      "correct_index": 2,
+      "explanation": "(n+l): 3p = 4, 4s = 4, 3d = 5. Between 3p and 4s (tie), the lower n wins — 3p is lowest, then 4s, then 3d.",
+      "hint": "Compute (n + l) for each; break ties with n.",
+      "distractor_logic": [
+        "true only in hydrogen",
+        "highest of the three",
+        "loses the tie-break"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-029",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "regular",
+      "question": "A Paschen series transition (ending at n = 3) is observed at 1285 nm. It starts from n =",
+      "options": [
+        "5",
+        "4",
+        "7",
+        "6"
+      ],
+      "correct_index": 0,
+      "explanation": "&nu; = c/&lambda; = 2.335 &times; 10<sup>14</sup> Hz. Using &nu; = 3.29 &times; 10<sup>15</sup> (1/9 - 1/n<sup>2</sup>): 1/9 - 1/n<sup>2</sup> = 0.071, so 1/n<sup>2</sup> = 0.040, n<sup>2</sup> = 25, n = 5. Region: infrared.",
+      "hint": "Convert to frequency, then solve the Rydberg expression for n.",
+      "distractor_logic": [
+        "gives 1875 nm",
+        "gives 1005 nm",
+        "gives 1094 nm"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-L3-030",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "An emission transition starts from an orbit of radius 1.3225 nm and ends at 211.6 pm. The transition and its series are:",
+      "options": [
+        "n = 5 to n = 3, Paschen",
+        "n = 25 to n = 4, Brackett",
+        "n = 4 to n = 2, Balmer",
+        "n = 5 to n = 2, Balmer"
+      ],
+      "correct_index": 3,
+      "explanation": "r = n<sup>2</sup> &times; 52.9 pm: 1322.5 pm gives n = 5; 211.6 pm gives n = 2. So 5 &rarr; 2 — a Balmer line (434 nm, visible).",
+      "hint": "Divide each radius by 52.9 pm and take the square root.",
+      "distractor_logic": [
+        "radius 211.6 is n = 2, not 3",
+        "treated n<sup>2</sup> as n",
+        "1322.5/52.9 = 25 = n<sup>2</sup>, not n"
+      ],
+      "mixed_topics": null
+    },
+    {
+      "id": "CHE11-CH02-B-001",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "bonus",
+      "question": "Which species in which state has the SAME energy as a hydrogen atom in its ground state (n = 1)?",
+      "options": [
+        "He<sup>+</sup> in n = 4",
+        "He<sup>+</sup> in n = 2",
+        "Li<sup>2+</sup> in n = 2",
+        "He<sup>+</sup> in n = 1"
+      ],
+      "correct_index": 1,
+      "explanation": "E is proportional to Z<sup>2</sup>/n<sup>2</sup>. For H(n=1): 1/1 = 1. He<sup>+</sup>(n=2): 4/4 = 1 — equal. Li<sup>2+</sup>(n=2) gives 9/4, He<sup>+</sup>(n=4) gives 4/16.",
+      "hint": "Compare Z<sup>2</sup>/n<sup>2</sup> for each option.",
+      "distractor_logic": [
+        "gives 1/4",
+        "gives 9/4",
+        "gives 4x"
+      ],
+      "mixed_topics": [
+        "Bohr Model",
+        "Hydrogen-like Ions"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-002",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "bonus",
+      "question": "The ratio of the radius of the n = 2 orbit of H to that of the n = 2 orbit of He<sup>+</sup> is:",
+      "options": [
+        "4:1",
+        "1:2",
+        "2:1",
+        "1:1"
+      ],
+      "correct_index": 2,
+      "explanation": "r proportional to n<sup>2</sup>/Z. Same n, so ratio = Z(He<sup>+</sup>)/Z(H) = 2:1 — the He<sup>+</sup> orbit is half as large.",
+      "hint": "Radius shrinks with nuclear charge.",
+      "distractor_logic": [
+        "used Z<sup>2</sup>",
+        "inverted",
+        "forgot Z"
+      ],
+      "mixed_topics": [
+        "Bohr Model",
+        "Hydrogen-like Ions"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-003",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 3,
+      "type": "bonus",
+      "question": "The electron in Bohr's first orbit moves at 2.19 &times; 10<sup>6</sup> m/s. Its de Broglie wavelength is about:",
+      "options": [
+        "3320 pm",
+        "3.32 pm",
+        "332 pm",
+        "33.2 pm"
+      ],
+      "correct_index": 2,
+      "explanation": "&lambda; = h/mv = 6.626 &times; 10<sup>&minus;34</sup>/(9.1 &times; 10<sup>&minus;31</sup> &times; 2.19 &times; 10<sup>6</sup>) = 3.32 &times; 10<sup>&minus;10</sup> m = 332 pm — exactly the circumference of the first Bohr orbit (2 &pi; x 52.9 pm), as the standing-wave condition requires.",
+      "hint": "It should equal 2 &pi; times the Bohr radius.",
+      "distractor_logic": [
+        "power slip",
+        "power slip",
+        "power slip"
+      ],
+      "mixed_topics": [
+        "Dual Nature & de Broglie",
+        "Bohr Model"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-004",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 3,
+      "type": "bonus",
+      "question": "A 150 pm photon strikes an atom and an inner electron is ejected at 1.5 &times; 10<sup>7</sup> m/s. The energy binding the electron to the nucleus was about:",
+      "options": [
+        "1.32 &times; 10<sup>&minus;15</sup> J",
+        "2.35 &times; 10<sup>&minus;15</sup> J",
+        "1.02 &times; 10<sup>&minus;16</sup> J",
+        "1.22 &times; 10<sup>&minus;15</sup> J"
+      ],
+      "correct_index": 3,
+      "explanation": "Photon energy = hc/&lambda; = 1.325 &times; 10<sup>&minus;15</sup> J. KE = (1/2)(9.1 &times; 10<sup>&minus;31</sup>)(1.5 &times; 10<sup>7</sup>)<sup>2</sup> = 1.02 &times; 10<sup>&minus;16</sup> J. Binding energy = 1.325 &times; 10<sup>&minus;15</sup> - 1.02 &times; 10<sup>&minus;16</sup> = 1.22 &times; 10<sup>&minus;15</sup> J.",
+      "hint": "Binding energy = photon energy minus kinetic energy.",
+      "distractor_logic": [
+        "photon energy alone",
+        "added them",
+        "the KE alone"
+      ],
+      "mixed_topics": [
+        "Photoelectric Effect",
+        "Planck's Quantum Theory"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-005",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 3,
+      "type": "bonus",
+      "question": "Neon sign light at 616 nm has frequency:",
+      "options": [
+        "1.62 &times; 10<sup>15</sup> Hz",
+        "4.87 &times; 10<sup>14</sup> Hz",
+        "6.16 &times; 10<sup>14</sup> Hz",
+        "4.87 &times; 10<sup>11</sup> Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "&nu; = c/&lambda; = 3.0 &times; 10<sup>8</sup>/616 &times; 10<sup>&minus;9</sup> = 4.87 &times; 10<sup>14</sup> Hz.",
+      "hint": "c over &lambda; in metres.",
+      "distractor_logic": [
+        "inverted",
+        "wavelength digits reused",
+        "nm slip"
+      ],
+      "mixed_topics": [
+        "Electromagnetic Radiation",
+        "Atomic Spectra"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-006",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 3,
+      "type": "bonus",
+      "question": "If that same 616 nm neon emission delivers 2 J of energy, the number of quanta involved is about:",
+      "options": [
+        "6.0 &times; 10<sup>23</sup>",
+        "6.2 &times; 10<sup>18</sup>",
+        "3.2 &times; 10<sup>&minus;19</sup>",
+        "3.1 &times; 10<sup>18</sup>"
+      ],
+      "correct_index": 1,
+      "explanation": "E per quantum = hc/&lambda; = 3.23 &times; 10<sup>&minus;19</sup> J; N = 2/3.23 &times; 10<sup>&minus;19</sup> = 6.2 &times; 10<sup>18</sup> quanta.",
+      "hint": "Total energy divided by the energy of one quantum.",
+      "distractor_logic": [
+        "Avogadro reflex",
+        "one quantum's energy",
+        "forgot the factor of 2 J"
+      ],
+      "mixed_topics": [
+        "Planck's Quantum Theory",
+        "Electromagnetic Radiation"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-007",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 3,
+      "type": "bonus",
+      "question": "A photon detector receives 3.15 &times; 10<sup>&minus;18</sup> J in total from 600 nm starlight. The number of photons received is:",
+      "options": [
+        "About 6 &times; 10<sup>23</sup>",
+        "About 10",
+        "About 100",
+        "About 1"
+      ],
+      "correct_index": 1,
+      "explanation": "E per photon = hc/&lambda; = 3.31 &times; 10<sup>&minus;19</sup> J; N = 3.15 &times; 10<sup>&minus;18</sup>/3.31 &times; 10<sup>&minus;19</sup> = 9.5, i.e. about 10 photons — astronomy really does count single photons.",
+      "hint": "The answer is a surprisingly small whole number.",
+      "distractor_logic": [
+        "moles are irrelevant here",
+        "power slip",
+        "only one photon's worth"
+      ],
+      "mixed_topics": [
+        "Planck's Quantum Theory",
+        "Electromagnetic Radiation"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-008",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Planck's Quantum Theory",
+      "level": 3,
+      "type": "bonus",
+      "question": "A nitrogen laser at 337.1 nm emits 5.6 &times; 10<sup>24</sup> photons. The total energy is about:",
+      "options": [
+        "3.3 &times; 10<sup>3</sup> J",
+        "5.6 &times; 10<sup>5</sup> J",
+        "5.9 &times; 10<sup>&minus;19</sup> J",
+        "3.3 &times; 10<sup>6</sup> J"
+      ],
+      "correct_index": 3,
+      "explanation": "E per photon = hc/&lambda; = 5.9 &times; 10<sup>&minus;19</sup> J; total = 5.9 &times; 10<sup>&minus;19</sup> &times; 5.6 &times; 10<sup>24</sup> = 3.3 &times; 10<sup>6</sup> J.",
+      "hint": "One photon's energy times the photon count.",
+      "distractor_logic": [
+        "power slip",
+        "photon count digits reused",
+        "one photon only"
+      ],
+      "mixed_topics": [
+        "Planck's Quantum Theory",
+        "Electromagnetic Radiation"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-009",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "bonus",
+      "question": "The sodium doublet lines lie at 589.0 and 589.6 nm. The energy DIFFERENCE between the two excited states is about:",
+      "options": [
+        "3.4 &times; 10<sup>&minus;19</sup> J",
+        "6.6 &times; 10<sup>&minus;19</sup> J",
+        "Zero — they are the same state",
+        "3.4 &times; 10<sup>&minus;22</sup> J"
+      ],
+      "correct_index": 3,
+      "explanation": "nu1 = 5.093 &times; 10<sup>14</sup> Hz, nu2 = 5.088 &times; 10<sup>14</sup> Hz; &Delta;&nu; = 5.2 &times; 10<sup>11</sup> Hz, so &Delta;E = h &Delta;&nu; = 3.45 &times; 10<sup>&minus;22</sup> J — tiny, which is why the lines sit so close.",
+      "hint": "Work with the difference in frequencies, not either frequency alone.",
+      "distractor_logic": [
+        "one full photon's energy",
+        "random combination",
+        "the doublet exists because they differ"
+      ],
+      "mixed_topics": [
+        "Atomic Spectra",
+        "Planck's Quantum Theory"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-010",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 3,
+      "type": "bonus",
+      "question": "The work function of caesium is 1.9 eV. Its threshold wavelength is about (1 eV = 1.602 &times; 10<sup>&minus;19</sup> J):",
+      "options": [
+        "1900 nm",
+        "305 nm",
+        "190 nm",
+        "653 nm"
+      ],
+      "correct_index": 3,
+      "explanation": "W<sub>0</sub> = 3.04 &times; 10<sup>&minus;19</sup> J; &lambda;0 = hc/W<sub>0</sub> = 1.986 &times; 10<sup>&minus;25</sup>/3.04 &times; 10<sup>&minus;19</sup> = 6.53 &times; 10<sup>&minus;7</sup> m = 653 nm — red light can just barely eject electrons from Cs.",
+      "hint": "&lambda;0 = hc / work function (in joules).",
+      "distractor_logic": [
+        "power slip",
+        "arithmetic slip",
+        "eV digits reused"
+      ],
+      "mixed_topics": [
+        "Photoelectric Effect",
+        "Electromagnetic Radiation"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-011",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Photoelectric Effect",
+      "level": 3,
+      "type": "bonus",
+      "question": "Given work functions Li 2.42, Na 2.3, K 2.25, Cu 4.8, Ag 4.3 eV — which metal needs light of the HIGHEST frequency to show the photoelectric effect?",
+      "options": [
+        "Cu",
+        "Ag",
+        "Na",
+        "K"
+      ],
+      "correct_index": 0,
+      "explanation": "Threshold frequency &&nu;;<sub>0</sub> = W<sub>0</sub>/h, so the largest work function (Cu, 4.8 eV) demands the highest frequency; K (2.25 eV) is the easiest.",
+      "hint": "Bigger energy barrier means higher frequency needed.",
+      "distractor_logic": [
+        "second hardest",
+        "second easiest",
+        "easiest, not hardest"
+      ],
+      "mixed_topics": [
+        "Photoelectric Effect",
+        "Planck's Quantum Theory"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-012",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Number & Mass Number",
+      "level": 3,
+      "type": "bonus",
+      "question": "Which of these is NOT isoelectronic with argon (18 e)?",
+      "options": [
+        "Na<sup>+</sup>",
+        "K<sup>+</sup>",
+        "S<sup>2&minus;</sup>",
+        "Ca<sup>2+</sup>"
+      ],
+      "correct_index": 0,
+      "explanation": "K<sup>+</sup> (19-1), Ca<sup>2+</sup> (20-2) and S<sup>2&minus;</sup> (16+2) all have 18 electrons. Na<sup>+</sup> has 10 — isoelectronic with neon instead.",
+      "hint": "Do the electron count for each ion.",
+      "distractor_logic": [
+        "18 e",
+        "18 e",
+        "18 e"
+      ],
+      "mixed_topics": [
+        "Atomic Number & Mass Number",
+        "Electronic Configuration"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-013",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "The electronic configuration of Fe<sup>3+</sup> (Fe: Z = 26) is:",
+      "options": [
+        "[Ar] 3d<sup>4</sup> 4s<sup>1</sup>",
+        "[Ar] 3d<sup>3</sup> 4s<sup>2</sup>",
+        "[Ar] 3d<sup>5</sup>",
+        "[Ar] 3d<sup>6</sup> 4s<sup>2</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "Fe = [Ar]3d<sup>6</sup> 4s<sup>2</sup>. Cations lose the OUTERMOST (4s) electrons first, then one 3d: Fe<sup>3+</sup> = [Ar]3d<sup>5</sup> — extra stable because half-filled.",
+      "hint": "4s electrons leave before 3d when forming cations.",
+      "distractor_logic": [
+        "invalid removal pattern",
+        "removed 3d electrons first",
+        "neutral Fe"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Atomic Number & Mass Number"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-014",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "The number of unpaired electrons in iron (Z = 26, [Ar]3d<sup>6</sup> 4s<sup>2</sup>) is:",
+      "options": [
+        "4",
+        "0",
+        "2",
+        "6"
+      ],
+      "correct_index": 0,
+      "explanation": "In 3d<sup>6</sup>, five electrons singly occupy the five d orbitals (Hund), and the sixth pairs up in one of them — leaving 4 unpaired.",
+      "hint": "Fill five d boxes by Hund's rule, then add the sixth electron.",
+      "distractor_logic": [
+        "all paired is wrong",
+        "counted paired sets",
+        "forgot the pairing of the 6th"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Quantum Numbers"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-015",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "The number of unpaired electrons in chromium ([Ar]3d<sup>5</sup> 4s<sup>1</sup>) is:",
+      "options": [
+        "1",
+        "6",
+        "4",
+        "5"
+      ],
+      "correct_index": 1,
+      "explanation": "All five 3d electrons are unpaired (half-filled) AND the lone 4s electron is unpaired: total 6 — the maximum for any element up to Z = 30.",
+      "hint": "Don't forget the 4s electron.",
+      "distractor_logic": [
+        "counted only 4s",
+        "forgot 4s and one d",
+        "forgot 4s"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Quantum Numbers"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-016",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "Half-filled and fully filled subshells are extra stable because of symmetrical electron distribution and maximum:",
+      "options": [
+        "Kinetic energy",
+        "Ionisation energy",
+        "Exchange energy",
+        "Shielding energy"
+      ],
+      "correct_index": 2,
+      "explanation": "Electrons of the same spin in degenerate orbitals can exchange positions, releasing exchange energy — maximised when the subshell is exactly half or completely filled.",
+      "hint": "Same-spin electrons swapping positions releases this energy.",
+      "distractor_logic": [
+        "unrelated",
+        "a consequence, not the cause",
+        "shielding is actually smaller here"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Orbitals & Shapes"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-017",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "The atomic number of the element whose outermost electrons are 3p<sup>5</sup> is:",
+      "options": [
+        "35",
+        "17",
+        "13",
+        "15"
+      ],
+      "correct_index": 1,
+      "explanation": "Count up to 3p<sup>5</sup>: 2 + 2 + 6 + 2 + 5 = 17 — chlorine. (3s fills before 3p.)",
+      "hint": "Add all electrons through [Ne]3s<sup>2</sup> 3p<sup>5</sup>.",
+      "distractor_logic": [
+        "Br has 4p<sup>5</sup> outermost",
+        "3p<sup>1</sup> gives Al",
+        "3p<sup>3</sup> gives P"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Atomic Number & Mass Number"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-018",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "The atom with configuration [Ne] 3s<sup>2</sup> 3p<sup>3</sup> is:",
+      "options": [
+        "Phosphorus",
+        "Arsenic",
+        "Aluminium",
+        "Nitrogen"
+      ],
+      "correct_index": 0,
+      "explanation": "10 (Ne core) + 2 + 3 = 15 electrons = phosphorus. Nitrogen is [He]2s<sup>2</sup> 2p<sup>3</sup> — same group, one period up.",
+      "hint": "Count total electrons including the core.",
+      "distractor_logic": [
+        "4p<sup>3</sup> element",
+        "3p<sup>1</sup> element",
+        "same valence pattern, wrong shell"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Atomic Number & Mass Number"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-019",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 3,
+      "type": "bonus",
+      "question": "Which set of quantum numbers is NOT possible?",
+      "options": [
+        "n = 2, l = 1, m<sub>l</sub> = 0, m<sub>s</sub> = -1/2",
+        "n = 1, l = 0, m<sub>l</sub> = 0, m<sub>s</sub> = -1/2",
+        "n = 3, l = 2, m<sub>l</sub> = -2, m<sub>s</sub> = +1/2",
+        "n = 1, l = 1, m<sub>l</sub> = 0, m<sub>s</sub> = +1/2"
+      ],
+      "correct_index": 3,
+      "explanation": "For n = 1, l can only be 0; l = 1 requires n &ge; 2. All other sets satisfy l &le; n-1 and |m<sub>l</sub>| &le; l.",
+      "hint": "Check l against n - 1 in each set.",
+      "distractor_logic": [
+        "valid 2p",
+        "valid 1s",
+        "valid 3d"
+      ],
+      "mixed_topics": [
+        "Quantum Numbers",
+        "Orbitals & Shapes"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-020",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 3,
+      "type": "bonus",
+      "question": "Which set of quantum numbers is NOT possible?",
+      "options": [
+        "n = 3, l = 2, m<sub>l</sub> = -2",
+        "n = 3, l = 1, m<sub>l</sub> = 0",
+        "n = 3, l = 0, m<sub>l</sub> = 0",
+        "n = 3, l = 3, m<sub>l</sub> = -3"
+      ],
+      "correct_index": 3,
+      "explanation": "l runs only up to n - 1 = 2 for n = 3, so l = 3 (an 'f' subshell in the third shell) cannot exist.",
+      "hint": "l must stay below n.",
+      "distractor_logic": [
+        "valid 3d",
+        "valid 3p",
+        "valid 3s"
+      ],
+      "mixed_topics": [
+        "Quantum Numbers",
+        "Orbitals & Shapes"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-021",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 3,
+      "type": "bonus",
+      "question": "An electron is in a 3d orbital. Its n and l values are:",
+      "options": [
+        "n = 3, l = 3",
+        "n = 3, l = 2",
+        "n = 3, l = 1",
+        "n = 2, l = 3"
+      ],
+      "correct_index": 1,
+      "explanation": "The digit is n = 3; the letter d means l = 2 (m<sub>l</sub> can be -2 to +2).",
+      "hint": "s, p, d, f correspond to l = 0, 1, 2, 3.",
+      "distractor_logic": [
+        "d is not l = 3",
+        "that's 3p",
+        "digits swapped"
+      ],
+      "mixed_topics": [
+        "Quantum Numbers",
+        "Orbitals & Shapes"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-022",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Quantum Numbers",
+      "level": 3,
+      "type": "bonus",
+      "question": "The maximum number of electrons in the 3s subshell is ______ and in the 3d subshell is ______.",
+      "options": [
+        "6 and 10",
+        "2 and 6",
+        "2 and 10",
+        "1 and 5"
+      ],
+      "correct_index": 2,
+      "explanation": "s has 1 orbital (2 electrons); d has 5 orbitals (10 electrons). Each orbital holds at most 2 electrons with opposite spins (Pauli).",
+      "hint": "Orbitals in the subshell times two.",
+      "distractor_logic": [
+        "p and d values",
+        "6 is p",
+        "forgot Pauli's factor of 2"
+      ],
+      "mixed_topics": [
+        "Quantum Numbers",
+        "Electronic Configuration"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-023",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "2p and 3s have (n+l) = 3 and 3, yet 2p fills first because:",
+      "options": [
+        "It has more orbitals",
+        "It is closer to the nucleus in every atom",
+        "p orbitals are always lower than s",
+        "When (n+l) is equal, the orbital with lower n has lower energy"
+      ],
+      "correct_index": 3,
+      "explanation": "The tie-break of the (n+l) rule: equal (n+l) means the smaller n wins — 2p (n = 2) is lower in energy than 3s (n = 3).",
+      "hint": "The rule has a second clause for ties.",
+      "distractor_logic": [
+        "orbital count is irrelevant",
+        "not the stated rule",
+        "false in general (3s < 3p)"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Quantum Numbers"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-024",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Orbitals & Shapes",
+      "level": 3,
+      "type": "bonus",
+      "question": "Between 3p and 3d electrons in the same atom, the 3p electron experiences a LARGER effective nuclear charge because it:",
+      "options": [
+        "Has higher energy",
+        "Penetrates closer to the nucleus and is less shielded",
+        "Carries more charge",
+        "Has more nodes"
+      ],
+      "correct_index": 1,
+      "explanation": "Within a shell, penetration decreases s > p > d > f; the 3p electron spends more time near the nucleus, feels a higher Zeff, and is more tightly bound than 3d.",
+      "hint": "Think about which orbital spends more time near the nucleus.",
+      "distractor_logic": [
+        "it actually has LOWER energy",
+        "all electrons carry -e",
+        "nodes don't decide Zeff"
+      ],
+      "mixed_topics": [
+        "Orbitals & Shapes",
+        "Electronic Configuration"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-025",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Orbitals & Shapes",
+      "level": 3,
+      "type": "bonus",
+      "question": "Among 4d and 4f in the same atom, the larger effective nuclear charge is experienced by the electron in:",
+      "options": [
+        "Neither feels any Zeff",
+        "4f",
+        "Both equal",
+        "4d"
+      ],
+      "correct_index": 3,
+      "explanation": "Penetration order s > p > d > f: 4d penetrates more than 4f, is less shielded, and feels the larger Zeff.",
+      "hint": "The earlier letter in s, p, d, f penetrates more.",
+      "distractor_logic": [
+        "Zeff is always positive",
+        "least penetrating of the pair",
+        "shielding differs"
+      ],
+      "mixed_topics": [
+        "Orbitals & Shapes",
+        "Electronic Configuration"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-026",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "The unpaired 3p electrons of Al (Z = 13) and Si (Z = 14) — which feel more effective nuclear charge?",
+      "options": [
+        "Neither has unpaired 3p electrons",
+        "Silicon's",
+        "Both equal",
+        "Aluminium's"
+      ],
+      "correct_index": 1,
+      "explanation": "Same subshell, but Si has one more proton; nuclear charge rises faster than the extra shielding from one more 3p electron, so Si's 3p electrons feel the higher Zeff.",
+      "hint": "Compare the nuclear charges.",
+      "distractor_logic": [
+        "Al has 1, Si has 2 unpaired",
+        "shielding doesn't fully cancel the extra proton",
+        "lower Z"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Orbitals & Shapes"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-027",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electronic Configuration",
+      "level": 3,
+      "type": "bonus",
+      "question": "In bromine (Z = 35), which electrons experience the LOWEST effective nuclear charge: those in 2p, 3p or 4p?",
+      "options": [
+        "2p",
+        "4p",
+        "3p",
+        "All equal"
+      ],
+      "correct_index": 1,
+      "explanation": "The 4p electrons are the outermost — screened by all the inner shells — so they feel the smallest net pull. Zeff decreases outward: 2p > 3p > 4p.",
+      "hint": "The most-shielded, outermost electrons feel the least.",
+      "distractor_logic": [
+        "innermost p, highest Zeff",
+        "intermediate",
+        "shielding differs by shell"
+      ],
+      "mixed_topics": [
+        "Electronic Configuration",
+        "Orbitals & Shapes"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-028",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "bonus",
+      "question": "The number of spectral lines produced when a hydrogen electron drops from n = 4 to the ground state is:",
+      "options": [
+        "6",
+        "8",
+        "4",
+        "3"
+      ],
+      "correct_index": 0,
+      "explanation": "Lines = n(n-1)/2 = 4 &times; 3/2 = 6: transitions 4-3, 4-2, 4-1, 3-2, 3-1, 2-1.",
+      "hint": "Count every possible downward hop, not just direct ones.",
+      "distractor_logic": [
+        "doubled",
+        "just n",
+        "only direct drops from 4"
+      ],
+      "mixed_topics": [
+        "Atomic Spectra",
+        "Bohr Model"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-029",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "bonus",
+      "question": "The series limit (shortest wavelength) of the Lyman series has wavenumber:",
+      "options": [
+        "82,258 cm<sup>&minus;1</sup>",
+        "15,233 cm<sup>&minus;1</sup>",
+        "109,677 cm<sup>&minus;1</sup>",
+        "27,419 cm<sup>&minus;1</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "Series limit: n<sub>2</sub> = &infin;, so wavenumber = 109677(1/1 - 0) = 109677 cm<sup>&minus;1</sup> (about 91.2 nm) — the full Rydberg constant.",
+      "hint": "Set n<sub>2</sub> to &infin; with n<sub>1</sub> = 1.",
+      "distractor_logic": [
+        "Lyman &alpha; (3/4 of R)",
+        "Balmer &alpha;",
+        "Balmer limit (109677/4)"
+      ],
+      "mixed_topics": [
+        "Atomic Spectra",
+        "Bohr Model"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-030",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Atomic Spectra",
+      "level": 3,
+      "type": "bonus",
+      "question": "An absorption spectrum is described as the ______ of the emission spectrum.",
+      "options": [
+        "Continuous version",
+        "Mirror image",
+        "Photographic negative",
+        "Amplified copy"
+      ],
+      "correct_index": 2,
+      "explanation": "The wavelengths absorbed (dark lines on a bright continuum) are exactly those emitted (bright lines on dark) — NCERT calls it the photographic negative.",
+      "hint": "Dark lines where the other has bright ones.",
+      "distractor_logic": [
+        "both are line spectra",
+        "not spatial reflection",
+        "intensity differs"
+      ],
+      "mixed_topics": [
+        "Atomic Spectra",
+        "Electromagnetic Radiation"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-031",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "bonus",
+      "question": "The energy required to shift the hydrogen electron from n = 1 to n = 5 is about:",
+      "options": [
+        "2.09 &times; 10<sup>&minus;18</sup> J",
+        "4.36 &times; 10<sup>&minus;19</sup> J",
+        "2.18 &times; 10<sup>&minus;18</sup> J",
+        "8.72 &times; 10<sup>&minus;20</sup> J"
+      ],
+      "correct_index": 0,
+      "explanation": "&Delta;E = 2.18 &times; 10<sup>&minus;18</sup> (1/1 - 1/25) = 2.18 &times; 10<sup>&minus;18</sup> &times; 0.96 = 2.09 &times; 10<sup>&minus;18</sup> J — nearly the full ionisation energy.",
+      "hint": "It's slightly LESS than the ionisation energy.",
+      "distractor_logic": [
+        "random fraction",
+        "full ionisation",
+        "energy of n = 5 level alone"
+      ],
+      "mixed_topics": [
+        "Bohr Model",
+        "Atomic Spectra"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-032",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "bonus",
+      "question": "When that electron (n = 5) returns to the ground state, the emitted light has wavelength about:",
+      "options": [
+        "434 nm",
+        "95 nm",
+        "520 nm",
+        "950 nm"
+      ],
+      "correct_index": 1,
+      "explanation": "&lambda; = hc/&Delta;E = 1.986 &times; 10<sup>&minus;25</sup>/2.09 &times; 10<sup>&minus;18</sup> = 9.5 &times; 10<sup>&minus;8</sup> m = 95 nm — ultraviolet, a Lyman series line.",
+      "hint": "Any drop to n = 1 lands in the ultraviolet.",
+      "distractor_logic": [
+        "that's 5 to 2 (Balmer)",
+        "no such H line",
+        "power slip"
+      ],
+      "mixed_topics": [
+        "Bohr Model",
+        "Atomic Spectra"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-033",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Bohr Model",
+      "level": 3,
+      "type": "bonus",
+      "question": "The longest wavelength of light that can just remove the electron from the n = 2 level of hydrogen is about:",
+      "options": [
+        "91 nm",
+        "121 nm",
+        "365 nm",
+        "656 nm"
+      ],
+      "correct_index": 2,
+      "explanation": "E needed = 2.18 &times; 10<sup>&minus;18</sup>/4 = 5.45 &times; 10<sup>&minus;19</sup> J; &lambda; = hc/E = 1.986 &times; 10<sup>&minus;25</sup>/5.45 &times; 10<sup>&minus;19</sup> = 3.65 &times; 10<sup>&minus;7</sup> m = 365 nm.",
+      "hint": "Ionisation from n = 2 costs a quarter of the ground-state IE.",
+      "distractor_logic": [
+        "ionisation from n = 1",
+        "Lyman &alpha;",
+        "H-&alpha; emission"
+      ],
+      "mixed_topics": [
+        "Bohr Model",
+        "Photoelectric Effect"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-034",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 3,
+      "type": "bonus",
+      "question": "In a neutron diffraction microscope the wavelength used is 800 pm. The neutron's velocity (m = 1.675 &times; 10<sup>&minus;27</sup> kg) is about:",
+      "options": [
+        "4.94 &times; 10<sup>4</sup> m/s",
+        "8.0 &times; 10<sup>2</sup> m/s",
+        "494 m/s",
+        "3.0 &times; 10<sup>8</sup> m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "v = h/(m &lambda;) = 6.626 &times; 10<sup>&minus;34</sup>/(1.675 &times; 10<sup>&minus;27</sup> &times; 8 &times; 10<sup>&minus;10</sup>) = 494 m/s.",
+      "hint": "Rearrange de Broglie for v.",
+      "distractor_logic": [
+        "power slip",
+        "wavelength digits reused",
+        "photons only"
+      ],
+      "mixed_topics": [
+        "Dual Nature & de Broglie",
+        "Subatomic Particles"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-035",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 3,
+      "type": "bonus",
+      "question": "An electron and a proton have the SAME de Broglie wavelength. Which is moving faster?",
+      "options": [
+        "The electron",
+        "Both equal",
+        "The proton",
+        "Cannot be compared"
+      ],
+      "correct_index": 0,
+      "explanation": "&lambda; = h/mv: equal &lambda; means equal momentum mv. The electron, being ~1836 times lighter, must move ~1836 times faster.",
+      "hint": "Equal wavelength means equal momentum.",
+      "distractor_logic": [
+        "masses differ hugely",
+        "heavier means slower here",
+        "fully determined"
+      ],
+      "mixed_topics": [
+        "Dual Nature & de Broglie",
+        "Subatomic Particles"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-036",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Dual Nature & de Broglie",
+      "level": 3,
+      "type": "bonus",
+      "question": "In an electron microscope the electrons move at 1.6 &times; 10<sup>6</sup> m/s. Their de Broglie wavelength is about:",
+      "options": [
+        "45.5 pm",
+        "4.55 pm",
+        "455 pm",
+        "4550 pm"
+      ],
+      "correct_index": 2,
+      "explanation": "&lambda; = h/mv = 6.626 &times; 10<sup>&minus;34</sup>/(9.1 &times; 10<sup>&minus;31</sup> &times; 1.6 &times; 10<sup>6</sup>) = 4.55 &times; 10<sup>&minus;10</sup> m = 455 pm — short enough to resolve molecules, the basis of electron microscopy.",
+      "hint": "Same calculation as any de Broglie problem.",
+      "distractor_logic": [
+        "power slip",
+        "power slip",
+        "power slip"
+      ],
+      "mixed_topics": [
+        "Dual Nature & de Broglie",
+        "Electromagnetic Radiation"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-037",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 3,
+      "type": "bonus",
+      "question": "The total number of electrons present in one mole of methane (CH<sub>4</sub>) is:",
+      "options": [
+        "6.022 &times; 10<sup>22</sup>",
+        "6.022 &times; 10<sup>23</sup>",
+        "6.022 &times; 10<sup>24</sup>",
+        "1.0 &times; 10<sup>24</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "CH<sub>4</sub> has 6 + 4 = 10 electrons per molecule; per mole: 10 &times; 6.022 &times; 10<sup>23</sup> = 6.022 &times; 10<sup>24</sup>.",
+      "hint": "Electrons per molecule times Avogadro's number.",
+      "distractor_logic": [
+        "divided by 10",
+        "forgot the 10 per molecule",
+        "rounded incorrectly"
+      ],
+      "mixed_topics": [
+        "Subatomic Particles",
+        "Atomic Number & Mass Number"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-038",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Subatomic Particles",
+      "level": 3,
+      "type": "bonus",
+      "question": "The number of electrons that together weigh one gram is about:",
+      "options": [
+        "6.022 &times; 10<sup>23</sup>",
+        "9.1 &times; 10<sup>27</sup>",
+        "1.1 &times; 10<sup>27</sup>",
+        "1.1 &times; 10<sup>24</sup>"
+      ],
+      "correct_index": 2,
+      "explanation": "N = 10<sup>&minus;3</sup> kg / 9.109 &times; 10<sup>&minus;31</sup> kg = 1.098 &times; 10<sup>27</sup> electrons — far more than a mole, because electrons are so light.",
+      "hint": "Divide 1 g (in kg) by one electron's mass.",
+      "distractor_logic": [
+        "Avogadro reflex",
+        "mass digits reused",
+        "power slip"
+      ],
+      "mixed_topics": [
+        "Subatomic Particles",
+        "Atomic Number & Mass Number"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-039",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Electromagnetic Radiation",
+      "level": 3,
+      "type": "bonus",
+      "question": "Arrange in INCREASING order of frequency: FM radio, microwave (oven), amber traffic light, X-rays.",
+      "options": [
+        "X-rays < amber < microwave < FM",
+        "Microwave < FM < X-rays < amber",
+        "Amber < FM < microwave < X-rays",
+        "FM < microwave < amber < X-rays"
+      ],
+      "correct_index": 3,
+      "explanation": "Radio (~10<sup>8</sup> Hz) < microwave (~10<sup>10</sup>) < visible amber (~10<sup>14</sup>) < X-rays (~10<sup>18</sup>). Cosmic rays would sit even higher.",
+      "hint": "Longer wavelength means lower frequency.",
+      "distractor_logic": [
+        "fully reversed",
+        "scrambled",
+        "scrambled"
+      ],
+      "mixed_topics": [
+        "Electromagnetic Radiation",
+        "Atomic Spectra"
+      ]
+    },
+    {
+      "id": "CHE11-CH02-B-040",
+      "chapter": 2,
+      "chapter_name": "Structure of Atom",
+      "topic": "Heisenberg Uncertainty",
+      "level": 3,
+      "type": "bonus",
+      "question": "For a milligram-scale object, &Delta;v x &Delta;x is about 10<sup>&minus;28</sup> m<sup>2</sup>/s, but for an electron it is about 10<sup>&minus;4</sup> m<sup>2</sup>/s. The correct conclusion is:",
+      "options": [
+        "Uncertainty is negligible for macroscopic objects but decisive for electrons",
+        "Electrons obey classical mechanics",
+        "Uncertainty matters for both equally",
+        "The principle fails for small masses"
+      ],
+      "correct_index": 0,
+      "explanation": "The h/(4 &pi; m) product is inversely proportional to mass: insignificant for milligram objects, enormous for electrons — which is exactly why electron trajectories (Bohr orbits) are replaced by probability statements in the quantum mechanical model.",
+      "hint": "Compare the two magnitudes against real measurement scales.",
+      "distractor_logic": [
+        "the opposite",
+        "differ by 10<sup>24</sup>",
+        "it succeeds; classical fails"
+      ],
+      "mixed_topics": [
+        "Heisenberg Uncertainty",
+        "Quantum Mechanical Model"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "name": "Subatomic Particles",
+      "summary": "Atoms are built from three particles. <b>Electrons</b> (found via cathode rays; charge &minus;1.602 &times; 10<sup>&minus;19</sup> C by Millikan's oil drop, mass 9.109 &times; 10<sup>&minus;31</sup> kg) are negative and very light. <b>Protons</b> (the H<sup>+</sup> ion, from canal rays) are positive with mass &asymp; 1 u. <b>Neutrons</b> (Chadwick, 1932 — &alpha;-particles on beryllium) are neutral, slightly heavier than protons. Thomson measured e/m of the electron with crossed electric and magnetic fields; combining it with Millikan's e gave the electron's mass.",
+      "key_formulas": [
+        "e/m<sub>e</sub> = 1.758820 &times; 10<sup>11</sup> C kg<sup>&minus;1</sup>",
+        "e = &minus;1.602 &times; 10<sup>&minus;19</sup> C",
+        "q = ne (charge is quantised)"
+      ],
+      "worked_example": "A drop carries &minus;1.282 &times; 10<sup>&minus;18</sup> C. Electrons on it = 1.282 &times; 10<sup>&minus;18</sup> / 1.602 &times; 10<sup>&minus;19</sup> = 8 — always a whole number.",
+      "common_mistakes": [
+        "Mixing up which scientist did which experiment (Thomson: e/m, Millikan: e, Chadwick: neutron)",
+        "Confusing the electron's mass and charge values",
+        "Forgetting charge comes only in whole multiples of e"
+      ],
+      "question_count": 16
+    },
+    {
+      "name": "Atomic Models",
+      "summary": "<b>Thomson (1898)</b>: a uniform positive sphere with electrons embedded — the plum-pudding model; mass spread evenly. <b>Rutherford (1909)</b> shot &alpha;-particles at thin gold foil: most passed straight through, a few deflected, ~1 in 20,000 bounced back. Conclusion: nearly all mass and all positive charge sit in a tiny <b>nucleus</b> (~10<sup>&minus;15</sup> m) inside a mostly empty atom (~10<sup>&minus;10</sup> m), with electrons orbiting like planets. Fatal flaw: an orbiting (accelerating) charge should radiate energy and spiral into the nucleus in ~10<sup>&minus;8</sup> s — Rutherford's model cannot explain atomic stability.",
+      "key_formulas": [
+        "r<sub>atom</sub> &asymp; 10<sup>&minus;10</sup> m; r<sub>nucleus</sub> &asymp; 10<sup>&minus;15</sup> m"
+      ],
+      "worked_example": "If the nucleus were a cricket ball, the atom would be about 5 km wide — that's how empty the atom is.",
+      "common_mistakes": [
+        "Saying Rutherford's model explains stability (it's exactly what it fails at)",
+        "Thinking many &alpha;-particles bounced back — it was extremely rare",
+        "Confusing which model assumes uniformly spread mass (Thomson)"
+      ],
+      "question_count": 7
+    },
+    {
+      "name": "Atomic Number & Mass Number",
+      "summary": "<b>Atomic number Z</b> = protons in the nucleus = electrons in a neutral atom; it defines the element. <b>Mass number A</b> = protons + neutrons (together: nucleons). Notation: <span class=\"nuc\"><span>A</span><span>Z</span></span>X. For ions, count carefully: an anion has MORE electrons than protons; a cation has fewer. Neutrons = A &minus; Z always, ion or not.",
+      "key_formulas": [
+        "Z = protons = electrons (neutral atom)",
+        "A = Z + n",
+        "n = A &minus; Z"
+      ],
+      "worked_example": "Species with 18 e, 16 p, 16 n: Z = 16 &rarr; sulphur; 2 extra electrons &rarr; S<sup>2&minus;</sup>; A = 32.",
+      "common_mistakes": [
+        "Using electron count to identify the element of an ion (protons decide the element)",
+        "Forgetting anion = extra electrons, cation = missing electrons",
+        "Swapping A and Z in the symbol"
+      ],
+      "question_count": 10
+    },
+    {
+      "name": "Isotopes & Isobars",
+      "summary": "<b>Isotopes</b>: same Z, different A — same element with different neutron counts (protium <sup>1</sup>H, deuterium <sup>2</sup>D, tritium <sup>3</sup>T; or <sup>12</sup>C, <sup>13</sup>C, <sup>14</sup>C). All isotopes of an element show the SAME chemical behaviour because chemistry is controlled by electrons, whose number is fixed by protons. <b>Isobars</b>: same A, different Z — different elements, e.g. <sup>14</sup>C and <sup>14</sup>N.",
+      "key_formulas": [
+        "Isotopes: same Z, different A",
+        "Isobars: same A, different Z"
+      ],
+      "worked_example": "Tritium = 1 proton + 2 neutrons, so A = 3. Deuterium has 1 neutron, protium none.",
+      "common_mistakes": [
+        "Swapping the definitions of isotopes and isobars",
+        "Expecting isotopes to differ chemically (they don't — neutrons barely affect chemistry)"
+      ],
+      "question_count": 4
+    },
+    {
+      "name": "Electromagnetic Radiation",
+      "summary": "Light is oscillating electric and magnetic fields, perpendicular to each other and to the direction of travel; no medium needed. In vacuum ALL EM waves travel at c = 3.0 &times; 10<sup>8</sup> m/s. A wave is described by <b>frequency &nu;</b> (waves per second, in Hz), <b>wavelength &lambda;</b>, and <b>wavenumber</b> (wavelengths per unit length, = 1/&lambda;, usually cm<sup>&minus;1</sup>). The spectrum runs radio &rarr; microwave &rarr; IR &rarr; visible (400&ndash;750 nm) &rarr; UV &rarr; X-rays &rarr; &gamma;-rays, in increasing frequency.",
+      "key_formulas": [
+        "c = &nu;&lambda;",
+        "wavenumber = 1/&lambda;",
+        "visible: ~4.0&ndash;7.5 &times; 10<sup>14</sup> Hz"
+      ],
+      "worked_example": "580 nm sodium light: &nu; = c/&lambda; = 3.0 &times; 10<sup>8</sup> / 580 &times; 10<sup>&minus;9</sup> = 5.17 &times; 10<sup>14</sup> Hz.",
+      "common_mistakes": [
+        "Not converting nm/&Aring;/pm to metres before using c = &nu;&lambda;",
+        "Inverting the relation (dividing when you should multiply)",
+        "Ordering the spectrum by wavelength when asked for frequency"
+      ],
+      "question_count": 10
+    },
+    {
+      "name": "Planck's Quantum Theory",
+      "summary": "Hot-body radiation couldn't be explained by wave theory. <b>Planck (1900)</b>: energy is emitted or absorbed only in discrete packets — <b>quanta</b> — with E = h&nu;, h = 6.626 &times; 10<sup>&minus;34</sup> J s. Energy is like a staircase, not a ramp: only 0, h&nu;, 2h&nu;... are allowed. For light the quantum is the <b>photon</b>. Total energy of N photons = Nh&nu;; a mole of photons carries N<sub>A</sub>h&nu;.",
+      "key_formulas": [
+        "E = h&nu; = hc/&lambda;",
+        "E<sub>mole</sub> = N<sub>A</sub>h&nu;",
+        "N photons = E<sub>total</sub> / E<sub>photon</sub>"
+      ],
+      "worked_example": "Photons/second from a 100 W, 400 nm bulb: E<sub>photon</sub> = hc/&lambda; = 4.97 &times; 10<sup>&minus;19</sup> J; N = 100 / 4.97 &times; 10<sup>&minus;19</sup> = 2.01 &times; 10<sup>20</sup> per second.",
+      "common_mistakes": [
+        "Forgetting Avogadro's number when moving between one photon and a mole",
+        "Using &lambda; where &nu; belongs (E = h&nu;, not h&lambda;)",
+        "Power-of-ten slips with nm &rarr; m conversion"
+      ],
+      "question_count": 10
+    },
+    {
+      "name": "Photoelectric Effect",
+      "summary": "Light of high enough frequency ejects electrons from a metal instantly. Three facts wave theory can't explain: (1) no time lag; (2) below a <b>threshold frequency &nu;<sub>0</sub></b> nothing is ejected however bright the light; (3) kinetic energy of ejected electrons grows with FREQUENCY, while their NUMBER grows with intensity. <b>Einstein (1905)</b>: one photon gives all its energy h&nu; to one electron; h&nu;<sub>0</sub> (the <b>work function</b> W<sub>0</sub>) pays the escape cost and the rest becomes kinetic energy.",
+      "key_formulas": [
+        "KE = h&nu; &minus; h&nu;<sub>0</sub>",
+        "W<sub>0</sub> = h&nu;<sub>0</sub>",
+        "&lambda;<sub>0</sub> = hc/W<sub>0</sub>"
+      ],
+      "worked_example": "&nu;<sub>0</sub> = 7.0 &times; 10<sup>14</sup> Hz, light of 1.0 &times; 10<sup>15</sup> Hz: KE = 6.626 &times; 10<sup>&minus;34</sup> &times; 3.0 &times; 10<sup>14</sup> = 1.99 &times; 10<sup>&minus;19</sup> J.",
+      "common_mistakes": [
+        "Using the full &nu; instead of (&nu; &minus; &nu;<sub>0</sub>) for KE",
+        "Thinking brighter light raises each electron's KE (it only raises the count)",
+        "Believing intense below-threshold light eventually works (it never does)"
+      ],
+      "question_count": 12
+    },
+    {
+      "name": "Atomic Spectra",
+      "summary": "White light gives a <b>continuous spectrum</b>; excited gas atoms emit only specific wavelengths — a <b>line (emission) spectrum</b>, unique to each element like a fingerprint. An <b>absorption spectrum</b> is its photographic negative: dark lines on a continuum at the same wavelengths. Hydrogen's lines form series: Lyman (to n=1, UV), <b>Balmer (to n=2, visible)</b>, Paschen/Brackett/Pfund (to n=3,4,5, IR), all fitting Rydberg's formula. Dropping from level n gives n(n&minus;1)/2 possible lines.",
+      "key_formulas": [
+        "wavenumber = 109677 (1/n<sub>1</sub><sup>2</sup> &minus; 1/n<sub>2</sub><sup>2</sup>) cm<sup>&minus;1</sup>",
+        "lines from level n = n(n&minus;1)/2"
+      ],
+      "worked_example": "Longest Balmer wavelength = smallest jump (3&rarr;2): 109677 &times; (1/4 &minus; 1/9) = 15,233 cm<sup>&minus;1</sup> — the red H-&alpha; line at 656 nm.",
+      "common_mistakes": [
+        "Longest wavelength means SMALLEST energy jump, not largest",
+        "Assigning series to wrong regions (only Balmer is visible)",
+        "Counting only direct drops instead of all n(n&minus;1)/2 transitions"
+      ],
+      "question_count": 14
+    },
+    {
+      "name": "Bohr Model",
+      "summary": "<b>Bohr (1913)</b> for hydrogen: electrons move only in fixed orbits where angular momentum m<sub>e</sub>vr = nh/2&pi;. Each orbit has fixed energy E<sub>n</sub> = &minus;2.18 &times; 10<sup>&minus;18</sup>/n<sup>2</sup> J and radius r<sub>n</sub> = 52.9 n<sup>2</sup> pm. Energy is negative because the bound electron is lower than a free one (E = 0 at n = &infin;). Jumps between orbits absorb/emit photons: &Delta;E = h&nu;. Works for any ONE-electron species (He<sup>+</sup>, Li<sup>2+</sup>) with E &prop; Z<sup>2</sup>/n<sup>2</sup>, r &prop; n<sup>2</sup>/Z. Fails for multi-electron atoms, Zeeman/Stark effects — and contradicts wave nature and uncertainty.",
+      "key_formulas": [
+        "E<sub>n</sub> = &minus;2.18 &times; 10<sup>&minus;18</sup> (Z<sup>2</sup>/n<sup>2</sup>) J",
+        "r<sub>n</sub> = 52.9 (n<sup>2</sup>/Z) pm",
+        "&Delta;E = 2.18 &times; 10<sup>&minus;18</sup> (1/n<sub>i</sub><sup>2</sup> &minus; 1/n<sub>f</sub><sup>2</sup>) J",
+        "m<sub>e</sub>vr = nh/2&pi;"
+      ],
+      "worked_example": "n = 4 &rarr; 2: &Delta;E = 2.18 &times; 10<sup>&minus;18</sup>(1/4 &minus; 1/16) = 4.09 &times; 10<sup>&minus;19</sup> J; &lambda; = hc/&Delta;E = 486 nm.",
+      "common_mistakes": [
+        "Forgetting Z<sup>2</sup> for He<sup>+</sup>/Li<sup>2+</sup> (or using Z instead of Z<sup>2</sup>)",
+        "Dropping the negative sign's meaning — more negative = more stable",
+        "Confusing r &prop; n<sup>2</sup> with r &prop; n"
+      ],
+      "question_count": 17
+    },
+    {
+      "name": "Dual Nature & de Broglie",
+      "summary": "Light behaves as wave (interference, diffraction) AND particle (photoelectric effect). <b>de Broglie (1924)</b>: matter does too — every moving particle has wavelength &lambda; = h/mv. For everyday objects the mass is so large that &lambda; (~10<sup>&minus;34</sup> m) is undetectable; for electrons it's comparable to atomic sizes, which is why electron beams diffract and electron microscopes work. In Bohr's orbits, 2&pi;r = n&lambda; — a whole number of electron waves fits each allowed orbit.",
+      "key_formulas": [
+        "&lambda; = h/mv = h/p",
+        "2&pi;r = n&lambda; (Bohr orbits)",
+        "v = &radic;(2KE/m)"
+      ],
+      "worked_example": "Electron at 2.05 &times; 10<sup>7</sup> m/s: &lambda; = 6.626 &times; 10<sup>&minus;34</sup>/(9.1 &times; 10<sup>&minus;31</sup> &times; 2.05 &times; 10<sup>7</sup>) = 3.55 &times; 10<sup>&minus;11</sup> m.",
+      "common_mistakes": [
+        "Equal &lambda; means equal MOMENTUM, so the lighter particle moves faster",
+        "Forgetting to get v from KE first when only energy is given",
+        "Power-of-ten slips with the tiny masses"
+      ],
+      "question_count": 10
+    },
+    {
+      "name": "Heisenberg Uncertainty",
+      "summary": "<b>Heisenberg (1927)</b>: position and momentum (or velocity) of a particle cannot both be known exactly at the same time: &Delta;x &middot; &Delta;p &ge; h/4&pi;. The h/4&pi;m factor makes this meaningless for milligram-and-heavier objects but decisive for electrons — pin an electron's position to 0.1 &Aring; and its velocity is uncertain by ~5.8 &times; 10<sup>6</sup> m/s. Consequence: electrons have no definite paths, so Bohr's fixed orbits are impossible; the quantum model replaces trajectories with probabilities.",
+      "key_formulas": [
+        "&Delta;x &middot; &Delta;p &ge; h/4&pi;",
+        "&Delta;x &middot; &Delta;v &ge; h/4&pi;m"
+      ],
+      "worked_example": "Golf ball, 40 g, &Delta;v = 0.9 m/s: &Delta;x = h/(4&pi; &times; 0.040 &times; 0.9) = 1.46 &times; 10<sup>&minus;33</sup> m — ~10<sup>18</sup> times smaller than a nucleus, hence irrelevant.",
+      "common_mistakes": [
+        "Forgetting mass sits in the denominator (small mass = big uncertainty)",
+        "Leaving mass in grams instead of kg",
+        "Treating the principle as a measurement flaw rather than a fundamental limit"
+      ],
+      "question_count": 4
+    },
+    {
+      "name": "Quantum Numbers",
+      "summary": "Each orbital is labelled by three quantum numbers: <b>n</b> (1, 2, 3... — shell, size, mostly energy), <b>l</b> (0 to n&minus;1 — subshell and shape: s, p, d, f for l = 0, 1, 2, 3), and <b>m<sub>l</sub></b> (&minus;l to +l — orientation; 2l+1 orbitals per subshell). A fourth, spin <b>m<sub>s</sub></b> = +&frac12; or &minus;&frac12;, belongs to the electron. Validity checks: l &lt; n always; |m<sub>l</sub>| &le; l. Shell capacities: n<sup>2</sup> orbitals, 2n<sup>2</sup> electrons.",
+      "key_formulas": [
+        "l = 0 ... (n&minus;1)",
+        "m<sub>l</sub> = &minus;l ... +l (2l+1 values)",
+        "orbitals in shell = n<sup>2</sup>; electrons = 2n<sup>2</sup>"
+      ],
+      "worked_example": "Is n = 3, l = 3 allowed? No — l max = n &minus; 1 = 2, so 3f doesn't exist; 3s, 3p, 3d do.",
+      "common_mistakes": [
+        "Allowing l = n (1p, 3f are impossible)",
+        "Listing m<sub>l</sub> as only positive values",
+        "Confusing n<sup>2</sup> (orbitals) with 2n<sup>2</sup> (electrons)"
+      ],
+      "question_count": 12
+    },
+    {
+      "name": "Orbitals & Shapes",
+      "summary": "An orbital is the wave function &psi; of an electron; |&psi;|<sup>2</sup> is the probability density of finding it. <b>s orbitals</b> are spherical; <b>p orbitals</b> are dumbbells along x, y, z; <b>d orbitals</b> (five) are mostly double dumbbells. <b>Nodes</b> are zero-probability regions: radial nodes = n &minus; l &minus; 1, angular nodes (planes) = l, total = n &minus; 1. Within a shell, penetration s &gt; p &gt; d &gt; f: more-penetrating electrons feel a larger effective nuclear charge Z<sub>eff</sub> and sit lower in energy; outer electrons are shielded by inner shells.",
+      "key_formulas": [
+        "radial nodes = n &minus; l &minus; 1",
+        "angular nodes = l",
+        "total nodes = n &minus; 1"
+      ],
+      "worked_example": "4d: total nodes = 3 (angular 2, radial 4 &minus; 2 &minus; 1 = 1).",
+      "common_mistakes": [
+        "Mixing radial and angular node formulas",
+        "Thinking orbit and orbital are the same thing (they are not)",
+        "Reversing the penetration order s &gt; p &gt; d &gt; f"
+      ],
+      "question_count": 7
+    },
+    {
+      "name": "Electronic Configuration",
+      "summary": "Electrons fill orbitals by three rules. <b>Aufbau</b>: lowest energy first, ordered by the (n+l) rule — lower (n+l) fills first; on a tie, lower n wins (so 4s before 3d, 2p before 3s... order: 1s 2s 2p 3s 3p 4s 3d 4p 5s...). <b>Pauli</b>: no two electrons share all four quantum numbers — max 2 per orbital, opposite spins. <b>Hund</b>: within a subshell, one electron per orbital (parallel spins) before any pairing. Exceptions: Cr = [Ar]3d<sup>5</sup>4s<sup>1</sup>, Cu = [Ar]3d<sup>10</sup>4s<sup>1</sup> — half-filled and fully filled subshells gain extra stability from symmetry and exchange energy. Cations lose 4s electrons before 3d.",
+      "key_formulas": [
+        "(n+l) rule; tie &rarr; lower n",
+        "max electrons: s 2, p 6, d 10, f 14",
+        "shell max = 2n<sup>2</sup>"
+      ],
+      "worked_example": "Fe = [Ar]3d<sup>6</sup>4s<sup>2</sup> &rarr; Fe<sup>3+</sup> = [Ar]3d<sup>5</sup> (4s pair leaves first, then one 3d) — half-filled, extra stable, 5 unpaired electrons.",
+      "common_mistakes": [
+        "Writing Cr/Cu by naive aufbau (3d<sup>4</sup>4s<sup>2</sup>, 3d<sup>9</sup>4s<sup>2</sup> are wrong)",
+        "Removing 3d electrons before 4s when forming cations",
+        "Pairing electrons before every orbital of the subshell is singly filled"
+      ],
+      "question_count": 17
+    }
+  ]
+}

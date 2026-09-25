@@ -1,0 +1,3732 @@
+{
+  "meta": {
+    "chapter": "PHY11-CH14",
+    "chapter_name": "Waves",
+    "subject": "Physics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "Every progressive wave follows the locked \\( y=A\\sin(kx-\\omega t+\\phi) \\) convention for travel along +x (a plus sign between kx and the time term means travel along -x). Every Greek-letter symbol (omega, lambda, mu, gamma, phi) is written as a single KaTeX span, no raw Unicode math symbols appear anywhere, explanations separate steps with double line breaks, and every numeric correct answer terminates cleanly."
+  },
+  "topics": [
+    {
+      "name": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "summary": "A mechanical wave is a travelling disturbance that carries energy through a medium without carrying the medium along. In a transverse wave the particles vibrate perpendicular to the direction of travel (waves on a string); in a longitudinal wave they vibrate along it (sound in air). A sinusoidal wave moving along the positive x-direction is written \\( y=A\\sin(kx-\\omega t+\\phi) \\), where A is the amplitude, \\( k=2\\pi/\\lambda \\) is the angular wave number, \\( \\omega=2\\pi f \\) is the angular frequency and \\( \\phi \\) is the phase constant. The minus sign goes with travel along +x; a plus sign means travel along -x. The wave speed is \\( v=\\omega/k=f\\lambda \\). Each particle performs SHM, so its velocity is at most \\( A\\omega \\) and its acceleration is \\( -\\omega^2y \\), both quite different from the wave speed. On a stretched string the speed is fixed by the string and its tension, \\( v=\\sqrt{T/\\mu} \\), where \\( \\mu \\) is mass per unit length; changing the source frequency changes only the wavelength.",
+      "key_formulas": [
+        "\\( y=A\\sin(kx-\\omega t+\\phi) \\) for travel along +x",
+        "\\( k=2\\pi/\\lambda \\), \\( \\omega=2\\pi f \\)",
+        "\\( v=\\omega/k=f\\lambda \\)",
+        "\\( v=\\sqrt{T/\\mu} \\) on a string",
+        "Maximum particle speed \\( =A\\omega \\); particle acceleration \\( =-\\omega^2y \\)"
+      ],
+      "worked_example": "For \\( y=0.05\\sin(2x-10t) \\) (SI): \\( k=2 \\), \\( \\omega=10 \\), so \\( v=\\omega/k=5 \\) m/s along +x, and the maximum particle speed is \\( A\\omega=0.5 \\) m/s.",
+      "common_mistakes": [
+        "Treating \\( kx+\\omega t \\) as travel along +x; in this form the minus sign means +x",
+        "Using \\( v=\\omega k \\) or \\( v=f/\\lambda \\) instead of \\( v=\\omega/k=f\\lambda \\)",
+        "Thinking wave speed on a string changes with frequency or amplitude",
+        "Using total mass instead of mass per unit length in \\( \\sqrt{T/\\mu} \\)",
+        "Confusing particle speed \\( A\\omega \\) with wave speed \\( \\omega/k \\)"
+      ],
+      "question_count": 36
+    },
+    {
+      "name": "Speed of Sound and Waves in Different Media",
+      "summary": "Sound is a longitudinal mechanical wave, so it needs a medium and cannot cross a vacuum. Its speed depends on the elasticity and density of the medium: \\( v=\\sqrt{Y/\\rho} \\) in a solid rod, \\( v=\\sqrt{B/\\rho} \\) in a liquid, and \\( v=\\sqrt{\\gamma P/\\rho} \\) in a gas. Newton assumed isothermal compressions and wrote \\( \\sqrt{P/\\rho} \\), which came out about 15 percent too low; Laplace pointed out that the compressions are adiabatic, so the bulk modulus is \\( \\gamma P \\). Since \\( P/\\rho=RT/M \\), the speed in a gas is \\( \\sqrt{\\gamma RT/M} \\): it rises as \\( \\sqrt T \\) (T in kelvin), falls with molar mass, and does not change with pressure at fixed temperature. Moist air, being lighter, carries sound slightly faster. Sound is generally fastest in solids, slower in liquids and slowest in gases. When sound passes from one medium to another, the frequency stays fixed by the source while speed and wavelength both change.",
+      "key_formulas": [
+        "\\( v=\\sqrt{Y/\\rho} \\) (solid rod)",
+        "\\( v=\\sqrt{B/\\rho} \\) (liquid)",
+        "\\( v=\\sqrt{\\gamma P/\\rho}=\\sqrt{\\gamma RT/M} \\) (gas)",
+        "\\( v\\propto\\sqrt T \\) for a given gas",
+        "\\( \\gamma=5/3 \\) monoatomic, \\( 7/5 \\) diatomic"
+      ],
+      "worked_example": "Air at 300 K carries sound at 340 m/s. At 1200 K: \\( v=340\\times\\sqrt{1200/300}=680 \\) m/s.",
+      "common_mistakes": [
+        "Using Newton's \\( \\sqrt{P/\\rho} \\) and dropping \\( \\gamma \\)",
+        "Taking \\( v\\propto T \\) instead of \\( \\sqrt T \\)",
+        "Forgetting to convert Celsius to kelvin",
+        "Thinking higher pressure alone raises sound speed at constant temperature",
+        "Thinking frequency changes when sound enters a new medium"
+      ],
+      "question_count": 38
+    },
+    {
+      "name": "Superposition, Reflection, and Standing Waves",
+      "summary": "When waves overlap, the net displacement is the algebraic sum of the individual displacements (superposition), and each wave continues unchanged afterwards. Two coherent in-phase sources interfere constructively where the path difference is \\( n\\lambda \\) and destructively where it is \\( (n+\\tfrac12)\\lambda \\). For two equal waves with phase difference \\( \\phi \\), the resultant amplitude is \\( 2A\\cos(\\phi/2) \\). At a rigid boundary a wave reflects with a phase change of \\( \\pi \\) (inverted); at a free end it reflects with no phase change. Two identical waves travelling in opposite directions, \\( A\\sin(kx-\\omega t) \\) and \\( A\\sin(kx+\\omega t) \\), add to a standing wave \\( y=2A\\sin kx\\cos\\omega t \\). Its nodes (zero amplitude) are \\( \\lambda/2 \\) apart, antinodes (amplitude \\( 2A \\)) lie midway, and node-to-antinode is \\( \\lambda/4 \\). All particles within one loop move in phase; neighbouring loops move in opposite phase. A standing wave carries no net energy along the medium.",
+      "key_formulas": [
+        "\\( y=y_1+y_2 \\)",
+        "Constructive: \\( \\Delta=n\\lambda \\); destructive: \\( \\Delta=(n+\\tfrac12)\\lambda \\)",
+        "\\( A_R=2A\\cos(\\phi/2) \\) for equal amplitudes",
+        "\\( y=2A\\sin kx\\cos\\omega t \\)",
+        "Nodes at \\( x=n\\lambda/2 \\); antinodes at \\( x=(n+\\tfrac12)\\lambda/2 \\)"
+      ],
+      "worked_example": "For \\( y=0.04\\sin(5\\pi x)\\cos(100\\pi t) \\): \\( \\lambda=2\\pi/5\\pi=0.4 \\) m, so nodes are 0.2 m apart and each component wave has amplitude 0.02 m.",
+      "common_mistakes": [
+        "Mixing up node-to-node (\\( \\lambda/2 \\)) with node-to-antinode (\\( \\lambda/4 \\))",
+        "Forgetting the inversion on reflection from a rigid end",
+        "Taking the standing-wave amplitude \\( 2A \\) as the component amplitude",
+        "Thinking a standing wave has no component waves moving at all",
+        "Using \\( (n+\\tfrac12)\\lambda \\) for constructive interference"
+      ],
+      "question_count": 39
+    },
+    {
+      "name": "Normal Modes of Stretched Strings and Organ Pipes",
+      "summary": "A standing wave can only fit into a bounded system in certain patterns, called normal modes. A string fixed at both ends has a node at each end, so \\( L=n\\lambda/2 \\) and \\( f_n=nv/2L \\) for n = 1, 2, 3, ...; all harmonics are present. A pipe open at both ends has a displacement antinode at each end and also gives \\( f_n=nv/2L \\) with all harmonics. A pipe closed at one end has a displacement node at the closed end and an antinode at the open end, so only odd numbers of quarter wavelengths fit: \\( f=(2n-1)v/4L \\). Its fundamental \\( v/4L \\) is half that of an open pipe of the same length, and it has only odd harmonics, so its first overtone is the third harmonic. Overtones are counted from the first frequency higher than the fundamental. For a sonometer, \\( f_1=\\frac{1}{2L}\\sqrt{T/\\mu} \\). When an end correction e is given, it adds to the length at each open end.",
+      "key_formulas": [
+        "String and open pipe: \\( f_n=nv/2L \\)",
+        "Closed pipe: \\( f=(2n-1)v/4L \\)",
+        "\\( f_1=\\dfrac{1}{2L}\\sqrt{T/\\mu} \\) (sonometer)",
+        "Closed pipe with end correction: \\( f_1=v/4(L+e) \\)",
+        "Open pipe with end correction: \\( f_1=v/2(L+2e) \\)"
+      ],
+      "worked_example": "A pipe 0.85 m long closed at one end, with \\( v=340 \\) m/s, has \\( f_1=340/3.4=100 \\) Hz; its next resonances are 300 Hz and 500 Hz, never 200 Hz or 400 Hz.",
+      "common_mistakes": [
+        "Using \\( v/2L \\) for a closed pipe",
+        "Allowing even harmonics in a closed pipe",
+        "Swapping node and antinode at closed or open ends",
+        "Calling the second harmonic the second overtone",
+        "Ignoring a stated end correction, or adding it only once for an open pipe"
+      ],
+      "question_count": 43
+    },
+    {
+      "name": "Beats and the Doppler Effect",
+      "summary": "When two sounds of slightly different frequencies \\( f_1 \\) and \\( f_2 \\) superpose, the loudness rises and falls periodically; the number of beats per second is \\( |f_1-f_2| \\), and the pitch heard is close to the average frequency. Loading a tuning fork with wax lowers its frequency, while filing a prong raises it; watching whether beats increase or decrease identifies an unknown frequency. The Doppler effect is the change in heard frequency caused by motion of the source or observer along the line joining them. With v the speed of sound, \\( f'=f\\dfrac{v\\pm v_o}{v\\mp v_s} \\), using the upper signs when source and observer move towards each other and the lower signs when they move apart. Approach always raises the heard frequency; recession always lowers it. A moving source changes the wavelength in the medium, while a moving observer only changes how often crests are met. An echo from a wall involves two shifts: the wall first acts as an observer, then as a source.",
+      "key_formulas": [
+        "\\( f_{beat}=|f_1-f_2| \\)",
+        "Moving source: \\( f'=f\\,\\dfrac{v}{v\\mp v_s} \\)",
+        "Moving observer: \\( f'=f\\,\\dfrac{v\\pm v_o}{v} \\)",
+        "General: \\( f'=f\\,\\dfrac{v\\pm v_o}{v\\mp v_s} \\) (upper signs for approach)",
+        "Wavelength ahead of a moving source: \\( (v-v_s)/f \\)"
+      ],
+      "worked_example": "A 450 Hz source approaches at 34 m/s with \\( v=340 \\) m/s: \\( f'=450\\times340/306=500 \\) Hz. Receding at the same speed, a 550 Hz source is heard at \\( 550\\times340/374=500 \\) Hz.",
+      "common_mistakes": [
+        "Taking the sum or average of frequencies as the beat frequency",
+        "Flipping Doppler signs so frequency falls on approach",
+        "Using the moving-observer formula for a moving source, or vice versa",
+        "Forgetting that wax lowers and filing raises a fork's frequency",
+        "Applying only one Doppler shift for an echo from a wall"
+      ],
+      "question_count": 36
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY11-CH14-L1-001",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "In a transverse wave travelling along a stretched string, the particles of the string vibrate in which direction?",
+      "options": [
+        "Perpendicular to the direction in which the wave travels",
+        "Parallel to the direction in which the wave travels",
+        "Forward along with the wave, carrying the string material to the far end",
+        "In small circles in the plane containing the string"
+      ],
+      "correct_index": 0,
+      "explanation": "In a transverse wave the displacement of each particle is perpendicular to the direction of propagation.<br><br>On a string the wave moves along the string while each element moves sideways, up and down, about its mean position.",
+      "hint": "Transverse means 'across'. Think about a rope flicked up and down.",
+      "distractor_logic": [
+        "This describes a longitudinal wave, not a transverse one",
+        "Confuses transport of energy with transport of matter; particles only oscillate about their mean positions",
+        "Borrows the motion of surface water particles, which is not how a stretched string vibrates"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-002",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "A sound wave travelling through air is an example of which type of wave?",
+      "options": [
+        "A transverse mechanical wave",
+        "A longitudinal mechanical wave",
+        "A wave that needs no medium at all",
+        "Transverse in air but longitudinal in water"
+      ],
+      "correct_index": 1,
+      "explanation": "Sound travels as a series of compressions and rarefactions.<br><br>The air particles oscillate back and forth along the direction in which the sound travels, so the wave is longitudinal. Being carried by the particles of air, it is a mechanical wave.",
+      "hint": "Picture a slinky pushed and pulled along its length.",
+      "distractor_logic": [
+        "Air cannot sustain the shear needed for transverse waves; its particles oscillate along the direction of travel",
+        "Sound is a mechanical wave and needs a material medium to travel",
+        "Reverses nothing useful: fluids support only longitudinal mechanical waves, in air as well as in water"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-003",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "Which relation correctly connects wave speed \\( v \\), frequency \\( f \\) and wavelength \\( \\lambda \\)?",
+      "options": [
+        "\\( v=f/\\lambda \\)",
+        "\\( v=\\lambda/f \\)",
+        "\\( v=f\\lambda \\)",
+        "\\( v=f+\\lambda \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "In one period \\( T \\) the wave advances by exactly one wavelength.<br><br>So \\( v=\\lambda/T \\), and since \\( f=1/T \\), \\( v=f\\lambda \\).",
+      "hint": "In one time period, how far does the wave move forward?",
+      "distractor_logic": [
+        "Divides instead of multiplies, the speed-formula version of Trap A",
+        "Inverts the role of frequency; this has units of metre-seconds, not metres per second",
+        "Adds two quantities with different units, which is dimensionally meaningless"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-004",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "A wave has frequency 50 Hz and wavelength 4 m. What is its speed?",
+      "options": [
+        "12.5 m/s",
+        "0.08 m/s",
+        "54 m/s",
+        "200 m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "Use \\( v=f\\lambda \\).<br><br>\\( v=50\\times4=200 \\) m/s.",
+      "hint": "Speed equals frequency times wavelength.",
+      "distractor_logic": [
+        "Uses \\( v=f/\\lambda \\) instead of \\( v=f\\lambda \\)",
+        "Uses \\( v=\\lambda/f \\), which inverts the frequency",
+        "Adds frequency and wavelength instead of multiplying them"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-005",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "A wave is described by \\( y=A\\sin(kx-\\omega t) \\) with \\( k \\) and \\( \\omega \\) positive. In which direction does it travel?",
+      "options": [
+        "Along the positive x-direction",
+        "Along the negative x-direction",
+        "Along the positive y-direction",
+        "It does not travel; it is a standing wave"
+      ],
+      "correct_index": 0,
+      "explanation": "Keep the phase \\( kx-\\omega t \\) constant to follow one crest.<br><br>As \\( t \\) increases, \\( x \\) must also increase to keep \\( kx-\\omega t \\) fixed, so the crest moves towards positive x.<br><br>The minus sign between \\( kx \\) and \\( \\omega t \\) goes with travel along +x.",
+      "hint": "Follow a crest: if t grows, what must x do to keep the phase the same?",
+      "distractor_logic": [
+        "Trap A: associates the minus sign with negative-direction travel, the reverse of the correct rule",
+        "Mixes up the direction of particle displacement (y) with the direction of wave travel (x)",
+        "A single sine of \\( kx-\\omega t \\) is a travelling wave; a standing wave needs a product like \\( \\sin kx\\cos\\omega t \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-006",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "How is the angular wave number \\( k \\) related to the wavelength \\( \\lambda \\)?",
+      "options": [
+        "\\( k=\\lambda/2\\pi \\)",
+        "\\( k=2\\pi/\\lambda \\)",
+        "\\( k=2\\pi\\lambda \\)",
+        "\\( k=1/\\lambda \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Over one wavelength the phase \\( kx \\) must change by \\( 2\\pi \\).<br><br>So \\( k\\lambda=2\\pi \\), which gives \\( k=2\\pi/\\lambda \\).",
+      "hint": "One full wavelength corresponds to one full cycle of phase.",
+      "distractor_logic": [
+        "Inverts the relation; a longer wavelength should give a smaller k",
+        "Multiplies instead of divides, so k would grow with wavelength",
+        "Drops the \\( 2\\pi \\) factor that converts cycles into radians"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-007",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "The speed of a transverse wave on a stretched string with tension \\( T \\) and linear mass density \\( \\mu \\) is:",
+      "options": [
+        "\\( v=\\sqrt{\\mu/T} \\)",
+        "\\( v=T/\\mu \\)",
+        "\\( v=\\sqrt{T/\\mu} \\)",
+        "\\( v=\\sqrt{T/M} \\), where \\( M \\) is the total mass of the string"
+      ],
+      "correct_index": 2,
+      "explanation": "A tighter string pulls a displaced element back faster, so speed rises with \\( T \\).<br><br>A heavier string per metre responds more slowly, so speed falls with \\( \\mu \\).<br><br>Together, \\( v=\\sqrt{T/\\mu} \\), where \\( \\mu \\) is mass per unit length.",
+      "hint": "Tension helps the wave, inertia per metre slows it down.",
+      "distractor_logic": [
+        "Trap B: swaps tension and linear mass density, so a heavier string would carry waves faster",
+        "Leaves out the square root, which also gives wrong units",
+        "Trap B: uses total mass instead of mass per unit length"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-008",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 1,
+      "type": "regular",
+      "question": "A wave pulse travels along a long rope from one end to the other. What does the wave carry along the rope?",
+      "options": [
+        "The rope's material itself, moving from one end to the other",
+        "Both the rope's material and energy",
+        "Only the shape of the pulse, with no energy at all",
+        "Energy, without carrying the rope's material along"
+      ],
+      "correct_index": 3,
+      "explanation": "Each piece of the rope moves and then returns to its mean position.<br><br>What travels is the disturbance, and with it energy and momentum, not the rope itself.",
+      "hint": "After the pulse passes, where is each bit of rope?",
+      "distractor_logic": [
+        "Confuses the motion of the disturbance with the motion of the medium",
+        "Particles only oscillate about fixed mean positions, so no net material is transported",
+        "A wave does transfer energy; it is exactly what makes the far end move"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-009",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "Through which of the following can sound NOT travel?",
+      "options": [
+        "Vacuum",
+        "Water",
+        "Steel",
+        "Hydrogen gas"
+      ],
+      "correct_index": 0,
+      "explanation": "Sound is a mechanical wave: it needs particles of a medium to pass on compressions and rarefactions.<br><br>A vacuum has no particles, so sound cannot travel through it.",
+      "hint": "Sound needs something to push against.",
+      "distractor_logic": [
+        "Liquids carry sound well as longitudinal waves",
+        "Solids carry sound, in fact faster than gases do",
+        "Any gas can carry sound; a light gas like hydrogen carries it quite fast"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-010",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "In which of these media is the speed of sound usually the greatest?",
+      "options": [
+        "Air",
+        "Steel",
+        "Water",
+        "Vacuum"
+      ],
+      "correct_index": 1,
+      "explanation": "Speed of sound depends on the elasticity of the medium divided by its density.<br><br>Solids like steel have very large elastic moduli, so sound is fastest in them, then liquids, then gases.",
+      "hint": "Stiffer media pass on disturbances faster.",
+      "distractor_logic": [
+        "Gases are the least stiff and give the lowest speeds",
+        "Water is faster than air but far less stiff than steel",
+        "Sound cannot travel in a vacuum at all"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-011",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "Laplace corrected Newton's formula for the speed of sound in a gas by replacing the pressure \\( P \\) with:",
+      "options": [
+        "\\( P/\\gamma \\)",
+        "\\( \\gamma^2P \\)",
+        "\\( \\gamma P \\)",
+        "\\( 2P \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Newton assumed isothermal compressions, giving \\( v=\\sqrt{P/\\rho} \\), which came out too low.<br><br>Laplace treated them as adiabatic, where the bulk modulus is \\( \\gamma P \\).<br><br>So \\( v=\\sqrt{\\gamma P/\\rho} \\).",
+      "hint": "Adiabatic bulk modulus of a gas.",
+      "distractor_logic": [
+        "Divides by \\( \\gamma \\), which would make the corrected speed smaller than Newton's value",
+        "Squares the ratio of specific heats, overcorrecting",
+        "Uses an arbitrary factor unrelated to the adiabatic nature of sound"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-012",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "Laplace assumed that the compressions and rarefactions of a sound wave in air take place:",
+      "options": [
+        "Isothermally",
+        "At constant pressure",
+        "At constant volume",
+        "Adiabatically"
+      ],
+      "correct_index": 3,
+      "explanation": "The oscillations are so fast that there is no time for heat to flow in or out of a compressed layer.<br><br>So the process is adiabatic, and the bulk modulus becomes \\( \\gamma P \\).",
+      "hint": "Think about how quickly the air is squeezed and released.",
+      "distractor_logic": [
+        "This was Newton's assumption, which gave a speed about 15 percent too low",
+        "Pressure is exactly what varies in a sound wave",
+        "The volume of each layer of air changes as it is compressed and expanded"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-013",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "The speed of a longitudinal wave in a solid rod of Young's modulus \\( Y \\) and density \\( \\rho \\) is:",
+      "options": [
+        "\\( \\sqrt{Y/\\rho} \\)",
+        "\\( \\sqrt{\\rho/Y} \\)",
+        "\\( Y/\\rho \\)",
+        "\\( \\sqrt{\\gamma Y/\\rho} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For any medium, \\( v=\\sqrt{\\text{elastic modulus}/\\text{density}} \\).<br><br>For a thin solid rod the relevant modulus is Young's modulus, giving \\( v=\\sqrt{Y/\\rho} \\).",
+      "hint": "Elasticity over inertia, under a square root.",
+      "distractor_logic": [
+        "Inverts the ratio, so denser rods would carry sound faster",
+        "Leaves out the square root; the units are then \\( \\mathrm{m^2\\,s^{-2}} \\)",
+        "Applies the gas-only Laplace factor \\( \\gamma \\) to a solid"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-014",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "A sound wave passes from air into water. Which of its properties stays the same?",
+      "options": [
+        "Wavelength",
+        "Frequency",
+        "Speed",
+        "Both speed and wavelength"
+      ],
+      "correct_index": 1,
+      "explanation": "Frequency is set by the source; each crest arriving at the boundary produces one crest on the other side.<br><br>Speed changes with the medium, so from \\( v=f\\lambda \\) the wavelength changes too.",
+      "hint": "What does the source control?",
+      "distractor_logic": [
+        "Wavelength changes because speed changes while frequency is fixed",
+        "Speed is set by the medium and is much larger in water",
+        "Both change; only frequency, set by the source, is unchanged"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-015",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "The pressure of a gas is doubled while its temperature is kept constant. What happens to the speed of sound in it?",
+      "options": [
+        "It increases by a factor of \\( \\sqrt2 \\)",
+        "It decreases",
+        "It stays the same",
+        "It doubles"
+      ],
+      "correct_index": 2,
+      "explanation": "At constant temperature, \\( P/\\rho \\) stays constant (it equals \\( RT/M \\)).<br><br>So \\( v=\\sqrt{\\gamma P/\\rho} \\) is unchanged.",
+      "hint": "What happens to density when pressure doubles at fixed temperature?",
+      "distractor_logic": [
+        "Looks only at P in \\( \\sqrt{\\gamma P/\\rho} \\) and forgets that density doubles as well",
+        "Assumes the extra density alone matters and ignores the rise in pressure",
+        "Treats speed as directly proportional to pressure"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-016",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 1,
+      "type": "regular",
+      "question": "The absolute temperature of air is made four times. The speed of sound in it becomes:",
+      "options": [
+        "Four times",
+        "Unchanged",
+        "Half",
+        "Two times"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v=\\sqrt{\\gamma RT/M} \\), so \\( v\\propto\\sqrt T \\).<br><br>Four times T gives \\( \\sqrt4=2 \\) times v.",
+      "hint": "Speed of sound goes as the square root of absolute temperature.",
+      "distractor_logic": [
+        "Takes speed proportional to T instead of to \\( \\sqrt T \\)",
+        "Trap B confusion: temperature is a property of the medium and does change the speed",
+        "Reverses the dependence, as if hotter air slowed sound"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-017",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "According to the principle of superposition, when two waves overlap, the resultant displacement at a point is:",
+      "options": [
+        "The algebraic sum of the displacements due to each wave",
+        "The product of the two individual displacements",
+        "Equal to the larger of the two displacements",
+        "The average of the two displacements"
+      ],
+      "correct_index": 0,
+      "explanation": "Each wave produces its own displacement independently.<br><br>Where they overlap, the net displacement is \\( y=y_1+y_2 \\), with signs taken into account.",
+      "hint": "Displacements with signs simply add.",
+      "distractor_logic": [
+        "Multiplication has no physical basis here; displacements add",
+        "Ignores the contribution of the smaller wave",
+        "Divides by two, which would halve the combined effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-018",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "In a standing wave, what is the distance between two consecutive nodes?",
+      "options": [
+        "\\( \\lambda \\)",
+        "\\( \\lambda/2 \\)",
+        "\\( \\lambda/4 \\)",
+        "\\( 2\\lambda \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Nodes of \\( y=2A\\sin kx\\cos\\omega t \\) occur where \\( \\sin kx=0 \\), i.e. \\( kx=n\\pi \\).<br><br>So \\( x=n\\lambda/2 \\): consecutive nodes are \\( \\lambda/2 \\) apart.",
+      "hint": "Where does \\( \\sin kx \\) vanish?",
+      "distractor_logic": [
+        "Gives the distance between alternate nodes",
+        "Gives the node-to-antinode distance",
+        "Doubles a full wavelength; nodes are much closer than that"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-019",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "In a standing wave, what is the distance between a node and the nearest antinode?",
+      "options": [
+        "\\( \\lambda/2 \\)",
+        "\\( \\lambda \\)",
+        "\\( \\lambda/4 \\)",
+        "\\( \\lambda/8 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Nodes are \\( \\lambda/2 \\) apart and antinodes lie midway between them.<br><br>So a node and its nearest antinode are \\( \\lambda/4 \\) apart.",
+      "hint": "Antinodes sit halfway between nodes.",
+      "distractor_logic": [
+        "Gives the node-to-node distance",
+        "Gives a full wavelength",
+        "Halves the correct value once too often"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-020",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "When a wave on a string reflects from a rigidly fixed end, the reflected wave undergoes a phase change of:",
+      "options": [
+        "Zero",
+        "\\( \\pi/2 \\) radians",
+        "\\( \\pi/4 \\) radians",
+        "\\( \\pi \\) radians"
+      ],
+      "correct_index": 3,
+      "explanation": "At a rigid end the displacement must always be zero.<br><br>This forces the reflected wave to be inverted, which is a phase change of \\( \\pi \\).",
+      "hint": "The fixed end cannot move; how must the reflected wave cancel the incident one there?",
+      "distractor_logic": [
+        "This happens at a free end, not a rigid end",
+        "A quarter-cycle shift does not satisfy zero displacement at the fixed end",
+        "An arbitrary fraction with no link to the boundary condition"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-021",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "An upward pulse on a string reaches an end that is free to move up and down. The reflected pulse is:",
+      "options": [
+        "Upward, with no inversion",
+        "Inverted (downward)",
+        "Absent, because a free end absorbs the pulse fully",
+        "Upward but moving in the same direction as before"
+      ],
+      "correct_index": 0,
+      "explanation": "At a free end there is no restoring pull from beyond the end, so the end overshoots.<br><br>The pulse reflects with no phase change: it returns upright.",
+      "hint": "Free end: no phase change.",
+      "distractor_logic": [
+        "This is what happens at a rigid end",
+        "A free end reflects the pulse; it does not absorb it",
+        "A reflected pulse must travel back the way it came"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-022",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "Two coherent sources emit waves in phase. At a point, the waves interfere constructively when the path difference is:",
+      "options": [
+        "\\( (n+\\tfrac12)\\lambda \\)",
+        "\\( n\\lambda \\), where n is an integer",
+        "\\( n\\lambda/4 \\)",
+        "\\( n/\\lambda \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Constructive interference needs crests to meet crests.<br><br>This happens when one path is longer by a whole number of wavelengths: \\( \\Delta=n\\lambda \\).",
+      "hint": "Crest meets crest when the extra path is a whole number of wavelengths.",
+      "distractor_logic": [
+        "This is the condition for destructive interference",
+        "Quarter-wavelength steps include points of partial and destructive interference",
+        "Has units of inverse length, so it cannot be a path difference"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-023",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "At a node of a standing wave on a string, the particle of the string:",
+      "options": [
+        "Vibrates with the maximum amplitude",
+        "Vibrates with amplitude equal to twice that of each component wave",
+        "Stays at rest at all times",
+        "Passes energy along the string at the wave speed"
+      ],
+      "correct_index": 2,
+      "explanation": "A node is a point where the two component waves always cancel.<br><br>So its displacement is zero at every instant.",
+      "hint": "Node means 'no motion'.",
+      "distractor_logic": [
+        "Describes an antinode, not a node",
+        "That amplitude, \\( 2A \\), occurs at antinodes",
+        "A standing wave does not transport energy past its nodes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-024",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement about a standing wave on a string is correct?",
+      "options": [
+        "It transports energy along the string at the wave speed",
+        "Its pattern moves along the string at twice the wave speed",
+        "All points on the string vibrate with the same amplitude",
+        "It does not transport energy along the string"
+      ],
+      "correct_index": 3,
+      "explanation": "A standing wave is the sum of two equal waves travelling in opposite directions.<br><br>Their energy flows cancel, so no net energy moves past a node; energy only sloshes between adjacent nodes.",
+      "hint": "What does 'standing' mean for the pattern?",
+      "distractor_logic": [
+        "That is a property of a single travelling wave",
+        "The pattern stays in place; that is why it is called standing",
+        "Amplitude varies from zero at nodes to maximum at antinodes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-025",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "The fundamental frequency of a string of length L fixed at both ends, with wave speed v, is:",
+      "options": [
+        "\\( v/2L \\)",
+        "\\( v/4L \\)",
+        "\\( v/L \\)",
+        "\\( 2v/L \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "With a node at each end, the simplest pattern has one loop: \\( L=\\lambda/2 \\).<br><br>So \\( \\lambda=2L \\) and \\( f_1=v/2L \\).",
+      "hint": "One loop fits between the fixed ends.",
+      "distractor_logic": [
+        "Trap C: uses the closed-pipe fundamental for a string",
+        "Takes the whole length as one wavelength, which is the second harmonic",
+        "Inverts the half-wavelength relation"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-026",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "The fundamental frequency of a pipe of length L closed at one end, with sound speed v, is:",
+      "options": [
+        "\\( v/2L \\)",
+        "\\( v/4L \\)",
+        "\\( v/L \\)",
+        "\\( 4v/L \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "A closed end is a displacement node and an open end is an antinode.<br><br>The simplest fit is a quarter wavelength: \\( L=\\lambda/4 \\).<br><br>So \\( f_1=v/4L \\).",
+      "hint": "Node to antinode is a quarter wavelength.",
+      "distractor_logic": [
+        "Trap C: uses the open-pipe or string fundamental",
+        "Treats the pipe length as a full wavelength",
+        "Inverts the quarter-wavelength relation"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-027",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "Which harmonics are present in a pipe closed at one end?",
+      "options": [
+        "All harmonics",
+        "Only the even harmonics",
+        "Only the odd harmonics",
+        "Only the fundamental"
+      ],
+      "correct_index": 2,
+      "explanation": "The pipe must fit an odd number of quarter wavelengths: \\( L=(2n-1)\\lambda/4 \\).<br><br>So \\( f=(2n-1)v/4L \\): only 1, 3, 5, ... times the fundamental.",
+      "hint": "Node at one end, antinode at the other: count quarter wavelengths.",
+      "distractor_logic": [
+        "Trap C: true for strings and open pipes, not for closed pipes",
+        "Reverses the rule, and would even exclude the fundamental",
+        "Closed pipes do support overtones, namely the odd harmonics"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-028",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "For sound in a pipe, what is found at the closed end?",
+      "options": [
+        "A displacement antinode",
+        "Both a displacement node and a displacement antinode",
+        "Neither, since the closed end has no effect on the pattern",
+        "A displacement node"
+      ],
+      "correct_index": 3,
+      "explanation": "Air at a closed end cannot move into the wall.<br><br>So its displacement is always zero: a displacement node.",
+      "hint": "Can the air move through a solid wall?",
+      "distractor_logic": [
+        "Trap C: swaps the closed-end condition with the open-end one",
+        "A point cannot be both at once",
+        "The closed end fixes the boundary condition"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-029",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "For a pipe open at both ends, what are the conditions at the two ends?",
+      "options": [
+        "A displacement antinode at each end",
+        "A displacement node at each end",
+        "A node at one end and an antinode at the other",
+        "Nodes or antinodes depending on the frequency"
+      ],
+      "correct_index": 0,
+      "explanation": "At an open end the air is free to move in and out.<br><br>So both ends are displacement antinodes, and the fundamental has \\( L=\\lambda/2 \\).",
+      "hint": "Air is free to move at an open end.",
+      "distractor_logic": [
+        "Trap C: that is the condition for a string fixed at both ends",
+        "Trap C: that is the closed-pipe condition",
+        "The end conditions are fixed by the open ends, not by frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-030",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "A string 0.5 m long, fixed at both ends, carries waves at 100 m/s. What is its fundamental frequency?",
+      "options": [
+        "50 Hz",
+        "100 Hz",
+        "200 Hz",
+        "25 Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f_1=v/2L=100/(2\\times0.5) \\).<br><br>\\( f_1=100 \\) Hz.",
+      "hint": "Use \\( v/2L \\).",
+      "distractor_logic": [
+        "Trap C: uses \\( v/4L \\), the closed-pipe formula",
+        "Uses \\( v/L \\), taking the string length as a full wavelength",
+        "Uses \\( v/8L \\), halving the closed-pipe value again"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-031",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "An open pipe 0.85 m long is in air where sound travels at 340 m/s. What is its fundamental frequency?",
+      "options": [
+        "100 Hz",
+        "400 Hz",
+        "200 Hz",
+        "289 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "Open pipe: \\( f_1=v/2L \\).<br><br>\\( f_1=340/(2\\times0.85)=340/1.7=200 \\) Hz.",
+      "hint": "Antinodes at both ends, like one loop.",
+      "distractor_logic": [
+        "Trap C: uses the closed-pipe formula \\( v/4L \\)",
+        "Uses \\( v/L \\), which gives the second harmonic",
+        "Multiplies speed by length instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-032",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 1,
+      "type": "regular",
+      "question": "For a pipe closed at one end, the second overtone is which harmonic?",
+      "options": [
+        "Third harmonic",
+        "Second harmonic",
+        "Fourth harmonic",
+        "Fifth harmonic"
+      ],
+      "correct_index": 3,
+      "explanation": "A closed pipe has only odd harmonics: 1st, 3rd, 5th, ...<br><br>Overtones are the frequencies higher than the fundamental: first overtone = 3rd harmonic, second overtone = 5th harmonic.",
+      "hint": "List the allowed harmonics, then count overtones after the fundamental.",
+      "distractor_logic": [
+        "That is the first overtone",
+        "Trap C: assumes even harmonics exist in a closed pipe",
+        "Trap C: counts even harmonics as overtones"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-033",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "Two tuning forks of frequencies 256 Hz and 260 Hz are sounded together. How many beats are heard per second?",
+      "options": [
+        "4",
+        "516",
+        "258",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "Beat frequency \\( =|f_1-f_2| \\).<br><br>\\( |256-260|=4 \\) beats per second.",
+      "hint": "Beats count the difference, not the sum.",
+      "distractor_logic": [
+        "Trap D: adds the frequencies instead of taking their difference",
+        "Trap D: gives the average frequency, which is the pitch heard, not the beat rate",
+        "Halves the difference"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-034",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "Beats are produced when:",
+      "options": [
+        "Two waves of equal frequency travel in opposite directions",
+        "Two sound waves of slightly different frequencies superpose",
+        "A sound wave reflects from a hard wall",
+        "A source moves towards a listener"
+      ],
+      "correct_index": 1,
+      "explanation": "Two nearby frequencies drift in and out of step.<br><br>When in step the sound is loud, when out of step it is soft; this periodic rise and fall is beats.",
+      "hint": "Think of two notes that are almost, but not quite, the same.",
+      "distractor_logic": [
+        "That produces a standing wave",
+        "Reflection alone gives an echo, not beats",
+        "That is the Doppler effect, a change in heard frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-035",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "A source of sound of frequency f moves towards a stationary observer with speed \\( v_s \\). If v is the speed of sound, the frequency heard is:",
+      "options": [
+        "\\( f\\,\\dfrac{v}{v+v_s} \\)",
+        "\\( f\\,\\dfrac{v-v_s}{v} \\)",
+        "\\( f\\,\\dfrac{v}{v-v_s} \\)",
+        "\\( f\\,\\dfrac{v+v_s}{v} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "An approaching source crowds the wavefronts in front of it, shortening the wavelength to \\( (v-v_s)/f \\).<br><br>The observer hears \\( f'=v/\\lambda'=f\\,v/(v-v_s) \\), which is higher than f.",
+      "hint": "Approaching source: frequency must go up; the source speed belongs in the denominator.",
+      "distractor_logic": [
+        "Trap D: this is the receding-source formula, giving a lower frequency on approach",
+        "Trap D: puts the source speed in the numerator, like an observer, with the wrong sign",
+        "Treats the source as if it were a moving observer"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-036",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "An observer moves with speed \\( v_o \\) towards a stationary source of frequency f. If v is the speed of sound, the frequency heard is:",
+      "options": [
+        "\\( f\\,\\dfrac{v-v_o}{v} \\)",
+        "\\( f\\,\\dfrac{v}{v-v_o} \\)",
+        "\\( f\\,\\dfrac{v}{v+v_o} \\)",
+        "\\( f\\,\\dfrac{v+v_o}{v} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The wavelength in air is unchanged since the source is at rest.<br><br>Moving towards the source, the observer meets waves at relative speed \\( v+v_o \\).<br><br>\\( f'=(v+v_o)/\\lambda=f\\,(v+v_o)/v \\).",
+      "hint": "Approaching observer: meets crests more often.",
+      "distractor_logic": [
+        "Trap D: this is for an observer moving away, giving a lower frequency on approach",
+        "Uses the moving-source form for a moving observer",
+        "Trap D: puts the observer speed in the denominator with a sign that lowers the frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-037",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "Wax is stuck on one prong of a tuning fork. Its frequency:",
+      "options": [
+        "Decreases",
+        "Increases",
+        "Stays the same",
+        "Becomes zero"
+      ],
+      "correct_index": 0,
+      "explanation": "Adding mass to the prong increases its inertia.<br><br>A heavier prong vibrates more slowly, so the frequency falls. (Filing a prong does the opposite.)",
+      "hint": "More mass, slower vibration.",
+      "distractor_logic": [
+        "Reverses the effect; extra mass slows the vibration",
+        "Ignores the added mass",
+        "A little wax only lowers the frequency; the fork still vibrates"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-038",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "Two sources of 400 Hz and 403 Hz are sounded together. How many beats are heard in 5 seconds?",
+      "options": [
+        "3",
+        "15",
+        "4015",
+        "2007.5"
+      ],
+      "correct_index": 1,
+      "explanation": "Beat frequency \\( =403-400=3 \\) per second.<br><br>In 5 s: \\( 3\\times5=15 \\) beats.",
+      "hint": "Find beats per second first.",
+      "distractor_logic": [
+        "Gives beats per second, not the number in 5 seconds",
+        "Trap D: uses the sum of frequencies",
+        "Trap D: uses the average frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-039",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "A source of sound moves away from a stationary listener. Compared with the actual frequency, the frequency heard is:",
+      "options": [
+        "Higher",
+        "The same",
+        "Lower",
+        "Higher at first and then lower"
+      ],
+      "correct_index": 2,
+      "explanation": "A receding source stretches the waves behind it, making the wavelength longer.<br><br>Longer wavelength at the same wave speed means lower frequency: \\( f'=f\\,v/(v+v_s) \\).",
+      "hint": "Moving away stretches the waves.",
+      "distractor_logic": [
+        "Trap D: this is what happens when the source approaches",
+        "Ignores the Doppler effect",
+        "Mixes this with a source that first approaches and then passes the listener"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L1-040",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 1,
+      "type": "regular",
+      "question": "When two sound waves of slightly different frequencies produce beats, the time between two successive loud sounds equals:",
+      "options": [
+        "\\( 1/(f_1+f_2) \\)",
+        "\\( |f_1-f_2| \\)",
+        "\\( 2/(f_1+f_2) \\)",
+        "\\( 1/|f_1-f_2| \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The loudness repeats at the beat frequency \\( |f_1-f_2| \\).<br><br>So the time between loud sounds is the beat period \\( 1/|f_1-f_2| \\).",
+      "hint": "Period is the reciprocal of frequency.",
+      "distractor_logic": [
+        "Trap D: uses the sum of the frequencies",
+        "Gives the beat frequency, not the beat period",
+        "Trap D: uses the period of the average frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-001",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "A wave is given by \\( y=0.05\\sin(2x-10t) \\) in SI units. What are its speed and direction of travel?",
+      "options": [
+        "5 m/s along the positive x-direction",
+        "5 m/s along the negative x-direction",
+        "20 m/s along the positive x-direction",
+        "0.2 m/s along the positive x-direction"
+      ],
+      "correct_index": 0,
+      "explanation": "Compare with \\( y=A\\sin(kx-\\omega t) \\): here \\( k=2 \\) rad/m and \\( \\omega=10 \\) rad/s.<br><br>Speed \\( v=\\omega/k=10/2=5 \\) m/s.<br><br>The form \\( kx-\\omega t \\) means travel along +x.",
+      "hint": "Read off k and \\( \\omega \\), then use \\( v=\\omega/k \\).",
+      "distractor_logic": [
+        "Trap A: gets the speed right but links the minus sign with negative-direction travel",
+        "Trap A variant: uses \\( v=\\omega k \\) instead of \\( v=\\omega/k \\)",
+        "Uses \\( k/\\omega \\), inverting the speed formula"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-002",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "For the wave \\( y=0.02\\sin(\\pi x+4\\pi t) \\) (SI units), what are the wavelength and the frequency?",
+      "options": [
+        "\\( \\lambda=0.5 \\) m and \\( f=0.5 \\) Hz",
+        "\\( \\lambda=2 \\) m and \\( f=2 \\) Hz",
+        "\\( \\lambda=\\pi \\) m and \\( f=4\\pi \\) Hz",
+        "\\( \\lambda=2 \\) m and \\( f=4 \\) Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "Here \\( k=\\pi \\) rad/m and \\( \\omega=4\\pi \\) rad/s.<br><br>\\( \\lambda=2\\pi/k=2\\pi/\\pi=2 \\) m.<br><br>\\( f=\\omega/2\\pi=4\\pi/2\\pi=2 \\) Hz. (The + sign only tells us the wave moves along -x; it does not change \\( \\lambda \\) or \\( f \\).)",
+      "hint": "Use \\( \\lambda=2\\pi/k \\) and \\( f=\\omega/2\\pi \\).",
+      "distractor_logic": [
+        "Inverts both relations, using \\( \\lambda=k/2\\pi \\) and \\( f=2\\pi/\\omega \\)",
+        "Reads k and \\( \\omega \\) directly as wavelength and frequency",
+        "Divides \\( \\omega \\) by \\( \\pi \\) instead of \\( 2\\pi \\) when finding frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-003",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "A string is stretched with a tension of 100 N and has a linear mass density of 0.01 kg/m. What is the speed of a transverse wave on it?",
+      "options": [
+        "0.01 m/s",
+        "10000 m/s",
+        "100 m/s",
+        "1 m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v=\\sqrt{T/\\mu}=\\sqrt{100/0.01} \\).<br><br>\\( v=\\sqrt{10000}=100 \\) m/s.",
+      "hint": "Tension over mass per unit length, then take the square root.",
+      "distractor_logic": [
+        "Trap B: swaps the ratio and computes \\( \\sqrt{\\mu/T} \\)",
+        "Forgets the square root and uses \\( T/\\mu \\)",
+        "Multiplies instead of dividing, computing \\( \\sqrt{T\\mu} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-004",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "A 4 m long string has a total mass of 0.04 kg and is under a tension of 64 N. What is the speed of transverse waves on it?",
+      "options": [
+        "40 m/s",
+        "6400 m/s",
+        "0.0125 m/s",
+        "80 m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "Linear mass density \\( \\mu=0.04/4=0.01 \\) kg/m.<br><br>\\( v=\\sqrt{64/0.01}=\\sqrt{6400}=80 \\) m/s.",
+      "hint": "First convert total mass into mass per metre.",
+      "distractor_logic": [
+        "Trap B: uses total mass 0.04 kg in place of mass per unit length",
+        "Computes \\( T/\\mu \\) and forgets the square root",
+        "Trap B: swaps tension and linear mass density"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-005",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "For the wave \\( y=0.01\\sin(5x-200t) \\) in SI units, what is the maximum speed of a particle of the medium?",
+      "options": [
+        "2 m/s",
+        "40 m/s",
+        "0.05 m/s",
+        "200 m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "Particle velocity is \\( \\partial y/\\partial t=-A\\omega\\cos(kx-\\omega t) \\).<br><br>Its maximum magnitude is \\( A\\omega=0.01\\times200=2 \\) m/s.<br><br>This is different from the wave speed \\( \\omega/k=40 \\) m/s.",
+      "hint": "Differentiate y with respect to time; the largest value of cosine is 1.",
+      "distractor_logic": [
+        "Gives the wave speed \\( \\omega/k \\), confusing the speed of the wave with the speed of a particle",
+        "Multiplies amplitude by k instead of by \\( \\omega \\)",
+        "Takes \\( \\omega \\) itself as a speed, ignoring the amplitude"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-006",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "A vibrator sends waves along a stretched string. If the vibrator's frequency is doubled while the tension stays the same, what happens?",
+      "options": [
+        "The wave speed doubles and the wavelength stays the same",
+        "The wave speed stays the same and the wavelength halves",
+        "The wave speed doubles and the wavelength also doubles",
+        "The wave speed halves and the wavelength stays the same"
+      ],
+      "correct_index": 1,
+      "explanation": "Speed on the string is \\( v=\\sqrt{T/\\mu} \\), fixed by the string and its tension.<br><br>With v fixed, \\( v=f\\lambda \\) forces \\( \\lambda \\) to halve when f doubles.",
+      "hint": "What decides wave speed on a string: the source or the string?",
+      "distractor_logic": [
+        "Trap B: assumes wave speed depends on the wave's own frequency",
+        "Trap B, and it also breaks \\( v=f\\lambda \\) since doubling f and \\( \\lambda \\) would quadruple v",
+        "Trap B: makes speed depend on frequency, and in the wrong direction"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-007",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "A wave of wavelength 2 m travels along a string. What is the phase difference between two points on the string 0.5 m apart along the direction of travel?",
+      "options": [
+        "\\( \\pi \\) rad",
+        "\\( \\pi/4 \\) rad",
+        "\\( \\pi/2 \\) rad",
+        "0.25 rad"
+      ],
+      "correct_index": 2,
+      "explanation": "Phase difference \\( \\Delta\\phi=k\\Delta x=\\dfrac{2\\pi}{\\lambda}\\Delta x \\).<br><br>\\( \\Delta\\phi=\\dfrac{2\\pi}{2}\\times0.5=\\dfrac{\\pi}{2} \\) rad.",
+      "hint": "One wavelength corresponds to \\( 2\\pi \\) of phase.",
+      "distractor_logic": [
+        "Treats 0.5 m as half a wavelength instead of a quarter",
+        "Uses \\( \\pi\\Delta x/\\lambda \\), losing a factor of 2",
+        "Gives \\( \\Delta x/\\lambda \\) directly as an angle, leaving out \\( 2\\pi \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-008",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 2,
+      "type": "regular",
+      "question": "The tension in a stretched string is made four times its original value. The speed of transverse waves on it becomes:",
+      "options": [
+        "Four times the original speed",
+        "Half the original speed",
+        "Unchanged, since speed depends only on the wave's frequency",
+        "Twice the original speed"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v=\\sqrt{T/\\mu} \\), so \\( v\\propto\\sqrt T \\).<br><br>Making T four times gives \\( \\sqrt4=2 \\) times the speed.",
+      "hint": "Speed goes as the square root of tension.",
+      "distractor_logic": [
+        "Takes speed to be proportional to T rather than to \\( \\sqrt T \\)",
+        "Inverts the dependence, as if speed fell with tension",
+        "Trap B: speed is set by the medium, and tension is part of that medium property"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-009",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "For a diatomic gas with \\( \\gamma=7/5 \\), pressure \\( 1.0\\times10^5 \\) Pa and density 0.875 kg per cubic metre, what is the speed of sound?",
+      "options": [
+        "400 m/s",
+        "About 338 m/s",
+        "About 473 m/s",
+        "160000 m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( v=\\sqrt{\\gamma P/\\rho} \\).<br><br>\\( \\gamma P=1.4\\times10^5 \\) Pa, and \\( 1.4\\times10^5/0.875=1.6\\times10^5 \\).<br><br>\\( v=\\sqrt{1.6\\times10^5}=400 \\) m/s.",
+      "hint": "Use Laplace's formula, keeping the \\( \\gamma \\).",
+      "distractor_logic": [
+        "Trap B: Newton's uncorrected formula \\( \\sqrt{P/\\rho} \\), dropping \\( \\gamma \\)",
+        "Uses \\( \\gamma^2P \\) instead of \\( \\gamma P \\)",
+        "Forgets to take the square root"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-010",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "The speed of sound in air at 300 K is 340 m/s. What is it at 1200 K?",
+      "options": [
+        "1360 m/s",
+        "680 m/s",
+        "340 m/s",
+        "170 m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v\\propto\\sqrt T \\).<br><br>\\( v_2=340\\times\\sqrt{1200/300}=340\\times2=680 \\) m/s.",
+      "hint": "Take the ratio of temperatures, then its square root.",
+      "distractor_logic": [
+        "Takes speed proportional to T, not \\( \\sqrt T \\)",
+        "Assumes the speed of sound in a given gas is fixed regardless of temperature",
+        "Uses the inverse square-root dependence"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-011",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "At the same temperature, what is the ratio of the speed of sound in hydrogen (molar mass 2 g/mol) to that in oxygen (molar mass 32 g/mol)? Both are diatomic.",
+      "options": [
+        "1/4",
+        "16",
+        "4",
+        "1"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v=\\sqrt{\\gamma RT/M} \\); \\( \\gamma \\) and T are the same.<br><br>\\( v_H/v_O=\\sqrt{M_O/M_H}=\\sqrt{32/2}=\\sqrt{16}=4 \\).",
+      "hint": "Same \\( \\gamma \\), same T, so only molar mass matters.",
+      "distractor_logic": [
+        "Inverts the ratio; lighter gases carry sound faster, not slower",
+        "Uses the ratio of molar masses without taking the square root",
+        "Assumes same temperature means same speed, ignoring molar mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-012",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "A 500 Hz sound passes from air (speed 340 m/s) into water (speed 1500 m/s). What is its wavelength in water?",
+      "options": [
+        "0.68 m",
+        "\\( 7.5\\times10^5 \\) m",
+        "\\( \\tfrac13 \\) m",
+        "3 m"
+      ],
+      "correct_index": 3,
+      "explanation": "Frequency stays 500 Hz in water.<br><br>\\( \\lambda=v/f=1500/500=3 \\) m.",
+      "hint": "Frequency carries over; speed changes.",
+      "distractor_logic": [
+        "Keeps the wavelength from air, as if wavelength were fixed across media",
+        "Multiplies speed by frequency instead of dividing",
+        "Divides frequency by speed, inverting \\( \\lambda=v/f \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-013",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "Water has a bulk modulus of \\( 2.25\\times10^9 \\) Pa and density 1000 kg per cubic metre. What is the speed of sound in water?",
+      "options": [
+        "1500 m/s",
+        "\\( 2.25\\times10^6 \\) m/s",
+        "About 47400 m/s",
+        "About \\( 6.7\\times10^{-4} \\) m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "For a liquid, \\( v=\\sqrt{B/\\rho} \\).<br><br>\\( B/\\rho=2.25\\times10^9/1000=2.25\\times10^6 \\).<br><br>\\( v=\\sqrt{2.25\\times10^6}=1500 \\) m/s.",
+      "hint": "Use bulk modulus over density, then take the root.",
+      "distractor_logic": [
+        "Forgets the square root in \\( \\sqrt{B/\\rho} \\)",
+        "Takes the square root of the bulk modulus alone, ignoring density",
+        "Inverts the ratio to \\( \\sqrt{\\rho/B} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-014",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "At the same temperature and pressure, how does the speed of sound in moist air compare with that in dry air?",
+      "options": [
+        "It is smaller in moist air",
+        "It is greater in moist air",
+        "It is exactly the same",
+        "It depends on the frequency of the sound"
+      ],
+      "correct_index": 1,
+      "explanation": "Water vapour (molar mass 18 g/mol) is lighter than dry air (about 29 g/mol).<br><br>So moist air has a lower density at the same pressure, and \\( v=\\sqrt{\\gamma P/\\rho} \\) is larger.",
+      "hint": "Compare the molar mass of water with that of air.",
+      "distractor_logic": [
+        "Assumes moist air is denser, but water vapour is lighter than the nitrogen and oxygen it replaces",
+        "Ignores the change in density caused by water vapour",
+        "Trap B: sound speed in a medium does not depend on frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-015",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "For a monoatomic gas, by what factor does \\( v^2 \\) from Laplace's formula exceed \\( v^2 \\) from Newton's formula?",
+      "options": [
+        "\\( \\sqrt{5/3} \\)",
+        "\\( 7/5 \\)",
+        "\\( 5/3 \\)",
+        "\\( 3/5 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Laplace: \\( v^2=\\gamma P/\\rho \\). Newton: \\( v^2=P/\\rho \\).<br><br>Ratio \\( =\\gamma \\), which is \\( 5/3 \\) for a monoatomic gas.",
+      "hint": "Divide the two expressions for \\( v^2 \\).",
+      "distractor_logic": [
+        "Gives the ratio of speeds, but the question asks for the ratio of squared speeds",
+        "Uses \\( \\gamma \\) for a diatomic gas",
+        "Inverts the ratio, which would make Laplace's value the smaller one"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-016",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 2,
+      "type": "regular",
+      "question": "At what temperature will the speed of sound in air be double its value at \\( 27^\\circ\\text{C} \\)?",
+      "options": [
+        "\\( 54^\\circ\\text{C} \\)",
+        "\\( 327^\\circ\\text{C} \\)",
+        "\\( 1200^\\circ\\text{C} \\)",
+        "\\( 927^\\circ\\text{C} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( 27^\\circ\\text{C}=300 \\) K, and \\( v\\propto\\sqrt T \\).<br><br>Doubling v needs T multiplied by 4: \\( T=1200 \\) K.<br><br>\\( 1200-273=927^\\circ\\text{C} \\).",
+      "hint": "Work in kelvin; speed goes as \\( \\sqrt T \\).",
+      "distractor_logic": [
+        "Doubles the Celsius temperature and uses a linear dependence",
+        "Doubles the Kelvin temperature, taking \\( v\\propto T \\)",
+        "Finds the right Kelvin value but forgets to convert back to Celsius"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-017",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "A standing wave is given by \\( y=0.04\\sin(5\\pi x)\\cos(100\\pi t) \\) in SI units. What is the distance between adjacent nodes?",
+      "options": [
+        "0.2 m",
+        "0.4 m",
+        "0.1 m",
+        "0.8 m"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( k=5\\pi \\) rad/m, so \\( \\lambda=2\\pi/k=0.4 \\) m.<br><br>Adjacent nodes are \\( \\lambda/2=0.2 \\) m apart.",
+      "hint": "Find \\( \\lambda \\) from k, then halve it.",
+      "distractor_logic": [
+        "Gives the wavelength instead of half of it",
+        "Gives the node-to-antinode distance",
+        "Doubles the wavelength"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-018",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "A standing wave \\( y=0.06\\sin kx\\cos\\omega t \\) (in m) is formed by two travelling waves. What are the amplitude and directions of these component waves?",
+      "options": [
+        "0.03 m each, travelling in the same direction",
+        "0.03 m each, travelling in opposite directions",
+        "0.06 m each, travelling in opposite directions",
+        "0.12 m each, travelling in opposite directions"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( A\\sin(kx-\\omega t)+A\\sin(kx+\\omega t)=2A\\sin kx\\cos\\omega t \\).<br><br>Here \\( 2A=0.06 \\) m, so \\( A=0.03 \\) m, and the two waves move in opposite directions.",
+      "hint": "Compare with \\( 2A\\sin kx\\cos\\omega t \\).",
+      "distractor_logic": [
+        "Waves in the same direction combine into another travelling wave, not a standing wave",
+        "Forgets that the standing-wave amplitude is twice the component amplitude",
+        "Doubles instead of halving"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-019",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "Two coherent sources emit waves of wavelength 0.4 m in phase. At a point P the path difference is 0.6 m. What happens at P?",
+      "options": [
+        "Constructive interference",
+        "Partially constructive, with amplitude 1.5 times that of one wave",
+        "Destructive interference",
+        "It cannot be decided without the frequency"
+      ],
+      "correct_index": 2,
+      "explanation": "Path difference in wavelengths: \\( 0.6/0.4=1.5 \\), i.e. \\( (1+\\tfrac12)\\lambda \\).<br><br>This matches the destructive condition \\( (n+\\tfrac12)\\lambda \\).",
+      "hint": "Divide the path difference by the wavelength.",
+      "distractor_logic": [
+        "Treats 0.6 m as a whole number of wavelengths, but it is 1.5 wavelengths",
+        "Misreads the number of wavelengths as an amplitude factor",
+        "Only the path difference compared with \\( \\lambda \\) is needed"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-020",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "Two pulses on a string, one upward of height 3 cm and one downward of depth 3 cm with the same shape, approach and pass through each other. Which is correct?",
+      "options": [
+        "The pulses destroy each other permanently",
+        "At full overlap the displacement is 6 cm",
+        "The pulses bounce off each other and reverse direction",
+        "At full overlap the string is momentarily flat there, and afterwards both pulses continue unchanged"
+      ],
+      "correct_index": 3,
+      "explanation": "At full overlap: \\( y=(+3)+(-3)=0 \\), so the string is flat for an instant.<br><br>The energy is not lost; it is stored as kinetic energy of the string at that moment.<br><br>After passing, each pulse continues exactly as before.",
+      "hint": "Superposition affects only the overlap region, and only while they overlap.",
+      "distractor_logic": [
+        "Superposition is temporary; each pulse continues with its own shape",
+        "Adds magnitudes, ignoring that the displacements have opposite signs",
+        "Waves pass through each other; they do not collide like particles"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-021",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "Two waves \\( y_1=A\\sin(kx-\\omega t) \\) and \\( y_2=A\\sin(kx+\\omega t) \\) superpose. The result is:",
+      "options": [
+        "A standing wave \\( y=2A\\sin kx\\cos\\omega t \\)",
+        "A standing wave \\( y=2A\\cos kx\\sin\\omega t \\)",
+        "Zero displacement everywhere",
+        "A wave of amplitude \\( 2A \\) travelling along +x"
+      ],
+      "correct_index": 0,
+      "explanation": "Use \\( \\sin(a-b)+\\sin(a+b)=2\\sin a\\cos b \\) with \\( a=kx \\), \\( b=\\omega t \\).<br><br>\\( y=2A\\sin kx\\cos\\omega t \\): a standing wave, with positions fixed by \\( \\sin kx \\) and time dependence by \\( \\cos\\omega t \\).",
+      "hint": "Apply the sin(a-b)+sin(a+b) identity.",
+      "distractor_logic": [
+        "Swaps sine and cosine when applying the sum formula",
+        "Assumes the opposite signs of \\( \\omega t \\) make the waves cancel completely",
+        "Two waves in opposite directions cannot give a net travelling wave"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-022",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "For the standing wave \\( y=2A\\sin kx\\cos\\omega t \\), where are the nodes located? (n = 0, 1, 2, ...)",
+      "options": [
+        "\\( x=(n+\\tfrac12)\\lambda/2 \\)",
+        "\\( x=n\\lambda/2 \\)",
+        "\\( x=n\\lambda \\)",
+        "\\( x=n\\lambda/4 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Nodes need \\( \\sin kx=0 \\), so \\( kx=n\\pi \\).<br><br>With \\( k=2\\pi/\\lambda \\): \\( x=n\\lambda/2 \\).",
+      "hint": "Set \\( \\sin kx=0 \\).",
+      "distractor_logic": [
+        "These are the antinode positions",
+        "Gives only every second node",
+        "Includes antinodes as well as nodes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-023",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "Two waves of equal amplitude A and equal frequency travel in the same direction with a phase difference of \\( 2\\pi/3 \\). What is the amplitude of the resultant wave?",
+      "options": [
+        "\\( 2A \\)",
+        "Zero",
+        "\\( A \\)",
+        "\\( \\sqrt3\\,A \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Resultant amplitude \\( =2A\\cos(\\phi/2) \\).<br><br>\\( =2A\\cos(\\pi/3)=2A\\times\\tfrac12=A \\).",
+      "hint": "Use \\( 2A\\cos(\\phi/2) \\).",
+      "distractor_logic": [
+        "Ignores the phase difference and adds amplitudes directly",
+        "Treats the phase difference as \\( \\pi \\)",
+        "Uses \\( 2A\\sin(\\phi/2) \\) instead of \\( 2A\\cos(\\phi/2) \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-024",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "In a standing wave on a string, how do particles between two adjacent nodes vibrate relative to each other?",
+      "options": [
+        "With phase changing steadily from point to point, as in a travelling wave",
+        "Each in opposite phase to its immediate neighbour",
+        "All with the same amplitude but random phases",
+        "All in the same phase, with different amplitudes"
+      ],
+      "correct_index": 3,
+      "explanation": "In \\( y=2A\\sin kx\\cos\\omega t \\) every point shares the same \\( \\cos\\omega t \\).<br><br>Between two nodes \\( \\sin kx \\) keeps one sign, so all these particles move together, in phase.<br><br>Across a node \\( \\sin kx \\) changes sign, so neighbouring loops are in opposite phase.",
+      "hint": "Look at the time factor and the sign of \\( \\sin kx \\) within one loop.",
+      "distractor_logic": [
+        "This describes a travelling wave, not a standing wave",
+        "Opposite phase occurs only across a node, not between neighbours in the same loop",
+        "Amplitude varies with position and phases are not random"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-025",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "A pipe 0.85 m long is closed at one end. Taking the speed of sound as 340 m/s, what are its two lowest resonant frequencies?",
+      "options": [
+        "100 Hz and 300 Hz",
+        "100 Hz and 200 Hz",
+        "200 Hz and 400 Hz",
+        "200 Hz and 600 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "Fundamental \\( f_1=v/4L=340/3.4=100 \\) Hz.<br><br>Only odd harmonics are allowed, so the next is \\( 3f_1=300 \\) Hz.",
+      "hint": "Closed pipe: \\( v/4L \\), then odd multiples only.",
+      "distractor_logic": [
+        "Trap C: includes the second harmonic, which a closed pipe cannot have",
+        "Trap C: uses the open-pipe formula",
+        "Uses \\( v/2L \\) for the fundamental but keeps only odd multiples"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-026",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "A pipe 0.5 m long is open at both ends. With sound speed 340 m/s, what is the frequency of its third harmonic?",
+      "options": [
+        "510 Hz",
+        "1020 Hz",
+        "680 Hz",
+        "340 Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "Open pipe: \\( f_n=nv/2L \\).<br><br>\\( f_1=340/1=340 \\) Hz, so \\( f_3=3\\times340=1020 \\) Hz.",
+      "hint": "Open pipe harmonics are all integer multiples of \\( v/2L \\).",
+      "distractor_logic": [
+        "Trap C: uses the closed-pipe formula \\( 3v/4L \\)",
+        "Gives the second harmonic",
+        "Gives the fundamental"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-027",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "A string 1 m long, fixed at both ends, has tension 64 N and linear mass density 0.01 kg/m. What is the frequency of its third harmonic?",
+      "options": [
+        "100 Hz",
+        "240 Hz",
+        "120 Hz",
+        "40 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v=\\sqrt{64/0.01}=80 \\) m/s.<br><br>\\( f_1=v/2L=40 \\) Hz, so \\( f_3=3\\times40=120 \\) Hz.",
+      "hint": "Find v first, then use \\( f_n=nv/2L \\).",
+      "distractor_logic": [
+        "Trap C: uses the closed-pipe pattern \\( 3v/4L \\) for a string",
+        "Uses \\( nv/L \\), doubling the correct value",
+        "Gives the fundamental instead of the third harmonic"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-028",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "An open pipe and a closed pipe have the same length. What is the ratio of the fundamental frequency of the open pipe to that of the closed pipe?",
+      "options": [
+        "1 : 2",
+        "1 : 1",
+        "4 : 1",
+        "2 : 1"
+      ],
+      "correct_index": 3,
+      "explanation": "Open: \\( v/2L \\). Closed: \\( v/4L \\).<br><br>Ratio \\( =(v/2L)/(v/4L)=2 \\).",
+      "hint": "Half wavelength versus quarter wavelength.",
+      "distractor_logic": [
+        "Inverts the ratio; the closed pipe has the lower fundamental",
+        "Trap C: assumes the ends do not affect the fundamental",
+        "Compares \\( v/L \\) with \\( v/4L \\) by mistake"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-029",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "The fundamental of a pipe closed at one end is 150 Hz. Which of the following can also be a resonant frequency of this pipe?",
+      "options": [
+        "450 Hz",
+        "300 Hz",
+        "600 Hz",
+        "900 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "Closed pipe frequencies are \\( (2n-1)f_1 \\): 150, 450, 750, ... Hz.<br><br>\\( 450=3\\times150 \\) is allowed; 300, 600 and 900 Hz are even multiples.",
+      "hint": "Divide each by 150 and check for odd numbers.",
+      "distractor_logic": [
+        "Trap C: an even multiple (2nd harmonic) that a closed pipe cannot support",
+        "Trap C: an even multiple (4th harmonic)",
+        "Trap C: an even multiple (6th harmonic)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-030",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "A string fixed at both ends vibrates in its fourth harmonic. How many nodes are there, including the two ends?",
+      "options": [
+        "4",
+        "5",
+        "3",
+        "8"
+      ],
+      "correct_index": 1,
+      "explanation": "The fourth harmonic has 4 loops.<br><br>4 loops need 4 + 1 = 5 nodes, counting both fixed ends.",
+      "hint": "Loops are separated by nodes; add one for the ends.",
+      "distractor_logic": [
+        "Counts one node per loop and forgets the extra end node",
+        "Counts only the nodes between the ends",
+        "Counts antinodes and nodes as if each loop had two nodes of its own"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-031",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "A pipe closed at one end is 20 cm long. What length of open pipe has the same fundamental frequency?",
+      "options": [
+        "10 cm",
+        "20 cm",
+        "40 cm",
+        "80 cm"
+      ],
+      "correct_index": 2,
+      "explanation": "Equal fundamentals: \\( v/2L_o=v/4L_c \\).<br><br>\\( L_o=2L_c=40 \\) cm.",
+      "hint": "Set \\( v/2L_o \\) equal to \\( v/4L_c \\).",
+      "distractor_logic": [
+        "Inverts the relation between the two pipes",
+        "Trap C: assumes equal lengths give equal fundamentals",
+        "Multiplies by 4 instead of 2"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-032",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 2,
+      "type": "regular",
+      "question": "On a sonometer, the vibrating length of a wire is halved while tension stays the same. The fundamental frequency becomes:",
+      "options": [
+        "Half the original",
+        "Four times the original",
+        "Unchanged, as frequency depends only on tension",
+        "Twice the original"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f_1=\\dfrac{1}{2L}\\sqrt{T/\\mu} \\): with T and \\( \\mu \\) fixed, \\( f_1\\propto1/L \\).<br><br>Halving L doubles \\( f_1 \\).",
+      "hint": "Frequency is inversely proportional to length.",
+      "distractor_logic": [
+        "Makes frequency increase with length",
+        "Takes frequency inversely proportional to \\( L^2 \\)",
+        "Forgets that length sets the wavelength of the fundamental"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-033",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "A source of 450 Hz moves towards a stationary observer at 34 m/s. The speed of sound is 340 m/s. What frequency does the observer hear?",
+      "options": [
+        "500 Hz",
+        "About 409 Hz",
+        "495 Hz",
+        "405 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( f'=f\\,\\dfrac{v}{v-v_s}=450\\times\\dfrac{340}{306} \\).<br><br>\\( 340/306=10/9 \\), so \\( f'=450\\times10/9=500 \\) Hz.",
+      "hint": "Source approaching: denominator \\( v-v_s \\).",
+      "distractor_logic": [
+        "Trap D: uses the receding-source formula, lowering the frequency on approach",
+        "Uses the moving-observer formula for a moving source",
+        "Trap D: uses \\( (v-v_s)/v \\), lowering the frequency on approach"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-034",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "An observer moves away from a stationary 500 Hz source at 34 m/s. The speed of sound is 340 m/s. What frequency does the observer hear?",
+      "options": [
+        "550 Hz",
+        "450 Hz",
+        "About 556 Hz",
+        "500 Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f'=f\\,\\dfrac{v-v_o}{v}=500\\times\\dfrac{306}{340} \\).<br><br>\\( 306/340=9/10 \\), so \\( f'=450 \\) Hz.",
+      "hint": "Observer receding: numerator \\( v-v_o \\).",
+      "distractor_logic": [
+        "Trap D: uses the approaching-observer sign, raising the frequency while receding",
+        "Uses a moving-source form with the wrong sign",
+        "Assumes only a moving source causes a Doppler shift"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-035",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "Fork A (256 Hz) gives 4 beats per second with fork B. When B is loaded with a little wax, the beats increase to 6 per second. What was the original frequency of B?",
+      "options": [
+        "260 Hz",
+        "250 Hz",
+        "252 Hz",
+        "262 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "B is either 252 Hz or 260 Hz.<br><br>Wax lowers B's frequency. From 260 Hz it would move towards 256 Hz, reducing beats; from 252 Hz it moves away, increasing beats.<br><br>Beats increased, so B was 252 Hz.",
+      "hint": "Loading lowers the frequency; check which choice makes beats rise.",
+      "distractor_logic": [
+        "If B were 260 Hz, loading would bring it closer to 256 Hz and the beats would decrease",
+        "Subtracts the new beat count, not the original one",
+        "Adds the new beat count, and also takes the wrong side of 256 Hz"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-036",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "A train moves away from a stationary listener at 34 m/s while blowing a 550 Hz whistle. The speed of sound is 340 m/s. What frequency does the listener hear?",
+      "options": [
+        "About 611 Hz",
+        "605 Hz",
+        "495 Hz",
+        "500 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f'=f\\,\\dfrac{v}{v+v_s}=550\\times\\dfrac{340}{374} \\).<br><br>\\( 340/374=10/11 \\), so \\( f'=500 \\) Hz.",
+      "hint": "Source receding: denominator \\( v+v_s \\).",
+      "distractor_logic": [
+        "Trap D: uses the approaching-source formula, raising the frequency while receding",
+        "Trap D: uses an approaching-observer formula",
+        "Uses the receding-observer formula for a receding source"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-037",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "Two sources of 300 Hz and 304 Hz are sounded together. What is the time interval between two successive maxima of loudness?",
+      "options": [
+        "0.25 s",
+        "4 s",
+        "0.5 s",
+        "\\( \\tfrac{1}{604} \\) s"
+      ],
+      "correct_index": 0,
+      "explanation": "Beat frequency \\( =304-300=4 \\) Hz.<br><br>Time between maxima \\( =1/4=0.25 \\) s.",
+      "hint": "Beat period is the reciprocal of the beat frequency.",
+      "distractor_logic": [
+        "Takes the beat frequency itself as the time interval",
+        "Halves the beat frequency before taking the reciprocal",
+        "Trap D: uses the sum of the frequencies"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-038",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "A source of 450 Hz and an observer move towards each other, each at 34 m/s. The speed of sound is 340 m/s. What frequency does the observer hear?",
+      "options": [
+        "500 Hz",
+        "550 Hz",
+        "About 368 Hz",
+        "495 Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f'=f\\,\\dfrac{v+v_o}{v-v_s}=450\\times\\dfrac{374}{306} \\).<br><br>\\( 374/306=11/9 \\), so \\( f'=450\\times11/9=550 \\) Hz.",
+      "hint": "Both approaching: plus in the numerator, minus in the denominator.",
+      "distractor_logic": [
+        "Accounts for the source's motion but ignores the observer's",
+        "Trap D: uses receding signs for both, lowering the frequency while approaching",
+        "Accounts for the observer's motion but ignores the source's"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-039",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "Fork P (512 Hz) gives 5 beats per second with fork Q. When a prong of Q is filed slightly, the beats decrease. What was Q's original frequency?",
+      "options": [
+        "517 Hz",
+        "512 Hz",
+        "507 Hz",
+        "502 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "Q is either 507 Hz or 517 Hz.<br><br>Filing removes mass and raises Q's frequency.<br><br>From 507 Hz it moves towards 512 Hz, so beats decrease: Q was 507 Hz.",
+      "hint": "Filing raises frequency; find which choice gets closer to 512 Hz.",
+      "distractor_logic": [
+        "Filing raises Q; starting from 517 Hz would move it further from 512 Hz and increase beats",
+        "Equal frequencies would give no beats at all",
+        "Subtracts twice the beat count"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L2-040",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 2,
+      "type": "regular",
+      "question": "A train whistle is heard as it approaches a station and again after it has passed, moving at one-tenth the speed of sound. What is the ratio of the approaching frequency to the receding frequency?",
+      "options": [
+        "9 : 11",
+        "1 : 1",
+        "121 : 81",
+        "11 : 9"
+      ],
+      "correct_index": 3,
+      "explanation": "Approaching: \\( f\\,v/(v-v/10)=\\tfrac{10}{9}f \\). Receding: \\( f\\,v/(v+v/10)=\\tfrac{10}{11}f \\).<br><br>Ratio \\( =\\dfrac{10/9}{10/11}=\\dfrac{11}{9} \\).",
+      "hint": "Write both frequencies with \\( v_s=v/10 \\), then divide.",
+      "distractor_logic": [
+        "Trap D: flips the ratio, making the approaching sound lower",
+        "Assumes the shifts cancel so both are heard at the true frequency",
+        "Squares the correct ratio"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-001",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 3,
+      "type": "regular",
+      "question": "For the wave \\( y=0.02\\sin(5x-100t+\\pi/3) \\) in SI units, what is the velocity of the particle at \\( x=0 \\) at \\( t=0 \\)?",
+      "options": [
+        "\\( -1 \\) m/s",
+        "\\( +1 \\) m/s",
+        "\\( -2 \\) m/s",
+        "\\( -0.05 \\) m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "Particle velocity \\( \\partial y/\\partial t=-A\\omega\\cos(kx-\\omega t+\\phi) \\).<br><br>At \\( x=0,t=0 \\): \\( -0.02\\times100\\times\\cos(\\pi/3) \\).<br><br>\\( =-2\\times\\tfrac12=-1 \\) m/s.",
+      "hint": "Differentiate with respect to t, then substitute; \\( \\cos(\\pi/3)=1/2 \\).",
+      "distractor_logic": [
+        "Drops the minus sign produced by the chain rule when differentiating \\( -\\omega t \\)",
+        "Gives the maximum particle speed \\( A\\omega \\), ignoring the cosine factor at this phase",
+        "Uses k instead of \\( \\omega \\) when differentiating"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-002",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 3,
+      "type": "regular",
+      "question": "For the wave \\( y=0.03\\sin(2x-20t+\\pi/6) \\) in SI units, what is the acceleration of the particle at \\( x=0 \\) at \\( t=0 \\)?",
+      "options": [
+        "\\( +6\\ \\mathrm{m\\,s^{-2}} \\)",
+        "\\( -6\\ \\mathrm{m\\,s^{-2}} \\)",
+        "\\( -12\\ \\mathrm{m\\,s^{-2}} \\)",
+        "\\( -0.06\\ \\mathrm{m\\,s^{-2}} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Each particle performs SHM, so \\( a=-\\omega^2y \\).<br><br>At \\( x=0,t=0 \\): \\( y=0.03\\sin(\\pi/6)=0.015 \\) m.<br><br>\\( a=-(20)^2\\times0.015=-400\\times0.015=-6\\ \\mathrm{m\\,s^{-2}} \\).",
+      "hint": "Find y at that point first, then use \\( a=-\\omega^2 y \\).",
+      "distractor_logic": [
+        "Forgets that acceleration is \\( -\\omega^2 y \\), directed opposite to displacement",
+        "Uses the amplitude A instead of the actual displacement y at this instant",
+        "Uses \\( k^2 \\) instead of \\( \\omega^2 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-003",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 3,
+      "type": "regular",
+      "question": "Two wires are made of the same material and stretched with the same tension. The radius of one is r and of the other is 2r. What is the ratio of wave speed in the thinner wire to that in the thicker wire?",
+      "options": [
+        "1 : 2",
+        "4 : 1",
+        "2 : 1",
+        "1 : 1"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\mu=\\rho\\pi r^2 \\), so \\( \\mu\\propto r^2 \\).<br><br>\\( v=\\sqrt{T/\\mu}\\propto1/r \\).<br><br>\\( v_1/v_2=2r/r=2 \\), giving 2 : 1.",
+      "hint": "Mass per metre depends on the cross-sectional area.",
+      "distractor_logic": [
+        "Makes speed increase with radius, reversing the effect of extra mass per metre",
+        "Takes speed inversely proportional to \\( r^2 \\), forgetting the square root in \\( \\sqrt{T/\\mu} \\)",
+        "Trap B: assumes same material means same speed, ignoring that \\( \\mu \\) depends on thickness"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-004",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 3,
+      "type": "regular",
+      "question": "A wave \\( y=0.05\\sin(4x-8t) \\) (SI units) travels on a string of linear mass density 0.02 kg/m. What is the tension in the string?",
+      "options": [
+        "0.04 N",
+        "20.48 N",
+        "0.005 N",
+        "0.08 N"
+      ],
+      "correct_index": 3,
+      "explanation": "Wave speed \\( v=\\omega/k=8/4=2 \\) m/s.<br><br>From \\( v=\\sqrt{T/\\mu} \\), \\( T=\\mu v^2=0.02\\times4=0.08 \\) N.",
+      "hint": "Get v from the equation, then rearrange \\( v=\\sqrt{T/\\mu} \\).",
+      "distractor_logic": [
+        "Uses \\( T=\\mu v \\), forgetting to square the speed",
+        "Trap A variant: takes \\( v=\\omega k=32 \\) m/s instead of \\( \\omega/k \\)",
+        "Takes \\( v=k/\\omega=0.5 \\) m/s, inverting the speed formula"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-005",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 3,
+      "type": "regular",
+      "question": "For a wave \\( y=A\\sin(kx-\\omega t) \\), the ratio of the maximum particle speed to the wave speed is:",
+      "options": [
+        "\\( Ak \\), which equals \\( 2\\pi A/\\lambda \\)",
+        "\\( A/\\lambda \\)",
+        "\\( A\\omega k \\)",
+        "Exactly 1, since particles move at the wave speed"
+      ],
+      "correct_index": 0,
+      "explanation": "Maximum particle speed is \\( A\\omega \\).<br><br>Wave speed is \\( \\omega/k \\).<br><br>Ratio \\( =A\\omega\\div(\\omega/k)=Ak=2\\pi A/\\lambda \\).",
+      "hint": "Divide \\( A\\omega \\) by \\( \\omega/k \\).",
+      "distractor_logic": [
+        "Drops the \\( 2\\pi \\) hidden inside k",
+        "Trap A variant: multiplies by the wave speed written as \\( \\omega k \\)",
+        "Confuses particle motion with the motion of the wave pattern"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-006",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": 3,
+      "type": "regular",
+      "question": "A 200 Hz vibrator drives a string. When the tension is 25 N the wavelength is 0.5 m. The tension is raised to 100 N with the same vibrator. What is the new wavelength?",
+      "options": [
+        "2 m",
+        "1 m",
+        "0.25 m",
+        "0.5 m"
+      ],
+      "correct_index": 1,
+      "explanation": "The vibrator fixes \\( f=200 \\) Hz.<br><br>\\( v\\propto\\sqrt T \\): raising T from 25 N to 100 N doubles v (from 100 m/s to 200 m/s).<br><br>\\( \\lambda=v/f=200/200=1 \\) m.",
+      "hint": "The source decides frequency; the string decides speed.",
+      "distractor_logic": [
+        "Takes wavelength proportional to tension instead of to \\( \\sqrt T \\)",
+        "Makes wavelength fall as tension rises",
+        "Trap B reversed: assumes the frequency adjusts so wavelength stays fixed, but the source fixes frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-007",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 3,
+      "type": "regular",
+      "question": "At what temperature will the speed of sound in oxygen equal the speed of sound in hydrogen at 300 K? (Both diatomic; molar masses 32 and 2 g/mol.)",
+      "options": [
+        "1200 K",
+        "18.75 K",
+        "4800 K",
+        "300 K"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v=\\sqrt{\\gamma RT/M} \\) with the same \\( \\gamma \\).<br><br>Equal speeds need \\( T_O/M_O=T_H/M_H \\).<br><br>\\( T_O=300\\times32/2=4800 \\) K.",
+      "hint": "Set \\( T/M \\) equal for the two gases.",
+      "distractor_logic": [
+        "Multiplies by \\( \\sqrt{16}=4 \\) instead of 16, mixing up speed ratio and temperature ratio",
+        "Inverts the ratio, making oxygen need a lower temperature",
+        "Assumes equal temperatures give equal speeds in all gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-008",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 3,
+      "type": "regular",
+      "question": "A steel rod has Young's modulus \\( 2\\times10^{11} \\) Pa and density 8000 kg per cubic metre. A 2500 Hz longitudinal wave travels along it. What is its wavelength in the rod?",
+      "options": [
+        "0.136 m",
+        "\\( 1.25\\times10^7 \\) m",
+        "0.5 m",
+        "2 m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v=\\sqrt{Y/\\rho}=\\sqrt{2\\times10^{11}/8000}=\\sqrt{2.5\\times10^7}=5000 \\) m/s.<br><br>\\( \\lambda=v/f=5000/2500=2 \\) m.",
+      "hint": "Find v in steel first, then use \\( \\lambda=v/f \\).",
+      "distractor_logic": [
+        "Uses the speed of sound in air (340 m/s) instead of the speed in steel",
+        "Multiplies speed by frequency instead of dividing",
+        "Divides frequency by speed, inverting \\( \\lambda=v/f \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-009",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 3,
+      "type": "regular",
+      "question": "A hammer strikes one end of a 1020 m steel rail. A listener at the other end hears the sound through the rail and through the air. If sound travels at 5100 m/s in steel and 340 m/s in air, what is the time gap between the two sounds?",
+      "options": [
+        "2.8 s",
+        "3.2 s",
+        "3 s",
+        "0.2 s"
+      ],
+      "correct_index": 0,
+      "explanation": "Time through steel \\( =1020/5100=0.2 \\) s.<br><br>Time through air \\( =1020/340=3 \\) s.<br><br>Gap \\( =3-0.2=2.8 \\) s.",
+      "hint": "Find each travel time, then the difference.",
+      "distractor_logic": [
+        "Adds the two travel times instead of subtracting",
+        "Gives only the travel time through air",
+        "Gives only the travel time through the rail"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-010",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 3,
+      "type": "regular",
+      "question": "A diatomic gas is heated at constant pressure until its density is halved. If the speed of sound was \\( v \\) initially, what is it now?",
+      "options": [
+        "\\( 2v \\)",
+        "\\( \\sqrt2\\,v \\)",
+        "\\( v/\\sqrt2 \\)",
+        "\\( v \\), because pressure is unchanged"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v=\\sqrt{\\gamma P/\\rho} \\) with \\( \\gamma \\) and P fixed.<br><br>\\( v\\propto1/\\sqrt\\rho \\); halving \\( \\rho \\) multiplies v by \\( \\sqrt2 \\).",
+      "hint": "Only density changes in Laplace's formula here.",
+      "distractor_logic": [
+        "Takes speed inversely proportional to density rather than to \\( \\sqrt\\rho \\)",
+        "Makes speed fall as density falls",
+        "Looks only at P and ignores the density change in \\( \\sqrt{\\gamma P/\\rho} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-011",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 3,
+      "type": "regular",
+      "question": "A tuning fork produces sound of wavelength 1.7 m in air at 300 K. What is the wavelength of the sound from the same fork in air at 1200 K?",
+      "options": [
+        "6.8 m",
+        "0.85 m",
+        "3.4 m",
+        "1.7 m"
+      ],
+      "correct_index": 2,
+      "explanation": "The fork's frequency does not change with air temperature.<br><br>\\( v\\propto\\sqrt T \\): from 300 K to 1200 K, v doubles.<br><br>\\( \\lambda=v/f \\) doubles: \\( 2\\times1.7=3.4 \\) m.",
+      "hint": "Frequency fixed by the fork; speed depends on temperature.",
+      "distractor_logic": [
+        "Takes speed, and hence wavelength, proportional to T",
+        "Makes wavelength fall with temperature",
+        "Assumes the fork's frequency adjusts to keep wavelength fixed, when in fact the fork fixes frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-012",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": 3,
+      "type": "regular",
+      "question": "The temperature of air rises from 400 K to 441 K. By what percentage does the speed of sound increase?",
+      "options": [
+        "10.25%",
+        "2.5%",
+        "0%",
+        "5%"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_2/v_1=\\sqrt{441/400}=21/20=1.05 \\).<br><br>So the speed increases by 5%.",
+      "hint": "Both temperatures are perfect squares.",
+      "distractor_logic": [
+        "Uses the percentage change in temperature, as if \\( v\\propto T \\)",
+        "Halves the correct percentage, applying the square-root rule twice",
+        "Assumes a gas has one fixed sound speed regardless of temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-013",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "A standing wave is given by \\( y=0.1\\sin(\\pi x/3)\\cos(40\\pi t) \\) with x in metres. What is the amplitude of vibration at \\( x=0.5 \\) m?",
+      "options": [
+        "0.05 m",
+        "0.1 m",
+        "0.025 m",
+        "0 m, since this point is a node"
+      ],
+      "correct_index": 0,
+      "explanation": "Amplitude at x is \\( 0.1\\sin(\\pi x/3) \\).<br><br>At \\( x=0.5 \\): \\( 0.1\\sin(\\pi/6)=0.1\\times\\tfrac12=0.05 \\) m.",
+      "hint": "Amplitude depends on position through \\( \\sin(\\pi x/3) \\).",
+      "distractor_logic": [
+        "Uses the antinode amplitude for every point",
+        "Halves the result again, treating 0.1 as four times the component amplitude",
+        "Nodes are at x = 0, 3, 6 m here, not at 0.5 m"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-014",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "A standing wave on a string is \\( y=0.02\\sin(4\\pi x)\\cos(200\\pi t) \\) in SI units. What is the speed of the travelling waves that form it?",
+      "options": [
+        "Zero, because a standing wave does not move",
+        "50 m/s",
+        "100 m/s",
+        "\\( 800\\pi^2 \\) m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "Component waves have \\( k=4\\pi \\) rad/m and \\( \\omega=200\\pi \\) rad/s.<br><br>\\( v=\\omega/k=200\\pi/4\\pi=50 \\) m/s.",
+      "hint": "The components share k and \\( \\omega \\) with the standing wave.",
+      "distractor_logic": [
+        "Confuses the stationary pattern with the component waves, which do travel",
+        "Doubles the speed on the idea that two waves add their speeds",
+        "Trap A variant: multiplies \\( \\omega \\) and k"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-015",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "Two in-phase coherent sound sources are 4 m and 5 m from a point P. Sound speed is 340 m/s. What is the lowest frequency for which P gets constructive interference?",
+      "options": [
+        "170 Hz",
+        "680 Hz",
+        "340 Hz",
+        "85 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "Path difference \\( =5-4=1 \\) m.<br><br>Constructive needs \\( 1=n\\lambda \\); the longest wavelength is \\( \\lambda=1 \\) m (n = 1).<br><br>Lowest frequency \\( f=v/\\lambda=340 \\) Hz.",
+      "hint": "Largest wavelength that fits a whole number of times in the path difference.",
+      "distractor_logic": [
+        "At 170 Hz the path difference is half a wavelength, which is destructive",
+        "Also constructive, but not the lowest such frequency",
+        "Takes the wavelength as 4 m, so the 1 m path difference is only a quarter wave"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-016",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "A wave travels from a light string into a heavier string joined to it, at the same tension. For the transmitted wave, compared with the incident wave:",
+      "options": [
+        "Speed is the same, while frequency is smaller",
+        "Speed is larger, with the same frequency",
+        "Wavelength is the same, while frequency is smaller",
+        "Frequency is the same, while speed and wavelength are smaller"
+      ],
+      "correct_index": 3,
+      "explanation": "The junction oscillates at the incoming frequency, so f is unchanged.<br><br>\\( v=\\sqrt{T/\\mu} \\) is smaller on the heavier string.<br><br>\\( \\lambda=v/f \\) is therefore smaller too.",
+      "hint": "Which quantity is fixed by the source, and which by the string?",
+      "distractor_logic": [
+        "Trap B: speed is set by the new string's \\( \\mu \\), while frequency is set by the source",
+        "A heavier string has larger \\( \\mu \\), so \\( \\sqrt{T/\\mu} \\) decreases",
+        "Frequency cannot change at a boundary; wavelength is what changes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-017",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "At an instant when a string carrying a standing wave is completely straight (zero displacement everywhere), its energy is:",
+      "options": [
+        "Entirely kinetic",
+        "Zero",
+        "Entirely potential",
+        "Destroyed and recreated each half cycle"
+      ],
+      "correct_index": 0,
+      "explanation": "When the string is straight it is not stretched, so its elastic potential energy is minimum.<br><br>But the particles are passing through their mean positions at maximum speed.<br><br>So the energy is entirely kinetic at that instant.",
+      "hint": "Where is a particle in SHM fastest?",
+      "distractor_logic": [
+        "Energy cannot vanish; it has only changed form",
+        "Potential energy needs the string to be stretched out of shape, which it is not at this instant",
+        "Energy is conserved; it only converts between kinetic and potential forms"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-018",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "Two waves \\( y_1=4\\sin(kx-\\omega t) \\) and \\( y_2=3\\sin(kx-\\omega t+\\pi/2) \\) (in cm) superpose. What is the amplitude of the resultant wave?",
+      "options": [
+        "7 cm",
+        "5 cm",
+        "1 cm",
+        "3.5 cm"
+      ],
+      "correct_index": 1,
+      "explanation": "For a phase difference \\( \\phi \\): \\( A_R^2=A_1^2+A_2^2+2A_1A_2\\cos\\phi \\).<br><br>Here \\( \\cos(\\pi/2)=0 \\), so \\( A_R=\\sqrt{16+9}=5 \\) cm.",
+      "hint": "A phase difference of \\( \\pi/2 \\) combines amplitudes like perpendicular vectors.",
+      "distractor_logic": [
+        "Adds amplitudes as if the waves were in phase",
+        "Subtracts amplitudes as if the waves were in opposite phase",
+        "Averages the two amplitudes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-019",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 3,
+      "type": "regular",
+      "question": "A pipe closed at one end is 0.33 m long, with an end correction of 0.01 m at its open end. With sound speed 340 m/s, what is its fundamental frequency?",
+      "options": [
+        "About 258 Hz",
+        "500 Hz",
+        "250 Hz",
+        "About 266 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "Effective length \\( =L+e=0.33+0.01=0.34 \\) m.<br><br>\\( f_1=v/4(L+e)=340/1.36=250 \\) Hz.",
+      "hint": "End correction adds to the length at the open end.",
+      "distractor_logic": [
+        "Ignores the stated end correction",
+        "Trap C: uses \\( v/2(L+e) \\), the open-pipe form",
+        "Subtracts the end correction instead of adding it"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-020",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 3,
+      "type": "regular",
+      "question": "A pipe 0.8 m long is open at both ends, with an end correction of 0.025 m at each end. With sound speed 340 m/s, what is its fundamental frequency?",
+      "options": [
+        "212.5 Hz",
+        "About 206 Hz",
+        "100 Hz",
+        "200 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "An open pipe has two open ends, so add the correction twice: \\( L_{eff}=0.8+0.05=0.85 \\) m.<br><br>\\( f_1=v/2L_{eff}=340/1.7=200 \\) Hz.",
+      "hint": "Count the open ends.",
+      "distractor_logic": [
+        "Ignores both end corrections",
+        "Applies the end correction at only one end",
+        "Trap C: uses the closed-pipe formula with the corrected length"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-021",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 3,
+      "type": "regular",
+      "question": "Two successive resonant frequencies of a pipe are 450 Hz and 750 Hz. What kind of pipe is it, and what is its fundamental?",
+      "options": [
+        "Closed at one end, with fundamental 150 Hz",
+        "Open at both ends, with fundamental 300 Hz",
+        "Closed at one end, with fundamental 300 Hz",
+        "Open at both ends, with fundamental 150 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "The difference is 300 Hz. If it were an open pipe, \\( f_1=300 \\) Hz, but 450 is not a multiple of 300.<br><br>For a closed pipe, successive resonances differ by \\( 2f_1 \\), so \\( f_1=150 \\) Hz.<br><br>Check: \\( 450=3\\times150 \\), \\( 750=5\\times150 \\), both odd harmonics.",
+      "hint": "Test whether the given values are consecutive odd multiples of something.",
+      "distractor_logic": [
+        "Takes the difference as the fundamental, but 450 Hz is not a multiple of 300 Hz",
+        "Trap C: for a closed pipe successive resonances differ by \\( 2f_1 \\), not \\( f_1 \\)",
+        "An open pipe at 150 Hz would also resonate at 600 Hz, between the two given values"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-022",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 3,
+      "type": "regular",
+      "question": "A string 1.5 m long, fixed at both ends, vibrates at 120 Hz in a pattern with 3 loops. Its linear mass density is 0.01 kg/m. What is the tension?",
+      "options": [
+        "1.2 N",
+        "144 N",
+        "324 N",
+        "36 N"
+      ],
+      "correct_index": 1,
+      "explanation": "3 loops: \\( L=3\\lambda/2 \\), so \\( \\lambda=1 \\) m.<br><br>\\( v=f\\lambda=120 \\) m/s.<br><br>\\( T=\\mu v^2=0.01\\times14400=144 \\) N.",
+      "hint": "Each loop is half a wavelength.",
+      "distractor_logic": [
+        "Uses \\( T=\\mu v \\), forgetting to square the speed",
+        "Takes the wavelength equal to the full string length",
+        "Takes the wavelength equal to one loop length"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-023",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 3,
+      "type": "regular",
+      "question": "In a resonance-tube experiment with a 500 Hz fork, the first two resonances occur at air-column lengths of 16 cm and 50 cm. What is the speed of sound?",
+      "options": [
+        "320 m/s",
+        "170 m/s",
+        "340 m/s",
+        "1000 m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "Successive resonances differ by \\( \\lambda/2 \\), and the end correction cancels in the difference.<br><br>\\( \\lambda/2=50-16=34 \\) cm, so \\( \\lambda=68 \\) cm.<br><br>\\( v=f\\lambda=500\\times0.68=340 \\) m/s.",
+      "hint": "Use the difference of the two lengths.",
+      "distractor_logic": [
+        "Takes \\( \\lambda=4\\times16 \\) cm, ignoring the end correction",
+        "Takes the length difference as a full wavelength instead of half",
+        "Takes \\( \\lambda=4\\times50 \\) cm, treating the second resonance as the fundamental"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-024",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": 3,
+      "type": "regular",
+      "question": "A guitar string has a fundamental of 200 Hz. A finger presses it so that the vibrating length becomes four-fifths of the original, with the same tension. What is the new fundamental?",
+      "options": [
+        "160 Hz",
+        "312.5 Hz",
+        "200 Hz",
+        "250 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f\\propto1/L \\) at fixed tension.<br><br>\\( f'=200\\times\\dfrac{5}{4}=250 \\) Hz.",
+      "hint": "Shorter string, higher pitch, in inverse proportion.",
+      "distractor_logic": [
+        "Takes frequency proportional to length",
+        "Takes frequency inversely proportional to \\( L^2 \\)",
+        "Assumes frequency depends only on tension and mass, not length"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-025",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "A car moves towards a large wall at 34 m/s, sounding a 450 Hz horn. The speed of sound is 340 m/s. What frequency does the driver hear in the echo from the wall?",
+      "options": [
+        "550 Hz",
+        "500 Hz",
+        "450 Hz",
+        "About 368 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "The wall, as a stationary observer, receives \\( f_1=450\\times340/306=500 \\) Hz.<br><br>The wall re-emits 500 Hz as a stationary source; the driver approaches it: \\( f_2=500\\times374/340=550 \\) Hz.",
+      "hint": "Treat the wall first as a listener, then as a source.",
+      "distractor_logic": [
+        "Applies only one Doppler shift, missing that the driver also moves towards the reflected sound",
+        "Assumes reflection cancels the Doppler effect",
+        "Trap D: uses receding signs, lowering the frequency while approaching"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-026",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "An observer walks at 3.4 m/s straight from one 340 Hz source towards another identical 340 Hz source, both stationary. The speed of sound is 340 m/s. How many beats per second does the observer hear?",
+      "options": [
+        "3.4",
+        "6.8",
+        "0",
+        "680"
+      ],
+      "correct_index": 1,
+      "explanation": "From the source ahead: \\( 340\\times343.4/340=343.4 \\) Hz.<br><br>From the source behind: \\( 340\\times336.6/340=336.6 \\) Hz.<br><br>Beats \\( =343.4-336.6=6.8 \\) per second.",
+      "hint": "One source is approached, the other is receded from.",
+      "distractor_logic": [
+        "Counts the Doppler shift from only one source",
+        "Assumes identical sources can never produce beats",
+        "Trap D: adds the two heard frequencies"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-027",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "A 400 Hz fork gives 6 beats per second with an unknown fork. When the unknown fork is loaded with wax, the beats drop to 4 per second. What is the unknown frequency?",
+      "options": [
+        "394 Hz",
+        "402 Hz",
+        "406 Hz",
+        "410 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "The unknown is 394 Hz or 406 Hz.<br><br>Wax lowers the frequency; from 406 Hz it moves towards 400 Hz, so beats fall.<br><br>So the unknown is 406 Hz.",
+      "hint": "Which choice, when lowered, gets closer to 400 Hz?",
+      "distractor_logic": [
+        "Loading 394 Hz would move it further from 400 Hz and increase beats",
+        "Uses the new beat count instead of the original",
+        "Adds both beat counts to 400 Hz"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-028",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "A 500 Hz source moves at 34 m/s towards an observer who is moving away from it at 34 m/s along the same line. The speed of sound is 340 m/s. What frequency does the observer hear?",
+      "options": [
+        "About 611 Hz",
+        "About 409 Hz",
+        "450 Hz",
+        "500 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f'=f\\,\\dfrac{v-v_o}{v-v_s} \\): the source approaches (minus in the denominator) and the observer recedes (minus in the numerator).<br><br>\\( f'=500\\times306/306=500 \\) Hz: with equal speeds there is no relative motion, so no shift.",
+      "hint": "Set up the signs separately for source and observer.",
+      "distractor_logic": [
+        "Trap D: treats the observer as approaching as well",
+        "Trap D: treats the source as receding",
+        "Counts only the observer's motion and ignores the source's"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-029",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "A whistle is heard at 550 Hz as a car approaches and 450 Hz after it passes. The speed of sound is 330 m/s. What is the car's speed?",
+      "options": [
+        "33 m/s",
+        "60 m/s",
+        "66 m/s",
+        "16.5 m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac{f_1}{f_2}=\\dfrac{v+v_s}{v-v_s}=\\dfrac{11}{9} \\).<br><br>\\( 9v+9v_s=11v-11v_s \\Rightarrow 20v_s=2v \\).<br><br>\\( v_s=v/10=33 \\) m/s.",
+      "hint": "Take the ratio so the unknown true frequency cancels.",
+      "distractor_logic": [
+        "Divides the frequency difference by the higher frequency alone",
+        "Forgets to halve: uses \\( 2v(f_1-f_2)/(f_1+f_2) \\)",
+        "Halves the correct answer once more"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-L3-030",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": 3,
+      "type": "regular",
+      "question": "A 500 Hz source moves at 34 m/s towards an observer. The speed of sound is 340 m/s. What is the wavelength of the sound in the air in front of the source?",
+      "options": [
+        "0.68 m",
+        "0.612 m",
+        "0.748 m",
+        "306 m"
+      ],
+      "correct_index": 1,
+      "explanation": "Ahead of a moving source the wavefronts are crowded: \\( \\lambda'=(v-v_s)/f \\).<br><br>\\( \\lambda'=(340-34)/500=306/500=0.612 \\) m.",
+      "hint": "In one period the source moves forward before sending the next crest.",
+      "distractor_logic": [
+        "Assumes only frequency shifts and the wavelength in air is unchanged",
+        "Gives the wavelength behind the source",
+        "Forgets to divide by the frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-001",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A string 1 m long, fixed at both ends, has tension 100 N and linear mass density 0.01 kg/m. What is its fundamental frequency?",
+      "options": [
+        "25 Hz",
+        "100 Hz",
+        "50 Hz",
+        "5000 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v=\\sqrt{100/0.01}=100 \\) m/s.<br><br>\\( f_1=v/2L=100/2=50 \\) Hz.",
+      "hint": "Find the wave speed first.",
+      "distractor_logic": [
+        "Trap C: uses the closed-pipe form \\( v/4L \\) for a string",
+        "Uses \\( v/L \\), which is the second harmonic",
+        "Forgets the square root, taking \\( v=T/\\mu \\)"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-002",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A sonometer wire has a fundamental of 100 Hz under a tension of 25 N. What tension is needed to make the fundamental 200 Hz, with the same length?",
+      "options": [
+        "50 N",
+        "25 N",
+        "6.25 N",
+        "100 N"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f_1=\\dfrac{1}{2L}\\sqrt{T/\\mu} \\), so \\( f_1\\propto\\sqrt T \\) and \\( T\\propto f_1^2 \\).<br><br>Doubling \\( f_1 \\) needs \\( 4\\times25=100 \\) N.",
+      "hint": "Frequency goes as the square root of tension.",
+      "distractor_logic": [
+        "Takes frequency proportional to tension instead of \\( \\sqrt T \\)",
+        "Trap B: assumes frequency can change without any change in wave speed",
+        "Inverts the dependence, lowering tension to raise pitch"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-003",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The waves \\( y_1=0.02\\sin(2\\pi x-100\\pi t) \\) and \\( y_2=0.02\\sin(2\\pi x+100\\pi t) \\) (SI units) superpose. What are the distance between adjacent nodes and the amplitude at an antinode?",
+      "options": [
+        "0.5 m and 0.04 m",
+        "1 m and 0.04 m",
+        "0.5 m and 0.02 m",
+        "0.25 m and 0.04 m"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( k=2\\pi \\), so \\( \\lambda=1 \\) m; nodes are \\( \\lambda/2=0.5 \\) m apart.<br><br>The sum is \\( 0.04\\sin(2\\pi x)\\cos(100\\pi t) \\), so antinode amplitude is 0.04 m.",
+      "hint": "Get \\( \\lambda \\) from k; the standing-wave amplitude is 2A.",
+      "distractor_logic": [
+        "Takes the node spacing as a full wavelength",
+        "Forgets that the antinode amplitude is twice each wave's amplitude",
+        "Gives the node-to-antinode distance"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-004",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A pipe closed at one end sounds its first overtone. How many displacement nodes are there in the pipe, counting the closed end?",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "4"
+      ],
+      "correct_index": 1,
+      "explanation": "The first overtone of a closed pipe is the third harmonic: \\( L=3\\lambda/4 \\).<br><br>Starting with a node at the closed end: node, antinode, node, antinode (at the open end).<br><br>So there are 2 nodes.",
+      "hint": "Lay out quarter wavelengths from the closed end.",
+      "distractor_logic": [
+        "Counts as if the pipe held the fifth harmonic",
+        "Counts only the node at the closed end, as in the fundamental",
+        "Trap C: treats the first overtone as the fourth harmonic"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-005",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An open pipe has a fundamental of 200 Hz when the air is at 300 K. What is its fundamental when the air is at 1200 K? (Ignore expansion of the pipe.)",
+      "options": [
+        "800 Hz",
+        "200 Hz",
+        "400 Hz",
+        "100 Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f_1=v/2L \\) and \\( v\\propto\\sqrt T \\).<br><br>\\( \\sqrt{1200/300}=2 \\), so \\( f_1=2\\times200=400 \\) Hz.",
+      "hint": "The pipe's frequency follows the speed of sound.",
+      "distractor_logic": [
+        "Takes sound speed proportional to T",
+        "Assumes a pipe's frequency depends only on its length",
+        "Makes speed fall as temperature rises"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-006",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A pipe closed at one end has a fundamental of 100 Hz when filled with oxygen. What is the fundamental when it is filled with hydrogen at the same temperature? (Molar masses 32 and 2 g/mol; both diatomic.)",
+      "options": [
+        "25 Hz",
+        "1600 Hz",
+        "100 Hz",
+        "400 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v\\propto1/\\sqrt M \\): \\( v_H/v_O=\\sqrt{32/2}=4 \\).<br><br>\\( f_1=v/4L\\propto v \\), so \\( f_1=400 \\) Hz.",
+      "hint": "Frequency scales with the speed of sound in the gas.",
+      "distractor_logic": [
+        "Inverts the speed ratio",
+        "Uses the molar-mass ratio without the square root",
+        "Assumes the pipe's length alone fixes its frequency"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-007",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two identical strings each have a fundamental of 200 Hz. The tension in one is increased by 21%. How many beats per second are heard when both are plucked?",
+      "options": [
+        "20",
+        "42",
+        "10.5",
+        "420"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( f\\propto\\sqrt T \\): \\( \\sqrt{1.21}=1.1 \\), so the new frequency is 220 Hz.<br><br>Beats \\( =220-200=20 \\) per second.",
+      "hint": "\\( 1.21 \\) is a perfect square.",
+      "distractor_logic": [
+        "Takes frequency proportional to tension, so a 21% rise in f",
+        "Halves the tension change instead of taking its square root",
+        "Trap D: adds the two frequencies"
+      ],
+      "mixed_topics": [
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-008",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An open pipe 0.85 m long and a closed pipe 0.4 m long sound their fundamentals together. With sound speed 340 m/s, how many beats per second are heard?",
+      "options": [
+        "225",
+        "12.5",
+        "412.5",
+        "112.5"
+      ],
+      "correct_index": 1,
+      "explanation": "Open pipe: \\( 340/1.7=200 \\) Hz.<br><br>Closed pipe: \\( 340/1.6=212.5 \\) Hz.<br><br>Beats \\( =212.5-200=12.5 \\) per second.",
+      "hint": "Find each fundamental with the right end conditions.",
+      "distractor_logic": [
+        "Trap C: uses \\( v/2L \\) for the closed pipe",
+        "Trap D: adds the two frequencies",
+        "Trap C: uses \\( v/4L \\) for the open pipe"
+      ],
+      "mixed_topics": [
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-009",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A wave is given by \\( y=A\\sin(\\pi x-200\\pi t) \\) (SI units). Two such waves from in-phase sources reach a point with a path difference of 3 m. What happens there?",
+      "options": [
+        "Constructive interference",
+        "Constructive, because 3 m is a whole number of metres",
+        "Destructive interference",
+        "No interference, because the waves move along +x"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( k=\\pi \\), so \\( \\lambda=2\\pi/\\pi=2 \\) m.<br><br>Path difference \\( =3 \\) m \\( =1.5\\lambda \\), which is \\( (n+\\tfrac12)\\lambda \\): destructive.",
+      "hint": "Get \\( \\lambda \\) from k first.",
+      "distractor_logic": [
+        "Takes \\( \\lambda=\\pi \\) or 1 m from the equation, making 3 m look like whole wavelengths",
+        "Compares the path difference with 1 m instead of with the wavelength",
+        "Direction of travel does not prevent superposition"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-010",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "On a hot day the air is at 1200 K, where the speed of sound is 680 m/s. A 450 Hz source approaches a stationary listener at 68 m/s. What frequency is heard?",
+      "options": [
+        "562.5 Hz",
+        "About 409 Hz",
+        "495 Hz",
+        "500 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_s=68 \\) m/s is \\( v/10 \\) at \\( v=680 \\) m/s.<br><br>\\( f'=450\\times680/612=450\\times10/9=500 \\) Hz.",
+      "hint": "Use the speed of sound for the stated air.",
+      "distractor_logic": [
+        "Uses 340 m/s instead of the stated speed of sound at this temperature",
+        "Trap D: uses the receding-source formula",
+        "Uses the moving-observer formula for a moving source"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-011",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two tuning forks of 500 Hz and 504 Hz are sounded together under water, where sound travels at 1500 m/s. What beat frequency is heard?",
+      "options": [
+        "4 Hz",
+        "About 17.6 Hz",
+        "About 0.91 Hz",
+        "1004 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "Frequencies are set by the forks and do not change with the medium.<br><br>Beat frequency \\( =504-500=4 \\) Hz, in water as in air.",
+      "hint": "What does a change of medium leave unchanged?",
+      "distractor_logic": [
+        "Scales the beat frequency by the ratio of speeds, as if frequency changed with medium",
+        "Scales inversely with the speed ratio",
+        "Trap D: adds the two frequencies"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-012",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Waves on a guitar string travel at 500 m/s with wavelength 2.5 m. The string makes sound in air, where sound travels at 340 m/s. What is the wavelength of the sound in air?",
+      "options": [
+        "2.5 m",
+        "1.7 m",
+        "\\( 6.8\\times10^4 \\) m",
+        "0.85 m"
+      ],
+      "correct_index": 1,
+      "explanation": "String frequency \\( f=500/2.5=200 \\) Hz.<br><br>The air vibrates at the same 200 Hz: \\( \\lambda=340/200=1.7 \\) m.",
+      "hint": "The frequency is shared; speeds differ.",
+      "distractor_logic": [
+        "Assumes the wavelength carries over from the string to the air",
+        "Multiplies the speed of sound by the frequency",
+        "Uses \\( v/2f \\), halving the wavelength"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Speed of Sound and Waves in Different Media"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-013",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A string 1.2 m long vibrates in a standing wave with 4 loops. What is the distance between a node and the nearest antinode?",
+      "options": [
+        "0.3 m",
+        "0.6 m",
+        "0.15 m",
+        "0.075 m"
+      ],
+      "correct_index": 2,
+      "explanation": "4 loops: \\( 4\\times\\lambda/2=1.2 \\), so \\( \\lambda=0.6 \\) m.<br><br>Node to antinode \\( =\\lambda/4=0.15 \\) m.",
+      "hint": "Each loop is \\( \\lambda/2 \\).",
+      "distractor_logic": [
+        "Gives the node-to-node distance",
+        "Gives the full wavelength",
+        "Divides the loop length by 4 instead of 2"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-014",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A string 0.25 m long has a total mass of 2.5 g and a tension of 100 N, and is fixed at both ends. What is its fundamental frequency?",
+      "options": [
+        "400 Hz",
+        "100 Hz",
+        "20000 Hz",
+        "200 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\mu=0.0025/0.25=0.01 \\) kg/m, so \\( v=\\sqrt{100/0.01}=100 \\) m/s.<br><br>\\( f_1=v/2L=100/0.5=200 \\) Hz.",
+      "hint": "Convert total mass to mass per metre.",
+      "distractor_logic": [
+        "Trap B: uses total mass instead of mass per unit length",
+        "Trap C: uses \\( v/4L \\) for a string",
+        "Forgets the square root in the wave speed"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-015",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A sonometer wire has a fundamental of 400 Hz. By what percentage must its tension change so that it is in unison with a 404 Hz fork?",
+      "options": [
+        "Increase by 2.01%",
+        "Increase by 1%",
+        "Decrease by 2.01%",
+        "Increase by 0.5%"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T\\propto f^2 \\): \\( T_2/T_1=(404/400)^2=1.01^2=1.0201 \\).<br><br>So tension must increase by 2.01%.",
+      "hint": "Tension goes as frequency squared.",
+      "distractor_logic": [
+        "Takes frequency proportional to tension",
+        "Gets the size right but lowers the pitch instead of raising it",
+        "Takes tension proportional to the square root of frequency"
+      ],
+      "mixed_topics": [
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-016",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a resonance tube with a 500 Hz fork, the first resonance occurs at an air-column length of 16 cm. The end correction is 1 cm. What is the speed of sound?",
+      "options": [
+        "320 m/s",
+        "340 m/s",
+        "680 m/s",
+        "360 m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "At first resonance \\( L+e=\\lambda/4 \\): \\( 16+1=17 \\) cm, so \\( \\lambda=68 \\) cm.<br><br>\\( v=f\\lambda=500\\times0.68=340 \\) m/s.",
+      "hint": "Closed tube: corrected length is a quarter wavelength.",
+      "distractor_logic": [
+        "Ignores the given end correction",
+        "Treats the corrected length as half a wavelength",
+        "Adds the end correction twice, as for an open pipe"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-017",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At the open end of an organ pipe, the conditions are:",
+      "options": [
+        "Displacement node and pressure antinode",
+        "Displacement node and pressure node",
+        "Displacement antinode and pressure node",
+        "Displacement antinode and pressure antinode"
+      ],
+      "correct_index": 2,
+      "explanation": "At an open end the air moves freely: displacement antinode.<br><br>The pressure there stays close to atmospheric: pressure node.<br><br>In a sound standing wave, displacement nodes are pressure antinodes and vice versa.",
+      "hint": "Open to the atmosphere, so pressure cannot vary much.",
+      "distractor_logic": [
+        "Trap C: these are the closed-end conditions",
+        "Displacement and pressure nodes never coincide in a sound standing wave",
+        "Pressure variation is largest where displacement is smallest, not at the same place"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-018",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A standing wave on a string is \\( y=0.04\\sin(10\\pi x)\\cos(200\\pi t) \\) (SI units). Which is the component wave travelling along +x?",
+      "options": [
+        "\\( y=0.04\\sin(10\\pi x-200\\pi t) \\)",
+        "\\( y=0.02\\sin(10\\pi x+200\\pi t) \\)",
+        "\\( y=0.02\\sin(200\\pi x-10\\pi t) \\)",
+        "\\( y=0.02\\sin(10\\pi x-200\\pi t) \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( 2A\\sin kx\\cos\\omega t=A\\sin(kx-\\omega t)+A\\sin(kx+\\omega t) \\).<br><br>Here \\( A=0.02 \\), \\( k=10\\pi \\), \\( \\omega=200\\pi \\).<br><br>The +x component has \\( kx-\\omega t \\): \\( 0.02\\sin(10\\pi x-200\\pi t) \\).",
+      "hint": "Split the standing wave into two halves; the minus sign goes with +x.",
+      "distractor_logic": [
+        "Forgets that each component has half the standing-wave amplitude",
+        "Trap A: this component travels along -x",
+        "Swaps the roles of k and \\( \\omega \\)"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-019",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two in-phase speakers emit 340 Hz. At a point the path difference is 1 m. The speed of sound is 340 m/s at 300 K and 680 m/s at 1200 K. What does the point experience at each temperature?",
+      "options": [
+        "Constructive at 300 K, destructive at 1200 K",
+        "Constructive at both temperatures",
+        "Destructive at 300 K, constructive at 1200 K",
+        "Destructive at both temperatures"
+      ],
+      "correct_index": 0,
+      "explanation": "At 300 K: \\( \\lambda=340/340=1 \\) m, so 1 m \\( =\\lambda \\): constructive.<br><br>At 1200 K: \\( \\lambda=680/340=2 \\) m, so 1 m \\( =\\lambda/2 \\): destructive.",
+      "hint": "Find the wavelength at each temperature.",
+      "distractor_logic": [
+        "Assumes wavelength is fixed, forgetting it grows as speed of sound rises",
+        "Swaps the two cases",
+        "Misjudges the 300 K case, where 1 m is a whole wavelength"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-020",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A string 0.5 m long, fixed at both ends, is in unison with the fundamental of an open pipe 0.85 m long (sound speed 340 m/s). What is the speed of waves on the string?",
+      "options": [
+        "340 m/s",
+        "200 m/s",
+        "400 m/s",
+        "100 m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "Pipe: \\( f=340/1.7=200 \\) Hz, and the string's fundamental is also 200 Hz.<br><br>String: \\( v=2Lf=2\\times0.5\\times200=200 \\) m/s.",
+      "hint": "Match frequencies, not speeds.",
+      "distractor_logic": [
+        "Trap B: assumes the string carries waves at the speed of sound in air",
+        "Uses \\( v=4Lf \\), a closed-pipe relation, for the string",
+        "Uses \\( v=Lf \\), taking a loop as a full wavelength"
+      ],
+      "mixed_topics": [
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-021",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A bat flies towards a wall at one-tenth the speed of sound, emitting a 45 kHz call. What frequency does it hear in the echo?",
+      "options": [
+        "50 kHz",
+        "45 kHz",
+        "55 kHz",
+        "About 36.8 kHz"
+      ],
+      "correct_index": 2,
+      "explanation": "Wall receives \\( 45\\times\\dfrac{v}{v-v/10}=50 \\) kHz.<br><br>Bat approaches the reflected source: \\( 50\\times\\dfrac{v+v/10}{v}=55 \\) kHz.",
+      "hint": "Two shifts: bat as source, then bat as observer.",
+      "distractor_logic": [
+        "Includes only one Doppler shift",
+        "Assumes the echo returns at the emitted frequency",
+        "Trap D: uses receding signs while approaching"
+      ],
+      "mixed_topics": [
+        "Beats and the Doppler Effect",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-022",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A source vibrates according to \\( y=A\\sin(kx-900\\pi t) \\) and moves towards a stationary listener at 34 m/s. The speed of sound is 340 m/s. What frequency is heard?",
+      "options": [
+        "\\( 1000\\pi \\) Hz",
+        "1000 Hz",
+        "About 409 Hz",
+        "500 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f=\\omega/2\\pi=900\\pi/2\\pi=450 \\) Hz.<br><br>\\( f'=450\\times340/306=450\\times10/9=500 \\) Hz.",
+      "hint": "Convert \\( \\omega \\) to f first.",
+      "distractor_logic": [
+        "Doppler-shifts the angular frequency and labels it in Hz",
+        "Reads the frequency as \\( \\omega/\\pi=900 \\) Hz instead of \\( \\omega/2\\pi \\)",
+        "Trap D: uses the receding-source formula"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-023",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which situation produces a pattern of nodes that stay fixed in space?",
+      "options": [
+        "Two waves of equal frequency travelling in opposite directions",
+        "Two waves of slightly different frequency travelling in the same direction",
+        "Two waves of equal frequency travelling in the same direction",
+        "Two waves of slightly different frequency travelling in opposite directions"
+      ],
+      "correct_index": 0,
+      "explanation": "A standing wave needs equal frequencies moving in opposite directions: \\( 2A\\sin kx\\cos\\omega t \\) has nodes where \\( \\sin kx=0 \\).<br><br>Slightly different frequencies give beats, a variation in time, not fixed nodes.",
+      "hint": "Standing waves vary in space; beats vary in time.",
+      "distractor_logic": [
+        "This produces beats, where loudness varies with time rather than fixed nodes",
+        "This gives another travelling wave with no fixed nodes",
+        "The nodes would drift along the string rather than stay fixed"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-024",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two identical open pipes each sound 200 Hz at 300 K. One is warmed to 363 K. How many beats per second are heard?",
+      "options": [
+        "42",
+        "20",
+        "0",
+        "420"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f\\propto v\\propto\\sqrt T \\): \\( \\sqrt{363/300}=\\sqrt{1.21}=1.1 \\).<br><br>Warmed pipe: 220 Hz. Beats \\( =220-200=20 \\) per second.",
+      "hint": "Warm air raises the speed of sound.",
+      "distractor_logic": [
+        "Takes frequency proportional to T",
+        "Assumes identical pipes stay in unison regardless of temperature",
+        "Trap D: adds the two frequencies"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-025",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A pulse travels along a 10 m string (tension 40 N, linear mass density 0.1 kg/m) to a fixed end and back. How long does the round trip take, and how does the pulse return?",
+      "options": [
+        "0.5 s, inverted",
+        "1 s, upright",
+        "1 s, inverted",
+        "0.05 s, inverted"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v=\\sqrt{40/0.1}=20 \\) m/s.<br><br>Round trip \\( =20/20=1 \\) s.<br><br>A fixed end inverts the pulse.",
+      "hint": "Find v, double the length, and recall the fixed-end rule.",
+      "distractor_logic": [
+        "Counts only the one-way journey",
+        "Treats the fixed end as free, missing the phase change of \\( \\pi \\)",
+        "Takes \\( v=T/\\mu \\), forgetting the square root"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-026",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A closed pipe has fundamental f in air at 300 K. What is the fundamental of an open pipe of the same length in air at 1200 K?",
+      "options": [
+        "\\( 2f \\)",
+        "\\( 8f \\)",
+        "\\( f \\)",
+        "\\( 4f \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Open instead of closed: \\( v/2L \\) is twice \\( v/4L \\).<br><br>\\( 300\\to1200 \\) K doubles v.<br><br>Together: \\( 2\\times2=4 \\), so \\( 4f \\).",
+      "hint": "Two independent factors of 2.",
+      "distractor_logic": [
+        "Accounts for only one of the two changes",
+        "Takes speed proportional to T",
+        "Assumes neither the end conditions nor temperature matter"
+      ],
+      "mixed_topics": [
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Speed of Sound and Waves in Different Media"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-027",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A closed pipe is 0.3 m long. What length of open pipe has a fundamental equal to the closed pipe's first overtone?",
+      "options": [
+        "0.2 m",
+        "0.3 m",
+        "0.6 m",
+        "0.4 m"
+      ],
+      "correct_index": 0,
+      "explanation": "Closed pipe first overtone \\( =3v/4L_c=3v/1.2 \\).<br><br>Set equal to \\( v/2L_o \\): \\( L_o=1.2/6=0.2 \\) m.",
+      "hint": "The closed pipe's first overtone is its third harmonic.",
+      "distractor_logic": [
+        "Trap C: takes the closed pipe's first overtone as its second harmonic",
+        "Matches the fundamentals instead of the overtone",
+        "Matches the open pipe's first overtone instead of its fundamental"
+      ],
+      "mixed_topics": [
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-028",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two waves \\( y_1=3\\sin(kx-\\omega t) \\) and \\( y_2=4\\sin(kx-\\omega t+\\pi) \\) (in mm) superpose. Describe the resultant.",
+      "options": [
+        "Amplitude 7 mm, travelling along +x",
+        "Amplitude 1 mm, travelling along +x",
+        "Amplitude 1 mm, travelling along -x",
+        "Amplitude 5 mm, travelling along +x"
+      ],
+      "correct_index": 1,
+      "explanation": "A phase difference of \\( \\pi \\) means the waves oppose: amplitude \\( |4-3|=1 \\) mm.<br><br>Both have \\( kx-\\omega t \\), so the resultant also travels along +x.",
+      "hint": "Opposite phase: subtract amplitudes.",
+      "distractor_logic": [
+        "Ignores the phase difference of \\( \\pi \\)",
+        "Trap A: links the minus sign with -x travel",
+        "Treats the phase difference as \\( \\pi/2 \\)"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-029",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two sounds of 256 Hz and 260 Hz reach the ear together. What is heard?",
+      "options": [
+        "A tone of 4 Hz whose loudness peaks 258 times per second",
+        "A tone of 516 Hz whose loudness peaks 4 times per second",
+        "A tone of 258 Hz whose loudness peaks 4 times per second",
+        "A tone of 258 Hz whose loudness peaks 2 times per second"
+      ],
+      "correct_index": 2,
+      "explanation": "Superposing \\( \\sin(2\\pi f_1t)+\\sin(2\\pi f_2t) \\) gives a wave at the average frequency 258 Hz.<br><br>Its amplitude varies, and loudness peaks \\( |f_1-f_2|=4 \\) times per second.",
+      "hint": "Average gives pitch; difference gives beats.",
+      "distractor_logic": [
+        "Swaps the pitch and the beat rate",
+        "Trap D: takes the sum as the pitch heard",
+        "Halves the beat frequency"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-030",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1000 Hz wave travels in steel at 5100 m/s and in air at 340 m/s. What is the ratio of its wavelength in steel to that in air?",
+      "options": [
+        "1/15",
+        "1",
+        "225",
+        "15"
+      ],
+      "correct_index": 3,
+      "explanation": "Frequency is the same in both, so \\( \\lambda\\propto v \\).<br><br>Ratio \\( =5100/340=15 \\).",
+      "hint": "Same f, so wavelength follows speed.",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Assumes wavelength is fixed by the source",
+        "Squares the speed ratio"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Speed of Sound and Waves in Different Media"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-031",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A string 1 m long, fixed at both ends, vibrates in its third harmonic. Which point is an antinode?",
+      "options": [
+        "\\( x=1/6 \\) m",
+        "\\( x=1/3 \\) m",
+        "\\( x=2/3 \\) m",
+        "\\( x=1/4 \\) m"
+      ],
+      "correct_index": 0,
+      "explanation": "Third harmonic: \\( \\lambda=2L/3=2/3 \\) m; nodes at 0, 1/3, 2/3, 1 m.<br><br>Antinodes lie midway: 1/6, 1/2, 5/6 m.",
+      "hint": "Find the nodes first, then take midpoints.",
+      "distractor_logic": [
+        "This is a node for the third harmonic",
+        "This is also a node",
+        "Places the antinode at L/4, as if \\( \\lambda \\) were L"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-032",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Beats and the Doppler Effect",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 450 Hz underwater source approaches a stationary hydrophone at 150 m/s. Sound travels at 1500 m/s in water. What frequency is received?",
+      "options": [
+        "About 805 Hz",
+        "500 Hz",
+        "About 409 Hz",
+        "495 Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "Here \\( v_s=v/10 \\) with \\( v=1500 \\) m/s.<br><br>\\( f'=450\\times1500/1350=450\\times10/9=500 \\) Hz.",
+      "hint": "Use the speed of sound in water.",
+      "distractor_logic": [
+        "Uses 340 m/s, the speed of sound in air",
+        "Trap D: uses the receding-source formula",
+        "Uses the moving-observer formula"
+      ],
+      "mixed_topics": [
+        "Beats and the Doppler Effect",
+        "Speed of Sound and Waves in Different Media"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-033",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A standing wave \\( y=0.02\\sin(2\\pi x)\\cos(100\\pi t) \\) forms on a 1 m string fixed at both ends. Which harmonic is it?",
+      "options": [
+        "Fundamental",
+        "Fourth harmonic",
+        "Second harmonic",
+        "Third harmonic"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( k=2\\pi \\), so \\( \\lambda=1 \\) m.<br><br>Number of loops \\( =L/(\\lambda/2)=1/0.5=2 \\), so it is the second harmonic.",
+      "hint": "How many half-wavelengths fit in the string?",
+      "distractor_logic": [
+        "Takes \\( \\lambda=1 \\) m as one loop",
+        "Counts nodes and antinodes together as loops",
+        "Counts the nodes, including both ends, as the harmonic number"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-034",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At 1200 K the speed of sound in air is 680 m/s. What length of pipe closed at one end has a 250 Hz fundamental in this air?",
+      "options": [
+        "0.34 m",
+        "1.36 m",
+        "2.72 m",
+        "0.68 m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( L=v/4f=680/1000=0.68 \\) m.",
+      "hint": "Closed pipe: quarter wavelength.",
+      "distractor_logic": [
+        "Uses 340 m/s instead of the stated speed",
+        "Trap C: uses the open-pipe relation \\( v/2f \\)",
+        "Uses the full wavelength instead of a quarter"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-035",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Sound reflects from a wall and forms a standing wave with displacement nodes 0.5 m apart. The speed of sound is 340 m/s. What is the frequency?",
+      "options": [
+        "340 Hz",
+        "170 Hz",
+        "680 Hz",
+        "1360 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "Nodes are \\( \\lambda/2 \\) apart: \\( \\lambda=1 \\) m.<br><br>\\( f=v/\\lambda=340 \\) Hz.",
+      "hint": "Node spacing is half a wavelength.",
+      "distractor_logic": [
+        "Takes \\( \\lambda=2 \\) m, as if node spacing were \\( \\lambda/4 \\)",
+        "Takes the node spacing as a full wavelength",
+        "Takes \\( \\lambda=0.25 \\) m"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-036",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Normal Modes of Stretched Strings and Organ Pipes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A listener drives at 34 m/s towards a stationary pipe closed at one end, 17 cm long. The speed of sound is 340 m/s. What frequency is heard?",
+      "options": [
+        "About 556 Hz",
+        "550 Hz",
+        "1100 Hz",
+        "450 Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "Pipe: \\( f=v/4L=340/0.68=500 \\) Hz.<br><br>\\( f'=500\\times374/340=500\\times11/10=550 \\) Hz.",
+      "hint": "Find the pipe frequency first.",
+      "distractor_logic": [
+        "Uses the moving-source formula for a moving observer",
+        "Trap C: uses the open-pipe fundamental",
+        "Trap D: uses the receding-observer sign while approaching"
+      ],
+      "mixed_topics": [
+        "Normal Modes of Stretched Strings and Organ Pipes",
+        "Beats and the Doppler Effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-037",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 200 Hz sound and an 800 Hz sound travel through the same air. What are the ratios of their speeds and wavelengths (200 Hz : 800 Hz)?",
+      "options": [
+        "Speeds 1 : 4, wavelengths 1 : 1",
+        "Speeds 1 : 1, wavelengths 1 : 4",
+        "Speeds 1 : 1, wavelengths 4 : 1",
+        "Speeds 4 : 1, wavelengths 1 : 1"
+      ],
+      "correct_index": 2,
+      "explanation": "Speed depends only on the medium: both travel at the same speed.<br><br>\\( \\lambda=v/f \\): the lower frequency has 4 times the wavelength.",
+      "hint": "Speed is a property of air.",
+      "distractor_logic": [
+        "Trap B: makes speed depend on frequency",
+        "Inverts the wavelength ratio",
+        "Trap B, reversed"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Speed of Sound and Waves in Different Media"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-038",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Superposition, Reflection, and Standing Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 340 Hz fork is held over a tube closed at the bottom (sound speed 340 m/s). Neglecting end correction, at which two lowest air-column lengths is resonance heard?",
+      "options": [
+        "0.25 m and 0.5 m",
+        "0.5 m and 1 m",
+        "0.75 m and 1.25 m",
+        "0.25 m and 0.75 m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\lambda=1 \\) m; closed tube resonates at odd quarter-wavelengths.<br><br>\\( \\lambda/4=0.25 \\) m and \\( 3\\lambda/4=0.75 \\) m.",
+      "hint": "Odd multiples of \\( \\lambda/4 \\).",
+      "distractor_logic": [
+        "Trap C: allows even harmonics in a closed tube",
+        "Trap C: uses open-pipe lengths",
+        "Skips the fundamental"
+      ],
+      "mixed_topics": [
+        "Superposition, Reflection, and Standing Waves",
+        "Normal Modes of Stretched Strings and Organ Pipes"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-039",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A source vibrates at \\( \\omega=1100\\pi \\) rad/s and moves away from a stationary listener at 34 m/s. The speed of sound is 340 m/s. What frequency is heard?",
+      "options": [
+        "500 Hz",
+        "About 611 Hz",
+        "605 Hz",
+        "495 Hz"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( f=1100\\pi/2\\pi=550 \\) Hz.<br><br>\\( f'=550\\times340/374=550\\times10/11=500 \\) Hz.",
+      "hint": "Convert \\( \\omega \\) to f, then apply the receding-source formula.",
+      "distractor_logic": [
+        "Trap D: uses the approaching-source formula",
+        "Trap D: uses an approaching-observer formula",
+        "Uses the receding-observer formula"
+      ],
+      "mixed_topics": [
+        "Transverse and Longitudinal Waves: the Wave Equation and Speed of a Wave",
+        "Beats and the Doppler Effect",
+        "Speed of Sound and Waves in Different Media"
+      ]
+    },
+    {
+      "id": "PHY11-CH14-B-040",
+      "chapter": "PHY11-CH14",
+      "chapter_name": "Waves",
+      "topic": "Speed of Sound and Waves in Different Media",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A person claps in front of a cliff 170 m away. The air is at 300 K, where sound travels at 340 m/s. After what time is the echo heard?",
+      "options": [
+        "0.5 s",
+        "1 s",
+        "2 s",
+        "\\( 5.78\\times10^4 \\) s"
+      ],
+      "correct_index": 1,
+      "explanation": "The sound travels to the cliff, reflects, and returns: total path \\( =2\\times170=340 \\) m.<br><br>Time \\( =340/340=1 \\) s.",
+      "hint": "Reflection means the sound covers the distance twice.",
+      "distractor_logic": [
+        "Counts only the trip to the cliff, not the return after reflection",
+        "Doubles the round-trip time",
+        "Multiplies distance by speed instead of dividing"
+      ],
+      "mixed_topics": [
+        "Speed of Sound and Waves in Different Media",
+        "Superposition, Reflection, and Standing Waves"
+      ]
+    }
+  ]
+}

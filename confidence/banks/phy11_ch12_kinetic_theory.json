@@ -1,0 +1,3729 @@
+{
+  "meta": {
+    "chapter": "PHY11-CH12",
+    "chapter_name": "Kinetic Theory",
+    "subject": "Physics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "All mathematics is written in KaTeX inline spans \\( ... \\). The speeds \\( v_{rms} \\), \\( v_{avg} \\) and \\( v_{mp} \\), Boltzmann's constant \\( k_B \\), and every exponent (including powers of ten and unit exponents such as m\\( ^3 \\)) are each single unnested KaTeX spans. No raw Unicode math symbols appear anywhere outside KaTeX. Every numeric answer terminates cleanly or is a clean order-of-magnitude value."
+  },
+  "topics": [
+    {
+      "name": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "summary": "Kinetic theory models a gas as a very large number of tiny molecules in continuous, random motion. The postulates are simple: molecules are point-sized compared with the spaces between them, they exert no forces on each other except during collisions, and every collision (with another molecule or with a wall) is perfectly elastic. From this picture the ideal gas equation follows. For \\( \\mu \\) moles, \\( PV=\\mu RT \\); written for \\( N \\) molecules it becomes \\( PV=Nk_BT \\), because \\( R=N_Ak_B \\). Dividing by volume gives \\( P=nk_BT \\), where \\( n=N/V \\) is the number density. Always use absolute temperature in kelvin. The same equation contains Boyle's law (fixed \\( T \\)), Charles's law (fixed \\( P \\)) and Avogadro's hypothesis: equal volumes of all gases at the same \\( T \\) and \\( P \\) hold the same number of molecules. Dalton's law of partial pressures follows too, since each gas in a mixture contributes \\( n_ik_BT \\). Note that molecular mass never appears in \\( P=nk_BT \\): heavy and light molecules at the same temperature and number density exert the same pressure.",
+      "key_formulas": [
+        "\\( PV=\\mu RT \\)",
+        "\\( PV=Nk_BT \\)",
+        "\\( P=nk_BT \\), with \\( n=\\dfrac NV \\)",
+        "\\( R=N_Ak_B \\)",
+        "\\( P=P_1+P_2+\\dots \\) (Dalton)"
+      ],
+      "worked_example": "How many molecules per m\\( ^3 \\) are there at \\( 1.38\\times10^{5} \\) Pa and 300 K? (\\( k_B=1.38\\times10^{-23} \\) J/K)<br><br>\\( n=\\dfrac{P}{k_BT}=\\dfrac{1.38\\times10^{5}}{1.38\\times10^{-23}\\times300}=\\dfrac{10^{28}}{300}\\approx3.3\\times10^{25} \\) m\\( ^{-3} \\).",
+      "common_mistakes": [
+        "Pairing \\( R \\) with a molecule count, or \\( k_B \\) with a number of moles",
+        "Using temperature in degrees Celsius instead of kelvin",
+        "Confusing the total molecule count \\( N \\) with the number density \\( n \\)",
+        "Thinking heavier molecules exert more pressure at the same \\( n \\) and \\( T \\)"
+      ],
+      "question_count": 39
+    },
+    {
+      "name": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "summary": "Pressure arises because molecules bounce off the container walls and each bounce transfers momentum. Summing over all molecules gives \\( P=\\dfrac13nm\\overline{v^2}=\\dfrac13\\rho\\overline{v^2} \\). The factor \\( \\dfrac13 \\) appears because only one of the three perpendicular velocity components pushes on a given wall, and on average \\( \\overline{v_x^2}=\\dfrac13\\overline{v^2} \\); it has nothing to do with the \\( \\dfrac12 \\) in kinetic energy. Writing \\( \\bar E=\\dfrac12m\\overline{v^2} \\) turns this into \\( P=\\dfrac23n\\bar E \\), or \\( PV=\\dfrac23E \\) for the whole gas. Comparing with \\( P=nk_BT \\) gives the kinetic interpretation of temperature: \\( \\bar E=\\dfrac32k_BT \\). The average translational kinetic energy per molecule depends only on absolute temperature, not on the kind of gas, its pressure, or its volume. For one mole, the translational energy is \\( \\dfrac32RT \\). At the same temperature a helium atom and an oxygen molecule have the same average translational energy, even though their speeds differ. Absolute zero is where this translational energy would vanish. Because \\( \\bar E \\) is fixed by temperature, doubling the absolute temperature doubles the average kinetic energy of every molecule, whatever the gas; changing the pressure alone at constant temperature leaves it unchanged.",
+      "key_formulas": [
+        "\\( P=\\dfrac13nm\\overline{v^2}=\\dfrac13\\rho\\overline{v^2} \\)",
+        "\\( P=\\dfrac23n\\bar E \\), \\( PV=\\dfrac23E \\)",
+        "\\( \\bar E=\\dfrac32k_BT \\)",
+        "Translational energy per mole \\( =\\dfrac32RT \\)"
+      ],
+      "worked_example": "Find the average translational kinetic energy of a molecule at 300 K. (\\( k_B=1.38\\times10^{-23} \\) J/K)<br><br>\\( \\bar E=\\dfrac32k_BT=\\dfrac32\\times1.38\\times10^{-23}\\times300=6.21\\times10^{-21} \\) J.",
+      "common_mistakes": [
+        "Replacing \\( \\dfrac13 \\) in the pressure formula by \\( \\dfrac12 \\), or dropping it",
+        "Using \\( N \\) where the number density \\( n \\) is needed",
+        "Believing lighter molecules have more kinetic energy at the same temperature",
+        "Linking kinetic energy to pressure instead of temperature"
+      ],
+      "question_count": 34
+    },
+    {
+      "name": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "summary": "Molecules of a gas move with a spread of speeds described by the Maxwell distribution, and three speeds summarise it. The rms speed is \\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3k_BT}{m}} \\); the average speed is \\( v_{avg}=\\sqrt{\\dfrac{8RT}{\\pi M}} \\); the most probable speed, at the peak of the curve, is \\( v_{mp}=\\sqrt{\\dfrac{2RT}{M}} \\). The coefficients are 3, \\( \\dfrac8\\pi \\) (about 2.55) and 2, so the order is always \\( v_{mp}<v_{avg}<v_{rms} \\). Use \\( R \\) with molar mass \\( M \\) in kg/mol, or \\( k_B \\) with molecular mass \\( m \\) in kg; never mix the pairs. All three speeds grow as \\( \\sqrt T \\) and fall as \\( \\dfrac{1}{\\sqrt M} \\), so at equal temperature hydrogen molecules move 4 times faster than oxygen molecules, since \\( \\dfrac{32}{2}=16 \\). On heating, the Maxwell curve flattens and broadens, and its peak shifts to higher speed while the area under it stays fixed. The rms speed is the one tied to kinetic energy: \\( \\bar E=\\dfrac12mv_{rms}^2 \\). A useful shortcut is \\( v_{rms}=\\sqrt{\\dfrac{3P}{\\rho}} \\), which needs only pressure and density. Remember that the speeds depend on temperature and molar mass alone, not on pressure by itself or on the size of the molecules.",
+      "key_formulas": [
+        "\\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3k_BT}{m}}=\\sqrt{\\dfrac{3P}{\\rho}} \\)",
+        "\\( v_{avg}=\\sqrt{\\dfrac{8RT}{\\pi M}}=\\sqrt{\\dfrac{8k_BT}{\\pi m}} \\)",
+        "\\( v_{mp}=\\sqrt{\\dfrac{2RT}{M}}=\\sqrt{\\dfrac{2k_BT}{m}} \\)",
+        "\\( v_{mp}<v_{avg}<v_{rms} \\)",
+        "\\( v_{mp}:v_{avg}:v_{rms}=\\sqrt2:\\sqrt{\\dfrac8\\pi}:\\sqrt3 \\)"
+      ],
+      "worked_example": "Find \\( v_{rms} \\) for oxygen (\\( M=32 \\) g/mol) at 320 K, with \\( R=8.3 \\) J/(mol K).<br><br>\\( v_{rms}=\\sqrt{\\dfrac{3\\times8.3\\times320}{0.032}}=\\sqrt{249000}\\approx499 \\) m/s, roughly 500 m/s. The other two speeds are smaller: \\( v_{mp}<v_{avg}<v_{rms} \\).",
+      "common_mistakes": [
+        "Swapping the coefficients 2, \\( \\dfrac8\\pi \\) and 3 between the named speeds",
+        "Writing the order as \\( v_{rms}<v_{avg}<v_{mp} \\)",
+        "Plugging molar mass \\( M \\) into the \\( k_B \\) formula, or \\( m \\) into the \\( R \\) formula",
+        "Leaving \\( M \\) in g/mol",
+        "Forgetting the square root when scaling with \\( T \\) or \\( M \\)"
+      ],
+      "question_count": 38
+    },
+    {
+      "name": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "summary": "The degrees of freedom \\( f \\) of a molecule count the independent squared terms in its energy. A monatomic molecule has 3, all translational. A rigid diatomic molecule adds 2 rotations about axes perpendicular to its bond, giving \\( f=5 \\). A rigid non-linear polyatomic molecule can rotate about 3 axes, giving \\( f=6 \\). At high temperature a diatomic molecule can also vibrate, and one vibrational mode adds 2 degrees of freedom, one for vibrational kinetic energy and one for vibrational potential energy, so \\( f=7 \\). The law of equipartition states that in thermal equilibrium each degree of freedom carries on average \\( \\dfrac12k_BT \\) per molecule. Hence the average energy per molecule is \\( \\dfrac f2k_BT \\), and the internal energy per mole is \\( U=\\dfrac f2RT \\). Translation always gets exactly \\( \\dfrac32k_BT \\), whatever the molecule, so extra modes add energy without changing molecular speeds. For a gas at pressure \\( P \\) and volume \\( V \\), \\( U=\\dfrac f2PV \\), because \\( \\mu RT=PV \\). Mixtures are handled by adding each component's energy.",
+      "key_formulas": [
+        "Monatomic \\( f=3 \\); rigid diatomic \\( f=5 \\); vibrating diatomic (high temperature) \\( f=7 \\); rigid non-linear polyatomic \\( f=6 \\)",
+        "Energy per degree of freedom \\( =\\dfrac12k_BT \\)",
+        "\\( U=\\dfrac f2\\mu RT=\\dfrac f2PV \\)"
+      ],
+      "worked_example": "Find the internal energy of 2 mol of rigid nitrogen at 300 K, with \\( R=8.3 \\) J/(mol K).<br><br>\\( f=5 \\), so \\( U=\\dfrac52\\mu RT=\\dfrac52\\times2\\times8.3\\times300=12450 \\) J.",
+      "common_mistakes": [
+        "Counting a vibrational mode as 1 degree of freedom instead of 2",
+        "Applying the monatomic \\( f=3 \\) to a diatomic gas",
+        "Giving a linear molecule 3 rotations",
+        "Thinking extra degrees of freedom raise translational energy or speed"
+      ],
+      "question_count": 41
+    },
+    {
+      "name": "Specific Heat Capacities of Gases and Mean Free Path",
+      "summary": "Equipartition predicts molar heat capacities directly. At constant volume all heat raises internal energy, so \\( C_v=\\dfrac f2R \\). At constant pressure the gas also does work \\( R \\) per mole per kelvin, so \\( C_p=C_v+R \\) (Mayer's relation), and \\( \\gamma=\\dfrac{C_p}{C_v}=1+\\dfrac2f \\). This gives \\( \\gamma=\\dfrac53 \\) for monatomic, \\( \\dfrac75 \\) for rigid diatomic, \\( \\dfrac97 \\) for vibrating diatomic, and \\( \\dfrac43 \\) for rigid non-linear polyatomic gases. The mean free path \\( \\lambda \\) is the average distance a molecule travels between collisions: \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\), where \\( d \\) is the molecular diameter and \\( n \\) the number density. The \\( \\sqrt2 \\) accounts for the relative motion of the colliding molecules. Since \\( n=\\dfrac{P}{k_BT} \\), \\( \\lambda \\) decreases as pressure rises at fixed temperature, and increases with temperature at fixed pressure. In a sealed rigid container, \\( n \\) is fixed, so \\( \\lambda \\) does not change on heating. The time between collisions is \\( \\dfrac{\\lambda}{v_{avg}} \\), and the collision frequency is its reciprocal. Doubling the molecular diameter cuts \\( \\lambda \\) to one-fourth, because the effective collision area \\( \\pi d^2 \\) grows fourfold.",
+      "key_formulas": [
+        "\\( C_v=\\dfrac f2R \\)",
+        "\\( C_p=C_v+R \\)",
+        "\\( \\gamma=1+\\dfrac2f \\)",
+        "\\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n}=\\dfrac{k_BT}{\\sqrt2\\,\\pi d^2P} \\)",
+        "Collision time \\( =\\dfrac{\\lambda}{v_{avg}} \\)"
+      ],
+      "worked_example": "Find \\( \\lambda \\) for \\( d=3\\times10^{-10} \\) m and \\( n=2.5\\times10^{25} \\) m\\( ^{-3} \\), with \\( \\sqrt2\\,\\pi\\approx4.44 \\).<br><br>\\( \\sqrt2\\,\\pi d^2n\\approx4.44\\times9\\times10^{-20}\\times2.5\\times10^{25}\\approx10^{7} \\) m\\( ^{-1} \\), so \\( \\lambda\\approx10^{-7} \\) m.",
+      "common_mistakes": [
+        "Forgetting to add \\( R \\) to \\( C_v \\) to get \\( C_p \\)",
+        "Dropping the \\( \\sqrt2 \\) from the mean free path",
+        "Claiming \\( \\lambda \\) increases with pressure",
+        "Using \\( d \\) instead of \\( d^2 \\)",
+        "Using a vibrating-diatomic value with vibration counted as 1 degree of freedom"
+      ],
+      "question_count": 43
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY11-CH12-L1-001",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following is NOT an assumption of the kinetic theory of an ideal gas?",
+      "options": [
+        "Gas molecules attract one another strongly at all separations",
+        "Gas molecules are in continuous, random motion",
+        "Collisions between gas molecules are perfectly elastic",
+        "The size of a molecule is negligible compared with the average distance between molecules"
+      ],
+      "correct_index": 0,
+      "explanation": "Kinetic theory assumes molecules exert negligible forces on each other except during collisions.<br><br>A strong attraction at all separations directly contradicts this, so it is not an assumption.<br><br>Random motion, elastic collisions and negligible molecular size are all standard postulates.",
+      "hint": "Recall what kinetic theory says about forces between molecules when they are not colliding.",
+      "distractor_logic": [
+        "Random motion is a genuine postulate; molecules move in all directions with a range of speeds",
+        "Perfectly elastic collisions are a genuine postulate; no kinetic energy is lost in collisions",
+        "Point-sized molecules is a genuine postulate; molecular volume is ignored"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-002",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "In the kinetic theory of gases, collisions of molecules with each other and with the walls are assumed to be",
+      "options": [
+        "perfectly inelastic",
+        "perfectly elastic",
+        "partially elastic, with a small loss of kinetic energy in each collision",
+        "elastic with the walls but inelastic between molecules"
+      ],
+      "correct_index": 1,
+      "explanation": "Kinetic theory assumes every collision conserves total kinetic energy, i.e. it is perfectly elastic.<br><br>If energy were lost in collisions, an isolated gas would keep cooling, contradicting the steady temperature of a gas at equilibrium.",
+      "hint": "An isolated gas at equilibrium keeps a steady temperature. What does that say about energy lost in collisions?",
+      "distractor_logic": [
+        "Perfectly inelastic collisions would make molecules stick together, which a gas does not show",
+        "A steady loss of kinetic energy would make an isolated gas cool on its own, which does not happen at equilibrium",
+        "The postulate treats all collisions alike; no distinction is made between wall and molecule collisions"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-003",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\( \\mu \\) moles of an ideal gas at pressure \\( P \\), volume \\( V \\) and absolute temperature \\( T \\), the ideal gas equation is",
+      "options": [
+        "\\( PV=\\dfrac{\\mu R}{T} \\)",
+        "\\( PV=\\dfrac{RT}{\\mu} \\)",
+        "\\( PV=\\mu RT \\)",
+        "\\( P=\\mu RTV \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The ideal gas equation combines Boyle's, Charles's and Avogadro's laws: \\( PV \\) is proportional to both the amount of gas and the absolute temperature.<br><br>With the universal gas constant \\( R \\) as the constant of proportionality, \\( PV=\\mu RT \\).",
+      "hint": "\\( PV \\) should increase if you add more gas or raise the temperature.",
+      "distractor_logic": [
+        "Places \\( T \\) in the denominator; \\( PV \\) actually grows with temperature",
+        "Divides by the number of moles; more gas at the same \\( T \\) and \\( V \\) gives more pressure, not less",
+        "Multiplies by \\( V \\) instead of dividing; at fixed amount and \\( T \\), \\( P \\) falls as \\( V \\) rises"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-004",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "In terms of the total number of molecules \\( N \\), the ideal gas equation is written as",
+      "options": [
+        "\\( PV=NRT \\)",
+        "\\( PV=\\dfrac{Nk_B}{T} \\)",
+        "\\( PV=\\dfrac{k_BT}{N} \\)",
+        "\\( PV=Nk_BT \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\( \\mu=\\dfrac{N}{N_A} \\) and \\( R=N_Ak_B \\), \\( PV=\\mu RT=\\dfrac{N}{N_A}N_Ak_BT \\).<br><br>So \\( PV=Nk_BT \\): Boltzmann's constant \\( k_B \\) is the gas constant per molecule.",
+      "hint": "Replace the number of moles by \\( N \\) divided by Avogadro's number and see what \\( R \\) becomes.",
+      "distractor_logic": [
+        "Pairs the molar constant \\( R \\) with a molecule count; \\( R \\) belongs with moles, \\( k_B \\) with molecules",
+        "Puts \\( T \\) in the denominator; \\( PV \\) must rise with temperature",
+        "Divides by \\( N \\); more molecules in the same volume at the same \\( T \\) must raise the pressure"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-005",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "The universal gas constant \\( R \\), Boltzmann's constant \\( k_B \\) and Avogadro's number \\( N_A \\) are related by",
+      "options": [
+        "\\( R=N_Ak_B \\)",
+        "\\( k_B=N_AR \\)",
+        "\\( R=\\dfrac{k_B}{N_A} \\)",
+        "\\( R=k_B \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( R \\) is the gas constant for one mole; \\( k_B \\) is the same constant for one molecule.<br><br>A mole contains \\( N_A \\) molecules, so \\( R=N_Ak_B \\). Numerically, \\( 6.02\\times10^{23}\\times1.38\\times10^{-23}\\approx8.31 \\) J/(mol K).",
+      "hint": "One mole contains Avogadro's number of molecules.",
+      "distractor_logic": [
+        "Inverts the relation; \\( k_B \\) is the constant for one molecule, so it is far smaller than \\( R \\)",
+        "Divides where it should multiply; \\( R \\) refers to a whole mole, which contains \\( N_A \\) molecules",
+        "Treats the per-mole and per-molecule constants as identical, ignoring the factor \\( N_A \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-006",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "2 mol of an ideal gas occupy \\( 8.3\\times10^{-3} \\) m\\( ^3 \\) at 300 K. Taking \\( R=8.3 \\) J/(mol K), the pressure of the gas is",
+      "options": [
+        "\\( 3\\times10^{5} \\) Pa",
+        "\\( 6\\times10^{5} \\) Pa",
+        "\\( 1.5\\times10^{5} \\) Pa",
+        "\\( 600 \\) Pa"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=\\dfrac{\\mu RT}{V} \\).<br><br>\\( \\mu RT=2\\times8.3\\times300=4980 \\) J.<br><br>\\( P=\\dfrac{4980}{8.3\\times10^{-3}}=6\\times10^{5} \\) Pa.",
+      "hint": "Rearrange \\( PV=\\mu RT \\) for \\( P \\) and keep track of the power of ten in \\( V \\).",
+      "distractor_logic": [
+        "Uses 1 mol instead of 2 mol, halving the result",
+        "Divides by the number of moles instead of multiplying, using \\( P=\\dfrac{RT}{\\mu V} \\)",
+        "Drops the power of ten in the volume, treating it as 8.3 m\\( ^3 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-007",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "A fixed amount of ideal gas is compressed to half its volume while its temperature is kept constant. Its pressure",
+      "options": [
+        "halves",
+        "becomes four times as large",
+        "doubles",
+        "stays the same"
+      ],
+      "correct_index": 2,
+      "explanation": "At constant \\( T \\) and fixed amount, \\( PV=\\mu RT \\) is constant (Boyle's law).<br><br>If \\( V \\) becomes \\( \\dfrac V2 \\), \\( P \\) must become \\( 2P \\) to keep \\( PV \\) unchanged.<br><br>Kinetically, the same molecules now hit a smaller wall area more often.",
+      "hint": "What stays constant for a fixed amount of gas at constant temperature?",
+      "distractor_logic": [
+        "Reverses Boyle's law; at constant \\( T \\), \\( P \\) and \\( V \\) are inversely related",
+        "Squares the volume ratio; \\( P \\) varies as \\( \\dfrac1V \\), not \\( \\dfrac{1}{V^2} \\)",
+        "Ignores that \\( PV \\) is constant at fixed \\( T \\); halving \\( V \\) must change \\( P \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-008",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "According to kinetic theory, between two successive collisions a gas molecule moves",
+      "options": [
+        "along a curved path, pulled by neighbouring molecules",
+        "with steadily decreasing speed until the next collision",
+        "in a small circle about a fixed point",
+        "in a straight line with constant velocity"
+      ],
+      "correct_index": 3,
+      "explanation": "Kinetic theory neglects intermolecular forces except during collisions.<br><br>With no net force, Newton's first law says the molecule moves in a straight line at constant velocity until it next collides.",
+      "hint": "What does Newton's first law say about a body with no net force on it?",
+      "distractor_logic": [
+        "Curved paths would need intermolecular forces between collisions, which the theory neglects",
+        "Slowing down would need a force acting between collisions; with no force, speed stays constant",
+        "Circular motion needs a centripetal force; a free molecule has none"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-009",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "According to kinetic theory, the pressure of an ideal gas of density \\( \\rho \\) and mean square speed \\( \\overline{v^2} \\) is",
+      "options": [
+        "\\( P=\\dfrac13\\rho\\overline{v^2} \\)",
+        "\\( P=\\dfrac12\\rho\\overline{v^2} \\)",
+        "\\( P=\\rho\\overline{v^2} \\)",
+        "\\( P=3\\rho\\overline{v^2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Momentum delivered to a wall comes only from the velocity component normal to it: \\( P=\\rho\\overline{v_x^2} \\).<br><br>For random motion \\( \\overline{v_x^2}=\\overline{v_y^2}=\\overline{v_z^2}=\\dfrac13\\overline{v^2} \\).<br><br>So \\( P=\\dfrac13\\rho\\overline{v^2} \\).",
+      "hint": "Only one of the three perpendicular velocity components pushes on any given wall.",
+      "distractor_logic": [
+        "Borrows the one-half from the kinetic-energy formula; the one-third comes from sharing among three directions",
+        "Drops the fraction, as if every molecule moved straight at the wall",
+        "Multiplies by 3 instead of dividing; only one of the three velocity components presses on a given wall"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-010",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "The factor \\( \\dfrac13 \\) in the kinetic-theory pressure formula arises because",
+      "options": [
+        "kinetic energy is averaged over three stages of each collision",
+        "only the velocity component perpendicular to a given wall transfers momentum to it, and on average this is one-third of \\( \\overline{v^2} \\)",
+        "only one-third of the molecules are moving towards any given wall",
+        "two-thirds of the momentum is lost in each wall collision"
+      ],
+      "correct_index": 1,
+      "explanation": "A molecule hitting a wall normal to \\( x \\) transfers \\( 2mv_x \\), which leads to \\( P=nm\\overline{v_x^2} \\).<br><br>Random motion makes the three directions equivalent: \\( \\overline{v^2}=\\overline{v_x^2}+\\overline{v_y^2}+\\overline{v_z^2}=3\\overline{v_x^2} \\).<br><br>Hence the \\( \\dfrac13 \\): it is a geometric sharing among three perpendicular directions.",
+      "hint": "Write \\( \\overline{v^2} \\) as the sum of its three components and ask which one matters for one wall.",
+      "distractor_logic": [
+        "No energy averaging over collision stages occurs in the derivation; the factor is geometric, not energetic",
+        "All molecules contribute; the factor comes from splitting the mean square speed among three directions, not from counting molecules",
+        "Collisions are perfectly elastic, so no momentum or energy is lost"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-011",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "The average translational kinetic energy of a molecule of an ideal gas at absolute temperature \\( T \\) is",
+      "options": [
+        "\\( \\dfrac12k_BT \\)",
+        "\\( 3k_BT \\)",
+        "\\( \\dfrac32k_BT \\)",
+        "\\( \\dfrac32RT \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Combining \\( P=\\dfrac13nm\\overline{v^2} \\) with \\( P=nk_BT \\) gives \\( \\dfrac13m\\overline{v^2}=k_BT \\).<br><br>So \\( \\dfrac12m\\overline{v^2}=\\dfrac32k_BT \\).",
+      "hint": "Three translational directions, each contributing equally.",
+      "distractor_logic": [
+        "This is the share of only one translational direction, not all three",
+        "Doubles the correct value by dropping the one-half of kinetic energy",
+        "Uses the molar constant \\( R \\); \\( \\dfrac32RT \\) is the energy of a whole mole, not one molecule"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-012",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "The absolute temperature of an ideal gas is doubled. The average translational kinetic energy of its molecules",
+      "options": [
+        "becomes four times as large",
+        "becomes \\( \\sqrt2 \\) times as large",
+        "remains unchanged",
+        "doubles"
+      ],
+      "correct_index": 3,
+      "explanation": "Average translational KE \\( =\\dfrac32k_BT \\), directly proportional to \\( T \\).<br><br>Doubling \\( T \\) doubles it. (It is the speed, not the energy, that scales as \\( \\sqrt T \\).)",
+      "hint": "Look at how \\( T \\) appears in \\( \\dfrac32k_BT \\).",
+      "distractor_logic": [
+        "Squares the temperature ratio; kinetic energy is proportional to \\( T \\), not \\( T^2 \\)",
+        "Applies the square-root dependence that belongs to molecular speed, not to energy",
+        "Ignores that average kinetic energy is set directly by temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-013",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "Helium and oxygen are kept at the same temperature. Compared with an oxygen molecule, a helium molecule has",
+      "options": [
+        "the same average translational kinetic energy",
+        "a larger average translational kinetic energy because it is lighter",
+        "a smaller average translational kinetic energy because it is lighter",
+        "the same root-mean-square speed"
+      ],
+      "correct_index": 0,
+      "explanation": "Average translational KE per molecule is \\( \\dfrac32k_BT \\), which contains no mass.<br><br>At the same \\( T \\) both gases have equal average translational KE; the lighter helium molecule simply moves faster.",
+      "hint": "Does the expression for average kinetic energy contain the molecular mass?",
+      "distractor_logic": [
+        "Lighter molecules move faster, but the kinetic energy works out equal at equal \\( T \\)",
+        "The lower mass is exactly compensated by a higher speed; average kinetic energy depends on \\( T \\) alone",
+        "Equal kinetic energy with unequal masses means unequal speeds; helium is faster"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-014",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "The pressure of an ideal gas equals what fraction of its total translational kinetic energy per unit volume?",
+      "options": [
+        "\\( \\dfrac13 \\)",
+        "\\( \\dfrac23 \\)",
+        "\\( \\dfrac12 \\)",
+        "\\( \\dfrac32 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=\\dfrac13\\rho\\overline{v^2} \\) and kinetic energy per unit volume \\( \\dfrac EV=\\dfrac12\\rho\\overline{v^2} \\).<br><br>\\( \\dfrac{P}{E/V}=\\dfrac{1/3}{1/2}=\\dfrac23 \\), so \\( P=\\dfrac23\\dfrac EV \\).",
+      "hint": "Divide \\( \\dfrac13\\rho\\overline{v^2} \\) by \\( \\dfrac12\\rho\\overline{v^2} \\).",
+      "distractor_logic": [
+        "Takes the one-third from \\( P=\\dfrac13\\rho\\overline{v^2} \\) but forgets that energy per volume is \\( \\dfrac12\\rho\\overline{v^2} \\)",
+        "Uses the one-half from the kinetic-energy formula as the whole answer",
+        "Inverts the ratio; energy per unit volume is larger than the pressure"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-015",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "According to the classical kinetic theory of an ideal gas, the average translational kinetic energy of the molecules at 0 K would be",
+      "options": [
+        "maximum",
+        "\\( \\dfrac32k_B \\) per molecule",
+        "zero",
+        "the same as at room temperature"
+      ],
+      "correct_index": 2,
+      "explanation": "Classically, average translational KE \\( =\\dfrac32k_BT \\).<br><br>At \\( T=0 \\) K this is zero: molecular motion would stop. This is why absolute zero is the natural zero of the kinetic temperature scale.",
+      "hint": "Substitute \\( T=0 \\) in the expression for average kinetic energy.",
+      "distractor_logic": [
+        "Reverses the trend; kinetic energy grows with \\( T \\), so it is smallest at 0 K",
+        "Treats \\( T \\) as 1 in \\( \\dfrac32k_BT \\); at \\( T=0 \\) the product is zero",
+        "Ignores that kinetic energy is proportional to absolute temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-016",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 1,
+      "type": "regular",
+      "question": "The total translational kinetic energy of one mole of an ideal gas at temperature \\( T \\) is",
+      "options": [
+        "\\( \\dfrac32k_BT \\)",
+        "\\( \\dfrac12RT \\)",
+        "\\( 3RT \\)",
+        "\\( \\dfrac32RT \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Each molecule has \\( \\dfrac32k_BT \\); a mole has \\( N_A \\) molecules.<br><br>\\( E=N_A\\times\\dfrac32k_BT=\\dfrac32RT \\), since \\( N_Ak_B=R \\).",
+      "hint": "Multiply the per-molecule value by Avogadro's number.",
+      "distractor_logic": [
+        "Gives the energy of a single molecule, not of a mole",
+        "Counts only one of the three translational directions",
+        "Doubles the correct value by dropping the one-half of kinetic energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-017",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "The root-mean-square speed of the molecules of a gas of molar mass \\( M \\) at temperature \\( T \\) is",
+      "options": [
+        "\\( \\sqrt{\\dfrac{3RT}{M}} \\)",
+        "\\( \\sqrt{\\dfrac{2RT}{M}} \\)",
+        "\\( \\sqrt{\\dfrac{8RT}{\\pi M}} \\)",
+        "\\( \\sqrt{\\dfrac{3RT}{m}} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "From \\( \\dfrac12mv_{rms}^2=\\dfrac32k_BT \\): \\( v_{rms}=\\sqrt{\\dfrac{3k_BT}{m}} \\).<br><br>Multiplying numerator and denominator by \\( N_A \\) (with \\( N_Ak_B=R \\) and \\( N_Am=M \\)) gives \\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}} \\).",
+      "hint": "The rms speed comes straight from \\( \\dfrac12mv_{rms}^2=\\dfrac32k_BT \\).",
+      "distractor_logic": [
+        "The coefficient 2 belongs to the most probable speed",
+        "The coefficient \\( \\dfrac8\\pi \\) belongs to the average speed",
+        "Pairs \\( R \\) with the single-molecule mass \\( m \\); \\( R \\) must go with the molar mass \\( M \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-018",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "For the molecules of a gas at a given temperature, the correct order of the most probable speed, the average speed and the root-mean-square speed is",
+      "options": [
+        "\\( v_{rms}<v_{avg}<v_{mp} \\)",
+        "\\( v_{mp}<v_{avg}<v_{rms} \\)",
+        "\\( v_{avg}<v_{mp}<v_{rms} \\)",
+        "\\( v_{mp}<v_{rms}<v_{avg} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The coefficients inside the square roots are \\( 2 \\), \\( \\dfrac8\\pi\\approx2.55 \\) and \\( 3 \\).<br><br>So \\( v_{mp}:v_{avg}:v_{rms}=\\sqrt2:\\sqrt{8/\\pi}:\\sqrt3\\approx1.41:1.60:1.73 \\), giving \\( v_{mp}<v_{avg}<v_{rms} \\).",
+      "hint": "Compare the numbers 2, \\( \\dfrac8\\pi \\) and 3 under the square roots.",
+      "distractor_logic": [
+        "Reverses the true order completely",
+        "Swaps the average and most probable speeds; the peak of the distribution sits at a lower speed than the mean",
+        "Swaps the rms and average speeds; squaring before averaging weights fast molecules more"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-019",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "The most probable speed of gas molecules of mass \\( m \\) at temperature \\( T \\) is",
+      "options": [
+        "\\( \\sqrt{\\dfrac{3k_BT}{m}} \\)",
+        "\\( \\sqrt{\\dfrac{8k_BT}{\\pi m}} \\)",
+        "\\( \\sqrt{\\dfrac{2k_BT}{m}} \\)",
+        "\\( \\sqrt{\\dfrac{2k_BT}{M}} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The three characteristic speeds differ only in their coefficient: 2 for \\( v_{mp} \\), \\( \\dfrac8\\pi \\) for \\( v_{avg} \\), 3 for \\( v_{rms} \\).<br><br>With per-molecule quantities, \\( v_{mp}=\\sqrt{\\dfrac{2k_BT}{m}} \\).",
+      "hint": "The most probable speed has the smallest coefficient of the three.",
+      "distractor_logic": [
+        "The coefficient 3 belongs to the rms speed",
+        "The coefficient \\( \\dfrac8\\pi \\) belongs to the average speed",
+        "Uses the molar mass \\( M \\) with \\( k_B \\); \\( k_B \\) must go with the mass of one molecule"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-020",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "The absolute temperature of a gas is made four times larger. The root-mean-square speed of its molecules becomes",
+      "options": [
+        "four times as large",
+        "sixteen times as large",
+        "unchanged",
+        "twice as large"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}}\\propto\\sqrt T \\).<br><br>\\( \\sqrt4=2 \\), so \\( v_{rms} \\) doubles.",
+      "hint": "Speed goes as the square root of absolute temperature.",
+      "distractor_logic": [
+        "Treats speed as proportional to \\( T \\); it is energy that scales with \\( T \\)",
+        "Squares the factor instead of taking its root",
+        "Ignores the temperature dependence of molecular speed"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-021",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "At 300 K, which of these gases has the greatest root-mean-square speed?",
+      "options": [
+        "Hydrogen, \\( H_2 \\)",
+        "Oxygen, \\( O_2 \\)",
+        "Helium, He",
+        "Nitrogen, \\( N_2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At equal \\( T \\), \\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}}\\propto\\dfrac{1}{\\sqrt M} \\).<br><br>Molar masses: \\( H_2 \\) 2, He 4, \\( N_2 \\) 28, \\( O_2 \\) 32 g/mol. The lightest, \\( H_2 \\), is fastest.",
+      "hint": "At the same temperature, lighter molecules move faster.",
+      "distractor_logic": [
+        "Oxygen has the heaviest molecules here, so it is actually the slowest",
+        "Helium (\\( M=4 \\) g/mol) is twice as heavy as hydrogen, so it is slower",
+        "Nitrogen (\\( M=28 \\) g/mol) is much heavier than hydrogen"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-022",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "On the Maxwell speed-distribution curve of a gas, the speed at which the curve reaches its peak is",
+      "options": [
+        "the root-mean-square speed",
+        "the most probable speed",
+        "the average speed",
+        "the maximum speed any molecule can have"
+      ],
+      "correct_index": 1,
+      "explanation": "The peak marks the speed shared by the largest fraction of molecules, which by definition is \\( v_{mp} \\).<br><br>Because the curve has a long high-speed tail, \\( v_{avg} \\) and \\( v_{rms} \\) both lie to the right of the peak, in the order \\( v_{mp}<v_{avg}<v_{rms} \\).",
+      "hint": "Which speed do the largest number of molecules have?",
+      "distractor_logic": [
+        "The rms speed lies to the right of the peak",
+        "The average speed also lies to the right of the peak, though closer than the rms speed",
+        "The curve has a long high-speed tail; the peak is not the highest possible speed"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-023",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "When the temperature of a gas is increased, its Maxwell speed-distribution curve",
+      "options": [
+        "shifts its peak to a lower speed and becomes taller",
+        "keeps its peak at the same speed but becomes narrower",
+        "shifts its peak to a higher speed and becomes flatter and broader",
+        "shifts its peak to a higher speed and becomes taller"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v_{mp}=\\sqrt{\\dfrac{2RT}{M}} \\) rises with \\( T \\), so the peak moves right.<br><br>The area under the curve equals the total number of molecules, which is unchanged, so as the curve spreads over more speeds its peak must drop.",
+      "hint": "The area under the curve counts the molecules and cannot change.",
+      "distractor_logic": [
+        "Reverses both effects; heating speeds molecules up",
+        "Heating changes the most probable speed, which grows as \\( \\sqrt T \\)",
+        "The area under the curve (number of molecules) is fixed, so a broader curve must be lower, not taller"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-024",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 1,
+      "type": "regular",
+      "question": "The average speed of the molecules of a gas of molar mass \\( M \\) at temperature \\( T \\) is",
+      "options": [
+        "\\( \\sqrt{\\dfrac{8RT}{M}} \\)",
+        "\\( \\sqrt{\\dfrac{3RT}{M}} \\)",
+        "\\( \\sqrt{\\dfrac{8k_BT}{\\pi M}} \\)",
+        "\\( \\sqrt{\\dfrac{8RT}{\\pi M}} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The average speed carries the coefficient \\( \\dfrac8\\pi \\): \\( v_{avg}=\\sqrt{\\dfrac{8RT}{\\pi M}}=\\sqrt{\\dfrac{8k_BT}{\\pi m}} \\).<br><br>Since \\( 2<\\dfrac8\\pi<3 \\), it lies between \\( v_{mp} \\) and \\( v_{rms} \\).",
+      "hint": "The average speed has \\( \\pi \\) in its formula.",
+      "distractor_logic": [
+        "Drops the \\( \\pi \\) in the denominator, which would make it larger than even the rms speed",
+        "The coefficient 3 belongs to the rms speed",
+        "Pairs \\( k_B \\) with the molar mass \\( M \\); \\( k_B \\) goes with the molecular mass \\( m \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-025",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The number of degrees of freedom \\( f \\) of a molecule of a monatomic gas such as helium is",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "1"
+      ],
+      "correct_index": 0,
+      "explanation": "A monatomic molecule behaves as a point: it can only translate along \\( x \\), \\( y \\) and \\( z \\).<br><br>Rotation of a point carries negligible energy, so \\( f=3 \\).",
+      "hint": "Count the independent directions in which a point particle can move.",
+      "distractor_logic": [
+        "5 applies to a rigid diatomic molecule, which can also rotate",
+        "6 applies to a non-linear polyatomic molecule with three rotations",
+        "A point atom still moves in three independent directions, not one"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-026",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "A rigid diatomic molecule such as \\( O_2 \\) at ordinary temperatures has how many degrees of freedom?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_index": 1,
+      "explanation": "Translation: 3. Rotation: 2, about the two axes perpendicular to the bond.<br><br>Rotation about the bond axis has negligible moment of inertia, and a rigid molecule does not vibrate, so \\( f=3+2=5 \\).",
+      "hint": "Add the translational and rotational counts; a rigid molecule does not vibrate.",
+      "distractor_logic": [
+        "Counts translation only and ignores the two rotations",
+        "Adds a third rotation about the molecular axis, which carries negligible energy",
+        "Includes vibration, which a rigid molecule does not have"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-027",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The law of equipartition of energy states that, in thermal equilibrium at temperature \\( T \\), each degree of freedom of a molecule has an average energy of",
+      "options": [
+        "\\( k_BT \\)",
+        "\\( \\dfrac32k_BT \\)",
+        "\\( \\dfrac12k_BT \\)",
+        "\\( \\dfrac12RT \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Each independent quadratic energy term (a degree of freedom) receives \\( \\dfrac12k_BT \\) per molecule, or \\( \\dfrac12RT \\) per mole.<br><br>Three translational terms give the familiar \\( \\dfrac32k_BT \\).",
+      "hint": "Three translational degrees together give \\( \\dfrac32k_BT \\). What does each one get?",
+      "distractor_logic": [
+        "Double the correct share; \\( k_BT \\) belongs to a whole vibrational mode, which has two energy terms",
+        "\\( \\dfrac32k_BT \\) is the total translational energy for all three directions",
+        "Uses the molar constant \\( R \\) for a single molecule"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-028",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "Why does a diatomic molecule have only 2 rotational degrees of freedom, not 3?",
+      "options": [
+        "Collisions prevent rotation about the third axis",
+        "A diatomic molecule can rotate about only one axis",
+        "The two atoms repel each other when rotating about the bond axis",
+        "Its moment of inertia about the bond axis is negligible, so rotation about that axis carries negligible energy"
+      ],
+      "correct_index": 3,
+      "explanation": "Both atoms lie on the bond axis and act as point masses on that line.<br><br>The moment of inertia about the bond axis is therefore negligible, and so is the rotational energy about it. Only the two perpendicular axes count.",
+      "hint": "Think about where the mass of the molecule lies relative to the bond axis.",
+      "distractor_logic": [
+        "Collisions do not forbid any rotation; the issue is the negligible moment of inertia",
+        "It rotates about two perpendicular axes, not one",
+        "Repulsion is not the reason; the atoms lie on the axis, so the moment of inertia about it is almost zero"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-029",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The internal energy of one mole of a monatomic ideal gas at temperature \\( T \\) is",
+      "options": [
+        "\\( \\dfrac32RT \\)",
+        "\\( \\dfrac52RT \\)",
+        "\\( 3RT \\)",
+        "\\( \\dfrac32k_BT \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( f=3 \\), and each degree of freedom has \\( \\dfrac12RT \\) per mole.<br><br>\\( U=\\dfrac f2RT=\\dfrac32RT \\).",
+      "hint": "Multiply the number of degrees of freedom by \\( \\dfrac12RT \\).",
+      "distractor_logic": [
+        "Uses \\( f=5 \\) of a rigid diatomic gas",
+        "Gives each degree of freedom \\( RT \\) instead of \\( \\dfrac12RT \\)",
+        "This is the energy of a single molecule, not of a mole"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-030",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "At high temperature, a single vibrational mode of a diatomic molecule contributes how many degrees of freedom (energy terms)?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "A vibrating bond behaves like a spring: its energy has a kinetic term and a potential term, both quadratic.<br><br>Each gets \\( \\dfrac12k_BT \\), so one vibrational mode contributes 2 degrees of freedom, i.e. \\( k_BT \\) per molecule.",
+      "hint": "A vibrating spring stores energy in two forms.",
+      "distractor_logic": [
+        "Counts only vibrational kinetic energy and forgets vibrational potential energy",
+        "Confuses one vibrational mode with the three translational directions",
+        "Vibration does contribute once it is excited at high temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-031",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The internal energy of one mole of a rigid diatomic ideal gas at temperature \\( T \\) is",
+      "options": [
+        "\\( \\dfrac32RT \\)",
+        "\\( \\dfrac72RT \\)",
+        "\\( \\dfrac52RT \\)",
+        "\\( \\dfrac52k_BT \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Rigid diatomic: \\( f=5 \\) (3 translational and 2 rotational).<br><br>\\( U=\\dfrac f2RT=\\dfrac52RT \\) per mole.",
+      "hint": "Count 3 translational and 2 rotational degrees of freedom.",
+      "distractor_logic": [
+        "Uses the monatomic value \\( f=3 \\)",
+        "Includes vibration, which a rigid molecule does not have",
+        "Uses \\( k_B \\) for a whole mole instead of \\( R \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-032",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "How many translational degrees of freedom does a \\( CO_2 \\) molecule have?",
+      "options": [
+        "2",
+        "5",
+        "6",
+        "3"
+      ],
+      "correct_index": 3,
+      "explanation": "Every molecule, whatever its shape, can move its centre of mass independently along \\( x \\), \\( y \\) and \\( z \\).<br><br>So translational degrees of freedom are always 3; shape affects only the rotational count.",
+      "hint": "The question asks only about translation, not rotation.",
+      "distractor_logic": [
+        "A linear shape limits rotations, not translations; the centre of mass still moves in three directions",
+        "5 is the total for a rigid linear molecule, including rotations",
+        "6 would be translations plus three rotations"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-033",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "For one mole of an ideal gas, the molar specific heats at constant pressure and at constant volume are related by",
+      "options": [
+        "\\( C_p-C_v=R \\)",
+        "\\( C_p+C_v=R \\)",
+        "\\( \\dfrac{C_p}{C_v}=R \\)",
+        "\\( C_v-C_p=R \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At constant pressure, extra heat is needed for the work \\( P\\Delta V=R\\Delta T \\) per mole.<br><br>So \\( C_p=C_v+R \\), i.e. \\( C_p-C_v=R \\) (Mayer's relation).",
+      "hint": "Which specific heat must be larger, and by how much work per kelvin?",
+      "distractor_logic": [
+        "Adds instead of subtracting",
+        "Confuses Mayer's relation with the ratio \\( \\gamma=\\dfrac{C_p}{C_v} \\), which is dimensionless",
+        "Reverses the order; \\( C_p \\) is the larger one, since heating at constant pressure also does work"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-034",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "The molar specific heat at constant volume of a monatomic ideal gas is",
+      "options": [
+        "\\( \\dfrac52R \\)",
+        "\\( \\dfrac32R \\)",
+        "\\( 3R \\)",
+        "\\( \\dfrac12R \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "A monatomic molecule has only 3 translational degrees of freedom, so \\( U=\\dfrac32RT \\) per mole.<br><br>At constant volume all heat raises \\( U \\), so \\( C_v=\\dfrac{dU}{dT}=\\dfrac32R \\).",
+      "hint": "Differentiate the molar internal energy with respect to \\( T \\).",
+      "distractor_logic": [
+        "This is \\( C_p \\) for a monatomic gas (or \\( C_v \\) for a rigid diatomic one)",
+        "Gives each degree of freedom \\( R \\) instead of \\( \\dfrac12R \\)",
+        "Counts only one degree of freedom"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-035",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "The ratio \\( \\gamma=\\dfrac{C_p}{C_v} \\) for a monatomic ideal gas is",
+      "options": [
+        "\\( \\dfrac75 \\)",
+        "\\( \\dfrac35 \\)",
+        "\\( \\dfrac53 \\)",
+        "\\( \\dfrac97 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( C_v=\\dfrac32R \\) and \\( C_p=\\dfrac32R+R=\\dfrac52R \\).<br><br>\\( \\gamma=\\dfrac{5/2}{3/2}=\\dfrac53 \\).",
+      "hint": "Find \\( C_v \\) from \\( f=3 \\), then add \\( R \\) for \\( C_p \\).",
+      "distractor_logic": [
+        "This is the value for a rigid diatomic gas",
+        "Inverts the ratio; \\( \\gamma \\) is always greater than 1",
+        "This is the value for a vibrating diatomic gas at high temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-036",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "The molar specific heat at constant pressure of a rigid diatomic ideal gas is",
+      "options": [
+        "\\( \\dfrac52R \\)",
+        "\\( \\dfrac92R \\)",
+        "\\( 3R \\)",
+        "\\( \\dfrac72R \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f=5 \\), so \\( C_v=\\dfrac52R \\).<br><br>\\( C_p=C_v+R=\\dfrac72R \\).",
+      "hint": "Start from \\( C_v=\\dfrac f2R \\) and use Mayer's relation.",
+      "distractor_logic": [
+        "This is \\( C_v \\); \\( R \\) must still be added to get \\( C_p \\)",
+        "Includes vibration, which a rigid molecule does not have",
+        "Adds \\( \\dfrac12R \\) instead of \\( R \\) to \\( C_v \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-037",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "The mean free path of a gas molecule is",
+      "options": [
+        "the average distance it travels between two successive collisions",
+        "the average distance between neighbouring molecules",
+        "the diameter of the molecule",
+        "the average distance of a molecule from the nearest wall"
+      ],
+      "correct_index": 0,
+      "explanation": "Between collisions a molecule moves in a straight line.<br><br>The mean free path \\( \\lambda \\) is the average length of these straight segments, i.e. the average distance between successive collisions.",
+      "hint": "The word 'free' refers to motion without collisions.",
+      "distractor_logic": [
+        "The spacing between neighbours is much smaller than the free path in a gas",
+        "The diameter sets the collision cross-section but is not the distance travelled",
+        "Distance from a wall depends on the container size, not on molecular collisions"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-038",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "The mean free path of molecules of diameter \\( d \\) in a gas of number density \\( n \\) is",
+      "options": [
+        "\\( \\lambda=\\dfrac{1}{\\pi d^2n} \\)",
+        "\\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\)",
+        "\\( \\lambda=\\dfrac{\\sqrt2}{\\pi d^2n} \\)",
+        "\\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi dn} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "A molecule sweeps out a collision cylinder of cross-section \\( \\pi d^2 \\), which would give \\( \\dfrac{1}{\\pi d^2n} \\) if the others stood still.<br><br>All molecules move, and the average relative speed is \\( \\sqrt2 \\) times the average speed, so this is divided by \\( \\sqrt2 \\): \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\).",
+      "hint": "The cross-section is an area, and moving targets make collisions more frequent.",
+      "distractor_logic": [
+        "Drops the \\( \\sqrt2 \\) correction for the relative motion of the molecules",
+        "Puts \\( \\sqrt2 \\) in the numerator; relative motion shortens the free path, it does not lengthen it",
+        "Uses \\( d \\) instead of \\( d^2 \\); the collision cross-section is an area"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-039",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "At constant temperature, the pressure of a gas is increased. Its mean free path",
+      "options": [
+        "increases",
+        "remains unchanged",
+        "decreases",
+        "rises at first and then falls"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\) and \\( n=\\dfrac{P}{k_BT} \\).<br><br>At fixed \\( T \\), raising \\( P \\) raises \\( n \\), so \\( \\lambda\\propto\\dfrac1P \\) decreases.",
+      "hint": "How does number density change with pressure at fixed temperature?",
+      "distractor_logic": [
+        "Reverses the trend; more molecules per volume mean more frequent collisions",
+        "Ignores that \\( n=\\dfrac{P}{k_BT} \\) rises with pressure",
+        "No such turnover occurs; \\( \\lambda \\) varies steadily as \\( \\dfrac1P \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L1-040",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 1,
+      "type": "regular",
+      "question": "If the molecular diameter were doubled, with number density unchanged, the mean free path would become",
+      "options": [
+        "one-half",
+        "twice",
+        "four times",
+        "one-fourth"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\); with \\( n \\) fixed, \\( \\lambda\\propto\\dfrac{1}{d^2} \\).<br><br>Doubling \\( d \\) multiplies \\( d^2 \\) by 4, so \\( \\lambda \\) becomes \\( \\dfrac14 \\) of its value.",
+      "hint": "\\( \\lambda \\) depends on the square of the diameter, in the denominator.",
+      "distractor_logic": [
+        "Uses \\( d \\) instead of \\( d^2 \\)",
+        "Makes \\( \\lambda \\) grow with molecular size",
+        "Squares correctly but inverts the dependence"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-001",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A gas at \\( 1.38\\times10^{5} \\) Pa occupies \\( 10^{-3} \\) m\\( ^3 \\) at 100 K. Taking \\( k_B=1.38\\times10^{-23} \\) J/K, the number of molecules in the gas is",
+      "options": [
+        "\\( 10^{23} \\)",
+        "\\( 10^{26} \\)",
+        "\\( 10^{27} \\)",
+        "\\( 6\\times10^{23} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( N=\\dfrac{PV}{k_BT} \\).<br><br>\\( PV=1.38\\times10^{5}\\times10^{-3}=138 \\) J and \\( k_BT=1.38\\times10^{-23}\\times100=1.38\\times10^{-21} \\) J.<br><br>\\( N=\\dfrac{138}{1.38\\times10^{-21}}=10^{23} \\).",
+      "hint": "Use \\( PV=Nk_BT \\) and solve for \\( N \\).",
+      "distractor_logic": [
+        "Uses 1 m\\( ^3 \\) for the volume, dropping its power of ten",
+        "Multiplies by \\( T \\) instead of dividing by it",
+        "Assumes the sample is one mole and quotes Avogadro's number without calculating"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-002",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A fixed amount of ideal gas is at 300 K. Its pressure is doubled and its volume is tripled. Its new temperature is",
+      "options": [
+        "200 K",
+        "1800 K",
+        "450 K",
+        "900 K"
+      ],
+      "correct_index": 1,
+      "explanation": "For a fixed amount, \\( \\dfrac{PV}{T} \\) is constant, so \\( T\\propto PV \\).<br><br>\\( PV \\) becomes \\( 2\\times3=6 \\) times larger.<br><br>\\( T_2=6\\times300=1800 \\) K.",
+      "hint": "For a fixed amount of gas, \\( T \\) is proportional to the product \\( PV \\).",
+      "distractor_logic": [
+        "Uses \\( T\\propto\\dfrac PV \\), giving a factor \\( \\dfrac23 \\)",
+        "Uses \\( T\\propto\\dfrac VP \\), giving a factor \\( \\dfrac32 \\)",
+        "Accounts for the volume change but forgets the doubled pressure"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-003",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "An ideal gas of molar mass \\( M \\) is at pressure \\( P \\) and temperature \\( T \\). Its density \\( \\rho \\) is",
+      "options": [
+        "\\( \\rho=\\dfrac{RT}{PM} \\)",
+        "\\( \\rho=\\dfrac{PRT}{M} \\)",
+        "\\( \\rho=\\dfrac{PM}{RT} \\)",
+        "\\( \\rho=\\dfrac{Pm}{RT} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Write \\( \\mu=\\dfrac{w}{M} \\) for a sample of mass \\( w \\) in \\( PV=\\mu RT \\): \\( PV=\\dfrac wMRT \\).<br><br>Density \\( \\rho=\\dfrac wV=\\dfrac{PM}{RT} \\).<br><br>The per-molecule version is \\( \\rho=\\dfrac{Pm}{k_BT} \\); mixing \\( m \\) with \\( R \\) is dimensionally wrong.",
+      "hint": "Replace the number of moles by (mass of sample) divided by \\( M \\).",
+      "distractor_logic": [
+        "Inverted; density must increase with pressure, not decrease",
+        "Places \\( T \\) in the numerator; a hotter gas at the same pressure is less dense",
+        "Uses the single-molecule mass \\( m \\) with the molar constant \\( R \\); \\( R \\) must be paired with \\( M \\), or \\( m \\) with \\( k_B \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-004",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "Taking \\( R=8.3 \\) J/(mol K), the volume occupied by 1 mol of an ideal gas at 300 K and \\( 8.3\\times10^{4} \\) Pa is",
+      "options": [
+        "\\( 30 \\) m\\( ^3 \\)",
+        "\\( 10^{-4} \\) m\\( ^3 \\)",
+        "\\( 3\\times10^{-1} \\) m\\( ^3 \\)",
+        "\\( 3\\times10^{-2} \\) m\\( ^3 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( V=\\dfrac{\\mu RT}{P}=\\dfrac{1\\times8.3\\times300}{8.3\\times10^{4}} \\).<br><br>\\( V=\\dfrac{300}{10^{4}}=3\\times10^{-2} \\) m\\( ^3 \\), i.e. 30 litres.",
+      "hint": "Rearrange \\( PV=\\mu RT \\) for \\( V \\), keeping pressure in pascals.",
+      "distractor_logic": [
+        "Uses the pressure in kPa (83) instead of pascals",
+        "Forgets to multiply by the temperature",
+        "Slips one power of ten in the pressure, using \\( 8.3\\times10^{3} \\) Pa"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-005",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "2 mol of gas A and 3 mol of gas B are mixed in a closed container, and the total pressure is \\( 5\\times10^{5} \\) Pa. Treating both as ideal and non-reacting, the partial pressure of gas A is",
+      "options": [
+        "\\( 2\\times10^{5} \\) Pa",
+        "\\( 3\\times10^{5} \\) Pa",
+        "\\( 2.5\\times10^{5} \\) Pa",
+        "\\( 5\\times10^{5} \\) Pa"
+      ],
+      "correct_index": 0,
+      "explanation": "Each gas behaves as if alone: \\( P_A=\\dfrac{\\mu_ART}{V} \\), so partial pressure is proportional to the number of moles.<br><br>Mole fraction of A \\( =\\dfrac25 \\).<br><br>\\( P_A=\\dfrac25\\times5\\times10^{5}=2\\times10^{5} \\) Pa.",
+      "hint": "Partial pressure is shared in proportion to the number of moles.",
+      "distractor_logic": [
+        "Uses the mole fraction of gas B instead of gas A",
+        "Splits the pressure equally between the gases, ignoring their different amounts",
+        "Takes the total pressure as the pressure of A alone"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-006",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "Two containers of equal volume, at the same temperature and pressure, hold hydrogen and oxygen respectively. Which statement is correct?",
+      "options": [
+        "The oxygen container holds 16 times as many molecules",
+        "Both contain the same number of molecules",
+        "The hydrogen container holds 16 times as many molecules",
+        "Both contain the same mass of gas"
+      ],
+      "correct_index": 1,
+      "explanation": "From \\( PV=Nk_BT \\), \\( N=\\dfrac{PV}{k_BT} \\), which contains no molecular mass.<br><br>Equal \\( P \\), \\( V \\) and \\( T \\) therefore mean equal \\( N \\) (Avogadro's hypothesis), while the masses differ in the ratio of molar masses.",
+      "hint": "Does molecular mass appear in \\( PV=Nk_BT \\)?",
+      "distractor_logic": [
+        "Assumes heavier molecules mean more molecules; \\( N \\) depends only on \\( P \\), \\( V \\) and \\( T \\)",
+        "Assumes lighter molecules pack in more densely; molecular mass does not appear in \\( PV=Nk_BT \\)",
+        "Confuses equal numbers of molecules with equal mass; oxygen molecules are 16 times heavier"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-007",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "At constant pressure, an ideal gas occupying 2 L at 300 K is heated to 450 K. Its new volume is",
+      "options": [
+        "1 L",
+        "4.5 L",
+        "3 L",
+        "2 L"
+      ],
+      "correct_index": 2,
+      "explanation": "At constant \\( P \\), \\( V\\propto T \\) (Charles's law, from \\( PV=\\mu RT \\)).<br><br>\\( V_2=2\\times\\dfrac{450}{300}=3 \\) L.",
+      "hint": "At constant pressure, volume is proportional to absolute temperature.",
+      "distractor_logic": [
+        "Takes only the fractional rise in temperature (one-half of 2 L) as the new volume",
+        "Squares the temperature ratio, as if \\( V \\) were proportional to \\( T^2 \\)",
+        "Assumes the volume stays fixed; at constant pressure \\( V \\) is proportional to \\( T \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-008",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A real gas behaves most like an ideal gas at",
+      "options": [
+        "high pressure and low temperature",
+        "high pressure and high temperature",
+        "low pressure and low temperature",
+        "low pressure and high temperature"
+      ],
+      "correct_index": 3,
+      "explanation": "Kinetic theory assumes negligible molecular volume and negligible attractions.<br><br>Low pressure spreads the molecules far apart, so their size hardly matters.<br><br>High temperature makes them fast, so brief attractions hardly matter. Both assumptions hold best together.",
+      "hint": "Which conditions make molecular size and attraction least important?",
+      "distractor_logic": [
+        "Both conditions push molecules close together and slow them down, making molecular size and attraction important",
+        "High pressure crowds molecules so that their own volume is no longer negligible",
+        "Low temperature makes molecules slow enough for attractions to matter"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-009",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "Taking \\( k_B=1.38\\times10^{-23} \\) J/K, the average translational kinetic energy of a gas molecule at 300 K is",
+      "options": [
+        "\\( 6.21\\times10^{-21} \\) J",
+        "\\( 4.14\\times10^{-21} \\) J",
+        "\\( 2.07\\times10^{-21} \\) J",
+        "\\( 3735 \\) J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\overline{E}=\\dfrac32k_BT=1.5\\times1.38\\times10^{-23}\\times300 \\).<br><br>\\( \\overline{E}=1.5\\times4.14\\times10^{-21}=6.21\\times10^{-21} \\) J.",
+      "hint": "Use \\( \\dfrac32k_BT \\) with the value of \\( k_B \\) given.",
+      "distractor_logic": [
+        "Uses \\( k_BT \\), dropping the factor \\( \\dfrac32 \\)",
+        "Uses \\( \\dfrac12k_BT \\), the share of just one direction",
+        "Uses \\( R=8.3 \\) in place of \\( k_B \\), giving the energy of a mole, not a molecule"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-010",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "A gas has density \\( 1.2 \\) kg/m\\( ^3 \\) and root-mean-square speed 500 m/s. The pressure it exerts is",
+      "options": [
+        "\\( 1.5\\times10^{5} \\) Pa",
+        "\\( 10^{5} \\) Pa",
+        "\\( 3\\times10^{5} \\) Pa",
+        "\\( 200 \\) Pa"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=\\dfrac13\\rho v_{rms}^2 \\), since \\( v_{rms}^2=\\overline{v^2} \\).<br><br>\\( P=\\dfrac13\\times1.2\\times(500)^2=\\dfrac13\\times1.2\\times2.5\\times10^{5} \\).<br><br>\\( P=10^{5} \\) Pa.",
+      "hint": "Use \\( P=\\dfrac13\\rho\\overline{v^2} \\), and remember to square the speed.",
+      "distractor_logic": [
+        "Uses one-half instead of one-third, borrowing from the kinetic-energy formula",
+        "Drops the one-third altogether",
+        "Uses \\( v_{rms} \\) instead of its square"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-011",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "An ideal gas at \\( 10^{5} \\) Pa occupies \\( 2\\times10^{-3} \\) m\\( ^3 \\). The total translational kinetic energy of its molecules is",
+      "options": [
+        "200 J",
+        "100 J",
+        "300 J",
+        "600 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( P=\\dfrac23\\dfrac EV \\), so \\( E=\\dfrac32PV \\).<br><br>\\( E=1.5\\times10^{5}\\times2\\times10^{-3}=300 \\) J.",
+      "hint": "Pressure is two-thirds of the kinetic energy per unit volume.",
+      "distractor_logic": [
+        "Uses \\( E=\\dfrac23PV \\), inverting the relation between pressure and energy density",
+        "Uses \\( E=\\dfrac12PV \\)",
+        "Uses \\( E=3PV \\), dropping the one-half of kinetic energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-012",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "At fixed density, the root-mean-square speed of the molecules of a gas is doubled. The pressure becomes",
+      "options": [
+        "twice as large",
+        "eight times as large",
+        "\\( \\sqrt2 \\) times as large",
+        "four times as large"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=\\dfrac13\\rho v_{rms}^2 \\), so at fixed \\( \\rho \\), \\( P\\propto v_{rms}^2 \\).<br><br>Doubling \\( v_{rms} \\) multiplies \\( P \\) by \\( 2^2=4 \\).",
+      "hint": "Pressure depends on the square of the speed.",
+      "distractor_logic": [
+        "Treats pressure as proportional to speed rather than to speed squared",
+        "Cubes the speed factor",
+        "Takes a square root where it should square"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-013",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "The average translational kinetic energy of the molecules of a gas at 300 K is to be made four times larger. The required temperature is",
+      "options": [
+        "1200 K",
+        "600 K",
+        "4800 K",
+        "75 K"
+      ],
+      "correct_index": 0,
+      "explanation": "Average KE \\( =\\dfrac32k_BT\\propto T \\).<br><br>Four times the kinetic energy needs four times the temperature: \\( T=4\\times300=1200 \\) K.",
+      "hint": "Average kinetic energy is directly proportional to absolute temperature.",
+      "distractor_logic": [
+        "Treats temperature as proportional to the square root of kinetic energy, the way speed behaves",
+        "Squares the factor, as if kinetic energy were proportional to \\( \\sqrt T \\)",
+        "Divides by 4 instead of multiplying"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-014",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "A container of volume \\( 2\\times10^{-3} \\) m\\( ^3 \\) holds \\( 4\\times10^{22} \\) molecules, each of mass \\( 5\\times10^{-26} \\) kg, with mean square speed \\( 3\\times10^{5} \\) m\\( ^2 \\)/s\\( ^2 \\). The pressure of the gas is",
+      "options": [
+        "\\( 3\\times10^{5} \\) Pa",
+        "\\( 10^{5} \\) Pa",
+        "\\( 5\\times10^{4} \\) Pa",
+        "\\( 200 \\) Pa"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=\\dfrac13\\dfrac{Nm\\overline{v^2}}{V} \\).<br><br>\\( Nm=4\\times10^{22}\\times5\\times10^{-26}=2\\times10^{-3} \\) kg, and \\( Nm\\overline{v^2}=2\\times10^{-3}\\times3\\times10^{5}=600 \\) J.<br><br>\\( P=\\dfrac13\\times\\dfrac{600}{2\\times10^{-3}}=10^{5} \\) Pa.",
+      "hint": "Use \\( P=\\dfrac13\\dfrac{Nm\\overline{v^2}}{V} \\) and do not forget the volume.",
+      "distractor_logic": [
+        "Drops the one-third factor",
+        "Multiplies by an extra one-half, mixing the kinetic-energy formula into the pressure formula",
+        "Forgets to divide by the volume, using \\( N \\) where the number density \\( \\dfrac NV \\) is needed"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-015",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "The pressure of an ideal gas is \\( 1.5\\times10^{5} \\) Pa. Its translational kinetic energy per unit volume is",
+      "options": [
+        "\\( 10^{5} \\) J/m\\( ^3 \\)",
+        "\\( 4.5\\times10^{5} \\) J/m\\( ^3 \\)",
+        "\\( 2.25\\times10^{5} \\) J/m\\( ^3 \\)",
+        "\\( 7.5\\times10^{4} \\) J/m\\( ^3 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( P=\\dfrac23\\dfrac EV \\), so \\( \\dfrac EV=\\dfrac32P \\).<br><br>\\( \\dfrac EV=1.5\\times1.5\\times10^{5}=2.25\\times10^{5} \\) J/m\\( ^3 \\).",
+      "hint": "Energy per unit volume is three-halves of the pressure.",
+      "distractor_logic": [
+        "Multiplies by two-thirds instead of three-halves",
+        "Multiplies by 3, dropping the one-half of kinetic energy",
+        "Takes half the pressure"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-016",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 2,
+      "type": "regular",
+      "question": "A closed container of gas is on a train that starts moving steadily at high speed. Compared with when the train was at rest, the temperature of the gas",
+      "options": [
+        "rises, because every molecule now has extra kinetic energy",
+        "falls, because the molecules lag behind the moving container",
+        "rises in proportion to the square of the train's speed",
+        "is unchanged, because temperature depends only on random motion relative to the container"
+      ],
+      "correct_index": 3,
+      "explanation": "Temperature measures the average kinetic energy of RANDOM molecular motion, i.e. motion relative to the centre of mass of the gas.<br><br>Moving the whole container adds the same velocity to every molecule. That ordered motion leaves the random part, and hence \\( T \\), unchanged.",
+      "hint": "Temperature is linked to random motion, not to motion of the gas as a whole.",
+      "distractor_logic": [
+        "The extra kinetic energy is ordered bulk motion, which does not count as thermal energy",
+        "In steady motion the gas moves along with the container; nothing lags behind",
+        "Bulk speed adds ordered kinetic energy, not random kinetic energy, so it does not change \\( T \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-017",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "The ratio of the rms speed of hydrogen (\\( M=2 \\) g/mol) molecules to that of oxygen (\\( M=32 \\) g/mol) molecules at the same temperature is",
+      "options": [
+        "4 : 1",
+        "1 : 4",
+        "16 : 1",
+        "1 : 1"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac{v_{H_2}}{v_{O_2}}=\\sqrt{\\dfrac{M_{O_2}}{M_{H_2}}}=\\sqrt{\\dfrac{32}{2}}=\\sqrt{16}=4 \\).<br><br>So the ratio is 4 : 1; the lighter hydrogen molecules move faster, since \\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}} \\).",
+      "hint": "At equal temperature, rms speed goes as \\( \\dfrac{1}{\\sqrt M} \\).",
+      "distractor_logic": [
+        "Inverts the ratio; the lighter gas is faster",
+        "Forgets the square root on the mass ratio",
+        "Assumes equal temperature means equal speed; it means equal kinetic energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-018",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "Gas molecules of mass \\( 4.14\\times10^{-26} \\) kg are at 250 K. Taking \\( k_B=1.38\\times10^{-23} \\) J/K, their rms speed is",
+      "options": [
+        "\\( 2.5\\times10^{5} \\) m/s",
+        "500 m/s",
+        "\\( 500\\sqrt3 \\) m/s",
+        "250 m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v_{rms}^2=\\dfrac{3k_BT}{m}=\\dfrac{3\\times1.38\\times10^{-23}\\times250}{4.14\\times10^{-26}} \\).<br><br>Since \\( 3\\times1.38\\times10^{-23}=4.14\\times10^{-23} \\), \\( v_{rms}^2=250\\times10^{3}=2.5\\times10^{5} \\) m\\( ^2 \\)/s\\( ^2 \\).<br><br>\\( v_{rms}=500 \\) m/s.",
+      "hint": "Use the per-molecule form \\( \\sqrt{\\dfrac{3k_BT}{m}} \\).",
+      "distractor_logic": [
+        "Stops at \\( v_{rms}^2 \\) and forgets the square root",
+        "Applies the factor 3 once inside the root and again outside it",
+        "Halves the answer, carrying over the one-half from the kinetic-energy formula"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-019",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "The rms speed of the molecules of a gas at 300 K is 400 m/s. At 1200 K it will be",
+      "options": [
+        "1600 m/s",
+        "400 m/s",
+        "800 m/s",
+        "200 m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v_{rms}\\propto\\sqrt T \\).<br><br>\\( v_2=400\\sqrt{\\dfrac{1200}{300}}=400\\times2=800 \\) m/s.",
+      "hint": "Take the square root of the temperature ratio.",
+      "distractor_logic": [
+        "Takes speed proportional to \\( T \\) instead of \\( \\sqrt T \\)",
+        "Assumes speed does not depend on temperature",
+        "Inverts the dependence, as if a hotter gas were slower"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-020",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "At what temperature will the rms speed of oxygen (\\( M=32 \\) g/mol) molecules equal the rms speed of hydrogen (\\( M=2 \\) g/mol) molecules at 200 K?",
+      "options": [
+        "12.5 K",
+        "800 K",
+        "200 K",
+        "3200 K"
+      ],
+      "correct_index": 3,
+      "explanation": "Equal \\( v_{rms} \\) needs equal \\( \\dfrac TM \\): \\( \\dfrac{T_{O_2}}{32}=\\dfrac{200}{2} \\).<br><br>\\( T_{O_2}=100\\times32=3200 \\) K.",
+      "hint": "Equal rms speeds require equal values of \\( \\dfrac TM \\).",
+      "distractor_logic": [
+        "Inverts the mass ratio, dividing instead of multiplying",
+        "Uses the square root of the mass ratio (4) instead of the ratio itself",
+        "Assumes equal temperature gives equal speed for different gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-021",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "Four molecules have speeds 1, 5, 5 and 7 m/s. Their root-mean-square speed is",
+      "options": [
+        "5 m/s",
+        "4.5 m/s",
+        "25 m/s",
+        "10 m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "Sum of squares \\( =1+25+25+49=100 \\).<br><br>Mean square \\( =\\dfrac{100}{4}=25 \\) m\\( ^2 \\)/s\\( ^2 \\), so \\( v_{rms}=\\sqrt{25}=5 \\) m/s.<br><br>The plain average, 4.5 m/s, is smaller than \\( v_{rms} \\), as it always is.",
+      "hint": "Square, average, then take the square root.",
+      "distractor_logic": [
+        "This is the average speed; the rms speed averages the squares first",
+        "Averages the squares but forgets to take the square root",
+        "Takes the root of the sum of squares without dividing by the number of molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-022",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "For a gas at a given temperature, the ratio \\( \\dfrac{v_{rms}}{v_{mp}} \\) is",
+      "options": [
+        "\\( \\sqrt{\\dfrac23} \\)",
+        "\\( \\sqrt{\\dfrac32} \\)",
+        "\\( \\dfrac32 \\)",
+        "\\( \\sqrt{\\dfrac{3\\pi}{8}} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{v_{rms}}{v_{mp}}=\\dfrac{\\sqrt{3RT/M}}{\\sqrt{2RT/M}}=\\sqrt{\\dfrac32}\\approx1.22 \\).<br><br>It is greater than 1, consistent with \\( v_{mp}<v_{rms} \\).",
+      "hint": "Only the coefficients 3 and 2 differ between the two formulas.",
+      "distractor_logic": [
+        "Inverted; \\( v_{rms} \\) is the larger of the two speeds",
+        "Forgets the square root on the ratio of coefficients",
+        "This is \\( \\dfrac{v_{rms}}{v_{avg}} \\), using the coefficient of the average speed"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-023",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "A student finds the rms speed of nitrogen at 300 K using \\( v_{rms}=\\sqrt{\\dfrac{3k_BT}{M}} \\) with \\( M=0.028 \\) kg/mol and gets an absurdly small value. The mistake is that",
+      "options": [
+        "the coefficient should be 2, not 3",
+        "the temperature should have been in degrees Celsius",
+        "\\( k_B \\) must be paired with the mass of one molecule \\( m \\), or else \\( R \\) must be used with the molar mass \\( M \\)",
+        "there is no mistake; nitrogen molecules really are that slow"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( k_B \\) is the gas constant for ONE molecule, so it must be divided by the mass of one molecule \\( m \\).<br><br>Using the molar mass \\( M \\), about \\( 6\\times10^{23} \\) times larger, makes \\( v_{rms}^2 \\) far too small.<br><br>Correct pairs: \\( \\sqrt{\\dfrac{3k_BT}{m}} \\) or \\( \\sqrt{\\dfrac{3RT}{M}} \\).",
+      "hint": "Which mass goes with \\( k_B \\), and which with \\( R \\)?",
+      "distractor_logic": [
+        "Changing the coefficient gives \\( v_{mp} \\) and does not fix the constant-mass mismatch",
+        "Kinetic-theory formulas always use absolute temperature in kelvin",
+        "Real nitrogen molecules at room temperature move at hundreds of metres per second"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-024",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 2,
+      "type": "regular",
+      "question": "Two Maxwell speed-distribution curves X and Y are drawn for the same gas. Curve X peaks at a lower speed and is taller than curve Y. Then",
+      "options": [
+        "the temperature for X is higher than that for Y",
+        "both curves are at the same temperature",
+        "curve X represents fewer molecules than curve Y",
+        "the temperature for X is lower than that for Y"
+      ],
+      "correct_index": 3,
+      "explanation": "For a given gas, \\( v_{mp}=\\sqrt{\\dfrac{2RT}{M}} \\) grows with \\( T \\), and the curve flattens as it broadens.<br><br>A lower-speed, taller peak therefore means a colder gas: \\( T_X<T_Y \\).",
+      "hint": "Where does the peak move when a gas is heated?",
+      "distractor_logic": [
+        "A higher temperature moves the peak to a higher speed, not a lower one",
+        "Different peak positions for the same gas mean different temperatures",
+        "A taller, narrower curve can enclose the same area; height alone says nothing about the number of molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-025",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Taking \\( R=8.3 \\) J/(mol K), the internal energy of 2 mol of helium at 300 K is",
+      "options": [
+        "7470 J",
+        "12450 J",
+        "3735 J",
+        "4980 J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( U=\\mu\\times\\dfrac32RT=2\\times1.5\\times8.3\\times300 \\).<br><br>\\( U=3\\times2490=7470 \\) J.",
+      "hint": "Helium is monatomic, so \\( f=3 \\).",
+      "distractor_logic": [
+        "Uses \\( f=5 \\), treating helium as diatomic",
+        "Calculates for 1 mol only",
+        "Uses \\( U=\\mu RT \\), as if \\( f=2 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-026",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Taking \\( k_B=1.38\\times10^{-23} \\) J/K, the average total energy of a rigid \\( O_2 \\) molecule at 400 K is",
+      "options": [
+        "\\( 8.28\\times10^{-21} \\) J",
+        "\\( 1.38\\times10^{-20} \\) J",
+        "\\( 1.932\\times10^{-20} \\) J",
+        "\\( 2.76\\times10^{-21} \\) J"
+      ],
+      "correct_index": 1,
+      "explanation": "Rigid diatomic, \\( f=5 \\): \\( \\overline{E}=\\dfrac52k_BT \\).<br><br>\\( \\overline{E}=2.5\\times1.38\\times10^{-23}\\times400=2.5\\times5.52\\times10^{-21}=1.38\\times10^{-20} \\) J.",
+      "hint": "Give each of the 5 degrees of freedom \\( \\dfrac12k_BT \\).",
+      "distractor_logic": [
+        "Counts only translational energy, \\( \\dfrac32k_BT \\)",
+        "Includes vibration, using \\( \\dfrac72k_BT \\), which does not apply to a rigid molecule",
+        "Uses \\( \\dfrac12k_BT \\), the share of a single degree of freedom"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-027",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "For a rigid diatomic gas, what fraction of the total internal energy is rotational kinetic energy?",
+      "options": [
+        "\\( \\dfrac35 \\)",
+        "\\( \\dfrac12 \\)",
+        "\\( \\dfrac25 \\)",
+        "\\( \\dfrac23 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f=5 \\): 3 translational and 2 rotational, each with \\( \\dfrac12k_BT \\).<br><br>Rotational fraction \\( =\\dfrac25 \\).",
+      "hint": "Equipartition shares energy equally per degree of freedom, not per type of motion.",
+      "distractor_logic": [
+        "This is the translational fraction",
+        "Assumes rotation and translation share the energy equally",
+        "Compares rotational energy with translational energy instead of with the total"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-028",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "The internal energy of a mixture of 1 mol of helium and 1 mol of nitrogen (rigid) at temperature \\( T \\) is",
+      "options": [
+        "\\( 3RT \\)",
+        "\\( 5RT \\)",
+        "\\( 8RT \\)",
+        "\\( 4RT \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Helium: \\( \\dfrac32RT \\). Nitrogen: \\( \\dfrac52RT \\).<br><br>\\( U=\\dfrac32RT+\\dfrac52RT=4RT \\).",
+      "hint": "Add the energies of the two gases, each with its own \\( f \\).",
+      "distractor_logic": [
+        "Treats both gases as monatomic",
+        "Treats both gases as diatomic",
+        "Gives each degree of freedom \\( RT \\) instead of \\( \\dfrac12RT \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-029",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "One mole of helium and one mole of oxygen (rigid) are at the same temperature. The ratio of their total TRANSLATIONAL kinetic energies, helium to oxygen, is",
+      "options": [
+        "1 : 1",
+        "3 : 5",
+        "5 : 3",
+        "1 : 8"
+      ],
+      "correct_index": 0,
+      "explanation": "Translational KE per mole is \\( \\dfrac32RT \\) for every ideal gas.<br><br>Oxygen's extra \\( RT \\) is rotational, not translational, so the translational ratio is 1 : 1. (The total energies would be in the ratio 3 : 5.)",
+      "hint": "Read the question carefully: translational energy only.",
+      "distractor_logic": [
+        "Compares total internal energies instead of translational energies",
+        "Inverts the internal-energy ratio and still ignores the word translational",
+        "Applies the mass ratio 4 : 32 to kinetic energy, which does not depend on mass at fixed \\( T \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-030",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "The average energy of a rigid diatomic gas molecule is \\( 1.035\\times10^{-20} \\) J. Taking \\( k_B=1.38\\times10^{-23} \\) J/K, the gas temperature is",
+      "options": [
+        "500 K",
+        "300 K",
+        "750 K",
+        "1500 K"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac52k_BT=1.035\\times10^{-20} \\) J.<br><br>\\( T=\\dfrac{1.035\\times10^{-20}}{2.5\\times1.38\\times10^{-23}}=\\dfrac{1.035\\times10^{-20}}{3.45\\times10^{-23}}=300 \\) K.",
+      "hint": "A rigid diatomic molecule has 5 degrees of freedom.",
+      "distractor_logic": [
+        "Uses \\( \\dfrac32k_BT \\), counting translational energy only",
+        "Uses \\( k_BT \\) as the total energy",
+        "Uses \\( \\dfrac12k_BT \\), the energy of one degree of freedom"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-031",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Why is the rotational energy of a monatomic gas molecule taken as zero?",
+      "options": [
+        "The container walls stop atoms from rotating",
+        "Rotation is forbidden by the law of equipartition",
+        "A single atom acts as a point mass with negligible moment of inertia about any axis",
+        "Atoms can rotate only at temperatures close to 0 K"
+      ],
+      "correct_index": 2,
+      "explanation": "Rotational KE \\( =\\dfrac12I\\omega^2 \\). For a single atom, practically all the mass sits at a point on any axis through it, so \\( I \\) is negligible.<br><br>Rotational energy is then negligible, leaving only the 3 translational degrees of freedom.",
+      "hint": "Think about the moment of inertia of a point mass about an axis through itself.",
+      "distractor_logic": [
+        "Walls exchange momentum with atoms but cannot prevent rotation",
+        "Equipartition assigns energy to every active degree of freedom; it does not forbid any",
+        "Nothing makes rotation appear only near absolute zero; the claim is baseless"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-032",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "At the same ordinary temperature, which of these gases has the greatest internal energy per mole?",
+      "options": [
+        "Helium",
+        "Argon",
+        "Neon",
+        "Oxygen"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( U=\\dfrac f2RT \\) per mole, independent of molar mass.<br><br>Helium, neon and argon are monatomic (\\( f=3 \\)); oxygen is diatomic (\\( f=5 \\)), so it has the largest internal energy.",
+      "hint": "Internal energy per mole depends on \\( f \\), not on molar mass.",
+      "distractor_logic": [
+        "Being lightest does not give more energy; energy per mole depends on degrees of freedom, not mass",
+        "Being heaviest does not help; argon is monatomic with \\( f=3 \\)",
+        "Neon is monatomic, like helium and argon"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-033",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "The value of \\( \\gamma \\) for a rigid diatomic ideal gas is",
+      "options": [
+        "\\( \\dfrac75 \\)",
+        "\\( \\dfrac53 \\)",
+        "\\( \\dfrac97 \\)",
+        "\\( \\dfrac57 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( C_v=\\dfrac52R \\) and \\( C_p=\\dfrac72R \\).<br><br>\\( \\gamma=\\dfrac{C_p}{C_v}=\\dfrac75=1.4 \\).",
+      "hint": "Use \\( f=5 \\) to get \\( C_v \\), then add \\( R \\) for \\( C_p \\).",
+      "distractor_logic": [
+        "This is the monatomic value",
+        "This is the value for a vibrating diatomic gas at high temperature",
+        "Inverted ratio, less than 1"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-034",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "Gas molecules of diameter \\( 10^{-10} \\) m have number density \\( 10^{25} \\) m\\( ^{-3} \\). Taking \\( \\sqrt2\\,\\pi\\approx4.4 \\), the mean free path is of the order of",
+      "options": [
+        "\\( 10^{-16} \\) m",
+        "\\( 10^{-6} \\) m",
+        "\\( 10^{5} \\) m",
+        "\\( 10^{-10} \\) m"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\sqrt2\\,\\pi d^2n\\approx4.4\\times10^{-20}\\times10^{25}=4.4\\times10^{5} \\) m\\( ^{-1} \\).<br><br>\\( \\lambda\\approx\\dfrac{1}{4.4\\times10^{5}}\\approx2.3\\times10^{-6} \\) m, i.e. of the order of \\( 10^{-6} \\) m: thousands of molecular diameters.",
+      "hint": "Square the diameter first, then take the reciprocal of the whole denominator.",
+      "distractor_logic": [
+        "Uses \\( d \\) instead of \\( d^2 \\)",
+        "Forgets to take the reciprocal",
+        "Assumes a molecule travels only about one diameter between collisions"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-035",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "A fixed mass of gas has both its pressure and its absolute temperature doubled. Its mean free path",
+      "options": [
+        "halves",
+        "doubles",
+        "remains unchanged",
+        "becomes one-fourth"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( n=\\dfrac{P}{k_BT} \\): doubling both \\( P \\) and \\( T \\) leaves \\( n \\) unchanged.<br><br>With \\( d \\) fixed, \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\) stays the same.",
+      "hint": "Find what happens to the number density first.",
+      "distractor_logic": [
+        "Accounts for the pressure rise but not the temperature rise",
+        "Accounts for the temperature rise but not the pressure rise",
+        "Squares the pressure effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-036",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "Taking \\( R=8.3 \\) J/(mol K), the molar specific heat at constant pressure of a monatomic gas is",
+      "options": [
+        "12.45 J/(mol K)",
+        "29.05 J/(mol K)",
+        "8.3 J/(mol K)",
+        "20.75 J/(mol K)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( C_p=C_v+R=\\dfrac32R+R=\\dfrac52R \\).<br><br>\\( C_p=2.5\\times8.3=20.75 \\) J/(mol K).",
+      "hint": "Find \\( C_v \\) first, then add \\( R \\).",
+      "distractor_logic": [
+        "This is \\( C_v \\); \\( R \\) was not added",
+        "Uses the rigid-diatomic value \\( \\dfrac72R \\)",
+        "Gives only the difference \\( C_p-C_v \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-037",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "Taking \\( R=8.3 \\) J/(mol K), the heat needed to raise the temperature of 2 mol of oxygen (rigid) by 10 K at constant volume is",
+      "options": [
+        "415 J",
+        "581 J",
+        "249 J",
+        "207.5 J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( Q=\\mu C_v\\Delta T=2\\times\\dfrac52\\times8.3\\times10 \\).<br><br>\\( Q=5\\times83=415 \\) J.",
+      "hint": "Constant volume means \\( C_v \\); oxygen here has \\( f=5 \\).",
+      "distractor_logic": [
+        "Uses \\( C_p=\\dfrac72R \\) although the volume is constant",
+        "Uses the monatomic \\( C_v=\\dfrac32R \\)",
+        "Calculates for 1 mol only"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-038",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "For an ideal gas whose molecules have \\( f \\) degrees of freedom, \\( \\gamma \\) equals",
+      "options": [
+        "\\( 1+\\dfrac f2 \\)",
+        "\\( 1+\\dfrac2f \\)",
+        "\\( \\dfrac2f \\)",
+        "\\( 1+\\dfrac1f \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( C_v=\\dfrac f2R \\) and \\( C_p=\\left(\\dfrac f2+1\\right)R \\).<br><br>\\( \\gamma=\\dfrac{C_p}{C_v}=1+\\dfrac2f \\). Check: \\( f=3 \\) gives \\( \\dfrac53 \\) and \\( f=5 \\) gives \\( \\dfrac75 \\).",
+      "hint": "Divide \\( C_p=C_v+R \\) by \\( C_v=\\dfrac f2R \\).",
+      "distractor_logic": [
+        "Inverts the fraction; this would make \\( \\gamma \\) grow with \\( f \\)",
+        "Drops the 1 that comes from \\( C_p=C_v+R \\)",
+        "Uses \\( \\dfrac Rf \\) instead of \\( \\dfrac{2R}{f} \\), forgetting that \\( C_v=\\dfrac f2R \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-039",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "The factor \\( \\sqrt2 \\) in \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\) accounts for",
+      "options": [
+        "collisions happening in two dimensions instead of three",
+        "the ratio of molecular diameter to molecular radius",
+        "the relative motion of the molecules: their average relative speed is \\( \\sqrt2 \\) times their average speed",
+        "collisions of molecules with the container walls"
+      ],
+      "correct_index": 2,
+      "explanation": "If only one molecule moved, it would collide on average once per length \\( \\dfrac{1}{\\pi d^2n} \\).<br><br>Because the target molecules also move, collisions happen more often: averaging the relative velocities gives a factor \\( \\sqrt2 \\), which shortens \\( \\lambda \\).",
+      "hint": "The other molecules are not standing still.",
+      "distractor_logic": [
+        "The motion is fully three-dimensional; the factor has nothing to do with counting dimensions",
+        "Diameter is twice the radius, not \\( \\sqrt2 \\) times",
+        "Wall collisions are irrelevant to the free path between molecular collisions"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L2-040",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 2,
+      "type": "regular",
+      "question": "A gas has \\( C_p=\\dfrac52R \\). The gas is",
+      "options": [
+        "rigid diatomic",
+        "diatomic, vibrating at high temperature",
+        "non-linear polyatomic with no vibration",
+        "monatomic"
+      ],
+      "correct_index": 3,
+      "explanation": "By Mayer's relation, \\( C_v=C_p-R=\\dfrac32R \\).<br><br>\\( C_v=\\dfrac f2R \\) gives \\( f=3 \\): a monatomic gas.",
+      "hint": "Subtract \\( R \\) to get \\( C_v \\), then find \\( f \\).",
+      "distractor_logic": [
+        "Confuses \\( C_p \\) with \\( C_v \\); a rigid diatomic gas has \\( C_v=\\dfrac52R \\) but \\( C_p=\\dfrac72R \\)",
+        "A vibrating diatomic gas has \\( C_p=\\dfrac92R \\)",
+        "A rigid non-linear polyatomic gas has \\( C_p=4R \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-001",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "Vessel A (2 L) holds an ideal gas at \\( 3\\times10^{5} \\) Pa and vessel B (3 L) holds an ideal gas at \\( 2\\times10^{5} \\) Pa, both at the same temperature. They are joined by a thin tube of negligible volume, with the temperature unchanged. The final common pressure is",
+      "options": [
+        "\\( 2.4\\times10^{5} \\) Pa",
+        "\\( 2.5\\times10^{5} \\) Pa",
+        "\\( 5\\times10^{5} \\) Pa",
+        "\\( 1.2\\times10^{6} \\) Pa"
+      ],
+      "correct_index": 0,
+      "explanation": "At constant \\( T \\) the total number of moles is conserved, so \\( P_1V_1+P_2V_2=P(V_1+V_2) \\).<br><br>\\( P_1V_1+P_2V_2=3\\times10^{5}\\times2+2\\times10^{5}\\times3=12\\times10^{5} \\) Pa L.<br><br>\\( P=\\dfrac{12\\times10^{5}}{5}=2.4\\times10^{5} \\) Pa.",
+      "hint": "The total number of moles, proportional to \\( PV \\) at fixed \\( T \\), is conserved.",
+      "distractor_logic": [
+        "Takes a simple average of the two pressures, ignoring the different volumes",
+        "Adds the pressures as if both gases were squeezed into one vessel",
+        "Adds \\( P_1V_1+P_2V_2 \\) but forgets to divide by the total volume of 5 L"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-002",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "A cylinder holds gas at \\( 6\\times10^{5} \\) Pa and 300 K. After some gas leaks out, the remaining gas is at \\( 2\\times10^{5} \\) Pa and 400 K. What fraction of the original gas has escaped?",
+      "options": [
+        "\\( \\dfrac23 \\)",
+        "\\( \\dfrac34 \\)",
+        "\\( \\dfrac14 \\)",
+        "\\( \\dfrac59 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "At fixed volume, \\( \\mu=\\dfrac{PV}{RT}\\propto\\dfrac PT \\).<br><br>\\( \\dfrac{\\mu_2}{\\mu_1}=\\dfrac{2\\times10^{5}/400}{6\\times10^{5}/300}=\\dfrac{500}{2000}=\\dfrac14 \\).<br><br>So \\( \\dfrac14 \\) remains and \\( \\dfrac34 \\) has escaped.",
+      "hint": "At fixed volume, the amount of gas is proportional to \\( \\dfrac PT \\).",
+      "distractor_logic": [
+        "Uses the pressure ratio alone, ignoring the temperature change",
+        "Gives the fraction remaining instead of the fraction escaped",
+        "Takes the number of moles proportional to \\( PT \\) rather than \\( \\dfrac PT \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-003",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "Oxygen (molar mass 32 g/mol) fills a \\( 8.3\\times10^{-3} \\) m\\( ^3 \\) vessel at \\( 3\\times10^{5} \\) Pa and 300 K. Taking \\( R=8.3 \\) J/(mol K), the mass of oxygen is",
+      "options": [
+        "16 g",
+        "64 g",
+        "32 g",
+        "\\( 3.2\\times10^{-2} \\) g"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\mu=\\dfrac{PV}{RT}=\\dfrac{3\\times10^{5}\\times8.3\\times10^{-3}}{8.3\\times300} \\).<br><br>Numerator \\( =2490 \\) J and denominator \\( =2490 \\) J/mol, so \\( \\mu=1 \\) mol.<br><br>Mass \\( =\\mu M=1\\times32=32 \\) g.",
+      "hint": "Find the number of moles first, then multiply by the molar mass.",
+      "distractor_logic": [
+        "Uses the atomic mass of oxygen (16 g/mol) instead of the molecular mass of \\( O_2 \\)",
+        "Doubles for the two atoms in each molecule even though the molar mass already accounts for them",
+        "Converts 32 g to 0.032 kg but keeps the unit as grams"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-004",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "A gas is compressed to a very high pressure. Which kinetic-theory assumption becomes the LEAST reliable?",
+      "options": [
+        "Molecular motion is random",
+        "Molecules obey Newton's laws of motion",
+        "The number of molecules is very large",
+        "The molecules' own volume is negligible compared with the container volume"
+      ],
+      "correct_index": 3,
+      "explanation": "At very high pressure the molecules are packed closely, so the space they themselves occupy becomes a noticeable fraction of the container volume.<br><br>The point-molecule assumption fails first, and the gas deviates from \\( PV=\\mu RT \\).",
+      "hint": "What happens to the free space between molecules when a gas is squeezed hard?",
+      "distractor_logic": [
+        "Random motion persists at any pressure; compression does not line molecules up",
+        "Newton's laws continue to govern molecular collisions at high pressure",
+        "Compression does not reduce the number of molecules, so this assumption still holds"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-005",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "For a fixed volume of gas, a graph of \\( P \\) against \\( T \\) (in kelvin) is a straight line through the origin. Two such lines are drawn for the same gas in two containers of equal volume. The steeper line corresponds to",
+      "options": [
+        "the container holding more moles of gas",
+        "the container holding fewer moles of gas",
+        "the container at the higher temperature",
+        "the container in which the gas molecules are heavier"
+      ],
+      "correct_index": 0,
+      "explanation": "From \\( PV=\\mu RT \\), \\( P=\\left(\\dfrac{\\mu R}{V}\\right)T \\), so the slope is \\( \\dfrac{\\mu R}{V} \\).<br><br>With equal \\( V \\), a steeper line means a larger \\( \\mu \\).",
+      "hint": "Write \\( P \\) as (slope) times \\( T \\) using the ideal gas equation.",
+      "distractor_logic": [
+        "Inverts the relation; the slope \\( \\dfrac{\\mu R}{V} \\) grows with the amount of gas",
+        "The slope of a line through the origin does not depend on where along the line the gas sits",
+        "The slope \\( \\dfrac{\\mu R}{V} \\) contains no molecular mass; it is the same gas anyway"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-006",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "Vessel A holds an ideal gas at pressure \\( P \\), volume \\( 2V \\) and 300 K. Vessel B holds an ideal gas at pressure \\( 3P \\), volume \\( V \\) and 600 K. The ratio of the numbers of molecules \\( N_A:N_B \\) is",
+      "options": [
+        "3 : 4",
+        "4 : 3",
+        "2 : 3",
+        "1 : 3"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( N=\\dfrac{PV}{k_BT} \\).<br><br>\\( N_A\\propto\\dfrac{P\\times2V}{300}=\\dfrac{PV}{150} \\) and \\( N_B\\propto\\dfrac{3P\\times V}{600}=\\dfrac{PV}{200} \\).<br><br>\\( N_A:N_B=\\dfrac{1}{150}:\\dfrac{1}{200}=4:3 \\).",
+      "hint": "\\( N \\) is proportional to \\( \\dfrac{PV}{T} \\).",
+      "distractor_logic": [
+        "Inverts the final ratio",
+        "Compares \\( PV \\) only and ignores the different temperatures",
+        "Multiplies by \\( T \\) instead of dividing, using \\( N\\propto PVT \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-007",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 3,
+      "type": "regular",
+      "question": "Every second, \\( 10^{23} \\) molecules, each of mass \\( 5\\times10^{-26} \\) kg, strike a wall of area \\( 10^{-4} \\) m\\( ^2 \\) head-on at 500 m/s and rebound elastically. The pressure on the wall is",
+      "options": [
+        "\\( 2.5\\times10^{4} \\) Pa",
+        "\\( 5 \\) Pa",
+        "\\( 5\\times10^{4} \\) Pa",
+        "\\( 5\\times10^{-4} \\) Pa"
+      ],
+      "correct_index": 2,
+      "explanation": "Each elastic rebound reverses the velocity: momentum change \\( =2mv=2\\times5\\times10^{-26}\\times500=5\\times10^{-23} \\) kg m/s.<br><br>Force = number of hits per second times \\( 2mv \\): \\( F=10^{23}\\times5\\times10^{-23}=5 \\) N.<br><br>\\( P=\\dfrac FA=\\dfrac{5}{10^{-4}}=5\\times10^{4} \\) Pa. No \\( \\dfrac13 \\) factor appears here because every molecule moves normal to the wall.",
+      "hint": "Force is the rate of change of momentum; an elastic rebound reverses the velocity.",
+      "distractor_logic": [
+        "Uses a momentum change of \\( mv \\) per hit instead of \\( 2mv \\) for an elastic rebound",
+        "Gives the force (5 N) as if it were the pressure, forgetting to divide by the area",
+        "Multiplies the force by the area instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-008",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 3,
+      "type": "regular",
+      "question": "In a container of fixed volume, the mass of each gas molecule is halved, the number of molecules is doubled, and the rms speed is doubled. The pressure becomes",
+      "options": [
+        "2 times as large",
+        "the same",
+        "8 times as large",
+        "4 times as large"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=\\dfrac13\\dfrac{Nm\\overline{v^2}}{V} \\), so \\( P\\propto Nm\\overline{v^2} \\) at fixed \\( V \\).<br><br>Factor \\( =2\\times\\dfrac12\\times2^2=4 \\).",
+      "hint": "Track each of \\( N \\), \\( m \\) and \\( \\overline{v^2} \\) in the pressure formula.",
+      "distractor_logic": [
+        "Doubles for the speed change instead of squaring it",
+        "Lets mass and number cancel but ignores the speed change entirely",
+        "Doubles for \\( N \\) and squares the speed but forgets the halved mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-009",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 3,
+      "type": "regular",
+      "question": "Taking \\( k_B=1.38\\times10^{-23} \\) J/K, at what temperature is the average translational kinetic energy of a gas molecule equal to \\( 4.14\\times10^{-21} \\) J?",
+      "options": [
+        "200 K",
+        "300 K",
+        "100 K",
+        "600 K"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac32k_BT=4.14\\times10^{-21} \\), so \\( T=\\dfrac{2\\times4.14\\times10^{-21}}{3\\times1.38\\times10^{-23}} \\).<br><br>\\( T=\\dfrac{8.28\\times10^{-21}}{4.14\\times10^{-23}}=200 \\) K.",
+      "hint": "Solve \\( \\dfrac32k_BT \\) equal to the given energy.",
+      "distractor_logic": [
+        "Sets the energy equal to \\( k_BT \\), dropping the three-halves",
+        "Sets the energy equal to \\( 3k_BT \\)",
+        "Sets the energy equal to \\( \\dfrac12k_BT \\), the share of one direction only"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-010",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 3,
+      "type": "regular",
+      "question": "A fixed amount of ideal gas has its volume doubled and its pressure tripled. The average translational kinetic energy per molecule becomes",
+      "options": [
+        "1.5 times as large",
+        "6 times as large",
+        "5 times as large",
+        "\\( \\dfrac23 \\) times as large"
+      ],
+      "correct_index": 1,
+      "explanation": "For fixed \\( N \\), \\( PV=Nk_BT \\), so \\( T\\propto PV \\), which grows by \\( 3\\times2=6 \\).<br><br>Average KE \\( =\\dfrac32k_BT\\propto T \\), so it becomes 6 times as large.",
+      "hint": "First find how the temperature changes.",
+      "distractor_logic": [
+        "Divides the pressure factor by the volume factor instead of multiplying",
+        "Adds the factors instead of multiplying them",
+        "Divides the volume factor by the pressure factor"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-011",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 3,
+      "type": "regular",
+      "question": "In deriving \\( P=\\dfrac13\\rho\\overline{v^2} \\), collisions between molecules are ignored. Why does this not affect the result?",
+      "options": [
+        "Molecules of an ideal gas never collide with one another",
+        "Such collisions cancel because point-sized molecules pass through each other",
+        "At equilibrium, elastic molecule-molecule collisions only exchange momentum among molecules and leave the velocity distribution, and so the momentum delivered to the walls, unchanged",
+        "They add an extra pressure, but it is always much smaller than the wall pressure"
+      ],
+      "correct_index": 2,
+      "explanation": "Elastic collisions conserve total momentum and kinetic energy.<br><br>At equilibrium, for every molecule knocked off one path another is knocked onto an equivalent one, so the velocity distribution stays the same.<br><br>The average momentum delivered to the walls, and hence \\( P \\), is unaffected.",
+      "hint": "What do elastic collisions conserve, and what happens to the overall velocity distribution?",
+      "distractor_logic": [
+        "Ideal gas molecules do collide; that is how the gas reaches equilibrium",
+        "Point size is a simplification of volume, not a claim that molecules pass through each other",
+        "Intermolecular collisions add no pressure; they only reshuffle momenta while keeping the averages unchanged"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-012",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": 3,
+      "type": "regular",
+      "question": "Taking \\( k_B=1.38\\times10^{-23} \\) J/K, the number density of molecules in an ideal gas at \\( 1.38\\times10^{5} \\) Pa and 1000 K is",
+      "options": [
+        "\\( 10^{28} \\) m\\( ^{-3} \\)",
+        "\\( 10^{31} \\) m\\( ^{-3} \\)",
+        "\\( 10^{22} \\) m\\( ^{-3} \\)",
+        "\\( 10^{25} \\) m\\( ^{-3} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "From \\( P=\\dfrac13nm\\overline{v^2} \\) and \\( \\dfrac12m\\overline{v^2}=\\dfrac32k_BT \\), we get \\( P=nk_BT \\).<br><br>\\( n=\\dfrac{P}{k_BT}=\\dfrac{1.38\\times10^{5}}{1.38\\times10^{-23}\\times1000}=10^{25} \\) m\\( ^{-3} \\).",
+      "hint": "Combine the kinetic pressure formula with the average kinetic energy to get \\( P=nk_BT \\).",
+      "distractor_logic": [
+        "Forgets to divide by the temperature",
+        "Multiplies by the temperature instead of dividing",
+        "Uses the pressure in kPa (138) rather than pascals"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-013",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 3,
+      "type": "regular",
+      "question": "The rms speed of the molecules of a gas is \\( 100\\sqrt6 \\) m/s. Their most probable speed is",
+      "options": [
+        "200 m/s",
+        "300 m/s",
+        "\\( 100\\sqrt6 \\) m/s",
+        "\\( 100\\sqrt2 \\) m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac{v_{mp}}{v_{rms}}=\\sqrt{\\dfrac23} \\).<br><br>\\( v_{mp}=100\\sqrt6\\times\\sqrt{\\dfrac23}=100\\sqrt4=200 \\) m/s.<br><br>As expected, \\( v_{mp}<v_{rms} \\), since \\( 100\\sqrt6\\approx245 \\) m/s.",
+      "hint": "The two speeds differ by the ratio of \\( \\sqrt2 \\) to \\( \\sqrt3 \\).",
+      "distractor_logic": [
+        "Multiplies by \\( \\sqrt{3/2} \\) instead of \\( \\sqrt{2/3} \\), making the most probable speed exceed the rms speed",
+        "Assumes the most probable speed equals the rms speed",
+        "Divides by \\( \\sqrt3 \\) only, forgetting the \\( \\sqrt2 \\) in the most probable speed"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-014",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 3,
+      "type": "regular",
+      "question": "A vessel contains a mixture of hydrogen (\\( M=2 \\) g/mol) and oxygen (\\( M=32 \\) g/mol) at the same temperature. The ratios, hydrogen to oxygen, of the average translational kinetic energy per molecule and of the rms speed are respectively",
+      "options": [
+        "1 : 16 and 4 : 1",
+        "1 : 1 and 4 : 1",
+        "1 : 1 and 1 : 4",
+        "16 : 1 and 4 : 1"
+      ],
+      "correct_index": 1,
+      "explanation": "Average translational KE \\( =\\dfrac32k_BT \\) depends only on \\( T \\): ratio 1 : 1.<br><br>\\( v_{rms}\\propto\\dfrac{1}{\\sqrt M} \\): \\( \\sqrt{\\dfrac{32}{2}}=4 \\), ratio 4 : 1.",
+      "hint": "Energy depends on temperature alone; speed also depends on mass.",
+      "distractor_logic": [
+        "Makes kinetic energy depend on molecular mass; at equal \\( T \\) it does not",
+        "Inverts the speed ratio; lighter molecules move faster",
+        "Scales energy by the square of the speed ratio but ignores the 16 times smaller mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-015",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 3,
+      "type": "regular",
+      "question": "To what temperature must a gas at 300 K be heated so that the rms speed of its molecules increases by 20%?",
+      "options": [
+        "360 K",
+        "132 K",
+        "432 K",
+        "622.08 K"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v_{rms}\\propto\\sqrt T \\), so \\( T\\propto v_{rms}^2 \\).<br><br>\\( T_2=300\\times(1.2)^2=300\\times1.44=432 \\) K.",
+      "hint": "Temperature goes as the square of the rms speed.",
+      "distractor_logic": [
+        "Raises \\( T \\) by 20%, treating speed as proportional to \\( T \\)",
+        "Gives the rise in temperature, not the final temperature",
+        "Raises the speed factor to the fourth power instead of squaring it"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-016",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 3,
+      "type": "regular",
+      "question": "Which statement about the Maxwell speed distribution of a fixed amount of gas is correct?",
+      "options": [
+        "The area under the curve increases as the gas is heated",
+        "The height of the peak increases as the gas is heated",
+        "At equilibrium, every molecule moves at the rms speed",
+        "The area under the curve stays the same when the temperature changes"
+      ],
+      "correct_index": 3,
+      "explanation": "The area under the distribution curve equals the total number of molecules, which is fixed for a sealed sample.<br><br>Heating shifts the peak to a higher speed and spreads the curve, so the peak must drop to keep the area constant.",
+      "hint": "What physical quantity does the area under the curve represent?",
+      "distractor_logic": [
+        "The area counts the molecules, whose number does not change on heating",
+        "Heating broadens the curve, which lowers its peak",
+        "The distribution exists precisely because molecules have a spread of speeds; the rms speed is only a representative value"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-017",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 3,
+      "type": "regular",
+      "question": "Helium (\\( M=4 \\) g/mol) is at 900 K and methane (\\( M=16 \\) g/mol) is at 400 K. The ratio of the average molecular speed of helium to that of methane is",
+      "options": [
+        "3 : 1",
+        "1 : 3",
+        "9 : 1",
+        "2 : 1"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( v_{avg}=\\sqrt{\\dfrac{8RT}{\\pi M}}\\propto\\sqrt{\\dfrac TM} \\); the \\( \\dfrac8\\pi \\) cancels in a ratio.<br><br>\\( \\dfrac{v_{He}}{v_{CH_4}}=\\sqrt{\\dfrac{900/4}{400/16}}=\\sqrt{\\dfrac{225}{25}}=3 \\).",
+      "hint": "In a ratio of average speeds, only \\( \\dfrac TM \\) matters.",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Forgets the square root",
+        "Uses only the molar masses and ignores the different temperatures"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-018",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": 3,
+      "type": "regular",
+      "question": "At what temperature is the most probable speed of nitrogen molecules equal to their rms speed at 300 K?",
+      "options": [
+        "200 K",
+        "450 K",
+        "300 K",
+        "675 K"
+      ],
+      "correct_index": 1,
+      "explanation": "Set \\( \\sqrt{\\dfrac{2RT}{M}}=\\sqrt{\\dfrac{3R\\times300}{M}} \\).<br><br>\\( 2T=900 \\), so \\( T=450 \\) K.<br><br>A higher temperature is needed because \\( v_{mp}<v_{rms} \\) at any single temperature.",
+      "hint": "Equate the two formulas; only the coefficients and temperatures differ.",
+      "distractor_logic": [
+        "Inverts the coefficient ratio, using \\( \\dfrac23 \\) instead of \\( \\dfrac32 \\)",
+        "Assumes the two speeds are equal at the same temperature; \\( v_{mp} \\) is always smaller than \\( v_{rms} \\) at a given \\( T \\)",
+        "Applies the factor \\( \\dfrac32 \\) twice"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-019",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "At high temperature, the vibrational mode of a diatomic gas is fully excited. The internal energy per mole is then",
+      "options": [
+        "\\( 3RT \\)",
+        "\\( \\dfrac52RT \\)",
+        "\\( \\dfrac72RT \\)",
+        "\\( \\dfrac92RT \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Translation 3, rotation 2, vibration 2 (kinetic and potential): \\( f=7 \\).<br><br>\\( U=\\dfrac72RT \\) per mole.",
+      "hint": "One vibrational mode brings two energy terms.",
+      "distractor_logic": [
+        "Adds only 1 degree of freedom for vibration, giving \\( f=6 \\)",
+        "Ignores the vibration and uses the rigid value",
+        "Confuses internal energy with \\( C_pT \\), adding an extra \\( RT \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-020",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "A non-linear polyatomic gas molecule is treated as rigid, with no vibrational contribution. Its average energy per molecule at temperature \\( T \\) is",
+      "options": [
+        "\\( \\dfrac52k_BT \\)",
+        "\\( \\dfrac32k_BT \\)",
+        "\\( 6k_BT \\)",
+        "\\( 3k_BT \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "A non-linear molecule can rotate about three independent axes: \\( f=3+3=6 \\).<br><br>\\( \\overline{E}=\\dfrac62k_BT=3k_BT \\).",
+      "hint": "A non-linear molecule has a non-negligible moment of inertia about all three axes.",
+      "distractor_logic": [
+        "Treats the molecule as linear, with only 2 rotations",
+        "Counts translational energy only",
+        "Gives each of the 6 degrees of freedom \\( k_BT \\) instead of \\( \\dfrac12k_BT \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-021",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "A container holds 2 mol of helium and 3 mol of oxygen (rigid) at temperature \\( T \\). The total internal energy is",
+      "options": [
+        "\\( \\dfrac{21}{2}RT \\)",
+        "\\( \\dfrac{25}{2}RT \\)",
+        "\\( \\dfrac{15}{2}RT \\)",
+        "\\( 4RT \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Helium: \\( 2\\times\\dfrac32RT=3RT \\). Oxygen: \\( 3\\times\\dfrac52RT=\\dfrac{15}{2}RT \\).<br><br>Total \\( =3RT+\\dfrac{15}{2}RT=\\dfrac{21}{2}RT \\).",
+      "hint": "Multiply each gas's molar energy by its number of moles.",
+      "distractor_logic": [
+        "Treats all 5 mol as diatomic",
+        "Treats all 5 mol as monatomic",
+        "Adds the per-mole energies of the two gases, ignoring how many moles of each are present"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-022",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "At the same temperature \\( T \\), compare the internal energy per mole of a diatomic gas with its vibration fully excited (the high-temperature case) and that of a rigid diatomic gas. The ratio vibrating : rigid is",
+      "options": [
+        "6 : 5",
+        "7 : 5",
+        "5 : 3",
+        "9 : 7"
+      ],
+      "correct_index": 1,
+      "explanation": "Vibrating: \\( f=7 \\), \\( U=\\dfrac72RT \\). Rigid: \\( f=5 \\), \\( U=\\dfrac52RT \\).<br><br>Ratio \\( =7:5 \\).",
+      "hint": "Internal energy per mole is \\( \\dfrac f2RT \\).",
+      "distractor_logic": [
+        "Adds only 1 degree of freedom for vibration",
+        "Compares a rigid diatomic gas with a monatomic gas",
+        "Uses the \\( C_p \\) coefficients \\( \\dfrac92 \\) and \\( \\dfrac72 \\) instead of the internal-energy coefficients"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-023",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "At high temperature a diatomic gas vibrates fully. Taking \\( R=8.3 \\) J/(mol K), the internal energy of 1 mol of such a gas at 1000 K is",
+      "options": [
+        "20750 J",
+        "24900 J",
+        "29050 J",
+        "37350 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f=7 \\), so \\( U=\\dfrac72RT \\).<br><br>\\( U=3.5\\times8.3\\times1000=29050 \\) J.",
+      "hint": "Vibrating diatomic: 3 translational, 2 rotational, 2 vibrational.",
+      "distractor_logic": [
+        "Uses the rigid value \\( f=5 \\)",
+        "Counts vibration as only 1 degree of freedom, \\( f=6 \\)",
+        "Uses the \\( C_p \\) coefficient \\( \\dfrac92 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-024",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "At room temperature, the vibrational degrees of freedom of most diatomic gases do not contribute to their specific heat. The accepted explanation is that",
+      "options": [
+        "the chemical bond is too weak to vibrate",
+        "the law of equipartition forbids vibrational energy",
+        "diatomic molecules split into single atoms at room temperature",
+        "vibrational energy comes in quanta much larger than \\( k_BT \\) at room temperature, so vibrations are not excited"
+      ],
+      "correct_index": 3,
+      "explanation": "Classical equipartition would give vibrating molecules \\( f=7 \\), but the measured \\( C_v \\) at room temperature matches \\( f=5 \\).<br><br>Quantum theory explains this: vibrational energy levels are widely spaced compared with \\( k_BT \\), so at ordinary temperatures vibrations stay in their lowest state and absorb no heat. They become active only at high temperature.",
+      "hint": "Classical theory fails here; think about energy coming in discrete amounts.",
+      "distractor_logic": [
+        "A weaker bond would make vibration easier to excite, not harder",
+        "Equipartition would share energy with vibration if it were active; here its classical prediction simply fails",
+        "Diatomic gases like \\( O_2 \\) and \\( N_2 \\) stay molecular at room temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-025",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 3,
+      "type": "regular",
+      "question": "A gas at \\( 1.38\\times10^{5} \\) Pa and 1000 K has molecules of diameter \\( 3\\times10^{-10} \\) m. Taking \\( k_B=1.38\\times10^{-23} \\) J/K and \\( \\sqrt2\\,\\pi\\approx4.44 \\), the mean free path is about",
+      "options": [
+        "\\( 2.5\\times10^{-7} \\) m",
+        "\\( 3.5\\times10^{-7} \\) m",
+        "\\( 7.5\\times10^{-17} \\) m",
+        "\\( 2.5\\times10^{-10} \\) m"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( n=\\dfrac{P}{k_BT}=\\dfrac{1.38\\times10^{5}}{1.38\\times10^{-20}}=10^{25} \\) m\\( ^{-3} \\).<br><br>\\( \\sqrt2\\,\\pi d^2n\\approx4.44\\times9\\times10^{-20}\\times10^{25}\\approx4\\times10^{6} \\) m\\( ^{-1} \\).<br><br>\\( \\lambda\\approx\\dfrac{1}{4\\times10^{6}}=2.5\\times10^{-7} \\) m.",
+      "hint": "Find \\( n \\) from \\( P=nk_BT \\) first, then use \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\).",
+      "distractor_logic": [
+        "Drops the \\( \\sqrt2 \\) factor, using \\( \\pi\\approx3.14 \\) alone",
+        "Uses \\( d \\) instead of \\( d^2 \\)",
+        "Takes \\( n=\\dfrac{P}{k_B} \\), forgetting to divide by \\( T \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-026",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 3,
+      "type": "regular",
+      "question": "One mole of helium is mixed with one mole of oxygen (rigid). The ratio \\( \\gamma \\) for the mixture is",
+      "options": [
+        "\\( \\dfrac{23}{15} \\)",
+        "\\( \\dfrac32 \\)",
+        "\\( \\dfrac54 \\)",
+        "\\( \\dfrac75 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Total \\( C_v=\\dfrac32R+\\dfrac52R=4R \\) for the 2 mol; total \\( C_p=\\dfrac52R+\\dfrac72R=6R \\).<br><br>\\( \\gamma=\\dfrac{6R}{4R}=\\dfrac32 \\).",
+      "hint": "Add the heat capacities first, then take the ratio.",
+      "distractor_logic": [
+        "Averages the two \\( \\gamma \\) values directly; \\( \\gamma \\) of a mixture comes from the combined heat capacities",
+        "Adds \\( R \\) only once to the total \\( C_v \\) of \\( 4R \\), instead of once per mole",
+        "Treats the whole mixture as diatomic"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-027",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 3,
+      "type": "regular",
+      "question": "At high temperature, where the vibrational mode of a diatomic gas is fully excited, \\( \\gamma \\) is",
+      "options": [
+        "\\( \\dfrac75 \\)",
+        "\\( \\dfrac43 \\)",
+        "\\( \\dfrac97 \\)",
+        "\\( \\dfrac79 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f=7 \\): \\( C_v=\\dfrac72R \\) and \\( C_p=\\dfrac72R+R=\\dfrac92R \\).<br><br>\\( \\gamma=\\dfrac97 \\).",
+      "hint": "Count vibration as two degrees of freedom, then use \\( \\gamma=1+\\dfrac2f \\).",
+      "distractor_logic": [
+        "Uses the rigid-molecule value, ignoring vibration",
+        "Adds only 1 degree of freedom for vibration, giving \\( f=6 \\)",
+        "Inverts \\( \\dfrac{C_p}{C_v} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-028",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 3,
+      "type": "regular",
+      "question": "A non-linear polyatomic gas is treated as rigid, with no vibrational contribution. Its molar specific heat at constant pressure is",
+      "options": [
+        "\\( 3R \\)",
+        "\\( \\dfrac72R \\)",
+        "\\( 5R \\)",
+        "\\( 4R \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( f=6 \\), so \\( C_v=\\dfrac62R=3R \\).<br><br>\\( C_p=C_v+R=4R \\).",
+      "hint": "A non-linear molecule has 3 rotational degrees of freedom.",
+      "distractor_logic": [
+        "This is \\( C_v \\); \\( R \\) still has to be added",
+        "Treats the molecule as linear, with 2 rotations",
+        "Adds \\( 2R \\) instead of \\( R \\) to \\( C_v \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-029",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 3,
+      "type": "regular",
+      "question": "At constant pressure, the absolute temperature of a gas is doubled. Its mean free path",
+      "options": [
+        "doubles",
+        "halves",
+        "remains unchanged",
+        "becomes \\( \\sqrt2 \\) times as large"
+      ],
+      "correct_index": 0,
+      "explanation": "At fixed \\( P \\), \\( n=\\dfrac{P}{k_BT}\\propto\\dfrac1T \\).<br><br>\\( \\lambda\\propto\\dfrac1n\\propto T \\), so doubling \\( T \\) doubles \\( \\lambda \\): the gas expands and the molecules spread out.",
+      "hint": "At constant pressure, how does number density depend on temperature?",
+      "distractor_logic": [
+        "Treats heating as increasing the number density",
+        "Ignores that \\( n=\\dfrac{P}{k_BT} \\) falls as \\( T \\) rises at fixed \\( P \\)",
+        "Applies the \\( \\sqrt T \\) law of molecular speed to the free path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-L3-030",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Specific Heat Capacities of Gases and Mean Free Path",
+      "level": 3,
+      "type": "regular",
+      "question": "One mole of a monatomic ideal gas is heated at constant pressure from 300 K to 400 K. Taking \\( R=8.3 \\) J/(mol K), how much of the heat supplied goes into increasing its internal energy?",
+      "options": [
+        "2075 J",
+        "1245 J",
+        "830 J",
+        "2905 J"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\Delta U=C_v\\Delta T=\\dfrac32\\times8.3\\times100=1245 \\) J.<br><br>Heat supplied \\( =C_p\\Delta T=2075 \\) J; the remaining \\( R\\Delta T=830 \\) J does work.",
+      "hint": "Internal energy change always uses \\( C_v \\), whatever the process.",
+      "distractor_logic": [
+        "This is the total heat \\( C_p\\Delta T \\), part of which does work",
+        "This is the work done, \\( R\\Delta T \\)",
+        "Uses the rigid-diatomic \\( C_p=\\dfrac72R \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-001",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A gas has density \\( \\rho=1.44 \\) kg/m\\( ^3 \\) at a pressure of \\( 1.2\\times10^{5} \\) Pa. The rms speed of its molecules is",
+      "options": [
+        "\\( 2.5\\times10^{5} \\) m/s",
+        "\\( 500\\sqrt3 \\) m/s",
+        "500 m/s",
+        "\\( 250\\sqrt2 \\) m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "From \\( P=\\dfrac13\\rho v_{rms}^2 \\), \\( v_{rms}=\\sqrt{\\dfrac{3P}{\\rho}} \\).<br><br>\\( v_{rms}=\\sqrt{\\dfrac{3\\times1.2\\times10^{5}}{1.44}}=\\sqrt{2.5\\times10^{5}}=500 \\) m/s.",
+      "hint": "Rearrange \\( P=\\dfrac13\\rho v_{rms}^2 \\) for the speed.",
+      "distractor_logic": [
+        "Stops at \\( v_{rms}^2 \\); the square root was never taken",
+        "Multiplies by the factor 3 twice, using \\( \\dfrac{9P}{\\rho} \\)",
+        "Brings in an extra \\( \\dfrac12 \\) from the kinetic-energy formula, using \\( \\dfrac{3P}{2\\rho} \\)"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-002",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "3 mol of helium (\\( M=4 \\) g/mol) occupy \\( 10^{-2} \\) m\\( ^3 \\) at a pressure of \\( 10^{5} \\) Pa. The rms speed of the helium atoms is",
+      "options": [
+        "\\( 500\\sqrt3 \\) m/s",
+        "\\( 5\\sqrt{10} \\) m/s",
+        "\\( 2.5\\times10^{5} \\) m/s",
+        "500 m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "From \\( PV=\\mu RT \\), \\( RT=\\dfrac{PV}{\\mu} \\), so \\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}}=\\sqrt{\\dfrac{3PV}{\\mu M}} \\).<br><br>\\( v_{rms}=\\sqrt{\\dfrac{3\\times10^{5}\\times10^{-2}}{3\\times4\\times10^{-3}}}=\\sqrt{2.5\\times10^{5}}=500 \\) m/s.",
+      "hint": "Use the gas equation to replace \\( RT \\), and remember \\( M \\) must be in kg/mol.",
+      "distractor_logic": [
+        "Forgets to divide \\( PV \\) by the number of moles",
+        "Keeps \\( M \\) in g/mol instead of converting to kg/mol",
+        "Leaves the answer as \\( v_{rms}^2 \\)"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-003",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Taking \\( R=8.3 \\) J/(mol K), the total translational kinetic energy of 1 mol of oxygen at 300 K is",
+      "options": [
+        "3735 J",
+        "6225 J",
+        "2490 J",
+        "8715 J"
+      ],
+      "correct_index": 0,
+      "explanation": "Translational energy per mole is \\( \\dfrac32RT \\) for every gas, whatever its structure.<br><br>\\( \\dfrac32\\times8.3\\times300=3735 \\) J.<br><br>Rotation adds further energy to the total, but not to the translational part.",
+      "hint": "Translation always carries exactly 3 degrees of freedom.",
+      "distractor_logic": [
+        "Includes the 2 rotational degrees of freedom; translational energy uses only 3",
+        "Uses \\( RT \\), which corresponds to only 2 degrees of freedom instead of 3",
+        "Uses \\( \\dfrac72RT \\), counting vibration on top of rotation"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "Degrees of Freedom and the Law of Equipartition of Energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-004",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The ratio of specific heats of a gas is \\( \\gamma=1.4 \\). The number of degrees of freedom of its molecules, and the kind of gas, are",
+      "options": [
+        "7, a diatomic gas vibrating at high temperature",
+        "5, a rigid diatomic gas",
+        "3, a monatomic gas",
+        "6, a rigid non-linear polyatomic gas"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\gamma=1+\\dfrac2f \\), so \\( 1.4=1+\\dfrac2f \\).<br><br>\\( \\dfrac2f=0.4 \\) gives \\( f=5 \\): a rigid diatomic gas.",
+      "hint": "Use \\( \\gamma=1+\\dfrac2f \\).",
+      "distractor_logic": [
+        "Matches \\( \\gamma=\\dfrac97 \\), a vibrating diatomic",
+        "Matches \\( \\gamma=\\dfrac53 \\), a monatomic gas",
+        "Matches \\( \\gamma=\\dfrac43 \\), a rigid non-linear polyatomic gas"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-005",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A rigid diatomic ideal gas occupies \\( 2\\times10^{-3} \\) m\\( ^3 \\) at \\( 10^{5} \\) Pa. Its internal energy is",
+      "options": [
+        "300 J",
+        "700 J",
+        "500 J",
+        "200 J"
+      ],
+      "correct_index": 2,
+      "explanation": "With \\( f=5 \\), \\( U=\\dfrac52\\mu RT \\), and \\( \\mu RT=PV \\).<br><br>\\( U=\\dfrac52PV=\\dfrac52\\times10^{5}\\times2\\times10^{-3}=500 \\) J.",
+      "hint": "Replace \\( \\mu RT \\) with \\( PV \\).",
+      "distractor_logic": [
+        "Uses the monatomic \\( \\dfrac32PV \\)",
+        "Uses \\( \\dfrac72PV \\), which corresponds to \\( C_p \\), not \\( U \\)",
+        "Takes \\( U=PV \\), ignoring equipartition"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Degrees of Freedom and the Law of Equipartition of Energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-006",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A gas in a sealed rigid container is heated from 300 K to 600 K. Which statement is correct?",
+      "options": [
+        "The mean free path doubles and \\( v_{rms} \\) doubles",
+        "The mean free path halves and \\( v_{rms} \\) becomes \\( \\sqrt2 \\) times as large",
+        "The mean free path is unchanged and \\( v_{rms} \\) doubles",
+        "The mean free path is unchanged and \\( v_{rms} \\) becomes \\( \\sqrt2 \\) times as large"
+      ],
+      "correct_index": 3,
+      "explanation": "Sealed and rigid means \\( N \\) and \\( V \\) are fixed, so \\( n=\\dfrac NV \\) is fixed and \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\) does not change.<br><br>\\( v_{rms}\\propto\\sqrt T \\), so doubling \\( T \\) multiplies it by \\( \\sqrt2 \\). The pressure doubles only because molecules move faster, not because they are closer.",
+      "hint": "Mean free path depends on number density, not temperature directly.",
+      "distractor_logic": [
+        "Assumes \\( \\lambda \\) grows with \\( T \\) even though \\( n \\) is fixed, and treats \\( v_{rms} \\) as proportional to \\( T \\)",
+        "Treats the pressure rise as packing molecules closer; in a sealed rigid box \\( n \\) stays the same",
+        "Gets \\( \\lambda \\) right but uses \\( v_{rms}\\propto T \\) instead of \\( \\sqrt T \\)"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-007",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Molecules of a gas have mean free path \\( 2\\times10^{-7} \\) m and average speed 400 m/s. The average time between successive collisions is",
+      "options": [
+        "\\( 5\\times10^{-10} \\) s",
+        "\\( 2\\times10^{9} \\) s",
+        "\\( 8\\times10^{-5} \\) s",
+        "\\( 2.5\\times10^{-10} \\) s"
+      ],
+      "correct_index": 0,
+      "explanation": "Between collisions a molecule covers \\( \\lambda \\) at speed \\( v_{avg} \\).<br><br>\\( \\tau=\\dfrac{\\lambda}{v_{avg}}=\\dfrac{2\\times10^{-7}}{400}=5\\times10^{-10} \\) s.",
+      "hint": "Time equals distance divided by speed.",
+      "distractor_logic": [
+        "Computes \\( \\dfrac{v_{avg}}{\\lambda} \\), which is the collision frequency, not the time",
+        "Multiplies \\( \\lambda \\) by the speed instead of dividing",
+        "Divides once more by 2, treating each collision as shared between two molecules"
+      ],
+      "mixed_topics": [
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-008",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An ideal gas at \\( 10^{5} \\) Pa has \\( 2.5\\times10^{25} \\) molecules per m\\( ^3 \\). The average translational kinetic energy of a molecule is",
+      "options": [
+        "\\( 4\\times10^{-21} \\) J",
+        "\\( 6\\times10^{-21} \\) J",
+        "\\( 1.2\\times10^{-20} \\) J",
+        "\\( 2\\times10^{-21} \\) J"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=\\dfrac23n\\bar E \\), since \\( P=\\dfrac13nm\\overline{v^2} \\) and \\( \\bar E=\\dfrac12m\\overline{v^2} \\).<br><br>\\( \\bar E=\\dfrac{3P}{2n}=\\dfrac{3\\times10^{5}}{5\\times10^{25}}=6\\times10^{-21} \\) J.",
+      "hint": "Link pressure to average kinetic energy per molecule.",
+      "distractor_logic": [
+        "Takes \\( P=n\\bar E \\), dropping the \\( \\dfrac23 \\)",
+        "Drops the \\( \\dfrac12 \\) and uses \\( \\dfrac{3P}{n} \\)",
+        "Divides by \\( 2n \\), dropping the 3"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-009",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Helium and rigid oxygen are at the same temperature. Compared with oxygen, helium has",
+      "options": [
+        "a greater \\( v_{rms} \\) and a greater molar \\( C_v \\)",
+        "a smaller \\( v_{rms} \\) and a smaller molar \\( C_v \\)",
+        "a greater \\( v_{rms} \\) and a smaller molar \\( C_v \\)",
+        "the same \\( v_{rms} \\) and the same molar \\( C_v \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}} \\); helium's \\( M \\) is 8 times smaller, so its \\( v_{rms} \\) is larger.<br><br>Helium has \\( f=3 \\), \\( C_v=\\dfrac32R \\); rigid oxygen has \\( f=5 \\), \\( C_v=\\dfrac52R \\).",
+      "hint": "Treat speed and heat capacity separately.",
+      "distractor_logic": [
+        "Assumes lighter molecules store more energy per mole; helium has only 3 degrees of freedom",
+        "Thinks heavier molecules move faster; \\( v_{rms}\\propto\\dfrac{1}{\\sqrt M} \\)",
+        "Confuses equal average translational energy with equal speed and equal heat capacity"
+      ],
+      "mixed_topics": [
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-010",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "2 mol of rigid nitrogen is heated at constant pressure through 20 K. Taking \\( R=8.3 \\) J/(mol K), the heat supplied is",
+      "options": [
+        "830 J",
+        "1494 J",
+        "581 J",
+        "1162 J"
+      ],
+      "correct_index": 3,
+      "explanation": "Rigid diatomic: \\( C_p=\\dfrac52R+R=\\dfrac72R \\).<br><br>\\( Q=\\mu C_p\\Delta T=2\\times\\dfrac72\\times8.3\\times20=1162 \\) J.",
+      "hint": "At constant pressure, use \\( C_p=C_v+R \\).",
+      "distractor_logic": [
+        "Uses \\( C_v \\) instead of \\( C_p \\), forgetting to add \\( R \\)",
+        "Uses \\( C_p=\\dfrac92R \\), which applies only when vibration is active",
+        "Uses 1 mol instead of 2"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-011",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At high temperature, the vibrational mode of a diatomic gas is fully excited. Taking \\( R=8.3 \\) J/(mol K), the heat needed to raise 1 mol of it by 10 K at constant volume is",
+      "options": [
+        "290.5 J",
+        "207.5 J",
+        "249 J",
+        "373.5 J"
+      ],
+      "correct_index": 0,
+      "explanation": "Vibration adds 2 degrees of freedom (kinetic and potential), so \\( f=7 \\) and \\( C_v=\\dfrac72R \\).<br><br>\\( Q=C_v\\Delta T=\\dfrac72\\times8.3\\times10=290.5 \\) J.",
+      "hint": "One vibrational mode contributes two squared terms to the energy.",
+      "distractor_logic": [
+        "Uses the rigid value \\( C_v=\\dfrac52R \\)",
+        "Gives vibration only 1 degree of freedom, so \\( C_v=3R \\)",
+        "Uses \\( C_p=\\dfrac92R \\), but the volume is constant"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-012",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A monatomic ideal gas expands at constant pressure and does 400 J of work. The heat supplied to it is",
+      "options": [
+        "600 J",
+        "1000 J",
+        "1400 J",
+        "400 J"
+      ],
+      "correct_index": 1,
+      "explanation": "At constant pressure, \\( W=P\\Delta V=\\mu R\\Delta T=400 \\) J.<br><br>\\( \\Delta U=\\dfrac32\\mu R\\Delta T=600 \\) J, so \\( Q=\\Delta U+W=\\dfrac52\\mu R\\Delta T=1000 \\) J.",
+      "hint": "Express both \\( W \\) and \\( \\Delta U \\) in terms of \\( \\mu R\\Delta T \\).",
+      "distractor_logic": [
+        "This is only \\( \\Delta U \\), the part that stays as internal energy",
+        "Uses the rigid-diatomic \\( \\dfrac72 \\) factor",
+        "Assumes all heat goes into work, as in an isothermal process"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-013",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A helium atom and a rigid nitrogen molecule are in the same gas mixture at temperature \\( T \\). On average,",
+      "options": [
+        "their total energies are equal",
+        "the helium atom has more translational kinetic energy because it is lighter",
+        "their translational kinetic energies are equal, but the nitrogen molecule has more total energy by \\( k_BT \\)",
+        "their translational kinetic energies are equal, and the nitrogen molecule has more total energy by \\( \\dfrac12k_BT \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Both have \\( \\dfrac32k_BT \\) of translational energy: this depends only on \\( T \\).<br><br>Nitrogen also has 2 rotational degrees of freedom, adding \\( 2\\times\\dfrac12k_BT=k_BT \\).",
+      "hint": "Each degree of freedom carries \\( \\dfrac12k_BT \\).",
+      "distractor_logic": [
+        "Ignores the two rotational degrees of freedom of nitrogen",
+        "Confuses higher speed with higher energy; mass and speed compensate exactly",
+        "Counts only one rotational degree of freedom"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "Degrees of Freedom and the Law of Equipartition of Energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-014",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Vessel X holds 1 mol of oxygen and vessel Y holds 4 mol of oxygen, both at the same pressure and in the same volume. The ratio of rms speeds in X to Y is",
+      "options": [
+        "1 : 2",
+        "4 : 1",
+        "1 : 1",
+        "2 : 1"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T=\\dfrac{PV}{\\mu R} \\), so \\( T_X=4T_Y \\).<br><br>\\( v_{rms}\\propto\\sqrt T \\), giving \\( \\sqrt4=2 \\), so the ratio is 2 : 1.",
+      "hint": "Find the temperature ratio from the gas equation first.",
+      "distractor_logic": [
+        "Inverts the ratio; more moles at the same \\( PV \\) means a lower temperature",
+        "Forgets the square root in \\( v_{rms}\\propto\\sqrt T \\)",
+        "Assumes equal \\( P \\) and \\( V \\) mean equal temperature"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-015",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Gas A has molecular diameter \\( d \\) at pressure \\( P \\). Gas B has diameter \\( 2d \\) at pressure \\( \\dfrac P2 \\). Both are at the same temperature. The ratio of mean free paths \\( \\lambda_A:\\lambda_B \\) is",
+      "options": [
+        "2 : 1",
+        "1 : 2",
+        "1 : 1",
+        "8 : 1"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( n=\\dfrac{P}{k_BT} \\), so \\( \\lambda=\\dfrac{k_BT}{\\sqrt2\\,\\pi d^2P} \\) and \\( \\lambda\\propto\\dfrac{1}{d^2P} \\).<br><br>For B, \\( d^2P \\) is \\( 4\\times\\dfrac12=2 \\) times that of A, so \\( \\lambda_B=\\dfrac{\\lambda_A}{2} \\).",
+      "hint": "Write \\( \\lambda \\) in terms of \\( P \\) and \\( T \\) using \\( P=nk_BT \\).",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Assumes the halved pressure exactly cancels the doubled diameter, treating \\( \\lambda \\) as \\( \\propto\\dfrac1d \\)",
+        "Assumes \\( \\lambda \\) increases with pressure"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-016",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A gas molecule has mass \\( 4.8\\times10^{-26} \\) kg, and the average translational kinetic energy per molecule is \\( 6\\times10^{-21} \\) J. The rms speed is",
+      "options": [
+        "\\( 250\\sqrt2 \\) m/s",
+        "500 m/s",
+        "\\( 500\\sqrt3 \\) m/s",
+        "250 m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\bar E=\\dfrac12mv_{rms}^2 \\), so \\( v_{rms}=\\sqrt{\\dfrac{2\\bar E}{m}} \\).<br><br>\\( v_{rms}=\\sqrt{\\dfrac{1.2\\times10^{-20}}{4.8\\times10^{-26}}}=\\sqrt{2.5\\times10^{5}}=500 \\) m/s.",
+      "hint": "The average kinetic energy is \\( \\dfrac12m \\) times the mean square speed.",
+      "distractor_logic": [
+        "Drops the factor 2, using \\( \\sqrt{\\dfrac{\\bar E}{m}} \\)",
+        "Adds an extra factor 3, mixing in the \\( 3k_BT \\) form",
+        "Halves the correct speed, as if \\( \\bar E=2mv_{rms}^2 \\)"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-017",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A gas is heated at constant pressure. Which statement is correct?",
+      "options": [
+        "The mean free path decreases, and the peak shifts to a higher speed",
+        "The mean free path increases, and the peak shifts to a lower speed",
+        "The mean free path increases, and the peak of the Maxwell speed distribution shifts to a higher speed",
+        "The mean free path is unchanged, and the peak stays where it is"
+      ],
+      "correct_index": 2,
+      "explanation": "At constant \\( P \\), \\( n=\\dfrac{P}{k_BT} \\) falls as \\( T \\) rises, so \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\) increases.<br><br>Higher \\( T \\) raises all characteristic speeds, so the distribution broadens and its peak \\( v_{mp} \\) moves to a higher speed.",
+      "hint": "Think about what heating at fixed pressure does to the volume.",
+      "distractor_logic": [
+        "Believes faster molecules collide more and so travel less far; \\( \\lambda \\) depends only on \\( n \\) and \\( d \\)",
+        "Thinks heating narrows and lowers the curve toward low speeds; it flattens and moves right",
+        "Ignores that the gas expands, lowering \\( n \\)"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-018",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A container holds oxygen at \\( 10^{5} \\) Pa. An equal number of molecules of a gas 4 times heavier is added at the same temperature, in the same volume. The new pressure is",
+      "options": [
+        "\\( 5\\times10^{5} \\) Pa",
+        "\\( 10^{5} \\) Pa",
+        "\\( 3\\times10^{5} \\) Pa",
+        "\\( 2\\times10^{5} \\) Pa"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=nk_BT \\): pressure depends only on number density and temperature, not on molecular mass.<br><br>Heavier molecules move slower but carry more momentum; the effects cancel. Doubling \\( n \\) doubles \\( P \\) to \\( 2\\times10^{5} \\) Pa.",
+      "hint": "Use \\( P=nk_BT \\); does mass appear?",
+      "distractor_logic": [
+        "Weights the contribution by molecular mass, adding 4 times as much",
+        "Assumes adding gas at the same temperature leaves the pressure unchanged",
+        "Weights the contribution by \\( \\sqrt M \\), a speed-based argument"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-019",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A non-linear polyatomic gas is stated to behave as rigid, with no vibrational contribution. Its \\( \\gamma \\) and molar \\( C_v \\) are",
+      "options": [
+        "\\( \\gamma=\\dfrac43 \\) and \\( C_v=3R \\)",
+        "\\( \\gamma=\\dfrac43 \\) and \\( C_v=4R \\)",
+        "\\( \\gamma=\\dfrac75 \\) and \\( C_v=\\dfrac52R \\)",
+        "\\( \\gamma=\\dfrac43 \\) and \\( C_v=6R \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Non-linear rigid: 3 translational + 3 rotational, \\( f=6 \\).<br><br>\\( C_v=\\dfrac62R=3R \\), \\( C_p=4R \\), \\( \\gamma=\\dfrac{4R}{3R}=\\dfrac43 \\).",
+      "hint": "A non-linear molecule can rotate about three axes.",
+      "distractor_logic": [
+        "Gives \\( C_p \\) in place of \\( C_v \\)",
+        "Treats the molecule as linear, with only 2 rotations",
+        "Uses \\( f \\) itself as \\( C_v \\) in units of \\( R \\), forgetting the \\( \\dfrac12 \\)"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-020",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The average energy of a rigid diatomic molecule at 300 K equals the average energy of a monatomic molecule at temperature",
+      "options": [
+        "180 K",
+        "500 K",
+        "300 K",
+        "700 K"
+      ],
+      "correct_index": 1,
+      "explanation": "Diatomic: \\( \\dfrac52k_B(300) \\). Monatomic: \\( \\dfrac32k_BT \\).<br><br>\\( \\dfrac32T=\\dfrac52\\times300 \\) gives \\( T=500 \\) K.",
+      "hint": "Equate \\( \\dfrac f2k_BT \\) for the two molecules.",
+      "distractor_logic": [
+        "Inverts the ratio of degrees of freedom",
+        "Assumes equal temperature means equal total energy",
+        "Uses \\( \\dfrac72 \\) for the diatomic, counting vibration"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "Degrees of Freedom and the Law of Equipartition of Energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-021",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The molar \\( C_p \\) of an ideal gas is measured as 29.05 J/(mol K). Taking \\( R=8.3 \\) J/(mol K), the gas is",
+      "options": [
+        "a monatomic gas",
+        "a diatomic gas vibrating fully at high temperature",
+        "a rigid diatomic gas",
+        "a non-linear polyatomic gas with no vibration"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{29.05}{8.3}=3.5 \\), so \\( C_p=\\dfrac72R \\).<br><br>Then \\( C_v=\\dfrac52R \\), giving \\( f=5 \\): a rigid diatomic gas.",
+      "hint": "Divide by \\( R \\), then subtract 1 to get \\( \\dfrac f2 \\).",
+      "distractor_logic": [
+        "Monatomic \\( C_p=\\dfrac52R=20.75 \\) J/(mol K)",
+        "Vibrating diatomic \\( C_p=\\dfrac92R=37.35 \\) J/(mol K)",
+        "Rigid non-linear polyatomic \\( C_p=4R=33.2 \\) J/(mol K)"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-022",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A diatomic gas is heated until its vibrational mode becomes active. Compared with a rigid diatomic gas of the same molar mass at that same temperature, its \\( v_{rms} \\) is",
+      "options": [
+        "larger",
+        "smaller",
+        "larger by a factor \\( \\sqrt{\\dfrac75} \\)",
+        "the same"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_{rms}=\\sqrt{\\dfrac{3k_BT}{m}} \\) comes only from translational energy, \\( \\dfrac32k_BT \\).<br><br>Vibration adds energy in other modes but leaves translation, and hence \\( v_{rms} \\), unchanged at a given \\( T \\).",
+      "hint": "Which degrees of freedom decide the speed of the centre of mass?",
+      "distractor_logic": [
+        "Assumes extra degrees of freedom speed up translation",
+        "Assumes energy diverted into vibration slows translation; equipartition gives translation \\( \\dfrac32k_BT \\) regardless",
+        "Scales the speed by the ratio of degrees of freedom"
+      ],
+      "mixed_topics": [
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+        "Degrees of Freedom and the Law of Equipartition of Energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-023",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A rigid diatomic gas is heated at constant pressure. The fraction of the heat supplied that increases its internal energy is",
+      "options": [
+        "\\( \\dfrac57 \\)",
+        "\\( \\dfrac35 \\)",
+        "\\( \\dfrac27 \\)",
+        "\\( \\dfrac59 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\dfrac{\\Delta U}{Q}=\\dfrac{\\mu C_v\\Delta T}{\\mu C_p\\Delta T}=\\dfrac{C_v}{C_p} \\).<br><br>With \\( C_v=\\dfrac52R \\), \\( C_p=\\dfrac72R \\), the fraction is \\( \\dfrac57 \\).",
+      "hint": "Compare \\( C_v \\) with \\( C_p \\).",
+      "distractor_logic": [
+        "Uses the monatomic ratio \\( \\dfrac{C_v}{C_p} \\)",
+        "This is the fraction that becomes work",
+        "Mixes rigid \\( C_v \\) with the vibrating \\( C_p=\\dfrac92R \\)"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-024",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "700 J of heat is given to a rigid diatomic ideal gas at constant pressure. The work done by the gas is",
+      "options": [
+        "500 J",
+        "200 J",
+        "280 J",
+        "700 J"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( W=\\mu R\\Delta T \\) and \\( Q=\\mu\\dfrac72R\\Delta T \\), so \\( \\dfrac WQ=\\dfrac27 \\).<br><br>\\( W=\\dfrac27\\times700=200 \\) J.",
+      "hint": "Find \\( \\dfrac{R}{C_p} \\) for a rigid diatomic gas.",
+      "distractor_logic": [
+        "This is \\( \\Delta U \\)",
+        "Divides by \\( C_v \\) instead of \\( C_p \\), using \\( \\dfrac25 \\)",
+        "Assumes all heat becomes work"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-025",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The pressure of a gas in a sealed rigid container becomes 4 times as large on heating. The rms speed and the average kinetic energy per molecule become",
+      "options": [
+        "4 times and 16 times as large",
+        "2 times and 2 times as large",
+        "2 times and 4 times as large",
+        "4 times and 4 times as large"
+      ],
+      "correct_index": 2,
+      "explanation": "With \\( n \\) fixed, \\( P\\propto T \\), so \\( T \\) becomes 4 times.<br><br>\\( \\bar E\\propto T \\): 4 times. \\( v_{rms}\\propto\\sqrt T \\): 2 times.",
+      "hint": "Fixed volume and molecule count means \\( P\\propto T \\).",
+      "distractor_logic": [
+        "Treats \\( v_{rms} \\) as proportional to \\( P \\)",
+        "Treats kinetic energy as proportional to \\( v_{rms} \\) rather than its square",
+        "Forgets the square root linking speed to temperature"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-026",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A gas at \\( 1.38\\times10^{5} \\) Pa and 250 K has molecular diameter \\( 2.5\\times10^{-10} \\) m. Take \\( k_B=1.38\\times10^{-23} \\) J/K and \\( \\sqrt2\\,\\pi\\approx4.44 \\). The mean free path is about",
+      "options": [
+        "\\( 1.3\\times10^{-7} \\) m",
+        "\\( 3.6\\times10^{-10} \\) m",
+        "\\( 2.3\\times10^{-17} \\) m",
+        "\\( 9\\times10^{-8} \\) m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( n=\\dfrac{P}{k_BT}=\\dfrac{1.38\\times10^{5}}{1.38\\times10^{-23}\\times250}=4\\times10^{25} \\) m\\( ^{-3} \\).<br><br>\\( \\sqrt2\\,\\pi d^2n\\approx4.44\\times6.25\\times10^{-20}\\times4\\times10^{25}\\approx1.1\\times10^{7} \\) m\\( ^{-1} \\).<br><br>\\( \\lambda\\approx9\\times10^{-8} \\) m.",
+      "hint": "Find \\( n \\) from \\( P=nk_BT \\), then use \\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\).",
+      "distractor_logic": [
+        "Drops the \\( \\sqrt2 \\) factor",
+        "Forgets to divide by \\( T \\), so \\( n \\) comes out far too large",
+        "Uses \\( d \\) instead of \\( d^2 \\)"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-027",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which quantity has the same value per mole for every ideal gas, whatever its atomicity?",
+      "options": [
+        "\\( C_p-C_v \\)",
+        "\\( C_p \\)",
+        "\\( C_v \\)",
+        "\\( \\gamma \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At constant pressure, the extra heat per mole per kelvin is the work \\( P\\Delta V=R\\Delta T \\), from the ideal gas equation.<br><br>So \\( C_p-C_v=R \\) for every ideal gas, while \\( C_p \\), \\( C_v \\) and \\( \\gamma \\) all depend on \\( f \\).",
+      "hint": "The extra work at constant pressure comes from \\( PV=\\mu RT \\) alone.",
+      "distractor_logic": [
+        "\\( C_p=\\dfrac f2R+R \\) depends on \\( f \\)",
+        "\\( C_v=\\dfrac f2R \\) depends on \\( f \\)",
+        "\\( \\gamma=1+\\dfrac2f \\) depends on \\( f \\)"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-028",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Equal numbers of molecules of helium and rigid nitrogen are placed in identical containers at the same temperature. Then",
+      "options": [
+        "the pressures and internal energies are both equal",
+        "the pressures are equal, but the nitrogen has more internal energy",
+        "the nitrogen has higher pressure and more internal energy",
+        "the helium has higher pressure, and the internal energies are equal"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=nk_BT \\), the same for both.<br><br>Internal energy per molecule is \\( \\dfrac f2k_BT \\): \\( \\dfrac32k_BT \\) for helium, \\( \\dfrac52k_BT \\) for rigid nitrogen.",
+      "hint": "Pressure comes from translation only; internal energy includes rotation.",
+      "distractor_logic": [
+        "Forgets rotational energy in nitrogen",
+        "Links pressure to total energy; pressure depends only on translational motion",
+        "Assumes faster helium atoms push harder; momentum per hit is smaller"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "Degrees of Freedom and the Law of Equipartition of Energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-029",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At a fixed temperature and pressure, a gas is replaced by another of the same molar mass but twice the molecular diameter. The rms speed and mean free path become",
+      "options": [
+        "unchanged and one-half as large",
+        "one-half and one-fourth as large",
+        "unchanged and one-fourth as large",
+        "unchanged and 4 times as large"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v_{rms}=\\sqrt{\\dfrac{3RT}{M}} \\) has no \\( d \\), so it is unchanged.<br><br>\\( \\lambda=\\dfrac{1}{\\sqrt2\\,\\pi d^2n} \\) with \\( n \\) fixed; doubling \\( d \\) makes \\( \\lambda \\) one-fourth.",
+      "hint": "Check which formula contains the diameter.",
+      "distractor_logic": [
+        "Treats \\( \\lambda \\) as \\( \\propto\\dfrac1d \\) rather than \\( \\dfrac{1}{d^2} \\)",
+        "Assumes bigger molecules move slower; \\( v_{rms} \\) depends only on \\( T \\) and \\( M \\)",
+        "Inverts the dependence of \\( \\lambda \\) on diameter"
+      ],
+      "mixed_topics": [
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-030",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At constant temperature, the pressure of a gas is tripled. The average kinetic energy per molecule and the mean free path become",
+      "options": [
+        "3 times and one-third as large",
+        "unchanged and 3 times as large",
+        "3 times and unchanged",
+        "unchanged and one-third as large"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\bar E=\\dfrac32k_BT \\), so it is unchanged at constant \\( T \\).<br><br>\\( n=\\dfrac{P}{k_BT} \\) triples, so \\( \\lambda\\propto\\dfrac1n \\) becomes one-third.",
+      "hint": "Energy follows temperature; mean free path follows number density.",
+      "distractor_logic": [
+        "Links kinetic energy to pressure rather than temperature",
+        "Claims \\( \\lambda \\) increases with pressure",
+        "Mixes both errors: energy with pressure and \\( \\lambda \\) independent of density"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-031",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Equal numbers of moles of helium and rigid oxygen are mixed in a volume of \\( 10^{-3} \\) m\\( ^3 \\) at a total pressure of \\( 10^{5} \\) Pa. The internal energy of the mixture is",
+      "options": [
+        "200 J",
+        "150 J",
+        "250 J",
+        "400 J"
+      ],
+      "correct_index": 0,
+      "explanation": "Total \\( PV=100 \\) J \\( =2\\mu RT \\), so \\( \\mu RT=50 \\) J for each gas.<br><br>\\( U=\\dfrac32(50)+\\dfrac52(50)=75+125=200 \\) J.",
+      "hint": "Split \\( PV \\) equally between the two gases first.",
+      "distractor_logic": [
+        "Treats the whole mixture as monatomic",
+        "Treats the whole mixture as diatomic",
+        "Applies \\( \\dfrac32PV \\) and \\( \\dfrac52PV \\) to the full \\( PV \\) each, double-counting"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Degrees of Freedom and the Law of Equipartition of Energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-032",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At high temperature, the internal energy of 1 mol of a diatomic gas is \\( U=\\dfrac72RT \\). Its molar \\( C_p \\) is",
+      "options": [
+        "\\( \\dfrac72R \\)",
+        "\\( \\dfrac92R \\)",
+        "\\( 4R \\)",
+        "\\( \\dfrac52R \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( C_v=\\dfrac{dU}{dT}=\\dfrac72R \\) (vibration contributes 2 degrees of freedom, so \\( f=7 \\)).<br><br>\\( C_p=C_v+R=\\dfrac92R \\).",
+      "hint": "Differentiate \\( U \\) to get \\( C_v \\), then use Mayer's relation.",
+      "distractor_logic": [
+        "Gives \\( C_v \\), forgetting to add \\( R \\)",
+        "Adds only \\( \\dfrac12R \\), as if vibration gave just 1 extra degree of freedom",
+        "Uses the rigid \\( C_v \\)"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-033",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Both the pressure and the volume of a fixed amount of ideal gas are doubled. The rms speed of its molecules becomes",
+      "options": [
+        "\\( \\sqrt2 \\) times as large",
+        "4 times as large",
+        "2 times as large",
+        "unchanged"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T\\propto PV \\), so \\( T \\) becomes 4 times.<br><br>\\( v_{rms}\\propto\\sqrt T \\) becomes 2 times.",
+      "hint": "Find the new temperature from \\( PV=\\mu RT \\).",
+      "distractor_logic": [
+        "Doubles \\( T \\) only once",
+        "Forgets the square root",
+        "Assumes the two changes cancel"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-034",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The average translational kinetic energy of a molecule of mass \\( m \\) equals \\( \\dfrac12mv^2 \\) when \\( v \\) is taken as",
+      "options": [
+        "\\( v_{avg} \\)",
+        "\\( v_{mp} \\)",
+        "the speed at which the Maxwell curve falls to half its peak height",
+        "\\( v_{rms} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Average energy is \\( \\dfrac12m\\overline{v^2} \\), and \\( v_{rms}=\\sqrt{\\overline{v^2}} \\) by definition.<br><br>Since \\( v_{mp}<v_{avg}<v_{rms} \\), using either of the other two speeds gives a value that is too small.",
+      "hint": "Kinetic energy averages the square of speed.",
+      "distractor_logic": [
+        "The square of the mean speed is smaller than the mean of the squares",
+        "The most probable speed is the smallest of the three",
+        "This speed has no link to the mean kinetic energy"
+      ],
+      "mixed_topics": [
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-035",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which gas has the largest molar \\( C_p \\)?",
+      "options": [
+        "Nitrogen at high temperature with its vibrational mode fully active",
+        "Helium",
+        "Nitrogen treated as rigid",
+        "A rigid non-linear polyatomic gas with no vibration"
+      ],
+      "correct_index": 0,
+      "explanation": "Vibrating diatomic: \\( f=7 \\), \\( C_v=\\dfrac72R \\), \\( C_p=\\dfrac92R \\).<br><br>This exceeds \\( 4R \\) for rigid non-linear polyatomic, \\( \\dfrac72R \\) for rigid diatomic, and \\( \\dfrac52R \\) for monatomic.",
+      "hint": "Count degrees of freedom for each, with vibration worth two.",
+      "distractor_logic": [
+        "\\( C_p=\\dfrac52R \\)",
+        "\\( C_p=\\dfrac72R \\)",
+        "\\( C_p=4R \\)"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-036",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Half the gas leaks out of a rigid container while the temperature is kept constant. The pressure and the rms speed become",
+      "options": [
+        "one-half and one-half",
+        "one-half and unchanged",
+        "unchanged and one-half",
+        "one-half and \\( \\dfrac{1}{\\sqrt2} \\) times"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( P=nk_BT \\): \\( n \\) halves, so \\( P \\) halves.<br><br>\\( v_{rms}=\\sqrt{\\dfrac{3k_BT}{m}} \\) depends only on \\( T \\), so it is unchanged.",
+      "hint": "Which quantity depends on the number of molecules?",
+      "distractor_logic": [
+        "Links speed to the amount of gas",
+        "Assumes pressure is fixed by temperature alone",
+        "Applies the \\( \\sqrt{} \\) law to the number of molecules"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-037",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A gas in a sealed rigid container is heated from 300 K to 1200 K. The number of collisions per second made by one molecule",
+      "options": [
+        "becomes 4 times",
+        "is unchanged",
+        "doubles",
+        "halves"
+      ],
+      "correct_index": 2,
+      "explanation": "Collision frequency \\( =\\dfrac{v_{avg}}{\\lambda} \\). With \\( n \\) fixed, \\( \\lambda \\) is unchanged.<br><br>\\( v_{avg}\\propto\\sqrt T \\) becomes \\( \\sqrt4=2 \\) times, so the frequency doubles.",
+      "hint": "Frequency equals speed divided by mean free path.",
+      "distractor_logic": [
+        "Uses \\( T \\) directly instead of \\( \\sqrt T \\)",
+        "Assumes a fixed mean free path means fixed collision rate",
+        "Assumes faster molecules travel farther between collisions"
+      ],
+      "mixed_topics": [
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-038",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Equal masses of hydrogen (\\( M=2 \\) g/mol) and oxygen (\\( M=32 \\) g/mol) are placed in identical containers at the same pressure. The ratio of rms speeds of hydrogen to oxygen is",
+      "options": [
+        "4 : 1",
+        "1 : 4",
+        "16 : 1",
+        "1 : 1"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_{rms}^2=\\dfrac{3RT}{M} \\) and \\( \\dfrac{RT}{M}=\\dfrac{PV}{\\mu M}=\\dfrac{PV}{w} \\), where \\( w \\) is the mass of gas.<br><br>So \\( v_{rms}=\\sqrt{\\dfrac{3PV}{w}} \\): equal \\( P \\), \\( V \\) and \\( w \\) give equal speeds (oxygen is 16 times hotter).",
+      "hint": "Don't assume equal temperature: express \\( v_{rms} \\) through \\( P \\), \\( V \\) and mass.",
+      "distractor_logic": [
+        "Assumes equal temperatures; here the temperatures differ",
+        "Inverts the equal-temperature ratio",
+        "Uses the molar-mass ratio without a square root, assuming equal temperatures"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "RMS Speed, Average Speed, and Most Probable Speed of Gas Molecules"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-039",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Degrees of Freedom and the Law of Equipartition of Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "2 mol of helium are mixed with 1 mol of rigid oxygen. The molar \\( C_v \\) of the mixture is",
+      "options": [
+        "\\( \\dfrac{11}{6}R \\)",
+        "\\( 2R \\)",
+        "\\( \\dfrac{11}{2}R \\)",
+        "\\( \\dfrac{17}{6}R \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Total \\( C_v=2\\times\\dfrac32R+1\\times\\dfrac52R=\\dfrac{11}{2}R \\).<br><br>Per mole: \\( \\dfrac{11}{2}R\\div3=\\dfrac{11}{6}R \\).",
+      "hint": "Weight each gas by its number of moles.",
+      "distractor_logic": [
+        "Takes a simple average of \\( \\dfrac32R \\) and \\( \\dfrac52R \\), ignoring the mole amounts",
+        "Gives the total for 3 mol, not per mole",
+        "Gives \\( C_p \\) per mole"
+      ],
+      "mixed_topics": [
+        "Degrees of Freedom and the Law of Equipartition of Energy",
+        "Specific Heat Capacities of Gases and Mean Free Path"
+      ]
+    },
+    {
+      "id": "PHY11-CH12-B-040",
+      "chapter": "PHY11-CH12",
+      "chapter_name": "Kinetic Theory",
+      "topic": "Kinetic Theory Postulates and the Ideal Gas Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Kinetic theory gives \\( PV=\\dfrac23E \\), where \\( E \\) is the total translational kinetic energy. This explains Boyle's law because",
+      "options": [
+        "\\( E \\) grows as \\( V \\) shrinks, so \\( P \\) rises",
+        "at fixed temperature \\( E \\) is fixed, so \\( PV \\) is constant",
+        "\\( P \\) and \\( V \\) each depend only on temperature",
+        "the \\( \\dfrac23 \\) factor cancels any change in \\( V \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( E=\\dfrac32Nk_BT \\) depends only on \\( N \\) and \\( T \\).<br><br>At fixed \\( T \\) and \\( N \\), \\( PV=\\dfrac23E \\) is constant, which is Boyle's law.",
+      "hint": "What does \\( E \\) depend on?",
+      "distractor_logic": [
+        "\\( E \\) depends on \\( T \\) and amount, not on volume",
+        "Each can vary alone; only the product is fixed",
+        "The factor is a constant and cancels nothing"
+      ],
+      "mixed_topics": [
+        "Kinetic Theory Postulates and the Ideal Gas Equation",
+        "Pressure of an Ideal Gas and the Kinetic Interpretation of Temperature"
+      ]
+    }
+  ]
+}

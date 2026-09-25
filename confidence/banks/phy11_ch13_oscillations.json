@@ -1,0 +1,3725 @@
+{
+  "meta": {
+    "chapter": "PHY11-CH13",
+    "chapter_name": "Oscillations",
+    "subject": "Physics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "The SHM equation and every Greek-letter symbol (omega, phi, theta) are written as single unnested KaTeX spans; no raw Unicode math symbols appear anywhere outside KaTeX; every numeric answer terminates cleanly."
+  },
+  "topics": [
+    {
+      "name": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "summary": "A periodic motion repeats itself after equal intervals of time; an oscillatory motion is a periodic motion that goes to and fro about a fixed mean position. The time for one complete repetition is the period \\( T \\), and the number of repetitions per second is the frequency \\( f=1/T \\), measured in hertz. In simple harmonic motion the displacement is a sinusoidal function of time, \\( x=A\\sin(\\omega t+\\phi) \\) or equivalently a cosine form. Here \\( A \\) is the amplitude (the maximum displacement from the mean position), \\( \\omega=2\\pi f=2\\pi/T \\) is the angular frequency in rad/s, the full argument \\( (\\omega t+\\phi) \\) is the phase, and \\( \\phi \\) is the phase constant that fixes where the motion starts. Starting at the mean position gives a sine with zero phase constant; release from rest at an extreme gives a cosine. SHM can also be seen as the projection of uniform circular motion onto a diameter: the radius becomes the amplitude and the revolution frequency becomes the oscillation frequency.",
+      "key_formulas": [
+        "\\( f=1/T \\)",
+        "\\( \\omega=2\\pi f=2\\pi/T \\)",
+        "\\( x=A\\sin(\\omega t+\\phi) \\)",
+        "Distance covered in one period \\( =4A \\)"
+      ],
+      "worked_example": "A particle moves as \\( x=6\\cos(\\pi t/3) \\) cm. Find its period and its displacement at \\( t=2 \\) s.<br><br>\\( \\omega=\\pi/3 \\) rad/s, so \\( T=2\\pi/(\\pi/3)=6 \\) s.<br><br>At \\( t=2 \\) s the phase is \\( 2\\pi/3 \\), and \\( \\cos(2\\pi/3)=-\\tfrac12 \\), so \\( x=-3 \\) cm.",
+      "common_mistakes": [
+        "Using \\( f \\) where \\( \\omega \\) is needed, silently dropping the \\( 2\\pi \\) factor",
+        "Treating period and frequency as the same quantity instead of reciprocals",
+        "Reporting the extreme-to-extreme distance \\( 2A \\) as the amplitude",
+        "Forgetting to include the phase constant when evaluating the phase"
+      ],
+      "question_count": 38
+    },
+    {
+      "name": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "summary": "A particle executes simple harmonic motion when its acceleration is proportional to its displacement and always directed toward the mean position: \\( a=-\\omega^{2}x \\). The negative sign is essential, because it makes the force restoring; with a positive sign the particle would run away instead of oscillating. Equivalently, the motion obeys the differential equation \\( \\dfrac{d^{2}x}{dt^{2}}+\\omega^{2}x=0 \\), whose solution is \\( x=A\\sin(\\omega t+\\phi) \\). Differentiating gives the velocity \\( v=A\\omega\\cos(\\omega t+\\phi) \\), which in terms of position is \\( v=\\omega\\sqrt{A^{2}-x^{2}} \\). The speed is maximum, \\( v_{max}=A\\omega \\), at the mean position, and zero at the extremes. The acceleration behaves in exactly the opposite way: zero at the mean position and maximum, \\( a_{max}=A\\omega^{2} \\), at the extremes. Velocity leads displacement in phase by \\( \\pi/2 \\), and acceleration is always opposite to displacement, a phase difference of \\( \\pi \\). Dividing \\( a_{max} \\) by \\( v_{max} \\) gives \\( \\omega \\) directly.",
+      "key_formulas": [
+        "\\( a=-\\omega^{2}x \\)",
+        "\\( \\dfrac{d^{2}x}{dt^{2}}+\\omega^{2}x=0 \\)",
+        "\\( v=\\omega\\sqrt{A^{2}-x^{2}} \\)",
+        "\\( v_{max}=A\\omega \\) at \\( x=0 \\)",
+        "\\( a_{max}=A\\omega^{2} \\) at \\( x=\\pm A \\)"
+      ],
+      "worked_example": "A particle in SHM has amplitude 5 cm and \\( \\omega=2 \\) rad/s. Find its speed and acceleration at \\( x=+3 \\) cm.<br><br>\\( v=2\\sqrt{25-9}=8 \\) cm/s.<br><br>\\( a=-\\omega^{2}x=-4\\times3=-12\\ \\text{cm/s}^2 \\), pointing toward the mean position.",
+      "common_mistakes": [
+        "Placing the maximum speed at the extremes or the maximum acceleration at the mean position",
+        "Dropping the negative sign in \\( a=-\\omega^{2}x \\)",
+        "Using \\( \\omega \\) instead of \\( \\omega^{2} \\) for acceleration",
+        "Reading the coefficient \\( \\omega^{2} \\) in the differential equation as \\( \\omega \\)"
+      ],
+      "question_count": 42
+    },
+    {
+      "name": "Energy in Simple Harmonic Motion",
+      "summary": "The energy of a particle in SHM keeps changing form between kinetic and potential, but for an undamped oscillator the total never changes. The potential energy at displacement \\( x \\) is \\( PE=\\tfrac12kx^{2}=\\tfrac12m\\omega^{2}x^{2} \\): zero at the mean position and maximum at the extremes. The kinetic energy is \\( KE=\\tfrac12m\\omega^{2}(A^{2}-x^{2}) \\): maximum at the mean position and zero at the extremes. Their sum is the total energy \\( E=\\tfrac12kA^{2}=\\tfrac12m\\omega^{2}A^{2} \\), the same at every point, so energy is proportional to the square of the amplitude. Useful splits: at \\( x=A/2 \\), \\( PE=\\tfrac14E \\) and \\( KE=\\tfrac34E \\); at \\( x=A/\\sqrt{2} \\), the two are equal. Because \\( KE \\) and \\( PE \\) depend on \\( \\cos^{2} \\) and \\( \\sin^{2} \\) of \\( \\omega t \\), each oscillates with angular frequency \\( 2\\omega \\), twice the oscillator's own. Averaged over a full cycle, each form holds half the total energy.",
+      "key_formulas": [
+        "\\( PE=\\tfrac12kx^{2} \\)",
+        "\\( KE=\\tfrac12k(A^{2}-x^{2}) \\)",
+        "\\( E=\\tfrac12kA^{2}=\\tfrac12m\\omega^{2}A^{2} \\)",
+        "\\( KE \\) and \\( PE \\) oscillate at \\( 2\\omega \\)"
+      ],
+      "worked_example": "A spring of \\( k=100 \\) N/m oscillates with amplitude 0.2 m. Find KE and PE at \\( x=0.1 \\) m.<br><br>\\( E=\\tfrac12\\times100\\times0.04=2 \\) J.<br><br>\\( PE=\\tfrac12\\times100\\times0.01=0.5 \\) J, so \\( KE=2-0.5=1.5 \\) J.",
+      "common_mistakes": [
+        "Swapping where KE and PE are maximum",
+        "Claiming the total energy of an undamped oscillator changes with position",
+        "Using \\( \\omega \\) instead of \\( 2\\omega \\) for how fast KE or PE oscillates",
+        "Treating energy as proportional to \\( x \\) or \\( A \\) instead of their squares"
+      ],
+      "question_count": 38
+    },
+    {
+      "name": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "summary": "For a mass \\( m \\) on an ideal spring of force constant \\( k \\), the restoring force \\( -kx \\) gives \\( \\omega=\\sqrt{k/m} \\) and period \\( T=2\\pi\\sqrt{m/k} \\): a heavier mass or a softer spring oscillates more slowly. For a simple pendulum of length \\( L \\) under the small-angle approximation, the restoring acceleration is \\( -(g/L)x \\), so \\( T=2\\pi\\sqrt{L/g} \\). This formula has no mass term at all, because both the restoring force and the inertia scale with the bob's mass; for small angles it is also independent of amplitude. When two springs are combined, the rules are the reverse of those for resistors. In series the effective spring is softer, \\( \\dfrac{1}{k_{eff}}=\\dfrac{1}{k_{1}}+\\dfrac{1}{k_{2}} \\), giving a longer period; in parallel it is stiffer, \\( k_{eff}=k_{1}+k_{2} \\), giving a shorter period. Cutting a spring in half doubles the stiffness of each half. For a vertical spring, the equilibrium stretch \\( d \\) satisfies \\( kd=mg \\), so \\( T=2\\pi\\sqrt{d/g} \\).",
+      "key_formulas": [
+        "\\( T=2\\pi\\sqrt{m/k} \\)",
+        "\\( T=2\\pi\\sqrt{L/g} \\)",
+        "Series: \\( \\dfrac{1}{k_{eff}}=\\dfrac{1}{k_{1}}+\\dfrac{1}{k_{2}} \\)",
+        "Parallel: \\( k_{eff}=k_{1}+k_{2} \\)"
+      ],
+      "worked_example": "Two identical springs of 8 N/m each are joined in series and carry a 1 kg mass. Find the period.<br><br>\\( k_{eff}=\\dfrac{8\\times8}{16}=4 \\) N/m.<br><br>\\( T=2\\pi\\sqrt{1/4}=\\pi \\) s. (In parallel, \\( k_{eff}=16 \\) N/m would give \\( \\pi/2 \\) s.)",
+      "common_mistakes": [
+        "Inserting the bob's mass into the pendulum period",
+        "Using the pendulum formula's mass-independence for a spring, whose period does depend on mass",
+        "Borrowing resistor rules: adding spring constants in series",
+        "Forgetting the square root when scaling \\( T \\) with \\( m \\), \\( k \\), \\( L \\) or \\( g \\)"
+      ],
+      "question_count": 44
+    },
+    {
+      "name": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "summary": "Real oscillators lose energy to their surroundings. A damping force, usually taken proportional to velocity, \\( F_{d}=-bv \\), makes the equation of motion \\( m\\dfrac{d^{2}x}{dt^{2}}=-kx-bv \\). The result is damped oscillation: the amplitude decays with time, \\( A(t)=A_{0}e^{-bt/(2m)} \\), while the lost mechanical energy appears as heat in the medium. Since energy goes as \\( A^{2} \\), it decays twice as fast in the exponent, \\( E=E_{0}e^{-bt/m} \\). For light damping the frequency is only slightly less than the natural value \\( \\omega_{0}=\\sqrt{k/m} \\). When a periodic external force drives the system, it eventually oscillates at the driving frequency \\( \\omega_{d} \\), not its natural one, with a steady amplitude set by the balance between energy fed in and energy lost. The amplitude is largest when \\( \\omega_{d} \\) is close to \\( \\omega_{0} \\): this is resonance. Less damping gives a taller, sharper resonance peak. Swings, radio tuning, bridges under marching soldiers and car suspensions are everyday examples.",
+      "key_formulas": [
+        "\\( F_{d}=-bv \\)",
+        "\\( m\\dfrac{d^{2}x}{dt^{2}}=-kx-bv \\)",
+        "\\( A(t)=A_{0}e^{-bt/(2m)} \\)",
+        "Resonance when \\( \\omega_{d}\\approx\\omega_{0} \\)"
+      ],
+      "worked_example": "A damped oscillator has \\( m=0.5 \\) kg and \\( b=0.1 \\) kg/s. When does its amplitude fall to \\( A_{0}/e \\)?<br><br>Set \\( bt/(2m)=1 \\): \\( t=2m/b=10 \\) s.<br><br>Its energy is then \\( E_{0}/e^{2} \\).",
+      "common_mistakes": [
+        "Thinking a forced oscillator settles at its natural frequency rather than the driving frequency",
+        "Believing more damping makes the resonance peak taller",
+        "Forgetting that energy falls as the square of amplitude",
+        "Mixing up the amplitude time \\( 2m/b \\) with the energy time \\( m/b \\)"
+      ],
+      "question_count": 32
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY11-CH13-L1-001",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following motions is periodic but NOT oscillatory?",
+      "options": [
+        "The revolution of the Earth around the Sun",
+        "A simple pendulum swinging about its lowest point",
+        "A mass on a spring bouncing up and down",
+        "A plucked guitar string vibrating"
+      ],
+      "correct_index": 0,
+      "explanation": "Periodic motion repeats itself after equal intervals of time; oscillatory motion is periodic motion that goes to and fro about a mean position.<br><br>The Earth returns to the same point in its orbit every year, so the motion is periodic, but it never moves back and forth about a mean position.<br><br>Pendulums, springs, and strings all move to and fro, so they are oscillatory.",
+      "hint": "Ask whether the object moves back and forth about a fixed mean position.",
+      "distractor_logic": [
+        "A pendulum moves to and fro about a mean position, so it is oscillatory as well as periodic",
+        "A spring-mass system moves back and forth about its equilibrium point, so it is oscillatory",
+        "A vibrating string moves to and fro about its rest position, so it is oscillatory"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-002",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "A motion repeats itself every 0.5 s. What is its frequency?",
+      "options": [
+        "0.5 Hz",
+        "2 Hz",
+        "\\( 4\\pi \\) Hz",
+        "1 Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "Frequency is the reciprocal of the period: \\( f=1/T \\).<br><br>\\( f=1/0.5=2 \\) Hz.",
+      "hint": "Frequency and period are reciprocals of each other.",
+      "distractor_logic": [
+        "Treats the period and the frequency as the same quantity instead of reciprocals",
+        "This is the angular frequency \\( \\omega=2\\pi/T \\) in rad/s, not the frequency in Hz",
+        "Uses \\( f=1/(2T) \\), halving the correct value"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-003",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "For the motion \\( x=5\\sin(2t+\\pi/3) \\), where \\( x \\) is in cm and \\( t \\) in s, what is the amplitude?",
+      "options": [
+        "10 cm",
+        "2 cm",
+        "5 cm",
+        "\\( \\pi/3 \\) cm"
+      ],
+      "correct_index": 2,
+      "explanation": "Compare with the standard form \\( x=A\\sin(\\omega t+\\phi) \\).<br><br>The coefficient of the sine function is the amplitude, so \\( A=5 \\) cm.",
+      "hint": "The amplitude is the number multiplying the sine function.",
+      "distractor_logic": [
+        "10 cm is the peak-to-peak distance (from one extreme to the other), which is twice the amplitude",
+        "2 is the angular frequency \\( \\omega \\) in rad/s, not the amplitude",
+        "\\( \\pi/3 \\) is the phase constant \\( \\phi \\), not a length"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-004",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "A particle moves according to \\( x=0.2\\cos(4\\pi t) \\), with \\( x \\) in m and \\( t \\) in s. What is its period?",
+      "options": [
+        "\\( 4\\pi \\) s",
+        "2 s",
+        "0.25 s",
+        "0.5 s"
+      ],
+      "correct_index": 3,
+      "explanation": "Here \\( \\omega=4\\pi \\) rad/s.<br><br>\\( T=2\\pi/\\omega=2\\pi/(4\\pi)=0.5 \\) s.",
+      "hint": "Read off \\( \\omega \\), then use \\( T=2\\pi/\\omega \\).",
+      "distractor_logic": [
+        "Reads the angular frequency \\( \\omega=4\\pi \\) rad/s as if it were the period",
+        "2 Hz is the frequency; writing it as 2 s confuses frequency with period",
+        "Uses \\( T=\\pi/\\omega \\), dropping a factor of 2 from \\( T=2\\pi/\\omega \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-005",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "In the SHM equation \\( x=A\\sin(\\omega t+\\phi) \\), what name is given to the entire argument \\( (\\omega t+\\phi) \\)?",
+      "options": [
+        "The phase of the motion at time \\( t \\)",
+        "The phase constant",
+        "The angular frequency",
+        "The amplitude"
+      ],
+      "correct_index": 0,
+      "explanation": "The full argument \\( (\\omega t+\\phi) \\) changes with time and fixes both position and direction of motion at time \\( t \\); it is called the phase.<br><br>Its value at \\( t=0 \\), namely \\( \\phi \\), is the phase constant.",
+      "hint": "The phase constant is just the starting value of this argument.",
+      "distractor_logic": [
+        "The phase constant is only \\( \\phi \\), the value of the phase at \\( t=0 \\)",
+        "The angular frequency is \\( \\omega \\) alone, which multiplies \\( t \\)",
+        "The amplitude is \\( A \\), the coefficient outside the sine"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-006",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the SI unit of angular frequency \\( \\omega \\)?",
+      "options": [
+        "s",
+        "rad/s",
+        "m",
+        "rad"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\omega \\) tells how many radians of phase are covered per second, since \\( \\omega=2\\pi/T \\).<br><br>So its unit is rad/s.",
+      "hint": "Angular frequency is phase covered per unit time.",
+      "distractor_logic": [
+        "The second is the unit of the time period \\( T \\), not of \\( \\omega \\)",
+        "The metre is the unit of amplitude and displacement",
+        "The radian alone is the unit of phase; \\( \\omega \\) is phase per unit time"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-007",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "A particle moves as \\( x=3\\cos(\\omega t) \\) (in cm). Where is it at \\( t=0 \\)?",
+      "options": [
+        "At the mean position \\( x=0 \\)",
+        "At \\( x=-3 \\) cm",
+        "At \\( x=+3 \\) cm, a positive extreme position",
+        "At \\( x=1.5 \\) cm"
+      ],
+      "correct_index": 2,
+      "explanation": "At \\( t=0 \\), \\( x=3\\cos 0=3\\times1=3 \\) cm.<br><br>This equals the amplitude, so the particle starts at the positive extreme.",
+      "hint": "Put \\( t=0 \\) and recall that \\( \\cos 0=1 \\).",
+      "distractor_logic": [
+        "That would be true for a sine function, since \\( \\sin 0=0 \\), but \\( \\cos 0=1 \\)",
+        "Introduces a negative sign that is not in the equation",
+        "Takes half the amplitude, as if \\( \\cos 0 \\) were one half"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-008",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 1,
+      "type": "regular",
+      "question": "Which relation between angular frequency \\( \\omega \\) and period \\( T \\) is correct?",
+      "options": [
+        "\\( \\omega=2\\pi T \\)",
+        "\\( \\omega=1/T \\)",
+        "\\( \\omega=T/(2\\pi) \\)",
+        "\\( \\omega=2\\pi/T \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "One full oscillation corresponds to a phase change of \\( 2\\pi \\) radians, completed in time \\( T \\).<br><br>So \\( \\omega=2\\pi/T=2\\pi f \\).",
+      "hint": "One cycle means \\( 2\\pi \\) radians covered in one period.",
+      "distractor_logic": [
+        "Multiplies by \\( T \\) instead of dividing, so a longer period would wrongly give a larger \\( \\omega \\)",
+        "This is the frequency \\( f \\); it silently drops the \\( 2\\pi \\) factor",
+        "Inverts the correct relation completely"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-009",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement correctly describes the acceleration of a particle in SHM?",
+      "options": [
+        "It is proportional to the displacement and always directed toward the mean position",
+        "It is proportional to the displacement and directed away from the mean position",
+        "It is constant in magnitude and always directed toward the mean position",
+        "It is proportional to the velocity and directed along the velocity"
+      ],
+      "correct_index": 0,
+      "explanation": "SHM is defined by \\( a=-\\omega^{2}x \\).<br><br>Magnitude is proportional to \\( x \\), and the minus sign means it always points back toward the mean position.",
+      "hint": "Think of the restoring force of a spring.",
+      "distractor_logic": [
+        "This drops the negative sign in \\( a=-\\omega^{2}x \\); such motion would run away, not oscillate",
+        "A constant-magnitude acceleration does not produce SHM; in SHM the magnitude grows with \\( |x| \\)",
+        "SHM acceleration depends on displacement, not velocity"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-010",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "At which position is the speed of a particle in SHM maximum?",
+      "options": [
+        "At either extreme position",
+        "At the mean position",
+        "Halfway between the mean position and an extreme",
+        "The speed is the same everywhere"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v=\\omega\\sqrt{A^{2}-x^{2}} \\) is largest when \\( x=0 \\).<br><br>So \\( v_{max}=A\\omega \\) occurs at the mean position.",
+      "hint": "Where does the particle momentarily stop? The answer is the opposite place.",
+      "distractor_logic": [
+        "At the extremes the particle momentarily stops, so the speed is zero there; the acceleration, not the speed, is largest there",
+        "At \\( x=A/2 \\) the speed is only \\( \\tfrac{\\sqrt{3}}{2}A\\omega \\), less than the maximum",
+        "The speed \\( \\omega\\sqrt{A^{2}-x^{2}} \\) changes with position"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-011",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "At which position is the magnitude of the acceleration of a particle in SHM maximum?",
+      "options": [
+        "At the mean position",
+        "At \\( x=A/2 \\)",
+        "At either extreme position",
+        "It is the same at all positions"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( |a|=\\omega^{2}|x| \\) is largest when \\( |x| \\) is largest, i.e. \\( x=\\pm A \\).<br><br>So \\( a_{max}=A\\omega^{2} \\) at the extremes.",
+      "hint": "Acceleration grows with distance from the mean position.",
+      "distractor_logic": [
+        "At the mean position \\( x=0 \\), so \\( a=-\\omega^{2}x=0 \\); this is where the speed, not the acceleration, is largest",
+        "At \\( x=A/2 \\) the acceleration is only half its maximum",
+        "The acceleration \\( -\\omega^{2}x \\) depends on position"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-012",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "A particle executes SHM with amplitude 0.05 m and angular frequency 10 rad/s. What is its maximum speed?",
+      "options": [
+        "5 m/s",
+        "0.005 m/s",
+        "1 m/s",
+        "0.5 m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_{max}=A\\omega \\).<br><br>\\( v_{max}=0.05\\times10=0.5 \\) m/s.",
+      "hint": "Maximum speed is amplitude times angular frequency.",
+      "distractor_logic": [
+        "\\( A\\omega^{2}=5 \\) is the maximum acceleration (in \\( \\text{m/s}^2 \\)), not the maximum speed",
+        "Divides \\( A \\) by \\( \\omega \\) instead of multiplying",
+        "Uses twice the amplitude, as if the peak-to-peak distance were \\( A \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-013",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "A particle executes SHM with amplitude 0.02 m and angular frequency 5 rad/s. What is its maximum acceleration?",
+      "options": [
+        "\\( 0.5\\ \\text{m/s}^2 \\)",
+        "\\( 0.1\\ \\text{m/s}^2 \\)",
+        "\\( 0.004\\ \\text{m/s}^2 \\)",
+        "\\( 0.25\\ \\text{m/s}^2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( a_{max}=A\\omega^{2} \\).<br><br>\\( a_{max}=0.02\\times5^{2}=0.02\\times25=0.5\\ \\text{m/s}^2 \\).",
+      "hint": "Maximum acceleration uses \\( \\omega \\) squared.",
+      "distractor_logic": [
+        "\\( A\\omega=0.1 \\) is the maximum speed (in m/s), not the maximum acceleration",
+        "Divides \\( A \\) by \\( \\omega \\)",
+        "Includes a spurious factor of one half"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-014",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the acceleration of a particle in SHM when it passes through the mean position?",
+      "options": [
+        "Maximum, equal to \\( A\\omega^{2} \\)",
+        "Zero",
+        "Equal to \\( A\\omega \\)",
+        "Equal to \\( g \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( a=-\\omega^{2}x \\), and at the mean position \\( x=0 \\).<br><br>So \\( a=0 \\), even though the speed is maximum there.",
+      "hint": "Put \\( x=0 \\) into \\( a=-\\omega^{2}x \\).",
+      "distractor_logic": [
+        "The maximum acceleration occurs at the extremes, not at the mean position",
+        "\\( A\\omega \\) is the speed at the mean position, not an acceleration",
+        "There is no reason for the acceleration to equal \\( g \\) in general SHM"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-015",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "For a particle in SHM, the acceleration is always directed",
+      "options": [
+        "along the velocity",
+        "away from the mean position",
+        "toward the mean position",
+        "along the displacement"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( a=-\\omega^{2}x \\): the acceleration is always opposite to the displacement.<br><br>Since displacement points away from the mean position, acceleration points toward it.",
+      "hint": "The minus sign in \\( a=-\\omega^{2}x \\) is the key.",
+      "distractor_logic": [
+        "While moving toward an extreme, the velocity points away from the mean but the acceleration points back",
+        "This contradicts the negative sign in \\( a=-\\omega^{2}x \\)",
+        "Displacement points away from the mean position; acceleration is opposite to it"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-016",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "The speed of a particle in SHM at displacement \\( x \\) is given by",
+      "options": [
+        "\\( v=\\omega\\sqrt{x^{2}-A^{2}} \\)",
+        "\\( v=\\omega^{2}\\sqrt{A^{2}-x^{2}} \\)",
+        "\\( v=\\omega(A-x) \\)",
+        "\\( v=\\omega\\sqrt{A^{2}-x^{2}} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "From \\( x=A\\sin\\omega t \\) and \\( v=A\\omega\\cos\\omega t \\), use \\( \\sin^{2}+\\cos^{2}=1 \\).<br><br>This gives \\( v=\\omega\\sqrt{A^{2}-x^{2}} \\): maximum \\( A\\omega \\) at \\( x=0 \\), zero at \\( x=\\pm A \\).",
+      "hint": "It must be \\( A\\omega \\) at the mean position and zero at the extremes.",
+      "distractor_logic": [
+        "Reverses the terms; \\( x^{2}-A^{2} \\) is negative inside the motion, giving no real speed",
+        "Uses \\( \\omega^{2} \\), which gives the wrong units for speed",
+        "Is not the square-root relation; it would give a wrong speed except at the ends"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-017",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the total mechanical energy of a particle of mass \\( m \\) executing SHM with amplitude \\( A \\) and angular frequency \\( \\omega \\)?",
+      "options": [
+        "\\( \\tfrac12m\\omega^{2}A^{2} \\)",
+        "\\( \\tfrac12m\\omega A^{2} \\)",
+        "\\( \\tfrac12m\\omega^{2}x^{2} \\)",
+        "\\( m\\omega^{2}A^{2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At the extreme, all energy is potential: \\( \\tfrac12kA^{2} \\) with \\( k=m\\omega^{2} \\).<br><br>So \\( E=\\tfrac12m\\omega^{2}A^{2} \\), the same at every point of the motion.",
+      "hint": "Evaluate the potential energy at the extreme position.",
+      "distractor_logic": [
+        "Uses \\( \\omega \\) instead of \\( \\omega^{2} \\), giving wrong units",
+        "This is the potential energy at displacement \\( x \\), which varies with position",
+        "Drops the factor of one half"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-018",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "Where is the kinetic energy of a particle in SHM maximum?",
+      "options": [
+        "At the extreme positions",
+        "At the mean position",
+        "At \\( x=A/2 \\)",
+        "It is the same everywhere"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( KE=\\tfrac12m\\omega^{2}(A^{2}-x^{2}) \\) is largest at \\( x=0 \\).<br><br>There \\( KE=E \\) and \\( PE=0 \\).",
+      "hint": "Kinetic energy is greatest where speed is greatest.",
+      "distractor_logic": [
+        "At the extremes the particle is momentarily at rest, so KE is zero there; it is PE that peaks at the extremes",
+        "At \\( A/2 \\), KE is only three-quarters of its maximum",
+        "KE changes with position; only the total energy stays constant"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-019",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the potential energy of a particle in SHM (force constant \\( k \\)) at displacement \\( x \\)?",
+      "options": [
+        "\\( \\tfrac12kA^{2} \\)",
+        "\\( kx \\)",
+        "\\( \\tfrac12kx^{2} \\)",
+        "\\( \\tfrac12k(A^{2}-x^{2}) \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The work done against the restoring force \\( kx \\) in moving from 0 to \\( x \\) is \\( \\tfrac12kx^{2} \\).<br><br>So \\( PE=\\tfrac12kx^{2} \\): zero at the mean position, maximum at the extremes.",
+      "hint": "Think of the energy stored in a stretched spring.",
+      "distractor_logic": [
+        "This is the total energy, which is the PE only at the extremes",
+        "\\( kx \\) is the magnitude of the restoring force, not an energy",
+        "This is the kinetic energy at displacement \\( x \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-020",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "As a particle in undamped SHM moves from the mean position to an extreme, its total mechanical energy",
+      "options": [
+        "increases",
+        "decreases",
+        "first increases, then decreases",
+        "remains constant"
+      ],
+      "correct_index": 3,
+      "explanation": "KE is converted into PE on the way to the extreme.<br><br>With no damping, \\( KE+PE=\\tfrac12kA^{2} \\) stays constant throughout.",
+      "hint": "Energy changes form but is not lost when there is no friction.",
+      "distractor_logic": [
+        "Only the PE increases; the KE falls by exactly the same amount",
+        "Only the KE decreases; the PE rises to compensate",
+        "Confuses the total energy with one of its parts"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-021",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "A spring of force constant 200 N/m oscillates with amplitude 0.1 m. What is its total energy?",
+      "options": [
+        "1 J",
+        "10 J",
+        "2 J",
+        "20 J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( E=\\tfrac12kA^{2}=\\tfrac12\\times200\\times(0.1)^{2} \\).<br><br>\\( E=100\\times0.01=1 \\) J.",
+      "hint": "Use \\( E=\\tfrac12kA^{2} \\).",
+      "distractor_logic": [
+        "Uses \\( \\tfrac12kA \\), forgetting to square the amplitude",
+        "Forgets the factor of one half",
+        "Uses \\( kA \\), which is the maximum force in newtons, not an energy"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-022",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement is correct when a particle in SHM is at its mean position?",
+      "options": [
+        "Its potential energy equals the total energy and its kinetic energy is zero",
+        "Its kinetic energy equals the total energy and its potential energy is zero",
+        "Its kinetic and potential energies are each half of the total",
+        "Both its kinetic and potential energies are zero"
+      ],
+      "correct_index": 1,
+      "explanation": "At \\( x=0 \\): \\( PE=\\tfrac12kx^{2}=0 \\).<br><br>So all the energy is kinetic: \\( KE=E \\).",
+      "hint": "Put \\( x=0 \\) into the PE formula.",
+      "distractor_logic": [
+        "This swaps the two: it describes the extreme position, not the mean position",
+        "The half-and-half split happens at \\( x=A/\\sqrt{2} \\), not at the mean position",
+        "The total energy is never zero for an oscillating particle"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-023",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "If the amplitude of a spring-mass oscillator is doubled, its total energy becomes",
+      "options": [
+        "two times",
+        "unchanged",
+        "four times",
+        "half"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E=\\tfrac12kA^{2} \\), so \\( E\\propto A^{2} \\).<br><br>Doubling \\( A \\) multiplies \\( E \\) by \\( 2^{2}=4 \\).",
+      "hint": "Energy depends on the square of the amplitude.",
+      "distractor_logic": [
+        "Assumes energy is proportional to \\( A \\) rather than \\( A^{2} \\)",
+        "Energy depends on amplitude, so it cannot stay the same",
+        "Energy increases with amplitude, it does not decrease"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-024",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 1,
+      "type": "regular",
+      "question": "A particle of mass 2 kg executes SHM with \\( \\omega=3 \\) rad/s and amplitude 0.1 m. What is its total energy?",
+      "options": [
+        "0.03 J",
+        "0.18 J",
+        "0.9 J",
+        "0.09 J"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E=\\tfrac12m\\omega^{2}A^{2}=\\tfrac12\\times2\\times9\\times0.01 \\).<br><br>\\( E=0.09 \\) J.",
+      "hint": "Square both \\( \\omega \\) and \\( A \\).",
+      "distractor_logic": [
+        "Uses \\( \\omega \\) instead of \\( \\omega^{2} \\)",
+        "Forgets the factor of one half",
+        "Forgets to square the amplitude"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-025",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the time period of a mass \\( m \\) oscillating on an ideal spring of force constant \\( k \\)?",
+      "options": [
+        "\\( T=2\\pi\\sqrt{m/k} \\)",
+        "\\( T=2\\pi\\sqrt{k/m} \\)",
+        "\\( T=2\\pi m/k \\)",
+        "\\( T=\\tfrac{1}{2\\pi}\\sqrt{m/k} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "For a spring, \\( \\omega=\\sqrt{k/m} \\).<br><br>\\( T=2\\pi/\\omega=2\\pi\\sqrt{m/k} \\).",
+      "hint": "A heavier mass should oscillate more slowly.",
+      "distractor_logic": [
+        "Inverts the ratio; a heavier mass must give a longer period",
+        "Omits the square root",
+        "Divides by \\( 2\\pi \\) instead of multiplying, mixing up the roles of period and frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-026",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "The period of a simple pendulum (small oscillations) depends on",
+      "options": [
+        "the mass of the bob",
+        "its length and the acceleration due to gravity",
+        "the mass of the bob and its length",
+        "the amplitude of swing"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T=2\\pi\\sqrt{L/g} \\).<br><br>Only \\( L \\) and \\( g \\) appear; mass and small amplitude do not.",
+      "hint": "Write the pendulum formula and see which quantities appear.",
+      "distractor_logic": [
+        "The pendulum period \\( 2\\pi\\sqrt{L/g} \\) has no mass term",
+        "Includes mass, which does not appear in the pendulum formula",
+        "For small angles the period is independent of amplitude"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-027",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "A 1 kg mass oscillates on a spring of force constant 100 N/m. What is the period?",
+      "options": [
+        "\\( 20\\pi \\) s",
+        "\\( 5/\\pi \\) s",
+        "\\( \\pi/5 \\) s",
+        "\\( \\pi/50 \\) s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega=\\sqrt{k/m}=\\sqrt{100/1}=10 \\) rad/s.<br><br>\\( T=2\\pi/10=\\pi/5 \\) s.",
+      "hint": "Find \\( \\omega=\\sqrt{k/m} \\) first.",
+      "distractor_logic": [
+        "Uses \\( 2\\pi\\sqrt{k/m} \\), inverting the ratio",
+        "This is the frequency \\( f=\\omega/(2\\pi) \\), not the period",
+        "Uses \\( 2\\pi(m/k) \\), omitting the square root"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-028",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "A simple pendulum has length 1 m at a place where \\( g=\\pi^{2}\\ \\text{m/s}^2 \\). What is its period?",
+      "options": [
+        "1 s",
+        "4 s",
+        "0.5 s",
+        "2 s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T=2\\pi\\sqrt{L/g}=2\\pi\\sqrt{1/\\pi^{2}} \\).<br><br>\\( T=2\\pi\\times\\tfrac{1}{\\pi}=2 \\) s.",
+      "hint": "Use \\( T=2\\pi\\sqrt{L/g} \\).",
+      "distractor_logic": [
+        "Uses \\( \\pi\\sqrt{L/g} \\), dropping a factor of 2",
+        "Doubles the correct value",
+        "Gives the frequency 0.5 Hz as if it were the period"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-029",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "The bob of a simple pendulum is replaced by one of twice the mass, keeping the length the same. The period",
+      "options": [
+        "remains the same",
+        "increases",
+        "decreases",
+        "doubles"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T=2\\pi\\sqrt{L/g} \\) contains no mass term.<br><br>Gravity and inertia both scale with mass and cancel, so the period is unchanged.",
+      "hint": "Does mass appear anywhere in the pendulum formula?",
+      "distractor_logic": [
+        "Borrows the spring-mass idea that more mass means a longer period; the pendulum formula has no mass",
+        "Mass does not appear in \\( 2\\pi\\sqrt{L/g} \\), so it cannot decrease",
+        "Treats the period as proportional to mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-030",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "Two springs of force constants 6 N/m and 3 N/m are connected in series. What is the effective force constant?",
+      "options": [
+        "9 N/m",
+        "2 N/m",
+        "3 N/m",
+        "4.5 N/m"
+      ],
+      "correct_index": 1,
+      "explanation": "Series: \\( \\dfrac{1}{k_{eff}}=\\dfrac{1}{6}+\\dfrac{1}{3}=\\dfrac{1}{2} \\).<br><br>\\( k_{eff}=2 \\) N/m, smaller than either spring.",
+      "hint": "Springs in series combine like resistors in parallel.",
+      "distractor_logic": [
+        "Adds the constants directly, which is the parallel rule (borrowed from series resistors)",
+        "Assumes the combination equals the softer spring",
+        "Averages the two constants"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-031",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "Two springs of force constants 200 N/m and 300 N/m are connected in parallel. What is the effective force constant?",
+      "options": [
+        "120 N/m",
+        "250 N/m",
+        "500 N/m",
+        "100 N/m"
+      ],
+      "correct_index": 2,
+      "explanation": "In parallel both springs stretch equally and their forces add.<br><br>\\( k_{eff}=k_{1}+k_{2}=200+300=500 \\) N/m.",
+      "hint": "In parallel the restoring forces add.",
+      "distractor_logic": [
+        "Uses the reciprocal (series) rule, borrowed from parallel resistors",
+        "Averages the two constants",
+        "Subtracts the constants"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-032",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 1,
+      "type": "regular",
+      "question": "The length of a simple pendulum is made four times. Its period becomes",
+      "options": [
+        "four times",
+        "unchanged",
+        "half",
+        "two times"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T\\propto\\sqrt{L} \\).<br><br>\\( \\sqrt{4}=2 \\), so the period doubles.",
+      "hint": "Period depends on the square root of length.",
+      "distractor_logic": [
+        "Assumes \\( T\\propto L \\) rather than \\( T\\propto\\sqrt{L} \\)",
+        "Length does appear in the formula, so the period changes",
+        "A longer pendulum swings more slowly, not faster"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-033",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "In a damped oscillation, the amplitude",
+      "options": [
+        "decreases with time",
+        "increases with time",
+        "remains constant",
+        "alternately increases and decreases"
+      ],
+      "correct_index": 0,
+      "explanation": "A damping force, such as air resistance, removes mechanical energy each cycle.<br><br>Less energy means a smaller amplitude, so the oscillations die out gradually.",
+      "hint": "Think of a pendulum slowly coming to rest.",
+      "distractor_logic": [
+        "Damping removes energy, so the amplitude cannot grow without a driving force",
+        "Constant amplitude is the undamped (ideal) case",
+        "Damping gives a steady decay, not a rising and falling amplitude"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-034",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "The damping force on an oscillating body in a fluid is usually taken to be proportional to its",
+      "options": [
+        "displacement",
+        "velocity",
+        "acceleration",
+        "mass"
+      ],
+      "correct_index": 1,
+      "explanation": "The damping force is written \\( F_{d}=-bv \\).<br><br>It opposes the motion and grows with speed.",
+      "hint": "Faster motion through air meets more resistance.",
+      "distractor_logic": [
+        "A force proportional to displacement is the restoring force \\( -kx \\), not the damping force",
+        "Damping depends on how fast the body moves, not on its acceleration",
+        "Damping is a resistive effect of the medium, not proportional to mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-035",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "Resonance occurs when",
+      "options": [
+        "the driving frequency is twice the natural frequency",
+        "the driving frequency is zero",
+        "the driving frequency is equal to the natural frequency of the system",
+        "the damping is made very large"
+      ],
+      "correct_index": 2,
+      "explanation": "A forced oscillator responds most strongly when driven at its own natural frequency.<br><br>This large-amplitude response is resonance.",
+      "hint": "The system responds best when pushed in step with its own rhythm.",
+      "distractor_logic": [
+        "Driving at twice the natural frequency does not match the system's own rhythm",
+        "A zero driving frequency means no periodic driving at all",
+        "Large damping reduces the resonant amplitude rather than causing resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-036",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "Why are marching soldiers asked to break step while crossing a bridge?",
+      "options": [
+        "To reduce the total weight on the bridge",
+        "To reduce friction between boots and the bridge",
+        "To make the bridge oscillate at a higher frequency",
+        "To avoid resonance if the marching frequency matches the bridge's natural frequency"
+      ],
+      "correct_index": 3,
+      "explanation": "Marching in step applies a periodic force to the bridge.<br><br>If it matches the bridge's natural frequency, resonance can build up dangerously large oscillations.",
+      "hint": "Regular periodic pushes can build up large oscillations.",
+      "distractor_logic": [
+        "Breaking step does not change the soldiers' weight",
+        "Friction is not the concern; periodic forcing is",
+        "The aim is to avoid regular forcing, not to change the bridge's frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-037",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "In the steady state, a forced oscillator oscillates at",
+      "options": [
+        "the frequency of the driving force",
+        "its own natural frequency",
+        "the average of its natural and driving frequencies",
+        "zero frequency"
+      ],
+      "correct_index": 0,
+      "explanation": "After the transient motion dies out due to damping, the system follows the driving force.<br><br>So it oscillates at the driving frequency.",
+      "hint": "In the long run, the driver sets the rhythm.",
+      "distractor_logic": [
+        "The natural frequency dominates only in the early transient stage, which dies out",
+        "There is no averaging of frequencies in forced oscillations",
+        "A driven system keeps oscillating as long as it is driven"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-038",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "Where does the mechanical energy lost by a damped oscillator go?",
+      "options": [
+        "It is stored permanently in the spring",
+        "It is dissipated as heat (and some sound) in the surroundings",
+        "It is converted into extra mass of the oscillator",
+        "It is destroyed completely"
+      ],
+      "correct_index": 1,
+      "explanation": "The damping force does negative work on the oscillator.<br><br>That energy appears as thermal energy of the medium and the system.",
+      "hint": "Energy changes form; it is not destroyed.",
+      "distractor_logic": [
+        "The spring's stored energy is part of the mechanical energy that is decreasing",
+        "Oscillator mass does not change",
+        "Energy is never destroyed; it only changes form"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-039",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following is an example of damped oscillation?",
+      "options": [
+        "An ideal mass on a frictionless spring oscillating forever",
+        "The Earth revolving around the Sun",
+        "A pendulum swinging in air that gradually comes to rest",
+        "A particle in uniform circular motion"
+      ],
+      "correct_index": 2,
+      "explanation": "Air resistance removes energy from the pendulum.<br><br>Its amplitude shrinks until it stops: damped oscillation.",
+      "hint": "Look for an oscillation that dies out.",
+      "distractor_logic": [
+        "No energy is lost, so this is undamped oscillation",
+        "This is periodic but not oscillatory, and not damped",
+        "Uniform circular motion does not decay"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L1-040",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 1,
+      "type": "regular",
+      "question": "The frequency at which a system oscillates when displaced and released, with no driving force, is called its",
+      "options": [
+        "driving frequency",
+        "beat frequency",
+        "damping constant",
+        "natural frequency"
+      ],
+      "correct_index": 3,
+      "explanation": "A freely oscillating system vibrates at a frequency fixed by its own properties.<br><br>For a spring-mass system this is \\( \\omega_{0}=\\sqrt{k/m} \\), the natural frequency.",
+      "hint": "It is set by the system itself.",
+      "distractor_logic": [
+        "Driving frequency belongs to an external periodic force",
+        "Beats involve two nearby frequencies, not free oscillation",
+        "The damping constant \\( b \\) measures resistance, not frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-001",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle moves as \\( x=4\\sin(\\pi t/6) \\), with \\( x \\) in cm and \\( t \\) in s. What is its displacement at \\( t=1 \\) s?",
+      "options": [
+        "2 cm",
+        "4 cm",
+        "\\( 2\\sqrt{3} \\) cm",
+        "0 cm"
+      ],
+      "correct_index": 0,
+      "explanation": "At \\( t=1 \\) s the phase is \\( \\pi/6 \\).<br><br>\\( x=4\\sin(\\pi/6)=4\\times\\tfrac12=2 \\) cm.",
+      "hint": "Evaluate the phase first, then take its sine.",
+      "distractor_logic": [
+        "Gives the amplitude, as if \\( \\sin(\\pi/6) \\) were 1",
+        "Uses \\( \\cos(\\pi/6)=\\sqrt{3}/2 \\) in place of \\( \\sin(\\pi/6) \\)",
+        "Assumes the particle is still at the mean position"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-002",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle moves as \\( x=6\\cos(\\pi t/3) \\), with \\( x \\) in cm and \\( t \\) in s. What is its displacement at \\( t=2 \\) s?",
+      "options": [
+        "\\( +3 \\) cm",
+        "\\( -3 \\) cm",
+        "\\( -3\\sqrt{3} \\) cm",
+        "\\( -6 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "At \\( t=2 \\) s the phase is \\( 2\\pi/3 \\).<br><br>\\( \\cos(2\\pi/3)=-\\tfrac12 \\), so \\( x=6\\times(-\\tfrac12)=-3 \\) cm.<br><br>The particle is on the negative side of the mean position.",
+      "hint": "The cosine of an angle between \\( \\pi/2 \\) and \\( \\pi \\) is negative.",
+      "distractor_logic": [
+        "Drops the sign: \\( \\cos(2\\pi/3) \\) is negative, so the particle is on the negative side",
+        "Uses \\( \\sin(2\\pi/3)=\\sqrt{3}/2 \\) with a minus sign instead of the cosine",
+        "Takes \\( \\cos(2\\pi/3) \\) as \\( -1 \\), placing the particle at the extreme"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-003",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM has period 12 s. Starting from the mean position, what is the minimum time it takes to reach \\( x=A/2 \\)?",
+      "options": [
+        "3 s",
+        "2 s",
+        "1 s",
+        "6 s"
+      ],
+      "correct_index": 2,
+      "explanation": "Write \\( x=A\\sin(\\omega t) \\) and set \\( x=A/2 \\): \\( \\sin(\\omega t)=\\tfrac12 \\), so \\( \\omega t=\\pi/6 \\).<br><br>\\( t=\\dfrac{\\pi/6}{2\\pi/T}=\\dfrac{T}{12}=\\dfrac{12}{12}=1 \\) s.",
+      "hint": "Find the phase at which \\( \\sin \\) equals one half.",
+      "distractor_logic": [
+        "3 s is \\( T/4 \\), the time to reach the extreme \\( x=A \\), not \\( A/2 \\)",
+        "2 s is \\( T/6 \\), the time to go from the extreme back to \\( A/2 \\)",
+        "6 s is half a period, after which the particle is back at the mean position"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-004",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "Which expression is identical to \\( x=2\\sin(4\\pi t+\\pi/2) \\)?",
+      "options": [
+        "\\( x=2\\sin(4\\pi t) \\)",
+        "\\( x=-2\\cos(4\\pi t) \\)",
+        "\\( x=-2\\sin(4\\pi t) \\)",
+        "\\( x=2\\cos(4\\pi t) \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Use \\( \\sin(\\theta+\\pi/2)=\\cos\\theta \\).<br><br>So \\( x=2\\cos(4\\pi t) \\): the particle starts at the positive extreme.",
+      "hint": "Shifting a sine by \\( \\pi/2 \\) turns it into a cosine.",
+      "distractor_logic": [
+        "Ignores the phase constant \\( \\pi/2 \\) altogether",
+        "Uses \\( \\sin(\\theta+\\pi/2)=-\\cos\\theta \\), which has the wrong sign",
+        "Treats a phase shift of \\( \\pi/2 \\) as if it were \\( \\pi \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-005",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM has amplitude 0.1 m and frequency 5 Hz. It starts at the mean position moving in the positive direction. Which equation describes its motion (\\( x \\) in m, \\( t \\) in s)?",
+      "options": [
+        "\\( x=0.1\\sin(10\\pi t) \\)",
+        "\\( x=0.1\\sin(5t) \\)",
+        "\\( x=0.1\\cos(10\\pi t) \\)",
+        "\\( x=0.1\\sin(2\\pi t/5) \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega=2\\pi f=2\\pi\\times5=10\\pi \\) rad/s.<br><br>Starting at \\( x=0 \\) and moving in the positive direction means a sine with zero phase constant.<br><br>So \\( x=0.1\\sin(10\\pi t) \\).",
+      "hint": "Convert frequency to angular frequency before writing the equation.",
+      "distractor_logic": [
+        "Uses the frequency 5 Hz directly in place of \\( \\omega \\), dropping the \\( 2\\pi \\) factor",
+        "A cosine starts at the extreme position, not at the mean position",
+        "Uses \\( \\omega=2\\pi/f \\) instead of \\( \\omega=2\\pi f \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-006",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "Which of the following functions of time does NOT represent a periodic motion?",
+      "options": [
+        "\\( \\sin\\omega t+\\cos\\omega t \\)",
+        "\\( e^{-\\omega t} \\)",
+        "\\( \\cos^{2}\\omega t \\)",
+        "\\( \\sin 3\\omega t \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "A periodic function must return to the same value after a fixed interval.<br><br>\\( e^{-\\omega t} \\) decreases steadily and never repeats, so it is not periodic.<br><br>The other three all repeat after a fixed time.",
+      "hint": "Check whether the function ever returns to its earlier values.",
+      "distractor_logic": [
+        "The sum of a sine and a cosine of the same \\( \\omega \\) repeats every \\( 2\\pi/\\omega \\), so it is periodic",
+        "\\( \\cos^{2}\\omega t \\) repeats every \\( \\pi/\\omega \\), so it is periodic",
+        "\\( \\sin 3\\omega t \\) repeats every \\( 2\\pi/(3\\omega) \\), so it is periodic"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-007",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle executes \\( x=A\\sin(\\omega t+\\phi) \\). At \\( t=0 \\) it is at \\( x=A/2 \\) and moving away from the mean position. What is \\( \\phi \\)?",
+      "options": [
+        "\\( \\pi/3 \\)",
+        "\\( 5\\pi/6 \\)",
+        "\\( \\pi/6 \\)",
+        "\\( 0 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "At \\( t=0 \\): \\( A/2=A\\sin\\phi \\), so \\( \\sin\\phi=\\tfrac12 \\), giving \\( \\phi=\\pi/6 \\) or \\( 5\\pi/6 \\).<br><br>Velocity \\( v=A\\omega\\cos\\phi \\) must be positive (moving away from the mean position toward \\( +A \\)), so \\( \\cos\\phi>0 \\).<br><br>Therefore \\( \\phi=\\pi/6 \\).",
+      "hint": "Two angles give the right position; use the direction of motion to choose.",
+      "distractor_logic": [
+        "\\( \\pi/3 \\) is the angle whose cosine is one half, not whose sine is one half",
+        "At \\( 5\\pi/6 \\) the sine is also one half, but the particle would be moving back toward the mean position",
+        "A zero phase constant puts the particle at the mean position at \\( t=0 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-008",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM takes 0.2 s to go from one extreme position to the other. What is its frequency?",
+      "options": [
+        "5 Hz",
+        "0.4 Hz",
+        "1.25 Hz",
+        "2.5 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "Extreme to extreme is half an oscillation, so \\( T=2\\times0.2=0.4 \\) s.<br><br>\\( f=1/T=1/0.4=2.5 \\) Hz.",
+      "hint": "How much of a full cycle is the trip from one extreme to the other?",
+      "distractor_logic": [
+        "Treats 0.2 s as the full period, but extreme to extreme is only half a cycle",
+        "0.4 s is the period; writing it as a frequency confuses \\( T \\) with \\( f \\)",
+        "Treats extreme to extreme as a quarter cycle, giving \\( T=0.8 \\) s"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-009",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM has amplitude 5 cm and angular frequency 2 rad/s. What is its speed when the displacement is 3 cm?",
+      "options": [
+        "8 cm/s",
+        "4 cm/s",
+        "10 cm/s",
+        "16 cm/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( v=\\omega\\sqrt{A^{2}-x^{2}}=2\\sqrt{25-9} \\).<br><br>\\( v=2\\times4=8 \\) cm/s.",
+      "hint": "Use \\( v=\\omega\\sqrt{A^{2}-x^{2}} \\).",
+      "distractor_logic": [
+        "Computes \\( \\sqrt{A^{2}-x^{2}} \\) but forgets to multiply by \\( \\omega \\)",
+        "Gives the maximum speed \\( A\\omega \\), which occurs only at the mean position",
+        "Multiplies by \\( \\omega^{2} \\) instead of \\( \\omega \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-010",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle executes SHM with angular frequency 4 rad/s. What is its acceleration when its displacement is \\( x=+3 \\) cm?",
+      "options": [
+        "\\( +48\\ \\text{cm/s}^2 \\)",
+        "\\( -48\\ \\text{cm/s}^2 \\)",
+        "\\( -12\\ \\text{cm/s}^2 \\)",
+        "\\( 0\\ \\text{cm/s}^2 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( a=-\\omega^{2}x=-(4)^{2}\\times3 \\).<br><br>\\( a=-48\\ \\text{cm/s}^2 \\), pointing toward the mean position.",
+      "hint": "Square \\( \\omega \\) and keep the minus sign.",
+      "distractor_logic": [
+        "Drops the negative sign of \\( a=-\\omega^{2}x \\); acceleration must point back toward the mean position",
+        "Uses \\( \\omega \\) instead of \\( \\omega^{2} \\)",
+        "Zero acceleration occurs only at the mean position"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-011",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle moves as \\( x=2\\sin(3t) \\), with \\( x \\) in m and \\( t \\) in s. What is its velocity at \\( t=0 \\)?",
+      "options": [
+        "0 m/s",
+        "18 m/s",
+        "6 m/s",
+        "2 m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v=\\dfrac{dx}{dt}=6\\cos(3t) \\).<br><br>At \\( t=0 \\): \\( v=6\\cos 0=6 \\) m/s, the maximum speed, since the particle is at the mean position.",
+      "hint": "Differentiate \\( x(t) \\) with respect to time.",
+      "distractor_logic": [
+        "Zero velocity is for the extreme position; at \\( t=0 \\) this particle is at the mean position",
+        "\\( A\\omega^{2}=18 \\) is the maximum acceleration, not a velocity",
+        "Uses the amplitude instead of \\( A\\omega \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-012",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM has maximum speed 10 m/s and maximum acceleration \\( 50\\ \\text{m/s}^2 \\). What is its amplitude?",
+      "options": [
+        "0.2 m",
+        "5 m",
+        "20 m",
+        "2 m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( a_{max}/v_{max}=A\\omega^{2}/(A\\omega)=\\omega=50/10=5 \\) rad/s.<br><br>\\( A=v_{max}/\\omega=10/5=2 \\) m.",
+      "hint": "Dividing \\( a_{max} \\) by \\( v_{max} \\) gives \\( \\omega \\).",
+      "distractor_logic": [
+        "Divides \\( v_{max} \\) by \\( a_{max} \\), which gives \\( 1/\\omega \\) in seconds, not the amplitude",
+        "5 is the angular frequency \\( a_{max}/v_{max} \\) in rad/s",
+        "Multiplies \\( v_{max} \\) by 2 without using \\( a_{max} \\) correctly"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-013",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle obeys \\( \\dfrac{d^{2}x}{dt^{2}}+16x=0 \\). What is the period of its motion?",
+      "options": [
+        "\\( \\pi/2 \\) s",
+        "\\( \\pi/8 \\) s",
+        "\\( 1/4 \\) s",
+        "\\( 2/\\pi \\) s"
+      ],
+      "correct_index": 0,
+      "explanation": "Compare with \\( \\dfrac{d^{2}x}{dt^{2}}+\\omega^{2}x=0 \\): \\( \\omega^{2}=16 \\), so \\( \\omega=4 \\) rad/s.<br><br>\\( T=2\\pi/\\omega=2\\pi/4=\\pi/2 \\) s.",
+      "hint": "The coefficient of \\( x \\) equals \\( \\omega^{2} \\), not \\( \\omega \\).",
+      "distractor_logic": [
+        "Takes \\( \\omega=16 \\) instead of \\( \\omega^{2}=16 \\)",
+        "Uses \\( T=1/\\omega \\), dropping the \\( 2\\pi \\) factor",
+        "Computes the frequency \\( \\omega/(2\\pi) \\) and reports it as the period"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-014",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "Which of the following acceleration-displacement relations represents SHM?",
+      "options": [
+        "\\( a=9x \\)",
+        "\\( a=-9x \\)",
+        "\\( a=-9x^{2} \\)",
+        "\\( a=-9 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "SHM needs \\( a=-\\omega^{2}x \\): linear in \\( x \\) with a negative constant.<br><br>Only \\( a=-9x \\) fits, with \\( \\omega=3 \\) rad/s.",
+      "hint": "Look for linear in \\( x \\) with a negative sign.",
+      "distractor_logic": [
+        "Positive sign: acceleration points away from the mean position, so the particle would run off instead of oscillating",
+        "Acceleration must be proportional to \\( x \\), not \\( x^{2} \\)",
+        "A constant acceleration gives uniformly accelerated motion, not SHM"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-015",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle moves as \\( x=0.1\\sin(\\pi t) \\), with \\( x \\) in m and \\( t \\) in s. What is its acceleration at \\( t=0.5 \\) s?",
+      "options": [
+        "\\( +0.1\\pi^{2}\\ \\text{m/s}^2 \\)",
+        "\\( 0\\ \\text{m/s}^2 \\)",
+        "\\( -0.1\\pi^{2}\\ \\text{m/s}^2 \\)",
+        "\\( -0.1\\pi\\ \\text{m/s}^2 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "At \\( t=0.5 \\) s: \\( x=0.1\\sin(\\pi/2)=0.1 \\) m, the positive extreme.<br><br>\\( a=-\\omega^{2}x=-\\pi^{2}\\times0.1=-0.1\\pi^{2}\\ \\text{m/s}^2 \\).",
+      "hint": "Find \\( x \\) first, then use \\( a=-\\omega^{2}x \\).",
+      "distractor_logic": [
+        "Drops the negative sign; at the positive extreme the acceleration points toward the mean position",
+        "Zero is the acceleration at the mean position, but at \\( t=0.5 \\) s the particle is at an extreme",
+        "Uses \\( \\omega \\) instead of \\( \\omega^{2} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-016",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM has maximum speed \\( v_{max} \\). What is its speed at \\( x=A/2 \\)?",
+      "options": [
+        "\\( \\tfrac12 v_{max} \\)",
+        "\\( \\tfrac34 v_{max} \\)",
+        "\\( \\tfrac{1}{\\sqrt{2}}v_{max} \\)",
+        "\\( \\tfrac{\\sqrt{3}}{2}v_{max} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v=\\omega\\sqrt{A^{2}-A^{2}/4}=\\omega A\\sqrt{3/4} \\).<br><br>So \\( v=\\tfrac{\\sqrt{3}}{2}A\\omega=\\tfrac{\\sqrt{3}}{2}v_{max} \\).",
+      "hint": "Substitute \\( x=A/2 \\) into \\( v=\\omega\\sqrt{A^{2}-x^{2}} \\).",
+      "distractor_logic": [
+        "Assumes speed falls linearly with displacement",
+        "\\( \\tfrac34 \\) is the fraction of energy that is kinetic at \\( A/2 \\), not the speed fraction",
+        "This is the speed at \\( x=A/\\sqrt{2} \\), where KE equals PE"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-017",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "For a particle in SHM at \\( x=A/2 \\), what fraction of the total energy is kinetic?",
+      "options": [
+        "\\( 3/4 \\)",
+        "\\( 1/4 \\)",
+        "\\( 1/2 \\)",
+        "\\( \\sqrt{3}/2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( PE/E=x^{2}/A^{2}=1/4 \\).<br><br>\\( KE/E=1-1/4=3/4 \\).",
+      "hint": "First find the PE fraction \\( x^{2}/A^{2} \\).",
+      "distractor_logic": [
+        "\\( 1/4 \\) is the potential-energy fraction at \\( A/2 \\); this swaps KE and PE",
+        "Assumes energy splits linearly with displacement",
+        "\\( \\sqrt{3}/2 \\) is the speed fraction \\( v/v_{max} \\), not an energy fraction"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-018",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "At what displacement are the kinetic and potential energies of a particle in SHM equal?",
+      "options": [
+        "\\( x=\\pm A/2 \\)",
+        "\\( x=\\pm A/\\sqrt{2} \\)",
+        "\\( x=\\pm A/4 \\)",
+        "\\( x=\\pm\\tfrac{\\sqrt{3}}{2}A \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "KE = PE means each is \\( E/2 \\): \\( \\tfrac12kx^{2}=\\tfrac12\\cdot\\tfrac12kA^{2} \\).<br><br>\\( x^{2}=A^{2}/2 \\), so \\( x=\\pm A/\\sqrt{2} \\).",
+      "hint": "Set PE equal to half the total energy.",
+      "distractor_logic": [
+        "At \\( A/2 \\), PE is only one quarter of the total",
+        "At \\( A/4 \\), PE is only one sixteenth of the total",
+        "At \\( \\tfrac{\\sqrt{3}}{2}A \\), PE is three quarters of the total"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-019",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM has total energy 8 J. What is its potential energy at \\( x=A/2 \\)?",
+      "options": [
+        "4 J",
+        "6 J",
+        "2 J",
+        "8 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( PE=E\\,(x/A)^{2}=8\\times\\tfrac14 \\).<br><br>\\( PE=2 \\) J (and \\( KE=6 \\) J).",
+      "hint": "PE scales with the square of the displacement.",
+      "distractor_logic": [
+        "Assumes PE is proportional to \\( x \\) rather than \\( x^{2} \\)",
+        "6 J is the kinetic energy at \\( A/2 \\), not the potential energy",
+        "The full 8 J is potential only at the extreme"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-020",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "A spring-mass oscillator has frequency 5 Hz. With what frequency does its kinetic energy oscillate?",
+      "options": [
+        "5 Hz",
+        "2.5 Hz",
+        "20 Hz",
+        "10 Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( KE\\propto\\cos^{2}\\omega t=\\tfrac12(1+\\cos2\\omega t) \\).<br><br>So KE oscillates with angular frequency \\( 2\\omega \\): frequency \\( 2\\times5=10 \\) Hz.<br><br>KE peaks twice per cycle, at each pass through the mean position.",
+      "hint": "How many times per cycle does the particle pass through the mean position?",
+      "distractor_logic": [
+        "Assumes KE oscillates at the oscillator's own frequency",
+        "Halves the frequency instead of doubling it",
+        "Quadruples the frequency"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-021",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle attached to a spring (\\( k=100 \\) N/m) oscillates with amplitude 0.2 m. What is its kinetic energy at \\( x=0.1 \\) m?",
+      "options": [
+        "1.5 J",
+        "0.5 J",
+        "2 J",
+        "5 J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( KE=\\tfrac12k(A^{2}-x^{2})=\\tfrac12\\times100\\times(0.04-0.01) \\).<br><br>\\( KE=50\\times0.03=1.5 \\) J.",
+      "hint": "KE is total energy minus PE.",
+      "distractor_logic": [
+        "0.5 J is the potential energy \\( \\tfrac12kx^{2} \\) at that point",
+        "2 J is the total energy \\( \\tfrac12kA^{2} \\)",
+        "Uses \\( \\tfrac12k(A-x) \\) without squaring"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-022",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "How does the potential energy of a particle in SHM vary with displacement \\( x \\)?",
+      "options": [
+        "As a straight line through the origin",
+        "As a parabola, with its minimum at the mean position",
+        "As a parabola, with its maximum at the mean position",
+        "It stays constant"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( PE=\\tfrac12kx^{2} \\) is a parabola opening upward.<br><br>Its minimum value, zero, is at \\( x=0 \\).",
+      "hint": "PE depends on \\( x^{2} \\).",
+      "distractor_logic": [
+        "PE depends on \\( x^{2} \\), not on \\( x \\), and cannot be negative",
+        "This is the shape of the KE curve; PE is minimum, not maximum, at \\( x=0 \\)",
+        "Only the total energy is constant; PE varies"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-023",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle in SHM has kinetic energy equal to \\( \\tfrac34 \\) of its total energy. What is its displacement?",
+      "options": [
+        "\\( x=\\pm\\tfrac{\\sqrt{3}}{2}A \\)",
+        "\\( x=\\pm\\tfrac34A \\)",
+        "\\( x=\\pm A/2 \\)",
+        "\\( x=\\pm A/4 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "If \\( KE=\\tfrac34E \\), then \\( PE=\\tfrac14E \\).<br><br>\\( x^{2}/A^{2}=\\tfrac14 \\), so \\( x=\\pm A/2 \\).",
+      "hint": "Find the PE fraction first, then take a square root.",
+      "distractor_logic": [
+        "At \\( \\tfrac{\\sqrt{3}}{2}A \\) it is PE, not KE, that equals three quarters of \\( E \\); this swaps the two",
+        "Assumes the energy fraction equals the displacement fraction",
+        "Uses the PE fraction \\( 1/4 \\) directly as a displacement fraction without taking a square root"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-024",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 2,
+      "type": "regular",
+      "question": "A particle of mass 0.5 kg in SHM has total energy 4 J. What is its maximum speed?",
+      "options": [
+        "8 m/s",
+        "16 m/s",
+        "\\( 2\\sqrt{2} \\) m/s",
+        "4 m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "At the mean position all energy is kinetic: \\( \\tfrac12mv_{max}^{2}=E \\).<br><br>\\( v_{max}=\\sqrt{2\\times4/0.5}=\\sqrt{16}=4 \\) m/s.",
+      "hint": "All the energy is kinetic at the mean position.",
+      "distractor_logic": [
+        "Uses \\( E/m \\) as if it were a speed",
+        "Computes \\( 2E/m \\) but forgets to take the square root",
+        "Forgets the factor of 2 in \\( v=\\sqrt{2E/m} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-025",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "The mass attached to a spring is made four times. The period of oscillation becomes",
+      "options": [
+        "two times",
+        "four times",
+        "\\( \\sqrt{2} \\) times",
+        "unchanged"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T=2\\pi\\sqrt{m/k} \\), so \\( T\\propto\\sqrt{m} \\).<br><br>\\( \\sqrt{4}=2 \\): the period doubles.",
+      "hint": "The spring period depends on mass, unlike the pendulum's.",
+      "distractor_logic": [
+        "Assumes \\( T\\propto m \\) rather than \\( T\\propto\\sqrt{m} \\)",
+        "Takes a square root twice, as if \\( T\\propto m^{1/4} \\)",
+        "Confuses the spring with the pendulum, whose period has no mass term; the spring period does depend on mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-026",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "A 0.5 kg mass on a spring has period \\( \\pi/10 \\) s. What is the force constant of the spring?",
+      "options": [
+        "10 N/m",
+        "200 N/m",
+        "400 N/m",
+        "20 N/m"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\omega=2\\pi/T=2\\pi/(\\pi/10)=20 \\) rad/s.<br><br>\\( k=m\\omega^{2}=0.5\\times400=200 \\) N/m.",
+      "hint": "Find \\( \\omega \\) from \\( T \\), then use \\( k=m\\omega^{2} \\).",
+      "distractor_logic": [
+        "Uses \\( k=m\\omega \\) instead of \\( m\\omega^{2} \\)",
+        "Uses \\( \\omega^{2} \\) alone, forgetting to multiply by the mass",
+        "Reports \\( \\omega \\) itself as the force constant"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-027",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "A simple pendulum has period \\( \\pi \\) s at a place where \\( g=10\\ \\text{m/s}^2 \\). What is its length?",
+      "options": [
+        "5 m",
+        "10 m",
+        "2.5 m",
+        "\\( 10\\pi^{2} \\) m"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( L=g\\left(\\dfrac{T}{2\\pi}\\right)^{2}=10\\times\\left(\\dfrac{\\pi}{2\\pi}\\right)^{2} \\).<br><br>\\( L=10\\times\\tfrac14=2.5 \\) m.",
+      "hint": "Rearrange \\( T=2\\pi\\sqrt{L/g} \\) to make \\( L \\) the subject.",
+      "distractor_logic": [
+        "Forgets to square \\( T/(2\\pi) \\)",
+        "Uses \\( \\pi \\) in place of \\( 2\\pi \\) in the formula",
+        "Drops the \\( 2\\pi \\) factor entirely, using \\( L=gT^{2} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-028",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "Two identical springs (each of force constant \\( k \\)) carry the same mass, first in series and then in parallel. What is the ratio \\( T_{series}:T_{parallel} \\)?",
+      "options": [
+        "\\( 1:2 \\)",
+        "\\( 4:1 \\)",
+        "\\( 1:1 \\)",
+        "\\( 2:1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Series: \\( k_{eff}=k/2 \\). Parallel: \\( k_{eff}=2k \\).<br><br>\\( T\\propto1/\\sqrt{k_{eff}} \\), so \\( T_{s}/T_{p}=\\sqrt{2k/(k/2)}=\\sqrt{4}=2 \\).",
+      "hint": "Softer effective spring means longer period.",
+      "distractor_logic": [
+        "Uses the resistor rules, which make the series combination stiffer; in fact series springs are softer",
+        "Compares force constants instead of periods, forgetting the square root",
+        "Assumes the arrangement does not matter"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-029",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "A spring of force constant \\( k \\) is cut into two equal halves. What is the force constant of each half?",
+      "options": [
+        "\\( 2k \\)",
+        "\\( k/2 \\)",
+        "\\( k \\)",
+        "\\( 4k \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The original spring is two halves in series: \\( \\dfrac{1}{k}=\\dfrac{1}{k'}+\\dfrac{1}{k'} \\).<br><br>So \\( k'=2k \\).",
+      "hint": "Think of the full spring as two halves joined in series.",
+      "distractor_logic": [
+        "Assumes a shorter spring is softer; it is actually stiffer",
+        "Assumes cutting does not change stiffness",
+        "Squares the factor of 2 without reason"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-030",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "A simple pendulum is taken to the Moon, where \\( g \\) is one-sixth of its value on Earth. Its period becomes",
+      "options": [
+        "6 times",
+        "\\( \\sqrt{6} \\) times",
+        "\\( 1/\\sqrt{6} \\) times",
+        "unchanged"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T\\propto1/\\sqrt{g} \\).<br><br>\\( g\\to g/6 \\) gives \\( T\\to\\sqrt{6}\\,T \\).",
+      "hint": "Weaker gravity means a slower swing.",
+      "distractor_logic": [
+        "Forgets the square root in \\( T\\propto1/\\sqrt{g} \\)",
+        "Weaker gravity gives a longer period, not a shorter one",
+        "The period depends on \\( g \\), so it must change"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-031",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "A 1 kg mass oscillates on a spring of force constant 400 N/m. What is the frequency of oscillation?",
+      "options": [
+        "20 Hz",
+        "\\( \\pi/10 \\) Hz",
+        "\\( 10/\\pi \\) Hz",
+        "\\( 20/\\pi \\) Hz"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega=\\sqrt{400/1}=20 \\) rad/s.<br><br>\\( f=\\omega/(2\\pi)=20/(2\\pi)=10/\\pi \\) Hz.",
+      "hint": "Frequency is \\( \\omega/(2\\pi) \\).",
+      "distractor_logic": [
+        "20 is the angular frequency in rad/s; using it as \\( f \\) drops the \\( 2\\pi \\) factor",
+        "\\( \\pi/10 \\) s is the period, not the frequency",
+        "Divides \\( \\omega \\) by \\( \\pi \\) instead of \\( 2\\pi \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-032",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 2,
+      "type": "regular",
+      "question": "A mass on a spring has period 2 s. When an extra 3 kg is added, the period becomes 4 s. What was the original mass?",
+      "options": [
+        "3 kg",
+        "4 kg",
+        "12 kg",
+        "1 kg"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T\\propto\\sqrt{m} \\): \\( \\dfrac{m+3}{m}=\\left(\\dfrac{4}{2}\\right)^{2}=4 \\).<br><br>\\( m+3=4m \\), so \\( m=1 \\) kg.",
+      "hint": "Square the period ratio to get the mass ratio.",
+      "distractor_logic": [
+        "Assumes \\( T\\propto m \\), so doubling the period means doubling the mass",
+        "4 kg is the final total mass, not the original mass",
+        "Multiplies the added mass by the square of the period ratio instead of solving the ratio equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-033",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "How does increasing the damping affect the amplitude-versus-driving-frequency (resonance) curve?",
+      "options": [
+        "The peak becomes lower and broader",
+        "The peak becomes higher and sharper",
+        "The curve does not change",
+        "The peak shifts to zero frequency"
+      ],
+      "correct_index": 0,
+      "explanation": "Damping removes energy, limiting the amplitude the driver can build up.<br><br>So the peak is lower, and the response is spread over a wider range of frequencies.",
+      "hint": "More damping means more energy lost each cycle.",
+      "distractor_logic": [
+        "Reverses the effect: less damping gives a higher, sharper peak",
+        "Damping directly controls the resonant amplitude",
+        "The peak stays near the natural frequency for moderate damping"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-034",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "If a forced oscillator had no damping at all and was driven exactly at its natural frequency, its amplitude would",
+      "options": [
+        "become zero",
+        "keep growing and become very large (theoretically without limit)",
+        "equal the amplitude of the driving force",
+        "become half its initial value"
+      ],
+      "correct_index": 1,
+      "explanation": "At resonance the driver feeds energy in every cycle.<br><br>With no damping to remove energy, the amplitude keeps building up.",
+      "hint": "What limits the amplitude at resonance in real systems?",
+      "distractor_logic": [
+        "Resonant driving increases the amplitude, it does not kill it",
+        "There is no rule that the response copies the driver's amplitude",
+        "Nothing removes energy, so it cannot decrease"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-035",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "In the equation \\( m\\dfrac{d^{2}x}{dt^{2}}=-kx-bv \\), what does the term \\( -bv \\) represent?",
+      "options": [
+        "The restoring force",
+        "The external driving force",
+        "The damping force, opposing the motion",
+        "The inertia of the body"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( -kx \\) pulls the body back toward the mean position.<br><br>\\( -bv \\) is proportional to velocity and opposes it: the damping force.",
+      "hint": "Which term depends on velocity?",
+      "distractor_logic": [
+        "The restoring force is \\( -kx \\), which depends on displacement",
+        "A driving force would be an explicit periodic function of time",
+        "Inertia corresponds to the \\( m\\,d^{2}x/dt^{2} \\) side"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-036",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the main purpose of shock absorbers in a car?",
+      "options": [
+        "To make the car body oscillate with a larger amplitude",
+        "To drive the springs at their natural frequency",
+        "To reduce the mass of the car",
+        "To damp the oscillations of the car body after it hits a bump"
+      ],
+      "correct_index": 3,
+      "explanation": "The car's springs allow it to oscillate after a bump.<br><br>Shock absorbers provide damping so these oscillations die out quickly.",
+      "hint": "A comfortable ride means oscillations should die out fast.",
+      "distractor_logic": [
+        "Shock absorbers reduce amplitude; they do not increase it",
+        "Driving at the natural frequency would cause resonance, the opposite of the aim",
+        "They do not change the car's mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-037",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "Tuning a radio to a particular station is an example of",
+      "options": [
+        "resonance",
+        "damping",
+        "free oscillation",
+        "beats"
+      ],
+      "correct_index": 0,
+      "explanation": "The tuning circuit's natural frequency is adjusted to match the station's frequency.<br><br>The response is then maximum for that station: resonance.",
+      "hint": "The circuit responds strongly when frequencies match.",
+      "distractor_logic": [
+        "Damping reduces oscillations; tuning selects one frequency to enhance",
+        "The circuit is driven by the incoming signal, so it is not free",
+        "Beats need two close frequencies heard together"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-038",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "A lightly damped oscillator is driven at a frequency far away from its natural frequency. Its steady-state amplitude is",
+      "options": [
+        "very large",
+        "small",
+        "unlimited",
+        "equal to the resonant amplitude"
+      ],
+      "correct_index": 1,
+      "explanation": "Far from resonance the driver is out of step with the natural motion for most of each cycle.<br><br>Energy fed in is small, so the amplitude stays small.",
+      "hint": "How well is the driver in step with the system?",
+      "distractor_logic": [
+        "Large amplitude occurs only near resonance",
+        "Unlimited growth needs resonance and zero damping",
+        "The resonant amplitude is reached only when the frequencies match"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-039",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "For light damping, how does the angular frequency of the damped oscillation compare with the natural angular frequency \\( \\omega_{0} \\)?",
+      "options": [
+        "It is exactly twice \\( \\omega_{0} \\)",
+        "It is much greater than \\( \\omega_{0} \\)",
+        "It is slightly less than \\( \\omega_{0} \\)",
+        "It is zero"
+      ],
+      "correct_index": 2,
+      "explanation": "Damping slightly reduces the angular frequency below \\( \\omega_{0}=\\sqrt{k/m} \\).<br><br>For light damping the difference is very small.",
+      "hint": "Damping slows things down slightly.",
+      "distractor_logic": [
+        "Doubling of frequency applies to energy oscillation, not to damped motion",
+        "Damping slows the motion slightly; it never speeds it up much",
+        "Light damping still allows oscillation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L2-040",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 2,
+      "type": "regular",
+      "question": "A child on a swing goes higher and higher when pushed at the right moments. This works because",
+      "options": [
+        "the pushes reduce the swing's damping to zero",
+        "the pushes change the swing's natural frequency",
+        "the pushes are applied at twice the natural frequency",
+        "the pushes are applied at the swing's natural frequency, causing resonance"
+      ],
+      "correct_index": 3,
+      "explanation": "Each push arrives in step with the motion, adding energy every cycle.<br><br>Matching the natural frequency gives resonance and a growing amplitude.",
+      "hint": "The pushes match the swing's own rhythm.",
+      "distractor_logic": [
+        "Air resistance and friction are still present; the pushes add energy, they do not remove damping",
+        "The natural frequency depends on the swing's length and \\( g \\), not on pushing",
+        "Pushes at twice the frequency would sometimes act against the motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-001",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the period of the motion described by \\( x=\\sin^{2}(\\omega t) \\)?",
+      "options": [
+        "\\( \\pi/\\omega \\)",
+        "\\( 2\\pi/\\omega \\)",
+        "\\( \\pi/(2\\omega) \\)",
+        "\\( 4\\pi/\\omega \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Use \\( \\sin^{2}\\omega t=\\tfrac12-\\tfrac12\\cos 2\\omega t \\).<br><br>This oscillates with angular frequency \\( 2\\omega \\) about the value \\( \\tfrac12 \\).<br><br>Period \\( =2\\pi/(2\\omega)=\\pi/\\omega \\).",
+      "hint": "Rewrite \\( \\sin^{2} \\) using a double-angle identity.",
+      "distractor_logic": [
+        "Assumes squaring does not change the period of \\( \\sin\\omega t \\)",
+        "Halves the correct period a second time",
+        "Doubles the period instead of halving it"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-002",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle in SHM with period 12 s moves outward from \\( x=A/2 \\) to \\( x=\\sqrt{3}A/2 \\) on the same side of the mean position. What is the minimum time taken?",
+      "options": [
+        "2 s",
+        "1 s",
+        "3 s",
+        "0.5 s"
+      ],
+      "correct_index": 1,
+      "explanation": "With \\( x=A\\sin\\omega t \\): \\( x=A/2 \\) at \\( \\omega t=\\pi/6 \\), and \\( x=\\sqrt{3}A/2 \\) at \\( \\omega t=\\pi/3 \\).<br><br>Phase difference \\( =\\pi/3-\\pi/6=\\pi/6 \\).<br><br>\\( t=\\dfrac{\\pi/6}{2\\pi/T}=\\dfrac{T}{12}=1 \\) s.",
+      "hint": "Find the phase at each position and subtract.",
+      "distractor_logic": [
+        "2 s is \\( T/6 \\), the time from the mean position to \\( \\sqrt{3}A/2 \\)",
+        "3 s is \\( T/4 \\), the time from the mean position all the way to the extreme",
+        "Halves the correct phase difference"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-003",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle moves as \\( x=5\\cos(\\pi t/4+\\pi/4) \\), with \\( x \\) in cm and \\( t \\) in s. What is its displacement at \\( t=3 \\) s?",
+      "options": [
+        "\\( +5 \\) cm",
+        "\\( 0 \\) cm",
+        "\\( -5 \\) cm",
+        "\\( -5/\\sqrt{2} \\) cm"
+      ],
+      "correct_index": 2,
+      "explanation": "Phase at \\( t=3 \\) s: \\( 3\\pi/4+\\pi/4=\\pi \\).<br><br>\\( x=5\\cos\\pi=5\\times(-1)=-5 \\) cm, the negative extreme.",
+      "hint": "Remember to include the phase constant in the argument.",
+      "distractor_logic": [
+        "Drops the sign of \\( \\cos\\pi=-1 \\)",
+        "Evaluates at \\( t=1 \\) s (phase \\( \\pi/2 \\)) instead of \\( t=3 \\) s",
+        "Forgets to add the phase constant, using only \\( 3\\pi/4 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-004",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle in SHM with amplitude \\( 4\\sqrt{2} \\) cm and period 8 s is released from its positive extreme at \\( t=0 \\). What is its displacement at \\( t=1 \\) s?",
+      "options": [
+        "\\( 4\\sqrt{2} \\) cm",
+        "\\( 2\\sqrt{2} \\) cm",
+        "0 cm",
+        "4 cm"
+      ],
+      "correct_index": 3,
+      "explanation": "Released from the extreme: \\( x=A\\cos\\omega t \\), with \\( \\omega=2\\pi/8=\\pi/4 \\) rad/s.<br><br>At \\( t=1 \\) s: \\( x=4\\sqrt{2}\\cos(\\pi/4)=4\\sqrt{2}\\times\\tfrac{1}{\\sqrt{2}}=4 \\) cm.",
+      "hint": "Released from rest at the extreme means a cosine form.",
+      "distractor_logic": [
+        "Assumes the particle has not moved from the extreme",
+        "Uses \\( \\cos(\\pi/3)=\\tfrac12 \\) instead of \\( \\cos(\\pi/4) \\)",
+        "Assumes it reaches the mean position after 1 s, but that takes \\( T/4=2 \\) s"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-005",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle in SHM has amplitude 5 cm and period 2 s. What is its average speed over one complete oscillation?",
+      "options": [
+        "10 cm/s",
+        "0 cm/s",
+        "\\( 5\\pi \\) cm/s",
+        "5 cm/s"
+      ],
+      "correct_index": 0,
+      "explanation": "In one cycle the particle covers \\( 4A=20 \\) cm (mean to extreme, back, to the other extreme, and back).<br><br>Average speed \\( =20/2=10 \\) cm/s.",
+      "hint": "Total distance in one cycle is four amplitudes.",
+      "distractor_logic": [
+        "Zero is the average velocity over a cycle (net displacement is zero), not the average speed",
+        "\\( 5\\pi \\) cm/s is the maximum speed \\( A\\omega \\), not the average",
+        "Uses a distance of \\( 2A \\) per cycle instead of \\( 4A \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-006",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle moves uniformly on a circle of radius 0.2 m, making 4 revolutions per second. Its projection on a diameter executes SHM. What are the amplitude and period of this SHM?",
+      "options": [
+        "0.4 m and 0.25 s",
+        "0.2 m and 0.25 s",
+        "0.2 m and 4 s",
+        "0.2 m and \\( 8\\pi \\) s"
+      ],
+      "correct_index": 1,
+      "explanation": "The projection oscillates between \\( -r \\) and \\( +r \\), so the amplitude equals the radius, 0.2 m.<br><br>The SHM frequency equals the revolution frequency, 4 Hz, so \\( T=1/4=0.25 \\) s.",
+      "hint": "The shadow moves one radius on either side of the centre.",
+      "distractor_logic": [
+        "Uses the diameter as the amplitude; the projection only goes one radius on either side of the centre",
+        "Treats the 4 revolutions per second (a frequency) as the period",
+        "Uses the angular frequency \\( 8\\pi \\) rad/s as the period"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-007",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle in SHM has speed 8 cm/s at \\( x=3 \\) cm and 6 cm/s at \\( x=4 \\) cm. What is its amplitude?",
+      "options": [
+        "7 cm",
+        "3.5 cm",
+        "5 cm",
+        "10 cm"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v^{2}=\\omega^{2}(A^{2}-x^{2}) \\): \\( 64=\\omega^{2}(A^{2}-9) \\) and \\( 36=\\omega^{2}(A^{2}-16) \\).<br><br>Subtracting: \\( 28=7\\omega^{2} \\), so \\( \\omega=2 \\) rad/s.<br><br>Then \\( A^{2}=9+64/4=25 \\), so \\( A=5 \\) cm.",
+      "hint": "Write \\( v^{2}=\\omega^{2}(A^{2}-x^{2}) \\) twice and eliminate.",
+      "distractor_logic": [
+        "Adds the two displacements, which has no physical meaning here",
+        "Averages the two displacements",
+        "Doubles the correct amplitude, as if reporting the extreme-to-extreme distance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-008",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "At what displacement is the speed of a particle in SHM equal to half its maximum speed?",
+      "options": [
+        "\\( x=\\pm A/2 \\)",
+        "\\( x=\\pm A/\\sqrt{2} \\)",
+        "\\( x=\\pm A/4 \\)",
+        "\\( x=\\pm\\tfrac{\\sqrt{3}}{2}A \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Set \\( \\omega\\sqrt{A^{2}-x^{2}}=\\tfrac12A\\omega \\): \\( A^{2}-x^{2}=A^{2}/4 \\).<br><br>\\( x^{2}=\\tfrac34A^{2} \\), so \\( x=\\pm\\tfrac{\\sqrt{3}}{2}A \\).",
+      "hint": "Square both sides of \\( \\omega\\sqrt{A^{2}-x^{2}}=\\tfrac12A\\omega \\).",
+      "distractor_logic": [
+        "At \\( A/2 \\) the speed is \\( \\tfrac{\\sqrt{3}}{2}v_{max} \\), not \\( \\tfrac12 v_{max} \\); this reverses the relation",
+        "At \\( A/\\sqrt{2} \\) the speed is \\( v_{max}/\\sqrt{2} \\)",
+        "Assumes speed depends linearly on displacement"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-009",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle in SHM has period 6 s and starts at the mean position. After what minimum time does the magnitude of its acceleration become half the maximum value?",
+      "options": [
+        "0.5 s",
+        "1.5 s",
+        "1 s",
+        "3 s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( |a|=\\omega^{2}|x| \\), so half the maximum acceleration means \\( |x|=A/2 \\).<br><br>From the mean position, \\( x=A/2 \\) at \\( \\omega t=\\pi/6 \\), i.e. \\( t=T/12=6/12=0.5 \\) s.",
+      "hint": "Half the maximum acceleration means half the amplitude.",
+      "distractor_logic": [
+        "1.5 s is \\( T/4 \\), when the acceleration reaches its full maximum at the extreme",
+        "1 s is \\( T/6 \\), when \\( x=\\tfrac{\\sqrt{3}}{2}A \\)",
+        "After half a period the particle is back at the mean position, where acceleration is zero"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-010",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle obeys \\( \\dfrac{d^{2}x}{dt^{2}}=-4\\pi^{2}x \\). What is the frequency of oscillation?",
+      "options": [
+        "\\( 2\\pi \\) Hz",
+        "1 Hz",
+        "\\( 4\\pi^{2} \\) Hz",
+        "\\( \\pi \\) Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\omega^{2}=4\\pi^{2} \\), so \\( \\omega=2\\pi \\) rad/s.<br><br>\\( f=\\omega/(2\\pi)=1 \\) Hz.",
+      "hint": "Find \\( \\omega \\), then divide by \\( 2\\pi \\).",
+      "distractor_logic": [
+        "\\( 2\\pi \\) is the angular frequency in rad/s; using it as \\( f \\) drops the \\( 2\\pi \\) factor",
+        "Uses the coefficient \\( \\omega^{2} \\) directly as the frequency",
+        "Divides \\( \\omega \\) by 2 instead of by \\( 2\\pi \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-011",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the phase difference between the acceleration and the displacement of a particle in SHM?",
+      "options": [
+        "\\( 0 \\)",
+        "\\( \\pi/2 \\)",
+        "\\( \\pi \\)",
+        "\\( \\pi/4 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( a=-\\omega^{2}x \\): acceleration is always exactly opposite to displacement.<br><br>If \\( x=A\\sin\\omega t \\), then \\( a=A\\omega^{2}\\sin(\\omega t+\\pi) \\): a phase difference of \\( \\pi \\).",
+      "hint": "Opposite directions at every instant mean a phase difference of what?",
+      "distractor_logic": [
+        "Zero phase difference would mean \\( a=+\\omega^{2}x \\), dropping the essential negative sign",
+        "\\( \\pi/2 \\) is the phase difference between velocity and displacement",
+        "There is no quarter-of-\\( \\pi/2 \\) relation in SHM"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-012",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle moves as \\( x=4\\sin(\\pi t) \\), with \\( x \\) in cm and \\( t \\) in s. What is its velocity at \\( t=1/3 \\) s?",
+      "options": [
+        "\\( 4\\pi \\) cm/s",
+        "\\( 2\\sqrt{3}\\pi \\) cm/s",
+        "\\( -2\\pi \\) cm/s",
+        "\\( 2\\pi \\) cm/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v=4\\pi\\cos(\\pi t) \\).<br><br>At \\( t=1/3 \\) s: \\( v=4\\pi\\cos(\\pi/3)=4\\pi\\times\\tfrac12=2\\pi \\) cm/s.",
+      "hint": "Velocity is \\( A\\omega\\cos\\omega t \\) for this motion.",
+      "distractor_logic": [
+        "Gives the maximum speed \\( A\\omega \\), valid only at the mean position",
+        "Uses \\( \\sin(\\pi/3) \\) instead of \\( \\cos(\\pi/3) \\) in the velocity",
+        "Wrong sign: at \\( t=1/3 \\) s the particle is still moving in the positive direction"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-013",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 3,
+      "type": "regular",
+      "question": "When the speed of a particle in SHM is half its maximum speed, what fraction of the total energy is potential?",
+      "options": [
+        "\\( 3/4 \\)",
+        "\\( 1/4 \\)",
+        "\\( 1/2 \\)",
+        "\\( 2/3 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( KE\\propto v^{2} \\): at half the maximum speed, \\( KE=\\tfrac14E \\).<br><br>\\( PE=E-\\tfrac14E=\\tfrac34E \\).",
+      "hint": "Kinetic energy depends on the square of speed.",
+      "distractor_logic": [
+        "\\( 1/4 \\) is the kinetic fraction; this swaps KE and PE",
+        "Assumes energy splits linearly with speed",
+        "Assumes the energies are in the ratio \\( 1:2 \\), taking the speed ratio without squaring it"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-014",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle in SHM has period 4 s and starts from the mean position. After what minimum time are its kinetic and potential energies equal?",
+      "options": [
+        "1 s",
+        "0.5 s",
+        "2 s",
+        "0.25 s"
+      ],
+      "correct_index": 1,
+      "explanation": "KE = PE at \\( x=A/\\sqrt{2} \\), i.e. \\( \\sin\\omega t=1/\\sqrt{2} \\), so \\( \\omega t=\\pi/4 \\).<br><br>\\( t=\\dfrac{\\pi/4}{2\\pi/T}=\\dfrac{T}{8}=0.5 \\) s.",
+      "hint": "Find the phase at which \\( x=A/\\sqrt{2} \\).",
+      "distractor_logic": [
+        "1 s is \\( T/4 \\), when all energy is potential",
+        "2 s is \\( T/2 \\), when the particle is back at the mean position with all energy kinetic",
+        "Uses \\( T/16 \\), halving the correct phase"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-015",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 3,
+      "type": "regular",
+      "question": "A spring-mass oscillator has period 2 s. What is the period with which its potential energy varies?",
+      "options": [
+        "2 s",
+        "4 s",
+        "1 s",
+        "0.5 s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( PE\\propto\\sin^{2}\\omega t \\), which repeats with angular frequency \\( 2\\omega \\).<br><br>So the PE period is \\( T/2=1 \\) s: PE peaks at both extremes in each cycle.",
+      "hint": "PE reaches its maximum at both extremes in each cycle.",
+      "distractor_logic": [
+        "Assumes PE repeats with the oscillator's own period",
+        "Doubles the period instead of halving it",
+        "Quarters the period"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-016",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 3,
+      "type": "regular",
+      "question": "The amplitude of an oscillator is halved and its angular frequency is doubled, with the mass unchanged. Its total energy becomes",
+      "options": [
+        "four times",
+        "one quarter",
+        "two times",
+        "unchanged"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E=\\tfrac12m\\omega^{2}A^{2}\\propto(\\omega A)^{2} \\).<br><br>\\( \\omega A \\to (2\\omega)(A/2)=\\omega A \\), so \\( E \\) is unchanged.",
+      "hint": "Energy depends on the product \\( \\omega A \\), squared.",
+      "distractor_logic": [
+        "Accounts for the frequency change but forgets the amplitude change",
+        "Accounts for the amplitude change but forgets the frequency change",
+        "Assumes the energy follows the frequency change alone, as if \\( E\\propto\\omega \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-017",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle of mass 0.1 kg moves as \\( x=0.2\\sin(5t) \\), with \\( x \\) in m and \\( t \\) in s. What is its kinetic energy at \\( x=0.1 \\) m?",
+      "options": [
+        "0.0375 J",
+        "0.0125 J",
+        "0.05 J",
+        "0.025 J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( E=\\tfrac12m\\omega^{2}A^{2}=\\tfrac12\\times0.1\\times25\\times0.04=0.05 \\) J.<br><br>At \\( x=A/2 \\), \\( PE=\\tfrac14E=0.0125 \\) J.<br><br>\\( KE=0.05-0.0125=0.0375 \\) J.",
+      "hint": "Find total energy, then subtract the PE at that point.",
+      "distractor_logic": [
+        "0.0125 J is the potential energy at \\( x=0.1 \\) m",
+        "0.05 J is the total energy",
+        "Assumes KE is half the total at \\( x=A/2 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-018",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": 3,
+      "type": "regular",
+      "question": "A particle in undamped SHM has total energy 6 J. What is its average kinetic energy over one complete cycle?",
+      "options": [
+        "6 J",
+        "3 J",
+        "0 J",
+        "1.5 J"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( KE=E\\cos^{2}\\omega t \\), and the average of \\( \\cos^{2} \\) over a cycle is \\( \\tfrac12 \\).<br><br>Average \\( KE=\\tfrac12\\times6=3 \\) J (the average PE is also 3 J).",
+      "hint": "The average of \\( \\cos^{2} \\) over a full cycle is one half.",
+      "distractor_logic": [
+        "6 J is the maximum KE, reached only at the mean position",
+        "KE is never negative and is zero only at the extremes, so its average cannot be zero",
+        "Takes a quarter of the total instead of a half"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-019",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 3,
+      "type": "regular",
+      "question": "Two identical springs, each of force constant 8 N/m, are joined in series and a 1 kg mass is attached. What is the period?",
+      "options": [
+        "\\( \\pi/2 \\) s",
+        "\\( 4\\pi \\) s",
+        "\\( \\pi \\) s",
+        "\\( \\pi/8 \\) s"
+      ],
+      "correct_index": 2,
+      "explanation": "Series: \\( k_{eff}=\\dfrac{8\\times8}{8+8}=4 \\) N/m.<br><br>\\( T=2\\pi\\sqrt{1/4}=2\\pi\\times\\tfrac12=\\pi \\) s.",
+      "hint": "Find \\( k_{eff} \\) for series first; it is smaller than either spring.",
+      "distractor_logic": [
+        "Uses \\( k_{eff}=16 \\) N/m, which is the parallel value (resistor rule borrowed for series)",
+        "Uses \\( 2\\pi\\sqrt{k/m} \\) with \\( k=4 \\), inverting the ratio",
+        "Uses the parallel value and also omits the square root"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-020",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 3,
+      "type": "regular",
+      "question": "The length of a simple pendulum is increased by 21%. By what percentage does its period increase?",
+      "options": [
+        "21%",
+        "42%",
+        "10.5%",
+        "10%"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T\\propto\\sqrt{L} \\): new ratio \\( \\sqrt{1.21}=1.1 \\).<br><br>So the period increases by exactly 10%.",
+      "hint": "Take the square root of 1.21.",
+      "distractor_logic": [
+        "Assumes \\( T\\propto L \\)",
+        "Doubles the length change instead of taking a square root",
+        "Uses the small-change approximation of half the percentage, not exact here"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-021",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 3,
+      "type": "regular",
+      "question": "A mass hanging from a vertical spring stretches it by 10 cm at equilibrium. Taking \\( g=10\\ \\text{m/s}^2 \\), what is the period of small vertical oscillations?",
+      "options": [
+        "\\( 0.2\\pi \\) s",
+        "\\( 20\\pi \\) s",
+        "\\( 0.02\\pi \\) s",
+        "\\( 0.1\\pi \\) s"
+      ],
+      "correct_index": 0,
+      "explanation": "At equilibrium \\( kd=mg \\), so \\( m/k=d/g \\).<br><br>\\( T=2\\pi\\sqrt{d/g}=2\\pi\\sqrt{0.1/10}=2\\pi\\times0.1=0.2\\pi \\) s.",
+      "hint": "Use \\( kd=mg \\) to replace \\( m/k \\).",
+      "distractor_logic": [
+        "Inverts the ratio, using \\( 2\\pi\\sqrt{g/d} \\)",
+        "Omits the square root",
+        "Uses \\( \\pi \\) instead of \\( 2\\pi \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-022",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 3,
+      "type": "regular",
+      "question": "The frequencies of two simple pendulums are in the ratio \\( 2:1 \\). What is the ratio of their lengths?",
+      "options": [
+        "\\( 2:1 \\)",
+        "\\( 1:4 \\)",
+        "\\( 1:2 \\)",
+        "\\( 4:1 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f\\propto1/\\sqrt{L} \\), so \\( L\\propto1/f^{2} \\).<br><br>\\( L_{1}:L_{2}=1/4:1/1=1:4 \\).",
+      "hint": "A faster pendulum is a shorter one.",
+      "distractor_logic": [
+        "Assumes length is proportional to frequency",
+        "Inverts the ratio but forgets to square it",
+        "Squares the ratio but forgets to invert it: higher frequency needs a shorter pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-023",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 3,
+      "type": "regular",
+      "question": "A spring-mass system has frequency \\( f \\). The force constant is doubled and the mass is made one-quarter. The new frequency is",
+      "options": [
+        "\\( 8f \\)",
+        "\\( 2f \\)",
+        "\\( 2\\sqrt{2}\\,f \\)",
+        "\\( \\sqrt{2}\\,f \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f\\propto\\sqrt{k/m} \\).<br><br>\\( k/m \\) becomes \\( 2k/(m/4)=8k/m \\), so \\( f\\to\\sqrt{8}\\,f=2\\sqrt{2}\\,f \\).",
+      "hint": "Find how \\( k/m \\) changes, then take a square root.",
+      "distractor_logic": [
+        "Forgets the square root on \\( k/m \\)",
+        "Accounts for the mass change only",
+        "Accounts for the spring change only"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-024",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": 3,
+      "type": "regular",
+      "question": "A spring of force constant \\( k \\) with a mass has period \\( T \\). The spring is cut into two equal halves, which are connected in parallel to the same mass. The new period is",
+      "options": [
+        "\\( T \\)",
+        "\\( 2T \\)",
+        "\\( T/4 \\)",
+        "\\( T/2 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Each half has force constant \\( 2k \\); in parallel \\( k_{eff}=2k+2k=4k \\).<br><br>\\( T\\propto1/\\sqrt{k_{eff}} \\), so \\( T\\to T/\\sqrt{4}=T/2 \\).",
+      "hint": "First find the stiffness of each half.",
+      "distractor_logic": [
+        "Assumes cutting and recombining leaves the stiffness unchanged",
+        "Treats the parallel pair as softer, as with resistors in parallel",
+        "Forgets the square root in \\( T\\propto1/\\sqrt{k} \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-025",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 3,
+      "type": "regular",
+      "question": "The amplitude of a damped oscillator varies as \\( A(t)=A_{0}e^{-bt/(2m)} \\). For \\( m=0.5 \\) kg and \\( b=0.1 \\) kg/s, after what time does the amplitude fall to \\( A_{0}/e \\)?",
+      "options": [
+        "10 s",
+        "5 s",
+        "20 s",
+        "0.1 s"
+      ],
+      "correct_index": 0,
+      "explanation": "Set \\( bt/(2m)=1 \\).<br><br>\\( t=2m/b=2\\times0.5/0.1=10 \\) s.",
+      "hint": "The exponent must equal 1.",
+      "distractor_logic": [
+        "Uses \\( m/b \\), which is the time for energy (not amplitude) to fall by \\( e \\)",
+        "This is the time for the amplitude to fall to \\( A_{0}/e^{2} \\)",
+        "Reports \\( b/(2m) \\), the decay constant, as a time"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-026",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 3,
+      "type": "regular",
+      "question": "When the amplitude of a damped oscillator falls to \\( A_{0}/e \\), its mechanical energy falls by a factor of",
+      "options": [
+        "\\( e \\)",
+        "\\( e^{2} \\)",
+        "\\( 2e \\)",
+        "\\( \\sqrt{e} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( E\\propto A^{2} \\).<br><br>\\( A\\to A_{0}/e \\) gives \\( E\\to E_{0}/e^{2} \\).",
+      "hint": "Energy depends on the square of amplitude.",
+      "distractor_logic": [
+        "Assumes energy is proportional to amplitude",
+        "Doubles \\( e \\) instead of squaring it",
+        "Takes a square root instead of squaring"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-027",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 3,
+      "type": "regular",
+      "question": "A damped oscillator has \\( m=0.25 \\) kg and \\( b=0.05 \\) kg/s. How long does it take for the amplitude to fall to \\( A_{0}/e^{2} \\)?",
+      "options": [
+        "10 s",
+        "40 s",
+        "20 s",
+        "5 s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( A=A_{0}e^{-bt/(2m)} \\); set \\( bt/(2m)=2 \\).<br><br>\\( t=4m/b=4\\times0.25/0.05=20 \\) s.",
+      "hint": "The exponent must equal 2.",
+      "distractor_logic": [
+        "10 s is the time for the amplitude to fall only to \\( A_{0}/e \\)",
+        "Doubles the correct time",
+        "Uses \\( m/b \\), which is not the amplitude time constant"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-028",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 3,
+      "type": "regular",
+      "question": "The mechanical energy of a damped oscillator varies as \\( E=E_{0}e^{-bt/m} \\). For \\( m=0.4 \\) kg and \\( b=0.08 \\) kg/s, after what time does the energy fall to \\( E_{0}/e \\)?",
+      "options": [
+        "10 s",
+        "2.5 s",
+        "20 s",
+        "5 s"
+      ],
+      "correct_index": 3,
+      "explanation": "Set \\( bt/m=1 \\).<br><br>\\( t=m/b=0.4/0.08=5 \\) s.",
+      "hint": "Energy decays twice as fast as amplitude in the exponent.",
+      "distractor_logic": [
+        "10 s is \\( 2m/b \\), the time for the amplitude (not energy) to fall by \\( e \\)",
+        "Halves the correct time",
+        "Quadruples the correct time"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-029",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 3,
+      "type": "regular",
+      "question": "Two identical pendulums are set swinging with the same amplitude, one in air and the other in water. Which statement is correct?",
+      "options": [
+        "The amplitude of the pendulum in water decreases faster",
+        "The amplitude of the pendulum in air decreases faster",
+        "Both amplitudes decrease at the same rate",
+        "The pendulum in water keeps a constant amplitude"
+      ],
+      "correct_index": 0,
+      "explanation": "Water exerts a much larger damping force than air for the same speed.<br><br>Larger \\( b \\) means faster decay of amplitude.",
+      "hint": "Which medium resists motion more?",
+      "distractor_logic": [
+        "Air offers far less resistance than water",
+        "The damping constant \\( b \\) is much larger in water",
+        "Water increases damping; it cannot remove it"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-L3-030",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Damped Oscillations, Forced Oscillations, and Resonance",
+      "level": 3,
+      "type": "regular",
+      "question": "A damped oscillator with natural angular frequency \\( \\omega_{0} \\) is driven at \\( \\omega_{d} \\). Which statement about its steady state is correct?",
+      "options": [
+        "It oscillates at \\( \\omega_{0} \\), and its amplitude is largest when \\( \\omega_{d} \\) is close to \\( \\omega_{0} \\)",
+        "It oscillates at \\( \\omega_{d} \\), and its amplitude is largest when \\( \\omega_{d} \\) is close to \\( \\omega_{0} \\)",
+        "It oscillates at \\( \\omega_{d} \\), and its amplitude does not depend on \\( \\omega_{d} \\)",
+        "It oscillates at \\( \\omega_{0}+\\omega_{d} \\), with amplitude set only by damping"
+      ],
+      "correct_index": 1,
+      "explanation": "After transients die out, the system follows the driving frequency \\( \\omega_{d} \\).<br><br>The amplitude peaks (resonance) when \\( \\omega_{d} \\) is near \\( \\omega_{0} \\).",
+      "hint": "Separate what sets the frequency from what sets the amplitude.",
+      "distractor_logic": [
+        "The natural frequency shows up only in the transient; the steady state follows the driver",
+        "The amplitude depends strongly on how close \\( \\omega_{d} \\) is to \\( \\omega_{0} \\)",
+        "There is no summing of frequencies in forced oscillations"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-001",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle of mass 0.2 kg executes SHM with amplitude 0.1 m and angular frequency 10 rad/s. What is its maximum kinetic energy?",
+      "options": [
+        "0.2 J",
+        "1 J",
+        "0.1 J",
+        "0.05 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v_{max}=A\\omega=0.1\\times10=1 \\) m/s, reached at the mean position.<br><br>\\( KE_{max}=\\tfrac12\\times0.2\\times1^{2}=0.1 \\) J.",
+      "hint": "Maximum KE occurs where speed is \\( A\\omega \\).",
+      "distractor_logic": [
+        "Forgets the one half in \\( \\tfrac12mv^{2} \\)",
+        "Uses \\( A\\omega^{2} \\) (the maximum acceleration) in place of the maximum speed",
+        "Includes an extra factor of one half"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Energy in Simple Harmonic Motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-002",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1 kg mass on a spring of force constant 100 N/m oscillates with amplitude 0.1 m. What is its maximum speed?",
+      "options": [
+        "10 m/s",
+        "0.01 m/s",
+        "0.1 m/s",
+        "1 m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\omega=\\sqrt{k/m}=10 \\) rad/s.<br><br>\\( v_{max}=A\\omega=0.1\\times10=1 \\) m/s, at the mean position.",
+      "hint": "Get \\( \\omega \\) from the spring, then use \\( v_{max}=A\\omega \\).",
+      "distractor_logic": [
+        "\\( A\\omega^{2}=10 \\) is the maximum acceleration, reached at the extremes",
+        "Divides \\( A \\) by \\( \\omega \\)",
+        "Uses the amplitude as if \\( \\omega \\) were 1 rad/s"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-003",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A simple pendulum of length 0.4 m (take \\( g=10\\ \\text{m/s}^2 \\)) swings with a small linear amplitude of 0.02 m. What is the maximum acceleration of the bob along its path?",
+      "options": [
+        "\\( 0.5\\ \\text{m/s}^2 \\)",
+        "\\( 0.1\\ \\text{m/s}^2 \\)",
+        "\\( 0.004\\ \\text{m/s}^2 \\)",
+        "\\( 10\\ \\text{m/s}^2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega^{2}=g/L=10/0.4=25 \\), so \\( \\omega=5 \\) rad/s.<br><br>\\( a_{max}=\\omega^{2}A=25\\times0.02=0.5\\ \\text{m/s}^2 \\), at the extremes.",
+      "hint": "For a pendulum, \\( \\omega^{2}=g/L \\).",
+      "distractor_logic": [
+        "\\( A\\omega=0.1 \\) is the maximum speed in m/s, reached at the mean position",
+        "Divides the amplitude by \\( \\omega \\)",
+        "Takes the full \\( g \\) as the acceleration along the path"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-004",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1 kg mass on a spring of force constant 400 N/m is pulled to \\( x=+0.05 \\) m and released from rest at \\( t=0 \\). Which equation describes its motion (\\( x \\) in m, \\( t \\) in s)?",
+      "options": [
+        "\\( x=0.05\\sin(20t) \\)",
+        "\\( x=0.05\\cos(20t) \\)",
+        "\\( x=0.05\\cos(400t) \\)",
+        "\\( x=0.05\\cos(10t/\\pi) \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\omega=\\sqrt{400/1}=20 \\) rad/s.<br><br>Released from rest at \\( +A \\) means a cosine: \\( x=0.05\\cos(20t) \\).",
+      "hint": "Starting from rest at an extreme suggests which function?",
+      "distractor_logic": [
+        "A sine starts at the mean position, but the mass starts at the extreme",
+        "Uses \\( k \\) directly as \\( \\omega \\), forgetting \\( \\omega=\\sqrt{k/m} \\)",
+        "Uses the frequency \\( f=10/\\pi \\) Hz in place of \\( \\omega \\), dropping the \\( 2\\pi \\) factor"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-005",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A pendulum bob of mass 0.5 kg hangs on a string of length 2.5 m (\\( g=10\\ \\text{m/s}^2 \\)) and swings with a small linear amplitude of 0.1 m. What is its total energy of oscillation?",
+      "options": [
+        "0.02 J",
+        "0.1 J",
+        "0.01 J",
+        "0.005 J"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega^{2}=g/L=10/2.5=4\\ \\text{s}^{-2} \\) (the period is mass-independent, but the energy is not).<br><br>\\( E=\\tfrac12m\\omega^{2}A^{2}=\\tfrac12\\times0.5\\times4\\times0.01=0.01 \\) J.",
+      "hint": "Find \\( \\omega^{2} \\) from \\( g/L \\), then use the energy formula.",
+      "distractor_logic": [
+        "Forgets the factor of one half",
+        "Forgets to square the amplitude",
+        "Includes an extra factor of one half"
+      ],
+      "mixed_topics": [
+        "Energy in Simple Harmonic Motion",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-006",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two identical springs, each of force constant 50 N/m, are connected in parallel to a mass that oscillates with amplitude 0.2 m. What is the total energy?",
+      "options": [
+        "0.5 J",
+        "1 J",
+        "4 J",
+        "2 J"
+      ],
+      "correct_index": 3,
+      "explanation": "Parallel: \\( k_{eff}=50+50=100 \\) N/m.<br><br>\\( E=\\tfrac12k_{eff}A^{2}=\\tfrac12\\times100\\times0.04=2 \\) J.",
+      "hint": "Find \\( k_{eff} \\) for parallel springs first.",
+      "distractor_logic": [
+        "Uses the series value \\( k_{eff}=25 \\) N/m, borrowing the resistor rule for parallel",
+        "Uses a single spring's constant, ignoring the second spring",
+        "Forgets the factor of one half"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Energy in Simple Harmonic Motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-007",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle moves as \\( x=3\\sin(2\\pi t) \\), with \\( x \\) in m and \\( t \\) in s. What is its acceleration at \\( t=0.25 \\) s?",
+      "options": [
+        "\\( -12\\pi^{2}\\ \\text{m/s}^2 \\)",
+        "\\( +12\\pi^{2}\\ \\text{m/s}^2 \\)",
+        "\\( 0\\ \\text{m/s}^2 \\)",
+        "\\( -6\\pi\\ \\text{m/s}^2 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At \\( t=0.25 \\) s: \\( x=3\\sin(\\pi/2)=3 \\) m, the positive extreme.<br><br>\\( a=-\\omega^{2}x=-(2\\pi)^{2}\\times3=-12\\pi^{2}\\ \\text{m/s}^2 \\).",
+      "hint": "Locate the particle first, then apply \\( a=-\\omega^{2}x \\).",
+      "distractor_logic": [
+        "Drops the sign; at the positive extreme the acceleration points toward the mean position",
+        "Zero acceleration is at the mean position, but at \\( t=0.25 \\) s the particle is at the extreme",
+        "Uses \\( A\\omega \\) instead of \\( A\\omega^{2} \\)"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-008",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why is the motion of a damped oscillator not simple harmonic motion?",
+      "options": [
+        "Its acceleration becomes \\( +\\omega^{2}x \\)",
+        "Its net force contains a velocity-dependent term, so its acceleration is not simply proportional to \\( -x \\)",
+        "Its period becomes zero",
+        "Its mass changes during the motion"
+      ],
+      "correct_index": 1,
+      "explanation": "SHM requires \\( a=-\\omega^{2}x \\) exactly.<br><br>Damping adds \\( -bv/m \\), so \\( a=-(k/m)x-(b/m)v \\), which is not pure SHM.",
+      "hint": "Compare the damped equation with \\( a=-\\omega^{2}x \\).",
+      "distractor_logic": [
+        "The sign of the restoring part is unchanged; damping adds a \\( -bv \\) term",
+        "A damped oscillator still has a finite period",
+        "The mass stays constant; only energy is lost"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-009",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Due to damping, the amplitude of an oscillator falls to half its initial value. What fraction of its initial energy remains?",
+      "options": [
+        "\\( 1/2 \\)",
+        "\\( 1/\\sqrt{2} \\)",
+        "\\( 1/4 \\)",
+        "All of it"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E\\propto A^{2} \\).<br><br>\\( (1/2)^{2}=1/4 \\) of the initial energy remains.",
+      "hint": "Energy scales as amplitude squared.",
+      "distractor_logic": [
+        "Assumes energy is proportional to amplitude",
+        "Takes a square root instead of squaring",
+        "Damping removes energy; total energy is conserved only without damping"
+      ],
+      "mixed_topics": [
+        "Energy in Simple Harmonic Motion",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-010",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1 kg mass on a spring of force constant 100 N/m is driven by a periodic force. At what driving frequency does resonance occur?",
+      "options": [
+        "10 Hz",
+        "100 Hz",
+        "\\( \\pi/5 \\) Hz",
+        "\\( 5/\\pi \\) Hz"
+      ],
+      "correct_index": 3,
+      "explanation": "Natural angular frequency \\( \\omega_{0}=\\sqrt{100/1}=10 \\) rad/s.<br><br>Resonance at \\( f=\\omega_{0}/(2\\pi)=10/(2\\pi)=5/\\pi \\) Hz.",
+      "hint": "Resonance happens at the natural frequency; convert \\( \\omega_{0} \\) to Hz.",
+      "distractor_logic": [
+        "10 is the natural angular frequency in rad/s; using it as \\( f \\) drops the \\( 2\\pi \\) factor",
+        "Uses the force constant as a frequency",
+        "\\( \\pi/5 \\) s is the natural period, not a frequency"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-011",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A simple pendulum of length 2.5 m (\\( g=10\\ \\text{m/s}^2 \\)) is driven by a small periodic force. At what driving angular frequency will its amplitude be largest?",
+      "options": [
+        "2 rad/s",
+        "4 rad/s",
+        "0.5 rad/s",
+        "\\( 4\\pi \\) rad/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega_{0}=\\sqrt{g/L}=\\sqrt{10/2.5}=2 \\) rad/s.<br><br>Maximum amplitude (resonance) occurs when \\( \\omega_{d}=\\omega_{0}=2 \\) rad/s.",
+      "hint": "Find the pendulum's natural angular frequency.",
+      "distractor_logic": [
+        "Uses \\( g/L=4 \\) without taking the square root",
+        "Uses \\( \\sqrt{L/g} \\), inverting the ratio",
+        "Multiplies the correct \\( \\omega_{0} \\) by \\( 2\\pi \\) as if converting from Hz"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-012",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A simple pendulum completes 20 oscillations in 40 s at a place where \\( g=\\pi^{2}\\ \\text{m/s}^2 \\). What is its length?",
+      "options": [
+        "0.0625 m",
+        "1 m",
+        "4 m",
+        "2 m"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T=40/20=2 \\) s.<br><br>\\( L=\\dfrac{gT^{2}}{4\\pi^{2}}=\\dfrac{\\pi^{2}\\times4}{4\\pi^{2}}=1 \\) m.",
+      "hint": "Find the period from the count, then use the pendulum formula.",
+      "distractor_logic": [
+        "Uses the frequency 0.5 Hz as the period",
+        "Uses \\( L=gT^{2}/\\pi^{2} \\), forgetting the 4 in \\( 4\\pi^{2} \\)",
+        "Assumes \\( L\\propto T \\), forgetting the square"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-013",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle of mass 0.5 kg moves as \\( x=0.1\\sin(10t) \\), with \\( x \\) in m and \\( t \\) in s. What is its kinetic energy at \\( t=\\pi/20 \\) s?",
+      "options": [
+        "0.25 J",
+        "0.125 J",
+        "0 J",
+        "0.5 J"
+      ],
+      "correct_index": 2,
+      "explanation": "At \\( t=\\pi/20 \\) s: \\( 10t=\\pi/2 \\), so \\( x=0.1 \\) m, the extreme.<br><br>At the extreme the speed is zero, so \\( KE=0 \\) (all 0.25 J is potential).",
+      "hint": "Find where the particle is at that instant.",
+      "distractor_logic": [
+        "0.25 J is the total energy, all kinetic only at the mean position",
+        "Assumes KE is half the total at this instant",
+        "Forgets the one half in the KE formula at the mean position"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Energy in Simple Harmonic Motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-014",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For a simple pendulum at a place where \\( g=10\\ \\text{m/s}^2 \\), the tangential acceleration is found to be \\( a=-25x \\). What is the length of the pendulum?",
+      "options": [
+        "2.5 m",
+        "2 m",
+        "250 m",
+        "0.4 m"
+      ],
+      "correct_index": 3,
+      "explanation": "Compare \\( a=-25x \\) with \\( a=-\\omega^{2}x \\): \\( \\omega^{2}=25\\ \\text{s}^{-2} \\).<br><br>For a pendulum \\( \\omega^{2}=g/L \\), so \\( L=10/25=0.4 \\) m.",
+      "hint": "Match \\( a=-\\omega^{2}x \\), then use \\( \\omega^{2}=g/L \\).",
+      "distractor_logic": [
+        "Uses \\( L=\\omega^{2}/g \\), inverting the relation",
+        "Uses \\( L=g/\\omega \\), forgetting to square \\( \\omega \\)",
+        "Multiplies \\( g \\) by \\( \\omega^{2} \\)"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-015",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 2 kg mass on a spring of force constant 200 N/m oscillates with amplitude 0.3 m. Which set of values is correct at the extreme position?",
+      "options": [
+        "Speed 0, acceleration magnitude \\( 30\\ \\text{m/s}^2 \\), potential energy 9 J",
+        "Speed 3 m/s, acceleration 0, potential energy 0",
+        "Speed 0, acceleration magnitude \\( 3\\ \\text{m/s}^2 \\), potential energy 9 J",
+        "Speed 0, acceleration magnitude \\( 30\\ \\text{m/s}^2 \\), potential energy 18 J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega=\\sqrt{200/2}=10 \\) rad/s.<br><br>At the extreme: \\( v=0 \\); \\( |a|=A\\omega^{2}=0.3\\times100=30\\ \\text{m/s}^2 \\); \\( PE=\\tfrac12\\times200\\times0.09=9 \\) J.",
+      "hint": "At the extreme the particle is momentarily at rest.",
+      "distractor_logic": [
+        "These are mean-position values; the maximum speed and maximum acceleration occur at opposite ends",
+        "Uses \\( A\\omega \\) for the acceleration instead of \\( A\\omega^{2} \\)",
+        "Forgets the one half in \\( \\tfrac12kA^{2} \\)"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Energy in Simple Harmonic Motion",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-016",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two identical springs, each of force constant 200 N/m, are joined in series and attached to a 1 kg mass oscillating with amplitude 0.05 m. What is the maximum speed?",
+      "options": [
+        "1 m/s",
+        "0.5 m/s",
+        "5 m/s",
+        "0.005 m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "Series: \\( k_{eff}=200/2=100 \\) N/m, so \\( \\omega=\\sqrt{100/1}=10 \\) rad/s.<br><br>\\( v_{max}=A\\omega=0.05\\times10=0.5 \\) m/s.",
+      "hint": "Series springs give a smaller \\( k_{eff} \\).",
+      "distractor_logic": [
+        "Uses the parallel value \\( k_{eff}=400 \\) N/m, borrowing the resistor rule",
+        "Uses \\( A\\omega^{2} \\), the maximum acceleration",
+        "Divides \\( A \\) by \\( \\omega \\)"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-017",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle is released from rest at \\( x=+A \\) at \\( t=0 \\) and executes SHM with period \\( T \\). Which description is correct at \\( t=T/4 \\)?",
+      "options": [
+        "At \\( x=-A \\), with zero speed",
+        "At the mean position, with maximum acceleration",
+        "At the mean position, with speed \\( A\\omega \\) and kinetic energy equal to the total energy",
+        "At \\( x=A/2 \\), with kinetic energy equal to half the total"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( x=A\\cos(\\omega t) \\); at \\( t=T/4 \\), \\( \\omega t=\\pi/2 \\), so \\( x=0 \\).<br><br>There speed is maximum, \\( A\\omega \\), and \\( PE=0 \\), so \\( KE=E \\).",
+      "hint": "How far does the particle travel in a quarter period from the extreme?",
+      "distractor_logic": [
+        "The particle reaches \\( -A \\) only at \\( t=T/2 \\)",
+        "At the mean position the acceleration is zero; the maximum acceleration is at the extremes",
+        "A quarter period takes it all the way from \\( +A \\) to 0"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Energy in Simple Harmonic Motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-018",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle moves as \\( x=5\\cos(\\pi t) \\), with \\( x \\) in cm and \\( t \\) in s. What is its velocity at \\( t=0.5 \\) s?",
+      "options": [
+        "\\( +5\\pi \\) cm/s",
+        "\\( 0 \\) cm/s",
+        "\\( -5\\pi^{2} \\) cm/s",
+        "\\( -5\\pi \\) cm/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v=\\dfrac{dx}{dt}=-5\\pi\\sin(\\pi t) \\).<br><br>At \\( t=0.5 \\) s: \\( v=-5\\pi\\sin(\\pi/2)=-5\\pi \\) cm/s.",
+      "hint": "The derivative of \\( \\cos \\) carries a minus sign.",
+      "distractor_logic": [
+        "Drops the minus sign from differentiating a cosine; the particle is moving toward negative \\( x \\)",
+        "At \\( t=0.5 \\) s the particle is at the mean position, where speed is maximum, not zero",
+        "Uses \\( \\omega^{2} \\), giving the size of an acceleration, not a velocity"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-019",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 0.1 kg mass on a spring oscillates with amplitude 0.05 m and has maximum acceleration \\( 20\\ \\text{m/s}^2 \\). What is the force constant of the spring?",
+      "options": [
+        "40 N/m",
+        "400 N/m",
+        "2 N/m",
+        "20 N/m"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( a_{max}=A\\omega^{2} \\), so \\( \\omega^{2}=20/0.05=400\\ \\text{s}^{-2} \\).<br><br>\\( k=m\\omega^{2}=0.1\\times400=40 \\) N/m.",
+      "hint": "Find \\( \\omega^{2} \\) from \\( a_{max}=A\\omega^{2} \\).",
+      "distractor_logic": [
+        "Gives \\( \\omega^{2} \\) without multiplying by the mass",
+        "2 N is the maximum force \\( ma_{max} \\), not the force constant",
+        "Uses the numerical value of \\( a_{max} \\) as \\( k \\)"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-020",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The bob of a simple pendulum is replaced by one of twice the mass, keeping the length and the linear amplitude the same. What happens to the period and the energy of oscillation?",
+      "options": [
+        "The period doubles; the energy doubles",
+        "The period stays the same; the energy doubles",
+        "The period stays the same; the energy stays the same",
+        "The period decreases; the energy doubles"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T=2\\pi\\sqrt{L/g} \\): no mass, so the period is unchanged.<br><br>\\( E=\\tfrac12m(g/L)A^{2}\\propto m \\), so doubling the mass doubles the energy.",
+      "hint": "Check which formula contains mass.",
+      "distractor_logic": [
+        "Puts mass into the pendulum period, which has no mass term",
+        "The energy \\( \\tfrac12m\\omega^{2}A^{2} \\) does depend on mass",
+        "Borrows mass dependence from the spring formula in the wrong direction"
+      ],
+      "mixed_topics": [
+        "Energy in Simple Harmonic Motion",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-021",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The amplitude of a lightly damped simple pendulum slowly decreases. What happens to its period (small oscillations)?",
+      "options": [
+        "It decreases steadily along with the amplitude",
+        "It increases steadily",
+        "It stays practically the same",
+        "It becomes zero when the amplitude becomes small"
+      ],
+      "correct_index": 2,
+      "explanation": "For small angles \\( T=2\\pi\\sqrt{L/g} \\), independent of amplitude.<br><br>Light damping reduces the amplitude but leaves the period almost unchanged.",
+      "hint": "Does amplitude appear in the pendulum formula?",
+      "distractor_logic": [
+        "For small oscillations the period does not depend on amplitude",
+        "Nothing in \\( 2\\pi\\sqrt{L/g} \\) grows as the amplitude falls",
+        "A period cannot be zero; small amplitude still means the same \\( T \\)"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-022",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why does a forced, damped oscillator settle into a steady amplitude instead of growing forever?",
+      "options": [
+        "The damping force switches off once steady state is reached",
+        "The driver stops supplying energy once steady state is reached",
+        "The total energy keeps increasing, but the amplitude cannot",
+        "The energy fed in by the driver each cycle equals the energy lost to damping each cycle"
+      ],
+      "correct_index": 3,
+      "explanation": "Energy of oscillation depends on amplitude.<br><br>A steady amplitude means input from the driver balances loss to damping every cycle.",
+      "hint": "Think of an energy balance per cycle.",
+      "distractor_logic": [
+        "Damping acts all the time while the body moves",
+        "The driver keeps supplying energy to replace what damping removes",
+        "Energy of oscillation depends on amplitude; if amplitude is steady, so is energy"
+      ],
+      "mixed_topics": [
+        "Energy in Simple Harmonic Motion",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-023",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle in SHM has amplitude 2 m and period \\( \\pi \\) s, starting from the mean position and moving in the positive direction. What is its velocity at \\( t=\\pi/6 \\) s?",
+      "options": [
+        "2 m/s",
+        "4 m/s",
+        "\\( 2\\sqrt{3} \\) m/s",
+        "\\( -2 \\) m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\omega=2\\pi/\\pi=2 \\) rad/s, so \\( x=2\\sin(2t) \\) and \\( v=4\\cos(2t) \\).<br><br>At \\( t=\\pi/6 \\) s: \\( v=4\\cos(\\pi/3)=2 \\) m/s.",
+      "hint": "Write \\( x(t) \\), then differentiate.",
+      "distractor_logic": [
+        "4 m/s is \\( v_{max} \\), reached only at the mean position",
+        "Uses the sine of the phase instead of the cosine",
+        "Wrong sign: the particle is still moving in the positive direction"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-024",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At the point where the magnitude of a particle's acceleration in SHM is half its maximum value, what fraction of its total energy is kinetic?",
+      "options": [
+        "\\( 1/4 \\)",
+        "\\( 3/4 \\)",
+        "\\( 1/2 \\)",
+        "\\( \\sqrt{3}/2 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( |a|\\propto|x| \\), so half the maximum acceleration means \\( x=A/2 \\).<br><br>\\( PE=\\tfrac14E \\), so \\( KE=\\tfrac34E \\).",
+      "hint": "Convert the acceleration condition into a displacement first.",
+      "distractor_logic": [
+        "\\( 1/4 \\) is the potential fraction there; this swaps KE and PE",
+        "Assumes energy splits in the same ratio as acceleration",
+        "This is a speed ratio, not an energy fraction"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Energy in Simple Harmonic Motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-025",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1 kg mass oscillates on a spring of force constant \\( 100\\pi^{2} \\) N/m. How many complete oscillations does it make in 10 s?",
+      "options": [
+        "\\( 100\\pi \\)",
+        "2",
+        "50",
+        "25"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\omega=\\sqrt{100\\pi^{2}/1}=10\\pi \\) rad/s, so \\( f=\\omega/(2\\pi)=5 \\) Hz.<br><br>Oscillations in 10 s \\( =5\\times10=50 \\).",
+      "hint": "Number of oscillations is frequency times time.",
+      "distractor_logic": [
+        "Multiplies the angular frequency \\( 10\\pi \\) rad/s by the time, counting radians instead of cycles",
+        "Multiplies the period 0.2 s by the time",
+        "Halves the correct count"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-026",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A spring-mass system of mass 2 kg and force constant 800 N/m has total energy 4 J. What is its maximum acceleration?",
+      "options": [
+        "\\( 2\\ \\text{m/s}^2 \\)",
+        "\\( 400\\ \\text{m/s}^2 \\)",
+        "\\( 80\\ \\text{m/s}^2 \\)",
+        "\\( 40\\ \\text{m/s}^2 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( A=\\sqrt{2E/k}=\\sqrt{8/800}=0.1 \\) m.<br><br>\\( \\omega^{2}=k/m=800/2=400\\ \\text{s}^{-2} \\).<br><br>\\( a_{max}=A\\omega^{2}=0.1\\times400=40\\ \\text{m/s}^2 \\), at the extremes.",
+      "hint": "Find \\( A \\) from the energy, then use \\( a_{max}=A\\omega^{2} \\).",
+      "distractor_logic": [
+        "2 is the maximum speed \\( A\\omega \\) in m/s, which occurs at the mean position, not the extreme",
+        "Reports \\( \\omega^{2} \\) alone, forgetting to multiply by the amplitude",
+        "Uses \\( \\omega^{2}=k \\), ignoring the 2 kg mass"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Energy in Simple Harmonic Motion",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-027",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle in SHM starts from the mean position at \\( t=0 \\). At \\( t=T/8 \\), what is the ratio of its kinetic energy to its potential energy?",
+      "options": [
+        "\\( 1:1 \\)",
+        "\\( 3:1 \\)",
+        "\\( 1:3 \\)",
+        "\\( 1:0 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At \\( t=T/8 \\), \\( \\omega t=\\pi/4 \\), so \\( x=A\\sin(\\pi/4)=A/\\sqrt{2} \\).<br><br>\\( PE=\\tfrac12E \\) and \\( KE=\\tfrac12E \\): ratio \\( 1:1 \\).",
+      "hint": "Find the displacement at \\( t=T/8 \\) first.",
+      "distractor_logic": [
+        "\\( 3:1 \\) holds at \\( x=A/2 \\), reached at \\( t=T/12 \\)",
+        "\\( 1:3 \\) holds at \\( x=\\tfrac{\\sqrt{3}}{2}A \\), reached at \\( t=T/6 \\)",
+        "All-kinetic holds only at the mean position, at \\( t=0 \\)"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Energy in Simple Harmonic Motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-028",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A damped spring-mass oscillator loses mechanical energy fastest when the mass is",
+      "options": [
+        "at an extreme position",
+        "passing through the mean position",
+        "at \\( x=A/2 \\)",
+        "anywhere; the rate of loss is uniform"
+      ],
+      "correct_index": 1,
+      "explanation": "Power lost to damping is \\( bv^{2} \\).<br><br>Speed is maximum at the mean position, so energy is lost fastest there.",
+      "hint": "The damping force depends on speed.",
+      "distractor_logic": [
+        "At the extremes the speed is zero, so the damping force \\( -bv \\) does no work there",
+        "Speed at \\( A/2 \\) is less than at the mean position",
+        "The power lost, \\( bv^{2} \\), depends on speed, which changes with position"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Energy in Simple Harmonic Motion",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-029",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A child on a swing of natural period 2 s is to be pushed so that the amplitude builds up as fast as possible, with one push every so often. How often should the pushes be given?",
+      "options": [
+        "Every 0.5 s",
+        "Every 3 s",
+        "Every 2 s",
+        "Every \\( \\pi \\) s"
+      ],
+      "correct_index": 2,
+      "explanation": "To build amplitude, each push must arrive at the same point in every cycle.<br><br>So pushes should repeat once per natural period: every 2 s (resonance).",
+      "hint": "Match the pushing rhythm to the swing's own period.",
+      "distractor_logic": [
+        "0.5 is the frequency in Hz; using it as a time interval confuses \\( f \\) and \\( T \\)",
+        "Pushes every 3 s drift out of step with the swing",
+        "Uses the numerical value of \\( \\omega=\\pi \\) rad/s as a time"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-030",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A simple pendulum of length 1 m swings at a place where \\( g=\\pi^{2}\\ \\text{m/s}^2 \\), with a small linear amplitude of 0.1 m. What is the maximum speed of the bob?",
+      "options": [
+        "\\( 0.1\\pi^{2} \\) m/s",
+        "\\( 0.1/\\pi \\) m/s",
+        "\\( 0.2\\pi \\) m/s",
+        "\\( 0.1\\pi \\) m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\omega=\\sqrt{g/L}=\\sqrt{\\pi^{2}/1}=\\pi \\) rad/s.<br><br>\\( v_{max}=A\\omega=0.1\\pi \\) m/s, at the lowest point (mean position).",
+      "hint": "For a pendulum, \\( \\omega=\\sqrt{g/L} \\).",
+      "distractor_logic": [
+        "\\( A\\omega^{2} \\) is the maximum acceleration, which occurs at the extremes",
+        "Divides the amplitude by \\( \\omega \\)",
+        "Uses \\( \\omega=2\\pi \\), as if the period were 1 s instead of 2 s"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-031",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 2 kg mass on a spring moves as \\( x=0.1\\sin(5t) \\), with \\( x \\) in m and \\( t \\) in s. What is the force constant of the spring?",
+      "options": [
+        "50 N/m",
+        "10 N/m",
+        "25 N/m",
+        "0.08 N/m"
+      ],
+      "correct_index": 0,
+      "explanation": "From the equation, \\( \\omega=5 \\) rad/s.<br><br>\\( k=m\\omega^{2}=2\\times25=50 \\) N/m.",
+      "hint": "Read \\( \\omega \\) off the equation, then use \\( \\omega^{2}=k/m \\).",
+      "distractor_logic": [
+        "Uses \\( k=m\\omega \\) instead of \\( m\\omega^{2} \\)",
+        "Reports \\( \\omega^{2} \\) without multiplying by the mass",
+        "Uses \\( m/\\omega^{2} \\), inverting the relation"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-032",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1 kg mass on a spring of force constant \\( 25\\pi^{2} \\) N/m is released from the positive extreme at \\( t=0 \\). When does it first reach the mean position?",
+      "options": [
+        "0.2 s",
+        "0.1 s",
+        "0.4 s",
+        "0.05 s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\omega=\\sqrt{25\\pi^{2}/1}=5\\pi \\) rad/s, so \\( T=2\\pi/(5\\pi)=0.4 \\) s.<br><br>From the extreme to the mean position takes \\( T/4=0.1 \\) s.",
+      "hint": "Extreme to mean position is a quarter cycle.",
+      "distractor_logic": [
+        "0.2 s is \\( T/2 \\), when it reaches the opposite extreme",
+        "0.4 s is a full period, when it is back at the start",
+        "Uses \\( T/8 \\), when it is only at \\( A/\\sqrt{2} \\)"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-033",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For a particle in SHM, the acceleration-displacement graph is a straight line through the origin with slope \\( -16\\ \\text{s}^{-2} \\). What is the period?",
+      "options": [
+        "\\( \\pi/8 \\) s",
+        "\\( 2\\pi \\) s",
+        "\\( \\pi/2 \\) s",
+        "\\( 8\\pi \\) s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( a=-\\omega^{2}x \\), so the slope is \\( -\\omega^{2} \\): \\( \\omega=4 \\) rad/s.<br><br>\\( T=2\\pi/4=\\pi/2 \\) s.",
+      "hint": "The slope of the \\( a \\)-\\( x \\) graph is \\( -\\omega^{2} \\).",
+      "distractor_logic": [
+        "Takes \\( \\omega=16 \\) rad/s instead of \\( \\omega^{2}=16 \\)",
+        "Takes \\( \\omega=1 \\) rad/s, ignoring the slope",
+        "Multiplies \\( 2\\pi \\) by \\( \\omega \\) instead of dividing"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-034",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A car of mass 1000 kg rests on suspension of total force constant \\( 1.6\\times10^{4}\\pi^{2} \\) N/m. It drives over a road with bumps every 5 m. At what speed will the car bounce most violently?",
+      "options": [
+        "2.5 m/s",
+        "0.4 m/s",
+        "\\( 20\\pi \\) m/s",
+        "10 m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\omega_{0}=\\sqrt{1.6\\times10^{4}\\pi^{2}/1000}=\\sqrt{16\\pi^{2}}=4\\pi \\) rad/s, so \\( f_{0}=2 \\) Hz.<br><br>Bumps arrive at frequency \\( v/5 \\); resonance when \\( v/5=2 \\), i.e. \\( v=10 \\) m/s.",
+      "hint": "Bump frequency equals speed divided by spacing.",
+      "distractor_logic": [
+        "Divides the bump spacing by the frequency instead of multiplying",
+        "Divides the frequency by the bump spacing",
+        "Uses the angular frequency \\( 4\\pi \\) rad/s in place of the frequency 2 Hz"
+      ],
+      "mixed_topics": [
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-035",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A particle in SHM has total energy 10 J. Starting from the mean position, what is its potential energy at \\( t=T/12 \\)?",
+      "options": [
+        "2.5 J",
+        "5 J",
+        "7.5 J",
+        "0 J"
+      ],
+      "correct_index": 0,
+      "explanation": "At \\( t=T/12 \\), \\( \\omega t=\\pi/6 \\), so \\( x=A\\sin(\\pi/6)=A/2 \\).<br><br>\\( PE=E(x/A)^{2}=10\\times\\tfrac14=2.5 \\) J.",
+      "hint": "Find the displacement at \\( T/12 \\) first.",
+      "distractor_logic": [
+        "Assumes PE is proportional to \\( x \\) (half the amplitude gives half the energy)",
+        "7.5 J is the kinetic energy at that instant",
+        "PE is zero only at \\( t=0 \\), at the mean position"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Energy in Simple Harmonic Motion"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-036",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\( x=A\\sin\\omega t \\), which expression correctly gives the velocity written as a sine function?",
+      "options": [
+        "\\( v=A\\omega\\sin(\\omega t-\\pi/2) \\)",
+        "\\( v=A\\omega\\sin(\\omega t+\\pi/2) \\)",
+        "\\( v=A\\omega^{2}\\sin(\\omega t+\\pi) \\)",
+        "\\( v=A\\sin(\\omega t+\\pi/2) \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v=dx/dt=A\\omega\\cos\\omega t \\).<br><br>\\( \\cos\\omega t=\\sin(\\omega t+\\pi/2) \\), so velocity leads displacement by \\( \\pi/2 \\).",
+      "hint": "Differentiate, then convert cosine to sine.",
+      "distractor_logic": [
+        "Makes velocity lag the displacement; it actually leads by \\( \\pi/2 \\)",
+        "This is the acceleration, not the velocity",
+        "Forgets the factor \\( \\omega \\) from differentiation"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-037",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Energy in Simple Harmonic Motion",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two springs of force constants 6 N/m and 3 N/m are joined in series and a mass on them oscillates with amplitude 0.2 m. What is the total energy of oscillation?",
+      "options": [
+        "0.18 J",
+        "0.08 J",
+        "0.04 J",
+        "0.4 J"
+      ],
+      "correct_index": 2,
+      "explanation": "Series: \\( \\dfrac{1}{k_{eff}}=\\dfrac16+\\dfrac13=\\dfrac12 \\), so \\( k_{eff}=2 \\) N/m.<br><br>\\( E=\\tfrac12\\times2\\times(0.2)^{2}=0.04 \\) J.",
+      "hint": "Series springs give a smaller \\( k_{eff} \\).",
+      "distractor_logic": [
+        "Uses the parallel value \\( k_{eff}=9 \\) N/m, borrowing the resistor rule for series",
+        "Forgets the factor of one half",
+        "Forgets to square the amplitude"
+      ],
+      "mixed_topics": [
+        "Energy in Simple Harmonic Motion",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-038",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "As a damped oscillator's amplitude decreases cycle by cycle, the speed with which it passes through the mean position",
+      "options": [
+        "increases from one pass to the next",
+        "stays the same on every pass",
+        "is zero on every pass",
+        "decreases from one pass to the next"
+      ],
+      "correct_index": 3,
+      "explanation": "Maximum speed is \\( A\\omega \\), reached at the mean position.<br><br>Damping reduces \\( A \\), so each pass through the mean position is slower.",
+      "hint": "Maximum speed is proportional to amplitude.",
+      "distractor_logic": [
+        "Energy is being lost, so the maximum speed cannot grow",
+        "Maximum speed \\( A\\omega \\) falls as \\( A \\) falls",
+        "The speed is maximum, not zero, at the mean position"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Damped Oscillations, Forced Oscillations, and Resonance"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-039",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A simple pendulum of length 1 m, at a place where \\( g=\\pi^{2}\\ \\text{m/s}^2 \\), is released from rest at an angular displacement \\( \\theta=0.1 \\) rad at \\( t=0 \\). What is its angular displacement at \\( t=1 \\) s?",
+      "options": [
+        "\\( -0.1 \\) rad",
+        "\\( +0.1 \\) rad",
+        "\\( 0 \\) rad",
+        "\\( -0.05 \\) rad"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T=2\\pi\\sqrt{1/\\pi^{2}}=2 \\) s, so \\( \\omega=\\pi \\) rad/s and \\( \\theta=0.1\\cos(\\pi t) \\).<br><br>At \\( t=1 \\) s: \\( \\theta=0.1\\cos\\pi=-0.1 \\) rad, the opposite extreme.",
+      "hint": "Find the period first; 1 s is what fraction of it?",
+      "distractor_logic": [
+        "After one full period it would be back at \\( +0.1 \\) rad, but 1 s is only half the 2 s period",
+        "The lowest point is reached at \\( T/4=0.5 \\) s",
+        "Takes half the amplitude, as if \\( \\cos\\pi \\) were \\( -\\tfrac12 \\)"
+      ],
+      "mixed_topics": [
+        "Periodic and Oscillatory Motion: Displacement as a Function of Time",
+        "Time Period of Oscillating Systems: Spring-Mass Systems and the Simple Pendulum"
+      ]
+    },
+    {
+      "id": "PHY11-CH13-B-040",
+      "chapter": "PHY11-CH13",
+      "chapter_name": "Oscillations",
+      "topic": "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A spring-mass system with total energy 2 J, force constant 400 N/m, and mass 1 kg oscillates. What is its maximum speed?",
+      "options": [
+        "40 m/s",
+        "2 m/s",
+        "\\( \\sqrt{2} \\) m/s",
+        "4 m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "All energy is kinetic at the mean position: \\( \\tfrac12mv_{max}^{2}=2 \\).<br><br>\\( v_{max}=\\sqrt{4}=2 \\) m/s (check: \\( A=0.1 \\) m, \\( \\omega=20 \\) rad/s, \\( A\\omega=2 \\) m/s).",
+      "hint": "All energy is kinetic at the mean position.",
+      "distractor_logic": [
+        "40 is \\( A\\omega^{2} \\), the maximum acceleration in \\( \\text{m/s}^2 \\)",
+        "Forgets the factor of 2 in \\( v=\\sqrt{2E/m} \\)",
+        "Computes \\( 2E/m \\) but forgets the square root"
+      ],
+      "mixed_topics": [
+        "Simple Harmonic Motion: Velocity, Acceleration, and the SHM Differential Equation",
+        "Energy in Simple Harmonic Motion"
+      ]
+    }
+  ]
+}

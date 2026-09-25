@@ -1,0 +1,3807 @@
+{
+  "meta": {
+    "chapter": "MAT11-CH04",
+    "chapter_name": "Complex Numbers and Quadratic Equations",
+    "subject": "Mathematics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering": "All mathematical content is delimited with KaTeX inline math \\( ... \\); no raw Unicode math symbols are used except the em dash (—) in prose."
+  },
+  "topics": [
+    {
+      "name": "The Imaginary Unit i and Powers of i",
+      "summary": "Real numbers alone cannot solve an equation like \\(x^2+1=0\\), because no real number squares to give \\(-1\\). To fix this gap, mathematicians defined a new number \\(i\\), called the imaginary unit, with the single defining property \\(i^2=-1\\). Every other power of \\(i\\) follows directly from this one rule: \\(i^3=i^2\\cdot i=-i\\), and \\(i^4=(i^2)^2=1\\). Because \\(i^4=1\\), the powers of \\(i\\) repeat in a cycle of length 4 — \\(i,\\,-1,\\,-i,\\,1,\\,i,\\,-1,\\dots\\) — forever. This means that to evaluate any power \\(i^n\\), you only need the remainder when \\(n\\) is divided by 4; the exact size of \\(n\\) never matters beyond that. Negative and fractional-looking exponents can be handled the same way once you know \\(i^{-1}=-i\\). This single idea — cyclicity with period 4 — underlies almost every question about powers of \\(i\\), from a direct evaluation to summing many consecutive powers, since any four consecutive powers of \\(i\\) always add up to exactly \\(0\\).",
+      "key_formulas": [
+        "\\(i^2=-1\\)",
+        "\\(i^3=-i\\)",
+        "\\(i^4=1\\)",
+        "\\(i^{-1}=-i\\)",
+        "\\(i^n = i^{\\,n \\bmod 4}\\)",
+        "\\(i^n+i^{n+1}+i^{n+2}+i^{n+3}=0 \\text{ for any integer } n\\)"
+      ],
+      "worked_example": {
+        "problem": "Evaluate \\(i^{23}\\).",
+        "solution": "Divide the exponent by 4: \\(23=4\\times5+3\\), so the remainder is 3. Therefore \\(i^{23}=i^3=-i\\)."
+      },
+      "common_mistakes": [
+        "Confusing \\(i^2=-1\\) with the modulus of \\(i\\), which is \\(1\\) — these are different quantities entirely.",
+        "Using the wrong remainder when dividing the exponent by 4, especially for negative or very large exponents.",
+        "Assuming the reciprocal of \\(i\\) is \\(i\\) itself, rather than working out that \\(1/i=-i\\).",
+        "Mismanaging signs when adding several consecutive powers of \\(i\\), instead of recognizing that any four in a row cancel to \\(0\\)."
+      ],
+      "question_count": 22
+    },
+    {
+      "name": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "summary": "A complex number is written in standard (rectangular) form as \\(a+bi\\), where \\(a\\) is the real part and \\(b\\) is the imaginary part. Addition and subtraction of complex numbers work componentwise: combine the real parts together and the imaginary parts together, exactly as you would with vectors. Multiplication uses the ordinary distributive law, treating \\(i\\) like any other symbol during expansion — except that at the very end, every occurrence of \\(i^2\\) must be replaced by \\(-1\\). Division is the one genuinely new operation: since you cannot leave \\(i\\) in a denominator, you rationalize by multiplying both the numerator and denominator by the conjugate of the denominator, which clears the imaginary part from the bottom because \\((c+di)(c-di)=c^2+d^2\\) is always a real number. Mastering this rationalizing trick is the single most important skill in this topic, since it appears constantly in later topics too, including modulus, conjugate, and polar-form calculations.",
+      "key_formulas": [
+        "\\((a+bi)+(c+di)=(a+c)+(b+d)i\\)",
+        "\\((a+bi)-(c+di)=(a-c)+(b-d)i\\)",
+        "\\((a+bi)(c+di)=(ac-bd)+(ad+bc)i\\)",
+        "\\(\\frac{a+bi}{c+di}=\\frac{(a+bi)(c-di)}{c^2+d^2}\\)"
+      ],
+      "worked_example": {
+        "problem": "Simplify \\(\\frac{3+4i}{1-2i}\\).",
+        "solution": "Multiply top and bottom by the conjugate \\(1+2i\\): \\(\\frac{(3+4i)(1+2i)}{1^2+2^2}=\\frac{3+6i+4i-8}{5}=\\frac{-5+10i}{5}=-1+2i\\)."
+      },
+      "common_mistakes": [
+        "Forgetting to replace \\(i^2\\) with \\(-1\\) at the final step of a multiplication, leaving a term uncombined.",
+        "Sign slips while distributing across a subtraction, such as \\((a+bi)-(c+di)\\).",
+        "Rationalizing a quotient by multiplying by the wrong conjugate, or forgetting to apply it to both numerator and denominator.",
+        "Leaving a division answer as an unsimplified fraction instead of reducing it fully to \\(a+bi\\) form."
+      ],
+      "question_count": 25
+    },
+    {
+      "name": "Conjugate and Modulus of a Complex Number",
+      "summary": "The conjugate of \\(z=a+bi\\), written \\(\\bar z\\), is \\(a-bi\\) — only the sign of the imaginary part flips; the real part is untouched. Geometrically, conjugation reflects a point across the real axis. The modulus \\(|z|=\\sqrt{a^2+b^2}\\) measures the distance of \\(z\\) from the origin, and it is always a non-negative real number. Conjugate and modulus are closely linked: multiplying a complex number by its own conjugate always produces a real number equal to the modulus squared, \\(z\\bar z=|z|^2\\) — this identity is exactly why conjugates are used to rationalize denominators. Modulus also behaves predictably under multiplication and division: the modulus of a product is the product of the moduli, \\(|z_1z_2|=|z_1||z_2|\\), and similarly for quotients — which is often far faster than expanding a product out fully just to find its modulus afterward. Because \\(|\\bar z|=|z|\\) always, conjugation never changes distance from the origin, only direction.",
+      "key_formulas": [
+        "\\(\\overline{a+bi}=a-bi\\)",
+        "\\(|a+bi|=\\sqrt{a^2+b^2}\\)",
+        "\\(z\\bar z=|z|^2\\)",
+        "\\(|z_1z_2|=|z_1|\\,|z_2|\\)",
+        "\\(\\left|\\frac{z_1}{z_2}\\right|=\\frac{|z_1|}{|z_2|}\\)",
+        "\\(|\\bar z|=|z|\\)"
+      ],
+      "worked_example": {
+        "problem": "Find \\(|(3+4i)(1-i)|\\) without expanding the product.",
+        "solution": "\\(|3+4i|=5\\) and \\(|1-i|=\\sqrt2\\), so the modulus of the product is \\(5\\sqrt2\\) directly, by the multiplicative property."
+      },
+      "common_mistakes": [
+        "Flipping the sign of the real part instead of the imaginary part when writing down a conjugate.",
+        "Forgetting to take the final square root after computing \\(a^2+b^2\\), leaving the answer as the squared modulus.",
+        "Assuming the modulus of a sum equals the sum of the individual moduli — this multiplicative rule only applies to products and quotients, not sums.",
+        "Expanding a product fully before finding its modulus, instead of using the faster \\(|z_1z_2|=|z_1||z_2|\\) shortcut."
+      ],
+      "question_count": 25
+    },
+    {
+      "name": "Argand Plane and Polar (Trigonometric) Representation",
+      "summary": "Every complex number \\(z=x+iy\\) corresponds to a unique point \\((x,y)\\) in the Argand plane, with the real part along the horizontal axis and the imaginary part along the vertical axis. Instead of rectangular coordinates, the same point can be described by its distance from the origin (the modulus \\(r\\)) and the angle it makes with the positive real axis (the argument \\(\\theta\\)), giving the polar form \\(z=r(\\cos\\theta+i\\sin\\theta)\\). Finding the argument requires care: compute a reference angle from \\(\\tan\\theta=|y/x|\\), then adjust it according to which quadrant the point actually lies in, since the raw arctangent alone cannot distinguish between quadrants. The principal argument is conventionally reported in the range \\((-\\pi,\\pi]\\). Polar form makes multiplication elegant: when two complex numbers are multiplied, their moduli multiply and their arguments simply add, \\(\\arg(z_1z_2)=\\arg(z_1)+\\arg(z_2)\\) — a relationship with no simple analogue in rectangular form.",
+      "key_formulas": [
+        "\\(z=x+iy \\leftrightarrow (x,y)\\)",
+        "\\(r=|z|=\\sqrt{x^2+y^2}\\)",
+        "\\(z=r(\\cos\\theta+i\\sin\\theta)\\)",
+        "\\(\\arg(z_1z_2)=\\arg(z_1)+\\arg(z_2)\\)",
+        "\\(\\arg(\\bar z)=-\\arg(z)\\)"
+      ],
+      "worked_example": {
+        "problem": "Find the principal argument of \\(z=-1+i\\).",
+        "solution": "The reference angle is \\(\\arctan(1/1)=\\pi/4\\). Since the point lies in the second quadrant, the principal argument is \\(\\pi-\\pi/4=3\\pi/4\\)."
+      },
+      "common_mistakes": [
+        "Reporting only the reference angle without adjusting it for the actual quadrant the point lies in.",
+        "Reporting an angle outside the principal range \\((-\\pi,\\pi]\\) instead of converting it back in.",
+        "Swapping the roles of the real and imaginary parts when reading coordinates off the Argand plane.",
+        "Assuming conjugation or multiplication leaves the argument unchanged, instead of applying the correct sign or addition rule."
+      ],
+      "question_count": 23
+    },
+    {
+      "name": "Algebraic Identities and Properties of Complex Numbers",
+      "summary": "Every algebraic identity familiar from real numbers — \\((a+b)^2=a^2+2ab+b^2\\), the difference of squares \\(a^2-b^2=(a+b)(a-b)\\), the binomial cube \\((a+b)^3=a^3+3a^2b+3ab^2+b^3\\), and the sum/difference of cubes — continues to hold exactly when \\(a\\) and \\(b\\) are complex numbers, since the algebra of the complex numbers obeys the same field axioms as the reals. The only new step is that after expanding, any \\(i^2\\) that appears must be replaced with \\(-1\\) (and \\(i^3\\) with \\(-i\\)), which is where most of the actual simplification work happens. These identities are powerful shortcuts: rather than multiplying out \\((1+i)^3\\) term by term from scratch, recognizing the binomial-cube pattern lets you substitute directly and simplify quickly. They also connect naturally to conjugates, since expressions like \\(z^2+\\bar z^2\\) or \\(z\\bar z\\) are best handled by treating \\(z\\) and \\(\\bar z\\) as the two variables in a familiar identity rather than expanding from first principles every time.",
+      "key_formulas": [
+        "\\((a\\pm b)^2=a^2\\pm2ab+b^2\\)",
+        "\\(a^2-b^2=(a+b)(a-b)\\)",
+        "\\((a\\pm b)^3=a^3\\pm3a^2b+3ab^2\\pm b^3\\)",
+        "\\(a^3+b^3=(a+b)(a^2-ab+b^2)\\)"
+      ],
+      "worked_example": {
+        "problem": "Simplify \\((1+i)^3\\) using the binomial cube identity.",
+        "solution": "\\((1+i)^3=1^3+3(1)^2i+3(1)i^2+i^3=1+3i-3-i=-2+2i\\)."
+      },
+      "common_mistakes": [
+        "Expanding the identity correctly but forgetting to substitute \\(i^2=-1\\) (and \\(i^3=-i\\)) afterward.",
+        "Mismanaging signs on the odd-power terms of a cube expansion, flipping the imaginary part's sign.",
+        "Mismanaging signs on the even-power terms of a cube expansion, flipping the real part's sign.",
+        "Assuming a real-number identity might not apply to complex numbers and reverting to slower term-by-term expansion unnecessarily."
+      ],
+      "question_count": 25
+    },
+    {
+      "name": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "summary": "For a quadratic equation \\(ax^2+bx+c=0\\), the discriminant \\(D=b^2-4ac\\) governs the nature of its roots. When \\(D>0\\) the roots are real and distinct; when \\(D=0\\) they are real and equal; and when \\(D<0\\) — the case at the heart of this topic — the equation has no real solutions at all. Instead, applying the quadratic formula \\(x=\\frac{-b\\pm\\sqrt D}{2a}\\) requires taking the square root of a negative number, which is handled by writing \\(\\sqrt D=i\\sqrt{|D|}\\). This produces two roots of the form \\(p\\pm qi\\), and — crucially, when the coefficients \\(a,b,c\\) are real — these two roots are always complex conjugates of each other. This conjugate-pairing is not a coincidence but a direct consequence of real coefficients; it's also why, given one complex root of a real-coefficient quadratic, the other root can be written down immediately without recomputing the discriminant. (Equations with genuinely complex coefficients are the exception — there, roots need not pair up as conjugates at all.)",
+      "key_formulas": [
+        "\\(D=b^2-4ac\\)",
+        "\\(x=\\frac{-b\\pm\\sqrt D}{2a}\\)",
+        "\\(D<0 \\Rightarrow x=\\frac{-b\\pm i\\sqrt{|D|}}{2a}\\)",
+        "Real coefficients + one complex root \\(\\Rightarrow\\) the conjugate is automatically the other root"
+      ],
+      "worked_example": {
+        "problem": "Solve \\(x^2-2x+5=0\\).",
+        "solution": "\\(D=4-20=-16\\). \\(x=\\frac{2\\pm\\sqrt{-16}}{2}=\\frac{2\\pm4i}{2}=1\\pm2i\\)."
+      },
+      "common_mistakes": [
+        "Forgetting to insert i when taking the square root of a negative discriminant, and instead reporting a real (or unsigned) value.",
+        "Arithmetic slips while simplifying the fraction in the quadratic formula, especially dividing only part of the expression by 2a.",
+        "Assuming a real-coefficient quadratic equation simply has 'no solution' when D < 0, rather than recognizing it has two complex solutions.",
+        "Forgetting that a complex root of an equation with genuinely complex (non-real) coefficients need not have its conjugate as the other root."
+      ],
+      "question_count": 27
+    },
+    {
+      "name": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "summary": "For any quadratic equation \\(ax^2+bx+c=0\\) with roots \\(\\alpha\\) and \\(\\beta\\), two relationships hold regardless of whether the roots are real or complex: the sum \\(\\alpha+\\beta=-b/a\\) and the product \\(\\alpha\\beta=c/a\\). These two numbers alone completely determine the equation, since it can always be rewritten as \\(x^2-(\\alpha+\\beta)x+\\alpha\\beta=0\\) (after dividing through by \\(a\\)). Far more usefully, they let you compute symmetric expressions in the roots — quantities like \\(\\alpha^2+\\beta^2\\), \\((\\alpha-\\beta)^2\\), or \\(\\alpha^3+\\beta^3\\) — without ever solving for the individual roots themselves, by rewriting each expression algebraically in terms of just the sum and the product. This is especially valuable when the roots are complex, since it sidesteps working with \\(i\\) directly at all: \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\) and \\(\\alpha^3+\\beta^3=(\\alpha+\\beta)^3-3\\alpha\\beta(\\alpha+\\beta)\\) both hold exactly as they do for real roots, and can legitimately produce negative or otherwise unexpected-looking real values.",
+      "key_formulas": [
+        "\\(\\alpha+\\beta=-b/a\\)",
+        "\\(\\alpha\\beta=c/a\\)",
+        "\\(x^2-(\\alpha+\\beta)x+\\alpha\\beta=0\\)",
+        "\\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\)",
+        "\\((\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta\\)",
+        "\\(\\alpha^3+\\beta^3=(\\alpha+\\beta)^3-3\\alpha\\beta(\\alpha+\\beta)\\)"
+      ],
+      "worked_example": {
+        "problem": "For \\(x^2-7x+12=0\\), find \\(\\alpha^2+\\beta^2\\) without solving for the roots.",
+        "solution": "\\(\\alpha+\\beta=7\\), \\(\\alpha\\beta=12\\). \\(\\alpha^2+\\beta^2=49-24=25\\)."
+      },
+      "common_mistakes": [
+        "Dropping the negative sign in the sum-of-roots formula, \\(\\alpha+\\beta=-b/a\\).",
+        "Forgetting the subtraction term in an identity, such as reporting \\((\\alpha+\\beta)^2\\) alone instead of \\((\\alpha+\\beta)^2-2\\alpha\\beta\\).",
+        "Assuming these identities stop applying once the roots turn out to be complex, and abandoning the shortcut unnecessarily.",
+        "Assuming a squared or otherwise 'even-looking' symmetric expression must always come out positive, even when the roots are complex conjugates."
+      ],
+      "question_count": 21
+    },
+    {
+      "name": "Cube Roots of Unity and Loci in the Argand Plane",
+      "summary": "The cube roots of unity are the three solutions of \\(x^3=1\\): the familiar real root \\(1\\), and two complex roots conventionally labelled \\(\\omega\\) and \\(\\omega^2\\), where \\(\\omega=\\frac{-1+i\\sqrt3}2\\). Factoring \\(x^3-1=(x-1)(x^2+x+1)\\) shows that \\(\\omega\\) and \\(\\omega^2\\) are precisely the two roots of \\(x^2+x+1=0\\), which immediately gives the single most useful identity in this topic: \\(1+\\omega+\\omega^2=0\\). Combined with \\(\\omega^3=1\\), this lets you reduce almost any power or combination of \\(\\omega\\) down to a simple value — higher powers of \\(\\omega\\) cycle with period 3, exactly as powers of \\(i\\) cycle with period 4. Since \\(\\omega\\) and \\(\\omega^2\\) are also conjugates of each other, both have modulus \\(1\\). Separately, this topic also covers loci in the Argand plane: equations like \\(|z-a|=|z-b|\\) describe a perpendicular bisector (a straight line), while \\(|z-a|=r\\) describes a circle of radius \\(r\\) centered at \\(a\\) — recognizing which shape a given modulus equation describes is usually just a matter of writing \\(z=x+iy\\) and simplifying.",
+      "key_formulas": [
+        "\\(\\omega^3=1\\)",
+        "\\(1+\\omega+\\omega^2=0\\)",
+        "\\(\\bar\\omega=\\omega^2\\)",
+        "\\(|\\omega|=1\\)",
+        "\\(|z-a|=|z-b| \\Rightarrow \\text{perpendicular bisector of } a, b\\)",
+        "\\(|z-a|=r \\Rightarrow \\text{circle of radius } r \\text{ centered at } a\\)"
+      ],
+      "worked_example": {
+        "problem": "Simplify \\((1-\\omega)(1-\\omega^2)\\).",
+        "solution": "\\((1-\\omega)(1-\\omega^2)=1-\\omega-\\omega^2+\\omega^3=1-(\\omega+\\omega^2)+1=1-(-1)+1=3\\)."
+      },
+      "common_mistakes": [
+        "Forgetting that \\(\\omega^3=1\\) when reducing a higher power of \\(\\omega\\), instead treating it as an entirely new value.",
+        "Sign errors when rearranging the identity \\(1+\\omega+\\omega^2=0\\) to isolate \\(\\omega+\\omega^2=-1\\).",
+        "Misidentifying a locus equation \\(|z-a|=|z-b|\\) as a circle instead of a line, or vice versa for \\(|z-a|=r\\).",
+        "Assuming \\(\\omega\\) and \\(\\omega^2\\) are unrelated complex numbers rather than recognizing they are conjugates of each other, both with modulus \\(1\\)."
+      ],
+      "question_count": 22
+    }
+  ],
+  "questions": [
+    {
+      "id": "MAT11-CH04-L1-001",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(i^2\\)?",
+      "options": [
+        "1",
+        "\\(i\\)",
+        "\\(-i\\)",
+        "-1"
+      ],
+      "correct_index": 3,
+      "explanation": "By definition, \\(i\\) is the number satisfying \\(i^2=-1\\). This is the foundational identity from which every power of \\(i\\) is derived.",
+      "hint": "This is the defining property of the imaginary unit itself.",
+      "distractor_logic": [
+        "Confuses \\(i^2\\) with \\(|i|^2\\), the squared modulus of \\(i\\), which equals \\(1\\) rather than \\(-1\\).",
+        "Treats squaring as leaving \\(i\\) unchanged, as though multiplying by 1 rather than by \\(i\\) again, giving \\(i\\).",
+        "Applies the right idea that a sign change occurs, but reduces the power incorrectly and lands on \\(-i\\) instead of the real number \\(-1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-002",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(i^4\\)?",
+      "options": [
+        "\\(-1\\)",
+        "\\(i\\)",
+        "1",
+        "\\(-i\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(i^4=(i^2)^2=(-1)^2=1\\). Every fourth power of \\(i\\) returns to 1, which is why powers of \\(i\\) cycle with period 4.",
+      "hint": "Write \\(i^4\\) as \\((i^2)^2\\) and use \\(i^2=-1\\).",
+      "distractor_logic": [
+        "Stops after only one squaring step, reporting \\(i^2=-1\\) instead of squaring the result again.",
+        "Assumes the cycle length is 3 rather than 4, matching \\(i^4\\) to the value expected for \\(i^1\\).",
+        "Assumes the cycle length is 3 rather than 4, matching \\(i^4\\) to the value expected for \\(i^3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-003",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(i^{-1}\\)?",
+      "options": [
+        "\\(i\\)",
+        "\\(-i\\)",
+        "1",
+        "\\(-1\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(i^{-1}=1/i\\). Multiplying numerator and denominator by \\(-i\\) gives \\(\\frac{-i}{-i^2}=\\frac{-i}{1}=-i\\). Equivalently, \\(i\\cdot(-i)=-i^2=1\\), confirming \\(-i\\) is the reciprocal of \\(i\\).",
+      "hint": "Multiply \\(\\frac{1}{i}\\) by \\(\\frac{-i}{-i}\\) to clear \\(i\\) from the denominator.",
+      "distractor_logic": [
+        "Assumes the reciprocal of \\(i\\) is \\(i\\) itself, as happens only for \\(\\pm1\\).",
+        "Drops the imaginary unit entirely and reports a purely real reciprocal, \\(1\\).",
+        "Confuses the reciprocal of \\(i\\) with \\(i^2\\), giving \\(-1\\) instead of \\(-i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-004",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(i^{101}\\)?",
+      "options": [
+        "\\(-1\\)",
+        "\\(i\\)",
+        "1",
+        "\\(-i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Powers of \\(i\\) repeat every 4 steps, so only the remainder of the exponent on division by 4 matters. Since \\(101 = 4\\times 25 + 1\\), \\(i^{101}=i^{1}=i\\).",
+      "hint": "Divide the exponent by 4 and use only the remainder.",
+      "distractor_logic": [
+        "Uses remainder 2 instead of the correct remainder 1 when dividing 101 by 4, giving \\(-1\\).",
+        "Uses remainder 0, as if 101 were a multiple of 4, giving \\(1\\).",
+        "Uses remainder 3 instead of the correct remainder 1, giving \\(-i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-005",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(i+i^2+i^3+i^4\\)?",
+      "options": [
+        "1",
+        "\\(-1\\)",
+        "0",
+        "\\(2i\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(i+i^2+i^3+i^4 = i-1-i+1 = 0\\). Any four consecutive powers of \\(i\\) always sum to zero, since they represent one full cycle.",
+      "hint": "Substitute the known values of each power and add them up.",
+      "distractor_logic": [
+        "Forgets to include the \\(i^2\\) term in the sum, leaving \\(i+i^3+i^4=i-i+1=1\\).",
+        "Forgets to include the \\(i^4\\) term in the sum, leaving \\(i+i^2+i^3=i-1-i=-1\\).",
+        "Miscalculates \\(i^3\\) as \\(+i\\) instead of \\(-i\\), so the two imaginary terms add instead of cancelling, giving \\(2i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-006",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the real part of the complex number \\(3-4i\\)?",
+      "options": [
+        "\\(-4\\)",
+        "4",
+        "3",
+        "\\(-3\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For a complex number written as \\(a+bi\\), the real part is \\(a\\). Here \\(a=3\\) and \\(b=-4\\).",
+      "hint": "The real part is the term without the i.",
+      "distractor_logic": [
+        "Reports the coefficient of \\(i\\) (the imaginary part), \\(-4\\), instead of the real part.",
+        "Reports the coefficient of \\(i\\) but with the sign flipped, \\(4\\).",
+        "Flips the sign of the correct real part, giving \\(-3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-007",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the imaginary part of the complex number \\(-2+5i\\)?",
+      "options": [
+        "\\(-2\\)",
+        "2",
+        "5",
+        "\\(-5\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For \\(a+bi\\), the imaginary part is the real number \\(b\\) (not \\(bi\\)). Here \\(b=5\\).",
+      "hint": "The imaginary part is \\(b\\), the coefficient of \\(i\\), without the \\(i\\) attached.",
+      "distractor_logic": [
+        "Reports the real part, \\(-2\\), instead of the imaginary part.",
+        "Reports the correct coefficient but drops the sign, giving \\(2\\) instead of \\(5\\).",
+        "Reports the imaginary part with the sign flipped, \\(-5\\) instead of \\(5\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-008",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\((2+3i)+(4-i)\\)?",
+      "options": [
+        "\\(6+2i\\)",
+        "\\(6-2i\\)",
+        "\\(2+2i\\)",
+        "\\(6+4i\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Add real parts and imaginary parts separately: \\((2+4)+(3-1)i = 6+2i\\).",
+      "hint": "Add the real parts together, then add the imaginary coefficients together.",
+      "distractor_logic": [
+        "Adds the real parts correctly but subtracts the imaginary parts instead of adding, giving \\(6-2i\\).",
+        "Subtracts the real parts instead of adding them, giving \\(2+2i\\).",
+        "Adds the imaginary coefficients as \\(3+1\\) instead of \\(3+(-1)\\), giving \\(6+4i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-009",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\((5+2i)-(2+6i)\\)?",
+      "options": [
+        "\\(3+4i\\)",
+        "\\(3-4i\\)",
+        "\\(7-4i\\)",
+        "\\(3-8i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Subtract real and imaginary parts separately: \\((5-2)+(2-6)i = 3-4i\\).",
+      "hint": "Subtract the real parts and the imaginary coefficients independently.",
+      "distractor_logic": [
+        "Subtracts the real parts correctly but adds the imaginary parts instead of subtracting, giving \\(3+4i\\).",
+        "Adds the real parts instead of subtracting them, giving \\(7-4i\\).",
+        "Subtracts the imaginary coefficients as \\(2-(-6)\\) instead of \\(2-6\\), giving \\(3-8i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-010",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(i(3+2i)\\)?",
+      "options": [
+        "\\(2+3i\\)",
+        "\\(3+2i\\)",
+        "\\(-2-3i\\)",
+        "\\(-2+3i\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Distribute: \\(i(3+2i)=3i+2i^2=3i-2=-2+3i\\).",
+      "hint": "Distribute \\(i\\) across both terms, then simplify \\(i^2\\) to \\(-1\\).",
+      "distractor_logic": [
+        "Distributes correctly but forgets to convert \\(2i^2\\) into \\(-2\\), leaving \\(2+3i\\) instead of \\(-2+3i\\).",
+        "Fails to distribute \\(i\\) across the sum at all, just returning the original expression \\(3+2i\\).",
+        "Converts \\(2i^2\\) to \\(-2\\) correctly but also flips the sign of the imaginary term, giving \\(-2-3i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-011",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the conjugate of \\(3+4i\\)?",
+      "options": [
+        "\\(-3+4i\\)",
+        "\\(-3-4i\\)",
+        "\\(3-4i\\)",
+        "\\(4+3i\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The conjugate of \\(a+bi\\) is \\(a-bi\\) — the sign of the imaginary part alone is flipped. So \\(\\overline{3+4i}=3-4i\\).",
+      "hint": "Only the sign of the imaginary part changes; the real part stays the same.",
+      "distractor_logic": [
+        "Flips the sign of the real part instead of the imaginary part, giving \\(-3+4i\\).",
+        "Flips the signs of both the real and imaginary parts, giving \\(-3-4i\\).",
+        "Swaps the real and imaginary parts instead of negating the imaginary part, giving \\(4+3i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-012",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the modulus of \\(3+4i\\)?",
+      "options": [
+        "7",
+        "25",
+        "\\(\\sqrt{7}\\)",
+        "5"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(|3+4i|=\\sqrt{3^2+4^2}=\\sqrt{9+16}=\\sqrt{25}=5\\).",
+      "hint": "Use \\(|a+bi|=\\sqrt{a^2+b^2}\\).",
+      "distractor_logic": [
+        "Adds \\(a+b\\) directly instead of using the square-root-of-sum-of-squares formula, giving \\(3+4=7\\).",
+        "Reports \\(a^2+b^2=9+16=25\\) without taking the final square root.",
+        "Adds \\(a\\) and \\(b\\) before squaring, computing \\(\\sqrt{3+4}\\) incorrectly as \\(\\sqrt7\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-013",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the conjugate of \\(-2-5i\\)?",
+      "options": [
+        "\\(2+5i\\)",
+        "\\(-2+5i\\)",
+        "\\(2-5i\\)",
+        "\\(-2-5i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Flip only the sign of the imaginary part: \\(\\overline{-2-5i} = -2+5i\\).",
+      "hint": "Keep the real part exactly as it is; negate only the imaginary part.",
+      "distractor_logic": [
+        "Flips the signs of both parts, over-correcting to \\(2+5i\\).",
+        "Flips the sign of the real part instead of the imaginary part, giving \\(2-5i\\).",
+        "Leaves the number completely unchanged, forgetting to negate anything."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-014",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the modulus of \\(-6i\\)?",
+      "options": [
+        "36",
+        "\\(-6\\)",
+        "\\(\\sqrt{6}\\)",
+        "6"
+      ],
+      "correct_index": 3,
+      "explanation": "Write \\(-6i\\) as \\(0-6i\\), so \\(|{-6i}|=\\sqrt{0^2+(-6)^2}=\\sqrt{36}=6\\).",
+      "hint": "Treat the real part as 0 before applying the modulus formula.",
+      "distractor_logic": [
+        "Reports \\(a^2+b^2=36\\) without taking the final square root.",
+        "Reports the coefficient of \\(i\\) directly, keeping its negative sign, even though a modulus is never negative.",
+        "Takes the square root of the coefficient itself, \\(\\sqrt6\\), instead of the square root of its square."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-015",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\(z=a+bi\\), what does \\(z+\\bar{z}\\) equal?",
+      "options": [
+        "\\(2bi\\)",
+        "0",
+        "\\(2a\\)",
+        "\\(a\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(z+\\bar{z} = (a+bi)+(a-bi) = 2a\\). Adding a complex number to its conjugate always cancels the imaginary part and doubles the real part.",
+      "hint": "Add the complex number and its conjugate term by term; the imaginary parts should cancel.",
+      "distractor_logic": [
+        "Confuses \\(z+\\bar{z}\\) with \\(z-\\bar{z}\\), which instead gives \\(2bi\\).",
+        "Incorrectly assumes the real parts cancel instead of the imaginary parts, leaving \\(0\\).",
+        "Reports only half of the correct real result, \\(a\\), forgetting the factor of 2."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-016",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "In the Argand plane, the complex number \\(3+4i\\) is represented by which point?",
+      "options": [
+        "(4, 3)",
+        "(3, 4)",
+        "(3, -4)",
+        "(-3, 4)"
+      ],
+      "correct_index": 1,
+      "explanation": "A complex number \\(x+iy\\) is plotted as the point \\((x,y)\\), with the real part on the horizontal axis and the imaginary part on the vertical axis. So \\(3+4i\\) corresponds to \\((3,4)\\).",
+      "hint": "The real part gives the horizontal coordinate; the imaginary part gives the vertical coordinate.",
+      "distractor_logic": [
+        "Swaps the horizontal and vertical coordinates, giving (4, 3).",
+        "Uses the correct horizontal coordinate but negates the vertical one, giving (3, -4).",
+        "Uses the correct vertical coordinate but negates the horizontal one, giving (-3, 4)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-017",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\(z=x+iy\\), the modulus \\(r\\) in polar form equals?",
+      "options": [
+        "\\(x^2+y^2\\)",
+        "\\(\\sqrt{x^2+y^2}\\)",
+        "\\(x+y\\)",
+        "\\(\\sqrt{x+y}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "By definition, \\(r=|z|=\\sqrt{x^2+y^2}\\), the distance of the point \\((x,y)\\) from the origin.",
+      "hint": "Recall the modulus formula for a complex number.",
+      "distractor_logic": [
+        "Omits the square root, leaving the squared distance \\(x^2+y^2\\) instead of the distance itself.",
+        "Adds the coordinates directly, \\(x+y\\), instead of using the Pythagorean-style formula.",
+        "Takes the square root of the sum of the coordinates rather than the sum of their squares."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-018",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the argument of the complex number 1 (that is, 1+0i)?",
+      "options": [
+        "0",
+        "\\(\\pi\\)",
+        "\\(\\pi/2\\)",
+        "\\(2\\pi\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The point (1,0) lies on the positive real axis, which corresponds to an angle of 0 measured from that axis.",
+      "hint": "Where does the point (1, 0) sit relative to the positive real axis?",
+      "distractor_logic": [
+        "Confuses the positive real axis with the negative real axis, which corresponds to \\(\\pi\\).",
+        "Confuses the positive real axis with the positive imaginary axis, which corresponds to \\(\\pi/2\\).",
+        "Assumes the positive real axis corresponds to a full turn, \\(2\\pi\\), rather than 0."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-019",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "The polar form of a complex number \\(z\\) with modulus \\(r\\) and argument \\(\\theta\\) is written as?",
+      "options": [
+        "\\(r(\\cos\\theta + i\\sin\\theta)\\)",
+        "\\(r(\\cos\\theta - i\\sin\\theta)\\)",
+        "\\(r(\\sin\\theta+i\\cos\\theta)\\)",
+        "\\(\\theta(\\cos r + i \\sin r)\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The polar (trigonometric) form is \\(z=r(\\cos\\theta+i\\sin\\theta)\\), where \\(r\\) is the modulus and \\(\\theta\\) is the argument.",
+      "hint": "The modulus multiplies a cosine-plus-i-sine expression in the argument.",
+      "distractor_logic": [
+        "Uses a minus sign between the cosine and sine terms instead of a plus.",
+        "Swaps the roles of sine and cosine in the formula.",
+        "Swaps the roles of \\(r\\) and \\(\\theta\\) in the formula."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-020",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the argument of \\(i\\) (that is, \\(0+1i\\))?",
+      "options": [
+        "0",
+        "\\(\\pi/2\\)",
+        "\\(\\pi\\)",
+        "\\(-\\pi/2\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The point \\((0,1)\\) lies on the positive imaginary axis, which corresponds to an angle of \\(\\pi/2\\) from the positive real axis.",
+      "hint": "Where does the point (0, 1) sit relative to the positive real axis?",
+      "distractor_logic": [
+        "Confuses the positive imaginary axis with the positive real axis, which corresponds to \\(0\\).",
+        "Confuses the positive imaginary axis with the negative real axis, which corresponds to \\(\\pi\\).",
+        "Uses the correct axis but the wrong direction, giving the angle for the negative imaginary axis instead."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-021",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 1,
+      "type": "regular",
+      "question": "For complex numbers \\(z_1, z_2\\), what does \\((z_1+z_2)^2\\) expand to?",
+      "options": [
+        "\\(z_1^2+z_2^2\\)",
+        "\\(z_1^2-2z_1z_2+z_2^2\\)",
+        "\\(z_1^2+2z_1z_2+z_2^2\\)",
+        "\\(z_1^2+z_1z_2+z_2^2\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The same binomial identity that holds for real numbers holds for complex numbers: \\((z_1+z_2)^2=z_1^2+2z_1z_2+z_2^2\\).",
+      "hint": "This is the same square-of-a-sum identity used for real numbers.",
+      "distractor_logic": [
+        "Drops the cross term entirely, leaving \\(z_1^2+z_2^2\\).",
+        "Uses the sign pattern for \\((z_1-z_2)^2\\) instead of \\((z_1+z_2)^2\\), giving \\(z_1^2-2z_1z_2+z_2^2\\).",
+        "Forgets the factor of 2 on the cross term, giving \\(z_1^2+z_1z_2+z_2^2\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-022",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 1,
+      "type": "regular",
+      "question": "For complex numbers \\(z_1, z_2\\), what does \\((z_1+z_2)(z_1-z_2)\\) simplify to?",
+      "options": [
+        "\\(z_1^2+z_2^2\\)",
+        "\\(z_1^2-z_2^2\\)",
+        "\\(z_1^2+2z_1z_2-z_2^2\\)",
+        "\\(z_2^2-z_1^2\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "This is the difference-of-squares identity, valid for complex numbers exactly as for real ones: \\((z_1+z_2)(z_1-z_2)=z_1^2-z_2^2\\).",
+      "hint": "This is the difference-of-squares pattern.",
+      "distractor_logic": [
+        "Confuses this product with a sum of squares, giving \\(z_1^2+z_2^2\\).",
+        "Leaves a leftover cross term instead of letting it cancel, giving \\(z_1^2+2z_1z_2-z_2^2\\).",
+        "Gets the order of subtraction backwards, giving \\(z_2^2-z_1^2\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-023",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 1,
+      "type": "regular",
+      "question": "What is \\((1+i)^2\\)?",
+      "options": [
+        "2",
+        "\\(2i\\)",
+        "\\(2+2i\\)",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "\\((1+i)^2=1+2i+i^2=1+2i-1=2i\\).",
+      "hint": "Expand using \\((a+b)^2=a^2+2ab+b^2\\), then use \\(i^2=-1\\).",
+      "distractor_logic": [
+        "Treats \\(i^2\\) as \\(+1\\) instead of \\(-1\\) and drops the cross term \\(2i\\), leaving only \\(1+1=2\\).",
+        "Expands correctly but forgets that \\(i^2=-1\\), leaving \\(1+2i+1=2+2i\\) uncombined.",
+        "Skips the cross term \\(2i\\) entirely, combining only \\(1^2+i^2=1-1=0\\) as if squaring distributed without a middle term."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-024",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 1,
+      "type": "regular",
+      "question": "What is \\((2-i)^2\\)?",
+      "options": [
+        "\\(5-4i\\)",
+        "\\(3-4i\\)",
+        "\\(3+4i\\)",
+        "5"
+      ],
+      "correct_index": 1,
+      "explanation": "\\((2-i)^2=4-4i+i^2=4-4i-1=3-4i\\).",
+      "hint": "Expand using \\((a-b)^2=a^2-2ab+b^2\\), then use \\(i^2=-1\\).",
+      "distractor_logic": [
+        "Treats \\(i^2\\) as \\(+1\\) instead of \\(-1\\), giving \\(4-4i+1=5-4i\\).",
+        "Flips the sign of the cross term, giving \\(4+4i-1=3+4i\\).",
+        "Treats \\(i^2\\) as \\(+1\\) and drops the imaginary term entirely, leaving only \\(4+1=5\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-025",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 1,
+      "type": "regular",
+      "question": "What is \\((i+1)(i-1)\\)?",
+      "options": [
+        "2",
+        "\\(2i\\)",
+        "\\(-2\\)",
+        "0"
+      ],
+      "correct_index": 2,
+      "explanation": "This is a difference of squares: \\((i+1)(i-1)=i^2-1=-1-1=-2\\).",
+      "hint": "Recognize this as a difference-of-squares product.",
+      "distractor_logic": [
+        "Computes \\(i^2-1\\) but flips the final sign, giving \\(2\\) instead of \\(-2\\).",
+        "Multiplies out term by term and mismanages the cross terms, leaving a leftover \\(2i\\) instead of letting them cancel.",
+        "Incorrectly assumes the two factors are conjugates that cancel to \\(0\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-026",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\(ax^2+bx+c=0\\), the discriminant \\(D\\) is given by?",
+      "options": [
+        "\\(b^2+4ac\\)",
+        "\\(4ac-b^2\\)",
+        "\\(b^2-ac\\)",
+        "\\(b^2-4ac\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The discriminant of a quadratic equation is defined as \\(D=b^2-4ac\\); its sign determines the nature of the roots.",
+      "hint": "Recall the standard formula that appears under the square root in the quadratic formula.",
+      "distractor_logic": [
+        "Flips the sign between the two terms, giving \\(b^2+4ac\\).",
+        "Computes the negative of the correct discriminant, \\(4ac-b^2\\).",
+        "Forgets to multiply \\(ac\\) by 4, giving \\(b^2-ac\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-027",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 1,
+      "type": "regular",
+      "question": "If the discriminant D of a quadratic equation with real coefficients is negative, the roots are?",
+      "options": [
+        "equal and real",
+        "distinct and real",
+        "one real, one complex",
+        "complex conjugates"
+      ],
+      "correct_index": 3,
+      "explanation": "With real coefficients, a negative discriminant means the square root in the quadratic formula is imaginary, producing two non-real roots that are complex conjugates of each other.",
+      "hint": "Think about what happens inside the square root of the quadratic formula when D is negative.",
+      "distractor_logic": [
+        "Confuses \\(D<0\\) with \\(D=0\\), which actually gives equal real roots.",
+        "Confuses \\(D<0\\) with \\(D>0\\), which gives distinct real roots.",
+        "Assumes complex roots of a real-coefficient equation could appear singly rather than in conjugate pairs."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-028",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 1,
+      "type": "regular",
+      "question": "What are the roots of \\(x^2+1=0\\)?",
+      "options": [
+        "\\(\\pm 1\\)",
+        "\\(\\pm 2i\\)",
+        "\\(\\pm i\\)",
+        "0, 1"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(x^2=-1\\), so \\(x=\\pm\\sqrt{-1}=\\pm i\\).",
+      "hint": "Rearrange to \\(x^2=-1\\) and take the square root of both sides.",
+      "distractor_logic": [
+        "Drops the imaginary unit and treats \\(x^2=-1\\) as if it were \\(x^2=1\\), giving \\(\\pm1\\).",
+        "Introduces an extra factor of 2 that doesn't belong, giving \\(\\pm2i\\).",
+        "Assumes one root must be real, misreading the equation's structure and giving \\(0\\) and \\(1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-029",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 1,
+      "type": "regular",
+      "question": "If the discriminant D of a quadratic equation equals 0, the equation has?",
+      "options": [
+        "equal (repeated) real roots",
+        "two distinct real roots",
+        "two complex conjugate roots",
+        "no roots at all"
+      ],
+      "correct_index": 0,
+      "explanation": "When D = 0, the quadratic formula reduces to a single repeated value, so the equation has two equal real roots.",
+      "hint": "What happens to the quadratic formula when the term under the square root vanishes?",
+      "distractor_logic": [
+        "Confuses \\(D=0\\) with \\(D>0\\).",
+        "Confuses \\(D=0\\) with \\(D<0\\).",
+        "Incorrectly assumes a vanishing discriminant means the equation has no solutions."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-030",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 1,
+      "type": "regular",
+      "question": "What are the roots of \\(x^2+4=0\\)?",
+      "options": [
+        "\\(\\pm 4i\\)",
+        "\\(\\pm 2\\)",
+        "\\(\\pm 2i\\)",
+        "\\(\\pm 4\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(x^2=-4\\), so \\(x=\\pm\\sqrt{-4}=\\pm 2i\\).",
+      "hint": "Rearrange to \\(x^2=-4\\) and take the square root of both sides carefully.",
+      "distractor_logic": [
+        "Takes the square root of \\(4\\) correctly but forgets to also take the square root of the sign, using \\(4i\\) instead of \\(2i\\).",
+        "Finds the square root of the constant but drops the imaginary unit entirely, giving \\(\\pm2\\).",
+        "Reports the constant itself rather than its square root, giving \\(\\pm4\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-031",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\(ax^2+bx+c=0\\) with roots \\(\\alpha, \\beta\\), what is \\(\\alpha+\\beta\\)?",
+      "options": [
+        "\\(b/a\\)",
+        "\\(c/a\\)",
+        "\\(-b/a\\)",
+        "\\(-c/a\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The sum of the roots of a quadratic equation equals \\(-b/a\\), a direct consequence of comparing coefficients with \\(a(x-\\alpha)(x-\\beta)=0\\).",
+      "hint": "Recall the sum-of-roots formula for a quadratic equation.",
+      "distractor_logic": [
+        "Drops the negative sign from the correct formula, giving \\(b/a\\).",
+        "Confuses the sum-of-roots formula with the product-of-roots formula, giving \\(c/a\\).",
+        "Confuses the product-of-roots formula with the sum-of-roots formula and also drops the sign, giving \\(-c/a\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-032",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\(ax^2+bx+c=0\\) with roots \\(\\alpha, \\beta\\), what is \\(\\alpha\\beta\\)?",
+      "options": [
+        "\\(-b/a\\)",
+        "\\(c/a\\)",
+        "\\(b/a\\)",
+        "\\(-c/a\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The product of the roots of a quadratic equation equals \\(c/a\\).",
+      "hint": "Recall the product-of-roots formula for a quadratic equation.",
+      "distractor_logic": [
+        "Confuses the product-of-roots formula with the sum-of-roots formula, giving \\(-b/a\\).",
+        "Confuses the product-of-roots formula with the sum-of-roots formula and also drops the sign, giving \\(b/a\\).",
+        "Uses the right ratio \\(c/a\\) but with the wrong sign, giving \\(-c/a\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-033",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "If the roots of a quadratic equation are \\(\\alpha\\) and \\(\\beta\\), the equation can be written as?",
+      "options": [
+        "\\(x^2+(\\alpha+\\beta)x+\\alpha\\beta=0\\)",
+        "\\(x^2-(\\alpha+\\beta)x+\\alpha\\beta=0\\)",
+        "\\(x^2-(\\alpha+\\beta)x-\\alpha\\beta=0\\)",
+        "\\(x^2-\\alpha\\beta x+(\\alpha+\\beta)=0\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "A monic quadratic with roots \\(\\alpha, \\beta\\) is \\(x^2-(\\alpha+\\beta)x+\\alpha\\beta=0\\), obtained by expanding \\((x-\\alpha)(x-\\beta)=0\\).",
+      "hint": "Expand \\((x-\\alpha)(x-\\beta)\\) and compare with the general form.",
+      "distractor_logic": [
+        "Drops the negative sign on the sum-of-roots term, giving \\(x^2+(\\alpha+\\beta)x+\\alpha\\beta=0\\).",
+        "Uses the correct sign for the sum term but flips the sign on the product term, giving \\(x^2-(\\alpha+\\beta)x-\\alpha\\beta=0\\).",
+        "Swaps the positions of the sum and product terms in the formula."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-034",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\(x^2-5x+6=0\\), what is the sum of the roots?",
+      "options": [
+        "5",
+        "6",
+        "-5",
+        "-6"
+      ],
+      "correct_index": 0,
+      "explanation": "Sum of roots \\(=-b/a=-(-5)/1=5\\).",
+      "hint": "Use \\(\\alpha+\\beta=-b/a\\) with \\(a=1, b=-5\\).",
+      "distractor_logic": [
+        "Reports the product of the roots, \\(6\\), instead of the sum.",
+        "Reports \\(b\\) directly, \\(-5\\), without negating it.",
+        "Reports the negative of the product of the roots, \\(-6\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-035",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 1,
+      "type": "regular",
+      "question": "For \\(x^2-5x+6=0\\), what is the product of the roots?",
+      "options": [
+        "6",
+        "5",
+        "-5",
+        "-6"
+      ],
+      "correct_index": 0,
+      "explanation": "Product of roots \\(=c/a=6/1=6\\).",
+      "hint": "Use \\(\\alpha\\beta=c/a\\) with \\(a=1, c=6\\).",
+      "distractor_logic": [
+        "Reports the sum of the roots, \\(5\\), instead of the product.",
+        "Reports the negative of the sum of the roots, \\(-5\\).",
+        "Reports the correct magnitude, \\(6\\), but with the wrong sign, \\(-6\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-036",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 1,
+      "type": "regular",
+      "question": "The three cube roots of unity are commonly written as?",
+      "options": [
+        "\\(1, i, -i\\)",
+        "\\(\\omega, \\omega^2, \\omega^3\\)",
+        "\\(0, \\omega, \\omega^2\\)",
+        "\\(1, \\omega, \\omega^2\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The solutions of \\(x^3=1\\) are \\(1\\), \\(\\omega\\), and \\(\\omega^2\\), where \\(\\omega=\\frac{-1+i\\sqrt{3}}{2}\\).",
+      "hint": "One root is always \\(1\\); the other two are complex and usually labelled \\(\\omega\\) and \\(\\omega^2\\).",
+      "distractor_logic": [
+        "Confuses the cube roots of unity with the square roots of \\(-1\\), giving \\(1, i, -i\\).",
+        "Lists \\(\\omega^3\\) as if it were a distinct third root, when it actually equals \\(1\\).",
+        "Replaces the real root \\(1\\) with \\(0\\), which is not a cube root of unity at all."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-037",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(1+\\omega+\\omega^2\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "1",
+        "0",
+        "\\(-1\\)",
+        "\\(3\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "This is a standard identity: the three cube roots of unity sum to \\(0\\), since they are the roots of \\(x^3-1=(x-1)(x^2+x+1)=0\\) and the \\(x^2+x+1\\) factor already forces \\(\\omega+\\omega^2=-1\\).",
+      "hint": "This is one of the most-used identities for the complex cube roots of unity — commit it to memory.",
+      "distractor_logic": [
+        "Miscombines the identity and reports the real root alone, \\(1\\), instead of the full sum.",
+        "Correctly finds \\(\\omega+\\omega^2=-1\\) but forgets to add the remaining root \\(1\\), stopping short of the full identity.",
+        "Assumes the three roots simply add up to the count of roots present, \\(3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-038",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the value of \\(\\omega^3\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "\\(\\omega\\)",
+        "1",
+        "\\(\\omega^2\\)",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "By definition, \\(\\omega\\) satisfies \\(\\omega^3=1\\); it is a cube root of unity.",
+      "hint": "This follows directly from what it means to be a cube root of \\(1\\).",
+      "distractor_logic": [
+        "Assumes the cycle simply continues the pattern \\(\\omega,\\omega^2,\\omega^3,\\dots\\) without ever returning to 1.",
+        "Confuses \\(\\omega^3\\) with \\(\\omega^2\\cdot\\omega^2=\\omega^4=\\omega\\), one step off in the cycle.",
+        "Incorrectly assumes powers of \\(\\omega\\) eventually decay to 0."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-039",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 1,
+      "type": "regular",
+      "question": "What is \\(|\\omega|\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "0",
+        "\\(\\sqrt{3}\\)",
+        "3",
+        "1"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\(\\omega=\\cos120^\\circ+i\\sin120^\\circ\\) lies on the unit circle, \\(|\\omega|=1\\), just like every other root of unity.",
+      "hint": "All roots of unity lie on the unit circle in the Argand plane.",
+      "distractor_logic": [
+        "Assumes the modulus must be 0 since \\(\\omega\\) is not the real root 1.",
+        "Confuses the modulus of \\(\\omega\\) with the coefficient \\(\\sqrt3\\) appearing inside its rectangular form, and reports that directly.",
+        "Confuses the modulus with the number of cube roots of unity, \\(3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L1-040",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 1,
+      "type": "regular",
+      "question": "What is \\(\\bar{\\omega}\\) (the conjugate of the complex cube root of unity \\(\\omega\\)), in terms of \\(\\omega\\)?",
+      "options": [
+        "\\(\\omega\\)",
+        "\\(-\\omega\\)",
+        "1",
+        "\\(\\omega^2\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\(\\omega\\) and \\(\\omega^2\\) are reflections of each other across the real axis (both lie on the unit circle, symmetric about the horizontal axis), \\(\\bar{\\omega}=\\omega^2\\).",
+      "hint": "Geometrically, where does the reflection of \\(\\omega\\) across the real axis land among the three cube roots of unity?",
+      "distractor_logic": [
+        "Assumes \\(\\omega\\) is self-conjugate, which would only be true if it were real.",
+        "Confuses conjugation with negation, giving \\(-\\omega\\).",
+        "Confuses the conjugate with the real cube root \\(1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-001",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\(i^{15}+i^{-15}\\)?",
+      "options": [
+        "\\(2i\\)",
+        "0",
+        "\\(-2i\\)",
+        "1"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(15=4\\times3+3\\), so \\(i^{15}=i^3=-i\\). Then \\(i^{-15}=(i^{15})^{-1}=(-i)^{-1}=i\\) (multiply by \\(i/i\\): \\(i/(-i^2)=i\\)). So \\(i^{15}+i^{-15}=-i+i=0\\).",
+      "hint": "Find \\(i^{15}\\) using the remainder of 15 on division by 4, then find its reciprocal.",
+      "distractor_logic": [
+        "Miscalculates \\(i^{15}\\) as \\(+i\\) instead of \\(-i\\) (a sign slip in reducing the exponent) while correctly finding \\(i^{-15}=i\\), giving \\(i+i=2i\\).",
+        "Incorrectly assumes \\(i^{-15}\\) equals \\(i^{15}\\) itself, missing that a negative exponent inverts the value; both terms then come out as \\(-i\\), giving \\(-2i\\).",
+        "Computes the product \\(i^{15}\\cdot i^{-15}=i^0=1\\) instead of the requested sum."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-002",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the smallest positive integer \\(n\\) such that \\(i^n=1\\)?",
+      "options": [
+        "4",
+        "1",
+        "2",
+        "3"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(i^1=i\\), \\(i^2=-1\\), \\(i^3=-i\\), \\(i^4=1\\). The first time the value returns to 1 is at \\(n=4\\).",
+      "hint": "Check each power of i in order starting from n = 1.",
+      "distractor_logic": [
+        "Assumes \\(n=1\\) works because \\(i\\) is sometimes loosely (and incorrectly) called a kind of 'unity'.",
+        "Confuses \\(i^2=-1\\) with equalling 1.",
+        "Confuses \\(i^3=-i\\) with equalling 1."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-003",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\((1+i)^2\\)?",
+      "options": [
+        "\\(2i\\)",
+        "2",
+        "\\(2+2i\\)",
+        "0"
+      ],
+      "correct_index": 0,
+      "explanation": "\\((1+i)^2=1+2i+i^2=1+2i-1=2i\\).",
+      "hint": "Expand the square and substitute \\(i^2=-1\\).",
+      "distractor_logic": [
+        "Treats \\(i^2\\) as \\(+1\\) instead of \\(-1\\) and drops the cross term \\(2i\\), leaving only \\(1+1=2\\).",
+        "Expands correctly but forgets that \\(i^2=-1\\), leaving \\(1+2i+1=2+2i\\) uncombined.",
+        "Misreads \\((1+i)^2\\) as \\(1^2+i^2\\), skipping the cross term entirely and combining \\(1+(-1)=0\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-004",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\(i^{2023}\\)?",
+      "options": [
+        "\\(i\\)",
+        "1",
+        "\\(-1\\)",
+        "\\(-i\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(2023=4\\times505+3\\), so \\(i^{2023}=i^3=-i\\).",
+      "hint": "Find the remainder when 2023 is divided by 4.",
+      "distractor_logic": [
+        "Uses remainder 1 instead of the correct remainder 3 when dividing 2023 by 4, giving \\(i\\).",
+        "Uses remainder 0 instead of the correct remainder 3, giving \\(1\\).",
+        "Uses remainder 2 instead of the correct remainder 3, giving \\(-1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-005",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\(1/i^{19}\\)?",
+      "options": [
+        "\\(-i\\)",
+        "1",
+        "\\(i\\)",
+        "\\(-1\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(19=4\\times4+3\\), so \\(i^{19}=i^3=-i\\). Then \\(1/(-i)=i\\) (multiply numerator and denominator by \\(i\\): \\(i/(-i^2)=i\\)).",
+      "hint": "First simplify \\(i^{19}\\) using the remainder rule, then take its reciprocal.",
+      "distractor_logic": [
+        "Reports \\(i^{19}=-i\\) itself instead of taking its reciprocal.",
+        "Assumes the reciprocal of \\(-i\\) is \\(1\\) rather than \\(i\\).",
+        "Assumes the reciprocal of \\(-i\\) is \\(-1\\) rather than \\(i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-006",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\((2+3i)(1-2i)\\)?",
+      "options": [
+        "\\(8-i\\)",
+        "\\(8+i\\)",
+        "\\(-4+i\\)",
+        "\\(-4-i\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\((2+3i)(1-2i)=2-4i+3i-6i^2=2-i+6=8-i\\).",
+      "hint": "Multiply term by term (FOIL), then use \\(i^2=-1\\) to simplify.",
+      "distractor_logic": [
+        "Combines the imaginary terms with the wrong sign, getting \\(+i\\) instead of \\(-i\\), giving \\(8+i\\).",
+        "Forgets to convert \\(-6i^2\\) into \\(+6\\) (treating it as \\(-6\\)) and also flips the sign of the imaginary term, giving \\(-4+i\\).",
+        "Forgets to convert \\(-6i^2\\) into \\(+6\\), treating it as \\(-6\\) and leaving the real part as \\(2-6=-4\\), giving \\(-4-i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-007",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\(\\frac{3+4i}{1-2i}\\)?",
+      "options": [
+        "\\(1+2i\\)",
+        "\\(-1-2i\\)",
+        "\\(-1+2i\\)",
+        "\\(1-2i\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Multiply numerator and denominator by the conjugate \\(1+2i\\): \\(\\frac{(3+4i)(1+2i)}{1^2+2^2}=\\frac{3+6i+4i-8}{5}=\\frac{-5+10i}{5}=-1+2i\\).",
+      "hint": "Multiply top and bottom by the conjugate of the denominator to clear i from the denominator.",
+      "distractor_logic": [
+        "Correctly simplifies the imaginary part but drops the sign on the real part, giving \\(1+2i\\).",
+        "Flips the sign of the imaginary part but keeps the real part correct, giving \\(-1-2i\\).",
+        "Flips the signs of both parts, giving \\(1-2i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-008",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\(\\frac{1+i}{1-i}\\)?",
+      "options": [
+        "\\(-i\\)",
+        "1",
+        "\\(-1\\)",
+        "\\(i\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Multiply by the conjugate: \\(\\frac{(1+i)^2}{1^2+1^2}=\\frac{1+2i-1}{2}=\\frac{2i}{2}=i\\).",
+      "hint": "Multiply numerator and denominator by (1+i), the conjugate of the denominator.",
+      "distractor_logic": [
+        "Gets the magnitude right but the sign wrong, giving \\(-i\\).",
+        "Drops the imaginary unit and reports a purely real answer, \\(1\\).",
+        "Drops the imaginary unit and reports the wrong sign of a purely real answer, \\(-1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-009",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\((2-i)^2-(2-i)\\)?",
+      "options": [
+        "\\(1+3i\\)",
+        "\\(5-5i\\)",
+        "\\(-1-3i\\)",
+        "\\(1-3i\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\((2-i)^2=4-4i+i^2=3-4i\\). Then \\((3-4i)-(2-i)=1-3i\\).",
+      "hint": "First expand \\((2-i)^2\\), then subtract \\((2-i)\\) from the result.",
+      "distractor_logic": [
+        "Correctly finds \\((2-i)^2=3-4i\\) but flips the sign of the imaginary part during the final subtraction, giving \\(1+3i\\).",
+        "Correctly finds \\((2-i)^2=3-4i\\) but adds \\((2-i)\\) instead of subtracting it, giving \\(3-4i+2-i=5-5i\\).",
+        "Subtracts correctly but flips the sign of the real part of the final answer, giving \\(-1-3i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-010",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the value of \\((3+2i)+(4-5i)-(1+i)\\)?",
+      "options": [
+        "\\(8-4i\\)",
+        "\\(6-4i\\)",
+        "\\(6-2i\\)",
+        "\\(6+4i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Combine real parts: \\(3+4-1=6\\). Combine imaginary parts: \\(2-5-1=-4\\). Result: \\(6-4i\\).",
+      "hint": "Combine all the real parts together and all the imaginary parts together, tracking each sign carefully.",
+      "distractor_logic": [
+        "Mishandles the last subtraction and adds 1 to the real part instead of subtracting it, giving \\(3+4+1=8\\), so \\(8-4i\\).",
+        "Combines the imaginary parts as \\(2-5+1\\) instead of \\(2-5-1\\), giving \\(6-2i\\).",
+        "Gets the correct magnitudes but the wrong sign on the imaginary part, giving \\(6+4i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-011",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the modulus of \\((3+4i)(1-i)\\)?",
+      "options": [
+        "25",
+        "\\(5\\)",
+        "\\(5\\sqrt2\\)",
+        "\\(50\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Using \\(|z_1z_2|=|z_1||z_2|\\): \\(|3+4i|=5\\) and \\(|1-i|=\\sqrt2\\), so the product has modulus \\(5\\sqrt2\\).",
+      "hint": "Use the property \\(|z_1z_2|=|z_1|\\,|z_2|\\) rather than multiplying the complex numbers out first.",
+      "distractor_logic": [
+        "Reports only \\(|3+4i|^2=25\\) instead of the modulus of the product.",
+        "Reports \\(|3+4i|=5\\) alone, ignoring the second factor entirely.",
+        "Multiplies the two moduli correctly (\\(5\\cdot\\sqrt2\\)) but then squares the result, giving \\(50\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-012",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\(z=2-3i\\), what is \\(z\\bar{z}\\)?",
+      "options": [
+        "\\(-5\\)",
+        "5",
+        "\\(4-9i\\)",
+        "13"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(z\\bar z = |z|^2 = 2^2+3^2 = 4+9 = 13\\).",
+      "hint": "Recall that \\(z\\bar z\\) always equals \\(|z|^2\\).",
+      "distractor_logic": [
+        "Computes \\(a^2-b^2\\) instead of \\(a^2+b^2\\), giving \\(4-9=-5\\).",
+        "Adds \\(|a|\\) and \\(|b|\\) directly, \\(2+3=5\\), instead of squaring and adding them.",
+        "Multiplies \\(z\\) by itself instead of by its conjugate, leaving a complex (not purely real) result, \\(4-9i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-013",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(|z|=5\\) and \\(z=3+bi\\) with \\(b>0\\), what is \\(b\\)?",
+      "options": [
+        "3",
+        "5",
+        "16",
+        "4"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(|z|^2=9+b^2=25\\), so \\(b^2=16\\) and \\(b=4\\) (taking the positive root as required).",
+      "hint": "Set up \\(9+b^2=25\\) and solve for \\(b\\).",
+      "distractor_logic": [
+        "Reports the given real part, \\(3\\), instead of solving for \\(b\\).",
+        "Reports the given modulus, \\(5\\), instead of solving for \\(b\\).",
+        "Solves for \\(b^2=16\\) correctly but forgets to take the square root."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-014",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the modulus of \\(\\frac{1+i}{1-i}\\)?",
+      "options": [
+        "\\(\\sqrt2\\)",
+        "1",
+        "2",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(\\frac{1+i}{1-i}=i\\) (shown by rationalizing), and \\(|i|=1\\). Alternatively, \\(\\left|\\frac{1+i}{1-i}\\right|=\\frac{|1+i|}{|1-i|}=\\frac{\\sqrt2}{\\sqrt2}=1\\).",
+      "hint": "Use \\(\\left|\\frac{z_1}{z_2}\\right|=\\frac{|z_1|}{|z_2|}\\) rather than simplifying the fraction first.",
+      "distractor_logic": [
+        "Reports the modulus of just the numerator, \\(\\sqrt2\\), instead of the full quotient.",
+        "Doubles the correct answer by mistake, giving \\(2\\).",
+        "Assumes a quotient of two numbers with equal modulus must be \\(0\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-015",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the conjugate of \\(\\frac{2+3i}{1-i}\\)?",
+      "options": [
+        "\\(\\frac{-1+5i}{2}\\)",
+        "\\(\\frac{1-5i}{2}\\)",
+        "\\(\\frac{1+5i}{2}\\)",
+        "\\(\\frac{-1-5i}{2}\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "First simplify: \\(\\frac{2+3i}{1-i}\\cdot\\frac{1+i}{1+i}=\\frac{2+2i+3i+3i^2}{2}=\\frac{-1+5i}{2}\\). Its conjugate flips the sign of the imaginary part: \\(\\frac{-1-5i}{2}\\).",
+      "hint": "First simplify the quotient into a+bi form, then negate only the imaginary part.",
+      "distractor_logic": [
+        "Reports the simplified quotient itself, \\(\\frac{-1+5i}{2}\\), forgetting to take the conjugate at all.",
+        "Flips the sign of the real part instead of the imaginary part, giving \\(\\frac{1-5i}{2}\\).",
+        "Flips the signs of both parts, giving \\(\\frac{1+5i}{2}\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-016",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the argument of \\(z=-1+i\\) (principal value)?",
+      "options": [
+        "\\(\\pi/4\\)",
+        "\\(-3\\pi/4\\)",
+        "\\(3\\pi/4\\)",
+        "\\(-\\pi/4\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The point \\((-1,1)\\) lies in the second quadrant. The reference angle is \\(\\arctan(1/1)=\\pi/4\\), so the principal argument is \\(\\pi-\\pi/4=3\\pi/4\\).",
+      "hint": "Find the reference angle first, then adjust for the quadrant the point lies in.",
+      "distractor_logic": [
+        "Reports only the reference angle, \\(\\pi/4\\), without adjusting for the quadrant.",
+        "Adjusts for the wrong (fourth) quadrant instead of the second, giving \\(-3\\pi/4\\).",
+        "Adjusts for the wrong quadrant and also forgets to flip the sign, giving \\(-\\pi/4\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-017",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the modulus of \\(z=-3-3i\\)?",
+      "options": [
+        "18",
+        "\\(3\\sqrt2\\)",
+        "6",
+        "\\(\\sqrt{18}\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(|z|=\\sqrt{(-3)^2+(-3)^2}=\\sqrt{18}=3\\sqrt2\\).",
+      "hint": "Apply the modulus formula and simplify the resulting square root.",
+      "distractor_logic": [
+        "Reports the value under the square root, \\(18\\), instead of the square root itself.",
+        "Adds the two coordinates directly, \\(3+3=6\\), instead of squaring them first.",
+        "Leaves the answer as the unsimplified radical \\(\\sqrt{18}\\) rather than reducing it to \\(3\\sqrt2\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-018",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the argument of \\(z=1+i\\sqrt3\\)?",
+      "options": [
+        "\\(\\pi/3\\)",
+        "\\(\\pi/6\\)",
+        "\\(\\pi/4\\)",
+        "\\(2\\pi/3\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Here \\(\\tan\\theta=\\sqrt3/1=\\sqrt3\\), and since both coordinates are positive (first quadrant), \\(\\theta=\\pi/3\\).",
+      "hint": "Compute \\(\\tan\\theta\\) from the coordinates and identify the standard angle.",
+      "distractor_logic": [
+        "Confuses \\(\\tan\\theta=\\sqrt3\\) with \\(\\tan\\theta=1/\\sqrt3\\), which instead gives \\(\\pi/6\\).",
+        "Confuses the standard angle for \\(\\tan\\theta=\\sqrt3\\) with the one for \\(\\tan\\theta=1\\), giving \\(\\pi/4\\).",
+        "Applies the correct reference angle but to the wrong (second) quadrant, giving \\(2\\pi/3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-019",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(z=2(\\cos60^\\circ+i\\sin60^\\circ)\\), what is \\(z\\) in \\(a+bi\\) form?",
+      "options": [
+        "\\(\\sqrt3+i\\)",
+        "\\(1+\\sqrt3\\,i\\)",
+        "\\(2+\\sqrt3\\,i\\)",
+        "\\(1+2\\sqrt3\\,i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(\\cos60^\\circ=1/2\\) and \\(\\sin60^\\circ=\\sqrt3/2\\), so \\(z=2\\cdot\\tfrac12+2\\cdot\\tfrac{\\sqrt3}2 i = 1+\\sqrt3\\,i\\).",
+      "hint": "Substitute the exact values of cos 60° and sin 60°, then multiply through by the modulus.",
+      "distractor_logic": [
+        "Swaps the values of \\(\\cos60^\\circ\\) and \\(\\sin60^\\circ\\), giving \\(\\sqrt3+i\\).",
+        "Uses \\(\\cos60^\\circ=1\\) instead of \\(1/2\\), giving a real part of \\(2\\) while the imaginary part is computed correctly as \\(\\sqrt3\\).",
+        "Uses \\(\\sin60^\\circ=\\sqrt3\\) instead of \\(\\sqrt3/2\\), giving an imaginary part of \\(2\\sqrt3\\) while the real part is computed correctly as \\(1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-020",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the argument of \\(z=-4\\) (a negative real number)?",
+      "options": [
+        "0",
+        "\\(\\pi\\)",
+        "\\(\\pi/2\\)",
+        "\\(-\\pi\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The point \\((-4,0)\\) lies on the negative real axis, corresponding to an angle of \\(\\pi\\) in the principal range \\((-\\pi,\\pi]\\).",
+      "hint": "Where does a negative real number sit on the Argand plane?",
+      "distractor_logic": [
+        "Confuses the negative real axis with the positive real axis, giving \\(0\\).",
+        "Confuses the negative real axis with the positive imaginary axis, giving \\(\\pi/2\\).",
+        "Uses the mathematically equivalent angle \\(-\\pi\\) instead of the principal value \\(\\pi\\) (the convention here uses the half-open range \\((-\\pi,\\pi]\\), which includes \\(\\pi\\) but excludes \\(-\\pi\\))."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-021",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\((1+i)^3\\)?",
+      "options": [
+        "\\(2+2i\\)",
+        "\\(-2+2i\\)",
+        "\\(-2-2i\\)",
+        "\\(2-2i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\((1+i)^3=1+3i+3i^2+i^3=1+3i-3-i=-2+2i\\).",
+      "hint": "Expand using \\((a+b)^3=a^3+3a^2b+3ab^2+b^3\\), then simplify each power of \\(i\\).",
+      "distractor_logic": [
+        "Mismanages the signs on the odd-power terms, flipping the sign of the imaginary part, giving \\(2+2i\\).",
+        "Mismanages the signs on the even-power terms, flipping the sign of the real part, giving \\(-2-2i\\).",
+        "Flips both signs, effectively computing the negative of the correct answer, giving \\(2-2i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-022",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\((1-i)^4\\)?",
+      "options": [
+        "4",
+        "\\(-4\\)",
+        "\\(4i\\)",
+        "\\(-4i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\((1-i)^2=1-2i+i^2=-2i\\). Then \\((1-i)^4=(-2i)^2=4i^2=-4\\).",
+      "hint": "Square the expression once, then square the result again.",
+      "distractor_logic": [
+        "Correctly finds \\((1-i)^2=-2i\\) but forgets to convert \\(i^2\\) to \\(-1\\) in the second squaring step, leaving a positive result, \\(4\\).",
+        "Stops after finding the magnitude of \\((-2i)^2\\) and misses that \\(i^2\\) contributes a negative sign, reporting \\(4i\\).",
+        "Introduces a spurious factor of \\(i\\) that shouldn't survive the final squaring, giving \\(-4i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-023",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\(z=2+i\\), what is \\(z^2+\\bar{z}^2\\)?",
+      "options": [
+        "8",
+        "6",
+        "\\(6+8i\\)",
+        "\\(3+4i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(z^2=(2+i)^2=3+4i\\) and \\(\\bar z^2=(2-i)^2=3-4i\\). Adding gives \\(6\\) (the imaginary parts cancel, as they always do for \\(z^2+\\bar z^2}=2(a^2-b^2)\\)).",
+      "hint": "Compute \\(z^2\\) and \\(\\bar z^2\\) separately, then add — the imaginary parts should cancel.",
+      "distractor_logic": [
+        "Correctly computes \\(z^2\\) but adds it to itself instead of to \\(\\bar z^2\\), then reports only the difference of the two real parts, \\(8\\).",
+        "Adds the two squares without letting the imaginary parts cancel, leaving a spurious imaginary term, \\(6+8i\\).",
+        "Reports \\(z^2\\) alone, \\(3+4i\\), forgetting to add \\(\\bar z^2\\) at all."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-024",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\((3+2i)(3-2i)\\)?",
+      "options": [
+        "13",
+        "5",
+        "\\(5+12i\\)",
+        "\\(13+12i\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "This is a difference of squares: \\(3^2-(2i)^2=9-4i^2=9+4=13\\).",
+      "hint": "Recognize this as a product of conjugates and use the difference-of-squares shortcut.",
+      "distractor_logic": [
+        "Confuses \\(3^2-(2i)^2\\) with \\(3^2-2^2\\), forgetting that squaring \\(2i\\) introduces a sign flip, giving \\(9-4=5\\).",
+        "Multiplies term by term but keeps a spurious cross term that should have cancelled, giving \\(5+12i\\).",
+        "Makes both the sign confusion and the leftover cross-term error at once, giving \\(13+12i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-025",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\((x+iy)(x-iy)-x^2\\) for real \\(x, y\\)?",
+      "options": [
+        "\\(-y^2\\)",
+        "\\(2x^2\\)",
+        "0",
+        "\\(y^2\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\((x+iy)(x-iy)=x^2+y^2\\), so subtracting \\(x^2\\) leaves \\(y^2\\).",
+      "hint": "Simplify \\((x+iy)(x-iy)\\) first using the difference-of-squares pattern.",
+      "distractor_logic": [
+        "Gets the sign of \\(y^2\\) wrong by mismanaging \\(-(iy)^2\\), giving \\(-y^2\\).",
+        "Forgets to subtract \\(x^2\\) at all and instead doubles it, giving \\(2x^2\\).",
+        "Assumes the two conjugate factors \\((x+iy)\\) and \\((x-iy)\\) must always cancel to zero."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-026",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 2,
+      "type": "regular",
+      "question": "What are the roots of \\(x^2-2x+5=0\\)?",
+      "options": [
+        "\\(1\\pm2i\\)",
+        "\\(1\\pm i\\)",
+        "\\(2\\pm i\\)",
+        "\\(-1\\pm2i\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(D=4-20=-16\\). \\(x=\\frac{2\\pm\\sqrt{-16}}{2}=\\frac{2\\pm4i}{2}=1\\pm2i\\).",
+      "hint": "Apply the quadratic formula and simplify the square root of the negative discriminant.",
+      "distractor_logic": [
+        "Miscalculates \\(\\sqrt{-16}\\) as \\(2i\\) instead of \\(4i\\), halving the imaginary part, giving \\(1\\pm i\\).",
+        "Uses the coefficient \\(-b=2\\) directly as the real part without dividing by \\(2a\\), and miscombines the imaginary part along the way, giving \\(2\\pm i\\).",
+        "Uses the wrong sign inside the formula, effectively solving a different equation and giving \\(-1\\pm2i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-027",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the discriminant of \\(2x^2+3x+5=0\\)?",
+      "options": [
+        "31",
+        "-31",
+        "49",
+        "-49"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(D=b^2-4ac=9-4(2)(5)=9-40=-31\\).",
+      "hint": "Substitute \\(a=2, b=3, c=5\\) into \\(D=b^2-4ac\\).",
+      "distractor_logic": [
+        "Computes the correct magnitude but with the wrong sign, giving \\(31\\).",
+        "Uses the sign pattern \\(b^2+4ac\\) instead of \\(b^2-4ac\\), giving \\(49\\).",
+        "Uses the sign pattern \\(b^2+4ac\\) and also flips the overall sign, giving \\(-49\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-028",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 2,
+      "type": "regular",
+      "question": "What are the roots of \\(x^2+x+1=0\\)?",
+      "options": [
+        "\\(\\frac{1\\pm i\\sqrt3}{2}\\)",
+        "\\(\\frac{-1\\pm i\\sqrt3}{4}\\)",
+        "\\(-1\\pm i\\sqrt3\\)",
+        "\\(\\frac{-1\\pm i\\sqrt3}{2}\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(D=1-4=-3\\). \\(x=\\frac{-1\\pm\\sqrt{-3}}{2}=\\frac{-1\\pm i\\sqrt3}{2}\\).",
+      "hint": "Apply the quadratic formula directly with a = b = c = 1.",
+      "distractor_logic": [
+        "Drops the negative sign in front of the leading 1, giving \\(\\frac{1\\pm i\\sqrt3}{2}\\).",
+        "Uses a denominator of 4 instead of correctly dividing by \\(2a=2\\), giving \\(\\frac{-1\\pm i\\sqrt3}{4}\\).",
+        "Forgets to divide by \\(2a\\) at all, giving \\(-1\\pm i\\sqrt3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-029",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 2,
+      "type": "regular",
+      "question": "For what positive value of \\(k\\) does \\(x^2+kx+9=0\\) have equal roots?",
+      "options": [
+        "6",
+        "3",
+        "9",
+        "18"
+      ],
+      "correct_index": 0,
+      "explanation": "Equal roots require \\(D=0\\): \\(k^2-36=0\\), so \\(k=\\pm6\\); taking the positive value, \\(k=6\\).",
+      "hint": "Set the discriminant \\(k^2-4(1)(9)\\) equal to 0 and solve for \\(k\\).",
+      "distractor_logic": [
+        "Reports \\(\\sqrt{9}=3\\) instead of correctly solving \\(k^2=36\\).",
+        "Reports the constant term, \\(9\\), directly instead of solving the discriminant equation.",
+        "Reports \\(2\\times9=18\\), confusing this with the doubled constant rather than solving for \\(k\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-030",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 2,
+      "type": "regular",
+      "question": "What are the roots of \\(3x^2-2x+1=0\\)?",
+      "options": [
+        "\\(\\frac{1\\pm i\\sqrt2}{6}\\)",
+        "\\(\\frac{2\\pm i\\sqrt2}{3}\\)",
+        "\\(\\frac{1\\pm i2\\sqrt2}{3}\\)",
+        "\\(\\frac{1\\pm i\\sqrt2}{3}\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(D=4-12=-8\\). \\(x=\\frac{2\\pm\\sqrt{-8}}{6}=\\frac{2\\pm2i\\sqrt2}{6}=\\frac{1\\pm i\\sqrt2}{3}\\).",
+      "hint": "Apply the quadratic formula and fully simplify the resulting fraction.",
+      "distractor_logic": [
+        "Correctly simplifies the numerator but forgets to also simplify (halve) the denominator, giving \\(\\frac{1\\pm i\\sqrt2}{6}\\).",
+        "Keeps the real part unsimplified, reporting \\(2\\) instead of the reduced \\(1\\), giving \\(\\frac{2\\pm i\\sqrt2}{3}\\).",
+        "Forgets to factor the 2 out of the radical, leaving \\(2\\sqrt2\\) instead of \\(\\sqrt2\\), giving \\(\\frac{1\\pm i2\\sqrt2}{3}\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-031",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-7x+12=0\\), what is \\(\\alpha^2+\\beta^2\\)?",
+      "options": [
+        "49",
+        "1",
+        "25",
+        "73"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(\\alpha+\\beta=7\\), \\(\\alpha\\beta=12\\). \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta=49-24=25\\).",
+      "hint": "Use the identity \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\).",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=49\\) directly, forgetting to subtract \\(2\\alpha\\beta\\).",
+        "Uses the \\((\\alpha-\\beta)^2\\) identity (subtracting \\(4\\alpha\\beta\\)) instead of the sum-of-squares identity, giving \\(49-48=1\\).",
+        "Adds \\(2\\alpha\\beta\\) instead of subtracting it, giving \\(49+24=73\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-032",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(2x^2-3x+1=0\\), what is \\(\\frac1\\alpha+\\frac1\\beta\\)?",
+      "options": [
+        "3",
+        "\\(3/2\\)",
+        "2",
+        "\\(1/2\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\alpha+\\beta=3/2\\), \\(\\alpha\\beta=1/2\\). \\(\\frac1\\alpha+\\frac1\\beta=\\frac{\\alpha+\\beta}{\\alpha\\beta}=\\frac{3/2}{1/2}=3\\).",
+      "hint": "Combine the fractions first: \\(\\frac1\\alpha+\\frac1\\beta=\\frac{\\alpha+\\beta}{\\alpha\\beta}\\).",
+      "distractor_logic": [
+        "Reports \\(\\alpha+\\beta=3/2\\) directly instead of completing the division by \\(\\alpha\\beta\\).",
+        "Adds \\(\\alpha+\\beta\\) and \\(\\alpha\\beta\\) together instead of dividing one by the other, giving \\(3/2+1/2=2\\).",
+        "Reports \\(\\alpha\\beta=1/2\\) directly instead of the requested expression."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-033",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "If the roots of \\(x^2-6x+k=0\\) are equal, what is \\(k\\)?",
+      "options": [
+        "6",
+        "9",
+        "36",
+        "3"
+      ],
+      "correct_index": 1,
+      "explanation": "Equal roots require \\(D=0\\): \\(36-4k=0\\), so \\(k=9\\).",
+      "hint": "Set \\(D=36-4k\\) equal to 0 and solve.",
+      "distractor_logic": [
+        "Reports the coefficient of \\(x\\) directly, \\(6\\), rather than solving for \\(k\\).",
+        "Reports \\(6^2=36\\) without dividing by 4.",
+        "Divides 36 by 12 instead of by 4, giving \\(3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-034",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2+5x+6=0\\), what is \\((\\alpha-\\beta)^2\\)?",
+      "options": [
+        "49",
+        "25",
+        "-1",
+        "1"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(\\alpha+\\beta=-5\\), \\(\\alpha\\beta=6\\). \\((\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta=25-24=1\\).",
+      "hint": "Use the identity \\((\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta\\).",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=25\\) plus 24 instead of minus, giving \\(49\\).",
+        "Reports \\((\\alpha+\\beta)^2=25\\) directly without subtracting anything.",
+        "Computes the subtraction correctly in magnitude but reports a negative value, \\(-1\\), which is impossible for a real square."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-035",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the coefficient of x in the monic quadratic equation whose roots are 2 and -3?",
+      "options": [
+        "-1",
+        "-6",
+        "6",
+        "1"
+      ],
+      "correct_index": 3,
+      "explanation": "Sum of roots \\(=2+(-3)=-1\\), so the coefficient of \\(x\\) is \\(-(\\alpha+\\beta)=1\\). (The full equation is \\(x^2+x-6=0\\).)",
+      "hint": "The coefficient of x equals the negative of the sum of the roots.",
+      "distractor_logic": [
+        "Forgets to negate the sum of the roots, giving \\(-1\\).",
+        "Reports the product of the roots, \\(-6\\), instead of the coefficient of \\(x\\).",
+        "Reports the negative of the product of the roots, \\(6\\), instead of the coefficient of \\(x\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-036",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\(\\omega^{100}\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "\\(\\omega\\)",
+        "\\(1\\)",
+        "\\(\\omega^2\\)",
+        "0"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(100=3\\times33+1\\), so \\(\\omega^{100}=(\\omega^3)^{33}\\cdot\\omega=1^{33}\\cdot\\omega=\\omega\\).",
+      "hint": "Find the remainder when 100 is divided by 3.",
+      "distractor_logic": [
+        "Uses remainder 0 by mistake, as if 100 were divisible by 3, giving \\(1\\).",
+        "Uses remainder 2 by mistake, giving \\(\\omega^2\\).",
+        "Assumes all large powers of \\(\\omega\\) eventually vanish to 0."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-037",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\(1+\\omega^{15}+\\omega^{30}\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "3",
+        "0",
+        "1",
+        "\\(-1\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Since 15 and 30 are both multiples of 3, \\(\\omega^{15}=\\omega^{30}=1\\). So the sum is \\(1+1+1=3\\).",
+      "hint": "Check whether the exponents 15 and 30 are multiples of 3.",
+      "distractor_logic": [
+        "Confuses this expression with \\(1+\\omega+\\omega^2\\), which does equal 0, without checking that the exponents here are multiples of 3.",
+        "Simplifies only one of the two power terms correctly to 1 and drops the constant 1 entirely, leaving just \\(1\\).",
+        "Correctly simplifies both powers to 1 but then subtracts instead of adding, giving \\(-1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-038",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\(\\omega+\\omega^2\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "\\(1\\)",
+        "\\(0\\)",
+        "\\(-2\\)",
+        "\\(-1\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Since \\(1+\\omega+\\omega^2=0\\), rearranging gives \\(\\omega+\\omega^2=-1\\).",
+      "hint": "Start from the identity \\(1+\\omega+\\omega^2=0\\) and isolate the two complex terms.",
+      "distractor_logic": [
+        "Assumes the two complex roots simply add up to the number of terms, \\(1\\).",
+        "Assumes the two complex roots simply cancel to \\(0\\).",
+        "Miscounts the constant term when rearranging the identity, doubling it instead of just moving it across the equation, giving \\(-2\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-039",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\((1+\\omega+\\omega^2)(1+\\omega^2+\\omega)\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "1",
+        "3",
+        "0",
+        "\\(-1\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Both factors equal \\(1+\\omega+\\omega^2=0\\), so their product is \\(0\\times0=0\\).",
+      "hint": "Recognize that both factors are the same well-known identity in disguise.",
+      "distractor_logic": [
+        "Assumes each factor equals 1 (miscounting the three terms as contributing 1 each) instead of 0, and multiplies \\(1\\times1=1\\).",
+        "Assumes each factor equals \\(\\sqrt3\\) rounded loosely and multiplies incorrectly, arriving at \\(3\\).",
+        "Treats the product as a difference of the two (identical) factors instead of a product, arriving at \\(-1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L2-040",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 2,
+      "type": "regular",
+      "question": "What is \\(|1+\\omega|\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "2",
+        "0",
+        "1",
+        "\\(\\sqrt3\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Since \\(1+\\omega=-\\omega^2\\) (from \\(1+\\omega+\\omega^2=0\\)), and \\(|\\omega^2|=1\\), we get \\(|1+\\omega|=|-\\omega^2|=1\\).",
+      "hint": "Rewrite \\(1+\\omega\\) using the identity \\(1+\\omega+\\omega^2=0\\) first.",
+      "distractor_logic": [
+        "Assumes the moduli of the two separate terms \\(1\\) and \\(\\omega\\) simply add, giving \\(1+1=2\\).",
+        "Assumes \\(1+\\omega\\) must vanish entirely, confusing it with the three-term identity \\(1+\\omega+\\omega^2=0\\).",
+        "Confuses this modulus with the coefficient \\(\\sqrt3/2\\) that appears inside \\(\\omega\\)'s rectangular form, rounding it up to \\(\\sqrt3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-001",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the value of \\(i^{100}+i^{101}+i^{102}+\\cdots+i^{200}\\)?",
+      "options": [
+        "0",
+        "\\(i\\)",
+        "1",
+        "\\(-1\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "There are 101 terms. Group the first 100 terms (\\(i^{100}\\) through \\(i^{199}\\)) into 25 blocks of 4 consecutive powers; each block sums to 0. That leaves only the final term \\(i^{200}=(i^4)^{50}=1\\). So the total is \\(0+1=1\\).",
+      "hint": "Group the exponents into blocks of four consecutive powers, then see what's left over.",
+      "distractor_logic": [
+        "Assumes every block of four consecutive powers cancels with nothing left over, missing that 101 is not a multiple of 4, and reports \\(0\\).",
+        "Correctly isolates one leftover term but misidentifies its value as \\(i\\) instead of \\(i^{200}=1\\).",
+        "Leaves over the wrong boundary term and reports \\(i^{100}=-1\\) instead of \\(i^{200}=1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-002",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the value of \\(i+2i^2+3i^3+4i^4\\)?",
+      "options": [
+        "\\(2-2i\\)",
+        "\\(2+2i\\)",
+        "\\(-2+2i\\)",
+        "\\(-2-2i\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Substitute term by term: \\(i+2(-1)+3(-i)+4(1)=i-2-3i+4\\). Combine real parts \\((4-2)=2\\) and imaginary parts \\((i-3i)=-2i\\), giving \\(2-2i\\).",
+      "hint": "Replace each power of \\(i\\) with its value first, then combine real and imaginary parts separately.",
+      "distractor_logic": [
+        "Combines the imaginary coefficients with the wrong sign, giving \\(2+2i\\) instead of \\(2-2i\\).",
+        "Combines the real parts with the wrong sign, giving \\(-2+2i\\) instead of \\(2-2i\\).",
+        "Makes both sign errors at once, flipping the whole answer to \\(-2-2i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-003",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": 3,
+      "type": "regular",
+      "question": "For how many values of n in {1, 2, ..., 20} does i^n = 1?",
+      "options": [
+        "4",
+        "6",
+        "20",
+        "5"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(i^n=1\\) exactly when \\(n\\) is a multiple of 4. In \\(\\{1,\\dots,20\\}\\), the multiples of 4 are \\(4,8,12,16,20\\) — five values.",
+      "hint": "i to the power n equals 1 exactly when n is a multiple of 4 — count those in the given range.",
+      "distractor_logic": [
+        "Miscounts the multiples of 4 up to 20, undercounting by one and reporting \\(4\\).",
+        "Confuses this with the count of multiples of 3 in the same range, reporting \\(6\\).",
+        "Assumes every value of \\(n\\) in the range works, since powers of \\(i\\) always cycle back eventually, reporting \\(20\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-004",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 3,
+      "type": "regular",
+      "question": "What is \\((1+i)^4\\)?",
+      "options": [
+        "\\(-4\\)",
+        "4",
+        "\\(4i\\)",
+        "\\(-4i\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\((1+i)^2=2i\\). Then \\((1+i)^4=(2i)^2=4i^2=-4\\).",
+      "hint": "Square the expression once, then square the result.",
+      "distractor_logic": [
+        "Correctly finds \\((1+i)^2=2i\\) but forgets that \\(i^2=-1\\) when squaring again, leaving a positive result, \\(4\\).",
+        "Introduces a spurious \\(i\\), treating \\((2i)^2\\) as if it were \\(4i\\).",
+        "Same spurious-\\(i\\) error as above but with the wrong sign, giving \\(-4i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-005",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the value of \\(\\left[\\frac{1+i}{1-i}\\right]^{100}\\)?",
+      "options": [
+        "\\(i\\)",
+        "1",
+        "\\(-1\\)",
+        "\\(-i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(\\frac{1+i}{1-i}=i\\) (a standard simplification). So the expression equals \\(i^{100}=(i^4)^{25}=1\\).",
+      "hint": "First simplify the fraction inside the brackets, then apply the power of \\(i\\) rule.",
+      "distractor_logic": [
+        "Correctly simplifies the fraction to \\(i\\) but forgets to also raise it to the 100th power.",
+        "Uses remainder 2 when reducing \\(i^{100}\\) modulo 4, giving \\(-1\\).",
+        "Uses remainder 3 when reducing \\(i^{100}\\) modulo 4, giving \\(-i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-006",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the value of \\(\\frac{(3+2i)(2-i)}{1+2i}\\)?",
+      "options": [
+        "\\(2-3i\\)",
+        "\\(2+3i\\)",
+        "\\(-2-3i\\)",
+        "\\(8+i\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "First, \\((3+2i)(2-i)=6-3i+4i-2i^2=8+i\\). Then \\(\\frac{8+i}{1+2i}\\cdot\\frac{1-2i}{1-2i}=\\frac{8-16i+i-2i^2}{5}=\\frac{10-15i}{5}=2-3i\\).",
+      "hint": "First multiply out the numerator, then rationalize the denominator using its conjugate.",
+      "distractor_logic": [
+        "Rationalizes correctly but flips the sign of the imaginary part of the final answer, giving \\(2+3i\\).",
+        "Rationalizes correctly but flips the sign of the real part of the final answer, giving \\(-2-3i\\).",
+        "Correctly computes the numerator \\(8+i\\) but forgets to divide by the denominator at all, reporting \\(8+i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-007",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\((a+bi)(1+2i)=5i\\) for real \\(a, b\\), what is \\(a+b\\)?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct_index": 2,
+      "explanation": "Expand: \\((a+bi)(1+2i)=(a-2b)+(2a+b)i\\). Comparing with \\(0+5i\\): \\(a-2b=0\\) and \\(2a+b=5\\). From the first, \\(a=2b\\); substituting gives \\(4b+b=5\\), so \\(b=1\\) and \\(a=2\\). Hence \\(a+b=3\\).",
+      "hint": "Expand the product, then compare real and imaginary parts on both sides separately.",
+      "distractor_logic": [
+        "Solves for \\(b=1\\) correctly but reports it alone instead of \\(a+b\\).",
+        "Solves for \\(a=2\\) correctly but reports it alone instead of \\(a+b\\).",
+        "Misreads the right-hand side \\(5i\\) as if it also carried a real part of 5, and adds that in instead of the correct value \\(a+b=3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-008",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(z_1=1+i\\) and \\(z_2=2-3i\\), what is \\(|z_1z_2|^2-|z_1|^2|z_2|^2\\)?",
+      "options": [
+        "1",
+        "10",
+        "26",
+        "0"
+      ],
+      "correct_index": 3,
+      "explanation": "By the multiplicative property of modulus, \\(|z_1z_2|=|z_1||z_2|\\) always holds, so \\(|z_1z_2|^2\\) and \\(|z_1|^2|z_2|^2\\) are automatically equal for any \\(z_1,z_2\\), making the difference 0 regardless of the specific values.",
+      "hint": "Recall the identity relating the modulus of a product to the product of the moduli — no computation is actually needed.",
+      "distractor_logic": [
+        "Miscombines the two (always-equal) quantities and reports a small nonzero leftover, \\(1\\), instead of recognizing they cancel exactly.",
+        "Computes \\(|z_1|^2|z_2|^2\\) alone (treating it as the full answer) instead of recognizing the subtraction must vanish, reporting \\(10\\).",
+        "Computes \\(|z_1z_2|^2\\) alone instead of recognizing the subtraction must vanish, reporting \\(26\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-009",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 3,
+      "type": "regular",
+      "question": "If a complex number \\(z\\) satisfies \\(|z-3|=|z-5|\\), what must \\(\\text{Re}(z)\\) equal?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "8"
+      ],
+      "correct_index": 0,
+      "explanation": "This describes all points equidistant from \\(3\\) and \\(5\\) on the real axis — the perpendicular bisector of the segment joining them, which is the vertical line \\(x=4\\). So \\(\\text{Re}(z)=4\\) for every such \\(z\\).",
+      "hint": "This condition describes a perpendicular bisector — find the midpoint of the two real numbers.",
+      "distractor_logic": [
+        "Reports one of the two given numbers, \\(3\\), instead of their midpoint.",
+        "Reports the other given number, \\(5\\), instead of their midpoint.",
+        "Adds the two numbers instead of averaging them, giving \\(8\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-010",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(z=x+iy\\) satisfies \\(|z+1|=|z-i|\\), which relation must \\(x\\) and \\(y\\) satisfy?",
+      "options": [
+        "\\(x-y=0\\)",
+        "\\(x+y=1\\)",
+        "\\(x+y=0\\)",
+        "\\(2x+y=0\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Squaring both sides: \\((x+1)^2+y^2=x^2+(y-1)^2\\). Expanding: \\(x^2+2x+1+y^2=x^2+y^2-2y+1\\), which simplifies to \\(2x=-2y\\), i.e. \\(x+y=0\\).",
+      "hint": "Square both sides of the modulus equation and expand carefully before simplifying.",
+      "distractor_logic": [
+        "Makes a sign error while expanding \\((y-1)^2\\), ending up with \\(x-y=0\\) instead.",
+        "Loses the constant terms during expansion instead of letting them cancel, leaving a stray constant that turns into \\(x+y=1\\).",
+        "Introduces an extra factor of 2 on the wrong term while simplifying, giving \\(2x+y=0\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-011",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(|z_1|=|z_2|=|z_1+z_2|=1\\), what is \\(|z_1-z_2|\\)?",
+      "options": [
+        "1",
+        "2",
+        "\\(\\sqrt3\\)",
+        "\\(\\sqrt2\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Using the parallelogram identity \\(|z_1+z_2|^2+|z_1-z_2|^2=2(|z_1|^2+|z_2|^2)\\): \\(1+|z_1-z_2|^2=2(1+1)=4\\), so \\(|z_1-z_2|^2=3\\) and \\(|z_1-z_2|=\\sqrt3\\).",
+      "hint": "Use the parallelogram law relating \\(|z_1+z_2|^2\\) and \\(|z_1-z_2|^2\\) to \\(|z_1|^2\\) and \\(|z_2|^2\\).",
+      "distractor_logic": [
+        "Skips squaring and treats the moduli as if they combine linearly, reporting \\(1\\).",
+        "Correctly sets up the parallelogram identity but forgets to double the right-hand side, arriving at \\(2\\).",
+        "Forgets to take the final square root after correctly finding \\(|z_1-z_2|^2=3\\), and instead reports an unrelated value, \\(\\sqrt2\\), from a slip elsewhere in the algebra."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-012",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 3,
+      "type": "regular",
+      "question": "A point \\(z=x+iy\\) lies in the third quadrant with \\(x=-1, y=-1\\). What is its principal argument?",
+      "options": [
+        "\\(3\\pi/4\\)",
+        "\\(5\\pi/4\\)",
+        "\\(-\\pi/4\\)",
+        "\\(-3\\pi/4\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The reference angle is \\(\\pi/4\\). In the third quadrant, the angle measured normally is \\(\\pi+\\pi/4=5\\pi/4\\), but the principal range is \\((-\\pi,\\pi]\\), so the equivalent principal value is \\(5\\pi/4-2\\pi=-3\\pi/4\\).",
+      "hint": "Find the angle in the usual 0-to-\\(2\\pi\\) sense first, then convert it into the principal range \\((-\\pi,\\pi]\\).",
+      "distractor_logic": [
+        "Adjusts for the wrong (second) quadrant instead of the third, giving \\(3\\pi/4\\).",
+        "Reports the angle in the 0-to-\\(2\\pi\\) sense, \\(5\\pi/4\\), without converting it into the principal range.",
+        "Reports only the reference angle with the wrong sign, without accounting for the quadrant at all, giving \\(-\\pi/4\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-013",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(z_1\\) has modulus 2 and argument \\(\\pi/3\\), and \\(z_2\\) has modulus 3 and argument \\(\\pi/6\\), what is the argument of \\(z_1z_2\\)?",
+      "options": [
+        "\\(\\pi/3\\)",
+        "\\(\\pi/6\\)",
+        "\\(\\pi/9\\)",
+        "\\(\\pi/2\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Arguments add under multiplication: \\(\\pi/3+\\pi/6=2\\pi/6+\\pi/6=3\\pi/6=\\pi/2\\).",
+      "hint": "Recall that when two complex numbers are multiplied, their arguments simply add.",
+      "distractor_logic": [
+        "Reports only one of the two given arguments, \\(\\pi/3\\), instead of adding them.",
+        "Reports the other given argument, \\(\\pi/6\\), instead of adding them.",
+        "Multiplies the two arguments together instead of adding them, and further miscombines the result down to \\(\\pi/9\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-014",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(\\arg(z)=\\theta\\), what is \\(\\arg(\\bar z)\\) in terms of \\(\\theta\\) (for z not a negative real number)?",
+      "options": [
+        "\\(\\theta\\)",
+        "\\(\\pi-\\theta\\)",
+        "\\(\\pi+\\theta\\)",
+        "\\(-\\theta\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Conjugation reflects a point across the real axis, which negates its argument: \\(\\arg(\\bar z)=-\\theta\\).",
+      "hint": "Conjugation reflects the point in the Argand plane across which axis?",
+      "distractor_logic": [
+        "Assumes the argument is unaffected by conjugation, reporting \\(\\theta\\).",
+        "Confuses reflection across the real axis with reflection across the imaginary axis, which instead gives \\(\\pi-\\theta\\).",
+        "Confuses conjugation with a half-turn rotation about the origin, giving \\(\\pi+\\theta\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-015",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": 3,
+      "type": "regular",
+      "question": "A complex number \\(z\\) satisfies \\(|z|=2\\) and \\(\\arg(z)=2\\pi/3\\). What is \\(z\\) in \\(a+bi\\) form?",
+      "options": [
+        "\\(1+\\sqrt3\\,i\\)",
+        "\\(-2+\\sqrt3\\,i\\)",
+        "\\(-1+\\sqrt3\\,i\\)",
+        "\\(-1+2\\sqrt3\\,i\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(\\cos(2\\pi/3)=-1/2\\) and \\(\\sin(2\\pi/3)=\\sqrt3/2\\), so \\(z=2(-\\tfrac12)+2(\\tfrac{\\sqrt3}2)i=-1+\\sqrt3\\,i\\).",
+      "hint": "Substitute the exact cosine and sine values for \\(2\\pi/3\\), then scale by the modulus.",
+      "distractor_logic": [
+        "Drops the sign of the cosine term, treating the angle as if it were in the first quadrant, giving \\(1+\\sqrt3\\,i\\).",
+        "Uses \\(\\cos(2\\pi/3)=-1\\) instead of \\(-1/2\\) (forgetting the exact half value), giving a real part of \\(-2\\) while the imaginary part is computed correctly as \\(\\sqrt3\\).",
+        "Uses \\(\\sin(2\\pi/3)=\\sqrt3\\) instead of \\(\\sqrt3/2\\), giving an imaginary part of \\(2\\sqrt3\\) while the real part is computed correctly as \\(-1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-016",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(z+\\frac1z=1\\) for a nonzero complex number \\(z\\), what is \\(z^3+\\frac1{z^3}\\)?",
+      "options": [
+        "\\(-2\\)",
+        "1",
+        "2",
+        "0"
+      ],
+      "correct_index": 0,
+      "explanation": "Using the identity \\(a^3+\\frac1{a^3}=\\left(a+\\frac1a\\right)^3-3\\left(a+\\frac1a\\right)\\) with \\(a+\\frac1a=1\\): \\(1^3-3(1)=1-3=-2\\).",
+      "hint": "Use the algebraic identity relating \\(a^3+1/a^3\\) to \\(a+1/a\\).",
+      "distractor_logic": [
+        "Reports \\(\\left(a+\\frac1a\\right)^3=1\\) alone, forgetting to subtract the correction term.",
+        "Applies the identity for \\(a^2+1/a^2\\) instead of the cubic one, giving \\(1-2=-1\\), then further miscombines the sign to land on \\(2\\).",
+        "Assumes \\(a+1/a=1\\) forces \\(a=1\\) itself, then computes \\(1^3+1/1^3\\) incorrectly as \\(0\\) rather than \\(2\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-017",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(z_1=1+i\\) and \\(z_2=1-i\\), what is \\(z_1^3+z_2^3\\)?",
+      "options": [
+        "4",
+        "\\(-4i\\)",
+        "\\(4i\\)",
+        "\\(-4\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Using \\(a^3+b^3=(a+b)(a^2-ab+b^2)\\) with \\(a+b=2\\): \\(a^2=(1+i)^2=2i\\), \\(b^2=(1-i)^2=-2i\\), \\(ab=(1+i)(1-i)=2\\). So \\(a^2-ab+b^2=2i-2-2i=-2\\), and the product is \\(2\\times(-2)=-4\\).",
+      "hint": "Use the sum-of-cubes identity, computing \\(a+b\\), \\(a^2\\), \\(b^2\\), and \\(ab\\) separately first.",
+      "distractor_logic": [
+        "Miscalculates the intermediate value \\(a^2-ab+b^2\\) as \\(+2\\) instead of \\(-2\\) (a sign slip), giving \\(2\\times2=4\\) after multiplying by \\(a+b=2\\).",
+        "Mismanages a sign while computing \\(ab=(1+i)(1-i)\\), leaving a spurious imaginary term in the final product instead of a real result, giving \\(-4i\\).",
+        "Makes the same kind of sign slip in \\(ab\\) with the opposite sign, giving \\(4i\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-018",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(z=\\cos\\theta+i\\sin\\theta\\), what does \\(z+\\frac1z\\) simplify to?",
+      "options": [
+        "\\(2\\cos\\theta\\)",
+        "\\(2\\sin\\theta\\)",
+        "\\(2i\\sin\\theta\\)",
+        "0"
+      ],
+      "correct_index": 0,
+      "explanation": "Since \\(|z|=1\\), \\(\\frac1z=\\bar z=\\cos\\theta-i\\sin\\theta\\). Adding: \\(z+\\frac1z=2\\cos\\theta\\) (the imaginary parts cancel).",
+      "hint": "For \\(|z|=1\\), the reciprocal of \\(z\\) equals its conjugate — use that to simplify the sum.",
+      "distractor_logic": [
+        "Assumes the real parts cancel instead of the imaginary parts, leaving only a sine term, \\(2\\sin\\theta\\).",
+        "Confuses \\(z+1/z\\) with \\(z-1/z\\), which instead gives \\(2i\\sin\\theta\\).",
+        "Assumes \\(z\\) and \\(1/z\\) always cancel entirely regardless of \\(\\theta\\), reporting \\(0\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-019",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 3,
+      "type": "regular",
+      "question": "The equation \\(x^2-(3+2i)x+(2+2i)=0\\) has one real root. What is it?",
+      "options": [
+        "2",
+        "1",
+        "\\(-1\\)",
+        "3"
+      ],
+      "correct_index": 1,
+      "explanation": "Let the real root be \\(r\\). Substituting and separating real and imaginary parts of \\(r^2-(3+2i)r+(2+2i)=0\\) gives two equations: \\(r^2-3r+2=0\\) (real part) and \\(-2r+2=0\\) (imaginary part). The imaginary-part equation forces \\(r=1\\), and this value also satisfies the real-part equation, confirming \\(r=1\\) is the (unique) real root.",
+      "hint": "Substitute a real value r into the equation and separately set the real part and the imaginary part of the result to zero.",
+      "distractor_logic": [
+        "Solves only the real-part equation \\(r^2-3r+2=0\\), which factors as \\((r-1)(r-2)=0\\), and picks the other root \\(2\\) that doesn't actually satisfy the imaginary-part condition.",
+        "Guesses a real value without checking both the real and imaginary conditions simultaneously, landing on \\(-1\\).",
+        "Guesses another unchecked value that satisfies neither condition, landing on \\(3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-020",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 3,
+      "type": "regular",
+      "question": "One root of \\(x^2+px+q=0\\) (real \\(p, q\\)) is \\(2+3i\\). What is \\(p+q\\)?",
+      "options": [
+        "9",
+        "5",
+        "13",
+        "-4"
+      ],
+      "correct_index": 0,
+      "explanation": "Since the coefficients are real, the other root is the conjugate \\(2-3i\\). Sum of roots \\(=4=-p\\), so \\(p=-4\\). Product of roots \\(=(2+3i)(2-3i)=4+9=13=q\\). So \\(p+q=-4+13=9\\).",
+      "hint": "Real coefficients force the other root to be the conjugate — then use the sum and product of roots.",
+      "distractor_logic": [
+        "Correctly finds \\(q=13\\) but combines it with an unrelated value instead of the correct \\(p=-4\\), arriving at \\(5\\).",
+        "Correctly finds \\(q=13\\) but reports it alone instead of \\(p+q\\).",
+        "Correctly finds \\(p=-4\\) but reports it alone instead of \\(p+q\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-021",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the coefficient of \\(x\\) in the monic quadratic equation with real coefficients having \\(3-2i\\) as a root?",
+      "options": [
+        "6",
+        "\\(-13\\)",
+        "13",
+        "\\(-6\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "With real coefficients, the other root is \\(3+2i\\). Sum of roots \\(=6\\), so the coefficient of \\(x\\) is \\(-6\\) (the equation is \\(x^2-6x+13=0\\)).",
+      "hint": "Find the other (conjugate) root first, then use the sum-of-roots relationship.",
+      "distractor_logic": [
+        "Forgets to negate the sum of the roots, giving \\(6\\).",
+        "Reports the negative of the constant term of the equation instead of the coefficient of \\(x\\), giving \\(-13\\).",
+        "Reports the constant term of the equation directly instead of the coefficient of \\(x\\), giving \\(13\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-022",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(\\alpha\\) and \\(\\beta\\) are the roots of \\(x^2+4x+13=0\\), what is \\(|\\alpha|\\)?",
+      "options": [
+        "\\(\\sqrt{13}\\)",
+        "13",
+        "4",
+        "\\(\\sqrt{29}\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(D=16-52=-36\\). Roots \\(=\\frac{-4\\pm6i}{2}=-2\\pm3i\\). So \\(|\\alpha|=\\sqrt{(-2)^2+3^2}=\\sqrt{13}\\). (This also equals \\(\\sqrt{\\alpha\\beta}}=\\sqrt{c/a}=\\sqrt{13}\\), since for a real-coefficient quadratic with complex conjugate roots, \\(\\alpha\\beta=|\\alpha|^2\\).)",
+      "hint": "Solve for the roots explicitly, or use the shortcut that \\(|\\text{root}|^2\\) equals the product of the roots for a conjugate pair.",
+      "distractor_logic": [
+        "Reports \\(\\alpha\\beta=13\\) itself instead of taking its square root.",
+        "Reports the coefficient of \\(x\\), \\(4\\), directly instead of computing the modulus.",
+        "Adds the squares of the real and imaginary parts of the root incorrectly, using \\(4^2+13\\) instead of \\(2^2+3^2\\), giving \\(\\sqrt{29}\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-023",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-4x+3=0\\), what is \\(\\alpha^3+\\beta^3\\)?",
+      "options": [
+        "28",
+        "64",
+        "36",
+        "8"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\alpha+\\beta=4\\), \\(\\alpha\\beta=3\\). Using \\(\\alpha^3+\\beta^3=(\\alpha+\\beta)^3-3\\alpha\\beta(\\alpha+\\beta)\\): \\(4^3-3(3)(4)=64-36=28\\).",
+      "hint": "Use the identity \\(\\alpha^3+\\beta^3=(\\alpha+\\beta)^3-3\\alpha\\beta(\\alpha+\\beta)\\).",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^3=64\\) alone, forgetting to subtract the correction term.",
+        "Reports only the correction term \\(3\\alpha\\beta(\\alpha+\\beta)=36\\) instead of the full expression.",
+        "Misreads the question and reports \\(2(\\alpha+\\beta)=2\\times4=8\\) instead of the cube-sum expression."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-024",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2+3x+5=0\\), what is \\(\\alpha^2+\\beta^2\\)?",
+      "options": [
+        "9",
+        "19",
+        "1",
+        "\\(-1\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(\\alpha+\\beta=-3\\), \\(\\alpha\\beta=5\\). \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta=9-10=-1\\). (This is a good reminder that the sum of squares of a complex-conjugate root pair can be negative.)",
+      "hint": "Use \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\), even though the roots themselves are complex.",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=9\\) alone, forgetting to subtract \\(2\\alpha\\beta\\).",
+        "Adds \\(2\\alpha\\beta\\) instead of subtracting it, giving \\(9+10=19\\).",
+        "Assumes a sum of squares can never be negative and flips the sign of the correct answer, giving \\(1\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-025",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "The roots \\(\\alpha, \\beta\\) of \\(x^2-(m+1)x+m=0\\) satisfy \\(\\alpha=2\\beta\\). If \\(m\\) is a positive integer, what is \\(m\\)?",
+      "options": [
+        "1",
+        "4",
+        "2",
+        "3"
+      ],
+      "correct_index": 2,
+      "explanation": "Sum: \\(3\\beta=m+1\\). Product: \\(2\\beta^2=m\\). Substituting \\(\\beta=(m+1)/3\\) into the product equation and simplifying gives \\(2m^2-5m+2=0\\), i.e. \\((2m-1)(m-2)=0\\), so \\(m=1/2\\) or \\(m=2\\). Only \\(m=2\\) is a positive integer.",
+      "hint": "Set up the sum and product equations with the given ratio, then solve the resulting equation for m — only one solution is an integer.",
+      "distractor_logic": [
+        "Picks the non-integer solution's numerator, \\(1\\), without noticing it actually corresponds to \\(m=1/2\\), not an integer value of \\(m\\).",
+        "Makes an arithmetic slip while forming the quadratic \\(2m^2-5m+2=0\\) and lands on the unrelated integer \\(4\\).",
+        "Makes a different arithmetic slip while forming the same quadratic and lands on the unrelated integer \\(3\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-026",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-6x+c=0\\) and \\(\\alpha^2+\\beta^2=20\\), what is \\(c\\)?",
+      "options": [
+        "8",
+        "16",
+        "36",
+        "10"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\alpha+\\beta=6\\). \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\) gives \\(20=36-2c\\), so \\(2c=16\\) and \\(c=8\\).",
+      "hint": "Substitute \\(\\alpha+\\beta=6\\) into the sum-of-squares identity and solve for \\(c\\).",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=36\\) directly instead of solving for \\(c\\).",
+        "Solves for \\(2c=16\\) correctly but forgets to divide by 2 at the end, reporting \\(16\\).",
+        "Reports the given sum-of-squares value, \\(20\\), minus an unrelated constant, arriving at \\(10\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-027",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(\\omega\\) is a complex cube root of unity, what is \\((1-\\omega)(1-\\omega^2)(1-\\omega^4)(1-\\omega^8)\\)?",
+      "options": [
+        "3",
+        "9",
+        "0",
+        "81"
+      ],
+      "correct_index": 1,
+      "explanation": "Since \\(\\omega^3=1\\), \\(\\omega^4=\\omega\\) and \\(\\omega^8=\\omega^2\\). So the expression is \\([(1-\\omega)(1-\\omega^2)]^2\\). Now \\((1-\\omega)(1-\\omega^2)=1-\\omega-\\omega^2+\\omega^3=1-(\\omega+\\omega^2)+1=1-(-1)+1=3\\). Squaring gives \\(9\\).",
+      "hint": "Reduce the higher powers of \\(\\omega\\) using \\(\\omega^3=1\\) first, then use the identity \\(1+\\omega+\\omega^2=0\\).",
+      "distractor_logic": [
+        "Correctly finds the inner product \\((1-\\omega)(1-\\omega^2)=3\\) but forgets to square it, since the expression actually repeats this pair twice.",
+        "Assumes the higher powers \\(\\omega^4\\) and \\(\\omega^8\\) are distinct new roots rather than reducing them back to \\(\\omega\\) and \\(\\omega^2\\), introducing a spurious zero factor and forcing the whole product to \\(0\\).",
+        "Correctly squares \\((1-\\omega)(1-\\omega^2)\\) but miscomputes the base value as \\(9\\) rather than \\(3\\) before squaring, overshooting to \\(81\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-028",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(\\omega\\) is a complex cube root of unity (\\(\\omega\\neq1\\)), what is \\(\\omega+\\omega^2+\\omega^3+\\cdots+\\omega^{99}\\)?",
+      "options": [
+        "1",
+        "\\(-1\\)",
+        "0",
+        "33"
+      ],
+      "correct_index": 2,
+      "explanation": "The powers of \\(\\omega\\) cycle as \\(\\omega,\\omega^2,1,\\omega,\\omega^2,1,\\dots\\) with period 3, and each block of 3 consecutive terms sums to \\(\\omega+\\omega^2+1=0\\). There are 99 terms, forming exactly 33 complete blocks, so the total is \\(0\\).",
+      "hint": "Group the 99 terms into blocks of 3 consecutive powers and use the fact that each block sums to zero.",
+      "distractor_logic": [
+        "Assumes each block of three consecutive terms sums to 1 instead of 0, and reports the resulting count directly, \\(1\\).",
+        "Assumes the 99 terms don't fully divide into complete blocks of three and a leftover term of \\(-1\\) remains.",
+        "Confuses the number of blocks, \\(33\\), with the value of the sum itself."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-029",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 3,
+      "type": "regular",
+      "question": "If \\(x=a+b\\), \\(y=a\\omega+b\\omega^2\\), and \\(z=a\\omega^2+b\\omega\\) (where \\(\\omega\\) is a complex cube root of unity), what is \\(x+y+z\\)?",
+      "options": [
+        "0",
+        "\\(3a+3b\\)",
+        "\\(a+b\\)",
+        "\\(3(a+b)\\omega\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(x+y+z=a(1+\\omega+\\omega^2)+b(1+\\omega^2+\\omega)=a(0)+b(0)=0\\), since \\(1+\\omega+\\omega^2=0\\).",
+      "hint": "Group all the coefficients of a together and all the coefficients of b together — each group is a familiar identity.",
+      "distractor_logic": [
+        "Assumes \\(1+\\omega+\\omega^2\\) equals 3 (the number of terms) rather than 0, giving \\(3a+3b\\).",
+        "Only sums the \\(a\\)-terms and forgets the \\(b\\)-terms contribute anything at all, then reports the leftover as \\(a+b\\).",
+        "Assumes the grouped identity introduces a leftover factor of \\(\\omega\\) instead of vanishing completely, giving \\(3(a+b)\\omega\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-L3-030",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": 3,
+      "type": "regular",
+      "question": "In the Argand plane, what is the locus of points z satisfying |z| = |z - 4|?",
+      "options": [
+        "\\(\\text{Re}(z)=2\\)",
+        "\\(\\text{Re}(z)=4\\)",
+        "\\(|z|=2\\)",
+        "\\(\\text{Im}(z)=2\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Let \\(z=x+iy\\). \\(x^2+y^2=(x-4)^2+y^2\\) expands to \\(x^2=x^2-8x+16\\), giving \\(8x=16\\), so \\(x=2\\) — a vertical line, i.e. \\(\\text{Re}(z)=2\\).",
+      "hint": "Square both sides of the modulus equation, letting z = x + iy, and simplify.",
+      "distractor_logic": [
+        "Reports the given constant, \\(4\\), directly instead of solving for its midpoint value.",
+        "Confuses the locus (a line) with a circle of some related radius, reporting \\(|z|=2\\).",
+        "Solves for the wrong coordinate, treating this as a condition on the imaginary part instead of the real part, giving \\(\\text{Im}(z)=2\\)."
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-001",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(3i\\) is one root of \\(x^2+bx+9=0\\) (real \\(b\\)), what is \\(b\\)?",
+      "options": [
+        "6",
+        "\\(-6\\)",
+        "3",
+        "0"
+      ],
+      "correct_index": 3,
+      "explanation": "With real \\(b\\), the other root must be \\(-3i\\) (the conjugate). Product check: \\((3i)(-3i)=9\\) ✓ matches \\(9\\). Sum \\(=3i+(-3i)=0=-b\\), so \\(b=0\\).",
+      "hint": "A pure imaginary root of a real-coefficient equation forces its conjugate to be the other root — use the sum of roots.",
+      "distractor_logic": [
+        "Mistakenly computes the sum of the roots as \\(3+3=6\\) (adding the two roots' magnitudes instead of letting the imaginary parts cancel) and reports that directly as \\(b\\), skipping the required negation.",
+        "Makes the same magnitude-sum mistake but correctly applies \\(b=-(\\text{sum})\\), giving \\(b=-6\\).",
+        "Confuses \\(b\\) with the square root of the constant term, \\(\\sqrt9=3\\)."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-002",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(|(2+i)(1-i)|\\)?",
+      "options": [
+        "10",
+        "\\(\\sqrt{10}\\)",
+        "5",
+        "\\(\\sqrt5\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(|2+i|=\\sqrt5\\), \\(|1-i|=\\sqrt2\\). By the multiplicative property, \\(|(2+i)(1-i)|=\\sqrt5\\cdot\\sqrt2=\\sqrt{10}\\).",
+      "hint": "Use \\(|z_1z_2|=|z_1||z_2|\\) rather than expanding the product first.",
+      "distractor_logic": [
+        "Squares the correct answer instead of leaving it as a square root, giving \\(10\\).",
+        "Reports only \\(|2+i|^2=5\\), ignoring the second factor entirely.",
+        "Reports only \\(|2+i|=\\sqrt5\\), ignoring the second factor entirely."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Conjugate and Modulus of a Complex Number"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-003",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(z=1+i\\sqrt3\\) has argument \\(\\pi/3\\), what is \\(\\arg(\\bar z)\\)?",
+      "options": [
+        "\\(\\pi/3\\)",
+        "\\(-\\pi/3\\)",
+        "\\(2\\pi/3\\)",
+        "\\(-2\\pi/3\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Conjugation reflects the point across the real axis, negating the argument: \\(\\arg(\\bar z)=-\\pi/3\\).",
+      "hint": "Conjugation reflects a point across the real axis in the Argand plane.",
+      "distractor_logic": [
+        "Assumes conjugation leaves the argument unchanged, reporting \\(\\pi/3\\).",
+        "Confuses reflection across the real axis with a rotation, adding \\(\\pi/3\\) to itself instead of negating it, giving \\(2\\pi/3\\).",
+        "Makes the same rotation confusion but with the wrong sign as well, giving \\(-2\\pi/3\\)."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Argand Plane and Polar (Trigonometric) Representation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-004",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-4x+7=0\\), what is \\(\\alpha^2+\\beta^2\\)?",
+      "options": [
+        "2",
+        "16",
+        "9",
+        "-6"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\alpha+\\beta=4\\), \\(\\alpha\\beta=7\\). \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta=16-14=2\\).",
+      "hint": "Use \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\).",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=16\\) alone, forgetting to subtract \\(2\\alpha\\beta\\).",
+        "Subtracts \\(\\alpha\\beta=7\\) only once instead of \\(2\\alpha\\beta\\), giving \\(16-7=9\\).",
+        "Miscombines the sum and product with an extra sign flip somewhere in the identity, landing on \\(-6\\) instead of \\(2\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Identities and Properties of Complex Numbers",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-005",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-2x+5=0\\), what is \\(\\alpha^2+\\beta^2\\)?",
+      "options": [
+        "\\(-6\\)",
+        "4",
+        "6",
+        "14"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\alpha+\\beta=2\\), \\(\\alpha\\beta=5\\). \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta=4-10=-6\\), a reminder that this identity applies even when the roots are complex.",
+      "hint": "Apply the standard sum-of-squares identity, even though the roots here turn out to be complex.",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=4\\) alone, forgetting to subtract \\(2\\alpha\\beta\\).",
+        "Computes \\(2\\alpha\\beta-(\\alpha+\\beta)^2\\) instead of \\((\\alpha+\\beta)^2-2\\alpha\\beta\\), getting the subtraction backwards, giving \\(10-4=6\\).",
+        "Adds \\(2\\alpha\\beta\\) instead of subtracting it, giving \\(4+10=14\\)."
+      ],
+      "mixed_topics": [
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+        "Relations Between Roots and Coefficients of a Quadratic Equation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-006",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\((1+i)^6\\)?",
+      "options": [
+        "\\(-8i\\)",
+        "\\(8i\\)",
+        "\\(-8\\)",
+        "8"
+      ],
+      "correct_index": 0,
+      "explanation": "\\((1+i)^2=2i\\), so \\((1+i)^6=(2i)^3=8i^3=8(-i)=-8i\\).",
+      "hint": "Compute \\((1+i)^2\\) first, then cube that result.",
+      "distractor_logic": [
+        "Flips the sign of the final result, giving \\(8i\\).",
+        "Forgets that \\(i^3=-i\\) and reports a real number instead, \\(-8\\).",
+        "Makes the same real-number slip as above but with the opposite sign, \\(8\\)."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Algebraic Identities and Properties of Complex Numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-007",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(|(1+i)(1-i\\sqrt3)|\\)?",
+      "options": [
+        "4",
+        "2",
+        "\\(2\\sqrt2\\)",
+        "\\(\\sqrt8\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(|1+i|=\\sqrt2\\) and \\(|1-i\\sqrt3|=\\sqrt{1+3}=2\\). So \\(|(1+i)(1-i\\sqrt3)|=\\sqrt2\\times2=2\\sqrt2\\).",
+      "hint": "Find the modulus of each factor separately, then multiply.",
+      "distractor_logic": [
+        "Multiplies the two moduli correctly (\\(\\sqrt2\\times2\\)) but then doubles the result again by mistake, giving \\(4\\).",
+        "Reports only the second factor's modulus, \\(2\\), ignoring the first.",
+        "Reports the correct value but written as the unsimplified radical \\(\\sqrt8\\), obscuring that it equals \\(2\\sqrt2\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Argand Plane and Polar (Trigonometric) Representation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-008",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The complex cube root of unity \\(\\omega\\) satisfies \\(x^2+x+1=0\\). What is the other root of this equation, in terms of \\(\\omega\\)?",
+      "options": [
+        "\\(-\\omega\\)",
+        "\\(\\omega^2\\)",
+        "1",
+        "\\(\\omega\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The two non-real roots of \\(x^2+x+1=0\\) are exactly the two complex cube roots of unity, \\(\\omega\\) and \\(\\omega^2\\). So the other root is \\(\\omega^2\\).",
+      "hint": "Recall which two numbers are the roots of this particular equation.",
+      "distractor_logic": [
+        "Assumes the two roots are negatives of each other, as would be true for a purely imaginary pair rather than this specific equation, giving \\(-\\omega\\).",
+        "Reports the real root \\(1\\), forgetting that \\(1\\) does not actually satisfy \\(x^2+x+1=0\\).",
+        "Repeats the given root \\(\\omega\\) itself instead of naming the other one."
+      ],
+      "mixed_topics": [
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-009",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(i^8\\cdot i^{-3}\\)?",
+      "options": [
+        "1",
+        "\\(-i\\)",
+        "\\(i\\)",
+        "\\(-1\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(i^8\\cdot i^{-3}=i^{8-3}=i^5=i^4\\cdot i=1\\cdot i=i\\).",
+      "hint": "Combine the exponents first using the laws of indices, then reduce modulo 4.",
+      "distractor_logic": [
+        "Reports \\(i^8=1\\) alone, forgetting to combine it with the second factor.",
+        "Uses the wrong remainder when reducing \\(i^5\\) modulo 4, treating it as \\(i^3\\) instead, giving \\(-i\\).",
+        "Uses a different wrong remainder when reducing \\(i^5\\) modulo 4, treating it as \\(i^2\\), giving \\(-1\\)."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-010",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(|z|=2\\), what is \\(|z|^2+|\\bar z|^2\\)?",
+      "options": [
+        "4",
+        "16",
+        "8",
+        "2"
+      ],
+      "correct_index": 2,
+      "explanation": "Since \\(|\\bar z|=|z|\\) always, \\(|z|^2+|\\bar z|^2=4+4=8\\).",
+      "hint": "Recall that \\(|\\bar z|\\) always equals \\(|z|\\).",
+      "distractor_logic": [
+        "Reports only \\(|z|^2=4\\), forgetting to add the second term.",
+        "Doubles \\(|z|=2\\) first and then squares the sum, treating it as \\((2|z|)^2=16\\).",
+        "Reports \\(|z|=2\\) directly, forgetting the question asks for \\(|z|^2+|\\bar z|^2\\)."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Algebraic Identities and Properties of Complex Numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-011",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(\\arg(\\omega)\\), where \\(\\omega=\\frac{-1+i\\sqrt3}{2}\\) is a complex cube root of unity?",
+      "options": [
+        "\\(2\\pi/3\\)",
+        "\\(\\pi/3\\)",
+        "\\(-2\\pi/3\\)",
+        "\\(\\pi/6\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\cos\\theta=-1/2\\) and \\(\\sin\\theta=\\sqrt3/2\\) places \\(\\theta\\) in the second quadrant with reference angle \\(\\pi/3\\), giving \\(\\theta=\\pi-\\pi/3=2\\pi/3\\).",
+      "hint": "Read off the cosine and sine values from \\(\\omega\\)'s rectangular form, then find the matching quadrant angle.",
+      "distractor_logic": [
+        "Reports only the reference angle, \\(\\pi/3\\), without adjusting for the quadrant.",
+        "Adjusts for the wrong (fourth) quadrant, flipping the sign, giving \\(-2\\pi/3\\).",
+        "Confuses this with the argument of \\(\\omega^2\\), the conjugate root, arriving at \\(\\pi/6\\) after a further miscalculation."
+      ],
+      "mixed_topics": [
+        "Argand Plane and Polar (Trigonometric) Representation",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-012",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(z=1+2i\\) is a root of \\(x^2+bx+c=0\\) (real \\(b,c\\)), what is \\(b+c\\)?",
+      "options": [
+        "5",
+        "-3",
+        "1",
+        "3"
+      ],
+      "correct_index": 3,
+      "explanation": "The other root is \\(1-2i\\). Sum \\(=2=-b\\), so \\(b=-2\\). Product \\(=(1+2i)(1-2i)=1+4=5=c\\). So \\(b+c=-2+5=3\\).",
+      "hint": "Find the conjugate root first, then use the sum and product of roots.",
+      "distractor_logic": [
+        "Reports \\(c=5\\) alone instead of \\(b+c\\).",
+        "Negates the sum of the real and imaginary parts of the given root itself, \\(-(1+2)=-3\\), instead of properly computing \\(b+c\\).",
+        "Reports the real part of the given root, \\(1\\), mistaking it for the requested \\(b+c\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-013",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-3x+2=0\\), what is \\(\\alpha^3+\\beta^3-3\\alpha\\beta(\\alpha+\\beta)\\)?",
+      "options": [
+        "\\(-9\\)",
+        "9",
+        "0",
+        "27"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\alpha+\\beta=3}, \\alpha\\beta=2\\). \\(\\alpha^3+\\beta^3=(\\alpha+\\beta)^3-3\\alpha\\beta(\\alpha+\\beta)=27-18=9\\). Subtracting \\(3\\alpha\\beta(\\alpha+\\beta)=18\\) again gives \\(9-18=-9\\).",
+      "hint": "First find \\(\\alpha^3+\\beta^3\\) using the standard identity, then subtract the extra correction term the question asks for.",
+      "distractor_logic": [
+        "Stops after finding \\(\\alpha^3+\\beta^3=9\\) and forgets the question asks for an additional subtraction.",
+        "Assumes the extra correction term exactly cancels \\(\\alpha^3+\\beta^3\\), landing on \\(0\\).",
+        "Adds the correction term instead of subtracting it a second time, giving \\(9+18=27\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Identities and Properties of Complex Numbers",
+        "Relations Between Roots and Coefficients of a Quadratic Equation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-014",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(|i^{13}|\\)?",
+      "options": [
+        "13",
+        "\\(\\sqrt{13}\\)",
+        "1",
+        "0"
+      ],
+      "correct_index": 2,
+      "explanation": "Since \\(|i|=1\\), \\(|i^n|=|i|^n=1\\) for every integer \\(n\\), regardless of the exponent. So \\(|i^{13}|=1\\).",
+      "hint": "The modulus of any power of i is always 1 — you don't need to work out the value of the power itself.",
+      "distractor_logic": [
+        "Reports the exponent itself, \\(13\\), as if it were the modulus.",
+        "Reports the square root of the exponent, \\(\\sqrt{13}\\), confusing it with a modulus formula.",
+        "Assumes odd powers of \\(i\\) must have modulus \\(0\\)."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Conjugate and Modulus of a Complex Number"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-015",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(z_1=2+i\\) and \\(z_2=1-i\\) are the roots of a monic quadratic equation, what is the coefficient of \\(x\\)?",
+      "options": [
+        "\\(-3\\)",
+        "3",
+        "\\(-4\\)",
+        "4"
+      ],
+      "correct_index": 0,
+      "explanation": "For a monic quadratic with roots \\(z_1, z_2\\), the coefficient of \\(x\\) is \\(-(z_1+z_2)\\). Here \\(z_1+z_2=3\\), so the coefficient is \\(-3\\).",
+      "hint": "This sum-of-roots relationship holds even when the roots aren't a conjugate pair.",
+      "distractor_logic": [
+        "Forgets to negate the sum of the roots, giving \\(3\\).",
+        "Miscomputes the product of the roots by mishandling the cross terms in \\((2+i)(1-i)\\), arriving at a spurious real value of \\(-4\\) instead of correctly working with the sum.",
+        "Makes a similar miscalculation of the product with the opposite sign, landing on \\(4\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Relations Between Roots and Coefficients of a Quadratic Equation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-016",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are the roots of \\(x^2-4x+13=0\\), what is \\(|\\alpha|+|\\beta|\\)?",
+      "options": [
+        "\\(\\sqrt{13}\\)",
+        "\\(2\\sqrt{13}\\)",
+        "13",
+        "4"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(D=16-52=-36\\), roots \\(=2\\pm3i\\). Each has modulus \\(\\sqrt{4+9}=\\sqrt{13}\\), so the sum of moduli is \\(2\\sqrt{13}\\).",
+      "hint": "Find both roots explicitly, then add their individual moduli.",
+      "distractor_logic": [
+        "Reports the modulus of just one root, \\(\\sqrt{13}\\), instead of the sum for both.",
+        "Reports the constant term of the equation, \\(13\\), directly.",
+        "Reports the coefficient of \\(x\\), \\(4\\), instead of computing the moduli."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-017",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For \\(z=1+i\\), what is \\(z^2+\\bar z^2\\)?",
+      "options": [
+        "4",
+        "\\(4i\\)",
+        "\\(-4i\\)",
+        "0"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(z^2=(1+i)^2=2i\\) and \\(\\bar z^2=(1-i)^2=-2i\\). Adding gives \\(0\\).",
+      "hint": "Compute \\(z^2\\) and the conjugate squared separately — the imaginary parts should cancel.",
+      "distractor_logic": [
+        "Adds the two squares as if they had the same sign, doubling instead of cancelling, and reports the resulting magnitude as \\(4\\).",
+        "Reports the magnitude of one square without letting the two cancel, giving \\(4i\\).",
+        "Makes the same magnitude error as above but with the opposite sign, \\(-4i\\)."
+      ],
+      "mixed_topics": [
+        "Argand Plane and Polar (Trigonometric) Representation",
+        "Algebraic Identities and Properties of Complex Numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-018",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2+2x+2=0\\), what is \\(\\alpha^2+\\beta^2\\)?",
+      "options": [
+        "4",
+        "\\(-4\\)",
+        "0",
+        "2"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(\\alpha+\\beta=-2\\), \\(\\alpha\\beta=2\\). \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta=4-4=0\\). (The roots themselves are \\(-1\\pm i\\), both involving \\(i\\).)",
+      "hint": "Use \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta\\).",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=4\\) alone, forgetting to subtract \\(2\\alpha\\beta\\).",
+        "Flips the sign of the final subtraction, giving \\(-4\\).",
+        "Reports \\(\\alpha\\beta=2\\) instead of the requested sum of squares."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Relations Between Roots and Coefficients of a Quadratic Equation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-019",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\((1+\\omega)(1+\\omega^2)\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "0",
+        "3",
+        "1",
+        "\\(-1\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\((1+\\omega)(1+\\omega^2)=1+\\omega^2+\\omega+\\omega^3=1+(\\omega+\\omega^2)+1=1+(-1)+1=1\\).",
+      "hint": "Expand the product, then use the identity \\(1+\\omega+\\omega^2=0\\) and \\(\\omega^3=1\\).",
+      "distractor_logic": [
+        "Assumes the expansion collapses entirely to \\(0\\) rather than correctly reducing to \\(1\\).",
+        "Assumes \\(1+\\omega+\\omega^2\\) inside the expansion evaluates to \\(3\\) rather than \\(0\\).",
+        "Forgets to convert \\(\\omega^3\\) to \\(1\\), leaving a spurious extra term that flips the sign, giving \\(-1\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-020",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\((1+\\omega+\\omega^2)^2+(1+\\omega^2+\\omega)^2\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "1",
+        "2",
+        "9",
+        "0"
+      ],
+      "correct_index": 3,
+      "explanation": "Both bracketed expressions equal \\(1+\\omega+\\omega^2=0\\), so both squared terms are \\(0\\), and their sum is \\(0\\).",
+      "hint": "Both brackets are the same well-known identity in disguise — evaluate that first.",
+      "distractor_logic": [
+        "Assumes each bracket equals \\(1\\) rather than \\(0\\), but counts only one of the two squared terms, giving \\(1\\).",
+        "Assumes each bracket equals \\(1\\) (miscounting the three terms as contributing 1 each), giving \\(1^2+1^2=2\\).",
+        "Confuses this with \\((1+\\omega+\\omega^2)\\times3\\)-type reasoning, landing on \\(9\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Identities and Properties of Complex Numbers",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-021",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-2x+2=0\\), what is \\(|\\alpha|\\cdot|\\beta|\\)?",
+      "options": [
+        "4",
+        "1",
+        "2",
+        "\\(\\sqrt2\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(\\alpha\\beta=2\\) (product of roots). Since the roots are a conjugate pair, \\(|\\alpha|\\,|\\beta|=|\\alpha|^2=\\alpha\\bar\\alpha=\\alpha\\beta=2\\).",
+      "hint": "For a conjugate root pair, the product of the moduli equals the product of the roots directly.",
+      "distractor_logic": [
+        "Confuses the product of moduli with the square of the product of roots, \\((\\alpha\\beta)^2=4\\).",
+        "Reports \\(|\\alpha|\\) alone without multiplying by \\(|\\beta|\\), misreporting it as \\(1\\).",
+        "Takes the square root of the product of roots unnecessarily, giving \\(\\sqrt2\\)."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Relations Between Roots and Coefficients of a Quadratic Equation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-022",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For \\(z=i\\), what is \\(\\arg(z^2)\\)?",
+      "options": [
+        "\\(\\pi/2\\)",
+        "0",
+        "\\(\\pi\\)",
+        "\\(-\\pi/2\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(z^2=i^2=-1\\), and \\(\\arg(-1)=\\pi\\).",
+      "hint": "First compute \\(z^2\\) directly, then find its argument.",
+      "distractor_logic": [
+        "Reports \\(\\arg(z)=\\pi/2\\) itself, forgetting the question asks about \\(z^2\\).",
+        "Assumes squaring a complex number leaves its argument at \\(0\\).",
+        "Assumes squaring negates the sign of the argument rather than doubling it, giving \\(-\\pi/2\\)."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Argand Plane and Polar (Trigonometric) Representation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-023",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Cube Roots of Unity and Loci in the Argand Plane",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is the sum of the two non-real roots of \\(x^3-1=0\\)?",
+      "options": [
+        "0",
+        "1",
+        "\\(-1\\)",
+        "\\(-2\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(x^3-1=(x-1)(x^2+x+1)=0\\), so the non-real roots are \\(\\omega\\) and \\(\\omega^2\\), the complex cube roots of unity, and \\(\\omega+\\omega^2=-1\\).",
+      "hint": "Factor \\(x^3-1\\) first to identify the two non-real roots.",
+      "distractor_logic": [
+        "Assumes all three roots of \\(x^3-1=0\\) together sum to \\(0\\) and forgets to exclude the real root \\(1\\) from that total.",
+        "Assumes the two non-real roots sum to the real root itself, \\(1\\).",
+        "Miscounts the identity \\(1+\\omega+\\omega^2=0\\), doubling the constant instead of isolating the two complex terms, giving \\(-2\\)."
+      ],
+      "mixed_topics": [
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-024",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\((2+i)^3\\)?",
+      "options": [
+        "\\(8+i\\)",
+        "\\(2+11i\\)",
+        "\\(2-11i\\)",
+        "\\(11+2i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\((2+i)^2=4+4i+i^2=3+4i\\). Then \\((2+i)^3=(2+i)(3+4i)=6+8i+3i+4i^2=6+11i-4=2+11i\\).",
+      "hint": "Square the expression first, then multiply that result by (2+i) once more.",
+      "distractor_logic": [
+        "Miscomputes the second multiplication step and drops most of the imaginary contribution, landing on \\(8+i\\).",
+        "Flips the sign of the imaginary part in the final answer, giving \\(2-11i\\).",
+        "Swaps the real and imaginary parts of the final answer, giving \\(11+2i\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Algebraic Identities and Properties of Complex Numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-025",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(|\\omega-\\omega^2|\\), where \\(\\omega\\) is a complex cube root of unity?",
+      "options": [
+        "1",
+        "\\(\\sqrt3\\)",
+        "2",
+        "0"
+      ],
+      "correct_index": 1,
+      "explanation": "With \\(\\omega=\\frac{-1+i\\sqrt3}2\\) and \\(\\omega^2=\\frac{-1-i\\sqrt3}2\\) (its conjugate), \\(\\omega-\\omega^2=i\\sqrt3\\), so \\(|\\omega-\\omega^2|=\\sqrt3\\).",
+      "hint": "Write \\(\\omega\\) and \\(\\omega^2\\) out in rectangular form and subtract directly.",
+      "distractor_logic": [
+        "Reports \\(|\\omega|=1\\) alone, ignoring the subtraction entirely.",
+        "Confuses this with \\(|\\omega|+|\\omega^2|=1+1=2\\) instead of the actual difference.",
+        "Assumes \\(\\omega\\) and \\(\\omega^2\\) are identical and reports \\(0\\)."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-026",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The roots of \\(x^2+9=0\\) are \\(\\pm3i\\). What is the argument of the root on the positive imaginary axis?",
+      "options": [
+        "0",
+        "\\(\\pi\\)",
+        "\\(3\\pi\\)",
+        "\\(\\pi/2\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The root \\(3i\\) lies on the positive imaginary axis, which has argument \\(\\pi/2\\).",
+      "hint": "Where does a positive multiple of i sit in the Argand plane?",
+      "distractor_logic": [
+        "Confuses the positive imaginary axis with the positive real axis, giving \\(0\\).",
+        "Confuses the positive imaginary axis with the negative real axis, giving \\(\\pi\\).",
+        "Uses the coefficient \\(3\\) itself as if it were an angle multiple, scaling the argument incorrectly to \\(3\\pi\\)."
+      ],
+      "mixed_topics": [
+        "Argand Plane and Polar (Trigonometric) Representation",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-027",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(i^{12}+i^{-8}\\)?",
+      "options": [
+        "0",
+        "\\(2i\\)",
+        "2",
+        "1"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(i^{12}=(i^4)^3=1\\) and \\(i^{-8}=1/(i^4)^2=1/1=1\\). So the sum is \\(1+1=2\\).",
+      "hint": "Simplify each power separately using the fact that \\(i^4=1\\), then add.",
+      "distractor_logic": [
+        "Assumes the two terms cancel each other out, reporting \\(0\\).",
+        "Correctly simplifies both terms to \\(1\\) but introduces an extra factor of \\(i\\) by mistake, giving \\(2i\\).",
+        "Reports only one of the two simplified terms, giving \\(1\\)."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-028",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-5x+7=0\\), what is \\((\\alpha+1)(\\beta+1)\\)?",
+      "options": [
+        "7",
+        "13",
+        "5",
+        "12"
+      ],
+      "correct_index": 1,
+      "explanation": "\\((\\alpha+1)(\\beta+1)=\\alpha\\beta+\\alpha+\\beta+1=7+5+1=13\\).",
+      "hint": "Expand the product first, then substitute the known sum and product of the roots.",
+      "distractor_logic": [
+        "Reports \\(\\alpha\\beta=7\\) alone, forgetting the other terms.",
+        "Reports \\(\\alpha+\\beta=5\\) alone, forgetting the other terms.",
+        "Forgets to add the final constant term of 1 after combining the sum and product, giving \\(7+5=12\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Identities and Properties of Complex Numbers",
+        "Relations Between Roots and Coefficients of a Quadratic Equation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-029",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(|z|=1\\) and \\(\\arg(z)=\\pi\\), what is \\(z\\) in \\(a+bi\\) form?",
+      "options": [
+        "1",
+        "\\(-1\\)",
+        "\\(i\\)",
+        "\\(-i\\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(z=\\cos\\pi+i\\sin\\pi=-1+0i=-1\\).",
+      "hint": "Substitute the angle directly into the polar form and evaluate cosine and sine at \\(\\pi\\).",
+      "distractor_logic": [
+        "Confuses the negative real axis with the positive real axis, giving \\(1\\).",
+        "Confuses the negative real axis with the positive imaginary axis, giving \\(i\\).",
+        "Confuses the negative real axis with the negative imaginary axis, giving \\(-i\\)."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Argand Plane and Polar (Trigonometric) Representation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-030",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(x^2+px+q=0\\) (real \\(p,q\\)) has \\(2+i\\) as a root, what is \\(q-p\\)?",
+      "options": [
+        "1",
+        "-9",
+        "-1",
+        "9"
+      ],
+      "correct_index": 3,
+      "explanation": "The other root is \\(2-i\\). Sum \\(=4=-p\\), so \\(p=-4\\). Product \\(=(2+i)(2-i)=5=q\\). So \\(q-p=5-(-4)=9\\).",
+      "hint": "Find both roots and coefficients first, then compute the requested difference carefully.",
+      "distractor_logic": [
+        "Reports \\(q+p\\) instead of \\(q-p\\), giving \\(5+(-4)=1\\).",
+        "Reports \\(p-q\\) (the negative of the requested quantity), giving \\(-4-5=-9\\).",
+        "Negates the incorrectly computed sum \\(q+p=1\\), giving \\(-1\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-031",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "The Imaginary Unit i and Powers of i",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\omega\\) is a complex cube root of unity and \\(k\\) is a positive integer, what is \\(\\omega^{3k}\\)?",
+      "options": [
+        "1",
+        "\\(\\omega\\)",
+        "\\(\\omega^2\\)",
+        "0"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\omega^{3k}=(\\omega^3)^k=1^k=1\\) for every positive integer \\(k\\).",
+      "hint": "Rewrite \\(\\omega^{3k}\\) as \\((\\omega^3)^k\\) and use the defining property of \\(\\omega\\).",
+      "distractor_logic": [
+        "Assumes only \\(k=1\\) gives \\(1\\) and other values of \\(k\\) give \\(\\omega\\) instead.",
+        "Assumes only \\(k=1\\) gives \\(1\\) and other values give \\(\\omega^2\\) instead.",
+        "Assumes powers of \\(\\omega\\) eventually decay to \\(0\\) for large \\(k\\)."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-032",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-6x+13=0\\), what is \\((\\alpha-\\beta)^2\\)?",
+      "options": [
+        "\\(-16\\)",
+        "16",
+        "36",
+        "-4"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(\\alpha+\\beta=6\\), \\(\\alpha\\beta=13\\). \\((\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta=36-52=-16\\) — a negative value, since the roots here are complex.",
+      "hint": "Use \\((\\alpha-\\beta)^2=(\\alpha+\\beta)^2-4\\alpha\\beta\\), even though the result can be negative for complex roots.",
+      "distractor_logic": [
+        "Assumes a squared quantity must be positive and reports the correct magnitude with the wrong sign, \\(16\\).",
+        "Reports \\((\\alpha+\\beta)^2=36\\) alone, forgetting to subtract \\(4\\alpha\\beta\\).",
+        "Miscalculates \\(\\alpha\\beta\\) as \\(10\\) instead of \\(13\\) and subtracts \\(4\\times10=40\\) from \\(36\\), giving \\(-4\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Identities and Properties of Complex Numbers",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-033",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2+2x+5=0\\), what is \\(|\\alpha|^2+|\\beta|^2\\)?",
+      "options": [
+        "5",
+        "4",
+        "20",
+        "10"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(D=4-20=-16\\), roots \\(=-1\\pm2i\\). Each root has \\(|{\\cdot}|^2=1+4=5\\) (which also equals \\(\\alpha\\beta=5\\) for this conjugate pair), so the sum is \\(5+5=10\\).",
+      "hint": "Find the roots explicitly, or recall that for a conjugate pair, each root's squared modulus equals the product of the roots.",
+      "distractor_logic": [
+        "Reports the product of roots \\(\\alpha\\beta=5\\) alone, forgetting to double it for both roots.",
+        "Reports the coefficient of \\(x\\), \\(4\\), directly without connecting it to the modulus.",
+        "Overcounts by doubling the coefficient of \\(x\\) against the constant term, arriving at \\(20\\) instead of \\(10\\)."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-034",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Argand Plane and Polar (Trigonometric) Representation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(z=\\cos\\theta+i\\sin\\theta\\), what is \\(z\\bar z\\)?",
+      "options": [
+        "1",
+        "0",
+        "\\(2\\cos\\theta\\)",
+        "\\(\\cos2\\theta\\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(z\\bar z=(\\cos\\theta+i\\sin\\theta)(\\cos\\theta-i\\sin\\theta)=\\cos^2\\theta+\\sin^2\\theta=1\\).",
+      "hint": "Recall that \\(z\\) times its conjugate always equals \\(|z|^2\\) — and here \\(|z|=1\\).",
+      "distractor_logic": [
+        "Assumes a complex number times its conjugate always vanishes, reporting \\(0\\).",
+        "Confuses \\(z\\bar z\\) with \\(z+\\bar z\\), which instead gives \\(2\\cos\\theta\\).",
+        "Confuses this with a double-angle cosine formula from trigonometry, reporting \\(\\cos2\\theta\\)."
+      ],
+      "mixed_topics": [
+        "Argand Plane and Polar (Trigonometric) Representation",
+        "Algebraic Identities and Properties of Complex Numbers"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-035",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For \\(z_1=3+4i\\) and \\(z_2=1-2i\\), what is \\(|z_1+z_2|\\)?",
+      "options": [
+        "6",
+        "\\(2\\sqrt5\\)",
+        "\\(\\sqrt{20}\\)",
+        "20"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(z_1+z_2=4+2i\\), so \\(|z_1+z_2|=\\sqrt{16+4}=\\sqrt{20}=2\\sqrt5\\).",
+      "hint": "Add the two complex numbers first, then take the modulus of the sum — not the sum of the individual moduli.",
+      "distractor_logic": [
+        "Adds \\(|z_1|\\) and \\(|z_2|\\) directly (\\(5\\) and \\(\\sqrt5\\), rounded loosely) instead of computing the modulus of the actual sum, arriving near \\(6\\).",
+        "Leaves the answer as the unsimplified surd \\(\\sqrt{20}\\) instead of reducing it to \\(2\\sqrt5\\).",
+        "Reports the squared modulus, \\(20\\), without taking the final square root."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Conjugate and Modulus of a Complex Number"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-036",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The roots of \\(x^2+16=0\\) can be written as \\(\\pm ki\\) for a positive real number \\(k\\). What is \\(k\\)?",
+      "options": [
+        "4",
+        "16",
+        "8",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "\\(x^2=-16\\), so \\(x=\\pm\\sqrt{-16}=\\pm4i\\). Thus \\(k=4\\).",
+      "hint": "Rearrange to \\(x^2=-16\\) and take the square root of both sides.",
+      "distractor_logic": [
+        "Reports the constant term itself, \\(16\\), instead of its square root.",
+        "Reports half the constant term, \\(8\\), instead of its square root.",
+        "Reports the square root of half the constant term, rounded loosely to \\(2\\), instead of the full constant's square root."
+      ],
+      "mixed_topics": [
+        "The Imaginary Unit i and Powers of i",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-037",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Relations Between Roots and Coefficients of a Quadratic Equation",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Taking \\(\\alpha=\\omega\\) and \\(\\beta=\\omega^2\\) as the two roots of \\(x^2+x+1=0\\), what is \\(\\alpha^2+\\beta^2\\)?",
+      "options": [
+        "1",
+        "0",
+        "\\(-1\\)",
+        "2"
+      ],
+      "correct_index": 2,
+      "explanation": "Here \\(\\alpha+\\beta=-1\\) and \\(\\alpha\\beta=1\\) (directly from the equation's coefficients). \\(\\alpha^2+\\beta^2=(\\alpha+\\beta)^2-2\\alpha\\beta=1-2=-1\\).",
+      "hint": "Read the sum and product of roots directly off the equation's coefficients, then apply the usual identity.",
+      "distractor_logic": [
+        "Reports \\((\\alpha+\\beta)^2=1\\) alone, forgetting to subtract \\(2\\alpha\\beta\\).",
+        "Subtracts \\(\\alpha\\beta\\) only once instead of \\(2\\alpha\\beta\\), giving \\(1-1=0\\).",
+        "Reports \\(2\\alpha\\beta=2\\) directly instead of completing the identity."
+      ],
+      "mixed_topics": [
+        "Relations Between Roots and Coefficients of a Quadratic Equation",
+        "Cube Roots of Unity and Loci in the Argand Plane"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-038",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is \\(|(1-i)^3|\\)?",
+      "options": [
+        "4",
+        "2",
+        "\\(2\\sqrt2\\)",
+        "\\(\\sqrt8\\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\(|1-i|=\\sqrt2\\), so \\(|(1-i)^3|=(\\sqrt2)^3=2\\sqrt2\\).",
+      "hint": "Use the property that the modulus of a power equals the modulus raised to that power — no need to expand the cube first.",
+      "distractor_logic": [
+        "Squares the modulus instead of cubing it and then simplifies incorrectly, giving \\(4\\).",
+        "Reports \\(|1-i|^2=2\\) instead of the cube.",
+        "Leaves the answer as the unsimplified radical \\(\\sqrt8\\) rather than reducing it to \\(2\\sqrt2\\)."
+      ],
+      "mixed_topics": [
+        "Algebraic Operations on Complex Numbers (Addition, Subtraction, Multiplication, Division)",
+        "Argand Plane and Polar (Trigonometric) Representation"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-039",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Algebraic Identities and Properties of Complex Numbers",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(\\alpha, \\beta\\) are roots of \\(x^2-8x+25=0\\), what is \\(\\alpha^3+\\beta^3\\)?",
+      "options": [
+        "88",
+        "512",
+        "-600",
+        "\\(-88\\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\(\\alpha+\\beta=8\\), \\(\\alpha\\beta=25\\). \\(\\alpha^3+\\beta^3=(\\alpha+\\beta)^3-3\\alpha\\beta(\\alpha+\\beta)=512-600=-88\\).",
+      "hint": "Use \\(\\alpha^3+\\beta^3=(\\alpha+\\beta)^3-3\\alpha\\beta(\\alpha+\\beta)\\).",
+      "distractor_logic": [
+        "Computes the correct magnitude but drops the negative sign, giving \\(88\\).",
+        "Reports \\((\\alpha+\\beta)^3=512\\) alone, forgetting to subtract the correction term.",
+        "Reports only the correction term \\(3\\alpha\\beta(\\alpha+\\beta)\\) with its sign flipped, \\(-600\\), instead of the full expression."
+      ],
+      "mixed_topics": [
+        "Algebraic Identities and Properties of Complex Numbers",
+        "Quadratic Equations with Complex Roots (Discriminant and Nature of Roots)"
+      ]
+    },
+    {
+      "id": "MAT11-CH04-B-040",
+      "chapter": "MAT11-CH04",
+      "chapter_name": "Complex Numbers and Quadratic Equations",
+      "topic": "Conjugate and Modulus of a Complex Number",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If \\(|z|=3\\), what is \\(|z^2|-|z|^2\\)?",
+      "options": [
+        "9",
+        "0",
+        "18",
+        "3"
+      ],
+      "correct_index": 1,
+      "explanation": "\\(|z^2|=|z|^2=9\\) always, so the difference is \\(9-9=0\\).",
+      "hint": "Recall that \\(|z^2|\\) always equals \\(|z|^2\\) — no need to know z explicitly.",
+      "distractor_logic": [
+        "Reports \\(|z|^2=9\\) alone instead of the difference.",
+        "Doubles \\(|z|^2=9\\) instead of subtracting it from itself, giving \\(18\\).",
+        "Reports \\(|z|=3\\) directly rather than \\(|z|^2\\), mismanaging the exponent."
+      ],
+      "mixed_topics": [
+        "Conjugate and Modulus of a Complex Number",
+        "Algebraic Identities and Properties of Complex Numbers"
+      ]
+    }
+  ]
+}

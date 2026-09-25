@@ -1,0 +1,3722 @@
+{
+  "meta": {
+    "chapter": "PHY12-CH12",
+    "chapter_name": "Atoms",
+    "subject": "Physics",
+    "class": 12,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "All math is KaTeX in \\( ... \\) spans; \\( n \\), \\( Z \\), \\( r_n \\), \\( E_n \\) and \\( R \\) always appear as single KaTeX spans; no raw Unicode math symbols appear anywhere. Orbital energies \\( E_n \\) are always negative, while radii, speeds, wavelengths and ionization energies are always non-negative. Every numeric answer terminates cleanly or is a clean order-of-magnitude value."
+  },
+  "topics": [
+    {
+      "name": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "summary": "In the Geiger–Marsden experiment, alpha particles (charge \\( +2e \\)) were fired at a very thin gold foil. The overwhelming majority passed straight through with little or no deflection, so an atom is mostly empty space. Only a tiny fraction were scattered through large angles, and an even smaller fraction bounced almost straight back. Rutherford concluded that all the positive charge and nearly all the mass sit in a tiny, dense nucleus, about \\( 10^{4} \\) to \\( 10^{5} \\) times smaller than the atom, disproving Thomson's plum-pudding model. The aim of an incoming particle is described by its impact parameter \\( b \\): smaller \\( b \\) means a larger scattering angle, and \\( b=0 \\) (head-on) sends the particle back through \\( 180^\\circ \\). In a head-on collision the alpha particle stops at the distance of closest approach \\( r_0 \\), where all its kinetic energy has become electrostatic potential energy; \\( r_0 \\) gives an upper limit on the nuclear size. Rutherford's model, however, was classically unstable: an orbiting electron should radiate and spiral into the nucleus.",
+      "key_formulas": [
+        "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{KE} \\) (head-on, \\( b=0 \\))",
+        "\\( r_0\\propto\\dfrac{Z}{KE} \\)",
+        "Smaller \\( b \\) gives larger scattering angle; \\( b=0 \\) gives \\( 180^\\circ \\)"
+      ],
+      "worked_example": "A 7.9 MeV alpha particle hits a gold nucleus (\\( Z=79 \\)) head-on. With \\( \\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9} \\) N·m\\( ^{2} \\)/C\\( ^{2} \\) and \\( e=1.6\\times10^{-19} \\) C: \\( r_0=\\dfrac{9\\times10^{9}\\times2\\times79\\times1.6\\times10^{-19}}{7.9\\times10^{6}}=2.88\\times10^{-14} \\) m.",
+      "common_mistakes": [
+        "Claiming most alpha particles are strongly deflected — most pass straight through",
+        "Reading the result as support for uniformly spread charge (plum-pudding)",
+        "Dropping the factor of \\( 2 \\) in \\( r_0 \\) (the alpha particle's charge is \\( 2e \\))",
+        "Confusing the closest-approach distance \\( r_0 \\) with the impact parameter \\( b \\), or thinking larger \\( b \\) means larger deflection"
+      ],
+      "question_count": 28
+    },
+    {
+      "name": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "summary": "Bohr kept Rutherford's nucleus but added three postulates. First, the electron moves only in certain stationary orbits in which it does not radiate. Second, in these orbits its angular momentum is quantized: \\( mv_nr_n=\\dfrac{nh}{2\\pi} \\). Third, light is emitted or absorbed only when the electron jumps between orbits, with \\( h\\nu=E_i-E_f \\). For a hydrogen-like (single-electron) ion of atomic number \\( Z \\), these give \\( r_n=0.529\\dfrac{n^2}{Z} \\) Å, \\( v_n=2.18\\times10^{6}\\dfrac{Z}{n} \\) m/s and \\( E_n=-\\dfrac{13.6Z^2}{n^2} \\) eV. The three quantities scale differently: radius grows with \\( n^2 \\) and shrinks with \\( Z \\); speed falls with \\( n \\) (the electron is slower in higher orbits) and rises with \\( Z \\); energy becomes less negative as \\( n \\) grows and more negative as \\( Z \\) grows. In any orbit, kinetic energy is \\( -E_n \\) and potential energy is \\( 2E_n \\). The model applies only to H, He\\( ^{+} \\), Li\\( ^{2+} \\) and similar one-electron systems.",
+      "key_formulas": [
+        "\\( mv_nr_n=\\dfrac{nh}{2\\pi} \\)",
+        "\\( r_n=0.529\\dfrac{n^2}{Z} \\) Å",
+        "\\( v_n=2.18\\times10^{6}\\dfrac{Z}{n} \\) m/s",
+        "\\( E_n=-\\dfrac{13.6Z^2}{n^2} \\) eV",
+        "\\( KE=-E_n \\), \\( PE=2E_n \\)"
+      ],
+      "worked_example": "For He\\( ^{+} \\) (\\( Z=2 \\)) in \\( n=2 \\): \\( r_2=0.529\\times\\dfrac{4}{2}=1.058 \\) Å, \\( v_2=2.18\\times10^{6}\\times\\dfrac{2}{2}=2.18\\times10^{6} \\) m/s, and \\( E_2=-\\dfrac{13.6\\times4}{4}=-13.6 \\) eV.",
+      "common_mistakes": [
+        "Thinking the electron speeds up in higher orbits — \\( v_n\\propto\\dfrac{1}{n} \\)",
+        "Writing \\( r_n\\propto\\dfrac{Z}{n^2} \\) or forgetting to divide by \\( Z \\)",
+        "Using \\( Z \\) instead of \\( Z^2 \\) in \\( E_n \\)",
+        "Dropping the negative sign of \\( E_n \\)"
+      ],
+      "question_count": 46
+    },
+    {
+      "name": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "summary": "Each allowed orbit has a fixed energy \\( E_n \\), all negative because the electron is bound; \\( E_n=0 \\) corresponds to a free electron at rest (\\( n=\\infty \\)). For hydrogen the levels are \\( -13.6 \\), \\( -3.4 \\), about \\( -1.51 \\), \\( -0.85 \\) eV and so on, crowding together just below zero. Excitation moves the electron to a higher level and needs exactly the energy difference, for example 10.2 eV from \\( n=1 \\) to \\( n=2 \\). A photon is absorbed only if its energy matches such a difference exactly. Ionization energy is the positive energy needed to take the electron from a given level to \\( n=\\infty \\): 13.6 eV from hydrogen's ground state, \\( 13.6Z^2 \\) eV for a hydrogen-like ion. If a photon has more than the ionization energy, the extra appears as kinetic energy of the freed electron. When excited atoms fall back, each downward jump emits a photon of energy \\( E_i-E_f \\); from level \\( n \\) up to \\( \\dfrac{n(n-1)}{2} \\) different lines are possible.",
+      "key_formulas": [
+        "\\( E_n=-\\dfrac{13.6Z^2}{n^2} \\) eV",
+        "Excitation energy \\( =E_{\\text{upper}}-E_{\\text{lower}} \\)",
+        "Ionization energy from level \\( n \\) \\( =0-E_n=\\dfrac{13.6Z^2}{n^2} \\) eV",
+        "Number of lines from level \\( n \\): \\( \\dfrac{n(n-1)}{2} \\)"
+      ],
+      "worked_example": "Li\\( ^{2+} \\) (\\( Z=3 \\)): \\( E_1=-122.4 \\) eV and \\( E_2=-30.6 \\) eV. The 2 to 1 photon carries \\( 91.8 \\) eV, and ionizing from \\( n=2 \\) needs \\( 30.6 \\) eV.",
+      "common_mistakes": [
+        "Reporting ionization energy as negative",
+        "Using \\( |E_n| \\) of the upper level as the excitation energy instead of the difference",
+        "Assuming a photon can be partly absorbed when its energy matches no level gap",
+        "Forgetting the \\( Z^2 \\) factor for He\\( ^{+} \\) and Li\\( ^{2+} \\)"
+      ],
+      "question_count": 43
+    },
+    {
+      "name": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "summary": "When hydrogen's electron falls from a higher level \\( n_2 \\) to a lower level \\( n_1 \\), the emitted line obeys the Rydberg formula \\( \\dfrac{1}{\\lambda}=RZ^2\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\), with \\( R=1.097\\times10^{7} \\) m\\( ^{-1} \\) and \\( n_2>n_1 \\). Lines are grouped into series by their final level: Lyman (\\( n_1=1 \\), ultraviolet), Balmer (\\( n_1=2 \\), the only series with visible lines, partly extending into the near ultraviolet), Paschen (\\( n_1=3 \\)), Brackett (\\( n_1=4 \\)) and Pfund (\\( n_1=5 \\)), the last three entirely infrared. Within a series, the longest wavelength comes from the smallest jump, \\( n_1+1 \\) to \\( n_1 \\), and the shortest wavelength, the series limit, comes from \\( n_2\\to\\infty \\). Lines crowd together towards the limit. The photon energy at a series limit equals the ionization energy from that series' final level; for example, \\( hcR=13.6 \\) eV. For hydrogen-like ions the whole pattern is scaled by \\( Z^2 \\).",
+      "key_formulas": [
+        "\\( \\dfrac{1}{\\lambda}=RZ^2\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\), \\( n_2>n_1 \\)",
+        "Series limit: \\( n_2\\to\\infty \\), \\( \\dfrac{1}{\\lambda}=\\dfrac{RZ^2}{n_1^2} \\)",
+        "Longest line: \\( n_2=n_1+1 \\)",
+        "\\( hcR=13.6 \\) eV"
+      ],
+      "worked_example": "Balmer \\( H_\\alpha \\) (3 to 2): \\( \\dfrac{1}{\\lambda}=R\\left(\\dfrac{1}{4}-\\dfrac{1}{9}\\right)=\\dfrac{5R}{36} \\), so \\( \\lambda=\\dfrac{36}{5R} \\). Balmer limit: \\( \\dfrac{1}{\\lambda}=\\dfrac{R}{4} \\), which is \\( 2.75\\times10^{6} \\) m\\( ^{-1} \\) for \\( R=1.1\\times10^{7} \\) m\\( ^{-1} \\).",
+      "common_mistakes": [
+        "Swapping \\( n_1 \\) and \\( n_2 \\), which gives a negative wavenumber",
+        "Naming a series by its starting level instead of its final level",
+        "Crediting a series other than Balmer with visible lines",
+        "Computing the series limit from \\( n_1+1 \\) to \\( n_1 \\) (that is the longest wavelength) instead of \\( n_2\\to\\infty \\)"
+      ],
+      "question_count": 42
+    },
+    {
+      "name": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "summary": "de Broglie explained Bohr's quantization rule by treating the electron as a wave with \\( \\lambda=\\dfrac{h}{mv} \\). For the wave to survive going round an orbit, it must join smoothly with itself as a standing wave, so the circumference must hold exactly a whole number of wavelengths: \\( 2\\pi r_n=n\\lambda \\). Substituting \\( \\lambda=\\dfrac{h}{mv_n} \\) gives \\( mv_nr_n=\\dfrac{nh}{2\\pi} \\), exactly Bohr's postulate. The number of wavelengths in orbit \\( n \\) is \\( n \\) itself, and in hydrogen \\( \\lambda\\propto n \\), since the electron slows in higher orbits. Despite its successes, Bohr's model has clear limitations. It works only for single-electron (hydrogen-like) systems and fails for multi-electron atoms because it cannot include electron-electron repulsion. It does not explain the relative intensities of spectral lines or their fine structure. And its sharply defined orbits, with precise position and momentum at every instant, contradict Heisenberg's uncertainty principle, so later quantum mechanics replaced them.",
+      "key_formulas": [
+        "\\( \\lambda=\\dfrac{h}{mv} \\)",
+        "\\( 2\\pi r_n=n\\lambda \\)",
+        "\\( 2\\pi r_n=n\\lambda \\) with \\( \\lambda=\\dfrac{h}{mv_n} \\) gives \\( mv_nr_n=\\dfrac{nh}{2\\pi} \\)",
+        "\\( \\lambda\\propto\\dfrac{n}{Z} \\) for hydrogen-like ions"
+      ],
+      "worked_example": "Hydrogen \\( n=2 \\): \\( r_2=2.116 \\) Å, so \\( \\lambda=\\dfrac{2\\pi\\times2.116}{2}=2.116\\pi \\) Å, and exactly 2 wavelengths fit around the orbit.",
+      "common_mistakes": [
+        "Allowing a half-integer number of wavelengths, or an inequality, instead of an exact whole-number fit",
+        "Using \\( \\pi r_n \\) instead of the full circumference \\( 2\\pi r_n \\)",
+        "Claiming Bohr's model works for multi-electron atoms such as neutral He",
+        "Believing Bohr's model needed no correction from later quantum mechanics"
+      ],
+      "question_count": 33
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY12-CH12-L1-001",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "In the Geiger–Marsden experiment, alpha particles are fired at a thin gold foil. What happens to the overwhelming majority of them?",
+      "options": [
+        "They pass straight through with little or no deflection",
+        "They are deflected through large angles",
+        "They bounce almost straight back towards the source",
+        "They are absorbed and stopped inside the foil"
+      ],
+      "correct_index": 0,
+      "explanation": "Almost all alpha particles go through the foil essentially undeflected.<br><br>This means most of the volume of an atom is empty space, with nothing massive enough in the way to push the alpha particle aside.<br><br>Only a very small fraction are scattered through large angles, and an even smaller fraction bounce back.",
+      "hint": "Think about what the result tells you about how much of the atom is empty.",
+      "distractor_logic": [
+        "Large-angle scattering happens to only a tiny fraction; claiming it for most particles is the central misreading of the experiment",
+        "Back-scattering is the rarest outcome of all, not the typical one",
+        "Gold foil thin enough for the experiment lets alpha particles pass; absorption was not what was observed"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-002",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "A very small fraction of alpha particles were found to bounce almost straight back from the gold foil. What did Rutherford conclude from this?",
+      "options": [
+        "Positive charge is spread uniformly throughout the atom",
+        "The atom has a tiny, dense, positively charged nucleus",
+        "The electrons are packed together at the centre of the atom",
+        "The atom is mostly filled with solid matter"
+      ],
+      "correct_index": 1,
+      "explanation": "To turn a fast, heavy alpha particle around, it must meet a very strong repulsive force.<br><br>That is only possible if the atom's positive charge and almost all its mass are concentrated in a very small region — the nucleus.<br><br>A uniformly spread charge (Thomson's plum-pudding model) could never produce such a strong force.",
+      "hint": "What kind of charge distribution could reverse a heavy, fast, positively charged particle?",
+      "distractor_logic": [
+        "This is the plum-pudding picture, which the experiment disproved because a spread-out charge cannot reverse an alpha particle",
+        "Electrons are far too light to turn back an alpha particle, and they are not at the centre",
+        "Most alpha particles pass straight through, so the atom is mostly empty, not solid"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-003",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "In Rutherford's experiment, roughly what fraction of alpha particles were scattered by more than \\( 90^\\circ \\)?",
+      "options": [
+        "About half of them",
+        "About 1 in 10",
+        "About 1 in 8000",
+        "None of them"
+      ],
+      "correct_index": 2,
+      "explanation": "Only about 1 alpha particle in 8000 was deflected by more than \\( 90^\\circ \\).<br><br>This rarity shows that the nucleus occupies only a tiny part of the atom, so a close encounter with it is very unlikely.<br><br>But the fact that it happens at all shows the nucleus exists.",
+      "hint": "Large-angle scattering is real but extremely rare.",
+      "distractor_logic": [
+        "Half would mean the nucleus fills much of the atom, which contradicts the mostly-undeflected result",
+        "1 in 10 is far too common for scattering off a tiny nucleus",
+        "Some particles were indeed scattered back; that observation is the whole basis of the nuclear model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-004",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "An atom has a size of order \\( 10^{-10} \\) m, while Rutherford's experiment showed the nucleus is of order \\( 10^{-15} \\) m to \\( 10^{-14} \\) m. Roughly how many times smaller is the nucleus than the atom?",
+      "options": [
+        "About 10 times smaller",
+        "About the same size",
+        "About \\( 10^{10} \\) times smaller",
+        "About \\( 10^{4} \\) to \\( 10^{5} \\) times smaller"
+      ],
+      "correct_index": 3,
+      "explanation": "Divide the atom's size by the nucleus's size: \\( \\dfrac{10^{-10}}{10^{-14}}=10^{4} \\) and \\( \\dfrac{10^{-10}}{10^{-15}}=10^{5} \\).<br><br>So the nucleus is roughly \\( 10^{4} \\) to \\( 10^{5} \\) times smaller than the atom — which is why most of the atom is empty space.",
+      "hint": "Subtract the powers of ten.",
+      "distractor_logic": [
+        "A factor of 10 would make the nucleus a large part of the atom, and many more particles would be deflected",
+        "If the nucleus were atom-sized, nearly every alpha particle would be scattered",
+        "This adds the exponents instead of subtracting them"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-005",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "For a head-on collision (impact parameter \\( b=0 \\)), which expression gives the distance of closest approach \\( r_0 \\) of an alpha particle with kinetic energy \\( KE \\) to a nucleus of atomic number \\( Z \\)?",
+      "options": [
+        "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{KE} \\)",
+        "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{Ze^2}{KE} \\)",
+        "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{(KE)^2} \\)",
+        "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2\\,KE}{1} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "At closest approach the alpha particle momentarily stops, so all its kinetic energy has become electrostatic potential energy.<br><br>The alpha particle carries charge \\( 2e \\) and the nucleus \\( Ze \\), so \\( KE=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{(2e)(Ze)}{r_0} \\).<br><br>Rearranging gives \\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{KE} \\).",
+      "hint": "Set kinetic energy equal to the Coulomb potential energy between charges \\( 2e \\) and \\( Ze \\).",
+      "distractor_logic": [
+        "Drops the factor of 2 — the alpha particle's charge is \\( 2e \\), not \\( e \\)",
+        "Squares the kinetic energy; energy balance is linear in \\( KE \\)",
+        "Puts \\( KE \\) in the numerator, which would make faster particles stop farther away — the opposite of reality"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-006",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "Why was a very thin gold foil used in the alpha-scattering experiment?",
+      "options": [
+        "Because gold is radioactive and adds its own alpha particles",
+        "So that each alpha particle is scattered at most once, making the results easy to interpret",
+        "So that the foil absorbs all the slow alpha particles",
+        "Because a thick foil would be completely transparent to alpha particles"
+      ],
+      "correct_index": 1,
+      "explanation": "In a thin foil, an alpha particle usually meets at most one nucleus closely.<br><br>A single scattering event can be analysed cleanly with Coulomb's law, so the observed angles directly reveal the nucleus.<br><br>Gold can be beaten into extremely thin sheets, which is why it was chosen.",
+      "hint": "Think about how many nuclei a particle might meet in a thick versus a thin foil.",
+      "distractor_logic": [
+        "Gold is not radioactive; the alpha particles came from a separate radioactive source",
+        "The foil's purpose was scattering, not filtering out slow particles",
+        "A thicker foil stops or multiply-scatters more particles; it is not more transparent"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-007",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "In alpha-particle scattering, what is the impact parameter \\( b \\)?",
+      "options": [
+        "The smallest distance the alpha particle reaches from the nucleus during its motion",
+        "The radius of the gold nucleus",
+        "The perpendicular distance of the alpha particle's initial velocity line from the centre of the nucleus",
+        "The distance the alpha particle travels inside the foil"
+      ],
+      "correct_index": 2,
+      "explanation": "The impact parameter \\( b \\) is measured before the interaction: it is how far the particle's original straight-line path would miss the nucleus's centre.<br><br>It is different from the distance of closest approach \\( r_0 \\), which is reached during the motion.<br><br>Only for a head-on collision is \\( b=0 \\).",
+      "hint": "It describes the aim of the particle, not where it ends up.",
+      "distractor_logic": [
+        "This is the distance of closest approach; confusing it with \\( b \\) is a classic trap",
+        "The nuclear radius is a property of the target, not of the particle's aim",
+        "The path length in the foil has nothing to do with how the particle is aimed at one nucleus"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-008",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the charge of the alpha particle used in Rutherford's experiment?",
+      "options": [
+        "\\( +e \\)",
+        "\\( -2e \\)",
+        "Zero",
+        "\\( +2e \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "An alpha particle is a helium nucleus: 2 protons and 2 neutrons.<br><br>Its charge is therefore \\( +2e \\).<br><br>This is where the factor of \\( 2 \\) in \\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{KE} \\) comes from.",
+      "hint": "An alpha particle is a helium nucleus.",
+      "distractor_logic": [
+        "That is the charge of a proton, which has only one proton",
+        "An alpha particle is positively charged; that is why the positive nucleus repels it",
+        "A neutral particle would not be repelled by the nucleus at all"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-009",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement is Bohr's quantization condition for the angular momentum of an electron in orbit \\( n \\)?",
+      "options": [
+        "\\( mv_nr_n=\\dfrac{nh}{2\\pi} \\)",
+        "\\( mv_nr_n=\\dfrac{h}{2\\pi n} \\)",
+        "\\( mv_nr_n=nh \\)",
+        "\\( mv_nr_n=\\dfrac{nh}{4\\pi} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Bohr postulated that the electron can only occupy orbits in which its angular momentum is a whole-number multiple of \\( \\dfrac{h}{2\\pi} \\).<br><br>So \\( mv_nr_n=\\dfrac{nh}{2\\pi} \\), with \\( n=1,2,3,\\ldots \\)",
+      "hint": "Angular momentum comes in whole-number multiples of \\( \\dfrac{h}{2\\pi} \\).",
+      "distractor_logic": [
+        "Puts \\( n \\) in the denominator, so angular momentum would shrink in higher orbits",
+        "Omits the \\( 2\\pi \\); the quantum unit is \\( \\dfrac{h}{2\\pi} \\), not \\( h \\)",
+        "Uses \\( 4\\pi \\) instead of \\( 2\\pi \\), halving the quantum unit"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-010",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "For a hydrogen-like ion, how does the orbit radius \\( r_n \\) depend on \\( n \\) and \\( Z \\)?",
+      "options": [
+        "\\( r_n\\propto\\dfrac{Z}{n^2} \\)",
+        "\\( r_n\\propto\\dfrac{n^2}{Z} \\)",
+        "\\( r_n\\propto\\dfrac{n}{Z} \\)",
+        "\\( r_n\\propto n^2Z \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Bohr's model gives \\( r_n=0.529\\dfrac{n^2}{Z} \\) Å.<br><br>Radius grows as \\( n^2 \\) — higher orbits are much bigger.<br><br>Radius shrinks with \\( Z \\) — a more highly charged nucleus pulls the electron closer.",
+      "hint": "Higher orbits are larger; a stronger nucleus pulls the electron in.",
+      "distractor_logic": [
+        "Reverses both dependencies, so higher orbits would be smaller",
+        "Uses \\( n \\) instead of \\( n^2 \\), underestimating how fast orbits grow",
+        "Makes radius grow with \\( Z \\), but a larger nuclear charge pulls the electron closer"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-011",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "As \\( n \\) increases in the hydrogen atom, what happens to the electron's orbital speed?",
+      "options": [
+        "It increases, varying as \\( n \\)",
+        "It stays the same in every orbit",
+        "It decreases, varying as \\( \\dfrac{1}{n} \\)",
+        "It decreases, varying as \\( \\dfrac{1}{n^2} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Bohr's model gives \\( v_n\\propto\\dfrac{Z}{n} \\).<br><br>So the electron moves slower in higher orbits, even though those orbits have higher (less negative) energy.<br><br>In the ground state of hydrogen the speed is about \\( 2.18\\times10^{6} \\) m/s, and in \\( n=2 \\) it is half of that.",
+      "hint": "Farther from the nucleus, the attraction is weaker, so less speed is needed.",
+      "distractor_logic": [
+        "The common intuition that higher-energy orbits mean faster motion — the electron actually slows down",
+        "Speed does depend on \\( n \\); only angular momentum steps up in equal units",
+        "The \\( \\dfrac{1}{n^2} \\) dependence belongs to energy, not speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-012",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "Using \\( r_n=0.529\\,n^2 \\) Å for hydrogen, what is the radius of the \\( n=2 \\) orbit?",
+      "options": [
+        "1.058 Å",
+        "0.13225 Å",
+        "4.232 Å",
+        "2.116 Å"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( r_2=0.529\\times2^2=0.529\\times4 \\)<br><br>\\( r_2=2.116 \\) Å",
+      "hint": "Square \\( n \\) before multiplying.",
+      "distractor_logic": [
+        "Multiplies by \\( n \\) instead of \\( n^2 \\)",
+        "Divides by \\( n^2 \\), as if higher orbits were smaller",
+        "Multiplies by \\( n^3 \\) instead of \\( n^2 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-013",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the energy of the electron in the ground state of the hydrogen atom?",
+      "options": [
+        "\\( -13.6 \\) eV",
+        "\\( +13.6 \\) eV",
+        "\\( -3.4 \\) eV",
+        "\\( -27.2 \\) eV"
+      ],
+      "correct_index": 0,
+      "explanation": "For hydrogen, \\( E_n=-\\dfrac{13.6}{n^2} \\) eV.<br><br>With \\( n=1 \\), \\( E_1=-13.6 \\) eV.<br><br>The negative sign means the electron is bound to the nucleus.",
+      "hint": "Put \\( n=1 \\) into \\( E_n=-\\dfrac{13.6}{n^2} \\) eV and keep the sign.",
+      "distractor_logic": [
+        "Drops the negative sign; a positive orbital energy would mean the electron is not bound",
+        "This is \\( E_2 \\), the first excited state",
+        "This is the potential energy in the ground state, not the total energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-014",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "Which expression gives the energy \\( E_n \\) of the electron in orbit \\( n \\) of a hydrogen-like ion with atomic number \\( Z \\)?",
+      "options": [
+        "\\( E_n=-\\dfrac{13.6Z}{n^2} \\) eV",
+        "\\( E_n=-\\dfrac{13.6Z^2}{n^2} \\) eV",
+        "\\( E_n=-\\dfrac{13.6n^2}{Z^2} \\) eV",
+        "\\( E_n=+\\dfrac{13.6Z^2}{n^2} \\) eV"
+      ],
+      "correct_index": 1,
+      "explanation": "Bohr's energy for a single-electron ion is \\( E_n=-\\dfrac{13.6Z^2}{n^2} \\) eV.<br><br>It depends on \\( Z^2 \\) because both the nuclear charge and the smaller orbit strengthen the binding.<br><br>It is negative for every bound state.",
+      "hint": "Energy depends on the square of the nuclear charge.",
+      "distractor_logic": [
+        "Uses \\( Z \\) instead of \\( Z^2 \\)",
+        "Inverts the fraction, making higher orbits more tightly bound",
+        "Positive sign would mean the electron is unbound"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-015",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "According to Bohr's postulates, an electron moving in one of the allowed (stationary) orbits",
+      "options": [
+        "radiates energy continuously and slowly spirals inwards",
+        "radiates only when its speed is greatest",
+        "does not radiate energy",
+        "absorbs energy continuously from the nucleus"
+      ],
+      "correct_index": 2,
+      "explanation": "Bohr's first postulate: in a stationary orbit the electron does not radiate, even though it is accelerating.<br><br>Radiation is emitted or absorbed only when the electron jumps between orbits.<br><br>This postulate is what makes the atom stable.",
+      "hint": "Stationary orbits are exactly what make the atom stable.",
+      "distractor_logic": [
+        "This is the classical prediction for Rutherford's atom that Bohr rejected",
+        "Speed is constant in a circular orbit, and no radiation is emitted in any stationary orbit",
+        "The electron's energy stays fixed in a stationary orbit"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-016",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 1,
+      "type": "regular",
+      "question": "By Bohr's frequency condition, when an electron jumps from an initial level of energy \\( E_i \\) to a lower level of energy \\( E_f \\), the emitted photon has frequency \\( \\nu \\) given by",
+      "options": [
+        "\\( h\\nu=E_i+E_f \\)",
+        "\\( \\nu=E_i-E_f \\)",
+        "\\( h\\nu=\\dfrac{E_i}{E_f} \\)",
+        "\\( h\\nu=E_i-E_f \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The photon carries away exactly the energy the atom loses.<br><br>So \\( h\\nu=E_i-E_f \\), which is positive because \\( E_i \\) is higher than \\( E_f \\).",
+      "hint": "The photon's energy equals the energy difference between levels.",
+      "distractor_logic": [
+        "Adding the two (negative) energies has no physical meaning for the photon",
+        "Forgets Planck's constant — energy and frequency are linked by \\( h \\)",
+        "A ratio of energies is dimensionless, not an energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-017",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the ionization energy of a hydrogen atom in its ground state?",
+      "options": [
+        "13.6 eV",
+        "\\( -13.6 \\) eV",
+        "10.2 eV",
+        "3.4 eV"
+      ],
+      "correct_index": 0,
+      "explanation": "Ionization means taking the electron from \\( n=1 \\) to \\( n=\\infty \\), where \\( E_n=0 \\).<br><br>Energy needed \\( =0-(-13.6)=13.6 \\) eV.<br><br>Ionization energy is always a positive amount of energy that must be supplied.",
+      "hint": "How much energy lifts the electron from \\( -13.6 \\) eV up to 0?",
+      "distractor_logic": [
+        "Ionization energy is energy supplied, so it is positive; \\( -13.6 \\) eV is the ground-state energy itself",
+        "This is the energy to reach \\( n=2 \\), not \\( n=\\infty \\)",
+        "This is the ionization energy from \\( n=2 \\), not from the ground state"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-018",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the first excitation energy of hydrogen (from \\( n=1 \\) to \\( n=2 \\))?",
+      "options": [
+        "3.4 eV",
+        "10.2 eV",
+        "13.6 eV",
+        "12.09 eV"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( E_1=-13.6 \\) eV and \\( E_2=-\\dfrac{13.6}{4}=-3.4 \\) eV.<br><br>Excitation energy \\( =E_2-E_1=-3.4-(-13.6)=10.2 \\) eV.",
+      "hint": "Subtract the ground-state energy from the \\( n=2 \\) energy.",
+      "distractor_logic": [
+        "This is just the magnitude of \\( E_2 \\), not the difference between levels",
+        "This is the ionization energy, a jump to \\( n=\\infty \\)",
+        "This is the excitation energy to \\( n=3 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-019",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the energy \\( E_n \\) of the electron in the \\( n=4 \\) level of hydrogen?",
+      "options": [
+        "\\( -3.4 \\) eV",
+        "\\( +0.85 \\) eV",
+        "\\( -0.85 \\) eV",
+        "\\( -54.4 \\) eV"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E_n=-\\dfrac{13.6}{n^2} \\) eV.<br><br>\\( E_4=-\\dfrac{13.6}{16}=-0.85 \\) eV.",
+      "hint": "Divide by \\( n^2 \\), not \\( n \\), and keep the minus sign.",
+      "distractor_logic": [
+        "Divides by \\( n \\) instead of \\( n^2 \\)",
+        "Drops the sign; every bound level has negative energy",
+        "Multiplies by \\( n^2 \\) instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-020",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the energy of the electron when it is at \\( n=\\infty \\), i.e. just removed from the atom with no kinetic energy?",
+      "options": [
+        "\\( -13.6 \\) eV",
+        "\\( +13.6 \\) eV",
+        "\\( -\\infty \\)",
+        "0"
+      ],
+      "correct_index": 3,
+      "explanation": "Using \\( E_n=-\\dfrac{13.6}{n^2} \\) eV, as \\( n\\to\\infty \\), \\( E_n\\to0 \\).<br><br>Zero energy is the reference for a free electron at rest far from the nucleus.<br><br>All bound levels lie below it, so they are negative.",
+      "hint": "Let \\( n \\) grow without limit in \\( -\\dfrac{13.6}{n^2} \\).",
+      "distractor_logic": [
+        "This is the ground-state energy, the most tightly bound level, not the free state",
+        "A positive value would mean the electron still has kinetic energy after leaving",
+        "The energy approaches zero from below; it does not run off to negative infinity"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-021",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "Why is the energy of an electron in any Bohr orbit negative?",
+      "options": [
+        "Because the electron is bound to the nucleus, and energy must be supplied to free it",
+        "Because the electron's kinetic energy is negative",
+        "Because the electron repels the nucleus",
+        "Because the electron has negative mass"
+      ],
+      "correct_index": 0,
+      "explanation": "The zero of energy is chosen as a free electron at rest far away.<br><br>A bound electron has less energy than that, so its total energy is negative.<br><br>The magnitude of this negative energy is the energy needed to free it.",
+      "hint": "Compare with the energy of a free electron at rest.",
+      "distractor_logic": [
+        "Kinetic energy is never negative; it is the potential energy that is negative",
+        "The electron is attracted to the positive nucleus, not repelled",
+        "Mass is always positive; the sign comes from binding"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-022",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "Hydrogen atoms are excited to the \\( n=4 \\) level. What is the maximum number of different spectral lines that can be emitted as they return to the ground state?",
+      "options": [
+        "3",
+        "6",
+        "4",
+        "10"
+      ],
+      "correct_index": 1,
+      "explanation": "The number of possible lines from level \\( n \\) is \\( \\dfrac{n(n-1)}{2} \\).<br><br>For \\( n=4 \\): \\( \\dfrac{4\\times3}{2}=6 \\).<br><br>They are 4 to 3, 4 to 2, 4 to 1, 3 to 2, 3 to 1 and 2 to 1.",
+      "hint": "Count every pair of levels from 1 to 4.",
+      "distractor_logic": [
+        "Counts only the downward steps one level at a time, missing direct jumps",
+        "Counts only the number of levels, not the pairs",
+        "This is the count for \\( n=5 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-023",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "An electron in hydrogen moves from \\( n=1 \\) to \\( n=3 \\). What does the atom do?",
+      "options": [
+        "It emits a photon of energy \\( E_3-E_1 \\)",
+        "It absorbs energy equal to \\( E_3+E_1 \\)",
+        "It absorbs energy equal to \\( E_3-E_1 \\)",
+        "It neither absorbs nor emits energy"
+      ],
+      "correct_index": 2,
+      "explanation": "Moving to a higher level (less negative energy) needs energy input.<br><br>The atom must absorb exactly \\( E_3-E_1 \\), for example from a photon or a collision.<br><br>Emission happens only when the electron drops to a lower level.",
+      "hint": "Is \\( n=3 \\) higher or lower in energy than \\( n=1 \\)?",
+      "distractor_logic": [
+        "Emission happens on a downward jump; this is an upward jump",
+        "The energy needed is a difference of levels, not a sum",
+        "Any change of level involves exchanging energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-024",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the ionization energy of the He\\( ^{+} \\) ion (\\( Z=2 \\)) in its ground state?",
+      "options": [
+        "27.2 eV",
+        "13.6 eV",
+        "\\( -54.4 \\) eV",
+        "54.4 eV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E_1=-\\dfrac{13.6Z^2}{1^2}=-13.6\\times4=-54.4 \\) eV.<br><br>Ionization energy \\( =0-(-54.4)=54.4 \\) eV.",
+      "hint": "Energy scales as \\( Z^2 \\).",
+      "distractor_logic": [
+        "Uses \\( Z \\) instead of \\( Z^2 \\)",
+        "Ignores the nuclear charge and uses hydrogen's value",
+        "Ionization energy is supplied energy, so it is positive"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-025",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "All lines of the Lyman series of hydrogen end at which level?",
+      "options": [
+        "\\( n=1 \\)",
+        "\\( n=2 \\)",
+        "\\( n=3 \\)",
+        "\\( n=5 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "A series is named by its final (lower) level \\( n_1 \\).<br><br>Lyman: \\( n_1=1 \\); Balmer: \\( n_1=2 \\); Paschen: \\( n_1=3 \\); Brackett: \\( n_1=4 \\); Pfund: \\( n_1=5 \\).",
+      "hint": "Lyman is the series ending at the lowest possible level.",
+      "distractor_logic": [
+        "This is the Balmer series",
+        "This is the Paschen series",
+        "This is the Pfund series"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-026",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "Which hydrogen spectral series is the only one with lines in the visible region?",
+      "options": [
+        "Lyman",
+        "Balmer",
+        "Paschen",
+        "Pfund"
+      ],
+      "correct_index": 1,
+      "explanation": "Balmer lines (ending at \\( n=2 \\)) include the red, blue-green and violet lines of hydrogen.<br><br>Lyman lies in the ultraviolet; Paschen, Brackett and Pfund lie entirely in the infrared.",
+      "hint": "It is the series ending at \\( n=2 \\).",
+      "distractor_logic": [
+        "Lyman lines have large energy gaps and lie in the ultraviolet",
+        "Paschen lines lie entirely in the infrared",
+        "Pfund lines have tiny energy gaps and lie far in the infrared"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-027",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "In which region of the electromagnetic spectrum do the lines of the Paschen series lie?",
+      "options": [
+        "Ultraviolet",
+        "Visible",
+        "Infrared",
+        "X-ray"
+      ],
+      "correct_index": 2,
+      "explanation": "Paschen lines end at \\( n_1=3 \\).<br><br>The energy gaps down to \\( n=3 \\) are small, giving long wavelengths in the infrared.",
+      "hint": "Series ending at higher levels involve smaller energy gaps.",
+      "distractor_logic": [
+        "Ultraviolet belongs to the Lyman series",
+        "Only the Balmer series has visible lines",
+        "Hydrogen transitions never reach X-ray energies"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-028",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "Which is the correct form of the Rydberg formula for a hydrogen-like ion, with \\( n_2>n_1 \\)?",
+      "options": [
+        "\\( \\dfrac{1}{\\lambda}=RZ^2\\left(\\dfrac{1}{n_2^2}-\\dfrac{1}{n_1^2}\\right) \\)",
+        "\\( \\dfrac{1}{\\lambda}=RZ\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\)",
+        "\\( \\lambda=RZ^2\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\)",
+        "\\( \\dfrac{1}{\\lambda}=RZ^2\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Here \\( n_1 \\) is the lower (final) level and \\( n_2 \\) the higher (initial) level.<br><br>Because \\( n_2>n_1 \\), the bracket is positive, as a wavenumber must be.<br><br>The \\( Z^2 \\) factor comes from the \\( Z^2 \\) in \\( E_n \\).",
+      "hint": "The bracket must be positive.",
+      "distractor_logic": [
+        "Swaps \\( n_1 \\) and \\( n_2 \\), which gives a negative, meaningless wavenumber",
+        "Uses \\( Z \\) instead of \\( Z^2 \\)",
+        "The formula gives \\( \\dfrac{1}{\\lambda} \\) (wavenumber), not \\( \\lambda \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-029",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "The lines of the Lyman series lie in which region?",
+      "options": [
+        "Ultraviolet",
+        "Visible",
+        "Infrared",
+        "Microwave"
+      ],
+      "correct_index": 0,
+      "explanation": "Lyman lines end at \\( n=1 \\), the deepest level.<br><br>The energy gaps are large (10.2 eV to 13.6 eV), so the wavelengths are short — ultraviolet.",
+      "hint": "Transitions to the ground state release the most energy.",
+      "distractor_logic": [
+        "Visible lines belong only to the Balmer series",
+        "Infrared belongs to Paschen, Brackett and Pfund",
+        "Atomic transitions in hydrogen are far too energetic for microwaves"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-030",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "The series limit of any hydrogen spectral series corresponds to which transition?",
+      "options": [
+        "From \\( n_1+1 \\) down to \\( n_1 \\)",
+        "From \\( n_2=\\infty \\) down to the series' final level \\( n_1 \\)",
+        "From \\( n_1 \\) up to \\( n_2=\\infty \\)",
+        "From \\( n_2=\\infty \\) down to \\( n=1 \\), for every series"
+      ],
+      "correct_index": 1,
+      "explanation": "The series limit is the shortest-wavelength, highest-energy line of the series.<br><br>It comes from the largest possible fall, which starts at \\( n_2=\\infty \\) and ends at that series' own \\( n_1 \\).<br><br>The fall from \\( n_1+1 \\) gives the longest wavelength instead.",
+      "hint": "The series limit is the biggest jump that still ends at the series' own level.",
+      "distractor_logic": [
+        "This gives the longest-wavelength line of the series, the opposite end",
+        "An upward jump is absorption (ionization), not an emission line",
+        "Each series has its own final level; only Lyman ends at \\( n=1 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-031",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "The Pfund series of hydrogen consists of transitions ending at which level?",
+      "options": [
+        "\\( n=4 \\)",
+        "\\( n=3 \\)",
+        "\\( n=5 \\)",
+        "\\( n=6 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "In order: Lyman \\( n_1=1 \\), Balmer \\( n_1=2 \\), Paschen \\( n_1=3 \\), Brackett \\( n_1=4 \\), Pfund \\( n_1=5 \\).",
+      "hint": "Pfund is the fifth series in the list.",
+      "distractor_logic": [
+        "This is the Brackett series",
+        "This is the Paschen series",
+        "No standard named series ends at \\( n=6 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-032",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 1,
+      "type": "regular",
+      "question": "Using \\( R=1.1\\times10^{7} \\) m\\( ^{-1} \\), what is the wavenumber \\( \\dfrac{1}{\\lambda} \\) of the Lyman series limit of hydrogen (\\( n_2\\to\\infty \\))?",
+      "options": [
+        "\\( 8.25\\times10^{6} \\) m\\( ^{-1} \\)",
+        "\\( 2.75\\times10^{6} \\) m\\( ^{-1} \\)",
+        "\\( 4.4\\times10^{7} \\) m\\( ^{-1} \\)",
+        "\\( 1.1\\times10^{7} \\) m\\( ^{-1} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=R\\left(\\dfrac{1}{1^2}-\\dfrac{1}{\\infty}\\right)=R \\)<br><br>So \\( \\dfrac{1}{\\lambda}=1.1\\times10^{7} \\) m\\( ^{-1} \\).",
+      "hint": "With \\( n_2\\to\\infty \\), the second term vanishes.",
+      "distractor_logic": [
+        "This is \\( \\dfrac{3R}{4} \\), the first Lyman line (2 to 1), the longest wavelength, not the limit",
+        "This is \\( \\dfrac{R}{4} \\), the Balmer series limit",
+        "This is \\( 4R \\), which would apply to He\\( ^{+} \\), not hydrogen"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-033",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "According to de Broglie, an electron's orbit of radius \\( r_n \\) is allowed only if",
+      "options": [
+        "\\( 2\\pi r_n=n\\lambda \\)",
+        "\\( 2\\pi r_n=\\left(n+\\dfrac{1}{2}\\right)\\lambda \\)",
+        "\\( \\pi r_n=n\\lambda \\)",
+        "\\( 2\\pi r_n\\geq n\\lambda \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The electron wave must close on itself smoothly as a standing wave.<br><br>So the circumference must hold exactly a whole number of wavelengths: \\( 2\\pi r_n=n\\lambda \\).",
+      "hint": "A standing wave around a circle needs a whole number of wavelengths.",
+      "distractor_logic": [
+        "A half-integer fit would make the wave cancel itself as it goes round",
+        "Uses half the circumference",
+        "An inequality is not a fit; the condition is exact"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-034",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "Bohr's model can correctly be applied to which of these?",
+      "options": [
+        "Neutral helium",
+        "He\\( ^{+} \\)",
+        "Neutral lithium",
+        "Neon"
+      ],
+      "correct_index": 1,
+      "explanation": "Bohr's model works only for single-electron (hydrogen-like) systems: H, He\\( ^{+} \\), Li\\( ^{2+} \\) and so on.<br><br>He\\( ^{+} \\) has one electron with \\( Z=2 \\).<br><br>Neutral He, Li and Ne have two or more electrons, which the model cannot handle.",
+      "hint": "Count the electrons.",
+      "distractor_logic": [
+        "Neutral helium has two electrons",
+        "Neutral lithium has three electrons",
+        "Neon has ten electrons"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-035",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of the following can Bohr's model NOT explain?",
+      "options": [
+        "The existence of discrete lines in the hydrogen spectrum",
+        "The value of the ionization energy of hydrogen",
+        "The relative intensities of the lines in the hydrogen spectrum",
+        "The stability of the hydrogen atom"
+      ],
+      "correct_index": 2,
+      "explanation": "Bohr's model predicts where hydrogen lines appear, the 13.6 eV ionization energy, and why the atom is stable.<br><br>It says nothing about why some lines are brighter than others — that needs quantum mechanics.",
+      "hint": "Bohr predicts positions of lines, but what about brightness?",
+      "distractor_logic": [
+        "Explaining discrete lines is the model's main success",
+        "Bohr's model gives 13.6 eV exactly",
+        "Stationary orbits were introduced precisely to explain stability"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-036",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "How many de Broglie wavelengths fit around the circumference of the \\( n=3 \\) Bohr orbit?",
+      "options": [
+        "9",
+        "1.5",
+        "6",
+        "3"
+      ],
+      "correct_index": 3,
+      "explanation": "From \\( 2\\pi r_n=n\\lambda \\), the number of wavelengths in the orbit is simply \\( n \\).<br><br>For \\( n=3 \\), exactly 3 wavelengths fit.",
+      "hint": "The number of wavelengths equals the orbit number.",
+      "distractor_logic": [
+        "Uses \\( n^2 \\), confusing this with how the radius scales",
+        "A non-whole number of wavelengths would not form a standing wave",
+        "Doubles \\( n \\) for no reason"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-037",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "Bohr's model is fundamentally inconsistent with which principle?",
+      "options": [
+        "Heisenberg's uncertainty principle",
+        "Conservation of energy",
+        "Coulomb's law",
+        "Conservation of charge"
+      ],
+      "correct_index": 0,
+      "explanation": "Bohr's model gives the electron a sharp circular path with a definite position and momentum at every instant.<br><br>The uncertainty principle forbids knowing both precisely at the same time.<br><br>Energy conservation, Coulomb's law and charge conservation are all used within the model.",
+      "hint": "Which principle limits how precisely position and momentum can be known together?",
+      "distractor_logic": [
+        "Energy conservation is built into the frequency condition",
+        "Coulomb attraction supplies the centripetal force in the model",
+        "Charge conservation is never violated in the model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-038",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "The de Broglie wavelength of an electron with momentum \\( p \\) is",
+      "options": [
+        "\\( \\lambda=\\dfrac{p}{h} \\)",
+        "\\( \\lambda=\\dfrac{h}{p} \\)",
+        "\\( \\lambda=hp \\)",
+        "\\( \\lambda=\\dfrac{h}{2\\pi p} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "de Broglie's relation: \\( \\lambda=\\dfrac{h}{p}=\\dfrac{h}{mv} \\).<br><br>Larger momentum means shorter wavelength.",
+      "hint": "Wavelength gets shorter as momentum grows.",
+      "distractor_logic": [
+        "Inverted; this would make faster electrons have longer waves",
+        "A product has the wrong units for a wavelength",
+        "The extra \\( 2\\pi \\) belongs to angular momentum quantization, not to \\( \\lambda \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-039",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "de Broglie argued that only certain electron orbits are allowed because",
+      "options": [
+        "the electron's charge must be spread evenly around the orbit",
+        "only orbits touching the nucleus are stable",
+        "the electron wave must form a standing wave that closes on itself",
+        "the electron must travel at the speed of light"
+      ],
+      "correct_index": 2,
+      "explanation": "A wave going round a closed loop reinforces itself only if it fits a whole number of times.<br><br>Otherwise, successive loops cancel out.<br><br>This standing-wave condition picks out exactly Bohr's allowed orbits.",
+      "hint": "Think about a wave going round and meeting itself.",
+      "distractor_logic": [
+        "Charge distribution has nothing to do with the standing-wave argument",
+        "Allowed orbits are far from the nucleus",
+        "The electron in hydrogen moves far slower than light"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L1-040",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 1,
+      "type": "regular",
+      "question": "A high-resolution spectrometer shows that a single hydrogen Balmer line is actually made of several very closely spaced components. This fine structure",
+      "options": [
+        "is fully explained by Bohr's model",
+        "shows that the line is in the infrared",
+        "proves that hydrogen has two electrons",
+        "is not explained by Bohr's model"
+      ],
+      "correct_index": 3,
+      "explanation": "Bohr's model gives one energy for each \\( n \\), so it predicts a single sharp line for each transition.<br><br>Fine-structure splitting needs later quantum theory and is outside the Bohr model.",
+      "hint": "Bohr's energies depend only on \\( n \\).",
+      "distractor_logic": [
+        "Bohr's model has no mechanism to split one level into several",
+        "Balmer lines are the visible series of hydrogen",
+        "Hydrogen has one electron; the splitting has another origin"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-001",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "An alpha particle with kinetic energy 7.9 MeV approaches a gold nucleus (\\( Z=79 \\)) head-on. Take \\( \\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9} \\) N·m\\( ^{2} \\)/C\\( ^{2} \\) and \\( e=1.6\\times10^{-19} \\) C. What is the distance of closest approach?",
+      "options": [
+        "\\( 2.88\\times10^{-14} \\) m",
+        "\\( 1.44\\times10^{-14} \\) m",
+        "\\( 5.76\\times10^{-14} \\) m",
+        "\\( 2.88\\times10^{-8} \\) m"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{KE} \\), with \\( KE=7.9\\times10^{6}\\times1.6\\times10^{-19} \\) J.<br><br>One factor of \\( e \\) cancels: \\( r_0=\\dfrac{9\\times10^{9}\\times2\\times79\\times1.6\\times10^{-19}}{7.9\\times10^{6}} \\)<br><br>\\( r_0=\\dfrac{9\\times10^{9}\\times20\\times1.6\\times10^{-19}}{10^{6}}=2.88\\times10^{-14} \\) m",
+      "hint": "Convert MeV to joules, and remember the alpha particle's charge is \\( 2e \\).",
+      "distractor_logic": [
+        "Drops the factor of 2 for the alpha particle's charge",
+        "Doubles the answer by counting the factor of 2 twice",
+        "Leaves the energy in eV rather than MeV, missing the factor \\( 10^{6} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-002",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "If the kinetic energy of the alpha particles is doubled (same nucleus), the distance of closest approach in a head-on collision",
+      "options": [
+        "is doubled",
+        "is halved",
+        "becomes one-fourth",
+        "stays the same"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{KE} \\), so \\( r_0\\propto\\dfrac{1}{KE} \\).<br><br>Doubling \\( KE \\) halves \\( r_0 \\): a more energetic particle pushes closer against the repulsion.",
+      "hint": "\\( KE \\) sits in the denominator of \\( r_0 \\).",
+      "distractor_logic": [
+        "Treats \\( r_0 \\) as proportional to \\( KE \\)",
+        "Treats \\( r_0 \\) as depending on \\( (KE)^2 \\)",
+        "Ignores that more energy lets the particle get closer"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-003",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "Alpha particles of the same kinetic energy are fired head-on first at a nucleus with \\( Z=40 \\) and then at one with \\( Z=80 \\). How does the distance of closest approach change?",
+      "options": [
+        "It halves",
+        "It becomes four times",
+        "It doubles",
+        "It is unchanged"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( r_0\\propto Z \\) at fixed \\( KE \\).<br><br>Doubling \\( Z \\) doubles the repulsion, so the particle stops twice as far away.",
+      "hint": "A stronger positive nucleus stops the particle sooner.",
+      "distractor_logic": [
+        "Reverses the dependence on \\( Z \\), as if \\( Z \\) were in the denominator",
+        "Treats \\( r_0 \\) as depending on \\( Z^2 \\), mixing it up with the Bohr energy",
+        "Ignores the nuclear charge in the formula"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-004",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "Alpha particles of equal energy approach the same nucleus with different impact parameters. Which one is scattered through the largest angle?",
+      "options": [
+        "The one with the largest impact parameter",
+        "All are scattered by the same angle, since impact parameter does not matter",
+        "The one whose impact parameter equals the size of the atom",
+        "The one with the smallest impact parameter"
+      ],
+      "correct_index": 3,
+      "explanation": "A small impact parameter means the particle is aimed close to the nucleus, where the repulsion is strongest.<br><br>So smaller \\( b \\) gives a larger scattering angle; \\( b=0 \\) sends the particle straight back.",
+      "hint": "Aiming closer to the nucleus means a stronger push.",
+      "distractor_logic": [
+        "Reverses the relation: larger \\( b \\) means a weaker push and smaller deflection",
+        "Scattering angle depends strongly on \\( b \\)",
+        "Such a particle passes far from the nucleus and is barely deflected"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-005",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "In a head-on collision (\\( b=0 \\)) between an alpha particle and a gold nucleus, through what angle is the alpha particle scattered?",
+      "options": [
+        "\\( 180^\\circ \\)",
+        "\\( 90^\\circ \\)",
+        "\\( 0^\\circ \\)",
+        "\\( 45^\\circ \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Aimed straight at the nucleus, the alpha particle slows, stops at \\( r_0 \\), and is pushed straight back along its path.<br><br>That is a scattering angle of \\( 180^\\circ \\).",
+      "hint": "Where does a particle go when it is stopped and repelled along the same line?",
+      "distractor_logic": [
+        "A right-angle deflection needs a nonzero impact parameter",
+        "Zero deflection happens for particles passing far from the nucleus",
+        "There is no sideways push in a head-on encounter"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-006",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "According to classical electromagnetic theory, what should happen to an electron orbiting the nucleus in Rutherford's model?",
+      "options": [
+        "It should orbit forever without losing energy",
+        "It should radiate energy continuously and spiral into the nucleus",
+        "It should fly off and leave the atom",
+        "It should become stationary at a fixed distance"
+      ],
+      "correct_index": 1,
+      "explanation": "An electron in circular motion is accelerating, and classical theory says an accelerating charge radiates.<br><br>Losing energy, it would spiral inward in a tiny fraction of a second.<br><br>Real atoms are stable, so Rutherford's model needed Bohr's stationary-orbit postulate.",
+      "hint": "What does an accelerating charge do classically?",
+      "distractor_logic": [
+        "That is Bohr's postulate, not the classical prediction",
+        "Losing energy makes the orbit shrink, not escape",
+        "Coulomb attraction would pull a stationary electron into the nucleus"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-007",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "At the distance of closest approach in a head-on collision, the kinetic energy of the alpha particle is",
+      "options": [
+        "equal to its initial kinetic energy",
+        "half its initial kinetic energy",
+        "zero, since all of it has become electrostatic potential energy",
+        "twice its initial kinetic energy"
+      ],
+      "correct_index": 2,
+      "explanation": "The alpha particle slows as it climbs the Coulomb repulsion.<br><br>At \\( r_0 \\) it stops momentarily, so \\( KE=0 \\) and \\( PE=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{r_0} \\) equals the starting \\( KE \\).",
+      "hint": "At the turning point the particle is momentarily at rest.",
+      "distractor_logic": [
+        "If \\( KE \\) were unchanged, the particle would not have slowed at all",
+        "Half-and-half sharing has no basis for a head-on stop",
+        "Kinetic energy cannot exceed the starting value in a repulsive encounter"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-008",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 2,
+      "type": "regular",
+      "question": "Why do the electrons in the gold foil hardly deflect the alpha particles?",
+      "options": [
+        "The electrons carry positive charge",
+        "The electrons are located inside the nucleus",
+        "Alpha particles are neutral and do not feel the electrons",
+        "An electron's mass is tiny compared with the alpha particle's mass"
+      ],
+      "correct_index": 3,
+      "explanation": "An alpha particle is about 7300 times heavier than an electron.<br><br>Colliding with an electron is like a bowling ball hitting a table-tennis ball — the heavy one barely changes direction.<br><br>So large deflections must come from the massive nucleus.",
+      "hint": "Compare the masses.",
+      "distractor_logic": [
+        "Electrons are negatively charged",
+        "Electrons are outside the nucleus",
+        "Alpha particles carry charge \\( +2e \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-009",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "Using \\( r_n=0.529\\dfrac{n^2}{Z} \\) Å, what is the radius of the \\( n=2 \\) orbit of He\\( ^{+} \\) (\\( Z=2 \\))?",
+      "options": [
+        "1.058 Å",
+        "2.116 Å",
+        "4.232 Å",
+        "0.529 Å"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( r_2=0.529\\times\\dfrac{2^2}{2}=0.529\\times2 \\)<br><br>\\( r_2=1.058 \\) Å",
+      "hint": "Square \\( n \\), then divide by \\( Z \\).",
+      "distractor_logic": [
+        "Ignores \\( Z \\), giving hydrogen's \\( n=2 \\) radius",
+        "Multiplies by \\( Z \\) instead of dividing",
+        "Uses \\( n \\) instead of \\( n^2 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-010",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "In hydrogen, what is the ratio \\( \\dfrac{r_3}{r_1} \\) of the \\( n=3 \\) orbit radius to the ground-state radius?",
+      "options": [
+        "3",
+        "9",
+        "\\( \\dfrac{1}{9} \\)",
+        "27"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( r_n\\propto n^2 \\), so \\( \\dfrac{r_3}{r_1}=\\dfrac{3^2}{1^2}=9 \\).",
+      "hint": "Radius goes as the square of \\( n \\).",
+      "distractor_logic": [
+        "Uses \\( n \\) instead of \\( n^2 \\)",
+        "Inverts the ratio, as if higher orbits were smaller",
+        "Uses \\( n^3 \\), the dependence of the orbital period"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-011",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "The electron's speed in the ground state of hydrogen is \\( 2.18\\times10^{6} \\) m/s. What is its speed in the \\( n=2 \\) orbit?",
+      "options": [
+        "\\( 4.36\\times10^{6} \\) m/s",
+        "\\( 5.45\\times10^{5} \\) m/s",
+        "\\( 1.09\\times10^{6} \\) m/s",
+        "\\( 2.18\\times10^{6} \\) m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( v_n\\propto\\dfrac{Z}{n} \\), so \\( v_2=\\dfrac{2.18\\times10^{6}}{2} \\).<br><br>\\( v_2=1.09\\times10^{6} \\) m/s — the electron is slower in the higher orbit.",
+      "hint": "Speed goes as \\( \\dfrac{1}{n} \\).",
+      "distractor_logic": [
+        "Assumes the electron speeds up in a higher orbit — the central speed trap",
+        "Divides by \\( n^2 \\), the dependence of energy, not speed",
+        "Assumes speed is the same in every orbit"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-012",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the energy \\( E_n \\) of the electron in the \\( n=3 \\) level of Li\\( ^{2+} \\) (\\( Z=3 \\))?",
+      "options": [
+        "\\( -122.4 \\) eV",
+        "\\( -40.8 \\) eV",
+        "\\( +13.6 \\) eV",
+        "\\( -13.6 \\) eV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E_n=-\\dfrac{13.6Z^2}{n^2} \\) eV.<br><br>\\( E_3=-\\dfrac{13.6\\times9}{9}=-13.6 \\) eV",
+      "hint": "Here \\( Z^2 \\) and \\( n^2 \\) are equal.",
+      "distractor_logic": [
+        "Forgets to divide by \\( n^2 \\), giving the Li\\( ^{2+} \\) ground state",
+        "Divides by \\( n \\) instead of \\( n^2 \\)",
+        "Drops the negative sign; bound levels are negative"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-013",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "The total energy of the electron in the ground state of hydrogen is \\( -13.6 \\) eV. What is its kinetic energy?",
+      "options": [
+        "13.6 eV",
+        "\\( -13.6 \\) eV",
+        "27.2 eV",
+        "6.8 eV"
+      ],
+      "correct_index": 0,
+      "explanation": "In a Bohr orbit, kinetic energy \\( = -E_n \\) and potential energy \\( = 2E_n \\).<br><br>So \\( KE=13.6 \\) eV and \\( PE=-27.2 \\) eV, adding up to \\( -13.6 \\) eV.",
+      "hint": "Kinetic energy is the magnitude of the total energy.",
+      "distractor_logic": [
+        "Kinetic energy can never be negative",
+        "27.2 eV is the magnitude of the potential energy",
+        "Halving the total energy has no basis"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-014",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the ratio of the ground-state orbital speed in He\\( ^{+} \\) to that in hydrogen?",
+      "options": [
+        "4",
+        "2",
+        "\\( \\dfrac{1}{2} \\)",
+        "1"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v_n\\propto\\dfrac{Z}{n} \\); with \\( n=1 \\) in both, the ratio is \\( \\dfrac{Z_{\\text{He}}}{Z_{\\text{H}}}=2 \\).",
+      "hint": "Speed is proportional to \\( Z \\).",
+      "distractor_logic": [
+        "Uses \\( Z^2 \\), the energy dependence",
+        "Puts \\( Z \\) in the denominator, the radius dependence",
+        "Ignores the nuclear charge"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-015",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the ratio of the electron's angular momentum in the \\( n=3 \\) orbit to that in the \\( n=2 \\) orbit?",
+      "options": [
+        "\\( \\dfrac{9}{4} \\)",
+        "\\( \\dfrac{2}{3} \\)",
+        "\\( \\dfrac{3}{2} \\)",
+        "1"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( L=\\dfrac{nh}{2\\pi} \\), so \\( L\\propto n \\).<br><br>\\( \\dfrac{L_3}{L_2}=\\dfrac{3}{2} \\)",
+      "hint": "Angular momentum steps up in equal units of \\( \\dfrac{h}{2\\pi} \\).",
+      "distractor_logic": [
+        "Uses \\( n^2 \\), the radius dependence",
+        "Inverts the ratio",
+        "Angular momentum is not the same in every orbit"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-016",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 2,
+      "type": "regular",
+      "question": "When the electron in hydrogen moves from \\( n=2 \\) to \\( n=3 \\), which statement is correct?",
+      "options": [
+        "\\( r_n \\) increases, speed increases, and \\( E_n \\) becomes less negative",
+        "\\( r_n \\) decreases, speed decreases, and \\( E_n \\) becomes more negative",
+        "\\( r_n \\) increases, speed decreases, and \\( E_n \\) becomes more negative",
+        "\\( r_n \\) increases, speed decreases, and \\( E_n \\) becomes less negative"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( r_n\\propto n^2 \\): larger.<br><br>\\( v_n\\propto\\dfrac{1}{n} \\): slower.<br><br>\\( E_n=-\\dfrac{13.6}{n^2} \\) eV: from \\( -3.4 \\) eV to about \\( -1.5 \\) eV, i.e. less negative (higher).",
+      "hint": "Check each of the three dependencies separately.",
+      "distractor_logic": [
+        "The electron slows down, not speeds up, in a higher orbit",
+        "Higher orbits are larger and have higher energy",
+        "Energy rises (becomes less negative) as \\( n \\) increases"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-017",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the energy of the photon emitted when an electron in hydrogen falls from \\( n=4 \\) to \\( n=2 \\)?",
+      "options": [
+        "2.55 eV",
+        "12.75 eV",
+        "4.25 eV",
+        "0.85 eV"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( E_4=-0.85 \\) eV and \\( E_2=-3.4 \\) eV.<br><br>Photon energy \\( =E_4-E_2=-0.85-(-3.4)=2.55 \\) eV",
+      "hint": "Take the difference between the two levels.",
+      "distractor_logic": [
+        "This is the 4 to 1 transition",
+        "Adds the magnitudes instead of subtracting",
+        "This is only the magnitude of \\( E_4 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-018",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "What energy is needed to excite He\\( ^{+} \\) (\\( Z=2 \\)) from \\( n=1 \\) to \\( n=2 \\)?",
+      "options": [
+        "10.2 eV",
+        "40.8 eV",
+        "20.4 eV",
+        "54.4 eV"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( E_1=-54.4 \\) eV and \\( E_2=-\\dfrac{54.4}{4}=-13.6 \\) eV.<br><br>Excitation energy \\( =-13.6-(-54.4)=40.8 \\) eV",
+      "hint": "Scale hydrogen's energies by \\( Z^2 \\).",
+      "distractor_logic": [
+        "Uses hydrogen's value, ignoring \\( Z \\)",
+        "Scales by \\( Z \\) instead of \\( Z^2 \\)",
+        "This is the ionization energy, a jump to \\( n=\\infty \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-019",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "How much energy is needed to ionize a hydrogen atom whose electron is in the \\( n=2 \\) level?",
+      "options": [
+        "13.6 eV",
+        "\\( -3.4 \\) eV",
+        "3.4 eV",
+        "10.2 eV"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E_2=-3.4 \\) eV.<br><br>To reach \\( n=\\infty \\) (energy 0), supply \\( 0-(-3.4)=3.4 \\) eV.",
+      "hint": "Start from the \\( n=2 \\) energy, not the ground state.",
+      "distractor_logic": [
+        "This is the ionization energy from the ground state",
+        "Ionization energy is a positive supplied energy",
+        "This is the energy to go from \\( n=1 \\) to \\( n=2 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-020",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "Hydrogen atoms are excited to \\( n=5 \\). What is the maximum number of spectral lines they can emit on returning to the ground state?",
+      "options": [
+        "4",
+        "5",
+        "15",
+        "10"
+      ],
+      "correct_index": 3,
+      "explanation": "Number of lines \\( =\\dfrac{n(n-1)}{2}=\\dfrac{5\\times4}{2}=10 \\).",
+      "hint": "Count all pairs of levels from 1 to 5.",
+      "distractor_logic": [
+        "Counts only the one-step downward jumps",
+        "Counts the levels instead of the pairs",
+        "This is the count for \\( n=6 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-021",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "A ground-state hydrogen atom absorbs a 12.75 eV photon. To which level does the electron go?",
+      "options": [
+        "\\( n=4 \\)",
+        "\\( n=3 \\)",
+        "\\( n=2 \\)",
+        "It is ionized"
+      ],
+      "correct_index": 0,
+      "explanation": "Energy after absorption \\( =-13.6+12.75=-0.85 \\) eV.<br><br>\\( -\\dfrac{13.6}{n^2}=-0.85 \\) gives \\( n^2=16 \\), so \\( n=4 \\).",
+      "hint": "Add the photon energy to \\( -13.6 \\) eV and match a level.",
+      "distractor_logic": [
+        "Reaching \\( n=3 \\) needs 12.09 eV",
+        "Reaching \\( n=2 \\) needs 10.2 eV",
+        "Ionization needs at least 13.6 eV"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-022",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "A photon of energy 11 eV falls on a hydrogen atom in its ground state. What happens?",
+      "options": [
+        "The electron goes to \\( n=2 \\) and the extra 0.8 eV is kept by the atom",
+        "The photon is not absorbed, since 11 eV matches no allowed transition from the ground state",
+        "The atom is ionized",
+        "The electron goes to \\( n=3 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "From the ground state, allowed jumps need 10.2 eV (\\( n=2 \\)), 12.09 eV (\\( n=3 \\)), 12.75 eV (\\( n=4 \\)), and so on.<br><br>A photon must supply exactly one of these values, and 11 eV does not match any.<br><br>So the photon passes through unabsorbed.",
+      "hint": "A photon is absorbed only if its energy matches a level gap exactly.",
+      "distractor_logic": [
+        "Photons cannot be partly absorbed; there is no level 0.8 eV above \\( n=2 \\) to account for it",
+        "Ionization needs at least 13.6 eV",
+        "Reaching \\( n=3 \\) needs 12.09 eV, more than 11 eV"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-023",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the ratio of the ground-state ionization energy of He\\( ^{+} \\) to that of hydrogen?",
+      "options": [
+        "2",
+        "1",
+        "4",
+        "16"
+      ],
+      "correct_index": 2,
+      "explanation": "Ionization energy \\( =13.6Z^2 \\) eV from the ground state.<br><br>Ratio \\( =\\dfrac{2^2}{1^2}=4 \\) (54.4 eV to 13.6 eV).",
+      "hint": "Energies scale as \\( Z^2 \\).",
+      "distractor_logic": [
+        "Uses \\( Z \\) instead of \\( Z^2 \\)",
+        "Ignores the nuclear charge",
+        "Uses \\( Z^4 \\), squaring twice"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-024",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 2,
+      "type": "regular",
+      "question": "An electron in Li\\( ^{2+} \\) (\\( Z=3 \\)) falls from \\( n=2 \\) to \\( n=1 \\). What is the energy of the emitted photon?",
+      "options": [
+        "10.2 eV",
+        "30.6 eV",
+        "153 eV",
+        "91.8 eV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E_1=-13.6\\times9=-122.4 \\) eV and \\( E_2=-\\dfrac{122.4}{4}=-30.6 \\) eV.<br><br>Photon energy \\( =-30.6-(-122.4)=91.8 \\) eV",
+      "hint": "Multiply hydrogen's 2 to 1 energy by \\( Z^2 \\).",
+      "distractor_logic": [
+        "Uses hydrogen's value, ignoring \\( Z \\)",
+        "Scales by \\( Z \\) instead of \\( Z^2 \\)",
+        "Adds the magnitudes of the two energies"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-025",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "For hydrogen, what is the ratio of the longest wavelength to the shortest wavelength in the Lyman series?",
+      "options": [
+        "\\( \\dfrac{4}{3} \\)",
+        "\\( \\dfrac{3}{4} \\)",
+        "4",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "Longest line (2 to 1): \\( \\dfrac{1}{\\lambda}=R\\left(1-\\dfrac{1}{4}\\right)=\\dfrac{3R}{4} \\), so \\( \\lambda=\\dfrac{4}{3R} \\).<br><br>Shortest line (series limit, \\( n_2\\to\\infty \\)): \\( \\lambda=\\dfrac{1}{R} \\).<br><br>Ratio \\( =\\dfrac{4}{3} \\)",
+      "hint": "Longest comes from the smallest jump, shortest from \\( n_2\\to\\infty \\).",
+      "distractor_logic": [
+        "Inverts the ratio — shortest over longest",
+        "This is the ratio of the Balmer limit to the Lyman limit",
+        "Guesses a factor without using the Rydberg formula"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-026",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "The longest-wavelength line of the Balmer series (\\( H_\\alpha \\)) arises from which transition?",
+      "options": [
+        "\\( n=\\infty \\) to \\( n=2 \\)",
+        "\\( n=3 \\) to \\( n=2 \\)",
+        "\\( n=2 \\) to \\( n=1 \\)",
+        "\\( n=3 \\) to \\( n=1 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Balmer lines all end at \\( n_1=2 \\).<br><br>The longest wavelength means the smallest energy gap: the fall from the next level up, \\( n_2=3 \\).",
+      "hint": "Smallest jump ending at \\( n=2 \\).",
+      "distractor_logic": [
+        "This is the Balmer series limit, the shortest wavelength",
+        "This ends at \\( n=1 \\), so it is a Lyman line",
+        "This ends at \\( n=1 \\), so it is also a Lyman line"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-027",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "Using \\( R=1.1\\times10^{7} \\) m\\( ^{-1} \\), what is the wavenumber of the Balmer series limit of hydrogen (\\( n_2\\to\\infty \\))?",
+      "options": [
+        "\\( 1.1\\times10^{7} \\) m\\( ^{-1} \\)",
+        "\\( 4.4\\times10^{7} \\) m\\( ^{-1} \\)",
+        "\\( 2.75\\times10^{6} \\) m\\( ^{-1} \\)",
+        "\\( 5.5\\times10^{6} \\) m\\( ^{-1} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=R\\left(\\dfrac{1}{2^2}-0\\right)=\\dfrac{R}{4} \\)<br><br>\\( \\dfrac{1}{\\lambda}=\\dfrac{1.1\\times10^{7}}{4}=2.75\\times10^{6} \\) m\\( ^{-1} \\)",
+      "hint": "Balmer ends at \\( n_1=2 \\); divide \\( R \\) by \\( n_1^2 \\).",
+      "distractor_logic": [
+        "This is the Lyman limit, using \\( n_1=1 \\)",
+        "Multiplies by 4 instead of dividing",
+        "Divides by \\( n_1 \\) instead of \\( n_1^2 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-028",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "In terms of \\( R \\), what is the wavelength of the \\( H_\\alpha \\) line (\\( n=3 \\) to \\( n=2 \\)) of hydrogen?",
+      "options": [
+        "\\( \\lambda=\\dfrac{5}{36R} \\)",
+        "\\( \\lambda=\\dfrac{4}{R} \\)",
+        "\\( \\lambda=\\dfrac{4}{3R} \\)",
+        "\\( \\lambda=\\dfrac{36}{5R} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=R\\left(\\dfrac{1}{4}-\\dfrac{1}{9}\\right)=\\dfrac{5R}{36} \\)<br><br>So \\( \\lambda=\\dfrac{36}{5R} \\).",
+      "hint": "Find the wavenumber first, then invert it.",
+      "distractor_logic": [
+        "Stops at the wavenumber algebra and forgets to invert correctly",
+        "This is the Balmer series limit",
+        "This is the first Lyman line"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-029",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "In terms of \\( R \\), what is the shortest wavelength in the Paschen series of hydrogen (\\( n_2\\to\\infty \\))?",
+      "options": [
+        "\\( \\lambda=\\dfrac{9}{R} \\)",
+        "\\( \\lambda=\\dfrac{144}{7R} \\)",
+        "\\( \\lambda=\\dfrac{1}{9R} \\)",
+        "\\( \\lambda=\\dfrac{4}{R} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Paschen ends at \\( n_1=3 \\); the shortest wavelength is the series limit, \\( n_2\\to\\infty \\).<br><br>\\( \\dfrac{1}{\\lambda}=\\dfrac{R}{9} \\), so \\( \\lambda=\\dfrac{9}{R} \\).",
+      "hint": "Series limit means \\( n_2\\to\\infty \\).",
+      "distractor_logic": [
+        "This is the longest Paschen line (4 to 3), the opposite end",
+        "Forgets to invert the wavenumber",
+        "This is the Balmer limit"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-030",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "A line in the hydrogen spectrum comes from the transition \\( n=5 \\) to \\( n=4 \\). It belongs to",
+      "options": [
+        "the Pfund series, in the infrared",
+        "the Brackett series, in the infrared",
+        "the Balmer series, in the visible",
+        "the Paschen series, in the infrared"
+      ],
+      "correct_index": 1,
+      "explanation": "The series is fixed by the final level.<br><br>Final level \\( n_1=4 \\) means the Brackett series, which lies entirely in the infrared.",
+      "hint": "Look only at where the electron ends up.",
+      "distractor_logic": [
+        "Names the series by the starting level \\( n=5 \\) instead of the final level",
+        "Balmer lines end at \\( n=2 \\)",
+        "Paschen lines end at \\( n=3 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-031",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "Why does every Lyman line have a greater photon energy than every Balmer line?",
+      "options": [
+        "Lyman lines start from higher levels than Balmer lines",
+        "Lyman lines are in the visible and Balmer lines are in the infrared",
+        "Even the smallest Lyman gap (10.2 eV) is larger than the largest Balmer gap (3.4 eV)",
+        "The Rydberg constant is larger for the Lyman series"
+      ],
+      "correct_index": 2,
+      "explanation": "The smallest Lyman gap is 2 to 1: 10.2 eV.<br><br>The largest Balmer gap is \\( \\infty \\) to 2: 3.4 eV.<br><br>The ranges do not overlap, so every Lyman photon is more energetic.",
+      "hint": "Compare the two ranges of energy gaps.",
+      "distractor_logic": [
+        "Both series can start from any higher level; the difference is the final level",
+        "Lyman is ultraviolet and Balmer is partly visible",
+        "\\( R \\) is the same constant for all hydrogen series"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-032",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 2,
+      "type": "regular",
+      "question": "A student writes \\( \\dfrac{1}{\\lambda}=R\\left(\\dfrac{1}{3^2}-\\dfrac{1}{2^2}\\right) \\) for the \\( H_\\alpha \\) line and gets a negative answer. What does this show?",
+      "options": [
+        "Emission lines always have negative wavenumbers",
+        "A negative result means the line is an absorption line",
+        "The Rydberg formula does not apply to the Balmer series",
+        "\\( n_1 \\) must be the lower (final) level, so the correct choice is \\( n_1=2 \\), \\( n_2=3 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "In \\( \\dfrac{1}{\\lambda}=R\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\), \\( n_1 \\) is the lower level and \\( n_2>n_1 \\).<br><br>For \\( H_\\alpha \\), \\( n_1=2 \\) and \\( n_2=3 \\), giving \\( \\dfrac{5R}{36} \\), which is positive.",
+      "hint": "A wavenumber can never be negative.",
+      "distractor_logic": [
+        "Wavenumbers are always positive",
+        "Absorption and emission lines have the same positive wavenumber",
+        "The formula works for all hydrogen series"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-033",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "The radius of the \\( n=2 \\) orbit of hydrogen is 2.116 Å. Using \\( 2\\pi r_n=n\\lambda \\), what is the de Broglie wavelength of the electron in this orbit?",
+      "options": [
+        "\\( 2.116\\pi \\) Å",
+        "\\( 4.232\\pi \\) Å",
+        "\\( 1.058\\pi \\) Å",
+        "\\( 0.529\\pi \\) Å"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\lambda=\\dfrac{2\\pi r_n}{n}=\\dfrac{2\\pi\\times2.116}{2} \\)<br><br>\\( \\lambda=2.116\\pi \\) Å",
+      "hint": "Divide the circumference by \\( n \\).",
+      "distractor_logic": [
+        "Forgets to divide by \\( n \\)",
+        "Divides by \\( n^2 \\) instead of \\( n \\)",
+        "Uses the ground-state radius instead of \\( r_2 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-034",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "The de Broglie wavelength of an electron in the \\( n=3 \\) orbit of a hydrogen-like ion is 3.3 Å. What is the circumference of this orbit?",
+      "options": [
+        "3.3 Å",
+        "9.9 Å",
+        "1.1 Å",
+        "29.7 Å"
+      ],
+      "correct_index": 1,
+      "explanation": "Circumference \\( =2\\pi r_n=n\\lambda=3\\times3.3 \\)<br><br>Circumference \\( =9.9 \\) Å",
+      "hint": "Circumference equals \\( n \\) wavelengths.",
+      "distractor_logic": [
+        "Fits only one wavelength, as if \\( n=1 \\)",
+        "Divides by \\( n \\) instead of multiplying",
+        "Multiplies by \\( n^2 \\) instead of \\( n \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-035",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "Combining \\( \\lambda=\\dfrac{h}{mv_n} \\) with de Broglie's condition \\( 2\\pi r_n=n\\lambda \\) gives",
+      "options": [
+        "\\( mv_nr_n=nh \\)",
+        "\\( mv_n=\\dfrac{nh}{r_n} \\)",
+        "\\( mv_nr_n=\\dfrac{nh}{2\\pi} \\)",
+        "\\( mv_nr_n=\\dfrac{h}{2\\pi n} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Substitute: \\( 2\\pi r_n=\\dfrac{nh}{mv_n} \\).<br><br>Rearrange: \\( mv_nr_n=\\dfrac{nh}{2\\pi} \\) — exactly Bohr's angular-momentum postulate.",
+      "hint": "Substitute \\( \\lambda \\) and rearrange for \\( mv_nr_n \\).",
+      "distractor_logic": [
+        "Loses the \\( 2\\pi \\) from the circumference",
+        "Drops the \\( 2\\pi \\) and mixes up the rearrangement",
+        "Puts \\( n \\) in the denominator"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-036",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "For hydrogen, how does the de Broglie wavelength of the electron in orbit \\( n \\) depend on \\( n \\)?",
+      "options": [
+        "\\( \\lambda\\propto n^2 \\)",
+        "\\( \\lambda\\propto\\dfrac{1}{n} \\)",
+        "\\( \\lambda \\) is independent of \\( n \\)",
+        "\\( \\lambda\\propto n \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\lambda=\\dfrac{2\\pi r_n}{n} \\) and \\( r_n\\propto n^2 \\).<br><br>So \\( \\lambda\\propto\\dfrac{n^2}{n}=n \\).<br><br>This matches \\( \\lambda=\\dfrac{h}{mv_n} \\) with \\( v_n\\propto\\dfrac{1}{n} \\): a slower electron has a longer wavelength.",
+      "hint": "Combine \\( r_n\\propto n^2 \\) with \\( \\lambda=\\dfrac{2\\pi r_n}{n} \\).",
+      "distractor_logic": [
+        "This is the radius dependence, not the wavelength",
+        "This would need the electron to speed up in higher orbits",
+        "The wavelength does change, because speed changes"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-037",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "Why can't Bohr's model predict the energy levels of neutral helium?",
+      "options": [
+        "Helium has two electrons, and the model cannot include the repulsion between electrons",
+        "The helium nucleus is too heavy for the model",
+        "Helium has no stationary orbits",
+        "It can, simply by putting \\( Z=2 \\) into the hydrogen formula"
+      ],
+      "correct_index": 0,
+      "explanation": "Bohr's model treats one electron attracted by a nucleus.<br><br>In neutral helium, each electron is also repelled by the other, and the model has no way to handle this.<br><br>So it works for He\\( ^{+} \\) but not neutral He.",
+      "hint": "How many electrons does neutral helium have?",
+      "distractor_logic": [
+        "Nuclear mass is not the problem; He\\( ^{+} \\) works fine",
+        "The issue is the extra electron, not a lack of orbits",
+        "\\( Z=2 \\) in the hydrogen formula describes He\\( ^{+} \\), not neutral He"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-038",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "Which assumption of Bohr's model conflicts with Heisenberg's uncertainty principle?",
+      "options": [
+        "The energy of the atom is quantized",
+        "The electron moves in a sharply defined circular orbit with a definite speed",
+        "The photon's energy equals the difference between levels",
+        "The nucleus is positively charged"
+      ],
+      "correct_index": 1,
+      "explanation": "A definite circular path means the electron's position and momentum are both known exactly at each instant.<br><br>The uncertainty principle says this is impossible.<br><br>Energy quantization and the frequency condition survive in modern quantum mechanics.",
+      "hint": "Which assumption fixes both position and momentum at once?",
+      "distractor_logic": [
+        "Quantized energy remains true in quantum mechanics",
+        "The frequency condition is still correct",
+        "The positive nucleus comes from Rutherford's experiment and is correct"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-039",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "Which statement about Bohr's model is correct?",
+      "options": [
+        "It gives the correct energy levels for neutral lithium",
+        "It explains the fine structure of spectral lines",
+        "It gives the correct energy levels for Li\\( ^{2+} \\)",
+        "It explains the relative intensities of spectral lines"
+      ],
+      "correct_index": 2,
+      "explanation": "Li\\( ^{2+} \\) has one electron, so it is a hydrogen-like ion and Bohr's formula \\( E_n=-\\dfrac{13.6Z^2}{n^2} \\) eV with \\( Z=3 \\) works.<br><br>Neutral lithium, fine structure and line intensities are all beyond the model.",
+      "hint": "Bohr's model works only for single-electron systems.",
+      "distractor_logic": [
+        "Neutral lithium has three electrons",
+        "Fine structure is a known failure of the model",
+        "Line intensities are a known failure of the model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L2-040",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 2,
+      "type": "regular",
+      "question": "What is the ratio of the de Broglie wavelength of the electron in the ground state of He\\( ^{+} \\) to that in the ground state of hydrogen?",
+      "options": [
+        "2",
+        "\\( \\dfrac{1}{4} \\)",
+        "1",
+        "\\( \\dfrac{1}{2} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\lambda=\\dfrac{2\\pi r_n}{n} \\) and \\( r_n\\propto\\dfrac{n^2}{Z} \\), so for \\( n=1 \\), \\( \\lambda\\propto\\dfrac{1}{Z} \\).<br><br>Ratio \\( =\\dfrac{1}{2} \\): the He\\( ^{+} \\) electron is faster and has a shorter wavelength.",
+      "hint": "The He\\( ^{+} \\) orbit is smaller, so each wavelength is shorter.",
+      "distractor_logic": [
+        "Reverses the \\( Z \\) dependence",
+        "Uses \\( Z^2 \\), the energy dependence",
+        "Ignores the nuclear charge"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-001",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 3,
+      "type": "regular",
+      "question": "An alpha particle with kinetic energy 4.5 MeV approaches a tin nucleus (\\( Z=50 \\)) head-on. Take \\( \\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9} \\) N·m\\( ^{2} \\)/C\\( ^{2} \\) and \\( e=1.6\\times10^{-19} \\) C. What is the distance of closest approach?",
+      "options": [
+        "\\( 3.2\\times10^{-14} \\) m",
+        "\\( 1.6\\times10^{-14} \\) m",
+        "\\( 6.4\\times10^{-14} \\) m",
+        "\\( 3.2\\times10^{-8} \\) m"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( r_0=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{KE} \\) with \\( KE=4.5\\times10^{6}e \\) J.<br><br>\\( r_0=\\dfrac{9\\times10^{9}\\times100\\times1.6\\times10^{-19}}{4.5\\times10^{6}} \\)<br><br>\\( r_0=\\dfrac{1.44\\times10^{-7}}{4.5\\times10^{6}}=3.2\\times10^{-14} \\) m",
+      "hint": "Cancel one factor of \\( e \\) against the eV-to-joule conversion.",
+      "distractor_logic": [
+        "Drops the factor of 2 for the alpha particle's charge",
+        "Counts the factor of 2 twice",
+        "Treats 4.5 MeV as 4.5 eV, losing the factor \\( 10^{6} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-002",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 3,
+      "type": "regular",
+      "question": "A 7.9 MeV alpha particle aimed head-on at a gold nucleus (\\( Z=79 \\)) turns back at \\( 2.88\\times10^{-14} \\) m from its centre, still repelled only by the Coulomb force. What can be concluded about the radius of the gold nucleus?",
+      "options": [
+        "It must be larger than \\( 2.88\\times10^{-14} \\) m",
+        "It must be smaller than about \\( 2.88\\times10^{-14} \\) m",
+        "It must be exactly \\( 2.88\\times10^{-14} \\) m",
+        "It must be about \\( 10^{-10} \\) m"
+      ],
+      "correct_index": 1,
+      "explanation": "The alpha particle turned around under pure Coulomb repulsion without touching the nucleus.<br><br>So the nuclear surface lies inside the closest-approach distance.<br><br>The closest approach therefore gives an upper limit on the nuclear size.",
+      "hint": "Did the particle reach the nucleus's surface?",
+      "distractor_logic": [
+        "If the nucleus were larger, the particle would have hit it before turning",
+        "Closest approach only bounds the size; it does not measure the surface exactly",
+        "\\( 10^{-10} \\) m is the size of the whole atom"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-003",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 3,
+      "type": "regular",
+      "question": "A proton and an alpha particle with the same kinetic energy are each fired head-on at the same nucleus. What is the ratio of the proton's distance of closest approach to the alpha particle's?",
+      "options": [
+        "2",
+        "1",
+        "\\( \\dfrac{1}{2} \\)",
+        "\\( \\dfrac{1}{4} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "In general, \\( KE=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{q\\,Ze}{r_0} \\), so \\( r_0\\propto q \\) at fixed \\( KE \\) and \\( Z \\).<br><br>The proton has \\( q=e \\) and the alpha particle \\( q=2e \\).<br><br>Ratio \\( =\\dfrac{e}{2e}=\\dfrac{1}{2} \\)",
+      "hint": "The factor 2 in the alpha formula is the alpha particle's charge.",
+      "distractor_logic": [
+        "Inverts the ratio — the less-charged proton is repelled less and gets closer",
+        "Assumes closest approach does not depend on the projectile's charge",
+        "Brings in the mass ratio; at equal kinetic energy, mass does not enter \\( r_0 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-004",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 3,
+      "type": "regular",
+      "question": "What kinetic energy must an alpha particle have to reach a closest-approach distance of \\( 1.44\\times10^{-14} \\) m in a head-on collision with a gold nucleus (\\( Z=79 \\))? Take \\( \\dfrac{1}{4\\pi\\epsilon_0}=9\\times10^{9} \\) N·m\\( ^{2} \\)/C\\( ^{2} \\) and \\( e=1.6\\times10^{-19} \\) C.",
+      "options": [
+        "7.9 MeV",
+        "3.95 MeV",
+        "31.6 MeV",
+        "15.8 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( KE=\\dfrac{1}{4\\pi\\epsilon_0}\\dfrac{2Ze^2}{r_0} \\).<br><br>In eV: \\( KE=\\dfrac{9\\times10^{9}\\times158\\times1.6\\times10^{-19}}{1.44\\times10^{-14}} \\) eV \\( =1.58\\times10^{7} \\) eV<br><br>\\( KE=15.8 \\) MeV",
+      "hint": "Rearrange the closest-approach formula for \\( KE \\).",
+      "distractor_logic": [
+        "Drops the factor of 2 for the alpha particle's charge",
+        "Divides by 2 twice",
+        "Doubles the answer an extra time"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-005",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 3,
+      "type": "regular",
+      "question": "Two alpha particles of the same energy are scattered by the same nucleus, one through \\( 30^\\circ \\) and the other through \\( 90^\\circ \\). Which statement is correct?",
+      "options": [
+        "The \\( 90^\\circ \\) particle had the smaller impact parameter, and neither had \\( b=0 \\)",
+        "The \\( 30^\\circ \\) particle had the smaller impact parameter",
+        "The \\( 90^\\circ \\) particle had \\( b=0 \\)",
+        "Both had the same impact parameter, equal to the distance of closest approach"
+      ],
+      "correct_index": 0,
+      "explanation": "Smaller impact parameter means stronger repulsion and a larger scattering angle, so the \\( 90^\\circ \\) particle had the smaller \\( b \\).<br><br>Only \\( b=0 \\) gives \\( 180^\\circ \\), so both had nonzero \\( b \\).<br><br>Impact parameter and closest-approach distance are different quantities.",
+      "hint": "Larger angle means the particle was aimed closer to the nucleus.",
+      "distractor_logic": [
+        "Reverses the relation between \\( b \\) and scattering angle",
+        "\\( b=0 \\) gives \\( 180^\\circ \\), not \\( 90^\\circ \\)",
+        "Confuses impact parameter with closest-approach distance, and ignores that different angles need different \\( b \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-006",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": 3,
+      "type": "regular",
+      "question": "If Thomson's plum-pudding model (positive charge spread uniformly through the atom) had been correct, what would Geiger and Marsden have observed?",
+      "options": [
+        "Many alpha particles bouncing straight back",
+        "All alpha particles deflected by only small angles, with essentially no large-angle scattering",
+        "All alpha particles absorbed by the foil",
+        "About half the alpha particles deflected by more than \\( 90^\\circ \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "A spread-out positive charge exerts only a weak force on a passing alpha particle.<br><br>So every particle would be nudged by a tiny angle, with no way to turn one around.<br><br>The rare large-angle scattering actually seen ruled this model out.",
+      "hint": "Could a spread-out charge produce a strong enough force to reverse an alpha particle?",
+      "distractor_logic": [
+        "Back-scattering needs a concentrated nucleus — this is Rutherford's result, not Thomson's prediction",
+        "Neither model predicts absorption of the alpha particles",
+        "Such frequent large-angle scattering would need a very large, dense nucleus"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-007",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 3,
+      "type": "regular",
+      "question": "Which state of Li\\( ^{2+} \\) (\\( Z=3 \\)) has the same energy as the ground state of hydrogen?",
+      "options": [
+        "\\( n=1 \\)",
+        "\\( n=9 \\)",
+        "\\( n=3 \\)",
+        "\\( n=2 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "We need \\( -\\dfrac{13.6\\times9}{n^2}=-13.6 \\).<br><br>So \\( n^2=9 \\) and \\( n=3 \\).",
+      "hint": "Set \\( \\dfrac{Z^2}{n^2}=1 \\).",
+      "distractor_logic": [
+        "The Li\\( ^{2+} \\) ground state is \\( -122.4 \\) eV",
+        "Sets \\( n=Z^2 \\) instead of \\( n^2=Z^2 \\)",
+        "\\( n=2 \\) gives \\( -30.6 \\) eV"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-008",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 3,
+      "type": "regular",
+      "question": "For a hydrogen-like ion, the product \\( v_nr_n \\) is proportional to",
+      "options": [
+        "\\( \\dfrac{n^3}{Z^2} \\)",
+        "\\( \\dfrac{Z}{n} \\)",
+        "\\( nZ \\)",
+        "\\( n \\), independent of \\( Z \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_n\\propto\\dfrac{Z}{n} \\) and \\( r_n\\propto\\dfrac{n^2}{Z} \\).<br><br>Product \\( \\propto\\dfrac{Z}{n}\\cdot\\dfrac{n^2}{Z}=n \\).<br><br>This agrees with \\( mv_nr_n=\\dfrac{nh}{2\\pi} \\).",
+      "hint": "Multiply the two scalings; one \\( Z \\) cancels.",
+      "distractor_logic": [
+        "This is the dependence of the orbital period, \\( \\dfrac{r_n}{v_n} \\)",
+        "This is the speed dependence alone",
+        "Wrongly keeps \\( Z \\); it cancels in the product"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-009",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 3,
+      "type": "regular",
+      "question": "The orbital period of an electron is \\( T=\\dfrac{2\\pi r_n}{v_n} \\). What is the ratio \\( \\dfrac{T_2}{T_1} \\) for hydrogen?",
+      "options": [
+        "8",
+        "4",
+        "2",
+        "\\( \\dfrac{1}{8} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T\\propto\\dfrac{r_n}{v_n}\\propto\\dfrac{n^2}{1/n}=n^3 \\).<br><br>\\( \\dfrac{T_2}{T_1}=2^3=8 \\)",
+      "hint": "Radius grows as \\( n^2 \\) while speed falls as \\( \\dfrac{1}{n} \\).",
+      "distractor_logic": [
+        "Uses only the radius scaling",
+        "Uses only the speed scaling",
+        "Inverts the ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-010",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 3,
+      "type": "regular",
+      "question": "The electron's speed in the ground state of hydrogen is \\( 2.18\\times10^{6} \\) m/s. What is the electron's speed in the \\( n=4 \\) orbit of He\\( ^{+} \\) (\\( Z=2 \\))?",
+      "options": [
+        "\\( 4.36\\times10^{6} \\) m/s",
+        "\\( 1.09\\times10^{6} \\) m/s",
+        "\\( 5.45\\times10^{5} \\) m/s",
+        "\\( 2.725\\times10^{5} \\) m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v_n=2.18\\times10^{6}\\times\\dfrac{Z}{n} \\) m/s.<br><br>\\( v_4=2.18\\times10^{6}\\times\\dfrac{2}{4}=1.09\\times10^{6} \\) m/s",
+      "hint": "Speed goes as \\( \\dfrac{Z}{n} \\).",
+      "distractor_logic": [
+        "Uses \\( \\dfrac{n}{Z} \\), as if the electron sped up in higher orbits",
+        "Ignores \\( Z \\)",
+        "Uses \\( \\dfrac{Z}{n^2} \\), borrowing the energy's \\( n \\) dependence"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-011",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 3,
+      "type": "regular",
+      "question": "Using \\( r_n=0.529\\dfrac{n^2}{Z} \\) Å, what is the radius of the \\( n=3 \\) orbit of Li\\( ^{2+} \\) (\\( Z=3 \\))?",
+      "options": [
+        "4.761 Å",
+        "0.529 Å",
+        "1.587 Å",
+        "14.283 Å"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( r_3=0.529\\times\\dfrac{9}{3}=0.529\\times3 \\)<br><br>\\( r_3=1.587 \\) Å",
+      "hint": "Square \\( n \\), then divide by \\( Z \\).",
+      "distractor_logic": [
+        "Ignores \\( Z \\)",
+        "Uses \\( \\dfrac{n}{Z} \\) instead of \\( \\dfrac{n^2}{Z} \\)",
+        "Multiplies by \\( Z \\) instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-012",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": 3,
+      "type": "regular",
+      "question": "In which of these states does the electron move fastest?",
+      "options": [
+        "Li\\( ^{2+} \\), \\( n=2 \\)",
+        "H, \\( n=1 \\)",
+        "He\\( ^{+} \\), \\( n=3 \\)",
+        "He\\( ^{+} \\), \\( n=1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( v_n\\propto\\dfrac{Z}{n} \\).<br><br>He\\( ^{+} \\), \\( n=1 \\): 2. Li\\( ^{2+} \\), \\( n=2 \\): 1.5. H, \\( n=1 \\): 1. He\\( ^{+} \\), \\( n=3 \\): about 0.67.<br><br>He\\( ^{+} \\) in its ground state is fastest.",
+      "hint": "Compare \\( \\dfrac{Z}{n} \\) for each.",
+      "distractor_logic": [
+        "Assumes the largest \\( Z \\) always wins, ignoring the \\( n \\) in the denominator",
+        "Hydrogen has the smallest nuclear charge",
+        "A higher orbit means a slower electron"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-013",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 3,
+      "type": "regular",
+      "question": "Ground-state hydrogen atoms are bombarded with electrons of energy 12.5 eV, which can transfer part of their energy. What is the maximum number of spectral lines the atoms can then emit?",
+      "options": [
+        "3",
+        "6",
+        "1",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "Excitation energies from \\( n=1 \\): 10.2 eV (\\( n=2 \\)), 12.09 eV (\\( n=3 \\)), 12.75 eV (\\( n=4 \\)).<br><br>12.5 eV reaches \\( n=3 \\) but not \\( n=4 \\).<br><br>From \\( n=3 \\): \\( \\dfrac{3\\times2}{2}=3 \\) lines.",
+      "hint": "Find the highest level 12.5 eV can reach first.",
+      "distractor_logic": [
+        "Assumes \\( n=4 \\) is reached, but that needs 12.75 eV",
+        "Counts only the direct fall to the ground state",
+        "Counts only the step-by-step falls"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-014",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 3,
+      "type": "regular",
+      "question": "The first ionization energy of neutral helium is 24.6 eV. Using Bohr's model for He\\( ^{+} \\) (\\( Z=2 \\)), what total energy is needed to remove both electrons from a helium atom?",
+      "options": [
+        "54.4 eV",
+        "79.0 eV",
+        "24.6 eV",
+        "108.8 eV"
+      ],
+      "correct_index": 1,
+      "explanation": "Removing the first electron costs 24.6 eV and leaves He\\( ^{+} \\).<br><br>He\\( ^{+} \\) is hydrogen-like, so its ionization energy is \\( 13.6\\times4=54.4 \\) eV.<br><br>Total \\( =24.6+54.4=79.0 \\) eV",
+      "hint": "Two steps: neutral He to He\\( ^{+} \\), then He\\( ^{+} \\) to bare nucleus.",
+      "distractor_logic": [
+        "Counts only the second electron",
+        "Counts only the first electron",
+        "Treats both electrons as needing 54.4 eV each"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-015",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 3,
+      "type": "regular",
+      "question": "What energy is needed to excite the electron in He\\( ^{+} \\) (\\( Z=2 \\)) from \\( n=2 \\) to \\( n=4 \\)?",
+      "options": [
+        "2.55 eV",
+        "5.1 eV",
+        "10.2 eV",
+        "13.6 eV"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E_2=-\\dfrac{54.4}{4}=-13.6 \\) eV and \\( E_4=-\\dfrac{54.4}{16}=-3.4 \\) eV.<br><br>Energy \\( =-3.4-(-13.6)=10.2 \\) eV",
+      "hint": "Scale hydrogen's levels by \\( Z^2=4 \\).",
+      "distractor_logic": [
+        "Uses hydrogen's 2 to 4 value, ignoring \\( Z \\)",
+        "Scales by \\( Z \\) instead of \\( Z^2 \\)",
+        "This is the ionization energy from \\( n=2 \\), not a jump to \\( n=4 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-016",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 3,
+      "type": "regular",
+      "question": "A 15 eV photon is absorbed by a ground-state hydrogen atom. What is the kinetic energy of the ejected electron?",
+      "options": [
+        "15 eV",
+        "13.6 eV",
+        "28.6 eV",
+        "1.4 eV"
+      ],
+      "correct_index": 3,
+      "explanation": "13.6 eV is used to free the electron.<br><br>The rest becomes kinetic energy: \\( 15-13.6=1.4 \\) eV.",
+      "hint": "Subtract the ionization energy.",
+      "distractor_logic": [
+        "Forgets that ionization uses up part of the energy",
+        "This is the energy used for ionization, not the leftover",
+        "Adds the ionization energy instead of subtracting"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-017",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 3,
+      "type": "regular",
+      "question": "Which statement correctly describes the spacing of hydrogen's energy levels?",
+      "options": [
+        "The gap between successive levels shrinks as \\( n \\) increases, crowding towards \\( E_n=0 \\)",
+        "All successive gaps are equal",
+        "The gaps grow as \\( n \\) increases",
+        "The gaps shrink as \\( n \\) increases, crowding towards \\( -13.6 \\) eV"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( E_n=-\\dfrac{13.6}{n^2} \\) eV gives \\( -13.6,-3.4,-1.51,-0.85,\\ldots \\) eV.<br><br>Gaps: 10.2, then about 1.9, then about 0.66 eV, and so on — getting smaller.<br><br>The levels pile up just below zero, the ionization limit.",
+      "hint": "Write out the first few levels.",
+      "distractor_logic": [
+        "The \\( \\dfrac{1}{n^2} \\) law makes the gaps unequal",
+        "Reverses the trend; the biggest gap is 1 to 2",
+        "\\( -13.6 \\) eV is the ground state, where the levels are most widely spaced"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-018",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": 3,
+      "type": "regular",
+      "question": "An electron in Li\\( ^{2+} \\) (\\( Z=3 \\)) is in the \\( n=2 \\) level. What minimum energy must it absorb to be removed from the ion?",
+      "options": [
+        "3.4 eV",
+        "30.6 eV",
+        "122.4 eV",
+        "91.8 eV"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( E_2=-\\dfrac{13.6\\times9}{4}=-30.6 \\) eV.<br><br>Energy needed to reach \\( n=\\infty \\): \\( 0-(-30.6)=30.6 \\) eV",
+      "hint": "Ionize from \\( n=2 \\), not the ground state.",
+      "distractor_logic": [
+        "Uses hydrogen's \\( n=2 \\) value, ignoring \\( Z \\)",
+        "This is the ionization energy from the ground state",
+        "This is the 2 to 1 transition energy, not ionization"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-019",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 3,
+      "type": "regular",
+      "question": "Using \\( R=1.1\\times10^{7} \\) m\\( ^{-1} \\), what is the wavenumber of the series limit for He\\( ^{+} \\) (\\( Z=2 \\)) transitions ending at \\( n_1=1 \\) (\\( n_2\\to\\infty \\))?",
+      "options": [
+        "\\( 1.1\\times10^{7} \\) m\\( ^{-1} \\)",
+        "\\( 2.2\\times10^{7} \\) m\\( ^{-1} \\)",
+        "\\( 4.4\\times10^{7} \\) m\\( ^{-1} \\)",
+        "\\( 1.76\\times10^{8} \\) m\\( ^{-1} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=RZ^2\\left(\\dfrac{1}{1^2}-0\\right)=4R \\)<br><br>\\( \\dfrac{1}{\\lambda}=4.4\\times10^{7} \\) m\\( ^{-1} \\)",
+      "hint": "Include the \\( Z^2 \\) factor.",
+      "distractor_logic": [
+        "Ignores \\( Z \\), giving hydrogen's Lyman limit",
+        "Uses \\( Z \\) instead of \\( Z^2 \\)",
+        "Uses \\( Z^4 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-020",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the ratio of the shortest wavelength of the Balmer series to the shortest wavelength of the Lyman series of hydrogen?",
+      "options": [
+        "\\( \\dfrac{1}{4} \\)",
+        "2",
+        "\\( \\dfrac{4}{3} \\)",
+        "4"
+      ],
+      "correct_index": 3,
+      "explanation": "Balmer limit: \\( \\lambda=\\dfrac{4}{R} \\). Lyman limit: \\( \\lambda=\\dfrac{1}{R} \\).<br><br>Ratio \\( =4 \\)",
+      "hint": "Both shortest wavelengths are series limits, \\( n_2\\to\\infty \\).",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Uses \\( n_1 \\) instead of \\( n_1^2 \\)",
+        "Uses the Lyman longest-to-shortest ratio instead"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-021",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the ratio of the wavelength of Balmer \\( H_\\alpha \\) (3 to 2) to that of the first Lyman line (2 to 1) in hydrogen?",
+      "options": [
+        "\\( \\dfrac{27}{5} \\)",
+        "\\( \\dfrac{5}{27} \\)",
+        "3",
+        "\\( \\dfrac{9}{4} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( H_\\alpha \\): \\( \\lambda=\\dfrac{36}{5R} \\). Lyman first line: \\( \\lambda=\\dfrac{4}{3R} \\).<br><br>Ratio \\( =\\dfrac{36}{5}\\times\\dfrac{3}{4}=\\dfrac{27}{5} \\)",
+      "hint": "Write each wavelength in terms of \\( R \\), then divide.",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Guesses from the level numbers instead of the Rydberg formula",
+        "Compares only \\( n_2^2 \\) values"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-022",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 3,
+      "type": "regular",
+      "question": "A hydrogen line has wavelength \\( \\lambda=\\dfrac{16}{R} \\). Which transition produces it?",
+      "options": [
+        "\\( n_2=5 \\) to \\( n_1=4 \\), the first Brackett line",
+        "\\( n_2=\\infty \\) to \\( n_1=4 \\), the Brackett series limit",
+        "\\( n_2=4 \\) to \\( n_1=1 \\), a Lyman line",
+        "\\( n_2=\\infty \\) to \\( n_1=2 \\), the Balmer series limit"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=\\dfrac{R}{16}=R\\left(\\dfrac{1}{4^2}-0\\right) \\).<br><br>That is \\( n_1=4 \\) with \\( n_2\\to\\infty \\): the Brackett series limit.",
+      "hint": "\\( \\dfrac{1}{16}=\\dfrac{1}{4^2} \\), with nothing subtracted.",
+      "distractor_logic": [
+        "The 5 to 4 line has \\( \\dfrac{1}{\\lambda}=\\dfrac{9R}{400} \\), the longest Brackett wavelength",
+        "Places 4 as the upper level; a Lyman line has \\( \\dfrac{1}{\\lambda}=\\dfrac{15R}{16} \\)",
+        "The Balmer limit is \\( \\dfrac{4}{R} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-023",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 3,
+      "type": "regular",
+      "question": "The Balmer series limit lies near 365 nm, just beyond the violet end of the visible range. Which description of the Balmer series is correct?",
+      "options": [
+        "All its lines are in the visible region",
+        "All its lines are in the ultraviolet region",
+        "Its longer-wavelength lines are visible, while lines crowding towards the limit lie in the near ultraviolet",
+        "All its lines are in the infrared region"
+      ],
+      "correct_index": 2,
+      "explanation": "Balmer lines run from \\( H_\\alpha \\) (red, about 656 nm) down to the limit near 365 nm.<br><br>So the first few lines are visible, and the crowded lines near the limit are near ultraviolet.<br><br>Balmer is the only hydrogen series with any visible lines.",
+      "hint": "Compare 365 nm with the visible range, about 400 nm to 700 nm.",
+      "distractor_logic": [
+        "Ignores that the lines near 365 nm lie outside the visible range",
+        "The strongest Balmer lines are clearly visible",
+        "Infrared belongs to Paschen, Brackett and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-024",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": 3,
+      "type": "regular",
+      "question": "In hydrogen, the wavenumber of the Lyman series limit minus the wavenumber of the first Lyman line (2 to 1) equals the wavenumber of",
+      "options": [
+        "the Balmer \\( H_\\alpha \\) line",
+        "the Paschen series limit",
+        "the second Lyman line (3 to 1)",
+        "the Balmer series limit"
+      ],
+      "correct_index": 3,
+      "explanation": "Lyman limit: \\( R \\). First Lyman line: \\( \\dfrac{3R}{4} \\).<br><br>Difference \\( =\\dfrac{R}{4}=R\\left(\\dfrac{1}{2^2}-0\\right) \\), the Balmer limit.<br><br>Physically: \\( (\\infty\\to1)-(2\\to1)=(\\infty\\to2) \\).",
+      "hint": "Subtract \\( \\dfrac{3R}{4} \\) from \\( R \\).",
+      "distractor_logic": [
+        "\\( H_\\alpha \\) is \\( \\dfrac{5R}{36} \\)",
+        "The Paschen limit is \\( \\dfrac{R}{9} \\)",
+        "The 3 to 1 line is \\( \\dfrac{8R}{9} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-025",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "The radius of the \\( n=3 \\) orbit of hydrogen is 4.761 Å. Which de Broglie wavelength satisfies \\( 2\\pi r_n=n\\lambda \\) for this orbit?",
+      "options": [
+        "\\( 3.174\\pi \\) Å",
+        "\\( 9.522\\pi \\) Å",
+        "\\( 1.058\\pi \\) Å",
+        "\\( 1.587\\pi \\) Å"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\lambda=\\dfrac{2\\pi r_3}{3}=\\dfrac{2\\pi\\times4.761}{3} \\)<br><br>\\( \\lambda=3.174\\pi \\) Å",
+      "hint": "Divide the full circumference by \\( n \\).",
+      "distractor_logic": [
+        "Forgets to divide by \\( n \\)",
+        "Divides by \\( n^2 \\)",
+        "Uses \\( \\pi r_n \\) instead of \\( 2\\pi r_n \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-026",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "A student claims an electron wave could fit exactly 2.5 wavelengths around an orbit in hydrogen. What does de Broglie's picture say?",
+      "options": [
+        "It is allowed, since half-integer fits also form standing waves",
+        "This orbit is not allowed, because the wave would not join smoothly and would cancel itself",
+        "It is allowed, lying between \\( n=2 \\) and \\( n=3 \\) with \\( E_n=-2.176 \\) eV",
+        "It is allowed only in He\\( ^{+} \\), not in hydrogen"
+      ],
+      "correct_index": 1,
+      "explanation": "de Broglie's condition is exact: \\( 2\\pi r_n=n\\lambda \\) with \\( n \\) a whole number.<br><br>With 2.5 wavelengths, the wave arrives out of step after one loop and destructive interference wipes it out.<br><br>No such orbit exists in any hydrogen-like system.",
+      "hint": "Can a wave meet itself out of step and survive?",
+      "distractor_logic": [
+        "Half-integer fits give destructive interference around a closed loop",
+        "There is no stationary state between \\( n=2 \\) and \\( n=3 \\)",
+        "The whole-number condition holds for every hydrogen-like ion"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-027",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "For hydrogen, what is the ratio of the electron's de Broglie wavelength in the \\( n=4 \\) orbit to that in the \\( n=1 \\) orbit?",
+      "options": [
+        "16",
+        "\\( \\dfrac{1}{4} \\)",
+        "4",
+        "2"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda=\\dfrac{2\\pi r_n}{n} \\) with \\( r_n\\propto n^2 \\), so \\( \\lambda\\propto n \\).<br><br>Ratio \\( =\\dfrac{4}{1}=4 \\)",
+      "hint": "Wavelength scales as \\( n \\).",
+      "distractor_logic": [
+        "Uses \\( n^2 \\), the radius scaling",
+        "Inverts the ratio, as if the electron sped up in higher orbits",
+        "Uses \\( \\sqrt{n} \\) with no basis"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-028",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "Which of these is NOT a genuine limitation of Bohr's model?",
+      "options": [
+        "It fails for atoms with more than one electron",
+        "It cannot explain the fine structure of spectral lines",
+        "It cannot explain the relative intensities of spectral lines",
+        "It cannot account for hydrogen's discrete line spectrum"
+      ],
+      "correct_index": 3,
+      "explanation": "Explaining hydrogen's discrete lines is the Bohr model's great success, not a limitation.<br><br>Failure for multi-electron atoms, fine structure and line intensities are all real limitations.",
+      "hint": "Three of these are real failures; one is the model's big success.",
+      "distractor_logic": [
+        "This is a real limitation — electron-electron repulsion is not included",
+        "This is a real limitation — one energy per \\( n \\) cannot split lines",
+        "This is a real limitation — the model gives no transition probabilities"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-029",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "How does the de Broglie wavelength of the electron in the \\( n=2 \\) orbit of He\\( ^{+} \\) (\\( Z=2 \\)) compare with that in the ground state of hydrogen?",
+      "options": [
+        "They are equal",
+        "It is twice as long",
+        "It is half as long",
+        "It is four times as long"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\lambda=\\dfrac{2\\pi r_n}{n} \\) and \\( r_n\\propto\\dfrac{n^2}{Z} \\), so \\( \\lambda\\propto\\dfrac{n}{Z} \\).<br><br>He\\( ^{+} \\), \\( n=2 \\): \\( \\dfrac{2}{2}=1 \\). H, \\( n=1 \\): \\( \\dfrac{1}{1}=1 \\).<br><br>So the wavelengths are equal (and so are the speeds).",
+      "hint": "Compare \\( \\dfrac{n}{Z} \\) in each case.",
+      "distractor_logic": [
+        "Accounts for \\( n \\) but forgets \\( Z \\)",
+        "Accounts for \\( Z \\) but forgets \\( n \\)",
+        "Uses \\( n^2 \\), the radius dependence, and ignores \\( Z \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-L3-030",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model",
+      "level": 3,
+      "type": "regular",
+      "question": "An electron's orbit in a hydrogen-like ion contains exactly 5 de Broglie wavelengths. What is its angular momentum?",
+      "options": [
+        "\\( 5h \\)",
+        "\\( \\dfrac{5h}{2\\pi} \\)",
+        "\\( \\dfrac{25h}{2\\pi} \\)",
+        "\\( \\dfrac{h}{10\\pi} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "5 wavelengths means \\( n=5 \\) by \\( 2\\pi r_n=n\\lambda \\).<br><br>Bohr's condition then gives \\( L=\\dfrac{nh}{2\\pi}=\\dfrac{5h}{2\\pi} \\).",
+      "hint": "Number of wavelengths equals \\( n \\).",
+      "distractor_logic": [
+        "Drops the \\( 2\\pi \\)",
+        "Uses \\( n^2 \\)",
+        "Puts \\( n \\) in the denominator"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-001",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which He\\( ^{+} \\) (\\( Z=2 \\)) transition emits the same wavelength as the first Lyman line (2 to 1) of hydrogen?",
+      "options": [
+        "\\( n=2 \\) to \\( n=1 \\)",
+        "\\( n=3 \\) to \\( n=2 \\)",
+        "\\( n=4 \\) to \\( n=2 \\)",
+        "\\( n=4 \\) to \\( n=1 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "For hydrogen: \\( \\dfrac{1}{\\lambda}=R\\left(1-\\dfrac{1}{4}\\right)=\\dfrac{3R}{4} \\).<br><br>For He\\( ^{+} \\): \\( \\dfrac{1}{\\lambda}=4R\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\); with \\( n_1=2,n_2=4 \\): \\( 4R\\left(\\dfrac{1}{4}-\\dfrac{1}{16}\\right)=\\dfrac{3R}{4} \\).<br><br>Doubling both levels exactly cancels the \\( Z^2=4 \\).",
+      "hint": "The \\( Z^2=4 \\) factor is cancelled if both \\( n \\) values are doubled.",
+      "distractor_logic": [
+        "The He\\( ^{+} \\) 2 to 1 line has four times hydrogen's wavenumber",
+        "Gives \\( \\dfrac{5R}{9} \\), not \\( \\dfrac{3R}{4} \\)",
+        "Gives \\( \\dfrac{15R}{4} \\), far too large"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-002",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The Li\\( ^{2+} \\) (\\( Z=3 \\)) transition from \\( n=6 \\) to \\( n=3 \\) has the same wavelength as which hydrogen line?",
+      "options": [
+        "The Balmer \\( H_\\alpha \\) line (3 to 2)",
+        "The hydrogen line from \\( n=6 \\) to \\( n=3 \\)",
+        "The Lyman series limit",
+        "The first Lyman line (2 to 1)"
+      ],
+      "correct_index": 3,
+      "explanation": "Li\\( ^{2+} \\): \\( \\dfrac{1}{\\lambda}=9R\\left(\\dfrac{1}{9}-\\dfrac{1}{36}\\right)=R\\left(1-\\dfrac{1}{4}\\right)=\\dfrac{3R}{4} \\).<br><br>That is the hydrogen 2 to 1 line: dividing both levels by 3 cancels \\( Z^2=9 \\).",
+      "hint": "Divide both levels by \\( Z=3 \\).",
+      "distractor_logic": [
+        "\\( H_\\alpha \\) is \\( \\dfrac{5R}{36} \\)",
+        "Ignores the \\( Z^2=9 \\) factor",
+        "The Lyman limit is \\( R \\), not \\( \\dfrac{3R}{4} \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-003",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An electron in hydrogen falls from \\( n=4 \\) to \\( n=2 \\). What are the photon energy and the series it belongs to?",
+      "options": [
+        "2.55 eV, Balmer series",
+        "2.55 eV, Lyman series",
+        "12.75 eV, Balmer series",
+        "10.2 eV, Paschen series"
+      ],
+      "correct_index": 0,
+      "explanation": "Energy \\( =E_4-E_2=-0.85-(-3.4)=2.55 \\) eV.<br><br>The final level is \\( n=2 \\), so it is a Balmer line (it is the blue-green visible line).",
+      "hint": "Energy from the level difference; series from the final level.",
+      "distractor_logic": [
+        "Lyman lines end at \\( n=1 \\)",
+        "12.75 eV is the 4 to 1 energy",
+        "Neither the energy nor the series matches a fall to \\( n=2 \\)"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-004",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Hydrogen atoms are excited to \\( n=5 \\). How many of the lines they can emit belong to the Balmer series?",
+      "options": [
+        "10",
+        "3",
+        "4",
+        "1"
+      ],
+      "correct_index": 1,
+      "explanation": "Balmer lines end at \\( n=2 \\).<br><br>From levels up to \\( n=5 \\), the possible Balmer lines are 5 to 2, 4 to 2 and 3 to 2.<br><br>That makes 3.",
+      "hint": "Count only the jumps that end at \\( n=2 \\).",
+      "distractor_logic": [
+        "10 is the total count across all series",
+        "Counts the level \\( n=2 \\) itself as a source",
+        "Counts only one line"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-005",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The photon energy at the Lyman series limit of hydrogen equals",
+      "options": [
+        "the first excitation energy of hydrogen",
+        "the ionization energy from \\( n=2 \\)",
+        "the ionization energy of hydrogen from its ground state",
+        "zero"
+      ],
+      "correct_index": 2,
+      "explanation": "Lyman limit: \\( n_2=\\infty \\) to \\( n_1=1 \\).<br><br>Its photon energy is \\( 0-(-13.6)=13.6 \\) eV — exactly the ground-state ionization energy.",
+      "hint": "The series limit starts at \\( n=\\infty \\).",
+      "distractor_logic": [
+        "10.2 eV is the longest Lyman line, not the limit",
+        "3.4 eV is the Balmer limit",
+        "The limit is the most energetic Lyman photon"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-006",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is the photon energy of the Balmer series limit of hydrogen?",
+      "options": [
+        "13.6 eV",
+        "6.8 eV",
+        "\\( -3.4 \\) eV",
+        "3.4 eV"
+      ],
+      "correct_index": 3,
+      "explanation": "Balmer limit: \\( n_2=\\infty \\) to \\( n_1=2 \\).<br><br>Energy \\( =0-(-3.4)=3.4 \\) eV, equal to the ionization energy from \\( n=2 \\).",
+      "hint": "From \\( n=\\infty \\) down to \\( n=2 \\).",
+      "distractor_logic": [
+        "This is the Lyman limit",
+        "Divides 13.6 eV by \\( n_1 \\) instead of \\( n_1^2 \\)",
+        "A photon's energy is always positive"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-007",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The hydrogen ground-state orbit radius is 0.529 Å, and a nucleus is of order \\( 10^{-15} \\) m. About how many times larger is the orbit radius than the nucleus?",
+      "options": [
+        "About \\( 5\\times10^{4} \\)",
+        "About \\( 5\\times10^{-5} \\)",
+        "About \\( 5\\times10^{9} \\)",
+        "About 50"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( 0.529 \\) Å \\( =5.29\\times10^{-11} \\) m.<br><br>\\( \\dfrac{5.29\\times10^{-11}}{10^{-15}}\\approx5\\times10^{4} \\).<br><br>This matches Rutherford's finding that the atom is mostly empty space.",
+      "hint": "Convert ångström to metre: \\( 1 \\) Å \\( =10^{-10} \\) m.",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Treats 0.529 Å as if it were 0.529 m",
+        "Forgets the power-of-ten conversion almost entirely"
+      ],
+      "mixed_topics": [
+        "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-008",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Bohr introduced stationary orbits mainly to fix which problem with Rutherford's nuclear model?",
+      "options": [
+        "Rutherford's nucleus was too small to be detected",
+        "Classical theory predicted the orbiting electron would radiate and collapse into the nucleus",
+        "Rutherford could not explain alpha-particle scattering",
+        "Rutherford's model gave the electron too much mass"
+      ],
+      "correct_index": 1,
+      "explanation": "Rutherford's model had electrons circling the nucleus.<br><br>Classically, an accelerating charge radiates, so the electron should spiral in and the atom should collapse.<br><br>Bohr's postulate that stationary orbits do not radiate removed this problem.",
+      "hint": "What made Rutherford's atom unstable?",
+      "distractor_logic": [
+        "The nucleus's size came out of the scattering data",
+        "Explaining scattering was the nuclear model's success",
+        "Electron mass played no role in the problem"
+      ],
+      "mixed_topics": [
+        "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-009",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The ground-state radius of He\\( ^{+} \\) (\\( Z=2 \\)) is 0.2645 Å. Using \\( 2\\pi r_n=n\\lambda \\), what is the electron's de Broglie wavelength in this state?",
+      "options": [
+        "\\( 1.058\\pi \\) Å",
+        "\\( 0.2645\\pi \\) Å",
+        "\\( 0.529\\pi \\) Å",
+        "\\( 2.116\\pi \\) Å"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda=\\dfrac{2\\pi r_1}{1}=2\\pi\\times0.2645 \\)<br><br>\\( \\lambda=0.529\\pi \\) Å — half of hydrogen's ground-state value.",
+      "hint": "With \\( n=1 \\), the wavelength is the full circumference.",
+      "distractor_logic": [
+        "Uses hydrogen's radius instead of He\\( ^{+} \\)'s",
+        "Uses \\( \\pi r_n \\) instead of \\( 2\\pi r_n \\)",
+        "Multiplies by \\( Z^2 \\) instead of dividing by \\( Z \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-010",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How many de Broglie wavelengths fit around the orbit of a hydrogen electron whose energy is \\( -3.4 \\) eV?",
+      "options": [
+        "4",
+        "1",
+        "3",
+        "2"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( -\\dfrac{13.6}{n^2}=-3.4 \\) gives \\( n^2=4 \\), so \\( n=2 \\).<br><br>By \\( 2\\pi r_n=n\\lambda \\), 2 wavelengths fit.",
+      "hint": "Find \\( n \\) from the energy first.",
+      "distractor_logic": [
+        "Uses \\( n^2 \\) instead of \\( n \\)",
+        "Assumes the ground state",
+        "No hydrogen level gives \\( n=3 \\) at \\( -3.4 \\) eV"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-011",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An electron in hydrogen is in an orbit of radius 8.464 Å. What is its energy?",
+      "options": [
+        "\\( -0.85 \\) eV",
+        "\\( -3.4 \\) eV",
+        "\\( +0.85 \\) eV",
+        "\\( -54.4 \\) eV"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( 0.529n^2=8.464 \\) gives \\( n^2=16 \\), so \\( n=4 \\).<br><br>\\( E_4=-\\dfrac{13.6}{16}=-0.85 \\) eV",
+      "hint": "Find \\( n \\) from the radius, then use \\( E_n \\).",
+      "distractor_logic": [
+        "Divides by \\( n \\) instead of \\( n^2 \\)",
+        "Drops the negative sign",
+        "Multiplies by \\( n^2 \\) instead of dividing"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-012",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The electron in He\\( ^{+} \\) (\\( Z=2 \\)) in its \\( n=2 \\) state has kinetic energy 13.6 eV. What is its ionization energy from this state?",
+      "options": [
+        "\\( -13.6 \\) eV",
+        "13.6 eV",
+        "27.2 eV",
+        "54.4 eV"
+      ],
+      "correct_index": 1,
+      "explanation": "In a Bohr orbit, \\( E_n=-KE \\), so \\( E_2=-13.6 \\) eV.<br><br>Ionization energy \\( =0-(-13.6)=13.6 \\) eV.<br><br>Check: \\( E_2=-\\dfrac{13.6\\times4}{4}=-13.6 \\) eV.",
+      "hint": "Total energy is minus the kinetic energy.",
+      "distractor_logic": [
+        "Ionization energy is a positive supplied energy",
+        "Adds kinetic energy to its magnitude again",
+        "This is the ionization energy from the He\\( ^{+} \\) ground state"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-013",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The Li\\( ^{2+} \\) (\\( Z=3 \\)) electron in \\( n=3 \\) has the same energy as the hydrogen ground state. How do the orbit radii compare?",
+      "options": [
+        "The radii are equal too",
+        "The Li\\( ^{2+} \\) orbit is one-third as large",
+        "The Li\\( ^{2+} \\) orbit is 3 times larger, even though the energies are equal",
+        "The Li\\( ^{2+} \\) orbit is 9 times larger"
+      ],
+      "correct_index": 2,
+      "explanation": "Li\\( ^{2+} \\), \\( n=3 \\): \\( r=0.529\\times\\dfrac{9}{3}=1.587 \\) Å. Hydrogen ground state: 0.529 Å.<br><br>Ratio \\( =3 \\).<br><br>Energy goes as \\( \\dfrac{Z^2}{n^2} \\) but radius as \\( \\dfrac{n^2}{Z} \\), so equal energy does not mean equal radius.",
+      "hint": "Energy and radius depend on \\( Z \\) differently.",
+      "distractor_logic": [
+        "Assumes equal energy means equal radius",
+        "Inverts the radius ratio",
+        "Uses \\( n^2 \\) and forgets to divide by \\( Z \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-014",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why does hydrogen emit light only at certain sharp wavelengths?",
+      "options": [
+        "The electron radiates continuously while orbiting",
+        "The nucleus emits the light",
+        "Electrons can occupy any orbit, but only a few are bright",
+        "Only standing-wave orbits exist, so the energy differences between them are fixed"
+      ],
+      "correct_index": 3,
+      "explanation": "de Broglie's standing-wave condition allows only certain orbits, each with a fixed energy.<br><br>Light is emitted only when the electron jumps between them, with \\( h\\nu=E_i-E_f \\).<br><br>Fixed energy differences mean fixed, sharp wavelengths.",
+      "hint": "Discrete orbits lead to discrete energy gaps.",
+      "distractor_logic": [
+        "Continuous radiation would give a continuous spectrum",
+        "Line spectra come from electron transitions",
+        "Arbitrary orbits would give a continuous spectrum"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-015",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For the Balmer series of hydrogen, what does Bohr's model correctly predict?",
+      "options": [
+        "The wavelengths of the lines",
+        "The relative brightness of the lines",
+        "The fine-structure splitting of each line",
+        "Similar lines for neutral helium"
+      ],
+      "correct_index": 0,
+      "explanation": "Bohr's model reproduces the Rydberg formula, so it predicts the Balmer wavelengths accurately.<br><br>It cannot predict line intensities or fine structure, and it fails for multi-electron atoms such as neutral He.",
+      "hint": "Positions yes — but what about brightness?",
+      "distractor_logic": [
+        "Intensities are a known limitation",
+        "Fine structure is a known limitation",
+        "Neutral helium has two electrons"
+      ],
+      "mixed_topics": [
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-016",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 7.9 MeV alpha particle approaches a gold nucleus to \\( 2.88\\times10^{-14} \\) m, while hydrogen's ground-state radius is \\( 5.29\\times10^{-11} \\) m. Roughly how many times larger is the Bohr radius?",
+      "options": [
+        "About \\( 10^{-3} \\)",
+        "About \\( 10^{3} \\)",
+        "About 1",
+        "About \\( 10^{8} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{5.29\\times10^{-11}}{2.88\\times10^{-14}}\\approx1.8\\times10^{3} \\), i.e. of order \\( 10^{3} \\).<br><br>Nuclear-scale distances are about a thousand or more times smaller than atomic orbits.",
+      "hint": "Compare the powers of ten.",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "The two distances are very different in scale",
+        "Adds the exponents instead of subtracting"
+      ],
+      "mixed_topics": [
+        "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-017",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The product \\( hcR \\) for hydrogen equals",
+      "options": [
+        "10.2 eV",
+        "3.4 eV",
+        "13.6 eV, the ground-state ionization energy",
+        "\\( -13.6 \\) eV, the ground-state energy \\( E_n \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The Lyman limit has \\( \\dfrac{1}{\\lambda}=R \\), so its photon energy is \\( \\dfrac{hc}{\\lambda}=hcR \\).<br><br>That photon energy equals the ground-state ionization energy, 13.6 eV.",
+      "hint": "Think of the Lyman series limit.",
+      "distractor_logic": [
+        "This is the longest Lyman line, \\( \\dfrac{3}{4}hcR \\)",
+        "This is the Balmer limit, \\( \\dfrac{1}{4}hcR \\)",
+        "\\( h \\), \\( c \\) and \\( R \\) are all positive, so the product is positive"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-018",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is the photon energy of the longest-wavelength line of the Lyman series?",
+      "options": [
+        "13.6 eV",
+        "2.55 eV",
+        "12.09 eV",
+        "10.2 eV"
+      ],
+      "correct_index": 3,
+      "explanation": "Longest wavelength means smallest energy: the 2 to 1 jump.<br><br>Energy \\( =-3.4-(-13.6)=10.2 \\) eV.",
+      "hint": "Longest wavelength means lowest energy.",
+      "distractor_logic": [
+        "This is the Lyman limit, the shortest wavelength",
+        "This is the 4 to 2 Balmer line",
+        "This is the 3 to 1 line"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-019",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Cold hydrogen gas, with all atoms in the ground state, absorbs light passing through it. Its absorption lines belong to",
+      "options": [
+        "the Lyman series only",
+        "the Balmer series only",
+        "all five series",
+        "the Paschen series only"
+      ],
+      "correct_index": 0,
+      "explanation": "Absorption starts from the level the electron is actually in.<br><br>All electrons are in \\( n=1 \\), so every absorption is 1 to a higher level — Lyman lines.",
+      "hint": "Absorption starts from the occupied level.",
+      "distractor_logic": [
+        "Balmer absorption needs electrons already in \\( n=2 \\)",
+        "Other series need electrons in excited levels",
+        "Paschen absorption needs electrons in \\( n=3 \\)"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-020",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Using \\( R=1.1\\times10^{7} \\) m\\( ^{-1} \\), what is the wavenumber of the series limit of He\\( ^{+} \\) (\\( Z=2 \\)) transitions ending at \\( n_1=2 \\)?",
+      "options": [
+        "\\( 2.75\\times10^{6} \\) m\\( ^{-1} \\)",
+        "\\( 1.1\\times10^{7} \\) m\\( ^{-1} \\), the same as hydrogen's Lyman limit",
+        "\\( 4.4\\times10^{7} \\) m\\( ^{-1} \\)",
+        "\\( 5.5\\times10^{6} \\) m\\( ^{-1} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=RZ^2\\left(\\dfrac{1}{2^2}-0\\right)=4R\\times\\dfrac{1}{4}=R \\)<br><br>\\( \\dfrac{1}{\\lambda}=1.1\\times10^{7} \\) m\\( ^{-1} \\)",
+      "hint": "\\( Z^2=4 \\) and \\( n_1^2=4 \\) cancel.",
+      "distractor_logic": [
+        "Ignores \\( Z \\), giving hydrogen's Balmer limit",
+        "Uses \\( n_1=1 \\) for He\\( ^{+} \\)",
+        "Uses \\( Z \\) instead of \\( Z^2 \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-021",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A hydrogen electron falls from \\( n=4 \\) to \\( n=2 \\) and then from \\( n=2 \\) to \\( n=1 \\). How does the total energy of the two photons compare with a single direct 4 to 1 jump?",
+      "options": [
+        "It is less than the direct jump",
+        "It is only 2.55 eV",
+        "It is the same, 12.75 eV",
+        "It is more than the direct jump"
+      ],
+      "correct_index": 2,
+      "explanation": "Photons: 2.55 eV (Balmer) and 10.2 eV (Lyman).<br><br>Total \\( =12.75 \\) eV \\( =E_4-E_1 \\), the same as the direct Lyman jump.<br><br>Energy depends only on the start and end levels.",
+      "hint": "Add the two level differences.",
+      "distractor_logic": [
+        "Energy is conserved; the route does not matter",
+        "Counts only the first photon",
+        "No extra energy appears from stepping down"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-022",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is the photon energy at the series limit of Li\\( ^{2+} \\) (\\( Z=3 \\)) transitions ending at \\( n=1 \\)?",
+      "options": [
+        "40.8 eV",
+        "13.6 eV",
+        "367.2 eV",
+        "122.4 eV"
+      ],
+      "correct_index": 3,
+      "explanation": "Series limit means \\( n_2=\\infty \\) to \\( n_1=1 \\).<br><br>Energy \\( =0-E_1=13.6\\times9=122.4 \\) eV, which is also the ionization energy of Li\\( ^{2+} \\).",
+      "hint": "The series limit photon equals the ionization energy.",
+      "distractor_logic": [
+        "Scales by \\( Z \\) instead of \\( Z^2 \\)",
+        "Ignores \\( Z \\)",
+        "Scales by \\( Z^3 \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-023",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Bohr's energy for a hydrogen-like ion depends on the nuclear charge as",
+      "options": [
+        "\\( Z^2 \\), because a point-like nucleus of charge \\( Ze \\) (as Rutherford found) sets the Coulomb attraction",
+        "\\( Z \\), because energy is proportional to charge",
+        "independent of \\( Z \\), since only the electron matters",
+        "\\( \\dfrac{1}{Z^2} \\), because a bigger nucleus holds the electron more loosely"
+      ],
+      "correct_index": 0,
+      "explanation": "Rutherford showed the positive charge \\( Ze \\) is concentrated in a tiny nucleus, so the electron feels a Coulomb force.<br><br>In Bohr's model, a larger \\( Z \\) both strengthens this force and shrinks the orbit, giving \\( E_n\\propto Z^2 \\).",
+      "hint": "Nuclear charge enters twice: stronger force and smaller orbit.",
+      "distractor_logic": [
+        "Misses the second factor of \\( Z \\) from the smaller orbit",
+        "The nucleus's charge controls the binding",
+        "Reverses the trend; larger \\( Z \\) binds more tightly"
+      ],
+      "mixed_topics": [
+        "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-024",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "As \\( n \\) increases in hydrogen, which pair of statements is correct?",
+      "options": [
+        "The speed \\( v_n \\) increases and the de Broglie wavelength decreases",
+        "The speed \\( v_n \\) decreases and the de Broglie wavelength increases",
+        "Both the speed and the de Broglie wavelength increase",
+        "Both the speed and the de Broglie wavelength decrease"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v_n\\propto\\dfrac{1}{n} \\): slower in higher orbits.<br><br>\\( \\lambda=\\dfrac{h}{mv_n}\\propto n \\): longer wavelength.<br><br>The two always move in opposite directions.",
+      "hint": "\\( \\lambda=\\dfrac{h}{mv} \\): slower means longer.",
+      "distractor_logic": [
+        "The central trap: the electron slows down, not speeds up, in higher orbits",
+        "Speed and wavelength cannot rise together",
+        "Speed and wavelength cannot fall together"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-025",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Putting \\( Z=2 \\) into \\( E_1=-13.6Z^2 \\) eV gives 54.4 eV, but the measured first ionization energy of neutral helium is 24.6 eV. Why the mismatch?",
+      "options": [
+        "The measurement must be wrong",
+        "\\( Z \\) for helium should be taken as 1",
+        "Neutral helium has two electrons, and Bohr's model ignores the repulsion between them",
+        "The helium nucleus is not point-like"
+      ],
+      "correct_index": 2,
+      "explanation": "Bohr's formula applies to one electron with a bare nucleus — that is He\\( ^{+} \\), whose ionization energy really is 54.4 eV.<br><br>In neutral He, each electron is repelled by the other, making it easier to remove.<br><br>Bohr's model cannot handle this multi-electron effect.",
+      "hint": "The formula works for He\\( ^{+} \\), not neutral He.",
+      "distractor_logic": [
+        "The 24.6 eV value is well established",
+        "Helium's nuclear charge is \\( 2e \\)",
+        "The nucleus's size is not the issue"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-026",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Can the formula \\( \\dfrac{1}{\\lambda}=RZ^2\\left(\\dfrac{1}{n_1^2}-\\dfrac{1}{n_2^2}\\right) \\) with \\( Z=11 \\) predict sodium's yellow spectral line?",
+      "options": [
+        "Yes, simply by using \\( Z=11 \\)",
+        "Yes, because it is a Balmer line",
+        "Yes, if \\( Z \\) is taken as 1",
+        "No — sodium has many electrons, and the formula applies only to single-electron systems"
+      ],
+      "correct_index": 3,
+      "explanation": "The Rydberg formula follows from Bohr's model for one electron around a nucleus.<br><br>Neutral sodium has 11 electrons, so the formula does not apply.",
+      "hint": "How many electrons does neutral sodium have?",
+      "distractor_logic": [
+        "Using \\( Z \\) cannot make up for the other 10 electrons",
+        "Balmer lines belong to hydrogen",
+        "No choice of \\( Z \\) turns sodium into a one-electron system"
+      ],
+      "mixed_topics": [
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-027",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A hydrogen electron is moved from the ground state to an orbit with 4 times the radius. How much energy is needed?",
+      "options": [
+        "10.2 eV",
+        "12.75 eV",
+        "3.4 eV",
+        "13.6 eV"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( r_n\\propto n^2 \\): 4 times the radius means \\( n=2 \\).<br><br>Energy \\( =E_2-E_1=-3.4-(-13.6)=10.2 \\) eV",
+      "hint": "Radius is proportional to \\( n^2 \\).",
+      "distractor_logic": [
+        "Takes \\( n=4 \\), as if radius were proportional to \\( n \\)",
+        "This is \\( |E_2| \\), not the difference",
+        "This is the ionization energy"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-028",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The electron in He\\( ^{+} \\) (\\( Z=2 \\)) is excited so that its orbital speed halves compared with the ground state. How much energy was absorbed?",
+      "options": [
+        "10.2 eV",
+        "40.8 eV",
+        "54.4 eV",
+        "13.6 eV"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v_n\\propto\\dfrac{1}{n} \\): halving the speed means \\( n=2 \\).<br><br>Energy \\( =E_2-E_1=-13.6-(-54.4)=40.8 \\) eV",
+      "hint": "Speed halves when \\( n \\) doubles.",
+      "distractor_logic": [
+        "Uses hydrogen's value, ignoring \\( Z \\)",
+        "This is the ionization energy",
+        "This is only \\( |E_2| \\) for He\\( ^{+} \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-029",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A He\\( ^{+} \\) ion emits its 2 to 1 photon (40.8 eV), which then strikes a ground-state hydrogen atom. What is the kinetic energy of the electron ejected from hydrogen?",
+      "options": [
+        "40.8 eV",
+        "54.4 eV",
+        "27.2 eV",
+        "13.6 eV"
+      ],
+      "correct_index": 2,
+      "explanation": "The photon has more than 13.6 eV, so it ionizes hydrogen.<br><br>Kinetic energy \\( =40.8-13.6=27.2 \\) eV",
+      "hint": "Subtract hydrogen's ionization energy.",
+      "distractor_logic": [
+        "Forgets the energy spent on ionization",
+        "Adds instead of subtracting",
+        "This is the ionization energy itself"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-030",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is the ratio of the Lyman-limit wavelength of hydrogen to the corresponding series-limit wavelength (ending at \\( n=1 \\)) of He\\( ^{+} \\)?",
+      "options": [
+        "\\( \\dfrac{1}{4} \\)",
+        "2",
+        "1",
+        "4"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{1}{\\lambda}\\propto Z^2 \\) for the same levels, so \\( \\lambda\\propto\\dfrac{1}{Z^2} \\).<br><br>\\( \\dfrac{\\lambda_{\\text{H}}}{\\lambda_{\\text{He}^+}}=\\dfrac{2^2}{1^2}=4 \\)",
+      "hint": "Wavelength goes as \\( \\dfrac{1}{Z^2} \\).",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Uses \\( Z \\) instead of \\( Z^2 \\)",
+        "Ignores the nuclear charge"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-031",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which statement correctly traces how models of the atom developed?",
+      "options": [
+        "Rutherford found the nucleus by scattering; Bohr added quantized orbits for stability; later quantum mechanics replaced sharply defined orbits",
+        "Bohr found the nucleus by scattering; Rutherford added quantized orbits",
+        "Rutherford's model was already stable, so Bohr only added the Rydberg formula",
+        "Bohr's orbits are exactly correct and needed no later changes"
+      ],
+      "correct_index": 0,
+      "explanation": "Alpha scattering revealed the nucleus (Rutherford).<br><br>Bohr's quantized, non-radiating orbits made the atom stable and explained hydrogen's lines.<br><br>Because definite orbits conflict with the uncertainty principle, quantum mechanics later replaced them.",
+      "hint": "Each step fixed the previous model's biggest failure.",
+      "distractor_logic": [
+        "Swaps the two scientists' contributions",
+        "Rutherford's classical atom was unstable",
+        "Bohr's model conflicts with the uncertainty principle and fails for multi-electron atoms"
+      ],
+      "mixed_topics": [
+        "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-032",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Using \\( R=1.1\\times10^{7} \\) m\\( ^{-1} \\), what is the wavenumber of the hydrogen line from \\( n=4 \\) to \\( n=2 \\)?",
+      "options": [
+        "\\( -2.0625\\times10^{6} \\) m\\( ^{-1} \\)",
+        "\\( 2.0625\\times10^{6} \\) m\\( ^{-1} \\)",
+        "\\( 2.75\\times10^{6} \\) m\\( ^{-1} \\)",
+        "\\( 8.25\\times10^{6} \\) m\\( ^{-1} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=R\\left(\\dfrac{1}{4}-\\dfrac{1}{16}\\right)=\\dfrac{3R}{16} \\)<br><br>\\( \\dfrac{1}{\\lambda}=\\dfrac{3\\times1.1\\times10^{7}}{16}=2.0625\\times10^{6} \\) m\\( ^{-1} \\)",
+      "hint": "Here \\( n_1=2 \\) and \\( n_2=4 \\).",
+      "distractor_logic": [
+        "Swaps \\( n_1 \\) and \\( n_2 \\), giving a meaningless negative wavenumber",
+        "This is the Balmer limit, using \\( n_2\\to\\infty \\)",
+        "This is the first Lyman line"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-033",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An excited hydrogen atom emits a 12.75 eV photon. Which transition and series is this?",
+      "options": [
+        "\\( n=4 \\) to \\( n=2 \\), Balmer series, visible",
+        "\\( n=\\infty \\) to \\( n=1 \\), the Lyman series limit",
+        "\\( n=4 \\) to \\( n=1 \\), Lyman series, ultraviolet",
+        "\\( n=3 \\) to \\( n=1 \\), Lyman series, ultraviolet"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E_4-E_1=-0.85-(-13.6)=12.75 \\) eV.<br><br>It ends at \\( n=1 \\), so it is a Lyman line in the ultraviolet.",
+      "hint": "Which level lies 12.75 eV above the ground state?",
+      "distractor_logic": [
+        "The 4 to 2 photon has only 2.55 eV",
+        "The Lyman limit photon has 13.6 eV",
+        "The 3 to 1 photon has 12.09 eV"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-034",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What is the potential energy of the electron in the ground state of He\\( ^{+} \\) (\\( Z=2 \\))?",
+      "options": [
+        "\\( -54.4 \\) eV",
+        "\\( +54.4 \\) eV",
+        "\\( -27.2 \\) eV",
+        "\\( -108.8 \\) eV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E_1=-54.4 \\) eV.<br><br>In a Bohr orbit, \\( PE=2E_n=-108.8 \\) eV (and \\( KE=+54.4 \\) eV).",
+      "hint": "Potential energy is twice the total energy.",
+      "distractor_logic": [
+        "This is the total energy, not the potential energy",
+        "This is the kinetic energy",
+        "This is hydrogen's ground-state potential energy"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-035",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A hydrogen electron has energy \\( -0.85 \\) eV. What is its angular momentum?",
+      "options": [
+        "\\( \\dfrac{2h}{\\pi} \\)",
+        "\\( \\dfrac{h}{\\pi} \\)",
+        "\\( \\dfrac{8h}{\\pi} \\)",
+        "\\( 4h \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( -\\dfrac{13.6}{n^2}=-0.85 \\) gives \\( n=4 \\).<br><br>\\( L=\\dfrac{nh}{2\\pi}=\\dfrac{4h}{2\\pi}=\\dfrac{2h}{\\pi} \\)",
+      "hint": "Find \\( n \\), then use \\( L=\\dfrac{nh}{2\\pi} \\).",
+      "distractor_logic": [
+        "Uses \\( n=2 \\)",
+        "Uses \\( n^2=16 \\) as if it were \\( n \\)",
+        "Drops the \\( 2\\pi \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-036",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If the nuclear charge \\( Z \\) is increased, what happens to the closest-approach distance \\( r_0 \\) of an alpha particle of fixed kinetic energy, and to the Bohr radius \\( r_1 \\) of a hydrogen-like ion?",
+      "options": [
+        "Both increase",
+        "\\( r_0 \\) increases, while \\( r_1 \\) decreases",
+        "Both decrease",
+        "\\( r_0 \\) decreases, while \\( r_1 \\) increases"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( r_0\\propto Z \\): a more strongly charged nucleus stops the repelled alpha particle farther away.<br><br>\\( r_n\\propto\\dfrac{n^2}{Z} \\): a more strongly charged nucleus pulls the attracted electron closer.<br><br>Repulsion and attraction give opposite trends.",
+      "hint": "One particle is repelled, the other attracted.",
+      "distractor_logic": [
+        "The attracted electron is pulled closer, not pushed out",
+        "The repelled alpha particle is stopped farther away",
+        "Reverses both dependencies"
+      ],
+      "mixed_topics": [
+        "Alpha-Particle Scattering and Rutherford's Nuclear Model of the Atom",
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-037",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For He\\( ^{+} \\) (\\( Z=2 \\)) in \\( n=3 \\), which pair gives the orbit radius and the number of de Broglie wavelengths around it?",
+      "options": [
+        "4.761 Å, 3 wavelengths",
+        "2.3805 Å, 9 wavelengths",
+        "2.3805 Å, 3 wavelengths",
+        "1.587 Å, 3 wavelengths"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( r_3=0.529\\times\\dfrac{9}{2}=2.3805 \\) Å.<br><br>By \\( 2\\pi r_n=n\\lambda \\), \\( n=3 \\) wavelengths fit.",
+      "hint": "Radius: \\( \\dfrac{n^2}{Z} \\). Wavelengths: \\( n \\).",
+      "distractor_logic": [
+        "Ignores \\( Z \\) in the radius",
+        "Uses \\( n^2 \\) for the number of wavelengths",
+        "Divides by \\( Z=3 \\), as for Li\\( ^{2+} \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-038",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A hydrogen electron moves from an orbit fitting 2 de Broglie wavelengths to one fitting 4. How much energy does it absorb?",
+      "options": [
+        "12.75 eV",
+        "10.2 eV",
+        "0.85 eV",
+        "2.55 eV"
+      ],
+      "correct_index": 3,
+      "explanation": "Number of wavelengths \\( =n \\), so the jump is \\( n=2 \\) to \\( n=4 \\).<br><br>Energy \\( =-0.85-(-3.4)=2.55 \\) eV",
+      "hint": "The wavelength count gives \\( n \\) directly.",
+      "distractor_logic": [
+        "Starts from \\( n=1 \\) instead of \\( n=2 \\)",
+        "This is the 1 to 2 energy",
+        "This is only \\( |E_4| \\)"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "de Broglie's Explanation of Bohr's Quantization Condition, and Limitations of the Bohr Model"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-039",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A hydrogen atom in the \\( n=2 \\) level returns to the ground state. The emitted line is",
+      "options": [
+        "the first Lyman line, 10.2 eV",
+        "a Balmer line, 3.4 eV",
+        "the Lyman series limit, 13.6 eV",
+        "the Balmer \\( H_\\alpha \\) line"
+      ],
+      "correct_index": 0,
+      "explanation": "From \\( n=2 \\) the only downward jump is 2 to 1.<br><br>It ends at \\( n=1 \\) (Lyman) with energy \\( 10.2 \\) eV.",
+      "hint": "There is only one way down from \\( n=2 \\).",
+      "distractor_logic": [
+        "Balmer lines end at \\( n=2 \\), not start there",
+        "The Lyman limit starts from \\( n=\\infty \\)",
+        "\\( H_\\alpha \\) is the 3 to 2 line"
+      ],
+      "mixed_topics": [
+        "Energy Levels, Excitation, Ionization, and Atomic Transitions",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    },
+    {
+      "id": "PHY12-CH12-B-040",
+      "chapter": "PHY12-CH12",
+      "chapter_name": "Atoms",
+      "topic": "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In terms of \\( R \\), what is the wavelength of the first (longest-wavelength) line of He\\( ^{+} \\) (\\( Z=2 \\)) transitions ending at \\( n=1 \\)?",
+      "options": [
+        "\\( \\lambda=\\dfrac{4}{3R} \\)",
+        "\\( \\lambda=\\dfrac{1}{3R} \\)",
+        "\\( \\lambda=\\dfrac{3}{R} \\)",
+        "\\( \\lambda=\\dfrac{1}{4R} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{1}{\\lambda}=4R\\left(1-\\dfrac{1}{4}\\right)=3R \\).<br><br>So \\( \\lambda=\\dfrac{1}{3R} \\), a quarter of hydrogen's \\( \\dfrac{4}{3R} \\).",
+      "hint": "Include \\( Z^2=4 \\), then invert.",
+      "distractor_logic": [
+        "Ignores \\( Z \\), giving hydrogen's value",
+        "Forgets to invert the wavenumber",
+        "This is the He\\( ^{+} \\) series limit, not the first line"
+      ],
+      "mixed_topics": [
+        "Bohr's Postulates and the Bohr Model: Radius, Velocity, and Energy of Orbits",
+        "Hydrogen Spectral Series: Lyman, Balmer, Paschen, Brackett, and Pfund"
+      ]
+    }
+  ]
+}

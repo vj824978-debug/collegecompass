@@ -1,0 +1,3728 @@
+{
+  "meta": {
+    "chapter": "PHY12-CH08",
+    "chapter_name": "Electromagnetic Waves",
+    "subject": "Physics",
+    "class": 12,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "All cross products (e.g. \\( \\vec E\\times\\vec B \\)), \\( \\epsilon_0 \\) and \\( \\mu_0 \\) are written as single KaTeX spans; no raw Unicode math symbols (including the arrow) appear anywhere outside KaTeX; every numeric answer terminates cleanly or is a clean order-of-magnitude value."
+  },
+  "topics": [
+    {
+      "name": "Displacement Current and the Ampere-Maxwell Law",
+      "summary": "Ampere's original law, \\( \\oint\\vec B\\cdot d\\vec l=\\mu_0I_c \\), fails for a charging capacitor: a surface cutting the wire encloses current, but a surface passing between the plates encloses none. Maxwell fixed this by adding the displacement current \\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\), which arises from a changing electric flux and involves no motion of charge. The Ampere-Maxwell law is \\( \\oint\\vec B\\cdot d\\vec l=\\mu_0(I_c+I_d) \\). Between the plates, \\( I_c=0 \\) but \\( I_d \\) is non-zero, and in a simple charging circuit \\( I_d \\) equals the wire current exactly at every instant, so the total current is continuous. Displacement current is a genuine source of magnetic field: a changing electric field produces a magnetic field, just as a changing magnetic field produces an electric field. When the capacitor is fully charged, the field stops changing and \\( I_d=0 \\). This symmetry is what makes electromagnetic waves possible.",
+      "key_formulas": [
+        "\\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt}=\\epsilon_0A\\dfrac{dE}{dt} \\)",
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0(I_c+I_d) \\)",
+        "\\( I_d=C\\dfrac{dV}{dt} \\) with \\( C=\\dfrac{\\epsilon_0A}{d} \\)",
+        "\\( I_d=I_c \\) in a simple charging circuit"
+      ],
+      "worked_example": "A capacitor with plate area 0.1 m\\( ^{2} \\) and separation 1 mm has its voltage rising at \\( 10^{6} \\) V/s. Find \\( I_d \\).<br><br>\\( C=\\dfrac{(8.85\\times10^{-12})(0.1)}{10^{-3}}=8.85\\times10^{-10} \\) F.<br><br>\\( I_d=C\\dfrac{dV}{dt}=8.85\\times10^{-4} \\) A, equal to the current in the wires.",
+      "common_mistakes": [
+        "Using only \\( I_c \\) (the unmodified law) for a surface between the plates, getting zero.",
+        "Treating \\( I_d \\) and \\( I_c \\) as unrelated; in a charging circuit they are exactly equal.",
+        "Thinking displacement current is charge jumping across the gap.",
+        "Using the flux itself instead of its rate of change."
+      ],
+      "question_count": 29
+    },
+    {
+      "name": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "summary": "An electromagnetic wave consists of oscillating electric and magnetic fields that regenerate each other and travel through vacuum without any medium. The wave is purely transverse: \\( \\vec E \\) and \\( \\vec B \\) are perpendicular to each other and to the direction of travel, which is along \\( \\vec E\\times\\vec B \\) (never \\( \\vec B\\times\\vec E \\), which is the opposite direction). The two fields oscillate in phase, reaching their maximum and zero values at the same place and instant; a \\( 90^\\circ \\) lag is an AC-circuit idea that does not apply here. Their magnitudes are related by \\( E=cB \\) at every instant, so \\( E_0/B_0=c \\). The speed in vacuum is \\( c=\\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}}=3\\times10^{8} \\) m/s for every frequency and wavelength. Frequency and wavelength are linked by \\( c=f\\lambda \\), and angular frequency and wave number by \\( \\omega=ck \\).",
+      "key_formulas": [
+        "\\( c=\\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\)",
+        "\\( \\dfrac{E_0}{B_0}=c \\)",
+        "\\( c=f\\lambda \\), \\( \\omega=ck \\)",
+        "Direction of travel along \\( \\vec E\\times\\vec B \\)"
+      ],
+      "worked_example": "A wave has \\( E_0=300 \\) V/m, with \\( \\vec E \\) along \\( +\\hat i \\) and \\( \\vec B \\) along \\( +\\hat j \\).<br><br>\\( B_0=\\dfrac{300}{3\\times10^{8}}=10^{-6} \\) T.<br><br>Direction: \\( \\hat i\\times\\hat j=\\hat k \\), so the wave travels along \\( +\\hat k \\).",
+      "common_mistakes": [
+        "Giving \\( E \\) and \\( B \\) a \\( 90^\\circ \\) phase difference.",
+        "Using \\( \\vec B\\times\\vec E \\) and getting the reversed direction.",
+        "Using \\( c^2 \\) or \\( 1/c \\) for \\( E_0/B_0 \\).",
+        "Believing higher-frequency waves travel faster in vacuum."
+      ],
+      "question_count": 45
+    },
+    {
+      "name": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "summary": "Electromagnetic waves carry energy and momentum. The electric energy density is \\( u_E=\\tfrac12\\epsilon_0E^2 \\) and the magnetic energy density is \\( u_B=\\dfrac{B^2}{2\\mu_0} \\). Because \\( E=cB \\) and \\( c^2=\\dfrac{1}{\\mu_0\\epsilon_0} \\), these are always exactly equal, so each field carries half the energy. Averaging over a cycle, the total average energy density is \\( u_{avg}=\\tfrac12\\epsilon_0E_0^2 \\), and the intensity is \\( I=u_{avg}c=\\tfrac12\\epsilon_0cE_0^2 \\), proportional to the square of the amplitude. Energy \\( U \\) carries momentum \\( U/c \\), so waves exert radiation pressure. For a fully absorbing surface, \\( P=\\dfrac{I}{c} \\); for a perfectly reflecting surface, \\( P=\\dfrac{2I}{c} \\), because the momentum reverses, like an elastic ball bouncing off a wall. Pressure depends on intensity only, not on frequency, and force equals pressure times area.",
+      "key_formulas": [
+        "\\( u_E=\\tfrac12\\epsilon_0E^2=u_B=\\dfrac{B^2}{2\\mu_0} \\)",
+        "\\( I=u_{avg}c=\\tfrac12\\epsilon_0cE_0^2 \\)",
+        "Absorbing: \\( P=\\dfrac{I}{c} \\); reflecting: \\( P=\\dfrac{2I}{c} \\)",
+        "Momentum \\( p=\\dfrac{U}{c} \\) (absorbed), \\( \\dfrac{2U}{c} \\) (reflected)"
+      ],
+      "worked_example": "Light of intensity 1200 W/m\\( ^{2} \\) falls on a perfectly reflecting mirror.<br><br>\\( P=\\dfrac{2I}{c}=\\dfrac{2400}{3\\times10^{8}}=8\\times10^{-6} \\) Pa.<br><br>If the surface absorbed instead, the pressure would be half: \\( 4\\times10^{-6} \\) Pa.",
+      "common_mistakes": [
+        "Using \\( I/c \\) for a reflecting surface, or \\( 2I/c \\) for an absorbing one.",
+        "Thinking the electric or magnetic energy dominates; they are equal.",
+        "Forgetting the \\( \\tfrac12 \\) or the square in \\( I=\\tfrac12\\epsilon_0cE_0^2 \\).",
+        "Thinking higher-frequency radiation exerts more pressure at the same intensity."
+      ],
+      "question_count": 36
+    },
+    {
+      "name": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "summary": "All electromagnetic waves are the same kind of wave, differing only in frequency and wavelength, and all travel at \\( c \\) in vacuum. In order of increasing frequency (decreasing wavelength) the spectrum is: radio waves (longer than 0.1 m), microwaves (0.1 m to 1 mm), infrared (1 mm to 700 nm), visible light (700 nm to 400 nm), ultraviolet (400 nm to 1 nm), X-rays (1 nm to \\( 10^{-3} \\) nm) and gamma rays (below \\( 10^{-3} \\) nm). This order is fixed. Energy per photon increases with frequency, so shorter wavelength means higher photon energy: a gamma photon carries far more energy than a radio photon. To identify a band from a frequency, first convert using \\( \\lambda=\\dfrac{c}{f} \\), then compare the wavelength with the ranges. Keep the neighbours straight: microwaves sit between radio and infrared, and ultraviolet sits between visible and X-rays.",
+      "key_formulas": [
+        "\\( \\lambda=\\dfrac{c}{f} \\)",
+        "Photon energy \\( E=hf=\\dfrac{hc}{\\lambda} \\), so \\( E\\propto\\dfrac1\\lambda \\)",
+        "Order: radio, microwave, infrared, visible, ultraviolet, X-rays, gamma"
+      ],
+      "worked_example": "Identify the band of a wave of frequency \\( 1.5\\times10^{15} \\) Hz.<br><br>\\( \\lambda=\\dfrac{3\\times10^{8}}{1.5\\times10^{15}}=2\\times10^{-7} \\) m \\( =200 \\) nm.<br><br>200 nm lies between 400 nm and 1 nm, so it is ultraviolet.",
+      "common_mistakes": [
+        "Placing X-rays before ultraviolet, or microwaves after infrared.",
+        "Thinking longer wavelength means more energy per photon.",
+        "Thinking gamma rays or X-rays travel faster than radio waves in vacuum.",
+        "Forgetting unit conversions (nm, \\( \\mu\\text{m} \\), cm) before comparing ranges."
+      ],
+      "question_count": 46
+    },
+    {
+      "name": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "summary": "Each band has characteristic sources, detectors and uses. Radio waves come from accelerated charges in oscillating circuits and antennas and are used for communication. Microwaves are produced by klystron and magnetron valves and used in radar and microwave ovens, where their frequency matches water molecules in food. Infrared is emitted by warm and hot bodies and molecules; it is used in remote controls and thermal imaging, and trapped infrared causes the greenhouse effect. Visible light comes from electron transitions in atoms and is detected by the eye and photographic film. Ultraviolet comes from very hot bodies such as the Sun and special lamps; it is detected by photocells, used for sterilization, and mostly absorbed by the ozone layer. X-rays come from high-energy electrons striking a metal target and are used in medical diagnosis and crystallography. Gamma rays come from nuclear transitions in radioactive decay and are used in cancer treatment.",
+      "key_formulas": [
+        "Radio: oscillating circuits; communication",
+        "Microwave: klystron/magnetron; radar, ovens",
+        "Infrared: warm bodies; remote controls, thermal imaging, greenhouse effect",
+        "Visible: atomic transitions; vision, photography",
+        "Ultraviolet: very hot bodies, lamps; sterilization; absorbed by ozone",
+        "X-rays: electrons hitting metal; diagnosis, crystallography",
+        "Gamma: nuclear transitions; cancer treatment"
+      ],
+      "worked_example": "A hospital images a fracture and then treats a tumour.<br><br>Fracture imaging uses X-rays, produced by fast electrons hitting a metal target.<br><br>Tumour treatment uses gamma rays, from nuclear transitions, which lie at even higher frequency.",
+      "common_mistakes": [
+        "Confusing X-ray production (electrons on metal) with gamma production (nuclei).",
+        "Linking the greenhouse effect to ultraviolet instead of infrared.",
+        "Thinking remote controls use microwaves.",
+        "Thinking the ozone layer absorbs infrared rather than ultraviolet."
+      ],
+      "question_count": 40
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY12-CH08-L1-001",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement correctly describes displacement current?",
+      "options": [
+        "It arises from a changing electric flux and involves no actual motion of charge.",
+        "It is a flow of electrons that jumps across the gap between capacitor plates.",
+        "It arises from a changing magnetic flux through a surface.",
+        "It exists only when the electric field stays constant in time."
+      ],
+      "correct_index": 0,
+      "explanation": "Maxwell defined displacement current as \\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>It depends only on how fast the electric flux changes; no charge physically moves through the region.<br><br>Even so, it produces a magnetic field exactly like an ordinary current.",
+      "hint": "Look at what changes in the gap of a charging capacitor: charges or the electric field?",
+      "distractor_logic": [
+        "Confuses displacement current with conduction current; no charge crosses the insulating gap.",
+        "A changing magnetic flux induces an emf (Faraday's law); displacement current comes from changing electric flux.",
+        "A constant electric field gives zero rate of change of flux, so the displacement current would be zero."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-002",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Which expression gives the displacement current \\( I_d \\) through a surface?",
+      "options": [
+        "\\( I_d=\\mu_0\\dfrac{d\\Phi_E}{dt} \\)",
+        "\\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\)",
+        "\\( I_d=\\epsilon_0\\Phi_E \\)",
+        "\\( I_d=\\dfrac{1}{\\epsilon_0}\\dfrac{d\\Phi_E}{dt} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Displacement current is proportional to the RATE of change of electric flux.<br><br>The constant of proportionality is the permittivity of free space: \\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>Check: \\( \\epsilon_0 \\) times V m/s works out to C/s, which is ampere.",
+      "hint": "A current is a rate, so the formula must contain a time derivative.",
+      "distractor_logic": [
+        "Uses the magnetic constant \\( \\mu_0 \\) instead of the permittivity \\( \\epsilon_0 \\).",
+        "Uses the flux itself rather than its rate of change; a steady flux gives no displacement current.",
+        "Divides by \\( \\epsilon_0 \\) instead of multiplying, which does not give units of current."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-003",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Which is the correct form of the Ampere-Maxwell law?",
+      "options": [
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0 I_c \\)",
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0(I_c-I_d) \\)",
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0(I_c+I_d) \\)",
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\epsilon_0(I_c+I_d) \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Maxwell added the displacement current to the conduction current as a source of magnetic field.<br><br>The law becomes \\( \\oint\\vec B\\cdot d\\vec l=\\mu_0(I_c+I_d) \\), with \\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>This makes the total current continuous everywhere, including across a capacitor gap.",
+      "hint": "Maxwell did not remove the conduction current; he added something to it.",
+      "distractor_logic": [
+        "This is the original, unmodified Ampere's law, which fails where conduction current is discontinuous.",
+        "Subtracts the displacement current; both currents act as sources of \\( \\vec B \\) and add.",
+        "Uses \\( \\epsilon_0 \\) as the constant in front; Ampere's law uses \\( \\mu_0 \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-004",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Who introduced the idea of displacement current to correct Ampere's circuital law?",
+      "options": [
+        "Michael Faraday",
+        "Heinrich Hertz",
+        "Andre-Marie Ampere",
+        "James Clerk Maxwell"
+      ],
+      "correct_index": 3,
+      "explanation": "Maxwell noticed that Ampere's law gives contradictory results for a charging capacitor.<br><br>He fixed it by adding the displacement current term \\( \\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>This correction led him to predict electromagnetic waves.",
+      "hint": "The same scientist predicted electromagnetic waves theoretically.",
+      "distractor_logic": [
+        "Faraday discovered electromagnetic induction (changing magnetic flux), not displacement current.",
+        "Hertz experimentally produced and detected electromagnetic waves after Maxwell's prediction.",
+        "Ampere gave the original law that needed the correction; he did not add the extra term."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-005",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "A capacitor is being charged by a battery. What is the conduction current in the empty gap between its plates?",
+      "options": [
+        "Zero",
+        "Equal to the current in the connecting wires",
+        "Twice the current in the connecting wires",
+        "Half the current in the connecting wires"
+      ],
+      "correct_index": 0,
+      "explanation": "Conduction current needs charges to move, but the gap between the plates is empty.<br><br>So \\( I_c=0 \\) in the gap.<br><br>What does exist there is a displacement current, because the electric field between the plates is changing.",
+      "hint": "Can electrons actually travel through the empty space between the plates?",
+      "distractor_logic": [
+        "This value belongs to the displacement current in the gap, not the conduction current.",
+        "No charge flows across the gap, so nothing can double the wire current there.",
+        "The gap is an insulator; there is no partial flow of charge across it."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-006",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "In a simple circuit where a capacitor is being charged, how does the displacement current between the plates compare with the conduction current in the wires at the same instant?",
+      "options": [
+        "The displacement current is always zero.",
+        "They are exactly equal.",
+        "The displacement current is always smaller.",
+        "They are unrelated and can take any values."
+      ],
+      "correct_index": 1,
+      "explanation": "The charge on the plate is \\( Q=\\epsilon_0 EA \\), so \\( \\dfrac{dQ}{dt}=\\epsilon_0\\dfrac{d(EA)}{dt}=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>The left side is the wire current \\( I_c \\) and the right side is \\( I_d \\).<br><br>Hence \\( I_d=I_c \\) at every instant, keeping the total current continuous.",
+      "hint": "The rate at which charge piles up on the plate controls how fast the field between the plates grows.",
+      "distractor_logic": [
+        "Ignores the changing electric field between the plates, which gives a non-zero \\( I_d \\).",
+        "Assumes some current is lost in the gap; in fact \\( I_d=I_c \\) exactly at every instant.",
+        "Treats \\( I_d \\) and \\( I_c \\) as independent; the same charge build-up fixes both, so they must match."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-007",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Can displacement current produce a magnetic field?",
+      "options": [
+        "No, it produces only an electric field.",
+        "Only if it flows inside a metal conductor.",
+        "Yes, it produces a magnetic field in the same way as a conduction current.",
+        "Only after the capacitor becomes fully charged."
+      ],
+      "correct_index": 2,
+      "explanation": "In the Ampere-Maxwell law, \\( I_d \\) sits next to \\( I_c \\) as a source of \\( \\vec B \\).<br><br>So a changing electric field produces a magnetic field, even in empty space.<br><br>This is exactly how the magnetic field between capacitor plates arises.",
+      "hint": "Look at where \\( I_d \\) appears in the Ampere-Maxwell law.",
+      "distractor_logic": [
+        "Denies the central point of Maxwell's correction: \\( I_d \\) is a genuine source of \\( \\vec B \\).",
+        "Displacement current exists even in vacuum; no conductor is needed.",
+        "When fully charged, the field stops changing, so \\( I_d \\) becomes zero."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-008",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 1,
+      "type": "regular",
+      "question": "A capacitor has become fully charged and the voltage across it no longer changes. What is the displacement current between its plates now?",
+      "options": [
+        "Maximum",
+        "Equal to the initial charging current",
+        "Equal to \\( \\epsilon_0 \\) times the electric field",
+        "Zero"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>When the voltage is steady, the field and flux between the plates are constant.<br><br>So \\( \\dfrac{d\\Phi_E}{dt}=0 \\) and \\( I_d=0 \\).",
+      "hint": "Is anything changing between the plates once charging is complete?",
+      "distractor_logic": [
+        "The displacement current is largest while the field changes fastest, not when it has stopped changing.",
+        "The initial charging current has died out; with no change in field there is no \\( I_d \\).",
+        "Uses the field itself rather than its rate of change; \\( I_d \\) needs a changing flux."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-009",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "In an electromagnetic wave, how are the electric field, the magnetic field, and the direction of propagation oriented?",
+      "options": [
+        "All three are mutually perpendicular.",
+        "The electric field is along the direction of propagation.",
+        "The electric and magnetic fields are parallel to each other.",
+        "The magnetic field is along the direction of propagation."
+      ],
+      "correct_index": 0,
+      "explanation": "An electromagnetic wave is purely transverse.<br><br>\\( \\vec E \\) is perpendicular to \\( \\vec B \\), and both are perpendicular to the direction of travel.<br><br>The travel direction is along \\( \\vec E\\times\\vec B \\).",
+      "hint": "EM waves are transverse. What does that say about each field?",
+      "distractor_logic": [
+        "Would make the wave partly longitudinal; EM waves have no field component along propagation.",
+        "\\( \\vec E \\) and \\( \\vec B \\) are always perpendicular to each other in an EM wave.",
+        "Would give a longitudinal magnetic component; \\( \\vec B \\) is transverse too."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-010",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the phase relationship between the electric and magnetic fields in an electromagnetic wave travelling through vacuum?",
+      "options": [
+        "The electric field leads by \\( 90^\\circ \\).",
+        "They are in phase.",
+        "The magnetic field leads by \\( 90^\\circ \\).",
+        "They are \\( 180^\\circ \\) out of phase."
+      ],
+      "correct_index": 1,
+      "explanation": "In a travelling EM wave, \\( E \\) and \\( B \\) reach their maximum and zero values at the same place and instant.<br><br>So \\( E=cB \\) holds at every instant, not just for amplitudes.<br><br>A \\( 90^\\circ \\) lag belongs to AC circuit quantities, not to the fields of a wave.",
+      "hint": "Does \\( E \\) become zero at the same moment that \\( B \\) does?",
+      "distractor_logic": [
+        "Carries over the phase lag from LCR circuits; in an EM wave there is no lag.",
+        "Same false carryover from AC circuits, just with the lag reversed.",
+        "Opposite phase would reverse the sign of \\( \\vec E\\times\\vec B \\) every half cycle; the fields actually peak together."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-011",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "The direction of propagation of an electromagnetic wave is along",
+      "options": [
+        "\\( \\vec B\\times\\vec E \\)",
+        "\\( \\vec E \\)",
+        "\\( \\vec E\\times\\vec B \\)",
+        "\\( \\vec B \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The propagation direction is given by the cross product \\( \\vec E\\times\\vec B \\), in that order.<br><br>Since \\( \\vec B\\times\\vec E=-\\vec E\\times\\vec B \\), swapping the order reverses the direction.<br><br>It is perpendicular to both fields, consistent with a transverse wave.",
+      "hint": "Order matters in a cross product.",
+      "distractor_logic": [
+        "Reverses the cross-product order, which points in exactly the opposite direction.",
+        "The wave is transverse, so it cannot travel along its own electric field.",
+        "The wave is transverse, so it cannot travel along its own magnetic field."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-012",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "For an electromagnetic wave in vacuum, the ratio of the electric field amplitude to the magnetic field amplitude, \\( E_0/B_0 \\), equals",
+      "options": [
+        "\\( c^2 \\)",
+        "\\( \\dfrac{1}{c} \\)",
+        "\\( \\mu_0\\epsilon_0 \\)",
+        "\\( c \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "For an EM wave in vacuum, \\( E_0=cB_0 \\).<br><br>So \\( \\dfrac{E_0}{B_0}=c=3\\times10^{8} \\) m/s.<br><br>This is why the magnetic field amplitude in tesla is tiny compared with the electric field in V/m.",
+      "hint": "Check units: V/m divided by T gives m/s.",
+      "distractor_logic": [
+        "Squares the speed; the relation is \\( E_0=cB_0 \\), not \\( E_0=c^2B_0 \\).",
+        "Inverts the ratio; \\( 1/c \\) is \\( B_0/E_0 \\).",
+        "\\( \\mu_0\\epsilon_0 \\) equals \\( 1/c^2 \\), not \\( c \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-013",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "The speed of electromagnetic waves in vacuum is given by",
+      "options": [
+        "\\( c=\\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\)",
+        "\\( c=\\sqrt{\\mu_0\\epsilon_0} \\)",
+        "\\( c=\\dfrac{1}{\\mu_0\\epsilon_0} \\)",
+        "\\( c=\\sqrt{\\dfrac{\\mu_0}{\\epsilon_0}} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Maxwell's equations give \\( c=\\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\).<br><br>Putting in the values gives about \\( 3\\times10^{8} \\) m/s.<br><br>This matched the measured speed of light, showing light is an EM wave.",
+      "hint": "Remember \\( c^2=1/(\\mu_0\\epsilon_0) \\).",
+      "distractor_logic": [
+        "Forgets the reciprocal; \\( \\sqrt{\\mu_0\\epsilon_0} \\) is \\( 1/c \\).",
+        "Forgets the square root; \\( 1/(\\mu_0\\epsilon_0) \\) equals \\( c^2 \\).",
+        "This ratio has units of resistance (the impedance of free space), not speed."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-014",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "Electromagnetic waves are",
+      "options": [
+        "longitudinal waves",
+        "transverse waves",
+        "partly transverse and partly longitudinal",
+        "transverse in the magnetic field but longitudinal in the electric field"
+      ],
+      "correct_index": 1,
+      "explanation": "Both \\( \\vec E \\) and \\( \\vec B \\) oscillate perpendicular to the direction of propagation.<br><br>So an electromagnetic wave is purely transverse.",
+      "hint": "Compare the directions of the fields with the direction of travel.",
+      "distractor_logic": [
+        "Longitudinal waves vibrate along the travel direction; EM fields are perpendicular to it.",
+        "Neither field has any component along the propagation direction.",
+        "Both fields are perpendicular to the direction of travel; neither is longitudinal."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-015",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "Do electromagnetic waves need a material medium to travel?",
+      "options": [
+        "Yes, they need air or some other gas.",
+        "Yes, they need a solid medium.",
+        "No, they can travel through vacuum.",
+        "They travel only through conducting materials."
+      ],
+      "correct_index": 2,
+      "explanation": "An EM wave consists of electric and magnetic fields that regenerate each other.<br><br>Fields exist in empty space, so no material medium is needed.<br><br>Sunlight crossing space is the everyday proof.",
+      "hint": "How does sunlight reach the Earth?",
+      "distractor_logic": [
+        "Light reaches us from the Sun through empty space, so no gas is needed.",
+        "Confuses EM waves with mechanical waves like sound in solids.",
+        "Conductors actually tend to absorb or reflect EM waves; vacuum is ideal for travel."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-016",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 1,
+      "type": "regular",
+      "question": "An electromagnetic wave in vacuum has frequency \\( 10^{6} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, what is its wavelength?",
+      "options": [
+        "\\( 3\\times10^{14} \\) m",
+        "30 m",
+        "\\( \\dfrac{1}{300} \\) m",
+        "300 m"
+      ],
+      "correct_index": 3,
+      "explanation": "Use \\( c=f\\lambda \\), so \\( \\lambda=\\dfrac{c}{f} \\).<br><br>\\( \\lambda=\\dfrac{3\\times10^{8}}{10^{6}}=300 \\) m.",
+      "hint": "Wavelength equals speed divided by frequency.",
+      "distractor_logic": [
+        "Multiplies \\( c \\) by \\( f \\) instead of dividing.",
+        "Drops one power of ten while dividing.",
+        "Divides \\( f \\) by \\( c \\), which inverts the correct relation."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-017",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "The energy density of the electric field in an electromagnetic wave is",
+      "options": [
+        "\\( \\tfrac12\\epsilon_0E^2 \\)",
+        "\\( \\epsilon_0E^2 \\)",
+        "\\( \\tfrac12\\epsilon_0E \\)",
+        "\\( \\dfrac{E^2}{2\\epsilon_0} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The electric energy density is \\( u_E=\\tfrac12\\epsilon_0E^2 \\), the same formula used for a capacitor.<br><br>It depends on the square of the field.",
+      "hint": "Recall the energy stored per unit volume in a capacitor's field.",
+      "distractor_logic": [
+        "Drops the factor \\( \\tfrac12 \\); \\( \\epsilon_0E^2 \\) is the total (electric plus magnetic) energy density.",
+        "Forgets to square the field; energy density goes as \\( E^2 \\).",
+        "Divides by \\( \\epsilon_0 \\) instead of multiplying; this does not give J/m\\( ^{3} \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-018",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "The energy density of the magnetic field in an electromagnetic wave is",
+      "options": [
+        "\\( \\tfrac12\\mu_0B^2 \\)",
+        "\\( \\dfrac{B^2}{2\\mu_0} \\)",
+        "\\( \\dfrac{B}{2\\mu_0} \\)",
+        "\\( \\dfrac{B^2}{\\mu_0} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "The magnetic energy density is \\( u_B=\\dfrac{B^2}{2\\mu_0} \\), the same as inside an inductor.<br><br>Note the \\( \\mu_0 \\) is in the denominator.",
+      "hint": "Think of the energy stored per unit volume in a solenoid.",
+      "distractor_logic": [
+        "Multiplies by \\( \\mu_0 \\) instead of dividing, copying the electric formula's pattern incorrectly.",
+        "Forgets to square \\( B \\).",
+        "Drops the factor \\( \\tfrac12 \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-019",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "In an electromagnetic wave, how does the electric energy density \\( u_E \\) compare with the magnetic energy density \\( u_B \\) at any instant?",
+      "options": [
+        "\\( u_E=c\\,u_B \\)",
+        "\\( u_B \\) is much larger than \\( u_E \\)",
+        "\\( u_E=u_B \\)",
+        "\\( u_E=c^2u_B \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( u_E=\\tfrac12\\epsilon_0E^2 \\) and \\( u_B=\\dfrac{B^2}{2\\mu_0} \\).<br><br>Put \\( E=cB \\): \\( u_E=\\tfrac12\\epsilon_0c^2B^2 \\).<br><br>Since \\( \\epsilon_0c^2=\\dfrac{1}{\\mu_0} \\), this equals \\( \\dfrac{B^2}{2\\mu_0}=u_B \\). The two are always equal.",
+      "hint": "Substitute \\( E=cB \\) and use \\( c^2=1/(\\mu_0\\epsilon_0) \\).",
+      "distractor_logic": [
+        "Mixes up the field ratio \\( E=cB \\) with the energy-density ratio, which is 1.",
+        "Tiny values of \\( B \\) in tesla mislead; \\( B^2/\\mu_0 \\) balances exactly.",
+        "Forgets that \\( c^2=1/(\\mu_0\\epsilon_0) \\) cancels the factor completely."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-020",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "An electromagnetic wave of intensity \\( I \\) falls normally on a surface that absorbs it completely. The radiation pressure is",
+      "options": [
+        "\\( \\dfrac{2I}{c} \\)",
+        "\\( Ic \\)",
+        "\\( \\dfrac{I}{c^2} \\)",
+        "\\( \\dfrac{I}{c} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Energy \\( U \\) carries momentum \\( U/c \\).<br><br>For full absorption, momentum per second per unit area is \\( I/c \\), which is the pressure.<br><br>So \\( P=\\dfrac{I}{c} \\).",
+      "hint": "When absorbed, the wave's momentum is simply handed over to the surface.",
+      "distractor_logic": [
+        "This is the pressure on a perfectly reflecting surface, not an absorbing one.",
+        "Multiplies by \\( c \\); pressure is intensity divided by speed.",
+        "Divides by \\( c^2 \\); that is the formula pattern for mass-energy, not pressure."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-021",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "An electromagnetic wave of intensity \\( I \\) falls normally on a perfectly reflecting surface. The radiation pressure is",
+      "options": [
+        "\\( \\dfrac{2I}{c} \\)",
+        "\\( \\dfrac{I}{c} \\)",
+        "\\( \\dfrac{I}{2c} \\)",
+        "\\( \\dfrac{4I}{c} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "On reflection, momentum \\( p \\) becomes \\( -p \\), so the change is \\( 2p \\).<br><br>This is like an elastic ball bouncing back from a wall.<br><br>So \\( P=\\dfrac{2I}{c} \\), double the absorbing value.",
+      "hint": "Compare a ball that sticks to a wall with one that bounces back.",
+      "distractor_logic": [
+        "This is for an absorbing surface; reflection reverses the momentum and doubles the transfer.",
+        "Halves instead of doubling the absorbing value.",
+        "Doubles twice; the momentum change on reflection is exactly twice, not four times."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-022",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "The intensity \\( I \\) of an electromagnetic wave is related to its average energy density \\( u_{avg} \\) by",
+      "options": [
+        "\\( I=\\dfrac{u_{avg}}{c} \\)",
+        "\\( I=u_{avg}\\,c \\)",
+        "\\( I=u_{avg}\\,c^2 \\)",
+        "\\( I=u_{avg} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Intensity is energy crossing unit area per second.<br><br>In one second, the energy in a column of length \\( c \\) passes through, so \\( I=u_{avg}\\,c \\).",
+      "hint": "How far does the wave's energy travel in one second?",
+      "distractor_logic": [
+        "Divides by \\( c \\); energy flow rate needs multiplication by the speed.",
+        "Squares the speed; the units would not be W/m\\( ^{2} \\).",
+        "Ignores that energy moves at speed \\( c \\); J/m\\( ^{3} \\) is not W/m\\( ^{2} \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-023",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "Why does an electromagnetic wave exert pressure on a surface it falls on?",
+      "options": [
+        "Because photons have rest mass.",
+        "Because the wave's electric field repels the surface's electrons outward.",
+        "Because the wave carries momentum as well as energy.",
+        "Because the wave heats the surface and the air pushes on it."
+      ],
+      "correct_index": 2,
+      "explanation": "An EM wave carrying energy \\( U \\) also carries momentum \\( U/c \\).<br><br>When this momentum is absorbed or reversed at a surface, a force acts on it.<br><br>Force per unit area is the radiation pressure.",
+      "hint": "A force needs a rate of change of something.",
+      "distractor_logic": [
+        "EM waves carry momentum \\( U/c \\) without any rest mass.",
+        "The pressure comes from momentum transfer, not an electrostatic repulsion.",
+        "Radiation pressure exists even in vacuum with no air present."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-024",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 1,
+      "type": "regular",
+      "question": "The intensity of an electromagnetic wave is proportional to",
+      "options": [
+        "its electric field amplitude",
+        "the reciprocal of its electric field amplitude",
+        "the square root of its electric field amplitude",
+        "the square of its electric field amplitude"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I=\\tfrac12\\epsilon_0cE_0^2 \\).<br><br>So intensity grows as the square of the field amplitude: doubling \\( E_0 \\) makes \\( I \\) four times larger.",
+      "hint": "Energy density contains \\( E^2 \\).",
+      "distractor_logic": [
+        "Forgets that energy density depends on \\( E^2 \\), not \\( E \\).",
+        "A stronger field carries more energy, not less.",
+        "Inverts the power dependence."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-025",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "Which sequence lists the electromagnetic spectrum in order of increasing frequency?",
+      "options": [
+        "Radio waves, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays",
+        "Radio waves, infrared, microwaves, visible, ultraviolet, X-rays, gamma rays",
+        "Radio waves, microwaves, infrared, visible, X-rays, ultraviolet, gamma rays",
+        "Gamma rays, X-rays, ultraviolet, visible, infrared, microwaves, radio waves"
+      ],
+      "correct_index": 0,
+      "explanation": "Frequency increases (wavelength decreases) in this fixed order: radio, microwave, infrared, visible, ultraviolet, X-rays, gamma.<br><br>Any swap of neighbours breaks the canonical sequence.",
+      "hint": "Start from the longest wavelength and move toward the shortest.",
+      "distractor_logic": [
+        "Swaps microwaves and infrared; microwaves have lower frequency than infrared.",
+        "Places X-rays before ultraviolet; ultraviolet has lower frequency than X-rays.",
+        "This is the order of decreasing frequency (increasing wavelength), the reverse of what is asked."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-026",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "Which part of the electromagnetic spectrum has the shortest wavelength?",
+      "options": [
+        "Radio waves",
+        "Gamma rays",
+        "Ultraviolet",
+        "X-rays"
+      ],
+      "correct_index": 1,
+      "explanation": "Gamma rays sit at the high-frequency end of the spectrum.<br><br>Highest frequency means shortest wavelength, below about \\( 10^{-3} \\) nm.",
+      "hint": "Shortest wavelength is at the highest-frequency end.",
+      "distractor_logic": [
+        "Radio waves have the longest wavelength, not the shortest.",
+        "Ultraviolet lies well before X-rays and gamma rays in the sequence.",
+        "X-rays are the second shortest; gamma rays lie beyond them."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-027",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "Which part of the electromagnetic spectrum has the longest wavelength?",
+      "options": [
+        "Microwaves",
+        "Infrared",
+        "Radio waves",
+        "Gamma rays"
+      ],
+      "correct_index": 2,
+      "explanation": "Radio waves are at the low-frequency end, with wavelengths greater than about 0.1 m.<br><br>Lowest frequency means longest wavelength.",
+      "hint": "Longest wavelength is at the lowest-frequency end.",
+      "distractor_logic": [
+        "Microwaves come next after radio waves; their wavelength is shorter.",
+        "Infrared wavelengths are well below a millimetre, much shorter than radio.",
+        "Gamma rays have the shortest wavelength of all."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-028",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the approximate wavelength range of visible light?",
+      "options": [
+        "1 nm to 400 nm",
+        "700 nm to 1 mm",
+        "1 mm to 0.1 m",
+        "400 nm to 700 nm"
+      ],
+      "correct_index": 3,
+      "explanation": "Visible light spans about 400 nm (violet) to 700 nm (red).<br><br>Just shorter is ultraviolet; just longer is infrared.",
+      "hint": "Violet is near 400 nm and red is near 700 nm.",
+      "distractor_logic": [
+        "This is the ultraviolet range.",
+        "This is the infrared range.",
+        "This is the microwave range."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-029",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "Which carries more energy per photon: infrared or ultraviolet radiation?",
+      "options": [
+        "Ultraviolet",
+        "Infrared",
+        "Both carry the same energy per photon",
+        "It depends only on the brightness of the source"
+      ],
+      "correct_index": 0,
+      "explanation": "Photon energy increases with frequency, so it increases as wavelength decreases.<br><br>Ultraviolet has shorter wavelength than infrared, so each ultraviolet photon carries more energy.",
+      "hint": "Shorter wavelength means higher frequency.",
+      "distractor_logic": [
+        "Infrared has longer wavelength and lower frequency, so less energy per photon.",
+        "Photon energy depends on frequency, which differs between the two bands.",
+        "Brightness changes the number of photons, not the energy of each one."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-030",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "Which band of the electromagnetic spectrum lies between visible light and X-rays?",
+      "options": [
+        "Infrared",
+        "Ultraviolet",
+        "Gamma rays",
+        "Microwaves"
+      ],
+      "correct_index": 1,
+      "explanation": "The sequence is visible, ultraviolet, X-rays in order of increasing frequency.<br><br>So ultraviolet sits between them.",
+      "hint": "Write out the spectrum order and look at the neighbours.",
+      "distractor_logic": [
+        "Infrared lies on the other side of visible light, at longer wavelengths.",
+        "Gamma rays lie beyond X-rays, not between visible and X-rays.",
+        "Microwaves lie at much longer wavelengths than visible light."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-031",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "Which band lies immediately on the longer-wavelength side of visible light?",
+      "options": [
+        "Ultraviolet",
+        "Radio waves",
+        "Infrared",
+        "X-rays"
+      ],
+      "correct_index": 2,
+      "explanation": "Just beyond red (about 700 nm) lies infrared, extending up to about 1 mm.",
+      "hint": "The name means 'below red' in frequency.",
+      "distractor_logic": [
+        "Ultraviolet is on the shorter-wavelength side of visible light.",
+        "Radio waves are further away, beyond microwaves.",
+        "X-rays are on the far shorter-wavelength side."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-032",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 1,
+      "type": "regular",
+      "question": "In vacuum, which of these electromagnetic waves travels the fastest?",
+      "options": [
+        "Gamma rays",
+        "Radio waves",
+        "Visible light",
+        "All travel at the same speed"
+      ],
+      "correct_index": 3,
+      "explanation": "Every electromagnetic wave travels at \\( c=\\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\) in vacuum.<br><br>This does not depend on frequency or wavelength.",
+      "hint": "Does the formula for \\( c \\) contain frequency?",
+      "distractor_logic": [
+        "Higher frequency or energy does not mean higher speed in vacuum.",
+        "Longer wavelength does not mean higher speed in vacuum.",
+        "Visible light has no special speed; every EM wave moves at \\( c \\) in vacuum."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-033",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "Which electromagnetic waves are used for cooking food in ovens?",
+      "options": [
+        "Microwaves",
+        "Infrared",
+        "Ultraviolet",
+        "Radio waves"
+      ],
+      "correct_index": 0,
+      "explanation": "Microwave ovens use microwaves whose frequency is matched to water molecules in food.<br><br>The molecules absorb energy and the food heats up.",
+      "hint": "The appliance is named after the waves.",
+      "distractor_logic": [
+        "Infrared heats surfaces (as in a grill) but is not what a microwave oven uses.",
+        "Ultraviolet is used for sterilization, not cooking.",
+        "Radio waves are used mainly for communication."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-034",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "A television remote control usually sends signals using",
+      "options": [
+        "microwaves",
+        "infrared waves",
+        "ultraviolet rays",
+        "X-rays"
+      ],
+      "correct_index": 1,
+      "explanation": "Remote controls use infrared LEDs that emit invisible infrared light.<br><br>A detector on the TV picks up the pulses.",
+      "hint": "The signal is invisible light just beyond red.",
+      "distractor_logic": [
+        "Microwaves are used for radar, ovens and some communication links, not typical remotes.",
+        "Ultraviolet is used for sterilization and would be harmful for household signalling.",
+        "X-rays are used in medical imaging, never in remote controls."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-035",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "Which radiation is used to kill germs and sterilize surgical instruments?",
+      "options": [
+        "Infrared",
+        "Visible light",
+        "Ultraviolet",
+        "Radio waves"
+      ],
+      "correct_index": 2,
+      "explanation": "Ultraviolet photons have enough energy to damage the genetic material of microbes.<br><br>Special UV lamps are therefore used for sterilization.",
+      "hint": "Think of germicidal lamps.",
+      "distractor_logic": [
+        "Infrared mainly heats objects; it is not the standard sterilizing radiation.",
+        "Visible light lacks the photon energy needed to kill germs effectively.",
+        "Radio waves have far too little photon energy to damage microbes."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-036",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "Which radiation is used by doctors to detect bone fractures?",
+      "options": [
+        "Gamma rays",
+        "Infrared",
+        "Microwaves",
+        "X-rays"
+      ],
+      "correct_index": 3,
+      "explanation": "X-rays pass through soft tissue but are absorbed more by bone.<br><br>This contrast produces an image of the skeleton, used in medical diagnosis.",
+      "hint": "The radiograph you get at a hospital.",
+      "distractor_logic": [
+        "Gamma rays are used mainly for treating cancer, not for routine fracture imaging.",
+        "Infrared is used in thermal imaging, not for seeing bones.",
+        "Microwaves are used in radar and ovens."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-037",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "Which radiation is emitted during radioactive decay of nuclei?",
+      "options": [
+        "Gamma rays",
+        "X-rays",
+        "Ultraviolet",
+        "Infrared"
+      ],
+      "correct_index": 0,
+      "explanation": "Gamma rays arise from nuclear transitions, such as during radioactive decay.<br><br>They are the highest-energy part of the spectrum.",
+      "hint": "The source is inside the nucleus.",
+      "distractor_logic": [
+        "X-rays come from high-energy electrons hitting a metal target, not from nuclei.",
+        "Ultraviolet comes from very hot bodies and special lamps.",
+        "Infrared comes from warm bodies and molecular vibrations."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-038",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "The ozone layer in the atmosphere absorbs most of the Sun's",
+      "options": [
+        "infrared radiation",
+        "ultraviolet radiation",
+        "visible light",
+        "radio waves"
+      ],
+      "correct_index": 1,
+      "explanation": "The ozone layer absorbs most of the harmful ultraviolet radiation from the Sun.<br><br>This protects living cells on Earth.",
+      "hint": "It is the radiation that causes sunburn.",
+      "distractor_logic": [
+        "Infrared is trapped by greenhouse gases, not mainly by ozone.",
+        "Visible light passes through the atmosphere largely unabsorbed; we see by it.",
+        "Radio waves are not absorbed by the ozone layer."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-039",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "Radio waves are produced by",
+      "options": [
+        "transitions inside atomic nuclei",
+        "high-energy electrons striking a metal target",
+        "accelerated motion of charges in conducting wires or oscillating circuits",
+        "electron transitions in atoms at visible wavelengths"
+      ],
+      "correct_index": 2,
+      "explanation": "Charges oscillating in a circuit or antenna wire radiate electromagnetic waves.<br><br>At the frequencies such circuits reach, these are radio waves, used for communication.",
+      "hint": "Think of broadcasting antennas.",
+      "distractor_logic": [
+        "Nuclear transitions produce gamma rays.",
+        "This is how X-rays are produced.",
+        "Atomic transitions of this kind give visible light."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L1-040",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 1,
+      "type": "regular",
+      "question": "The greenhouse effect, which keeps the Earth warm, is mainly associated with",
+      "options": [
+        "ultraviolet radiation",
+        "X-rays",
+        "microwaves",
+        "infrared radiation"
+      ],
+      "correct_index": 3,
+      "explanation": "The Earth's surface re-emits energy as infrared.<br><br>Greenhouse gases absorb and trap this infrared, keeping the Earth warm.",
+      "hint": "Warm bodies emit this band.",
+      "distractor_logic": [
+        "Ultraviolet is absorbed by ozone; it is not the radiation trapped in the greenhouse effect.",
+        "X-rays play no role in warming the Earth's surface.",
+        "Microwaves are not the band re-radiated by the warm Earth."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-001",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "Charge on a capacitor plate increases at a steady rate of 2 mA while it is being charged. What is the displacement current between the plates?",
+      "options": [
+        "2 mA",
+        "0 mA",
+        "4 mA",
+        "1 mA"
+      ],
+      "correct_index": 0,
+      "explanation": "In a simple charging circuit, \\( I_d=\\dfrac{dQ}{dt} \\).<br><br>So \\( I_d=2 \\) mA, exactly equal to the wire current.",
+      "hint": "The displacement current equals the rate at which charge builds up on a plate.",
+      "distractor_logic": [
+        "Uses only the conduction current, which is zero in the gap; ignores the displacement current.",
+        "Counts both plates separately and doubles the value.",
+        "Splits the current between the two plates."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-002",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A capacitor of capacitance \\( 5\\,\\mu\\text{F} \\) has its voltage increasing at a constant rate of 1000 V/s. What is the displacement current between its plates?",
+      "options": [
+        "5 A",
+        "5 mA",
+        "0 A",
+        "0.2 mA"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I_d=\\dfrac{dQ}{dt}=C\\dfrac{dV}{dt} \\).<br><br>\\( I_d=(5\\times10^{-6})(1000)=5\\times10^{-3} \\) A \\( =5 \\) mA.",
+      "hint": "Differentiate \\( Q=CV \\) with respect to time.",
+      "distractor_logic": [
+        "Forgets to convert microfarad to farad.",
+        "Treats only conduction current, which is zero across the gap.",
+        "Divides the capacitance by the rate instead of multiplying."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-003",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "The electric field between the plates of a parallel-plate capacitor (plate area 1 m\\( ^{2} \\)) changes at a rate of \\( 10^{12} \\) V/(m s). With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)), find the displacement current.",
+      "options": [
+        "\\( 8.85\\times10^{-12} \\) A",
+        "\\( 1.13\\times10^{23} \\) A",
+        "8.85 A",
+        "0 A"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I_d=\\epsilon_0A\\dfrac{dE}{dt} \\).<br><br>\\( I_d=(8.85\\times10^{-12})(1)(10^{12})=8.85 \\) A.",
+      "hint": "Flux is field times area, so \\( \\dfrac{d\\Phi_E}{dt}=A\\dfrac{dE}{dt} \\).",
+      "distractor_logic": [
+        "Uses \\( \\epsilon_0 \\) alone and forgets to multiply by the rate of change of field.",
+        "Divides the rate by \\( \\epsilon_0 \\) instead of multiplying.",
+        "Assumes no current exists because no charge crosses the gap."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-004",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A parallel-plate capacitor has plate area 0.1 m\\( ^{2} \\) and plate separation 1 mm. Its voltage rises at \\( 10^{6} \\) V/s. With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)), find the displacement current.",
+      "options": [
+        "\\( 8.85\\times10^{-7} \\) A",
+        "\\( 8.85\\times10^{-10} \\) A",
+        "0 A",
+        "\\( 8.85\\times10^{-4} \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( C=\\dfrac{\\epsilon_0A}{d}=\\dfrac{(8.85\\times10^{-12})(0.1)}{10^{-3}}=8.85\\times10^{-10} \\) F.<br><br>\\( I_d=C\\dfrac{dV}{dt}=(8.85\\times10^{-10})(10^{6})=8.85\\times10^{-4} \\) A.",
+      "hint": "Find the capacitance first, then use \\( I_d=C\\,dV/dt \\).",
+      "distractor_logic": [
+        "Takes the separation as 1 m instead of converting 1 mm to \\( 10^{-3} \\) m.",
+        "Stops at the capacitance \\( C=\\epsilon_0A/d \\) and forgets to multiply by \\( dV/dt \\).",
+        "Uses only the conduction current in the gap, which is zero."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-005",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A capacitor is discharging through a resistor. At some instant the current in the wires is 3 A. What is the magnitude of the displacement current between the plates at that instant?",
+      "options": [
+        "3 A",
+        "0 A",
+        "6 A",
+        "It cannot be found without the plate area"
+      ],
+      "correct_index": 0,
+      "explanation": "During discharge the field between the plates decreases, so \\( \\dfrac{d\\Phi_E}{dt} \\) is non-zero.<br><br>In magnitude, \\( I_d=\\left|\\dfrac{dQ}{dt}\\right|=I_c=3 \\) A.<br><br>Only the sense reverses compared with charging.",
+      "hint": "The equality \\( I_d=I_c \\) holds whether the charge is increasing or decreasing.",
+      "distractor_logic": [
+        "Assumes the gap carries no current of any kind during discharge.",
+        "Doubles the value by counting both plates.",
+        "Area is not needed; \\( I_d \\) must equal the wire current in magnitude."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-006",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "The electric flux through a surface between the plates of a capacitor changes at \\( 10^{9} \\) V m/s. With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)), what is the displacement current through that surface?",
+      "options": [
+        "\\( 8.85\\times10^{-12} \\) A",
+        "\\( 8.85\\times10^{-3} \\) A",
+        "\\( 1.13\\times10^{20} \\) A",
+        "0 A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>\\( I_d=(8.85\\times10^{-12})(10^{9})=8.85\\times10^{-3} \\) A.",
+      "hint": "Apply the definition directly.",
+      "distractor_logic": [
+        "Ignores the rate of change of flux and gives only \\( \\epsilon_0 \\).",
+        "Divides the flux rate by \\( \\epsilon_0 \\).",
+        "Assumes that because no charge moves there can be no current of any kind."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-007",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A capacitor with circular plates is being charged. Loop P encircles the connecting wire; loop Q, identical in size and larger than the plates, encircles the gap between the plates. How does \\( \\oint\\vec B\\cdot d\\vec l \\) around Q compare with that around P?",
+      "options": [
+        "It is zero around Q.",
+        "It is twice as large around Q.",
+        "They are equal.",
+        "It is zero around P."
+      ],
+      "correct_index": 2,
+      "explanation": "Around P: enclosed current is the conduction current \\( I \\).<br><br>Around Q: enclosed current is the displacement current, and \\( I_d=I \\).<br><br>So both line integrals equal \\( \\mu_0I \\).",
+      "hint": "Which current passes through each loop, and how are they related?",
+      "distractor_logic": [
+        "Uses the unmodified Ampere's law with only conduction current, which is zero in the gap.",
+        "No mechanism doubles the current in the gap; \\( I_d \\) equals the wire current.",
+        "The wire carries a real conduction current, so the integral around P is certainly non-zero."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-008",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A current of 4 A flows in the wires charging a capacitor. A surface is chosen that passes through the gap between the plates without touching any wire. In the Ampere-Maxwell law, what are the conduction current and the displacement current through this surface?",
+      "options": [
+        "\\( I_c=4 \\) A and \\( I_d=0 \\)",
+        "\\( I_c=4 \\) A and \\( I_d=4 \\) A",
+        "\\( I_c=0 \\) and \\( I_d=0 \\)",
+        "\\( I_c=0 \\) and \\( I_d=4 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "The surface cuts no wire, so no charge flows through it: \\( I_c=0 \\).<br><br>The electric field in the gap is changing, so \\( I_d=I=4 \\) A.<br><br>The total \\( I_c+I_d=4 \\) A, the same as for a surface cutting the wire.",
+      "hint": "Ask separately: does charge cross this surface, and does electric flux through it change?",
+      "distractor_logic": [
+        "Swaps the two: no charge crosses the gap, so \\( I_c \\) there must be zero.",
+        "Double counts; the surface misses the wire, so it has only displacement current.",
+        "Ignores the changing field in the gap, which gives a displacement current."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-009",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave in vacuum has an electric field amplitude of 300 V/m. Taking \\( c=3\\times10^{8} \\) m/s, find the magnetic field amplitude.",
+      "options": [
+        "\\( 1\\times10^{-6} \\) T",
+        "\\( 9\\times10^{10} \\) T",
+        "\\( 3.3\\times10^{-15} \\) T",
+        "300 T"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( B_0=\\dfrac{E_0}{c} \\).<br><br>\\( B_0=\\dfrac{300}{3\\times10^{8}}=1\\times10^{-6} \\) T.",
+      "hint": "Use \\( E_0/B_0=c \\).",
+      "distractor_logic": [
+        "Multiplies by \\( c \\) instead of dividing.",
+        "Divides by \\( c^2 \\) instead of \\( c \\).",
+        "Assumes the two field amplitudes are numerically equal."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-010",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "The magnetic field amplitude of an electromagnetic wave in vacuum is \\( 2\\times10^{-8} \\) T. Taking \\( c=3\\times10^{8} \\) m/s, find the electric field amplitude.",
+      "options": [
+        "\\( 6.7\\times10^{-17} \\) V/m",
+        "6 V/m",
+        "\\( 2\\times10^{-8} \\) V/m",
+        "\\( 1.8\\times10^{9} \\) V/m"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( E_0=cB_0 \\).<br><br>\\( E_0=(3\\times10^{8})(2\\times10^{-8})=6 \\) V/m.",
+      "hint": "The electric field is \\( c \\) times the magnetic field.",
+      "distractor_logic": [
+        "Divides by \\( c \\) instead of multiplying.",
+        "Treats the two amplitudes as numerically equal.",
+        "Multiplies by \\( c^2 \\) instead of \\( c \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-011",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "In an electromagnetic wave, at a certain point the electric field is along \\( +\\hat i \\) and the magnetic field is along \\( +\\hat j \\). In which direction does the wave travel?",
+      "options": [
+        "\\( -\\hat k \\)",
+        "\\( +\\hat i \\)",
+        "\\( +\\hat k \\)",
+        "\\( +\\hat j \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The direction of travel is along \\( \\vec E\\times\\vec B \\).<br><br>\\( \\hat i\\times\\hat j=\\hat k \\).<br><br>So the wave moves along \\( +\\hat k \\).",
+      "hint": "Compute \\( \\vec E\\times\\vec B \\) using the cyclic order \\( \\hat i,\\hat j,\\hat k \\).",
+      "distractor_logic": [
+        "Uses \\( \\vec B\\times\\vec E \\), which reverses the direction.",
+        "The wave cannot travel along its own electric field.",
+        "The wave cannot travel along its own magnetic field."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-012",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave in vacuum has angular frequency \\( 6\\times10^{9} \\) rad/s. Taking \\( c=3\\times10^{8} \\) m/s, find its wave number \\( k \\).",
+      "options": [
+        "\\( 1.8\\times10^{18} \\) rad/m",
+        "0.05 rad/m",
+        "\\( 20\\pi \\) rad/m",
+        "20 rad/m"
+      ],
+      "correct_index": 3,
+      "explanation": "For an EM wave in vacuum, \\( \\omega=ck \\).<br><br>\\( k=\\dfrac{\\omega}{c}=\\dfrac{6\\times10^{9}}{3\\times10^{8}}=20 \\) rad/m.",
+      "hint": "Wave speed equals \\( \\omega/k \\).",
+      "distractor_logic": [
+        "Multiplies \\( \\omega \\) by \\( c \\) instead of dividing.",
+        "Divides \\( c \\) by \\( \\omega \\), inverting the relation.",
+        "Adds a stray factor of \\( \\pi \\) while converting between \\( \\omega \\) and \\( k \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-013",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave travels along \\( +\\hat k \\) and its electric field at some point is along \\( +\\hat i \\). Along which direction is its magnetic field at that point?",
+      "options": [
+        "\\( +\\hat j \\)",
+        "\\( -\\hat j \\)",
+        "\\( +\\hat k \\)",
+        "\\( +\\hat i \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "We need \\( \\vec E\\times\\vec B \\) along \\( +\\hat k \\) with \\( \\vec E \\) along \\( +\\hat i \\).<br><br>Since \\( \\hat i\\times\\hat j=\\hat k \\), \\( \\vec B \\) is along \\( +\\hat j \\).",
+      "hint": "Which unit vector, crossed after \\( \\hat i \\), gives \\( \\hat k \\)?",
+      "distractor_logic": [
+        "Gives \\( \\vec E\\times\\vec B \\) along \\( -\\hat k \\), the wrong way.",
+        "The magnetic field is transverse and cannot lie along the propagation direction.",
+        "\\( \\vec B \\) must be perpendicular to \\( \\vec E \\), not parallel to it."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-014",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "Light of frequency \\( 6\\times10^{14} \\) Hz travels in vacuum. Taking \\( c=3\\times10^{8} \\) m/s, what is its wavelength?",
+      "options": [
+        "5000 nm",
+        "500 nm",
+        "\\( 2\\times10^{6} \\) m",
+        "50 nm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\lambda=\\dfrac{c}{f}=\\dfrac{3\\times10^{8}}{6\\times10^{14}}=5\\times10^{-7} \\) m.<br><br>\\( 5\\times10^{-7} \\) m \\( =500 \\) nm.",
+      "hint": "Remember 1 nm \\( =10^{-9} \\) m.",
+      "distractor_logic": [
+        "Slips one power of ten while converting to nanometres.",
+        "Divides frequency by speed instead of speed by frequency.",
+        "Slips one power of ten in the other direction."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-015",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "At a certain point in an electromagnetic wave, the electric field has just reached its maximum value. What is the magnetic field at that point at that same instant?",
+      "options": [
+        "Zero",
+        "Half its maximum value",
+        "At its maximum value",
+        "At its maximum value in the opposite sense to that required by \\( \\vec E\\times\\vec B \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E \\) and \\( B \\) oscillate in phase.<br><br>So when \\( E \\) is at its maximum, \\( B \\) is also at its maximum, with \\( E=cB \\) at that instant.",
+      "hint": "In phase means both peak together.",
+      "distractor_logic": [
+        "Assumes a \\( 90^\\circ \\) lag carried over from AC circuits.",
+        "No phase difference exists, so the fields scale together exactly.",
+        "The fields must keep \\( \\vec E\\times\\vec B \\) pointing along propagation at all times."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-016",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 2,
+      "type": "regular",
+      "question": "At a particular point and instant, the electric field of an electromagnetic wave in vacuum is 150 V/m. Taking \\( c=3\\times10^{8} \\) m/s, what is the magnetic field there at that same instant?",
+      "options": [
+        "0 T",
+        "\\( 4.5\\times10^{10} \\) T",
+        "\\( 2\\times10^{6} \\) T",
+        "\\( 5\\times10^{-7} \\) T"
+      ],
+      "correct_index": 3,
+      "explanation": "Because the fields are in phase, \\( E=cB \\) holds at every instant, not only for amplitudes.<br><br>\\( B=\\dfrac{150}{3\\times10^{8}}=5\\times10^{-7} \\) T.",
+      "hint": "The relation \\( E=cB \\) works for instantaneous values too.",
+      "distractor_logic": [
+        "Assumes \\( B \\) is zero whenever \\( E \\) is large, as if they were \\( 90^\\circ \\) out of phase.",
+        "Multiplies by \\( c \\) instead of dividing.",
+        "Divides \\( c \\) by \\( E \\), inverting the relation."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-017",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "Sunlight of intensity 900 W/m\\( ^{2} \\) falls normally on a surface that absorbs it completely. Taking \\( c=3\\times10^{8} \\) m/s, find the radiation pressure.",
+      "options": [
+        "\\( 3\\times10^{-6} \\) Pa",
+        "\\( 6\\times10^{-6} \\) Pa",
+        "\\( 2.7\\times10^{11} \\) Pa",
+        "\\( 1\\times10^{-14} \\) Pa"
+      ],
+      "correct_index": 0,
+      "explanation": "For full absorption, \\( P=\\dfrac{I}{c} \\).<br><br>\\( P=\\dfrac{900}{3\\times10^{8}}=3\\times10^{-6} \\) Pa.",
+      "hint": "Absorbing surface: divide intensity by the speed of light once.",
+      "distractor_logic": [
+        "Uses the reflecting-surface formula \\( 2I/c \\) for an absorbing surface.",
+        "Multiplies intensity by \\( c \\).",
+        "Divides by \\( c^2 \\) instead of \\( c \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-018",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "A beam of intensity 1200 W/m\\( ^{2} \\) falls normally on a perfectly reflecting mirror. Taking \\( c=3\\times10^{8} \\) m/s, find the radiation pressure on the mirror.",
+      "options": [
+        "\\( 4\\times10^{-6} \\) Pa",
+        "\\( 8\\times10^{-6} \\) Pa",
+        "\\( 1.6\\times10^{-5} \\) Pa",
+        "\\( 2\\times10^{-6} \\) Pa"
+      ],
+      "correct_index": 1,
+      "explanation": "For full reflection, \\( P=\\dfrac{2I}{c} \\).<br><br>\\( P=\\dfrac{2(1200)}{3\\times10^{8}}=8\\times10^{-6} \\) Pa.",
+      "hint": "Reflection reverses the momentum, so the pressure doubles.",
+      "distractor_logic": [
+        "Uses the absorbing formula \\( I/c \\) for a reflecting surface.",
+        "Doubles twice, using \\( 4I/c \\).",
+        "Halves the absorbing value, using \\( I/(2c) \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-019",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "The average energy density of an electromagnetic wave in vacuum is \\( 1\\times10^{-6} \\) J/m\\( ^{3} \\). Taking \\( c=3\\times10^{8} \\) m/s, find its intensity.",
+      "options": [
+        "\\( 3.3\\times10^{-15} \\) W/m\\( ^{2} \\)",
+        "\\( 9\\times10^{10} \\) W/m\\( ^{2} \\)",
+        "300 W/m\\( ^{2} \\)",
+        "150 W/m\\( ^{2} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I=u_{avg}\\,c \\).<br><br>\\( I=(1\\times10^{-6})(3\\times10^{8})=300 \\) W/m\\( ^{2} \\).",
+      "hint": "Energy density times the speed at which that energy moves.",
+      "distractor_logic": [
+        "Divides by \\( c \\) instead of multiplying.",
+        "Multiplies by \\( c^2 \\) instead of \\( c \\).",
+        "Inserts an unnecessary factor of \\( \\tfrac12 \\); the average is already included."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-020",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave has electric field amplitude 100 V/m. With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)), find its average total energy density.",
+      "options": [
+        "\\( 8.85\\times10^{-8} \\) J/m\\( ^{3} \\)",
+        "\\( 2.2125\\times10^{-8} \\) J/m\\( ^{3} \\)",
+        "\\( 4.425\\times10^{-10} \\) J/m\\( ^{3} \\)",
+        "\\( 4.425\\times10^{-8} \\) J/m\\( ^{3} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The average of \\( \\sin^2 \\) is \\( \\tfrac12 \\), so average electric energy density is \\( \\tfrac14\\epsilon_0E_0^2 \\), and magnetic is the same.<br><br>Total: \\( u_{avg}=\\tfrac12\\epsilon_0E_0^2 \\).<br><br>\\( u_{avg}=\\tfrac12(8.85\\times10^{-12})(10^{4})=4.425\\times10^{-8} \\) J/m\\( ^{3} \\).",
+      "hint": "Average total energy density is \\( \\tfrac12\\epsilon_0E_0^2 \\).",
+      "distractor_logic": [
+        "Drops the factor \\( \\tfrac12 \\) from time-averaging (this is the peak total energy density).",
+        "Counts only the electric share and forgets the equal magnetic share.",
+        "Forgets to square the field amplitude."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-021",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave in vacuum has electric field amplitude 100 V/m. With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)) and \\( c=3\\times10^{8} \\) m/s, find its intensity.",
+      "options": [
+        "13.275 W/m\\( ^{2} \\)",
+        "26.55 W/m\\( ^{2} \\)",
+        "\\( 4.425\\times10^{-8} \\) W/m\\( ^{2} \\)",
+        "0.13275 W/m\\( ^{2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I=\\tfrac12\\epsilon_0cE_0^2 \\).<br><br>\\( I=\\tfrac12(8.85\\times10^{-12})(3\\times10^{8})(10^{4})=13.275 \\) W/m\\( ^{2} \\).",
+      "hint": "Intensity is average energy density times \\( c \\).",
+      "distractor_logic": [
+        "Drops the factor \\( \\tfrac12 \\) in \\( I=\\tfrac12\\epsilon_0cE_0^2 \\).",
+        "Stops at the energy density and forgets to multiply by \\( c \\).",
+        "Forgets to square \\( E_0 \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-022",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "If the electric field amplitude of an electromagnetic wave is doubled, its intensity becomes",
+      "options": [
+        "twice",
+        "four times",
+        "unchanged",
+        "eight times"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I\\propto E_0^2 \\).<br><br>Doubling \\( E_0 \\) multiplies \\( I \\) by \\( 2^2=4 \\).",
+      "hint": "Intensity depends on the square of the amplitude.",
+      "distractor_logic": [
+        "Assumes intensity is proportional to \\( E_0 \\) rather than \\( E_0^2 \\).",
+        "Assumes intensity depends only on frequency.",
+        "Cubes the factor instead of squaring it."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-023",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "A surface fully absorbs 30 J of electromagnetic energy. Taking \\( c=3\\times10^{8} \\) m/s, how much momentum is delivered to it?",
+      "options": [
+        "\\( 2\\times10^{-7} \\) kg m/s",
+        "\\( 9\\times10^{9} \\) kg m/s",
+        "\\( 1\\times10^{-7} \\) kg m/s",
+        "Zero, because light has no mass"
+      ],
+      "correct_index": 2,
+      "explanation": "Momentum carried by EM energy \\( U \\) is \\( p=\\dfrac{U}{c} \\).<br><br>For full absorption, \\( p=\\dfrac{30}{3\\times10^{8}}=1\\times10^{-7} \\) kg m/s.",
+      "hint": "Momentum equals energy divided by \\( c \\).",
+      "distractor_logic": [
+        "Uses the doubled value that applies to a reflecting surface.",
+        "Multiplies energy by \\( c \\) instead of dividing.",
+        "EM waves carry momentum \\( U/c \\) even without rest mass."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-024",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 2,
+      "type": "regular",
+      "question": "Radiation of intensity 600 W/m\\( ^{2} \\) falls normally on a completely absorbing plate of area 2 m\\( ^{2} \\). Taking \\( c=3\\times10^{8} \\) m/s, find the force on the plate.",
+      "options": [
+        "\\( 8\\times10^{-6} \\) N",
+        "\\( 1\\times10^{-6} \\) N",
+        "\\( 2\\times10^{-6} \\) N",
+        "\\( 4\\times10^{-6} \\) N"
+      ],
+      "correct_index": 3,
+      "explanation": "Pressure \\( P=\\dfrac{I}{c}=\\dfrac{600}{3\\times10^{8}}=2\\times10^{-6} \\) Pa.<br><br>Force \\( F=PA=(2\\times10^{-6})(2)=4\\times10^{-6} \\) N.",
+      "hint": "Find the pressure first, then force = pressure times area.",
+      "distractor_logic": [
+        "Uses \\( 2I/c \\) as if the plate were reflecting.",
+        "Divides the pressure by the area instead of multiplying.",
+        "Stops at the pressure and forgets to multiply by the area."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-025",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave has wavelength 5 cm. To which band does it belong?",
+      "options": [
+        "Microwaves",
+        "Radio waves",
+        "Infrared",
+        "Visible light"
+      ],
+      "correct_index": 0,
+      "explanation": "5 cm \\( =0.05 \\) m.<br><br>Microwaves range from 0.1 m down to 1 mm, and 0.05 m lies inside this range.",
+      "hint": "Convert to metres and compare with 0.1 m and 1 mm.",
+      "distractor_logic": [
+        "Radio waves have wavelengths above about 0.1 m; 5 cm is shorter.",
+        "Infrared wavelengths are below about 1 mm; 5 cm is much longer.",
+        "Visible light is only 400 nm to 700 nm."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-026",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "Radiation of wavelength \\( 10\\,\\mu\\text{m} \\) belongs to which band?",
+      "options": [
+        "Microwaves",
+        "Infrared",
+        "Ultraviolet",
+        "X-rays"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( 10\\,\\mu\\text{m}=10^{-5} \\) m \\( =10000 \\) nm.<br><br>Infrared spans 700 nm to 1 mm, so this is infrared.",
+      "hint": "Convert micrometres to nanometres.",
+      "distractor_logic": [
+        "Microwaves are longer than 1 mm; \\( 10\\,\\mu\\text{m} \\) is far shorter.",
+        "Ultraviolet is below 400 nm; \\( 10\\,\\mu\\text{m} \\) is far longer.",
+        "X-rays are below 1 nm."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-027",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave has frequency \\( 1.5\\times10^{15} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, identify its band.",
+      "options": [
+        "Visible light",
+        "Infrared",
+        "Ultraviolet",
+        "Gamma rays"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda=\\dfrac{3\\times10^{8}}{1.5\\times10^{15}}=2\\times10^{-7} \\) m \\( =200 \\) nm.<br><br>Ultraviolet spans 400 nm down to 1 nm, so this is ultraviolet.",
+      "hint": "Find the wavelength first.",
+      "distractor_logic": [
+        "Visible light starts only at 400 nm; this wavelength is 200 nm.",
+        "Infrared has longer wavelength than visible; 200 nm is much shorter.",
+        "Gamma rays are below \\( 10^{-3} \\) nm."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-028",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "Which of these wavelengths lies in the X-ray region?",
+      "options": [
+        "100 nm",
+        "1 mm",
+        "500 nm",
+        "0.1 nm"
+      ],
+      "correct_index": 3,
+      "explanation": "X-rays span about 1 nm to \\( 10^{-3} \\) nm.<br><br>0.1 nm lies inside this range.",
+      "hint": "X-rays are shorter than 1 nm.",
+      "distractor_logic": [
+        "100 nm is ultraviolet.",
+        "1 mm is at the microwave-infrared scale, far too long.",
+        "500 nm is visible light."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-029",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "An electromagnetic wave has frequency \\( 10^{8} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, identify its band.",
+      "options": [
+        "Radio waves",
+        "Microwaves",
+        "Infrared",
+        "Ultraviolet"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\lambda=\\dfrac{3\\times10^{8}}{10^{8}}=3 \\) m.<br><br>Radio waves are longer than 0.1 m, so this is a radio wave.",
+      "hint": "Compute \\( \\lambda=c/f \\).",
+      "distractor_logic": [
+        "Microwaves are shorter than 0.1 m; this wave is 3 m long.",
+        "Infrared is below 1 mm.",
+        "Ultraviolet is below 400 nm."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-030",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "Which frequency lies in the visible region? (Take \\( c=3\\times10^{8} \\) m/s.)",
+      "options": [
+        "\\( 6\\times10^{12} \\) Hz",
+        "\\( 6\\times10^{14} \\) Hz",
+        "\\( 6\\times10^{16} \\) Hz",
+        "\\( 6\\times10^{9} \\) Hz"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\lambda=\\dfrac{3\\times10^{8}}{6\\times10^{14}}=5\\times10^{-7} \\) m \\( =500 \\) nm.<br><br>500 nm is within 400 nm to 700 nm, so it is visible.",
+      "hint": "Convert each frequency to a wavelength.",
+      "distractor_logic": [
+        "Gives \\( \\lambda=50\\,\\mu\\text{m} \\), which is infrared.",
+        "Gives \\( \\lambda=5 \\) nm, which is ultraviolet.",
+        "Gives \\( \\lambda=5 \\) cm, which is microwave."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-031",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "Arrange X-rays, microwaves, ultraviolet and infrared in order of DECREASING wavelength.",
+      "options": [
+        "Infrared, microwaves, ultraviolet, X-rays",
+        "Microwaves, infrared, X-rays, ultraviolet",
+        "Microwaves, infrared, ultraviolet, X-rays",
+        "X-rays, ultraviolet, infrared, microwaves"
+      ],
+      "correct_index": 2,
+      "explanation": "Decreasing wavelength follows the standard order from the radio end: microwaves, infrared, (visible), ultraviolet, X-rays.",
+      "hint": "Longest wavelength sits nearest the radio end.",
+      "distractor_logic": [
+        "Swaps microwaves and infrared; microwaves are longer.",
+        "Swaps ultraviolet and X-rays; ultraviolet is longer.",
+        "This is increasing wavelength, the reverse of what is asked."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-032",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 2,
+      "type": "regular",
+      "question": "Two photons have wavelengths 100 nm and 400 nm. What is the ratio of the energy of the 100 nm photon to that of the 400 nm photon?",
+      "options": [
+        "\\( \\dfrac14 \\)",
+        "1",
+        "16",
+        "4"
+      ],
+      "correct_index": 3,
+      "explanation": "Photon energy \\( E=hf=\\dfrac{hc}{\\lambda} \\), so \\( E\\propto\\dfrac{1}{\\lambda} \\).<br><br>Ratio \\( =\\dfrac{400}{100}=4 \\). The shorter wavelength carries more energy.",
+      "hint": "Energy increases as wavelength decreases.",
+      "distractor_logic": [
+        "Assumes longer wavelength means more energy, which is the reverse.",
+        "Assumes all photons carry the same energy.",
+        "Squares the wavelength ratio; energy is inversely proportional to wavelength, not its square."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-033",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "Aircraft navigation and speed-detection radar systems use",
+      "options": [
+        "microwaves",
+        "X-rays",
+        "gamma rays",
+        "visible light"
+      ],
+      "correct_index": 0,
+      "explanation": "Microwaves have short enough wavelengths to form narrow beams, making them suitable for radar.",
+      "hint": "The same band used in some ovens.",
+      "distractor_logic": [
+        "X-rays are used in medical imaging and crystallography.",
+        "Gamma rays are used in cancer treatment.",
+        "Visible light is scattered by clouds and is not used for radar."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-034",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "Klystron and magnetron valves are used to produce",
+      "options": [
+        "infrared rays",
+        "microwaves",
+        "X-rays",
+        "gamma rays"
+      ],
+      "correct_index": 1,
+      "explanation": "Special vacuum tubes such as the klystron and magnetron generate microwaves.<br><br>These drive radar systems and microwave ovens.",
+      "hint": "These devices are found inside radar sets.",
+      "distractor_logic": [
+        "Infrared comes from warm bodies and molecules.",
+        "X-rays come from high-energy electrons hitting a metal target.",
+        "Gamma rays come from nuclear transitions."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-035",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "X-rays are produced when",
+      "options": [
+        "electrons oscillate in an LC circuit",
+        "nuclei undergo radioactive decay",
+        "high-energy electrons strike a metal target",
+        "warm objects radiate heat"
+      ],
+      "correct_index": 2,
+      "explanation": "In an X-ray tube, fast electrons are suddenly stopped by a metal target.<br><br>This produces X-rays.",
+      "hint": "Think of an X-ray tube in a hospital.",
+      "distractor_logic": [
+        "Oscillating circuits produce radio waves.",
+        "Nuclear decay produces gamma rays.",
+        "Warm objects emit infrared."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-036",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "Night-vision and thermal imaging cameras detect",
+      "options": [
+        "ultraviolet radiation",
+        "microwaves",
+        "gamma rays",
+        "infrared radiation"
+      ],
+      "correct_index": 3,
+      "explanation": "Warm bodies emit infrared radiation.<br><br>Thermal cameras detect this infrared and form an image of temperature differences.",
+      "hint": "Body heat radiates in this band.",
+      "distractor_logic": [
+        "Ultraviolet is not emitted significantly by warm bodies at room temperature.",
+        "Microwaves are not the thermal radiation from human bodies.",
+        "Gamma rays come from nuclei, not from warm objects."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-037",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "Which radiation is produced by very hot bodies such as the Sun and by special lamps, and can be detected with photocells?",
+      "options": [
+        "Ultraviolet",
+        "Radio waves",
+        "Microwaves",
+        "Gamma rays"
+      ],
+      "correct_index": 0,
+      "explanation": "Ultraviolet is emitted by very hot bodies and special lamps.<br><br>It can be detected by photocells and photographic film.",
+      "hint": "It lies just beyond violet.",
+      "distractor_logic": [
+        "Radio waves are produced by oscillating circuits.",
+        "Microwaves are produced by klystron or magnetron tubes.",
+        "Gamma rays come from nuclear transitions."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-038",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "The arrangement of atoms in a crystal is studied using",
+      "options": [
+        "infrared rays",
+        "X-rays",
+        "radio waves",
+        "microwaves"
+      ],
+      "correct_index": 1,
+      "explanation": "X-ray wavelengths are comparable to the spacing between atoms.<br><br>So crystals diffract X-rays, revealing their structure.",
+      "hint": "You need a wavelength close to atomic spacing.",
+      "distractor_logic": [
+        "Infrared wavelengths are far longer than atomic spacings.",
+        "Radio wavelengths are metres long and cannot resolve atoms.",
+        "Microwave wavelengths are centimetres long."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-039",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "Which band is produced when electrons in atoms move between energy levels and is detected by the human eye?",
+      "options": [
+        "Infrared",
+        "X-rays",
+        "Visible light",
+        "Radio waves"
+      ],
+      "correct_index": 2,
+      "explanation": "Visible light is emitted in atomic electron transitions.<br><br>The eye, and photographic film, detect it.",
+      "hint": "The band our eyes respond to.",
+      "distractor_logic": [
+        "Infrared is not detected by the eye.",
+        "X-rays come from high-energy electron impacts, not ordinary atomic transitions.",
+        "Radio waves come from oscillating circuits."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L2-040",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 2,
+      "type": "regular",
+      "question": "In medicine, which radiation is used to destroy cancer cells?",
+      "options": [
+        "Infrared",
+        "Microwaves",
+        "Visible light",
+        "Gamma rays"
+      ],
+      "correct_index": 3,
+      "explanation": "Gamma rays have very high photon energy.<br><br>Focused beams are used to destroy cancer cells in radiotherapy.",
+      "hint": "The highest-energy band.",
+      "distractor_logic": [
+        "Infrared is used in physiotherapy heating, not cancer treatment.",
+        "Microwaves are used in radar and ovens.",
+        "Visible light lacks the energy to destroy cancer cells."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-001",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 3,
+      "type": "regular",
+      "question": "A parallel-plate capacitor has plate area \\( 10^{-2} \\) m\\( ^{2} \\). What rate of change of electric field between the plates gives a displacement current of 8.85 mA? (\\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)))",
+      "options": [
+        "\\( 10^{11} \\) V/(m s)",
+        "\\( 10^{9} \\) V/(m s)",
+        "\\( 10^{7} \\) V/(m s)",
+        "\\( 10^{14} \\) V/(m s)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I_d=\\epsilon_0A\\dfrac{dE}{dt} \\), so \\( \\dfrac{dE}{dt}=\\dfrac{I_d}{\\epsilon_0A} \\).<br><br>\\( \\dfrac{dE}{dt}=\\dfrac{8.85\\times10^{-3}}{(8.85\\times10^{-12})(10^{-2})}=10^{11} \\) V/(m s).",
+      "hint": "Rearrange \\( I_d=\\epsilon_0A\\,dE/dt \\).",
+      "distractor_logic": [
+        "Forgets to divide by the plate area.",
+        "Multiplies by the area instead of dividing.",
+        "Treats 8.85 mA as 8.85 A."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-002",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 3,
+      "type": "regular",
+      "question": "A capacitor with circular plates of radius \\( R \\) is charged at a steady rate, and the field between the plates is uniform. How does the magnetic field at distance \\( R/2 \\) from the axis (inside the gap) compare with that at distance \\( R \\)?",
+      "options": [
+        "It is the same.",
+        "It is half as large.",
+        "It is twice as large.",
+        "It is zero."
+      ],
+      "correct_index": 1,
+      "explanation": "A loop of radius \\( r<R \\) encloses a fraction \\( r^2/R^2 \\) of the displacement current.<br><br>\\( B(2\\pi r)=\\mu_0I_d\\dfrac{r^2}{R^2} \\), so \\( B\\propto r \\) inside.<br><br>At \\( r=R/2 \\), \\( B \\) is half its value at \\( r=R \\).",
+      "hint": "How much displacement current does a smaller loop enclose?",
+      "distractor_logic": [
+        "Assumes the full displacement current is enclosed by every loop.",
+        "Uses the outside-wire \\( 1/r \\) behaviour inside the gap.",
+        "Assumes no current exists inside the gap, using only conduction current."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-003",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 3,
+      "type": "regular",
+      "question": "For the same capacitor with circular plates of radius \\( R \\) being charged steadily, find the ratio of the magnetic field at distance \\( R/2 \\) from the axis (inside the gap) to that at distance \\( 2R \\) from the axis.",
+      "options": [
+        "\\( \\dfrac14 \\)",
+        "4",
+        "1",
+        "\\( \\dfrac12 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Inside: \\( B\\propto r \\), so \\( B(R/2)=\\tfrac12B(R) \\).<br><br>Outside: the full \\( I_d \\) is enclosed and \\( B\\propto\\dfrac1r \\), so \\( B(2R)=\\tfrac12B(R) \\).<br><br>Ratio \\( =1 \\).",
+      "hint": "Treat inside (proportional to \\( r \\)) and outside (proportional to \\( 1/r \\)) separately.",
+      "distractor_logic": [
+        "Treats the field inside as falling like \\( 1/r \\) from the axis, which gives the wrong trend.",
+        "Inverts the correct ratio of the two dependencies.",
+        "Correctly finds \\( B(R/2)=B(R)/2 \\) but forgets the outside field also halves by \\( 2R \\)."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-004",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 3,
+      "type": "regular",
+      "question": "The voltage across a \\( 10\\,\\text{nF} \\) capacitor rises uniformly from 0 to 100 V in 1 ms. What is the displacement current between its plates during this time?",
+      "options": [
+        "\\( 1\\,\\mu\\text{A} \\)",
+        "0 A",
+        "1 A",
+        "1 mA"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{dV}{dt}=\\dfrac{100}{10^{-3}}=10^{5} \\) V/s.<br><br>\\( I_d=C\\dfrac{dV}{dt}=(10\\times10^{-9})(10^{5})=10^{-3} \\) A \\( =1 \\) mA.",
+      "hint": "Find the rate of change of voltage first.",
+      "distractor_logic": [
+        "Takes \\( dV/dt \\) as 100 V/s, forgetting to divide by 1 ms.",
+        "Uses only the conduction current in the gap.",
+        "Reads nanofarad as microfarad."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-005",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 3,
+      "type": "regular",
+      "question": "Why is the original Ampere's circuital law \\( \\oint\\vec B\\cdot d\\vec l=\\mu_0I_c \\) inconsistent for a circuit charging a capacitor?",
+      "options": [
+        "For the same loop, a flat surface cutting the wire encloses current \\( I \\), while a bulging surface passing between the plates encloses none, giving two different values for the same line integral.",
+        "Because the magnetic field between the plates is always zero.",
+        "Because the conduction current in the wire is not constant along its length.",
+        "Because charges jump across the gap and are counted twice."
+      ],
+      "correct_index": 0,
+      "explanation": "The line integral depends only on the loop, not on which surface we choose.<br><br>With only \\( I_c \\), two surfaces on the same loop give \\( \\mu_0I \\) and zero.<br><br>Adding \\( I_d=I \\) through the gap surface removes the contradiction.",
+      "hint": "Consider two different surfaces bounded by the same loop.",
+      "distractor_logic": [
+        "There is a magnetic field between the plates, produced by the displacement current.",
+        "In a simple series circuit the wire current is the same everywhere at a given instant.",
+        "No charge crosses the gap; that is exactly why \\( I_c=0 \\) there."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-006",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": 3,
+      "type": "regular",
+      "question": "A parallel-plate capacitor is being charged so that \\( dV/dt \\) stays the same. If the plate separation is doubled (area unchanged), the displacement current between the plates",
+      "options": [
+        "doubles",
+        "halves",
+        "stays the same",
+        "becomes one-fourth"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( E=\\dfrac{V}{d} \\), so \\( \\dfrac{dE}{dt}=\\dfrac{1}{d}\\dfrac{dV}{dt} \\).<br><br>\\( I_d=\\epsilon_0A\\dfrac{dE}{dt}=\\dfrac{\\epsilon_0A}{d}\\dfrac{dV}{dt} \\).<br><br>Doubling \\( d \\) halves \\( I_d \\).",
+      "hint": "Write \\( I_d \\) in terms of \\( dV/dt \\) and \\( d \\).",
+      "distractor_logic": [
+        "Assumes wider separation increases the flux change.",
+        "Assumes only \\( dV/dt \\) matters and ignores the capacitance.",
+        "Squares the effect of separation."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-007",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 3,
+      "type": "regular",
+      "question": "The electric field of a wave in vacuum is \\( \\vec E=E_0\\sin(kz-\\omega t)\\,\\hat i \\). Which expression gives its magnetic field?",
+      "options": [
+        "\\( \\vec B=\\dfrac{E_0}{c}\\cos(kz-\\omega t)\\,\\hat j \\)",
+        "\\( \\vec B=-\\dfrac{E_0}{c}\\sin(kz-\\omega t)\\,\\hat j \\)",
+        "\\( \\vec B=\\dfrac{E_0}{c}\\sin(kz-\\omega t)\\,\\hat j \\)",
+        "\\( \\vec B=cE_0\\sin(kz-\\omega t)\\,\\hat j \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "The phase \\( kz-\\omega t \\) shows travel along \\( +\\hat z \\).<br><br>For \\( \\vec E\\times\\vec B \\) along \\( +\\hat k \\) with \\( \\vec E \\) along \\( \\hat i \\), \\( \\vec B \\) is along \\( +\\hat j \\).<br><br>Same phase, amplitude \\( E_0/c \\).",
+      "hint": "Same sine, same argument, amplitude divided by \\( c \\).",
+      "distractor_logic": [
+        "Introduces a \\( 90^\\circ \\) phase lag; the fields are in phase.",
+        "Reverses \\( \\vec B \\), which would make \\( \\vec E\\times\\vec B \\) point along \\( -\\hat k \\).",
+        "Multiplies by \\( c \\) instead of dividing."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-008",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 3,
+      "type": "regular",
+      "question": "The electric field of a wave in vacuum is \\( E_y=60\\sin\\left[2\\pi\\times10^{6}\\left(t-\\dfrac{x}{c}\\right)\\right] \\) V/m. Taking \\( c=3\\times10^{8} \\) m/s, find the magnetic field amplitude and wavelength.",
+      "options": [
+        "\\( 1.8\\times10^{10} \\) T and 300 m",
+        "\\( 2\\times10^{-7} \\) T and 150 m",
+        "60 T and 300 m",
+        "\\( 2\\times10^{-7} \\) T and 300 m"
+      ],
+      "correct_index": 3,
+      "explanation": "Compare with \\( \\sin[2\\pi f(t-x/c)] \\): \\( f=10^{6} \\) Hz.<br><br>\\( \\lambda=\\dfrac{c}{f}=300 \\) m.<br><br>\\( B_0=\\dfrac{60}{3\\times10^{8}}=2\\times10^{-7} \\) T.",
+      "hint": "The number multiplying \\( 2\\pi \\) is the frequency.",
+      "distractor_logic": [
+        "Multiplies \\( E_0 \\) by \\( c \\).",
+        "Takes \\( 2\\times10^{6} \\) as the frequency instead of \\( 10^{6} \\) Hz.",
+        "Assumes the amplitudes are equal."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-009",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 3,
+      "type": "regular",
+      "question": "An electromagnetic wave travels along \\( +\\hat j \\). At some point its magnetic field is along \\( +\\hat k \\). Along which direction is its electric field at that point?",
+      "options": [
+        "\\( -\\hat i \\)",
+        "\\( +\\hat i \\)",
+        "\\( +\\hat j \\)",
+        "\\( -\\hat k \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Need \\( \\vec E\\times\\hat k=+\\hat j \\).<br><br>\\( \\hat i\\times\\hat k=-\\hat j \\), so \\( (-\\hat i)\\times\\hat k=+\\hat j \\).<br><br>So \\( \\vec E \\) is along \\( -\\hat i \\).",
+      "hint": "Test \\( \\pm\\hat i \\) in the cross product with \\( \\hat k \\).",
+      "distractor_logic": [
+        "Gives \\( \\vec E\\times\\vec B=\\hat i\\times\\hat k=-\\hat j \\), the wrong way.",
+        "\\( \\vec E \\) cannot lie along the propagation direction.",
+        "\\( \\vec E \\) must be perpendicular to \\( \\vec B \\), not antiparallel."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-010",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 3,
+      "type": "regular",
+      "question": "A student makes three claims about EM waves in vacuum: (I) \\( E \\) and \\( B \\) differ in phase by \\( 90^\\circ \\); (II) gamma rays travel faster than radio waves; (III) \\( E_0/B_0=c \\). Which claims are correct?",
+      "options": [
+        "Only I and III",
+        "Only III",
+        "Only II and III",
+        "All three"
+      ],
+      "correct_index": 1,
+      "explanation": "I is false: the fields are in phase.<br><br>II is false: all EM waves move at \\( c \\) in vacuum.<br><br>III is true: \\( E_0=cB_0 \\).",
+      "hint": "Check each claim separately.",
+      "distractor_logic": [
+        "Accepts the \\( 90^\\circ \\) lag, which belongs to AC circuits, not EM waves.",
+        "Accepts that frequency affects speed in vacuum; it does not.",
+        "Accepts both false claims."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-011",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 3,
+      "type": "regular",
+      "question": "For an electromagnetic wave in vacuum, which of these quantities is NOT equal to the speed \\( c \\)?",
+      "options": [
+        "\\( \\dfrac{E_0}{B_0} \\)",
+        "\\( \\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\)",
+        "\\( \\dfrac{B_0}{E_0} \\)",
+        "\\( f\\lambda \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E_0/B_0=c \\), \\( 1/\\sqrt{\\mu_0\\epsilon_0}=c \\) and \\( f\\lambda=c \\).<br><br>\\( B_0/E_0=1/c \\), which is not \\( c \\).",
+      "hint": "Which ratio is upside down?",
+      "distractor_logic": [
+        "This equals \\( c \\) since \\( E_0=cB_0 \\).",
+        "This is the definition of \\( c \\) from Maxwell's theory.",
+        "Frequency times wavelength is the wave speed."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-012",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": 3,
+      "type": "regular",
+      "question": "Given \\( \\mu_0\\epsilon_0=\\dfrac19\\times10^{-16} \\) s\\( ^{2} \\)/m\\( ^{2} \\), find the speed of electromagnetic waves in vacuum.",
+      "options": [
+        "\\( 9\\times10^{16} \\) m/s",
+        "\\( \\dfrac13\\times10^{-8} \\) m/s",
+        "\\( 1.5\\times10^{8} \\) m/s",
+        "\\( 3\\times10^{8} \\) m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( c=\\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\).<br><br>\\( \\dfrac{1}{\\mu_0\\epsilon_0}=9\\times10^{16} \\), whose square root is \\( 3\\times10^{8} \\) m/s.",
+      "hint": "Take the reciprocal, then the square root.",
+      "distractor_logic": [
+        "Takes the reciprocal but forgets the square root.",
+        "Takes the square root but forgets the reciprocal.",
+        "Halves the correct result by mistake."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-013",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "The same beam of light falls normally, in turn, on a perfectly reflecting surface and on a perfectly absorbing surface of equal area. What is the ratio of the force on the reflecting surface to the force on the absorbing surface?",
+      "options": [
+        "2",
+        "1",
+        "\\( \\dfrac12 \\)",
+        "4"
+      ],
+      "correct_index": 0,
+      "explanation": "Reflecting: \\( P=2I/c \\). Absorbing: \\( P=I/c \\).<br><br>Same area, so force ratio \\( =2 \\).",
+      "hint": "Reflection doubles the momentum change.",
+      "distractor_logic": [
+        "Assumes surface type does not matter.",
+        "Inverts the ratio.",
+        "Squares the doubling factor."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-014",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "At some instant, the electric energy density at a point in an EM wave is \\( 4\\times10^{-6} \\) J/m\\( ^{3} \\). What is the total energy density at that point and instant?",
+      "options": [
+        "\\( 4\\times10^{-6} \\) J/m\\( ^{3} \\)",
+        "\\( 8\\times10^{-6} \\) J/m\\( ^{3} \\)",
+        "\\( 1.2\\times10^{3} \\) J/m\\( ^{3} \\)",
+        "\\( 2\\times10^{-6} \\) J/m\\( ^{3} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( u_E=u_B \\) at every instant.<br><br>Total \\( =2u_E=8\\times10^{-6} \\) J/m\\( ^{3} \\).",
+      "hint": "The magnetic share always equals the electric share.",
+      "distractor_logic": [
+        "Ignores the magnetic energy density.",
+        "Multiplies by \\( c \\), treating \\( u_B \\) as \\( c \\) times \\( u_E \\).",
+        "Splits the given value between the two fields."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-015",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "Radiation of intensity 1200 W/m\\( ^{2} \\) falls normally for 10 s on a perfectly reflecting sheet of area 0.5 m\\( ^{2} \\). Taking \\( c=3\\times10^{8} \\) m/s, what momentum is transferred to the sheet?",
+      "options": [
+        "\\( 2\\times10^{-5} \\) kg m/s",
+        "\\( 1.8\\times10^{12} \\) kg m/s",
+        "\\( 4\\times10^{-5} \\) kg m/s",
+        "\\( 8\\times10^{-5} \\) kg m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "Energy \\( U=IAt=(1200)(0.5)(10)=6000 \\) J.<br><br>Reflecting: \\( \\Delta p=\\dfrac{2U}{c}=\\dfrac{12000}{3\\times10^{8}}=4\\times10^{-5} \\) kg m/s.",
+      "hint": "Find total energy, then use \\( 2U/c \\).",
+      "distractor_logic": [
+        "Uses \\( U/c \\), the absorbing result.",
+        "Multiplies energy by \\( c \\).",
+        "Doubles twice."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-016",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "An EM wave in vacuum has intensity 13.275 W/m\\( ^{2} \\). With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)) and \\( c=3\\times10^{8} \\) m/s, find its electric field amplitude.",
+      "options": [
+        "\\( 10^{4} \\) V/m",
+        "50 V/m",
+        "200 V/m",
+        "100 V/m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I=\\tfrac12\\epsilon_0cE_0^2 \\), so \\( E_0^2=\\dfrac{2I}{\\epsilon_0c} \\).<br><br>\\( \\epsilon_0c=2.655\\times10^{-3} \\), so \\( E_0^2=\\dfrac{26.55}{2.655\\times10^{-3}}=10^{4} \\).<br><br>\\( E_0=100 \\) V/m.",
+      "hint": "Rearrange for \\( E_0^2 \\) and take the root.",
+      "distractor_logic": [
+        "Forgets the square root.",
+        "Halves the result after taking the square root.",
+        "Doubles the result."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-017",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "What fraction of the total energy of an electromagnetic wave is carried by its magnetic field?",
+      "options": [
+        "One-half",
+        "\\( \\dfrac1c \\)",
+        "Zero",
+        "All of it"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( u_E=u_B \\) at every instant.<br><br>So each field carries exactly half the energy.",
+      "hint": "Compare \\( u_E \\) and \\( u_B \\).",
+      "distractor_logic": [
+        "Confuses the field ratio \\( B/E=1/c \\) with the energy share.",
+        "Assumes the tiny tesla value of \\( B \\) carries no energy.",
+        "Ignores the electric energy."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-018",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": 3,
+      "type": "regular",
+      "question": "A perfectly absorbing surface experiences radiation pressure \\( P \\). The intensity is tripled and the surface is replaced by a perfectly reflecting one. The new pressure is",
+      "options": [
+        "\\( 3P \\)",
+        "\\( 6P \\)",
+        "\\( 2P \\)",
+        "\\( 9P \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Pressure is proportional to \\( I \\): tripling gives \\( 3P \\).<br><br>Reflection doubles it: \\( 6P \\).",
+      "hint": "Two independent factors multiply.",
+      "distractor_logic": [
+        "Accounts for intensity but not the reflection doubling.",
+        "Accounts for reflection but not the tripled intensity.",
+        "Squares the intensity factor."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-019",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 3,
+      "type": "regular",
+      "question": "An EM wave has frequency \\( 10^{10} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, identify its band.",
+      "options": [
+        "Radio waves",
+        "Infrared",
+        "Microwaves",
+        "X-rays"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda=\\dfrac{3\\times10^{8}}{10^{10}}=0.03 \\) m \\( =3 \\) cm.<br><br>This lies between 0.1 m and 1 mm, the microwave range.",
+      "hint": "Convert to wavelength.",
+      "distractor_logic": [
+        "Radio waves are longer than 0.1 m; this is 3 cm.",
+        "Infrared is shorter than 1 mm.",
+        "X-rays are below 1 nm."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-020",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 3,
+      "type": "regular",
+      "question": "Two waves have frequencies \\( 10^{14} \\) Hz and \\( 3\\times10^{21} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, identify their bands.",
+      "options": [
+        "Visible light and X-rays",
+        "Microwaves and gamma rays",
+        "Infrared and X-rays",
+        "Infrared and gamma rays"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\lambda_1=\\dfrac{3\\times10^{8}}{10^{14}}=3\\times10^{-6} \\) m: infrared.<br><br>\\( \\lambda_2=\\dfrac{3\\times10^{8}}{3\\times10^{21}}=10^{-13} \\) m \\( =10^{-4} \\) nm: gamma rays.",
+      "hint": "Compute each wavelength.",
+      "distractor_logic": [
+        "\\( 3\\,\\mu\\text{m} \\) is beyond 700 nm, and \\( 10^{-4} \\) nm is below the X-ray range.",
+        "\\( 3\\,\\mu\\text{m} \\) is far below 1 mm.",
+        "\\( 10^{-4} \\) nm is shorter than \\( 10^{-3} \\) nm, so it is gamma."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-021",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 3,
+      "type": "regular",
+      "question": "Which statement about the electromagnetic spectrum is correct?",
+      "options": [
+        "X-rays have a higher frequency than ultraviolet.",
+        "Microwaves lie between infrared and visible light.",
+        "Radio photons carry more energy than gamma photons because of their longer wavelength.",
+        "Infrared has a shorter wavelength than ultraviolet."
+      ],
+      "correct_index": 0,
+      "explanation": "Order of increasing frequency: radio, microwave, infrared, visible, ultraviolet, X-rays, gamma.<br><br>So X-rays exceed ultraviolet in frequency.",
+      "hint": "Write the fixed order.",
+      "distractor_logic": [
+        "Microwaves lie between radio and infrared.",
+        "Longer wavelength means less energy per photon.",
+        "Infrared is on the long side of visible; ultraviolet on the short side."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-022",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 3,
+      "type": "regular",
+      "question": "A wave has wavelength 1000 times smaller than that of 500 nm visible light. To which band does it belong?",
+      "options": [
+        "Ultraviolet",
+        "X-rays",
+        "Gamma rays",
+        "Infrared"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{500}{1000}=0.5 \\) nm.<br><br>X-rays span 1 nm to \\( 10^{-3} \\) nm.",
+      "hint": "Divide first.",
+      "distractor_logic": [
+        "Ultraviolet stops at 1 nm; 0.5 nm is shorter.",
+        "Gamma rays are below \\( 10^{-3} \\) nm.",
+        "Smaller wavelength moves away from infrared."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-023",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 3,
+      "type": "regular",
+      "question": "Find the ratio of the frequency of 500 nm light to that of \\( 10\\,\\mu\\text{m} \\) infrared.",
+      "options": [
+        "\\( \\dfrac{1}{20} \\)",
+        "2",
+        "20",
+        "200"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( f\\propto\\dfrac1\\lambda \\).<br><br>\\( \\dfrac{10\\,000\\text{ nm}}{500\\text{ nm}}=20 \\).",
+      "hint": "Frequency is inversely proportional to wavelength.",
+      "distractor_logic": [
+        "Inverts the ratio.",
+        "Misplaces a power of ten.",
+        "Misplaces a power of ten the other way."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-024",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": 3,
+      "type": "regular",
+      "question": "Arranged by decreasing photon energy, which band comes immediately after ultraviolet?",
+      "options": [
+        "X-rays",
+        "Infrared",
+        "Microwaves",
+        "Visible light"
+      ],
+      "correct_index": 3,
+      "explanation": "Decreasing energy: gamma, X-rays, ultraviolet, visible, infrared, microwaves, radio.",
+      "hint": "Walk toward longer wavelengths.",
+      "distractor_logic": [
+        "X-rays come before ultraviolet in decreasing energy.",
+        "Infrared comes after visible.",
+        "Microwaves are further down."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-025",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 3,
+      "type": "regular",
+      "question": "Which pairing of band and use is entirely correct?",
+      "options": [
+        "Infrared: remote controls; X-rays: crystallography",
+        "Infrared: crystallography; X-rays: remote controls",
+        "Microwaves: sterilization; ultraviolet: radar",
+        "Gamma rays: communication; radio waves: cancer treatment"
+      ],
+      "correct_index": 0,
+      "explanation": "Infrared suits remote controls.<br><br>X-ray wavelengths match atomic spacing, suiting crystallography.",
+      "hint": "Check each half.",
+      "distractor_logic": [
+        "Swaps the two uses.",
+        "Sterilization is ultraviolet; radar is microwave.",
+        "Communication is radio; cancer treatment is gamma."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-026",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 3,
+      "type": "regular",
+      "question": "Why is the ozone layer important for life on Earth?",
+      "options": [
+        "It absorbs infrared and prevents the Earth from overheating.",
+        "It absorbs most of the Sun's ultraviolet radiation, which can damage living cells.",
+        "It reflects radio waves back to Earth.",
+        "It produces visible light for photosynthesis."
+      ],
+      "correct_index": 1,
+      "explanation": "Ozone absorbs most harmful ultraviolet radiation.<br><br>This protects living cells.",
+      "hint": "Which band causes sunburn?",
+      "distractor_logic": [
+        "Ozone's key role is ultraviolet absorption.",
+        "Radio reflection is not ozone's protective role.",
+        "Ozone does not produce visible light."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-027",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 3,
+      "type": "regular",
+      "question": "Why do microwave ovens heat food efficiently?",
+      "options": [
+        "Microwaves ionize food molecules.",
+        "Microwaves are reflected by water.",
+        "The microwave frequency is matched to the resonant frequency of water molecules, which absorb the energy.",
+        "Microwaves travel slower than light."
+      ],
+      "correct_index": 2,
+      "explanation": "Water molecules absorb energy at the oven's frequency.<br><br>This raises the food's temperature.",
+      "hint": "Think resonance with water.",
+      "distractor_logic": [
+        "Microwave photons do not ionize.",
+        "Water absorbs microwaves.",
+        "All EM waves travel at \\( c \\) in vacuum."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-028",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 3,
+      "type": "regular",
+      "question": "How does the greenhouse effect keep the Earth warm?",
+      "options": [
+        "Greenhouse gases absorb incoming X-rays.",
+        "The ozone layer traps infrared.",
+        "Greenhouse gases convert ultraviolet into microwaves.",
+        "The surface re-emits infrared, which greenhouse gases absorb and trap."
+      ],
+      "correct_index": 3,
+      "explanation": "Sunlight warms the surface.<br><br>The warm surface emits infrared, trapped by greenhouse gases.",
+      "hint": "Warm bodies emit infrared.",
+      "distractor_logic": [
+        "X-rays play no role here.",
+        "Ozone mainly absorbs ultraviolet.",
+        "No such conversion occurs."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-029",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 3,
+      "type": "regular",
+      "question": "Which source-band pairing is INCORRECT?",
+      "options": [
+        "Gamma rays: oscillating LC circuits",
+        "X-rays: high-energy electrons striking a metal target",
+        "Microwaves: klystron valves",
+        "Infrared: warm bodies and molecular vibrations"
+      ],
+      "correct_index": 0,
+      "explanation": "Gamma rays come from nuclear transitions.<br><br>Oscillating circuits produce radio waves.",
+      "hint": "Find the misplaced source.",
+      "distractor_logic": [
+        "This pairing is actually correct: an X-ray tube works by stopping fast electrons in a metal target.",
+        "This pairing is actually correct: klystron and magnetron valves generate microwaves.",
+        "This pairing is actually correct: warm bodies radiate mainly in the infrared."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-L3-030",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+      "level": 3,
+      "type": "regular",
+      "question": "A hospital uses one band to image broken bones and another to destroy cancer cells. How does the second band compare with the first?",
+      "options": [
+        "It is ultraviolet, at lower frequency than X-rays.",
+        "It is gamma rays, at even higher frequency than X-rays.",
+        "It is infrared, at lower frequency than X-rays.",
+        "It is X-rays, at the same frequency."
+      ],
+      "correct_index": 1,
+      "explanation": "Bone imaging uses X-rays.<br><br>Cancer treatment uses gamma rays, beyond X-rays.",
+      "hint": "Which is higher energy?",
+      "distractor_logic": [
+        "Ultraviolet is not used for cancer treatment.",
+        "Infrared is not used for cancer treatment.",
+        "Cancer therapy uses gamma rays, not X-rays."
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-001",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How did Maxwell's displacement-current term lead to the prediction of electromagnetic waves?",
+      "options": [
+        "It showed that moving charges in wires are the only source of magnetic fields.",
+        "It showed that the electric and magnetic fields in a wave are \\( 90^\\circ \\) out of phase, like current and voltage in a capacitor.",
+        "A changing electric field produces a magnetic field and a changing magnetic field produces an electric field, so the two can sustain each other and travel at \\( 1/\\sqrt{\\mu_0\\epsilon_0} \\).",
+        "It showed that static charges emit waves travelling faster than light."
+      ],
+      "correct_index": 2,
+      "explanation": "Faraday: changing \\( \\vec B \\) gives \\( \\vec E \\). Maxwell: changing \\( \\vec E \\) gives \\( \\vec B \\) through \\( I_d \\).<br><br>Together, the fields can regenerate each other and move through space.<br><br>The predicted speed \\( 1/\\sqrt{\\mu_0\\epsilon_0} \\) equals the speed of light.",
+      "hint": "Combine Faraday's law with the new Ampere-Maxwell term.",
+      "distractor_logic": [
+        "The point of the new term is the opposite: a changing electric field is also a source of \\( \\vec B \\).",
+        "Imports an AC-circuit phase lag; in the wave the fields are in phase.",
+        "Static charges do not radiate, and the predicted speed equals the speed of light."
+      ],
+      "mixed_topics": [
+        "Displacement Current and the Ampere-Maxwell Law",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-002",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An electromagnetic wave travels through completely empty space where there are no charges or currents. What sustains its magnetic field?",
+      "options": [
+        "A conduction current flowing through the vacuum",
+        "Static charges left behind by the source",
+        "Nothing; the magnetic field exists independently of the electric field",
+        "The changing electric field of the wave, acting as a displacement current"
+      ],
+      "correct_index": 3,
+      "explanation": "In empty space \\( I_c=0 \\), so the Ampere-Maxwell law becomes \\( \\oint\\vec B\\cdot d\\vec l=\\mu_0\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).<br><br>The wave's changing electric field is therefore the source of its magnetic field.",
+      "hint": "What is left of the Ampere-Maxwell law when \\( I_c=0 \\)?",
+      "distractor_logic": [
+        "There are no charges in vacuum to carry a conduction current.",
+        "Static charges produce static fields, not oscillating ones travelling with the wave.",
+        "The fields are coupled: each is generated by the change of the other."
+      ],
+      "mixed_topics": [
+        "Displacement Current and the Ampere-Maxwell Law",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-003",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A capacitor is charged at a perfectly constant rate, so the displacement current between its plates is steady. Does this arrangement radiate electromagnetic waves?",
+      "options": [
+        "No; a steady displacement current gives a steady magnetic field, and radiation needs accelerated or oscillating charges whose changing fields regenerate each other.",
+        "Yes; any displacement current radiates electromagnetic waves.",
+        "Yes; it radiates gamma rays because the field between the plates is strong.",
+        "No; because displacement current produces no magnetic field at all."
+      ],
+      "correct_index": 0,
+      "explanation": "With \\( dE/dt \\) constant, \\( I_d \\) and hence \\( \\vec B \\) are constant.<br><br>A constant \\( \\vec B \\) induces no electric field, so the chain of regeneration never starts.<br><br>EM waves come from accelerated charges, such as those oscillating in a circuit.",
+      "hint": "Does anything oscillate in this arrangement?",
+      "distractor_logic": [
+        "A constant \\( I_d \\) gives a constant \\( \\vec B \\); nothing changes to induce a new electric field.",
+        "Gamma rays come from nuclear transitions, not from a charging capacitor.",
+        "Displacement current does produce a magnetic field; it is just steady here."
+      ],
+      "mixed_topics": [
+        "Displacement Current and the Ampere-Maxwell Law",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-004",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A radio wave and a gamma ray both travel in vacuum. How do their speeds compare?",
+      "options": [
+        "The gamma ray is faster because it has higher frequency.",
+        "They are equal.",
+        "The radio wave is faster because it has longer wavelength.",
+        "The gamma ray is faster because each photon carries more energy."
+      ],
+      "correct_index": 1,
+      "explanation": "All bands of the spectrum are the same kind of wave.<br><br>Every one travels at \\( c=\\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0} } \\) in vacuum, which contains no frequency.",
+      "hint": "Is there a frequency in the formula for \\( c \\)?",
+      "distractor_logic": [
+        "Frequency does not affect speed in vacuum.",
+        "Wavelength does not affect speed in vacuum.",
+        "Photon energy depends on frequency, but speed in vacuum does not."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-005",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A student says that because gamma rays carry far more energy per photon than radio waves, the ratio \\( E_0/B_0 \\) must be larger for gamma rays in vacuum. What is correct?",
+      "options": [
+        "The ratio is larger for gamma rays.",
+        "The ratio is larger for radio waves.",
+        "The ratio \\( E_0/B_0=c \\) for both.",
+        "The ratio is \\( c \\) for radio waves but \\( c^2 \\) for gamma rays."
+      ],
+      "correct_index": 2,
+      "explanation": "For every EM wave in vacuum, \\( E_0=cB_0 \\).<br><br>Since \\( c \\) is the same for all bands, so is the ratio.",
+      "hint": "Does \\( c \\) depend on the band?",
+      "distractor_logic": [
+        "Photon energy has no effect on the field ratio.",
+        "Wavelength has no effect on the field ratio.",
+        "The ratio is always \\( c \\), never \\( c^2 \\)."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-006",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiation of wavelength 0.1 nm travels in vacuum. Taking \\( c=3\\times10^{8} \\) m/s, what is its frequency and band?",
+      "options": [
+        "\\( 3\\times10^{18} \\) Hz, gamma rays",
+        "\\( 3\\times10^{16} \\) Hz, ultraviolet",
+        "\\( 3\\times10^{9} \\) Hz, microwaves",
+        "\\( 3\\times10^{18} \\) Hz, X-rays"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( 0.1 \\) nm \\( =10^{-10} \\) m.<br><br>\\( f=\\dfrac{3\\times10^{8}}{10^{-10}}=3\\times10^{18} \\) Hz.<br><br>0.1 nm lies between 1 nm and \\( 10^{-3} \\) nm: X-rays.",
+      "hint": "Convert nm to m before dividing.",
+      "distractor_logic": [
+        "Right frequency, but 0.1 nm is inside the X-ray range, not below \\( 10^{-3} \\) nm.",
+        "Uses \\( 10^{-8} \\) m instead of \\( 10^{-10} \\) m for 0.1 nm.",
+        "Uses 0.1 m instead of 0.1 nm."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-007",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiation of frequency \\( 5\\times10^{14} \\) Hz travels in vacuum. Taking \\( c=3\\times10^{8} \\) m/s, find its wavelength and band.",
+      "options": [
+        "600 nm, visible light",
+        "600 nm, infrared",
+        "60 nm, ultraviolet",
+        "6000 nm, infrared"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\lambda=\\dfrac{3\\times10^{8}}{5\\times10^{14}}=6\\times10^{-7} \\) m \\( =600 \\) nm.<br><br>600 nm is visible (orange-red).",
+      "hint": "Compute the wavelength, then compare with 400 nm to 700 nm.",
+      "distractor_logic": [
+        "Right wavelength, but 600 nm is inside 400 nm to 700 nm.",
+        "Slips a power of ten downward.",
+        "Slips a power of ten upward."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-008",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two waves in vacuum have wavelengths 3 m and 3 cm. What is the ratio of the frequency of the second to the first, and what bands are they?",
+      "options": [
+        "\\( \\dfrac{1}{100} \\); radio waves and microwaves",
+        "100; radio waves and microwaves",
+        "100; microwaves and infrared",
+        "1; both are radio waves"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( f\\propto\\dfrac1\\lambda \\), so \\( \\dfrac{f_2}{f_1}=\\dfrac{3}{0.03}=100 \\).<br><br>3 m is above 0.1 m: radio. 3 cm is between 0.1 m and 1 mm: microwaves.",
+      "hint": "Frequency goes as \\( 1/\\lambda \\).",
+      "distractor_logic": [
+        "Inverts the ratio; shorter wavelength means higher frequency.",
+        "3 m is radio and 3 cm is microwave, not infrared.",
+        "Wavelengths differ, so frequencies must differ."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-009",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A household device emits radiation of frequency \\( 10^{14} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, what is the band and a typical use?",
+      "options": [
+        "Microwaves, used in radar",
+        "Ultraviolet, used for sterilization",
+        "Infrared, used in TV remote controls",
+        "Visible light, used in photography"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda=\\dfrac{3\\times10^{8}}{10^{14}}=3\\times10^{-6} \\) m \\( =3000 \\) nm.<br><br>This is infrared, used in remote controls.",
+      "hint": "Find \\( \\lambda \\) first.",
+      "distractor_logic": [
+        "Microwaves are longer than 1 mm; this is \\( 3\\,\\mu\\text{m} \\).",
+        "Ultraviolet is shorter than 400 nm.",
+        "Visible is 400 nm to 700 nm; \\( 3\\,\\mu\\text{m} \\) is longer."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-010",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiation of wavelength 500 nm lies in which band, and how is it produced?",
+      "options": [
+        "Ultraviolet, produced by very hot bodies",
+        "Infrared, produced by molecular vibrations",
+        "Visible light, produced by nuclear decay",
+        "Visible light, produced by electron transitions in atoms"
+      ],
+      "correct_index": 3,
+      "explanation": "500 nm lies between 400 nm and 700 nm: visible.<br><br>Visible light comes from electron transitions between atomic energy levels.",
+      "hint": "Check the range, then the source.",
+      "distractor_logic": [
+        "500 nm is above 400 nm, so it is not ultraviolet.",
+        "500 nm is below 700 nm, so it is not infrared.",
+        "Right band, wrong source: nuclear decay gives gamma rays."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-011",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiation of wavelength \\( 10^{-5} \\) nm is detected coming from a radioactive sample. What is the band and its source?",
+      "options": [
+        "Gamma rays, from nuclear transitions",
+        "X-rays, from electrons hitting a metal target",
+        "Gamma rays, from oscillating circuits",
+        "Ultraviolet, from very hot bodies"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( 10^{-5} \\) nm is below \\( 10^{-3} \\) nm: gamma rays.<br><br>Gamma rays come from nuclear transitions in radioactive decay.",
+      "hint": "Compare with \\( 10^{-3} \\) nm.",
+      "distractor_logic": [
+        "\\( 10^{-5} \\) nm is below \\( 10^{-3} \\) nm, beyond the X-ray range.",
+        "Oscillating circuits give radio waves.",
+        "Ultraviolet is above 1 nm."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-012",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A police speed gun uses radiation of frequency \\( 2\\times10^{10} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, identify its wavelength and band.",
+      "options": [
+        "15 m, radio waves",
+        "1.5 cm, microwaves",
+        "1.5 mm, infrared",
+        "1.5 cm, radio waves"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\lambda=\\dfrac{3\\times10^{8}}{2\\times10^{10}}=0.015 \\) m \\( =1.5 \\) cm.<br><br>This is in the microwave band, used in radar.",
+      "hint": "Compute \\( c/f \\).",
+      "distractor_logic": [
+        "Multiplies instead of dividing by powers of ten.",
+        "Slips a factor of ten; 1.5 mm would still be microwave anyway.",
+        "Right wavelength, but radio waves are longer than 0.1 m."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-013",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiation of wavelength 200 nm reaching the Earth from the Sun is largely stopped by which layer, and what is the band?",
+      "options": [
+        "Infrared, absorbed by the ozone layer",
+        "X-rays, absorbed by greenhouse gases",
+        "Ultraviolet, absorbed by the ozone layer",
+        "Visible light, absorbed by the ozone layer"
+      ],
+      "correct_index": 2,
+      "explanation": "200 nm lies between 400 nm and 1 nm: ultraviolet.<br><br>The ozone layer absorbs most solar ultraviolet.",
+      "hint": "Identify the band first.",
+      "distractor_logic": [
+        "200 nm is below 400 nm, not infrared.",
+        "200 nm is above 1 nm, not X-rays.",
+        "200 nm is below the visible range."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-014",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiation of wavelength 0.05 nm is directed at a crystal. What is the band and why is it useful here?",
+      "options": [
+        "Ultraviolet; it sterilizes the crystal",
+        "Gamma rays; it destroys cancer cells",
+        "X-rays; it heats the crystal like a microwave oven",
+        "X-rays; the wavelength is comparable to atomic spacing, so the crystal diffracts it"
+      ],
+      "correct_index": 3,
+      "explanation": "0.05 nm lies between 1 nm and \\( 10^{-3} \\) nm: X-rays.<br><br>X-ray wavelengths match interatomic spacing, enabling crystallography.",
+      "hint": "Compare with atomic spacing.",
+      "distractor_logic": [
+        "0.05 nm is shorter than 1 nm, so it is not ultraviolet.",
+        "0.05 nm is above \\( 10^{-3} \\) nm, so it is X-rays.",
+        "Right band, wrong reason; crystallography relies on diffraction."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-015",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Arrange the radiations used in remote controls, sterilization and cancer treatment in order of increasing photon energy.",
+      "options": [
+        "Remote controls, sterilization, cancer treatment",
+        "Sterilization, remote controls, cancer treatment",
+        "Cancer treatment, sterilization, remote controls",
+        "Remote controls, cancer treatment, sterilization"
+      ],
+      "correct_index": 0,
+      "explanation": "Remote controls: infrared. Sterilization: ultraviolet. Cancer treatment: gamma.<br><br>Energy increases infrared, ultraviolet, gamma.",
+      "hint": "Identify the bands first.",
+      "distractor_logic": [
+        "Puts ultraviolet below infrared.",
+        "Reverses the order.",
+        "Puts gamma below ultraviolet."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-016",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Arrange the radiations used in broadcasting, remote controls and bone imaging in order of decreasing wavelength.",
+      "options": [
+        "Remote controls, broadcasting, bone imaging",
+        "Broadcasting, remote controls, bone imaging",
+        "Bone imaging, remote controls, broadcasting",
+        "Broadcasting, bone imaging, remote controls"
+      ],
+      "correct_index": 1,
+      "explanation": "Broadcasting: radio. Remote: infrared. Bone imaging: X-rays.<br><br>Wavelength decreases radio, infrared, X-rays.",
+      "hint": "Radio is longest.",
+      "distractor_logic": [
+        "Puts infrared above radio.",
+        "Reverses the order.",
+        "Puts X-rays above infrared."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-017",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An EM wave in vacuum has electric field amplitude 300 V/m. With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)) and \\( c=3\\times10^{8} \\) m/s, find its intensity.",
+      "options": [
+        "238.95 W/m\\( ^{2} \\)",
+        "0.39825 W/m\\( ^{2} \\)",
+        "119.475 W/m\\( ^{2} \\)",
+        "\\( 3.98\\times10^{-7} \\) W/m\\( ^{2} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I=\\tfrac12\\epsilon_0cE_0^2 \\).<br><br>\\( I=\\tfrac12(8.85\\times10^{-12})(3\\times10^{8})(9\\times10^{4})=119.475 \\) W/m\\( ^{2} \\).",
+      "hint": "Square the amplitude.",
+      "distractor_logic": [
+        "Drops the factor \\( \\tfrac12 \\).",
+        "Forgets to square \\( E_0 \\).",
+        "Stops at the energy density."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-018",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An EM wave in vacuum has magnetic field amplitude \\( 2\\times10^{-7} \\) T. With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)) and \\( c=3\\times10^{8} \\) m/s, find its intensity.",
+      "options": [
+        "9.558 W/m\\( ^{2} \\)",
+        "0.07965 W/m\\( ^{2} \\)",
+        "\\( 1.593\\times10^{-8} \\) W/m\\( ^{2} \\)",
+        "4.779 W/m\\( ^{2} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E_0=cB_0=60 \\) V/m.<br><br>\\( I=\\tfrac12(8.85\\times10^{-12})(3\\times10^{8})(3600)=4.779 \\) W/m\\( ^{2} \\).",
+      "hint": "Convert to \\( E_0 \\) first.",
+      "distractor_logic": [
+        "Drops the factor \\( \\tfrac12 \\).",
+        "Forgets to square \\( E_0 \\).",
+        "Stops at the energy density."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-019",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At a point in an EM wave, the electric field at some instant is 100 V/m. With \\( \\epsilon_0=8.85\\times10^{-12} \\) C\\( ^{2} \\)/(N m\\( ^{2} \\)), find the total energy density at that point and instant.",
+      "options": [
+        "\\( 8.85\\times10^{-8} \\) J/m\\( ^{3} \\)",
+        "\\( 4.425\\times10^{-8} \\) J/m\\( ^{3} \\)",
+        "\\( 8.85\\times10^{-10} \\) J/m\\( ^{3} \\)",
+        "\\( 1.77\\times10^{-7} \\) J/m\\( ^{3} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( u_E=\\tfrac12\\epsilon_0E^2=4.425\\times10^{-8} \\) J/m\\( ^{3} \\).<br><br>\\( u_B=u_E \\), total \\( =\\epsilon_0E^2=8.85\\times10^{-8} \\) J/m\\( ^{3} \\).",
+      "hint": "Add equal magnetic energy.",
+      "distractor_logic": [
+        "Counts only the electric energy density.",
+        "Forgets to square \\( E \\).",
+        "Doubles twice."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-020",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why are the electric and magnetic energy densities equal in an EM wave?",
+      "options": [
+        "Because \\( E \\) and \\( B \\) have equal numerical values.",
+        "Because \\( E=cB \\) and \\( c^2=1/(\\mu_0\\epsilon_0) \\), so \\( \\tfrac12\\epsilon_0E^2 \\) simplifies to \\( B^2/(2\\mu_0) \\).",
+        "Because the fields are \\( 90^\\circ \\) out of phase.",
+        "Because \\( E=c^2B \\)."
+      ],
+      "correct_index": 1,
+      "explanation": "\\( u_E=\\tfrac12\\epsilon_0c^2B^2 \\).<br><br>Since \\( \\epsilon_0c^2=1/\\mu_0 \\), \\( u_E=\\dfrac{B^2}{2\\mu_0}=u_B \\).",
+      "hint": "Substitute \\( E=cB \\).",
+      "distractor_logic": [
+        "In SI units, \\( E \\) is \\( c \\) times \\( B \\).",
+        "The fields are in phase.",
+        "The relation is \\( E=cB \\)."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-021",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An X-ray beam and a radio beam have the same intensity and are fully absorbed by identical surfaces. How do the radiation pressures compare?",
+      "options": [
+        "X-ray pressure is greater.",
+        "Radio pressure is greater.",
+        "They are equal.",
+        "X-ray pressure is double."
+      ],
+      "correct_index": 2,
+      "explanation": "For absorption \\( P=I/c \\).<br><br>Same intensity gives same pressure.",
+      "hint": "What does \\( I/c \\) depend on?",
+      "distractor_logic": [
+        "Pressure depends on intensity, not frequency.",
+        "Wavelength does not affect \\( I/c \\).",
+        "Doubling applies only to reflection."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-022",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A dim ultraviolet beam and a bright infrared beam are compared. Which has more energy per photon, and which exerts more pressure on an absorbing surface?",
+      "options": [
+        "Infrared has more energy per photon; ultraviolet exerts more pressure.",
+        "Ultraviolet on both counts.",
+        "Infrared on both counts.",
+        "Ultraviolet has more energy per photon; the bright infrared beam exerts more pressure."
+      ],
+      "correct_index": 3,
+      "explanation": "Photon energy increases with frequency: ultraviolet wins.<br><br>Pressure \\( =I/c \\): the brighter beam wins.",
+      "hint": "Separate photon energy from intensity.",
+      "distractor_logic": [
+        "Reverses both.",
+        "Pressure depends on intensity.",
+        "Photon energy depends on frequency."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-023",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A cooking appliance delivers radiation of intensity 1500 W/m\\( ^{2} \\) which is fully absorbed by food. Taking \\( c=3\\times10^{8} \\) m/s, what is the band and radiation pressure?",
+      "options": [
+        "Microwaves; \\( 5\\times10^{-6} \\) Pa",
+        "Microwaves; \\( 1\\times10^{-5} \\) Pa",
+        "Infrared; \\( 5\\times10^{-6} \\) Pa",
+        "Ultraviolet; \\( 5\\times10^{-6} \\) Pa"
+      ],
+      "correct_index": 0,
+      "explanation": "Microwave ovens use microwaves.<br><br>\\( P=\\dfrac{1500}{3\\times10^{8}}=5\\times10^{-6} \\) Pa.",
+      "hint": "Absorbing: \\( I/c \\).",
+      "distractor_logic": [
+        "Uses \\( 2I/c \\) for an absorbing surface.",
+        "Wrong band; ovens use microwaves.",
+        "Wrong band; ultraviolet sterilizes."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-024",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "If the electric field amplitude of an EM wave is doubled, what happens to \\( B_0 \\) and the intensity?",
+      "options": [
+        "\\( B_0 \\) is unchanged and intensity doubles",
+        "\\( B_0 \\) doubles and intensity becomes four times",
+        "\\( B_0 \\) doubles and intensity doubles",
+        "\\( B_0 \\) halves and intensity is unchanged"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( B_0=E_0/c \\) doubles.<br><br>\\( I\\propto E_0^2 \\), becomes four times.",
+      "hint": "Linear for \\( B_0 \\), square for \\( I \\).",
+      "distractor_logic": [
+        "\\( B_0=E_0/c \\) must also double.",
+        "Intensity goes as square.",
+        "\\( B_0 \\) follows \\( E_0 \\)."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-025",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In vacuum where an EM wave passes (no charges), the Ampere-Maxwell law reduces to",
+      "options": [
+        "\\( \\oint\\vec B\\cdot d\\vec l=0 \\)",
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0I_c \\)",
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\mu_0\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\)",
+        "\\( \\oint\\vec B\\cdot d\\vec l=\\epsilon_0\\dfrac{d\\Phi_B}{dt} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "With \\( I_c=0 \\), only \\( I_d=\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\) remains.<br><br>So \\( \\oint\\vec B\\cdot d\\vec l=\\mu_0\\epsilon_0\\dfrac{d\\Phi_E}{dt} \\).",
+      "hint": "Set \\( I_c=0 \\).",
+      "distractor_logic": [
+        "Ignores the displacement current.",
+        "No conduction current exists in vacuum.",
+        "Uses magnetic flux in place of electric flux."
+      ],
+      "mixed_topics": [
+        "Displacement Current and the Ampere-Maxwell Law",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-026",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An EM wave has average energy density \\( 2\\times10^{-6} \\) J/m\\( ^{3} \\) and is fully absorbed. Taking \\( c=3\\times10^{8} \\) m/s, find the radiation pressure.",
+      "options": [
+        "\\( 4\\times10^{-6} \\) Pa",
+        "600 Pa",
+        "\\( 6.7\\times10^{-15} \\) Pa",
+        "\\( 2\\times10^{-6} \\) Pa"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I=u c=600 \\) W/m\\( ^{2} \\).<br><br>\\( P=I/c=2\\times10^{-6} \\) Pa, equal to \\( u \\).",
+      "hint": "Pressure equals energy density here.",
+      "distractor_logic": [
+        "Uses reflecting formula.",
+        "Stops at intensity.",
+        "Divides by \\( c \\) twice."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-027",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A radio wave and visible light have the same electric field amplitude in vacuum. How do their intensities compare?",
+      "options": [
+        "They are equal.",
+        "Visible light is more intense.",
+        "Radio is more intense.",
+        "They differ by the frequency ratio."
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I=\\tfrac12\\epsilon_0cE_0^2 \\).<br><br>Same \\( E_0 \\), same intensity.",
+      "hint": "Does \\( I \\) contain frequency?",
+      "distractor_logic": [
+        "Intensity depends on \\( E_0 \\), not frequency.",
+        "Wavelength does not enter.",
+        "\\( I=\\tfrac12\\epsilon_0cE_0^2 \\) has no frequency."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-028",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In an oscillating LC circuit, the charge on the capacitor, and hence the displacement current between its plates, oscillates at frequency \\( f \\). What is the frequency of the electromagnetic waves radiated by this circuit?",
+      "options": [
+        "\\( 2f \\)",
+        "\\( f \\)",
+        "\\( \\dfrac{f}{2} \\)",
+        "No waves are radiated, since displacement current involves no moving charge."
+      ],
+      "correct_index": 1,
+      "explanation": "The charges in an LC circuit oscillate at \\( f \\), so the fields they produce, including \\( I_d \\) in the gap, change at \\( f \\).<br><br>An EM wave radiated by oscillating charges has the same frequency as the oscillation.<br><br>This is how oscillating circuits produce radio waves.",
+      "hint": "The source sets the frequency of the wave.",
+      "distractor_logic": [
+        "Assumes the radiated wave oscillates twice per charge cycle; the fields simply follow the charge oscillation.",
+        "Assumes the wave takes two charge cycles to complete one oscillation.",
+        "The charges in the circuit wires are accelerating, and the changing fields they create do radiate."
+      ],
+      "mixed_topics": [
+        "Displacement Current and the Ampere-Maxwell Law",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-029",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An oscillating circuit radiates electromagnetic waves of frequency \\( 5\\times10^{7} \\) Hz. Taking \\( c=3\\times10^{8} \\) m/s, find the wavelength and band of the radiation.",
+      "options": [
+        "6 m, microwaves",
+        "0.6 m, microwaves",
+        "6 m, radio waves",
+        "\\( 1.5\\times10^{16} \\) m, radio waves"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda=\\dfrac{c}{f}=\\dfrac{3\\times10^{8}}{5\\times10^{7}}=6 \\) m.<br><br>Radio waves have wavelength greater than 0.1 m, and oscillating circuits are their standard source.",
+      "hint": "Compute \\( c/f \\), then compare with 0.1 m.",
+      "distractor_logic": [
+        "Right wavelength, but microwaves are shorter than 0.1 m; 6 m is radio.",
+        "Slips a power of ten in the division; even 0.6 m would still be radio, not microwave.",
+        "Multiplies \\( c \\) by \\( f \\) instead of dividing."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-030",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two beams of equal intensity, one of wavelength 100 nm and one of 400 nm, are each fully absorbed by a surface. Find the ratio (100 nm beam to 400 nm beam) of photon energy and of radiation pressure.",
+      "options": [
+        "Photon energy ratio 1, pressure ratio 4",
+        "Photon energy ratio 4, pressure ratio 4",
+        "Photon energy ratio \\( \\dfrac14 \\), pressure ratio 1",
+        "Photon energy ratio 4, pressure ratio 1"
+      ],
+      "correct_index": 3,
+      "explanation": "Photon energy \\( \\propto\\dfrac1\\lambda \\), so the ratio is \\( \\dfrac{400}{100}=4 \\).<br><br>Pressure on an absorber is \\( I/c \\); equal intensities give ratio 1.<br><br>The 100 nm beam simply delivers fewer, more energetic photons.",
+      "hint": "Keep photon energy (frequency) separate from intensity (energy flow).",
+      "distractor_logic": [
+        "Swaps the two results: photon energy depends on wavelength, pressure does not.",
+        "Lets the pressure follow photon energy; pressure depends only on intensity, which is equal.",
+        "Inverts the photon-energy ratio, as if longer wavelength meant more energy."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-031",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An electromagnetic wave has \\( \\vec E \\) along \\( +\\hat i \\) and \\( \\vec B \\) along \\( +\\hat j \\). It falls on a surface that absorbs it completely. Along which direction does the radiation force act on the surface?",
+      "options": [
+        "\\( +\\hat k \\)",
+        "\\( -\\hat k \\)",
+        "\\( +\\hat i \\)",
+        "No force acts, since the absorbed radiation has no mass"
+      ],
+      "correct_index": 0,
+      "explanation": "The wave travels along \\( \\vec E\\times\\vec B=\\hat i\\times\\hat j=\\hat k \\).<br><br>Its momentum points the same way, and absorption transfers that momentum to the surface.<br><br>So the force is along \\( +\\hat k \\).",
+      "hint": "Momentum travels in the propagation direction.",
+      "distractor_logic": [
+        "Uses \\( \\vec B\\times\\vec E \\), which gives the reversed direction.",
+        "The force is not along the electric field; it follows the momentum, which travels with the wave.",
+        "EM waves carry momentum \\( U/c \\) without mass, so absorption does exert a force."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-032",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A germicidal lamp's radiation of intensity 600 W/m\\( ^{2} \\) falls normally on an instrument tray that absorbs it completely. Taking \\( c=3\\times10^{8} \\) m/s, which band is used, and what is the radiation pressure?",
+      "options": [
+        "Ultraviolet; \\( 4\\times10^{-6} \\) Pa",
+        "Ultraviolet; \\( 2\\times10^{-6} \\) Pa",
+        "Infrared; \\( 2\\times10^{-6} \\) Pa",
+        "X-rays; \\( 2\\times10^{-6} \\) Pa"
+      ],
+      "correct_index": 1,
+      "explanation": "Germicidal (sterilizing) lamps emit ultraviolet.<br><br>For full absorption, \\( P=\\dfrac{600}{3\\times10^{8}}=2\\times10^{-6} \\) Pa.",
+      "hint": "Identify the band from the use, then apply \\( I/c \\).",
+      "distractor_logic": [
+        "Right band, but uses \\( 2I/c \\) though the tray absorbs.",
+        "Right pressure, but infrared heats rather than sterilizes.",
+        "Right pressure, but X-rays are for imaging and crystallography, not germicidal lamps."
+      ],
+      "mixed_topics": [
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-033",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which band lies just beyond the violet end of the visible spectrum and can be detected with photocells?",
+      "options": [
+        "Infrared",
+        "X-rays",
+        "Ultraviolet",
+        "Visible light"
+      ],
+      "correct_index": 2,
+      "explanation": "Beyond violet (about 400 nm) lies ultraviolet, down to about 1 nm.<br><br>Ultraviolet is detected by photocells and photographic film.",
+      "hint": "The name tells you which end of the visible spectrum.",
+      "distractor_logic": [
+        "Infrared lies beyond the red end, not the violet end.",
+        "X-rays lie beyond ultraviolet, below 1 nm.",
+        "Visible light ends at the violet edge; the question asks for the band lying beyond it."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-034",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The human body radiates most strongly near a wavelength of \\( 10\\,\\mu\\text{m} \\). Which band is this, and which technology exploits it?",
+      "options": [
+        "Microwaves; radar",
+        "Ultraviolet; sterilization",
+        "Infrared; crystallography",
+        "Infrared; thermal imaging"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( 10\\,\\mu\\text{m}=10\\,000 \\) nm, inside the infrared range (700 nm to 1 mm).<br><br>Warm bodies emit infrared, which thermal-imaging cameras detect.",
+      "hint": "Convert to nanometres and check the range.",
+      "distractor_logic": [
+        "\\( 10\\,\\mu\\text{m} \\) is far shorter than 1 mm, so it is not microwave.",
+        "\\( 10\\,\\mu\\text{m} \\) is far longer than 400 nm, so it is not ultraviolet.",
+        "Right band, but crystallography needs X-rays with atomic-scale wavelengths."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-035",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What led Maxwell to conclude that light itself is an electromagnetic wave?",
+      "options": [
+        "The speed \\( \\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\) predicted for electromagnetic waves matched the measured speed of light.",
+        "Light was found to have its magnetic field lagging its electric field by \\( 90^\\circ \\).",
+        "Light was found to need a material medium to travel.",
+        "Light was found to be a longitudinal wave."
+      ],
+      "correct_index": 0,
+      "explanation": "Maxwell's equations, including the displacement-current term, predict waves travelling at \\( \\dfrac{1}{\\sqrt{\\mu_0\\epsilon_0}} \\).<br><br>Using measured \\( \\mu_0 \\) and \\( \\epsilon_0 \\) gives about \\( 3\\times10^{8} \\) m/s.<br><br>This matched the speed of light, so visible light is one band of the EM spectrum.",
+      "hint": "Compare a predicted speed with a measured one.",
+      "distractor_logic": [
+        "There is no such lag; the fields of an EM wave are in phase.",
+        "Light, like all EM waves, travels through vacuum.",
+        "Light, like all EM waves, is transverse."
+      ],
+      "mixed_topics": [
+        "Displacement Current and the Ampere-Maxwell Law",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-036",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An electromagnetic wave in vacuum has intensity 60 W/m\\( ^{2} \\). Taking \\( c=3\\times10^{8} \\) m/s, find its average energy density.",
+      "options": [
+        "\\( 1.8\\times10^{10} \\) J/m\\( ^{3} \\)",
+        "\\( 2\\times10^{-7} \\) J/m\\( ^{3} \\)",
+        "\\( 4\\times10^{-7} \\) J/m\\( ^{3} \\)",
+        "\\( 1\\times10^{-7} \\) J/m\\( ^{3} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I=u_{avg}\\,c \\), so \\( u_{avg}=\\dfrac{I}{c} \\).<br><br>\\( u_{avg}=\\dfrac{60}{3\\times10^{8}}=2\\times10^{-7} \\) J/m\\( ^{3} \\), shared equally between the two fields.",
+      "hint": "Rearrange \\( I=u_{avg}c \\).",
+      "distractor_logic": [
+        "Multiplies intensity by \\( c \\) instead of dividing.",
+        "Adds a spurious factor of 2, as if counting the magnetic share twice.",
+        "Keeps only half, as if intensity carried only the electric share."
+      ],
+      "mixed_topics": [
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed",
+        "Energy Density, Intensity, and Radiation Pressure of Electromagnetic Waves"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-037",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Arrange the radiations used for crystallography, sterilization and the greenhouse effect in order of INCREASING wavelength.",
+      "options": [
+        "Sterilization, crystallography, greenhouse effect",
+        "Greenhouse effect, sterilization, crystallography",
+        "Crystallography, sterilization, greenhouse effect",
+        "Crystallography, greenhouse effect, sterilization"
+      ],
+      "correct_index": 2,
+      "explanation": "Crystallography uses X-rays, sterilization uses ultraviolet, the greenhouse effect involves infrared.<br><br>Increasing wavelength: X-rays, ultraviolet, infrared.",
+      "hint": "Identify each band, then start from the shortest.",
+      "distractor_logic": [
+        "Places ultraviolet before X-rays; X-rays are shorter.",
+        "This is decreasing wavelength, the reverse order.",
+        "Places infrared before ultraviolet; ultraviolet is shorter."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-038",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "Displacement Current and the Ampere-Maxwell Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In an electromagnetic wave, the changing electric field produces the magnetic field and the changing magnetic field produces the electric field. What is the phase relation between \\( E \\) and \\( B \\) at any point?",
+      "options": [
+        "\\( B \\) lags \\( E \\) by \\( 90^\\circ \\).",
+        "They are \\( 180^\\circ \\) out of phase.",
+        "The phase difference keeps changing as the wave travels.",
+        "They are in phase."
+      ],
+      "correct_index": 3,
+      "explanation": "Because \\( E \\) and \\( B \\) each vary in both space and time, their mutual generation gives fields that rise and fall together.<br><br>So \\( E \\) and \\( B \\) are in phase and \\( E=cB \\) at every instant.<br><br>The \\( 90^\\circ \\) lag belongs to AC circuit quantities, not to EM wave fields.",
+      "hint": "Do the fields of an EM wave peak at the same time?",
+      "distractor_logic": [
+        "Reasons that 'B depends on the rate of change of E' must give a quarter-cycle lag; in a travelling wave the space and time variations combine so both peak together.",
+        "Opposite phase would make \\( \\vec E\\times\\vec B \\) reverse direction every half cycle.",
+        "The fields are locked together; \\( E=cB \\) holds at every point and instant."
+      ],
+      "mixed_topics": [
+        "Displacement Current and the Ampere-Maxwell Law",
+        "Nature of Electromagnetic Waves: Transverse Character, Phase Relationship, and Speed"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-039",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which band is generated by klystron valves and lies between radio waves and infrared in the spectrum?",
+      "options": [
+        "Microwaves",
+        "Visible light",
+        "Ultraviolet",
+        "X-rays"
+      ],
+      "correct_index": 0,
+      "explanation": "The order is radio, microwaves, infrared.<br><br>Microwaves are produced by klystron and magnetron valves.",
+      "hint": "Check both the position and the source.",
+      "distractor_logic": [
+        "Visible light lies on the other side of infrared, and comes from atomic transitions.",
+        "Ultraviolet lies beyond visible, and comes from very hot bodies and special lamps.",
+        "X-rays lie near the short-wavelength end, and come from electrons hitting metal targets."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    },
+    {
+      "id": "PHY12-CH08-B-040",
+      "chapter": "PHY12-CH08",
+      "chapter_name": "Electromagnetic Waves",
+      "topic": "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiation emitted in nuclear transitions during radioactive decay has wavelengths in which range?",
+      "options": [
+        "1 nm to \\( 10^{-3} \\) nm",
+        "Below \\( 10^{-3} \\) nm",
+        "400 nm to 1 nm",
+        "Greater than 0.1 m"
+      ],
+      "correct_index": 1,
+      "explanation": "Nuclear transitions emit gamma rays.<br><br>Gamma rays have wavelengths below about \\( 10^{-3} \\) nm.",
+      "hint": "Identify the band from the source first.",
+      "distractor_logic": [
+        "This is the X-ray range; nuclear transitions give gamma rays, which are shorter.",
+        "This is the ultraviolet range.",
+        "This is the radio range, the opposite end of the spectrum."
+      ],
+      "mixed_topics": [
+        "The Electromagnetic Spectrum: Wavelength and Frequency Ranges",
+        "Production, Detection, and Applications of Electromagnetic Waves Across the Spectrum"
+      ]
+    }
+  ]
+}

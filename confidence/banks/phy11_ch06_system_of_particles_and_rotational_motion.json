@@ -1,0 +1,3741 @@
+{
+ "meta": {
+  "chapter": "PHY11-CH06",
+  "chapter_name": "System of Particles and Rotational Motion",
+  "subject": "Physics",
+  "class": 11,
+  "total_questions": 150,
+  "level_breakdown": {
+   "L1": 40,
+   "L2": 40,
+   "L3": 30,
+   "Bonus": 40
+  },
+  "rendering_note": "All math is KaTeX inside \\( ... \\) delimiters. Every cross product and every Greek-letter symbol (omega, alpha, tau, theta) is written as a single KaTeX span; no raw Unicode math symbols appear anywhere; unit exponents are small KaTeX spans; every numeric correct answer terminates cleanly."
+ },
+ "topics": [
+  {
+   "name": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "summary": "The centre of mass of a system is the mass-weighted average position of its particles: \\(x_{cm}=\\dfrac{\\sum m_ix_i}{\\sum m_i}\\), with the same rule for the y-coordinate. It always lies closer to the heavier particles, and for two particles it divides the line joining them in the inverse ratio of the masses. For uniform symmetric bodies such as a rod, ring, disc or sphere, it sits at the geometric centre, even if no material is present there, as in a ring. The centre of mass moves as if the whole mass \\(M\\) were concentrated there and all external forces acted on it: \\(M\\vec a_{cm}=\\vec F_{ext}\\). The total linear momentum is \\(\\vec P=M\\vec v_{cm}\\). Internal forces cancel in pairs, so they can never change the motion of the centre of mass. That is why the fragments of an exploding shell keep their centre of mass on the original parabola, and why a man walking on a boat in still water leaves the combined centre of mass exactly where it was.",
+   "key_formulas": [
+    "\\(x_{cm}=\\dfrac{m_1x_1+m_2x_2+\\dots}{m_1+m_2+\\dots}\\)",
+    "\\(\\vec v_{cm}=\\dfrac{\\sum m_i\\vec v_i}{M}\\)",
+    "\\(\\vec P=M\\vec v_{cm}\\)",
+    "\\(M\\vec a_{cm}=\\vec F_{ext}\\)",
+    "Two particles: \\(d_1=\\dfrac{m_2d}{m_1+m_2}\\) from \\(m_1\\)"
+   ],
+   "worked_example": "A 1 kg particle is at \\(x=0\\) and a 3 kg particle is at \\(x=4\\) m.<br><br>\\(x_{cm}=\\dfrac{1(0)+3(4)}{1+3}=\\dfrac{12}{4}=3\\) m.<br><br>The centre of mass is 3 m from the light particle and only 1 m from the heavy one, as expected.",
+   "common_mistakes": [
+    "Taking the simple midpoint or a plain average of positions instead of weighting each position by its mass.",
+    "Forgetting to divide the weighted sum by the total mass.",
+    "Letting internal forces (explosions, pushes, a man walking on a boat) move the centre of mass.",
+    "Dividing the external force by the mass of one particle instead of the total mass.",
+    "Adding momenta as plain numbers when the velocities have opposite signs or are perpendicular."
+   ],
+   "question_count": 33
+  },
+  {
+   "name": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "summary": "Torque is the turning effect of a force: \\(\\vec\\tau=\\vec r\\times\\vec F\\), with magnitude \\(\\tau=rF\\sin\\theta\\). Only the component of the force perpendicular to the position vector matters, so a force directed along the line through the axis produces no torque at all. The direction is perpendicular to the plane of the two vectors and is fixed by the right-hand rule; reversing the order of the cross product reverses the sign. The angular momentum of a particle is \\(\\vec L=\\vec r\\times\\vec p\\), of magnitude \\(mvr_\\perp\\), and \\(\\dfrac{d\\vec L}{dt}=\\vec\\tau_{ext}\\). Hence angular momentum is conserved whenever the net external torque is zero, even if a net external force acts, as for a planet circling the Sun. Conservation of \\(L\\) does not guarantee conservation of kinetic energy: a skater pulling in her arms keeps \\(L\\) fixed, yet \\(KE=\\tfrac{L^2}{2I}\\) rises. A rigid body is in equilibrium only when both the net force and the net torque vanish. A couple has zero net force but a non-zero torque.",
+   "key_formulas": [
+    "\\(\\vec\\tau=\\vec r\\times\\vec F\\)",
+    "\\(\\tau=rF\\sin\\theta\\)",
+    "\\(\\tau_z=xF_y-yF_x\\)",
+    "\\(\\vec L=\\vec r\\times\\vec p\\), \\(L=mvr_\\perp\\)",
+    "\\(\\dfrac{d\\vec L}{dt}=\\vec\\tau_{ext}\\)",
+    "Equilibrium: \\(\\sum\\vec F=0\\) and \\(\\sum\\vec\\tau=0\\)",
+    "\\(KE=\\dfrac{L^2}{2I}\\)"
+   ],
+   "worked_example": "A force of 20 N acts 2 m from the axis at \\(30^\\circ\\) to the position vector.<br><br>\\(\\tau=rF\\sin\\theta=2\\times20\\times\\tfrac12=20\\) N m.<br><br>Using the cosine would give \\(20\\sqrt3\\) N m, which is wrong: the cosine belongs to the work formula, not to torque.",
+   "common_mistakes": [
+    "Using \\(rF\\cos\\theta\\) (the dot-product or work formula) instead of \\(rF\\sin\\theta\\).",
+    "Writing \\(\\vec F\\times\\vec r\\) or using a left-hand rule, which flips the direction of the torque.",
+    "Saying angular momentum is conserved when the net external force is zero; the condition is zero net external torque.",
+    "Assuming kinetic energy is conserved whenever angular momentum is conserved.",
+    "Checking only force balance for equilibrium and forgetting torque balance, or thinking a couple produces no rotation because its forces cancel."
+   ],
+   "question_count": 41
+  },
+  {
+   "name": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "summary": "The moment of inertia, \\(I=\\sum m_ir_i^2\\), measures how strongly a body resists changes in its rotation. It depends on the mass and on how that mass is spread about the chosen axis, so the same body has different values about different axes. Standard results: ring about its central axis \\(MR^2\\) and about a diameter \\(\\tfrac12MR^2\\); disc about its central axis \\(\\tfrac12MR^2\\) and about a diameter \\(\\tfrac14MR^2\\); solid sphere \\(\\tfrac25MR^2\\) and hollow sphere \\(\\tfrac23MR^2\\) about a diameter; solid cylinder about its axis \\(\\tfrac12MR^2\\); thin rod about its centre \\(\\tfrac{1}{12}ML^2\\) and about one end \\(\\tfrac13ML^2\\). The parallel-axis theorem, \\(I=I_{cm}+Md^2\\), shifts the axis away from the centre of mass and always adds, so the value through the centre of mass is the smallest for a given direction. The perpendicular-axis theorem, \\(I_z=I_x+I_y\\), holds only for flat bodies lying in the \\(xy\\)-plane, such as a ring or a disc. It must never be used for a sphere or a solid cylinder, which are three-dimensional.",
+   "key_formulas": [
+    "\\(I=\\sum m_ir_i^2\\)",
+    "\\(I=I_{cm}+Md^2\\)",
+    "\\(I_z=I_x+I_y\\) (planar bodies only)",
+    "Ring: \\(MR^2\\); disc and solid cylinder: \\(\\tfrac12MR^2\\)",
+    "Solid sphere: \\(\\tfrac25MR^2\\); hollow sphere: \\(\\tfrac23MR^2\\)",
+    "Rod: \\(\\tfrac{1}{12}ML^2\\) (centre), \\(\\tfrac13ML^2\\) (end)",
+    "\\(I=Mk^2\\), where \\(k\\) is the radius of gyration"
+   ],
+   "worked_example": "Disc of mass 4 kg and radius 0.5 m about a tangent perpendicular to its plane.<br><br>\\(I_{cm}=\\tfrac12MR^2=0.5\\) kg m\\(^2\\).<br><br>\\(Md^2=4\\times(0.5)^2=1\\) kg m\\(^2\\).<br><br>\\(I=0.5+1=1.5\\) kg m\\(^2\\), larger than \\(I_{cm}\\) as it must be.",
+   "common_mistakes": [
+    "Subtracting \\(Md^2\\) in the parallel-axis theorem; the theorem always adds, so \\(I\\) can never fall below \\(I_{cm}\\).",
+    "Applying the parallel-axis theorem from an axis that does not pass through the centre of mass.",
+    "Using the perpendicular-axis theorem for a solid sphere or a solid cylinder; it is valid only for flat laminae.",
+    "Mixing up coefficients, such as using the ring value for a disc or the solid-sphere value for a hollow sphere.",
+    "Forgetting to square the radius or the distance."
+   ],
+   "question_count": 39
+  },
+  {
+   "name": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "summary": "Rotation about a fixed axis mirrors motion along a straight line. Angular displacement \\(\\theta\\), angular velocity \\(\\omega\\) and angular acceleration \\(\\alpha\\) replace \\(x\\), \\(v\\) and \\(a\\). For constant angular acceleration, \\(\\omega=\\omega_0+\\alpha t\\), \\(\\theta=\\omega_0t+\\tfrac12\\alpha t^2\\) and \\(\\omega^2=\\omega_0^2+2\\alpha\\theta\\). A point at distance \\(r\\) from the axis has speed \\(v=\\omega r\\) and tangential acceleration \\(a_t=\\alpha r\\). Dynamics follows the same mirror: torque plays the role of force and moment of inertia the role of mass, so \\(\\tau=I\\alpha\\). The angular momentum is \\(L=I\\omega\\), the rotational kinetic energy is \\(\\tfrac12I\\omega^2\\), the work done by a torque is \\(W=\\tau\\theta\\), and the power is \\(P=\\tau\\omega\\). When solving a problem, first find the torque about the axis (force times perpendicular lever arm), then the correct moment of inertia about that same axis, and only then apply \\(\\tau=I\\alpha\\). A larger moment of inertia means a smaller angular acceleration for the same torque. Angles must be in radians: one revolution equals \\(2\\pi\\) rad, and revolutions per minute must be converted to rad/s before using any formula.",
+   "key_formulas": [
+    "\\(\\omega=\\omega_0+\\alpha t\\)",
+    "\\(\\theta=\\omega_0t+\\tfrac12\\alpha t^2\\)",
+    "\\(\\omega^2=\\omega_0^2+2\\alpha\\theta\\)",
+    "\\(v=\\omega r\\), \\(a_t=\\alpha r\\)",
+    "\\(\\tau=I\\alpha\\)",
+    "\\(L=I\\omega\\)",
+    "\\(KE=\\tfrac12I\\omega^2\\)",
+    "\\(W=\\tau\\theta\\), \\(P=\\tau\\omega\\)"
+   ],
+   "worked_example": "A 6 N tangential force acts on the rim of a disc of mass 4 kg and radius 0.5 m.<br><br>\\(\\tau=FR=6\\times0.5=3\\) N m.<br><br>\\(I=\\tfrac12MR^2=0.5\\) kg m\\(^2\\).<br><br>\\(\\alpha=\\dfrac{\\tau}{I}=6\\) rad/s\\(^2\\).",
+   "common_mistakes": [
+    "Using the force itself as the torque and forgetting the lever arm.",
+    "Using \\(I\\omega\\) where \\(\\tfrac12I\\omega^2\\) is needed, or the reverse.",
+    "Forgetting the factor \\(\\tfrac12\\) in \\(\\tfrac12\\alpha t^2\\), or the factor 2 in \\(2\\alpha\\theta\\).",
+    "Computing work as \\(\\tfrac12I(\\Delta\\omega)^2\\) instead of the difference of the two kinetic energies.",
+    "Leaving revolutions per minute unconverted, or dividing by \\(\\pi\\) instead of \\(2\\pi\\)."
+   ],
+   "question_count": 42
+  },
+  {
+   "name": "Rolling Motion",
+   "summary": "Rolling is translation of the centre of mass combined with rotation about it. When a body rolls without slipping, the point of contact is instantaneously at rest, which gives \\(v_{cm}=\\omega R\\) and \\(a_{cm}=\\alpha R\\). These relations hold only when there is no slipping; if a problem says the body slides, skids or spins in place, \\(v\\) and \\(\\omega\\) are independent. In pure rolling the top of the wheel moves at \\(2v_{cm}\\) and the contact point at zero. The friction at the contact is static, never kinetic, and because its point of application does not move, it does zero work, so mechanical energy is conserved. The total kinetic energy is \\(\\tfrac12mv^2\\left(1+\\dfrac{k^2}{R^2}\\right)\\), where \\(I=mk^2\\). Down an incline, \\(a=\\dfrac{g\\sin\\theta}{1+k^2/R^2}\\) and \\(v^2=\\dfrac{2gh}{1+k^2/R^2}\\), independent of mass and radius. With \\(k^2/R^2\\) equal to \\(\\tfrac25\\) for a solid sphere, \\(\\tfrac12\\) for a disc or solid cylinder, \\(\\tfrac23\\) for a hollow sphere and \\(1\\) for a ring, the solid sphere wins every race and the ring comes last.",
+   "key_formulas": [
+    "\\(v_{cm}=\\omega R\\), \\(a_{cm}=\\alpha R\\) (no slipping only)",
+    "\\(KE=\\tfrac12mv^2+\\tfrac12I\\omega^2=\\tfrac12mv^2\\left(1+\\dfrac{k^2}{R^2}\\right)\\)",
+    "\\(a=\\dfrac{g\\sin\\theta}{1+k^2/R^2}\\)",
+    "\\(v^2=\\dfrac{2gh}{1+k^2/R^2}\\)",
+    "\\(\\dfrac{KE_{rot}}{KE_{trans}}=\\dfrac{k^2}{R^2}\\)",
+    "Top point: \\(2v_{cm}\\); contact point: \\(0\\)"
+   ],
+   "worked_example": "A solid sphere rolls without slipping from rest through a height of 7 m, with \\(g=10\\) m/s\\(^2\\).<br><br>\\(mgh=\\tfrac12mv^2\\left(1+\\tfrac25\\right)\\).<br><br>\\(v^2=\\dfrac{2\\times10\\times7}{1.4}=100\\), so \\(v=10\\) m/s.<br><br>Friction is static and does no work, so no energy is lost.",
+   "common_mistakes": [
+    "Forcing \\(v_{cm}=\\omega R\\) onto a body that is stated to be slipping, skidding or spinning in place.",
+    "Treating friction in pure rolling as kinetic, \\(\\mu_kN\\), or letting it do negative work.",
+    "Ignoring the rotational kinetic energy and using the frictionless sliding result.",
+    "Concluding that friction is zero because it does no work; it is still needed to provide the torque.",
+    "Using the wrong value of \\(k^2/R^2\\) for the body, or \\(\\cos\\theta\\) in place of \\(\\sin\\theta\\) on an incline."
+   ],
+   "question_count": 38
+  }
+ ],
+ "questions": [
+  {
+   "id": "PHY11-CH06-L1-001",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "Two particles of mass 2 kg each are placed at \\(x=0\\) and \\(x=4\\) m. Where is their centre of mass?",
+   "options": [
+    "\\(x=2\\) m",
+    "\\(x=8\\) m",
+    "\\(x=4\\) m",
+    "\\(x=1\\) m"
+   ],
+   "correct_index": 0,
+   "explanation": "Use \\(x_{cm}=\\dfrac{m_1x_1+m_2x_2}{m_1+m_2}\\).<br><br>\\(x_{cm}=\\dfrac{2(0)+2(4)}{2+2}=\\dfrac{8}{4}=2\\) m.<br><br>For equal masses the centre of mass is simply the midpoint.",
+   "hint": "Equal masses: the centre of mass sits exactly midway.",
+   "distractor_logic": [
+    "Computed the sum of mass times position but forgot to divide by the total mass of 4 kg.",
+    "Simply took the position of the second particle instead of the mass-weighted average.",
+    "Divided the separation of 4 m by the total mass of 4 kg, which is not the centre-of-mass formula."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-002",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "A 1 kg particle is at \\(x=0\\) and a 3 kg particle is at \\(x=4\\) m. The centre of mass is at",
+   "options": [
+    "\\(x=2\\) m",
+    "\\(x=3\\) m",
+    "\\(x=1\\) m",
+    "\\(x=12\\) m"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(x_{cm}=\\dfrac{1(0)+3(4)}{1+3}=\\dfrac{12}{4}=3\\) m.<br><br>The centre of mass lies closer to the heavier 3 kg particle, as expected.",
+   "hint": "The centre of mass always shifts toward the heavier particle.",
+   "distractor_logic": [
+    "Took the geometric midpoint and ignored that the masses are unequal.",
+    "Put the centre of mass closer to the lighter particle, swapping the weights.",
+    "Found the sum of mass times position (12 kg m) but never divided by the total mass."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-003",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "The centre of mass of a uniform circular ring lies",
+   "options": [
+    "on the rim, because all the mass of the ring is on the rim",
+    "at the midpoint of any one radius",
+    "at its geometric centre, where there is no material of the ring",
+    "nowhere, since a ring has a hole at the middle"
+   ],
+   "correct_index": 2,
+   "explanation": "By symmetry, every mass element of the ring has an equal element diametrically opposite.<br><br>Their contributions cancel in pairs about the centre, so the centre of mass is the geometric centre.<br><br>The centre of mass need not lie inside the material of the body.",
+   "hint": "Use symmetry: every bit of the ring has a partner on the opposite side.",
+   "distractor_logic": [
+    "Assumes the centre of mass must be located where material exists, which is not required.",
+    "Averages the centre and the rim, which has no basis in the symmetry of the ring.",
+    "Believes a centre of mass cannot exist in empty space, but it is only a mass-weighted average position."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-004",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "For a thin uniform rod of length \\(L\\), the centre of mass is located",
+   "options": [
+    "at a distance \\(\\tfrac{L}{3}\\) from one end",
+    "at one end of the rod",
+    "at a distance \\(\\tfrac{L}{4}\\) from one end",
+    "at a distance \\(\\tfrac{L}{2}\\) from either end"
+   ],
+   "correct_index": 3,
+   "explanation": "A uniform rod has the same mass per unit length everywhere.<br><br>By symmetry about its midpoint, the centre of mass must be the midpoint.<br><br>So it is \\(\\tfrac{L}{2}\\) from either end.",
+   "hint": "A uniform rod is symmetric about its middle.",
+   "distractor_logic": [
+    "Confuses the rod with the centroid position of a triangle.",
+    "Confuses the axis often used for rotation (an end) with the centre of mass.",
+    "Halved the correct distance without any physical reason."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-005",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "The total linear momentum of a system of particles of total mass \\(M\\) equals",
+   "options": [
+    "\\(M\\vec v_{cm}\\), the total mass times the velocity of the centre of mass",
+    "\\(M\\vec a_{cm}\\)",
+    "\\(\\tfrac12Mv_{cm}^2\\)",
+    "zero, always"
+   ],
+   "correct_index": 0,
+   "explanation": "By definition \\(M\\vec v_{cm}=\\sum m_i\\vec v_i\\).<br><br>The right-hand side is the total linear momentum of the system.<br><br>Hence \\(\\vec P=M\\vec v_{cm}\\).",
+   "hint": "Differentiate the centre-of-mass position formula with respect to time.",
+   "distractor_logic": [
+    "This is the net external force on the system, not its momentum.",
+    "This is a kinetic-energy expression, a scalar, not the momentum.",
+    "True only in the centre-of-mass frame or when the centre of mass is at rest, not in general."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-006",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "If the net external force on a system of particles is zero, the velocity of its centre of mass",
+   "options": [
+    "must be zero",
+    "remains constant",
+    "keeps increasing",
+    "changes whenever the particles push on each other"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(M\\vec a_{cm}=\\vec F_{ext}\\).<br><br>With \\(\\vec F_{ext}=0\\), \\(\\vec a_{cm}=0\\).<br><br>So the centre of mass moves with constant velocity (which may or may not be zero).",
+   "hint": "Apply Newton's second law to the centre of mass.",
+   "distractor_logic": [
+    "Zero force means zero acceleration, not zero velocity; the centre of mass may be moving uniformly.",
+    "Would need a non-zero net external force to accelerate the centre of mass.",
+    "Internal forces cancel in pairs and cannot change the centre-of-mass velocity."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-007",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "Internal forces between the particles of a system",
+   "options": [
+    "always accelerate the centre of mass toward the heaviest particle",
+    "change the total linear momentum of the system",
+    "cannot change the acceleration of the centre of mass",
+    "are always zero in a rigid body"
+   ],
+   "correct_index": 2,
+   "explanation": "Internal forces occur in equal and opposite pairs (Newton's third law).<br><br>Their vector sum over the whole system is zero.<br><br>Only \\(\\vec F_{ext}\\) appears in \\(M\\vec a_{cm}=\\vec F_{ext}\\).",
+   "hint": "Think of Newton's third law pairs.",
+   "distractor_logic": [
+    "Internal forces cancel in action-reaction pairs, so they give no net force on the system.",
+    "Only external forces can change the total momentum.",
+    "Internal forces are large in a rigid body; they just sum to zero."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-008",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 1,
+   "type": "regular",
+   "question": "A 2 kg body moves at 3 m/s along \\(+x\\) and a 1 kg body is at rest. The velocity of the centre of mass is",
+   "options": [
+    "3 m/s",
+    "1.5 m/s",
+    "6 m/s",
+    "2 m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(v_{cm}=\\dfrac{m_1v_1+m_2v_2}{m_1+m_2}\\).<br><br>\\(v_{cm}=\\dfrac{2(3)+1(0)}{3}=2\\) m/s.",
+   "hint": "Total momentum divided by total mass.",
+   "distractor_logic": [
+    "Took the velocity of the moving body as the velocity of the whole system.",
+    "Took the simple average of 3 m/s and 0 without weighting by mass.",
+    "Computed the total momentum 6 kg m/s and forgot to divide by the total mass."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-009",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "The torque of a force \\(\\vec F\\) acting at position \\(\\vec r\\) (measured from the origin) is defined as",
+   "options": [
+    "\\(\\vec\\tau=\\vec r\\times\\vec F\\)",
+    "\\(\\vec\\tau=\\vec F\\times\\vec r\\)",
+    "\\(\\tau=\\vec r\\cdot\\vec F\\)",
+    "\\(\\tau=rF\\cos\\theta\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Torque is the moment of force: \\(\\vec\\tau=\\vec r\\times\\vec F\\).<br><br>Its magnitude is \\(rF\\sin\\theta\\) and its direction follows the right-hand rule.<br><br>The order matters because a cross product is anti-commutative.",
+   "hint": "Torque is a cross product, with the position vector written first.",
+   "distractor_logic": [
+    "Reversed the order of the cross product, which flips the direction of the torque.",
+    "Used the dot product, which gives a scalar like work, not a torque.",
+    "Borrowed the cosine from the work formula; torque needs the sine of the angle."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-010",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "A force of 10 N is applied perpendicular to a spanner at a distance of 0.5 m from the bolt. The torque on the bolt is",
+   "options": [
+    "0 N m",
+    "5 N m",
+    "20 N m",
+    "10 N m"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\tau=rF\\sin\\theta\\) with \\(\\theta=90^\\circ\\).<br><br>\\(\\tau=0.5\\times10\\times1=5\\) N m.",
+   "hint": "A perpendicular force gives the maximum torque, r times F.",
+   "distractor_logic": [
+    "Used \\(\\cos90^\\circ=0\\) from the work formula instead of \\(\\sin90^\\circ=1\\).",
+    "Divided the force by the distance instead of multiplying.",
+    "Ignored the lever arm and quoted the force itself."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-011",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "A force is applied to a door along a line that passes through the hinge axis. The torque of this force about the hinge is",
+   "options": [
+    "maximum",
+    "equal to the force times the width of the door",
+    "zero",
+    "negative but non-zero"
+   ],
+   "correct_index": 2,
+   "explanation": "Here \\(\\vec F\\) is parallel to \\(\\vec r\\), so \\(\\theta=0\\).<br><br>\\(\\tau=rF\\sin0=0\\).<br><br>Only the component of force perpendicular to the position vector produces torque.",
+   "hint": "What is the sine of zero?",
+   "distractor_logic": [
+    "Used \\(rF\\cos\\theta\\) with \\(\\theta=0\\), which would wrongly give the largest value.",
+    "Ignored the angle between the force and the position vector.",
+    "A force along the position vector has no perpendicular component and hence no turning effect at all."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-012",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "The SI unit of angular momentum is",
+   "options": [
+    "kg m/s",
+    "N m",
+    "kg m\\(^2\\)",
+    "kg m\\(^2\\)/s"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(L=rp\\sin\\theta\\) has the unit of m times kg m/s.<br><br>So the unit is kg m\\(^2\\)/s (equivalently J s).",
+   "hint": "Multiply the unit of distance by the unit of linear momentum.",
+   "distractor_logic": [
+    "This is the unit of linear momentum.",
+    "This is the unit of torque.",
+    "This is the unit of moment of inertia."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-013",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "The angular momentum of a system is conserved when",
+   "options": [
+    "the net external torque on it is zero",
+    "the net external force on it is zero",
+    "no internal forces act within it",
+    "its rotational kinetic energy is constant"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(\\dfrac{d\\vec L}{dt}=\\vec\\tau_{ext}\\).<br><br>If \\(\\vec\\tau_{ext}=0\\), then \\(\\vec L\\) is constant.<br><br>The condition is about external torque, not external force.",
+   "hint": "Look at the rotational form of Newton's second law.",
+   "distractor_logic": [
+    "Zero net force conserves linear momentum; a couple has zero net force yet changes angular momentum.",
+    "Internal forces may act freely; their torques cancel in pairs.",
+    "Kinetic energy can change while angular momentum stays fixed, so this is not the condition."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-014",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "The direction of the torque \\(\\vec\\tau=\\vec r\\times\\vec F\\) is",
+   "options": [
+    "perpendicular to the plane of \\(\\vec r\\) and \\(\\vec F\\), given by a left-hand rule",
+    "perpendicular to the plane of \\(\\vec r\\) and \\(\\vec F\\), given by the right-hand rule",
+    "along \\(\\vec F\\)",
+    "along \\(\\vec r\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "A cross product is perpendicular to both vectors.<br><br>Curl the fingers of the right hand from \\(\\vec r\\) to \\(\\vec F\\); the thumb gives \\(\\vec\\tau\\).",
+   "hint": "Which hand do we use for cross products?",
+   "distractor_logic": [
+    "Cross products follow the right-hand rule; a left-hand rule reverses the direction.",
+    "A cross product is perpendicular to both of its factors, never along one of them.",
+    "Confuses the lever arm with the axis of turning; the cross product has no component along the position vector."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-015",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "For a rigid body to be in mechanical equilibrium,",
+   "options": [
+    "only the net external force must be zero",
+    "only the net external torque must be zero",
+    "both the net external force and the net external torque must be zero",
+    "its linear momentum must be zero"
+   ],
+   "correct_index": 2,
+   "explanation": "Translational equilibrium needs zero net force.<br><br>Rotational equilibrium needs zero net torque.<br><br>A rigid body needs both conditions together.",
+   "hint": "A rigid body can both translate and rotate.",
+   "distractor_logic": [
+    "A couple has zero net force but still produces rotation.",
+    "Zero torque with a net force leaves the body accelerating in translation.",
+    "A body moving with constant velocity is also in equilibrium."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-016",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 1,
+   "type": "regular",
+   "question": "Two equal and opposite forces act on a body along different parallel lines (a couple). The couple produces",
+   "options": [
+    "zero net force and zero net torque",
+    "a non-zero net force and zero net torque",
+    "a net force equal to twice either force",
+    "zero net force but a non-zero net torque"
+   ],
+   "correct_index": 3,
+   "explanation": "The forces are equal and opposite, so the net force is zero.<br><br>Their lines of action differ, so their torques add to force times the separation.<br><br>A couple causes pure rotation without translation.",
+   "hint": "Think of turning a steering wheel with two hands.",
+   "distractor_logic": [
+    "Assumed that forces that cancel must also have cancelling torques.",
+    "Reversed the properties of a couple.",
+    "The forces are opposite, so they cancel rather than add."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-017",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The moment of inertia of a thin ring of mass \\(M\\) and radius \\(R\\) about its central axis (perpendicular to its plane) is",
+   "options": [
+    "\\(MR^2\\)",
+    "\\(\\tfrac12MR^2\\)",
+    "\\(\\tfrac25MR^2\\)",
+    "\\(2MR^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Every element of the ring is at the same distance \\(R\\) from the central axis.<br><br>\\(I=\\sum m_iR^2=MR^2\\).",
+   "hint": "All of the ring's mass is at the same distance from the axis.",
+   "distractor_logic": [
+    "This is the value for a disc, whose mass is spread inward from the rim.",
+    "This is the value for a solid sphere about a diameter.",
+    "This is the ring's value about a tangent parallel to the central axis."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-018",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The moment of inertia of a uniform disc of mass \\(M\\) and radius \\(R\\) about its central axis (perpendicular to its plane) is",
+   "options": [
+    "\\(MR^2\\)",
+    "\\(\\tfrac12MR^2\\)",
+    "\\(\\tfrac14MR^2\\)",
+    "\\(\\tfrac25MR^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The mass of a disc is spread from the centre to the rim.<br><br>The standard result is \\(I=\\tfrac12MR^2\\), half that of a ring of the same \\(M\\) and \\(R\\).",
+   "hint": "A disc has mass closer to the axis than a ring, so its value is smaller.",
+   "distractor_logic": [
+    "This is the value for a ring, where all the mass is at the rim.",
+    "This is the disc's value about a diameter.",
+    "This is the value for a solid sphere about a diameter."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-019",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The moment of inertia of a uniform solid sphere of mass \\(M\\) and radius \\(R\\) about a diameter is",
+   "options": [
+    "\\(\\tfrac23MR^2\\)",
+    "\\(\\tfrac12MR^2\\)",
+    "\\(\\tfrac25MR^2\\)",
+    "\\(\\tfrac75MR^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The standard result for a solid sphere about a diameter is \\(I=\\tfrac25MR^2\\).",
+   "hint": "Solid sphere: two-fifths; hollow sphere: two-thirds.",
+   "distractor_logic": [
+    "This is the value for a hollow sphere (thin shell).",
+    "This is the value for a disc or a solid cylinder about its axis.",
+    "This is the solid sphere's value about a tangent."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-020",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The moment of inertia of a thin uniform rod of mass \\(M\\) and length \\(L\\) about an axis through its centre and perpendicular to its length is",
+   "options": [
+    "\\(\\tfrac13ML^2\\)",
+    "\\(\\tfrac12ML^2\\)",
+    "\\(\\tfrac14ML^2\\)",
+    "\\(\\tfrac{1}{12}ML^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "The standard result about the centre is \\(I=\\tfrac{1}{12}ML^2\\).<br><br>About one end it is larger, \\(\\tfrac13ML^2\\).",
+   "hint": "The axis through the centre gives the smallest value for a rod.",
+   "distractor_logic": [
+    "This is the value about an axis through one end.",
+    "Borrowed the coefficient of a disc, which does not apply to a rod.",
+    "Treated the whole mass as sitting at distance \\(\\tfrac{L}{2}\\) from the axis."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-021",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The parallel-axis theorem relates the moment of inertia \\(I\\) about any axis to \\(I_{cm}\\) about a parallel axis through the centre of mass, a distance \\(d\\) away, as",
+   "options": [
+    "\\(I=I_{cm}+Md^2\\)",
+    "\\(I=I_{cm}-Md^2\\)",
+    "\\(I=I_{cm}+Md\\)",
+    "\\(I=I_{cm}\\times Md^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "The theorem states \\(I=I_{cm}+Md^2\\).<br><br>Since \\(d^2\\ge0\\), the moment of inertia is smallest about the axis through the centre of mass.",
+   "hint": "Does moving the axis away from the centre of mass make rotation easier or harder?",
+   "distractor_logic": [
+    "Treats \\(Md^2\\) as a correction to be subtracted; shifting the axis away from the centre of mass can only increase \\(I\\).",
+    "Left out the square on the distance, which also gives the wrong unit.",
+    "Multiplied instead of adding, which gives the wrong unit."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-022",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The perpendicular-axis theorem, \\(I_z=I_x+I_y\\), is valid for",
+   "options": [
+    "any rigid body of any shape",
+    "planar (flat) bodies only, with the \\(x\\) and \\(y\\) axes lying in the plane of the body",
+    "solid spheres only",
+    "solid cylinders only"
+   ],
+   "correct_index": 1,
+   "explanation": "The derivation assumes every mass element lies in the \\(xy\\)-plane.<br><br>So it holds only for laminae such as a ring, a disc or a flat plate.",
+   "hint": "The theorem needs every particle to have zero z-coordinate.",
+   "distractor_logic": [
+    "The theorem fails for three-dimensional bodies, whose mass extends out of the plane.",
+    "A solid sphere is three-dimensional, so the theorem does not apply to it at all.",
+    "A solid cylinder is three-dimensional, so the theorem does not apply to it."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-023",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The SI unit of moment of inertia is",
+   "options": [
+    "kg m",
+    "kg m\\(^2\\)/s",
+    "kg m\\(^2\\)",
+    "kg/m\\(^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(I=\\sum m_ir_i^2\\).<br><br>So the unit is kg m\\(^2\\).",
+   "hint": "Mass times the square of a distance.",
+   "distractor_logic": [
+    "Left out the square on the distance.",
+    "This is the unit of angular momentum.",
+    "Divided by the square of distance instead of multiplying."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-024",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 1,
+   "type": "regular",
+   "question": "The moment of inertia of a rigid body about a given axis depends on",
+   "options": [
+    "its mass only",
+    "its angular velocity",
+    "the torque applied to it",
+    "its mass and how that mass is distributed about the axis"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(I=\\sum m_ir_i^2\\) involves both the masses and their distances from the axis.<br><br>Changing the axis or the mass distribution changes the value.",
+   "hint": "Compare a ring and a disc of the same mass and radius.",
+   "distractor_logic": [
+    "Two bodies of the same mass, such as a ring and a disc, have different values.",
+    "It is a property of the body and the axis, not of how fast the body spins.",
+    "Torque changes the angular acceleration, not the moment of inertia."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-025",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "A wheel starts from rest with a constant angular acceleration of 2 rad/s\\(^2\\). Its angular velocity after 5 s is",
+   "options": [
+    "10 rad/s",
+    "2.5 rad/s",
+    "25 rad/s",
+    "7 rad/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(\\omega=\\omega_0+\\alpha t\\).<br><br>\\(\\omega=0+2\\times5=10\\) rad/s.",
+   "hint": "This is the rotational twin of \\(v=u+at\\).",
+   "distractor_logic": [
+    "Divided the time by the angular acceleration instead of multiplying.",
+    "Computed \\(\\tfrac12\\alpha t^2\\), which is the angle turned, not the angular velocity.",
+    "Added the angular acceleration and the time instead of multiplying."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-026",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "The rotational analogue of Newton's second law \\(F=ma\\) for rotation about a fixed axis is",
+   "options": [
+    "\\(\\tau=I\\omega\\)",
+    "\\(\\tau=I\\alpha\\)",
+    "\\(\\tau=\\tfrac12I\\omega^2\\)",
+    "\\(\\tau=\\dfrac{I}{\\alpha}\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Force corresponds to torque, mass to moment of inertia, and \\(a\\) to \\(\\alpha\\).<br><br>So \\(F=ma\\) becomes \\(\\tau=I\\alpha\\).",
+   "hint": "Replace each linear quantity by its rotational partner.",
+   "distractor_logic": [
+    "\\(I\\omega\\) is the angular momentum, the analogue of \\(mv\\), not of \\(ma\\).",
+    "This is the rotational kinetic energy, not the torque.",
+    "Divided instead of multiplying; torque grows with both \\(I\\) and \\(\\alpha\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-027",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "In rotational motion about a fixed axis, the quantity that plays the role of mass is",
+   "options": [
+    "torque",
+    "angular momentum",
+    "moment of inertia",
+    "angular velocity"
+   ],
+   "correct_index": 2,
+   "explanation": "Mass measures resistance to change in linear motion.<br><br>Moment of inertia measures resistance to change in rotational motion.",
+   "hint": "Which quantity measures rotational inertia?",
+   "distractor_logic": [
+    "Torque is the analogue of force, not of mass.",
+    "Angular momentum is the analogue of linear momentum.",
+    "Angular velocity is the analogue of linear velocity."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-028",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "The kinetic energy of a body of moment of inertia \\(I\\) rotating with angular velocity \\(\\omega\\) about a fixed axis is",
+   "options": [
+    "\\(I\\omega\\)",
+    "\\(\\tfrac12I\\omega\\)",
+    "\\(I\\omega^2\\)",
+    "\\(\\tfrac12I\\omega^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Compare with \\(\\tfrac12mv^2\\): replace \\(m\\) by \\(I\\) and \\(v\\) by \\(\\omega\\).<br><br>\\(KE=\\tfrac12I\\omega^2\\).",
+   "hint": "Mirror the linear kinetic-energy formula.",
+   "distractor_logic": [
+    "This is the angular momentum of the body.",
+    "Forgot to square \\(\\omega\\).",
+    "Left out the factor \\(\\tfrac12\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-029",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "A flywheel with moment of inertia 2 kg m\\(^2\\) spins at 3 rad/s. Its angular momentum is",
+   "options": [
+    "6 kg m\\(^2\\)/s",
+    "9 kg m\\(^2\\)/s",
+    "18 kg m\\(^2\\)/s",
+    "1.5 kg m\\(^2\\)/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(L=I\\omega=2\\times3=6\\) kg m\\(^2\\)/s.",
+   "hint": "\\(L=I\\omega\\) is the twin of \\(p=mv\\).",
+   "distractor_logic": [
+    "Computed \\(\\tfrac12I\\omega^2\\), the kinetic energy in joules.",
+    "Computed \\(I\\omega^2\\) instead of \\(I\\omega\\).",
+    "Divided \\(\\omega\\) by \\(I\\) instead of multiplying."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-030",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "A point on a wheel is 0.5 m from the axis. If the wheel rotates at 4 rad/s, the linear speed of the point is",
+   "options": [
+    "8 m/s",
+    "2 m/s",
+    "1 m/s",
+    "4.5 m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(v=\\omega r=4\\times0.5=2\\) m/s.",
+   "hint": "Points farther from the axis move faster.",
+   "distractor_logic": [
+    "Divided the angular velocity by the radius instead of multiplying.",
+    "Multiplied by the square of the radius.",
+    "Added the two numbers instead of multiplying."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-031",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "The power delivered by a torque \\(\\tau\\) to a body rotating with angular velocity \\(\\omega\\) is",
+   "options": [
+    "\\(P=\\dfrac{\\tau}{\\omega}\\)",
+    "\\(P=\\tau\\alpha\\)",
+    "\\(P=\\tau\\omega\\)",
+    "\\(P=\\tfrac12\\tau\\omega^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Linear: \\(P=Fv\\).<br><br>Rotational: \\(F\\) becomes \\(\\tau\\) and \\(v\\) becomes \\(\\omega\\), so \\(P=\\tau\\omega\\).",
+   "hint": "Mirror \\(P=Fv\\).",
+   "distractor_logic": [
+    "Divided instead of multiplying; compare with \\(P=Fv\\).",
+    "Used the angular acceleration instead of the angular velocity.",
+    "Mixed the power formula with the kinetic-energy formula."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-032",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 1,
+   "type": "regular",
+   "question": "A constant torque of 5 N m turns a wheel through 4 rad. The work done by the torque is",
+   "options": [
+    "1.25 J",
+    "9 J",
+    "0.8 J",
+    "20 J"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(W=\\tau\\theta=5\\times4=20\\) J.",
+   "hint": "Work by a torque mirrors \\(W=Fs\\).",
+   "distractor_logic": [
+    "Divided the torque by the angle.",
+    "Added the torque and the angle.",
+    "Divided the angle by the torque."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-033",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "For a wheel of radius \\(R\\) rolling without slipping, the speed of its centre of mass and its angular velocity are related by",
+   "options": [
+    "\\(v_{cm}=\\omega R\\)",
+    "\\(v_{cm}=\\dfrac{\\omega}{R}\\)",
+    "\\(v_{cm}=\\omega R^2\\)",
+    "\\(v_{cm}=2\\omega R\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "In rolling without slipping the contact point is instantaneously at rest.<br><br>That requires the forward speed \\(v_{cm}\\) to cancel the backward rim speed \\(\\omega R\\).<br><br>Hence \\(v_{cm}=\\omega R\\).",
+   "hint": "The contact point must have zero velocity.",
+   "distractor_logic": [
+    "Divided by the radius instead of multiplying, which also gives the wrong unit.",
+    "Squared the radius, which gives the wrong unit.",
+    "This is the speed of the topmost point, not of the centre."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-034",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "A wheel rolls without slipping with centre-of-mass speed \\(v\\). The instantaneous velocity of the point in contact with the ground is",
+   "options": [
+    "\\(v\\) forward",
+    "zero",
+    "\\(2v\\) forward",
+    "\\(v\\) backward"
+   ],
+   "correct_index": 1,
+   "explanation": "At the contact point, translation gives \\(v\\) forward and rotation gives \\(\\omega R=v\\) backward.<br><br>These cancel, so the contact point is momentarily at rest.",
+   "hint": "Add the velocity due to translation and the velocity due to rotation.",
+   "distractor_logic": [
+    "Forgot to combine the rotational velocity with the translational velocity at the contact point.",
+    "This is the velocity of the topmost point.",
+    "Took only the rotational part and ignored the forward motion of the centre."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-035",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "A wheel rolls without slipping with centre-of-mass speed \\(v\\). The speed of its topmost point is",
+   "options": [
+    "\\(v\\)",
+    "zero",
+    "\\(2v\\)",
+    "\\(\\tfrac{v}{2}\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "At the top, translation gives \\(v\\) forward and rotation gives \\(\\omega R=v\\) forward.<br><br>Total \\(=2v\\).",
+   "hint": "At the top, both contributions point the same way.",
+   "distractor_logic": [
+    "Counted only the translational velocity.",
+    "This is the speed of the contact point, not the top.",
+    "Halved instead of doubling; at the top the two velocities add."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-036",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "When a body rolls without slipping on a rough surface, the friction acting at the point of contact is",
+   "options": [
+    "kinetic friction",
+    "kinetic friction while speeding up and static friction while slowing down",
+    "air drag only",
+    "static friction"
+   ],
+   "correct_index": 3,
+   "explanation": "In pure rolling the contact point has zero velocity relative to the surface.<br><br>With no relative sliding, any friction present must be static.",
+   "hint": "Is the contact point sliding?",
+   "distractor_logic": [
+    "Kinetic friction needs relative sliding, but the contact point is at rest in pure rolling.",
+    "The type of friction depends on slipping, not on speeding up or slowing down.",
+    "Air drag does not act at the point of contact."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-037",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "A body rolls without slipping on a fixed rough surface. The work done by friction on the body is",
+   "options": [
+    "zero",
+    "negative, because friction always dissipates energy",
+    "positive, because friction makes the body spin",
+    "equal to \\(\\mu_kN\\) times the distance rolled"
+   ],
+   "correct_index": 0,
+   "explanation": "The point where friction acts is instantaneously at rest.<br><br>A force acting at a point with no displacement does no work.",
+   "hint": "What is the velocity of the point where friction acts?",
+   "distractor_logic": [
+    "Treats the friction as kinetic; static friction at a contact point that is at rest does no work.",
+    "Friction does provide a torque, but the contact point has no displacement, so no work is done.",
+    "Uses kinetic friction \\(\\mu_kN\\), which does not act during pure rolling."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-038",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "The total kinetic energy of a body of mass \\(m\\) and moment of inertia \\(I\\) (about its centre) that is rolling without slipping is",
+   "options": [
+    "\\(\\tfrac12mv_{cm}^2\\) only",
+    "\\(\\tfrac12mv_{cm}^2+\\tfrac12I\\omega^2\\)",
+    "\\(\\tfrac12I\\omega^2\\) only",
+    "\\(\\tfrac12mv_{cm}^2-\\tfrac12I\\omega^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Rolling is translation of the centre of mass plus rotation about it.<br><br>The two kinetic energies add.",
+   "hint": "Rolling is translation plus rotation.",
+   "distractor_logic": [
+    "Ignored the rotational part of the motion.",
+    "Ignored the translational motion of the centre of mass.",
+    "Subtracted the two energies; kinetic energies always add."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-039",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "A wheel of radius 0.5 m rolls without slipping with an angular velocity of 6 rad/s. The speed of its centre is",
+   "options": [
+    "12 m/s",
+    "1.5 m/s",
+    "3 m/s",
+    "6 m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(v_{cm}=\\omega R=6\\times0.5=3\\) m/s.",
+   "hint": "Use the rolling condition.",
+   "distractor_logic": [
+    "Divided the angular velocity by the radius.",
+    "Multiplied by the square of the radius.",
+    "This is the speed of the topmost point."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L1-040",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 1,
+   "type": "regular",
+   "question": "A solid sphere and a ring are released together from rest at the top of an incline and roll without slipping. Which reaches the bottom first?",
+   "options": [
+    "The ring",
+    "Both reach together",
+    "Whichever has the larger mass",
+    "The solid sphere"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(a=\\dfrac{g\\sin\\theta}{1+k^2/R^2}\\).<br><br>For the sphere \\(k^2/R^2=\\tfrac25\\); for the ring it is \\(1\\).<br><br>The smaller ratio gives the larger acceleration, so the sphere wins.",
+   "hint": "Compare the values of \\(k^2/R^2\\).",
+   "distractor_logic": [
+    "The ring puts more of its energy into rotation, so it moves down more slowly.",
+    "True for frictionless sliding, but in rolling the shape of the body matters.",
+    "Mass cancels out of the rolling acceleration."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-001",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "Masses of 2 kg, 1 kg and 1 kg are placed at \\(x=0\\), \\(x=4\\) m and \\(x=8\\) m respectively. The centre of mass is at",
+   "options": [
+    "\\(x=3\\) m",
+    "\\(x=4\\) m",
+    "\\(x=12\\) m",
+    "\\(x=5\\) m"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(x_{cm}=\\dfrac{2(0)+1(4)+1(8)}{2+1+1}\\).<br><br>\\(x_{cm}=\\dfrac{12}{4}=3\\) m.",
+   "hint": "Weight each position by its mass, then divide by the total mass.",
+   "distractor_logic": [
+    "Took the unweighted average of the three positions.",
+    "Summed mass times position but did not divide by the total mass of 4 kg.",
+    "Attached the 2 kg mass to the far end, swapping the masses at 0 and 8 m."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-002",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "Particles of mass 1 kg at \\((0,0)\\), 1 kg at \\((4,0)\\) and 2 kg at \\((2,2)\\) (coordinates in m) form a system. Its centre of mass is at",
+   "options": [
+    "\\((2,\\,2)\\) m",
+    "\\((2,\\,1)\\) m",
+    "\\((8,\\,4)\\) m",
+    "\\((2,\\,0)\\) m"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(x_{cm}=\\dfrac{1(0)+1(4)+2(2)}{4}=2\\) m.<br><br>\\(y_{cm}=\\dfrac{1(0)+1(0)+2(2)}{4}=1\\) m.<br><br>So the centre of mass is at \\((2,1)\\) m.",
+   "hint": "Treat the x and y coordinates separately.",
+   "distractor_logic": [
+    "Took the position of the heaviest particle as the centre of mass.",
+    "Computed the mass-weighted sums but did not divide by the total mass.",
+    "Ignored the contribution of the 2 kg particle to the y-coordinate."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-003",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "A 3 kg particle is at \\((1,2)\\) m and a 1 kg particle is at \\((5,6)\\) m. The centre of mass is at",
+   "options": [
+    "\\((3,\\,4)\\) m",
+    "\\((4,\\,5)\\) m",
+    "\\((2,\\,3)\\) m",
+    "\\((8,\\,12)\\) m"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(x_{cm}=\\dfrac{3(1)+1(5)}{4}=2\\) m.<br><br>\\(y_{cm}=\\dfrac{3(2)+1(6)}{4}=3\\) m.",
+   "hint": "The answer must lie closer to the 3 kg particle.",
+   "distractor_logic": [
+    "Took the midpoint of the two positions, ignoring the unequal masses.",
+    "Swapped the masses, weighting the far particle by 3 kg.",
+    "Did not divide the weighted sums by the total mass of 4 kg."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-004",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg body moves at \\(+5\\) m/s and a 3 kg body moves at \\(-5\\) m/s along the same line. The velocity of the centre of mass is",
+   "options": [
+    "\\(+1\\) m/s",
+    "\\(0\\) m/s",
+    "\\(5\\) m/s",
+    "\\(-1\\) m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(v_{cm}=\\dfrac{2(+5)+3(-5)}{2+3}=\\dfrac{-5}{5}\\).<br><br>\\(v_{cm}=-1\\) m/s.",
+   "hint": "Velocities are signed; add momenta with their signs.",
+   "distractor_logic": [
+    "Lost the sign: the heavier body moves in the negative direction, so the net momentum is negative.",
+    "Assumed equal speeds cancel, ignoring that the masses differ.",
+    "Added the magnitudes of the two momenta instead of adding them as signed quantities."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-005",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "A shell moving along a parabolic path explodes in mid-air into many fragments. Until any fragment hits the ground, the centre of mass of the fragments",
+   "options": [
+    "continues along the original parabolic path",
+    "falls vertically down from the point of explosion",
+    "comes to rest momentarily at the point of explosion",
+    "moves in a straight line along the velocity at the instant of explosion"
+   ],
+   "correct_index": 0,
+   "explanation": "The forces of the explosion are internal to the system.<br><br>The only external force before and after is gravity, the same as before.<br><br>So the centre of mass follows the same parabola it was already on.",
+   "hint": "Ask: did the external force change at the explosion?",
+   "distractor_logic": [
+    "Assumes the explosion destroys the horizontal momentum, but explosion forces are internal.",
+    "Internal forces cannot change the velocity of the centre of mass.",
+    "Forgets that gravity, an external force, still acts and keeps the path parabolic."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-006",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "A system consists of a 1 kg and a 3 kg particle. A net external force of 12 N acts on the system. The acceleration of its centre of mass is",
+   "options": [
+    "12 m/s\\(^2\\)",
+    "3 m/s\\(^2\\)",
+    "4 m/s\\(^2\\)",
+    "48 m/s\\(^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(a_{cm}=\\dfrac{F_{ext}}{M}\\) with \\(M=1+3=4\\) kg.<br><br>\\(a_{cm}=\\dfrac{12}{4}=3\\) m/s\\(^2\\).",
+   "hint": "Use the total mass of the system.",
+   "distractor_logic": [
+    "Divided the force by only the 1 kg mass.",
+    "Divided the force by only the 3 kg mass.",
+    "Multiplied force by total mass instead of dividing."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-007",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "A man standing on a boat at rest in still water walks from one end of the boat to the other. Neglecting water resistance, the centre of mass of the man-boat system",
+   "options": [
+    "moves in the direction the man walks",
+    "moves opposite to the direction the man walks",
+    "stays where it was",
+    "moves only if the man is heavier than the boat"
+   ],
+   "correct_index": 2,
+   "explanation": "There is no external horizontal force on the man-boat system.<br><br>The centre of mass was at rest, so it stays at rest.<br><br>The boat moves backward just enough to keep the centre of mass fixed.",
+   "hint": "Horizontal external force is zero and the system starts from rest.",
+   "distractor_logic": [
+    "The forces between the man and the boat are internal and cannot shift the centre of mass.",
+    "It is the boat, not the centre of mass, that moves backward.",
+    "The result does not depend on which body is heavier."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-008",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 2,
+   "type": "regular",
+   "question": "Particles of mass 1 kg and 4 kg are 10 m apart. The distance of the centre of mass from the 1 kg particle is",
+   "options": [
+    "2 m",
+    "5 m",
+    "2.5 m",
+    "8 m"
+   ],
+   "correct_index": 3,
+   "explanation": "Measured from \\(m_1\\): \\(d_1=\\dfrac{m_2\\,d}{m_1+m_2}\\).<br><br>\\(d_1=\\dfrac{4\\times10}{5}=8\\) m.<br><br>The centre of mass is far from the light particle and near the heavy one.",
+   "hint": "The centre of mass is closer to the heavier particle, so it is far from the 1 kg one.",
+   "distractor_logic": [
+    "This is the distance from the 4 kg particle, not from the 1 kg particle.",
+    "Took the midpoint, ignoring the unequal masses.",
+    "Divided the separation by the 4 kg mass, which is not the correct formula."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-009",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "A force of 20 N acts at a point 2 m from the axis, making an angle of \\(30^\\circ\\) with the position vector. The magnitude of the torque is",
+   "options": [
+    "20 N m",
+    "\\(20\\sqrt3\\) N m",
+    "40 N m",
+    "10 N m"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(\\tau=rF\\sin\\theta=2\\times20\\times\\sin30^\\circ\\).<br><br>\\(\\tau=40\\times\\tfrac12=20\\) N m.",
+   "hint": "Only the component of the force perpendicular to the position vector counts.",
+   "distractor_logic": [
+    "Used \\(rF\\cos\\theta\\), the work-style formula, instead of \\(rF\\sin\\theta\\).",
+    "Ignored the angle and simply multiplied the distance by the force.",
+    "Took the perpendicular component of the force but forgot to multiply by the distance."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-010",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "A force \\(\\vec F=4\\hat j\\) N acts at the point \\(\\vec r=3\\hat i\\) m. The torque about the origin is",
+   "options": [
+    "\\(-12\\hat k\\) N m",
+    "\\(12\\hat k\\) N m",
+    "\\(0\\) N m",
+    "\\(12\\hat j\\) N m"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\vec\\tau=\\vec r\\times\\vec F=(3\\hat i)\\times(4\\hat j)\\).<br><br>\\(\\hat i\\times\\hat j=\\hat k\\), so \\(\\vec\\tau=12\\hat k\\) N m.",
+   "hint": "Remember the cyclic order of the unit vectors.",
+   "distractor_logic": [
+    "Computed \\(\\vec F\\times\\vec r\\) instead of \\(\\vec r\\times\\vec F\\).",
+    "Took the dot product, which vanishes for perpendicular vectors.",
+    "Placed the torque along the force instead of perpendicular to both vectors."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-011",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "A force \\(\\vec F=5\\hat i\\) N acts at the point \\(\\vec r=2\\hat j\\) m. The torque about the origin is",
+   "options": [
+    "\\(+10\\hat k\\) N m",
+    "\\(0\\) N m",
+    "\\(-10\\hat k\\) N m",
+    "\\(10\\hat j\\) N m"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(\\vec\\tau=(2\\hat j)\\times(5\\hat i)=10(\\hat j\\times\\hat i)\\).<br><br>\\(\\hat j\\times\\hat i=-\\hat k\\), so \\(\\vec\\tau=-10\\hat k\\) N m (clockwise, seen from \\(+z\\)).",
+   "hint": "Reversing the order in a cross product changes the sign.",
+   "distractor_logic": [
+    "Assumed \\(\\hat j\\times\\hat i=+\\hat k\\); the reversed order actually gives \\(-\\hat k\\).",
+    "Used the dot product of two perpendicular vectors.",
+    "Put the torque along the position vector instead of perpendicular to the plane."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-012",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "A 2 kg particle moves at 3 m/s along a straight line whose perpendicular distance from the origin is 4 m. The magnitude of its angular momentum about the origin is",
+   "options": [
+    "6 kg m\\(^2\\)/s",
+    "1.5 kg m\\(^2\\)/s",
+    "12 kg m\\(^2\\)/s",
+    "24 kg m\\(^2\\)/s"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(L=mvr_\\perp\\).<br><br>\\(L=2\\times3\\times4=24\\) kg m\\(^2\\)/s.",
+   "hint": "Angular momentum of a particle is linear momentum times the perpendicular distance.",
+   "distractor_logic": [
+    "Computed only the linear momentum and left out the perpendicular distance.",
+    "Divided the linear momentum by the distance instead of multiplying.",
+    "Multiplied distance by speed but left out the mass."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-013",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "A 30 kg child sits 2 m from the pivot of a light seesaw. To balance it, a 20 kg child must sit on the other side at a distance of",
+   "options": [
+    "3 m",
+    "2 m",
+    "\\(\\tfrac43\\) m",
+    "5 m"
+   ],
+   "correct_index": 0,
+   "explanation": "Balance of torques about the pivot: \\(30g\\times2=20g\\times d\\).<br><br>\\(d=\\dfrac{60}{20}=3\\) m.",
+   "hint": "The lighter child needs the longer lever arm.",
+   "distractor_logic": [
+    "Assumed equal distances balance, ignoring the unequal weights.",
+    "Inverted the ratio, placing the lighter child closer to the pivot.",
+    "Added the distance and a mass-based number with no torque balance behind it."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-014",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "A skater spinning on smooth ice pulls her arms in close to her body. Neglecting friction, which statement is correct?",
+   "options": [
+    "Both her angular momentum and her rotational kinetic energy stay constant",
+    "Her angular momentum stays constant, while her rotational kinetic energy increases",
+    "Her angular momentum increases because she spins faster",
+    "Her rotational kinetic energy decreases because her moment of inertia decreases"
+   ],
+   "correct_index": 1,
+   "explanation": "No external torque acts, so angular momentum is conserved.<br><br>Pulling the arms in reduces \\(I\\), so \\(\\omega\\) rises to keep \\(L=I\\omega\\) fixed.<br><br>\\(KE=\\tfrac{L^2}{2I}\\) therefore increases; the extra energy comes from the work her muscles do.",
+   "hint": "Write the kinetic energy in terms of \\(L\\) and \\(I\\).",
+   "distractor_logic": [
+    "Assumes energy must be conserved along with \\(L\\); but \\(KE=\\tfrac{L^2}{2I}\\) rises as \\(I\\) falls.",
+    "Spinning faster is compensated by a smaller \\(I\\); with no external torque \\(L\\) cannot change.",
+    "With \\(L\\) fixed, \\(KE=\\tfrac{L^2}{2I}\\) goes up, not down, when \\(I\\) drops."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-015",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "A planet moves around the Sun under the Sun's gravitational pull, a non-zero force. About the Sun, the angular momentum of the planet is",
+   "options": [
+    "not conserved, because a non-zero external force acts on the planet",
+    "conserved only if the orbit is a perfect circle",
+    "conserved, because the gravitational force has zero torque about the Sun",
+    "always zero, because the force points toward the Sun"
+   ],
+   "correct_index": 2,
+   "explanation": "Gravity on the planet points along \\(-\\vec r\\) (toward the Sun).<br><br>So \\(\\vec\\tau=\\vec r\\times\\vec F=0\\) because the vectors are anti-parallel.<br><br>Zero torque means the angular momentum about the Sun stays constant, even though the force is not zero.",
+   "hint": "Check the torque, not the force.",
+   "distractor_logic": [
+    "Confuses the condition for linear momentum (zero force) with that for angular momentum (zero torque).",
+    "A central force has zero torque about the centre for an orbit of any shape.",
+    "Zero torque means constant angular momentum, not zero angular momentum."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-016",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 2,
+   "type": "regular",
+   "question": "The same force is applied perpendicular to a door, first at 0.8 m from the hinge and then at 0.2 m from the hinge. The ratio of the first torque to the second is",
+   "options": [
+    "\\(1:4\\)",
+    "\\(1:1\\)",
+    "\\(16:1\\)",
+    "\\(4:1\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(\\tau=rF\\) for a perpendicular force.<br><br>\\(\\dfrac{\\tau_1}{\\tau_2}=\\dfrac{0.8}{0.2}=4\\).",
+   "hint": "This is why door handles are fitted far from the hinge.",
+   "distractor_logic": [
+    "Inverted the ratio; the larger lever arm gives the larger torque.",
+    "Assumed torque depends only on the force and not on where it is applied.",
+    "Squared the distance ratio, as if torque depended on the square of the lever arm."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-017",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "Given \\(I_{cm}=\\tfrac{1}{12}ML^2\\) for a thin rod, the parallel-axis theorem gives its moment of inertia about a perpendicular axis through one end as",
+   "options": [
+    "\\(\\tfrac13ML^2\\)",
+    "\\(\\tfrac16ML^2\\)",
+    "\\(\\tfrac{13}{12}ML^2\\)",
+    "\\(\\tfrac{1}{12}ML^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "The end is at \\(d=\\tfrac{L}{2}\\) from the centre of mass.<br><br>\\(I=\\tfrac{1}{12}ML^2+M\\left(\\tfrac{L}{2}\\right)^2=\\tfrac{1}{12}ML^2+\\tfrac{3}{12}ML^2\\).<br><br>\\(I=\\tfrac13ML^2\\).",
+   "hint": "The distance d is from the centre of mass to the new axis.",
+   "distractor_logic": [
+    "Subtracted \\(M\\left(\\tfrac{L}{2}\\right)^2\\) and dropped the resulting negative sign; the theorem always adds.",
+    "Used \\(d=L\\) instead of \\(d=\\tfrac{L}{2}\\), the distance from the centre to the end.",
+    "Assumed that shifting the axis does not change the moment of inertia."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-018",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "A uniform disc has mass 2 kg and radius 0.5 m. Its moment of inertia about its central axis is",
+   "options": [
+    "0.5 kg m\\(^2\\)",
+    "0.25 kg m\\(^2\\)",
+    "0.125 kg m\\(^2\\)",
+    "0.2 kg m\\(^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(I=\\tfrac12MR^2=\\tfrac12\\times2\\times(0.5)^2\\).<br><br>\\(I=0.25\\) kg m\\(^2\\).",
+   "hint": "Square the radius before multiplying.",
+   "distractor_logic": [
+    "Used \\(MR^2\\), the ring formula.",
+    "Used \\(\\tfrac14MR^2\\), the value about a diameter.",
+    "Used \\(\\tfrac25MR^2\\), the solid-sphere coefficient."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-019",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "A ring has \\(I_z=MR^2\\) about its central axis. Using the perpendicular-axis theorem, its moment of inertia about a diameter is",
+   "options": [
+    "\\(2MR^2\\)",
+    "\\(MR^2\\)",
+    "\\(\\tfrac12MR^2\\)",
+    "\\(\\tfrac14MR^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "The ring is planar, so \\(I_z=I_x+I_y\\) applies.<br><br>By symmetry \\(I_x=I_y=I_d\\), so \\(MR^2=2I_d\\).<br><br>\\(I_d=\\tfrac12MR^2\\).",
+   "hint": "Any two perpendicular diameters are equivalent by symmetry.",
+   "distractor_logic": [
+    "Doubled \\(I_z\\) instead of halving it; the theorem says \\(I_z=I_x+I_y\\), not the other way round.",
+    "Assumed the value is the same about every axis through the centre.",
+    "This is the disc's value about a diameter, not the ring's."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-020",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "Using the perpendicular-axis theorem, the moment of inertia of a uniform disc about a diameter is",
+   "options": [
+    "\\(\\tfrac12MR^2\\)",
+    "\\(MR^2\\)",
+    "\\(\\tfrac34MR^2\\)",
+    "\\(\\tfrac14MR^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(I_z=\\tfrac12MR^2=I_x+I_y\\) and \\(I_x=I_y\\) by symmetry.<br><br>\\(I_d=\\tfrac12I_z=\\tfrac14MR^2\\).",
+   "hint": "Share the central-axis value equally between two perpendicular diameters.",
+   "distractor_logic": [
+    "Quoted the value about the central axis without applying the theorem.",
+    "Doubled \\(I_z\\) instead of halving it.",
+    "Added instead of sharing the central-axis value between two diameters."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-021",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "The moment of inertia of a ring of mass \\(M\\) and radius \\(R\\) about a tangent parallel to its central axis (perpendicular to the plane of the ring) is",
+   "options": [
+    "\\(2MR^2\\)",
+    "\\(0\\)",
+    "\\(MR^2\\)",
+    "\\(\\tfrac32MR^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(I_{cm}=MR^2\\) and the tangent is at \\(d=R\\).<br><br>\\(I=MR^2+MR^2=2MR^2\\).",
+   "hint": "Shift the central axis by one radius.",
+   "distractor_logic": [
+    "Subtracted \\(Md^2=MR^2\\) from \\(I_{cm}=MR^2\\); the parallel-axis theorem always adds.",
+    "Ignored the shift of the axis from the centre to the rim.",
+    "This is the value about a tangent lying in the plane of the ring."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-022",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "A uniform solid sphere has mass 5 kg and radius 0.2 m. Its moment of inertia about a diameter is",
+   "options": [
+    "0.4 kg m\\(^2\\)",
+    "0.08 kg m\\(^2\\)",
+    "0.2 kg m\\(^2\\)",
+    "0.1 kg m\\(^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(I=\\tfrac25MR^2=\\tfrac25\\times5\\times(0.2)^2\\).<br><br>\\(I=2\\times0.04=0.08\\) kg m\\(^2\\).",
+   "hint": "The coefficient for a solid sphere is two-fifths.",
+   "distractor_logic": [
+    "Forgot to square the radius.",
+    "Used \\(MR^2\\) without the factor \\(\\tfrac25\\).",
+    "Used the disc coefficient \\(\\tfrac12\\) instead of \\(\\tfrac25\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-023",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "A ring and a disc have the same mass and the same radius. About their central axes,",
+   "options": [
+    "the disc has the larger moment of inertia, since it contains more material",
+    "both have the same moment of inertia, since mass and radius are equal",
+    "the ring has the larger moment of inertia, since all its mass is at the rim",
+    "the comparison depends on how fast each is spinning"
+   ],
+   "correct_index": 2,
+   "explanation": "Ring: \\(I=MR^2\\). Disc: \\(I=\\tfrac12MR^2\\).<br><br>The ring has all of its mass at the maximum distance from the axis.",
+   "hint": "Mass far from the axis contributes more.",
+   "distractor_logic": [
+    "The masses are equal; what matters is how far the mass is from the axis.",
+    "Ignores the distribution of mass, which differs between the two bodies.",
+    "The moment of inertia does not depend on angular velocity."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-024",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 2,
+   "type": "regular",
+   "question": "A student writes \\(I_z=I_x+I_y\\) for a solid sphere and concludes that \\(I_z=2I_x\\). What is wrong?",
+   "options": [
+    "The student should have subtracted: \\(I_z=I_x-I_y\\)",
+    "Nothing is wrong; the theorem holds for every rigid body",
+    "The theorem holds for a sphere only if the axes pass through its surface",
+    "The perpendicular-axis theorem applies only to planar bodies; for a sphere all diameters give the same value"
+   ],
+   "correct_index": 3,
+   "explanation": "The theorem assumes all the mass lies in one plane.<br><br>A solid sphere is three-dimensional, and by symmetry \\(I_x=I_y=I_z=\\tfrac25MR^2\\).<br><br>So \\(I_z=2I_x\\) is false.",
+   "hint": "Is a sphere a flat body?",
+   "distractor_logic": [
+    "The theorem never subtracts, and in any case it does not apply to a sphere.",
+    "A sphere is three-dimensional, so the planar assumption of the theorem fails.",
+    "The position of the axes is not the issue; the body is not a lamina."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-025",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A wheel starts from rest with a constant angular acceleration of 3 rad/s\\(^2\\). The angle it turns through in 4 s is",
+   "options": [
+    "24 rad",
+    "12 rad",
+    "48 rad",
+    "6 rad"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(\\theta=\\omega_0t+\\tfrac12\\alpha t^2=0+\\tfrac12\\times3\\times16\\).<br><br>\\(\\theta=24\\) rad.",
+   "hint": "Use the twin of \\(s=ut+\\tfrac12at^2\\).",
+   "distractor_logic": [
+    "Computed \\(\\alpha t\\), which is the final angular velocity in rad/s.",
+    "Left out the factor \\(\\tfrac12\\) in \\(\\tfrac12\\alpha t^2\\).",
+    "Computed \\(\\tfrac12\\alpha t\\) and forgot to square the time."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-026",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A wheel spinning at 10 rad/s slows down uniformly at 2 rad/s\\(^2\\) until it stops. The angle turned through while stopping is",
+   "options": [
+    "5 rad",
+    "25 rad",
+    "50 rad",
+    "20 rad"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\omega^2=\\omega_0^2+2\\alpha\\theta\\) with \\(\\omega=0\\) and \\(\\alpha=-2\\) rad/s\\(^2\\).<br><br>\\(0=100-4\\theta\\), so \\(\\theta=25\\) rad.",
+   "hint": "No time is asked, so use the equation without time.",
+   "distractor_logic": [
+    "This is the stopping time in seconds, not the angle.",
+    "Left out the factor 2 in \\(\\omega^2=\\omega_0^2+2\\alpha\\theta\\).",
+    "Multiplied the initial angular velocity by the deceleration."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-027",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A net torque of 4 N m acts on a body of moment of inertia 0.5 kg m\\(^2\\). Its angular acceleration is",
+   "options": [
+    "2 rad/s\\(^2\\)",
+    "0.125 rad/s\\(^2\\)",
+    "8 rad/s\\(^2\\)",
+    "4 rad/s\\(^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(\\alpha=\\dfrac{\\tau}{I}=\\dfrac{4}{0.5}=8\\) rad/s\\(^2\\).",
+   "hint": "Rearrange \\(\\tau=I\\alpha\\).",
+   "distractor_logic": [
+    "Multiplied the torque by the moment of inertia instead of dividing.",
+    "Inverted the ratio, dividing the moment of inertia by the torque.",
+    "Set the angular acceleration equal to the torque, ignoring the moment of inertia."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-028",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A uniform disc of mass 4 kg and radius 0.5 m is free to rotate about its central axis. A tangential force of 6 N is applied at its rim. Its angular acceleration is",
+   "options": [
+    "12 rad/s\\(^2\\)",
+    "3 rad/s\\(^2\\)",
+    "24 rad/s\\(^2\\)",
+    "6 rad/s\\(^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(\\tau=FR=6\\times0.5=3\\) N m.<br><br>\\(I=\\tfrac12MR^2=\\tfrac12\\times4\\times0.25=0.5\\) kg m\\(^2\\).<br><br>\\(\\alpha=\\dfrac{3}{0.5}=6\\) rad/s\\(^2\\).",
+   "hint": "Find the torque and the moment of inertia separately first.",
+   "distractor_logic": [
+    "Used the force itself as the torque, forgetting to multiply by the radius.",
+    "Used \\(I=MR^2\\), the ring formula, instead of \\(\\tfrac12MR^2\\).",
+    "Divided the force by the radius to get the torque instead of multiplying."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-029",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A flywheel of moment of inertia 2 kg m\\(^2\\) rotates at 10 rad/s. Its rotational kinetic energy is",
+   "options": [
+    "100 J",
+    "20 J",
+    "200 J",
+    "10 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(KE=\\tfrac12I\\omega^2=\\tfrac12\\times2\\times100=100\\) J.",
+   "hint": "Square the angular velocity.",
+   "distractor_logic": [
+    "Computed \\(I\\omega\\), the angular momentum.",
+    "Left out the factor \\(\\tfrac12\\).",
+    "Computed \\(\\tfrac12I\\omega\\) without squaring \\(\\omega\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-030",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A flywheel rotates at 120 revolutions per minute. Its angular velocity is",
+   "options": [
+    "\\(2\\pi\\) rad/s",
+    "\\(4\\pi\\) rad/s",
+    "\\(240\\pi\\) rad/s",
+    "120 rad/s"
+   ],
+   "correct_index": 1,
+   "explanation": "120 revolutions per minute is 2 revolutions per second.<br><br>Each revolution is \\(2\\pi\\) rad, so \\(\\omega=2\\times2\\pi=4\\pi\\) rad/s.",
+   "hint": "One revolution is \\(2\\pi\\) rad, and one minute is 60 s.",
+   "distractor_logic": [
+    "Converted to 2 revolutions per second correctly but then used \\(\\pi\\) rad per revolution instead of \\(2\\pi\\).",
+    "Multiplied by the angle per revolution but did not convert minutes to seconds.",
+    "Treated revolutions per minute as if they were already radians per second."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-031",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A wheel starts from rest with a constant angular acceleration of \\(\\pi\\) rad/s\\(^2\\). The number of revolutions it completes in 4 s is",
+   "options": [
+    "8",
+    "2",
+    "4",
+    "16"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(\\theta=\\tfrac12\\alpha t^2=\\tfrac12\\times\\pi\\times16=8\\pi\\) rad.<br><br>Revolutions \\(=\\dfrac{8\\pi}{2\\pi}=4\\).",
+   "hint": "Find the angle in radians, then divide by \\(2\\pi\\).",
+   "distractor_logic": [
+    "Divided the angle by \\(\\pi\\) instead of by \\(2\\pi\\).",
+    "Left out the square on the time, using \\(\\tfrac12\\alpha t\\).",
+    "Left out the factor \\(\\tfrac12\\) and also divided by \\(\\pi\\) instead of \\(2\\pi\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-032",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 2,
+   "type": "regular",
+   "question": "A motor exerts a constant torque of 10 N m on a shaft rotating steadily at 20 rad/s. The power delivered is",
+   "options": [
+    "2 W",
+    "0.5 W",
+    "100 W",
+    "200 W"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(P=\\tau\\omega=10\\times20=200\\) W.",
+   "hint": "Use the twin of \\(P=Fv\\).",
+   "distractor_logic": [
+    "Divided the angular velocity by the torque.",
+    "Divided the torque by the angular velocity.",
+    "Inserted an unnecessary factor of \\(\\tfrac12\\), as in a kinetic-energy formula."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-033",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "For a ring rolling without slipping, the fraction of its total kinetic energy that is rotational is",
+   "options": [
+    "\\(\\tfrac12\\)",
+    "\\(\\tfrac13\\)",
+    "\\(\\tfrac27\\)",
+    "\\(1\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Rotational: \\(\\tfrac12I\\omega^2=\\tfrac12(MR^2)\\dfrac{v^2}{R^2}=\\tfrac12Mv^2\\).<br><br>Translational: \\(\\tfrac12Mv^2\\).<br><br>The two are equal, so the rotational fraction is one half.",
+   "hint": "Put \\(I=MR^2\\) and \\(\\omega=\\dfrac{v}{R}\\).",
+   "distractor_logic": [
+    "This is the fraction for a disc or a solid cylinder.",
+    "This is the fraction for a solid sphere.",
+    "Ignored the translational kinetic energy entirely."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-034",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "A solid sphere of mass 2 kg rolls without slipping at 10 m/s. Its total kinetic energy is",
+   "options": [
+    "100 J",
+    "140 J",
+    "40 J",
+    "200 J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(KE=\\tfrac12mv^2\\left(1+\\dfrac{k^2}{R^2}\\right)=\\tfrac12\\times2\\times100\\times\\tfrac75\\).<br><br>\\(KE=140\\) J.",
+   "hint": "Total energy is \\(\\tfrac12mv^2\\) times \\(\\left(1+k^2/R^2\\right)\\).",
+   "distractor_logic": [
+    "Counted only the translational kinetic energy.",
+    "Counted only the rotational kinetic energy.",
+    "Used the ring value \\(k^2/R^2=1\\) instead of \\(\\tfrac25\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-035",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "A uniform disc of mass 4 kg rolls without slipping at 2 m/s. Its total kinetic energy is",
+   "options": [
+    "8 J",
+    "16 J",
+    "12 J",
+    "4 J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(KE=\\tfrac12mv^2\\left(1+\\tfrac12\\right)=\\tfrac34mv^2\\).<br><br>\\(KE=\\tfrac34\\times4\\times4=12\\) J.",
+   "hint": "For a disc, the rotational part is half the translational part.",
+   "distractor_logic": [
+    "Counted only the translational kinetic energy.",
+    "Used \\(I=MR^2\\), the ring value.",
+    "Counted only the rotational kinetic energy."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-036",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "A ring rolls without slipping down an incline of angle \\(30^\\circ\\). Taking \\(g=10\\) m/s\\(^2\\), its acceleration is",
+   "options": [
+    "5 m/s\\(^2\\)",
+    "\\(\\tfrac{10}{3}\\) m/s\\(^2\\)",
+    "\\(2.5\\sqrt3\\) m/s\\(^2\\)",
+    "2.5 m/s\\(^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(a=\\dfrac{g\\sin\\theta}{1+k^2/R^2}\\) with \\(k^2/R^2=1\\) for a ring.<br><br>\\(a=\\dfrac{10\\times\\tfrac12}{2}=2.5\\) m/s\\(^2\\).",
+   "hint": "A ring rolls down with exactly half the sliding acceleration.",
+   "distractor_logic": [
+    "Treated the ring as sliding on a frictionless incline, ignoring rotation.",
+    "Used \\(k^2/R^2=\\tfrac12\\), the disc value.",
+    "Used \\(\\cos30^\\circ\\) for the component of gravity along the incline."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-037",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "A solid cylinder rolls without slipping down an incline for which \\(\\sin\\theta=0.6\\). Taking \\(g=10\\) m/s\\(^2\\), its acceleration is",
+   "options": [
+    "4 m/s\\(^2\\)",
+    "6 m/s\\(^2\\)",
+    "3 m/s\\(^2\\)",
+    "\\(\\tfrac{16}{3}\\) m/s\\(^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "For a solid cylinder \\(k^2/R^2=\\tfrac12\\).<br><br>\\(a=\\dfrac{10\\times0.6}{1.5}=4\\) m/s\\(^2\\).",
+   "hint": "Divide \\(g\\sin\\theta\\) by \\(1+k^2/R^2\\).",
+   "distractor_logic": [
+    "Ignored rotation and used the frictionless sliding value.",
+    "Used \\(k^2/R^2=1\\), the ring value.",
+    "Used \\(\\cos\\theta=0.8\\) in place of \\(\\sin\\theta\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-038",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "A hollow sphere (\\(I=\\tfrac23MR^2\\)) rolls without slipping. The fraction of its total kinetic energy that is rotational is",
+   "options": [
+    "\\(\\tfrac23\\)",
+    "\\(\\tfrac25\\)",
+    "\\(\\tfrac27\\)",
+    "\\(\\tfrac35\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Rotational to translational ratio is \\(k^2/R^2=\\tfrac23\\).<br><br>Fraction of total \\(=\\dfrac{2/3}{1+2/3}=\\dfrac{2/3}{5/3}=\\tfrac25\\).",
+   "hint": "Compare the rotational part with the total, not with the translational part.",
+   "distractor_logic": [
+    "Quoted \\(k^2/R^2\\) itself instead of the fraction of the total.",
+    "This is the fraction for a solid sphere.",
+    "This is the translational fraction."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-039",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "A sphere rolls without slipping down a rough incline. Neglecting air resistance, its total mechanical energy",
+   "options": [
+    "decreases, because friction always dissipates energy",
+    "decreases by \\(\\mu_kN\\) times the distance rolled",
+    "stays constant, because static friction at the stationary contact point does no work",
+    "increases, because friction adds rotational energy"
+   ],
+   "correct_index": 2,
+   "explanation": "In pure rolling the contact point is instantaneously at rest.<br><br>So static friction does zero work, and the normal force is perpendicular to the motion.<br><br>Only gravity does work, and mechanical energy is conserved.",
+   "hint": "Check the work done by each force.",
+   "distractor_logic": [
+    "Treats static friction in pure rolling like kinetic friction during sliding.",
+    "Uses kinetic friction, which is absent when there is no slipping.",
+    "Friction only redirects energy from translation into rotation; it adds none."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L2-040",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 2,
+   "type": "regular",
+   "question": "A wheel rolls without slipping with centre-of-mass speed \\(v\\). The speed of the point on the rim that is level with the centre (the front-most point) is",
+   "options": [
+    "\\(v\\)",
+    "\\(2v\\)",
+    "zero",
+    "\\(\\sqrt2\\,v\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "At this point translation gives \\(v\\) horizontally and rotation gives \\(\\omega R=v\\) vertically.<br><br>The two are perpendicular: speed \\(=\\sqrt{v^2+v^2}=\\sqrt2\\,v\\).",
+   "hint": "The rotational velocity at this point is vertical.",
+   "distractor_logic": [
+    "Counted only the translational velocity.",
+    "Added the two velocities as if they were parallel; here they are perpendicular.",
+    "Confused this point with the contact point."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-001",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 3,
+   "type": "regular",
+   "question": "Masses of 1 kg, 2 kg, 3 kg and 4 kg are placed at the corners \\((0,0)\\), \\((2,0)\\), \\((2,2)\\) and \\((0,2)\\) of a square (coordinates in m). The centre of mass is at",
+   "options": [
+    "\\((1,\\,1.4)\\) m",
+    "\\((1,\\,1)\\) m",
+    "\\((1.4,\\,1)\\) m",
+    "\\((10,\\,14)\\) m"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(x_{cm}=\\dfrac{1(0)+2(2)+3(2)+4(0)}{10}=\\dfrac{10}{10}=1\\) m.<br><br>\\(y_{cm}=\\dfrac{1(0)+2(0)+3(2)+4(2)}{10}=\\dfrac{14}{10}=1.4\\) m.",
+   "hint": "More mass sits on the top side, so the centre of mass is above the middle.",
+   "distractor_logic": [
+    "Took the geometric centre of the square, ignoring that the masses are unequal.",
+    "Interchanged the x and y calculations.",
+    "Found the weighted sums but did not divide by the total mass of 10 kg."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-002",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 3,
+   "type": "regular",
+   "question": "A 40 kg man stands on a 160 kg boat at rest in still water. He walks 4 m relative to the boat. Neglecting water resistance, the boat moves relative to the water by",
+   "options": [
+    "1 m",
+    "0.8 m",
+    "3.2 m",
+    "4 m"
+   ],
+   "correct_index": 1,
+   "explanation": "Let the boat move back by \\(x\\); the man then moves \\(4-x\\) forward relative to the water.<br><br>The centre of mass stays fixed: \\(40(4-x)=160x\\).<br><br>\\(160=200x\\), so \\(x=0.8\\) m.",
+   "hint": "Keep the centre of mass fixed and express the man's displacement relative to the water.",
+   "distractor_logic": [
+    "Divided by the mass of the boat alone instead of the total mass of 200 kg.",
+    "This is the displacement of the man relative to the water, not of the boat.",
+    "Assumed the boat moves back by as much as the man walks."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-003",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 3,
+   "type": "regular",
+   "question": "A bomb at rest explodes into three fragments. A 1 kg fragment flies along \\(+x\\) at 12 m/s and a 2 kg fragment flies along \\(+y\\) at 8 m/s. The speed of the third fragment, of mass 4 kg, is",
+   "options": [
+    "7 m/s",
+    "20 m/s",
+    "5 m/s",
+    "1 m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "Initial momentum is zero, so the third fragment must cancel the vector sum of the other two.<br><br>Momenta: \\(12\\) kg m/s along \\(x\\) and \\(16\\) kg m/s along \\(y\\); resultant \\(=\\sqrt{12^2+16^2}=20\\) kg m/s.<br><br>Speed \\(=\\dfrac{20}{4}=5\\) m/s.",
+   "hint": "Total momentum stays zero; add the two known momenta as perpendicular vectors.",
+   "distractor_logic": [
+    "Added the two momenta 12 and 16 as plain numbers instead of as perpendicular vectors.",
+    "Found the correct momentum of 20 kg m/s but forgot to divide by the 4 kg mass.",
+    "Subtracted the momenta (16 - 12) instead of combining them by Pythagoras."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-004",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg particle at \\(x=0\\) and a 3 kg particle at \\(x=10\\) m are initially at rest and attract each other with internal forces only. They will meet at",
+   "options": [
+    "\\(x=5\\) m",
+    "\\(x=4\\) m",
+    "\\(x=10\\) m",
+    "\\(x=6\\) m"
+   ],
+   "correct_index": 3,
+   "explanation": "Only internal forces act, and the centre of mass starts at rest, so it stays fixed.<br><br>The particles must therefore meet at the centre of mass.<br><br>\\(x_{cm}=\\dfrac{2(0)+3(10)}{5}=6\\) m.",
+   "hint": "Where can two particles meet if their centre of mass cannot move?",
+   "distractor_logic": [
+    "Assumed they meet midway, which is true only for equal masses.",
+    "Measured the centre-of-mass distance from the wrong particle.",
+    "Assumed the heavier particle does not move at all."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-005",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 3,
+   "type": "regular",
+   "question": "A projectile that would have had range \\(R\\) explodes at its highest point into two equal fragments. One fragment falls vertically down from the point of explosion. Neglecting air resistance, the other fragment lands at a distance from the launch point of",
+   "options": [
+    "\\(\\tfrac{3R}{2}\\)",
+    "\\(R\\)",
+    "\\(2R\\)",
+    "\\(\\tfrac{R}{2}\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "The centre of mass still lands at distance \\(R\\).<br><br>The dropped fragment lands below the top point, at \\(\\tfrac{R}{2}\\).<br><br>For equal masses: \\(\\dfrac{\\tfrac{R}{2}+x}{2}=R\\), so \\(x=\\tfrac{3R}{2}\\).",
+   "hint": "Both fragments land together; the centre of mass lands at the original range.",
+   "distractor_logic": [
+    "Assumed the second fragment simply completes the original path; it is the centre of mass that lands at this distance.",
+    "Doubled the range instead of using the centre-of-mass condition.",
+    "This is where the vertically falling fragment lands."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-006",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg block and a 3 kg block interact through internal forces of magnitude 20 N. In addition, an external force of 10 N along \\(+x\\) acts on the 2 kg block and an external force of 5 N along \\(-x\\) acts on the 3 kg block. The acceleration of the centre of mass is",
+   "options": [
+    "3 m/s\\(^2\\)",
+    "1 m/s\\(^2\\)",
+    "5 m/s\\(^2\\)",
+    "2.5 m/s\\(^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Internal forces cancel; \\(F_{ext}=10-5=5\\) N along \\(+x\\).<br><br>\\(a_{cm}=\\dfrac{5}{2+3}=1\\) m/s\\(^2\\).",
+   "hint": "Discard the internal forces first.",
+   "distractor_logic": [
+    "Added the magnitudes of the two external forces, ignoring that they are opposite.",
+    "Included the 20 N internal force in the net force on the system.",
+    "Divided the net force by the 2 kg mass alone instead of the total mass."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-007",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform beam of length 4 m and weight 100 N rests on supports at its two ends. A 200 N load is placed 1 m from the left end. The reaction of the left support is",
+   "options": [
+    "150 N",
+    "100 N",
+    "200 N",
+    "300 N"
+   ],
+   "correct_index": 2,
+   "explanation": "Take torques about the right end: \\(R_L\\times4=100\\times2+200\\times3\\).<br><br>\\(R_L=\\dfrac{800}{4}=200\\) N.<br><br>Check: the right support carries \\(300-200=100\\) N.",
+   "hint": "Take torques about one support to remove its unknown reaction.",
+   "distractor_logic": [
+    "Split the total load of 300 N equally, ignoring where the load sits.",
+    "This is the reaction at the right support.",
+    "Made the left support carry the entire load, forgetting the right support."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-008",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform ladder of length 5 m and weight 200 N leans against a smooth vertical wall with its foot on rough ground, 3 m from the wall (its top is 4 m high). The friction force at the ground is",
+   "options": [
+    "150 N",
+    "200 N",
+    "100 N",
+    "75 N"
+   ],
+   "correct_index": 3,
+   "explanation": "Horizontally, friction equals the normal force from the wall.<br><br>Torques about the foot: \\(N_w\\times4=200\\times1.5\\).<br><br>\\(N_w=75\\) N, so the friction force is 75 N.",
+   "hint": "The weight acts at the midpoint; its lever arm about the foot is horizontal.",
+   "distractor_logic": [
+    "Used the full 3 m as the lever arm of the weight instead of the 1.5 m to the midpoint.",
+    "Set friction equal to the weight; the weight is balanced by the normal force from the ground.",
+    "Used half the height (2 m) as the lever arm of the weight instead of half the horizontal distance."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-009",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 3,
+   "type": "regular",
+   "question": "A force \\(\\vec F=(4\\hat i-\\hat j)\\) N acts at the point \\(\\vec r=(2\\hat i+3\\hat j)\\) m. The torque about the origin is",
+   "options": [
+    "\\(-14\\hat k\\) N m",
+    "\\(+14\\hat k\\) N m",
+    "\\(5\\) N m",
+    "\\(10\\hat k\\) N m"
+   ],
+   "correct_index": 0,
+   "explanation": "For vectors in the \\(xy\\)-plane, \\(\\tau_z=xF_y-yF_x\\).<br><br>\\(\\tau_z=2(-1)-3(4)=-14\\).<br><br>\\(\\vec\\tau=-14\\hat k\\) N m.",
+   "hint": "Use \\(\\tau_z=xF_y-yF_x\\).",
+   "distractor_logic": [
+    "Evaluated \\(\\vec F\\times\\vec r\\) instead of \\(\\vec r\\times\\vec F\\).",
+    "Computed the dot product \\(\\vec r\\cdot\\vec F=8-3\\) instead of the cross product.",
+    "Used \\(xF_y+yF_x\\) with a plus sign in place of \\(xF_y-yF_x\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-010",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 3,
+   "type": "regular",
+   "question": "A 2 kg particle at \\(\\vec r=(3\\hat i+4\\hat j)\\) m moves with velocity \\(\\vec v=5\\hat i\\) m/s. Its angular momentum about the origin is",
+   "options": [
+    "\\(+40\\hat k\\) kg m\\(^2\\)/s",
+    "\\(-40\\hat k\\) kg m\\(^2\\)/s",
+    "\\(50\\hat k\\) kg m\\(^2\\)/s",
+    "\\(30\\hat k\\) kg m\\(^2\\)/s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\vec L=m(\\vec r\\times\\vec v)\\) and \\(L_z=m(xv_y-yv_x)\\).<br><br>\\(L_z=2[3(0)-4(5)]=-40\\).<br><br>\\(\\vec L=-40\\hat k\\) kg m\\(^2\\)/s.",
+   "hint": "The particle moves parallel to the x-axis, so the perpendicular distance is its y-coordinate.",
+   "distractor_logic": [
+    "Reversed the cross product, computing \\(\\vec p\\times\\vec r\\).",
+    "Used \\(mvr\\) with \\(r=5\\) m, ignoring that only the perpendicular distance of 4 m counts.",
+    "Used the x-coordinate (3 m) as the perpendicular distance instead of the y-coordinate."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-011",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 3,
+   "type": "regular",
+   "question": "A rod of length 2 m is pivoted at its centre. A force of 10 N acts perpendicular to the rod at one end, and an equal, opposite force acts perpendicular to the rod at the other end. The net torque about the centre has magnitude",
+   "options": [
+    "0 N m",
+    "10 N m",
+    "20 N m",
+    "40 N m"
+   ],
+   "correct_index": 2,
+   "explanation": "Each force has a lever arm of 1 m, giving \\(10\\times1=10\\) N m.<br><br>Both torques turn the rod in the same sense, so they add.<br><br>Net torque \\(=20\\) N m, which equals force times separation for a couple.",
+   "hint": "Do the two forces turn the rod in the same sense or in opposite senses?",
+   "distractor_logic": [
+    "Assumed that because the forces cancel, their torques also cancel; in a couple the torques add.",
+    "Counted the torque of only one of the two forces.",
+    "Used the full length of 2 m as the lever arm of each force."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-012",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform metre stick is pivoted at its 40 cm mark. It balances horizontally when a 0.2 kg mass is hung from the 10 cm mark. The mass of the metre stick is",
+   "options": [
+    "0.2 kg",
+    "0.15 kg",
+    "\\(\\tfrac{1}{15}\\) kg",
+    "0.6 kg"
+   ],
+   "correct_index": 3,
+   "explanation": "The weight of the stick acts at its centre of mass, the 50 cm mark, 10 cm from the pivot.<br><br>The hanging mass is 30 cm from the pivot on the other side.<br><br>\\(0.2\\times30=m\\times10\\), so \\(m=0.6\\) kg.",
+   "hint": "The stick's weight acts at the 50 cm mark.",
+   "distractor_logic": [
+    "Assumed the stick must have the same mass as the hanging load.",
+    "Used 40 cm, the pivot reading, as the lever arm of the stick's weight.",
+    "Interchanged the lever arms of the load and the stick's weight."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-013",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform disc of mass 4 kg and radius 0.5 m rotates about an axis that is tangent to its rim and perpendicular to its plane. Its moment of inertia about this axis is",
+   "options": [
+    "1.5 kg m\\(^2\\)",
+    "0.5 kg m\\(^2\\)",
+    "1.25 kg m\\(^2\\)",
+    "1 kg m\\(^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(I_{cm}=\\tfrac12MR^2=\\tfrac12\\times4\\times0.25=0.5\\) kg m\\(^2\\).<br><br>\\(Md^2=4\\times0.25=1\\) kg m\\(^2\\).<br><br>\\(I=0.5+1=1.5\\) kg m\\(^2\\).",
+   "hint": "Use the central-axis value, then add the parallel-axis term.",
+   "distractor_logic": [
+    "Used only \\(I_{cm}=\\tfrac12MR^2\\) and ignored the shift of the axis.",
+    "Started from \\(\\tfrac14MR^2\\), the value about a diameter, which is for a tangent in the plane.",
+    "Kept only the \\(Md^2\\) term and left out \\(I_{cm}\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-014",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 3,
+   "type": "regular",
+   "question": "The moment of inertia of a uniform disc of mass \\(M\\) and radius \\(R\\) about a tangent lying in its own plane is",
+   "options": [
+    "\\(\\tfrac32MR^2\\)",
+    "\\(\\tfrac54MR^2\\)",
+    "\\(\\tfrac34MR^2\\)",
+    "\\(\\tfrac14MR^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The parallel axis through the centre is a diameter: \\(I_{cm}=\\tfrac14MR^2\\).<br><br>\\(I=\\tfrac14MR^2+MR^2=\\tfrac54MR^2\\).",
+   "hint": "Which axis through the centre is parallel to a tangent in the plane?",
+   "distractor_logic": [
+    "Started from the central-axis value \\(\\tfrac12MR^2\\); the parallel axis through the centre here is a diameter.",
+    "Subtracted \\(\\tfrac14MR^2\\) from \\(MR^2\\); the parallel-axis theorem always adds the two terms.",
+    "Ignored the shift of the axis from the diameter to the tangent."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-015",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 3,
+   "type": "regular",
+   "question": "The moment of inertia of a uniform solid sphere of mass \\(M\\) and radius \\(R\\) about a tangent is",
+   "options": [
+    "\\(\\tfrac35MR^2\\)",
+    "\\(\\tfrac25MR^2\\)",
+    "\\(\\tfrac75MR^2\\)",
+    "\\(\\tfrac53MR^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(I_{cm}=\\tfrac25MR^2\\) and \\(d=R\\).<br><br>\\(I=\\tfrac25MR^2+MR^2=\\tfrac75MR^2\\).",
+   "hint": "Add one full unit of M R squared to the diameter value.",
+   "distractor_logic": [
+    "Computed \\(MR^2-\\tfrac25MR^2\\); the parallel-axis theorem adds, never subtracts.",
+    "Ignored the shift of the axis from the diameter to the tangent.",
+    "Used the hollow-sphere value as the starting point."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-016",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 3,
+   "type": "regular",
+   "question": "A thin uniform rod has mass 3 kg and length 2 m. Its moment of inertia about a perpendicular axis 0.5 m from its centre is",
+   "options": [
+    "0.25 kg m\\(^2\\)",
+    "1 kg m\\(^2\\)",
+    "4 kg m\\(^2\\)",
+    "1.75 kg m\\(^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(I_{cm}=\\tfrac{1}{12}\\times3\\times2^2=1\\) kg m\\(^2\\).<br><br>\\(Md^2=3\\times(0.5)^2=0.75\\) kg m\\(^2\\).<br><br>\\(I=1+0.75=1.75\\) kg m\\(^2\\).",
+   "hint": "The answer must be bigger than the value about the centre.",
+   "distractor_logic": [
+    "Subtracted \\(Md^2\\) from \\(I_{cm}\\); moving the axis away from the centre of mass must increase \\(I\\).",
+    "Ignored the shift and quoted the value about the centre.",
+    "Used \\(\\tfrac13ML^2\\), which is for an axis at the end, 1 m from the centre."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-017",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 3,
+   "type": "regular",
+   "question": "Point masses of 1 kg, 2 kg and 3 kg are fixed on a light rod at \\(x=0\\), \\(x=1\\) m and \\(x=2\\) m. The moment of inertia about a perpendicular axis through \\(x=0\\) is",
+   "options": [
+    "14 kg m\\(^2\\)",
+    "8 kg m\\(^2\\)",
+    "24 kg m\\(^2\\)",
+    "6 kg m\\(^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(I=\\sum m_ir_i^2=1(0)^2+2(1)^2+3(2)^2\\).<br><br>\\(I=0+2+12=14\\) kg m\\(^2\\).",
+   "hint": "Square each distance before multiplying by the mass.",
+   "distractor_logic": [
+    "Summed mass times distance without squaring the distances.",
+    "Placed the total mass of 6 kg at the far end, 2 m from the axis.",
+    "Simply added the masses, ignoring the distances."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-018",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": 3,
+   "type": "regular",
+   "question": "A ring of mass 2 kg and radius 1 m rotates about a tangent lying in its own plane. Its moment of inertia about this axis is",
+   "options": [
+    "4 kg m\\(^2\\)",
+    "3 kg m\\(^2\\)",
+    "1 kg m\\(^2\\)",
+    "2 kg m\\(^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "About a diameter: \\(I_{cm}=\\tfrac12MR^2=1\\) kg m\\(^2\\) (from the perpendicular-axis theorem).<br><br>Shift to the tangent: \\(Md^2=2\\times1^2=2\\) kg m\\(^2\\).<br><br>\\(I=1+2=3\\) kg m\\(^2\\).",
+   "hint": "Combine both theorems: first find the value about a diameter.",
+   "distractor_logic": [
+    "Used \\(I_{cm}=MR^2\\), which is for a tangent perpendicular to the plane.",
+    "Quoted the value about a diameter and ignored the shift of the axis.",
+    "Kept only the \\(Md^2\\) term and left out the diameter value."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-019",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform disc of mass 2 kg and radius 0.2 m can rotate about its fixed central axis. A string wound on its rim is pulled with a constant force of 4 N. Starting from rest, its angular velocity after 2 s is",
+   "options": [
+    "20 rad/s",
+    "200 rad/s",
+    "40 rad/s",
+    "10 rad/s"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(\\tau=FR=4\\times0.2=0.8\\) N m.<br><br>\\(I=\\tfrac12MR^2=\\tfrac12\\times2\\times0.04=0.04\\) kg m\\(^2\\).<br><br>\\(\\alpha=\\dfrac{0.8}{0.04}=20\\) rad/s\\(^2\\), so \\(\\omega=\\alpha t=40\\) rad/s.",
+   "hint": "Torque, then moment of inertia, then angular acceleration.",
+   "distractor_logic": [
+    "Used \\(I=MR^2\\) instead of \\(\\tfrac12MR^2\\), halving the angular acceleration.",
+    "Used the force as the torque, forgetting to multiply by the radius.",
+    "Used \\(I=MR^2\\) and then quoted the angular acceleration (10 rad/s\\(^2\\)) without multiplying by the time."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-020",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 3,
+   "type": "regular",
+   "question": "A flywheel of moment of inertia 4 kg m\\(^2\\) is speeded up from 10 rad/s to 20 rad/s. The work done on it is",
+   "options": [
+    "200 J",
+    "40 J",
+    "1200 J",
+    "600 J"
+   ],
+   "correct_index": 3,
+   "explanation": "Work done equals the change in rotational kinetic energy.<br><br>\\(W=\\tfrac12I(\\omega_2^2-\\omega_1^2)=\\tfrac12\\times4\\times(400-100)\\).<br><br>\\(W=600\\) J.",
+   "hint": "Subtract the squares; do not square the difference.",
+   "distractor_logic": [
+    "Used \\(\\tfrac12I(\\Delta\\omega)^2\\) instead of the difference of the two kinetic energies.",
+    "Computed \\(I\\,\\Delta\\omega\\), the change in angular momentum.",
+    "Left out the factor \\(\\tfrac12\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-021",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 3,
+   "type": "regular",
+   "question": "A 1 kg block hangs from a light string wound around a uniform disc-shaped pulley of mass 2 kg that turns freely about its fixed axis. Taking \\(g=10\\) m/s\\(^2\\) and no slipping of the string, the acceleration of the block is",
+   "options": [
+    "5 m/s\\(^2\\)",
+    "10 m/s\\(^2\\)",
+    "\\(\\tfrac{10}{3}\\) m/s\\(^2\\)",
+    "2.5 m/s\\(^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Block: \\(mg-T=ma\\). Pulley: \\(TR=I\\alpha\\) with \\(I=\\tfrac12MR^2\\) and \\(a=\\alpha R\\).<br><br>So \\(T=\\tfrac12Ma\\) and \\(a=\\dfrac{mg}{m+\\tfrac12M}\\).<br><br>\\(a=\\dfrac{10}{1+1}=5\\) m/s\\(^2\\).",
+   "hint": "The pulley behaves like an extra mass of half its actual mass.",
+   "distractor_logic": [
+    "Treated the block as freely falling, ignoring the rotational inertia of the pulley.",
+    "Used \\(I=MR^2\\) for the pulley instead of \\(\\tfrac12MR^2\\).",
+    "Added the pulley's full 2 kg to its effective mass of 1 kg, dividing by 4 kg in all."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-022",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 3,
+   "type": "regular",
+   "question": "A wheel of moment of inertia 2 kg m\\(^2\\) spinning at 30 rad/s is brought to rest in 6 s by a constant braking torque. The magnitude of this torque is",
+   "options": [
+    "60 N m",
+    "10 N m",
+    "360 N m",
+    "2.5 N m"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\alpha=\\dfrac{0-30}{6}=-5\\) rad/s\\(^2\\).<br><br>\\(|\\tau|=I|\\alpha|=2\\times5=10\\) N m.",
+   "hint": "Find the angular deceleration first.",
+   "distractor_logic": [
+    "Computed \\(I\\omega\\), the initial angular momentum, without dividing by the time.",
+    "Multiplied the angular momentum by the time instead of dividing.",
+    "Divided the angular deceleration by the moment of inertia instead of multiplying."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-023",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 3,
+   "type": "regular",
+   "question": "The angular velocity of a wheel increases uniformly from 20 rad/s to 40 rad/s while it turns through 100 rad. Its angular acceleration is",
+   "options": [
+    "12 rad/s\\(^2\\)",
+    "0.2 rad/s\\(^2\\)",
+    "6 rad/s\\(^2\\)",
+    "3 rad/s\\(^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(\\omega^2=\\omega_0^2+2\\alpha\\theta\\).<br><br>\\(1600=400+2\\alpha(100)\\), so \\(\\alpha=\\dfrac{1200}{200}=6\\) rad/s\\(^2\\).",
+   "hint": "Time is not given, so use the equation without time.",
+   "distractor_logic": [
+    "Left out the factor 2 in \\(\\omega^2=\\omega_0^2+2\\alpha\\theta\\).",
+    "Divided the change in angular velocity by the angle.",
+    "Divided by an extra factor of 2."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-024",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": 3,
+   "type": "regular",
+   "question": "A thin uniform rod of length 1.5 m is hinged at one end and released from rest in the horizontal position. Taking \\(g=10\\) m/s\\(^2\\), its initial angular acceleration is",
+   "options": [
+    "40 rad/s\\(^2\\)",
+    "20 rad/s\\(^2\\)",
+    "\\(\\tfrac{10}{3}\\) rad/s\\(^2\\)",
+    "10 rad/s\\(^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "The weight acts at the centre of mass: \\(\\tau=Mg\\tfrac{L}{2}\\).<br><br>About the hinge, \\(I=\\tfrac13ML^2\\).<br><br>\\(\\alpha=\\dfrac{\\tau}{I}=\\dfrac{3g}{2L}=\\dfrac{30}{3}=10\\) rad/s\\(^2\\).",
+   "hint": "The weight acts at the midpoint, and the axis is at the end.",
+   "distractor_logic": [
+    "Used \\(I=\\tfrac{1}{12}ML^2\\) about the centre instead of \\(\\tfrac13ML^2\\) about the hinge.",
+    "Took the lever arm of the weight as \\(L\\) instead of \\(\\tfrac{L}{2}\\).",
+    "Treated the rod as a point mass at its far end, using \\(I=ML^2\\) with lever arm \\(\\tfrac{L}{2}\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-025",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 3,
+   "type": "regular",
+   "question": "A solid sphere starts from rest and rolls without slipping down an incline through a vertical height of 7 m. Taking \\(g=10\\) m/s\\(^2\\), its speed at the bottom is",
+   "options": [
+    "10 m/s",
+    "\\(\\sqrt{140}\\) m/s",
+    "\\(\\sqrt{70}\\) m/s",
+    "\\(\\sqrt{50}\\) m/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(mgh=\\tfrac12mv^2\\left(1+\\tfrac25\\right)\\).<br><br>\\(v^2=\\dfrac{2gh}{7/5}=\\dfrac{140}{1.4}=100\\).<br><br>\\(v=10\\) m/s.",
+   "hint": "Energy is conserved; the kinetic energy has two parts.",
+   "distractor_logic": [
+    "Ignored rotational kinetic energy, as for frictionless sliding.",
+    "Used \\(k^2/R^2=1\\), the ring value.",
+    "Left out the factor 2 in \\(2gh\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-026",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform disc starts from rest and rolls without slipping down an incline through a vertical height of 2.7 m. Taking \\(g=10\\) m/s\\(^2\\), its speed at the bottom is",
+   "options": [
+    "\\(\\sqrt{54}\\) m/s",
+    "6 m/s",
+    "\\(\\sqrt{27}\\) m/s",
+    "4.5 m/s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(v^2=\\dfrac{2gh}{1+k^2/R^2}=\\dfrac{2\\times10\\times2.7}{1.5}\\).<br><br>\\(v^2=36\\), so \\(v=6\\) m/s.",
+   "hint": "For a disc, \\(1+k^2/R^2=\\tfrac32\\).",
+   "distractor_logic": [
+    "Put all the potential energy into translation, ignoring rotation.",
+    "Used \\(k^2/R^2=1\\), the ring value.",
+    "Assumed friction dissipates part of the energy; static friction in pure rolling does no work."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-027",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 3,
+   "type": "regular",
+   "question": "A solid cylinder of mass 3 kg rolls without slipping down an incline of angle \\(30^\\circ\\). Taking \\(g=10\\) m/s\\(^2\\), the static friction force on it is",
+   "options": [
+    "15 N",
+    "0 N",
+    "5 N",
+    "10 N"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(a=\\dfrac{g\\sin\\theta}{1+\\tfrac12}=\\dfrac{5}{1.5}=\\tfrac{10}{3}\\) m/s\\(^2\\).<br><br>Along the incline: \\(mg\\sin\\theta-f=ma\\), so \\(f=15-10=5\\) N.<br><br>Check with torque: \\(fR=\\tfrac12mR^2\\dfrac{a}{R}\\) gives \\(f=\\tfrac12ma=5\\) N.",
+   "hint": "Friction is the only force that has a torque about the centre.",
+   "distractor_logic": [
+    "Set friction equal to \\(mg\\sin\\theta\\), which would mean zero acceleration.",
+    "Argued that since friction does no work there is no friction; but friction is needed to provide the torque.",
+    "Quoted \\(ma\\), the net force along the incline, instead of the friction force."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-028",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 3,
+   "type": "regular",
+   "question": "A solid sphere and a ring roll without slipping down the same incline. The ratio of the acceleration of the sphere to that of the ring is",
+   "options": [
+    "\\(7:10\\)",
+    "\\(1:1\\)",
+    "\\(5:2\\)",
+    "\\(10:7\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Sphere: \\(a_s=\\dfrac{g\\sin\\theta}{7/5}=\\tfrac57g\\sin\\theta\\).<br><br>Ring: \\(a_r=\\dfrac{g\\sin\\theta}{2}=\\tfrac12g\\sin\\theta\\).<br><br>\\(\\dfrac{a_s}{a_r}=\\dfrac{5/7}{1/2}=\\dfrac{10}{7}\\).",
+   "hint": "Compare \\(1+k^2/R^2\\) for the two bodies.",
+   "distractor_logic": [
+    "Inverted the ratio; the sphere has the larger acceleration.",
+    "Assumed the shape does not matter, as in frictionless sliding.",
+    "Took the inverse ratio of the \\(k^2/R^2\\) values instead of \\(1+k^2/R^2\\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-029",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 3,
+   "type": "regular",
+   "question": "A solid sphere rolling without slipping at 10 m/s on level ground meets an incline and rolls up it without slipping. Taking \\(g=10\\) m/s\\(^2\\), the maximum vertical height it reaches is",
+   "options": [
+    "7 m",
+    "5 m",
+    "2 m",
+    "10 m"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(\\tfrac12mv^2\\left(1+\\tfrac25\\right)=mgh\\).<br><br>\\(h=\\dfrac{1.4\\,v^2}{2g}=\\dfrac{1.4\\times100}{20}=7\\) m.",
+   "hint": "Both parts of the kinetic energy turn into potential energy.",
+   "distractor_logic": [
+    "Converted only the translational kinetic energy into potential energy.",
+    "Converted only the rotational kinetic energy into potential energy.",
+    "Used \\(\\dfrac{v^2}{g}\\), leaving out the factor 2 and the rotational factor."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-L3-030",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": 3,
+   "type": "regular",
+   "question": "A uniform disc rolling without slipping has a total kinetic energy of 30 J. Its translational kinetic energy is",
+   "options": [
+    "10 J",
+    "20 J",
+    "15 J",
+    "30 J"
+   ],
+   "correct_index": 1,
+   "explanation": "For a disc, rotational : translational \\(=\\tfrac12:1\\).<br><br>Translational fraction \\(=\\dfrac{1}{1+\\tfrac12}=\\tfrac23\\).<br><br>\\(\\tfrac23\\times30=20\\) J.",
+   "hint": "The translational share is 1 part out of 1.5 parts.",
+   "distractor_logic": [
+    "This is the rotational part.",
+    "Assumed equal sharing, which holds for a ring and not for a disc.",
+    "Ignored the rotational part altogether."
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-001",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A force of 20 N is applied at the rim of a wheel of radius 0.5 m, making an angle of \\(30^\\circ\\) with the radius drawn to that point. The wheel has moment of inertia 0.5 kg m\\(^2\\) about its fixed axis. Its angular acceleration is",
+   "options": [
+    "\\(10\\sqrt3\\) rad/s\\(^2\\)",
+    "20 rad/s\\(^2\\)",
+    "10 rad/s\\(^2\\)",
+    "2.5 rad/s\\(^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(\\tau=rF\\sin\\theta=0.5\\times20\\times\\tfrac12=5\\) N m.<br><br>\\(\\alpha=\\dfrac{\\tau}{I}=\\dfrac{5}{0.5}=10\\) rad/s\\(^2\\).",
+   "hint": "Only the component of the force perpendicular to the radius produces torque.",
+   "distractor_logic": [
+    "Used \\(rF\\cos\\theta\\) for the torque, the work-style formula.",
+    "Ignored the angle and used the full force times the radius.",
+    "Multiplied the torque by the moment of inertia instead of dividing."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-002",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A thin uniform rod of mass 3 kg and length 2 m is pivoted about a perpendicular axis through one end. A net torque of 8 N m acts on it. Its angular acceleration is",
+   "options": [
+    "8 rad/s\\(^2\\)",
+    "\\(-4\\) rad/s\\(^2\\)",
+    "0.5 rad/s\\(^2\\)",
+    "2 rad/s\\(^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(I_{cm}=\\tfrac{1}{12}\\times3\\times4=1\\) kg m\\(^2\\); shift by \\(d=1\\) m: \\(I=1+3(1)^2=4\\) kg m\\(^2\\).<br><br>\\(\\alpha=\\dfrac{8}{4}=2\\) rad/s\\(^2\\).",
+   "hint": "First get the moment of inertia about the end using the parallel-axis theorem.",
+   "distractor_logic": [
+    "Used \\(I=\\tfrac{1}{12}ML^2=1\\) kg m\\(^2\\) about the centre instead of the value about the end.",
+    "Subtracted \\(Md^2\\) in the parallel-axis theorem, getting an impossible negative moment of inertia of \\(-2\\) kg m\\(^2\\).",
+    "Divided the moment of inertia by the torque."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-003",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A hollow sphere (\\(I=\\tfrac23MR^2\\)) rolls without slipping down an incline of angle \\(30^\\circ\\). Taking \\(g=10\\) m/s\\(^2\\), its acceleration is",
+   "options": [
+    "3 m/s\\(^2\\)",
+    "5 m/s\\(^2\\)",
+    "\\(\\tfrac{25}{7}\\) m/s\\(^2\\)",
+    "2.5 m/s\\(^2\\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(k^2/R^2=\\tfrac23\\) for a hollow sphere.<br><br>\\(a=\\dfrac{g\\sin\\theta}{1+\\tfrac23}=\\dfrac{5}{5/3}=3\\) m/s\\(^2\\).",
+   "hint": "Pick the right moment of inertia before using the rolling formula.",
+   "distractor_logic": [
+    "Ignored rotation, as for frictionless sliding.",
+    "Used the solid-sphere value \\(k^2/R^2=\\tfrac25\\).",
+    "Used the ring value \\(k^2/R^2=1\\)."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-004",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A cylinder rolls without slipping down a rough incline. Which statement about the friction force on it is correct?",
+   "options": [
+    "It is kinetic friction of magnitude \\(\\mu_kN\\), and it dissipates mechanical energy",
+    "It is static friction; it exerts a torque about the centre of mass but does zero work",
+    "It exerts no torque about the centre of mass, because it does no work",
+    "It does negative work equal to the rotational kinetic energy gained"
+   ],
+   "correct_index": 1,
+   "explanation": "Gravity and the normal force pass through the centre, so only friction can provide the torque for spinning up.<br><br>The contact point is at rest, so the friction is static and its work is zero.",
+   "hint": "Separate two questions: does it have a torque, and does it do work?",
+   "distractor_logic": [
+    "There is no sliding at the contact point, so kinetic friction is not the force acting.",
+    "Zero work does not mean zero torque; friction is the only force with a torque about the centre.",
+    "The rotational energy comes from gravity; friction only redirects energy and its net work is zero."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-005",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A bowling ball of radius 0.1 m is released so that it slides along a rough lane at 5 m/s with no spin at all (\\(\\omega=0\\)). At the instant of release, which statement is correct?",
+   "options": [
+    "Its angular velocity must be \\(\\omega=\\dfrac{v}{R}=50\\) rad/s",
+    "Static friction acts and does zero work, as in all rolling problems",
+    "The ball is slipping, so \\(v_{cm}=\\omega R\\) does not hold; kinetic friction acts at the contact point",
+    "No friction acts, because the ball is not rotating"
+   ],
+   "correct_index": 2,
+   "explanation": "The problem states \\(v=5\\) m/s and \\(\\omega=0\\) independently; the contact point moves at 5 m/s relative to the lane.<br><br>So the ball is slipping and kinetic friction acts.<br><br>\\(v_{cm}=\\omega R\\) becomes true only later, once pure rolling sets in.",
+   "hint": "Is the contact point at rest here?",
+   "distractor_logic": [
+    "Forces the rolling condition onto a ball that is explicitly sliding with \\(\\omega=0\\).",
+    "The contact point is sliding at 5 m/s, so the friction is kinetic and it does dissipate energy.",
+    "Sliding on a rough surface always brings kinetic friction into play."
+   ],
+   "mixed_topics": [
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-006",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg wheel of radius 0.3 m rolls without slipping with an angular velocity of 10 rad/s. The magnitude of its total linear momentum is",
+   "options": [
+    "12 kg m/s",
+    "0 kg m/s",
+    "20 kg m/s",
+    "6 kg m/s"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(v_{cm}=\\omega R=10\\times0.3=3\\) m/s.<br><br>\\(P=Mv_{cm}=2\\times3=6\\) kg m/s.",
+   "hint": "Total momentum depends only on the velocity of the centre of mass.",
+   "distractor_logic": [
+    "Used the speed of the topmost point, \\(2v_{cm}\\), instead of the centre-of-mass speed.",
+    "Used the zero velocity of the contact point for the whole wheel.",
+    "Multiplied mass by angular velocity without converting to linear speed."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-007",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A light rod carries a 2 kg mass at \\(x=0\\) and a 6 kg mass at \\(x=4\\) m. At which point should it be pivoted so that gravity exerts no net torque and it balances horizontally?",
+   "options": [
+    "\\(x=3\\) m",
+    "\\(x=2\\) m",
+    "\\(x=1\\) m",
+    "\\(x=4\\) m"
+   ],
+   "correct_index": 0,
+   "explanation": "Gravity has zero net torque about the centre of mass.<br><br>\\(x_{cm}=\\dfrac{2(0)+6(4)}{8}=3\\) m.<br><br>Check: \\(2g\\times3=6g\\times1\\).",
+   "hint": "The balance point is the centre of mass.",
+   "distractor_logic": [
+    "Chose the midpoint, which balances only equal masses.",
+    "Placed the pivot closer to the lighter mass.",
+    "Placed the pivot under the heavier mass, leaving the lighter one unbalanced."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-008",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A uniform disc of mass 2 kg and radius 0.5 m spins about its central axis at 8 rad/s. Its angular momentum is",
+   "options": [
+    "4 kg m\\(^2\\)/s",
+    "2 kg m\\(^2\\)/s",
+    "8 kg m\\(^2\\)/s",
+    "1 kg m\\(^2\\)/s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(I=\\tfrac12MR^2=\\tfrac12\\times2\\times0.25=0.25\\) kg m\\(^2\\).<br><br>\\(L=I\\omega=0.25\\times8=2\\) kg m\\(^2\\)/s.",
+   "hint": "Find the moment of inertia first.",
+   "distractor_logic": [
+    "Used \\(I=MR^2\\), the ring formula.",
+    "Computed \\(\\tfrac12I\\omega^2\\), the kinetic energy in joules.",
+    "Used \\(I=\\tfrac14MR^2\\), the value about a diameter."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-009",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A ring and a disc of the same mass and radius spin about their central axes with the same angular velocity. The ratio of the kinetic energy of the ring to that of the disc is",
+   "options": [
+    "\\(1:2\\)",
+    "\\(1:1\\)",
+    "\\(2:1\\)",
+    "\\(4:1\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(KE=\\tfrac12I\\omega^2\\), so at equal \\(\\omega\\) the ratio equals the ratio of \\(I\\).<br><br>\\(\\dfrac{MR^2}{\\tfrac12MR^2}=2\\).",
+   "hint": "At equal angular velocity, kinetic energy is proportional to moment of inertia.",
+   "distractor_logic": [
+    "Inverted the ratio; the ring has the larger moment of inertia.",
+    "Assumed equal mass and radius mean equal moment of inertia.",
+    "Squared the ratio of the moments of inertia."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-010",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A skater spinning on frictionless ice stretches her arms outward. Which of these quantities stays the same?",
+   "options": [
+    "Both her angular momentum and her rotational kinetic energy",
+    "Her rotational kinetic energy only",
+    "Her angular velocity",
+    "Her angular momentum only"
+   ],
+   "correct_index": 3,
+   "explanation": "No external torque acts, so angular momentum is conserved.<br><br>\\(I\\) increases, so \\(\\omega=\\dfrac{L}{I}\\) decreases.<br><br>\\(KE=\\tfrac{L^2}{2I}\\) decreases as well.",
+   "hint": "Zero external torque fixes only one quantity.",
+   "distractor_logic": [
+    "\\(KE=\\tfrac{L^2}{2I}\\) falls as \\(I\\) rises, so energy is not conserved along with \\(L\\).",
+    "Energy changes because her muscles do work; it is the angular momentum that is fixed.",
+    "\\(\\omega\\) must fall when \\(I\\) rises, to keep \\(I\\omega\\) constant."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-011",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A constant torque of 6 N m acts for 5 s on a wheel of moment of inertia 3 kg m\\(^2\\), initially at rest. Its final angular velocity is",
+   "options": [
+    "10 rad/s",
+    "30 rad/s",
+    "90 rad/s",
+    "2.5 rad/s"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(\\Delta L=\\tau t=6\\times5=30\\) kg m\\(^2\\)/s.<br><br>\\(\\omega=\\dfrac{L}{I}=\\dfrac{30}{3}=10\\) rad/s.",
+   "hint": "Torque times time gives the change in angular momentum.",
+   "distractor_logic": [
+    "Found the angular momentum gained but did not divide by the moment of inertia.",
+    "Multiplied torque, time and moment of inertia together.",
+    "Divided the time by the angular acceleration of 2 rad/s\\(^2\\) instead of multiplying."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-012",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A uniform disc of mass 2 kg rolls without slipping at 4 m/s. Its total kinetic energy is",
+   "options": [
+    "16 J",
+    "24 J",
+    "32 J",
+    "8 J"
+   ],
+   "correct_index": 1,
+   "explanation": "With \\(I=\\tfrac12MR^2\\) and \\(\\omega=\\dfrac{v}{R}\\), rotational energy is \\(\\tfrac14Mv^2=8\\) J.<br><br>Translational energy is \\(\\tfrac12Mv^2=16\\) J.<br><br>Total \\(=24\\) J.",
+   "hint": "Add the translational and rotational parts.",
+   "distractor_logic": [
+    "Counted only the translational kinetic energy.",
+    "Used \\(I=MR^2\\), the ring formula.",
+    "Counted only the rotational kinetic energy."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-013",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two skaters at rest on frictionless ice push each other apart. For the two-skater system, which statement is correct?",
+   "options": [
+    "Kinetic energy is also conserved, since momentum is conserved",
+    "The centre of mass moves toward the lighter skater",
+    "Total linear momentum and total angular momentum stay constant, and the centre of mass stays at rest, although kinetic energy increases",
+    "Linear momentum is not conserved, because forces act on each skater"
+   ],
+   "correct_index": 2,
+   "explanation": "The pushes are internal forces: equal, opposite and along the same line.<br><br>They give no net external force and no net external torque.<br><br>So momentum and angular momentum are conserved, while muscular work raises the kinetic energy.",
+   "hint": "Which forces are external here?",
+   "distractor_logic": [
+    "Conservation of momentum does not imply conservation of kinetic energy; the push adds energy.",
+    "Internal forces cannot move the centre of mass.",
+    "Those forces are internal and cancel for the system as a whole."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-014",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two tangential forces of 5 N each act at diametrically opposite points on the rim of a uniform disc of mass 1 kg and radius 0.2 m, forming a couple. The disc is free to turn about its central axis. Its angular acceleration is",
+   "options": [
+    "0 rad/s\\(^2\\)",
+    "50 rad/s\\(^2\\)",
+    "25 rad/s\\(^2\\)",
+    "100 rad/s\\(^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Torque of the couple \\(=5\\times0.4=2\\) N m.<br><br>\\(I=\\tfrac12MR^2=\\tfrac12\\times1\\times0.04=0.02\\) kg m\\(^2\\).<br><br>\\(\\alpha=\\dfrac{2}{0.02}=100\\) rad/s\\(^2\\).",
+   "hint": "Torque of a couple equals one force times the separation between the forces.",
+   "distractor_logic": [
+    "Argued that zero net force means zero torque; a couple has zero net force but a non-zero torque.",
+    "Counted the torque of only one of the two forces.",
+    "Counted only one force and also used \\(I=MR^2\\)."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-015",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A ring, a disc and a solid sphere are released together from rest on the same incline and roll without slipping. The order in which they reach the bottom is",
+   "options": [
+    "solid sphere, then disc, then ring",
+    "ring, then disc, then solid sphere",
+    "all three together",
+    "disc, then solid sphere, then ring"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(a=\\dfrac{g\\sin\\theta}{1+k^2/R^2}\\).<br><br>\\(k^2/R^2\\) is \\(\\tfrac25\\) (sphere), \\(\\tfrac12\\) (disc), \\(1\\) (ring).<br><br>The smaller the ratio, the larger the acceleration.",
+   "hint": "Rank the bodies by their moment-of-inertia coefficient.",
+   "distractor_logic": [
+    "Reversed the order; the largest moment-of-inertia coefficient gives the slowest descent.",
+    "True for frictionless sliding, not for rolling.",
+    "Ranked \\(\\tfrac12\\) below \\(\\tfrac25\\), comparing the fractions wrongly."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-016",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A wheel of radius 0.25 m rolls without slipping from rest with a constant angular acceleration of 4 rad/s\\(^2\\). The distance its centre moves in 4 s is",
+   "options": [
+    "16 m",
+    "8 m",
+    "32 m",
+    "4 m"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(a_{cm}=\\alpha R=4\\times0.25=1\\) m/s\\(^2\\).<br><br>\\(s=\\tfrac12at^2=\\tfrac12\\times1\\times16=8\\) m.",
+   "hint": "Convert the angular acceleration to linear acceleration first.",
+   "distractor_logic": [
+    "Left out the factor \\(\\tfrac12\\) in \\(\\tfrac12at^2\\).",
+    "Used the angular acceleration as if it were the linear acceleration.",
+    "Quoted the final speed in m/s instead of the distance."
+   ],
+   "mixed_topics": [
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-017",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A thin uniform rod of length 2 m rotates at 6 rad/s about a perpendicular axis through one end. The speed of its centre of mass is",
+   "options": [
+    "12 m/s",
+    "3 m/s",
+    "6 m/s",
+    "0 m/s"
+   ],
+   "correct_index": 2,
+   "explanation": "By symmetry the centre of mass of the rod is at its midpoint, 1 m from the axis.<br><br>\\(v=\\omega r=6\\times1=6\\) m/s.",
+   "hint": "Where is the centre of mass of a uniform rod?",
+   "distractor_logic": [
+    "Used the full length; this is the speed of the free end.",
+    "Divided the angular velocity by the length.",
+    "Assumed the centre of mass stays at rest in rotation; that is true only if the axis passes through it."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-018",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A cylinder of mass 2 kg and radius 0.1 m rolls without slipping down an incline of angle \\(30^\\circ\\). Taking \\(g=10\\) m/s\\(^2\\), the net torque on it about the instantaneous point of contact has magnitude",
+   "options": [
+    "\\(\\sqrt3\\) N m",
+    "0 N m",
+    "2 N m",
+    "1 N m"
+   ],
+   "correct_index": 3,
+   "explanation": "Friction and the normal force act at the contact point, so their torque about it is zero.<br><br>The component of weight along the incline, \\(mg\\sin\\theta\\), acts at height \\(R\\) above the contact point.<br><br>\\(\\tau=mg\\sin\\theta\\times R=2\\times10\\times\\tfrac12\\times0.1=1\\) N m.",
+   "hint": "Two of the three forces act at the contact point itself.",
+   "distractor_logic": [
+    "Used \\(\\cos30^\\circ\\) for the component of the weight that has a lever arm about the contact point.",
+    "Assumed all forces pass through the contact point; the weight does not.",
+    "Used the full weight times \\(R\\), ignoring the angle."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-019",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A uniform disc of mass 2 kg and radius 1 m rotates at 2 rad/s about an axis tangent to its rim and perpendicular to its plane. Its kinetic energy is",
+   "options": [
+    "6 J",
+    "2 J",
+    "\\(-2\\) J",
+    "12 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(I=\\tfrac12MR^2+MR^2=1+2=3\\) kg m\\(^2\\).<br><br>\\(KE=\\tfrac12I\\omega^2=\\tfrac12\\times3\\times4=6\\) J.",
+   "hint": "Get the moment of inertia about the actual axis first.",
+   "distractor_logic": [
+    "Used only \\(I_{cm}=1\\) kg m\\(^2\\) and ignored the shift of the axis.",
+    "Subtracted \\(Md^2\\) to get \\(I=-1\\) kg m\\(^2\\); a negative moment of inertia or kinetic energy is impossible.",
+    "Left out the factor \\(\\tfrac12\\)."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-020",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A thin uniform rod of mass \\(M\\) and length \\(L\\) has \\(\\tfrac{1}{12}ML^2\\) about its centre and \\(\\tfrac13ML^2\\) about one end. Its moment of inertia about a parallel axis at distance \\(\\tfrac{L}{4}\\) from the centre of mass is",
+   "options": [
+    "\\(\\tfrac{19}{48}ML^2\\)",
+    "\\(\\tfrac{7}{48}ML^2\\)",
+    "\\(\\tfrac{1}{48}ML^2\\)",
+    "\\(\\tfrac{1}{12}ML^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "The theorem must start from the axis through the centre of mass: \\(I=I_{cm}+Md^2\\).<br><br>\\(I=\\tfrac{1}{12}ML^2+M\\left(\\tfrac{L}{4}\\right)^2=\\tfrac{4}{48}ML^2+\\tfrac{3}{48}ML^2\\).<br><br>\\(I=\\tfrac{7}{48}ML^2\\).",
+   "hint": "The theorem only works from the centre-of-mass axis, which for a uniform rod is at its midpoint.",
+   "distractor_logic": [
+    "Applied the parallel-axis theorem starting from the end axis; it must start from the centre-of-mass axis.",
+    "Subtracted \\(Md^2\\) instead of adding it.",
+    "Ignored the shift of the axis."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-021",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A spinning skater pulls in her arms and her rotational kinetic energy increases while her angular momentum stays fixed. The extra kinetic energy comes from",
+   "options": [
+    "an external torque exerted by the ice",
+    "nowhere; kinetic energy cannot change when angular momentum is conserved",
+    "the work done by her muscles, an internal source",
+    "friction between her skates and the ice"
+   ],
+   "correct_index": 2,
+   "explanation": "With \\(L\\) fixed, \\(KE=\\tfrac{L^2}{2I}\\) rises as \\(I\\) falls.<br><br>She must pull her arms inward against the tendency to fly outward, doing positive work.<br><br>Internal work can change kinetic energy even though internal torques cannot change angular momentum.",
+   "hint": "Internal forces can do work even though they cannot change angular momentum.",
+   "distractor_logic": [
+    "An external torque would change her angular momentum, which stays fixed.",
+    "\\(KE=\\tfrac{L^2}{2I}\\) clearly changes when \\(I\\) changes at fixed \\(L\\).",
+    "Friction is neglected, and it would remove energy rather than supply it."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-022",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A car is stuck on ice: a wheel of radius 0.3 m spins at 20 rad/s while the car does not move (\\(v_{cm}=0\\)). Which statement is correct?",
+   "options": [
+    "The car must be moving at \\(v_{cm}=\\omega R=6\\) m/s",
+    "The contact point is at rest, so static friction acts",
+    "Friction does zero work on the wheel, as in every rolling problem",
+    "The contact point of the wheel slides backward at 6 m/s relative to the ice, and kinetic friction acts"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(v_{cm}=0\\) and \\(\\omega=20\\) rad/s are given independently, so this is slipping.<br><br>Contact-point speed \\(=\\omega R-v_{cm}=6\\) m/s backward.<br><br>Sliding contact means kinetic friction.",
+   "hint": "Check whether the rolling condition is actually satisfied.",
+   "distractor_logic": [
+    "Forces the rolling condition onto a wheel that is explicitly slipping.",
+    "The contact point is at rest only in rolling without slipping; here it slides.",
+    "Kinetic friction at a sliding contact does dissipate energy."
+   ],
+   "mixed_topics": [
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-023",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A ring of mass 4 kg and radius 0.5 m spins at 6 rad/s about one of its diameters. Its angular momentum is",
+   "options": [
+    "3 kg m\\(^2\\)/s",
+    "6 kg m\\(^2\\)/s",
+    "12 kg m\\(^2\\)/s",
+    "9 kg m\\(^2\\)/s"
+   ],
+   "correct_index": 0,
+   "explanation": "The ring is planar, so \\(I_d=\\tfrac12MR^2=\\tfrac12\\times4\\times0.25=0.5\\) kg m\\(^2\\).<br><br>\\(L=I\\omega=0.5\\times6=3\\) kg m\\(^2\\)/s.",
+   "hint": "Use the perpendicular-axis theorem to get the value about a diameter.",
+   "distractor_logic": [
+    "Used \\(I=MR^2\\), the value about the central axis.",
+    "Doubled \\(MR^2\\) instead of halving it when using the perpendicular-axis theorem.",
+    "Computed \\(\\tfrac12I\\omega^2\\), the kinetic energy in joules."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-024",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A uniform plank of mass 40 kg and length 6 m lies on a flat roof with 2 m of its length overhanging the edge. How far beyond the edge can a 20 kg child walk before the plank tips?",
+   "options": [
+    "1 m",
+    "2 m",
+    "3 m",
+    "0.5 m"
+   ],
+   "correct_index": 1,
+   "explanation": "The plank's centre of mass is at its midpoint, 3 m from either end, which is 1 m inside the edge.<br><br>Tipping begins when torques about the edge balance: \\(40g\\times1=20g\\times x\\).<br><br>\\(x=2\\) m, the very end of the plank.",
+   "hint": "Locate the plank's centre of mass relative to the edge, then balance torques about the edge.",
+   "distractor_logic": [
+    "Used the distance of the plank's centre of mass from the edge as the answer, without balancing torques.",
+    "Took the plank's centre of mass to be 3 m from the edge rather than 1 m.",
+    "Inverted the mass ratio in the torque balance."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-025",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A solid sphere of mass 5 kg rolls without slipping at 2 m/s. Its rotational kinetic energy is",
+   "options": [
+    "10 J",
+    "14 J",
+    "4 J",
+    "5 J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(KE_{rot}=\\tfrac12\\left(\\tfrac25mR^2\\right)\\dfrac{v^2}{R^2}=\\tfrac15mv^2\\).<br><br>\\(KE_{rot}=\\tfrac15\\times5\\times4=4\\) J.",
+   "hint": "Substitute \\(\\omega=\\dfrac{v}{R}\\); the radius cancels.",
+   "distractor_logic": [
+    "This is the translational kinetic energy.",
+    "This is the total kinetic energy.",
+    "Used the disc coefficient, giving \\(\\tfrac14mv^2\\)."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-026",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The angular momentum of a flywheel increases uniformly from 4 kg m\\(^2\\)/s to 10 kg m\\(^2\\)/s in 3 s. The net torque on it is",
+   "options": [
+    "18 N m",
+    "6 N m",
+    "\\(\\tfrac{14}{3}\\) N m",
+    "2 N m"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(\\tau=\\dfrac{\\Delta L}{\\Delta t}=\\dfrac{10-4}{3}=2\\) N m.",
+   "hint": "Torque is the rate of change of angular momentum.",
+   "distractor_logic": [
+    "Multiplied the change in angular momentum by the time.",
+    "Quoted the change in angular momentum without dividing by the time.",
+    "Added the two values of angular momentum instead of subtracting."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-027",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two 1 kg particles move in opposite directions at 2 m/s along parallel lines 3 m apart. About the point midway between the lines, the total angular momentum has magnitude",
+   "options": [
+    "6 kg m\\(^2\\)/s",
+    "0 kg m\\(^2\\)/s",
+    "3 kg m\\(^2\\)/s",
+    "12 kg m\\(^2\\)/s"
+   ],
+   "correct_index": 0,
+   "explanation": "Total linear momentum is zero, so the centre of mass is at rest.<br><br>Each particle has \\(L=mvr_\\perp=1\\times2\\times1.5=3\\) kg m\\(^2\\)/s, and both circulate in the same sense.<br><br>Total \\(=6\\) kg m\\(^2\\)/s.",
+   "hint": "Opposite velocities on opposite sides give the same sense of rotation.",
+   "distractor_logic": [
+    "Argued that zero total linear momentum means zero angular momentum; the two angular momenta actually add.",
+    "Counted only one of the two particles.",
+    "Used the full 3 m separation as the perpendicular distance for each particle."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-028",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "The same torque is applied to a disc and to a ring of equal mass and radius, each free to turn about its central axis. The ratio of the angular acceleration of the disc to that of the ring is",
+   "options": [
+    "\\(1:2\\)",
+    "\\(2:1\\)",
+    "\\(1:1\\)",
+    "\\(\\sqrt2:1\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(\\alpha=\\dfrac{\\tau}{I}\\), so the ratio is \\(\\dfrac{I_{ring}}{I_{disc}}=\\dfrac{MR^2}{\\tfrac12MR^2}=2\\).",
+   "hint": "Angular acceleration is inversely proportional to moment of inertia.",
+   "distractor_logic": [
+    "Inverted the ratio; the body with the smaller moment of inertia accelerates more.",
+    "Assumed equal mass and radius give equal moment of inertia.",
+    "Took the square root of the ratio of the moments of inertia, which has no basis in \\(\\tau=I\\alpha\\)."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-029",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A solid cylinder of radius 0.2 m starts from rest and rolls without slipping 8 m down an incline for which \\(\\sin\\theta=0.6\\). Taking \\(g=10\\) m/s\\(^2\\), its angular velocity at the bottom is",
+   "options": [
+    "1.6 rad/s",
+    "20 rad/s",
+    "40 rad/s",
+    "8 rad/s"
+   ],
+   "correct_index": 2,
+   "explanation": "\\(a=\\dfrac{g\\sin\\theta}{1+\\tfrac12}=\\dfrac{6}{1.5}=4\\) m/s\\(^2\\).<br><br>\\(v^2=2as=2\\times4\\times8=64\\), so \\(v=8\\) m/s.<br><br>\\(\\omega=\\dfrac{v}{R}=\\dfrac{8}{0.2}=40\\) rad/s.",
+   "hint": "Find the linear speed first, then use the rolling condition.",
+   "distractor_logic": [
+    "Multiplied the speed by the radius instead of dividing.",
+    "Divided the speed by the diameter, 0.4 m, instead of the radius.",
+    "Quoted the linear speed in m/s as the angular velocity."
+   ],
+   "mixed_topics": [
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-030",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A door of mass 12 kg and width 1 m can be treated as a uniform rod hinged at one edge. A force of 8 N is applied perpendicular to the door at its free edge. Its angular acceleration is",
+   "options": [
+    "8 rad/s\\(^2\\)",
+    "0.5 rad/s\\(^2\\)",
+    "1 rad/s\\(^2\\)",
+    "2 rad/s\\(^2\\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(\\tau=rF=1\\times8=8\\) N m.<br><br>\\(I=\\tfrac13ML^2=\\tfrac13\\times12\\times1=4\\) kg m\\(^2\\).<br><br>\\(\\alpha=\\dfrac{8}{4}=2\\) rad/s\\(^2\\).",
+   "hint": "The axis is at the hinge, not at the centre of the door.",
+   "distractor_logic": [
+    "Used \\(\\tfrac{1}{12}ML^2\\) about the centre instead of \\(\\tfrac13ML^2\\) about the hinge.",
+    "Divided the moment of inertia by the torque.",
+    "Used a lever arm of 0.5 m, the distance to the centre of mass, instead of the 1 m to where the force acts."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-031",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A wheel of radius 0.5 m rolls without slipping along a straight road. In one complete revolution, its centre of mass moves forward by",
+   "options": [
+    "\\(\\pi\\) m",
+    "\\(2\\pi\\) m",
+    "\\(0.5\\pi\\) m",
+    "0 m"
+   ],
+   "correct_index": 0,
+   "explanation": "Without slipping, distance moved equals arc length: \\(s=R\\theta\\).<br><br>\\(s=0.5\\times2\\pi=\\pi\\) m, along a straight line.",
+   "hint": "With no slipping, the wheel lays its circumference out on the road.",
+   "distractor_logic": [
+    "Used the diameter in place of the radius in the circumference.",
+    "Took half the circumference.",
+    "Thought that a full revolution returns the centre to where it started."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-032",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A sphere rolls without slipping down a rough incline. Which force provides the torque about its centre of mass that makes it spin faster?",
+   "options": [
+    "Gravity",
+    "Static friction",
+    "The normal force",
+    "Kinetic friction"
+   ],
+   "correct_index": 1,
+   "explanation": "Gravity and the normal force both pass through the centre.<br><br>Only friction, acting at the rim, has a lever arm.<br><br>Since the contact point does not slide, this friction is static.",
+   "hint": "Which force does not pass through the centre?",
+   "distractor_logic": [
+    "Gravity acts at the centre of mass, so it has no lever arm about it.",
+    "For a sphere the normal force points through the centre, so its torque about the centre is zero.",
+    "There is no slipping, so kinetic friction is absent."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-033",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A solid sphere is released from rest on a perfectly smooth (frictionless) incline of angle \\(30^\\circ\\). Taking \\(g=10\\) m/s\\(^2\\), the acceleration of its centre of mass is",
+   "options": [
+    "\\(\\tfrac{25}{7}\\) m/s\\(^2\\)",
+    "2.5 m/s\\(^2\\)",
+    "5 m/s\\(^2\\)",
+    "0 m/s\\(^2\\)"
+   ],
+   "correct_index": 2,
+   "explanation": "With no friction, no force has a torque about the centre, so the sphere does not spin.<br><br>It slides without rotating, and \\(v_{cm}=\\omega R\\) does not apply.<br><br>\\(a=g\\sin\\theta=10\\times\\tfrac12=5\\) m/s\\(^2\\).",
+   "hint": "Without friction, what could make the sphere rotate?",
+   "distractor_logic": [
+    "Forced the rolling-without-slipping formula onto a surface that cannot make the sphere roll.",
+    "Used the rolling formula with the ring coefficient.",
+    "Assumed the sphere cannot move without friction."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-034",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 1 kg mass and a 3 kg mass are fixed at the ends of a light rod 4 m long. The system spins at 2 rad/s about a perpendicular axis through its centre of mass. Its kinetic energy is",
+   "options": [
+    "32 J",
+    "12 J",
+    "48 J",
+    "24 J"
+   ],
+   "correct_index": 3,
+   "explanation": "The centre of mass is 3 m from the 1 kg mass and 1 m from the 3 kg mass.<br><br>\\(I=1(3)^2+3(1)^2=12\\) kg m\\(^2\\).<br><br>\\(KE=\\tfrac12I\\omega^2=\\tfrac12\\times12\\times4=24\\) J.",
+   "hint": "Locate the centre of mass before computing the moment of inertia.",
+   "distractor_logic": [
+    "Placed the axis at the midpoint of the rod instead of at the centre of mass.",
+    "Forgot to square \\(\\omega\\).",
+    "Left out the factor \\(\\tfrac12\\)."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-035",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A force of 50 N is applied at right angles to a spanner, 0.3 m from the nut, and turns it through 2 rad. The work done by the force is",
+   "options": [
+    "30 J",
+    "0 J",
+    "7.5 J",
+    "100 J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\(\\tau=rF\\sin90^\\circ=0.3\\times50=15\\) N m.<br><br>\\(W=\\tau\\theta=15\\times2=30\\) J.",
+   "hint": "Find the torque, then multiply by the angle in radians.",
+   "distractor_logic": [
+    "Used \\(\\cos90^\\circ=0\\) in the torque, confusing it with the dot-product formula.",
+    "Divided the torque by the angle turned.",
+    "Multiplied the force by the angle and left out the lever arm."
+   ],
+   "mixed_topics": [
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-036",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A flywheel is a uniform disc of mass 20 kg and radius 0.5 m. Starting from rest under a constant torque of 5 N m, the time it takes to reach 10 rad/s is",
+   "options": [
+    "10 s",
+    "5 s",
+    "2.5 s",
+    "20 s"
+   ],
+   "correct_index": 1,
+   "explanation": "\\(I=\\tfrac12MR^2=\\tfrac12\\times20\\times0.25=2.5\\) kg m\\(^2\\).<br><br>\\(\\alpha=\\dfrac{5}{2.5}=2\\) rad/s\\(^2\\).<br><br>\\(t=\\dfrac{\\omega}{\\alpha}=5\\) s.",
+   "hint": "Moment of inertia, then angular acceleration, then time.",
+   "distractor_logic": [
+    "Used \\(I=MR^2\\) instead of \\(\\tfrac12MR^2\\).",
+    "Used \\(I=\\tfrac14MR^2\\), the value about a diameter.",
+    "Computed the angular acceleration upside down, as moment of inertia divided by torque (0.5 rad/s\\(^2\\))."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-037",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A uniform rod of length 2 m and weight 40 N is hinged at one end and held horizontal by a vertical string tied to its other end. The tension in the string is",
+   "options": [
+    "40 N",
+    "80 N",
+    "20 N",
+    "10 N"
+   ],
+   "correct_index": 2,
+   "explanation": "The weight acts at the centre of mass, the midpoint, 1 m from the hinge.<br><br>Torques about the hinge: \\(T\\times2=40\\times1\\).<br><br>\\(T=20\\) N; the hinge supplies the other 20 N.",
+   "hint": "Take torques about the hinge so that the hinge force drops out.",
+   "distractor_logic": [
+    "Made the string carry the whole weight, ignoring the force from the hinge.",
+    "Interchanged the lever arms of the weight and the tension.",
+    "Placed the centre of mass at a quarter of the length."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Torque, Angular Momentum, and Equilibrium of a Rigid Body"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-038",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A body rolling without slipping has \\(\\dfrac{KE_{rot}}{KE_{trans}}=\\tfrac25\\). The body is a",
+   "options": [
+    "hollow sphere",
+    "disc",
+    "ring",
+    "solid sphere"
+   ],
+   "correct_index": 3,
+   "explanation": "\\(\\dfrac{KE_{rot}}{KE_{trans}}=\\dfrac{k^2}{R^2}\\) for rolling without slipping.<br><br>\\(\\tfrac25\\) matches \\(I=\\tfrac25MR^2\\), a solid sphere.",
+   "hint": "The ratio equals the coefficient in the moment-of-inertia formula.",
+   "distractor_logic": [
+    "A hollow sphere gives the ratio \\(\\tfrac23\\).",
+    "A disc gives the ratio \\(\\tfrac12\\).",
+    "A ring gives the ratio \\(1\\)."
+   ],
+   "mixed_topics": [
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-039",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Rolling Motion",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A 2 kg disc rolls without slipping for 5 m along a rough level floor with \\(\\mu_s=0.3\\) and \\(\\mu_k=0.2\\). Taking \\(g=10\\) m/s\\(^2\\), the work done by friction on the disc is",
+   "options": [
+    "0 J",
+    "\\(-20\\) J",
+    "\\(-30\\) J",
+    "\\(+20\\) J"
+   ],
+   "correct_index": 0,
+   "explanation": "In pure rolling the contact point is instantaneously at rest.<br><br>A force applied at a point with no displacement does no work, whatever the friction coefficients are.<br><br>So the work done by friction is zero.",
+   "hint": "The friction coefficients are there to distract you.",
+   "distractor_logic": [
+    "Used kinetic friction \\(\\mu_kN\\) over 5 m; there is no sliding in pure rolling.",
+    "Used the maximum static friction \\(\\mu_sN\\) over 5 m; static friction at a stationary contact point does no work.",
+    "Treated friction as a driving force doing positive work through the full distance."
+   ],
+   "mixed_topics": [
+    "Kinematics and Dynamics of Rotational Motion About a Fixed Axis",
+    "Rolling Motion"
+   ]
+  },
+  {
+   "id": "PHY11-CH06-B-040",
+   "chapter": "PHY11-CH06",
+   "chapter_name": "System of Particles and Rotational Motion",
+   "topic": "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two 2 kg point masses are fixed at the ends of a light rod 2 m long, so that the moment of inertia about a perpendicular axis through the centre of mass is 4 kg m\\(^2\\). About a parallel axis through one of the masses, the moment of inertia is",
+   "options": [
+    "0 kg m\\(^2\\)",
+    "8 kg m\\(^2\\)",
+    "4 kg m\\(^2\\)",
+    "16 kg m\\(^2\\)"
+   ],
+   "correct_index": 1,
+   "explanation": "By symmetry the centre of mass is at the midpoint, 1 m from each mass.<br><br>\\(I=I_{cm}+Md^2=4+4(1)^2=8\\) kg m\\(^2\\).<br><br>Check directly: \\(2(0)^2+2(2)^2=8\\) kg m\\(^2\\).",
+   "hint": "Use the total mass and the distance from the centre of mass.",
+   "distractor_logic": [
+    "Subtracted \\(Md^2=4\\) kg m\\(^2\\) from \\(I_{cm}\\); the theorem always adds.",
+    "Assumed the moment of inertia is unchanged when the axis shifts.",
+    "Used \\(d=2\\) m, the full rod length, instead of the 1 m from the centre of mass."
+   ],
+   "mixed_topics": [
+    "Centre of Mass: Definition, Motion, and Linear Momentum of a System of Particles",
+    "Moment of Inertia: Standard Bodies, and the Parallel and Perpendicular Axes Theorems"
+   ]
+  }
+ ]
+}

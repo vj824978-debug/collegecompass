@@ -1,0 +1,3728 @@
+{
+  "meta": {
+    "chapter": "PHY11-CH10",
+    "chapter_name": "Thermal Properties of Matter",
+    "subject": "Physics",
+    "class": 11,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "Greek-letter symbols (\\( \\alpha \\), \\( \\beta \\), \\( \\gamma \\), \\( \\sigma \\), \\( \\lambda \\)) and every exponent (including \\( T^4 \\) and powers of ten) are written as single unnested KaTeX spans; no raw Unicode math symbols appear anywhere outside KaTeX; plain-text unit labels (°C, °F, K, J, cal, W, m) sit outside KaTeX; every numeric correct answer terminates cleanly."
+  },
+  "topics": [
+    {
+      "name": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "summary": "Temperature measures how hot a body is and is read on three common scales. The Celsius scale puts the ice point at 0 °C and the steam point at 100 °C; the Fahrenheit scale puts them at 32 °F and 212 °F; the Kelvin scale starts at absolute zero, so 0 °C is 273 K. An absolute reading converts with both a scale factor and an offset, but a temperature change uses only the scale factor, because the offset cancels when two readings are subtracted. Most solids expand on heating. A length grows by a fraction \\( \\alpha\\Delta T \\), an area by \\( \\beta\\Delta T \\) and a volume by \\( \\gamma\\Delta T \\), where for an isotropic solid \\( \\beta=2\\alpha \\) and \\( \\gamma=3\\alpha \\). Liquids have only volume expansion, and a container's own expansion hides part of it. An ideal gas at constant pressure has \\( \\gamma=\\dfrac{1}{T} \\) with T in kelvin. Water is unusual: it contracts between 0 °C and 4 °C and is densest at 4 °C. Uneven expansion bends bimetallic strips, and a clamped rod develops thermal stress.",
+      "key_formulas": [
+        "\\( F=\\dfrac{9}{5}C+32 \\), \\( T_K=T_C+273 \\) (absolute readings)",
+        "\\( \\Delta T_F=\\dfrac{9}{5}\\Delta T_C \\), \\( \\Delta T_K=\\Delta T_C \\) (changes)",
+        "\\( \\Delta L=L_0\\alpha\\Delta T \\), \\( \\Delta A=A_0\\beta\\Delta T \\), \\( \\Delta V=V_0\\gamma\\Delta T \\)",
+        "\\( \\beta=2\\alpha \\), \\( \\gamma=3\\alpha \\)",
+        "Thermal stress \\( =Y\\alpha\\Delta T \\)"
+      ],
+      "worked_example": "A brass plate (\\( \\alpha=2\\times10^{-5} \\) per °C) of area \\( 0.5\\text{ m}^2 \\) is heated from 20 °C to 70 °C. Find the increase in area.<br><br>\\( \\beta=2\\alpha=4\\times10^{-5} \\) per °C and \\( \\Delta T=50 \\) °C.<br><br>\\( \\Delta A=0.5\\times4\\times10^{-5}\\times50=1\\times10^{-3}\\text{ m}^2 \\).",
+      "common_mistakes": [
+        "Adding \\( +32 \\) or \\( +273 \\) when converting a temperature change instead of a reading",
+        "Leaving out the offset when converting an absolute reading",
+        "Swapping the ratios, e.g. \\( \\beta=3\\alpha \\) or \\( \\gamma=2\\alpha \\)",
+        "Using the linear formula \\( \\Delta L=L_0\\alpha\\Delta T \\) for an area or volume change",
+        "Thinking a hole in a heated plate shrinks"
+      ],
+      "question_count": 39
+    },
+    {
+      "name": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "summary": "When heat flows into a body without a change of state, its temperature rises by an amount set by its mass and specific heat capacity: \\( Q=mc\\Delta T \\). Specific heat c is the heat needed to warm 1 kg by 1 K; water's large value, 4200 J/(kg·K) or 1 cal/(g·°C), makes it an excellent coolant and moderates coastal climates. The heat capacity of a whole body is \\( mc \\), and the water equivalent of a calorimeter is the mass of water with the same heat capacity. The principle of calorimetry is energy conservation for an isolated system: total heat lost by hotter bodies equals total heat gained by colder ones, and all reach a common final temperature. To solve a mixture problem, write each body's heat term from its own starting temperature to the common final temperature, include the calorimeter, and balance lost against gained. Only temperature changes appear, so kelvin and Celsius give identical results. With a heater of power P and no losses, \\( Pt=mc\\Delta T \\), which links time, power and temperature rise.",
+      "key_formulas": [
+        "\\( Q=mc\\Delta T \\)",
+        "Heat capacity \\( C=mc \\)",
+        "Water equivalent \\( W=\\dfrac{mc}{c_{water}} \\)",
+        "Heat lost \\( = \\) heat gained",
+        "\\( Pt=mc\\Delta T \\) (heater, no losses)"
+      ],
+      "worked_example": "0.5 kg of water at 90 °C is mixed with 1 kg of water at 30 °C. Find the final temperature.<br><br>\\( 0.5c(90-T)=1\\times c(T-30) \\).<br><br>\\( 45-0.5T=T-30 \\), so \\( 1.5T=75 \\) and \\( T=50 \\) °C.",
+      "common_mistakes": [
+        "Taking a simple average when masses or specific heats differ",
+        "Forgetting the heat absorbed by the calorimeter or container",
+        "Using an absolute temperature in place of \\( \\Delta T \\)",
+        "Measuring each body's change from the wrong starting temperature",
+        "Leaving heat per minute unconverted when finding power in watts"
+      ],
+      "question_count": 39
+    },
+    {
+      "name": "Change of State: Latent Heat and Phase Changes",
+      "summary": "Matter changes state when enough heat is added or removed: melting (fusion), freezing, vaporization, condensation and sublimation. During a change of state at fixed pressure the temperature stays constant, because the heat breaks or forms bonds instead of raising the average kinetic energy. The heat involved is \\( Q=mL \\), where L is the latent heat: for water, fusion needs about \\( 3.36\\times10^{5} \\) J/kg (80 cal/g) and vaporization about \\( 2.26\\times10^{6} \\) J/kg (540 cal/g). A heating curve therefore shows sloping parts, where one phase warms with \\( Q=mc\\Delta T \\) using that phase's own specific heat, and flat parts, where latent heat is absorbed. Whenever a temperature range crosses a phase boundary, the total heat is a chain of separate terms: warm each phase, and add a latent term for each transition. Boiling point rises with pressure, as in a pressure cooker, and falls at altitude; pressure lowers ice's melting point, which explains regelation. Steam burns are severe because condensing steam releases its large latent heat.",
+      "key_formulas": [
+        "\\( Q=mL \\) (at constant temperature)",
+        "\\( L_f\\approx3.36\\times10^{5} \\) J/kg \\( =80 \\) cal/g",
+        "\\( L_v\\approx2.26\\times10^{6} \\) J/kg \\( =540 \\) cal/g",
+        "Ice to steam: \\( Q=mc_{ice}\\Delta T_1+mL_f+mc_w\\Delta T_2+mL_v+\\dots \\)"
+      ],
+      "worked_example": "Find the heat to turn 20 g of ice at 0 °C into water at 50 °C (\\( L_f=80 \\) cal/g, \\( c_w=1 \\) cal/(g·°C)).<br><br>Melt: \\( 20\\times80=1600 \\) cal.<br><br>Warm: \\( 20\\times1\\times50=1000 \\) cal.<br><br>Total = 2600 cal.",
+      "common_mistakes": [
+        "Skipping the \\( mL \\) term when the temperature range crosses a phase boundary",
+        "Applying one \\( mc\\Delta T \\) across the whole range, or using water's specific heat for ice",
+        "Assuming all the ice melts without checking the available heat",
+        "Forgetting that condensed steam also cools after condensing",
+        "Confusing latent heat of fusion with latent heat of vaporization"
+      ],
+      "question_count": 38
+    },
+    {
+      "name": "Heat Transfer by Conduction and Convection",
+      "summary": "Conduction carries heat through a material from hotter to colder regions without bulk movement; metals conduct well because free electrons carry energy. In steady state the heat current through a slab is \\( H=\\dfrac{kA\\Delta T}{L} \\), where k is the thermal conductivity in W/(m·K). It is useful to define thermal resistance \\( R=\\dfrac{L}{kA} \\), so that \\( H=\\dfrac{\\Delta T}{R} \\), just like current in a circuit. Slabs in series carry the same heat current and their resistances add; the temperature drop across each slab is proportional to its resistance, which gives junction temperatures. Rods in parallel share the same temperature difference and their conductances add, so heat splits in proportion to kA/L. Still air, wool, thermocol and ice are poor conductors used for insulation. Convection transfers heat by the bulk movement of a fluid: warm fluid expands, becomes less dense and rises while cooler fluid sinks. It explains sea and land breezes, room heating from floor-level heaters, and why convection cannot occur in solids.",
+      "key_formulas": [
+        "\\( H=\\dfrac{kA\\Delta T}{L} \\)",
+        "\\( R=\\dfrac{L}{kA} \\), \\( H=\\dfrac{\\Delta T}{R} \\)",
+        "Series: \\( R=R_1+R_2 \\)",
+        "Parallel: \\( \\dfrac{1}{R}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2} \\)",
+        "Equal-thickness series slabs: \\( k_{eq}=\\dfrac{2k_1k_2}{k_1+k_2} \\)"
+      ],
+      "worked_example": "A glass pane 4 mm thick, area \\( 2\\text{ m}^2 \\), k = 0.8 W/(m·K), has faces at 25 °C and 5 °C. Find the heat flow.<br><br>\\( H=\\dfrac{0.8\\times2\\times20}{0.004} \\).<br><br>\\( H=8000 \\) W.",
+      "common_mistakes": [
+        "Leaving thickness in cm or mm instead of metres",
+        "Using the series formula for parallel rods, or the reverse",
+        "Splitting the temperature drop equally across unequal slabs",
+        "Putting the larger temperature drop across the better conductor",
+        "Treating convection as possible in a solid"
+      ],
+      "question_count": 36
+    },
+    {
+      "name": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "summary": "Radiation carries heat as electromagnetic waves and needs no medium, which is how the Sun warms the Earth. A perfect black body absorbs all radiation falling on it and is also the best emitter; good absorbers are good emitters. Stefan's law gives the power radiated per unit area as \\( E=e\\sigma T^4 \\), with \\( \\sigma=5.67\\times10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4} \\), emissivity e (1 for a black body) and T the absolute temperature in kelvin. A body in surroundings at \\( T_0 \\) loses net power \\( e\\sigma A(T^4-T_0^4) \\). Wien's displacement law, \\( \\lambda_{max}T=b \\) with \\( b=2.9\\times10^{-3} \\) m·K, says hotter bodies peak at shorter wavelengths, so blue stars are hotter than red ones. Newton's law of cooling states that the rate of cooling is proportional to the excess temperature over the surroundings. It is a linear approximation of the fourth-power law, valid only for small excesses, and is often applied using the average temperature over an interval.",
+      "key_formulas": [
+        "\\( E=e\\sigma T^4 \\), \\( P=e\\sigma AT^4 \\)",
+        "Net: \\( P=e\\sigma A(T^4-T_0^4) \\)",
+        "\\( \\lambda_{max}T=b \\), \\( b=2.9\\times10^{-3} \\) m·K",
+        "Newton: \\( \\dfrac{\\Delta T}{t}=K(\\bar{T}-T_0) \\)"
+      ],
+      "worked_example": "A black body at 127 °C is heated to 527 °C. By what factor does its radiated power increase?<br><br>In kelvin: 400 K and 800 K, a ratio of 2.<br><br>\\( \\dfrac{P_2}{P_1}=2^4=16 \\).",
+      "common_mistakes": [
+        "Substituting Celsius values into \\( T^4 \\) or \\( \\lambda_{max}T=b \\)",
+        "Using \\( T^2 \\) or \\( T^3 \\) instead of \\( T^4 \\)",
+        "Thinking \\( \\lambda_{max} \\) increases with temperature",
+        "Applying Newton's law of cooling to large temperature differences",
+        "Measuring the excess from 0 °C instead of from the surroundings"
+      ],
+      "question_count": 38
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY11-CH10-L1-001",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "Convert a reading of 25 °C to the Kelvin scale.",
+      "options": [
+        "298 K",
+        "\\( -248 \\) K",
+        "77 K",
+        "25 K"
+      ],
+      "correct_index": 0,
+      "explanation": "An absolute Celsius reading converts to Kelvin by adding the zero-point offset: \\( T_K=T_C+273 \\).<br><br>\\( T_K=25+273=298 \\) K.",
+      "hint": "A reading (not a change) needs the zero-point offset.",
+      "distractor_logic": [
+        "Subtracted 273 instead of adding it when converting a Celsius reading to Kelvin",
+        "Used the Fahrenheit formula \\( \\dfrac{9}{5}C+32 \\) instead of the Kelvin offset",
+        "Treated an absolute reading like a temperature difference and dropped the \\( +273 \\) offset"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-002",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "The temperature of a liquid rises by 45 °C. What is this rise expressed on the Fahrenheit scale?",
+      "options": [
+        "113 °F",
+        "81 °F",
+        "25 °F",
+        "45 °F"
+      ],
+      "correct_index": 1,
+      "explanation": "A temperature change converts using only the scale factor: \\( \\Delta T_F=\\dfrac{9}{5}\\Delta T_C \\).<br><br>\\( \\Delta T_F=\\dfrac{9}{5}\\times45=81 \\) °F.<br><br>No \\( +32 \\) is added, because the offset cancels when one reading is subtracted from another.",
+      "hint": "Is this a reading or a change? Changes use only the size of the degree.",
+      "distractor_logic": [
+        "Added the \\( +32 \\) offset, which belongs only to absolute readings, not to a temperature change",
+        "Multiplied by \\( \\dfrac{5}{9} \\) instead of \\( \\dfrac{9}{5} \\)",
+        "Assumed a Celsius degree and a Fahrenheit degree are the same size"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-003",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "At what temperature do the Celsius and Fahrenheit scales show the same numerical reading?",
+      "options": [
+        "\\( 0 \\) degrees",
+        "\\( 40 \\) degrees",
+        "\\( -40 \\) degrees",
+        "\\( -273 \\) degrees"
+      ],
+      "correct_index": 2,
+      "explanation": "Set \\( F=C=x \\) in \\( F=\\dfrac{9}{5}C+32 \\): \\( x=\\dfrac{9}{5}x+32 \\).<br><br>\\( -\\dfrac{4}{5}x=32 \\), so \\( x=-40 \\).<br><br>Hence \\( -40 \\) °C and \\( -40 \\) °F are the same temperature.",
+      "hint": "Put F = C = x into the conversion formula and solve.",
+      "distractor_logic": [
+        "Assumed both scales share the same zero point",
+        "Made a sign error while solving \\( x=\\dfrac{9}{5}x+32 \\)",
+        "Confused the crossover point with absolute zero on the Celsius scale"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-004",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "A steel rod 2 m long is heated through 50 °C. If \\( \\alpha=1.2\\times10^{-5} \\) per °C, what is the increase in its length?",
+      "options": [
+        "\\( 2.4 \\) mm",
+        "\\( 3.6 \\) mm",
+        "\\( 0.6 \\) mm",
+        "\\( 1.2 \\) mm"
+      ],
+      "correct_index": 3,
+      "explanation": "Linear expansion: \\( \\Delta L=L_0\\alpha\\Delta T \\).<br><br>\\( \\Delta L=2\\times1.2\\times10^{-5}\\times50=1.2\\times10^{-3} \\) m.<br><br>That is \\( 1.2 \\) mm.",
+      "hint": "For a length change, use the linear coefficient directly.",
+      "distractor_logic": [
+        "Used the areal coefficient \\( \\beta=2\\alpha \\) for a change in length",
+        "Used the volume coefficient \\( \\gamma=3\\alpha \\) for a change in length",
+        "Computed only \\( \\alpha\\Delta T \\) and forgot to multiply by the original length"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-005",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "For an isotropic solid, how is the coefficient of superficial (areal) expansion \\( \\beta \\) related to the linear coefficient \\( \\alpha \\)?",
+      "options": [
+        "\\( \\beta=2\\alpha \\)",
+        "\\( \\beta=3\\alpha \\)",
+        "\\( \\beta=\\alpha \\)",
+        "\\( \\beta=\\dfrac{\\alpha}{2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "A square of side \\( L \\) becomes \\( L(1+\\alpha\\Delta T) \\) on each side.<br><br>Area becomes \\( L^2(1+\\alpha\\Delta T)^2\\approx L^2(1+2\\alpha\\Delta T) \\).<br><br>So \\( \\beta=2\\alpha \\).",
+      "hint": "Area involves two lengths, each stretching by the same fraction.",
+      "distractor_logic": [
+        "Swapped the areal ratio with the volume ratio \\( \\gamma=3\\alpha \\)",
+        "Assumed area expands at the same fractional rate as length",
+        "Inverted the relation, as if area expanded more slowly than length"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-006",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "The volume expansion coefficient of a solid is \\( \\gamma=6\\times10^{-5} \\) per °C. What is its linear expansion coefficient \\( \\alpha \\)?",
+      "options": [
+        "\\( 3\\times10^{-5} \\) per °C",
+        "\\( 2\\times10^{-5} \\) per °C",
+        "\\( 1.8\\times10^{-4} \\) per °C",
+        "\\( 6\\times10^{-5} \\) per °C"
+      ],
+      "correct_index": 1,
+      "explanation": "For an isotropic solid, \\( \\gamma=3\\alpha \\).<br><br>\\( \\alpha=\\dfrac{\\gamma}{3}=\\dfrac{6\\times10^{-5}}{3}=2\\times10^{-5} \\) per °C.",
+      "hint": "Volume involves three lengths.",
+      "distractor_logic": [
+        "Divided by 2, using the areal relation \\( \\beta=2\\alpha \\) instead of \\( \\gamma=3\\alpha \\)",
+        "Multiplied by 3 instead of dividing",
+        "Assumed linear and volume coefficients are equal"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-007",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "The temperature of a gas changes by 30 K. What is this change on the Celsius scale?",
+      "options": [
+        "303 °C",
+        "\\( -243 \\) °C",
+        "30 °C",
+        "54 °C"
+      ],
+      "correct_index": 2,
+      "explanation": "Kelvin and Celsius degrees are the same size, and the 273 offset cancels in a difference.<br><br>So \\( \\Delta T_C=\\Delta T_K=30 \\) °C.",
+      "hint": "Changes on the Kelvin and Celsius scales are numerically equal.",
+      "distractor_logic": [
+        "Added 273 to a temperature difference; the offset applies only to absolute readings",
+        "Subtracted 273 from a temperature difference",
+        "Applied the Fahrenheit factor \\( \\dfrac{9}{5} \\), although Kelvin and Celsius degrees are the same size"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-008",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 1,
+      "type": "regular",
+      "question": "At what temperature does water have its maximum density?",
+      "options": [
+        "0 °C",
+        "100 °C",
+        "\\( -4 \\) °C",
+        "4 °C"
+      ],
+      "correct_index": 3,
+      "explanation": "Water shows anomalous expansion: between 0 °C and 4 °C it contracts on heating.<br><br>Above 4 °C it expands normally, so its density is greatest at 4 °C.",
+      "hint": "Think about why lake bottoms stay liquid in winter.",
+      "distractor_logic": [
+        "Assumed water is densest at its freezing point",
+        "Assumed hotter water is packed more tightly",
+        "Mixed up the sign; water at normal pressure is not liquid-stable there"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-009",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "How much heat is needed to warm 2 kg of water from 10 °C to 20 °C? (specific heat of water \\( 4200 \\) J/(kg·K))",
+      "options": [
+        "84000 J",
+        "8400 J",
+        "42000 J",
+        "2461200 J"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( Q=mc\\Delta T \\) with \\( \\Delta T=20-10=10 \\) K.<br><br>\\( Q=2\\times4200\\times10=84000 \\) J.",
+      "hint": "Only the rise in temperature enters the formula.",
+      "distractor_logic": [
+        "Forgot to multiply by the mass of 2 kg",
+        "Divided by the mass instead of multiplying",
+        "Used the final absolute temperature 293 K in place of the 10 K rise"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-010",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the SI unit of specific heat capacity?",
+      "options": [
+        "J/kg",
+        "J/(kg·K)",
+        "J/K",
+        "W/(m·K)"
+      ],
+      "correct_index": 1,
+      "explanation": "From \\( Q=mc\\Delta T \\), \\( c=\\dfrac{Q}{m\\Delta T} \\).<br><br>So its unit is joule per kilogram per kelvin, J/(kg·K).",
+      "hint": "Rearrange the heat equation to make c the subject.",
+      "distractor_logic": [
+        "Confused specific heat with latent heat, which has no temperature term",
+        "Confused specific heat with heat capacity of a whole body",
+        "Confused specific heat with thermal conductivity"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-011",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the heat capacity of a 0.5 kg aluminium block? (specific heat of aluminium 900 J/(kg·K))",
+      "options": [
+        "1800 J/K",
+        "900 J/K",
+        "450 J/K",
+        "450 J/kg"
+      ],
+      "correct_index": 2,
+      "explanation": "Heat capacity \\( C=mc \\).<br><br>\\( C=0.5\\times900=450 \\) J/K.",
+      "hint": "Heat capacity belongs to the whole body, so mass matters.",
+      "distractor_logic": [
+        "Divided the specific heat by the mass",
+        "Reported the specific heat instead of the heat capacity",
+        "Got the number right but used the unit of latent heat"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-012",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "A calorimeter of mass 200 g is made of a metal with specific heat 0.1 cal/(g·°C). What is its water equivalent?",
+      "options": [
+        "200 g",
+        "2000 g",
+        "0.1 g",
+        "20 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Water equivalent \\( W=\\dfrac{mc}{c_{water}} \\), with \\( c_{water}=1 \\) cal/(g·°C).<br><br>\\( W=200\\times0.1=20 \\) g.",
+      "hint": "Find the mass of water that has the same heat capacity.",
+      "distractor_logic": [
+        "Took the calorimeter's own mass as its water equivalent",
+        "Divided the mass by the specific heat instead of multiplying",
+        "Reported the specific heat value as the water equivalent"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-013",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "What does the principle of calorimetry state for an isolated system of bodies at different temperatures?",
+      "options": [
+        "Heat lost by the hotter bodies equals heat gained by the colder bodies",
+        "The bodies must start at the same temperature",
+        "All bodies must have the same specific heat",
+        "Heat lost by the hotter bodies is greater than heat gained by the colder bodies"
+      ],
+      "correct_index": 0,
+      "explanation": "In an isolated system no heat enters or leaves.<br><br>So by energy conservation, total heat lost equals total heat gained until a common temperature is reached.",
+      "hint": "It is conservation of energy applied to heat exchange.",
+      "distractor_logic": [
+        "Confused the final equilibrium condition with the starting condition",
+        "Assumed equal specific heats are needed for the principle to hold",
+        "Assumed some heat vanishes even in an isolated system"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-014",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "Why is water used as the coolant in car radiators?",
+      "options": [
+        "It has a low specific heat capacity",
+        "It has a high specific heat capacity",
+        "It has a high density",
+        "It has a low boiling point"
+      ],
+      "correct_index": 1,
+      "explanation": "A high specific heat means water absorbs a large amount of heat for a small temperature rise.<br><br>So it carries heat away from the engine without getting too hot itself.",
+      "hint": "Which property measures heat absorbed per kilogram per degree?",
+      "distractor_logic": [
+        "Reversed the property that lets a coolant absorb a lot of heat",
+        "Picked a property unrelated to how much heat it absorbs per degree",
+        "A low boiling point would make it boil away, not cool better"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-015",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "When 150 J of heat is supplied to 0.1 kg of a substance, its temperature rises by 3 °C. What is its specific heat?",
+      "options": [
+        "45 J/(kg·K)",
+        "5000 J/(kg·K)",
+        "500 J/(kg·K)",
+        "1500 J/(kg·K)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( c=\\dfrac{Q}{m\\Delta T} \\).<br><br>\\( c=\\dfrac{150}{0.1\\times3}=500 \\) J/(kg·K).",
+      "hint": "Rearrange the heat equation for c.",
+      "distractor_logic": [
+        "Multiplied heat, mass and temperature rise together",
+        "Used 0.01 kg for the mass",
+        "Divided by the mass but forgot to divide by the temperature rise"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-016",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 1,
+      "type": "regular",
+      "question": "Equal masses of water at 20 °C and 60 °C are mixed with no heat loss. What is the final temperature?",
+      "options": [
+        "80 °C",
+        "60 °C",
+        "20 °C",
+        "40 °C"
+      ],
+      "correct_index": 3,
+      "explanation": "Heat lost = heat gained: \\( mc(60-T)=mc(T-20) \\).<br><br>\\( 60-T=T-20 \\), so \\( T=40 \\) °C.",
+      "hint": "Equal masses of the same liquid meet halfway.",
+      "distractor_logic": [
+        "Added the two temperatures instead of balancing heat",
+        "Assumed the hotter water's temperature wins",
+        "Assumed the colder water's temperature wins"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-017",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "How much heat is needed to melt 2 kg of ice at 0 °C completely? (latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg)",
+      "options": [
+        "\\( 6.72\\times10^{5} \\) J",
+        "\\( 1.68\\times10^{5} \\) J",
+        "\\( 3.36\\times10^{5} \\) J",
+        "\\( 4.52\\times10^{6} \\) J"
+      ],
+      "correct_index": 0,
+      "explanation": "During melting the temperature stays at 0 °C, so \\( Q=mL_f \\).<br><br>\\( Q=2\\times3.36\\times10^{5}=6.72\\times10^{5} \\) J.",
+      "hint": "Melting needs latent heat only; no temperature changes.",
+      "distractor_logic": [
+        "Divided the latent heat by the mass instead of multiplying",
+        "Forgot to multiply by the 2 kg mass",
+        "Used the latent heat of vaporization, \\( 2.26\\times10^{6} \\) J/kg"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-018",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "While a block of ice at 0 °C is melting at normal pressure, what happens to its temperature?",
+      "options": [
+        "It rises steadily",
+        "It stays constant at 0 °C",
+        "It falls",
+        "It rises, then falls"
+      ],
+      "correct_index": 1,
+      "explanation": "During a phase change the absorbed heat breaks the solid's structure instead of raising temperature.<br><br>So the ice-water mixture stays at 0 °C until all the ice has melted.",
+      "hint": "Where does the heat go during melting?",
+      "distractor_logic": [
+        "Assumed all absorbed heat must raise the temperature",
+        "Confused melting with an endothermic cooling of the surroundings",
+        "Invented a temperature overshoot during the phase change"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-019",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "How much heat converts 10 g of water at 100 °C into steam at 100 °C? (latent heat of vaporization 540 cal/g)",
+      "options": [
+        "800 cal",
+        "54 cal",
+        "5400 cal",
+        "1000 cal"
+      ],
+      "correct_index": 2,
+      "explanation": "At constant 100 °C only latent heat is needed: \\( Q=mL_v \\).<br><br>\\( Q=10\\times540=5400 \\) cal.",
+      "hint": "Boiling at 100 °C needs latent heat, not specific heat.",
+      "distractor_logic": [
+        "Used the latent heat of fusion, 80 cal/g",
+        "Divided the latent heat by the mass",
+        "Used a temperature-change formula with a 100 °C rise, though the temperature does not change"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-020",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "Why does a burn from steam at 100 °C hurt more than one from boiling water at 100 °C?",
+      "options": [
+        "Steam is at a higher temperature than boiling water",
+        "Steam has a higher specific heat than water",
+        "Steam is denser than boiling water",
+        "Steam releases its latent heat of vaporization as it condenses on the skin"
+      ],
+      "correct_index": 3,
+      "explanation": "Each gram of steam condensing gives out about 540 cal before it even starts to cool.<br><br>Boiling water supplies only the heat from cooling, so steam delivers much more heat.",
+      "hint": "Condensation gives back the heat taken during boiling.",
+      "distractor_logic": [
+        "Both are at 100 °C; the difference lies in stored latent heat",
+        "Steam's specific heat is actually lower; that is not the reason",
+        "Steam is far less dense; density is not the cause"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-021",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "How does the boiling point of water at a high mountain station compare with that at sea level?",
+      "options": [
+        "It is lower",
+        "It is higher",
+        "It is the same",
+        "It depends only on how much water is heated"
+      ],
+      "correct_index": 0,
+      "explanation": "Boiling occurs when vapour pressure equals the surrounding pressure.<br><br>Air pressure is lower at altitude, so water boils at a lower temperature.",
+      "hint": "Boiling point depends on the pressure above the liquid.",
+      "distractor_logic": [
+        "Reversed the effect of reduced air pressure",
+        "Assumed boiling point does not depend on pressure",
+        "Confused quantity of water with the pressure that sets the boiling point"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-022",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "Food cooks faster in a pressure cooker mainly because:",
+      "options": [
+        "the raised pressure lowers the boiling point of water",
+        "the raised pressure raises the boiling point of water",
+        "the steam inside has a larger latent heat",
+        "the cooker's walls are better conductors"
+      ],
+      "correct_index": 1,
+      "explanation": "Higher pressure raises the boiling point above 100 °C.<br><br>Food cooks in hotter water, so it cooks faster.",
+      "hint": "What does extra pressure do to the boiling point?",
+      "distractor_logic": [
+        "Reversed the pressure-boiling point relation",
+        "Latent heat is not what the cooker changes",
+        "Wall material is not the main effect"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-023",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the name of the change in which a solid turns directly into vapour without becoming liquid (as camphor does)?",
+      "options": [
+        "Fusion",
+        "Vaporization",
+        "Sublimation",
+        "Condensation"
+      ],
+      "correct_index": 2,
+      "explanation": "Skipping the liquid stage, solid to vapour, is called sublimation.<br><br>Camphor, naphthalene and dry ice sublime.",
+      "hint": "It skips the liquid stage.",
+      "distractor_logic": [
+        "Fusion is solid to liquid",
+        "Vaporization is liquid to vapour",
+        "Condensation is vapour to liquid"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-024",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the SI unit of latent heat?",
+      "options": [
+        "J/(kg·K)",
+        "J/K",
+        "J·kg",
+        "J/kg"
+      ],
+      "correct_index": 3,
+      "explanation": "From \\( Q=mL \\), \\( L=\\dfrac{Q}{m} \\).<br><br>So latent heat is measured in joule per kilogram.",
+      "hint": "Rearrange Q = mL.",
+      "distractor_logic": [
+        "Confused latent heat with specific heat; phase change has no temperature term",
+        "Confused latent heat with heat capacity",
+        "Multiplied by mass instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-025",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "A rod of length 0.5 m and cross-section \\( 0.01\\text{ m}^2 \\) has thermal conductivity 200 W/(m·K). Its ends are held 50 K apart. What is the rate of heat flow?",
+      "options": [
+        "200 W",
+        "50 W",
+        "20000 W",
+        "100 W"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( H=\\dfrac{kA\\Delta T}{L} \\).<br><br>\\( H=\\dfrac{200\\times0.01\\times50}{0.5}=200 \\) W.",
+      "hint": "Heat current grows with area and falls with length.",
+      "distractor_logic": [
+        "Multiplied by the length instead of dividing",
+        "Left out the cross-sectional area",
+        "Forgot to divide by the length"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-026",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the SI unit of thermal conductivity?",
+      "options": [
+        "W/K",
+        "W/(m·K)",
+        "J/(kg·K)",
+        "W/(m\\( ^2 \\)·K)"
+      ],
+      "correct_index": 1,
+      "explanation": "From \\( H=\\dfrac{kA\\Delta T}{L} \\), \\( k=\\dfrac{HL}{A\\Delta T} \\).<br><br>Unit: \\( \\dfrac{\\text{W}\\cdot\\text{m}}{\\text{m}^2\\cdot\\text{K}} \\), which is W/(m·K).",
+      "hint": "Rearrange the conduction equation for k.",
+      "distractor_logic": [
+        "Confused conductivity with thermal conductance of a whole slab",
+        "Confused conductivity with specific heat",
+        "Placed area in the unit, as for a surface heat-transfer coefficient"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-027",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "Which of these is the best conductor of heat?",
+      "options": [
+        "Glass",
+        "Wood",
+        "Silver",
+        "Air"
+      ],
+      "correct_index": 2,
+      "explanation": "Metals conduct heat well because free electrons carry energy quickly.<br><br>Silver has one of the highest thermal conductivities of all materials.",
+      "hint": "Think of free electrons.",
+      "distractor_logic": [
+        "Glass is a poor conductor used as an insulator",
+        "Wood is a poor conductor, used for pan handles",
+        "Still air is among the poorest conductors"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-028",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "On a cold morning an iron gate and a wooden bench are at the same temperature, yet the iron feels colder. Why?",
+      "options": [
+        "Iron is actually at a lower temperature",
+        "Wood has a lower specific heat",
+        "Iron radiates cold into the hand",
+        "Iron conducts heat away from the hand much faster"
+      ],
+      "correct_index": 3,
+      "explanation": "The hand senses how fast it loses heat, not the object's temperature.<br><br>Iron's high conductivity draws heat from the hand quickly, so it feels colder.",
+      "hint": "Your skin senses the rate of heat loss.",
+      "distractor_logic": [
+        "Both have been in the same air long enough to share its temperature",
+        "Specific heat is not what makes the difference the hand senses",
+        "Cold is not a quantity that flows; heat flows out of the hand"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-029",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "On a sunny afternoon at the seashore, in which direction does the breeze usually blow?",
+      "options": [
+        "From the sea towards the land",
+        "From the land towards the sea",
+        "Straight upward over the sea",
+        "There is no breeze by day"
+      ],
+      "correct_index": 0,
+      "explanation": "By day land warms faster than the sea; the warm air over land rises.<br><br>Cooler air from over the sea flows in to replace it, making a sea breeze.",
+      "hint": "Warm air rises over whichever surface heats faster.",
+      "distractor_logic": [
+        "Described the night-time land breeze",
+        "Placed the rising warm air over the cooler sea",
+        "Ignored the convection current set up by uneven heating"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-030",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "In which of these can heat NOT be transferred by convection?",
+      "options": [
+        "A liquid",
+        "A solid",
+        "A gas",
+        "Air in a room"
+      ],
+      "correct_index": 1,
+      "explanation": "Convection needs the heated material itself to move.<br><br>Particles in a solid are fixed in place, so solids cannot convect.",
+      "hint": "Convection needs bulk movement of the medium.",
+      "distractor_logic": [
+        "Liquids transfer heat by convection currents",
+        "Gases transfer heat by convection currents",
+        "Air circulates, carrying heat by convection"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-031",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "The thickness of a wall is doubled while everything else stays the same. What happens to the steady rate of heat flow through it?",
+      "options": [
+        "It doubles",
+        "It stays the same",
+        "It halves",
+        "It becomes one quarter"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( H=\\dfrac{kA\\Delta T}{L} \\), so \\( H\\propto\\dfrac{1}{L} \\).<br><br>Doubling L halves H.",
+      "hint": "Thickness sits in the denominator.",
+      "distractor_logic": [
+        "Took heat flow as proportional to thickness",
+        "Assumed thickness does not affect conduction",
+        "Took heat flow as inversely proportional to the square of thickness"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-032",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 1,
+      "type": "regular",
+      "question": "A slab has thickness 0.4 m, area \\( 0.2\\text{ m}^2 \\) and thermal conductivity 0.5 W/(m·K). What is its thermal resistance?",
+      "options": [
+        "0.25 K/W",
+        "0.04 K/W",
+        "0.16 K/W",
+        "4 K/W"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( R=\\dfrac{L}{kA} \\).<br><br>\\( R=\\dfrac{0.4}{0.5\\times0.2}=4 \\) K/W.",
+      "hint": "Thicker and less conductive means more resistance.",
+      "distractor_logic": [
+        "Inverted the formula, calculating \\( \\dfrac{kA}{L} \\)",
+        "Multiplied thickness, conductivity and area together",
+        "Multiplied thickness by area and divided by conductivity"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-033",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "The absolute temperature of a black body is doubled. By what factor does the power it radiates increase?",
+      "options": [
+        "16",
+        "4",
+        "8",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "Stefan's law: \\( E=\\sigma T^4 \\).<br><br>\\( \\dfrac{E_2}{E_1}=2^4=16 \\).",
+      "hint": "Stefan's law uses the fourth power of absolute temperature.",
+      "distractor_logic": [
+        "Used \\( T^2 \\) instead of \\( T^4 \\)",
+        "Used \\( T^3 \\) instead of \\( T^4 \\)",
+        "Took radiated power as proportional to temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-034",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "According to Wien's displacement law, what happens to the peak wavelength \\( \\lambda_{max} \\) of a black body's radiation as its temperature rises?",
+      "options": [
+        "It increases",
+        "It decreases",
+        "It stays the same",
+        "It first increases, then decreases"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\lambda_{max}T=b \\), a constant.<br><br>So as T rises, \\( \\lambda_{max} \\) must fall; hotter bodies glow bluer.",
+      "hint": "Their product is constant.",
+      "distractor_logic": [
+        "Reversed the relation; \\( \\lambda_{max}T \\) is constant, so they vary inversely",
+        "Ignored the shift of the spectrum with temperature",
+        "Invented a turning point that the law does not contain"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-035",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "A black body is at 5800 K. Using Wien's law with \\( b=2.9\\times10^{-3} \\) m·K, what is its peak wavelength \\( \\lambda_{max} \\)?",
+      "options": [
+        "\\( 16.82 \\) m",
+        "\\( 5\\times10^{-4} \\) m",
+        "\\( 5\\times10^{-7} \\) m",
+        "\\( 2\\times10^{6} \\) m"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\lambda_{max}=\\dfrac{b}{T}=\\dfrac{2.9\\times10^{-3}}{5800} \\).<br><br>\\( \\lambda_{max}=5\\times10^{-7} \\) m, that is 500 nm.",
+      "hint": "Peak wavelength equals b divided by the absolute temperature.",
+      "distractor_logic": [
+        "Multiplied b by T instead of dividing",
+        "Dropped the \\( 10^{-3} \\) factor in b",
+        "Divided T by b, inverting the formula"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-036",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement describes a perfect black body?",
+      "options": [
+        "It reflects all radiation falling on it",
+        "It transmits all radiation falling on it",
+        "It emits no radiation at all",
+        "It absorbs all radiation falling on it"
+      ],
+      "correct_index": 3,
+      "explanation": "A perfect black body absorbs every wavelength completely.<br><br>Being the best absorber, it is also the best emitter at any temperature.",
+      "hint": "Black means nothing comes back.",
+      "distractor_logic": [
+        "Described a perfect reflector, the opposite of a black body",
+        "Described a perfectly transparent body",
+        "A black body is actually the best possible emitter"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-037",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "Newton's law of cooling (rate of cooling proportional to the temperature excess) holds well under which condition?",
+      "options": [
+        "When the body's temperature excess over the surroundings is small",
+        "When the temperature excess is very large",
+        "Only when the body is a perfect black body",
+        "Only in a complete vacuum"
+      ],
+      "correct_index": 0,
+      "explanation": "Net radiation depends on \\( T^4-T_0^4 \\).<br><br>Only for small \\( T-T_0 \\) does this become roughly proportional to \\( T-T_0 \\), giving Newton's law.",
+      "hint": "It is an approximation of the fourth-power law.",
+      "distractor_logic": [
+        "Applied the linear approximation where the full fourth-power law is needed",
+        "The law's validity depends on the size of the excess, not on the body being black",
+        "Newton's law is commonly used for bodies cooling in air"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-038",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "How does heat from the Sun reach the Earth?",
+      "options": [
+        "By conduction",
+        "By radiation",
+        "By convection",
+        "By conduction and convection together"
+      ],
+      "correct_index": 1,
+      "explanation": "Space between the Sun and Earth is almost a vacuum.<br><br>Only radiation, which needs no medium, can carry heat across it.",
+      "hint": "Which mode works through empty space?",
+      "distractor_logic": [
+        "Conduction needs a material medium, and space between is nearly empty",
+        "Convection needs a moving fluid, which space lacks",
+        "Neither mode can cross near-empty space"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-039",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the SI unit of the Stefan–Boltzmann constant \\( \\sigma \\)?",
+      "options": [
+        "\\( \\text{W m}^{-2}\\text{ K}^{-1} \\)",
+        "\\( \\text{W m}^{-1}\\text{ K}^{-1} \\)",
+        "\\( \\text{W m}^{-2}\\text{ K}^{-4} \\)",
+        "\\( \\text{J kg}^{-1}\\text{ K}^{-1} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\sigma=\\dfrac{E}{T^4} \\), where E is power per unit area.<br><br>Unit: \\( \\text{W m}^{-2} \\) divided by \\( \\text{K}^4 \\).",
+      "hint": "Rearrange Stefan's law for the constant.",
+      "distractor_logic": [
+        "Used the first power of temperature instead of \\( T^4 \\)",
+        "Gave the unit of thermal conductivity",
+        "Gave the unit of specific heat"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L1-040",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 1,
+      "type": "regular",
+      "question": "Two identical metal balls, one polished and one coated with lamp black, are at the same high temperature. Which radiates heat faster?",
+      "options": [
+        "The polished ball",
+        "Both radiate equally",
+        "Neither radiates until it cools",
+        "The lamp-black ball"
+      ],
+      "correct_index": 3,
+      "explanation": "Good absorbers are good emitters (Kirchhoff's law).<br><br>Lamp black has emissivity close to 1, while a polished surface is a poor emitter.",
+      "hint": "Good absorbers are good emitters.",
+      "distractor_logic": [
+        "Reversed the link between good absorbers and good emitters",
+        "Ignored the effect of surface finish on emissivity",
+        "All bodies above absolute zero radiate"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-001",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "A thermometer reads 77 °F. What is this temperature in °C?",
+      "options": [
+        "25 °C",
+        "81 °C",
+        "45 °C",
+        "298 °C"
+      ],
+      "correct_index": 0,
+      "explanation": "For an absolute reading, \\( C=\\dfrac{5}{9}(F-32) \\).<br><br>\\( C=\\dfrac{5}{9}(77-32)=\\dfrac{5}{9}\\times45=25 \\) °C.",
+      "hint": "A reading needs both the offset and the scale factor.",
+      "distractor_logic": [
+        "Subtracted 32 correctly but then multiplied by \\( \\dfrac{9}{5} \\) instead of \\( \\dfrac{5}{9} \\)",
+        "Subtracted 32 but forgot to rescale the degree size",
+        "Found 25 correctly, then added 273 as if converting to Kelvin while keeping the Celsius label"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-002",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "A faulty thermometer X reads 20 °X at the ice point and 220 °X at the steam point. What does it read when the true temperature is 50 °C?",
+      "options": [
+        "100 °X",
+        "120 °X",
+        "70 °X",
+        "110 °X"
+      ],
+      "correct_index": 1,
+      "explanation": "Use \\( \\dfrac{X-20}{220-20}=\\dfrac{C-0}{100-0} \\).<br><br>\\( X-20=200\\times\\dfrac{50}{100}=100 \\), so \\( X=120 \\) °X.",
+      "hint": "Compare the fraction of the way from ice point to steam point on both scales.",
+      "distractor_logic": [
+        "Scaled correctly but forgot to add the ice-point reading of 20",
+        "Added the ice-point reading but ignored the different degree size",
+        "Scaled by 220/100 using the full steam-point reading instead of the 200-degree span"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-003",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "Two bodies differ in temperature by 90 °F. What is this difference in kelvin?",
+      "options": [
+        "323 K",
+        "162 K",
+        "50 K",
+        "90 K"
+      ],
+      "correct_index": 2,
+      "explanation": "A difference uses only the scale factor: \\( \\Delta T_K=\\Delta T_C=\\dfrac{5}{9}\\Delta T_F \\).<br><br>\\( \\Delta T_K=\\dfrac{5}{9}\\times90=50 \\) K.<br><br>No \\( -32 \\) or \\( +273 \\) enters, because both offsets cancel in a difference.",
+      "hint": "A difference needs only the degree-size factor.",
+      "distractor_logic": [
+        "Converted the difference correctly to 50 but then added 273, an offset that never applies to a difference",
+        "Multiplied by \\( \\dfrac{9}{5} \\) instead of \\( \\dfrac{5}{9} \\)",
+        "Assumed a Fahrenheit degree equals a kelvin"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-004",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "A metal plate of area \\( 1\\text{ m}^2 \\) with \\( \\alpha=1.5\\times10^{-5} \\) per °C is heated through 100 °C. What is the increase in its area?",
+      "options": [
+        "\\( 1.5\\times10^{-3}\\text{ m}^2 \\)",
+        "\\( 4.5\\times10^{-3}\\text{ m}^2 \\)",
+        "\\( 3\\times10^{-5}\\text{ m}^2 \\)",
+        "\\( 3\\times10^{-3}\\text{ m}^2 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Areal coefficient: \\( \\beta=2\\alpha=3\\times10^{-5} \\) per °C.<br><br>\\( \\Delta A=A_0\\beta\\Delta T=1\\times3\\times10^{-5}\\times100=3\\times10^{-3}\\text{ m}^2 \\).",
+      "hint": "Convert the linear coefficient to the areal one first.",
+      "distractor_logic": [
+        "Used the linear coefficient \\( \\alpha \\) directly for an area change",
+        "Used the volume ratio \\( 3\\alpha \\) instead of the areal ratio \\( 2\\alpha \\)",
+        "Found \\( \\beta \\) correctly but forgot to multiply by \\( \\Delta T \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-005",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "A metal block of volume \\( 1000\\text{ cm}^3 \\) has \\( \\alpha=2\\times10^{-5} \\) per °C. By how much does its volume increase when heated through 50 °C?",
+      "options": [
+        "\\( 3\\text{ cm}^3 \\)",
+        "\\( 1\\text{ cm}^3 \\)",
+        "\\( 2\\text{ cm}^3 \\)",
+        "\\( 0.06\\text{ cm}^3 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Volume coefficient: \\( \\gamma=3\\alpha=6\\times10^{-5} \\) per °C.<br><br>\\( \\Delta V=V_0\\gamma\\Delta T=1000\\times6\\times10^{-5}\\times50=3\\text{ cm}^3 \\).",
+      "hint": "Volume change needs the cubical coefficient.",
+      "distractor_logic": [
+        "Applied the linear coefficient \\( \\alpha \\) to a volume change",
+        "Used the areal ratio \\( 2\\alpha \\) for a volume change",
+        "Found \\( V_0\\gamma \\) but forgot to multiply by \\( \\Delta T \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-006",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "A metal plate has a circular hole in it. When the plate is heated uniformly, what happens to the diameter of the hole?",
+      "options": [
+        "It decreases",
+        "It increases",
+        "It stays the same",
+        "It first decreases, then increases"
+      ],
+      "correct_index": 1,
+      "explanation": "Uniform heating scales every length in the plate by the same factor, like a photographic enlargement.<br><br>The hole's edge is a line of metal that lengthens, so the hole grows as if it were made of the same metal.",
+      "hint": "Picture the plate being enlarged like a photo.",
+      "distractor_logic": [
+        "Imagined the surrounding metal expanding inward to fill the hole",
+        "Assumed only the material, not the empty space, changes size",
+        "Invented a two-stage behaviour with no physical basis"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-007",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "A bimetallic strip is made of brass (larger expansion coefficient) and steel riveted together. On heating, how does it bend?",
+      "options": [
+        "It curves with steel on the outer (convex) side",
+        "It stays straight but becomes longer",
+        "It curves with brass on the outer (convex) side",
+        "It curves with brass on the inner (concave) side"
+      ],
+      "correct_index": 2,
+      "explanation": "Brass expands more than steel for the same temperature rise.<br><br>The longer strip must lie on the longer (outer) arc, so the strip bends with brass on the convex side.",
+      "hint": "The metal that grows more must take the longer path.",
+      "distractor_logic": [
+        "Reversed which metal lengthens more",
+        "Ignored that the two metals expand by different amounts",
+        "Placed the longer strip on the shorter arc, which is geometrically impossible"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-008",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 2,
+      "type": "regular",
+      "question": "A liquid has a real expansion coefficient of \\( 1.8\\times10^{-4} \\) per °C. It is heated in a glass vessel with \\( \\alpha=1\\times10^{-5} \\) per °C. What is the apparent expansion coefficient of the liquid?",
+      "options": [
+        "\\( 1.7\\times10^{-4} \\) per °C",
+        "\\( 1.6\\times10^{-4} \\) per °C",
+        "\\( 2.1\\times10^{-4} \\) per °C",
+        "\\( 1.5\\times10^{-4} \\) per °C"
+      ],
+      "correct_index": 3,
+      "explanation": "The vessel's volume grows too, with \\( \\gamma_g=3\\alpha=3\\times10^{-5} \\) per °C.<br><br>\\( \\gamma_{app}=\\gamma_{real}-\\gamma_g=1.8\\times10^{-4}-0.3\\times10^{-4}=1.5\\times10^{-4} \\) per °C.",
+      "hint": "The container's volume expansion hides part of the liquid's expansion.",
+      "distractor_logic": [
+        "Subtracted the glass's linear coefficient \\( \\alpha \\) instead of its volume coefficient \\( 3\\alpha \\)",
+        "Subtracted \\( 2\\alpha \\), the areal coefficient, for the vessel's volume change",
+        "Added the vessel's expansion instead of subtracting it"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-009",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "1 kg of water at 80 °C is mixed with 3 kg of water at 20 °C. Assuming no heat loss, what is the final temperature?",
+      "options": [
+        "35 °C",
+        "50 °C",
+        "65 °C",
+        "70 °C"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( 1\\times c(80-T)=3\\times c(T-20) \\).<br><br>\\( 80-T=3T-60 \\), so \\( 4T=140 \\) and \\( T=35 \\) °C.",
+      "hint": "The larger mass pulls the final temperature toward its own.",
+      "distractor_logic": [
+        "Took a simple average and ignored the unequal masses",
+        "Swapped the masses in the weighted average",
+        "Divided the weighted sum by the number of bodies instead of the total mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-010",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "A 0.2 kg metal block at 100 °C is dropped into 0.4 kg of water at 20 °C. The final temperature is 30 °C. Find the specific heat of the metal. (specific heat of water \\( 4200 \\) J/(kg·K))",
+      "options": [
+        "1050 J/(kg·K)",
+        "1200 J/(kg·K)",
+        "2800 J/(kg·K)",
+        "600 J/(kg·K)"
+      ],
+      "correct_index": 1,
+      "explanation": "Heat gained by water \\( =0.4\\times4200\\times(30-20)=16800 \\) J.<br><br>Heat lost by metal \\( =0.2\\times c\\times(100-30)=14c \\).<br><br>\\( 14c=16800 \\), so \\( c=1200 \\) J/(kg·K).",
+      "hint": "Each body's change runs from its own start to the common final temperature.",
+      "distractor_logic": [
+        "Used the metal's drop as \\( 100-20 \\) instead of \\( 100-30 \\)",
+        "Used the final temperature 30 °C as the metal's temperature change",
+        "Used the water's mass 0.4 kg for the metal"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-011",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "A calorimeter of water equivalent 20 g holds 100 g of water at 20 °C. Then 60 g of water at 80 °C is poured in. What is the final temperature? (no heat loss)",
+      "options": [
+        "42.5 °C",
+        "50 °C",
+        "40 °C",
+        "44 °C"
+      ],
+      "correct_index": 2,
+      "explanation": "Cold side: \\( (100+20)(T-20) \\); hot side: \\( 60(80-T) \\).<br><br>\\( 120T-2400=4800-60T \\), so \\( 180T=7200 \\).<br><br>\\( T=40 \\) °C.",
+      "hint": "The calorimeter starts at the cold water's temperature and warms with it.",
+      "distractor_logic": [
+        "Ignored the heat absorbed by the calorimeter",
+        "Took a simple average of 20 °C and 80 °C",
+        "Counted the calorimeter's water equivalent with the hot water as well as with the cold"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-012",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "Equal masses of two substances A and B receive equal amounts of heat. A warms by 10 °C and B by 20 °C. What is the ratio of their specific heats, A to B?",
+      "options": [
+        "1 : 2",
+        "1 : 1",
+        "4 : 1",
+        "2 : 1"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( c=\\dfrac{Q}{m\\Delta T} \\); with Q and m equal, \\( c\\propto\\dfrac{1}{\\Delta T} \\).<br><br>\\( \\dfrac{c_A}{c_B}=\\dfrac{20}{10}=2 \\).",
+      "hint": "The substance that warms less has the larger specific heat.",
+      "distractor_logic": [
+        "Took specific heat as proportional to the temperature rise",
+        "Assumed equal heat and mass force equal specific heats",
+        "Squared the ratio of the temperature rises"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-013",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "A 1000 W heater warms 2 kg of water from 25 °C to 75 °C with no losses. How long does it take? (specific heat of water \\( 4200 \\) J/(kg·K))",
+      "options": [
+        "420 s",
+        "630 s",
+        "210 s",
+        "7 s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( Q=2\\times4200\\times(75-25)=420000 \\) J.<br><br>\\( t=\\dfrac{Q}{P}=\\dfrac{420000}{1000}=420 \\) s.",
+      "hint": "Energy needed divided by power gives time.",
+      "distractor_logic": [
+        "Used the final temperature 75 °C as the rise",
+        "Forgot to multiply by the 2 kg mass",
+        "Found 7 minutes but reported it as seconds"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-014",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "How much heat is needed to raise 50 g of a metal with specific heat 0.2 cal/(g·°C) by 30 °C?",
+      "options": [
+        "1500 cal",
+        "300 cal",
+        "7500 cal",
+        "10 cal"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( Q=mc\\Delta T=50\\times0.2\\times30 \\).<br><br>\\( Q=300 \\) cal.",
+      "hint": "All three factors multiply.",
+      "distractor_logic": [
+        "Forgot the specific heat and used mass times temperature rise",
+        "Divided by the specific heat instead of multiplying",
+        "Forgot to multiply by the temperature rise"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-015",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "Equal masses of water and cooking oil (oil has a smaller specific heat) receive the same amount of heat from the same starting temperature. Which ends up hotter?",
+      "options": [
+        "The water",
+        "Both reach the same temperature",
+        "The oil",
+        "It depends only on which container is larger"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\Delta T=\\dfrac{Q}{mc} \\); with Q and m equal, the smaller c gives the larger rise.<br><br>Oil's specific heat is smaller, so it warms more.",
+      "hint": "Smaller specific heat means less heat needed per degree.",
+      "distractor_logic": [
+        "Reversed the link between specific heat and temperature rise",
+        "Assumed equal heat always gives equal temperature rise",
+        "Brought in container size, which the equal masses and equal heat already fix"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-016",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 2,
+      "type": "regular",
+      "question": "100 g of water at 90 °C is mixed with 200 g of a liquid (specific heat 0.5 cal/(g·°C)) at 30 °C. Water's specific heat is 1 cal/(g·°C). What is the final temperature?",
+      "options": [
+        "50 °C",
+        "42 °C",
+        "70 °C",
+        "60 °C"
+      ],
+      "correct_index": 3,
+      "explanation": "Heat lost by water \\( =100\\times1\\times(90-T) \\); heat gained by liquid \\( =200\\times0.5\\times(T-30) \\).<br><br>\\( 100(90-T)=100(T-30) \\).<br><br>\\( T=60 \\) °C.",
+      "hint": "Compare heat capacities (mc), not just masses.",
+      "distractor_logic": [
+        "Ignored the liquid's specific heat and balanced masses only",
+        "Attached the 0.5 cal/(g·°C) to the water instead of the liquid",
+        "Swapped the masses in a mass-weighted average"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-017",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "How much heat turns 1 kg of ice at 0 °C into water at 20 °C? (latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg, specific heat of water 4200 J/(kg·K))",
+      "options": [
+        "420000 J",
+        "84000 J",
+        "336000 J",
+        "252000 J"
+      ],
+      "correct_index": 0,
+      "explanation": "Melting at 0 °C: \\( mL_f=1\\times3.36\\times10^{5}=336000 \\) J.<br><br>Warming water 0 °C to 20 °C: \\( mc\\Delta T=1\\times4200\\times20=84000 \\) J.<br><br>Total = 420000 J.",
+      "hint": "The ice must melt before the water can warm.",
+      "distractor_logic": [
+        "Warmed the water but skipped the latent heat needed to melt the ice first",
+        "Melted the ice but forgot to warm the resulting water to 20 °C",
+        "Subtracted the warming term from the melting term instead of adding"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-018",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "How much heat turns 100 g of ice at \\( -10 \\) °C into water at 0 °C? (specific heat of ice 0.5 cal/(g·°C), latent heat of fusion 80 cal/g)",
+      "options": [
+        "500 cal",
+        "8500 cal",
+        "8000 cal",
+        "9000 cal"
+      ],
+      "correct_index": 1,
+      "explanation": "Warming ice: \\( 100\\times0.5\\times10=500 \\) cal.<br><br>Melting at 0 °C: \\( 100\\times80=8000 \\) cal.<br><br>Total = 8500 cal.",
+      "hint": "Ice must reach 0 °C before it can melt, using ice's own specific heat.",
+      "distractor_logic": [
+        "Warmed the ice to 0 °C but never melted it",
+        "Melted the ice but skipped warming it from \\( -10 \\) °C to 0 °C",
+        "Used water's specific heat, 1 cal/(g·°C), for ice"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-019",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "How much heat turns 50 g of water at 40 °C into steam at 100 °C? (specific heat of water 1 cal/(g·°C), latent heat of vaporization 540 cal/g)",
+      "options": [
+        "3000 cal",
+        "27000 cal",
+        "30000 cal",
+        "32000 cal"
+      ],
+      "correct_index": 2,
+      "explanation": "Warming: \\( 50\\times1\\times60=3000 \\) cal.<br><br>Vaporizing: \\( 50\\times540=27000 \\) cal.<br><br>Total = 30000 cal.",
+      "hint": "Reach the boiling point first, then pay the latent heat.",
+      "distractor_logic": [
+        "Warmed the water to 100 °C but skipped vaporization",
+        "Vaporized the water but skipped warming it to 100 °C",
+        "Used a 100 °C rise instead of 40 °C to 100 °C"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-020",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "100 g of ice at 0 °C is dropped into 400 g of water at 30 °C. Assuming no losses, what is the final temperature? (latent heat of fusion 80 cal/g, specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "24 °C",
+        "0 °C",
+        "10 °C",
+        "8 °C"
+      ],
+      "correct_index": 3,
+      "explanation": "Heat available cooling the water to 0 °C: \\( 400\\times30=12000 \\) cal; melting needs \\( 100\\times80=8000 \\) cal, so all ice melts.<br><br>\\( 400(30-T)=8000+100T \\).<br><br>\\( 12000-400T=8000+100T \\), so \\( T=8 \\) °C.",
+      "hint": "Check whether there is enough heat to melt all the ice before balancing.",
+      "distractor_logic": [
+        "Ignored the latent heat needed to melt the ice",
+        "Assumed some ice must remain without checking the available heat",
+        "Melted the ice but forgot that the meltwater must then warm to the final temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-021",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "200 g of ice at 0 °C is mixed with 100 g of water at 40 °C. How much ice melts? (latent heat of fusion 80 cal/g, specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "50 g",
+        "150 g",
+        "200 g",
+        "100 g"
+      ],
+      "correct_index": 0,
+      "explanation": "The warm water can give at most \\( 100\\times40=4000 \\) cal in cooling to 0 °C.<br><br>Ice melted \\( =\\dfrac{4000}{80}=50 \\) g; the mixture stays at 0 °C.",
+      "hint": "Find the most heat the warm water can release.",
+      "distractor_logic": [
+        "Reported the ice left over instead of the ice melted",
+        "Assumed all the ice melts without checking the heat available",
+        "Assumed the mass of ice melted equals the mass of warm water"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-022",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "A loaded wire passed over a block of ice sinks through it, yet the block stays in one piece. Which property of ice explains this regelation?",
+      "options": [
+        "Increased pressure raises the melting point of ice",
+        "Increased pressure lowers the melting point of ice",
+        "Pressure has no effect on the melting point of ice",
+        "The wire's weight raises the ice's temperature above 0 °C"
+      ],
+      "correct_index": 1,
+      "explanation": "Under the wire the pressure lowers the melting point, so the ice melts there.<br><br>Above the wire the pressure is released and the water refreezes, joining the block again.",
+      "hint": "Ice contracts on melting, so pressure favours melting.",
+      "distractor_logic": [
+        "Reversed the pressure effect on ice's melting point",
+        "Ignored ice's anomalous response to pressure",
+        "Confused lowering the melting point with heating the ice"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-023",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "Water is heated by a steady source from ice to steam. Why is the boiling plateau on its temperature–time graph much longer than the melting plateau?",
+      "options": [
+        "Steam has a much larger specific heat than ice",
+        "More heat escapes at 100 °C than at 0 °C",
+        "The latent heat of vaporization is much larger than the latent heat of fusion",
+        "Water absorbs heat faster when near boiling"
+      ],
+      "correct_index": 2,
+      "explanation": "Plateau length equals latent heat times mass divided by the source power.<br><br>\\( L_v\\approx540 \\) cal/g is nearly seven times \\( L_f\\approx80 \\) cal/g, so boiling takes much longer.",
+      "hint": "Plateau duration is proportional to latent heat.",
+      "distractor_logic": [
+        "Plateaus involve latent heat, not specific heat",
+        "A steady-source idealized graph reflects heat absorbed, not losses",
+        "A steady source supplies heat at a constant rate throughout"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-024",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 2,
+      "type": "regular",
+      "question": "How much heat is released when 5 g of steam at 100 °C condenses and the water cools to 60 °C? (latent heat of vaporization 540 cal/g, specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "200 cal",
+        "2700 cal",
+        "3200 cal",
+        "2900 cal"
+      ],
+      "correct_index": 3,
+      "explanation": "Condensing: \\( 5\\times540=2700 \\) cal.<br><br>Cooling water 100 °C to 60 °C: \\( 5\\times1\\times40=200 \\) cal.<br><br>Total = 2900 cal.",
+      "hint": "Condense first, then cool the water.",
+      "distractor_logic": [
+        "Counted the cooling but skipped the condensation heat",
+        "Counted condensation but skipped cooling from 100 °C to 60 °C",
+        "Used a 100 °C fall instead of 40 °C for the cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-025",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "Two slabs of equal thickness and area, with conductivities k and 2k, are joined face to face in series. What is the effective conductivity of the combination?",
+      "options": [
+        "\\( \\dfrac{4k}{3} \\)",
+        "\\( \\dfrac{3k}{2} \\)",
+        "\\( \\dfrac{2k}{3} \\)",
+        "\\( 3k \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "In series thermal resistances add: \\( \\dfrac{2L}{k_{eq}A}=\\dfrac{L}{kA}+\\dfrac{L}{2kA} \\).<br><br>\\( \\dfrac{2}{k_{eq}}=\\dfrac{3}{2k} \\), so \\( k_{eq}=\\dfrac{4k}{3} \\).",
+      "hint": "Series slabs add resistances, and the combined thickness is doubled.",
+      "distractor_logic": [
+        "Took the arithmetic mean, which applies to equal slabs side by side",
+        "Used \\( \\dfrac{k_1k_2}{k_1+k_2} \\), dropping the factor 2 for the doubled thickness",
+        "Added the conductivities as if heat took both routes at once"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-026",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "Two rods of equal length and equal cross-section, with conductivities k and 2k, are placed side by side between the same two reservoirs. What is the effective conductivity of the pair?",
+      "options": [
+        "\\( \\dfrac{4k}{3} \\)",
+        "\\( \\dfrac{3k}{2} \\)",
+        "\\( 3k \\)",
+        "\\( 2k \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "In parallel, heat currents add: \\( k_{eq}(2A)=kA+2kA \\).<br><br>\\( k_{eq}=\\dfrac{3k}{2} \\).",
+      "hint": "Side-by-side rods add conductances, over the combined area.",
+      "distractor_logic": [
+        "Used the series formula for rods that are in parallel",
+        "Added conductivities but forgot the total area is doubled",
+        "Took the larger conductivity as dominating"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-027",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "Two slabs of equal thickness and area are joined in series. Slab 1 has three times the conductivity of slab 2. Slab 1's free face is at 100 °C and slab 2's free face is at 0 °C. What is the junction temperature?",
+      "options": [
+        "25 °C",
+        "50 °C",
+        "75 °C",
+        "100 °C"
+      ],
+      "correct_index": 2,
+      "explanation": "Same heat current: \\( 3k(100-T)=k(T-0) \\).<br><br>\\( 300=4T \\), so \\( T=75 \\) °C.<br><br>The poorer conductor takes the larger share of the drop.",
+      "hint": "Equal heat current through both slabs sets the junction temperature.",
+      "distractor_logic": [
+        "Put the larger temperature drop across the better conductor",
+        "Assumed the drop splits equally regardless of conductivity",
+        "Assumed a good conductor carries heat with no temperature drop at all"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-028",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "Rod P has length L and area A. Rod Q, of the same material, has length 2L and area 2A. Their ends are held at the same temperatures. How do their heat currents compare?",
+      "options": [
+        "Q carries twice as much",
+        "Q carries half as much",
+        "Q carries four times as much",
+        "They are equal"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( H\\propto\\dfrac{A}{L} \\).<br><br>For Q: \\( \\dfrac{2A}{2L}=\\dfrac{A}{L} \\), the same as P.",
+      "hint": "Check the ratio A/L for each rod.",
+      "distractor_logic": [
+        "Counted the doubled area but ignored the doubled length",
+        "Counted the doubled length but ignored the doubled area",
+        "Multiplied the two factors of 2 instead of letting them cancel"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-029",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "An ice box has walls of total area \\( 1\\text{ m}^2 \\), 5 cm thick, with thermal conductivity 0.01 W/(m·K). Outside is 40 °C and inside is 0 °C. What is the rate of heat flow into the box?",
+      "options": [
+        "8 W",
+        "0.08 W",
+        "0.02 W",
+        "800 W"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( L=0.05 \\) m.<br><br>\\( H=\\dfrac{0.01\\times1\\times40}{0.05}=8 \\) W.",
+      "hint": "Convert the thickness to metres first.",
+      "distractor_logic": [
+        "Used the thickness in centimetres instead of metres",
+        "Multiplied by the thickness instead of dividing",
+        "Left out the thermal conductivity"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-030",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "Why are room heaters usually placed near the floor?",
+      "options": [
+        "Warm air sinks, so heat must start high up",
+        "Warm air rises, setting up convection currents that heat the whole room",
+        "Floors conduct heat well around the room",
+        "Heaters radiate only downward"
+      ],
+      "correct_index": 1,
+      "explanation": "Air warmed by the heater expands, becomes less dense and rises.<br><br>Cooler, denser air sinks to replace it, so a circulating current carries heat through the room.",
+      "hint": "Warm fluids are less dense.",
+      "distractor_logic": [
+        "Reversed the direction warm air moves",
+        "Floors are not the main path; heating relies on moving air",
+        "Radiation spreads in all directions; placement is about convection"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-031",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "A rod 0.5 m long has its ends at 100 °C and 20 °C in steady state. What is the temperature gradient along it?",
+      "options": [
+        "40 K/m",
+        "200 K/m",
+        "160 K/m",
+        "80 K/m"
+      ],
+      "correct_index": 2,
+      "explanation": "Gradient \\( =\\dfrac{\\Delta T}{L}=\\dfrac{100-20}{0.5} \\).<br><br>= 160 K/m (a change of 1 °C equals a change of 1 K).",
+      "hint": "Gradient is temperature difference per unit length.",
+      "distractor_logic": [
+        "Multiplied the temperature difference by the length",
+        "Used the hot end's reading instead of the temperature difference",
+        "Forgot to divide by the length"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-032",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 2,
+      "type": "regular",
+      "question": "Why do double-glazed windows keep a room warm better than a single pane of the same total glass thickness?",
+      "options": [
+        "Two panes of glass conduct heat faster",
+        "The air layer carries heat by strong convection",
+        "Glass reflects all heat back into the room",
+        "The trapped layer of still air is a very poor conductor"
+      ],
+      "correct_index": 3,
+      "explanation": "Still air has very low thermal conductivity.<br><br>The sealed gap adds a large thermal resistance in series with the glass.",
+      "hint": "What fills the gap between the panes?",
+      "distractor_logic": [
+        "Would make the room colder, not warmer",
+        "A thin sealed gap keeps convection weak",
+        "Ordinary glass does not reflect all heat"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-033",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "A black body is heated from 273 °C to 819 °C. By what factor does the power it radiates increase?",
+      "options": [
+        "16",
+        "81",
+        "4",
+        "2"
+      ],
+      "correct_index": 0,
+      "explanation": "Convert to kelvin: 273 °C = 546 K and 819 °C = 1092 K, a ratio of 2.<br><br>\\( \\dfrac{E_2}{E_1}=2^4=16 \\).",
+      "hint": "Stefan's law needs absolute temperatures.",
+      "distractor_logic": [
+        "Used the Celsius readings directly, whose ratio is 3, and raised 3 to the fourth power",
+        "Used \\( T^2 \\) instead of \\( T^4 \\)",
+        "Took radiated power as proportional to absolute temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-034",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "Two stars have peak wavelengths of 400 nm and 600 nm. What is the ratio of their surface temperatures, first to second?",
+      "options": [
+        "\\( \\dfrac{2}{3} \\)",
+        "\\( \\dfrac{3}{2} \\)",
+        "\\( \\dfrac{9}{4} \\)",
+        "\\( \\dfrac{81}{16} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T\\propto\\dfrac{1}{\\lambda_{max}} \\).<br><br>\\( \\dfrac{T_1}{T_2}=\\dfrac{600}{400}=\\dfrac{3}{2} \\).",
+      "hint": "The shorter peak wavelength belongs to the hotter star.",
+      "distractor_logic": [
+        "Took temperature as proportional to \\( \\lambda_{max} \\)",
+        "Squared the wavelength ratio",
+        "Applied a fourth power, mixing Wien's law with Stefan's law"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-035",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "A body cools from 60 °C to 50 °C in 10 minutes in a room at 20 °C. Using Newton's law of cooling with the average temperature, what is its temperature after the next 10 minutes?",
+      "options": [
+        "40 °C",
+        "45 °C",
+        "42.5 °C",
+        "35 °C"
+      ],
+      "correct_index": 2,
+      "explanation": "First interval: \\( \\dfrac{10}{10}=K(55-20) \\), so \\( K=\\dfrac{1}{35} \\) per min.<br><br>Second interval: \\( \\dfrac{50-x}{10}=\\dfrac{1}{35}\\left(\\dfrac{50+x}{2}-20\\right) \\).<br><br>\\( 35(50-x)=5(50+x)-200 \\), so \\( 40x=1700 \\) and \\( x=42.5 \\) °C.",
+      "hint": "Cooling slows as the excess over the room shrinks.",
+      "distractor_logic": [
+        "Assumed the body drops the same 10 °C in every equal interval",
+        "Assumed the temperature drop simply halves each interval",
+        "Assumed cooling speeds up as the body gets cooler"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-036",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "What power is radiated by a black body of surface area \\( 1\\text{ m}^2 \\) at 1000 K? (\\( \\sigma=5.67\\times10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4} \\))",
+      "options": [
+        "\\( 56.7 \\) W",
+        "\\( 5.67\\times10^{-2} \\) W",
+        "\\( 5.67\\times10^{-5} \\) W",
+        "\\( 5.67\\times10^{4} \\) W"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=\\sigma AT^4=5.67\\times10^{-8}\\times1\\times(10^{3})^4 \\).<br><br>\\( P=5.67\\times10^{-8}\\times10^{12}=5.67\\times10^{4} \\) W.",
+      "hint": "Raise 1000 K to the fourth power: \\( 10^{12} \\).",
+      "distractor_logic": [
+        "Used \\( T^3 \\) instead of \\( T^4 \\)",
+        "Used \\( T^2 \\) instead of \\( T^4 \\)",
+        "Used temperature to the first power"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-037",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "A body with emissivity 0.5 is at 1000 K. What power does it radiate per square metre? (\\( \\sigma=5.67\\times10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4} \\))",
+      "options": [
+        "\\( 2.835\\times10^{4} \\) W",
+        "\\( 5.67\\times10^{4} \\) W",
+        "\\( 1.134\\times10^{5} \\) W",
+        "\\( 2.835\\times10^{-2} \\) W"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( E=e\\sigma T^4 \\).<br><br>\\( E=0.5\\times5.67\\times10^{-8}\\times10^{12}=2.835\\times10^{4} \\) W per square metre.",
+      "hint": "A non-black body radiates a fraction e of the black-body value.",
+      "distractor_logic": [
+        "Ignored the emissivity, treating the body as perfectly black",
+        "Divided by the emissivity instead of multiplying",
+        "Used \\( T^2 \\) instead of \\( T^4 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-038",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "One star looks blue-white and another looks red. What does Wien's law tell us?",
+      "options": [
+        "The red star has the higher surface temperature",
+        "The blue-white star has the higher surface temperature",
+        "Both have the same temperature; colour depends only on size",
+        "Colour depends only on distance from Earth"
+      ],
+      "correct_index": 1,
+      "explanation": "Blue light has a shorter wavelength than red light.<br><br>Since \\( \\lambda_{max}T=b \\), a shorter peak wavelength means a higher temperature.",
+      "hint": "Shorter peak wavelength, higher temperature.",
+      "distractor_logic": [
+        "Took \\( \\lambda_{max} \\) as increasing with temperature",
+        "Ignored the link between peak wavelength and temperature",
+        "Distance changes brightness, not the peak wavelength"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-039",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "A body at 80 °C in a room at 20 °C cools at 3 °C per minute. By Newton's law of cooling, what is its rate of cooling when it is at 50 °C?",
+      "options": [
+        "1.875 °C per minute",
+        "3 °C per minute",
+        "1.5 °C per minute",
+        "0.75 °C per minute"
+      ],
+      "correct_index": 2,
+      "explanation": "Rate \\( \\propto(T-T_0) \\): the excess falls from 60 °C to 30 °C.<br><br>New rate \\( =3\\times\\dfrac{30}{60}=1.5 \\) °C per minute.",
+      "hint": "Measure temperature from the room, not from zero.",
+      "distractor_logic": [
+        "Scaled by the ratio of the body's own readings 50/80 instead of the excess over the room",
+        "Assumed the rate of cooling stays constant",
+        "Scaled by the square of the excess ratio"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L2-040",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 2,
+      "type": "regular",
+      "question": "Why are light-coloured clothes preferred in hot summer sunshine?",
+      "options": [
+        "Light colours absorb more radiation",
+        "Light colours conduct heat away faster",
+        "Light colours emit more radiation than they absorb in sunlight",
+        "Light colours reflect most of the incident radiation and absorb little"
+      ],
+      "correct_index": 3,
+      "explanation": "Dark surfaces are good absorbers of radiation; light surfaces reflect much of it.<br><br>Less absorbed sunlight means less heating of the body.",
+      "hint": "Which surfaces are poor absorbers?",
+      "distractor_logic": [
+        "Reversed the absorbing behaviour of light and dark surfaces",
+        "The effect is about radiation, not conduction",
+        "Confused emission with the reason for staying cool"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-001",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 3,
+      "type": "regular",
+      "question": "A steel measuring tape is accurate at 20 °C. At 45 °C it reads the length of a rod as 50 cm. If \\( \\alpha_{steel}=1.2\\times10^{-5} \\) per °C, what is the rod's actual length?",
+      "options": [
+        "\\( 50.015 \\) cm",
+        "\\( 49.985 \\) cm",
+        "\\( 50.03 \\) cm",
+        "\\( 50.027 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "The tape's marks have spread apart by the factor \\( 1+\\alpha\\Delta T \\), with \\( \\Delta T=45-20=25 \\) °C.<br><br>True length \\( =50(1+1.2\\times10^{-5}\\times25)=50+0.015 \\) cm.<br><br>So the rod is \\( 50.015 \\) cm long.",
+      "hint": "A heated tape's centimetre marks are farther apart than true centimetres.",
+      "distractor_logic": [
+        "Applied the correction in the wrong direction; a stretched tape under-reads",
+        "Used \\( 2\\alpha \\) for the tape's length change",
+        "Used the reading 45 °C as the temperature change instead of 45 minus 20"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-002",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 3,
+      "type": "regular",
+      "question": "A pendulum clock with a brass rod (\\( \\alpha=2\\times10^{-5} \\) per °C) keeps correct time at 20 °C. How does it behave in a day at 30 °C? (1 day = 86400 s)",
+      "options": [
+        "It gains 8.64 s",
+        "It loses 8.64 s",
+        "It loses 17.28 s",
+        "It loses 25.92 s"
+      ],
+      "correct_index": 1,
+      "explanation": "Period \\( \\propto\\sqrt{L} \\), so the fractional change in period is \\( \\dfrac{1}{2}\\alpha\\Delta\\theta \\).<br><br>\\( \\dfrac{1}{2}\\times2\\times10^{-5}\\times10=1\\times10^{-4} \\).<br><br>Time lost per day \\( =86400\\times10^{-4}=8.64 \\) s; the longer rod makes the clock slow.",
+      "hint": "Period depends on the square root of the length.",
+      "distractor_logic": [
+        "Got the size right but forgot that a longer pendulum swings more slowly",
+        "Forgot that the period depends on the square root of length, dropping the factor \\( \\dfrac{1}{2} \\)",
+        "Used the volume coefficient \\( \\gamma=3\\alpha \\) for a change in length"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-003",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the volume expansion coefficient of an ideal gas held at constant pressure at 27 °C?",
+      "options": [
+        "\\( \\dfrac{1}{27} \\) per K",
+        "\\( \\dfrac{1}{273} \\) per K",
+        "\\( \\dfrac{1}{300} \\) per K",
+        "\\( \\dfrac{1}{100} \\) per K"
+      ],
+      "correct_index": 2,
+      "explanation": "At constant pressure, \\( V\\propto T \\), so \\( \\gamma=\\dfrac{1}{V}\\dfrac{dV}{dT}=\\dfrac{1}{T} \\).<br><br>T must be absolute: \\( T=27+273=300 \\) K.<br><br>\\( \\gamma=\\dfrac{1}{300} \\) per K.",
+      "hint": "For an ideal gas at constant pressure, the coefficient depends on absolute temperature.",
+      "distractor_logic": [
+        "Substituted the Celsius reading instead of the absolute temperature",
+        "Used the value valid only at 0 °C",
+        "Treated \\( \\dfrac{1}{T} \\) as a linear coefficient and multiplied by 3"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-004",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 3,
+      "type": "regular",
+      "question": "A steel rod is clamped rigidly between two walls and heated through 50 °C. With \\( Y=2\\times10^{11} \\) Pa and \\( \\alpha=1\\times10^{-5} \\) per °C, what thermal stress develops?",
+      "options": [
+        "\\( 2\\times10^{8} \\) Pa",
+        "\\( 3\\times10^{8} \\) Pa",
+        "\\( 5\\times10^{-4} \\) Pa",
+        "\\( 1\\times10^{8} \\) Pa"
+      ],
+      "correct_index": 3,
+      "explanation": "The walls prevent the free expansion, producing strain \\( \\alpha\\Delta T=10^{-5}\\times50=5\\times10^{-4} \\).<br><br>Stress \\( =Y\\alpha\\Delta T=2\\times10^{11}\\times5\\times10^{-4}=1\\times10^{8} \\) Pa.",
+      "hint": "Stress equals Young's modulus times the prevented strain.",
+      "distractor_logic": [
+        "Used \\( 2\\alpha \\), the areal coefficient, for the prevented length change",
+        "Used \\( 3\\alpha \\), the volume coefficient",
+        "Reported the strain \\( \\alpha\\Delta T \\) as if it were the stress"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-005",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 3,
+      "type": "regular",
+      "question": "A steel rod (\\( \\alpha=1.2\\times10^{-5} \\) per °C) and a brass rod (\\( \\alpha=1.8\\times10^{-5} \\) per °C) must differ in length by 10 cm at every temperature. What must the length of the steel rod be?",
+      "options": [
+        "30 cm",
+        "20 cm",
+        "10 cm",
+        "50 cm"
+      ],
+      "correct_index": 0,
+      "explanation": "The difference stays fixed only if both rods expand by the same amount: \\( L_s\\alpha_s=L_b\\alpha_b \\).<br><br>\\( \\dfrac{L_s}{L_b}=\\dfrac{1.8}{1.2}=\\dfrac{3}{2} \\), and \\( L_s-L_b=10 \\) cm.<br><br>So \\( L_b=20 \\) cm and \\( L_s=30 \\) cm.",
+      "hint": "Equal expansions keep the gap constant.",
+      "distractor_logic": [
+        "Found the lengths correctly but reported the brass rod's length",
+        "Took the required difference itself as the steel rod's length",
+        "Added the two rod lengths instead of picking the steel rod"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-006",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": 3,
+      "type": "regular",
+      "question": "A liquid with \\( \\gamma=5\\times10^{-4} \\) per °C is heated through 40 °C. By approximately what percentage does its density change?",
+      "options": [
+        "It increases by 2%",
+        "It decreases by 2%",
+        "It decreases by 6%",
+        "It decreases by 4%"
+      ],
+      "correct_index": 1,
+      "explanation": "Mass is fixed, so \\( \\rho\\propto\\dfrac{1}{V} \\) and \\( \\dfrac{\\Delta\\rho}{\\rho}\\approx-\\gamma\\Delta T \\).<br><br>\\( \\gamma\\Delta T=5\\times10^{-4}\\times40=0.02 \\).<br><br>Density decreases by about 2%.",
+      "hint": "Density is mass divided by volume, and the given coefficient is already cubical.",
+      "distractor_logic": [
+        "Forgot that density falls as volume rises",
+        "Treated \\( \\gamma \\) as a linear coefficient and multiplied by 3",
+        "Treated \\( \\gamma \\) as a linear coefficient and multiplied by 2"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-007",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 3,
+      "type": "regular",
+      "question": "Three liquids A, B and C are at 10 °C, 40 °C and 100 °C. Mixing equal masses of A and B gives 20 °C; mixing equal masses of B and C gives 70 °C. What temperature results from mixing equal masses of A and C?",
+      "options": [
+        "55 °C",
+        "45 °C",
+        "40 °C",
+        "70 °C"
+      ],
+      "correct_index": 2,
+      "explanation": "A with B: \\( c_A(20-10)=c_B(40-20) \\), so \\( c_A=2c_B \\).<br><br>B with C: \\( c_B(70-40)=c_C(100-70) \\), so \\( c_C=c_B \\).<br><br>A with C: \\( 2c_B(T-10)=c_B(100-T) \\), giving \\( 3T=120 \\) and \\( T=40 \\) °C.",
+      "hint": "Use the first two mixtures to find the ratios of specific heats.",
+      "distractor_logic": [
+        "Took a simple average of A and C, ignoring their different specific heats",
+        "Averaged the two given mixture temperatures",
+        "Found the specific-heat ratio upside down"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-008",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 3,
+      "type": "regular",
+      "question": "A calorimeter holds 150 g of water at 20 °C. When 100 g of water at 80 °C is added, the final temperature is 40 °C. What is the calorimeter's water equivalent?",
+      "options": [
+        "250 g",
+        "150 g",
+        "200 g",
+        "50 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Heat lost by hot water \\( =100\\times(80-40)=4000 \\) cal.<br><br>Heat gained by cold water and calorimeter \\( =(150+W)(40-20) \\).<br><br>\\( 20(150+W)=4000 \\), so \\( W=50 \\) g.",
+      "hint": "The calorimeter warms from 20 °C along with the cold water.",
+      "distractor_logic": [
+        "Took the hot water's drop as 80 °C instead of \\( 80-40 \\)",
+        "Reported the cold water's mass",
+        "Found the total cold-side water equivalent and forgot to subtract the 150 g of water"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-009",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 3,
+      "type": "regular",
+      "question": "The same heater is used for two liquids. 2 kg of liquid A warms at 10 °C per minute; 1 kg of liquid B warms at 40 °C per minute. What is the ratio of specific heats, A to B?",
+      "options": [
+        "2 : 1",
+        "4 : 1",
+        "1 : 2",
+        "8 : 1"
+      ],
+      "correct_index": 0,
+      "explanation": "Same power: \\( m_Ac_Ar_A=m_Bc_Br_B \\), where r is the heating rate.<br><br>\\( \\dfrac{c_A}{c_B}=\\dfrac{m_Br_B}{m_Ar_A}=\\dfrac{1\\times40}{2\\times10}=2 \\).",
+      "hint": "Equal power means mass times specific heat times heating rate is the same.",
+      "distractor_logic": [
+        "Compared only the heating rates and ignored the masses",
+        "Compared only the masses and ignored the heating rates",
+        "Multiplied the mass ratio by the inverse rate ratio"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-010",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 3,
+      "type": "regular",
+      "question": "A 0.5 kg copper vessel (specific heat 400 J/(kg·K)) contains 1 kg of water (specific heat 4200 J/(kg·K)). How much heat raises both from 20 °C to 70 °C?",
+      "options": [
+        "210000 J",
+        "220000 J",
+        "10000 J",
+        "308000 J"
+      ],
+      "correct_index": 1,
+      "explanation": "Vessel: \\( 0.5\\times400\\times50=10000 \\) J.<br><br>Water: \\( 1\\times4200\\times50=210000 \\) J.<br><br>Total = 220000 J.",
+      "hint": "Both the container and its contents warm by the same amount.",
+      "distractor_logic": [
+        "Heated the water but ignored the vessel",
+        "Heated the vessel but ignored the water",
+        "Used 70 °C as the temperature rise"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-011",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 3,
+      "type": "regular",
+      "question": "2 kg of hot water is mixed with 3 kg of water at 20 °C, and the mixture settles at 44 °C. What was the hot water's initial temperature?",
+      "options": [
+        "68 °C",
+        "60 °C",
+        "80 °C",
+        "8 °C"
+      ],
+      "correct_index": 2,
+      "explanation": "Heat gained by cold water \\( =3\\times c\\times(44-20)=72c \\).<br><br>Heat lost by hot water \\( =2\\times c\\times(T-44) \\).<br><br>\\( 2(T-44)=72 \\), so \\( T=80 \\) °C.",
+      "hint": "Balance heat lost against heat gained, then solve for the unknown start.",
+      "distractor_logic": [
+        "Assumed equal masses, making 44 °C the midpoint",
+        "Attached the 2 kg mass to the cold water's rise and the 3 kg mass to the hot water",
+        "Reversed the sign of the hot water's temperature drop"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-012",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": 3,
+      "type": "regular",
+      "question": "An immersion heater warms 1.5 kg of water steadily at 2 °C per minute with no losses. What is its power? (specific heat of water \\( 4200 \\) J/(kg·K))",
+      "options": [
+        "12600 W",
+        "140 W",
+        "105 W",
+        "210 W"
+      ],
+      "correct_index": 3,
+      "explanation": "Heat per minute \\( =1.5\\times4200\\times2=12600 \\) J.<br><br>Power \\( =\\dfrac{12600}{60}=210 \\) W.",
+      "hint": "Power is heat per second, not per minute.",
+      "distractor_logic": [
+        "Used heat per minute without converting to per second",
+        "Used a mass of 1 kg",
+        "Dropped the 2 °C-per-minute factor, using 1 °C per minute"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-013",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 3,
+      "type": "regular",
+      "question": "How much heat turns 1 kg of ice at \\( -10 \\) °C into steam at 100 °C? (specific heat of ice 2100 J/(kg·K), latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg, specific heat of water 4200 J/(kg·K), latent heat of vaporization \\( 2.26\\times10^{6} \\) J/kg)",
+      "options": [
+        "\\( 3.037\\times10^{6} \\) J",
+        "\\( 4.62\\times10^{5} \\) J",
+        "\\( 7.77\\times10^{5} \\) J",
+        "\\( 2.701\\times10^{6} \\) J"
+      ],
+      "correct_index": 0,
+      "explanation": "Warm ice to 0 °C: \\( 1\\times2100\\times10=21000 \\) J.<br><br>Melt: \\( 3.36\\times10^{5}=336000 \\) J.<br><br>Warm water to 100 °C: \\( 1\\times4200\\times100=420000 \\) J.<br><br>Vaporize: \\( 2.26\\times10^{6}=2260000 \\) J.<br><br>Total \\( =3037000 \\) J \\( =3.037\\times10^{6} \\) J.",
+      "hint": "List every stage: each phase warms separately and each phase change has its own latent term.",
+      "distractor_logic": [
+        "Applied a single water-heating term across the whole 110 °C span, ignoring both phase changes and ice's different specific heat",
+        "Included melting but skipped the latent heat of vaporization",
+        "Included vaporization but skipped the latent heat of fusion"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-014",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 3,
+      "type": "regular",
+      "question": "What is the minimum mass of steam at 100 °C that, when passed into 270 g of ice at 0 °C, just melts all the ice? (latent heats: vaporization 540 cal/g, fusion 80 cal/g; specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "40 g",
+        "33.75 g",
+        "216 g",
+        "270 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Ice needs \\( 270\\times80=21600 \\) cal to melt; the final state is water at 0 °C.<br><br>Each gram of steam gives \\( 540+100\\times1=640 \\) cal in condensing and cooling to 0 °C.<br><br>Steam mass \\( =\\dfrac{21600}{640}=33.75 \\) g.",
+      "hint": "Steam gives up latent heat and then the heat of cooling to 0 °C.",
+      "distractor_logic": [
+        "Used only the condensation heat and forgot the condensed water also cools from 100 °C to 0 °C",
+        "Used only the cooling of condensed water, skipping condensation",
+        "Assumed equal masses of steam and ice are needed"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-015",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 3,
+      "type": "regular",
+      "question": "10 g of steam at 100 °C is passed into 300 g of water at 20 °C. Assuming no losses, what is the final temperature? (latent heat of vaporization 540 cal/g, specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "38 °C",
+        "60 °C",
+        "40 °C",
+        "100 °C"
+      ],
+      "correct_index": 2,
+      "explanation": "Heat given: \\( 10\\times540+10(100-T) \\).<br><br>Heat taken: \\( 300(T-20) \\).<br><br>\\( 5400+1000-10T=300T-6000 \\), so \\( 310T=12400 \\) and \\( T=40 \\) °C.",
+      "hint": "Steam releases two separate amounts of heat.",
+      "distractor_logic": [
+        "Counted condensation but forgot that the condensed water also cools to the final temperature",
+        "Took a simple average of 100 °C and 20 °C",
+        "Assumed the steam cannot condense in cooler water"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-016",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 3,
+      "type": "regular",
+      "question": "A 500 W heater is used on 0.5 kg of ice at 0 °C until it becomes water at 50 °C. Ignoring losses, how long does this take? (latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg, specific heat of water 4200 J/(kg·K))",
+      "options": [
+        "336 s",
+        "210 s",
+        "273 s",
+        "546 s"
+      ],
+      "correct_index": 3,
+      "explanation": "Melting: \\( 0.5\\times3.36\\times10^{5}=168000 \\) J.<br><br>Warming: \\( 0.5\\times4200\\times50=105000 \\) J.<br><br>\\( t=\\dfrac{273000}{500}=546 \\) s.",
+      "hint": "Add both stages, then divide by power.",
+      "distractor_logic": [
+        "Included only the melting and skipped warming the water",
+        "Included only warming the water and skipped melting",
+        "Divided the total heat by 1000 W instead of 500 W"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-017",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 3,
+      "type": "regular",
+      "question": "100 g of ice at \\( -20 \\) °C is mixed with 50 g of water at 40 °C. How much ice remains at equilibrium? (specific heat of ice 0.5 cal/(g·°C), latent heat of fusion 80 cal/g, specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "87.5 g",
+        "75 g",
+        "100 g",
+        "0 g"
+      ],
+      "correct_index": 0,
+      "explanation": "Water cooling to 0 °C gives \\( 50\\times40=2000 \\) cal.<br><br>Warming ice to 0 °C takes \\( 100\\times0.5\\times20=1000 \\) cal.<br><br>The remaining 1000 cal melts \\( \\dfrac{1000}{80}=12.5 \\) g, leaving 87.5 g of ice at 0 °C.",
+      "hint": "Spend the available heat in order: warm the ice first, then melt.",
+      "distractor_logic": [
+        "Forgot that some of the water's heat first warms the ice from \\( -20 \\) °C to 0 °C",
+        "Assumed no ice melts because the ice is below 0 °C",
+        "Assumed all the ice melts without checking the heat budget"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-018",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": 3,
+      "type": "regular",
+      "question": "A 0.2 kg solid is heated by a steady 100 W source. Its temperature stays constant for 3 minutes while it melts. What is its latent heat of fusion?",
+      "options": [
+        "1500 J/kg",
+        "\\( 9\\times10^{4} \\) J/kg",
+        "3600 J/kg",
+        "18000 J/kg"
+      ],
+      "correct_index": 1,
+      "explanation": "Heat absorbed during the plateau \\( =Pt=100\\times180=18000 \\) J.<br><br>\\( L=\\dfrac{Q}{m}=\\dfrac{18000}{0.2}=9\\times10^{4} \\) J/kg.",
+      "hint": "Convert minutes to seconds, then divide the heat by the mass.",
+      "distractor_logic": [
+        "Used 3 minutes as 3 seconds",
+        "Multiplied the heat by the mass instead of dividing",
+        "Found the heat absorbed but forgot to divide by the mass"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-019",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 3,
+      "type": "regular",
+      "question": "A wall of area \\( 1\\text{ m}^2 \\) has two layers in series, each 0.1 m thick: one with k = 1 W/(m·K), the other with k = 0.25 W/(m·K). The outer faces are at 60 °C and 10 °C. What is the rate of heat flow?",
+      "options": [
+        "625 W",
+        "500 W",
+        "100 W",
+        "125 W"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( R_1=\\dfrac{0.1}{1\\times1}=0.1 \\) K/W, \\( R_2=\\dfrac{0.1}{0.25\\times1}=0.4 \\) K/W.<br><br>Series: \\( R=0.5 \\) K/W.<br><br>\\( H=\\dfrac{50}{0.5}=100 \\) W.",
+      "hint": "Series layers: add resistances, then divide the total temperature difference.",
+      "distractor_logic": [
+        "Added the layers as if they were in parallel",
+        "Used only the first layer's resistance",
+        "Used only the second layer's resistance"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-020",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 3,
+      "type": "regular",
+      "question": "Two slabs of equal area are in series. Slab 1 is 3 cm thick with k = 1 W/(m·K); slab 2 is 8 cm thick with k = 4 W/(m·K). The outer faces are at 100 °C (slab 1) and 0 °C (slab 2). What is the junction temperature?",
+      "options": [
+        "60 °C",
+        "50 °C",
+        "20 °C",
+        "40 °C"
+      ],
+      "correct_index": 3,
+      "explanation": "Resistances per unit area: \\( \\dfrac{0.03}{1}=0.03 \\) and \\( \\dfrac{0.08}{4}=0.02 \\), a ratio of 3 : 2.<br><br>Drop across slab 1 \\( =100\\times\\dfrac{3}{5}=60 \\) °C.<br><br>Junction \\( =100-60=40 \\) °C.",
+      "hint": "Temperature drops share out in proportion to thermal resistance.",
+      "distractor_logic": [
+        "Assigned the temperature drops to the slabs the wrong way round",
+        "Split the drop equally between the slabs",
+        "Compared conductivities only and ignored the different thicknesses"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-021",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 3,
+      "type": "regular",
+      "question": "A test tube of water is heated only near its top surface. The water at the top can boil while the bottom stays fairly cool. Why?",
+      "options": [
+        "Hot water is less dense and stays at the top, so no convection current forms and water conducts heat poorly",
+        "Water is an excellent conductor, so heat stays at the top",
+        "Hot water sinks and cools the bottom",
+        "Radiation carries all the heat straight to the bottom"
+      ],
+      "correct_index": 0,
+      "explanation": "Convection needs warmer fluid below cooler fluid; heating at the top gives the opposite.<br><br>Without convection, only slow conduction through water carries heat downward.",
+      "hint": "Convection only helps when warm fluid starts beneath cooler fluid.",
+      "distractor_logic": [
+        "Water is a poor conductor; that is part of why the bottom stays cool",
+        "Hot water is less dense and rises, not sinks",
+        "Radiation through water plays only a minor role here"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-022",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 3,
+      "type": "regular",
+      "question": "A copper rod (k = 400 W/(m·K)) and a steel rod (k = 50 W/(m·K)) of identical length and cross-section are placed side by side between the same two reservoirs. Together they carry 90 W. How much flows through the steel rod?",
+      "options": [
+        "80 W",
+        "10 W",
+        "45 W",
+        "11.25 W"
+      ],
+      "correct_index": 1,
+      "explanation": "Each rod has the same \\( \\dfrac{A\\Delta T}{L} \\), so heat splits in the ratio of conductivities, 400 : 50 = 8 : 1.<br><br>Steel's share \\( =\\dfrac{1}{9}\\times90=10 \\) W.",
+      "hint": "Parallel rods share heat in proportion to their conductance.",
+      "distractor_logic": [
+        "Found the copper rod's share instead of the steel rod's",
+        "Split the heat equally, ignoring the different conductivities",
+        "Divided the total by the conductivity ratio 8 instead of by 9 parts"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-023",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 3,
+      "type": "regular",
+      "question": "Two slabs of equal area are in series: 1 cm thick with k = 1 W/(m·K), and 2 cm thick with k = 4 W/(m·K). What is the effective conductivity of the 3 cm combination?",
+      "options": [
+        "2.5 W/(m·K)",
+        "5 W/(m·K)",
+        "2 W/(m·K)",
+        "3 W/(m·K)"
+      ],
+      "correct_index": 2,
+      "explanation": "Series: \\( \\dfrac{L_1+L_2}{k_{eq}}=\\dfrac{L_1}{k_1}+\\dfrac{L_2}{k_2} \\).<br><br>\\( \\dfrac{3}{k_{eq}}=\\dfrac{1}{1}+\\dfrac{2}{4}=1.5 \\).<br><br>\\( k_{eq}=2 \\) W/(m·K).",
+      "hint": "Series layers add thickness divided by conductivity.",
+      "distractor_logic": [
+        "Took the simple average of the two conductivities",
+        "Added the two conductivities",
+        "Took a thickness-weighted average, which applies to parallel layers"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-024",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": 3,
+      "type": "regular",
+      "question": "Both the length and the radius of a cylindrical conducting rod are doubled, with the end temperatures unchanged. What happens to the rate of heat flow?",
+      "options": [
+        "It stays the same",
+        "It becomes four times",
+        "It halves",
+        "It doubles"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( H\\propto\\dfrac{A}{L}\\propto\\dfrac{r^2}{L} \\).<br><br>New ratio: \\( \\dfrac{(2r)^2}{2L}=2\\dfrac{r^2}{L} \\), so H doubles.",
+      "hint": "Area goes with the square of the radius.",
+      "distractor_logic": [
+        "Assumed doubling both dimensions cancels out",
+        "Counted the fourfold area but ignored the doubled length",
+        "Counted the doubled length but ignored the larger area"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-025",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 3,
+      "type": "regular",
+      "question": "A black body at 600 K in surroundings at 300 K loses net radiant power P. What will its net loss be when it is at 900 K in the same surroundings?",
+      "options": [
+        "\\( \\dfrac{16P}{3} \\)",
+        "\\( \\dfrac{81P}{16} \\)",
+        "\\( 2P \\)",
+        "\\( \\dfrac{3P}{2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Net power \\( \\propto T^4-T_0^4 \\).<br><br>\\( \\dfrac{900^4-300^4}{600^4-300^4}=\\dfrac{81-1}{16-1}=\\dfrac{80}{15}=\\dfrac{16}{3} \\).<br><br>New net loss \\( =\\dfrac{16P}{3} \\).",
+      "hint": "Large differences need the full fourth-power law, including absorption.",
+      "distractor_logic": [
+        "Ignored the power absorbed from the surroundings",
+        "Applied Newton's law of cooling to a large temperature difference",
+        "Took net power as proportional to the body's absolute temperature"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-026",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 3,
+      "type": "regular",
+      "question": "A star's peak wavelength shifts from 500 nm to 250 nm. By what factor does the power it radiates per unit area change?",
+      "options": [
+        "It increases 2 times",
+        "It increases 16 times",
+        "It becomes \\( \\dfrac{1}{16} \\) of the original",
+        "It increases 4 times"
+      ],
+      "correct_index": 1,
+      "explanation": "Wien: \\( T\\propto\\dfrac{1}{\\lambda_{max}} \\), so halving \\( \\lambda_{max} \\) doubles T.<br><br>Stefan: power per area \\( \\propto T^4 \\), so it rises by \\( 2^4=16 \\).",
+      "hint": "Chain Wien's law into Stefan's law.",
+      "distractor_logic": [
+        "Found the temperature doubles but took power as proportional to temperature",
+        "Assumed temperature rises with \\( \\lambda_{max} \\), so a shorter peak meant a cooler star",
+        "Used \\( T^2 \\) instead of \\( T^4 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-027",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 3,
+      "type": "regular",
+      "question": "Star A has twice the radius of star B but half its surface temperature (both black bodies). What is the ratio of the total power radiated by A to that by B?",
+      "options": [
+        "\\( \\dfrac{1}{8} \\)",
+        "\\( 1 \\)",
+        "\\( \\dfrac{1}{4} \\)",
+        "\\( 64 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( P=\\sigma(4\\pi R^2)T^4\\propto R^2T^4 \\).<br><br>\\( \\dfrac{P_A}{P_B}=2^2\\times\\left(\\dfrac{1}{2}\\right)^4=\\dfrac{4}{16}=\\dfrac{1}{4} \\).",
+      "hint": "Power depends on area (radius squared) and on the fourth power of temperature.",
+      "distractor_logic": [
+        "Used the radius ratio without squaring it for area",
+        "Used \\( T^2 \\) instead of \\( T^4 \\), which cancelled the area factor",
+        "Inverted the temperature ratio"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-028",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 3,
+      "type": "regular",
+      "question": "A body cools from 70 °C to 60 °C in 5 minutes in a room at 15 °C. Using Newton's law with average temperatures, how long will it take to cool from 60 °C to 50 °C?",
+      "options": [
+        "5 minutes",
+        "4 minutes",
+        "10 minutes",
+        "6.25 minutes"
+      ],
+      "correct_index": 3,
+      "explanation": "Average excess: \\( 65-15=50 \\) °C first, then \\( 55-15=40 \\) °C.<br><br>For equal drops, time \\( \\propto\\dfrac{1}{\\text{average excess}} \\).<br><br>\\( t=5\\times\\dfrac{50}{40}=6.25 \\) minutes.",
+      "hint": "A smaller excess means slower cooling, so a longer time.",
+      "distractor_logic": [
+        "Assumed every 10 °C drop takes the same time",
+        "Inverted the ratio of the average excesses",
+        "Assumed the cooling time doubles each interval"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-029",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 3,
+      "type": "regular",
+      "question": "A furnace wall is at 1177 °C. Treating it as a black body, what is its peak wavelength? (\\( b=2.9\\times10^{-3} \\) m·K)",
+      "options": [
+        "\\( 2\\times10^{-6} \\) m",
+        "\\( 4.205 \\) m",
+        "\\( 1\\times10^{-6} \\) m",
+        "\\( 2\\times10^{-3} \\) m"
+      ],
+      "correct_index": 0,
+      "explanation": "Convert first: \\( T=1177+273=1450 \\) K.<br><br>\\( \\lambda_{max}=\\dfrac{2.9\\times10^{-3}}{1450}=2\\times10^{-6} \\) m.",
+      "hint": "Wien's law needs the kelvin temperature.",
+      "distractor_logic": [
+        "Multiplied b by T instead of dividing",
+        "Used twice the correct absolute temperature",
+        "Dropped the \\( 10^{-3} \\) factor in b"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-L3-030",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": 3,
+      "type": "regular",
+      "question": "A body of surface area \\( 2\\text{ m}^2 \\) and emissivity 0.4 is at 500 K. What power does it radiate? (\\( \\sigma=5.67\\times10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4} \\))",
+      "options": [
+        "7087.5 W",
+        "2835 W",
+        "1417.5 W",
+        "5.67 W"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( T^4=(500)^4=6.25\\times10^{10} \\).<br><br>\\( P=e\\sigma AT^4=0.4\\times5.67\\times10^{-8}\\times2\\times6.25\\times10^{10} \\).<br><br>\\( P=2835 \\) W.",
+      "hint": "Include emissivity, area and the fourth power of T.",
+      "distractor_logic": [
+        "Ignored the emissivity",
+        "Left out the surface area",
+        "Used \\( T^3 \\) instead of \\( T^4 \\)"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-001",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In winter, fish survive at the bottom of a pond even though its surface is frozen. Which two effects make this possible?",
+      "options": [
+        "Ice is denser than water, and it conducts heat well",
+        "Water is densest at 0 °C, and convection keeps the bottom warm",
+        "Water is densest at 4 °C so it collects at the bottom, and the ice layer is a poor conductor",
+        "Pond water cannot freeze because it is too deep"
+      ],
+      "correct_index": 2,
+      "explanation": "Water at 4 °C is densest and sinks, so the bottom stays near 4 °C.<br><br>The floating ice and the cold water above conduct heat poorly, insulating the water below.",
+      "hint": "Recall where water at 4 °C ends up and how well ice conducts.",
+      "distractor_logic": [
+        "Ice floats because it is less dense, and it is a poor conductor",
+        "Water is densest at 4 °C, and convection stops once the top is colder",
+        "Depth alone does not stop freezing; the anomalous expansion and insulation do"
+      ],
+      "mixed_topics": [
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+        "Heat Transfer by Conduction and Convection"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-002",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why do water pipes sometimes burst in freezing winters?",
+      "options": [
+        "Water contracts when it freezes, pulling the pipe inward",
+        "The pipe metal contracts more than the water",
+        "Ice releases latent heat that melts the pipe",
+        "Water expands when it freezes into ice"
+      ],
+      "correct_index": 3,
+      "explanation": "Near freezing, water expands anomalously, and ice has a larger volume than the water it came from.<br><br>The expanding ice pushes on the pipe walls hard enough to split them.",
+      "hint": "Does ice float or sink in water?",
+      "distractor_logic": [
+        "Reversed the volume change on freezing",
+        "Metal contraction is small and would not split the pipe",
+        "The released heat is far too small, and it would not melt metal"
+      ],
+      "mixed_topics": [
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+        "Change of State: Latent Heat and Phase Changes"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-003",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Rods A and B have equal mass and equal length. A has \\( \\alpha=2\\times10^{-5} \\) per °C and specific heat 400 J/(kg·K); B has \\( \\alpha=1.2\\times10^{-5} \\) per °C and specific heat 900 J/(kg·K). Each absorbs the same heat. What is the ratio of their length increases, A to B?",
+      "options": [
+        "\\( \\dfrac{15}{4} \\)",
+        "\\( \\dfrac{5}{3} \\)",
+        "\\( \\dfrac{9}{4} \\)",
+        "\\( \\dfrac{4}{15} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\Delta T=\\dfrac{Q}{mc} \\), so \\( \\Delta L=L\\alpha\\dfrac{Q}{mc}\\propto\\dfrac{\\alpha}{c} \\).<br><br>\\( \\dfrac{\\Delta L_A}{\\Delta L_B}=\\dfrac{2\\times900}{1.2\\times400}=\\dfrac{1800}{480}=\\dfrac{15}{4} \\).",
+      "hint": "Same heat gives different temperature rises; both steps matter.",
+      "distractor_logic": [
+        "Compared only the expansion coefficients, assuming equal temperature rises",
+        "Compared only the temperature rises, assuming equal expansion coefficients",
+        "Inverted the correct ratio"
+      ],
+      "mixed_topics": [
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-004",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1 m rod, initially at 0 °C throughout, has one end raised to 100 °C while the other stays at 0 °C. In steady state the temperature falls uniformly along it. If \\( \\alpha=1\\times10^{-5} \\) per °C, by how much has the rod lengthened?",
+      "options": [
+        "\\( 1\\times10^{-3} \\) m",
+        "\\( 5\\times10^{-4} \\) m",
+        "\\( 0 \\) m",
+        "\\( 1.5\\times10^{-3} \\) m"
+      ],
+      "correct_index": 1,
+      "explanation": "A uniform gradient from 100 °C to 0 °C gives an average rise of 50 °C.<br><br>\\( \\Delta L=L\\alpha\\Delta T_{avg}=1\\times10^{-5}\\times50=5\\times10^{-4} \\) m.",
+      "hint": "A linear temperature profile means use the average rise.",
+      "distractor_logic": [
+        "Assumed the whole rod reaches 100 °C",
+        "Assumed the cold end fixes the length so the rod cannot expand",
+        "Used \\( 3\\alpha \\) with the average rise of 50 °C"
+      ],
+      "mixed_topics": [
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases",
+        "Heat Transfer by Conduction and Convection"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-005",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "2 kg of water absorbs 42000 J of heat. By how much does its temperature rise on the Fahrenheit scale? (specific heat of water 4200 J/(kg·K))",
+      "options": [
+        "41 °F",
+        "5 °F",
+        "9 °F",
+        "18 °F"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\Delta T=\\dfrac{Q}{mc}=\\dfrac{42000}{2\\times4200}=5 \\) °C.<br><br>As a change: \\( \\Delta T_F=\\dfrac{9}{5}\\times5=9 \\) °F, with no \\( +32 \\).",
+      "hint": "Find the rise from calorimetry, then convert it as a change.",
+      "distractor_logic": [
+        "Found the 5 °C rise but added the \\( +32 \\) offset, which never applies to a temperature change",
+        "Found the rise in °C and relabelled it °F without rescaling",
+        "Forgot to divide by the 2 kg mass before converting"
+      ],
+      "mixed_topics": [
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-006",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Equal masses of water and another liquid, in identical containers of negligible heat capacity, cool from 60 °C to 50 °C in the same surroundings. Water takes 10 minutes and the liquid takes 4 minutes. What is the liquid's specific heat? (specific heat of water 4200 J/(kg·K))",
+      "options": [
+        "10500 J/(kg·K)",
+        "4200 J/(kg·K)",
+        "1050 J/(kg·K)",
+        "1680 J/(kg·K)"
+      ],
+      "correct_index": 3,
+      "explanation": "Same surroundings and same temperature range give the same rate of heat loss (Newton's law).<br><br>So \\( \\dfrac{mc_w\\Delta T}{t_w}=\\dfrac{mc_l\\Delta T}{t_l} \\), giving \\( c_l=c_w\\dfrac{t_l}{t_w} \\).<br><br>\\( c_l=4200\\times\\dfrac{4}{10}=1680 \\) J/(kg·K).",
+      "hint": "Equal heat-loss rates mean the time taken is proportional to heat capacity.",
+      "distractor_logic": [
+        "Inverted the ratio of cooling times",
+        "Assumed equal masses cooling through the same range must have equal specific heats",
+        "Divided by the liquid's time alone instead of using the ratio of times"
+      ],
+      "mixed_topics": [
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-007",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The specific heat of water is 4200 J/(kg·K). What is its value in J/(kg·°C)?",
+      "options": [
+        "4200 J/(kg·°C)",
+        "7560 J/(kg·°C)",
+        "4473 J/(kg·°C)",
+        "1146600 J/(kg·°C)"
+      ],
+      "correct_index": 0,
+      "explanation": "Specific heat is per degree of temperature change.<br><br>A change of 1 K equals a change of 1 °C, so the value is unchanged: 4200 J/(kg·°C).",
+      "hint": "Is the kelvin in this unit a reading or a size of degree?",
+      "distractor_logic": [
+        "Applied the factor \\( \\dfrac{9}{5} \\), which relates Fahrenheit and Celsius degrees",
+        "Added 273 as if converting an absolute temperature",
+        "Multiplied by 273"
+      ],
+      "mixed_topics": [
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-008",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "0.5 kg of copper (specific heat 400 J/(kg·K)) in the form of a 2 m rod absorbs 20000 J. If \\( \\alpha=1.2\\times10^{-5} \\) per °C, by how much does the rod lengthen?",
+      "options": [
+        "\\( 4.8\\times10^{-3} \\) m",
+        "\\( 2.4\\times10^{-3} \\) m",
+        "\\( 7.2\\times10^{-3} \\) m",
+        "\\( 1.2\\times10^{-3} \\) m"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\Delta T=\\dfrac{Q}{mc}=\\dfrac{20000}{0.5\\times400}=100 \\) °C.<br><br>\\( \\Delta L=L_0\\alpha\\Delta T=2\\times1.2\\times10^{-5}\\times100=2.4\\times10^{-3} \\) m.",
+      "hint": "Find the temperature rise from the heat, then use linear expansion.",
+      "distractor_logic": [
+        "Used \\( 2\\alpha \\), the areal coefficient, for a length change",
+        "Used \\( 3\\alpha \\), the volume coefficient, for a length change",
+        "Forgot the mass when finding the temperature rise, getting 50 °C"
+      ],
+      "mixed_topics": [
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-009",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 0.2 kg metal block absorbs 3600 J and its temperature rises from 293 K to 313 K. What is its specific heat?",
+      "options": [
+        "57.5 J/(kg·K)",
+        "180 J/(kg·K)",
+        "900 J/(kg·K)",
+        "18000 J/(kg·K)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\Delta T=313-293=20 \\) K.<br><br>\\( c=\\dfrac{3600}{0.2\\times20}=900 \\) J/(kg·K).",
+      "hint": "Only the temperature change enters the heat equation.",
+      "distractor_logic": [
+        "Used the final absolute temperature 313 K in place of the 20 K rise",
+        "Forgot to divide by the mass",
+        "Forgot to divide by the temperature rise"
+      ],
+      "mixed_topics": [
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-010",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 2 kg body (specific heat 450 J/(kg·K)) cools from 50 °C to 40 °C in 5 minutes in a room at 20 °C. Using Newton's law with average temperatures, what will be its average rate of heat loss while cooling from 35 °C to 25 °C?",
+      "options": [
+        "30 W",
+        "20 W",
+        "75 W",
+        "12 W"
+      ],
+      "correct_index": 3,
+      "explanation": "First stage: heat lost \\( =2\\times450\\times10=9000 \\) J in 300 s, so 30 W at average excess \\( 45-20=25 \\) °C.<br><br>Second stage: average excess \\( 30-20=10 \\) °C.<br><br>Rate \\( =30\\times\\dfrac{10}{25}=12 \\) W.",
+      "hint": "Rate of heat loss is proportional to the average excess over the room.",
+      "distractor_logic": [
+        "Assumed the rate of heat loss stays constant",
+        "Scaled by the average temperatures measured from 0 °C instead of excesses over the room",
+        "Inverted the ratio of the average excesses"
+      ],
+      "mixed_topics": [
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry",
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-011",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 0.1 kg sample of molten wax loses heat to its surroundings at a steady 20 W. Its cooling curve shows a flat section lasting 10 minutes while it solidifies. What is its latent heat of fusion?",
+      "options": [
+        "\\( 1.2\\times10^{5} \\) J/kg",
+        "2000 J/kg",
+        "1200 J/kg",
+        "12000 J/kg"
+      ],
+      "correct_index": 0,
+      "explanation": "During the flat section the heat lost is released latent heat: \\( Q=Pt=20\\times600=12000 \\) J.<br><br>\\( L=\\dfrac{12000}{0.1}=1.2\\times10^{5} \\) J/kg.",
+      "hint": "The flat part of a cooling curve is a phase change releasing latent heat.",
+      "distractor_logic": [
+        "Used 10 minutes as 10 seconds",
+        "Multiplied the heat by the mass instead of dividing",
+        "Found the heat released but did not divide by the mass"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-012",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How much ice at 0 °C must be added to 225 g of water at 50 °C to bring the mixture to 10 °C? (latent heat of fusion 80 cal/g, specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "112.5 g",
+        "100 g",
+        "900 g",
+        "225 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Heat released by the water: \\( 225\\times1\\times(50-10)=9000 \\) cal.<br><br>Each gram of ice needs \\( 80+1\\times10=90 \\) cal to melt and reach 10 °C.<br><br>Mass of ice \\( =\\dfrac{9000}{90}=100 \\) g.",
+      "hint": "Ice melts, then its meltwater warms too.",
+      "distractor_logic": [
+        "Counted melting but forgot the meltwater must also warm from 0 °C to 10 °C",
+        "Ignored the latent heat and only warmed the ice's water to 10 °C",
+        "Assumed equal masses of ice and water are needed"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-013",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How much heat turns 100 g of ice at 14 °F into water at 0 °C? (specific heat of ice 0.5 cal/(g·°C), latent heat of fusion 80 cal/g)",
+      "options": [
+        "8700 cal",
+        "8900 cal",
+        "8500 cal",
+        "500 cal"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( C=\\dfrac{5}{9}(14-32)=-10 \\) °C.<br><br>Warm ice: \\( 100\\times0.5\\times10=500 \\) cal; melt: \\( 100\\times80=8000 \\) cal.<br><br>Total = 8500 cal.",
+      "hint": "Convert the reading first, then warm and melt.",
+      "distractor_logic": [
+        "Read 14 °F as \\( -14 \\) °C instead of converting",
+        "Used the 18 Fahrenheit-degree rise as if it were 18 °C",
+        "Warmed the ice to 0 °C but skipped the latent heat of melting"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-014",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "10 g of ice at 0 °C is turned into steam at 100 °C. What percentage of the total heat goes into vaporization? (latent heat of fusion 80 cal/g, specific heat of water 1 cal/(g·°C), latent heat of vaporization 540 cal/g)",
+      "options": [
+        "84.375%",
+        "25%",
+        "50%",
+        "75%"
+      ],
+      "correct_index": 3,
+      "explanation": "Melt: 800 cal; warm: \\( 10\\times1\\times100=1000 \\) cal; vaporize: \\( 10\\times540=5400 \\) cal.<br><br>Total = 7200 cal.<br><br>Share \\( =\\dfrac{5400}{7200}=75 \\)%.",
+      "hint": "Add every stage to get the total first.",
+      "distractor_logic": [
+        "Left the melting stage out of the total",
+        "Found the share of heat that does NOT go into vaporization",
+        "Assumed the two phase changes share the heat equally"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-015",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "How much heat turns 1 g of water at 32 °F into steam at 212 °F? (specific heat of water 1 cal/(g·°C), latent heat of vaporization 540 cal/g)",
+      "options": [
+        "640 cal",
+        "720 cal",
+        "100 cal",
+        "540 cal"
+      ],
+      "correct_index": 0,
+      "explanation": "32 °F to 212 °F is 0 °C to 100 °C, a 100 °C rise: \\( 1\\times1\\times100=100 \\) cal.<br><br>Vaporization: \\( 1\\times540=540 \\) cal.<br><br>Total = 640 cal.",
+      "hint": "The specific heat is per °C, so convert the rise first.",
+      "distractor_logic": [
+        "Used the 180 Fahrenheit-degree rise as if it were degrees Celsius",
+        "Warmed the water but skipped vaporization",
+        "Vaporized the water but skipped warming it to the boiling point"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-016",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A steady heater melts 1 kg of ice at 0 °C in time \\( t_1 \\) and then warms the water from 0 °C to 100 °C in time \\( t_2 \\). What is \\( t_1 \\) : \\( t_2 \\)? (latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg, specific heat of water 4200 J/(kg·K))",
+      "options": [
+        "\\( \\dfrac{5}{4} \\)",
+        "\\( \\dfrac{4}{5} \\)",
+        "\\( 1 \\)",
+        "\\( \\dfrac{113}{21} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Same power, so time \\( \\propto \\) heat.<br><br>Melting: 336000 J; warming: \\( 4200\\times100=420000 \\) J.<br><br>\\( \\dfrac{t_1}{t_2}=\\dfrac{336000}{420000}=\\dfrac{4}{5} \\).",
+      "hint": "With a steady heater, time is proportional to heat needed.",
+      "distractor_logic": [
+        "Inverted the ratio",
+        "Assumed melting and warming take equal times",
+        "Used the latent heat of vaporization instead of fusion"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-017",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 0.1 kg sample of molten metal solidifies at a constant 1000 K while radiating as a black body from a surface area of \\( 0.01\\text{ m}^2 \\) into cold surroundings. Its latent heat of fusion is \\( 2.835\\times10^{5} \\) J/kg. How long does solidification take? (\\( \\sigma=5.67\\times10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4} \\))",
+      "options": [
+        "50000 s",
+        "0.5 s",
+        "50 s",
+        "500 s"
+      ],
+      "correct_index": 2,
+      "explanation": "Temperature is constant, so the radiated power is constant: \\( P=5.67\\times10^{-8}\\times0.01\\times10^{12}=567 \\) W.<br><br>Latent heat released \\( =0.1\\times2.835\\times10^{5}=28350 \\) J.<br><br>\\( t=\\dfrac{28350}{567}=50 \\) s.",
+      "hint": "Constant temperature means constant radiated power.",
+      "distractor_logic": [
+        "Used \\( T^3 \\) instead of \\( T^4 \\)",
+        "Left out the surface area",
+        "Forgot to multiply the latent heat by the mass"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-018",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Equal masses of steam at 100 °C and ice at 0 °C are mixed. What is the final temperature? (latent heats: vaporization 540 cal/g, fusion 80 cal/g; specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "50 °C",
+        "0 °C",
+        "280 °C",
+        "100 °C"
+      ],
+      "correct_index": 3,
+      "explanation": "Per gram, the ice needs \\( 80+100=180 \\) cal to become water at 100 °C.<br><br>Per gram, the steam can release 540 cal just by condensing, which is more than enough.<br><br>Only \\( \\dfrac{180}{540}=\\dfrac{1}{3} \\) of the steam condenses, so the mixture stays at 100 °C.",
+      "hint": "Compare the heat the steam can give with what the ice needs.",
+      "distractor_logic": [
+        "Averaged the two temperatures, ignoring both latent heats",
+        "Assumed the ice keeps the mixture at its melting point",
+        "Solved the balance assuming all steam condenses, without checking that the result is impossible"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-019",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the regelation experiment, a loaded copper wire cuts through a block of ice faster than a loaded cotton thread of the same size. Why?",
+      "options": [
+        "Copper conducts the latent heat released by refreezing above the wire down to melt the ice below it",
+        "Copper is heavier, so it simply presses harder",
+        "Cotton raises the melting point of ice",
+        "Copper is at a higher temperature than the ice"
+      ],
+      "correct_index": 0,
+      "explanation": "Ice melts under the wire, taking latent heat, and refreezes above it, releasing latent heat.<br><br>Copper conducts this released heat quickly to the melting side; cotton conducts poorly, so it cuts slowly.",
+      "hint": "Melting below needs heat; refreezing above supplies it.",
+      "distractor_logic": [
+        "Equal loads are applied; conduction of latent heat is what differs",
+        "Neither material changes ice's melting point by itself",
+        "Both reach the ice's temperature; the difference is how fast heat moves"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Heat Transfer by Conduction and Convection"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-020",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Snow covered with a thin layer of soot melts faster in sunshine than clean snow. Why?",
+      "options": [
+        "Soot lowers the melting point of snow",
+        "The dark soot absorbs more solar radiation, supplying the latent heat needed for melting",
+        "Clean white snow absorbs more radiation",
+        "Soot is a good conductor that pulls cold out of the snow"
+      ],
+      "correct_index": 1,
+      "explanation": "Dark surfaces are good absorbers of radiation; white snow reflects most of it.<br><br>The extra absorbed energy provides the latent heat of fusion, so the snow melts sooner.",
+      "hint": "Which surfaces absorb radiation well?",
+      "distractor_logic": [
+        "Soot does not change the melting point; it changes how much radiation is absorbed",
+        "White surfaces reflect most sunlight",
+        "Cold does not flow, and the effect is about radiation absorbed"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-021",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Change of State: Latent Heat and Phase Changes",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "By what factor does the heat given to skin by 1 g of steam at 100 °C, cooling to 40 °C, exceed that given by 1 g of water at 100 °C cooling to 40 °C? (latent heat of vaporization 540 cal/g, specific heat of water 1 cal/(g·°C))",
+      "options": [
+        "9",
+        "1",
+        "10",
+        "5.4"
+      ],
+      "correct_index": 2,
+      "explanation": "Steam: \\( 540+1\\times60=600 \\) cal.<br><br>Water: \\( 1\\times60=60 \\) cal.<br><br>Ratio \\( =\\dfrac{600}{60}=10 \\).",
+      "hint": "Steam condenses first, then cools like the water.",
+      "distractor_logic": [
+        "Compared latent heat alone with the water's cooling, leaving out the steam's own cooling after condensing",
+        "Assumed equal temperatures give equal heat",
+        "Compared the latent heat with a 100 °C fall instead of the actual 60 °C fall"
+      ],
+      "mixed_topics": [
+        "Change of State: Latent Heat and Phase Changes",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-022",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A copper rod (k = 400 W/(m·K)), 0.5 m long with cross-section \\( 1\\times10^{-4}\\text{ m}^2 \\), has one end in boiling water at 100 °C and the other in melting ice at 0 °C. How much ice melts in 420 s? (latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg)",
+      "options": [
+        "2.5 g",
+        "0 g",
+        "3360 g",
+        "10 g"
+      ],
+      "correct_index": 3,
+      "explanation": "Heat current \\( H=\\dfrac{400\\times10^{-4}\\times100}{0.5}=8 \\) W.<br><br>Heat delivered in 420 s \\( =8\\times420=3360 \\) J.<br><br>Ice melted \\( =\\dfrac{3360}{3.36\\times10^{5}}=0.01 \\) kg = 10 g.",
+      "hint": "Heat conducted into the ice goes into latent heat of melting.",
+      "distractor_logic": [
+        "Multiplied by the rod's length instead of dividing when finding the heat current",
+        "Assumed ice at 0 °C cannot absorb heat because its temperature cannot rise",
+        "Found the heat in joules but reported it as grams without dividing by the latent heat"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Change of State: Latent Heat and Phase Changes"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-023",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A slab of area \\( 2\\text{ m}^2 \\), thickness 0.1 m and k = 0.8 W/(m·K) has faces differing in temperature by 90 °F. What is the rate of heat flow?",
+      "options": [
+        "800 W",
+        "1440 W",
+        "5168 W",
+        "2592 W"
+      ],
+      "correct_index": 0,
+      "explanation": "A difference converts by scale factor only: \\( \\Delta T=\\dfrac{5}{9}\\times90=50 \\) K.<br><br>\\( H=\\dfrac{0.8\\times2\\times50}{0.1}=800 \\) W.",
+      "hint": "Convert the difference to kelvin before using the conduction formula.",
+      "distractor_logic": [
+        "Used the 90 °F difference directly as kelvin",
+        "Converted the difference to 50 but then added 273, an offset that never applies to a difference",
+        "Multiplied by \\( \\dfrac{9}{5} \\) instead of \\( \\dfrac{5}{9} \\)"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-024",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Ice 5 cm thick covers a pond. The air above is at \\( -10 \\) °C and the water below is at 0 °C. Taking k(ice) = 1.68 W/(m·K), how much new ice forms per square metre each second? (latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg)",
+      "options": [
+        "\\( 1\\times10^{-5} \\) kg",
+        "\\( 1\\times10^{-3} \\) kg",
+        "\\( 336 \\) kg",
+        "\\( 8\\times10^{-3} \\) kg"
+      ],
+      "correct_index": 1,
+      "explanation": "Heat conducted up per square metre: \\( \\dfrac{1.68\\times10}{0.05}=336 \\) W.<br><br>This heat is removed from the water at 0 °C, freezing it.<br><br>Mass frozen per second \\( =\\dfrac{336}{3.36\\times10^{5}}=1\\times10^{-3} \\) kg.",
+      "hint": "Heat conducted out through the ice comes from water freezing at 0 °C.",
+      "distractor_logic": [
+        "Used the thickness in centimetres instead of metres",
+        "Found the heat flow in watts but did not divide by the latent heat",
+        "Divided by water's specific heat times 10 °C instead of by the latent heat"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Change of State: Latent Heat and Phase Changes"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-025",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A vacuum flask has a double wall with a vacuum between, and silvered inner surfaces. Which modes of heat transfer does each feature reduce?",
+      "options": [
+        "The vacuum stops radiation; the silvering stops conduction",
+        "Both features reduce only conduction",
+        "The vacuum stops conduction and convection; the silvering reduces radiation",
+        "The vacuum stops all three modes, so the silvering is decorative"
+      ],
+      "correct_index": 2,
+      "explanation": "Conduction and convection need a material medium, so the vacuum blocks both.<br><br>Radiation crosses a vacuum, so the shiny surfaces reflect it back.",
+      "hint": "Which mode can cross empty space?",
+      "distractor_logic": [
+        "Swapped the roles; radiation crosses a vacuum freely",
+        "Ignored convection and radiation entirely",
+        "Forgot that radiation needs no medium"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-026",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A rod (k = 420 W/(m·K), length 0.2 m, cross-section \\( 1\\times10^{-4}\\text{ m}^2 \\)) carries heat into 0.5 kg of water, with the temperature difference across it held at 100 K. How long does it take to warm the water by 10 °C? (specific heat of water 4200 J/(kg·K), no losses)",
+      "options": [
+        "2000 s",
+        "25000 s",
+        "1 s",
+        "1000 s"
+      ],
+      "correct_index": 3,
+      "explanation": "Heat current \\( H=\\dfrac{420\\times10^{-4}\\times100}{0.2}=21 \\) W.<br><br>Heat needed \\( =0.5\\times4200\\times10=21000 \\) J.<br><br>\\( t=\\dfrac{21000}{21}=1000 \\) s.",
+      "hint": "Heat needed divided by conduction rate gives time.",
+      "distractor_logic": [
+        "Used a 1 kg mass of water",
+        "Multiplied by the rod's length instead of dividing",
+        "Used 4.2 for the specific heat, a J/(g·K) value, with mass in kilograms"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-027",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A thermocol ice box has total wall area \\( 0.5\\text{ m}^2 \\), thickness 5 cm and k = 0.021 W/(m·K). Outside is 40 °C and inside is 0 °C. How much ice melts in one hour? (latent heat of fusion \\( 3.36\\times10^{5} \\) J/kg)",
+      "options": [
+        "90 g",
+        "0.9 g",
+        "0.025 g",
+        "30240 g"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( H=\\dfrac{0.021\\times0.5\\times40}{0.05}=8.4 \\) W.<br><br>In one hour: \\( 8.4\\times3600=30240 \\) J.<br><br>Ice melted \\( =\\dfrac{30240}{3.36\\times10^{5}}=0.09 \\) kg = 90 g.",
+      "hint": "Heat leaking in melts ice at 0 °C.",
+      "distractor_logic": [
+        "Used the thickness in centimetres instead of metres",
+        "Worked out the melting for one second instead of one hour",
+        "Found the heat in joules and reported it as grams without dividing by the latent heat"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Change of State: Latent Heat and Phase Changes"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-028",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Identify the main mode of heat transfer in each case: (i) the handle of a metal spoon in hot tea gets hot; (ii) a sea breeze blows on a sunny day; (iii) you feel warmth on your face across the room from a campfire.",
+      "options": [
+        "(i) convection, (ii) conduction, (iii) radiation",
+        "(i) conduction, (ii) convection, (iii) radiation",
+        "(i) conduction, (ii) radiation, (iii) convection",
+        "(i) radiation, (ii) convection, (iii) conduction"
+      ],
+      "correct_index": 1,
+      "explanation": "Heat travels along the solid spoon by conduction.<br><br>Moving air in a sea breeze is convection.<br><br>Warmth reaching you across open air from the fire is radiation.",
+      "hint": "Solids conduct, fluids convect, and radiation needs no contact.",
+      "distractor_logic": [
+        "Swapped conduction and convection; a solid spoon cannot convect",
+        "Took the breeze as radiation and the campfire warmth as moving air",
+        "Took the spoon as heated by radiation and the air gap as a conductor"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-029",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why does a sea breeze blow from sea to land on a sunny day?",
+      "options": [
+        "Water has a lower specific heat, so the sea warms faster",
+        "Land conducts heat to the sea through the ground",
+        "Land has a lower specific heat, warms faster, and the warm air over it rises as sea air flows in",
+        "Warm air over land sinks and pushes toward the sea"
+      ],
+      "correct_index": 2,
+      "explanation": "Water's high specific heat keeps the sea cooler by day, while land heats quickly.<br><br>Hot air over land rises by convection, and cooler sea air moves in to replace it.",
+      "hint": "Which heats faster in sunshine, and what does warm air do?",
+      "distractor_logic": [
+        "Reversed which surface has the higher specific heat",
+        "A breeze is moving air, which is convection, not conduction",
+        "Warm air rises; it does not sink"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-030",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A rod 0.5 m long has its ends held at 212 °F and 32 °F. What is the temperature gradient in K/m?",
+      "options": [
+        "360 K/m",
+        "424 K/m",
+        "746 K/m",
+        "200 K/m"
+      ],
+      "correct_index": 3,
+      "explanation": "212 °F and 32 °F are 100 °C and 0 °C, a difference of 100 K.<br><br>Gradient \\( =\\dfrac{100}{0.5}=200 \\) K/m.",
+      "hint": "Convert the difference, not each reading's offset.",
+      "distractor_logic": [
+        "Used the Fahrenheit difference of 180 directly as kelvin",
+        "Used the hot end's reading 212 as the temperature difference",
+        "Used the hot end's absolute temperature 373 K as the difference"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-031",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Conduction and Convection",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A pan's copper base (k = 113 W/(m·K)) has area \\( 0.02\\text{ m}^2 \\) and thickness 2 mm. Its underside is at 110 °C and water boils on top at 100 °C. How much water boils away each second? (latent heat of vaporization \\( 2.26\\times10^{6} \\) J/kg)",
+      "options": [
+        "5 g",
+        "0.005 g",
+        "300 g",
+        "55 g"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( H=\\dfrac{113\\times0.02\\times10}{0.002}=11300 \\) W.<br><br>Mass per second \\( =\\dfrac{11300}{2.26\\times10^{6}}=5\\times10^{-3} \\) kg = 5 g.",
+      "hint": "Conducted heat supplies the latent heat of vaporization.",
+      "distractor_logic": [
+        "Used the thickness in millimetres instead of metres",
+        "Found the mass boiled away in one minute, not one second",
+        "Used the underside reading 110 °C as the temperature difference"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Conduction and Convection",
+        "Change of State: Latent Heat and Phase Changes"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-032",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A black body is heated from 0 °C to 273 °C. By what factor does the power it radiates increase?",
+      "options": [
+        "It cannot be found, since the starting temperature is zero",
+        "16",
+        "2",
+        "4"
+      ],
+      "correct_index": 1,
+      "explanation": "In kelvin: 273 K rises to 546 K, a ratio of 2.<br><br>Power ratio \\( =2^4=16 \\).",
+      "hint": "A Celsius zero is not an absolute zero.",
+      "distractor_logic": [
+        "Substituted the Celsius reading 0 into Stefan's law instead of 273 K",
+        "Doubled the absolute temperature correctly but took power as proportional to T",
+        "Used \\( T^2 \\) instead of \\( T^4 \\)"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-033",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A black body's peak wavelength is \\( 1\\times10^{-6} \\) m. What is its temperature in °C? (\\( b=2.9\\times10^{-3} \\) m·K)",
+      "options": [
+        "2900 °C",
+        "3173 °C",
+        "2627 °C",
+        "2627 K"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( T=\\dfrac{b}{\\lambda_{max}}=\\dfrac{2.9\\times10^{-3}}{1\\times10^{-6}}=2900 \\) K.<br><br>In Celsius: \\( 2900-273=2627 \\) °C.",
+      "hint": "Wien's law gives kelvin; convert at the end.",
+      "distractor_logic": [
+        "Found the kelvin temperature but labelled it °C without converting",
+        "Added 273 instead of subtracting when going from kelvin to Celsius",
+        "Converted correctly but kept the kelvin label"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-034",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A hot plate of area \\( 0.16\\text{ m}^2 \\) radiates as a black body at 500 K. All of its radiation is absorbed by 0.27 kg of water. How long does it take to warm the water by 10 K? (\\( \\sigma=5.67\\times10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4} \\), specific heat of water 4200 J/(kg·K))",
+      "options": [
+        "3.2 s",
+        "10000 s",
+        "1200 s",
+        "20 s"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( P=\\sigma AT^4=5.67\\times10^{-8}\\times0.16\\times6.25\\times10^{10}=567 \\) W.<br><br>Heat needed \\( =0.27\\times4200\\times10=11340 \\) J.<br><br>\\( t=\\dfrac{11340}{567}=20 \\) s.",
+      "hint": "Radiated power times time equals heat absorbed by the water.",
+      "distractor_logic": [
+        "Left out the plate's area",
+        "Used \\( T^3 \\) instead of \\( T^4 \\)",
+        "Converted a time already in seconds by multiplying by 60"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-035",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A body 40 °C hotter than its surroundings cools at 9 °F per minute. By Newton's law, how fast (in K per minute) will it cool when it is 20 °C hotter than its surroundings?",
+      "options": [
+        "2.5 K per minute",
+        "4.5 K per minute",
+        "5 K per minute",
+        "275.5 K per minute"
+      ],
+      "correct_index": 0,
+      "explanation": "A rate of change converts by scale factor only: \\( 9\\times\\dfrac{5}{9}=5 \\) K per minute.<br><br>Rate \\( \\propto \\) excess; the excess halves from 40 to 20, so the rate becomes 2.5 K per minute.",
+      "hint": "Convert the rate as a change, then apply the proportionality.",
+      "distractor_logic": [
+        "Halved the rate but left it in Fahrenheit degrees",
+        "Converted to 5 K per minute but forgot the rate halves with the excess",
+        "Added 273 to a rate of change, which never takes the offset"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-036",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two solid spheres of the same material, radii r and 2r, are at the same temperature in the same surroundings. What is the ratio of their initial rates of fall of temperature, small sphere to large?",
+      "options": [
+        "1 : 2",
+        "2 : 1",
+        "1 : 4",
+        "8 : 1"
+      ],
+      "correct_index": 1,
+      "explanation": "Rate of heat loss \\( \\propto \\) area \\( \\propto r^2 \\); heat capacity \\( mc\\propto r^3 \\).<br><br>Rate of fall of temperature \\( \\propto\\dfrac{r^2}{r^3}=\\dfrac{1}{r} \\).<br><br>So small : large = 2 : 1.",
+      "hint": "Heat loss depends on area; temperature change also depends on heat capacity.",
+      "distractor_logic": [
+        "Took the larger sphere as cooling faster because it has more surface",
+        "Compared surface areas only, ignoring the heat capacities",
+        "Compared masses only, ignoring the surface areas"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-037",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Body X loses heat only by radiation into surroundings near 0 K; body Y loses heat only by conduction through a slab to a reservoir at 0 K. If each body's absolute temperature is doubled, how do their rates of heat loss change?",
+      "options": [
+        "Both rates double",
+        "Both rates become 16 times",
+        "X's rate becomes 16 times; Y's rate doubles",
+        "X's rate becomes 4 times; Y's rate doubles"
+      ],
+      "correct_index": 2,
+      "explanation": "Radiation: \\( P\\propto T^4 \\), so doubling T gives \\( 2^4=16 \\) times.<br><br>Conduction: \\( H\\propto\\Delta T \\), so doubling the difference doubles H.",
+      "hint": "One law is linear in temperature difference, the other is fourth power.",
+      "distractor_logic": [
+        "Treated radiation as linear in temperature, like conduction",
+        "Applied the fourth-power law to conduction as well",
+        "Used \\( T^2 \\) for radiation"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Heat Transfer by Conduction and Convection"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-038",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A black body at 27 °C is heated until it radiates 16 times as much power. What is its new temperature in °C?",
+      "options": [
+        "54 °C",
+        "432 °C",
+        "873 °C",
+        "327 °C"
+      ],
+      "correct_index": 3,
+      "explanation": "16 times the power means \\( T \\) doubles: \\( 16^{1/4}=2 \\).<br><br>300 K becomes 600 K.<br><br>In Celsius: \\( 600-273=327 \\) °C.",
+      "hint": "Work in kelvin, then convert back.",
+      "distractor_logic": [
+        "Doubled the Celsius reading instead of the absolute temperature",
+        "Multiplied the Celsius reading by 16, ignoring the fourth-power law",
+        "Found 600 K but added 273 instead of subtracting it"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-039",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A black sphere of mass 0.63 kg and surface area \\( 0.01\\text{ m}^2 \\), made of material with specific heat 450 J/(kg·K), is at 1000 K in surroundings near 0 K. At what initial rate does its temperature fall? (\\( \\sigma=5.67\\times10^{-8}\\text{ W m}^{-2}\\text{ K}^{-4} \\))",
+      "options": [
+        "2 K/s",
+        "0.002 K/s",
+        "1.26 K/s",
+        "900 K/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( P=\\sigma AT^4=5.67\\times10^{-8}\\times0.01\\times10^{12}=567 \\) W.<br><br>\\( \\dfrac{dT}{dt}=\\dfrac{P}{mc}=\\dfrac{567}{0.63\\times450}=2 \\) K/s.",
+      "hint": "Radiated power divided by heat capacity gives the rate of temperature fall.",
+      "distractor_logic": [
+        "Used \\( T^3 \\) instead of \\( T^4 \\)",
+        "Left out the mass",
+        "Left out the specific heat"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Calorimetry: Specific Heat Capacity and the Principle of Calorimetry"
+      ]
+    },
+    {
+      "id": "PHY11-CH10-B-040",
+      "chapter": "PHY11-CH10",
+      "chapter_name": "Thermal Properties of Matter",
+      "topic": "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A star at 5727 °C cools until its peak wavelength doubles. What is its new surface temperature in °C?",
+      "options": [
+        "2863.5 °C",
+        "2727 °C",
+        "3000 °C",
+        "11727 °C"
+      ],
+      "correct_index": 1,
+      "explanation": "5727 °C = 6000 K.<br><br>Wien: \\( \\lambda_{max}T=b \\), so doubling \\( \\lambda_{max} \\) halves T to 3000 K.<br><br>In Celsius: \\( 3000-273=2727 \\) °C.",
+      "hint": "Halve the kelvin temperature, not the Celsius one.",
+      "distractor_logic": [
+        "Halved the Celsius reading instead of the absolute temperature",
+        "Found 3000 K but did not convert back to Celsius",
+        "Doubled the temperature, taking \\( \\lambda_{max} \\) and T to rise together"
+      ],
+      "mixed_topics": [
+        "Heat Transfer by Radiation: Stefan's Law, Wien's Law, and Newton's Law of Cooling",
+        "Temperature Scales and Thermal Expansion of Solids, Liquids, and Gases"
+      ]
+    }
+  ]
+}

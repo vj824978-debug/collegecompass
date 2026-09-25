@@ -1,0 +1,3727 @@
+{
+ "meta": {
+  "chapter": "PHY11-CH11",
+  "chapter_name": "Thermodynamics",
+  "subject": "Physics",
+  "class": 11,
+  "total_questions": 150,
+  "level_breakdown": {
+   "L1": 40,
+   "L2": 40,
+   "L3": 30,
+   "Bonus": 40
+  },
+  "rendering_note": "The first law \\( \\Delta U=Q-W \\) follows the locked sign convention throughout (Q = heat absorbed by the system, W = work done by the gas). \\( \\ln \\), \\( \\gamma \\), and \\( \\eta \\) always appear as single KaTeX spans; no raw Unicode math symbols appear anywhere; every numeric correct answer terminates cleanly."
+ },
+ "topics": [
+  {
+   "name": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "summary": "Two bodies are in thermal equilibrium when no net heat flows between them. The zeroth law says that if A and B are each in thermal equilibrium with C, then A and B are in equilibrium with each other; this shared property is temperature, and it is why thermometers work. Heat is energy transferred because of a temperature difference, and it exists only while it flows. Work is energy transferred by mechanical means, such as a gas pushing a piston: \\( W=\\int P\\,dV \\), the area under the P-V curve. Internal energy \\( U \\) is the energy stored in the system; for an ideal gas it depends only on temperature. \\( U \\) is a state function, so its change depends only on the initial and final states, while heat and work depend on the path. In this chapter \\( W \\) always means work done BY the gas: positive in expansion, negative in compression. Over any complete cycle \\( \\Delta U=0 \\), and the net work equals the enclosed area on the P-V diagram.",
+   "key_formulas": [
+    "\\( W=P\\Delta V \\) (constant pressure)",
+    "\\( W=\\int P\\,dV \\) = area under P-V curve",
+    "\\( U=\\tfrac32nRT \\) (monoatomic), \\( U=\\tfrac52nRT \\) (diatomic)",
+    "Cycle: \\( \\Delta U=0 \\), net \\( W= \\) enclosed area"
+   ],
+   "worked_example": "A gas expands at \\( 1.0\\times10^{5} \\) Pa from \\( 2 \\) L to \\( 5 \\) L. \\( \\Delta V=3\\times10^{-3} \\) m\\( ^3 \\), so \\( W=P\\Delta V=300 \\) J. The value is positive because the gas expands and does work on the surroundings.",
+   "common_mistakes": [
+    "Saying a body contains heat; it contains internal energy, and heat is energy in transit.",
+    "Treating compression work as positive; work done by the gas is negative when volume decreases.",
+    "Thinking equal internal energy means thermal equilibrium; equilibrium needs equal temperature.",
+    "Assuming net heat over a cycle is zero because \\( \\Delta U=0 \\); net heat equals net work."
+   ],
+   "question_count": 33
+  },
+  {
+   "name": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "summary": "The first law of thermodynamics is energy conservation: \\( \\Delta U=Q-W \\). Here \\( Q \\) is heat absorbed by the system (negative if released) and \\( W \\) is work done by the system (negative if work is done on it). Always assign both signs before substituting; flipping only one sign is the most common error. Compression does not always raise internal energy: if enough heat leaves, \\( \\Delta U \\) can still be negative. Molar heat capacity at constant volume, \\( C_v \\), measures heat per mole per kelvin when no work is done, so \\( Q=nC_v\\Delta T=\\Delta U \\). At constant pressure the gas also does expansion work, so \\( C_p \\) is larger. Mayer's relation gives \\( C_p-C_v=R \\) for an ideal gas. For a monoatomic gas \\( C_v=\\tfrac32R \\), \\( C_p=\\tfrac52R \\), \\( \\gamma=\\tfrac53 \\); for a diatomic gas \\( C_v=\\tfrac52R \\), \\( C_p=\\tfrac72R \\), \\( \\gamma=\\tfrac75 \\). Change in internal energy always uses \\( C_v \\), whatever the process.",
+   "key_formulas": [
+    "\\( \\Delta U=Q-W \\)",
+    "\\( C_p-C_v=R \\)",
+    "\\( \\gamma=\\dfrac{C_p}{C_v} \\), \\( C_v=\\dfrac{R}{\\gamma-1} \\)",
+    "\\( \\Delta U=nC_v\\Delta T \\) (any process)",
+    "\\( Q_p=nC_p\\Delta T \\), \\( Q_v=nC_v\\Delta T \\)"
+   ],
+   "worked_example": "A piston does \\( 300 \\) J of work on a gas while it releases \\( 200 \\) J of heat. \\( Q=-200 \\) J and \\( W=-300 \\) J, so \\( \\Delta U=Q-W=-200-(-300)=+100 \\) J. The internal energy rises even though heat was lost.",
+   "common_mistakes": [
+    "Taking work done on the gas as positive \\( W \\) while keeping \\( \\Delta U=Q-W \\).",
+    "Treating released heat as positive \\( Q \\).",
+    "Believing compression must always lower (or always raise) internal energy regardless of heat flow.",
+    "Writing \\( C_v>C_p \\) or \\( C_p-C_v=-R \\).",
+    "Using \\( C_p \\) to find \\( \\Delta U \\)."
+   ],
+   "question_count": 42
+  },
+  {
+   "name": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "summary": "Four standard processes follow directly from \\( \\Delta U=Q-W \\). Isothermal (constant \\( T \\)): for an ideal gas \\( \\Delta U=0 \\), so \\( Q=W=nRT\\ln\\!\\left(\\dfrac{V_2}{V_1}\\right) \\); every joule of heat absorbed becomes work. Adiabatic (\\( Q=0 \\)): \\( \\Delta U=-W \\), so an expanding gas cools and a compressed gas heats up; the path obeys \\( PV^{\\gamma}=\\text{const} \\) and \\( TV^{\\gamma-1}=\\text{const} \\), and the work is \\( \\dfrac{nR(T_1-T_2)}{\\gamma-1} \\). Isochoric (constant \\( V \\)): \\( W=0 \\), so \\( Q=\\Delta U=nC_v\\Delta T \\). Isobaric (constant \\( P \\)): \\( W=P\\Delta V=nR\\Delta T \\) and \\( Q=nC_p\\Delta T \\). On a P-V diagram, the isothermal slope is \\( -\\dfrac{P}{V} \\) and the adiabatic slope is \\( -\\gamma\\dfrac{P}{V} \\); since \\( \\gamma>1 \\), the adiabatic curve is always steeper where they meet. As a result, from a common start an isothermal expansion does more work than an adiabatic one to the same final volume.",
+   "key_formulas": [
+    "Isothermal: \\( \\Delta U=0 \\), \\( Q=W=nRT\\ln\\!\\left(\\dfrac{V_2}{V_1}\\right) \\)",
+    "Adiabatic: \\( PV^{\\gamma}=\\text{const} \\), \\( TV^{\\gamma-1}=\\text{const} \\), \\( W=\\dfrac{nR(T_1-T_2)}{\\gamma-1} \\)",
+    "Isochoric: \\( W=0 \\), \\( Q=\\Delta U \\)",
+    "Isobaric: \\( W=nR\\Delta T \\), \\( Q=nC_p\\Delta T \\)",
+    "Slope ratio: adiabatic / isothermal \\( =\\gamma \\)"
+   ],
+   "worked_example": "A monoatomic gas at \\( 300 \\) K is compressed adiabatically to one-eighth of its volume. \\( T_2=300\\times8^{2/3}=1200 \\) K. Its pressure rises by \\( 8^{5/3}=32 \\), compared with only \\( 8 \\) for an isothermal compression.",
+   "common_mistakes": [
+    "Giving an isothermal process a nonzero \\( \\Delta U \\).",
+    "Saying temperature stays constant in an adiabatic process.",
+    "Assigning work to a constant-volume process.",
+    "Claiming the isothermal curve is steeper than the adiabatic.",
+    "Using \\( \\gamma-1 \\) in the pressure relation or \\( \\gamma \\) in the temperature relation."
+   ],
+   "question_count": 43
+  },
+  {
+   "name": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "summary": "A heat engine takes heat \\( Q_H \\) from a hot reservoir, does work \\( W \\), and rejects \\( Q_C \\) to a cold reservoir, returning to its initial state each cycle. Since \\( \\Delta U=0 \\) over a cycle, \\( W=Q_H-Q_C \\), and the efficiency is \\( \\eta=\\dfrac{W}{Q_H}=1-\\dfrac{Q_C}{Q_H} \\). A refrigerator runs the other way: work \\( W \\) pumps heat \\( Q_C \\) out of a cold space and releases \\( Q_H=Q_C+W \\) to the surroundings. Its coefficient of performance is \\( \\text{COP}=\\dfrac{Q_C}{W} \\), which can exceed 1. The second law sets the limits. Kelvin-Planck: no cyclic engine can convert all heat from a reservoir into work, so every engine needs a colder sink and \\( \\eta<1 \\). Clausius: no process can have as its only result the transfer of heat from a colder to a hotter body, so refrigerators need work. Neither law is about energy conservation; a device can obey the first law and still be impossible.",
+   "key_formulas": [
+    "\\( W=Q_H-Q_C \\)",
+    "\\( \\eta=\\dfrac{W}{Q_H}=1-\\dfrac{Q_C}{Q_H} \\)",
+    "\\( \\text{COP}=\\dfrac{Q_C}{W} \\)",
+    "Refrigerator: \\( Q_H=Q_C+W \\)"
+   ],
+   "worked_example": "An engine with \\( \\eta=30\\% \\) absorbs \\( 2000 \\) J per cycle. \\( W=0.3\\times2000=600 \\) J and the heat rejected is \\( 2000-600=1400 \\) J.",
+   "common_mistakes": [
+    "Dividing work by the rejected heat instead of the absorbed heat.",
+    "Thinking an engine converting all heat to work only breaks the first law; it breaks the second law.",
+    "Forgetting that a refrigerator releases more heat than it removes.",
+    "Claiming heat can never flow from cold to hot; it can, with work input."
+   ],
+   "question_count": 37
+  },
+  {
+   "name": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "summary": "A reversible process can be run backward so that both the system and its surroundings return exactly to their original states. It must be quasi-static (passing through equilibrium states) and free of dissipation. Friction, free expansion, mixing, and heat flow across a finite temperature difference make processes irreversible. The Carnot engine is the ideal reversible engine: isothermal expansion at \\( T_H \\), adiabatic expansion to \\( T_C \\), isothermal compression at \\( T_C \\), and adiabatic compression back to \\( T_H \\). For it, \\( \\dfrac{Q_C}{Q_H}=\\dfrac{T_C}{T_H} \\), so \\( \\eta=1-\\dfrac{T_C}{T_H} \\), with temperatures always in kelvin. Carnot's theorem says no engine between the same two reservoirs can beat this, and the efficiency does not depend on the working substance. Efficiency would reach \\( 100\\% \\) only if \\( T_C=0 \\) K, which is unattainable. Run backward, it is a Carnot refrigerator with \\( \\text{COP}=\\dfrac{T_C}{T_H-T_C} \\). Lowering the sink temperature raises efficiency more than raising the source by the same amount.",
+   "key_formulas": [
+    "\\( \\eta=1-\\dfrac{T_C}{T_H} \\) (kelvin only)",
+    "\\( \\dfrac{Q_C}{Q_H}=\\dfrac{T_C}{T_H} \\)",
+    "\\( \\text{COP}=\\dfrac{T_C}{T_H-T_C} \\)",
+    "Reversed engine: \\( \\text{COP}=\\dfrac{1-\\eta}{\\eta} \\)"
+   ],
+   "worked_example": "A Carnot engine works between \\( 273^\\circ \\)C and \\( 0^\\circ \\)C. In kelvin these are \\( 546 \\) K and \\( 273 \\) K, so \\( \\eta=1-\\dfrac{273}{546}=50\\% \\). Plugging in Celsius would wrongly give \\( 100\\% \\).",
+   "common_mistakes": [
+    "Substituting Celsius temperatures into the Carnot formula.",
+    "Inverting the ratio to \\( T_H/T_C \\).",
+    "Believing a clever real engine can exceed the Carnot efficiency.",
+    "Thinking Carnot efficiency depends on the working gas.",
+    "Treating free expansion as reversible or as doing work."
+   ],
+   "question_count": 37
+  }
+ ],
+ "questions": [
+  {
+   "id": "PHY11-CH11-L1-001",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "Body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with body C. What can be concluded about A and B?",
+   "options": [
+    "A and B are in thermal equilibrium with each other",
+    "A and B are in equilibrium only if they are made of the same material",
+    "A must be hotter than B",
+    "Nothing can be concluded unless A and B have equal masses"
+   ],
+   "correct_index": 0,
+   "explanation": "This is exactly the zeroth law of thermodynamics: two systems each in thermal equilibrium with a third are in thermal equilibrium with each other.<br><br>Equilibrium depends only on temperature, not on material or mass, so A and B are at the same temperature.",
+   "hint": "Think of C as a thermometer that reads the same value for both A and B.",
+   "distractor_logic": [
+    "Thermal equilibrium depends only on temperature, not on what the bodies are made of.",
+    "If both match C, they share the same temperature, so neither can be hotter.",
+    "Mass affects how much heat a body can store, not whether it is in equilibrium."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-002",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "The zeroth law of thermodynamics provides the basis for defining which physical quantity?",
+   "options": [
+    "Heat",
+    "Temperature",
+    "Internal energy",
+    "Pressure"
+   ],
+   "correct_index": 1,
+   "explanation": "The zeroth law says bodies in mutual thermal equilibrium share a common property.<br><br>That shared property is temperature, which is why thermometers work.",
+   "hint": "What is the same for all bodies that are in thermal equilibrium with one another?",
+   "distractor_logic": [
+    "Heat is energy in transit; it is not the property shared at equilibrium.",
+    "Two bodies in equilibrium can have very different internal energies (different sizes or materials).",
+    "Pressure equality defines mechanical, not thermal, equilibrium."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-003",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "For a fixed amount of an ideal gas, the internal energy depends on:",
+   "options": [
+    "Volume only",
+    "Pressure only",
+    "Temperature only",
+    "The path by which the gas reached its present state"
+   ],
+   "correct_index": 2,
+   "explanation": "In an ideal gas there are no intermolecular forces, so internal energy is purely the kinetic energy of the molecules.<br><br>That kinetic energy is fixed by temperature alone, e.g. \\( U=\\tfrac32nRT \\) for a monoatomic gas.",
+   "hint": "Ideal-gas molecules do not attract each other, so only their motion carries energy.",
+   "distractor_logic": [
+    "Changing volume at fixed temperature leaves an ideal gas's internal energy unchanged.",
+    "Pressure can change at fixed temperature (by changing volume) with no change in internal energy.",
+    "Internal energy is a state function; it never depends on the path taken."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-004",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "Which statement best describes heat in thermodynamics?",
+   "options": [
+    "The total energy stored inside a body",
+    "Another name for the temperature of a body",
+    "Energy transferred only by a moving piston",
+    "Energy transferred between a system and its surroundings because of a temperature difference"
+   ],
+   "correct_index": 3,
+   "explanation": "Heat is energy in transit, flowing only because of a temperature difference.<br><br>Once transferred it becomes part of the internal energy; a body does not contain heat.",
+   "hint": "Heat only exists while it is flowing.",
+   "distractor_logic": [
+    "Energy stored inside a body is internal energy, not heat.",
+    "Temperature measures hotness; heat is an energy transfer measured in joules.",
+    "Energy transferred by a moving piston is work, not heat."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-005",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "Which of the following is a state variable (depends only on the state of the system, not the path)?",
+   "options": [
+    "Internal energy",
+    "Heat absorbed by the system",
+    "Work done by the system",
+    "Both heat absorbed and work done"
+   ],
+   "correct_index": 0,
+   "explanation": "Internal energy has a definite value for each equilibrium state, so its change depends only on the initial and final states.<br><br>Heat and work depend on the path taken between those states.",
+   "hint": "Which quantity returns to its original value after any complete cycle?",
+   "distractor_logic": [
+    "Heat absorbed differs for different paths between the same two states.",
+    "Work is the area under the P-V curve, which changes with the path.",
+    "Both heat and work are path functions; only their difference is path independent."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-006",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "A gas expands at a constant pressure of \\( 2\\times10^{5} \\) Pa, and its volume increases by \\( 3\\times10^{-3} \\) m\\( ^3 \\). What is the work done by the gas?",
+   "options": [
+    "\\( -600 \\) J",
+    "\\( 600 \\) J",
+    "\\( 60 \\) J",
+    "\\( 6000 \\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "At constant pressure, \\( W=P\\Delta V \\).<br><br>\\( W=(2\\times10^{5})(3\\times10^{-3})=600 \\) J.<br><br>The gas expands, so the work done by the gas is positive.",
+   "hint": "Work done by a gas at constant pressure is pressure times change in volume.",
+   "distractor_logic": [
+    "Expansion means work done BY the gas is positive in the \\( \\Delta U=Q-W \\) convention.",
+    "Powers of ten mishandled: \\( 10^{5}\\times10^{-3}=10^{2} \\), not \\( 10^{1} \\).",
+    "Powers of ten mishandled: the product is \\( 6\\times10^{2} \\), not \\( 6\\times10^{3} \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-007",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "A gas is compressed by a piston. Using the convention \\( \\Delta U=Q-W \\), where \\( W \\) is work done by the gas, the value of \\( W \\) during this compression is:",
+   "options": [
+    "Positive, because work is being done on the gas",
+    "Zero, because the gas itself does nothing",
+    "Negative",
+    "Positive or negative depending on whether heat is absorbed"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( W \\) is work done BY the gas. In compression the volume decreases, so \\( W=\\int P\\,dV \\) is negative.<br><br>Work is done ON the gas, which is the same as saying the gas does negative work.",
+   "hint": "Look at the sign of the volume change.",
+   "distractor_logic": [
+    "This mixes in the work-done-on-the-gas convention, which is not used here.",
+    "The gas exerts a force on the moving piston, so it does (negative) work.",
+    "The sign of \\( W \\) depends only on the volume change, not on heat exchange."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-008",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 1,
+   "type": "regular",
+   "question": "Two bodies at different temperatures are placed in contact inside an insulated box. Heat flow between them stops when:",
+   "options": [
+    "Their internal energies become equal",
+    "Their heat contents become equal",
+    "Their specific heats become equal",
+    "Their temperatures become equal"
+   ],
+   "correct_index": 3,
+   "explanation": "Heat flows only because of a temperature difference.<br><br>When the temperatures are equal, thermal equilibrium is reached and the net heat flow stops, even if the internal energies are very different.",
+   "hint": "What drives heat flow in the first place?",
+   "distractor_logic": [
+    "A large cool body can have more internal energy than a small hot one; equality of energy is not required.",
+    "Bodies do not contain heat, so there is no heat content to equalise.",
+    "Specific heat is a material property and does not change to stop heat flow."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-009",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "The first law of thermodynamics, \\( \\Delta U=Q-W \\), is essentially a statement of:",
+   "options": [
+    "Conservation of energy",
+    "Conservation of mass",
+    "The direction in which heat flows naturally",
+    "The definition of temperature"
+   ],
+   "correct_index": 0,
+   "explanation": "Heat supplied to a system goes partly into raising its internal energy and partly into work done by it.<br><br>No energy is created or lost, so the first law is energy conservation applied to thermal systems.",
+   "hint": "Heat in = energy stored + energy given out as work.",
+   "distractor_logic": [
+    "Mass does not appear anywhere in \\( \\Delta U=Q-W \\).",
+    "The direction of natural heat flow is the subject of the second law.",
+    "Temperature is defined through the zeroth law."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-010",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "A gas absorbs \\( 500 \\) J of heat and does \\( 200 \\) J of work on its surroundings. What is the change in its internal energy?",
+   "options": [
+    "\\( 700 \\) J",
+    "\\( 300 \\) J",
+    "\\( -300 \\) J",
+    "\\( 200 \\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "Heat is absorbed, so \\( Q=+500 \\) J. Work is done by the gas, so \\( W=+200 \\) J.<br><br>\\( \\Delta U=Q-W=500-200=300 \\) J.",
+   "hint": "Work done by the gas carries energy out of it.",
+   "distractor_logic": [
+    "Adding \\( Q \\) and \\( W \\) uses the wrong convention for work done by the gas.",
+    "The signs of both \\( Q \\) and \\( W \\) were reversed.",
+    "This is just the work done, not the change in internal energy."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-011",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "For one mole of an ideal gas, Mayer's relation connects the molar heat capacities as:",
+   "options": [
+    "\\( C_v-C_p=R \\)",
+    "\\( C_p+C_v=R \\)",
+    "\\( C_p-C_v=R \\)",
+    "\\( \\dfrac{C_p}{C_v}=R \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "At constant pressure the gas must also do expansion work, so it needs more heat per kelvin.<br><br>For an ideal gas that extra amount per mole per kelvin is exactly \\( R \\): \\( C_p-C_v=R \\).",
+   "hint": "Which heat capacity is larger, and by how much?",
+   "distractor_logic": [
+    "This would make \\( C_v \\) larger than \\( C_p \\), which is impossible.",
+    "The sum of the heat capacities has no special value.",
+    "The ratio \\( C_p/C_v \\) is \\( \\gamma \\), which is dimensionless, not \\( R \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-012",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "What is the molar heat capacity at constant volume, \\( C_v \\), of a monoatomic ideal gas?",
+   "options": [
+    "\\( \\tfrac52R \\)",
+    "\\( \\tfrac72R \\)",
+    "\\( R \\)",
+    "\\( \\tfrac32R \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "A monoatomic gas has only 3 translational degrees of freedom, so \\( U=\\tfrac32nRT \\).<br><br>Hence \\( C_v=\\tfrac32R \\) (and \\( C_p=\\tfrac52R \\)).",
+   "hint": "Count the degrees of freedom of a single atom.",
+   "distractor_logic": [
+    "This is \\( C_p \\) of a monoatomic gas, or \\( C_v \\) of a diatomic gas.",
+    "This is \\( C_p \\) of a diatomic gas.",
+    "This is the difference \\( C_p-C_v \\), not \\( C_v \\) itself."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-013",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "For a diatomic ideal gas, the ratio \\( \\gamma=C_p/C_v \\) is:",
+   "options": [
+    "\\( \\tfrac75 \\)",
+    "\\( \\tfrac53 \\)",
+    "\\( \\tfrac57 \\)",
+    "\\( \\tfrac43 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "For a diatomic gas \\( C_v=\\tfrac52R \\) and \\( C_p=\\tfrac72R \\).<br><br>\\( \\gamma=\\dfrac{7/2}{5/2}=\\tfrac75 \\).",
+   "hint": "Use \\( C_v=\\tfrac52R \\) for a diatomic gas.",
+   "distractor_logic": [
+    "This is \\( \\gamma \\) for a monoatomic gas.",
+    "This inverts the ratio; \\( \\gamma \\) is always greater than 1.",
+    "This value does not match the standard diatomic heat capacities."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-014",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "Why is \\( C_p \\) always greater than \\( C_v \\) for an ideal gas?",
+   "options": [
+    "At constant volume, the gas does extra work against the walls",
+    "At constant pressure, part of the heat supplied is used for expansion work",
+    "Molecules move faster at constant pressure for the same temperature",
+    "Pressure resists heating, so less heat is needed at constant pressure"
+   ],
+   "correct_index": 1,
+   "explanation": "At constant volume, all heat goes into internal energy.<br><br>At constant pressure the gas expands as it warms, so extra heat is needed to supply the work \\( P\\Delta V \\). Hence \\( C_p>C_v \\).",
+   "hint": "Where does the extra heat go when the piston is free to move?",
+   "distractor_logic": [
+    "At constant volume there is no volume change, so no work is done.",
+    "Molecular speed depends only on temperature, not on how the heating happened.",
+    "This reverses the facts; more heat, not less, is needed at constant pressure."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-015",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "A gas releases \\( 100 \\) J of heat while \\( 40 \\) J of work is done on it by the surroundings. What is the change in its internal energy?",
+   "options": [
+    "\\( 60 \\) J",
+    "\\( -140 \\) J",
+    "\\( -60 \\) J",
+    "\\( 140 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "Heat released: \\( Q=-100 \\) J. Work done on the gas means work done by the gas is \\( W=-40 \\) J.<br><br>\\( \\Delta U=Q-W=-100-(-40)=-60 \\) J.",
+   "hint": "Write both \\( Q \\) and \\( W \\) with signs before substituting.",
+   "distractor_logic": [
+    "Released heat was treated as positive.",
+    "Work done on the gas was taken as \\( W=+40 \\) J, flipping only one sign.",
+    "Both signs were flipped and then added."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-016",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 1,
+   "type": "regular",
+   "question": "How much heat is needed to raise the temperature of \\( 2 \\) mol of a monoatomic ideal gas by \\( 10 \\) K at constant volume?",
+   "options": [
+    "\\( 50R \\)",
+    "\\( 20R \\)",
+    "\\( 15R \\)",
+    "\\( 30R \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "At constant volume, \\( Q=nC_v\\Delta T \\) with \\( C_v=\\tfrac32R \\).<br><br>\\( Q=2\\times\\tfrac32R\\times10=30R \\).",
+   "hint": "Constant volume means use \\( C_v \\).",
+   "distractor_logic": [
+    "This uses \\( C_p=\\tfrac52R \\), which applies at constant pressure.",
+    "This uses \\( nR\\Delta T \\), which is the extra work term at constant pressure.",
+    "The number of moles was left out."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-017",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "For an ideal gas undergoing an isothermal process, which relation is correct?",
+   "options": [
+    "\\( Q=W \\)",
+    "\\( Q=0 \\)",
+    "\\( W=0 \\)",
+    "\\( \\Delta U=Q \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Temperature is constant, so \\( \\Delta U=0 \\) for an ideal gas.<br><br>From \\( \\Delta U=Q-W \\), \\( Q=W \\): all heat absorbed is converted to work.",
+   "hint": "What happens to internal energy when temperature is fixed?",
+   "distractor_logic": [
+    "\\( Q=0 \\) defines an adiabatic process, not an isothermal one.",
+    "\\( W=0 \\) defines an isochoric process.",
+    "\\( \\Delta U=Q \\) holds for an isochoric process; here \\( \\Delta U=0 \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-018",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "A process in which no heat is exchanged between the system and its surroundings is called:",
+   "options": [
+    "Isothermal",
+    "Adiabatic",
+    "Isochoric",
+    "Isobaric"
+   ],
+   "correct_index": 1,
+   "explanation": "An adiabatic process has \\( Q=0 \\), usually because the system is insulated or the change is very fast.",
+   "hint": "Which process name refers to heat, not to \\( P \\), \\( V \\), or \\( T \\)?",
+   "distractor_logic": [
+    "Isothermal means constant temperature; heat is usually exchanged.",
+    "Isochoric means constant volume.",
+    "Isobaric means constant pressure."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-019",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "In an isochoric (constant-volume) process, the work done by the gas is:",
+   "options": [
+    "\\( nR\\Delta T \\)",
+    "Equal to the heat absorbed",
+    "Zero",
+    "Equal to the change in internal energy"
+   ],
+   "correct_index": 2,
+   "explanation": "Work done by a gas is \\( P\\Delta V \\) summed over the process. With \\( \\Delta V=0 \\), \\( W=0 \\).<br><br>So \\( Q=\\Delta U \\): all heat goes into internal energy.",
+   "hint": "Work needs a change in volume.",
+   "distractor_logic": [
+    "\\( nR\\Delta T \\) is the work at constant pressure.",
+    "Heat equals \\( \\Delta U \\) here, not work.",
+    "\\( \\Delta U \\) is generally nonzero; work is zero."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-020",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "When an ideal gas expands adiabatically, its temperature:",
+   "options": [
+    "Increases",
+    "Stays constant",
+    "Drops to absolute zero",
+    "Decreases"
+   ],
+   "correct_index": 3,
+   "explanation": "Adiabatic means \\( Q=0 \\), so \\( \\Delta U=-W \\).<br><br>During expansion \\( W>0 \\), so \\( \\Delta U<0 \\) and the temperature falls.",
+   "hint": "The gas does work but gets no heat. Where does the energy come from?",
+   "distractor_logic": [
+    "Temperature rises in adiabatic compression, not expansion.",
+    "Constant temperature describes an isothermal process.",
+    "The temperature falls by a finite amount, not all the way to 0 K."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-021",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "Which equation describes a reversible adiabatic process of an ideal gas?",
+   "options": [
+    "\\( PV^{\\gamma}=\\text{constant} \\)",
+    "\\( PV=\\text{constant} \\)",
+    "\\( PV^{\\gamma-1}=\\text{constant} \\)",
+    "\\( P^{\\gamma}V=\\text{constant} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "For a quasi-static adiabatic process, \\( PV^{\\gamma}=\\text{constant} \\).<br><br>Equivalent forms are \\( TV^{\\gamma-1}=\\text{constant} \\) and \\( P^{1-\\gamma}T^{\\gamma}=\\text{constant} \\).",
+   "hint": "The exponent is the ratio of heat capacities.",
+   "distractor_logic": [
+    "\\( PV=\\text{constant} \\) is the isothermal (Boyle's law) relation.",
+    "The exponent \\( \\gamma-1 \\) belongs with \\( T \\), not \\( P \\).",
+    "The exponent is on \\( V \\), not on \\( P \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-022",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "On a P-V diagram, an isothermal curve and an adiabatic curve pass through the same point. Which one is steeper there?",
+   "options": [
+    "The isothermal curve",
+    "The adiabatic curve",
+    "Both have the same slope",
+    "It depends on whether the gas is expanding or compressing"
+   ],
+   "correct_index": 1,
+   "explanation": "Isothermal slope: \\( -\\dfrac{P}{V} \\). Adiabatic slope: \\( -\\gamma\\dfrac{P}{V} \\).<br><br>Since \\( \\gamma>1 \\), the adiabatic curve is steeper.",
+   "hint": "Compare the slopes from \\( PV=\\text{const} \\) and \\( PV^{\\gamma}=\\text{const} \\).",
+   "distractor_logic": [
+    "This swaps the curves; the extra factor \\( \\gamma>1 \\) belongs to the adiabatic.",
+    "The slopes differ by the factor \\( \\gamma \\), which is never 1 for a real gas.",
+    "Slope at a point is a property of the curve, not of the direction of travel."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-023",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "A gas in a cylinder fitted with a freely moving, frictionless piston open to the atmosphere is slowly heated. The process is best described as:",
+   "options": [
+    "Isochoric heating",
+    "Isothermal expansion",
+    "Isobaric expansion",
+    "Adiabatic expansion"
+   ],
+   "correct_index": 2,
+   "explanation": "The free piston always balances atmospheric pressure, so the gas pressure stays constant while its volume increases.<br><br>Constant pressure means isobaric.",
+   "hint": "What keeps the same value because of the free piston?",
+   "distractor_logic": [
+    "The volume changes because the piston moves.",
+    "The gas is being heated, so its temperature rises.",
+    "Heat is being supplied, so \\( Q\\neq0 \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-024",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 1,
+   "type": "regular",
+   "question": "The work done by \\( n \\) moles of an ideal gas during an isothermal expansion at temperature \\( T \\) from volume \\( V_1 \\) to \\( V_2 \\) is:",
+   "options": [
+    "\\( nRT\\ln\\!\\left(\\dfrac{V_1}{V_2}\\right) \\)",
+    "\\( nRT\\,(V_2-V_1) \\)",
+    "\\( \\dfrac{nR(T_1-T_2)}{\\gamma-1} \\)",
+    "\\( nRT\\ln\\!\\left(\\dfrac{V_2}{V_1}\\right) \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Integrate \\( W=\\int P\\,dV \\) with \\( P=\\dfrac{nRT}{V} \\).<br><br>\\( W=nRT\\ln\\!\\left(\\dfrac{V_2}{V_1}\\right) \\), positive for expansion since \\( V_2>V_1 \\).",
+   "hint": "Substitute \\( P=nRT/V \\) and integrate.",
+   "distractor_logic": [
+    "The ratio is inverted, which gives a negative value for an expansion.",
+    "Pressure is not constant, and \\( nRT \\) times volume does not even have units of energy.",
+    "This is the work in an adiabatic process."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-025",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "The efficiency of a heat engine that absorbs heat \\( Q_H \\) from the hot reservoir, rejects \\( Q_C \\) to the cold reservoir, and does work \\( W \\) per cycle is:",
+   "options": [
+    "\\( \\eta=\\dfrac{W}{Q_H} \\)",
+    "\\( \\eta=\\dfrac{Q_C}{Q_H} \\)",
+    "\\( \\eta=\\dfrac{W}{Q_C} \\)",
+    "\\( \\eta=\\dfrac{Q_H}{W} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Efficiency is useful output divided by energy input: \\( \\eta=\\dfrac{W}{Q_H}=1-\\dfrac{Q_C}{Q_H} \\).",
+   "hint": "Output divided by input.",
+   "distractor_logic": [
+    "This is the fraction wasted, \\( 1-\\eta \\).",
+    "The input is \\( Q_H \\), not the rejected heat.",
+    "This is inverted and would always exceed 1."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-026",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "A heat engine absorbs \\( 1000 \\) J from the hot reservoir and rejects \\( 600 \\) J to the cold reservoir in each cycle. Its efficiency is:",
+   "options": [
+    "\\( 60\\% \\)",
+    "\\( 40\\% \\)",
+    "\\( 100\\% \\)",
+    "\\( 160\\% \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Work per cycle: \\( W=Q_H-Q_C=1000-600=400 \\) J.<br><br>\\( \\eta=\\dfrac{400}{1000}=40\\% \\).",
+   "hint": "Find the work first.",
+   "distractor_logic": [
+    "This is \\( Q_C/Q_H \\), the fraction rejected.",
+    "No engine can convert all the absorbed heat into work.",
+    "This adds the two heats instead of subtracting."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-027",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "A refrigerator works by:",
+   "options": [
+    "Transferring heat from a cold region to a hot region with no work needed",
+    "Transferring heat from a hot region to a cold region",
+    "Transferring heat from a cold region to a hot region using external work",
+    "Creating cold by destroying heat energy"
+   ],
+   "correct_index": 2,
+   "explanation": "Heat does not flow spontaneously from cold to hot.<br><br>A refrigerator uses work \\( W \\) to pump heat \\( Q_C \\) out of the cold interior and delivers \\( Q_H=Q_C+W \\) to the warmer room.",
+   "hint": "Why does a refrigerator need to be plugged in?",
+   "distractor_logic": [
+    "Moving heat from cold to hot with no work would violate the second law.",
+    "Hot-to-cold flow happens by itself; no refrigerator is needed for that.",
+    "Energy cannot be destroyed; heat is moved, not eliminated."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-028",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "Which statement is the Kelvin-Planck form of the second law of thermodynamics?",
+   "options": [
+    "Energy can be neither created nor destroyed",
+    "Heat can never flow from a colder body to a hotter body under any circumstances",
+    "Two systems in equilibrium with a third are in equilibrium with each other",
+    "No cyclic engine can convert all the heat absorbed from a reservoir completely into work"
+   ],
+   "correct_index": 3,
+   "explanation": "Kelvin-Planck: no process is possible whose sole result is absorption of heat from a reservoir and its complete conversion into work.<br><br>Every engine must reject some heat to a colder body.",
+   "hint": "It is about engines and the impossibility of \\( 100\\% \\) efficiency.",
+   "distractor_logic": [
+    "This is the first law (energy conservation).",
+    "Refrigerators do move heat from cold to hot, using work; this overstates the second law.",
+    "This is the zeroth law."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-029",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "The coefficient of performance of a refrigerator that removes heat \\( Q_C \\) from the cold space using work \\( W \\) is:",
+   "options": [
+    "\\( \\dfrac{Q_C}{W} \\)",
+    "\\( \\dfrac{W}{Q_C} \\)",
+    "\\( \\dfrac{Q_H}{W} \\)",
+    "\\( \\dfrac{Q_C}{Q_H} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "For a refrigerator the useful effect is heat removed from the cold space, and the cost is the work input.<br><br>\\( \\text{COP}=\\dfrac{Q_C}{W} \\).",
+   "hint": "Useful effect divided by what you pay for.",
+   "distractor_logic": [
+    "This is inverted.",
+    "\\( Q_H/W \\) is the performance of a heat pump used for heating.",
+    "This compares the two heats and ignores the work input."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-030",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "A refrigerator removes \\( 300 \\) J of heat from its interior using \\( 100 \\) J of electrical work. How much heat is released into the room?",
+   "options": [
+    "\\( 200 \\) J",
+    "\\( 400 \\) J",
+    "\\( 300 \\) J",
+    "\\( 100 \\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "Over a cycle the working substance has \\( \\Delta U=0 \\), so energy in equals energy out.<br><br>\\( Q_H=Q_C+W=300+100=400 \\) J.",
+   "hint": "The room gets both the extracted heat and the work.",
+   "distractor_logic": [
+    "The work was subtracted instead of added.",
+    "This ignores the work input, which also ends up as heat in the room.",
+    "This is only the work input."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-031",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "An inventor claims to have built a cyclic engine that converts all the heat it absorbs into work. This claim violates:",
+   "options": [
+    "The first law of thermodynamics",
+    "The zeroth law of thermodynamics",
+    "The second law of thermodynamics",
+    "Both the first and zeroth laws"
+   ],
+   "correct_index": 2,
+   "explanation": "Converting all absorbed heat into work conserves energy, so the first law is not broken.<br><br>It is forbidden by the Kelvin-Planck statement of the second law.",
+   "hint": "Is any energy being created or lost in the claim?",
+   "distractor_logic": [
+    "Energy is conserved in the claim (\\( W=Q_H \\)).",
+    "The zeroth law concerns thermal equilibrium, not engines.",
+    "Neither of these laws is broken; the second law is."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-032",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 1,
+   "type": "regular",
+   "question": "Every heat engine operating in a cycle must reject some heat to:",
+   "options": [
+    "The hot reservoir it draws heat from",
+    "Its own working substance, which stores it permanently",
+    "Nowhere; it can turn all heat into work",
+    "A cold reservoir (sink)"
+   ],
+   "correct_index": 3,
+   "explanation": "By the second law, an engine must reject part of the absorbed heat to a lower-temperature reservoir.<br><br>The working substance returns to its initial state each cycle, so it cannot store energy permanently.",
+   "hint": "An engine needs two temperatures to work.",
+   "distractor_logic": [
+    "Heat would not flow from the engine back into the hotter source.",
+    "Over a cycle \\( \\Delta U=0 \\), so the working substance stores nothing.",
+    "This is exactly what the second law forbids."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-033",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "The efficiency of a Carnot engine working between absolute temperatures \\( T_H \\) and \\( T_C \\) is:",
+   "options": [
+    "\\( \\eta=1-\\dfrac{T_C}{T_H} \\)",
+    "\\( \\eta=1-\\dfrac{T_H}{T_C} \\)",
+    "\\( \\eta=\\dfrac{T_C}{T_H} \\)",
+    "\\( \\eta=\\dfrac{T_H-T_C}{T_C} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "For a Carnot engine \\( \\dfrac{Q_C}{Q_H}=\\dfrac{T_C}{T_H} \\).<br><br>So \\( \\eta=1-\\dfrac{Q_C}{Q_H}=1-\\dfrac{T_C}{T_H} \\), with temperatures in kelvin.",
+   "hint": "The ratio of temperatures equals the ratio of rejected to absorbed heat.",
+   "distractor_logic": [
+    "The ratio is inverted; this gives a negative efficiency.",
+    "This is the fraction of heat rejected.",
+    "The denominator must be \\( T_H \\), not \\( T_C \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-034",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "A Carnot engine operates between reservoirs at \\( 500 \\) K and \\( 400 \\) K. Its efficiency is:",
+   "options": [
+    "\\( 80\\% \\)",
+    "\\( 20\\% \\)",
+    "\\( 25\\% \\)",
+    "\\( 100\\% \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\eta=1-\\dfrac{T_C}{T_H}=1-\\dfrac{400}{500}=0.2 \\).<br><br>So \\( \\eta=20\\% \\).",
+   "hint": "Use \\( 1-\\dfrac{T_C}{T_H} \\).",
+   "distractor_logic": [
+    "This is \\( T_C/T_H \\), the fraction rejected.",
+    "This divides the temperature difference by \\( T_C \\) instead of \\( T_H \\).",
+    "Even an ideal Carnot engine is limited below \\( 100\\% \\) unless \\( T_C=0 \\) K."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-035",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "A reversible process is one that:",
+   "options": [
+    "Happens quickly, with friction present",
+    "Is any cyclic process",
+    "Can be retraced so that both the system and the surroundings return exactly to their original states",
+    "Returns only the system, but not the surroundings, to its original state"
+   ],
+   "correct_index": 2,
+   "explanation": "A reversible process is quasi-static and free of dissipative effects like friction.<br><br>Reversing it restores both the system and its surroundings with no net change anywhere.",
+   "hint": "Reversible means no trace is left anywhere, not just in the system.",
+   "distractor_logic": [
+    "Speed and friction are exactly what make a process irreversible.",
+    "A cycle returns the system to its start, but it may still leave changes in the surroundings.",
+    "Restoring only the system is possible for any process; true reversibility needs the surroundings restored too."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-036",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "Which of these makes a process irreversible?",
+   "options": [
+    "A very slow, frictionless compression",
+    "A quasi-static isothermal expansion",
+    "A quasi-static adiabatic expansion",
+    "Friction between the piston and the cylinder"
+   ],
+   "correct_index": 3,
+   "explanation": "Friction dissipates work into heat, which cannot be fully recovered by reversing the process.<br><br>Slow, frictionless (quasi-static) processes are the idealised reversible ones.",
+   "hint": "Look for a dissipative effect.",
+   "distractor_logic": [
+    "Slow and frictionless is the recipe for a reversible process.",
+    "Quasi-static isothermal expansion is reversible (used in the Carnot cycle).",
+    "Quasi-static adiabatic expansion is reversible (used in the Carnot cycle)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-037",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "A Carnot cycle consists of:",
+   "options": [
+    "Two isothermal and two adiabatic processes",
+    "Two isochoric and two isobaric processes",
+    "Two isothermal and two isochoric processes",
+    "Two adiabatic and two isobaric processes"
+   ],
+   "correct_index": 0,
+   "explanation": "Carnot cycle: isothermal expansion at \\( T_H \\), adiabatic expansion to \\( T_C \\), isothermal compression at \\( T_C \\), adiabatic compression back to \\( T_H \\).",
+   "hint": "Heat is exchanged only at the two reservoir temperatures.",
+   "distractor_logic": [
+    "This rectangular cycle is not the Carnot cycle.",
+    "Isochoric steps would need heat exchange at many temperatures.",
+    "Isobaric steps would need heat exchange at many temperatures."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-038",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "According to Carnot's theorem, for two given reservoir temperatures:",
+   "options": [
+    "A well-designed real engine can exceed the Carnot efficiency",
+    "No engine can be more efficient than a Carnot engine",
+    "The Carnot engine reaches \\( 100\\% \\) efficiency",
+    "The engine with the best working gas is always most efficient"
+   ],
+   "correct_index": 1,
+   "explanation": "A reversible Carnot engine has the maximum possible efficiency \\( 1-\\dfrac{T_C}{T_H} \\) between two reservoirs.<br><br>All real engines have lower efficiency because of irreversibilities.",
+   "hint": "The Carnot engine sets the upper limit.",
+   "distractor_logic": [
+    "Exceeding the Carnot limit would violate the second law.",
+    "\\( 100\\% \\) would need \\( T_C=0 \\) K, which is unattainable.",
+    "Carnot efficiency does not depend on the working substance."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-039",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "The efficiency of a Carnot engine depends on:",
+   "options": [
+    "The nature of the working substance",
+    "The size of the engine",
+    "Only the temperatures of the hot and cold reservoirs",
+    "The amount of gas used"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\eta=1-\\dfrac{T_C}{T_H} \\) contains only the two reservoir temperatures.<br><br>Working substance, size, and amount of gas do not appear.",
+   "hint": "Look at which symbols appear in the Carnot formula.",
+   "distractor_logic": [
+    "Carnot's theorem says all reversible engines between the same reservoirs have equal efficiency.",
+    "A larger engine does more work per cycle but at the same efficiency.",
+    "More gas scales both \\( W \\) and \\( Q_H \\), leaving their ratio unchanged."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L1-040",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 1,
+   "type": "regular",
+   "question": "For a Carnot engine to have \\( 100\\% \\) efficiency, the cold reservoir would have to be at:",
+   "options": [
+    "\\( 0^\\circ \\)C",
+    "The same temperature as the hot reservoir",
+    "Any temperature, if the engine is reversible",
+    "\\( 0 \\) K"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\eta=1-\\dfrac{T_C}{T_H}=1 \\) only if \\( T_C=0 \\) K.<br><br>Absolute zero cannot be reached, so \\( 100\\% \\) efficiency is impossible.",
+   "hint": "Set \\( \\eta=1 \\) in the Carnot formula.",
+   "distractor_logic": [
+    "\\( 0^\\circ \\)C is \\( 273 \\) K; Celsius values cannot be used in the formula.",
+    "Equal temperatures give zero efficiency, not \\( 100\\% \\).",
+    "Even a reversible engine is limited to \\( 1-\\dfrac{T_C}{T_H} \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-001",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A gas expands at a constant pressure of \\( 1.0\\times10^{5} \\) Pa from \\( 2 \\) L to \\( 5 \\) L. What is the work done by the gas? (\\( 1 \\) L \\( =10^{-3} \\) m\\( ^3 \\))",
+   "options": [
+    "\\( 300 \\) J",
+    "\\( -300 \\) J",
+    "\\( 3\\times10^{5} \\) J",
+    "\\( 500 \\) J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\Delta V=5-2=3 \\) L \\( =3\\times10^{-3} \\) m\\( ^3 \\).<br><br>\\( W=P\\Delta V=(1.0\\times10^{5})(3\\times10^{-3})=300 \\) J, positive because the gas expands.",
+   "hint": "Convert litres to cubic metres first.",
+   "distractor_logic": [
+    "Expansion gives positive work done by the gas.",
+    "Litres were not converted to cubic metres.",
+    "The final volume was used instead of the change in volume."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-002",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "An ideal gas is taken through a complete cycle and returns to its initial state. The change in its internal energy over the cycle is:",
+   "options": [
+    "Equal to the net heat absorbed",
+    "Zero",
+    "Equal to the net work done by the gas",
+    "Impossible to find without knowing the path"
+   ],
+   "correct_index": 1,
+   "explanation": "Internal energy is a state function. Returning to the same state means returning to the same \\( U \\).<br><br>So \\( \\Delta U=0 \\), and therefore net \\( Q \\) equals net \\( W \\) over the cycle.",
+   "hint": "What kind of quantity is internal energy?",
+   "distractor_logic": [
+    "Net heat equals net work over a cycle, but that is because \\( \\Delta U=0 \\).",
+    "Net work is generally nonzero (the enclosed area); \\( \\Delta U \\) is still zero.",
+    "A state function's change depends only on end states, which are identical here."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-003",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "A gas is taken from state A to state B along two different paths. Which statement is correct?",
+   "options": [
+    "\\( Q \\), \\( W \\), and \\( \\Delta U \\) are all the same for both paths",
+    "\\( Q \\) is the same for both paths, but \\( W \\) differs",
+    "\\( \\Delta U \\) is the same for both paths, but \\( Q \\) and \\( W \\) may differ",
+    "\\( \\Delta U \\) differs between the paths, but \\( Q \\) and \\( W \\) are the same"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\Delta U \\) depends only on the initial and final states.<br><br>\\( Q \\) and \\( W \\) are path functions, but their difference \\( Q-W=\\Delta U \\) is the same for both paths.",
+   "hint": "Separate state functions from path functions.",
+   "distractor_logic": [
+    "Work (area under the P-V curve) generally changes with the path.",
+    "If \\( W \\) changes while \\( \\Delta U \\) is fixed, \\( Q \\) must change too.",
+    "This reverses which quantity is path independent."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-004",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "On a P-V diagram, the work done by a gas as it goes from state A to state B is represented by:",
+   "options": [
+    "The slope of the curve at state B",
+    "The area under the curve on a P-T diagram",
+    "The difference \\( P_BV_B-P_AV_A \\)",
+    "The area under the curve between \\( V_A \\) and \\( V_B \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Work done by a gas is \\( W=\\int P\\,dV \\), which is the area under the P-V curve.<br><br>It is positive if the volume increases and negative if it decreases.",
+   "hint": "Think of \\( W=\\int P\\,dV \\) geometrically.",
+   "distractor_logic": [
+    "The slope is \\( dP/dV \\), which is not work.",
+    "Work involves volume change, so a P-T diagram does not show it as an area.",
+    "\\( \\Delta(PV) \\) equals \\( nR\\Delta T \\), not the work done."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-005",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "Why must a thermometer be left in contact with a patient for some time before it is read?",
+   "options": [
+    "It must reach thermal equilibrium with the body, so both share the same temperature",
+    "The mercury must gain internal energy equal to that of the body",
+    "The thermometer must absorb all the heat contained in the body",
+    "Work must be done on the mercury to make it expand"
+   ],
+   "correct_index": 0,
+   "explanation": "By the zeroth law, the thermometer reading equals the body's temperature only when the two are in thermal equilibrium.<br><br>Reaching equilibrium takes time because heat must flow until the temperatures match.",
+   "hint": "When does the thermometer's own temperature equal the body's?",
+   "distractor_logic": [
+    "Equal temperatures, not equal internal energies, define equilibrium.",
+    "Bodies do not contain heat, and the body is not emptied of energy.",
+    "The mercury expands because it is heated, not because work is done on it."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-006",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "Which statement is correct?",
+   "options": [
+    "A hot body contains more heat than a cold body",
+    "A body possesses internal energy; heat is energy in transit due to a temperature difference",
+    "Heat is a state function like internal energy",
+    "The temperature of a body equals its total internal energy"
+   ],
+   "correct_index": 1,
+   "explanation": "A body has internal energy (a state property). Heat describes energy crossing a boundary because of a temperature difference.<br><br>So it is incorrect to say a body contains heat.",
+   "hint": "Is heat something stored or something transferred?",
+   "distractor_logic": [
+    "Bodies do not contain heat; they contain internal energy.",
+    "Heat depends on the path, so it is not a state function.",
+    "Temperature and internal energy have different units and meanings."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-007",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "What is the internal energy of \\( 2 \\) mol of a monoatomic ideal gas at \\( 300 \\) K? (Answer in terms of \\( R \\))",
+   "options": [
+    "\\( 1500R \\)",
+    "\\( 450R \\)",
+    "\\( 900R \\)",
+    "\\( 600R \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "For a monoatomic ideal gas, \\( U=\\tfrac32nRT \\).<br><br>\\( U=\\tfrac32\\times2\\times R\\times300=900R \\).",
+   "hint": "Only translational kinetic energy counts for a monoatomic gas.",
+   "distractor_logic": [
+    "This uses \\( \\tfrac52 \\), the diatomic factor.",
+    "The number of moles was left out.",
+    "This is \\( nRT \\), which equals \\( PV \\), not \\( U \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-008",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 2,
+   "type": "regular",
+   "question": "One mole of an ideal gas at \\( 300 \\) K is held in a \\( 1 \\) L container, and another mole of the same gas at \\( 300 \\) K is in a \\( 10 \\) L container. How do their internal energies compare?",
+   "options": [
+    "The gas in \\( 1 \\) L has more internal energy",
+    "The gas in \\( 10 \\) L has more internal energy",
+    "The gas in \\( 10 \\) L has ten times the internal energy",
+    "They are equal"
+   ],
+   "correct_index": 3,
+   "explanation": "For an ideal gas, internal energy depends only on the amount of gas and its temperature.<br><br>Same gas, same moles, same temperature means equal internal energy, whatever the volume.",
+   "hint": "Does volume appear in \\( U \\) for an ideal gas?",
+   "distractor_logic": [
+    "Higher pressure in the smaller container does not change ideal-gas internal energy.",
+    "A larger volume does not add energy at fixed temperature.",
+    "Internal energy is not proportional to volume."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-009",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "How much heat is required to raise the temperature of \\( 2 \\) mol of a diatomic ideal gas by \\( 20 \\) K at constant pressure?",
+   "options": [
+    "\\( 140R \\)",
+    "\\( 100R \\)",
+    "\\( 40R \\)",
+    "\\( 70R \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "At constant pressure, \\( Q=nC_p\\Delta T \\) with \\( C_p=\\tfrac72R \\) for a diatomic gas.<br><br>\\( Q=2\\times\\tfrac72R\\times20=140R \\).",
+   "hint": "Constant pressure means use \\( C_p \\).",
+   "distractor_logic": [
+    "This uses \\( C_v=\\tfrac52R \\), which misses the expansion work.",
+    "This is only the work \\( nR\\Delta T \\).",
+    "The number of moles was left out."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-010",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "A monoatomic ideal gas is heated at constant pressure. What fraction of the heat supplied goes into increasing its internal energy?",
+   "options": [
+    "\\( \\tfrac25 \\)",
+    "\\( \\tfrac35 \\)",
+    "\\( \\tfrac53 \\)",
+    "\\( 1 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\dfrac{\\Delta U}{Q}=\\dfrac{nC_v\\Delta T}{nC_p\\Delta T}=\\dfrac{C_v}{C_p}=\\dfrac{1}{\\gamma} \\).<br><br>For a monoatomic gas this is \\( \\dfrac{3/2}{5/2}=\\tfrac35 \\).",
+   "hint": "Compare \\( C_v \\) with \\( C_p \\).",
+   "distractor_logic": [
+    "This is the fraction that goes into work.",
+    "This is \\( \\gamma \\); a fraction of the heat cannot exceed 1.",
+    "All heat goes into \\( \\Delta U \\) only at constant volume."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-011",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "A gas is compressed by a piston that does \\( 300 \\) J of work on it, while the gas releases \\( 200 \\) J of heat. What is the change in internal energy of the gas?",
+   "options": [
+    "\\( -500 \\) J",
+    "\\( -100 \\) J",
+    "\\( +100 \\) J",
+    "\\( +500 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "Heat released: \\( Q=-200 \\) J. Work done on the gas: \\( W=-300 \\) J (work done by the gas).<br><br>\\( \\Delta U=Q-W=-200-(-300)=+100 \\) J. The internal energy increases even though heat was lost.",
+   "hint": "Write the sign of each quantity before substituting.",
+   "distractor_logic": [
+    "Work on the gas was treated as \\( W=+300 \\) J, flipping only one sign.",
+    "This assumes the gas must lose energy, ignoring that work in exceeds heat out.",
+    "Released heat was treated as positive."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-012",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "For a certain ideal gas, \\( C_p=29.1 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\). Taking \\( R=8.3 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\), what is \\( C_v \\)?",
+   "options": [
+    "\\( 37.4 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\)",
+    "\\( 29.1 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\)",
+    "\\( 8.3 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\)",
+    "\\( 20.8 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Mayer's relation: \\( C_v=C_p-R \\).<br><br>\\( C_v=29.1-8.3=20.8 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\).",
+   "hint": "\\( C_v \\) is smaller than \\( C_p \\) by \\( R \\).",
+   "distractor_logic": [
+    "\\( R \\) was added, which would make \\( C_v \\) larger than \\( C_p \\).",
+    "\\( C_p \\) and \\( C_v \\) are never equal for an ideal gas.",
+    "This is \\( R \\) itself, not \\( C_v \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-013",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "Using \\( C_p-C_v=R \\) and \\( \\gamma=\\dfrac{C_p}{C_v} \\), the molar heat capacity \\( C_v \\) of an ideal gas can be written as:",
+   "options": [
+    "\\( \\dfrac{R}{\\gamma-1} \\)",
+    "\\( \\dfrac{\\gamma R}{\\gamma-1} \\)",
+    "\\( R(\\gamma-1) \\)",
+    "\\( \\dfrac{\\gamma-1}{R} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Substitute \\( C_p=\\gamma C_v \\) into \\( C_p-C_v=R \\): \\( C_v(\\gamma-1)=R \\).<br><br>So \\( C_v=\\dfrac{R}{\\gamma-1} \\).",
+   "hint": "Replace \\( C_p \\) by \\( \\gamma C_v \\).",
+   "distractor_logic": [
+    "This is \\( C_p \\), not \\( C_v \\).",
+    "This multiplies instead of dividing by \\( \\gamma-1 \\).",
+    "This is the reciprocal of the correct expression."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-014",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "A gas absorbs \\( 400 \\) J of heat and its internal energy increases by \\( 150 \\) J. How much work does the gas do?",
+   "options": [
+    "\\( 550 \\) J",
+    "\\( 250 \\) J",
+    "\\( -250 \\) J",
+    "\\( 150 \\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\Delta U=Q-W \\) gives \\( W=Q-\\Delta U \\).<br><br>\\( W=400-150=250 \\) J, positive, so the gas does work on the surroundings.",
+   "hint": "Rearrange \\( \\Delta U=Q-W \\) for \\( W \\).",
+   "distractor_logic": [
+    "Adding \\( \\Delta U \\) to \\( Q \\) applies the wrong sign.",
+    "The sign is wrong; the gas does positive work.",
+    "This is \\( \\Delta U \\), not the work."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-015",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "One mole of a monoatomic ideal gas is heated at constant pressure through \\( 100 \\) K. Taking \\( R=8.3 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\), how much work does the gas do?",
+   "options": [
+    "\\( 1245 \\) J",
+    "\\( 2075 \\) J",
+    "\\( 830 \\) J",
+    "\\( -830 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "At constant pressure, \\( W=P\\Delta V=nR\\Delta T \\).<br><br>\\( W=1\\times8.3\\times100=830 \\) J, positive because the gas expands.",
+   "hint": "At constant pressure, \\( P\\Delta V=nR\\Delta T \\).",
+   "distractor_logic": [
+    "This is \\( \\Delta U=nC_v\\Delta T \\).",
+    "This is the heat supplied, \\( nC_p\\Delta T \\).",
+    "Heating at constant pressure means expansion, so \\( W \\) is positive."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-016",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 2,
+   "type": "regular",
+   "question": "The same amount of a diatomic ideal gas is heated through the same temperature rise, once at constant pressure (\\( Q_p \\)) and once at constant volume (\\( Q_v \\)). What is \\( \\dfrac{Q_p}{Q_v} \\)?",
+   "options": [
+    "\\( \\tfrac57 \\)",
+    "\\( \\tfrac53 \\)",
+    "\\( 1 \\)",
+    "\\( \\tfrac75 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\dfrac{Q_p}{Q_v}=\\dfrac{nC_p\\Delta T}{nC_v\\Delta T}=\\gamma \\).<br><br>For a diatomic gas, \\( \\gamma=\\tfrac75 \\).",
+   "hint": "The ratio of heats equals the ratio of heat capacities.",
+   "distractor_logic": [
+    "This is inverted; \\( Q_p \\) is the larger one.",
+    "This is \\( \\gamma \\) for a monoatomic gas.",
+    "Extra heat is needed at constant pressure for expansion work."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-017",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "One mole of a monoatomic ideal gas expands isothermally at temperature \\( T \\) from volume \\( V \\) to \\( eV \\). How much heat does it absorb?",
+   "options": [
+    "\\( RT \\)",
+    "\\( 0 \\)",
+    "\\( eRT \\)",
+    "\\( \\tfrac52RT \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( W=nRT\\ln\\!\\left(\\dfrac{eV}{V}\\right)=RT\\ln e=RT \\).<br><br>Isothermal means \\( \\Delta U=0 \\), so \\( Q=W=RT \\).",
+   "hint": "\\( \\ln e=1 \\), and \\( \\Delta U=0 \\) at constant temperature.",
+   "distractor_logic": [
+    "\\( Q=0 \\) is adiabatic; an isothermal expansion needs heat input.",
+    "The volume ratio was used directly instead of its logarithm.",
+    "This adds a nonzero \\( \\Delta U=\\tfrac32RT \\), but \\( \\Delta U=0 \\) in an isothermal process."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-018",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "A monoatomic ideal gas at \\( 300 \\) K is compressed adiabatically to one-eighth of its original volume. What is its final temperature?",
+   "options": [
+    "\\( 300 \\) K",
+    "\\( 1200 \\) K",
+    "\\( 2400 \\) K",
+    "\\( 600 \\) K"
+   ],
+   "correct_index": 1,
+   "explanation": "Use \\( TV^{\\gamma-1}=\\text{const} \\) with \\( \\gamma-1=\\tfrac23 \\).<br><br>\\( T_2=300\\times8^{2/3}=300\\times4=1200 \\) K.",
+   "hint": "\\( 8^{2/3}=(8^{1/3})^2 \\).",
+   "distractor_logic": [
+    "Temperature stays constant only in an isothermal process.",
+    "The exponent \\( \\gamma-1 \\) was dropped, using \\( 8^{1} \\).",
+    "The exponent \\( \\tfrac13 \\) was used instead of \\( \\tfrac23 \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-019",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "A diatomic ideal gas is compressed adiabatically to \\( \\tfrac{1}{32} \\) of its initial volume. By what factor does its pressure increase?",
+   "options": [
+    "\\( 32 \\)",
+    "\\( 4 \\)",
+    "\\( 128 \\)",
+    "\\( \\tfrac{1}{128} \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( PV^{\\gamma}=\\text{const} \\) gives \\( \\dfrac{P_2}{P_1}=\\left(\\dfrac{V_1}{V_2}\\right)^{\\gamma}=32^{7/5} \\).<br><br>\\( 32^{7/5}=(2^5)^{7/5}=2^7=128 \\).",
+   "hint": "Write \\( 32 \\) as \\( 2^5 \\).",
+   "distractor_logic": [
+    "This is the isothermal result \\( PV=\\text{const} \\).",
+    "The exponent \\( \\gamma-1 \\) was used, which applies to temperature, not pressure.",
+    "The ratio was inverted; compression raises pressure."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-020",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "Two moles of a monoatomic ideal gas expand adiabatically, and its temperature falls from \\( 400 \\) K to \\( 300 \\) K. What is the work done by the gas?",
+   "options": [
+    "\\( -300R \\)",
+    "\\( 200R \\)",
+    "\\( 500R \\)",
+    "\\( 300R \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Adiabatic: \\( Q=0 \\), so \\( W=-\\Delta U=-nC_v\\Delta T \\).<br><br>\\( W=-2\\times\\tfrac32R\\times(300-400)=300R \\), positive for expansion.",
+   "hint": "With \\( Q=0 \\), the work comes entirely out of internal energy.",
+   "distractor_logic": [
+    "The sign is wrong; the gas expands and does positive work.",
+    "This uses \\( nR\\Delta T \\), the isobaric work.",
+    "This uses \\( C_p \\) instead of \\( C_v \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-021",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "Three moles of a monoatomic ideal gas are heated at constant volume from \\( 300 \\) K to \\( 400 \\) K. Which pair correctly gives the work done by the gas and the change in internal energy?",
+   "options": [
+    "\\( W=0 \\), \\( \\Delta U=450R \\)",
+    "\\( W=300R \\), \\( \\Delta U=450R \\)",
+    "\\( W=0 \\), \\( \\Delta U=750R \\)",
+    "\\( W=300R \\), \\( \\Delta U=150R \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Constant volume, so \\( W=0 \\).<br><br>\\( \\Delta U=nC_v\\Delta T=3\\times\\tfrac32R\\times100=450R \\), and \\( Q=\\Delta U \\).",
+   "hint": "No volume change means no work.",
+   "distractor_logic": [
+    "Work \\( nR\\Delta T \\) was wrongly assigned to a constant-volume process.",
+    "This uses \\( C_p \\); at constant volume, \\( C_v \\) applies.",
+    "Work was assigned and then subtracted from \\( \\Delta U \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-022",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "At a point where an isothermal curve and an adiabatic curve of a diatomic ideal gas intersect, what is the ratio of the adiabatic slope to the isothermal slope?",
+   "options": [
+    "\\( \\tfrac57 \\)",
+    "\\( \\tfrac75 \\)",
+    "\\( 1 \\)",
+    "\\( \\tfrac25 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Isothermal slope \\( -\\dfrac{P}{V} \\), adiabatic slope \\( -\\gamma\\dfrac{P}{V} \\).<br><br>The ratio is \\( \\gamma=\\tfrac75 \\) for a diatomic gas.",
+   "hint": "The adiabatic slope carries an extra factor.",
+   "distractor_logic": [
+    "This inverts the ratio, which would make the isothermal steeper.",
+    "The slopes are never equal because \\( \\gamma>1 \\).",
+    "This is \\( \\gamma-1 \\), not \\( \\gamma \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-023",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "A diatomic ideal gas absorbs \\( 700 \\) J of heat at constant pressure. How much work does it do?",
+   "options": [
+    "\\( 500 \\) J",
+    "\\( 700 \\) J",
+    "\\( 200 \\) J",
+    "\\( 280 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( Q=nC_p\\Delta T=\\tfrac72nR\\Delta T \\), so \\( nR\\Delta T=200 \\) J.<br><br>At constant pressure \\( W=nR\\Delta T=200 \\) J, and \\( \\Delta U=500 \\) J.",
+   "hint": "The work fraction at constant pressure is \\( R/C_p \\).",
+   "distractor_logic": [
+    "This is \\( \\Delta U \\), not \\( W \\).",
+    "Not all the heat becomes work; some raises internal energy.",
+    "The monoatomic work fraction \\( \\tfrac25 \\) was used for a diatomic gas."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-024",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 2,
+   "type": "regular",
+   "question": "One mole of an ideal gas is compressed isothermally, and the surroundings do \\( 500 \\) J of work on it. What is the heat \\( Q \\) absorbed by the gas?",
+   "options": [
+    "\\( +500 \\) J",
+    "\\( 0 \\)",
+    "\\( -1000 \\) J",
+    "\\( -500 \\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "Work done on the gas is \\( 500 \\) J, so \\( W=-500 \\) J. Isothermal means \\( \\Delta U=0 \\).<br><br>\\( Q=W=-500 \\) J: the gas releases \\( 500 \\) J of heat.",
+   "hint": "With \\( \\Delta U=0 \\), \\( Q \\) equals \\( W \\), sign included.",
+   "distractor_logic": [
+    "The gas releases heat during isothermal compression; \\( Q \\) is negative.",
+    "\\( Q=0 \\) is adiabatic; isothermal compression needs heat to leave.",
+    "Heat and work were both counted, as if \\( \\Delta U \\) were nonzero."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-025",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "A heat engine of efficiency \\( 30\\% \\) absorbs \\( 2000 \\) J of heat per cycle. How much heat does it reject per cycle?",
+   "options": [
+    "\\( 1400 \\) J",
+    "\\( 600 \\) J",
+    "\\( 2600 \\) J",
+    "\\( 2000 \\) J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( W=\\eta Q_H=0.3\\times2000=600 \\) J.<br><br>\\( Q_C=Q_H-W=2000-600=1400 \\) J.",
+   "hint": "Find the work, then use energy conservation.",
+   "distractor_logic": [
+    "This is the work output.",
+    "The work was added to the heat input.",
+    "This assumes no heat is converted to work."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-026",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "A heat engine does \\( 500 \\) J of work per cycle and rejects \\( 2000 \\) J of heat per cycle. Its efficiency is:",
+   "options": [
+    "\\( 25\\% \\)",
+    "\\( 20\\% \\)",
+    "\\( 80\\% \\)",
+    "\\( 125\\% \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( Q_H=W+Q_C=500+2000=2500 \\) J.<br><br>\\( \\eta=\\dfrac{500}{2500}=20\\% \\).",
+   "hint": "Efficiency is based on heat absorbed, not heat rejected.",
+   "distractor_logic": [
+    "The work was divided by the rejected heat.",
+    "This is \\( Q_C/Q_H \\), the fraction rejected.",
+    "This is \\( Q_H/Q_C \\), which exceeds 1."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-027",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "A refrigerator has a coefficient of performance of \\( 4 \\). If \\( 250 \\) J of work is supplied, how much heat is removed from the cold space?",
+   "options": [
+    "\\( 62.5 \\) J",
+    "\\( 1250 \\) J",
+    "\\( 1000 \\) J",
+    "\\( 750 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\text{COP}=\\dfrac{Q_C}{W} \\), so \\( Q_C=4\\times250=1000 \\) J.",
+   "hint": "Multiply the work by the COP.",
+   "distractor_logic": [
+    "The work was divided by the COP.",
+    "This is \\( Q_H=Q_C+W \\), the heat released to the room.",
+    "The work was subtracted from \\( Q_C \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-028",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "For any refrigerator, which relation between the heat released to the room (\\( Q_H \\)) and the heat removed from the cold space (\\( Q_C \\)) is correct?",
+   "options": [
+    "\\( Q_H=Q_C \\)",
+    "\\( Q_H<Q_C \\)",
+    "\\( W=Q_H+Q_C \\)",
+    "\\( Q_H>Q_C \\) always"
+   ],
+   "correct_index": 3,
+   "explanation": "Over a cycle, \\( Q_H=Q_C+W \\) with \\( W>0 \\).<br><br>So the room always gets more heat than is removed from inside.",
+   "hint": "The work input also ends up somewhere.",
+   "distractor_logic": [
+    "This would need zero work, violating the Clausius statement.",
+    "This would destroy energy.",
+    "The work equals the difference of the heats, not their sum."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-029",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "A refrigerator is left running with its door open in a closed, insulated room. Over time, the temperature of the room:",
+   "options": [
+    "Rises slowly",
+    "Falls steadily",
+    "Stays exactly the same",
+    "Falls and then stays at a lower value"
+   ],
+   "correct_index": 0,
+   "explanation": "The refrigerator removes \\( Q_C \\) from the room air and releases \\( Q_H=Q_C+W \\) back into the same room.<br><br>The net effect is that the electrical work \\( W \\) is added to the room, so it warms.",
+   "hint": "Both the cold side and the hot side are in the same room.",
+   "distractor_logic": [
+    "Heat removed is returned to the same room, plus extra.",
+    "The work input is extra energy added to the room.",
+    "No net cooling occurs, since all heat returns with the work added."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-030",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "Over one complete cycle of a heat engine, the working substance returns to its initial state. Which relation follows?",
+   "options": [
+    "\\( W=Q_H \\)",
+    "\\( W=Q_H-Q_C \\)",
+    "\\( W=Q_H+Q_C \\)",
+    "\\( W=0 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Over a cycle \\( \\Delta U=0 \\), so net work equals net heat absorbed.<br><br>Net heat is \\( Q_H-Q_C \\), giving \\( W=Q_H-Q_C \\).",
+   "hint": "Apply \\( \\Delta U=Q-W \\) with \\( \\Delta U=0 \\).",
+   "distractor_logic": [
+    "This ignores the heat rejected to the sink.",
+    "Rejected heat leaves the engine, so it must be subtracted.",
+    "Returning to the same state makes \\( \\Delta U \\) zero, not \\( W \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-031",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "A heat engine of efficiency \\( 40\\% \\) delivers \\( 800 \\) J of work per cycle. How much heat does it absorb per cycle?",
+   "options": [
+    "\\( 320 \\) J",
+    "\\( 1200 \\) J",
+    "\\( 2000 \\) J",
+    "\\( 1120 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\eta=\\dfrac{W}{Q_H} \\), so \\( Q_H=\\dfrac{800}{0.4}=2000 \\) J.",
+   "hint": "Divide the work by the efficiency.",
+   "distractor_logic": [
+    "The work was multiplied by the efficiency.",
+    "This is the heat rejected.",
+    "This adds \\( 0.4\\times800 \\) to the work, which has no meaning."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-032",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 2,
+   "type": "regular",
+   "question": "A designer proposes powering a ship by drawing heat from the ocean (a single reservoir) and converting all of it into work. This proposal is:",
+   "options": [
+    "Possible, because energy is conserved",
+    "Impossible, because it violates the first law",
+    "Possible, if the ocean is large enough",
+    "Impossible, because a cyclic engine needs a colder sink to reject heat to"
+   ],
+   "correct_index": 3,
+   "explanation": "Energy is conserved, so the first law is satisfied.<br><br>But the Kelvin-Planck statement forbids a cyclic engine that converts heat from a single reservoir fully into work.",
+   "hint": "How many reservoirs does a heat engine need?",
+   "distractor_logic": [
+    "Energy conservation is necessary but not sufficient; the second law also applies.",
+    "No energy is created, so the first law holds.",
+    "The size of the reservoir does not remove the need for a sink."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-033",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "A Carnot engine works between a source at \\( 273^\\circ \\)C and a sink at \\( 0^\\circ \\)C. What is its efficiency?",
+   "options": [
+    "\\( 50\\% \\)",
+    "\\( 100\\% \\)",
+    "\\( -100\\% \\)",
+    "\\( 200\\% \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Convert to kelvin: \\( T_H=546 \\) K, \\( T_C=273 \\) K.<br><br>\\( \\eta=1-\\dfrac{273}{546}=\\tfrac12=50\\% \\).",
+   "hint": "Convert both temperatures to kelvin first.",
+   "distractor_logic": [
+    "Celsius values were substituted directly, giving \\( 1-0 \\).",
+    "The temperature ratio was inverted.",
+    "This is \\( T_H/T_C \\), not an efficiency."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-034",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "A Carnot engine works between \\( 800 \\) K and \\( 200 \\) K and absorbs \\( 1200 \\) J per cycle. How much heat does it reject per cycle?",
+   "options": [
+    "\\( 900 \\) J",
+    "\\( 300 \\) J",
+    "\\( 1500 \\) J",
+    "\\( 0 \\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\eta=1-\\dfrac{200}{800}=75\\% \\), so \\( W=900 \\) J.<br><br>\\( Q_C=1200-900=300 \\) J.",
+   "hint": "Use \\( \\dfrac{Q_C}{Q_H}=\\dfrac{T_C}{T_H} \\).",
+   "distractor_logic": [
+    "This is the work, not the rejected heat.",
+    "The rejected heat was added to the absorbed heat.",
+    "Even an ideal Carnot engine must reject heat."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-035",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "A Carnot engine absorbs \\( 500 \\) J from a reservoir at \\( 400 \\) K and rejects heat to a reservoir at \\( 300 \\) K. How much heat does it reject?",
+   "options": [
+    "\\( 125 \\) J",
+    "\\( 500 \\) J",
+    "\\( 375 \\) J",
+    "\\( 875 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "For a Carnot engine, \\( \\dfrac{Q_C}{Q_H}=\\dfrac{T_C}{T_H} \\).<br><br>\\( Q_C=500\\times\\dfrac{300}{400}=375 \\) J.",
+   "hint": "Heat ratio equals kelvin temperature ratio.",
+   "distractor_logic": [
+    "This is the work, \\( Q_H-Q_C \\).",
+    "This assumes no work is done.",
+    "The two heats were added."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-036",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "A Carnot refrigerator keeps its interior at \\( 250 \\) K in a room at \\( 300 \\) K. Its coefficient of performance is:",
+   "options": [
+    "\\( 6 \\)",
+    "\\( \\tfrac15 \\)",
+    "\\( \\tfrac56 \\)",
+    "\\( 5 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\text{COP}=\\dfrac{T_C}{T_H-T_C}=\\dfrac{250}{50}=5 \\).",
+   "hint": "Cold temperature divided by the temperature difference.",
+   "distractor_logic": [
+    "\\( T_H \\) was used in the numerator.",
+    "The ratio was inverted.",
+    "This is \\( T_C/T_H \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-037",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "Why do real engines always have lower efficiency than a Carnot engine working between the same temperatures?",
+   "options": [
+    "Real engines involve irreversible effects such as friction and heat flow across finite temperature differences",
+    "Real engines use a different working substance",
+    "Real engines operate at higher temperatures",
+    "The Carnot engine violates the first law"
+   ],
+   "correct_index": 0,
+   "explanation": "The Carnot engine is idealised as fully reversible.<br><br>Friction, turbulence, and heat transfer across finite temperature differences waste potential work in real engines.",
+   "hint": "What does a Carnot engine avoid that a real one cannot?",
+   "distractor_logic": [
+    "The Carnot efficiency does not depend on the working substance.",
+    "Being at the same reservoir temperatures is assumed in the comparison.",
+    "The Carnot engine obeys energy conservation."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-038",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "An ideal gas in an insulated container expands freely into a vacuum. Which description is correct?",
+   "options": [
+    "\\( Q=0 \\), \\( W>0 \\), \\( \\Delta U<0 \\), and the process is reversible",
+    "\\( Q=0 \\), \\( W=0 \\), \\( \\Delta U=0 \\), and the process is irreversible",
+    "\\( Q=0 \\), \\( W=0 \\), \\( \\Delta U=0 \\), and the process is reversible",
+    "\\( Q>0 \\), \\( W>0 \\), \\( \\Delta U=0 \\), and the process is reversible"
+   ],
+   "correct_index": 1,
+   "explanation": "Insulated: \\( Q=0 \\). Expanding into vacuum pushes against nothing: \\( W=0 \\). So \\( \\Delta U=0 \\) and the temperature is unchanged.<br><br>The gas never spontaneously returns to the smaller volume, so the process is irreversible.",
+   "hint": "There is nothing for the gas to push against.",
+   "distractor_logic": [
+    "This treats free expansion as a quasi-static adiabatic expansion doing work.",
+    "The energies are right, but free expansion cannot be reversed without outside work.",
+    "No heat enters an insulated container."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-039",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "A Carnot engine works between \\( 400 \\) K and \\( 200 \\) K. Which change increases its efficiency more?",
+   "options": [
+    "Raising the source temperature by \\( 100 \\) K",
+    "Both changes give the same increase",
+    "Lowering the sink temperature by \\( 100 \\) K",
+    "Neither change affects the efficiency"
+   ],
+   "correct_index": 2,
+   "explanation": "Initially \\( \\eta=1-\\dfrac{200}{400}=50\\% \\).<br><br>Sink at \\( 100 \\) K: \\( \\eta=1-\\dfrac{100}{400}=75\\% \\). Source at \\( 500 \\) K: \\( \\eta=1-\\dfrac{200}{500}=60\\% \\). Lowering the sink wins.",
+   "hint": "Calculate both new efficiencies.",
+   "distractor_logic": [
+    "Raising the source gives only \\( 60\\% \\).",
+    "The two changes give \\( 75\\% \\) and \\( 60\\% \\), which differ.",
+    "Efficiency depends directly on both temperatures."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L2-040",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 2,
+   "type": "regular",
+   "question": "An inventor claims an engine with \\( 50\\% \\) efficiency working between \\( 500 \\) K and \\( 300 \\) K. The claim is:",
+   "options": [
+    "Possible, because \\( 50\\% \\) is below \\( 100\\% \\)",
+    "Possible, because the maximum efficiency here is \\( 60\\% \\)",
+    "Possible, if a better working gas is used",
+    "Impossible, because the maximum efficiency here is \\( 40\\% \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Carnot limit: \\( \\eta_{\\max}=1-\\dfrac{300}{500}=40\\% \\).<br><br>No engine between these reservoirs can exceed \\( 40\\% \\), so \\( 50\\% \\) is impossible.",
+   "hint": "Compute the Carnot limit first.",
+   "distractor_logic": [
+    "Staying below \\( 100\\% \\) is not enough; the Carnot limit is stricter.",
+    "\\( 60\\% \\) is \\( T_C/T_H \\), not the efficiency.",
+    "The Carnot limit is the same for every working substance."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-001",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "An ideal gas is taken clockwise around a rectangular cycle on a P-V diagram with pressures \\( P_0 \\) and \\( 2P_0 \\) and volumes \\( V_0 \\) and \\( 3V_0 \\). What is the net heat absorbed by the gas per cycle?",
+   "options": [
+    "\\( 2P_0V_0 \\)",
+    "\\( 0 \\)",
+    "\\( -2P_0V_0 \\)",
+    "\\( 4P_0V_0 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Net work = enclosed area \\( =(2P_0-P_0)(3V_0-V_0)=2P_0V_0 \\), positive for a clockwise cycle.<br><br>Over a cycle \\( \\Delta U=0 \\), so net \\( Q=W=2P_0V_0 \\).",
+   "hint": "Zero change in internal energy does not mean zero heat.",
+   "distractor_logic": [
+    "\\( \\Delta U=0 \\) over a cycle, but net heat equals net work, which is not zero.",
+    "A negative value applies to an anticlockwise cycle.",
+    "This is the area under the upper isobar, not the enclosed area."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-002",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A gas goes from state A to state B along path 1, absorbing \\( 80 \\) J of heat and doing \\( 50 \\) J of work. Along path 2 between the same states, it does \\( 20 \\) J of work. How much heat does it absorb along path 2?",
+   "options": [
+    "\\( 80 \\) J",
+    "\\( 50 \\) J",
+    "\\( 10 \\) J",
+    "\\( 30 \\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "Path 1: \\( \\Delta U=80-50=30 \\) J. This is the same for every path from A to B.<br><br>Path 2: \\( Q=\\Delta U+W=30+20=50 \\) J.",
+   "hint": "Find \\( \\Delta U \\) from path 1 first.",
+   "distractor_logic": [
+    "Heat is a path function; it need not be the same on both paths.",
+    "This uses \\( Q=\\Delta U-W \\), a sign error.",
+    "This is \\( \\Delta U \\), not the heat."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-003",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "The internal energy of a gas increases by \\( 30 \\) J when it goes from state A to state B. It is then returned from B to A along a path in which the surroundings do \\( 40 \\) J of work on the gas. What is the heat \\( Q \\) absorbed by the gas on the return path?",
+   "options": [
+    "\\( +70 \\) J",
+    "\\( +10 \\) J",
+    "\\( -70 \\) J",
+    "\\( -10 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "From B to A, \\( \\Delta U=-30 \\) J. Work done on the gas means \\( W=-40 \\) J.<br><br>\\( Q=\\Delta U+W=-30+(-40)=-70 \\) J: the gas releases \\( 70 \\) J.",
+   "hint": "Reversing direction reverses the sign of \\( \\Delta U \\).",
+   "distractor_logic": [
+    "The gas actually releases heat on this path.",
+    "This uses \\( Q=\\Delta U-W \\), flipping the sign of the work term.",
+    "The sign of \\( \\Delta U \\) was not reversed for the return path."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-004",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A gas goes from \\( (P_0,V_0) \\) to \\( (3P_0,3V_0) \\) along a straight line on a P-V diagram. What is the work done by the gas?",
+   "options": [
+    "\\( 6P_0V_0 \\)",
+    "\\( 2P_0V_0 \\)",
+    "\\( 8P_0V_0 \\)",
+    "\\( 4P_0V_0 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "The area under the line is a trapezium with parallel sides \\( P_0 \\) and \\( 3P_0 \\) and width \\( 2V_0 \\).<br><br>\\( W=\\tfrac12(P_0+3P_0)(2V_0)=4P_0V_0 \\).",
+   "hint": "Find the trapezium area under the line.",
+   "distractor_logic": [
+    "The final pressure was used for the whole expansion.",
+    "The initial pressure was used for the whole expansion.",
+    "This is \\( P_2V_2-P_1V_1 \\), which is \\( nR\\Delta T \\), not the work."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-005",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "A monoatomic ideal gas goes from \\( (P_0,V_0) \\) to \\( (3P_0,3V_0) \\) along a straight line on a P-V diagram. How much heat does it absorb?",
+   "options": [
+    "\\( 16P_0V_0 \\)",
+    "\\( 12P_0V_0 \\)",
+    "\\( 8P_0V_0 \\)",
+    "\\( 4P_0V_0 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( \\Delta U=\\tfrac32\\Delta(PV)=\\tfrac32(9P_0V_0-P_0V_0)=12P_0V_0 \\).<br><br>\\( W= \\) trapezium area \\( =4P_0V_0 \\). So \\( Q=\\Delta U+W=16P_0V_0 \\).",
+   "hint": "Use \\( U=\\tfrac32PV \\) for a monoatomic ideal gas.",
+   "distractor_logic": [
+    "This is only \\( \\Delta U \\); the work must be added.",
+    "This subtracts the work, a sign error.",
+    "This is only the work."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-006",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": 3,
+   "type": "regular",
+   "question": "Body A (large) and body B (small) are separately found to give the same reading, \\( 350 \\) K, on the same thermometer. A and B are then placed in contact. The net heat flow between them is:",
+   "options": [
+    "From A to B, since A has more internal energy",
+    "Zero",
+    "From B to A, since B is smaller",
+    "From A to B until their internal energies are equal"
+   ],
+   "correct_index": 1,
+   "explanation": "By the zeroth law, A and B are each in equilibrium with the thermometer, so they are at the same temperature.<br><br>Heat flows only because of a temperature difference, so there is no net flow.",
+   "hint": "The thermometer plays the role of the third body.",
+   "distractor_logic": [
+    "Heat flow is set by temperature, not by the amount of internal energy.",
+    "Size does not create a temperature difference.",
+    "Equilibrium needs equal temperatures, not equal internal energies."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-007",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 3,
+   "type": "regular",
+   "question": "One mole of a monoatomic ideal gas is mixed with one mole of a diatomic ideal gas. What is \\( \\gamma \\) for the mixture?",
+   "options": [
+    "\\( \\tfrac{23}{15} \\)",
+    "\\( \\tfrac23 \\)",
+    "\\( \\tfrac32 \\)",
+    "\\( \\tfrac53 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Total \\( C_v \\) per mole: \\( \\dfrac{\\tfrac32R+\\tfrac52R}{2}=2R \\). Then \\( C_p=C_v+R=3R \\).<br><br>\\( \\gamma=\\dfrac{3R}{2R}=\\tfrac32 \\).",
+   "hint": "Average the heat capacities, not the \\( \\gamma \\) values.",
+   "distractor_logic": [
+    "The two \\( \\gamma \\) values were averaged directly, which is not valid.",
+    "This is \\( C_v/C_p \\), the inverse of \\( \\gamma \\).",
+    "This is \\( \\gamma \\) for the monoatomic part alone."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-008",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 3,
+   "type": "regular",
+   "question": "A monoatomic ideal gas is heated at constant pressure and does \\( 120 \\) J of work. How much heat did it absorb?",
+   "options": [
+    "\\( 180 \\) J",
+    "\\( 120 \\) J",
+    "\\( 420 \\) J",
+    "\\( 300 \\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "At constant pressure \\( W=nR\\Delta T=120 \\) J.<br><br>\\( Q=nC_p\\Delta T=\\tfrac52\\times120=300 \\) J (and \\( \\Delta U=180 \\) J).",
+   "hint": "Relate \\( W \\) to \\( nR\\Delta T \\), then use \\( C_p \\).",
+   "distractor_logic": [
+    "This is \\( \\Delta U \\) only.",
+    "This assumes all heat became work.",
+    "The work was added to \\( Q \\) again."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-009",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 3,
+   "type": "regular",
+   "question": "For hydrogen gas (molar mass \\( 2 \\) g mol\\( ^{-1} \\)), what is the difference between its specific heats per gram, \\( c_p-c_v \\)? Take \\( R=8.3 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\).",
+   "options": [
+    "\\( 4.15 \\) J g\\( ^{-1} \\) K\\( ^{-1} \\)",
+    "\\( 8.3 \\) J g\\( ^{-1} \\) K\\( ^{-1} \\)",
+    "\\( 16.6 \\) J g\\( ^{-1} \\) K\\( ^{-1} \\)",
+    "\\( -4.15 \\) J g\\( ^{-1} \\) K\\( ^{-1} \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Per mole, \\( C_p-C_v=R \\). Per gram, divide by the molar mass \\( M \\).<br><br>\\( c_p-c_v=\\dfrac{8.3}{2}=4.15 \\) J g\\( ^{-1} \\) K\\( ^{-1} \\).",
+   "hint": "Convert from per mole to per gram.",
+   "distractor_logic": [
+    "This is the per-mole value, not per gram.",
+    "This multiplies by \\( M \\) instead of dividing.",
+    "\\( c_p \\) is always greater than \\( c_v \\), so the difference is positive."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-010",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 3,
+   "type": "regular",
+   "question": "During a compression, \\( 800 \\) J of work is done on a gas and its internal energy decreases by \\( 200 \\) J. What is the heat \\( Q \\) absorbed by the gas?",
+   "options": [
+    "\\( +600 \\) J",
+    "\\( -1000 \\) J",
+    "\\( +1000 \\) J",
+    "\\( -200 \\) J"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\Delta U=-200 \\) J and \\( W=-800 \\) J (work done on the gas).<br><br>\\( Q=\\Delta U+W=-200-800=-1000 \\) J: the gas releases \\( 1000 \\) J, enough to outweigh the work input.",
+   "hint": "Compression does not guarantee heating; heat loss can dominate.",
+   "distractor_logic": [
+    "This uses \\( Q=\\Delta U-W \\), a sign error on the work term.",
+    "The signs of both terms were reversed.",
+    "This assumes all the energy change was heat and ignores the work."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-011",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 3,
+   "type": "regular",
+   "question": "A diatomic ideal gas is heated at constant pressure. What is the ratio \\( Q:\\Delta U:W \\)?",
+   "options": [
+    "\\( 5:3:2 \\)",
+    "\\( 7:2:5 \\)",
+    "\\( 7:5:2 \\)",
+    "\\( 5:7:2 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( Q=\\tfrac72nR\\Delta T \\), \\( \\Delta U=\\tfrac52nR\\Delta T \\), \\( W=nR\\Delta T \\).<br><br>So \\( Q:\\Delta U:W=7:5:2 \\).",
+   "hint": "Write each quantity in terms of \\( nR\\Delta T \\).",
+   "distractor_logic": [
+    "This is the monoatomic ratio.",
+    "\\( \\Delta U \\) and \\( W \\) were swapped.",
+    "\\( Q \\) and \\( \\Delta U \\) were swapped; \\( Q \\) must be largest."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-012",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": 3,
+   "type": "regular",
+   "question": "Two identical samples of a monoatomic ideal gas receive the same amount of heat. Sample X is heated at constant volume and sample Y at constant pressure. What is \\( \\dfrac{\\Delta T_X}{\\Delta T_Y} \\)?",
+   "options": [
+    "\\( \\tfrac35 \\)",
+    "\\( 1 \\)",
+    "\\( \\tfrac52 \\)",
+    "\\( \\tfrac53 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Same \\( Q \\): \\( nC_v\\Delta T_X=nC_p\\Delta T_Y \\).<br><br>\\( \\dfrac{\\Delta T_X}{\\Delta T_Y}=\\dfrac{C_p}{C_v}=\\gamma=\\tfrac53 \\).",
+   "hint": "At constant volume, none of the heat is spent on work.",
+   "distractor_logic": [
+    "This inverts the ratio; X heats up more.",
+    "Equal heat does not give equal temperature rise because of the expansion work in Y.",
+    "This is \\( C_p/R \\), not \\( C_p/C_v \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-013",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 3,
+   "type": "regular",
+   "question": "One mole of a monoatomic ideal gas at \\( 400 \\) K expands adiabatically to eight times its volume. What is the work done by the gas?",
+   "options": [
+    "\\( 450R \\)",
+    "\\( -450R \\)",
+    "\\( 0 \\)",
+    "\\( 300R \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( TV^{2/3}=\\text{const} \\): \\( T_2=\\dfrac{400}{8^{2/3}}=100 \\) K.<br><br>\\( W=-\\Delta U=-\\tfrac32R(100-400)=450R \\).",
+   "hint": "Find the final temperature first.",
+   "distractor_logic": [
+    "The sign is wrong; an expanding gas does positive work.",
+    "\\( Q=0 \\) does not mean \\( W=0 \\); the work comes from internal energy.",
+    "This uses \\( R\\Delta T \\) instead of \\( C_v\\Delta T \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-014",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 3,
+   "type": "regular",
+   "question": "Two moles of an ideal gas at \\( 300 \\) K expand isothermally from volume \\( V \\) to \\( e^{2}V \\). How much heat does the gas absorb?",
+   "options": [
+    "\\( 600R \\)",
+    "\\( 1200R \\)",
+    "\\( 0 \\)",
+    "\\( -1200R \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( W=nRT\\ln\\!\\left(e^{2}\\right)=2\\times R\\times300\\times2=1200R \\).<br><br>Isothermal, so \\( \\Delta U=0 \\) and \\( Q=W=1200R \\).",
+   "hint": "\\( \\ln(e^{2})=2 \\).",
+   "distractor_logic": [
+    "The logarithm was taken as 1 instead of 2.",
+    "\\( Q=0 \\) is adiabatic; an isothermal expansion absorbs heat.",
+    "Heat is absorbed during expansion, so \\( Q \\) is positive."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-015",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 3,
+   "type": "regular",
+   "question": "An ideal gas expands from the same initial state to the same final volume, once isothermally (\\( W_{\\text{iso}} \\)) and once adiabatically (\\( W_{\\text{adi}} \\)). Which is true?",
+   "options": [
+    "\\( W_{\\text{adi}}>W_{\\text{iso}} \\)",
+    "\\( W_{\\text{iso}}=W_{\\text{adi}} \\)",
+    "\\( W_{\\text{iso}}>W_{\\text{adi}} \\)",
+    "\\( W_{\\text{adi}}=0 \\) since \\( Q=0 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "From a common point the adiabatic curve is steeper, so its pressure falls faster during expansion.<br><br>The adiabatic curve lies below the isothermal, so the area under it (work) is smaller.",
+   "hint": "Which curve stays higher during the expansion?",
+   "distractor_logic": [
+    "This assumes the isothermal curve is steeper.",
+    "The curves have different slopes, so the areas differ.",
+    "With \\( Q=0 \\), work comes from internal energy; it is not zero."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-016",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 3,
+   "type": "regular",
+   "question": "A monoatomic ideal gas at pressure \\( P_0 \\) is compressed adiabatically to one-eighth of its volume, then cooled at constant volume back to its original temperature. What is the final pressure?",
+   "options": [
+    "\\( 32P_0 \\)",
+    "\\( 4P_0 \\)",
+    "\\( P_0 \\)",
+    "\\( 8P_0 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Adiabatic: \\( P=P_0\\times8^{5/3}=32P_0 \\) and \\( T=T_0\\times8^{2/3}=4T_0 \\).<br><br>Isochoric cooling to \\( T_0 \\): \\( P\\propto T \\), so \\( P=\\dfrac{32P_0}{4}=8P_0 \\). (The same as an isothermal compression to one-eighth.)",
+   "hint": "The final state has the original temperature and one-eighth the volume.",
+   "distractor_logic": [
+    "The cooling step was ignored.",
+    "The temperature factor was applied to \\( P_0 \\) instead of to \\( 32P_0 \\).",
+    "Returning to the original temperature does not restore the original pressure, because the volume is now one-eighth."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-017",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 3,
+   "type": "regular",
+   "question": "One mole of a monoatomic ideal gas is heated at constant pressure \\( 2P_0 \\) from volume \\( V_0 \\) to \\( 2V_0 \\). How much heat does it absorb?",
+   "options": [
+    "\\( 5P_0V_0 \\)",
+    "\\( 3P_0V_0 \\)",
+    "\\( 2P_0V_0 \\)",
+    "\\( 7P_0V_0 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( W=2P_0(2V_0-V_0)=2P_0V_0 \\) and \\( \\Delta U=\\tfrac32\\Delta(PV)=\\tfrac32(4P_0V_0-2P_0V_0)=3P_0V_0 \\).<br><br>\\( Q=\\Delta U+W=5P_0V_0 \\).",
+   "hint": "Use \\( Q=\\tfrac52\\Delta(PV) \\) at constant pressure for a monoatomic gas.",
+   "distractor_logic": [
+    "This is only \\( \\Delta U \\).",
+    "This is only the work.",
+    "The diatomic \\( C_p=\\tfrac72R \\) was used."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-018",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": 3,
+   "type": "regular",
+   "question": "A monoatomic ideal gas is at pressure \\( 3\\times10^{5} \\) Pa and volume \\( 2\\times10^{-3} \\) m\\( ^3 \\). What is the magnitude of the slope of the adiabatic curve through this point on a P-V diagram?",
+   "options": [
+    "\\( 1.5\\times10^{8} \\) Pa m\\( ^{-3} \\)",
+    "\\( 2.5\\times10^{8} \\) Pa m\\( ^{-3} \\)",
+    "\\( 0.9\\times10^{8} \\) Pa m\\( ^{-3} \\)",
+    "\\( 2.1\\times10^{8} \\) Pa m\\( ^{-3} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Adiabatic slope magnitude \\( =\\gamma\\dfrac{P}{V} \\).<br><br>\\( \\dfrac{P}{V}=1.5\\times10^{8} \\), so the slope is \\( \\tfrac53\\times1.5\\times10^{8}=2.5\\times10^{8} \\) Pa m\\( ^{-3} \\).",
+   "hint": "Multiply the isothermal slope by \\( \\gamma \\).",
+   "distractor_logic": [
+    "This is the isothermal slope.",
+    "The isothermal slope was divided by \\( \\gamma \\), making the adiabatic less steep.",
+    "The diatomic \\( \\gamma \\) was used for a monoatomic gas."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-019",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 3,
+   "type": "regular",
+   "question": "Engine 1 (efficiency \\( 40\\% \\)) rejects all its waste heat into engine 2 (efficiency \\( 25\\% \\)), which uses it as input. What is the overall efficiency of the combination?",
+   "options": [
+    "\\( 65\\% \\)",
+    "\\( 10\\% \\)",
+    "\\( 55\\% \\)",
+    "\\( 32.5\\% \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Per \\( 100 \\) J input: engine 1 gives \\( 40 \\) J work and rejects \\( 60 \\) J.<br><br>Engine 2 turns \\( 25\\% \\) of \\( 60 \\) J into \\( 15 \\) J. Total work \\( 55 \\) J, so \\( \\eta=55\\% \\).",
+   "hint": "Track \\( 100 \\) J of heat through both engines.",
+   "distractor_logic": [
+    "Efficiencies cannot be added; engine 2 only receives \\( 60\\% \\) of the input.",
+    "Multiplying efficiencies gives only the fraction handled by both, not the total.",
+    "Averaging efficiencies has no physical basis."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-020",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 3,
+   "type": "regular",
+   "question": "A refrigerator with a coefficient of performance of \\( 5 \\) removes heat from its interior at \\( 500 \\) J per second. How much heat does it release into the room each second?",
+   "options": [
+    "\\( 500 \\) J",
+    "\\( 100 \\) J",
+    "\\( 2500 \\) J",
+    "\\( 600 \\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( W=\\dfrac{Q_C}{\\text{COP}}=\\dfrac{500}{5}=100 \\) J per second.<br><br>\\( Q_H=Q_C+W=600 \\) J per second.",
+   "hint": "Find the work first, then add.",
+   "distractor_logic": [
+    "This ignores the work input.",
+    "This is the work input only.",
+    "\\( Q_C \\) was multiplied by the COP."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-021",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 3,
+   "type": "regular",
+   "question": "A heat engine with efficiency \\( 25\\% \\) delivers a power of \\( 5 \\) kW. At what rate does it reject heat?",
+   "options": [
+    "\\( 15 \\) kW",
+    "\\( 20 \\) kW",
+    "\\( 3.75 \\) kW",
+    "\\( 1.25 \\) kW"
+   ],
+   "correct_index": 0,
+   "explanation": "Heat input rate \\( =\\dfrac{5}{0.25}=20 \\) kW.<br><br>Rejection rate \\( =20-5=15 \\) kW.",
+   "hint": "Find the heat input rate first.",
+   "distractor_logic": [
+    "This is the heat input rate.",
+    "This is \\( 75\\% \\) of the output power, not of the input.",
+    "This is \\( 25\\% \\) of the output power."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-022",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 3,
+   "type": "regular",
+   "question": "A company advertises a refrigerator that moves heat from its cold interior to a warmer room with no work input at all. This claim violates:",
+   "options": [
+    "The first law of thermodynamics",
+    "The Clausius statement of the second law",
+    "The zeroth law of thermodynamics",
+    "Nothing, since energy is conserved"
+   ],
+   "correct_index": 1,
+   "explanation": "Energy is conserved (\\( Q_H=Q_C \\)), so the first law holds.<br><br>The Clausius statement forbids any process whose sole result is heat transfer from a colder to a hotter body.",
+   "hint": "Energy conservation alone does not decide the direction of heat flow.",
+   "distractor_logic": [
+    "No energy is created or destroyed in the claim.",
+    "The zeroth law concerns thermal equilibrium.",
+    "Energy conservation is necessary but not sufficient."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-023",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 3,
+   "type": "regular",
+   "question": "A refrigerator with a coefficient of performance of \\( 3 \\) is used as a heat pump to warm a house. If \\( 200 \\) J of work is supplied, how much heat is delivered to the house?",
+   "options": [
+    "\\( 600 \\) J",
+    "\\( 200 \\) J",
+    "\\( 800 \\) J",
+    "\\( 1000 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( Q_C=3\\times200=600 \\) J is drawn from outdoors.<br><br>Heat delivered \\( Q_H=Q_C+W=800 \\) J.",
+   "hint": "The house receives both the extracted heat and the work.",
+   "distractor_logic": [
+    "This is \\( Q_C \\), taken from outdoors.",
+    "This is only the work input.",
+    "The work was added twice."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-024",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": 3,
+   "type": "regular",
+   "question": "A reversible heat engine has efficiency \\( 20\\% \\). If it is run in reverse as a refrigerator between the same reservoirs, its coefficient of performance is:",
+   "options": [
+    "\\( 5 \\)",
+    "\\( \\tfrac14 \\)",
+    "\\( 0.8 \\)",
+    "\\( 4 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "For \\( Q_H=100 \\) J: \\( W=20 \\) J, \\( Q_C=80 \\) J.<br><br>Reversed: \\( \\text{COP}=\\dfrac{Q_C}{W}=\\dfrac{80}{20}=4 \\), i.e. \\( \\dfrac{1-\\eta}{\\eta} \\).",
+   "hint": "Use numbers: take \\( Q_H=100 \\) J.",
+   "distractor_logic": [
+    "This is \\( 1/\\eta=Q_H/W \\), the heat-pump figure.",
+    "This is inverted.",
+    "This is \\( 1-\\eta \\)."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-025",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 3,
+   "type": "regular",
+   "question": "A Carnot engine has efficiency \\( 40\\% \\) with its sink at \\( 300 \\) K. By how much must the source temperature be raised to increase the efficiency to \\( 50\\% \\), keeping the sink fixed?",
+   "options": [
+    "\\( 100 \\) K",
+    "\\( 50 \\) K",
+    "\\( 150 \\) K",
+    "\\( 200 \\) K"
+   ],
+   "correct_index": 0,
+   "explanation": "Initially \\( T_H=\\dfrac{300}{1-0.4}=500 \\) K. For \\( 50\\% \\): \\( T_H=\\dfrac{300}{0.5}=600 \\) K.<br><br>Increase \\( =100 \\) K.",
+   "hint": "Use \\( T_H=\\dfrac{T_C}{1-\\eta} \\) for both efficiencies.",
+   "distractor_logic": [
+    "This assumes efficiency grows in simple proportion to \\( T_H \\).",
+    "This uses \\( T_H=T_C/\\eta \\), which inverts the Carnot relation.",
+    "This is the source-sink gap \\( T_H-T_C \\), not the change needed."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-026",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 3,
+   "type": "regular",
+   "question": "Two Carnot engines are in series between \\( 800 \\) K and \\( 200 \\) K: the first rejects heat at an intermediate temperature \\( T \\), which the second uses as its source. If both have equal efficiency, what is \\( T \\)?",
+   "options": [
+    "\\( 500 \\) K",
+    "\\( 400 \\) K",
+    "\\( 320 \\) K",
+    "\\( 300 \\) K"
+   ],
+   "correct_index": 1,
+   "explanation": "Equal efficiency means \\( \\dfrac{T}{800}=\\dfrac{200}{T} \\).<br><br>\\( T^{2}=160000 \\), so \\( T=400 \\) K (each engine has \\( 50\\% \\) efficiency).",
+   "hint": "Equal efficiency means equal temperature ratios.",
+   "distractor_logic": [
+    "The arithmetic mean gives equal work, not equal efficiency.",
+    "This is the harmonic mean, which has no role here.",
+    "This is half the temperature difference, not a temperature in the range."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-027",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 3,
+   "type": "regular",
+   "question": "A Carnot refrigerator removes \\( 1000 \\) J from a freezer at \\( 250 \\) K and releases heat into a room at \\( 300 \\) K. What is the minimum work required?",
+   "options": [
+    "\\( 5000 \\) J",
+    "\\( 1200 \\) J",
+    "\\( 200 \\) J",
+    "\\( 1000 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\text{COP}=\\dfrac{250}{300-250}=5 \\).<br><br>\\( W=\\dfrac{Q_C}{\\text{COP}}=\\dfrac{1000}{5}=200 \\) J.",
+   "hint": "Find the COP from the temperatures.",
+   "distractor_logic": [
+    "\\( Q_C \\) was multiplied by the COP.",
+    "This is \\( Q_H \\), the heat released to the room.",
+    "This assumes work equals heat removed."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-028",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 3,
+   "type": "regular",
+   "question": "A Carnot engine between \\( 500 \\) K and \\( 300 \\) K absorbs \\( 1000 \\) J per cycle. All its work drives a Carnot refrigerator operating between \\( 300 \\) K and \\( 250 \\) K. How much heat does the refrigerator remove from the \\( 250 \\) K reservoir per cycle?",
+   "options": [
+    "\\( 400 \\) J",
+    "\\( 80 \\) J",
+    "\\( 2400 \\) J",
+    "\\( 2000 \\) J"
+   ],
+   "correct_index": 3,
+   "explanation": "Engine: \\( \\eta=1-\\dfrac{300}{500}=40\\% \\), so \\( W=400 \\) J.<br><br>Refrigerator: \\( \\text{COP}=\\dfrac{250}{50}=5 \\), so \\( Q_C=5\\times400=2000 \\) J.",
+   "hint": "Engine gives work; refrigerator multiplies it by its COP.",
+   "distractor_logic": [
+    "This is the work, not the heat removed.",
+    "The work was divided by the COP.",
+    "This is the heat the refrigerator releases at \\( 300 \\) K."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-029",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 3,
+   "type": "regular",
+   "question": "One mole of ideal gas runs a Carnot cycle between \\( 500 \\) K and \\( 300 \\) K. In the isothermal expansion at \\( 500 \\) K the volume increases by a factor of \\( e \\). What is the net work done per cycle?",
+   "options": [
+    "\\( 200R \\)",
+    "\\( 500R \\)",
+    "\\( 800R \\)",
+    "\\( 300R \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( Q_H=RT_H\\ln e=500R \\). In a Carnot cycle the isothermal compression has the same volume ratio, so \\( Q_C=300R \\).<br><br>\\( W=Q_H-Q_C=200R \\).",
+   "hint": "Both isothermal legs have the same volume ratio.",
+   "distractor_logic": [
+    "This is \\( Q_H \\), ignoring rejected heat.",
+    "The two heats were added.",
+    "This is \\( Q_C \\), the heat rejected."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-L3-030",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": 3,
+   "type": "regular",
+   "question": "Which of these processes is reversible, at least in principle?",
+   "options": [
+    "Heat conducted through a rod from a body at \\( 400 \\) K to one at \\( 300 \\) K",
+    "Slow isothermal expansion of an ideal gas with a frictionless piston, in contact with a reservoir at the same temperature",
+    "Two different gases mixing after a partition is removed",
+    "A gas rushing into a vacuum after a valve is opened"
+   ],
+   "correct_index": 1,
+   "explanation": "Reversibility needs quasi-static change with no friction and only infinitesimal temperature differences.<br><br>The slow frictionless isothermal expansion meets all three conditions; the others involve finite gradients or spontaneous mixing.",
+   "hint": "Look for slow, frictionless, and no finite temperature difference.",
+   "distractor_logic": [
+    "Heat flow across a finite temperature difference is irreversible.",
+    "Gases do not spontaneously unmix.",
+    "Free expansion is a classic irreversible process."
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-001",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "One mole of a monoatomic ideal gas at temperature \\( T_0 \\) is heated at constant pressure until its volume doubles. How much heat does it absorb?",
+   "options": [
+    "\\( \\tfrac32RT_0 \\)",
+    "\\( RT_0 \\)",
+    "\\( \\tfrac52RT_0 \\)",
+    "\\( \\tfrac72RT_0 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "At constant pressure \\( V\\propto T \\), so doubling \\( V \\) doubles \\( T \\): \\( \\Delta T=T_0 \\).<br><br>\\( Q=nC_p\\Delta T=\\tfrac52RT_0 \\).",
+   "hint": "Doubling volume at constant pressure doubles temperature.",
+   "distractor_logic": [
+    "This is \\( \\Delta U \\) only; expansion work is missing.",
+    "This is only the work done.",
+    "This is the diatomic \\( C_p \\)."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-002",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In a Carnot cycle, during which legs does the temperature of the working gas change?",
+   "options": [
+    "The two isothermal legs only",
+    "All four legs",
+    "None of the legs",
+    "The two adiabatic legs only"
+   ],
+   "correct_index": 3,
+   "explanation": "The isothermal legs happen at the fixed reservoir temperatures \\( T_H \\) and \\( T_C \\).<br><br>The adiabatic legs carry the gas between \\( T_H \\) and \\( T_C \\) with \\( Q=0 \\), using \\( \\Delta U=-W \\).",
+   "hint": "Isothermal legs are at fixed temperature by definition.",
+   "distractor_logic": [
+    "Isothermal legs have constant temperature by definition.",
+    "Temperature is constant on the isothermal legs.",
+    "The gas must move between \\( T_H \\) and \\( T_C \\) somewhere in the cycle."
+   ],
+   "mixed_topics": [
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-003",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An ideal gas is taken anticlockwise around a rectangle on a P-V diagram with pressures \\( P_0 \\) and \\( 3P_0 \\) and volumes \\( V_0 \\) and \\( 2V_0 \\). What is the net heat absorbed by the gas per cycle?",
+   "options": [
+    "\\( -2P_0V_0 \\)",
+    "\\( +2P_0V_0 \\)",
+    "\\( 0 \\)",
+    "\\( -6P_0V_0 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Enclosed area \\( =(3P_0-P_0)(2V_0-V_0)=2P_0V_0 \\). Anticlockwise means net work by the gas is negative: \\( W=-2P_0V_0 \\).<br><br>\\( \\Delta U=0 \\) over the cycle, so \\( Q=W=-2P_0V_0 \\).",
+   "hint": "The direction of travel sets the sign.",
+   "distractor_logic": [
+    "This is the clockwise result.",
+    "\\( \\Delta U=0 \\), but heat equals the nonzero net work.",
+    "This is the area under the upper isobar, not the enclosed area."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-004",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two moles of a monoatomic ideal gas expand adiabatically and do \\( 747 \\) J of work. Taking \\( R=8.3 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\), how does its temperature change?",
+   "options": [
+    "It rises by \\( 30 \\) K",
+    "It falls by \\( 30 \\) K",
+    "It stays the same",
+    "It falls by \\( 18 \\) K"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( Q=0 \\), so \\( \\Delta U=-W=-747 \\) J.<br><br>\\( \\Delta T=\\dfrac{\\Delta U}{nC_v}=\\dfrac{-747}{2\\times1.5\\times8.3}=-30 \\) K.",
+   "hint": "The work done comes out of internal energy.",
+   "distractor_logic": [
+    "Doing work with no heat input lowers internal energy, not raises it.",
+    "Constant temperature would be isothermal, not adiabatic.",
+    "\\( C_p \\) was used; \\( \\Delta U \\) always uses \\( C_v \\)."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-005",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An engine cycle has four legs: isochoric pressure rise, isobaric expansion, isochoric pressure drop, and isobaric compression. In which legs does the gas absorb heat?",
+   "options": [
+    "The isochoric pressure drop and the isobaric compression",
+    "Only the isobaric expansion",
+    "The isochoric pressure rise and the isobaric expansion",
+    "All four legs"
+   ],
+   "correct_index": 2,
+   "explanation": "Isochoric pressure rise: \\( T \\) rises, \\( W=0 \\), so \\( Q=\\Delta U>0 \\). Isobaric expansion: \\( T \\) rises and \\( W>0 \\), so \\( Q>0 \\).<br><br>The other two legs lower the temperature, so heat is rejected there.",
+   "hint": "Check whether temperature rises on each leg.",
+   "distractor_logic": [
+    "These legs cool the gas, so they reject heat.",
+    "The isochoric pressure rise also needs heat, since \\( T \\) rises with \\( W=0 \\).",
+    "An engine must reject heat on some legs."
+   ],
+   "mixed_topics": [
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-006",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An engine between \\( 500 \\) K and \\( 250 \\) K is claimed to absorb \\( 1000 \\) J and reject only \\( 400 \\) J per cycle. The claim is:",
+   "options": [
+    "Possible, since energy is conserved",
+    "Possible, since \\( 60\\% \\) is below \\( 100\\% \\)",
+    "Impossible, since it violates the first law",
+    "Impossible, since its efficiency of \\( 60\\% \\) exceeds the Carnot limit of \\( 50\\% \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Claimed \\( \\eta=\\dfrac{1000-400}{1000}=60\\% \\). Carnot limit \\( =1-\\dfrac{250}{500}=50\\% \\).<br><br>No engine can beat the Carnot limit, so the claim violates the second law.",
+   "hint": "Compare the claimed efficiency with the Carnot limit.",
+   "distractor_logic": [
+    "Energy conservation holds, but the second law is broken.",
+    "The Carnot limit, not \\( 100\\% \\), is the ceiling.",
+    "\\( W=600 \\) J with \\( Q_C=400 \\) J conserves energy."
+   ],
+   "mixed_topics": [
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-007",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In each cycle, an engine's working gas absorbs \\( 800 \\) J and releases \\( 600 \\) J. Using the first law over a complete cycle, what is its efficiency?",
+   "options": [
+    "\\( 25\\% \\)",
+    "\\( 75\\% \\)",
+    "\\( 33.3\\% \\)",
+    "\\( 100\\% \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Over a cycle \\( \\Delta U=0 \\), so \\( W=Q_{\\text{net}}=800-600=200 \\) J.<br><br>\\( \\eta=\\dfrac{200}{800}=25\\% \\).",
+   "hint": "Net work equals net heat in a cycle.",
+   "distractor_logic": [
+    "This is the fraction rejected.",
+    "This divides the work by the heat released.",
+    "Some heat is released, so the efficiency is below \\( 100\\% \\)."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-008",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A Carnot engine with a monoatomic ideal gas works between \\( 800 \\) K and \\( 200 \\) K. During its adiabatic expansion leg, by what factor does the volume increase?",
+   "options": [
+    "\\( 4 \\)",
+    "\\( 8 \\)",
+    "\\( 2 \\)",
+    "\\( 32 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( TV^{\\gamma-1}=\\text{const} \\) with \\( \\gamma-1=\\tfrac23 \\).<br><br>\\( \\dfrac{V_2}{V_1}=\\left(\\dfrac{800}{200}\\right)^{3/2}=4^{3/2}=8 \\).",
+   "hint": "Invert the exponent \\( \\gamma-1 \\).",
+   "distractor_logic": [
+    "This is just the temperature ratio.",
+    "The exponent \\( \\tfrac12 \\) was used instead of \\( \\tfrac32 \\).",
+    "This is the pressure ratio, using exponent \\( \\gamma/(\\gamma-1) \\)."
+   ],
+   "mixed_topics": [
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-009",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "One mole of a diatomic ideal gas is heated from \\( T \\) to \\( T+100 \\) K, once at constant pressure and once along some other path. What is \\( \\Delta U \\) in each case?",
+   "options": [
+    "\\( 350R \\) at constant pressure and \\( 250R \\) otherwise",
+    "\\( 150R \\) for both paths",
+    "\\( 250R \\) for both paths",
+    "\\( 250R \\) at constant pressure and \\( 0 \\) for the other path"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\Delta U \\) is a state function: \\( \\Delta U=nC_v\\Delta T \\) for any path.<br><br>\\( \\Delta U=\\tfrac52R\\times100=250R \\) for both.",
+   "hint": "Internal energy depends only on temperature.",
+   "distractor_logic": [
+    "\\( 350R \\) is the heat at constant pressure, not \\( \\Delta U \\).",
+    "The monoatomic \\( C_v \\) was used.",
+    "The same temperature change gives the same \\( \\Delta U \\) on any path."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-010",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Equal amounts of a monoatomic and a diatomic ideal gas expand isothermally at the same temperature through the same volume ratio. Which does more work?",
+   "options": [
+    "The diatomic gas",
+    "The monoatomic gas",
+    "The one with larger \\( \\gamma \\)",
+    "Both do equal work"
+   ],
+   "correct_index": 3,
+   "explanation": "Isothermal work \\( W=nRT\\ln\\!\\left(\\dfrac{V_2}{V_1}\\right) \\) contains no heat capacity.<br><br>With the same \\( n \\), \\( T \\), and volume ratio, the work is the same.",
+   "hint": "Does \\( C_v \\) appear in the isothermal work formula?",
+   "distractor_logic": [
+    "Extra degrees of freedom do not matter when \\( \\Delta U=0 \\).",
+    "\\( \\gamma \\) plays no role in isothermal work.",
+    "\\( \\gamma \\) matters for adiabatic, not isothermal, processes."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-011",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An ideal gas is compressed from the same initial state to the same final volume, once isothermally and once adiabatically. Which process gives the higher final pressure?",
+   "options": [
+    "The adiabatic compression",
+    "The isothermal compression",
+    "Both give the same pressure",
+    "The adiabatic one gives lower pressure, since \\( Q=0 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "In adiabatic compression, the work done on the gas raises its internal energy and temperature (\\( \\Delta U=-W>0 \\)).<br><br>Higher temperature at the same volume means higher pressure; equivalently the adiabatic curve is steeper.",
+   "hint": "What happens to temperature in each case?",
+   "distractor_logic": [
+    "The isothermal gas stays cooler, so its pressure is lower.",
+    "The temperatures differ, so the pressures differ.",
+    "\\( Q=0 \\) means the work goes entirely into heating the gas."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-012",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A Carnot engine works between \\( 400 \\) K and \\( 300 \\) K. If it is run in reverse as a refrigerator, what is its coefficient of performance?",
+   "options": [
+    "\\( 4 \\)",
+    "\\( 3 \\)",
+    "\\( \\tfrac13 \\)",
+    "\\( 0.75 \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\text{COP}=\\dfrac{T_C}{T_H-T_C}=\\dfrac{300}{100}=3 \\).<br><br>As an engine its efficiency is \\( 25\\% \\), consistent with \\( \\text{COP}=\\dfrac{1-\\eta}{\\eta}=3 \\).",
+   "hint": "Use \\( T_C/(T_H-T_C) \\).",
+   "distractor_logic": [
+    "This uses \\( T_H \\) in the numerator (heat-pump value).",
+    "This is inverted.",
+    "This is \\( T_C/T_H \\)."
+   ],
+   "mixed_topics": [
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-013",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An ideal gas absorbs \\( 500 \\) J of heat while expanding isothermally. What are \\( \\Delta U \\) and \\( W \\)?",
+   "options": [
+    "\\( \\Delta U=500 \\) J, \\( W=0 \\)",
+    "\\( \\Delta U=250 \\) J, \\( W=250 \\) J",
+    "\\( \\Delta U=0 \\), \\( W=500 \\) J",
+    "\\( \\Delta U=0 \\), \\( W=-500 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "Internal energy of an ideal gas depends only on temperature, so \\( \\Delta U=0 \\).<br><br>\\( W=Q-\\Delta U=500 \\) J: all the heat becomes work.",
+   "hint": "Constant temperature fixes the internal energy.",
+   "distractor_logic": [
+    "This describes an isochoric process.",
+    "None of the heat raises internal energy at constant temperature.",
+    "An expanding gas does positive work."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-014",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two moles of a diatomic ideal gas are heated through \\( 10 \\) K at constant volume. Taking \\( R=8.3 \\) J mol\\( ^{-1} \\) K\\( ^{-1} \\), which pair is correct?",
+   "options": [
+    "\\( Q=581 \\) J, \\( W=166 \\) J",
+    "\\( Q=415 \\) J, \\( W=166 \\) J",
+    "\\( Q=249 \\) J, \\( W=0 \\)",
+    "\\( Q=415 \\) J, \\( W=0 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Constant volume: \\( W=0 \\).<br><br>\\( Q=nC_v\\Delta T=2\\times2.5\\times8.3\\times10=415 \\) J.",
+   "hint": "Isochoric means no work; use \\( C_v \\).",
+   "distractor_logic": [
+    "This is the constant-pressure result.",
+    "Work cannot occur with no volume change.",
+    "The monoatomic \\( C_v \\) was used."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-015",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A gas runs clockwise around a rectangle on a P-V diagram between pressures \\( P_0 \\) and \\( 2P_0 \\) and volumes \\( V_0 \\) and \\( 3V_0 \\), absorbing \\( 10P_0V_0 \\) of heat per cycle. What is the efficiency of this engine cycle?",
+   "options": [
+    "\\( 20\\% \\)",
+    "\\( 80\\% \\)",
+    "\\( 25\\% \\)",
+    "\\( 40\\% \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Net work = enclosed area \\( =P_0\\times2V_0=2P_0V_0 \\).<br><br>\\( \\eta=\\dfrac{2P_0V_0}{10P_0V_0}=20\\% \\).",
+   "hint": "Net work is the enclosed area.",
+   "distractor_logic": [
+    "This is the fraction of heat rejected.",
+    "The work was divided by the rejected heat \\( 8P_0V_0 \\).",
+    "The area under the upper isobar was used as the work."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-016",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Bodies at \\( 400 \\) K and \\( 300 \\) K are placed in contact inside an insulated box. Which statement is correct?",
+   "options": [
+    "Heat flows until the internal energies are equal, and the process is reversible",
+    "Heat flows from the \\( 400 \\) K body until the temperatures are equal, and the process is irreversible",
+    "Heat flows from the \\( 300 \\) K body until the temperatures are equal, and the process is irreversible",
+    "Heat flows from the \\( 400 \\) K body until the temperatures are equal, and the process is reversible"
+   ],
+   "correct_index": 1,
+   "explanation": "Heat flows spontaneously from hot to cold until thermal equilibrium (equal temperatures) is reached.<br><br>Heat flow across a finite temperature difference cannot be undone without outside work, so it is irreversible.",
+   "hint": "What stops the flow, and can it run backward by itself?",
+   "distractor_logic": [
+    "Equilibrium means equal temperatures, and finite-gradient heat flow is irreversible.",
+    "Heat does not flow spontaneously from cold to hot.",
+    "Reaching equilibrium does not make the process reversible."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-017",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two Carnot engines work between \\( 600 \\) K and \\( 300 \\) K, one using a monoatomic gas and the other a diatomic gas. Their efficiencies are:",
+   "options": [
+    "Higher for the monoatomic gas, since its \\( \\gamma \\) is larger",
+    "Higher for the diatomic gas, since its \\( C_v \\) is larger",
+    "Both \\( 50\\% \\)",
+    "Dependent on the number of moles used"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( \\eta=1-\\dfrac{300}{600}=50\\% \\), and this contains no gas property.<br><br>Heat capacities affect the volume ratios of the adiabatic legs, not the efficiency.",
+   "hint": "Which symbols appear in the Carnot efficiency?",
+   "distractor_logic": [
+    "\\( \\gamma \\) changes the shape of the cycle, not its efficiency.",
+    "\\( C_v \\) does not appear in \\( 1-\\dfrac{T_C}{T_H} \\).",
+    "Scaling the gas scales both \\( W \\) and \\( Q_H \\)."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-018",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "One mole of ideal gas runs a Carnot cycle between \\( 600 \\) K and \\( 300 \\) K. During the isothermal expansion at \\( 600 \\) K the volume grows from \\( V \\) to \\( e^{2}V \\). How much heat is rejected per cycle?",
+   "options": [
+    "\\( 300R \\)",
+    "\\( 1200R \\)",
+    "\\( 0 \\)",
+    "\\( 600R \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( Q_H=RT_H\\ln(e^{2})=1200R \\).<br><br>\\( Q_C=Q_H\\dfrac{T_C}{T_H}=600R \\) (the cold isotherm has the same volume ratio).",
+   "hint": "\\( \\ln(e^{2})=2 \\), and \\( Q_C/Q_H=T_C/T_H \\).",
+   "distractor_logic": [
+    "The logarithm was taken as 1.",
+    "This is \\( Q_H \\).",
+    "Returning to the initial state makes \\( \\Delta U \\) zero, not \\( Q_C \\)."
+   ],
+   "mixed_topics": [
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-019",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An ideal gas is taken clockwise around a triangle on a P-V diagram with corners \\( (P_0,V_0) \\), \\( (3P_0,V_0) \\), and \\( (P_0,3V_0) \\). What is the net heat absorbed per cycle?",
+   "options": [
+    "\\( 2P_0V_0 \\)",
+    "\\( 4P_0V_0 \\)",
+    "\\( 0 \\)",
+    "\\( 6P_0V_0 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Enclosed area \\( =\\tfrac12(2P_0)(2V_0)=2P_0V_0 \\), positive for a clockwise cycle.<br><br>\\( \\Delta U=0 \\), so \\( Q=W=2P_0V_0 \\).",
+   "hint": "Area of a triangle is half base times height.",
+   "distractor_logic": [
+    "The factor \\( \\tfrac12 \\) was forgotten.",
+    "\\( \\Delta U=0 \\), but net heat equals net work.",
+    "The largest pressure \\( 3P_0 \\) was multiplied by the full volume span \\( 2V_0 \\)."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-020",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "For a monoatomic ideal gas, the isothermal slope at a point on a P-V diagram is \\( -3\\times10^{5} \\) Pa m\\( ^{-3} \\). What is the adiabatic slope at the same point?",
+   "options": [
+    "\\( -1.8\\times10^{5} \\) Pa m\\( ^{-3} \\)",
+    "\\( -5\\times10^{5} \\) Pa m\\( ^{-3} \\)",
+    "\\( -3\\times10^{5} \\) Pa m\\( ^{-3} \\)",
+    "\\( -4.2\\times10^{5} \\) Pa m\\( ^{-3} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Adiabatic slope \\( =\\gamma\\times \\) isothermal slope.<br><br>\\( \\tfrac53\\times(-3\\times10^{5})=-5\\times10^{5} \\) Pa m\\( ^{-3} \\).",
+   "hint": "The adiabatic is steeper by a factor \\( \\gamma \\).",
+   "distractor_logic": [
+    "Dividing by \\( \\gamma \\) makes the adiabatic less steep, which is wrong.",
+    "The slopes are not equal since \\( \\gamma>1 \\).",
+    "The diatomic \\( \\gamma \\) was used."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-021",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A heat pump delivers \\( 5000 \\) J to a house using \\( 1000 \\) J of work. How much heat does it draw from the cold outdoors?",
+   "options": [
+    "\\( 6000 \\) J",
+    "\\( 5000 \\) J",
+    "\\( 4000 \\) J",
+    "\\( 1000 \\) J"
+   ],
+   "correct_index": 2,
+   "explanation": "Energy balance over a cycle: \\( Q_H=Q_C+W \\).<br><br>\\( Q_C=5000-1000=4000 \\) J.",
+   "hint": "The house gets outdoor heat plus the work.",
+   "distractor_logic": [
+    "The work was added instead of subtracted.",
+    "This ignores the work input.",
+    "This is the work input."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-022",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Why must the isothermal legs of a Carnot cycle be carried out very slowly?",
+   "options": [
+    "To allow some heat to raise the internal energy of the gas",
+    "To turn the isothermal legs into adiabatic ones",
+    "To reduce the work done in those legs to zero",
+    "To keep the gas in equilibrium at essentially the reservoir temperature, so heat flows across only an infinitesimal difference"
+   ],
+   "correct_index": 3,
+   "explanation": "A reversible isothermal step needs the gas to pass through equilibrium states at the reservoir temperature.<br><br>A finite temperature difference would make the heat flow irreversible and lower the efficiency.",
+   "hint": "Reversible heat transfer needs nearly equal temperatures.",
+   "distractor_logic": [
+    "On an isothermal leg \\( \\Delta U=0 \\) for an ideal gas.",
+    "Slowness does not stop heat exchange; isothermal legs do exchange heat.",
+    "The isothermal legs are where the heat and work exchange happens."
+   ],
+   "mixed_topics": [
+    "Reversible and Irreversible Processes, and the Carnot Engine",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-023",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A heat reservoir used by a heat engine is best described as:",
+   "options": [
+    "A body so large that its temperature stays unchanged when it exchanges heat",
+    "A body whose internal energy can be turned entirely into work",
+    "A body kept at \\( 0 \\) K",
+    "A perfectly insulated container"
+   ],
+   "correct_index": 0,
+   "explanation": "A reservoir exchanges heat without any noticeable change in its own temperature because of its enormous heat capacity.<br><br>That fixed temperature is what engines and refrigerators work between.",
+   "hint": "What does not change about a reservoir?",
+   "distractor_logic": [
+    "No body's heat can be fully converted to work in a cycle (Kelvin-Planck).",
+    "Reservoirs are at ordinary temperatures; \\( 0 \\) K is unattainable.",
+    "An insulated container cannot exchange heat at all."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-024",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "One mole of a diatomic ideal gas cools adiabatically from \\( 500 \\) K to \\( 300 \\) K. What is \\( \\Delta U \\)?",
+   "options": [
+    "\\( +500R \\)",
+    "\\( -500R \\)",
+    "\\( 0 \\)",
+    "\\( -700R \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "\\( \\Delta U=nC_v\\Delta T=\\tfrac52R(300-500)=-500R \\).<br><br>With \\( Q=0 \\), the gas does \\( W=+500R \\) of work.",
+   "hint": "\\( \\Delta U \\) always uses \\( C_v \\).",
+   "distractor_logic": [
+    "Temperature falls, so \\( \\Delta U \\) is negative.",
+    "\\( \\Delta U=0 \\) only when temperature is constant.",
+    "\\( C_p \\) was used instead of \\( C_v \\)."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-025",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An engine cycle is made of two adiabatic legs and two isochoric legs. During which leg does the gas absorb heat?",
+   "options": [
+    "The adiabatic compression, since temperature rises there",
+    "Both adiabatic legs",
+    "The isochoric leg in which pressure rises",
+    "The isochoric leg in which pressure falls"
+   ],
+   "correct_index": 2,
+   "explanation": "Adiabatic legs have \\( Q=0 \\) by definition.<br><br>On the isochoric pressure-rise leg, \\( T \\) rises with \\( W=0 \\), so \\( Q=\\Delta U>0 \\). The pressure-fall leg rejects heat.",
+   "hint": "Adiabatic means no heat at all.",
+   "distractor_logic": [
+    "Temperature rises here because of work, not heat.",
+    "\\( Q=0 \\) on every adiabatic leg.",
+    "Falling pressure at constant volume means cooling, so heat is released."
+   ],
+   "mixed_topics": [
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-026",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A Carnot engine works between \\( 400 \\) K and \\( 200 \\) K. If the source temperature is doubled to \\( 800 \\) K, what is the new efficiency?",
+   "options": [
+    "\\( 100\\% \\)",
+    "\\( 50\\% \\)",
+    "\\( 25\\% \\)",
+    "\\( 75\\% \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "Initially \\( \\eta=50\\% \\). New: \\( \\eta=1-\\dfrac{200}{800}=75\\% \\).",
+   "hint": "Recalculate with the new \\( T_H \\).",
+   "distractor_logic": [
+    "Doubling \\( T_H \\) does not double \\( \\eta \\); \\( 100\\% \\) is impossible.",
+    "This is the original efficiency.",
+    "This is \\( T_C/T_H \\) at the new temperature."
+   ],
+   "mixed_topics": [
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-027",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Equal numbers of moles of a diatomic and a monoatomic ideal gas are at the same temperature. What is the ratio of their internal energies, \\( U_{\\text{dia}}:U_{\\text{mono}} \\)?",
+   "options": [
+    "\\( 5:3 \\)",
+    "\\( 3:5 \\)",
+    "\\( 7:5 \\)",
+    "\\( 1:1 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( U=nC_vT \\): \\( \\tfrac52nRT \\) for diatomic and \\( \\tfrac32nRT \\) for monoatomic.<br><br>Ratio \\( =5:3 \\).",
+   "hint": "Compare the two \\( C_v \\) values.",
+   "distractor_logic": [
+    "The ratio was inverted.",
+    "This is \\( \\gamma \\) for a diatomic gas.",
+    "Same temperature does not mean same internal energy for different gas types."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-028",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A refrigerator keeps food at \\( 0^\\circ \\)C in a kitchen at \\( 30^\\circ \\)C. What is its maximum possible coefficient of performance?",
+   "options": [
+    "\\( 0 \\)",
+    "\\( 9.1 \\)",
+    "\\( 10.1 \\)",
+    "\\( \\dfrac{30}{273} \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Convert to kelvin: \\( T_C=273 \\) K, \\( T_H=303 \\) K.<br><br>\\( \\text{COP}_{\\max}=\\dfrac{273}{303-273}=9.1 \\).",
+   "hint": "Kelvin temperatures only.",
+   "distractor_logic": [
+    "Celsius values were used, giving \\( \\dfrac{0}{30} \\).",
+    "\\( T_H \\) was used in the numerator.",
+    "The ratio was inverted."
+   ],
+   "mixed_topics": [
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-029",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Two moles of an ideal gas are heated through \\( 50 \\) K, once at constant pressure and once at constant volume. How much more heat is needed at constant pressure?",
+   "options": [
+    "\\( 250R \\)",
+    "\\( 350R \\)",
+    "\\( 100R \\)",
+    "\\( 0 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "Extra heat \\( =n(C_p-C_v)\\Delta T=nR\\Delta T \\).<br><br>\\( 2\\times R\\times50=100R \\), which is exactly the expansion work.",
+   "hint": "Use Mayer's relation.",
+   "distractor_logic": [
+    "This is \\( nC_v\\Delta T \\) for a diatomic gas.",
+    "This is \\( nC_p\\Delta T \\) for a diatomic gas.",
+    "Constant-pressure heating always needs extra heat for expansion work."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-030",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An ideal gas goes along a straight line on a P-V diagram from \\( (3P_0,V_0) \\) to \\( (P_0,3V_0) \\). How much heat does it absorb?",
+   "options": [
+    "\\( 0 \\), since the initial and final temperatures are equal",
+    "\\( 6P_0V_0 \\)",
+    "\\( 2P_0V_0 \\)",
+    "\\( 4P_0V_0 \\)"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( PV=3P_0V_0 \\) at both ends, so the end temperatures match and \\( \\Delta U=0 \\).<br><br>\\( W= \\) trapezium area \\( =\\tfrac12(3P_0+P_0)(2V_0)=4P_0V_0 \\), so \\( Q=W=4P_0V_0 \\).",
+   "hint": "Check \\( PV \\) at both ends.",
+   "distractor_logic": [
+    "\\( \\Delta U=0 \\) does not make \\( Q \\) zero; it makes \\( Q=W \\).",
+    "The initial pressure was used for the whole expansion.",
+    "The final pressure was used for the whole expansion."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-031",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A heat engine of efficiency \\( 40\\% \\) rejects \\( 900 \\) J per cycle. How much work does it do per cycle?",
+   "options": [
+    "\\( 600 \\) J",
+    "\\( 360 \\) J",
+    "\\( 540 \\) J",
+    "\\( 1500 \\) J"
+   ],
+   "correct_index": 0,
+   "explanation": "\\( Q_C=(1-\\eta)Q_H \\), so \\( Q_H=\\dfrac{900}{0.6}=1500 \\) J.<br><br>\\( W=Q_H-Q_C=600 \\) J.",
+   "hint": "Rejected heat is \\( 60\\% \\) of the input.",
+   "distractor_logic": [
+    "The efficiency was applied to \\( Q_C \\).",
+    "This is \\( 60\\% \\) of \\( Q_C \\).",
+    "This is \\( Q_H \\)."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-032",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Reversible and Irreversible Processes, and the Carnot Engine",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "Over the two adiabatic legs of a Carnot cycle using \\( n \\) moles of ideal gas, what is the total work done by the gas?",
+   "options": [
+    "\\( 2nC_v(T_H-T_C) \\)",
+    "Zero",
+    "\\( nC_v(T_H-T_C) \\)",
+    "\\( nR(T_H-T_C) \\)"
+   ],
+   "correct_index": 1,
+   "explanation": "Adiabatic expansion: \\( W=nC_v(T_H-T_C) \\). Adiabatic compression: \\( W=-nC_v(T_H-T_C) \\).<br><br>They cancel exactly, so net work comes only from the isothermal legs.",
+   "hint": "Both adiabatic legs span the same temperature range.",
+   "distractor_logic": [
+    "The compression work is negative and cancels the expansion work.",
+    "This is only the expansion leg.",
+    "This is not the adiabatic work formula."
+   ],
+   "mixed_topics": [
+    "Reversible and Irreversible Processes, and the Carnot Engine",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-033",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "An engine is placed between two reservoirs that are both at \\( 350 \\) K. How much net work can it deliver per cycle?",
+   "options": [
+    "The most possible, since there are no losses",
+    "All the heat it absorbs",
+    "Zero",
+    "An amount set by the size of the reservoirs"
+   ],
+   "correct_index": 2,
+   "explanation": "Reservoirs at the same temperature are in thermal equilibrium, so no net heat flows between them.<br><br>With \\( T_C=T_H \\), even the Carnot limit is \\( 1-1=0 \\).",
+   "hint": "Is there any temperature difference to exploit?",
+   "distractor_logic": [
+    "Without a temperature difference there is nothing to run the engine.",
+    "Complete conversion of heat to work is forbidden in any case.",
+    "Size does not create a temperature difference."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-034",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A Carnot engine rejects \\( 60\\% \\) of the heat it absorbs to a sink at \\( 300 \\) K. What is the source temperature?",
+   "options": [
+    "\\( 180 \\) K",
+    "\\( 750 \\) K",
+    "\\( 480 \\) K",
+    "\\( 500 \\) K"
+   ],
+   "correct_index": 3,
+   "explanation": "\\( \\dfrac{Q_C}{Q_H}=\\dfrac{T_C}{T_H}=0.6 \\).<br><br>\\( T_H=\\dfrac{300}{0.6}=500 \\) K.",
+   "hint": "The heat ratio equals the kelvin temperature ratio.",
+   "distractor_logic": [
+    "This multiplies instead of divides; the source must be hotter than the sink.",
+    "This uses \\( T_H=T_C/\\eta \\) with \\( \\eta=40\\% \\).",
+    "This adds \\( 60\\% \\) to \\( T_C \\), which has no basis."
+   ],
+   "mixed_topics": [
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-035",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A quasi-static process is one in which:",
+   "options": [
+    "The system passes through a continuous series of equilibrium states",
+    "The change happens suddenly in a single step",
+    "The temperature stays constant throughout",
+    "No work is done by the system"
+   ],
+   "correct_index": 0,
+   "explanation": "A quasi-static process is so slow that the system has well-defined \\( P \\), \\( V \\), and \\( T \\) at every stage.<br><br>This is required for a process to be reversible and to be drawn as a curve on a P-V diagram.",
+   "hint": "Think of infinitely slow steps.",
+   "distractor_logic": [
+    "Sudden changes pass through non-equilibrium states.",
+    "That is isothermal; quasi-static processes can change temperature.",
+    "Quasi-static expansions do work (area under the curve)."
+   ],
+   "mixed_topics": [
+    "Thermal Equilibrium, the Zeroth Law, and Heat, Work, and Internal Energy",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-036",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A gas is used as the working substance of a refrigerator, and its cycle is traversed anticlockwise on a P-V diagram. The net work \\( W \\) done by the gas per cycle is:",
+   "options": [
+    "Positive, equal to the enclosed area",
+    "Negative, with magnitude equal to the enclosed area",
+    "Zero, since the gas returns to its initial state",
+    "Negative, with magnitude equal to the area under the upper curve"
+   ],
+   "correct_index": 1,
+   "explanation": "Anticlockwise cycles give negative net work by the gas: work is done ON the gas.<br><br>Its magnitude is the enclosed area, which is the work input a refrigerator needs.",
+   "hint": "Direction sets the sign; enclosed area sets the size.",
+   "distractor_logic": [
+    "Positive net work describes an engine (clockwise).",
+    "Returning to the start makes \\( \\Delta U \\) zero, not \\( W \\).",
+    "Net work is the enclosed area, not the area under one curve."
+   ],
+   "mixed_topics": [
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-037",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "A Carnot engine using a monoatomic gas absorbs \\( 1200 \\) J at \\( 600 \\) K and rejects heat at \\( 400 \\) K. What are the work done and \\( \\Delta U \\) of the gas over one complete cycle?",
+   "options": [
+    "\\( W=400 \\) J, \\( \\Delta U=800 \\) J",
+    "\\( W=800 \\) J, \\( \\Delta U=0 \\)",
+    "\\( W=400 \\) J, \\( \\Delta U=0 \\)",
+    "\\( W=1200 \\) J, \\( \\Delta U=0 \\)"
+   ],
+   "correct_index": 2,
+   "explanation": "\\( Q_C=1200\\times\\dfrac{400}{600}=800 \\) J, so \\( W=1200-800=400 \\) J.<br><br>Over a full cycle the gas returns to its initial state, so \\( \\Delta U=0 \\).",
+   "hint": "Use \\( Q_C/Q_H=T_C/T_H \\); a cycle has zero \\( \\Delta U \\).",
+   "distractor_logic": [
+    "Rejected heat leaves the gas; it is not stored as internal energy.",
+    "\\( T_C/T_H \\) was used as the efficiency.",
+    "This assumes \\( 100\\% \\) efficiency."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Heat Engines, Refrigerators, and the Second Law of Thermodynamics",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-038",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In which process does all the heat supplied go into internal energy, and in which does all of it go into work?",
+   "options": [
+    "Isothermal; isochoric",
+    "Isobaric; adiabatic",
+    "Adiabatic; isobaric",
+    "Isochoric; isothermal"
+   ],
+   "correct_index": 3,
+   "explanation": "Isochoric: \\( W=0 \\), so \\( Q=\\Delta U \\).<br><br>Isothermal (ideal gas): \\( \\Delta U=0 \\), so \\( Q=W \\).",
+   "hint": "Which process has \\( W=0 \\), and which has \\( \\Delta U=0 \\)?",
+   "distractor_logic": [
+    "The two processes are swapped.",
+    "Isobaric splits heat between \\( \\Delta U \\) and \\( W \\); adiabatic has no heat at all.",
+    "Adiabatic has \\( Q=0 \\), and isobaric always splits the heat."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-039",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "In a Carnot engine between \\( 600 \\) K and \\( 300 \\) K, the surroundings do \\( 300 \\) J of work on the gas during the isothermal compression at \\( 300 \\) K. What is the net work done by the gas per cycle?",
+   "options": [
+    "\\( 300 \\) J",
+    "\\( 600 \\) J",
+    "\\( 900 \\) J",
+    "\\( 0 \\)"
+   ],
+   "correct_index": 0,
+   "explanation": "Isothermal compression: \\( \\Delta U=0 \\), so \\( Q=W=-300 \\) J, i.e. \\( Q_C=300 \\) J is rejected.<br><br>\\( Q_H=Q_C\\dfrac{T_H}{T_C}=600 \\) J, so net \\( W=Q_H-Q_C=300 \\) J.",
+   "hint": "On an isothermal leg, heat equals work.",
+   "distractor_logic": [
+    "This is \\( Q_H \\), ignoring the rejected heat.",
+    "The rejected heat was added to \\( Q_H \\).",
+    "Returning to the initial state makes \\( \\Delta U \\) zero, not the net work."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Reversible and Irreversible Processes, and the Carnot Engine"
+   ]
+  },
+  {
+   "id": "PHY11-CH11-B-040",
+   "chapter": "PHY11-CH11",
+   "chapter_name": "Thermodynamics",
+   "topic": "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+   "level": "Bonus",
+   "type": "bonus",
+   "question": "When a bicycle pump is worked rapidly, the air inside the barrel becomes noticeably warmer. The best explanation is:",
+   "options": [
+    "Compression is isothermal, so the air's internal energy stays constant",
+    "Rapid compression is nearly adiabatic, so the work done on the air raises its internal energy",
+    "Heat flows into the air from the cyclist's hand, making \\( Q \\) the main term",
+    "Compressing the air makes \\( W \\) positive, so \\( \\Delta U=Q-W \\) increases"
+   ],
+   "correct_index": 1,
+   "explanation": "There is little time for heat to escape, so \\( Q\\approx0 \\).<br><br>Work done on the air means \\( W<0 \\), so \\( \\Delta U=-W>0 \\) and the temperature rises.",
+   "hint": "Fast processes have no time to exchange heat.",
+   "distractor_logic": [
+    "If it were isothermal, the air would not warm up.",
+    "Heat from the hand is tiny compared with the work input in rapid pumping.",
+    "Compression makes work done by the gas negative; a positive \\( W \\) would lower \\( \\Delta U \\)."
+   ],
+   "mixed_topics": [
+    "The First Law of Thermodynamics and Specific Heat Capacities (Cp and Cv)",
+    "Thermodynamic Processes: Isothermal, Adiabatic, Isochoric, and Isobaric"
+   ]
+  }
+ ]
+}

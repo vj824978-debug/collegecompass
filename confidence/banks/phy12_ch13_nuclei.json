@@ -1,0 +1,3723 @@
+{
+  "meta": {
+    "chapter": "PHY12-CH13",
+    "chapter_name": "Nuclei",
+    "subject": "Physics",
+    "class": 12,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "The symbols \\( A \\), \\( Z \\), \\( \\Delta m \\), \\( E_b \\), \\( \\lambda \\), \\( T_{1/2} \\) and \\( \\tau \\), and every nuclide in full form such as \\( {}_{92}^{238}\\mathrm{U} \\), are each written as a single KaTeX span; no raw Unicode math symbols appear anywhere. Atomic (not bare nuclear) masses are used consistently, the electron masses cancelling. Every numeric answer terminates cleanly or is a clean order-of-magnitude value."
+  },
+  "topics": [
+    {
+      "name": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "summary": "A nucleus of element X is written \\( {}_Z^A\\mathrm{X} \\), where the atomic number \\( Z \\) counts protons and the mass number \\( A \\) counts all nucleons, so the neutron number is \\( A-Z \\). Nuclides are grouped by which count they share. Isotopes have the same \\( Z \\) but different \\( A \\): the same element with different neutron numbers, such as \\( {}_1^1\\mathrm{H} \\), \\( {}_1^2\\mathrm{H} \\) and \\( {}_1^3\\mathrm{H} \\). Isobars have the same \\( A \\) but different \\( Z \\), so they are different elements, such as \\( {}_6^{14}\\mathrm{C} \\) and \\( {}_7^{14}\\mathrm{N} \\). Isotones share the same neutron number. Scattering experiments show that nuclear volume is proportional to the number of nucleons, so the radius grows only as the cube root of the mass number: \\( R=R_0A^{1/3} \\) with \\( R_0\\approx1.2 \\) fm. Because mass and volume are both proportional to \\( A \\), nuclear density is essentially the same for every nucleus, about \\( 2.3\\times10^{17} \\) kg per cubic metre, far beyond any ordinary matter. Heavier nuclei are bigger, not denser, and the radius ratio of two nuclei depends only on the cube root of their mass-number ratio.",
+      "key_formulas": [
+        "\\( \\text{neutron number}=A-Z \\)",
+        "\\( R=R_0A^{1/3},\\ R_0\\approx1.2\\text{ fm} \\)",
+        "\\( \\frac{R_1}{R_2}=\\left(\\frac{A_1}{A_2}\\right)^{1/3} \\)",
+        "\\( \\rho=\\frac{3m_u}{4\\pi R_0^3}\\approx2.3\\times10^{17}\\ \\text{kg/m}^3 \\)"
+      ],
+      "worked_example": "Find the radius of \\( {}_{13}^{27}\\mathrm{Al} \\) and compare its density with \\( {}_{84}^{216}\\mathrm{Po} \\) (take \\( R_0=1.2 \\) fm).<br><br>\\( R=1.2\\times27^{1/3}=1.2\\times3=3.6 \\) fm.<br><br>Radius ratio Po to Al \\( =\\left(\\frac{216}{27}\\right)^{1/3}=2 \\), but mass and volume both scale with \\( A \\), so the densities are equal: \\( 1:1 \\).",
+      "common_mistakes": [
+        "Swapping the definitions: isotopes share \\( Z \\), isobars share \\( A \\)",
+        "Using \\( R\\propto A \\) instead of \\( R\\propto A^{1/3} \\)",
+        "Claiming heavier nuclei are denser; nuclear density is independent of \\( A \\)",
+        "Reporting \\( Z \\) or \\( A \\) when asked for the neutron number \\( A-Z \\)"
+      ],
+      "question_count": 39
+    },
+    {
+      "name": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "summary": "A nucleus always weighs less than its separate protons and neutrons. The difference is the mass defect, \\( \\Delta m=[Zm_p+(A-Z)m_n]-M \\), taken as constituents minus nucleus so that it is always positive. By Einstein's relation the missing mass appears as the binding energy \\( E_b=\\Delta mc^2 \\): the energy released when free nucleons come together, and equally the energy that must be supplied to pull the nucleus completely apart. The handy conversion is \\( 1\\text{ u}=931.5\\ \\text{MeV}/c^2 \\). In practice we use atomic masses, replacing each proton with a hydrogen atom; the electrons then appear equally on both sides and cancel exactly. A larger nucleus naturally has a larger total binding energy simply because it has more nucleons, so the total is not a fair measure of stability. To compare nuclei of different sizes, divide by the mass number and use the binding energy per nucleon, \\( E_b/A \\). The higher this value, the more tightly each nucleon is held and the more stable the nucleus.",
+      "key_formulas": [
+        "\\( \\Delta m=[Zm_H+(A-Z)m_n]-M_{atom} \\)",
+        "\\( E_b=\\Delta mc^2 \\)",
+        "\\( 1\\text{ u}=931.5\\ \\text{MeV}/c^2 \\)",
+        "\\( \\text{stability measure}=\\frac{E_b}{A} \\)"
+      ],
+      "worked_example": "Find \\( E_b \\) of \\( {}_2^4\\mathrm{He} \\) using \\( m_H=1.0078 \\) u, \\( m_n=1.0087 \\) u, \\( M=4.0026 \\) u.<br><br>\\( \\Delta m=2(1.0078)+2(1.0087)-4.0026=0.0304 \\) u.<br><br>\\( E_b=0.0304\\times931.5\\approx28.32 \\) MeV, so \\( E_b/A\\approx7.08 \\) MeV.",
+      "common_mistakes": [
+        "Subtracting in the wrong order and getting a negative \\( \\Delta m \\)",
+        "Comparing total \\( E_b \\) of different-sized nuclei to judge stability",
+        "Forgetting to convert \\( \\Delta m \\) from u to MeV",
+        "Dividing by \\( Z \\) instead of \\( A \\) for binding energy per nucleon"
+      ],
+      "question_count": 36
+    },
+    {
+      "name": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "summary": "The nuclear force holds protons and neutrons together. It is the strongest known force at about 1 fm but has a very short range, vanishing beyond a few femtometres, and becomes strongly repulsive below about 0.8 fm. It is charge-independent, acting almost equally between any pair of nucleons. Because each nucleon attracts only its nearest neighbours, the force saturates. A plot of \\( E_b/A \\) against \\( A \\) captures its effects. The curve rises steeply for light nuclei, where many nucleons sit at the surface with few neighbours, with a notable spike at \\( {}_2^4\\mathrm{He} \\). It peaks near \\( A\\approx56 \\) to \\( 62 \\), the iron-nickel region, at about 8.7 to 8.8 MeV per nucleon. Beyond the peak it falls slowly, because long-range Coulomb repulsion among protons keeps growing while the attraction saturates. This shape explains nuclear energy: heavy nuclei release energy by fission and light nuclei by fusion, because in both cases the products end up with a higher \\( E_b/A \\), closer to the peak.",
+      "key_formulas": [
+        "\\( \\text{energy released}=(E_b)_{products}-(E_b)_{reactants} \\)",
+        "\\( E_b=A\\times\\frac{E_b}{A} \\)",
+        "\\( \\left(\\frac{E_b}{A}\\right)_{max}\\approx8.8\\text{ MeV at }A\\approx56 \\)"
+      ],
+      "worked_example": "A nucleus with \\( A=240 \\) (\\( E_b/A=7.6 \\) MeV) splits into two nuclei of \\( A=120 \\) (\\( E_b/A=8.5 \\) MeV).<br><br>Before: \\( 240\\times7.6=1824 \\) MeV. After: \\( 240\\times8.5=2040 \\) MeV.<br><br>Energy released \\( =216 \\) MeV.",
+      "common_mistakes": [
+        "Thinking the curve rises steadily with \\( A \\); it peaks near \\( A\\approx56 \\)",
+        "Reversing which process suits light and heavy nuclei",
+        "Claiming energy is released when products have lower \\( E_b/A \\)",
+        "Treating the nuclear force as long-range or charge-dependent"
+      ],
+      "question_count": 37
+    },
+    {
+      "name": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "summary": "Radioactive decay is random for each nucleus, but a large sample behaves predictably: the decay rate is proportional to the number of undecayed nuclei, so \\( \\frac{dN}{dt}=-\\lambda N \\), where \\( \\lambda \\) is the decay constant. Integrating gives the exponential law \\( N=N_0e^{-\\lambda t} \\). The half-life \\( T_{1/2}=\\frac{\\ln2}{\\lambda}=\\frac{0.693}{\\lambda} \\) is the time for half the nuclei to decay. After \\( n \\) half-lives exactly \\( \\left(\\frac{1}{2}\\right)^n \\) remains, so the sample never reaches zero in any finite time, and each half-life removes half of what is left rather than a fixed amount. The mean life \\( \\tau=\\frac{1}{\\lambda} \\) is the average lifetime of a nucleus. Since \\( T_{1/2}=0.693\\tau \\), the mean life is always longer than the half-life. Activity \\( \\mathcal{A}=\\lambda N \\) counts decays per second, measured in becquerel, where 1 Bq is one decay per second, or in curie, where 1 Ci equals \\( 3.7\\times10^{10} \\) Bq. Activity also halves every half-life, so a sample whose activity drops from 1600 Bq to 100 Bq has passed through four half-lives, because each half-life halves both the number of nuclei and the activity.",
+      "key_formulas": [
+        "\\( N=N_0e^{-\\lambda t} \\)",
+        "\\( T_{1/2}=\\frac{\\ln2}{\\lambda}=0.693\\tau \\)",
+        "\\( \\tau=\\frac{1}{\\lambda} \\)",
+        "\\( \\frac{N}{N_0}=\\left(\\frac{1}{2}\\right)^{t/T_{1/2}} \\)",
+        "\\( \\mathcal{A}=\\lambda N,\\ 1\\text{ Ci}=3.7\\times10^{10}\\text{ Bq} \\)"
+      ],
+      "worked_example": "A nuclide has \\( \\tau=10 \\) days. How long until \\( \\frac{1}{8} \\) remains?<br><br>\\( T_{1/2}=0.693\\times10=6.93 \\) days.<br><br>\\( \\frac{1}{8}=\\left(\\frac{1}{2}\\right)^3 \\), so \\( t=3\\times6.93=20.79 \\) days.",
+      "common_mistakes": [
+        "Treating decay as linear, so the sample empties after two half-lives",
+        "Claiming mean life is shorter than or equal to half-life",
+        "Confusing activity \\( \\mathcal{A} \\) with the number of nuclei \\( N \\)",
+        "Mixing up becquerel and curie"
+      ],
+      "question_count": 34
+    },
+    {
+      "name": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "summary": "Unstable nuclei decay in three main ways. In alpha decay the nucleus emits \\( {}_2^4\\mathrm{He} \\), so \\( A \\) falls by 4 and \\( Z \\) by 2. In beta-minus decay a neutron changes into a proton, emitting an electron and an antineutrino, so \\( A \\) is unchanged and \\( Z \\) rises by 1; in beta-plus decay a proton becomes a neutron, emitting a positron and a neutrino, so \\( Z \\) falls by 1. Because the electron and antineutrino share the released energy, beta electrons show a continuous energy spectrum. Gamma decay is photon emission by an excited nucleus and changes neither \\( A \\) nor \\( Z \\). The energy released in any process equals the mass lost times \\( c^2 \\). In fission, a heavy nucleus such as \\( {}_{92}^{235}\\mathrm{U} \\) absorbs a neutron and splits into two medium fragments plus neutrons, releasing about 200 MeV. In fusion, light nuclei such as deuterium and tritium combine, releasing about 17.6 MeV, which is far more energy per unit mass. Fusion needs temperatures near \\( 10^{7} \\) K to overcome Coulomb repulsion.",
+      "key_formulas": [
+        "\\( {}_Z^A\\mathrm{X}\\to{}_{Z-2}^{A-4}\\mathrm{Y}+{}_2^4\\mathrm{He} \\)",
+        "\\( {}_Z^A\\mathrm{X}\\to{}_{Z+1}^{A}\\mathrm{Y}+e^-+\\bar{\\nu} \\)",
+        "\\( {}_Z^A\\mathrm{X}\\to{}_{Z-1}^{A}\\mathrm{Y}+e^++\\nu \\)",
+        "\\( Q=(m_{reactants}-m_{products})c^2 \\)"
+      ],
+      "worked_example": "How many alpha and beta-minus decays take \\( {}_{92}^{238}\\mathrm{U} \\) to \\( {}_{82}^{206}\\mathrm{Pb} \\)?<br><br>Alpha decays: \\( \\frac{238-206}{4}=8 \\), lowering \\( Z \\) to \\( 92-16=76 \\).<br><br>Beta-minus decays: \\( 82-76=6 \\).",
+      "common_mistakes": [
+        "Lowering \\( Z \\) in beta-minus decay",
+        "Changing \\( A \\) in beta or gamma decay",
+        "Swapping the changes in \\( A \\) and \\( Z \\) in alpha decay",
+        "Subtracting reactant and product masses in the wrong order"
+      ],
+      "question_count": 47
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY12-CH13-L1-001",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "Isotopes of an element are nuclides that have",
+      "options": [
+        "the same atomic number \\( Z \\) but different mass number \\( A \\)",
+        "the same mass number \\( A \\) but different atomic number \\( Z \\)",
+        "the same neutron number but different atomic number \\( Z \\)",
+        "the same \\( Z \\) and the same \\( A \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Isotopes belong to the same element, so they share the atomic number \\( Z \\).<br><br>They differ in neutron number \\( A-Z \\), so their mass numbers \\( A \\) differ, e.g. \\( {}_{1}^{1}\\mathrm{H} \\), \\( {}_{1}^{2}\\mathrm{H} \\) and \\( {}_{1}^{3}\\mathrm{H} \\).",
+      "hint": "Same element means the same number of protons.",
+      "distractor_logic": [
+        "This is the definition of isobars; the quantity held fixed has been swapped",
+        "This describes isotones, which share the neutron number \\( A-Z \\)",
+        "Identical \\( Z \\) and \\( A \\) describe one and the same nuclide, not two isotopes"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-002",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "Which pair of nuclides are isotopes?",
+      "options": [
+        "\\( {}_{6}^{14}\\mathrm{C} \\) and \\( {}_{7}^{14}\\mathrm{N} \\)",
+        "\\( {}_{1}^{1}\\mathrm{H} \\) and \\( {}_{1}^{2}\\mathrm{H} \\)",
+        "\\( {}_{1}^{3}\\mathrm{H} \\) and \\( {}_{2}^{3}\\mathrm{He} \\)",
+        "\\( {}_{6}^{14}\\mathrm{C} \\) and \\( {}_{8}^{16}\\mathrm{O} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Isotopes must have the same \\( Z \\).<br><br>\\( {}_{1}^{1}\\mathrm{H} \\) and \\( {}_{1}^{2}\\mathrm{H} \\) both have \\( Z=1 \\), with \\( A=1 \\) and \\( A=2 \\), so they are isotopes of hydrogen.",
+      "hint": "Compare the subscripts (the lower numbers) first.",
+      "distractor_logic": [
+        "Same \\( A=14 \\) but different \\( Z \\): these are isobars",
+        "Same \\( A=3 \\) with different \\( Z \\): isobars, not isotopes",
+        "Both have neutron number 8 but different \\( Z \\): these are isotones"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-003",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "Which pair of nuclides are isobars?",
+      "options": [
+        "\\( {}_{17}^{35}\\mathrm{Cl} \\) and \\( {}_{17}^{37}\\mathrm{Cl} \\)",
+        "\\( {}_{6}^{12}\\mathrm{C} \\) and \\( {}_{6}^{13}\\mathrm{C} \\)",
+        "\\( {}_{18}^{40}\\mathrm{Ar} \\) and \\( {}_{20}^{40}\\mathrm{Ca} \\)",
+        "\\( {}_{1}^{3}\\mathrm{H} \\) and \\( {}_{2}^{4}\\mathrm{He} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Isobars share the mass number \\( A \\) but belong to different elements, so their \\( Z \\) values differ.<br><br>\\( {}_{18}^{40}\\mathrm{Ar} \\) and \\( {}_{20}^{40}\\mathrm{Ca} \\) both have \\( A=40 \\), with \\( Z=18 \\) and \\( Z=20 \\).",
+      "hint": "Isobars share the upper number (the superscript).",
+      "distractor_logic": [
+        "Same \\( Z=17 \\), different \\( A \\): isotopes of chlorine",
+        "Same \\( Z=6 \\): isotopes of carbon, not isobars",
+        "Both have neutron number 2 with different \\( A \\): isotones"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-004",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "How many neutrons are present in the nucleus \\( {}_{92}^{238}\\mathrm{U} \\)?",
+      "options": [
+        "92",
+        "238",
+        "330",
+        "146"
+      ],
+      "correct_index": 3,
+      "explanation": "Neutron number \\( =A-Z \\).<br><br>\\( 238-92=146 \\).",
+      "hint": "Total nucleons minus protons.",
+      "distractor_logic": [
+        "92 is \\( Z \\), the number of protons",
+        "238 is \\( A \\), the total number of nucleons",
+        "Adds \\( A \\) and \\( Z \\) instead of subtracting"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-005",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "The nuclides \\( {}_{6}^{14}\\mathrm{C} \\) and \\( {}_{8}^{16}\\mathrm{O} \\) have the same",
+      "options": [
+        "neutron number",
+        "atomic number \\( Z \\)",
+        "mass number \\( A \\)",
+        "number of electrons in the neutral atom"
+      ],
+      "correct_index": 0,
+      "explanation": "Neutron number of \\( {}_{6}^{14}\\mathrm{C} \\): \\( 14-6=8 \\).<br><br>Neutron number of \\( {}_{8}^{16}\\mathrm{O} \\): \\( 16-8=8 \\).<br><br>Equal neutron numbers make them isotones.",
+      "hint": "Work out \\( A-Z \\) for each nuclide.",
+      "distractor_logic": [
+        "\\( Z \\) is 6 for carbon and 8 for oxygen",
+        "\\( A \\) is 14 and 16, clearly different",
+        "A neutral atom has \\( Z \\) electrons, and \\( Z \\) differs here"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-006",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "The radius \\( R \\) of a nucleus of mass number \\( A \\) is given by (with \\( R_0\\approx1.2 \\) fm)",
+      "options": [
+        "\\( R=R_0A \\)",
+        "\\( R=R_0A^{1/3} \\)",
+        "\\( R=R_0A^{1/2} \\)",
+        "\\( R=R_0A^{3} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Nuclear volume is proportional to the number of nucleons: \\( \\frac{4}{3}\\pi R^3\\propto A \\).<br><br>Hence \\( R\\propto A^{1/3} \\), written \\( R=R_0A^{1/3} \\).",
+      "hint": "The volume, not the radius, grows in step with the number of nucleons.",
+      "distractor_logic": [
+        "Makes the radius proportional to \\( A \\); it is the volume that is proportional to \\( A \\)",
+        "A square-root law has no basis; volume \\( \\propto R^3\\propto A \\) gives a cube root",
+        "Inverts the relation; volume would then grow as \\( A^{9} \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-007",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "How does the density of nuclear matter depend on the mass number \\( A \\)?",
+      "options": [
+        "It increases in proportion to \\( A \\)",
+        "It increases in proportion to \\( A^{1/3} \\)",
+        "It is practically independent of \\( A \\)",
+        "It decreases in proportion to \\( 1/A \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Nuclear mass \\( \\propto A \\) and nuclear volume \\( \\propto R^3\\propto A \\).<br><br>Density is mass divided by volume, so \\( A \\) cancels and nuclear density is nearly the same for all nuclei.",
+      "hint": "Mass and volume both scale the same way with \\( A \\).",
+      "distractor_logic": [
+        "Ignores that the nuclear volume also grows in proportion to \\( A \\)",
+        "Confuses the way the radius grows with the way density behaves",
+        "Assumes volume grows faster than mass, which it does not"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-008",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 1,
+      "type": "regular",
+      "question": "Using \\( R_0=1.2 \\) fm, the radius of the \\( {}_{13}^{27}\\mathrm{Al} \\) nucleus is",
+      "options": [
+        "32.4 fm",
+        "1.2 fm",
+        "10.8 fm",
+        "3.6 fm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( R=R_0A^{1/3} \\).<br><br>\\( 27^{1/3}=3 \\), so \\( R=1.2\\times3=3.6 \\) fm.",
+      "hint": "Find the cube root of 27 first.",
+      "distractor_logic": [
+        "Uses \\( R=R_0A \\) instead of \\( R=R_0A^{1/3} \\)",
+        "Takes \\( R_0 \\) itself as the radius, ignoring \\( A \\)",
+        "Uses \\( A^{2/3}=9 \\) instead of \\( A^{1/3}=3 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-009",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The mass defect \\( \\Delta m \\) of a nucleus \\( {}_Z^A\\mathrm{X} \\) of mass \\( M \\) is",
+      "options": [
+        "\\( \\Delta m=[Zm_p+(A-Z)m_n]-M \\)",
+        "\\( \\Delta m=M-[Zm_p+(A-Z)m_n] \\)",
+        "\\( \\Delta m=[Zm_p+Am_n]-M \\)",
+        "\\( \\Delta m=Zm_p+(A-Z)m_n+M \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The separate nucleons are heavier than the bound nucleus.<br><br>So \\( \\Delta m \\) is the sum of constituent masses minus the nucleus mass, which is positive.",
+      "hint": "Constituents minus the whole.",
+      "distractor_logic": [
+        "Reverses the subtraction, giving a negative \\( \\Delta m \\)",
+        "Counts \\( A \\) neutrons instead of \\( A-Z \\)",
+        "Adds the nucleus mass instead of subtracting it"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-010",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The binding energy \\( E_b \\) of a nucleus with mass defect \\( \\Delta m \\) is",
+      "options": [
+        "\\( E_b=\\Delta mc \\)",
+        "\\( E_b=\\Delta mc^2 \\)",
+        "\\( E_b=\\frac{\\Delta m}{c^2} \\)",
+        "\\( E_b=\\frac{1}{2}\\Delta mc^2 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Einstein's mass-energy relation converts the missing mass into energy.<br><br>\\( E_b=\\Delta mc^2 \\).",
+      "hint": "Mass-energy equivalence.",
+      "distractor_logic": [
+        "Drops a power of \\( c \\); the units are not energy",
+        "Divides instead of multiplying by \\( c^2 \\)",
+        "Borrows the kinetic-energy form, which does not apply"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-011",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The energy equivalent of 1 u of mass is approximately",
+      "options": [
+        "1 MeV",
+        "0.511 MeV",
+        "931.5 MeV",
+        "938.3 MeV"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( 1\\text{ u}=1.66\\times10^{-27} \\) kg; multiplying by \\( c^2 \\) gives about 931.5 MeV.<br><br>So \\( 1\\text{ u}=931.5\\ \\text{MeV}/c^2 \\).",
+      "hint": "This is the standard conversion used in every mass-defect problem.",
+      "distractor_logic": [
+        "Assumes one atomic mass unit is one MeV",
+        "This is the rest energy of an electron",
+        "This is the rest energy of a proton, slightly more than 1 u"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-012",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The binding energy of a nucleus is",
+      "options": [
+        "the energy needed to remove one electron from the atom",
+        "the energy that must be supplied to assemble the nucleus from free nucleons",
+        "the total kinetic energy of the nucleons inside the nucleus",
+        "the energy needed to separate it completely into free protons and neutrons"
+      ],
+      "correct_index": 3,
+      "explanation": "When free nucleons form a nucleus, energy \\( E_b=\\Delta mc^2 \\) is released.<br><br>The same energy must be supplied to pull the nucleus completely apart.",
+      "hint": "Think about pulling the nucleus apart.",
+      "distractor_logic": [
+        "Confuses nuclear binding with atomic ionisation",
+        "Gets the direction wrong: energy is released, not supplied, when nucleons bind",
+        "Binding energy is set by the mass defect, not by nucleon motion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-013",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "For a stable nucleus, the mass of the nucleus compared with the total mass of its separate nucleons is",
+      "options": [
+        "smaller, so \\( \\Delta m \\) is positive",
+        "larger, so \\( \\Delta m \\) is negative",
+        "exactly equal, so \\( \\Delta m=0 \\)",
+        "smaller for light nuclei but larger for heavy nuclei"
+      ],
+      "correct_index": 0,
+      "explanation": "Binding releases energy \\( E_b \\), so mass \\( \\Delta m=E_b/c^2 \\) disappears.<br><br>The nucleus is lighter than its separate nucleons, and \\( \\Delta m>0 \\).",
+      "hint": "Released energy must come from somewhere.",
+      "distractor_logic": [
+        "Reverses the sign; a bound nucleus is lighter than its parts",
+        "Would mean zero binding energy, so the nucleus would not hold together",
+        "All bound nuclei are lighter than their free nucleons, whatever their size"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-014",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "To compare the relative stability of two nuclei of different sizes, the correct quantity is",
+      "options": [
+        "the total binding energy \\( E_b \\)",
+        "the binding energy per nucleon, \\( E_b/A \\)",
+        "the total mass defect \\( \\Delta m \\)",
+        "the mass number \\( A \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Total \\( E_b \\) grows roughly with the number of nucleons.<br><br>Dividing by \\( A \\) gives the average energy holding each nucleon, which is the fair comparison.",
+      "hint": "Normalise for size.",
+      "distractor_logic": [
+        "A larger nucleus has a larger total \\( E_b \\) without being more stable per nucleon",
+        "\\( \\Delta m \\) is just the total \\( E_b \\) in mass units, so it has the same flaw",
+        "Size alone says nothing about how tightly nucleons are held"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-015",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The mass defect of a nucleus is 0.1 u. Taking 1 u = 931 MeV/\\( c^2 \\), its binding energy \\( E_b \\) is",
+      "options": [
+        "931 MeV",
+        "9.31 MeV",
+        "93.1 MeV",
+        "0.1 MeV"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E_b=\\Delta m\\times931 \\) MeV/u.<br><br>\\( 0.1\\times931=93.1 \\) MeV.",
+      "hint": "Multiply by the conversion factor.",
+      "distractor_logic": [
+        "Uses 1 u instead of 0.1 u",
+        "Slips the decimal point by one place",
+        "Leaves the mass in u without converting"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-016",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 1,
+      "type": "regular",
+      "question": "The binding energy of \\( {}_{10}^{20}\\mathrm{Ne} \\) is 160 MeV. Its binding energy per nucleon is",
+      "options": [
+        "16 MeV",
+        "160 MeV",
+        "3200 MeV",
+        "8 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E_b/A=\\frac{160}{20} \\).<br><br>\\( =8 \\) MeV per nucleon.",
+      "hint": "Divide by the number of nucleons.",
+      "distractor_logic": [
+        "Divides by \\( Z=10 \\) instead of \\( A=20 \\)",
+        "Reports the total binding energy",
+        "Multiplies by \\( A \\) instead of dividing"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-017",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "The nuclear force between nucleons is",
+      "options": [
+        "very strong and short-ranged, acting only over a few femtometres",
+        "long-ranged, like gravity",
+        "an inverse-square force, like the Coulomb force",
+        "of infinite range but weaker than gravity"
+      ],
+      "correct_index": 0,
+      "explanation": "The nuclear force is the strongest known force at separations of about 1 fm.<br><br>It falls off very rapidly and is negligible beyond a few fm.",
+      "hint": "Think about why it matters only inside nuclei.",
+      "distractor_logic": [
+        "Gravity acts over any distance; the nuclear force vanishes beyond a few fm",
+        "The nuclear force does not follow an inverse-square law",
+        "It is by far the strongest force at short range, with limited reach"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-018",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "The nuclear force between two nucleons is",
+      "options": [
+        "present only between protons",
+        "nearly the same for proton-proton, neutron-neutron and proton-neutron pairs",
+        "present only between neutrons",
+        "strongest between two protons because they are charged"
+      ],
+      "correct_index": 1,
+      "explanation": "The nuclear force does not depend on electric charge.<br><br>All nucleon pairs attract with roughly equal strength.",
+      "hint": "Charge independence.",
+      "distractor_logic": [
+        "Neutrons are also bound by it",
+        "Protons also feel it; otherwise nuclei with one neutron could not exist",
+        "The nuclear force is charge-independent; charge adds only Coulomb repulsion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-019",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "The binding energy per nucleon \\( E_b/A \\) curve reaches its maximum for nuclei with",
+      "options": [
+        "\\( A \\) around 4 (helium)",
+        "\\( A \\) around 238 (uranium)",
+        "\\( A \\) around 56 to 62 (the iron-nickel region)",
+        "\\( A=1 \\) (hydrogen)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( E_b/A \\) rises steeply for light nuclei and peaks near \\( A\\approx56 \\) to \\( 62 \\).<br><br>It then falls slowly for heavier nuclei.",
+      "hint": "The most tightly bound nuclei are medium-sized.",
+      "distractor_logic": [
+        "Helium is a local spike, well below the overall peak",
+        "Heavy nuclei lie on the falling side of the curve",
+        "A single nucleon has no binding energy at all"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-020",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "The maximum value of the binding energy per nucleon is about",
+      "options": [
+        "0.88 MeV",
+        "88 MeV",
+        "931 MeV",
+        "8.8 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "At the peak (iron-nickel region), \\( E_b/A\\approx8.7 \\) to \\( 8.8 \\) MeV.<br><br>Most medium and heavy nuclei lie between about 7.5 and 8.8 MeV per nucleon.",
+      "hint": "A few MeV per nucleon.",
+      "distractor_logic": [
+        "Too small by a factor of 10",
+        "Too large by a factor of 10",
+        "This is the energy equivalent of 1 u, not a binding energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-021",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "Which nucleus has the highest binding energy per nucleon?",
+      "options": [
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\)",
+        "\\( {}_{92}^{238}\\mathrm{U} \\)",
+        "\\( {}_{2}^{4}\\mathrm{He} \\)",
+        "\\( {}_{8}^{16}\\mathrm{O} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "The \\( E_b/A \\) curve peaks around \\( A\\approx56 \\).<br><br>\\( {}_{26}^{56}\\mathrm{Fe} \\) sits at the peak with about 8.8 MeV per nucleon.",
+      "hint": "Where is the peak of the curve?",
+      "distractor_logic": [
+        "Has the largest total \\( E_b \\) but lies on the falling part of the curve",
+        "Tightly bound for a light nucleus but still below the peak",
+        "Lies on the rising part, below the peak"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-022",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "Two protons are about 1 fm apart inside a nucleus. Which force dominates between them?",
+      "options": [
+        "The repulsive Coulomb force",
+        "The attractive nuclear force",
+        "Their gravitational attraction",
+        "No force acts between them"
+      ],
+      "correct_index": 1,
+      "explanation": "At about 1 fm, the nuclear attraction is far stronger than the Coulomb repulsion.<br><br>That is why protons can stay bound in a nucleus.",
+      "hint": "Which force holds nuclei together?",
+      "distractor_logic": [
+        "Coulomb repulsion exists but is much weaker than the nuclear force at 1 fm",
+        "Gravity is utterly negligible at this scale",
+        "Both nuclear and Coulomb forces clearly act"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-023",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "\\( E_b/A \\) stays roughly constant (about 8 MeV) for \\( 30<A<170 \\) because",
+      "options": [
+        "every nucleon attracts all the others equally",
+        "the Coulomb force vanishes in this range",
+        "the nuclear force saturates: each nucleon interacts only with its nearest neighbours",
+        "these nuclei contain no neutrons"
+      ],
+      "correct_index": 2,
+      "explanation": "Because the nuclear force is short-ranged, a nucleon feels only a limited number of neighbours.<br><br>Adding more nucleons does not raise the binding per nucleon, so \\( E_b/A \\) levels off.",
+      "hint": "Short range means limited neighbours.",
+      "distractor_logic": [
+        "If this were true, \\( E_b/A \\) would keep growing with \\( A \\)",
+        "Coulomb repulsion grows with \\( Z \\); it does not vanish",
+        "Medium nuclei contain many neutrons"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-024",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 1,
+      "type": "regular",
+      "question": "Beyond the peak region, as \\( A \\) increases, \\( E_b/A \\)",
+      "options": [
+        "keeps increasing",
+        "drops sharply to zero",
+        "stays exactly constant",
+        "decreases gradually"
+      ],
+      "correct_index": 3,
+      "explanation": "After the peak near \\( A\\approx56 \\), Coulomb repulsion grows with \\( Z \\).<br><br>So \\( E_b/A \\) falls slowly, to about 7.6 MeV for uranium.",
+      "hint": "Recall the shape after the maximum.",
+      "distractor_logic": [
+        "The curve does not rise forever; it peaks near \\( A\\approx56 \\)",
+        "The fall is slow; uranium still has about 7.6 MeV per nucleon",
+        "It is only roughly constant in the middle and clearly declines for heavy nuclei"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-025",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "The number \\( N \\) of undecayed nuclei at time \\( t \\) in a radioactive sample is given by",
+      "options": [
+        "\\( N=N_0e^{-\\lambda t} \\)",
+        "\\( N=N_0(1-\\lambda t) \\)",
+        "\\( N=N_0e^{\\lambda t} \\)",
+        "\\( N=\\frac{N_0}{\\lambda t} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Each nucleus decays with the same probability per unit time, so \\( \\frac{dN}{dt}=-\\lambda N \\).<br><br>Integrating gives the exponential law \\( N=N_0e^{-\\lambda t} \\).",
+      "hint": "Decay rate is proportional to the number present.",
+      "distractor_logic": [
+        "A linear law would empty the sample at a finite time",
+        "Positive exponent makes the sample grow",
+        "Blows up at \\( t=0 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-026",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "After three half-lives, the fraction of a radioactive sample remaining undecayed is",
+      "options": [
+        "\\( \\frac{1}{6} \\)",
+        "\\( \\frac{1}{8} \\)",
+        "\\( \\frac{1}{3} \\)",
+        "\\( \\frac{1}{9} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Each half-life halves what remains.<br><br>\\( \\left(\\frac{1}{2}\\right)^3=\\frac{1}{8} \\).",
+      "hint": "Halve three times.",
+      "distractor_logic": [
+        "Multiplies 2 by 3 instead of raising 2 to the power 3",
+        "Divides by the number of half-lives",
+        "Uses \\( 3^2 \\) instead of \\( 2^3 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-027",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "The half-life \\( T_{1/2} \\) and decay constant \\( \\lambda \\) are related by",
+      "options": [
+        "\\( T_{1/2}=\\frac{\\lambda}{\\ln2} \\)",
+        "\\( T_{1/2}=\\lambda\\ln2 \\)",
+        "\\( T_{1/2}=\\frac{\\ln2}{\\lambda} \\)",
+        "\\( T_{1/2}=\\frac{1}{\\lambda} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Set \\( N=\\frac{N_0}{2} \\) in \\( N=N_0e^{-\\lambda t} \\): \\( e^{-\\lambda T_{1/2}}=\\frac{1}{2} \\).<br><br>So \\( T_{1/2}=\\frac{\\ln2}{\\lambda}=\\frac{0.693}{\\lambda} \\).",
+      "hint": "Set \\( N=N_0/2 \\).",
+      "distractor_logic": [
+        "Inverted; units would not be time",
+        "Units would be inverse time",
+        "This is the mean life \\( \\tau \\), not the half-life"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-028",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "The mean life \\( \\tau \\) of a radioactive nuclide with decay constant \\( \\lambda \\) is",
+      "options": [
+        "\\( \\tau=\\frac{\\ln2}{\\lambda} \\)",
+        "\\( \\tau=\\lambda \\)",
+        "\\( \\tau=\\frac{2}{\\lambda} \\)",
+        "\\( \\tau=\\frac{1}{\\lambda} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Averaging the lifetimes of all nuclei under the exponential law gives \\( \\tau=\\frac{1}{\\lambda} \\).<br><br>Hence \\( T_{1/2}=0.693\\tau \\).",
+      "hint": "It is the reciprocal of the decay constant.",
+      "distractor_logic": [
+        "This is the half-life, not the mean life",
+        "Units of inverse time, not time",
+        "No basis; the average lifetime is exactly \\( 1/\\lambda \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-029",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "For any radioactive nuclide, the mean life \\( \\tau \\) compared with the half-life \\( T_{1/2} \\) is",
+      "options": [
+        "always longer, since \\( T_{1/2}=0.693\\tau \\)",
+        "always shorter",
+        "always equal",
+        "longer or shorter depending on the element"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T_{1/2}=\\frac{\\ln2}{\\lambda} \\) and \\( \\tau=\\frac{1}{\\lambda} \\).<br><br>So \\( \\frac{T_{1/2}}{\\tau}=\\ln2=0.693<1 \\): the mean life always exceeds the half-life.",
+      "hint": "Compare \\( \\ln2 \\) with 1.",
+      "distractor_logic": [
+        "Reverses the relation; 0.693 is less than 1",
+        "They differ by the factor \\( \\ln2 \\)",
+        "The ratio is the same fixed number for every nuclide"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-030",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement about a radioactive sample after 10 half-lives is correct?",
+      "options": [
+        "The sample has completely decayed, since each half-life removes a fixed amount",
+        "On average \\( \\left(\\frac{1}{2}\\right)^{10}=\\frac{1}{1024} \\) of the original nuclei remain undecayed",
+        "Exactly \\( \\frac{1}{20} \\) of the original nuclei remain",
+        "Half the original nuclei remain, since the half-life never changes"
+      ],
+      "correct_index": 1,
+      "explanation": "Each half-life halves the remaining number.<br><br>After 10 half-lives, \\( \\frac{1}{1024} \\) remains; the exponential never reaches exactly zero.",
+      "hint": "Halve ten times.",
+      "distractor_logic": [
+        "Assumes linear decay; the exponential law never reaches zero",
+        "Multiplies 2 by 10 instead of raising 2 to the tenth power",
+        "Confuses a constant half-life with a constant amount remaining"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-031",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "The SI unit of activity is the becquerel (Bq). One becquerel equals",
+      "options": [
+        "one decay per minute",
+        "\\( 3.7\\times10^{10} \\) decays per second",
+        "one decay per second",
+        "one gram of material decaying per second"
+      ],
+      "correct_index": 2,
+      "explanation": "Activity \\( \\mathcal{A}=\\lambda N \\) is the number of decays per unit time.<br><br>1 Bq = 1 decay per second.",
+      "hint": "SI units use seconds.",
+      "distractor_logic": [
+        "The SI time unit is the second",
+        "This is the curie, not the becquerel",
+        "Activity counts decays, not mass"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-032",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 1,
+      "type": "regular",
+      "question": "One curie (Ci) of activity equals",
+      "options": [
+        "1 Bq",
+        "\\( 3.7\\times10^{-10} \\) Bq",
+        "\\( 6.02\\times10^{23} \\) Bq",
+        "\\( 3.7\\times10^{10} \\) Bq"
+      ],
+      "correct_index": 3,
+      "explanation": "The curie is based on the activity of about 1 g of radium.<br><br>1 Ci \\( =3.7\\times10^{10} \\) decays per second \\( =3.7\\times10^{10} \\) Bq.",
+      "hint": "The curie is a very large unit.",
+      "distractor_logic": [
+        "The curie is the much larger unit",
+        "Inverts the conversion",
+        "This is Avogadro's number, unrelated"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-033",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "In alpha decay, the mass number \\( A \\) and atomic number \\( Z \\) of the nucleus change by",
+      "options": [
+        "\\( A \\) decreases by 4, \\( Z \\) decreases by 2",
+        "\\( A \\) decreases by 2, \\( Z \\) decreases by 4",
+        "\\( A \\) decreases by 4, \\( Z \\) increases by 2",
+        "\\( A \\) unchanged, \\( Z \\) decreases by 2"
+      ],
+      "correct_index": 0,
+      "explanation": "An alpha particle is \\( {}_{2}^{4}\\mathrm{He} \\): 2 protons and 2 neutrons.<br><br>So \\( {}_Z^A\\mathrm{X}\\to{}_{Z-2}^{A-4}\\mathrm{Y}+{}_2^4\\mathrm{He} \\).",
+      "hint": "What does an alpha particle contain?",
+      "distractor_logic": [
+        "Swaps the changes in \\( A \\) and \\( Z \\)",
+        "The alpha particle carries away positive charge, so \\( Z \\) must fall",
+        "The alpha particle carries away 4 nucleons, so \\( A \\) must fall"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-034",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "In beta-minus decay, the mass number \\( A \\) and atomic number \\( Z \\) change by",
+      "options": [
+        "\\( A \\) unchanged, \\( Z \\) decreases by 1",
+        "\\( A \\) unchanged, \\( Z \\) increases by 1",
+        "\\( A \\) decreases by 1, \\( Z \\) increases by 1",
+        "\\( A \\) increases by 1, \\( Z \\) unchanged"
+      ],
+      "correct_index": 1,
+      "explanation": "A neutron turns into a proton, emitting an electron and an antineutrino.<br><br>Nucleon count stays the same, proton count rises by 1.",
+      "hint": "A neutron becomes a proton.",
+      "distractor_logic": [
+        "That is beta-plus decay; beta-minus raises \\( Z \\)",
+        "No nucleon leaves, so \\( A \\) does not change",
+        "No nucleon is added; one neutron becomes a proton"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-035",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "In gamma decay, the nucleus",
+      "options": [
+        "loses 4 in \\( A \\) and 2 in \\( Z \\)",
+        "gains 1 in \\( Z \\) with \\( A \\) unchanged",
+        "keeps the same \\( A \\) and \\( Z \\), dropping to a lower energy state",
+        "loses 1 in \\( A \\) with \\( Z \\) unchanged"
+      ],
+      "correct_index": 2,
+      "explanation": "A gamma ray is a photon, with no charge and no nucleons.<br><br>The nucleus only de-excites; \\( A \\) and \\( Z \\) stay the same.",
+      "hint": "A photon has no charge and no mass number.",
+      "distractor_logic": [
+        "Describes alpha decay",
+        "Describes beta-minus decay",
+        "A photon carries no nucleons"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-036",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "In beta-minus decay, which process takes place inside the nucleus?",
+      "options": [
+        "A proton changes into a neutron, emitting a positron and a neutrino",
+        "A neutron changes into a proton, emitting only an electron",
+        "An orbital electron is ejected from the atom",
+        "A neutron changes into a proton, emitting an electron and an antineutrino"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( n\\to p+e^-+\\bar{\\nu} \\).<br><br>The electron and antineutrino are created at the moment of decay.",
+      "hint": "Where does the electron come from?",
+      "distractor_logic": [
+        "That is beta-plus decay",
+        "Omits the antineutrino, needed to conserve energy and momentum",
+        "Beta particles come from the nucleus, not the electron shells"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-037",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "Nuclear fission is",
+      "options": [
+        "the splitting of a heavy nucleus into two medium-sized nuclei",
+        "the joining of two light nuclei into a heavier one",
+        "the emission of an alpha particle",
+        "the emission of a gamma ray by an excited nucleus"
+      ],
+      "correct_index": 0,
+      "explanation": "In fission, a heavy nucleus such as \\( {}_{92}^{235}\\mathrm{U} \\) splits into two medium fragments plus a few neutrons.<br><br>Energy is released because the fragments are more tightly bound.",
+      "hint": "Fission means splitting.",
+      "distractor_logic": [
+        "That is fusion",
+        "That is alpha decay, not fission",
+        "That is gamma decay"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-038",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "Fusion of light nuclei requires extremely high temperatures because",
+      "options": [
+        "fusion absorbs a large amount of energy",
+        "the nuclei need large kinetic energy to overcome their Coulomb repulsion",
+        "high temperature raises the binding energy of each nucleus",
+        "heat breaks the nuclei into free nucleons first"
+      ],
+      "correct_index": 1,
+      "explanation": "Positively charged nuclei repel each other.<br><br>Only at temperatures of about \\( 10^{7} \\) K do they move fast enough to come within range of the nuclear force.",
+      "hint": "Like charges repel.",
+      "distractor_logic": [
+        "Fusion of light nuclei releases energy",
+        "Temperature does not change binding energy",
+        "Nuclei fuse directly; they are not broken up first"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-039",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "\\( {}_{92}^{238}\\mathrm{U} \\) emits an alpha particle. The daughter nucleus is",
+      "options": [
+        "\\( {}_{88}^{234}\\mathrm{Ra} \\)",
+        "\\( {}_{90}^{236}\\mathrm{Th} \\)",
+        "\\( {}_{90}^{234}\\mathrm{Th} \\)",
+        "\\( {}_{94}^{234}\\mathrm{Pu} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Alpha decay: \\( A \\) falls by 4 and \\( Z \\) falls by 2.<br><br>\\( 238-4=234 \\), \\( 92-2=90 \\): \\( {}_{90}^{234}\\mathrm{Th} \\).",
+      "hint": "Subtract \\( {}_{2}^{4}\\mathrm{He} \\).",
+      "distractor_logic": [
+        "Lowers \\( Z \\) by 4 instead of 2",
+        "Lowers \\( A \\) by 2 instead of 4",
+        "Raises \\( Z \\) instead of lowering it"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L1-040",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 1,
+      "type": "regular",
+      "question": "In beta-plus (positron) decay, the atomic number \\( Z \\)",
+      "options": [
+        "increases by 1, with \\( A \\) unchanged",
+        "decreases by 1, and \\( A \\) decreases by 1",
+        "decreases by 2, with \\( A \\) unchanged",
+        "decreases by 1, with \\( A \\) unchanged"
+      ],
+      "correct_index": 3,
+      "explanation": "A proton turns into a neutron, emitting a positron and a neutrino.<br><br>So \\( Z \\) falls by 1 and \\( A \\) is unchanged.",
+      "hint": "A proton becomes a neutron.",
+      "distractor_logic": [
+        "That is beta-minus decay",
+        "No nucleon leaves; \\( A \\) is unchanged",
+        "Only one proton converts, so \\( Z \\) changes by 1"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-001",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "Taking \\( R_0=1.2 \\) fm, the ratio of the nuclear radius of \\( {}_{30}^{64}\\mathrm{Zn} \\) to that of \\( {}_{13}^{27}\\mathrm{Al} \\) is",
+      "options": [
+        "\\( 4:3 \\)",
+        "\\( 64:27 \\)",
+        "\\( 16:9 \\)",
+        "\\( 1:1 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\frac{R_{Zn}}{R_{Al}}=\\left(\\frac{64}{27}\\right)^{1/3} \\).<br><br>\\( 64^{1/3}=4 \\) and \\( 27^{1/3}=3 \\), so the ratio is \\( 4:3 \\); \\( R_0 \\) cancels.",
+      "hint": "Take cube roots of both mass numbers.",
+      "distractor_logic": [
+        "Takes the radius proportional to \\( A \\)",
+        "Uses \\( A^{2/3} \\), which is the surface-area scaling",
+        "Confuses constant nuclear density with constant nuclear radius"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-002",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "The ratio of the nuclear densities of \\( {}_{52}^{125}\\mathrm{Te} \\) and \\( {}_{13}^{27}\\mathrm{Al} \\) is",
+      "options": [
+        "\\( 125:27 \\)",
+        "\\( 1:1 \\)",
+        "\\( 5:3 \\)",
+        "\\( 27:125 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Mass \\( \\propto A \\) and volume \\( \\propto R^3=R_0^3A \\).<br><br>So density \\( \\propto\\frac{A}{A}=1 \\): every nucleus has the same density, giving \\( 1:1 \\).",
+      "hint": "Write mass and volume in terms of \\( A \\) and divide.",
+      "distractor_logic": [
+        "Assumes a heavier nucleus is denser in proportion to \\( A \\)",
+        "Uses the radius ratio as if it were the density ratio",
+        "Assumes density falls as volume grows, forgetting that mass grows equally"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-003",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "With \\( R_0=1.2 \\) fm, the radius of the \\( {}_{52}^{125}\\mathrm{Te} \\) nucleus is",
+      "options": [
+        "150 fm",
+        "30 fm",
+        "6.0 fm",
+        "0.24 fm"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( R=R_0A^{1/3} \\).<br><br>\\( 125^{1/3}=5 \\), so \\( R=1.2\\times5=6.0 \\) fm.",
+      "hint": "125 is a perfect cube.",
+      "distractor_logic": [
+        "Uses \\( R=R_0A \\)",
+        "Uses \\( A^{2/3}=25 \\) instead of \\( A^{1/3}=5 \\)",
+        "Divides \\( R_0 \\) by \\( A^{1/3} \\) instead of multiplying"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-004",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "The ratio of the nuclear volume of \\( {}_{84}^{216}\\mathrm{Po} \\) to that of \\( {}_{4}^{8}\\mathrm{Be} \\) is",
+      "options": [
+        "3",
+        "9",
+        "19683",
+        "27"
+      ],
+      "correct_index": 3,
+      "explanation": "Nuclear volume \\( \\propto A \\).<br><br>Ratio \\( =\\frac{216}{8}=27 \\); check: the radius ratio is 3 and \\( 3^3=27 \\).",
+      "hint": "Volume is proportional to \\( A \\) itself.",
+      "distractor_logic": [
+        "This is the radius ratio \\( (216/8)^{1/3} \\)",
+        "This is the surface-area ratio, the square of the radius ratio",
+        "Cubes the mass-number ratio instead of using it directly"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-005",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "Which nuclide is an isotone of \\( {}_{7}^{15}\\mathrm{N} \\)?",
+      "options": [
+        "\\( {}_{8}^{16}\\mathrm{O} \\)",
+        "\\( {}_{7}^{14}\\mathrm{N} \\)",
+        "\\( {}_{8}^{15}\\mathrm{O} \\)",
+        "\\( {}_{8}^{17}\\mathrm{O} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( {}_{7}^{15}\\mathrm{N} \\) has neutron number \\( 15-7=8 \\).<br><br>\\( {}_{8}^{16}\\mathrm{O} \\) has neutron number \\( 16-8=8 \\), so the two are isotones.",
+      "hint": "Isotones match in \\( A-Z \\).",
+      "distractor_logic": [
+        "Same \\( Z=7 \\): an isotope, not an isotone",
+        "Same \\( A=15 \\): an isobar, not an isotone",
+        "Neutron number is \\( 17-8=9 \\), not 8"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-006",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "The nuclides \\( {}_{1}^{3}\\mathrm{H} \\) and \\( {}_{2}^{3}\\mathrm{He} \\) are",
+      "options": [
+        "isotopes",
+        "isobars",
+        "isotones",
+        "neither isotopes, isobars nor isotones"
+      ],
+      "correct_index": 1,
+      "explanation": "Both have \\( A=3 \\).<br><br>Their \\( Z \\) values are 1 and 2, so they are different elements with the same mass number: isobars.",
+      "hint": "Check which of \\( Z \\), \\( A \\) or \\( A-Z \\) is common.",
+      "distractor_logic": [
+        "Isotopes need the same \\( Z \\), but here \\( Z \\) is 1 and 2",
+        "Their neutron numbers are 2 and 1, not equal",
+        "They share \\( A=3 \\), which does make them isobars"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-007",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "The density of nuclear matter is of the order of",
+      "options": [
+        "\\( 10^{3}\\ \\text{kg/m}^3 \\)",
+        "\\( 10^{4}\\ \\text{kg/m}^3 \\)",
+        "\\( 10^{17}\\ \\text{kg/m}^3 \\)",
+        "\\( 10^{27}\\ \\text{kg/m}^3 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\rho=\\frac{Am_u}{\\frac{4}{3}\\pi R_0^3A}=\\frac{3m_u}{4\\pi R_0^3} \\), independent of \\( A \\).<br><br>With \\( m_u=1.66\\times10^{-27} \\) kg and \\( R_0=1.2\\times10^{-15} \\) m, \\( \\rho\\approx2.3\\times10^{17}\\ \\text{kg/m}^3 \\).",
+      "hint": "Use \\( R=R_0A^{1/3} \\) with \\( R_0=1.2 \\) fm and one nucleon mass per unit of \\( A \\).",
+      "distractor_logic": [
+        "This is the density of water",
+        "This is the density of ordinary solids such as iron",
+        "Overshoots by ten orders of magnitude"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-008",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 2,
+      "type": "regular",
+      "question": "A nucleus has a radius 1.5 times that of \\( {}_{4}^{8}\\mathrm{Be} \\). Taking \\( R_0=1.2 \\) fm, its mass number \\( A \\) is",
+      "options": [
+        "12",
+        "18",
+        "24",
+        "27"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( A\\propto R^3 \\), so \\( A=8\\times(1.5)^3 \\).<br><br>\\( 1.5^3=3.375 \\), and \\( 8\\times3.375=27 \\).",
+      "hint": "Mass number scales as the cube of the radius.",
+      "distractor_logic": [
+        "Treats \\( R \\) as proportional to \\( A \\)",
+        "Treats \\( R \\) as proportional to \\( A^{1/2} \\)",
+        "Takes \\( 1.5^3 \\) as 3 instead of 3.375"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-009",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Given atomic masses \\( {}_{1}^{1}\\mathrm{H} \\): 1.0078 u and \\( {}_{1}^{2}\\mathrm{H} \\): 2.0141 u, and neutron mass 1.0087 u, the mass defect \\( \\Delta m \\) of the deuteron is",
+      "options": [
+        "0.0024 u",
+        "\\( -0.0024 \\) u",
+        "4.0306 u",
+        "0.0009 u"
+      ],
+      "correct_index": 0,
+      "explanation": "Constituents: \\( 1.0078+1.0087=2.0165 \\) u.<br><br>\\( \\Delta m=2.0165-2.0141=0.0024 \\) u.",
+      "hint": "One hydrogen atom plus one neutron, minus the deuterium atom.",
+      "distractor_logic": [
+        "Subtracts in the wrong order",
+        "Adds all three masses instead of subtracting",
+        "Takes the neutron-hydrogen mass difference, which is not the mass defect"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-010",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Using atomic masses \\( {}_{1}^{1}\\mathrm{H} \\): 1.0078 u, \\( {}_{2}^{4}\\mathrm{He} \\): 4.0026 u, neutron: 1.0087 u, and 1 u = 931.5 MeV/\\( c^2 \\), the binding energy \\( E_b \\) of \\( {}_{2}^{4}\\mathrm{He} \\) is about",
+      "options": [
+        "\\( -28.32 \\) MeV",
+        "28.32 MeV",
+        "7.08 MeV",
+        "0.0304 MeV"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\Delta m=2(1.0078)+2(1.0087)-4.0026=4.0330-4.0026=0.0304 \\) u.<br><br>\\( E_b=0.0304\\times931.5\\approx28.32 \\) MeV.",
+      "hint": "Two hydrogen atoms and two neutrons form one helium atom.",
+      "distractor_logic": [
+        "Reverses the mass-defect subtraction",
+        "Gives the binding energy per nucleon instead of the total",
+        "Leaves \\( \\Delta m \\) in u without converting to MeV"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-011",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Nucleus X has \\( A=40 \\) and \\( E_b=340 \\) MeV; nucleus Y has \\( A=120 \\) and \\( E_b=960 \\) MeV. Which is more stable?",
+      "options": [
+        "Y, because its total \\( E_b \\) is larger",
+        "Y, because it contains more nucleons",
+        "X, because its \\( E_b/A \\) is 8.5 MeV against 8.0 MeV for Y",
+        "Both equally, since each has \\( E_b/A \\) above 8 MeV"
+      ],
+      "correct_index": 2,
+      "explanation": "X: \\( \\frac{340}{40}=8.5 \\) MeV per nucleon. Y: \\( \\frac{960}{120}=8.0 \\) MeV per nucleon.<br><br>Higher \\( E_b/A \\) means more stable, so X wins despite its smaller total.",
+      "hint": "Normalise each binding energy by its \\( A \\).",
+      "distractor_logic": [
+        "Compares raw totals; a bigger nucleus naturally has a larger total",
+        "More nucleons do not mean tighter binding",
+        "Ignores that 8.5 MeV and 8.0 MeV are genuinely different"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-012",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "The binding energy of \\( {}_{3}^{7}\\mathrm{Li} \\) is 39.2 MeV. The minimum energy needed to break it completely into free protons and neutrons is",
+      "options": [
+        "5.6 MeV",
+        "\\( -39.2 \\) MeV",
+        "274.4 MeV",
+        "39.2 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "Binding energy is exactly the energy needed for complete separation.<br><br>So 39.2 MeV must be supplied.",
+      "hint": "Recall what binding energy means.",
+      "distractor_logic": [
+        "This is only the average per nucleon",
+        "Energy that must be supplied is a positive quantity",
+        "Multiplies by \\( A \\), which has no meaning here"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-013",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "A nucleus has binding energy 9.315 MeV. Taking 1 u = 931.5 MeV/\\( c^2 \\), its mass defect \\( \\Delta m \\) is",
+      "options": [
+        "0.01 u",
+        "0.1 u",
+        "about 8677 u",
+        "\\( -0.01 \\) u"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\Delta m=\\frac{E_b}{931.5} \\) u.<br><br>\\( \\frac{9.315}{931.5}=0.01 \\) u.",
+      "hint": "Reverse the usual conversion.",
+      "distractor_logic": [
+        "Slips the decimal point by one place",
+        "Multiplies by 931.5 instead of dividing",
+        "Mass defect of a bound nucleus is positive"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-014",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Using atomic masses \\( {}_{1}^{1}\\mathrm{H} \\): 1.0078 u, \\( {}_{8}^{16}\\mathrm{O} \\): 15.9949 u, and neutron mass 1.0087 u, the mass defect of \\( {}_{8}^{16}\\mathrm{O} \\) is",
+      "options": [
+        "\\( -0.1371 \\) u",
+        "0.1371 u",
+        "0.0072 u",
+        "32.1269 u"
+      ],
+      "correct_index": 1,
+      "explanation": "Constituents: \\( 8(1.0078)+8(1.0087)=8.0624+8.0696=16.1320 \\) u.<br><br>\\( \\Delta m=16.1320-15.9949=0.1371 \\) u.",
+      "hint": "8 hydrogen atoms plus 8 neutrons, minus one oxygen atom.",
+      "distractor_logic": [
+        "Subtracts the constituents from the nucleus",
+        "Takes 8 times the neutron-hydrogen mass difference, not the mass defect",
+        "Adds the oxygen mass instead of subtracting it"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-015",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "Mass-defect calculations for \\( {}_{8}^{16}\\mathrm{O} \\) usually use atomic masses, with the \\( {}_{1}^{1}\\mathrm{H} \\) atom in place of the bare proton. Why is this valid?",
+      "options": [
+        "Electron masses are exactly zero on the atomic mass scale",
+        "Electrons supply the entire mass defect, so they must be included",
+        "The 8 electrons in the eight hydrogen atoms cancel the 8 electrons in the oxygen atom",
+        "It is not valid; atomic masses always give a negative \\( \\Delta m \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Each \\( {}_{1}^{1}\\mathrm{H} \\) atom carries one electron, so eight of them carry 8 electrons.<br><br>The neutral \\( {}_{8}^{16}\\mathrm{O} \\) atom also has 8 electrons, so they cancel in the subtraction.",
+      "hint": "Count the electrons on each side.",
+      "distractor_logic": [
+        "Electrons have a small but non-zero mass of about 0.00055 u",
+        "The mass defect comes from nuclear binding, not from electrons",
+        "The electron masses cancel exactly, so the sign of \\( \\Delta m \\) is unaffected"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-016",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 2,
+      "type": "regular",
+      "question": "The binding energy of \\( {}_{8}^{16}\\mathrm{O} \\) is 127.6 MeV. Its binding energy per nucleon is",
+      "options": [
+        "127.6 MeV",
+        "2041.6 MeV",
+        "15.95 MeV",
+        "7.975 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( E_b/A=\\frac{127.6}{16} \\).<br><br>\\( =7.975 \\) MeV per nucleon.",
+      "hint": "Divide by all 16 nucleons.",
+      "distractor_logic": [
+        "Reports the total rather than per nucleon",
+        "Multiplies by \\( A \\) instead of dividing",
+        "Divides by \\( Z=8 \\) instead of \\( A=16 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-017",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "Fission of a heavy nucleus releases energy because",
+      "options": [
+        "the two medium-sized fragments have a higher \\( E_b/A \\) than the heavy nucleus",
+        "the fragments have a lower \\( E_b/A \\) than the heavy nucleus",
+        "heavy nuclei have the highest \\( E_b/A \\) of all",
+        "mass is created during fission"
+      ],
+      "correct_index": 0,
+      "explanation": "Heavy nuclei have about 7.6 MeV per nucleon; medium fragments have about 8.5 MeV.<br><br>Moving toward the peak binds nucleons more tightly, and the extra binding is released as energy.",
+      "hint": "Which way along the curve do the products move?",
+      "distractor_logic": [
+        "Lower \\( E_b/A \\) in the products would mean energy absorbed",
+        "Heavy nuclei lie on the falling side of the curve",
+        "Mass is lost, not created, when energy is released"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-018",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "Fusion of two light nuclei releases energy because",
+      "options": [
+        "the product has a lower \\( E_b/A \\) than the reactants",
+        "the heavier product nucleus has a higher \\( E_b/A \\) than the light reactants",
+        "light nuclei lie beyond the peak of the curve",
+        "fusion splits nuclei into smaller pieces"
+      ],
+      "correct_index": 1,
+      "explanation": "Light nuclei are on the rising side of the \\( E_b/A \\) curve.<br><br>Combining them moves toward the peak, increasing \\( E_b/A \\) and releasing energy.",
+      "hint": "Light nuclei sit to the left of the peak.",
+      "distractor_logic": [
+        "Lower \\( E_b/A \\) would mean energy absorbed, not released",
+        "Light nuclei lie on the steeply rising side, before the peak",
+        "That describes fission, not fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-019",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "Which of these processes would NOT release energy?",
+      "options": [
+        "Fusing two \\( {}_{1}^{2}\\mathrm{H} \\) nuclei into \\( {}_{2}^{4}\\mathrm{He} \\)",
+        "Splitting \\( {}_{92}^{235}\\mathrm{U} \\) into two medium nuclei",
+        "Fusing two \\( {}_{26}^{56}\\mathrm{Fe} \\) nuclei into a heavier nucleus",
+        "Fusing \\( {}_{1}^{2}\\mathrm{H} \\) and \\( {}_{1}^{3}\\mathrm{H} \\) into \\( {}_{2}^{4}\\mathrm{He} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Iron is at the peak of the \\( E_b/A \\) curve.<br><br>Fusing iron moves beyond the peak to lower \\( E_b/A \\), so energy must be supplied.",
+      "hint": "What lies on either side of the peak?",
+      "distractor_logic": [
+        "Moves up the rising side of the curve, so it releases energy",
+        "Moves from the falling side toward the peak, releasing energy",
+        "Also moves up the rising side, releasing energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-020",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "A nucleus with \\( A=240 \\) and \\( E_b/A=7.6 \\) MeV splits into two nuclei of \\( A=120 \\), each with \\( E_b/A=8.5 \\) MeV. The energy released is",
+      "options": [
+        "0.9 MeV",
+        "108 MeV",
+        "\\( -216 \\) MeV",
+        "216 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "Initial \\( E_b=240\\times7.6=1824 \\) MeV. Final \\( E_b=2\\times120\\times8.5=2040 \\) MeV.<br><br>Energy released \\( =2040-1824=216 \\) MeV.",
+      "hint": "Compare total binding before and after.",
+      "distractor_logic": [
+        "Gives only the gain per nucleon",
+        "Counts only one of the two fragments",
+        "Reverses the sign; the products are more tightly bound"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-021",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "Why is \\( E_b/A \\) low for very light nuclei?",
+      "options": [
+        "A large fraction of their nucleons lie at the surface, with fewer neighbours to bind to",
+        "The nuclear force is weaker between light nucleons",
+        "Light nuclei have very strong Coulomb repulsion",
+        "Light nuclei contain no neutrons"
+      ],
+      "correct_index": 0,
+      "explanation": "In a small nucleus, most nucleons are on the surface.<br><br>Surface nucleons have fewer neighbours, so the average binding per nucleon is lower.",
+      "hint": "Think about neighbours.",
+      "distractor_logic": [
+        "The nuclear force has the same strength for all nucleons",
+        "Coulomb repulsion is small with only a few protons",
+        "Most light nuclei do contain neutrons"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-022",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "Why does \\( E_b/A \\) decrease for heavy nuclei?",
+      "options": [
+        "The nuclear force becomes repulsive in heavy nuclei",
+        "Coulomb repulsion acts between all protons, while the short-range nuclear attraction reaches only neighbours",
+        "Heavy nuclei have a lower nuclear density",
+        "Heavy nuclei have too few neutrons"
+      ],
+      "correct_index": 1,
+      "explanation": "Every proton repels every other proton, so the repulsion grows roughly as \\( Z^2 \\).<br><br>The nuclear attraction saturates, so the net binding per nucleon falls.",
+      "hint": "Long-range repulsion versus short-range attraction.",
+      "distractor_logic": [
+        "The attraction does not turn into repulsion as \\( A \\) grows",
+        "Nuclear density is essentially the same for all nuclei",
+        "Heavy nuclei actually have a neutron excess"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-023",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "\\( E_b/A \\) is 1.1 MeV for \\( {}_{1}^{2}\\mathrm{H} \\) and 7.1 MeV for \\( {}_{2}^{4}\\mathrm{He} \\). The energy released when two \\( {}_{1}^{2}\\mathrm{H} \\) nuclei fuse into one \\( {}_{2}^{4}\\mathrm{He} \\) nucleus is",
+      "options": [
+        "6.0 MeV",
+        "28.4 MeV",
+        "24.0 MeV",
+        "\\( -24.0 \\) MeV"
+      ],
+      "correct_index": 2,
+      "explanation": "Before: \\( 2\\times(2\\times1.1)=4.4 \\) MeV. After: \\( 4\\times7.1=28.4 \\) MeV.<br><br>Energy released \\( =28.4-4.4=24.0 \\) MeV.",
+      "hint": "Total binding after minus total binding before.",
+      "distractor_logic": [
+        "Uses only the per-nucleon difference",
+        "Ignores the binding energy the deuterons already had",
+        "Reverses the sign; the product is more tightly bound"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-024",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 2,
+      "type": "regular",
+      "question": "At separations below about 0.8 fm, the nuclear force between two nucleons is",
+      "options": [
+        "strongly attractive",
+        "zero",
+        "equal to the Coulomb force",
+        "strongly repulsive"
+      ],
+      "correct_index": 3,
+      "explanation": "The nuclear force is attractive from about 0.8 fm to a few fm.<br><br>Below about 0.8 fm it becomes strongly repulsive, which keeps nucleons from collapsing together.",
+      "hint": "Think about why nuclei do not collapse.",
+      "distractor_logic": [
+        "It is attractive at about 1 fm but turns repulsive at shorter range",
+        "It is far from zero at such close range",
+        "It is far stronger than the Coulomb force"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-025",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "A nuclide has decay constant \\( \\lambda=0.0693 \\) per year. Its half-life \\( T_{1/2} \\) is",
+      "options": [
+        "10 years",
+        "about 14.43 years",
+        "0.1 years",
+        "about 0.048 years"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( T_{1/2}=\\frac{0.693}{\\lambda} \\).<br><br>\\( \\frac{0.693}{0.0693}=10 \\) years.",
+      "hint": "\\( T_{1/2}=\\ln2/\\lambda \\).",
+      "distractor_logic": [
+        "This is the mean life \\( 1/\\lambda \\)",
+        "Divides \\( \\lambda \\) by \\( \\ln2 \\) instead of the reverse",
+        "Multiplies \\( \\lambda \\) by \\( \\ln2 \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-026",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "A nuclide has half-life \\( T_{1/2}=6.93 \\) s. Its mean life \\( \\tau \\) is",
+      "options": [
+        "6.93 s",
+        "10 s",
+        "about 4.80 s",
+        "0.1 s"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\tau=\\frac{T_{1/2}}{0.693} \\).<br><br>\\( \\frac{6.93}{0.693}=10 \\) s, longer than the half-life as it must be.",
+      "hint": "Mean life exceeds half-life.",
+      "distractor_logic": [
+        "Assumes mean life equals half-life",
+        "Multiplies by 0.693, making \\( \\tau \\) shorter than \\( T_{1/2} \\)",
+        "Reports the decay constant \\( \\lambda \\) in place of \\( \\tau \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-027",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "A nuclide has \\( T_{1/2}=5 \\) days. The time for its amount to fall to \\( \\frac{1}{16} \\) of the initial value is",
+      "options": [
+        "80 days",
+        "16 days",
+        "20 days",
+        "25 days"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\frac{1}{16}=\\left(\\frac{1}{2}\\right)^4 \\), so four half-lives pass.<br><br>\\( 4\\times5=20 \\) days.",
+      "hint": "How many halvings give 16?",
+      "distractor_logic": [
+        "Multiplies the half-life by 16",
+        "Takes the number 16 itself as the time",
+        "Counts five half-lives instead of four"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-028",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "After three half-lives, the fraction of the original nuclei that have decayed is",
+      "options": [
+        "\\( \\frac{1}{8} \\)",
+        "\\( \\frac{3}{8} \\)",
+        "\\( \\frac{3}{4} \\)",
+        "\\( \\frac{7}{8} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Remaining \\( =\\left(\\frac{1}{2}\\right)^3=\\frac{1}{8} \\).<br><br>Decayed \\( =1-\\frac{1}{8}=\\frac{7}{8} \\).",
+      "hint": "Decayed = 1 minus remaining.",
+      "distractor_logic": [
+        "This is the fraction remaining, not decayed",
+        "Treats each half-life as removing a fixed \\( \\frac{1}{8} \\)",
+        "This is the fraction decayed after only two half-lives"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-029",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "A sample has an activity of 800 Bq. After two half-lives its activity will be",
+      "options": [
+        "200 Bq",
+        "400 Bq",
+        "0 Bq",
+        "100 Bq"
+      ],
+      "correct_index": 0,
+      "explanation": "Activity \\( \\mathcal{A}=\\lambda N \\) is proportional to \\( N \\), so it halves every half-life.<br><br>\\( 800\\to400\\to200 \\) Bq.",
+      "hint": "Activity follows the same halving as \\( N \\).",
+      "distractor_logic": [
+        "Accounts for only one half-life",
+        "Assumes linear decay that empties in two half-lives",
+        "Halves three times instead of twice"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-030",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "A sample contains \\( N=2\\times10^{20} \\) nuclei with \\( \\lambda=3\\times10^{-9} \\) per second. Its activity \\( \\mathcal{A} \\) is",
+      "options": [
+        "\\( 2\\times10^{20} \\) Bq",
+        "\\( 6\\times10^{11} \\) Bq",
+        "\\( 6\\times10^{11} \\) Ci",
+        "about \\( 6.7\\times10^{28} \\) Bq"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\mathcal{A}=\\lambda N \\).<br><br>\\( 3\\times10^{-9}\\times2\\times10^{20}=6\\times10^{11} \\) decays per second \\( =6\\times10^{11} \\) Bq.",
+      "hint": "Activity \\( =\\lambda N \\).",
+      "distractor_logic": [
+        "Confuses the number of nuclei with the activity",
+        "Right number but wrong unit; decays per second are becquerels",
+        "Divides \\( N \\) by \\( \\lambda \\) instead of multiplying"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-031",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "An activity of \\( 7.4\\times10^{10} \\) Bq expressed in curies is",
+      "options": [
+        "\\( 7.4\\times10^{10} \\) Ci",
+        "0.5 Ci",
+        "2 Ci",
+        "20 Ci"
+      ],
+      "correct_index": 2,
+      "explanation": "1 Ci \\( =3.7\\times10^{10} \\) Bq.<br><br>\\( \\frac{7.4\\times10^{10}}{3.7\\times10^{10}}=2 \\) Ci.",
+      "hint": "Divide by the number of Bq in one Ci.",
+      "distractor_logic": [
+        "Changes the unit label without converting",
+        "Inverts the ratio",
+        "Misplaces the decimal by one power of ten"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-032",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 2,
+      "type": "regular",
+      "question": "A nuclide has \\( T_{1/2}=10 \\) min. A student says: half decays in the first 10 min, so the rest decays in the next 10 min. What actually remains after 20 min?",
+      "options": [
+        "None of the original nuclei",
+        "\\( \\frac{1}{2} \\) of the original nuclei",
+        "\\( \\frac{1}{3} \\) of the original nuclei",
+        "\\( \\frac{1}{4} \\) of the original nuclei"
+      ],
+      "correct_index": 3,
+      "explanation": "In each half-life, half of what remains decays, not a fixed amount.<br><br>After 2 half-lives, \\( \\left(\\frac{1}{2}\\right)^2=\\frac{1}{4} \\) remains.",
+      "hint": "Half of what remains, each time.",
+      "distractor_logic": [
+        "This is the student's linear assumption",
+        "Ignores the second half-life",
+        "No basis in the halving rule"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-033",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "\\( {}_{6}^{14}\\mathrm{C} \\) undergoes beta-minus decay. The daughter nucleus is",
+      "options": [
+        "\\( {}_{7}^{14}\\mathrm{N} \\)",
+        "\\( {}_{5}^{14}\\mathrm{B} \\)",
+        "\\( {}_{7}^{13}\\mathrm{N} \\)",
+        "\\( {}_{6}^{14}\\mathrm{C} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Beta-minus: \\( A \\) unchanged, \\( Z \\) up by 1.<br><br>\\( Z=6+1=7 \\): \\( {}_{7}^{14}\\mathrm{N} \\).",
+      "hint": "Beta-minus raises \\( Z \\).",
+      "distractor_logic": [
+        "Lowers \\( Z \\), which happens in beta-plus decay",
+        "Changes \\( A \\), which beta decay does not do",
+        "No change at all, as in gamma decay"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-034",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "In the decay \\( {}_{88}^{226}\\mathrm{Ra}\\to{}_{86}^{222}\\mathrm{Rn}+X \\), the particle X is",
+      "options": [
+        "an electron",
+        "an alpha particle, \\( {}_{2}^{4}\\mathrm{He} \\)",
+        "a gamma-ray photon",
+        "a proton, \\( {}_{1}^{1}\\mathrm{H} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( A \\): \\( 226-222=4 \\). \\( Z \\): \\( 88-86=2 \\).<br><br>A particle with \\( A=4 \\) and \\( Z=2 \\) is an alpha particle.",
+      "hint": "Balance \\( A \\) and \\( Z \\) on both sides.",
+      "distractor_logic": [
+        "An electron would raise \\( Z \\) and leave \\( A \\) unchanged",
+        "A photon changes neither \\( A \\) nor \\( Z \\)",
+        "A proton would reduce \\( A \\) by 1 and \\( Z \\) by 1"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-035",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "\\( {}_{92}^{238}\\mathrm{U} \\) undergoes one alpha decay followed by two beta-minus decays. The final nucleus is",
+      "options": [
+        "\\( {}_{86}^{234}\\mathrm{Rn} \\)",
+        "\\( {}_{90}^{234}\\mathrm{Th} \\)",
+        "\\( {}_{92}^{234}\\mathrm{U} \\)",
+        "\\( {}_{92}^{230}\\mathrm{U} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Alpha: \\( {}_{90}^{234}\\mathrm{Th} \\). First beta-minus: \\( {}_{91}^{234}\\mathrm{Pa} \\).<br><br>Second beta-minus: \\( {}_{92}^{234}\\mathrm{U} \\).",
+      "hint": "Beta decays raise \\( Z \\) and keep \\( A \\).",
+      "distractor_logic": [
+        "Lowers \\( Z \\) in each beta-minus decay",
+        "Stops after the alpha decay",
+        "Also lowers \\( A \\) during the beta decays"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-036",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "\\( {}_{92}^{238}\\mathrm{U} \\) decays to \\( {}_{82}^{206}\\mathrm{Pb} \\) through a series of alpha and beta-minus decays. The numbers of alpha and beta-minus decays are",
+      "options": [
+        "6 alpha, 8 beta-minus",
+        "8 alpha, 10 beta-minus",
+        "8 alpha, 0 beta-minus",
+        "8 alpha, 6 beta-minus"
+      ],
+      "correct_index": 3,
+      "explanation": "Only alpha decay changes \\( A \\): \\( \\frac{238-206}{4}=8 \\).<br><br>8 alpha decays lower \\( Z \\) to \\( 92-16=76 \\); to reach 82 needs 6 beta-minus decays.",
+      "hint": "Use \\( A \\) to count alphas first.",
+      "distractor_logic": [
+        "Swaps the two counts",
+        "Takes the beta count as \\( 92-82 \\), ignoring the charge lost to alpha decays",
+        "Ignores the beta decays needed to fix \\( Z \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-037",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\( {}_0^1n+{}_{92}^{235}\\mathrm{U}\\to{}_{56}^{141}\\mathrm{Ba}+{}_{36}^{92}\\mathrm{Kr}+3{}_0^1n \\), take atomic masses U: 235.0439 u, Ba: 140.9144 u, Kr: 91.9121 u, neutron 1.0087 u, and 1 u = 931.5 MeV/\\( c^2 \\). The energy released is",
+      "options": [
+        "186.3 MeV",
+        "\\( -186.3 \\) MeV",
+        "0.2000 MeV",
+        "about 2066 MeV"
+      ],
+      "correct_index": 0,
+      "explanation": "Reactants: \\( 1.0087+235.0439=236.0526 \\) u. Products: \\( 140.9144+91.9121+3(1.0087)=235.8526 \\) u.<br><br>\\( \\Delta m=0.2000 \\) u, so energy \\( =0.2000\\times931.5=186.3 \\) MeV.",
+      "hint": "Remember all three emitted neutrons.",
+      "distractor_logic": [
+        "Subtracts reactants from products",
+        "Leaves the mass difference in u",
+        "Includes only one neutron among the products"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-038",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "For \\( {}_1^2\\mathrm{H}+{}_1^3\\mathrm{H}\\to{}_2^4\\mathrm{He}+{}_0^1n \\), take atomic masses 2.0141 u, 3.0160 u, 4.0026 u, neutron 1.0087 u, and 1 u = 931.5 MeV/\\( c^2 \\). The energy released is about",
+      "options": [
+        "\\( -17.51 \\) MeV",
+        "17.51 MeV",
+        "0.0188 MeV",
+        "3.5 MeV"
+      ],
+      "correct_index": 1,
+      "explanation": "Reactants: \\( 2.0141+3.0160=5.0301 \\) u. Products: \\( 4.0026+1.0087=5.0113 \\) u.<br><br>\\( \\Delta m=0.0188 \\) u, so energy \\( =0.0188\\times931.5\\approx17.51 \\) MeV.",
+      "hint": "Mass of reactants minus mass of products.",
+      "distractor_logic": [
+        "Subtracts in the wrong order",
+        "Leaves the mass difference in u",
+        "This is only the alpha particle's share of the energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-039",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "Which equation correctly represents a beta-minus decay?",
+      "options": [
+        "\\( {}_{15}^{32}\\mathrm{P}\\to{}_{14}^{32}\\mathrm{Si}+e^-+\\bar{\\nu} \\)",
+        "\\( {}_{15}^{32}\\mathrm{P}\\to{}_{15}^{31}\\mathrm{P}+e^-+\\bar{\\nu} \\)",
+        "\\( {}_{15}^{32}\\mathrm{P}\\to{}_{16}^{32}\\mathrm{S}+e^-+\\bar{\\nu} \\)",
+        "\\( {}_{15}^{32}\\mathrm{P}\\to{}_{16}^{32}\\mathrm{S}+e^++\\nu \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Beta-minus keeps \\( A=32 \\) and raises \\( Z \\) from 15 to 16.<br><br>Charge: \\( 15=16+(-1) \\); an electron and an antineutrino are emitted.",
+      "hint": "Check charge balance.",
+      "distractor_logic": [
+        "Lowers \\( Z \\); charge would not balance with an electron emitted",
+        "Changes \\( A \\), which beta decay never does",
+        "Emitting a positron while \\( Z \\) rises violates charge conservation"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L2-040",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 2,
+      "type": "regular",
+      "question": "In the decay \\( {}_{11}^{22}\\mathrm{Na}\\to{}_{10}^{22}\\mathrm{Ne}+X+\\nu \\), the particle X is",
+      "options": [
+        "an electron, \\( e^- \\)",
+        "an alpha particle",
+        "a neutron",
+        "a positron, \\( e^+ \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( A \\) is unchanged at 22 and \\( Z \\) falls by 1.<br><br>Charge balance: \\( 11=10+1 \\), so X carries charge +1 with no nucleons: a positron.",
+      "hint": "Balance the charge.",
+      "distractor_logic": [
+        "An electron would raise \\( Z \\), not lower it",
+        "An alpha particle would reduce \\( A \\) by 4",
+        "A neutron would reduce \\( A \\) by 1 and leave \\( Z \\) unchanged"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-001",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 3,
+      "type": "regular",
+      "question": "Compare \\( {}_{84}^{216}\\mathrm{Po} \\) with \\( {}_{13}^{27}\\mathrm{Al} \\), taking \\( R_0=1.2 \\) fm. Which pair of ratios (Po to Al) for nuclear radius and nuclear density is correct?",
+      "options": [
+        "Radius \\( 2:1 \\), density \\( 1:1 \\)",
+        "Radius \\( 8:1 \\), density \\( 1:1 \\)",
+        "Radius \\( 2:1 \\), density \\( 8:1 \\)",
+        "Radius \\( 2:1 \\), density \\( 1:8 \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Radius ratio \\( =\\left(\\frac{216}{27}\\right)^{1/3}=\\frac{6}{3}=2 \\).<br><br>Density \\( \\propto\\frac{A}{R^3}\\propto\\frac{A}{A} \\), so the density ratio is \\( 1:1 \\).",
+      "hint": "Handle radius and density separately.",
+      "distractor_logic": [
+        "Takes the radius ratio equal to the mass-number ratio \\( 216/27 \\)",
+        "Claims the heavier nucleus is denser in proportion to \\( A \\)",
+        "Divides by volume but forgets that mass also scales with \\( A \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-002",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 3,
+      "type": "regular",
+      "question": "A nucleus has twice the radius of \\( {}_{13}^{27}\\mathrm{Al} \\). Taking \\( R_0=1.2 \\) fm, its mass number \\( A \\) is",
+      "options": [
+        "54",
+        "216",
+        "108",
+        "8"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( A\\propto R^3 \\), so doubling \\( R \\) multiplies \\( A \\) by \\( 2^3=8 \\).<br><br>\\( A=27\\times8=216 \\).",
+      "hint": "How does \\( A \\) scale with \\( R \\)?",
+      "distractor_logic": [
+        "Doubles \\( A \\), treating \\( R \\) as proportional to \\( A \\)",
+        "Multiplies by 4, treating \\( R \\) as proportional to \\( A^{1/2} \\)",
+        "Reports the factor \\( 2^3 \\) instead of the mass number"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-003",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 3,
+      "type": "regular",
+      "question": "Taking \\( R_0=1.2 \\) fm, the ratio of the nuclear surface area of \\( {}_{30}^{64}\\mathrm{Zn} \\) to that of \\( {}_{4}^{8}\\mathrm{Be} \\) is",
+      "options": [
+        "2",
+        "8",
+        "4",
+        "64"
+      ],
+      "correct_index": 2,
+      "explanation": "Radius ratio \\( =\\left(\\frac{64}{8}\\right)^{1/3}=2 \\).<br><br>Surface area \\( \\propto R^2 \\), so the ratio is \\( 2^2=4 \\).",
+      "hint": "Find the radius ratio first, then square it.",
+      "distractor_logic": [
+        "This is the radius ratio, not the area ratio",
+        "This is the volume (mass-number) ratio",
+        "Squares the mass-number ratio instead of the radius ratio"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-004",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 3,
+      "type": "regular",
+      "question": "A student argues that the \\( {}_{92}^{238}\\mathrm{U} \\) nucleus must be far denser than the \\( {}_{1}^{1}\\mathrm{H} \\) nucleus because it packs 238 nucleons instead of 1. Which evaluation is correct?",
+      "options": [
+        "Correct: nuclear density grows in proportion to \\( A \\)",
+        "Correct: nuclear density grows in proportion to \\( Z \\), since protons carry the charge",
+        "Incorrect: the uranium nucleus is actually less dense, since its radius is 238 times larger",
+        "Incorrect: its volume is also about 238 times larger, so the two densities are nearly equal"
+      ],
+      "correct_index": 3,
+      "explanation": "Mass \\( \\propto A \\) and volume \\( \\propto R^3=R_0^3A \\).<br><br>The ratio is independent of \\( A \\), so uranium and hydrogen nuclei have essentially the same density; the student's claim fails.",
+      "hint": "Think about how the volume scales with \\( A \\).",
+      "distractor_logic": [
+        "Ignores that volume \\( \\propto A \\) as well as mass \\( \\propto A \\)",
+        "Charge has nothing to do with mass density; density does not depend on \\( Z \\)",
+        "Uses \\( R\\propto A \\); the radius is only \\( 238^{1/3} \\) times larger"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-005",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 3,
+      "type": "regular",
+      "question": "Among \\( {}_{6}^{12}\\mathrm{C} \\), \\( {}_{6}^{13}\\mathrm{C} \\), \\( {}_{7}^{13}\\mathrm{N} \\) and \\( {}_{7}^{14}\\mathrm{N} \\), the numbers of isotope pairs, isobar pairs and isotone pairs are respectively",
+      "options": [
+        "2, 1, 2",
+        "2, 2, 1",
+        "1, 2, 2",
+        "2, 1, 1"
+      ],
+      "correct_index": 0,
+      "explanation": "Neutron numbers: 6, 7, 6, 7 respectively.<br><br>Isotopes (same \\( Z \\)): the two carbons and the two nitrogens, 2 pairs. Isobars (same \\( A \\)): \\( {}_{6}^{13}\\mathrm{C} \\) and \\( {}_{7}^{13}\\mathrm{N} \\), 1 pair.<br><br>Isotones (same neutron number): \\( {}_{6}^{12}\\mathrm{C} \\) with \\( {}_{7}^{13}\\mathrm{N} \\), and \\( {}_{6}^{13}\\mathrm{C} \\) with \\( {}_{7}^{14}\\mathrm{N} \\), 2 pairs.",
+      "hint": "Tabulate \\( Z \\), \\( A \\) and \\( A-Z \\) for all four.",
+      "distractor_logic": [
+        "Swaps the isobar and isotone counts",
+        "Swaps the isotope and isobar counts, confusing the fixed quantity",
+        "Misses one isotone pair by not computing every \\( A-Z \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-006",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": 3,
+      "type": "regular",
+      "question": "The radius of \\( {}_{30}^{64}\\mathrm{Zn} \\) is 4.8 fm (consistent with \\( R_0=1.2 \\) fm). The radius of \\( {}_{52}^{125}\\mathrm{Te} \\) is",
+      "options": [
+        "9.375 fm",
+        "6.0 fm",
+        "7.5 fm",
+        "4.8 fm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\frac{R_{Te}}{R_{Zn}}=\\left(\\frac{125}{64}\\right)^{1/3}=\\frac{5}{4} \\).<br><br>\\( R_{Te}=4.8\\times\\frac{5}{4}=6.0 \\) fm.",
+      "hint": "Use the ratio of cube roots.",
+      "distractor_logic": [
+        "Scales the radius linearly with \\( A \\)",
+        "Scales the radius as \\( A^{2/3} \\)",
+        "Confuses constant density with constant radius"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-007",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "The binding energies of \\( {}_{3}^{7}\\mathrm{Li} \\) and \\( {}_{3}^{6}\\mathrm{Li} \\) are 39.25 MeV and 32.00 MeV. The energy needed to remove one neutron from \\( {}_{3}^{7}\\mathrm{Li} \\) is",
+      "options": [
+        "71.25 MeV",
+        "\\( -7.25 \\) MeV",
+        "7.25 MeV",
+        "5.61 MeV"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( {}_{3}^{7}\\mathrm{Li} \\) becomes \\( {}_{3}^{6}\\mathrm{Li} \\) plus a free neutron (binding energy zero).<br><br>Energy needed \\( =39.25-32.00=7.25 \\) MeV.",
+      "hint": "Compare the binding before and after removal.",
+      "distractor_logic": [
+        "Adds the binding energies instead of subtracting",
+        "Removing a neutron needs energy supplied, a positive amount",
+        "Uses \\( E_b/A \\) of \\( {}_{3}^{7}\\mathrm{Li} \\), which is an average, not this specific cost"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-008",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "Using atomic masses \\( {}_{1}^{1}\\mathrm{H} \\): 1.0078 u, \\( {}_{3}^{7}\\mathrm{Li} \\): 7.0160 u, neutron: 1.0087 u, and 1 u = 931.5 MeV/\\( c^2 \\), the binding energy per nucleon of \\( {}_{3}^{7}\\mathrm{Li} \\) is about",
+      "options": [
+        "39.31 MeV",
+        "13.10 MeV",
+        "\\( -5.62 \\) MeV",
+        "5.62 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\Delta m=3(1.0078)+4(1.0087)-7.0160=7.0582-7.0160=0.0422 \\) u.<br><br>\\( E_b=0.0422\\times931.5\\approx39.31 \\) MeV.<br><br>\\( E_b/A=\\frac{39.31}{7}\\approx5.62 \\) MeV.",
+      "hint": "3 hydrogen atoms and 4 neutrons.",
+      "distractor_logic": [
+        "Stops at the total binding energy",
+        "Divides by \\( Z=3 \\) instead of \\( A=7 \\)",
+        "Reverses the mass-defect subtraction"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-009",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "\\( {}_{2}^{4}\\mathrm{He} \\) has \\( E_b=28.3 \\) MeV and \\( {}_{3}^{6}\\mathrm{Li} \\) has \\( E_b=32.0 \\) MeV. Which statement is correct?",
+      "options": [
+        "\\( {}_{2}^{4}\\mathrm{He} \\) is more stable, since its \\( E_b/A \\) of about 7.08 MeV exceeds about 5.33 MeV for \\( {}_{3}^{6}\\mathrm{Li} \\)",
+        "\\( {}_{3}^{6}\\mathrm{Li} \\) is more stable, since its total \\( E_b \\) is larger",
+        "Both are equally stable, since their totals differ by only 3.7 MeV",
+        "\\( {}_{3}^{6}\\mathrm{Li} \\) is more stable, since it has more protons"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( {}_{2}^{4}\\mathrm{He} \\): \\( \\frac{28.3}{4}=7.075 \\) MeV. \\( {}_{3}^{6}\\mathrm{Li} \\): \\( \\frac{32.0}{6}\\approx5.33 \\) MeV.<br><br>Helium binds each nucleon more tightly, even though lithium's total is bigger.",
+      "hint": "Per nucleon, not in total.",
+      "distractor_logic": [
+        "Compares raw totals between nuclei of different size",
+        "Stability is judged per nucleon, not by the gap in totals",
+        "Proton count does not measure how tightly each nucleon is held"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-010",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "A student writes the mass defect of \\( {}_{2}^{4}\\mathrm{He} \\) as \\( M_{He}-[2m_H+2m_n] \\) and gets \\( -0.0304 \\) u. What is the correct conclusion?",
+      "options": [
+        "The result shows that \\( {}_{2}^{4}\\mathrm{He} \\) is unbound and should fly apart",
+        "The subtraction is reversed; \\( \\Delta m=+0.0304 \\) u, because the separate constituents are heavier",
+        "The negative sign is right: energy must be supplied to form \\( {}_{2}^{4}\\mathrm{He} \\) from free nucleons",
+        "The magnitude must be doubled to count protons and neutrons separately"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\Delta m=[2m_H+2m_n]-M_{He} \\), constituents minus the atom.<br><br>This gives \\( +0.0304 \\) u, so helium is strongly bound.",
+      "hint": "Which side should be heavier?",
+      "distractor_logic": [
+        "The negative sign is an arithmetic artefact of the reversed order",
+        "Formation releases energy; only separation needs energy supplied",
+        "The formula already includes both protons and neutrons"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-011",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "The binding energy of \\( {}_{2}^{4}\\mathrm{He} \\) is 27.945 MeV. With \\( {}_{1}^{1}\\mathrm{H} \\): 1.0078 u, neutron: 1.0087 u and 1 u = 931.5 MeV/\\( c^2 \\), the atomic mass of \\( {}_{2}^{4}\\mathrm{He} \\) is",
+      "options": [
+        "4.0630 u",
+        "4.0330 u",
+        "4.0030 u",
+        "0.0300 u"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\Delta m=\\frac{27.945}{931.5}=0.0300 \\) u.<br><br>Constituents: \\( 2(1.0078)+2(1.0087)=4.0330 \\) u, so \\( M=4.0330-0.0300=4.0030 \\) u.",
+      "hint": "The atom is lighter than its parts by \\( \\Delta m \\).",
+      "distractor_logic": [
+        "Adds the mass defect instead of subtracting it",
+        "Gives the constituents' mass, ignoring the binding",
+        "Gives the mass defect instead of the atomic mass"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-012",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": 3,
+      "type": "regular",
+      "question": "If 1 mg of matter were converted completely into energy (\\( c=3\\times10^{8} \\) m/s), the energy released would be",
+      "options": [
+        "\\( 9\\times10^{13} \\) J",
+        "\\( 3\\times10^{2} \\) J",
+        "\\( 9\\times10^{16} \\) J",
+        "\\( 9\\times10^{10} \\) J"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( m=10^{-6} \\) kg.<br><br>\\( E=mc^2=10^{-6}\\times9\\times10^{16}=9\\times10^{10} \\) J.",
+      "hint": "Convert milligrams to kilograms carefully.",
+      "distractor_logic": [
+        "Takes 1 mg as \\( 10^{-3} \\) kg instead of \\( 10^{-6} \\) kg",
+        "Uses \\( mc \\) instead of \\( mc^2 \\)",
+        "Uses 1 kg instead of 1 mg"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-013",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 3,
+      "type": "regular",
+      "question": "A nucleus with \\( A=200 \\) and \\( E_b/A=7.8 \\) MeV splits into fragments with \\( A=90 \\) (\\( E_b/A=8.7 \\) MeV) and \\( A=110 \\) (\\( E_b/A=8.5 \\) MeV). The energy released is",
+      "options": [
+        "158 MeV",
+        "1718 MeV",
+        "0.8 MeV",
+        "\\( -158 \\) MeV"
+      ],
+      "correct_index": 0,
+      "explanation": "Products: \\( 90\\times8.7+110\\times8.5=783+935=1718 \\) MeV. Parent: \\( 200\\times7.8=1560 \\) MeV.<br><br>Energy released \\( =1718-1560=158 \\) MeV.",
+      "hint": "Compute each fragment's total separately.",
+      "distractor_logic": [
+        "Gives the total binding of the products only",
+        "Uses only an average gain per nucleon",
+        "Reverses the sign; the fragments are more tightly bound"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-014",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 3,
+      "type": "regular",
+      "question": "\\( E_b/A \\) values (MeV): \\( {}_{1}^{2}\\mathrm{H} \\) 1.11, \\( {}_{2}^{4}\\mathrm{He} \\) 7.07, \\( {}_{26}^{56}\\mathrm{Fe} \\) 8.79, \\( {}_{92}^{238}\\mathrm{U} \\) 7.57. From most to least stable, the order is",
+      "options": [
+        "\\( {}_{92}^{238}\\mathrm{U} \\), \\( {}_{26}^{56}\\mathrm{Fe} \\), \\( {}_{2}^{4}\\mathrm{He} \\), \\( {}_{1}^{2}\\mathrm{H} \\)",
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\), \\( {}_{92}^{238}\\mathrm{U} \\), \\( {}_{2}^{4}\\mathrm{He} \\), \\( {}_{1}^{2}\\mathrm{H} \\)",
+        "\\( {}_{1}^{2}\\mathrm{H} \\), \\( {}_{2}^{4}\\mathrm{He} \\), \\( {}_{92}^{238}\\mathrm{U} \\), \\( {}_{26}^{56}\\mathrm{Fe} \\)",
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\), \\( {}_{2}^{4}\\mathrm{He} \\), \\( {}_{92}^{238}\\mathrm{U} \\), \\( {}_{1}^{2}\\mathrm{H} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Stability follows \\( E_b/A \\).<br><br>\\( 8.79>7.57>7.07>1.11 \\), so iron, then uranium, then helium, then deuterium.",
+      "hint": "Sort by the given per-nucleon values only.",
+      "distractor_logic": [
+        "Ranks by total binding energy, which grows with size",
+        "Lists the order from least to most stable",
+        "Assumes \\( E_b/A \\) drops steeply after the peak, below helium"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-015",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 3,
+      "type": "regular",
+      "question": "Why does splitting a light nucleus such as \\( {}_{2}^{4}\\mathrm{He} \\) into two \\( {}_{1}^{2}\\mathrm{H} \\) nuclei NOT release energy, even though fission of \\( {}_{92}^{235}\\mathrm{U} \\) does?",
+      "options": [
+        "Fission releases energy only in nuclei with more than 92 protons",
+        "Light nuclei have no binding energy to release",
+        "The products would have a lower \\( E_b/A \\) than \\( {}_{2}^{4}\\mathrm{He} \\), moving away from the peak of the curve",
+        "Splitting always absorbs energy; uranium fission also absorbs it and is driven only by the neutron"
+      ],
+      "correct_index": 2,
+      "explanation": "For heavy nuclei, fragments lie nearer the peak, so \\( E_b/A \\) rises and energy is released.<br><br>For light nuclei, fragments lie further down the rising side, so \\( E_b/A \\) falls and energy is absorbed.",
+      "hint": "Which side of the peak are you on?",
+      "distractor_logic": [
+        "The criterion is whether \\( E_b/A \\) rises, not a proton threshold; uranium itself has exactly 92 protons",
+        "\\( {}_{2}^{4}\\mathrm{He} \\) has 28.3 MeV of binding energy",
+        "Uranium fission releases about 200 MeV"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-016",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 3,
+      "type": "regular",
+      "question": "Taking \\( E_b/A \\) as 8.6 MeV for \\( {}_{28}^{56}\\mathrm{Ni} \\) and 7.1 MeV for \\( {}_{2}^{4}\\mathrm{He} \\), the energy released if 14 \\( {}_{2}^{4}\\mathrm{He} \\) nuclei were fused into one \\( {}_{28}^{56}\\mathrm{Ni} \\) nucleus is",
+      "options": [
+        "1.5 MeV",
+        "481.6 MeV",
+        "\\( -84.0 \\) MeV",
+        "84.0 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "Product: \\( 56\\times8.6=481.6 \\) MeV. Reactants: \\( 14\\times4\\times7.1=397.6 \\) MeV.<br><br>Energy released \\( =481.6-397.6=84.0 \\) MeV.",
+      "hint": "14 helium nuclei contain 56 nucleons.",
+      "distractor_logic": [
+        "Gives only the per-nucleon gain",
+        "Gives the product's total binding, ignoring the reactants",
+        "Reverses the sign; the product is more tightly bound"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-017",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 3,
+      "type": "regular",
+      "question": "A stellar core made mainly of \\( {}_{26}^{56}\\mathrm{Fe} \\) cannot release energy by fusion or by fission. Why?",
+      "options": [
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\) sits at the peak of the \\( E_b/A \\) curve, so any product would have a lower \\( E_b/A \\)",
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\) has the largest total binding energy of all nuclei",
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\) has zero mass defect",
+        "Only hydrogen can undergo fusion"
+      ],
+      "correct_index": 0,
+      "explanation": "Both fusion and fission release energy only when products have higher \\( E_b/A \\).<br><br>At the peak, moving either way lowers \\( E_b/A \\), so energy would have to be supplied.",
+      "hint": "Where is iron on the curve?",
+      "distractor_logic": [
+        "Uranium has a far larger total; the point is \\( E_b/A \\)",
+        "Iron has a large positive mass defect",
+        "Helium, carbon and other light nuclei also fuse"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-018",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": 3,
+      "type": "regular",
+      "question": "Stable heavy nuclei such as \\( {}_{82}^{208}\\mathrm{Pb} \\) contain far more neutrons than protons. Why?",
+      "options": [
+        "Neutrons feel a stronger nuclear force than protons",
+        "Extra neutrons add nuclear attraction without adding Coulomb repulsion",
+        "Neutrons are lighter, keeping the nuclear density constant",
+        "Extra neutrons increase the range of the nuclear force"
+      ],
+      "correct_index": 1,
+      "explanation": "Coulomb repulsion grows rapidly with \\( Z \\) in heavy nuclei.<br><br>Neutrons are uncharged, so they strengthen the binding without adding repulsion; lead has 126 neutrons and 82 protons.",
+      "hint": "What does a neutron add, and what does it not add?",
+      "distractor_logic": [
+        "The nuclear force is charge-independent",
+        "The neutron is actually slightly heavier than the proton",
+        "The range of the nuclear force is fixed"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-019",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 3,
+      "type": "regular",
+      "question": "Samples X (\\( T_{1/2}=2 \\) h) and Y (\\( T_{1/2}=4 \\) h) start with equal numbers of nuclei. After 8 h, the ratio \\( N_X:N_Y \\) is",
+      "options": [
+        "\\( 1:2 \\)",
+        "\\( 4:1 \\)",
+        "\\( 1:4 \\)",
+        "\\( 1:16 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "X: 4 half-lives, \\( \\frac{1}{16} \\) remains. Y: 2 half-lives, \\( \\frac{1}{4} \\) remains.<br><br>\\( \\frac{1/16}{1/4}=\\frac{1}{4} \\), so \\( 1:4 \\).",
+      "hint": "Count half-lives for each separately.",
+      "distractor_logic": [
+        "Uses the ratio of half-lives rather than the remaining fractions",
+        "Inverts the ratio; X decays faster",
+        "Gives the fraction of X alone"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-020",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 3,
+      "type": "regular",
+      "question": "A nuclide has mean life \\( \\tau=10 \\) days. The time for its amount to fall to \\( \\frac{1}{8} \\) of the initial value is",
+      "options": [
+        "30 days",
+        "13.86 days",
+        "80 days",
+        "20.79 days"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( T_{1/2}=0.693\\tau=6.93 \\) days.<br><br>\\( \\frac{1}{8} \\) needs 3 half-lives: \\( 3\\times6.93=20.79 \\) days.",
+      "hint": "Convert mean life to half-life first.",
+      "distractor_logic": [
+        "Uses \\( \\tau \\) as if it were the half-life",
+        "Counts only two half-lives",
+        "Multiplies \\( \\tau \\) by 8"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-021",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 3,
+      "type": "regular",
+      "question": "A sample contains \\( 5\\times10^{15} \\) nuclei of a nuclide with \\( T_{1/2}=693 \\) s. Its activity is",
+      "options": [
+        "\\( 5\\times10^{12} \\) Bq",
+        "\\( 5\\times10^{15} \\) Bq",
+        "about \\( 7.2\\times10^{12} \\) Bq",
+        "\\( 5\\times10^{12} \\) Ci"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\lambda=\\frac{0.693}{693}=10^{-3} \\) per second.<br><br>\\( \\mathcal{A}=\\lambda N=10^{-3}\\times5\\times10^{15}=5\\times10^{12} \\) Bq.",
+      "hint": "Find \\( \\lambda \\) first.",
+      "distractor_logic": [
+        "Confuses the number of nuclei with activity",
+        "Uses \\( \\lambda=1/T_{1/2} \\), forgetting \\( \\ln2 \\)",
+        "Right number, wrong unit"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-022",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 3,
+      "type": "regular",
+      "question": "A 64 g sample of a radioactive nuclide passes through five half-lives. The mass that has decayed is",
+      "options": [
+        "2 g",
+        "62 g",
+        "64 g",
+        "32 g"
+      ],
+      "correct_index": 1,
+      "explanation": "Remaining \\( =64\\times\\left(\\frac{1}{2}\\right)^5=2 \\) g.<br><br>Decayed \\( =64-2=62 \\) g.",
+      "hint": "Find the remainder first.",
+      "distractor_logic": [
+        "This is the mass remaining",
+        "Assumes the sample is fully gone after five half-lives",
+        "Counts only the first half-life"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-023",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 3,
+      "type": "regular",
+      "question": "The activity of a sample falls from 1600 Bq to 100 Bq in 12 hours. The half-life is",
+      "options": [
+        "0.75 h",
+        "6 h",
+        "3 h",
+        "4 h"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\frac{1600}{100}=16=2^4 \\), so four half-lives pass.<br><br>\\( T_{1/2}=\\frac{12}{4}=3 \\) h.",
+      "hint": "How many times must 1600 be halved to reach 100?",
+      "distractor_logic": [
+        "Divides 12 h by 16, treating the ratio as a count of half-lives",
+        "Counts only two halvings",
+        "Counts three halvings instead of four"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-024",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": 3,
+      "type": "regular",
+      "question": "During the second half-life of a fresh sample, the fraction of the ORIGINAL nuclei that decays is",
+      "options": [
+        "\\( \\frac{1}{2} \\)",
+        "0",
+        "\\( \\frac{3}{4} \\)",
+        "\\( \\frac{1}{4} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "At the start of the second half-life, \\( \\frac{1}{2} \\) remains.<br><br>Half of that decays: \\( \\frac{1}{2}\\times\\frac{1}{2}=\\frac{1}{4} \\) of the original.",
+      "hint": "Half of what is left.",
+      "distractor_logic": [
+        "Assumes a fixed amount decays each half-life",
+        "Assumes the sample ran out after the first half-life",
+        "This is the total decayed after two half-lives"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-025",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 3,
+      "type": "regular",
+      "question": "For the alpha decay of \\( {}_{92}^{238}\\mathrm{U} \\) to \\( {}_{90}^{234}\\mathrm{Th} \\), take atomic masses U: 238.0508 u, Th: 234.0436 u, He: 4.0026 u, and 1 u = 931.5 MeV/\\( c^2 \\). The energy involved is",
+      "options": [
+        "about 4.28 MeV released",
+        "about 4.28 MeV absorbed",
+        "about 0.0046 MeV released",
+        "about 8.56 MeV released"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\Delta m=238.0508-(234.0436+4.0026)=0.0046 \\) u.<br><br>Energy \\( =0.0046\\times931.5\\approx4.28 \\) MeV, released since the parent is heavier than the products.",
+      "hint": "Parent mass minus products' mass.",
+      "distractor_logic": [
+        "Reverses the subtraction; the parent is heavier",
+        "Leaves the mass difference in u",
+        "Double-counts the mass difference"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-026",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 3,
+      "type": "regular",
+      "question": "\\( {}_{90}^{232}\\mathrm{Th} \\) decays to \\( {}_{82}^{208}\\mathrm{Pb} \\) by alpha and beta-minus emissions. The numbers of alpha and beta-minus decays are",
+      "options": [
+        "4 alpha, 6 beta-minus",
+        "6 alpha, 4 beta-minus",
+        "6 alpha, 8 beta-minus",
+        "6 alpha, 0 beta-minus"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\frac{232-208}{4}=6 \\) alpha decays, lowering \\( Z \\) to \\( 90-12=78 \\).<br><br>Reaching 82 requires 4 beta-minus decays.",
+      "hint": "Mass number first, then charge.",
+      "distractor_logic": [
+        "Swaps the two counts",
+        "Takes beta count as \\( 90-82 \\), ignoring alpha charge loss",
+        "Ignores the beta decays needed to fix \\( Z \\)"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-027",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 3,
+      "type": "regular",
+      "question": "A nucleus undergoes one alpha decay followed by two beta-minus decays and ends as \\( {}_{83}^{210}\\mathrm{Bi} \\). The original nucleus was",
+      "options": [
+        "\\( {}_{87}^{214}\\mathrm{Fr} \\)",
+        "\\( {}_{83}^{206}\\mathrm{Bi} \\)",
+        "\\( {}_{83}^{214}\\mathrm{Bi} \\)",
+        "\\( {}_{81}^{214}\\mathrm{Tl} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Undo two beta-minus decays: \\( Z=83-2=81 \\), \\( A=210 \\).<br><br>Undo the alpha decay: \\( A=214 \\), \\( Z=83 \\): \\( {}_{83}^{214}\\mathrm{Bi} \\).",
+      "hint": "Work backwards, undoing each step.",
+      "distractor_logic": [
+        "Treats beta-minus as lowering \\( Z \\) when working backwards",
+        "Applies the decays forward instead of reversing them",
+        "Undoes the beta decays but forgets to add back the 2 protons carried off by the alpha particle"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-028",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 3,
+      "type": "regular",
+      "question": "For \\( {}_1^2\\mathrm{H}+{}_1^2\\mathrm{H}\\to{}_2^3\\mathrm{He}+{}_0^1n \\), take atomic masses 2.0141 u (deuterium), 3.0160 u (helium-3), neutron 1.0087 u, and 1 u = 931.5 MeV/\\( c^2 \\). The energy released is about",
+      "options": [
+        "\\( -3.26 \\) MeV",
+        "0.0035 MeV",
+        "6.52 MeV",
+        "3.26 MeV"
+      ],
+      "correct_index": 3,
+      "explanation": "Reactants: \\( 2\\times2.0141=4.0282 \\) u. Products: \\( 3.0160+1.0087=4.0247 \\) u.<br><br>\\( \\Delta m=0.0035 \\) u, energy \\( =0.0035\\times931.5\\approx3.26 \\) MeV.",
+      "hint": "Two deuterium atoms on the left.",
+      "distractor_logic": [
+        "Reverses the subtraction",
+        "Leaves the mass difference in u",
+        "Double-counts the mass difference"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-029",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 3,
+      "type": "regular",
+      "question": "Energy released per nucleon of fuel is about 3.5 MeV for deuterium-tritium fusion and about 0.85 MeV for \\( {}_{92}^{235}\\mathrm{U} \\) fission. Which conclusion is correct?",
+      "options": [
+        "Per unit mass of fuel, fusion releases roughly four times as much energy as fission",
+        "Fission releases more per unit mass, since one fission gives about 200 MeV against about 17.6 MeV",
+        "Both release equal energy per unit mass, since both move toward the peak of the curve",
+        "Fusion releases less, since light nuclei have lower \\( E_b/A \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Mass of fuel is proportional to the number of nucleons.<br><br>\\( \\frac{3.5}{0.85}\\approx4 \\), so fusion yields about four times more energy per unit mass.",
+      "hint": "Compare per nucleon, not per event.",
+      "distractor_logic": [
+        "Compares energy per event, ignoring that uranium involves far more nucleons",
+        "Moving toward the peak does not fix the size of the gain",
+        "The large rise in \\( E_b/A \\) on the light side is what makes fusion so productive"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-L3-030",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion",
+      "level": 3,
+      "type": "regular",
+      "question": "A nucleus \\( {}_Z^A\\mathrm{X} \\) emits two alpha particles and three beta-minus particles. The final nucleus is",
+      "options": [
+        "\\( {}_{Z-7}^{A-8}\\mathrm{Y} \\)",
+        "\\( {}_{Z-1}^{A-8}\\mathrm{Y} \\)",
+        "\\( {}_{Z-1}^{A-11}\\mathrm{Y} \\)",
+        "\\( {}_{Z-4}^{A-8}\\mathrm{Y} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Two alpha decays: \\( A-8 \\), \\( Z-4 \\).<br><br>Three beta-minus decays: \\( A \\) unchanged, \\( Z \\) up by 3, giving \\( Z-4+3=Z-1 \\).",
+      "hint": "Track \\( A \\) and \\( Z \\) separately.",
+      "distractor_logic": [
+        "Treats each beta-minus decay as lowering \\( Z \\)",
+        "Lowers \\( A \\) in the beta decays as well",
+        "Ignores the three beta-minus decays"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-001",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{1}^{2}\\mathrm{H} \\) and \\( {}_{1}^{3}\\mathrm{H} \\) have binding energies 2.22 MeV and 8.49 MeV. Which statement is correct?",
+      "options": [
+        "They are isobars, and \\( {}_{1}^{3}\\mathrm{H} \\) is more stable because its total \\( E_b \\) is larger",
+        "They are isotopes, and both are equally stable because they are the same element",
+        "They are isotopes, and \\( {}_{1}^{3}\\mathrm{H} \\) is more stable, with \\( E_b/A \\) of about 2.83 MeV against 1.11 MeV",
+        "They are isotones, and \\( {}_{1}^{2}\\mathrm{H} \\) is more stable because it has fewer nucleons to hold"
+      ],
+      "correct_index": 2,
+      "explanation": "Both have \\( Z=1 \\), so they are isotopes.<br><br>\\( E_b/A \\): \\( \\frac{8.49}{3}=2.83 \\) MeV for \\( {}_{1}^{3}\\mathrm{H} \\) and \\( \\frac{2.22}{2}=1.11 \\) MeV for \\( {}_{1}^{2}\\mathrm{H} \\), so tritium is more tightly bound per nucleon.",
+      "hint": "Classify by \\( Z \\), then compare per nucleon.",
+      "distractor_logic": [
+        "Same \\( Z \\) makes them isotopes, and stability is judged per nucleon",
+        "Being the same element says nothing about nuclear binding",
+        "Neutron numbers are 1 and 2, so they are not isotones, and fewer nucleons does not mean tighter binding"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-002",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In every beta-minus decay, the parent and daughter nuclei are always",
+      "options": [
+        "isotopes, because the element does not change",
+        "isotones, because the neutron number does not change",
+        "isobars, because \\( A \\) is unchanged while \\( Z \\) falls by 1",
+        "isobars, because \\( A \\) is unchanged while \\( Z \\) rises by 1"
+      ],
+      "correct_index": 3,
+      "explanation": "Beta-minus: \\( A \\) stays the same and \\( Z \\) increases by 1.<br><br>Same \\( A \\) with different \\( Z \\) is the definition of isobars, e.g. \\( {}_{6}^{14}\\mathrm{C} \\) and \\( {}_{7}^{14}\\mathrm{N} \\).",
+      "hint": "Which of \\( A \\), \\( Z \\) stays fixed in beta decay?",
+      "distractor_logic": [
+        "\\( Z \\) changes, so the element changes",
+        "A neutron turns into a proton, so the neutron number falls by 1",
+        "Right classification but wrong direction; beta-minus raises \\( Z \\)"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-003",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the alpha decay of \\( {}_{92}^{238}\\mathrm{U} \\) to \\( {}_{90}^{234}\\mathrm{Th} \\), the parent and daughter are",
+      "options": [
+        "neither isotopes, isobars nor isotones, since \\( Z \\), \\( A \\) and the neutron number all change",
+        "isotones, since the neutron number stays at 146",
+        "isobars, since the mass number is conserved in alpha decay",
+        "isotopes, since both are heavy radioactive nuclei"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( Z \\): 92 to 90. \\( A \\): 238 to 234. Neutron number: 146 to 144.<br><br>Nothing is shared, so none of the three labels applies.",
+      "hint": "Check all three counts.",
+      "distractor_logic": [
+        "Neutron number falls from 146 to 144",
+        "\\( A \\) falls by 4 in alpha decay",
+        "\\( Z \\) changes from 92 to 90, so they are different elements"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-004",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which single property of the nuclear force explains both the nearly constant nuclear density and the nearly constant \\( E_b/A \\) of medium and heavy nuclei?",
+      "options": [
+        "Its long range: every nucleon attracts every other nucleon equally",
+        "Its short range and saturation: each nucleon attracts only its nearest neighbours",
+        "Its charge dependence: it acts only between protons",
+        "Its inverse-square dependence, identical to gravity"
+      ],
+      "correct_index": 1,
+      "explanation": "Each nucleon interacts only with a fixed number of neighbours, so nucleons pack at a fixed spacing: volume \\( \\propto A \\), density constant.<br><br>The same limit caps the binding each nucleon gets, so \\( E_b/A \\) stays near 8 MeV.",
+      "hint": "One property, two consequences.",
+      "distractor_logic": [
+        "Long range would make \\( E_b/A \\) grow steadily with \\( A \\)",
+        "It is charge-independent and binds neutrons too",
+        "It is not inverse-square; it falls off far faster"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-005",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{6}^{12}\\mathrm{C} \\) is stable while its isotope \\( {}_{6}^{14}\\mathrm{C} \\) is radioactive with \\( T_{1/2}=5730 \\) years. Why can isotopes of one element behave so differently?",
+      "options": [
+        "Isotopes differ in \\( Z \\), so they are really different elements",
+        "Half-life depends on chemical bonding, which differs between isotopes",
+        "Radioactive stability depends on the nucleus, especially its neutron number relative to \\( Z \\), not on the shared electron structure",
+        "\\( {}_{6}^{14}\\mathrm{C} \\) is denser, and denser nuclei are unstable"
+      ],
+      "correct_index": 2,
+      "explanation": "Isotopes share \\( Z \\), so their chemistry is identical.<br><br>Their neutron numbers differ (6 and 8), and nuclear stability depends on that neutron-proton balance.",
+      "hint": "Chemistry comes from electrons; decay comes from the nucleus.",
+      "distractor_logic": [
+        "Isotopes have the same \\( Z \\) by definition",
+        "Chemical bonding does not change nuclear half-lives",
+        "Nuclear density is the same for all nuclei"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-006",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{1}^{3}\\mathrm{H} \\) (\\( E_b=8.48 \\) MeV) and \\( {}_{2}^{3}\\mathrm{He} \\) (\\( E_b=7.72 \\) MeV) are isobars. For this pair, comparing total \\( E_b \\) gives the same stability ranking as comparing \\( E_b/A \\) because",
+      "options": [
+        "they have the same \\( Z \\), so their binding energies are directly comparable",
+        "total \\( E_b \\) is always the correct measure of stability for any two nuclei",
+        "they have the same neutron number, which fixes their binding",
+        "they have the same \\( A \\), so dividing both by 3 cannot change the order"
+      ],
+      "correct_index": 3,
+      "explanation": "Isobars share \\( A \\); here \\( A=3 \\) for both.<br><br>Dividing both totals by the same \\( A \\) keeps the order, so \\( {}_{1}^{3}\\mathrm{H} \\) is more tightly bound either way.",
+      "hint": "What do isobars share?",
+      "distractor_logic": [
+        "Isobars have different \\( Z \\)",
+        "For nuclei of different \\( A \\), total \\( E_b \\) misleads",
+        "Their neutron numbers are 2 and 1"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-007",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Using \\( R=R_0A^{1/3} \\) and the fact that \\( E_b/A \\) is nearly constant for medium and heavy nuclei, the total binding energy \\( E_b \\) scales with the nuclear radius \\( R \\) as",
+      "options": [
+        "\\( E_b\\propto R^{3} \\)",
+        "\\( E_b\\propto R \\)",
+        "\\( E_b\\propto R^{2} \\)",
+        "\\( E_b \\) independent of \\( R \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Constant \\( E_b/A \\) means \\( E_b\\propto A \\).<br><br>\\( R^3\\propto A \\), so \\( E_b\\propto R^3 \\): total binding grows with nuclear volume.",
+      "hint": "Connect \\( A \\) to \\( R \\).",
+      "distractor_logic": [
+        "Treats \\( E_b \\) as growing with radius rather than volume",
+        "Treats \\( E_b \\) as a surface effect",
+        "Confuses constant \\( E_b/A \\) with constant total \\( E_b \\)"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-008",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{6}^{11}\\mathrm{C} \\) decays by positron emission. The daughter nucleus and its relationship to the parent are",
+      "options": [
+        "\\( {}_{7}^{11}\\mathrm{N} \\); isobars",
+        "\\( {}_{5}^{11}\\mathrm{B} \\); isobars",
+        "\\( {}_{5}^{11}\\mathrm{B} \\); isotopes",
+        "\\( {}_{6}^{10}\\mathrm{C} \\); isotopes"
+      ],
+      "correct_index": 1,
+      "explanation": "Positron emission: \\( A \\) unchanged, \\( Z \\) falls by 1, giving \\( {}_{5}^{11}\\mathrm{B} \\).<br><br>Same \\( A=11 \\), different \\( Z \\): isobars.",
+      "hint": "Beta-plus lowers \\( Z \\).",
+      "distractor_logic": [
+        "Raises \\( Z \\), which is beta-minus behaviour",
+        "Right daughter, but different \\( Z \\) rules out isotopes",
+        "Changes \\( A \\), which positron emission does not"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-009",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The atomic mass of \\( {}_{8}^{16}\\mathrm{O} \\) is 15.9949 u, although it contains 16 nucleons each slightly heavier than 1 u. The shortfall is explained by",
+      "options": [
+        "the 8 electrons having negative mass",
+        "oxygen having more neutrons than protons",
+        "the mass defect: mass equivalent to the binding energy was released when the nucleus formed",
+        "oxygen nuclei being less dense than heavier nuclei"
+      ],
+      "correct_index": 2,
+      "explanation": "Separate nucleons plus electrons total about 16.1320 u.<br><br>The missing 0.1371 u is the mass defect, released as binding energy.",
+      "hint": "Binding energy has a mass equivalent.",
+      "distractor_logic": [
+        "Electrons have positive mass",
+        "\\( {}_{8}^{16}\\mathrm{O} \\) has equal numbers, 8 and 8",
+        "Nuclear density is the same for all nuclei"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-010",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Equal numbers of \\( {}_{6}^{11}\\mathrm{C} \\) atoms (\\( T_{1/2}=20 \\) min) and \\( {}_{6}^{14}\\mathrm{C} \\) atoms (\\( T_{1/2}=5730 \\) years) are mixed. After 60 minutes, the ratio of \\( {}_{6}^{11}\\mathrm{C} \\) to \\( {}_{6}^{14}\\mathrm{C} \\) atoms is very nearly",
+      "options": [
+        "\\( 1:1 \\)",
+        "\\( 1:3 \\)",
+        "\\( 8:1 \\)",
+        "\\( 1:8 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( {}_{6}^{11}\\mathrm{C} \\): 3 half-lives, so \\( \\frac{1}{8} \\) remains. \\( {}_{6}^{14}\\mathrm{C} \\): virtually unchanged in an hour.<br><br>Ratio \\( \\approx1:8 \\); same \\( Z \\) does not mean same half-life.",
+      "hint": "Treat each isotope separately.",
+      "distractor_logic": [
+        "Assumes isotopes decay at the same rate",
+        "Divides by the number of half-lives instead of halving",
+        "Inverts the ratio"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-011",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{90}^{232}\\mathrm{Th} \\) undergoes one alpha decay followed by two beta-minus decays. The final nucleus and the parent are",
+      "options": [
+        "isotopes, since \\( Z \\) returns to 90 while \\( A \\) falls to 228",
+        "isobars, since \\( A \\) returns to 232",
+        "isotones, since the neutron number is unchanged",
+        "isotopes, since \\( Z \\) returns to 90 and \\( A \\) stays at 232"
+      ],
+      "correct_index": 0,
+      "explanation": "Alpha: \\( {}_{88}^{228}\\mathrm{Ra} \\). Beta-minus: \\( {}_{89}^{228}\\mathrm{Ac} \\). Beta-minus: \\( {}_{90}^{228}\\mathrm{Th} \\).<br><br>Same \\( Z=90 \\), different \\( A \\): isotopes.",
+      "hint": "Follow \\( A \\) and \\( Z \\) through each step.",
+      "distractor_logic": [
+        "\\( A \\) drops by 4 in the alpha decay and beta decays do not restore it",
+        "Neutron number falls from 142 to 138",
+        "Forgets that the alpha decay removed 4 from \\( A \\)"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-012",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{1}^{3}\\mathrm{H} \\) and \\( {}_{2}^{3}\\mathrm{He} \\) are isobars with proton and neutron numbers interchanged, yet \\( E_b \\) of \\( {}_{2}^{3}\\mathrm{He} \\) (7.72 MeV) is below that of \\( {}_{1}^{3}\\mathrm{H} \\) (8.48 MeV). The best explanation is",
+      "options": [
+        "Neutron-neutron nuclear attraction is much stronger than proton-proton nuclear attraction",
+        "The nuclear force is charge-independent, so the gap comes from the extra proton-proton Coulomb repulsion in \\( {}_{2}^{3}\\mathrm{He} \\)",
+        "\\( {}_{2}^{3}\\mathrm{He} \\) has a smaller mass number",
+        "The nuclear force acts only on neutrons"
+      ],
+      "correct_index": 1,
+      "explanation": "Swapping protons and neutrons leaves the nuclear attraction almost unchanged.<br><br>\\( {}_{2}^{3}\\mathrm{He} \\) has two protons, adding Coulomb repulsion that lowers its binding.",
+      "hint": "What differs between the two nuclei apart from charge?",
+      "distractor_logic": [
+        "The nuclear force is nearly the same for all nucleon pairs",
+        "Both have \\( A=3 \\)",
+        "Protons also feel the nuclear force"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-013",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "The fragments from fission of \\( {}_{92}^{235}\\mathrm{U} \\) usually undergo a series of beta-minus decays. Why?",
+      "options": [
+        "The fragments are proton-rich, so they convert protons into neutrons by beta-minus decay",
+        "Beta-minus decay lowers \\( A \\), bringing the fragments toward \\( A\\approx56 \\)",
+        "Heavy nuclei have a high neutron-to-proton ratio, while stable medium nuclei need a lower one, so the neutron-rich fragments turn neutrons into protons",
+        "The fragments have zero binding energy until they emit electrons"
+      ],
+      "correct_index": 2,
+      "explanation": "Uranium carries 143 neutrons for 92 protons, a ratio stable medium nuclei cannot hold.<br><br>Beta-minus decays raise \\( Z \\) at fixed \\( A \\) until each fragment reaches a stable neutron-proton balance.",
+      "hint": "Compare the neutron-proton ratio of heavy and medium nuclei.",
+      "distractor_logic": [
+        "Beta-minus converts neutrons into protons, and the fragments are neutron-rich",
+        "Beta decay never changes \\( A \\)",
+        "The fragments are strongly bound; that is why fission releases energy"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Nuclear Force and the Binding Energy per Nucleon Curve",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-014",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Radiocarbon dating assumes a living organism takes up \\( {}_{6}^{14}\\mathrm{C} \\) in the same proportion as \\( {}_{6}^{12}\\mathrm{C} \\) from the air. This is reasonable because",
+      "options": [
+        "they are isobars, so they have equal masses",
+        "they are isotones, so their nuclei behave alike",
+        "\\( {}_{6}^{14}\\mathrm{C} \\) does not decay while inside living tissue",
+        "the two are isotopes, with the same \\( Z \\), so their chemistry is identical and they are absorbed alike"
+      ],
+      "correct_index": 3,
+      "explanation": "Chemistry depends on \\( Z \\), and both have \\( Z=6 \\).<br><br>Organisms therefore absorb both in the atmospheric ratio; after death, \\( {}_{6}^{14}\\mathrm{C} \\) decays exponentially.",
+      "hint": "What decides chemical behaviour?",
+      "distractor_logic": [
+        "Their mass numbers are 12 and 14, not equal",
+        "Neutron numbers are 6 and 8",
+        "Decay is a nuclear process unaffected by biology"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-015",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{15}^{32}\\mathrm{P} \\) undergoes beta-minus decay. The neutron number of the daughter nucleus is",
+      "options": [
+        "16",
+        "17",
+        "18",
+        "15"
+      ],
+      "correct_index": 0,
+      "explanation": "Daughter: \\( {}_{16}^{32}\\mathrm{S} \\).<br><br>Neutron number \\( =32-16=16 \\), one fewer than the parent's 17.",
+      "hint": "A neutron turns into a proton.",
+      "distractor_logic": [
+        "This is the parent's neutron number",
+        "Adds a neutron instead of converting one",
+        "This is the parent's \\( Z \\)"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-016",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Nuclear density is almost the same for all nuclei, yet \\( E_b/A \\) is clearly lower for light nuclei such as \\( {}_{1}^{2}\\mathrm{H} \\) and \\( {}_{3}^{6}\\mathrm{Li} \\). Why?",
+      "options": [
+        "Light nuclei are less dense, so nucleons are farther apart",
+        "In a small nucleus a large fraction of nucleons sit at the surface with fewer neighbours to bind to",
+        "The nuclear force is weaker between light nucleons",
+        "Light nuclei have more Coulomb repulsion per nucleon than heavy ones"
+      ],
+      "correct_index": 1,
+      "explanation": "Same packing density does not mean same number of neighbours.<br><br>Surface nucleons have fewer neighbours, and in small nuclei most nucleons are at the surface.",
+      "hint": "Think about surface versus interior.",
+      "distractor_logic": [
+        "Density is essentially constant for all nuclei",
+        "The nuclear force has the same strength for all nucleons",
+        "Coulomb repulsion per nucleon is larger in heavy nuclei"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-017",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{2}^{3}\\mathrm{He} \\) and \\( {}_{2}^{4}\\mathrm{He} \\) have binding energies 7.72 MeV and 28.30 MeV. Which statement is correct?",
+      "options": [
+        "They are isobars, and \\( {}_{2}^{3}\\mathrm{He} \\) is more stable because it is lighter",
+        "They are isotopes, and \\( {}_{2}^{3}\\mathrm{He} \\) is more stable since \\( E_b/A \\) always falls as \\( A \\) rises",
+        "They are isotopes, and \\( {}_{2}^{4}\\mathrm{He} \\) is far more tightly bound (about 7.08 MeV per nucleon against 2.57 MeV), matching its spike on the \\( E_b/A \\) curve",
+        "They are isotopes with nearly equal \\( E_b/A \\), since isotopes share the same binding"
+      ],
+      "correct_index": 2,
+      "explanation": "Both have \\( Z=2 \\): isotopes.<br><br>\\( \\frac{28.30}{4}\\approx7.08 \\) MeV versus \\( \\frac{7.72}{3}\\approx2.57 \\) MeV; helium-4 is the famous spike on the curve.",
+      "hint": "Classify, then compare per nucleon.",
+      "distractor_logic": [
+        "Same \\( Z \\) makes them isotopes, and lighter is not more stable",
+        "\\( E_b/A \\) rises steeply for light nuclei",
+        "Isotopes can differ greatly in binding"
+      ],
+      "mixed_topics": [
+        "Nuclear Composition and Size: Isotopes, Isobars, Isotones, and Nuclear Density",
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-018",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{84}^{212}\\mathrm{Po} \\) (\\( E_b=1655.0 \\) MeV) undergoes alpha decay to \\( {}_{82}^{208}\\mathrm{Pb} \\) (\\( E_b=1635.6 \\) MeV). Taking \\( E_b \\) of \\( {}_{2}^{4}\\mathrm{He} \\) as 28.3 MeV, the energy involved is",
+      "options": [
+        "8.9 MeV absorbed",
+        "19.4 MeV absorbed",
+        "28.3 MeV released",
+        "8.9 MeV released"
+      ],
+      "correct_index": 3,
+      "explanation": "Products: \\( 1635.6+28.3=1663.9 \\) MeV. Parent: 1655.0 MeV.<br><br>Energy released \\( =1663.9-1655.0=8.9 \\) MeV.",
+      "hint": "Total binding of products minus that of the parent.",
+      "distractor_logic": [
+        "Reverses the sign; the products are more tightly bound in total",
+        "Forgets the binding energy of the emitted alpha particle",
+        "Takes only the alpha particle's binding energy"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-019",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{26}^{56}\\mathrm{Fe} \\) has \\( E_b=492.8 \\) MeV and \\( {}_{92}^{238}\\mathrm{U} \\) has \\( E_b=1808.8 \\) MeV. Which is more stable, and why?",
+      "options": [
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\), since its \\( E_b/A \\) of 8.8 MeV lies at the peak of the curve, above 7.6 MeV for \\( {}_{92}^{238}\\mathrm{U} \\)",
+        "\\( {}_{92}^{238}\\mathrm{U} \\), since its total \\( E_b \\) is almost four times larger",
+        "\\( {}_{92}^{238}\\mathrm{U} \\), since heavier nuclei lie higher on the \\( E_b/A \\) curve",
+        "Both equally, since binding energy is proportional to \\( A \\) for all nuclei"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\frac{492.8}{56}=8.8 \\) MeV and \\( \\frac{1808.8}{238}=7.6 \\) MeV.<br><br>Iron binds each nucleon more tightly, consistent with its place at the peak.",
+      "hint": "Divide by \\( A \\) before comparing.",
+      "distractor_logic": [
+        "Compares raw totals between nuclei of very different size",
+        "The curve falls after its peak near \\( A\\approx56 \\)",
+        "8.8 and 7.6 MeV per nucleon are clearly different"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-020",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For \\( {}_1^2\\mathrm{H}+{}_1^3\\mathrm{H}\\to{}_2^4\\mathrm{He}+{}_0^1n \\), the binding energies are 2.22 MeV, 8.48 MeV and 28.30 MeV. The energy released is",
+      "options": [
+        "39.00 MeV",
+        "17.60 MeV",
+        "10.70 MeV",
+        "\\( -17.60 \\) MeV"
+      ],
+      "correct_index": 1,
+      "explanation": "A free neutron has zero binding energy.<br><br>Energy released \\( =28.30-(2.22+8.48)=17.60 \\) MeV.",
+      "hint": "Binding of products minus binding of reactants.",
+      "distractor_logic": [
+        "Adds all binding energies instead of subtracting",
+        "Gives only the reactants' total binding",
+        "Reverses products and reactants"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-021",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Tritium decays by beta-minus to helium-3. Atomic masses: \\( {}_{1}^{3}\\mathrm{H} \\) 3.016050 u and \\( {}_{2}^{3}\\mathrm{He} \\) 3.016030 u; 1 u = 931.5 MeV/\\( c^2 \\). The energy released is",
+      "options": [
+        "\\( -18.63 \\) keV",
+        "18.63 MeV",
+        "18.63 keV",
+        "\\( 2\\times10^{-5} \\) MeV"
+      ],
+      "correct_index": 2,
+      "explanation": "With atomic masses, the emitted electron is automatically accounted for, since the helium atom has one more electron than the tritium atom.<br><br>\\( \\Delta m=0.000020 \\) u, so energy \\( =0.000020\\times931.5=0.01863 \\) MeV \\( =18.63 \\) keV.",
+      "hint": "Parent atom minus daughter atom.",
+      "distractor_logic": [
+        "Subtracts parent from daughter",
+        "Slips by a factor of 1000 in the unit",
+        "Leaves the mass difference in u and labels it MeV"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-022",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A spontaneous nuclear decay or reaction can release energy only if",
+      "options": [
+        "the products have a larger total mass than the reactants",
+        "the products have a smaller total binding energy than the reactants",
+        "the parent nucleus has more than 56 nucleons",
+        "the total binding energy of the products exceeds that of the reactants, so the products have less total mass"
+      ],
+      "correct_index": 3,
+      "explanation": "Energy released \\( = \\) increase in total binding energy \\( = \\) decrease in total mass times \\( c^2 \\).<br><br>This single condition covers alpha decay, fission and fusion alike.",
+      "hint": "Where does released energy come from?",
+      "distractor_logic": [
+        "Released energy comes from mass lost, not gained",
+        "Reverses the condition",
+        "Fusion of light nuclei also releases energy"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Nuclear Force and the Binding Energy per Nucleon Curve",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-023",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "For \\( {}_1^2\\mathrm{H}+{}_1^2\\mathrm{H}\\to{}_2^3\\mathrm{He}+{}_0^1n \\), the binding energies of \\( {}_{1}^{2}\\mathrm{H} \\) and \\( {}_{2}^{3}\\mathrm{He} \\) are 2.22 MeV and 7.72 MeV. The energy released is",
+      "options": [
+        "3.28 MeV",
+        "5.50 MeV",
+        "12.16 MeV",
+        "\\( -3.28 \\) MeV"
+      ],
+      "correct_index": 0,
+      "explanation": "Reactants: \\( 2\\times2.22=4.44 \\) MeV. Products: 7.72 MeV (free neutron has none).<br><br>Energy released \\( =7.72-4.44=3.28 \\) MeV.",
+      "hint": "Two deuterons on the left.",
+      "distractor_logic": [
+        "Subtracts the binding of only one deuteron",
+        "Adds binding energies instead of subtracting",
+        "Reverses products and reactants"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-024",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Compare \\( {}_{2}^{4}\\mathrm{He} \\) (\\( E_b/A=7.1 \\) MeV) with \\( {}_{26}^{56}\\mathrm{Fe} \\) (\\( E_b/A=8.8 \\) MeV). Which needs more total energy to be separated into free nucleons, and which needs more per nucleon?",
+      "options": [
+        "\\( {}_{2}^{4}\\mathrm{He} \\) in both cases, since smaller nuclei are more tightly bound",
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\) in both cases: 492.8 MeV in total and 8.8 MeV per nucleon",
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\) in total, but \\( {}_{2}^{4}\\mathrm{He} \\) per nucleon",
+        "\\( {}_{2}^{4}\\mathrm{He} \\) in total, but \\( {}_{26}^{56}\\mathrm{Fe} \\) per nucleon"
+      ],
+      "correct_index": 1,
+      "explanation": "Totals: \\( 56\\times8.8=492.8 \\) MeV versus \\( 4\\times7.1=28.4 \\) MeV.<br><br>Per nucleon, 8.8 MeV exceeds 7.1 MeV, so iron wins both comparisons.",
+      "hint": "Compute both totals.",
+      "distractor_logic": [
+        "Helium sits below iron on the curve",
+        "Per-nucleon values are given: 8.8 exceeds 7.1",
+        "Helium's total is only 28.4 MeV"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-025",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( E_b \\) is 127.6 MeV for \\( {}_{8}^{16}\\mathrm{O} \\) and 28.3 MeV for \\( {}_{2}^{4}\\mathrm{He} \\). Splitting one \\( {}_{8}^{16}\\mathrm{O} \\) nucleus into four \\( {}_{2}^{4}\\mathrm{He} \\) nuclei",
+      "options": [
+        "releases 14.4 MeV",
+        "releases 127.6 MeV",
+        "requires 14.4 MeV to be supplied",
+        "requires 113.2 MeV to be supplied"
+      ],
+      "correct_index": 2,
+      "explanation": "Products: \\( 4\\times28.3=113.2 \\) MeV. Parent: 127.6 MeV.<br><br>Products are less bound by 14.4 MeV, so that energy must be supplied.",
+      "hint": "Compare total binding before and after.",
+      "distractor_logic": [
+        "Gets the direction wrong; the products are less bound in total",
+        "Uses only the oxygen binding energy",
+        "Gives the products' total binding, not the difference"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-026",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Which nucleus has the largest mass defect per nucleon?",
+      "options": [
+        "\\( {}_{92}^{238}\\mathrm{U} \\)",
+        "\\( {}_{2}^{4}\\mathrm{He} \\)",
+        "\\( {}_{1}^{2}\\mathrm{H} \\)",
+        "\\( {}_{26}^{56}\\mathrm{Fe} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Mass defect per nucleon \\( =\\frac{E_b/A}{c^2} \\).<br><br>It is largest where \\( E_b/A \\) peaks, around \\( {}_{26}^{56}\\mathrm{Fe} \\).",
+      "hint": "Mass defect and binding energy go together.",
+      "distractor_logic": [
+        "Largest total mass defect, but not per nucleon",
+        "Below the peak per nucleon",
+        "Very weakly bound per nucleon"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Nuclear Force and the Binding Energy per Nucleon Curve"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-027",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the beta-minus decay of \\( {}_{1}^{3}\\mathrm{H} \\), the total energy released is 18.6 keV. The kinetic energy of the emitted electron",
+      "options": [
+        "varies from nearly zero up to about 18.6 keV, since the antineutrino carries off the rest",
+        "is always exactly 18.6 keV",
+        "is always exactly 9.3 keV, half the total",
+        "is always zero, since the antineutrino takes all the energy"
+      ],
+      "correct_index": 0,
+      "explanation": "The released energy \\( \\Delta mc^2 \\) is shared between electron and antineutrino (the heavy daughter takes almost none).<br><br>So electron energies form a continuous spectrum up to the maximum of 18.6 keV.",
+      "hint": "Three particles share the energy.",
+      "distractor_logic": [
+        "Ignores the antineutrino's share",
+        "The sharing is not fixed at half",
+        "The electron's share varies from decay to decay"
+      ],
+      "mixed_topics": [
+        "Mass-Energy Equivalence, Mass Defect, and Binding Energy",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-028",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In the fission of \\( {}_{92}^{235}\\mathrm{U} \\) after neutron capture (236 nucleons), \\( E_b/A \\) rises from about 7.6 MeV to about 8.5 MeV. The energy released per fission is roughly",
+      "options": [
+        "0.9 MeV",
+        "212.4 MeV",
+        "2006 MeV",
+        "\\( -212.4 \\) MeV"
+      ],
+      "correct_index": 1,
+      "explanation": "Gain per nucleon \\( =8.5-7.6=0.9 \\) MeV.<br><br>Total \\( =236\\times0.9=212.4 \\) MeV, close to the familiar 200 MeV per fission.",
+      "hint": "Gain per nucleon times the number of nucleons.",
+      "distractor_logic": [
+        "Gives only the gain per nucleon",
+        "Gives the total binding of the fragments",
+        "Reverses the sign; the fragments are more tightly bound"
+      ],
+      "mixed_topics": [
+        "Nuclear Force and the Binding Energy per Nucleon Curve",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-029",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Heavy nuclei often emit an alpha particle rather than a single proton or neutron. Which feature of the \\( E_b/A \\) curve explains this?",
+      "options": [
+        "The curve rises monotonically, so smaller emitted particles are always less bound",
+        "Single nucleons have the highest \\( E_b/A \\) of all",
+        "\\( {}_{2}^{4}\\mathrm{He} \\) is exceptionally tightly bound (about 7.1 MeV per nucleon), so emitting it as a unit releases energy",
+        "The alpha particle has zero binding energy, so it escapes freely"
+      ],
+      "correct_index": 2,
+      "explanation": "Helium-4 is a sharp spike on the rising part of the curve.<br><br>Releasing 4 nucleons already bound by about 28.3 MeV makes the products' total binding exceed the parent's, so alpha decay can release energy.",
+      "hint": "Look at helium's point on the curve.",
+      "distractor_logic": [
+        "The curve peaks near \\( A\\approx56 \\) and is not monotonic",
+        "A free nucleon has zero binding energy",
+        "Helium-4 is strongly bound, with about 28.3 MeV"
+      ],
+      "mixed_topics": [
+        "Nuclear Force and the Binding Energy per Nucleon Curve",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-030",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Fusion of hydrogen nuclei releases energy, yet it needs core temperatures of about \\( 10^{7} \\) K. Why?",
+      "options": [
+        "High temperature raises the \\( E_b/A \\) of the products",
+        "The products have lower \\( E_b/A \\), so heat must be supplied",
+        "The nuclear force is repulsive at all distances, so heat is needed",
+        "The nuclei must come within the short range of the nuclear force against their Coulomb repulsion, which needs very high kinetic energy"
+      ],
+      "correct_index": 3,
+      "explanation": "The nuclear attraction acts only over a few fm.<br><br>Getting two positive nuclei that close requires kinetic energy large enough to beat Coulomb repulsion, hence the extreme temperature.",
+      "hint": "Range of the nuclear force versus Coulomb repulsion.",
+      "distractor_logic": [
+        "Temperature does not alter binding energies",
+        "The product has higher \\( E_b/A \\); that is why energy is released",
+        "It is attractive over about 0.8 to a few fm"
+      ],
+      "mixed_topics": [
+        "Nuclear Force and the Binding Energy per Nucleon Curve",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-031",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Nuclear Force and the Binding Energy per Nucleon Curve",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "All nuclei with \\( A>209 \\) are radioactive, mostly decaying by alpha emission. Which explanation is correct?",
+      "options": [
+        "Beyond the peak, \\( E_b/A \\) falls as Coulomb repulsion grows, so shedding an alpha particle moves the nucleus toward higher \\( E_b/A \\)",
+        "Their \\( E_b/A \\) is higher than that of iron, so they have extra binding to release",
+        "Their nuclear density is higher, which forces nucleons out",
+        "The nuclear force becomes repulsive for large \\( A \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Heavy nuclei lie on the falling side of the curve.<br><br>Alpha emission lowers \\( A \\) and \\( Z \\), moving toward the peak and releasing energy.",
+      "hint": "Which side of the peak are they on?",
+      "distractor_logic": [
+        "Heavy nuclei have lower \\( E_b/A \\) than iron",
+        "Nuclear density is the same for all nuclei",
+        "The attraction remains; it is the Coulomb repulsion that grows"
+      ],
+      "mixed_topics": [
+        "Nuclear Force and the Binding Energy per Nucleon Curve",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-032",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{6}^{14}\\mathrm{C} \\) is a beta-minus emitter with \\( T_{1/2}=5730 \\) years. After 11460 years, what fraction of the original \\( {}_{6}^{14}\\mathrm{C} \\) remains, and what is the daughter?",
+      "options": [
+        "\\( \\frac{1}{4} \\); \\( {}_{5}^{14}\\mathrm{B} \\)",
+        "\\( \\frac{1}{4} \\); \\( {}_{7}^{14}\\mathrm{N} \\)",
+        "None at all; \\( {}_{7}^{14}\\mathrm{N} \\)",
+        "\\( \\frac{1}{2} \\); \\( {}_{7}^{14}\\mathrm{N} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\frac{11460}{5730}=2 \\) half-lives, so \\( \\frac{1}{4} \\) remains.<br><br>Beta-minus: \\( A=14 \\) unchanged, \\( Z=6+1=7 \\): \\( {}_{7}^{14}\\mathrm{N} \\).",
+      "hint": "Count half-lives, then apply the beta-minus rule.",
+      "distractor_logic": [
+        "Right fraction, but beta-minus raises \\( Z \\), not lowers it",
+        "Assumes linear decay emptying the sample in two half-lives",
+        "Counts only one half-life"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-033",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A sample contains \\( 10^{20} \\) nuclei of an alpha emitter. How many alpha particles have been emitted after two half-lives?",
+      "options": [
+        "\\( 2.5\\times10^{19} \\)",
+        "\\( 10^{20} \\)",
+        "\\( 7.5\\times10^{19} \\)",
+        "\\( 5\\times10^{19} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Each decay emits one alpha particle.<br><br>Decayed \\( =\\left(1-\\frac{1}{4}\\right)\\times10^{20}=7.5\\times10^{19} \\).",
+      "hint": "One alpha per decay.",
+      "distractor_logic": [
+        "This is the number of nuclei remaining",
+        "Assumes all nuclei have decayed after two half-lives",
+        "Counts only one half-life"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-034",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A sample starts with \\( 10^{20} \\) nuclei of an alpha emitter, each decay releasing 5 MeV. Taking 1 MeV \\( =1.6\\times10^{-13} \\) J, the energy released in one half-life is",
+      "options": [
+        "\\( 8\\times10^{7} \\) J",
+        "\\( 2.5\\times10^{20} \\) J",
+        "\\( 4\\times10^{7} \\) MeV",
+        "\\( 4\\times10^{7} \\) J"
+      ],
+      "correct_index": 3,
+      "explanation": "Decays in one half-life \\( =5\\times10^{19} \\); energy \\( =5\\times10^{19}\\times5=2.5\\times10^{20} \\) MeV.<br><br>\\( 2.5\\times10^{20}\\times1.6\\times10^{-13}=4\\times10^{7} \\) J.",
+      "hint": "Only half the nuclei decay in one half-life.",
+      "distractor_logic": [
+        "Assumes every nucleus decays in one half-life",
+        "Leaves the answer in MeV but labels it joules",
+        "Right number, wrong unit"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-035",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A wooden artefact shows \\( \\frac{1}{8} \\) of the \\( {}_{6}^{14}\\mathrm{C} \\) activity of living wood. With \\( T_{1/2}=5730 \\) years for this beta emitter, its age is",
+      "options": [
+        "17190 years",
+        "5730 years",
+        "45840 years",
+        "1910 years"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\frac{1}{8}=\\left(\\frac{1}{2}\\right)^3 \\): three half-lives.<br><br>Age \\( =3\\times5730=17190 \\) years.",
+      "hint": "How many halvings give one-eighth?",
+      "distractor_logic": [
+        "Counts only one half-life",
+        "Treats \\( \\frac{1}{8} \\) as eight half-lives",
+        "Divides by 3 instead of multiplying"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-036",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An alpha source has activity \\( 10^{13} \\) Bq and each decay releases 5 MeV. Taking 1 MeV \\( =1.6\\times10^{-13} \\) J, the power released is",
+      "options": [
+        "\\( 5\\times10^{13} \\) W",
+        "8 W",
+        "8 kW",
+        "0.8 W"
+      ],
+      "correct_index": 1,
+      "explanation": "Energy per second \\( =10^{13}\\times5=5\\times10^{13} \\) MeV/s.<br><br>\\( 5\\times10^{13}\\times1.6\\times10^{-13}=8 \\) J/s \\( =8 \\) W.",
+      "hint": "Activity is decays per second.",
+      "distractor_logic": [
+        "Leaves energy in MeV per second",
+        "Slips by a factor of 1000",
+        "Slips by a factor of 10"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-037",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A pure sample of a beta-minus emitter decays into a stable daughter. After three half-lives, the ratio of daughter nuclei to parent nuclei is",
+      "options": [
+        "\\( 1:7 \\)",
+        "\\( 3:1 \\)",
+        "\\( 7:1 \\)",
+        "\\( 1:8 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Parent left \\( =\\frac{1}{8} \\); daughters formed \\( =\\frac{7}{8} \\), one per beta decay.<br><br>Ratio \\( =\\frac{7/8}{1/8}=7:1 \\).",
+      "hint": "Each decay creates one daughter.",
+      "distractor_logic": [
+        "Inverts the ratio",
+        "Uses the number of half-lives as the ratio",
+        "Gives parent to original, not daughter to parent"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-038",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "\\( {}_{27}^{60}\\mathrm{Co} \\) (\\( T_{1/2}\\approx5.3 \\) years) beta-minus decays to an excited \\( {}_{28}^{60}\\mathrm{Ni}^{*} \\), which then emits gamma rays. After 10.6 years, the fraction of the original cobalt remaining and the final ground-state nucleus are",
+      "options": [
+        "\\( \\frac{1}{4} \\); \\( {}_{26}^{60}\\mathrm{Fe} \\)",
+        "\\( \\frac{1}{2} \\); \\( {}_{28}^{60}\\mathrm{Ni} \\)",
+        "\\( \\frac{1}{4} \\); \\( {}_{28}^{59}\\mathrm{Ni} \\)",
+        "\\( \\frac{1}{4} \\); \\( {}_{28}^{60}\\mathrm{Ni} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\frac{10.6}{5.3}=2 \\) half-lives, so \\( \\frac{1}{4} \\) remains.<br><br>Beta-minus raises \\( Z \\) to 28 at \\( A=60 \\); gamma emission leaves \\( A \\) and \\( Z \\) unchanged, giving \\( {}_{28}^{60}\\mathrm{Ni} \\).",
+      "hint": "Gamma changes neither \\( A \\) nor \\( Z \\).",
+      "distractor_logic": [
+        "Lowers \\( Z \\), as if the decay were beta-plus",
+        "Counts only one half-life",
+        "Treats gamma emission as removing a nucleon"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-039",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A beta-minus source has an activity of 1 Ci. The number of electrons emitted per minute is",
+      "options": [
+        "\\( 2.22\\times10^{12} \\)",
+        "\\( 3.7\\times10^{10} \\)",
+        "about \\( 6.2\\times10^{8} \\)",
+        "\\( 1.33\\times10^{14} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "1 Ci \\( =3.7\\times10^{10} \\) decays per second, each emitting one electron.<br><br>Per minute: \\( 3.7\\times10^{10}\\times60=2.22\\times10^{12} \\).",
+      "hint": "Convert seconds to minutes.",
+      "distractor_logic": [
+        "This is the number per second",
+        "Divides by 60 instead of multiplying",
+        "This is the number per hour"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    },
+    {
+      "id": "PHY12-CH13-B-040",
+      "chapter": "PHY12-CH13",
+      "chapter_name": "Nuclei",
+      "topic": "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "16 mg of \\( {}_{86}^{222}\\mathrm{Rn} \\), an alpha emitter with \\( T_{1/2}=3.8 \\) days, is sealed in a tube. After 15.2 days, the mass of radon left and the fraction of the original nuclei that have emitted an alpha particle are",
+      "options": [
+        "4 mg; \\( \\frac{3}{4} \\)",
+        "1 mg; \\( \\frac{15}{16} \\)",
+        "0 mg; all of them",
+        "1 mg; \\( \\frac{1}{16} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\frac{15.2}{3.8}=4 \\) half-lives: \\( 16\\times\\frac{1}{16}=1 \\) mg left.<br><br>Fraction decayed \\( =1-\\frac{1}{16}=\\frac{15}{16} \\), each emitting one alpha particle.",
+      "hint": "Count half-lives first.",
+      "distractor_logic": [
+        "Counts only two half-lives",
+        "Assumes linear decay",
+        "Confuses the fraction remaining with the fraction decayed"
+      ],
+      "mixed_topics": [
+        "Radioactivity: The Law of Radioactive Decay, Half-Life, and Mean Life",
+        "Alpha, Beta, and Gamma Decay; Nuclear Fission and Fusion"
+      ]
+    }
+  ]
+}

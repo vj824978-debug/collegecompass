@@ -1,0 +1,3729 @@
+{
+  "meta": {
+    "chapter": "PHY12-CH03",
+    "chapter_name": "Current Electricity",
+    "subject": "Physics",
+    "class": 12,
+    "total_questions": 150,
+    "level_breakdown": {
+      "L1": 40,
+      "L2": 40,
+      "L3": 30,
+      "Bonus": 40
+    },
+    "rendering_note": "EMF is always written \\( \\varepsilon \\) (never a bare E). Greek-letter symbols for resistivity, conductivity, temperature coefficient and mobility (\\( \\rho \\), \\( \\sigma \\), \\( \\alpha \\), \\( \\mu \\)) and the drift velocity \\( v_d \\) always appear as single KaTeX spans; no raw Unicode math symbols appear anywhere outside KaTeX (plain Ω is used only as a bare unit label). Kirchhoff current answers may be signed, with the sign kept to show the actual direction. Every numeric answer terminates cleanly or is a clean order-of-magnitude value. Explanations separate steps with <br><br>."
+  },
+  "topics": [
+    {
+      "name": "Electric Current, Drift Velocity, and Ohm's Law",
+      "summary": "Electric current is the rate of flow of charge, \\( I=\\dfrac{q}{t} \\), measured in amperes. By convention it flows along the electric field, which is opposite to the drift of the negatively charged free electrons in a metal. Although current has a sense of flow, it is a scalar: currents meeting at a junction add algebraically, never by vector addition. Free electrons move randomly at high speeds, but an applied field adds a tiny average drift velocity \\( v_d \\), typically about \\( 10^{-4} \\) m/s. The circuit responds almost instantly because the field is set up throughout the conductor at nearly the speed of light, not because electrons race around it. Current and drift speed are linked by \\( I=neAv_d \\); mobility \\( \\mu=\\dfrac{v_d}{E} \\) measures drift per unit field. Ohm's law, \\( V=IR \\), holds for ohmic conductors at constant temperature and gives a straight-line V-I graph through the origin; its microscopic form is \\( j=\\sigma E \\). Devices such as diodes have curved V-I graphs and are non-ohmic.",
+      "key_formulas": [
+        "\\( I=\\dfrac{q}{t} \\)",
+        "\\( I=neAv_d \\)",
+        "\\( \\mu=\\dfrac{v_d}{E} \\)",
+        "\\( j=\\dfrac{I}{A}=nev_d \\)",
+        "\\( V=IR \\)",
+        "\\( j=\\sigma E \\)"
+      ],
+      "worked_example": "A wire of area \\( 10^{-6} \\) \\( \\text{m}^2 \\) with \\( n=10^{28} \\) \\( \\text{m}^{-3} \\) carries \\( 1.6 \\) A. With \\( e=1.6\\times10^{-19} \\) C: \\( v_d=\\dfrac{I}{neA}=\\dfrac{1.6}{10^{28}\\times1.6\\times10^{-19}\\times10^{-6}}=10^{-3} \\) m/s.",
+      "common_mistakes": [
+        "Taking conventional current to flow in the same direction as electron drift.",
+        "Adding currents at a junction as vectors using the angles between wires.",
+        "Confusing the tiny drift speed with the near-light speed at which the field (signal) travels.",
+        "Forgetting to divide by the cross-sectional area when finding \\( v_d \\)."
+      ],
+      "question_count": 34
+    },
+    {
+      "name": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "summary": "The resistance of a conductor depends on both its material and its shape: \\( R=\\rho\\dfrac{L}{A} \\). Resistivity \\( \\rho \\) is a property of the material at a given temperature, so cutting, stretching or folding a wire changes its resistance but not its resistivity. When a wire is stretched at constant volume, length rises and area falls together, so resistance grows as the square of the stretch factor. Conductivity is \\( \\sigma=\\dfrac{1}{\\rho} \\). Temperature matters in opposite ways for different materials. In metals, heating shortens the time between collisions, so resistance rises: \\( R=R_0(1+\\alpha\\Delta T) \\) with positive \\( \\alpha \\). In semiconductors, heating frees many more charge carriers, so resistance falls, giving an effectively negative temperature coefficient. Resistors in series add, \\( R_s=R_1+R_2+\\dots \\); in parallel their reciprocals add, \\( \\dfrac{1}{R_p}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\dots \\), giving a value smaller than the smallest resistor. Mixed networks are reduced step by step.",
+      "key_formulas": [
+        "\\( R=\\rho\\dfrac{L}{A} \\)",
+        "\\( \\sigma=\\dfrac{1}{\\rho} \\)",
+        "\\( \\rho=\\dfrac{m}{ne^2\\tau} \\)",
+        "\\( R=R_0(1+\\alpha\\Delta T) \\)",
+        "\\( R_s=R_1+R_2+\\dots \\)",
+        "\\( \\dfrac{1}{R_p}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\dots \\)"
+      ],
+      "worked_example": "A 5 Ω wire is stretched to twice its length at constant volume. Area halves, so \\( R'=\\rho\\dfrac{2L}{A/2}=4R=20 \\) Ω, while \\( \\rho \\) is unchanged.",
+      "common_mistakes": [
+        "Claiming resistivity changes when a wire is cut, stretched or folded.",
+        "Applying the metallic rising-resistance trend to a semiconductor, or the reverse.",
+        "Accounting for only the length change (or only the area change) when a wire is stretched.",
+        "Adding reciprocals for parallel resistors but forgetting to invert the sum."
+      ],
+      "question_count": 43
+    },
+    {
+      "name": "EMF, Internal Resistance, and Combination of Cells",
+      "summary": "The EMF \\( \\varepsilon \\) of a cell is the work it does per unit charge taken around the circuit; its unit is the volt. A real cell has internal resistance r, so when it drives a current I into an external resistor R, \\( I=\\dfrac{\\varepsilon}{R+r} \\) and its terminal voltage is \\( V=\\varepsilon-Ir \\), less than the EMF. On open circuit V equals \\( \\varepsilon \\). When a cell is being charged, current is forced into its positive terminal and \\( V=\\varepsilon+Ir \\), more than the EMF. The power wasted inside is \\( I^2r \\), and the power delivered to the load is largest when \\( R=r \\). Cells combine like resistors, not like capacitors. For n identical cells in series, EMF becomes \\( n\\varepsilon \\) and internal resistance nr. In parallel, EMF stays \\( \\varepsilon \\) and internal resistance becomes \\( \\dfrac{r}{n} \\). A reversed cell subtracts its EMF but still adds its internal resistance. For m parallel rows of n series cells, EMF is \\( n\\varepsilon \\) and internal resistance \\( \\dfrac{nr}{m} \\).",
+      "key_formulas": [
+        "\\( I=\\dfrac{\\varepsilon}{R+r} \\)",
+        "\\( V=\\varepsilon-Ir \\) (discharging)",
+        "\\( V=\\varepsilon+Ir \\) (charging)",
+        "Series: \\( n\\varepsilon \\), \\( nr \\)",
+        "Parallel: \\( \\varepsilon \\), \\( \\dfrac{r}{n} \\)",
+        "\\( P_{max}=\\dfrac{\\varepsilon^2}{4r} \\) at \\( R=r \\)"
+      ],
+      "worked_example": "A 10 V battery of internal resistance 0.5 Ω is charged at 2 A. Current enters its positive terminal, so \\( V=\\varepsilon+Ir=10+1=11 \\) V.",
+      "common_mistakes": [
+        "Using \\( V=\\varepsilon-Ir \\) for a cell that is being charged.",
+        "Combining internal resistances like capacitors instead of like resistors.",
+        "Ignoring internal resistance when finding the current.",
+        "Letting a reversed cell cancel its internal resistance as well as its EMF."
+      ],
+      "question_count": 42
+    },
+    {
+      "name": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "summary": "Kirchhoff's junction rule states that the total current entering a junction equals the total leaving; it expresses conservation of charge. The loop rule states that the algebraic sum of potential changes around any closed loop is zero; it expresses conservation of energy. Signs depend on the direction of traversal: a resistor crossed along the assumed current contributes \\( -IR \\), against it \\( +IR \\); a cell crossed from its negative to positive terminal contributes \\( +\\varepsilon \\), from positive to negative \\( -\\varepsilon \\). A negative answer for a current simply means its actual direction is opposite to the one assumed, so keep the sign. The Wheatstone bridge has four arms P, Q, R, S with a galvanometer across the middle. It is balanced, with zero galvanometer current, when \\( \\dfrac{P}{Q}=\\dfrac{R}{S} \\). This condition involves only the four arms: neither the galvanometer's resistance nor the battery's internal resistance affects it. The meter bridge uses a 100 cm uniform wire, giving \\( \\dfrac{X}{R}=\\dfrac{l}{100-l} \\).",
+      "key_formulas": [
+        "Junction: \\( \\sum I_{in}=\\sum I_{out} \\)",
+        "Loop: \\( \\sum\\Delta V=0 \\)",
+        "Along current: \\( -IR \\); against: \\( +IR \\)",
+        "Negative to positive terminal: \\( +\\varepsilon \\)",
+        "Balance: \\( \\dfrac{P}{Q}=\\dfrac{R}{S} \\)",
+        "Meter bridge: \\( X=R\\dfrac{l}{100-l} \\)"
+      ],
+      "worked_example": "A bridge has P = 2 Ω, Q = 6 Ω, R = 3 Ω. At balance \\( S=\\dfrac{RQ}{P}=\\dfrac{3\\times6}{2}=9 \\) Ω, whatever the galvanometer's or battery's resistance.",
+      "common_mistakes": [
+        "Using a fixed sign for a resistor or a cell regardless of the direction of travel.",
+        "Pairing the wrong arms in the balance ratio.",
+        "Thinking the galvanometer's or battery's resistance changes the balance condition.",
+        "Dropping the negative sign of a Kirchhoff current."
+      ],
+      "question_count": 39
+    },
+    {
+      "name": "The Potentiometer and Its Applications",
+      "summary": "A potentiometer is a long uniform wire carrying a steady current from a driver cell. Because every unit length has the same resistance, the potential drop across a length l is proportional to l: \\( V=kl \\), where k is the potential gradient. To measure an EMF, the test cell is connected through a galvanometer and the jockey is moved until the galvanometer reads zero. At this null point no current flows from the test cell, so the potentiometer measures its true EMF, unlike a voltmeter, which draws current and reads \\( \\varepsilon-Ir \\). Two EMFs compare as \\( \\dfrac{\\varepsilon_1}{\\varepsilon_2}=\\dfrac{l_1}{l_2} \\). A cell's internal resistance is found by balancing it on open circuit (length \\( l_1 \\)) and with a shunt R across it (length \\( l_2 \\)): \\( r=R\\left(\\dfrac{l_1}{l_2}-1\\right) \\). A longer wire gives a smaller gradient and higher sensitivity. A null point exists only if the drop across the whole wire exceeds the EMF being measured. The instrument can also be used to calibrate ammeters and voltmeters.",
+      "key_formulas": [
+        "\\( V=kl \\)",
+        "\\( k=\\dfrac{V_{wire}}{L} \\)",
+        "\\( \\dfrac{\\varepsilon_1}{\\varepsilon_2}=\\dfrac{l_1}{l_2} \\)",
+        "\\( r=R\\left(\\dfrac{l_1}{l_2}-1\\right) \\)"
+      ],
+      "worked_example": "A cell balances at 80 cm on open circuit and at 40 cm with a 5 Ω shunt. \\( r=5\\left(\\dfrac{80}{40}-1\\right)=5 \\) Ω.",
+      "common_mistakes": [
+        "Thinking the potentiometer draws current from the test cell at balance.",
+        "Inverting the length ratio in the internal-resistance formula.",
+        "Mixing centimetres and metres with the potential gradient.",
+        "Forgetting that a series rheostat reduces the drop across the wire."
+      ],
+      "question_count": 33
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHY12-CH03-L1-001",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "In a metallic wire carrying a steady current, how is the direction of conventional current related to the drift of the free electrons?",
+      "options": [
+        "Opposite to the electron drift, i.e. along the electric field inside the wire",
+        "Along the electron drift, since electrons are the charges that actually move",
+        "Perpendicular to the electron drift",
+        "It depends on how large the current is"
+      ],
+      "correct_index": 0,
+      "explanation": "Conventional current is defined as the direction in which positive charge would flow, which is along the electric field.<br><br>Free electrons are negatively charged, so the field pushes them opposite to itself.<br><br>Hence conventional current points opposite to the electron drift.",
+      "hint": "Which way does a negative charge move in an electric field?",
+      "distractor_logic": [
+        "Aligns conventional current with electron motion; electrons are negative, so conventional current is opposite to their drift.",
+        "Invents a perpendicular relation; current and drift lie along the same line, only opposite in sense.",
+        "Thinks the direction relation changes with magnitude; the negative sign of the electron's charge fixes it always."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-002",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "A charge of \\( 12 \\) C flows through a cross-section of a wire in \\( 4 \\) s at a steady rate. What is the current?",
+      "options": [
+        "\\( 48 \\) A",
+        "\\( 3 \\) A",
+        "\\( 0.33 \\) A",
+        "\\( 8 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "Current is the rate of flow of charge: \\( I=\\dfrac{q}{t} \\).<br><br>\\( I=\\dfrac{12}{4}=3 \\) A.",
+      "hint": "Current is charge per unit time.",
+      "distractor_logic": [
+        "Multiplies charge by time instead of dividing.",
+        "Inverts the ratio, dividing time by charge.",
+        "Subtracts time from charge, which has no physical meaning."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-003",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "A steady current of \\( 1.6 \\) A flows in a wire for \\( 1 \\) s. Taking \\( e=1.6\\times10^{-19} \\) C, how many electrons pass through a cross-section?",
+      "options": [
+        "\\( 10^{-19} \\)",
+        "\\( 2.56\\times10^{-19} \\)",
+        "\\( 10^{19} \\)",
+        "\\( 1.6\\times10^{19} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Charge passed: \\( q=It=1.6\\times1=1.6 \\) C.<br><br>Number of electrons: \\( N=\\dfrac{q}{e}=\\dfrac{1.6}{1.6\\times10^{-19}}=10^{19} \\).",
+      "hint": "Find the total charge first, then divide by the charge of one electron.",
+      "distractor_logic": [
+        "Flips the sign of the exponent while dividing by the electron charge.",
+        "Multiplies the charge by e instead of dividing by it.",
+        "Divides only the power of ten and forgets to cancel the 1.6 factors."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-004",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "A potential difference of \\( 10 \\) V is applied across an ohmic resistor of \\( 5 \\) Ω. What current flows?",
+      "options": [
+        "\\( 50 \\) A",
+        "\\( 0.5 \\) A",
+        "\\( 15 \\) A",
+        "\\( 2 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "Ohm's law: \\( V=IR \\), so \\( I=\\dfrac{V}{R} \\).<br><br>\\( I=\\dfrac{10}{5}=2 \\) A.",
+      "hint": "Rearrange V = IR for the current.",
+      "distractor_logic": [
+        "Multiplies V and R instead of dividing.",
+        "Divides R by V, inverting Ohm's law.",
+        "Adds V and R, which have different units."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-005",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the typical order of magnitude of the drift speed of free electrons in a copper wire carrying a few amperes?",
+      "options": [
+        "\\( 10^{-4} \\) m/s",
+        "\\( 3\\times10^{8} \\) m/s",
+        "\\( 10^{5} \\) m/s",
+        "\\( 10^{-19} \\) m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "Drift speed is the small average velocity superposed on the random motion of electrons by the applied field.<br><br>For ordinary currents and wire sizes, \\( v_d \\) works out to roughly \\( 10^{-4} \\) m/s, a fraction of a millimetre per second.",
+      "hint": "Drift is a slow average creep, not the random thermal motion.",
+      "distractor_logic": [
+        "Confuses the drift speed with the speed at which the electric field (signal) spreads through the circuit.",
+        "Confuses drift speed with the much larger random thermal speed of free electrons.",
+        "Mixes up drift speed with the size of the electron charge in coulombs."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-006",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Electrons drift very slowly in a wire, yet a bulb lights almost immediately when the switch is closed. Why?",
+      "options": [
+        "Electrons from the battery race to the bulb at nearly the speed of light",
+        "The electric field is set up throughout the circuit almost instantly, so free electrons everywhere start drifting at once",
+        "Closing the switch makes the drift speed very large for a moment",
+        "The bulb stores electrons that are released when the switch closes"
+      ],
+      "correct_index": 1,
+      "explanation": "Every part of the circuit, including the bulb filament, already contains free electrons.<br><br>When the switch closes, the electric field spreads through the conductors at nearly the speed of light.<br><br>Electrons in the filament begin drifting immediately, so the bulb glows without waiting for electrons to travel from the battery.",
+      "hint": "The filament already has its own free electrons. What makes them move?",
+      "distractor_logic": [
+        "Treats the fast signal speed as the speed of individual electrons, which actually drift at about a fraction of a mm/s.",
+        "Invents a momentary high drift speed; the drift speed for a steady current stays small.",
+        "Invents electron storage in the bulb; the filament simply has its own free electrons that respond to the field."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-007",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Which feature of a V-I graph shows that a device does NOT obey Ohm's law?",
+      "options": [
+        "The graph passes through the origin",
+        "The graph is a straight line with a large slope",
+        "The graph is curved, so the ratio V/I changes as the voltage changes",
+        "The graph is a straight line with a small slope"
+      ],
+      "correct_index": 2,
+      "explanation": "Ohm's law means V is proportional to I, giving a straight-line V-I graph through the origin with constant slope.<br><br>A curved graph (as for a diode) means the resistance V/I changes with voltage, so the device is non-ohmic.",
+      "hint": "Ohm's law demands a constant resistance. What graph shape keeps V/I constant?",
+      "distractor_logic": [
+        "An ohmic conductor's straight-line graph also passes through the origin, so this does not signal non-ohmic behaviour.",
+        "A straight line of any slope still means constant resistance, i.e. ohmic behaviour.",
+        "Slope size only sets the value of the resistance; linearity is what defines ohmic behaviour."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-008",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 1,
+      "type": "regular",
+      "question": "Electric current has a direction, yet it is classified as a scalar quantity. Why?",
+      "options": [
+        "Current has no direction at all",
+        "Current is always positive, so it cannot be a vector",
+        "A wire is straight, so the angle between currents is always zero",
+        "Currents meeting at a junction add algebraically, not by the law of vector addition"
+      ],
+      "correct_index": 3,
+      "explanation": "A vector must add by the triangle or parallelogram law.<br><br>At a junction, currents simply add or subtract (Kirchhoff's junction rule) whatever the angles between the wires.<br><br>So current, though it has a direction along the conductor, is a scalar.",
+      "hint": "Think of three wires meeting at a point at different angles.",
+      "distractor_logic": [
+        "Denies that current has a sense of flow; it does have a direction along the wire.",
+        "Wrong reason; a current in a branch can be assigned a negative sign when it flows opposite to the assumed direction.",
+        "Confuses wire geometry with the addition rule; currents in wires at any angle still add algebraically."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-009",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "A copper wire is cut into two equal halves. How does the resistivity of each half compare with that of the original wire (same temperature)?",
+      "options": [
+        "It is the same, because resistivity depends only on the material and temperature",
+        "It is halved, because the length is halved",
+        "It is doubled",
+        "It becomes one-fourth"
+      ],
+      "correct_index": 0,
+      "explanation": "Resistance is \\( R=\\rho\\dfrac{L}{A} \\); the geometry enters only through L and A.<br><br>Resistivity \\( \\rho \\) is a property of copper at a given temperature, so it is unchanged by cutting.<br><br>Each half has half the resistance but the same resistivity.",
+      "hint": "Separate the material property from the property that depends on the shape of the wire.",
+      "distractor_logic": [
+        "Confuses resistivity with resistance; only resistance depends on length.",
+        "Invents a change in a material property that cutting cannot produce.",
+        "Applies a geometric scaling to resistivity, which does not depend on geometry."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-010",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "A wire of resistivity \\( 2\\times10^{-8} \\) Ω m has length \\( 5 \\) m and cross-sectional area \\( 10^{-6} \\) \\( \\text{m}^2 \\). What is its resistance?",
+      "options": [
+        "\\( 10^{-7} \\) Ω",
+        "\\( 0.1 \\) Ω",
+        "\\( 4\\times10^{-15} \\) Ω",
+        "\\( 10 \\) Ω"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( R=\\rho\\dfrac{L}{A}=\\dfrac{2\\times10^{-8}\\times5}{10^{-6}} \\)<br><br>\\( R=10^{-7}\\times10^{6}=0.1 \\) Ω.",
+      "hint": "Resistance grows with length and falls with area.",
+      "distractor_logic": [
+        "Multiplies resistivity by length but forgets to divide by the area.",
+        "Uses A/L in place of L/A.",
+        "Takes the reciprocal of the correct result."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-011",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "Resistors of 3 Ω and 6 Ω are connected in series. What is the equivalent resistance?",
+      "options": [
+        "\\( 2 \\) Ω",
+        "\\( 18 \\) Ω",
+        "\\( 9 \\) Ω",
+        "\\( 0.5 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "In series, the same current flows through each resistor and the voltages add, so \\( R_s=R_1+R_2 \\).<br><br>\\( R_s=3+6=9 \\) Ω.",
+      "hint": "In series, resistances simply add.",
+      "distractor_logic": [
+        "Uses the parallel-combination formula for a series connection.",
+        "Multiplies the resistances instead of adding.",
+        "Adds reciprocals and forgets that series resistances add directly."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-012",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "Resistors of 3 Ω and 6 Ω are connected in parallel. What is the equivalent resistance?",
+      "options": [
+        "\\( 9 \\) Ω",
+        "\\( 0.5 \\) Ω",
+        "\\( 4.5 \\) Ω",
+        "\\( 2 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "In parallel, \\( \\dfrac{1}{R_p}=\\dfrac{1}{3}+\\dfrac{1}{6}=\\dfrac{1}{2} \\).<br><br>So \\( R_p=2 \\) Ω, smaller than either resistor.",
+      "hint": "The parallel equivalent is always smaller than the smallest resistor.",
+      "distractor_logic": [
+        "Adds the resistances as if they were in series.",
+        "Adds the reciprocals but forgets to invert the sum.",
+        "Takes the average of the two resistances."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-013",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "A copper wire is heated. What happens to its resistance?",
+      "options": [
+        "It increases, because electrons collide more frequently with the vibrating ions",
+        "It decreases, because more charge carriers become free",
+        "It stays the same, because the material is unchanged",
+        "It becomes zero at high temperature"
+      ],
+      "correct_index": 0,
+      "explanation": "In a metal the number of free electrons is essentially fixed.<br><br>Heating makes the ions vibrate more, so the time between collisions (relaxation time) falls.<br><br>Resistivity and hence resistance of the metal increase with temperature.",
+      "hint": "In metals the number of free electrons barely changes on heating. What does change?",
+      "distractor_logic": [
+        "Applies the semiconductor trend to a metal; in metals the carrier density hardly changes with temperature.",
+        "Treats resistance of a metal as temperature-independent.",
+        "Invents a superconducting effect at high temperature; superconductivity occurs at very low temperatures."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-014",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "A piece of pure silicon (a semiconductor) is heated. What happens to its resistance?",
+      "options": [
+        "It increases, just as it does for a metal",
+        "It decreases, because many more charge carriers become available",
+        "It stays constant",
+        "It first becomes zero, then increases"
+      ],
+      "correct_index": 1,
+      "explanation": "In a semiconductor, heating frees many more charge carriers.<br><br>This rise in carrier density outweighs the increase in collisions.<br><br>So the resistance of a semiconductor falls as temperature rises (negative temperature coefficient).",
+      "hint": "For semiconductors, think about how the number of charge carriers changes with temperature.",
+      "distractor_logic": [
+        "Applies the metallic (increasing) trend to a semiconductor.",
+        "Ignores the strong temperature dependence of carrier density in semiconductors.",
+        "Invents a non-physical zero-resistance stage."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-015",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "A metal wire has resistance \\( 10 \\) Ω at \\( 0 \\) \\( ^{\\circ}\\text{C} \\). Its temperature coefficient of resistance is \\( \\alpha=0.004 \\) per \\( ^{\\circ}\\text{C} \\). What is its resistance at \\( 50 \\) \\( ^{\\circ}\\text{C} \\)?",
+      "options": [
+        "\\( 8 \\) Ω",
+        "\\( 2 \\) Ω",
+        "\\( 12 \\) Ω",
+        "\\( 10.04 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( R=R_0(1+\\alpha\\Delta T) \\)<br><br>\\( R=10(1+0.004\\times50)=10\\times1.2=12 \\) Ω.",
+      "hint": "Use R = R0(1 + alpha times the temperature rise).",
+      "distractor_logic": [
+        "Uses a decreasing (semiconductor-like) trend for a metal.",
+        "Reports only the increase in resistance, not the new resistance.",
+        "Forgets to multiply alpha by the temperature change."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-016",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 1,
+      "type": "regular",
+      "question": "The resistivity of a metal is \\( 5\\times10^{-8} \\) Ω m. What is its conductivity \\( \\sigma \\)?",
+      "options": [
+        "\\( 5\\times10^{8} \\) S/m",
+        "\\( 2\\times10^{-7} \\) S/m",
+        "\\( 5\\times10^{-8} \\) S/m",
+        "\\( 2\\times10^{7} \\) S/m"
+      ],
+      "correct_index": 3,
+      "explanation": "Conductivity is the reciprocal of resistivity: \\( \\sigma=\\dfrac{1}{\\rho} \\).<br><br>\\( \\sigma=\\dfrac{1}{5\\times10^{-8}}=0.2\\times10^{8}=2\\times10^{7} \\) S/m.",
+      "hint": "Conductivity and resistivity are reciprocals.",
+      "distractor_logic": [
+        "Only flips the sign of the exponent instead of taking the full reciprocal.",
+        "Takes the reciprocal of 5 but keeps the negative exponent.",
+        "Assumes conductivity equals resistivity."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-017",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "A cell of EMF \\( \\varepsilon=12 \\) V and internal resistance \\( r=1 \\) Ω supplies a current of \\( 2 \\) A to an external circuit. What is its terminal voltage?",
+      "options": [
+        "\\( 10 \\) V",
+        "\\( 14 \\) V",
+        "\\( 12 \\) V",
+        "\\( 2 \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "A discharging cell: \\( V=\\varepsilon-Ir \\).<br><br>\\( V=12-2\\times1=10 \\) V.",
+      "hint": "When a cell drives current out, part of its EMF is lost inside it.",
+      "distractor_logic": [
+        "Uses the charging formula (adding Ir) for a cell that is discharging.",
+        "Ignores the drop across the internal resistance.",
+        "Reports only the internal drop Ir."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-018",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "A cell of EMF \\( 6 \\) V and internal resistance \\( 1 \\) Ω is connected to an external resistor of \\( 5 \\) Ω. What current flows?",
+      "options": [
+        "\\( 1.2 \\) A",
+        "\\( 1 \\) A",
+        "\\( 6 \\) A",
+        "\\( 1.5 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "Total resistance in the loop \\( =R+r=5+1=6 \\) Ω.<br><br>\\( I=\\dfrac{\\varepsilon}{R+r}=\\dfrac{6}{6}=1 \\) A.",
+      "hint": "The internal resistance is in series with the external resistor.",
+      "distractor_logic": [
+        "Ignores the internal resistance.",
+        "Uses only the internal resistance, ignoring the external resistor.",
+        "Subtracts the internal resistance from the external resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-019",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "Three identical cells, each of EMF \\( 1.5 \\) V and internal resistance \\( 0.5 \\) Ω, are connected in series. What are the EMF and internal resistance of the combination?",
+      "options": [
+        "\\( 1.5 \\) V and \\( \\tfrac{1}{6} \\) Ω",
+        "\\( 4.5 \\) V and \\( \\tfrac{1}{6} \\) Ω",
+        "\\( 4.5 \\) V and \\( 1.5 \\) Ω",
+        "\\( 1.5 \\) V and \\( 1.5 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "In series, EMFs add: \\( 3\\times1.5=4.5 \\) V.<br><br>Internal resistances are in series and add like ordinary resistors: \\( 3\\times0.5=1.5 \\) Ω.",
+      "hint": "Internal resistances combine exactly like ordinary resistors.",
+      "distractor_logic": [
+        "Uses the parallel-combination rules for a series connection.",
+        "Adds EMFs correctly but combines internal resistances as capacitors in series would, instead of like resistors.",
+        "Adds internal resistances but forgets that series EMFs also add."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-020",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "Four identical cells, each of EMF \\( 2 \\) V and internal resistance \\( 0.8 \\) Ω, are connected in parallel. What are the EMF and internal resistance of the combination?",
+      "options": [
+        "\\( 8 \\) V and \\( 3.2 \\) Ω",
+        "\\( 2 \\) V and \\( 3.2 \\) Ω",
+        "\\( 8 \\) V and \\( 0.2 \\) Ω",
+        "\\( 2 \\) V and \\( 0.2 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "Identical cells in parallel keep the EMF of one cell: \\( 2 \\) V.<br><br>Internal resistances are in parallel, like resistors: \\( \\dfrac{0.8}{4}=0.2 \\) Ω.",
+      "hint": "Parallel cells share the same EMF across them.",
+      "distractor_logic": [
+        "Applies the series rules to a parallel connection.",
+        "Adds internal resistances as capacitances add in parallel, instead of combining them like parallel resistors.",
+        "Adds the EMFs as if the cells were in series."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-021",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "An ideal voltmeter (drawing no current) is connected directly across a cell of EMF \\( \\varepsilon \\) with nothing else connected. What does it read?",
+      "options": [
+        "Exactly \\( \\varepsilon \\)",
+        "Zero",
+        "Less than \\( \\varepsilon \\) by the drop Ir",
+        "More than \\( \\varepsilon \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "With no current, \\( V=\\varepsilon-Ir=\\varepsilon-0=\\varepsilon \\).<br><br>The terminal voltage of an open-circuited cell equals its EMF.",
+      "hint": "What is the internal drop when the current is zero?",
+      "distractor_logic": [
+        "Assumes a voltmeter needs current through an external load to show a reading.",
+        "Applies the internal drop even though no current flows, so Ir is zero.",
+        "Uses the charging relation, though no current is being forced into the cell."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-022",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "Which statement best defines the EMF of a cell?",
+      "options": [
+        "The force with which the cell pushes electrons",
+        "The work done by the cell per unit charge in taking charge around the complete circuit",
+        "The potential difference across the external resistor in every situation",
+        "The current the cell delivers when short-circuited"
+      ],
+      "correct_index": 1,
+      "explanation": "EMF is the energy supplied by the cell per unit charge circulated.<br><br>Its unit is the volt, even though its name contains the word force.",
+      "hint": "EMF is measured in volts. What is a volt in terms of energy and charge?",
+      "distractor_logic": [
+        "Despite its name, EMF is not a force; it is energy per unit charge, measured in volts.",
+        "This equals the terminal voltage, which is less than the EMF whenever current flows.",
+        "Confuses EMF with a current; the short-circuit current is EMF divided by internal resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-023",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "A battery of EMF \\( 10 \\) V and internal resistance \\( 0.5 \\) Ω is being charged with a current of \\( 2 \\) A. What is the potential difference across its terminals?",
+      "options": [
+        "\\( 9 \\) V",
+        "\\( 10 \\) V",
+        "\\( 11 \\) V",
+        "\\( 1 \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "During charging, current is forced into the positive terminal, so \\( V=\\varepsilon+Ir \\).<br><br>\\( V=10+2\\times0.5=11 \\) V.",
+      "hint": "When current is forced into a cell, the charger must supply the EMF plus the internal drop.",
+      "distractor_logic": [
+        "Uses the discharging formula for a cell that is being charged.",
+        "Ignores the drop across the internal resistance.",
+        "Reports only the internal drop Ir."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-024",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 1,
+      "type": "regular",
+      "question": "A cell of EMF \\( 3 \\) V and internal resistance \\( 0.5 \\) Ω is short-circuited by a thick wire of negligible resistance. What current flows?",
+      "options": [
+        "\\( 1.5 \\) A",
+        "Zero, since there is no resistor in the circuit",
+        "An unlimited (infinite) current",
+        "\\( 6 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "With no external resistance, only r limits the current.<br><br>\\( I=\\dfrac{\\varepsilon}{r}=\\dfrac{3}{0.5}=6 \\) A.",
+      "hint": "Only the internal resistance remains in the loop.",
+      "distractor_logic": [
+        "Multiplies EMF by internal resistance instead of dividing.",
+        "Assumes current needs an external resistor; the internal resistance still completes the loop.",
+        "Ignores the internal resistance, which limits the short-circuit current."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-025",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "At a junction, a current of 5 A flows in through one wire and 2 A flows out through a second wire. A third wire is also connected. What is the current in the third wire?",
+      "options": [
+        "\\( 3 \\) A flowing out of the junction",
+        "\\( 7 \\) A flowing out of the junction",
+        "\\( 3 \\) A flowing into the junction",
+        "\\( 2.5 \\) A flowing out of the junction"
+      ],
+      "correct_index": 0,
+      "explanation": "Kirchhoff's junction rule: total current in = total current out.<br><br>\\( 5=2+I \\Rightarrow I=3 \\) A, and it must flow out to balance the 5 A coming in.",
+      "hint": "Total current entering must equal total current leaving.",
+      "distractor_logic": [
+        "Adds the incoming and outgoing currents instead of balancing them.",
+        "Gets the magnitude right but the direction wrong; total in must equal total out.",
+        "Averages the currents instead of applying conservation of charge."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-026",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "Kirchhoff's loop rule is a consequence of which conservation law?",
+      "options": [
+        "Conservation of charge",
+        "Conservation of energy",
+        "Conservation of linear momentum",
+        "Conservation of mass"
+      ],
+      "correct_index": 1,
+      "explanation": "Going around any closed loop, a charge returns to its starting potential.<br><br>So the sum of potential changes around the loop is zero, which expresses conservation of energy.",
+      "hint": "Around a closed loop, you return to the same potential.",
+      "distractor_logic": [
+        "That is the basis of the junction rule, not the loop rule.",
+        "Momentum plays no role in circuit loop equations.",
+        "Mass conservation has no bearing on potential differences around a loop."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-027",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "While applying the loop rule, you cross a resistor R in the same direction as the assumed current I. What potential change do you write?",
+      "options": [
+        "\\( +IR \\)",
+        "Zero",
+        "\\( -IR \\)",
+        "\\( +IR \\) or \\( -IR \\) depending on the EMF in the loop"
+      ],
+      "correct_index": 2,
+      "explanation": "Current flows from higher to lower potential through a resistor.<br><br>Moving along the current, the potential falls by IR, so the term is \\( -IR \\).",
+      "hint": "Current flows through a resistor from high potential to low potential.",
+      "distractor_logic": [
+        "Uses the sign for crossing against the current; along the current, potential drops.",
+        "Ignores the drop across the resistor.",
+        "Makes the resistor's sign depend on the cell instead of on the traversal direction relative to current."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-028",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "While applying the loop rule, you cross an ideal cell of EMF \\( \\varepsilon \\) from its positive terminal to its negative terminal. What potential change do you write?",
+      "options": [
+        "\\( +\\varepsilon \\)",
+        "\\( +\\varepsilon \\) if the current flows that way, otherwise \\( -\\varepsilon \\)",
+        "Zero",
+        "\\( -\\varepsilon \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "The positive terminal is at higher potential than the negative terminal.<br><br>Going from + to -, the potential falls by \\( \\varepsilon \\), so the term is \\( -\\varepsilon \\), whatever the current direction.",
+      "hint": "Which terminal of a cell is at the higher potential?",
+      "distractor_logic": [
+        "Uses a fixed positive sign for every cell regardless of traversal direction.",
+        "Borrows the resistor rule; for a cell, the sign depends only on which terminal you cross from.",
+        "Ignores the cell's EMF."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-029",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "A Wheatstone bridge has arms P = 2 Ω, Q = 6 Ω, R = 3 Ω and an unknown S, with the balance condition P/Q = R/S. Find S at balance.",
+      "options": [
+        "\\( 9 \\) Ω",
+        "\\( 4 \\) Ω",
+        "\\( 1 \\) Ω",
+        "\\( 11 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "Balance: \\( \\dfrac{P}{Q}=\\dfrac{R}{S} \\Rightarrow S=\\dfrac{RQ}{P} \\).<br><br>\\( S=\\dfrac{3\\times6}{2}=9 \\) Ω.",
+      "hint": "Cross-multiply the balance condition carefully.",
+      "distractor_logic": [
+        "Pairs the wrong arms, using P/S = R/Q.",
+        "Inverts the ratio, computing S = RP/Q.",
+        "Simply adds the three known resistances."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-030",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "A Wheatstone bridge is balanced. Its galvanometer is replaced by another with twice the resistance. What happens?",
+      "options": [
+        "The bridge becomes unbalanced and S must be doubled",
+        "The bridge stays balanced; the galvanometer still reads zero",
+        "The bridge stays balanced only if the battery is also changed",
+        "The galvanometer now shows half the previous current"
+      ],
+      "correct_index": 1,
+      "explanation": "Balance means the two galvanometer ends are at equal potential, which depends only on \\( \\dfrac{P}{Q}=\\dfrac{R}{S} \\).<br><br>With no potential difference across it, no current flows through the galvanometer, whatever its resistance.",
+      "hint": "At balance, is there any potential difference across the galvanometer?",
+      "distractor_logic": [
+        "Assumes the galvanometer's resistance enters the balance condition; it does not.",
+        "Links balance to the battery; the condition P/Q = R/S involves neither meter nor battery.",
+        "At balance no current flows through the galvanometer, whatever its resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-031",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "In a meter bridge, an unknown resistance X is in the left gap and a known 6 Ω resistor in the right gap. The null point is at 40 cm from the left end. Find X.",
+      "options": [
+        "\\( 9 \\) Ω",
+        "\\( 2.4 \\) Ω",
+        "\\( 4 \\) Ω",
+        "\\( 3.6 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{X}{R}=\\dfrac{l}{100-l} \\)<br><br>\\( X=6\\times\\dfrac{40}{60}=4 \\) Ω.",
+      "hint": "The left resistor pairs with the left length.",
+      "distractor_logic": [
+        "Inverts the length ratio, pairing X with the wrong segment.",
+        "Multiplies the known resistance by 0.4 instead of the ratio 40/60.",
+        "Multiplies the known resistance by 0.6."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-032",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 1,
+      "type": "regular",
+      "question": "Why does the galvanometer in a balanced Wheatstone bridge show zero deflection?",
+      "options": [
+        "No current flows in any arm of the bridge",
+        "The battery supplies no current at balance",
+        "The galvanometer's resistance becomes infinite at balance",
+        "Its two ends are at the same potential"
+      ],
+      "correct_index": 3,
+      "explanation": "At balance the potential drop across P equals that across R.<br><br>So the two junctions connected by the galvanometer are at the same potential, and no current flows through it.",
+      "hint": "Current flows only when there is a potential difference.",
+      "distractor_logic": [
+        "Current flows through all four arms; only the galvanometer branch carries none.",
+        "The battery still drives current through the arms.",
+        "The galvanometer's resistance does not change; there is simply no potential difference across it."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-033",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "On what principle does a potentiometer work?",
+      "options": [
+        "For a uniform wire with a steady current, the potential drop across any length is proportional to that length",
+        "The potential drop is proportional to the cross-sectional area of the wire",
+        "The potential drop is inversely proportional to the length of the wire",
+        "The potential drop is the same across every length of the wire"
+      ],
+      "correct_index": 0,
+      "explanation": "With current I through a uniform wire, the drop across length l is \\( V=I\\rho\\dfrac{l}{A} \\).<br><br>Since I, \\( \\rho \\) and A are constant, \\( V\\propto l \\), i.e. \\( V=kl \\) with k the potential gradient.",
+      "hint": "Every centimetre of the uniform wire has the same resistance.",
+      "distractor_logic": [
+        "Uses area; the wire has uniform area and the working principle is about length.",
+        "Reverses the relation; a longer segment has a larger drop.",
+        "Ignores that drop builds up steadily along the wire."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-034",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "What is the main advantage of a potentiometer over a voltmeter for measuring the EMF of a cell?",
+      "options": [
+        "It has a very low resistance, so readings are faster",
+        "At the null point it draws no current from the cell, so it measures the true EMF",
+        "It passes a large current through the cell for accuracy",
+        "Its wire has zero resistance"
+      ],
+      "correct_index": 1,
+      "explanation": "A voltmeter draws some current, so it reads the terminal voltage, which is less than the EMF.<br><br>At the potentiometer's null point, no current flows through the cell, so the balance gives the EMF itself.",
+      "hint": "What current flows through the test cell at the null point?",
+      "distractor_logic": [
+        "Speed and low resistance are not the reason; the null condition is.",
+        "Large current would reduce the terminal voltage below the EMF.",
+        "The wire must have resistance for a potential drop to exist along it."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-035",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "Two cells are compared on a potentiometer. Their balancing lengths are 60 cm and 40 cm. What is the ratio of their EMFs?",
+      "options": [
+        "\\( 2:3 \\)",
+        "\\( 9:4 \\)",
+        "\\( 3:2 \\)",
+        "\\( 3:5 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{\\varepsilon_1}{\\varepsilon_2}=\\dfrac{l_1}{l_2}=\\dfrac{60}{40}=\\dfrac{3}{2} \\).",
+      "hint": "EMF is proportional to balancing length.",
+      "distractor_logic": [
+        "Inverts the ratio of balancing lengths.",
+        "Squares the ratio of lengths.",
+        "Divides the first length by the sum of the two lengths."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-036",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "A potentiometer wire 4 m long has a potential drop of 2 V across it. What is the potential gradient?",
+      "options": [
+        "\\( 2 \\) V/m",
+        "\\( 8 \\) V/m",
+        "\\( 0.005 \\) V/m",
+        "\\( 0.5 \\) V/m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( k=\\dfrac{V}{L}=\\dfrac{2}{4}=0.5 \\) V/m.",
+      "hint": "Potential gradient is potential drop per unit length.",
+      "distractor_logic": [
+        "Reports the total drop as the gradient, without dividing by length.",
+        "Multiplies the drop by length.",
+        "Divides by the length in centimetres but labels the result per metre."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-037",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "The potential gradient along a potentiometer wire is 0.5 V/m. A cell balances at 300 cm. What is its EMF?",
+      "options": [
+        "\\( 1.5 \\) V",
+        "\\( 150 \\) V",
+        "\\( 6 \\) V",
+        "\\( 0.015 \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "Convert length: \\( 300 \\) cm \\( =3 \\) m.<br><br>\\( \\varepsilon=kl=0.5\\times3=1.5 \\) V.",
+      "hint": "Keep the units of length consistent with the gradient.",
+      "distractor_logic": [
+        "Uses the length in centimetres with a gradient in volts per metre.",
+        "Divides the length by the gradient instead of multiplying.",
+        "Converts centimetres to metres in the wrong direction."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-038",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "A voltmeter connected across a cell reads slightly less than the cell's EMF. Why?",
+      "options": [
+        "The cell is being charged by the voltmeter",
+        "The voltmeter draws a small current, causing a drop across the internal resistance",
+        "The voltmeter has zero resistance",
+        "The EMF of the cell itself falls when a meter is connected"
+      ],
+      "correct_index": 1,
+      "explanation": "The voltmeter draws a current I, so the terminal voltage is \\( V=\\varepsilon-Ir \\), slightly below \\( \\varepsilon \\).<br><br>A potentiometer avoids this because at the null point it draws no current.",
+      "hint": "Does a real voltmeter draw any current?",
+      "distractor_logic": [
+        "Uses the charging picture; the voltmeter cannot force current into the cell.",
+        "A zero-resistance meter would short the cell; a real voltmeter has high but finite resistance.",
+        "The EMF is a property of the cell; only the terminal voltage changes."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-039",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "While measuring a cell's EMF with a potentiometer, no null point can be found anywhere on the wire. What is a likely cause?",
+      "options": [
+        "The galvanometer's resistance is too high",
+        "The potentiometer wire is too long",
+        "The EMF of the driver cell is less than the EMF being measured",
+        "The cell under test has some internal resistance"
+      ],
+      "correct_index": 2,
+      "explanation": "A null point exists only if the total drop across the wire exceeds the EMF being measured.<br><br>If the driver EMF (and hence the drop across the wire) is smaller, balance is impossible. Connecting the positive terminals to different ends also prevents balance.",
+      "hint": "The wire's total drop must be at least as large as what you measure.",
+      "distractor_logic": [
+        "Galvanometer resistance affects sensitivity, not whether a null point exists.",
+        "A longer wire only lowers the gradient; the null point still exists if the driver EMF is large enough.",
+        "Internal resistance does not matter at the null point, where no current flows through the cell."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L1-040",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 1,
+      "type": "regular",
+      "question": "A potentiometer's wire is replaced by a longer wire of the same material and thickness, with the same total potential drop across it. What happens to its sensitivity?",
+      "options": [
+        "It decreases, because the potential gradient increases",
+        "It is unchanged, because the total drop is the same",
+        "It decreases, because a longer wire has more resistance",
+        "It increases, because the potential gradient decreases"
+      ],
+      "correct_index": 3,
+      "explanation": "Gradient \\( k=\\dfrac{V}{L} \\) falls as L increases.<br><br>A smaller gradient means a small change in EMF shifts the null point by a larger length, which is easier to detect.",
+      "hint": "Sensitivity improves when a small voltage corresponds to a long length.",
+      "distractor_logic": [
+        "Gets the gradient change backwards; the same drop over a longer wire gives a smaller gradient.",
+        "Ignores that a smaller gradient spreads small voltage differences over larger lengths.",
+        "Focuses on resistance; sensitivity depends on the potential gradient."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-001",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A wire of cross-sectional area \\( 10^{-6} \\) \\( \\text{m}^2 \\) has free-electron density \\( n=10^{28} \\) \\( \\text{m}^{-3} \\) and carries \\( 1.6 \\) A. Taking \\( e=1.6\\times10^{-19} \\) C, find the drift speed \\( v_d \\).",
+      "options": [
+        "\\( 10^{-3} \\) m/s",
+        "\\( 10^{3} \\) m/s",
+        "\\( 10^{-9} \\) m/s",
+        "\\( 3\\times10^{8} \\) m/s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I=neAv_d \\), so \\( v_d=\\dfrac{I}{neA} \\).<br><br>\\( neA=10^{28}\\times1.6\\times10^{-19}\\times10^{-6}=1.6\\times10^{3} \\)<br><br>\\( v_d=\\dfrac{1.6}{1.6\\times10^{3}}=10^{-3} \\) m/s.",
+      "hint": "Rearrange I = neA times drift speed.",
+      "distractor_logic": [
+        "Inverts the ratio in the drift formula.",
+        "Leaves out the cross-sectional area.",
+        "Confuses drift speed with the speed of the electric signal."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-002",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "The current in a given wire is doubled while the temperature stays the same. What happens to the drift speed of its electrons?",
+      "options": [
+        "It halves",
+        "It doubles",
+        "It stays the same, because drift speed is fixed for a material",
+        "It becomes four times"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( v_d=\\dfrac{I}{neA} \\), and n, e, A are fixed for the given wire.<br><br>So \\( v_d \\) is directly proportional to I; doubling I doubles \\( v_d \\).",
+      "hint": "Which quantities in I = neA times drift speed stay fixed for one wire?",
+      "distractor_logic": [
+        "Treats drift speed as inversely proportional to current.",
+        "Treats drift speed as a material constant; for a fixed wire it is proportional to current.",
+        "Squares the factor, as if drift speed depended on current squared."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-003",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "Two wires of the same material carry the same current. One has radius r and the other radius 2r. What is the ratio of drift speed in the thin wire to that in the thick wire?",
+      "options": [
+        "\\( 2:1 \\)",
+        "\\( 1:4 \\)",
+        "\\( 4:1 \\)",
+        "\\( 1:1 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "With the same I, n and e, \\( v_d\\propto\\dfrac{1}{A}\\propto\\dfrac{1}{r^2} \\).<br><br>Area ratio thin:thick \\( =1:4 \\), so the drift-speed ratio is \\( 4:1 \\).",
+      "hint": "Drift speed depends on area, and area depends on radius squared.",
+      "distractor_logic": [
+        "Uses the ratio of radii instead of the ratio of areas.",
+        "Inverts the ratio; the thinner wire has the larger drift speed.",
+        "Assumes equal current means equal drift speed regardless of area."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-004",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "Electrons in a conductor drift at \\( 6\\times10^{-4} \\) m/s when the electric field inside is \\( 3 \\) V/m. What is their mobility \\( \\mu \\)?",
+      "options": [
+        "\\( 1.8\\times10^{-3} \\) \\( \\text{m}^2\\,\\text{V}^{-1}\\text{s}^{-1} \\)",
+        "\\( 5\\times10^{3} \\) \\( \\text{m}^2\\,\\text{V}^{-1}\\text{s}^{-1} \\)",
+        "\\( 2\\times10^{4} \\) \\( \\text{m}^2\\,\\text{V}^{-1}\\text{s}^{-1} \\)",
+        "\\( 2\\times10^{-4} \\) \\( \\text{m}^2\\,\\text{V}^{-1}\\text{s}^{-1} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Mobility is drift speed per unit field: \\( \\mu=\\dfrac{v_d}{E} \\).<br><br>\\( \\mu=\\dfrac{6\\times10^{-4}}{3}=2\\times10^{-4} \\) \\( \\text{m}^2\\,\\text{V}^{-1}\\text{s}^{-1} \\).",
+      "hint": "Mobility tells you how fast the electrons drift per volt per metre of field.",
+      "distractor_logic": [
+        "Multiplies drift speed by the field instead of dividing.",
+        "Divides the field by the drift speed, inverting the definition.",
+        "Loses the negative sign on the exponent."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-005",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A current of \\( 2 \\) A flows uniformly through a wire of cross-sectional area \\( 4\\times10^{-6} \\) \\( \\text{m}^2 \\). What is the current density?",
+      "options": [
+        "\\( 5\\times10^{5} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 8\\times10^{-6} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 2\\times10^{-6} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 5\\times10^{-7} \\) \\( \\text{A m}^{-2} \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "Current density \\( j=\\dfrac{I}{A} \\).<br><br>\\( j=\\dfrac{2}{4\\times10^{-6}}=0.5\\times10^{6}=5\\times10^{5} \\) \\( \\text{A m}^{-2} \\).",
+      "hint": "Current density is current per unit area.",
+      "distractor_logic": [
+        "Multiplies current by area instead of dividing.",
+        "Divides area by current.",
+        "Divides correctly but gets the sign of the exponent wrong."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-006",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A metal has conductivity \\( \\sigma=5\\times10^{7} \\) S/m. The electric field inside it is \\( 0.02 \\) V/m. Using \\( j=\\sigma E \\), find the current density.",
+      "options": [
+        "\\( 2.5\\times10^{9} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 10^{6} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 4\\times10^{-10} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 10^{5} \\) \\( \\text{A m}^{-2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Microscopic form of Ohm's law: \\( j=\\sigma E \\).<br><br>\\( j=5\\times10^{7}\\times0.02=10^{6} \\) \\( \\text{A m}^{-2} \\).",
+      "hint": "Multiply the conductivity by the field.",
+      "distractor_logic": [
+        "Divides conductivity by field instead of multiplying.",
+        "Divides field by conductivity.",
+        "Multiplies correctly but slips a power of ten."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-007",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "A wire of one material tapers gradually from thick at one end to thin at the other and carries a steady current. Which quantity is the same at every cross-section?",
+      "options": [
+        "The drift speed of electrons",
+        "The current density",
+        "The current",
+        "The electric field inside the wire"
+      ],
+      "correct_index": 2,
+      "explanation": "In steady state, charge cannot pile up anywhere, so the same current passes every cross-section.<br><br>Since \\( j=I/A \\) and \\( v_d=I/(neA) \\), both are larger where A is smaller, and so is the field \\( E=j/\\sigma \\).",
+      "hint": "Charge cannot accumulate anywhere in a steady current.",
+      "distractor_logic": [
+        "Drift speed varies inversely with area, so it is larger in the thin part.",
+        "Current density I/A is larger where the area is smaller.",
+        "The field equals current density divided by conductivity, so it too is larger in the thin part."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-008",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 2,
+      "type": "regular",
+      "question": "Two wires carry 3 A and 2 A into a junction and meet each other at an angle of 60 degrees. A single third wire carries all the charge away. What current does it carry?",
+      "options": [
+        "\\( \\sqrt{19} \\) A",
+        "\\( 1 \\) A",
+        "\\( 6 \\) A",
+        "\\( 5 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "Charge is conserved at the junction, so the outgoing current equals the total incoming current.<br><br>Currents add algebraically, regardless of the angle between the wires.<br><br>\\( I=3+2=5 \\) A.",
+      "hint": "Does the angle between wires matter when adding currents?",
+      "distractor_logic": [
+        "Adds the currents as vectors using the angle between the wires; current is a scalar.",
+        "Subtracts the incoming currents instead of adding them.",
+        "Multiplies the incoming currents."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-009",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "A wire of resistance 5 Ω is stretched uniformly to twice its length, its volume staying constant. What is its new resistance?",
+      "options": [
+        "\\( 20 \\) Ω",
+        "\\( 10 \\) Ω",
+        "\\( 5 \\) Ω",
+        "\\( 2.5 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "Constant volume: doubling L halves A.<br><br>\\( R=\\rho\\dfrac{L}{A} \\), so \\( R'=\\rho\\dfrac{2L}{A/2}=4R \\).<br><br>\\( R'=4\\times5=20 \\) Ω.",
+      "hint": "Stretching changes both length and area.",
+      "distractor_logic": [
+        "Accounts for the doubled length but forgets that the area halves.",
+        "Treats resistance as unchanged, confusing it with resistivity.",
+        "Makes resistance fall on stretching, reversing the effect of length."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-010",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "A uniform wire is folded in half so that the two halves lie side by side and act as one thicker wire. Compared with the original, what happens to its resistance and resistivity?",
+      "options": [
+        "Resistance becomes one-fourth; resistivity also becomes one-fourth",
+        "Resistance becomes one-fourth; resistivity is unchanged",
+        "Resistance halves; resistivity is unchanged",
+        "Resistance and resistivity are both unchanged"
+      ],
+      "correct_index": 1,
+      "explanation": "Folding halves the length and doubles the area: \\( R'=\\rho\\dfrac{L/2}{2A}=\\dfrac{R}{4} \\).<br><br>The material and temperature are the same, so \\( \\rho \\) does not change.",
+      "hint": "Resistance depends on shape; resistivity does not.",
+      "distractor_logic": [
+        "Lets resistivity change with geometry; it is a material property.",
+        "Accounts for the halved length but forgets that the area doubles.",
+        "Assumes resistance, like resistivity, is independent of shape."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-011",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "A metal coil has resistance \\( 5 \\) Ω at \\( 0 \\) \\( ^{\\circ}\\text{C} \\) and \\( 7 \\) Ω at \\( 100 \\) \\( ^{\\circ}\\text{C} \\). What is its temperature coefficient of resistance \\( \\alpha \\)?",
+      "options": [
+        "\\( 0.02 \\) per \\( ^{\\circ}\\text{C} \\)",
+        "\\( 0.4 \\) per \\( ^{\\circ}\\text{C} \\)",
+        "\\( 0.004 \\) per \\( ^{\\circ}\\text{C} \\)",
+        "\\( 0.014 \\) per \\( ^{\\circ}\\text{C} \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\alpha=\\dfrac{R-R_0}{R_0\\,\\Delta T} \\)<br><br>\\( \\alpha=\\dfrac{7-5}{5\\times100}=\\dfrac{2}{500}=0.004 \\) per \\( ^{\\circ}\\text{C} \\).",
+      "hint": "Alpha is the fractional change in resistance per degree.",
+      "distractor_logic": [
+        "Divides the change in resistance by the temperature change but forgets to divide by the base resistance.",
+        "Divides the resistance change by the base resistance but leaves out the temperature change.",
+        "Uses the final resistance instead of the change in resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-012",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "A metal wire has resistance \\( 20 \\) Ω at \\( 0 \\) \\( ^{\\circ}\\text{C} \\) and \\( \\alpha=0.005 \\) per \\( ^{\\circ}\\text{C} \\). At what temperature will its resistance be \\( 24 \\) Ω?",
+      "options": [
+        "\\( 800 \\) \\( ^{\\circ}\\text{C} \\)",
+        "\\( 240 \\) \\( ^{\\circ}\\text{C} \\)",
+        "\\( -40 \\) \\( ^{\\circ}\\text{C} \\)",
+        "\\( 40 \\) \\( ^{\\circ}\\text{C} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( R=R_0(1+\\alpha\\Delta T) \\Rightarrow \\Delta T=\\dfrac{R-R_0}{R_0\\alpha} \\)<br><br>\\( \\Delta T=\\dfrac{4}{20\\times0.005}=\\dfrac{4}{0.1}=40 \\) \\( ^{\\circ}\\text{C} \\).",
+      "hint": "Solve R = R0(1 + alpha times the temperature rise) for the temperature rise.",
+      "distractor_logic": [
+        "Divides the resistance change by alpha alone, forgetting the base resistance.",
+        "Uses the final resistance in place of the change in resistance.",
+        "Applies a decreasing trend, as if the metal's resistance rose on cooling."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-013",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "A copper wire and a germanium sample are both heated from \\( 20 \\) \\( ^{\\circ}\\text{C} \\) to \\( 60 \\) \\( ^{\\circ}\\text{C} \\). How do their resistances change?",
+      "options": [
+        "Copper's resistance rises; germanium's resistance falls",
+        "Both resistances rise",
+        "Both resistances fall",
+        "Copper's resistance falls; germanium's resistance rises"
+      ],
+      "correct_index": 0,
+      "explanation": "In copper, heating mainly increases collisions, so resistance rises.<br><br>In germanium, heating frees many more carriers, so resistance falls.",
+      "hint": "Metal and semiconductor: which effect dominates in each?",
+      "distractor_logic": [
+        "Applies the metallic increasing trend to the semiconductor too.",
+        "Applies the semiconductor decreasing trend to the metal too.",
+        "Swaps the metal and semiconductor behaviours."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-014",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "A 6 Ω resistor and a 3 Ω resistor are connected in parallel, and this combination is connected in series with a 4 Ω resistor. What is the total resistance?",
+      "options": [
+        "\\( 13 \\) Ω",
+        "\\( 6 \\) Ω",
+        "\\( \\tfrac{4}{3} \\) Ω",
+        "\\( 2 \\) Ω"
+      ],
+      "correct_index": 1,
+      "explanation": "Parallel part: \\( \\dfrac{6\\times3}{6+3}=2 \\) Ω.<br><br>Add the series resistor: \\( 2+4=6 \\) Ω.",
+      "hint": "Reduce the parallel pair first, then add the series part.",
+      "distractor_logic": [
+        "Adds all three resistances as if all were in series.",
+        "Treats all three resistors as being in parallel.",
+        "Finds the parallel part but forgets to add the series resistor."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-015",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "Four identical 8 Ω resistors are first connected all in series and then all in parallel. What is the ratio of the series equivalent to the parallel equivalent?",
+      "options": [
+        "\\( 4 \\)",
+        "\\( \\tfrac{1}{16} \\)",
+        "\\( 16 \\)",
+        "\\( 8 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Series: \\( 4\\times8=32 \\) Ω. Parallel: \\( \\dfrac{8}{4}=2 \\) Ω.<br><br>Ratio \\( =\\dfrac{32}{2}=16 \\), which is \\( n^2 \\) for n = 4.",
+      "hint": "Find each equivalent separately, then divide.",
+      "distractor_logic": [
+        "Takes the ratio as n instead of n squared.",
+        "Inverts the ratio, putting the parallel value on top.",
+        "Uses 2n instead of n squared."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-016",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 2,
+      "type": "regular",
+      "question": "Two wires of the same material and the same length have diameters d and 2d. What is the ratio of the resistance of the thin wire to that of the thick wire?",
+      "options": [
+        "\\( 2:1 \\)",
+        "\\( 1:4 \\)",
+        "\\( 1:1 \\)",
+        "\\( 4:1 \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "Same \\( \\rho \\) and L, so \\( R\\propto\\dfrac{1}{A}\\propto\\dfrac{1}{d^2} \\).<br><br>Area ratio thin:thick \\( =1:4 \\), so \\( R_{thin}:R_{thick}=4:1 \\).",
+      "hint": "Resistance depends on area, which depends on the square of the diameter.",
+      "distractor_logic": [
+        "Uses the ratio of diameters rather than areas.",
+        "Inverts the ratio; the thinner wire has more resistance.",
+        "Assumes the same material means the same resistance, confusing resistance with resistivity."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-017",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "A cell of EMF \\( 2 \\) V sends a current of \\( 0.4 \\) A through an external resistor of \\( 4 \\) Ω. What is its internal resistance?",
+      "options": [
+        "\\( 1 \\) Ω",
+        "\\( 5 \\) Ω",
+        "\\( 0.2 \\) Ω",
+        "\\( 1.6 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "Total resistance: \\( \\dfrac{\\varepsilon}{I}=\\dfrac{2}{0.4}=5 \\) Ω.<br><br>\\( r=5-4=1 \\) Ω.",
+      "hint": "Total resistance = external + internal.",
+      "distractor_logic": [
+        "Reports the total circuit resistance instead of the internal part.",
+        "Divides current by EMF.",
+        "Takes the external drop IR as the internal resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-018",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "A cell's terminal voltage is 4.5 V when it delivers 1 A and 4 V when it delivers 2 A. What is its EMF?",
+      "options": [
+        "\\( 4 \\) V",
+        "\\( 5 \\) V",
+        "\\( 4.25 \\) V",
+        "\\( 4.5 \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( 4.5=\\varepsilon-r \\) and \\( 4=\\varepsilon-2r \\).<br><br>Subtracting: \\( r=0.5 \\) Ω, so \\( \\varepsilon=4.5+0.5=5 \\) V.",
+      "hint": "Set up V = EMF - Ir for both readings.",
+      "distractor_logic": [
+        "Takes the lower terminal voltage as the EMF.",
+        "Averages the two terminal voltages.",
+        "Takes the higher terminal voltage as the EMF, although current still flows."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-019",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "A cell of EMF \\( 12 \\) V and internal resistance \\( 2 \\) Ω is connected to a \\( 4 \\) Ω resistor. How much power is dissipated inside the cell?",
+      "options": [
+        "\\( 16 \\) W",
+        "\\( 24 \\) W",
+        "\\( 8 \\) W",
+        "\\( 72 \\) W"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I=\\dfrac{12}{4+2}=2 \\) A.<br><br>Power inside: \\( I^2r=4\\times2=8 \\) W.",
+      "hint": "Find the current, then use I squared times r.",
+      "distractor_logic": [
+        "Computes the power in the external resistor.",
+        "Computes the total power supplied by the cell.",
+        "Uses the short-circuit expression, EMF squared over r."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-020",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "Four identical cells, each of EMF \\( 2 \\) V and internal resistance \\( 1 \\) Ω, are connected in series across a \\( 4 \\) Ω resistor. What current flows?",
+      "options": [
+        "\\( 2 \\) A",
+        "\\( 0.4 \\) A",
+        "\\( 1.6 \\) A",
+        "\\( 1 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "Total EMF \\( =4\\times2=8 \\) V; total internal resistance \\( =4\\times1=4 \\) Ω.<br><br>\\( I=\\dfrac{8}{4+4}=1 \\) A.",
+      "hint": "In series both EMFs and internal resistances add.",
+      "distractor_logic": [
+        "Ignores the internal resistances.",
+        "Uses the EMF of only one cell.",
+        "Uses the internal resistance of one cell instead of all four."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-021",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "A 6 V battery of internal resistance 0.5 Ω is charged from a 9 V supply through a 1 Ω series resistor (the supply has negligible internal resistance). What is the terminal voltage of the battery being charged?",
+      "options": [
+        "\\( 7 \\) V",
+        "\\( 5 \\) V",
+        "\\( 6 \\) V",
+        "\\( 9 \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "Net EMF \\( =9-6=3 \\) V; total resistance \\( =1+0.5=1.5 \\) Ω; \\( I=2 \\) A.<br><br>Charging: \\( V=\\varepsilon+Ir=6+2\\times0.5=7 \\) V.",
+      "hint": "Find the charging current, then remember current is forced into this battery.",
+      "distractor_logic": [
+        "Uses the discharging formula for a battery that is being charged.",
+        "Ignores the internal drop in the battery.",
+        "Assumes the whole supply voltage appears across the battery."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-022",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "Three identical cells, each of EMF \\( 2 \\) V and internal resistance \\( 0.5 \\) Ω, are joined in series, but one is connected the wrong way round. What are the net EMF and internal resistance?",
+      "options": [
+        "\\( 6 \\) V and \\( 1.5 \\) Ω",
+        "\\( 2 \\) V and \\( 1.5 \\) Ω",
+        "\\( 2 \\) V and \\( 0.5 \\) Ω",
+        "\\( 4 \\) V and \\( 1 \\) Ω"
+      ],
+      "correct_index": 1,
+      "explanation": "EMFs: \\( 2+2-2=2 \\) V (the reversed cell subtracts).<br><br>Internal resistances always add in series: \\( 3\\times0.5=1.5 \\) Ω.",
+      "hint": "Reversing a cell flips its EMF but not its resistance.",
+      "distractor_logic": [
+        "Ignores the reversed cell's opposing EMF.",
+        "Assumes the reversed cell's internal resistance cancels too; resistance does not depend on orientation.",
+        "Drops the reversed cell entirely."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-023",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "As the external resistance connected to a cell is increased steadily, how does the cell's terminal voltage change?",
+      "options": [
+        "It decreases towards zero",
+        "It stays equal to the EMF throughout",
+        "It increases and approaches the EMF",
+        "It increases without limit"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I=\\dfrac{\\varepsilon}{R+r} \\) falls as R rises, so the drop Ir falls.<br><br>\\( V=\\varepsilon-Ir \\) therefore rises towards \\( \\varepsilon \\).",
+      "hint": "Larger external resistance means a smaller current.",
+      "distractor_logic": [
+        "Reverses the trend; larger external resistance means less current and less internal drop.",
+        "Ignores the internal drop while current flows.",
+        "Terminal voltage of a discharging cell cannot exceed its EMF."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-024",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 2,
+      "type": "regular",
+      "question": "A cell of EMF \\( 6 \\) V and internal resistance \\( 2 \\) Ω is connected to a variable resistor. What is the maximum power that can be delivered to the resistor?",
+      "options": [
+        "\\( 18 \\) W",
+        "\\( 9 \\) W",
+        "\\( 36 \\) W",
+        "\\( 4.5 \\) W"
+      ],
+      "correct_index": 3,
+      "explanation": "Maximum power transfer occurs when \\( R=r=2 \\) Ω.<br><br>\\( I=\\dfrac{6}{4}=1.5 \\) A; \\( P=I^2R=2.25\\times2=4.5 \\) W.",
+      "hint": "Power to the load is largest when the load matches the internal resistance.",
+      "distractor_logic": [
+        "Uses EMF squared over r, which is not the power delivered to the load.",
+        "Uses EMF squared over 2r, omitting a factor of 2.",
+        "Squares the EMF but forgets to divide by any resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-025",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "A single loop contains a 10 V cell and a 4 V cell connected so that they oppose each other, with a total resistance of 3 Ω. What current flows?",
+      "options": [
+        "\\( 2 \\) A in the direction driven by the 10 V cell",
+        "\\( \\tfrac{14}{3} \\) A",
+        "\\( 2 \\) A in the direction driven by the 4 V cell",
+        "\\( \\tfrac{4}{3} \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "Net EMF \\( =10-4=6 \\) V.<br><br>\\( I=\\dfrac{6}{3}=2 \\) A, in the direction set by the larger (10 V) cell.",
+      "hint": "Opposing EMFs subtract.",
+      "distractor_logic": [
+        "Adds the EMFs, forgetting that the cells oppose each other.",
+        "Correct magnitude, but the larger EMF sets the direction.",
+        "Uses only the 4 V cell."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-026",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "Going round a loop in the direction of current I, you cross a 9 V cell from - to +, then a 2 Ω resistor, then a 3 V cell from + to -, and return to the start. What is I?",
+      "options": [
+        "\\( 6 \\) A",
+        "\\( 3 \\) A",
+        "\\( 4.5 \\) A",
+        "\\( -3 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "Loop rule: \\( +9-2I-3=0 \\).<br><br>\\( 2I=6 \\Rightarrow I=3 \\) A.",
+      "hint": "Write each term with the sign set by your direction of travel.",
+      "distractor_logic": [
+        "Counts the 3 V cell as a rise, though it is crossed from + to -.",
+        "Ignores the second cell.",
+        "Writes the resistor term as +IR although it is crossed along the current."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-027",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "A Wheatstone bridge has P = 1 Ω, Q = 2 Ω, R = 2 Ω, S = 4 Ω and a 5 Ω galvanometer. What is the equivalent resistance between the battery terminals?",
+      "options": [
+        "\\( 9 \\) Ω",
+        "\\( 14 \\) Ω",
+        "\\( 2 \\) Ω",
+        "\\( 3 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\dfrac{P}{Q}=\\dfrac{1}{2}=\\dfrac{R}{S} \\), so the bridge is balanced and the galvanometer carries no current.<br><br>Remove it: \\( (1+2) \\) in parallel with \\( (2+4) \\) gives \\( \\dfrac{3\\times6}{9}=2 \\) Ω.",
+      "hint": "Check the balance condition before simplifying.",
+      "distractor_logic": [
+        "Adds all four arms in series.",
+        "Adds the galvanometer resistance in series with all the arms.",
+        "Takes only one path, P plus Q."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-028",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "In a meter bridge, the null point is at 30 cm. The resistors in the two gaps are then interchanged. Where is the new null point?",
+      "options": [
+        "\\( 30 \\) cm",
+        "\\( 50 \\) cm",
+        "\\( 15 \\) cm",
+        "\\( 70 \\) cm"
+      ],
+      "correct_index": 3,
+      "explanation": "Before: \\( \\dfrac{X}{R}=\\dfrac{30}{70} \\). After swapping, the ratio inverts.<br><br>New balance: \\( l=70 \\) cm from the same end.",
+      "hint": "Swapping the resistors swaps the two lengths.",
+      "distractor_logic": [
+        "Assumes the null point stays put although the resistors swapped sides.",
+        "Assumes interchanging brings the null point to the centre.",
+        "Halves the old reading."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-029",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "A balanced Wheatstone bridge has its battery replaced by one with twice the EMF and twice the internal resistance. What happens?",
+      "options": [
+        "It remains balanced",
+        "It becomes unbalanced because the current in the arms changes",
+        "S must be doubled to restore balance",
+        "It stays balanced only if the internal resistance is unchanged"
+      ],
+      "correct_index": 0,
+      "explanation": "The balance condition \\( \\dfrac{P}{Q}=\\dfrac{R}{S} \\) involves only the four arms.<br><br>Changing the battery changes all currents in proportion but keeps the galvanometer ends at equal potential.",
+      "hint": "Which quantities appear in the balance condition?",
+      "distractor_logic": [
+        "Currents change, but the ratio P/Q = R/S still makes the galvanometer ends equipotential.",
+        "Makes the balance condition depend on the battery.",
+        "The battery's internal resistance plays no part in the balance condition."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-030",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "Currents of 2 A and 3 A flow into a junction. A third wire carries current I, whose direction is assumed to be INTO the junction. Applying the junction rule, what value of I is obtained?",
+      "options": [
+        "\\( 5 \\) A",
+        "\\( -5 \\) A",
+        "\\( 1 \\) A",
+        "\\( -1 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "Sum of currents into the junction must be zero: \\( 2+3+I=0 \\).<br><br>\\( I=-5 \\) A. The negative sign shows the current actually flows out of the junction.",
+      "hint": "Keep the sign; it tells you about the assumed direction.",
+      "distractor_logic": [
+        "Drops the sign; the negative value shows the actual flow is out of the junction.",
+        "Subtracts the two incoming currents.",
+        "Subtracts and attaches a sign without applying the junction rule."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-031",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "A Wheatstone bridge has P = 10 Ω, Q = 30 Ω and S = 12 Ω. Find the resistance R that balances it, using P/Q = R/S.",
+      "options": [
+        "\\( 25 \\) Ω",
+        "\\( 36 \\) Ω",
+        "\\( 4 \\) Ω",
+        "\\( 52 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( R=S\\times\\dfrac{P}{Q}=12\\times\\dfrac{10}{30}=4 \\) Ω.",
+      "hint": "Arms are paired as P with Q and R with S.",
+      "distractor_logic": [
+        "Pairs the wrong arms, using P/R = S/Q.",
+        "Inverts the ratio, computing R = QS/P.",
+        "Adds the three known resistances."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-032",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 2,
+      "type": "regular",
+      "question": "In a meter bridge, an unknown X is in the left gap and 20 Ω in the right gap. The null point is at 80 cm from the left end. Find X.",
+      "options": [
+        "\\( 5 \\) Ω",
+        "\\( 16 \\) Ω",
+        "\\( 4 \\) Ω",
+        "\\( 80 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X=R\\times\\dfrac{l}{100-l}=20\\times\\dfrac{80}{20}=80 \\) Ω.",
+      "hint": "Left resistor pairs with the left length.",
+      "distractor_logic": [
+        "Inverts the length ratio.",
+        "Multiplies the known resistance by 0.8 instead of 80/20.",
+        "Uses only the length ratio and forgets the known resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-033",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "Measuring a cell's internal resistance on a potentiometer, the balancing length is 80 cm on open circuit and 40 cm when a 5 Ω resistor is connected across the cell. Find the internal resistance.",
+      "options": [
+        "\\( 5 \\) Ω",
+        "\\( 2.5 \\) Ω",
+        "\\( 10 \\) Ω",
+        "\\( 1 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( r=R\\left(\\dfrac{l_1}{l_2}-1\\right) \\)<br><br>\\( r=5\\left(\\dfrac{80}{40}-1\\right)=5 \\) Ω.",
+      "hint": "Use r = R(l1/l2 - 1).",
+      "distractor_logic": [
+        "Uses \\( R(1-l_2/l_1) \\), inverting the length ratio.",
+        "Multiplies R by l1/l2 without subtracting 1.",
+        "Computes l1/l2 minus 1 but forgets to multiply by R."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-034",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "A standard cell of EMF 1.5 V balances at 60 cm on a potentiometer. An unknown cell balances at 80 cm on the same setup. What is the unknown EMF?",
+      "options": [
+        "\\( 1.125 \\) V",
+        "\\( 2 \\) V",
+        "\\( 0.5 \\) V",
+        "\\( 1.2 \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\dfrac{\\varepsilon_x}{1.5}=\\dfrac{80}{60} \\)<br><br>\\( \\varepsilon_x=1.5\\times\\dfrac{4}{3}=2 \\) V.",
+      "hint": "EMFs are proportional to balancing lengths.",
+      "distractor_logic": [
+        "Inverts the ratio of lengths.",
+        "Uses the difference of lengths.",
+        "Divides the balancing length by the full 100 cm instead of by 60 cm."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-035",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "A driver cell of EMF 2 V (negligible internal resistance) is connected in series with a 6 Ω rheostat and a 4 m potentiometer wire of resistance 4 Ω. What is the potential gradient on the wire?",
+      "options": [
+        "\\( 0.5 \\) V/m",
+        "\\( 0.3 \\) V/m",
+        "\\( 0.2 \\) V/m",
+        "\\( 0.8 \\) V/m"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I=\\dfrac{2}{6+4}=0.2 \\) A; drop across wire \\( =0.2\\times4=0.8 \\) V.<br><br>\\( k=\\dfrac{0.8}{4}=0.2 \\) V/m.",
+      "hint": "Only part of the driver EMF appears across the wire.",
+      "distractor_logic": [
+        "Ignores the rheostat, putting the whole 2 V across the wire.",
+        "Uses the drop across the rheostat instead of across the wire.",
+        "Finds the drop across the wire but forgets to divide by its length."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-036",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "In the potentiometer method for internal resistance, the shunt resistor across the cell is made smaller. How does the balancing length with the shunt change?",
+      "options": [
+        "It becomes longer",
+        "It stays the same",
+        "The open-circuit length changes instead",
+        "It becomes shorter"
+      ],
+      "correct_index": 3,
+      "explanation": "A smaller shunt R gives a larger current \\( \\dfrac{\\varepsilon}{R+r} \\).<br><br>Terminal voltage \\( \\varepsilon-Ir \\) falls, so its balancing length shortens.",
+      "hint": "More current through the cell means a bigger internal drop.",
+      "distractor_logic": [
+        "A smaller shunt draws more current, lowering the terminal voltage, not raising it.",
+        "Ignores that the balance measures the terminal voltage, which depends on the shunt.",
+        "The open-circuit length depends only on the EMF."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-037",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "In the potentiometer method for internal resistance, what does the balancing length correspond to with the shunt key open and with it closed?",
+      "options": [
+        "Open: the EMF \\( \\varepsilon \\); closed: the terminal voltage \\( \\varepsilon-Ir \\)",
+        "Open: the terminal voltage; closed: the EMF \\( \\varepsilon \\)",
+        "Open: the EMF \\( \\varepsilon \\); closed: \\( \\varepsilon+Ir \\)",
+        "The EMF \\( \\varepsilon \\) in both cases"
+      ],
+      "correct_index": 0,
+      "explanation": "Key open: the cell supplies no current, so the balance gives its EMF.<br><br>Key closed: the cell drives current through the shunt, so the balance gives \\( \\varepsilon-Ir \\).",
+      "hint": "Does the cell supply any current when the shunt key is open?",
+      "distractor_logic": [
+        "Swaps the two cases; with the key open no current flows, so the EMF is balanced.",
+        "Uses the charging relation although the cell drives current through the shunt.",
+        "Ignores the current the cell drives through the shunt."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-038",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "A 10 m potentiometer wire of resistance 10 Ω is driven by a 2 V cell (negligible internal resistance). What resistance must be placed in series so that the potential gradient is 0.01 V/m?",
+      "options": [
+        "\\( 200 \\) Ω",
+        "\\( 190 \\) Ω",
+        "\\( 20 \\) Ω",
+        "\\( 210 \\) Ω"
+      ],
+      "correct_index": 1,
+      "explanation": "Required drop across wire \\( =0.01\\times10=0.1 \\) V, so \\( I=\\dfrac{0.1}{10}=0.01 \\) A.<br><br>Total resistance \\( =\\dfrac{2}{0.01}=200 \\) Ω; series resistance \\( =200-10=190 \\) Ω.",
+      "hint": "Find the current needed, then the total resistance.",
+      "distractor_logic": [
+        "Finds the total circuit resistance but forgets to subtract the wire's own resistance.",
+        "Divides the EMF by the wire's drop, treating a voltage ratio as a resistance.",
+        "Adds the wire's resistance instead of subtracting it."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-039",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "A cell of EMF 1.5 V and internal resistance 1 Ω is measured with a voltmeter of resistance 14 Ω, and separately with a potentiometer. What do they read?",
+      "options": [
+        "Both read 1.5 V",
+        "Both read 1.4 V",
+        "Voltmeter 1.4 V; potentiometer 1.5 V",
+        "Voltmeter 1.5 V; potentiometer 1.4 V"
+      ],
+      "correct_index": 2,
+      "explanation": "Voltmeter: \\( I=\\dfrac{1.5}{15}=0.1 \\) A, reading \\( =1.5-0.1\\times1=1.4 \\) V.<br><br>Potentiometer: no current at the null point, so it gives the full 1.5 V.",
+      "hint": "Which instrument draws current from the cell?",
+      "distractor_logic": [
+        "Ignores the current the voltmeter draws.",
+        "Assumes the potentiometer also draws current at balance.",
+        "Swaps the instruments' behaviour."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L2-040",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 2,
+      "type": "regular",
+      "question": "During an experiment, the EMF of the potentiometer's driver cell slowly falls. What happens to the balancing length for a fixed test cell?",
+      "options": [
+        "It decreases",
+        "It stays the same, since the potentiometer is a null method",
+        "The null point disappears at once",
+        "It increases"
+      ],
+      "correct_index": 3,
+      "explanation": "Lower driver EMF means lower wire current and smaller gradient k.<br><br>Balance: \\( \\varepsilon=kl \\), so smaller k needs larger l.",
+      "hint": "What happens to the potential gradient?",
+      "distractor_logic": [
+        "A weaker driver lowers the gradient, so more length is needed.",
+        "Null method removes the test-cell current, not the dependence on the gradient.",
+        "The null point only disappears when the total wire drop falls below the test EMF."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-001",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 3,
+      "type": "regular",
+      "question": "A copper wire of cross-section \\( 10^{-6} \\) \\( \\text{m}^2 \\) with \\( n=8\\times10^{28} \\) \\( \\text{m}^{-3} \\) carries \\( 1.28 \\) A. Taking \\( e=1.6\\times10^{-19} \\) C, how long does an electron take to drift \\( 1 \\) m along the wire?",
+      "options": [
+        "\\( 10^{4} \\) s",
+        "\\( 10^{-4} \\) s",
+        "About \\( 10^{-8} \\) s",
+        "\\( 10^{2} \\) s"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( neA=8\\times10^{28}\\times1.6\\times10^{-19}\\times10^{-6}=1.28\\times10^{4} \\)<br><br>\\( v_d=\\dfrac{1.28}{1.28\\times10^{4}}=10^{-4} \\) m/s<br><br>\\( t=\\dfrac{1}{10^{-4}}=10^{4} \\) s, nearly three hours.",
+      "hint": "Find the drift speed first, then time = distance / speed.",
+      "distractor_logic": [
+        "Reports the drift speed value as the time.",
+        "Uses the speed at which the field spreads, not the electron drift speed.",
+        "Slips two powers of ten in the drift-speed calculation."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-002",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 3,
+      "type": "regular",
+      "question": "Two wires of the same material are joined end to end in series; wire B has twice the diameter of wire A. A steady current flows. What is the ratio of the electric field inside A to that inside B?",
+      "options": [
+        "\\( 1:1 \\)",
+        "\\( 4:1 \\)",
+        "\\( 16:1 \\)",
+        "\\( 1:4 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "Same current, so \\( j=\\dfrac{I}{A} \\) is 4 times larger in A (a quarter of B's area).<br><br>Same material: \\( E=\\dfrac{j}{\\sigma} \\), so \\( E_A:E_B=4:1 \\).",
+      "hint": "Use j = sigma E with the same current in both.",
+      "distractor_logic": [
+        "Assumes the same current means the same field in both wires.",
+        "Squares the area ratio, as if the field depended on the square of the area.",
+        "Inverts the ratio; the thinner wire has the larger field."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-003",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 3,
+      "type": "regular",
+      "question": "Conventional current flows from end P to end Q of a wire. Which statement about the field inside the wire and the drift of free electrons is correct?",
+      "options": [
+        "The field points from Q to P; electrons drift from P to Q",
+        "The field points from P to Q; electrons also drift from P to Q",
+        "The field points from P to Q; electrons drift from Q to P",
+        "The field points from Q to P; electrons drift from Q to P"
+      ],
+      "correct_index": 2,
+      "explanation": "Conventional current is along the field, so the field points from P to Q (P is at higher potential).<br><br>Electrons are negative, so they drift opposite to the field, from Q to P.",
+      "hint": "Conventional current follows the field; electrons oppose it.",
+      "distractor_logic": [
+        "Reverses the field; conventional current is along the field.",
+        "Makes electrons drift with the conventional current; negative charges drift against the field.",
+        "Reverses the field and puts electrons along it."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-004",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 3,
+      "type": "regular",
+      "question": "A 4 m wire has a potential difference of \\( 0.8 \\) V across it. Its electrons have mobility \\( \\mu=5\\times10^{-3} \\) \\( \\text{m}^2\\,\\text{V}^{-1}\\text{s}^{-1} \\). What is the drift speed \\( v_d \\)?",
+      "options": [
+        "\\( 4\\times10^{-3} \\) m/s",
+        "\\( 2.5\\times10^{-2} \\) m/s",
+        "\\( 1.6\\times10^{-2} \\) m/s",
+        "\\( 10^{-3} \\) m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "Field \\( E=\\dfrac{V}{L}=\\dfrac{0.8}{4}=0.2 \\) V/m.<br><br>\\( v_d=\\mu E=5\\times10^{-3}\\times0.2=10^{-3} \\) m/s.",
+      "hint": "Convert the voltage to a field first.",
+      "distractor_logic": [
+        "Multiplies mobility by the voltage without converting to field.",
+        "Multiplies mobility by L/V instead of V/L.",
+        "Multiplies mobility by both V and L."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-005",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 3,
+      "type": "regular",
+      "question": "An ohmic conductor carries 0.4 A when 2 V is applied across it. What current flows when 7 V is applied at the same temperature?",
+      "options": [
+        "\\( 1.4 \\) A",
+        "\\( 35 \\) A",
+        "\\( 2.8 \\) A",
+        "\\( 3.5 \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( R=\\dfrac{2}{0.4}=5 \\) Ω.<br><br>\\( I=\\dfrac{7}{5}=1.4 \\) A.",
+      "hint": "Find the resistance first.",
+      "distractor_logic": [
+        "Multiplies the new voltage by the resistance.",
+        "Treats 0.4 A as the current per volt.",
+        "Divides the new voltage by 2, treating the old voltage as the resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-006",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": 3,
+      "type": "regular",
+      "question": "Free electrons in a conductor have density \\( 5\\times10^{28} \\) \\( \\text{m}^{-3} \\) and drift at \\( 2.5\\times10^{-4} \\) m/s. Taking \\( e=1.6\\times10^{-19} \\) C, what is the current density?",
+      "options": [
+        "\\( 2\\times10^{-6} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 2\\times10^{6} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 1.25\\times10^{25} \\) \\( \\text{A m}^{-2} \\)",
+        "\\( 3.2\\times10^{13} \\) \\( \\text{A m}^{-2} \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( j=nev_d \\)<br><br>\\( j=5\\times10^{28}\\times1.6\\times10^{-19}\\times2.5\\times10^{-4}=20\\times10^{5}=2\\times10^{6} \\) \\( \\text{A m}^{-2} \\).",
+      "hint": "Current density = n e times drift speed.",
+      "distractor_logic": [
+        "Gets the sign of the exponent wrong.",
+        "Leaves out the electron charge.",
+        "Divides by the drift speed instead of multiplying."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-007",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 3,
+      "type": "regular",
+      "question": "In the free-electron model, \\( \\rho=\\dfrac{m}{ne^2\\tau} \\). A metal wire of resistance 3 Ω is heated so that the relaxation time \\( \\tau \\) halves (n and dimensions essentially unchanged). What is its new resistance?",
+      "options": [
+        "\\( 1.5 \\) Ω",
+        "\\( 12 \\) Ω",
+        "\\( 6 \\) Ω",
+        "\\( 3 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\rho\\propto\\dfrac{1}{\\tau} \\), so halving \\( \\tau \\) doubles \\( \\rho \\).<br><br>With the same geometry, R doubles: \\( 6 \\) Ω.",
+      "hint": "Resistivity is a material property only at a given temperature.",
+      "distractor_logic": [
+        "Treats resistivity as proportional to relaxation time.",
+        "Squares the factor as though resistivity depended on tau squared.",
+        "Treats resistivity as fixed for a material even when temperature changes."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-008",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 3,
+      "type": "regular",
+      "question": "A wire of resistance 2 Ω is drawn out uniformly (constant volume) until its radius is halved. What is its new resistance?",
+      "options": [
+        "\\( 8 \\) Ω",
+        "\\( 4 \\) Ω",
+        "\\( 128 \\) Ω",
+        "\\( 32 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "Halving the radius quarters the area; constant volume makes the length 4 times.<br><br>\\( R'=R\\times\\dfrac{4}{1/4}=16R=32 \\) Ω.",
+      "hint": "Find the new length and the new area separately.",
+      "distractor_logic": [
+        "Accounts for only one of the two effects (longer length or smaller area).",
+        "Treats resistance as inversely proportional to radius.",
+        "Multiplies by the length factor, the area factor and 16 again, double-counting."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-009",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 3,
+      "type": "regular",
+      "question": "A carbon resistor of \\( 10 \\) Ω has \\( \\alpha=-0.0005 \\) per \\( ^{\\circ}\\text{C} \\). It is put in series with an iron wire (\\( \\alpha=0.005 \\) per \\( ^{\\circ}\\text{C} \\)). What iron-wire resistance makes the total resistance independent of small temperature changes?",
+      "options": [
+        "\\( 1 \\) Ω",
+        "\\( 100 \\) Ω",
+        "\\( 10 \\) Ω",
+        "No value works, since both resistances rise with temperature"
+      ],
+      "correct_index": 0,
+      "explanation": "Total change: \\( R_C\\alpha_C\\Delta T+R_{Fe}\\alpha_{Fe}\\Delta T=0 \\).<br><br>\\( 10\\times0.0005=R_{Fe}\\times0.005 \\Rightarrow R_{Fe}=1 \\) Ω.",
+      "hint": "The rise in one must cancel the fall in the other.",
+      "distractor_logic": [
+        "Inverts the ratio of temperature coefficients.",
+        "Assumes equal resistances cancel, ignoring the different coefficients.",
+        "Treats carbon like a metal; its coefficient is negative, so its resistance falls on heating."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-010",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 3,
+      "type": "regular",
+      "question": "A 12 V ideal battery is connected across two parallel branches: one has 2 Ω and 4 Ω in series, the other has 3 Ω and 3 Ω in series. What current flows through the 2 Ω resistor?",
+      "options": [
+        "\\( 4 \\) A",
+        "\\( 2 \\) A",
+        "\\( 6 \\) A",
+        "\\( 1 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "Each branch has \\( 6 \\) Ω and the full 12 V across it.<br><br>Current in the 2 Ω branch: \\( \\dfrac{12}{6}=2 \\) A, the same through both of its series resistors.",
+      "hint": "Each parallel branch gets the full battery voltage.",
+      "distractor_logic": [
+        "Reports the total current from the battery.",
+        "Applies the full 12 V across the 2 Ω resistor alone.",
+        "Halves the branch current again, as if the 2 Ω branch split further."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-011",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 3,
+      "type": "regular",
+      "question": "A 32 Ω wire is cut into four equal pieces, which are then connected in parallel. What is the equivalent resistance?",
+      "options": [
+        "\\( 8 \\) Ω",
+        "\\( 32 \\) Ω",
+        "\\( 2 \\) Ω",
+        "\\( 0.5 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "Each piece: \\( \\dfrac{32}{4}=8 \\) Ω.<br><br>Four in parallel: \\( \\dfrac{8}{4}=2 \\) Ω.",
+      "hint": "Cut first, then combine.",
+      "distractor_logic": [
+        "Finds the resistance of one piece but does not combine them in parallel.",
+        "Assumes resistance cannot change without changing the material.",
+        "Divides by 64 instead of 16."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-012",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": 3,
+      "type": "regular",
+      "question": "A metal has resistivity \\( 2\\times10^{-8} \\) Ω m at \\( 0 \\) \\( ^{\\circ}\\text{C} \\) and \\( \\alpha=0.004 \\) per \\( ^{\\circ}\\text{C} \\). What is its resistivity at \\( 100 \\) \\( ^{\\circ}\\text{C} \\)?",
+      "options": [
+        "\\( 2\\times10^{-8} \\) Ω m",
+        "\\( 1.2\\times10^{-8} \\) Ω m",
+        "\\( 8\\times10^{-9} \\) Ω m",
+        "\\( 2.8\\times10^{-8} \\) Ω m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\rho=\\rho_0(1+\\alpha\\Delta T) \\)<br><br>\\( \\rho=2\\times10^{-8}(1+0.4)=2.8\\times10^{-8} \\) Ω m.",
+      "hint": "Resistivity does not change with shape but does change with temperature.",
+      "distractor_logic": [
+        "Assumes resistivity is fixed for a material regardless of temperature.",
+        "Subtracts the increase, using a semiconductor-like trend.",
+        "Reports only the change in resistivity."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-013",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 3,
+      "type": "regular",
+      "question": "Six identical cells (EMF \\( 2 \\) V, internal resistance \\( 1 \\) Ω each) are arranged in 2 parallel rows of 3 cells in series. The combination drives current through a \\( 4.5 \\) Ω resistor. What is the current?",
+      "options": [
+        "\\( 1 \\) A",
+        "\\( \\tfrac{4}{3} \\) A",
+        "\\( 0.8 \\) A",
+        "\\( \\tfrac{1}{3} \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "Each row: EMF \\( 6 \\) V, internal resistance \\( 3 \\) Ω.<br><br>Two rows in parallel: EMF \\( 6 \\) V, internal resistance \\( 1.5 \\) Ω.<br><br>\\( I=\\dfrac{6}{4.5+1.5}=1 \\) A.",
+      "hint": "Combine within a row first, then combine the rows.",
+      "distractor_logic": [
+        "Ignores the internal resistance of the combination.",
+        "Uses one row's internal resistance and forgets the rows are in parallel.",
+        "Takes the combination's EMF as that of one cell."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-014",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 3,
+      "type": "regular",
+      "question": "A battery of EMF \\( 12 \\) V and internal resistance \\( 0.5 \\) Ω is being charged at \\( 4 \\) A. What power does the charger deliver to the battery?",
+      "options": [
+        "\\( 40 \\) W",
+        "\\( 56 \\) W",
+        "\\( 48 \\) W",
+        "\\( 8 \\) W"
+      ],
+      "correct_index": 1,
+      "explanation": "Terminal voltage while charging: \\( V=\\varepsilon+Ir=12+2=14 \\) V.<br><br>Power delivered \\( =VI=14\\times4=56 \\) W (48 W stored, 8 W as heat).",
+      "hint": "The charger must beat both the EMF and the internal drop.",
+      "distractor_logic": [
+        "Uses the discharging terminal voltage, EMF - Ir.",
+        "Counts only the power stored chemically, EMF times I.",
+        "Counts only the heat produced inside the battery."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-015",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 3,
+      "type": "regular",
+      "question": "Two cells are connected in parallel (positive to positive): one of EMF 2 V and internal resistance 1 Ω, the other of EMF 4 V and internal resistance 1 Ω. What single cell is equivalent to them?",
+      "options": [
+        "EMF \\( 6 \\) V, internal resistance \\( 2 \\) Ω",
+        "EMF \\( 3 \\) V, internal resistance \\( 2 \\) Ω",
+        "EMF \\( 3 \\) V, internal resistance \\( 0.5 \\) Ω",
+        "EMF \\( 2 \\) V, internal resistance \\( 0.5 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\varepsilon_{eq}=\\dfrac{\\varepsilon_1/r_1+\\varepsilon_2/r_2}{1/r_1+1/r_2}=\\dfrac{2+4}{2}=3 \\) V.<br><br>\\( r_{eq}=\\dfrac{1\\times1}{1+1}=0.5 \\) Ω, as for resistors in parallel.",
+      "hint": "Internal resistances combine like parallel resistors.",
+      "distractor_logic": [
+        "Uses the series rules for a parallel connection.",
+        "Gets the EMF but adds internal resistances as though in series.",
+        "Assumes the smaller EMF sets the terminal voltage."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-016",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 3,
+      "type": "regular",
+      "question": "Two cells of equal EMF but internal resistances 3 Ω and 1 Ω are connected in series across an external resistor R. For what value of R is the terminal voltage of the 3 Ω cell zero?",
+      "options": [
+        "\\( 4 \\) Ω",
+        "\\( 3 \\) Ω",
+        "\\( 1 \\) Ω",
+        "\\( 2 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I=\\dfrac{2\\varepsilon}{R+4} \\). For zero terminal voltage: \\( \\varepsilon-3I=0 \\Rightarrow I=\\dfrac{\\varepsilon}{3} \\).<br><br>\\( \\dfrac{2\\varepsilon}{R+4}=\\dfrac{\\varepsilon}{3} \\Rightarrow R+4=6 \\Rightarrow R=2 \\) Ω.",
+      "hint": "Set EMF - Ir = 0 for the 3 Ω cell.",
+      "distractor_logic": [
+        "Adds the two internal resistances.",
+        "Sets R equal to the internal resistance of the cell in question.",
+        "Sets R equal to the other cell's internal resistance."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-017",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 3,
+      "type": "regular",
+      "question": "A cell of EMF 10 V and internal resistance 1 Ω drives current through a 4 Ω resistor. What fraction of the cell's total power is delivered to the resistor?",
+      "options": [
+        "\\( 80\\% \\)",
+        "\\( 20\\% \\)",
+        "\\( 100\\% \\)",
+        "\\( 25\\% \\)"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( I=\\dfrac{10}{5}=2 \\) A; \\( V=10-2=8 \\) V.<br><br>Fraction \\( =\\dfrac{VI}{\\varepsilon I}=\\dfrac{8}{10}=80\\% \\).",
+      "hint": "Compare the terminal voltage with the EMF.",
+      "distractor_logic": [
+        "Gives the fraction wasted inside the cell.",
+        "Ignores the power lost in the internal resistance.",
+        "Uses the ratio r/R."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-018",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": 3,
+      "type": "regular",
+      "question": "A cell of EMF 2 V and internal resistance 0.5 Ω is connected to a voltmeter of resistance 9.5 Ω. What does the voltmeter read?",
+      "options": [
+        "\\( 2 \\) V",
+        "\\( 1.9 \\) V",
+        "\\( 2.1 \\) V",
+        "\\( 0.1 \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I=\\dfrac{2}{9.5+0.5}=0.2 \\) A.<br><br>Reading \\( =\\varepsilon-Ir=2-0.1=1.9 \\) V.",
+      "hint": "A real voltmeter completes the circuit and draws current.",
+      "distractor_logic": [
+        "Treats the voltmeter as ideal, drawing no current.",
+        "Uses the charging relation, adding Ir.",
+        "Reports the internal drop instead of the terminal voltage."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-019",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 3,
+      "type": "regular",
+      "question": "Between two nodes A and B there are three branches: a 12 V cell with 2 Ω, a 6 V cell with 1 Ω (both cells with their positive terminals towards A), and a plain 2 Ω resistor. What current flows through the 2 Ω resistor branch?",
+      "options": [
+        "\\( 6 \\) A",
+        "\\( 4.5 \\) A",
+        "\\( 3 \\) A",
+        "\\( 2 \\) A"
+      ],
+      "correct_index": 2,
+      "explanation": "Let \\( V=V_A-V_B \\). Junction rule at A: \\( \\dfrac{12-V}{2}+\\dfrac{6-V}{1}=\\dfrac{V}{2} \\).<br><br>\\( 6-\\dfrac{V}{2}+6-V=\\dfrac{V}{2} \\Rightarrow V=6 \\) V.<br><br>Current in resistor \\( =\\dfrac{6}{2}=3 \\) A (the 6 V cell carries zero current).",
+      "hint": "Use the potential of A relative to B as the single unknown.",
+      "distractor_logic": [
+        "Considers only the 12 V branch, as if it alone fed the resistor.",
+        "Treats the two cells as if in series, adding their EMFs in one loop.",
+        "Treats the two cells as opposing in a single loop and ignores the resistor branch."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-020",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 3,
+      "type": "regular",
+      "question": "Between nodes A and B there are three branches: a 12 V cell with 1 Ω, a 3 V cell with 1 Ω (both positive terminals towards A), and a 2 Ω resistor. Taking the current in the 3 V branch as flowing out of its positive terminal towards A, what value do you obtain?",
+      "options": [
+        "\\( 3 \\) A",
+        "\\( 6 \\) A",
+        "\\( 1.5 \\) A",
+        "\\( -3 \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "Junction rule with \\( V=V_A-V_B \\): \\( (12-V)+(3-V)=\\dfrac{V}{2} \\Rightarrow V=6 \\) V.<br><br>Current in 3 V branch \\( =\\dfrac{3-6}{1}=-3 \\) A.<br><br>The negative sign means current actually flows into its positive terminal: the 3 V cell is being charged.",
+      "hint": "Keep the sign; it reveals whether the cell is charging.",
+      "distractor_logic": [
+        "Drops the sign; the negative value shows the current actually enters the positive terminal (the cell is being charged).",
+        "Reports the node potential difference as a current.",
+        "Divides the 3 V by the 2 Ω resistor, ignoring the other branches."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-021",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 3,
+      "type": "regular",
+      "question": "A bridge has P = 1 Ω (A to B), Q = 2 Ω (B to C), R = 2 Ω (A to D) and S = 1 Ω (D to C), with a zero-resistance galvanometer between B and D. An ideal 6 V battery is across A and C. What current flows through the galvanometer?",
+      "options": [
+        "\\( 1.5 \\) A",
+        "\\( 0 \\) A",
+        "\\( 4.5 \\) A",
+        "\\( 3 \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "With zero galvanometer resistance, B and D are one node. P, R in parallel give \\( \\tfrac{2}{3} \\) Ω; Q, S in parallel give \\( \\tfrac{2}{3} \\) Ω.<br><br>Each pair has 3 V across it: \\( I_P=3 \\) A, \\( I_Q=1.5 \\) A.<br><br>Junction B: galvanometer current \\( =3-1.5=1.5 \\) A.",
+      "hint": "Check the balance condition first; if it fails, use junction currents.",
+      "distractor_logic": [
+        "Assumes the bridge is balanced; here P/Q is not equal to R/S.",
+        "Reports the total battery current.",
+        "Reports the current in P or S instead of the difference at the junction."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-022",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 3,
+      "type": "regular",
+      "question": "In a meter bridge, X is in the left gap and 10 Ω in the right gap; the null point is at 60 cm. A 30 Ω resistor is then connected in parallel with X. Where is the new null point?",
+      "options": [
+        "\\( 60 \\) cm",
+        "\\( 50 \\) cm",
+        "\\( 40 \\) cm",
+        "\\( 75 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( X=10\\times\\dfrac{60}{40}=15 \\) Ω.<br><br>With 30 Ω in parallel: \\( \\dfrac{15\\times30}{45}=10 \\) Ω.<br><br>Equal resistances in both gaps: balance at \\( 50 \\) cm.",
+      "hint": "Find X first, then the new left-gap resistance.",
+      "distractor_logic": [
+        "Assumes the null point does not move when X is changed.",
+        "Puts the new balance on the wrong side of the wire.",
+        "Takes the new left resistance as 30 Ω alone, ignoring X."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-023",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 3,
+      "type": "regular",
+      "question": "A balanced bridge with P = 2 Ω, Q = 4 Ω, R = 3 Ω, S = 6 Ω is fed by a cell of EMF 7.2 V and internal resistance 0.4 Ω. What current does the cell supply?",
+      "options": [
+        "\\( 2 \\) A",
+        "\\( 0 \\) A",
+        "\\( 1.8 \\) A",
+        "\\( 0.45 \\) A"
+      ],
+      "correct_index": 2,
+      "explanation": "Balanced: \\( (2+4) \\) parallel \\( (3+6) \\) \\( =\\dfrac{6\\times9}{15}=3.6 \\) Ω.<br><br>\\( I=\\dfrac{7.2}{3.6+0.4}=1.8 \\) A.",
+      "hint": "Balance lets you drop the galvanometer, not the internal resistance.",
+      "distractor_logic": [
+        "Ignores the cell's internal resistance; balance does not depend on it, but the current does.",
+        "Confuses zero galvanometer current with zero battery current.",
+        "Puts all four arms and the internal resistance in series."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-024",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": 3,
+      "type": "regular",
+      "question": "In a meter bridge experiment, the known resistance is chosen so that the null point lies near the middle of the wire. Why?",
+      "options": [
+        "The galvanometer's resistance cancels only when balance is at the middle",
+        "The battery's internal resistance cancels only at the middle",
+        "The current in the wire is maximum at the middle",
+        "It reduces the effect of end resistances and the percentage error in reading lengths"
+      ],
+      "correct_index": 3,
+      "explanation": "The balance condition holds anywhere on the wire, independent of galvanometer and battery resistances.<br><br>But extra resistance at the wire ends and reading errors affect short lengths most, so a near-middle balance gives the smallest percentage error.",
+      "hint": "Which errors grow when one of the two lengths is small?",
+      "distractor_logic": [
+        "The galvanometer's resistance never enters the balance condition, wherever the null point is.",
+        "The battery's resistance never affects the balance condition.",
+        "The wire carries the same current along its whole length."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-025",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "A cell balances at 150 cm on open circuit and at 120 cm when shunted by 8 Ω. The potential gradient is 0.01 V/cm. What current flows through the shunt when it is connected?",
+      "options": [
+        "\\( 0.15 \\) A",
+        "\\( 0.1875 \\) A",
+        "\\( 0.75 \\) A",
+        "\\( 0 \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\varepsilon=0.01\\times150=1.5 \\) V; \\( r=8\\left(\\dfrac{150}{120}-1\\right)=2 \\) Ω.<br><br>\\( I=\\dfrac{1.5}{8+2}=0.15 \\) A (check: \\( V=1.2 \\) V, and \\( 1.2/8=0.15 \\) A).",
+      "hint": "Find the EMF and internal resistance first.",
+      "distractor_logic": [
+        "Ignores the internal resistance, dividing the EMF by 8 Ω alone.",
+        "Divides the EMF by the internal resistance only.",
+        "Confuses zero galvanometer current at balance with zero current in the shunt."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-026",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "Two cells in series balance at 90 cm when their EMFs aid each other and at 30 cm when they oppose. What is the ratio of the larger EMF to the smaller?",
+      "options": [
+        "\\( 3:1 \\)",
+        "\\( 2:1 \\)",
+        "\\( 1:2 \\)",
+        "\\( 4:1 \\)"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\varepsilon_1+\\varepsilon_2\\propto90 \\), \\( \\varepsilon_1-\\varepsilon_2\\propto30 \\).<br><br>\\( \\dfrac{\\varepsilon_1}{\\varepsilon_2}=\\dfrac{90+30}{90-30}=\\dfrac{120}{60}=2 \\).",
+      "hint": "Add and subtract the two conditions.",
+      "distractor_logic": [
+        "Takes the ratio of the two balancing lengths directly.",
+        "Inverts the ratio.",
+        "Divides the sum of lengths by the opposing length only."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-027",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "Resistors R1 = 10 Ω and R2 are in series with a steady current. On a potentiometer, the drop across R1 balances at 40 cm and the drop across R1 and R2 together balances at 100 cm. Find R2.",
+      "options": [
+        "\\( 25 \\) Ω",
+        "\\( 4 \\) Ω",
+        "\\( 15 \\) Ω",
+        "\\( 6 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "Same current, so \\( \\dfrac{R_1+R_2}{R_1}=\\dfrac{100}{40} \\).<br><br>\\( R_1+R_2=25 \\) Ω, so \\( R_2=15 \\) Ω.",
+      "hint": "The drop is proportional to resistance when the current is the same.",
+      "distractor_logic": [
+        "Uses 100/40 for R2 instead of for R1 + R2.",
+        "Multiplies R1 by 40/100.",
+        "Multiplies R1 by 60/100."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-028",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "A driver cell of EMF 3 V and internal resistance 2 Ω is in series with a 3 Ω rheostat and a 5 m potentiometer wire of resistance 5 Ω. Where does a 0.6 V cell balance?",
+      "options": [
+        "\\( 160 \\) cm",
+        "\\( 50 \\) cm",
+        "\\( 2 \\) cm",
+        "\\( 200 \\) cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( I=\\dfrac{3}{2+3+5}=0.3 \\) A; drop across wire \\( =1.5 \\) V; \\( k=0.3 \\) V/m.<br><br>\\( l=\\dfrac{0.6}{0.3}=2 \\) m \\( =200 \\) cm.",
+      "hint": "Include every resistance in the driver circuit.",
+      "distractor_logic": [
+        "Ignores the driver cell's internal resistance.",
+        "Divides the gradient by the EMF instead of the reverse.",
+        "Reads the result in metres as centimetres."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-029",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "A cell's EMF is being measured with a potentiometer. The galvanometer in the cell's branch is replaced by one with a much larger resistance. What happens to the balancing length?",
+      "options": [
+        "It stays the same",
+        "It increases, since more resistance is in the cell branch",
+        "It decreases",
+        "No balance can be found any more"
+      ],
+      "correct_index": 0,
+      "explanation": "At balance, no current flows through the galvanometer or the test cell.<br><br>With zero current, the galvanometer's resistance causes no drop, so the balancing length is unchanged (only the sensitivity near balance changes).",
+      "hint": "What current flows through the galvanometer at the null point?",
+      "distractor_logic": [
+        "At the null point no current flows in that branch, so its resistance has no effect.",
+        "Assumes a drop across the galvanometer; there is none at balance.",
+        "The null condition depends only on EMF and gradient."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-L3-030",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "The Potentiometer and Its Applications",
+      "level": 3,
+      "type": "regular",
+      "question": "On a potentiometer, a cell balances at 240 cm on open circuit and at 200 cm when shunted by 4 Ω. If the shunt is replaced by 3.2 Ω, where is the new balance point?",
+      "options": [
+        "\\( 200 \\) cm",
+        "\\( 192 \\) cm",
+        "\\( 240 \\) cm",
+        "\\( 160 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( r=4\\left(\\dfrac{240}{200}-1\\right)=0.8 \\) Ω.<br><br>New terminal voltage fraction \\( =\\dfrac{3.2}{3.2+0.8}=0.8 \\).<br><br>\\( l=0.8\\times240=192 \\) cm.",
+      "hint": "First extract the internal resistance.",
+      "distractor_logic": [
+        "Assumes the balance length does not depend on the shunt value.",
+        "Takes the open-circuit (EMF) length.",
+        "Scales the old shunted length instead of the EMF length."
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-001",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A wire is replaced by one of the same material and length but twice the radius, and the same current is maintained. How do the drift speed and the resistance change?",
+      "options": [
+        "Drift speed becomes one-fourth; resistance is unchanged",
+        "Both are halved",
+        "Both become one-fourth",
+        "Drift speed is unchanged; resistance becomes one-fourth"
+      ],
+      "correct_index": 2,
+      "explanation": "Area becomes 4 times.<br><br>\\( v_d=\\dfrac{I}{neA} \\): one-fourth. \\( R=\\rho\\dfrac{L}{A} \\): one-fourth, while \\( \\rho \\) itself is unchanged.",
+      "hint": "Both quantities depend on the area.",
+      "distractor_logic": [
+        "Treats resistance like resistivity, as if it did not depend on area.",
+        "Scales with the radius instead of the area.",
+        "Forgets that the same current spread over a larger area drifts more slowly."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-002",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 1 m wire of resistivity \\( 10^{-8} \\) Ω m has \\( n=10^{29} \\) \\( \\text{m}^{-3} \\) and \\( 0.016 \\) V across it. Taking \\( e=1.6\\times10^{-19} \\) C, what is the drift speed \\( v_d \\)?",
+      "options": [
+        "\\( 10^{4} \\) m/s",
+        "\\( 10^{-12} \\) m/s",
+        "\\( 3\\times10^{8} \\) m/s",
+        "\\( 10^{-4} \\) m/s"
+      ],
+      "correct_index": 3,
+      "explanation": "Combine \\( j=\\dfrac{E}{\\rho} \\) and \\( j=nev_d \\): \\( v_d=\\dfrac{V}{\\rho neL} \\).<br><br>\\( \\rho neL=10^{-8}\\times10^{29}\\times1.6\\times10^{-19}\\times1=160 \\)<br><br>\\( v_d=\\dfrac{0.016}{160}=10^{-4} \\) m/s.",
+      "hint": "Link the field to current density through resistivity.",
+      "distractor_logic": [
+        "Inverts the expression for drift speed.",
+        "Leaves the resistivity out of the calculation.",
+        "Confuses drift speed with the speed at which the field is set up."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-003",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A metal wire is connected across a fixed voltage and then heated. What happens to the current and to the drift speed of its electrons?",
+      "options": [
+        "Both decrease",
+        "Both increase",
+        "Current decreases but drift speed is unchanged",
+        "Both remain unchanged"
+      ],
+      "correct_index": 0,
+      "explanation": "Heating a metal raises its resistance, so at fixed voltage the current falls.<br><br>\\( v_d=\\dfrac{I}{neA} \\) with n, A essentially fixed, so the drift speed falls too.",
+      "hint": "What happens to a metal's resistance when heated?",
+      "distractor_logic": [
+        "Applies the semiconductor trend (resistance falling on heating) to a metal.",
+        "Treats drift speed as fixed; with n and A fixed, it falls with the current.",
+        "Ignores the rise in a metal's resistance with temperature."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-004",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A metal wire of resistance \\( 5 \\) Ω at \\( 0 \\) \\( ^{\\circ}\\text{C} \\) (\\( \\alpha=0.004 \\) per \\( ^{\\circ}\\text{C} \\)) is heated to \\( 50 \\) \\( ^{\\circ}\\text{C} \\) and connected to a cell of EMF \\( 7 \\) V and internal resistance \\( 1 \\) Ω. What current flows?",
+      "options": [
+        "\\( \\tfrac{7}{5} \\) A",
+        "\\( 1 \\) A",
+        "\\( \\tfrac{7}{6} \\) A",
+        "\\( 7 \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( R=5(1+0.004\\times50)=6 \\) Ω.<br><br>\\( I=\\dfrac{7}{6+1}=1 \\) A.",
+      "hint": "Find the hot resistance first.",
+      "distractor_logic": [
+        "Makes the metal's resistance fall on heating (to 4 Ω), as for a semiconductor.",
+        "Ignores the heating and uses the 0 degree resistance.",
+        "Uses only the internal resistance."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-005",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two identical cells (EMF \\( 1.5 \\) V, internal resistance \\( 1 \\) Ω each) are to drive current through a \\( 0.5 \\) Ω resistor. Which arrangement gives more current, and how much?",
+      "options": [
+        "Series; \\( 6 \\) A",
+        "Series; \\( 1.2 \\) A",
+        "Parallel; \\( 1.5 \\) A",
+        "Parallel; \\( 0.6 \\) A"
+      ],
+      "correct_index": 2,
+      "explanation": "Series: \\( \\dfrac{3}{0.5+2}=1.2 \\) A. Parallel: \\( \\dfrac{1.5}{0.5+0.5}=1.5 \\) A.<br><br>With a small external resistance, halving the internal resistance helps more than doubling the EMF.",
+      "hint": "Compute both currents and compare.",
+      "distractor_logic": [
+        "Ignores the internal resistances in series.",
+        "Computes the series current correctly but does not compare; parallel gives more here.",
+        "Adds the internal resistances in parallel, as capacitances would add."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-006",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 12 V cell (1 Ω) and a 6 V cell (1 Ω) are connected in a single loop with opposing EMFs and a 1 Ω resistor. What is the terminal voltage of the 6 V cell?",
+      "options": [
+        "\\( 4 \\) V",
+        "\\( 6 \\) V",
+        "\\( 10 \\) V",
+        "\\( 8 \\) V"
+      ],
+      "correct_index": 3,
+      "explanation": "Loop rule: \\( 12-6-I(1+1+1)=0 \\Rightarrow I=2 \\) A.<br><br>Current enters the 6 V cell's positive terminal, so \\( V=6+2\\times1=8 \\) V.",
+      "hint": "Which cell is being charged?",
+      "distractor_logic": [
+        "Uses the discharging formula; the 6 V cell is being charged.",
+        "Ignores the drop across its internal resistance.",
+        "Gives the terminal voltage of the 12 V cell instead."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-007",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two identical cells (EMF \\( 2 \\) V, internal resistance \\( 1 \\) Ω each) are in parallel across a \\( 1.5 \\) Ω resistor. What current flows through each cell?",
+      "options": [
+        "\\( 0.5 \\) A",
+        "\\( 1 \\) A",
+        "\\( 2 \\) A",
+        "\\( \\tfrac{2}{3} \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "Combination: \\( 2 \\) V, \\( 0.5 \\) Ω; \\( I=\\dfrac{2}{1.5+0.5}=1 \\) A.<br><br>By symmetry each identical cell supplies half: 0.5 A.",
+      "hint": "Find the total, then use symmetry.",
+      "distractor_logic": [
+        "Gives the total current in the resistor, not the share of each cell.",
+        "Uses the short-circuit current of one cell.",
+        "Ignores internal resistance, then splits the current equally."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-008",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A potentiometer has gradient 1 V/m. A cell of internal resistance 0.5 Ω balances at 200 cm on open circuit. A 9.5 Ω resistor is then connected across the cell. What is the new balancing length?",
+      "options": [
+        "\\( 200 \\) cm",
+        "\\( 190 \\) cm",
+        "\\( 210 \\) cm",
+        "\\( 10 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( \\varepsilon=2 \\) V; \\( I=\\dfrac{2}{10}=0.2 \\) A; \\( V=2-0.1=1.9 \\) V.<br><br>\\( l=\\dfrac{1.9}{1}=1.9 \\) m \\( =190 \\) cm.",
+      "hint": "The balance now measures the terminal voltage.",
+      "distractor_logic": [
+        "Ignores the current now drawn through the resistor.",
+        "Adds Ir as if the cell were being charged.",
+        "Gives the length for the internal drop only."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-009",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A balanced Wheatstone bridge has P = Q, S = 10 Ω, and arm R a metal wire of 10 Ω at \\( 0 \\) \\( ^{\\circ}\\text{C} \\) (\\( \\alpha=0.004 \\) per \\( ^{\\circ}\\text{C} \\)). The wire is heated to \\( 50 \\) \\( ^{\\circ}\\text{C} \\). What must S become to restore balance?",
+      "options": [
+        "\\( 8 \\) Ω",
+        "\\( 10 \\) Ω",
+        "\\( 12 \\) Ω",
+        "\\( 2 \\) Ω"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( R=10(1+0.004\\times50)=12 \\) Ω.<br><br>With \\( P=Q \\), balance needs \\( S=R=12 \\) Ω.",
+      "hint": "Find the heated resistance, then apply P/Q = R/S.",
+      "distractor_logic": [
+        "Makes the metal's resistance fall on heating.",
+        "Ignores the temperature dependence of the metal wire.",
+        "Uses only the increase in resistance."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-010",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A wire 0.5 m long of cross-section \\( 5\\times10^{-7} \\) \\( \\text{m}^2 \\) is placed in the left gap of a meter bridge with 2 Ω in the right gap. Balance is at 60 cm. What is the wire's resistivity?",
+      "options": [
+        "\\( 3\\times10^{6} \\) Ω m",
+        "\\( 2\\times10^{-6} \\) Ω m",
+        "\\( 1.5\\times10^{-6} \\) Ω m",
+        "\\( 3\\times10^{-6} \\) Ω m"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( X=2\\times\\dfrac{60}{40}=3 \\) Ω.<br><br>\\( \\rho=\\dfrac{XA}{L}=\\dfrac{3\\times5\\times10^{-7}}{0.5}=3\\times10^{-6} \\) Ω m.",
+      "hint": "Find the resistance first, then rearrange R = rho L / A.",
+      "distractor_logic": [
+        "Uses RL/A instead of RA/L.",
+        "Uses the known 2 Ω instead of the wire's resistance.",
+        "Forgets to divide by the length."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-011",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Kirchhoff's Laws and the Wheatstone Bridge",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "What common feature makes both the meter bridge and the potentiometer results independent of the galvanometer's resistance?",
+      "options": [
+        "Both are null methods: at balance no current flows through the galvanometer",
+        "Both use galvanometers of zero resistance",
+        "Both use a wire of zero resistance",
+        "Both draw a large current from the cell being tested"
+      ],
+      "correct_index": 0,
+      "explanation": "At the null point, the galvanometer's two ends are at the same potential, so no current flows through it.<br><br>With zero current, its resistance cannot affect the result in either instrument.",
+      "hint": "What does the galvanometer read at balance?",
+      "distractor_logic": [
+        "Real galvanometers have resistance; it simply carries no current at balance.",
+        "Both rely on the wire having uniform, non-zero resistance per length.",
+        "The potentiometer draws no current from the test cell at balance."
+      ],
+      "mixed_topics": [
+        "Kirchhoff's Laws and the Wheatstone Bridge",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-012",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A potentiometer wire is 4 m long with cross-section \\( 10^{-6} \\) \\( \\text{m}^2 \\) and resistivity \\( 10^{-6} \\) Ω m. It carries \\( 0.25 \\) A. What is the potential gradient?",
+      "options": [
+        "\\( 1 \\) V/m",
+        "\\( 0.25 \\) V/m",
+        "\\( 0.0625 \\) V/m",
+        "\\( 4 \\) V/m"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( R=\\rho\\dfrac{L}{A}=\\dfrac{10^{-6}\\times4}{10^{-6}}=4 \\) Ω; drop \\( =0.25\\times4=1 \\) V.<br><br>\\( k=\\dfrac{1}{4}=0.25 \\) V/m.",
+      "hint": "Find the wire's resistance first.",
+      "distractor_logic": [
+        "Gives the total drop across the wire instead of the drop per metre.",
+        "Divides the current by the resistance.",
+        "Takes the wire's resistance as the gradient."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-013",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A thick wire carrying a steady current splits at a junction into two identical wires of the same material, each with half the cross-sectional area of the thick wire. How does the drift speed in each thin wire compare with that in the thick wire?",
+      "options": [
+        "It is half",
+        "It is double",
+        "It is the same",
+        "It is \\( \\tfrac{1}{\\sqrt{2}} \\) times"
+      ],
+      "correct_index": 2,
+      "explanation": "By the junction rule and symmetry, each thin wire carries half the current.<br><br>\\( v_d=\\dfrac{I}{neA}=\\dfrac{I/2}{ne(A/2)} \\), which is unchanged.",
+      "hint": "Both the current and the area are halved.",
+      "distractor_logic": [
+        "Accounts for the halved current but not the halved area.",
+        "Accounts for the halved area but not the halved current.",
+        "Splits the current as a vector into two components; current divides algebraically."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-014",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a Wheatstone bridge all four arms are 4 Ω and the galvanometer is also 4 Ω. What is the equivalent resistance between the battery terminals?",
+      "options": [
+        "\\( 16 \\) Ω",
+        "\\( 1 \\) Ω",
+        "\\( 2 \\) Ω",
+        "\\( 4 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{P}{Q}=\\dfrac{R}{S}=1 \\): balanced, so the galvanometer carries no current and can be removed.<br><br>Two paths of \\( 8 \\) Ω in parallel: \\( 4 \\) Ω.",
+      "hint": "Is the bridge balanced?",
+      "distractor_logic": [
+        "Adds all four arms in series.",
+        "Puts all four arms in parallel.",
+        "Puts only two arms in parallel and stops."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-015",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A cell of EMF 9 V drives 1.8 A through a 4 Ω resistor. Applying the loop rule, what is the internal resistance?",
+      "options": [
+        "\\( 1 \\) Ω",
+        "\\( 5 \\) Ω",
+        "\\( -1 \\) Ω",
+        "\\( 0.2 \\) Ω"
+      ],
+      "correct_index": 0,
+      "explanation": "Loop rule: \\( 9-1.8\\times4-1.8r=0 \\).<br><br>\\( 1.8r=1.8 \\Rightarrow r=1 \\) Ω.",
+      "hint": "Both resistances are crossed along the current.",
+      "distractor_logic": [
+        "Gives the total resistance of the loop.",
+        "Writes the internal-resistance term as +Ir though it is crossed along the current.",
+        "Divides the current by the EMF."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-016",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A battery of EMF 2 V and internal resistance 0.5 Ω is being charged at 0.4 A. Its terminal voltage is measured on a potentiometer with gradient 1 V/m. What is the balancing length?",
+      "options": [
+        "\\( 180 \\) cm",
+        "\\( 220 \\) cm",
+        "\\( 200 \\) cm",
+        "\\( 20 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "Charging: \\( V=\\varepsilon+Ir=2+0.2=2.2 \\) V.<br><br>\\( l=\\dfrac{2.2}{1}=2.2 \\) m \\( =220 \\) cm.",
+      "hint": "During charging, the terminal voltage exceeds the EMF.",
+      "distractor_logic": [
+        "Uses the discharging relation for a battery being charged.",
+        "Balances the EMF instead of the terminal voltage.",
+        "Balances only the internal drop."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-017",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A cell (EMF \\( 3 \\) V, internal resistance \\( 0.5 \\) Ω) drives current through a \\( 2.5 \\) Ω wire of cross-section \\( 6.25\\times10^{-6} \\) \\( \\text{m}^2 \\) with \\( n=10^{28} \\) \\( \\text{m}^{-3} \\). Taking \\( e=1.6\\times10^{-19} \\) C, find \\( v_d \\).",
+      "options": [
+        "\\( 1.2\\times10^{-4} \\) m/s",
+        "\\( 10^{4} \\) m/s",
+        "\\( 10^{-4} \\) m/s",
+        "\\( 3\\times10^{8} \\) m/s"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( I=\\dfrac{3}{2.5+0.5}=1 \\) A.<br><br>\\( neA=10^{28}\\times1.6\\times10^{-19}\\times6.25\\times10^{-6}=10^{4} \\)<br><br>\\( v_d=\\dfrac{1}{10^{4}}=10^{-4} \\) m/s.",
+      "hint": "Find the current including internal resistance.",
+      "distractor_logic": [
+        "Ignores the internal resistance when finding the current.",
+        "Inverts the drift-speed expression.",
+        "Confuses drift speed with the signal speed."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-018",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 4 Ω wire connected across a cell (EMF 6 V, internal resistance 2 Ω) carries 1 A. The wire is stretched uniformly to twice its length and reconnected. What current flows now?",
+      "options": [
+        "\\( 0.6 \\) A",
+        "\\( 1 \\) A",
+        "\\( 0.375 \\) A",
+        "\\( \\tfrac{1}{3} \\) A"
+      ],
+      "correct_index": 3,
+      "explanation": "Stretching to double length: \\( R'=4R=16 \\) Ω.<br><br>\\( I=\\dfrac{6}{16+2}=\\dfrac{1}{3} \\) A.",
+      "hint": "Stretching changes both length and area.",
+      "distractor_logic": [
+        "Doubles the resistance for the length but forgets the area halves.",
+        "Treats resistance as unchanged because the material is unchanged.",
+        "Finds the new resistance but ignores the internal resistance."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-019",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a balanced Wheatstone bridge, the battery and the galvanometer are interchanged. What happens?",
+      "options": [
+        "The bridge remains balanced",
+        "It becomes unbalanced because the battery's internal resistance now sits in a different branch",
+        "It becomes unbalanced unless P = Q",
+        "The galvanometer now shows the full battery current"
+      ],
+      "correct_index": 0,
+      "explanation": "After interchange, the new balance condition is \\( \\dfrac{P}{R}=\\dfrac{Q}{S} \\).<br><br>This is the same as \\( \\dfrac{P}{Q}=\\dfrac{R}{S} \\), so balance is kept.",
+      "hint": "Rearrange the balance condition.",
+      "distractor_logic": [
+        "Neither the battery's nor the galvanometer's resistance enters the balance condition.",
+        "Balance after interchange requires only P/Q = R/S, which still holds.",
+        "The arms' ratio condition still makes the new galvanometer ends equipotential."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-020",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Two cells have the same EMF but different internal resistances. On the same potentiometer, how do their balancing lengths compare?",
+      "options": [
+        "The cell with larger internal resistance balances at a shorter length",
+        "They are equal",
+        "The cell with larger internal resistance balances at a longer length",
+        "Neither can be balanced"
+      ],
+      "correct_index": 1,
+      "explanation": "At balance no current flows through the cell, so \\( V=\\varepsilon-0\\times r=\\varepsilon \\).<br><br>Equal EMFs give equal balancing lengths.",
+      "hint": "What current flows through the cell at balance?",
+      "distractor_logic": [
+        "Applies the internal drop, which is zero at the null point.",
+        "Invents an effect of internal resistance on EMF.",
+        "Internal resistance does not prevent balance."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-021",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A metal is cooled, which increases the relaxation time \\( \\tau \\) of its electrons. At the same applied field, how do its resistivity and the drift speed change?",
+      "options": [
+        "Resistivity increases and drift speed decreases",
+        "Resistivity is unchanged and drift speed increases",
+        "Resistivity decreases and drift speed increases",
+        "Both decrease"
+      ],
+      "correct_index": 2,
+      "explanation": "\\( \\rho=\\dfrac{m}{ne^2\\tau} \\): larger \\( \\tau \\) gives smaller \\( \\rho \\).<br><br>\\( v_d=\\dfrac{eE\\tau}{m} \\): larger \\( \\tau \\) gives larger \\( v_d \\) at the same field.",
+      "hint": "Both depend on relaxation time.",
+      "distractor_logic": [
+        "Uses the trend for heating, not cooling.",
+        "Treats resistivity as independent of temperature.",
+        "Links drift speed directly to resistivity instead of to relaxation time."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-022",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A coil X in the left gap of a meter bridge with 5 Ω in the right gap balances at 50 cm at \\( 0 \\) \\( ^{\\circ}\\text{C} \\) and at 60 cm at \\( 100 \\) \\( ^{\\circ}\\text{C} \\). What is the coil's temperature coefficient \\( \\alpha \\)?",
+      "options": [
+        "\\( 0.025 \\) per \\( ^{\\circ}\\text{C} \\)",
+        "\\( 0.015 \\) per \\( ^{\\circ}\\text{C} \\)",
+        "\\( 0.5 \\) per \\( ^{\\circ}\\text{C} \\)",
+        "\\( 0.005 \\) per \\( ^{\\circ}\\text{C} \\)"
+      ],
+      "correct_index": 3,
+      "explanation": "At \\( 0 \\) \\( ^{\\circ}\\text{C} \\): \\( X_0=5 \\) Ω. At \\( 100 \\) \\( ^{\\circ}\\text{C} \\): \\( X=5\\times\\dfrac{60}{40}=7.5 \\) Ω.<br><br>\\( \\alpha=\\dfrac{2.5}{5\\times100}=0.005 \\) per \\( ^{\\circ}\\text{C} \\).",
+      "hint": "Find both resistances with the meter bridge first.",
+      "distractor_logic": [
+        "Forgets to divide by the base resistance.",
+        "Uses the hot resistance instead of the change.",
+        "Forgets to divide by the temperature change."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-023",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A current of 1 A flows from A to B along a branch in which you first meet a 2 Ω resistor and then a 6 V cell entered at its negative terminal. What is the potential difference \\( V_A-V_B \\)?",
+      "options": [
+        "\\( -4 \\) V",
+        "\\( 4 \\) V",
+        "\\( 8 \\) V",
+        "\\( -8 \\) V"
+      ],
+      "correct_index": 0,
+      "explanation": "Moving A to B: \\( V_A-2\\times1+6=V_B \\).<br><br>\\( V_A-V_B=2-6=-4 \\) V, so B is at the higher potential.",
+      "hint": "Apply the sign rules term by term from A to B.",
+      "distractor_logic": [
+        "Drops the sign of the result.",
+        "Treats the cell as a drop though it is crossed from - to +.",
+        "Treats the resistor as a rise though it is crossed along the current."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-024",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A meter-bridge wire of 100 cm and resistance 4 Ω is used as a potentiometer, driven by a 2 V cell (negligible internal resistance) through a 6 Ω rheostat. Where does a 0.4 V cell balance?",
+      "options": [
+        "\\( 20 \\) cm",
+        "\\( 50 \\) cm",
+        "\\( 5 \\) cm",
+        "\\( 200 \\) cm"
+      ],
+      "correct_index": 1,
+      "explanation": "\\( I=\\dfrac{2}{10}=0.2 \\) A; drop across wire \\( =0.8 \\) V over 100 cm.<br><br>\\( l=\\dfrac{0.4}{0.8}\\times100=50 \\) cm.",
+      "hint": "Only part of the driver's EMF appears across the wire.",
+      "distractor_logic": [
+        "Ignores the rheostat, putting all 2 V across the wire.",
+        "Slips a factor of ten in the gradient.",
+        "Divides the gradient by the EMF instead of the reverse."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-025",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Inside a cell that is supplying current to an external circuit, which way does conventional current flow and which way do electrons move in the external wire?",
+      "options": [
+        "Conventional current flows from + to - inside the cell; electrons move towards the + terminal",
+        "Conventional current flows from - to + inside the cell; electrons in the external wire move away from the + terminal",
+        "Conventional current flows from - to + inside the cell; electrons in the external wire move towards the + terminal",
+        "No current flows inside the cell"
+      ],
+      "correct_index": 2,
+      "explanation": "Externally conventional current flows from + to -, so to complete the loop it flows from - to + inside the cell.<br><br>In the external wire, electrons drift opposite to conventional current, i.e. towards the + terminal.",
+      "hint": "Current is continuous around the whole loop.",
+      "distractor_logic": [
+        "Assumes current flows the same way inside the cell as through the external resistor.",
+        "Aligns electron motion with conventional current.",
+        "Ignores that the loop is complete, so the cell carries the same current."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-026",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A bridge network has arms 1 Ω and 2 Ω on one side, 3 Ω and 6 Ω on the other, and a 7 Ω resistor across the middle. What is the equivalent resistance between the input terminals?",
+      "options": [
+        "\\( 12 \\) Ω",
+        "\\( 3 \\) Ω",
+        "\\( 9.25 \\) Ω",
+        "\\( 2.25 \\) Ω"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( \\dfrac{1}{2}=\\dfrac{3}{6} \\): balanced, so the 7 Ω carries no current.<br><br>\\( 3 \\) Ω parallel \\( 9 \\) Ω \\( =\\dfrac{27}{12}=2.25 \\) Ω.",
+      "hint": "Check the balance condition first.",
+      "distractor_logic": [
+        "Adds the four arms in series.",
+        "Takes only one path.",
+        "Adds the middle resistor in series with the result."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-027",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A single cell balances at 40 cm on a potentiometer. Three such identical cells are connected in series, but one is reversed. Where does the combination balance?",
+      "options": [
+        "\\( 40 \\) cm",
+        "\\( 120 \\) cm",
+        "\\( 80 \\) cm",
+        "\\( 0 \\) cm"
+      ],
+      "correct_index": 0,
+      "explanation": "Net EMF \\( =\\varepsilon+\\varepsilon-\\varepsilon=\\varepsilon \\).<br><br>Balance length is proportional to EMF (internal resistances do not matter at balance): 40 cm.",
+      "hint": "Add EMFs with signs.",
+      "distractor_logic": [
+        "Ignores the reversal.",
+        "Removes the reversed cell rather than subtracting its EMF.",
+        "Assumes one reversed cell cancels all the others."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-028",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A cell of EMF 12 V and internal resistance 1 Ω is connected across a 6 Ω and a 3 Ω resistor in parallel. What is its terminal voltage?",
+      "options": [
+        "\\( 12 \\) V",
+        "\\( 8 \\) V",
+        "\\( 16 \\) V",
+        "\\( 10.8 \\) V"
+      ],
+      "correct_index": 1,
+      "explanation": "External: \\( 2 \\) Ω; \\( I=\\dfrac{12}{3}=4 \\) A.<br><br>\\( V=12-4\\times1=8 \\) V.",
+      "hint": "Simplify the parallel pair first.",
+      "distractor_logic": [
+        "Ignores the internal resistance.",
+        "Adds Ir as though the cell were charging.",
+        "Puts the external resistors in series."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-029",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An ideal cell of fixed voltage is connected to a wire. The wire is replaced by one of the same material and length but double the diameter. What happens to the drift speed?",
+      "options": [
+        "It becomes one-fourth",
+        "It becomes four times",
+        "It is unchanged",
+        "It halves"
+      ],
+      "correct_index": 2,
+      "explanation": "Resistance becomes one-fourth, so current becomes four times; area is also four times.<br><br>\\( v_d=\\dfrac{I}{neA} \\) stays the same; equivalently \\( v_d=\\dfrac{V}{\\rho neL} \\) has no area in it.",
+      "hint": "Voltage, not current, is fixed here.",
+      "distractor_logic": [
+        "Considers the larger area but not the larger current.",
+        "Considers the larger current but not the larger area.",
+        "Scales with the diameter instead of the area."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-030",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A 6 V cell (1 Ω) and a 4 V cell (1 Ω) are connected in parallel, positive to positive, with no external load. What is the common terminal voltage?",
+      "options": [
+        "\\( 6 \\) V",
+        "\\( 4 \\) V",
+        "\\( 10 \\) V",
+        "\\( 5 \\) V"
+      ],
+      "correct_index": 3,
+      "explanation": "Loop: \\( 6-4=I(1+1) \\Rightarrow I=1 \\) A circulating.<br><br>\\( V=6-1\\times1=5 \\) V (check: \\( 4+1\\times1=5 \\) V, the 4 V cell being charged).",
+      "hint": "A current circulates between the two cells.",
+      "distractor_logic": [
+        "Assumes the larger EMF sets the terminal voltage.",
+        "Assumes the smaller EMF sets the terminal voltage.",
+        "Adds the EMFs as if in series."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-031",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "EMF, Internal Resistance, and Combination of Cells",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A potentiometer (gradient 1 V/m) gives balancing lengths of 120 cm for a cell on open circuit and 100 cm when it is shunted by 5 Ω. What power is wasted inside the cell when shunted?",
+      "options": [
+        "\\( 0.04 \\) W",
+        "\\( 0.2 \\) W",
+        "\\( 0.24 \\) W",
+        "\\( 1.44 \\) W"
+      ],
+      "correct_index": 0,
+      "explanation": "\\( \\varepsilon=1.2 \\) V; \\( r=5\\left(\\dfrac{120}{100}-1\\right)=1 \\) Ω.<br><br>\\( I=\\dfrac{1.2}{6}=0.2 \\) A; \\( P=I^2r=0.04 \\) W.",
+      "hint": "Find r first, then the current.",
+      "distractor_logic": [
+        "Gives the power in the 5 Ω shunt.",
+        "Gives the total power supplied by the cell.",
+        "Uses EMF squared over internal resistance."
+      ],
+      "mixed_topics": [
+        "EMF, Internal Resistance, and Combination of Cells",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-032",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Why are alloys like manganin or constantan chosen for potentiometer wires?",
+      "options": [
+        "They have very low resistivity, so the gradient is large",
+        "They have high resistivity and a very small temperature coefficient of resistance",
+        "Their resistance falls sharply when heated",
+        "They are semiconductors, so their resistance is stable"
+      ],
+      "correct_index": 1,
+      "explanation": "A potentiometer needs a uniform, stable resistance per unit length.<br><br>High \\( \\rho \\) gives a useful drop; small \\( \\alpha \\) keeps it steady as the wire warms.",
+      "hint": "The wire's resistance must not drift during the experiment.",
+      "distractor_logic": [
+        "A potentiometer needs a steady, measurable drop, which high resistivity provides.",
+        "A large temperature coefficient of either sign would make the gradient drift.",
+        "Manganin and constantan are metallic alloys."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-033",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A wire of cross-section \\( 4 \\) \\( \\text{mm}^2 \\) carries current into a junction and splits into wire B (\\( 1 \\) \\( \\text{mm}^2 \\), 3 A) and wire C (\\( 1 \\) \\( \\text{mm}^2 \\), 1 A), all of the same material. What is the ratio of the drift speed in B to that in the thick wire?",
+      "options": [
+        "\\( 3:4 \\)",
+        "\\( 1:3 \\)",
+        "\\( 3:1 \\)",
+        "\\( 4:1 \\)"
+      ],
+      "correct_index": 2,
+      "explanation": "Junction rule: thick wire carries \\( 3+1=4 \\) A.<br><br>\\( v_d\\propto\\dfrac{I}{A} \\): B gives \\( 3 \\), thick wire gives \\( 1 \\). Ratio \\( 3:1 \\).",
+      "hint": "Use the junction rule, then I/A.",
+      "distractor_logic": [
+        "Compares currents only, ignoring the areas.",
+        "Inverts the ratio.",
+        "Compares areas only, ignoring the currents."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-034",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "In a meter bridge, the left gap holds a 6 Ω and a 3 Ω resistor in parallel; the right gap holds 3 Ω. Where is the null point?",
+      "options": [
+        "\\( 75 \\) cm",
+        "\\( 60 \\) cm",
+        "\\( 50 \\) cm",
+        "\\( 40 \\) cm"
+      ],
+      "correct_index": 3,
+      "explanation": "Left gap: \\( \\dfrac{6\\times3}{9}=2 \\) Ω.<br><br>\\( \\dfrac{2}{3}=\\dfrac{l}{100-l} \\Rightarrow l=40 \\) cm.",
+      "hint": "Simplify the left gap first.",
+      "distractor_logic": [
+        "Takes the left-gap resistors in series.",
+        "Inverts the length ratio.",
+        "Uses only the 3 Ω resistor in the left gap."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-035",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Four identical cells (EMF \\( 1.5 \\) V, internal resistance \\( 1 \\) Ω) form 2 parallel rows of 2 cells in series, connected to a \\( 2 \\) Ω resistor. What current flows?",
+      "options": [
+        "\\( 1 \\) A",
+        "\\( 1.5 \\) A",
+        "\\( 2 \\) A",
+        "\\( 0.5 \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "Each row: \\( 3 \\) V, \\( 2 \\) Ω. Two rows in parallel: \\( 3 \\) V, \\( 1 \\) Ω.<br><br>\\( I=\\dfrac{3}{2+1}=1 \\) A.",
+      "hint": "Internal resistances combine like resistors.",
+      "distractor_logic": [
+        "Ignores the internal resistance.",
+        "Counts all four EMFs as in series.",
+        "Takes the EMF of one cell for the whole combination."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-036",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "At the null point of a potentiometer measurement, what is the net drift velocity of free electrons in the galvanometer's connecting wires?",
+      "options": [
+        "The same as in the potentiometer wire",
+        "Zero",
+        "Maximum",
+        "Of the order of \\( 3\\times10^{8} \\) m/s"
+      ],
+      "correct_index": 1,
+      "explanation": "At null, no current flows in the galvanometer branch.<br><br>\\( I=neAv_d=0 \\Rightarrow v_d=0 \\); electrons still move randomly, but with no net drift.",
+      "hint": "Zero current means zero net drift.",
+      "distractor_logic": [
+        "The potentiometer wire carries current; the galvanometer branch does not.",
+        "At null, current and hence net drift in that branch vanish.",
+        "Confuses drift with the speed of the electric signal."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-037",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A balanced bridge with arms 1 Ω, 2 Ω, 2 Ω, 4 Ω (P, Q, R, S) is connected to a cell of EMF 5 V and internal resistance 0.5 Ω. What is the cell's terminal voltage?",
+      "options": [
+        "\\( 5 \\) V",
+        "\\( 6 \\) V",
+        "\\( 4 \\) V",
+        "\\( 1 \\) V"
+      ],
+      "correct_index": 2,
+      "explanation": "Balanced: \\( 3 \\) Ω parallel \\( 6 \\) Ω \\( =2 \\) Ω.<br><br>\\( I=\\dfrac{5}{2.5}=2 \\) A; \\( V=5-1=4 \\) V.",
+      "hint": "Simplify the balanced bridge, then use the cell's equation.",
+      "distractor_logic": [
+        "Ignores the internal resistance.",
+        "Adds Ir as if the cell were charging.",
+        "Reports only the internal drop."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "EMF, Internal Resistance, and Combination of Cells",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-038",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "A steady current of 0.5 A flows through a 3 Ω resistor. The drop across it is measured on a potentiometer with gradient 0.5 V/m. What is the balancing length?",
+      "options": [
+        "\\( 150 \\) cm",
+        "\\( 75 \\) cm",
+        "\\( 30 \\) cm",
+        "\\( 300 \\) cm"
+      ],
+      "correct_index": 3,
+      "explanation": "\\( V=IR=0.5\\times3=1.5 \\) V.<br><br>\\( l=\\dfrac{1.5}{0.5}=3 \\) m \\( =300 \\) cm.",
+      "hint": "Find the drop with Ohm's law first.",
+      "distractor_logic": [
+        "Treats the gradient as 1 V/m.",
+        "Multiplies the drop by the gradient.",
+        "Slips a factor of ten converting metres to centimetres."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "The Potentiometer and Its Applications"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-039",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "An 8 Ω wire is cut into two equal halves, which are connected in parallel across a cell of EMF 6 V and internal resistance 1 Ω. What current does the cell supply?",
+      "options": [
+        "\\( 2 \\) A",
+        "\\( \\tfrac{2}{3} \\) A",
+        "\\( 1.2 \\) A",
+        "\\( 3 \\) A"
+      ],
+      "correct_index": 0,
+      "explanation": "Halves: 4 Ω each; in parallel: 2 Ω.<br><br>\\( I=\\dfrac{6}{2+1}=2 \\) A.",
+      "hint": "Cut, combine, then include the internal resistance.",
+      "distractor_logic": [
+        "Uses the uncut 8 Ω wire.",
+        "Uses one 4 Ω half only.",
+        "Ignores the internal resistance."
+      ],
+      "mixed_topics": [
+        "Resistivity, Temperature Dependence of Resistance, and Combination of Resistors",
+        "EMF, Internal Resistance, and Combination of Cells"
+      ]
+    },
+    {
+      "id": "PHY12-CH03-B-040",
+      "chapter": "PHY12-CH03",
+      "chapter_name": "Current Electricity",
+      "topic": "Electric Current, Drift Velocity, and Ohm's Law",
+      "level": "Bonus",
+      "type": "bonus",
+      "question": "Three wires at 120 degrees to one another each carry 2 A into a junction. A fourth wire carries charge away. What current does it carry?",
+      "options": [
+        "\\( 0 \\) A",
+        "\\( 6 \\) A",
+        "\\( 2 \\) A",
+        "\\( 2\\sqrt{3} \\) A"
+      ],
+      "correct_index": 1,
+      "explanation": "Charge conservation: total in = total out.<br><br>\\( I=2+2+2=6 \\) A, whatever the angles.",
+      "hint": "Angles do not matter at a junction.",
+      "distractor_logic": [
+        "Adds the three currents as vectors, which cancel at 120 degrees; currents add algebraically.",
+        "Assumes the outgoing current matches one incoming wire.",
+        "Uses a vector combination of two of the currents."
+      ],
+      "mixed_topics": [
+        "Electric Current, Drift Velocity, and Ohm's Law",
+        "Kirchhoff's Laws and the Wheatstone Bridge"
+      ]
+    }
+  ]
+}
