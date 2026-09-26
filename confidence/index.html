@@ -167,6 +167,9 @@ const MAN=[{"file": "che11_ch01_some_basic_concepts_of_chemistry.json", "sub": "
 const $=id=>document.getElementById(id);
 const FREE_L1=true; // Level 1 free for everyone; L2/L3/Bonus/drills/concepts are Premium
 let subj='Physics', cls=11, CUR=null, BANKS={};
+const PASS={1:0.70,2:0.50,3:0.45};
+const CAPS={1:2,2:3,3:3};
+function passMark(lv,total){ return Math.ceil(PASS[lv]*total-1e-9); }
 /* ---------- progress ---------- */
 function prog(){ try{return JSON.parse(localStorage.getItem('cp_conf')||'{}');}catch(e){return {};} }
 function saveProg(p){ localStorage.setItem('cp_conf',JSON.stringify(p)); }
@@ -208,16 +211,16 @@ async function openChapter(file){
   d.questions.forEach(q=>{ if(isBonus(q))pools.b.push(q); else pools[parseInt(q.level)]?.push(q); });
   CUR={file,m,d,pools};
   $('c-title').textContent=m.name;
-  $('c-sub').innerHTML='Class '+m.cls+' '+m.sub+' · '+m.q+' questions · pass a level with <b>6/10</b> · 4 tries, then you move up anyway';
+  $('c-sub').innerHTML='Class '+m.cls+' '+m.sub+' · '+m.q+' questions · full-level attempts — pass <b>Level 1 at 70%</b>, <b>Level 2 at 50%</b>, <b>Level 3 at 45%</b> · use all attempts and you move up anyway';
   renderLevels(); renderTopics();
   show('chap');
 }
 function canEnter(lv){
   const cp=chProg(CUR.file);
   if(lv===1)return true;
-  if(lv===2)return cp.l1.c||cp.l1.a>=4;
-  if(lv===3)return cp.l2.c||cp.l2.a>=4;
-  return cp.l3.c||cp.l3.a>=4; // bonus
+  if(lv===2)return cp.l1.c||cp.l1.a>=CAPS[1];
+  if(lv===3)return cp.l2.c||cp.l2.a>=CAPS[2];
+  return cp.l3.c||cp.l3.a>=CAPS[3]; // bonus
 }
 function renderLevels(){
   const cp=chProg(CUR.file), P=CUR.pools;
@@ -228,15 +231,19 @@ function renderLevels(){
     const cls2=st.c?'lv cleared':(open?'lv':'lv locked');
     h+='<button class="'+cls2+'" onclick="startLevel('+lv+')" '+(open?'':'disabled')+'>'+
       '<div class="t">'+(st.c?'✅':open?(lv===1?'🟢':'🔓'):'🔒')+' '+names[lv]+(prem&&open?' <span style="font-size:10px;background:var(--pri-soft);color:var(--pri-dark);padding:2px 7px;border-radius:99px">PREMIUM</span>':'')+'</div>'+
-      '<div class="d">'+P[lv].length+' questions in pool · 10 per attempt</div>'+
+      '<div class="d">All '+P[lv].length+' questions in one attempt · pass at '+Math.round(PASS[lv]*100)+'% ('+passMark(lv,P[lv].length)+'/'+P[lv].length+')</div>'+
       '<div class="st" style="color:'+(st.c?'var(--green)':'var(--mut)')+'">'+
-      (st.c?'Cleared':st.a>=4?'Promoted after 4 tries — keep practicing':open?(st.a?st.a+'/4 attempts used':'Not attempted'):'Clear previous level to unlock')+'</div></button>';
+      (st.c?'Cleared':st.a>=CAPS[lv]?'Promoted after '+CAPS[lv]+' tries — keep practicing':open?(st.a?st.a+'/'+CAPS[lv]+' attempts used':'Not attempted · '+CAPS[lv]+' attempts'):'Clear previous level to unlock')+'</div></button>';
   }
   const bOpen=canEnter(4);
   h+='<button class="lv bonus'+(bOpen?'':' locked')+'" onclick="startBonus()" '+(bOpen?'':'disabled')+'>'+
     '<div class="t">'+(bOpen?'🏅':'🔒')+' Bonus · Mixed concepts'+(!cpPaid()&&bOpen?' <span style="font-size:10px;background:var(--pri-soft);color:var(--pri-dark);padding:2px 7px;border-radius:99px">PREMIUM</span>':'')+'</div>'+
     '<div class="d">'+CUR.pools.b.length+' questions mixing topics — the real-exam feel</div>'+
     '<div class="st" style="color:var(--mut)">'+(bOpen?(chProg(CUR.file).bq?chProg(CUR.file).bq+' answered':'Unlock earned ✓'):'Finish Level 3 to unlock')+'</div></button>';
+  h+='<a class="lv" style="border-color:var(--navy);background:#f2f6ff;display:block" href="/tests/chapter-test.html">'+
+    '<div class="t">🖥️ Real JEE CBT</div>'+
+    '<div class="d">Concepts built? Now face actual JEE questions of this chapter in the real computer-based-test interface — timed, marked +4/−1, with full solutions.</div>'+
+    '<div class="st" style="color:var(--navy)">Attempt JEE-level test →</div></a>';
   $('lvrow').innerHTML=h;
 }
 function renderTopics(){
@@ -254,7 +261,7 @@ function startLevel(lv){
   if(!canEnter(lv))return;
   if(lv>1&&!cpPaid()){ pmShow(); return; }
   if(lv===1&&!FREE_L1&&!cpPaid()){ pmShow(); return; }
-  MODE='level'; curLv=lv; ATT=sample(CUR.pools[lv],Math.min(10,CUR.pools[lv].length));
+  MODE='level'; curLv=lv; ATT=sample(CUR.pools[lv],CUR.pools[lv].length);
   idx=0;score=0;weak={};ANS=[];beginQ();
 }
 function startDrill(i){
@@ -274,7 +281,7 @@ function startBonus(){
 function beginQ(){ show('quiz'); renderQ(); }
 function quitQuiz(){ openChapter(CUR.file); }
 function whereTxt(){
-  if(MODE==='level'){ const a=chProg(CUR.file)['l'+curLv].a; return CUR.m.name+' · Level '+curLv+' · Attempt '+Math.min(a+1,4)+'/4'; }
+  if(MODE==='level'){ const a=chProg(CUR.file)['l'+curLv].a; return CUR.m.name+' · Level '+curLv+' · Attempt '+Math.min(a+1,CAPS[curLv])+'/'+CAPS[curLv]; }
   if(MODE==='drill')return CUR.m.name+' · Drill: '+curLv;
   return CUR.m.name+' · Bonus round';
 }
@@ -347,14 +354,15 @@ function finish(){
   $('q-bar').style.width='100%';
   const total=ATT.length;
   if(MODE==='level'){
-    const cp=chProg(CUR.file), pass=score>=6;
+    const need=passMark(curLv,total);
+    const cp=chProg(CUR.file), pass=score>=need;
     const st=cp['l'+curLv]; st.a=Math.min(st.a+1,9); if(pass)st.c=1;
     setChProg(CUR.file,cp);
     $('r-emoji').textContent=pass?'🎉':(st.a>=4?'🚀':'💪');
     $('r-score').textContent=score+'/'+total;
-    $('r-verdict').textContent=pass?'Level '+curLv+' cleared!':(st.a>=4?'Promoted to the next level':'Not cleared yet — attempt '+st.a+'/4 used');
+    $('r-verdict').textContent=pass?'Level '+curLv+' cleared!':(st.a>=CAPS[curLv]?'Promoted to the next level':'Not cleared yet — attempt '+st.a+'/'+CAPS[curLv]+' used');
     $('r-note').textContent=pass?(curLv<3?'Level '+(curLv+1)+' is now unlocked. Keep the streak going.':'All levels done — the Bonus round is unlocked. That is real-exam territory.')
-      :(st.a>=4?'You have used 4 attempts, so the next level is open anyway — but the weak topics below are where marks are leaking. Drill them first.':'Score 6/10 to clear. Check the weak topics below, read the concept, drill, then retry.');
+      :(st.a>=CAPS[curLv]?'You have used all '+CAPS[curLv]+' attempts, so the next level is open anyway — but the weak topics below are where marks are leaking. Drill them first.':'You needed '+need+'/'+total+' ('+Math.round(PASS[curLv]*100)+'%). Check the weak topics below, read the concept, drill, then retry.');
     // full test-style review
     const review=ATT.map((q,i)=>{
       const ok=ANS[i]===q.correct_index, na=ANS[i]==null;
@@ -375,7 +383,7 @@ function finish(){
     const btn=$('r-again');
     if(pass&&curLv<3){ btn.textContent='Start Level '+(curLv+1)+' →'; btn.onclick=()=>startLevel(curLv+1); }
     else if(pass){ btn.textContent='Bonus round →'; btn.onclick=startBonus; }
-    else if(st.a>=4){ btn.textContent='Move to Level '+(curLv+1)+' →'; btn.onclick=()=>curLv<3?startLevel(curLv+1):startBonus(); }
+    else if(st.a>=CAPS[curLv]){ btn.textContent='Move to Level '+(curLv+1)+' →'; btn.onclick=()=>curLv<3?startLevel(curLv+1):startBonus(); }
     else { btn.textContent='Retry Level '+curLv; btn.onclick=()=>startLevel(curLv); }
   } else {
     if(MODE==='bonus'){ const cp=chProg(CUR.file); cp.bq=(cp.bq||0)+total; setChProg(CUR.file,cp); }
