@@ -130,8 +130,10 @@ h1{font-size:22px;letter-spacing:-.3px}
       <div id="q-opts"></div>
       <div id="q-fb"></div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+        <button class="btn ghost hidden" id="q-prev" onclick="prevQ()">← Previous</button>
         <button class="btn ghost" id="q-hint" onclick="showHint()">💡 Hint</button>
         <button class="btn pri hidden" id="q-next" onclick="nextQ()">Next →</button>
+        <button class="btn pri hidden" id="q-submit" onclick="submitLevel()" style="background:var(--navy)">Submit Level ✔</button>
       </div>
       <a class="report" id="q-report" href="#" target="_blank">⚑ Report this question</a>
     </div>
@@ -149,6 +151,7 @@ h1{font-size:22px;letter-spacing:-.3px}
         <button class="btn pri" id="r-again"></button>
         <button class="btn ghost" onclick="openChapter(CUR.file)">Back to chapter</button>
       </div>
+      <div id="r-review"></div>
     </div>
   </div>
 </main>
@@ -245,14 +248,14 @@ function renderTopics(){
     +(prem?'<div style="font-size:12px;color:var(--pri-dark);margin-top:10px;font-weight:600">Concepts & drills are part of Premium — ₹99 lifetime.</div>':'');
 }
 /* ---------- sessions ---------- */
-let MODE=null, ATT=[], idx=0, score=0, curLv=0, weak={}, answered=false;
+let MODE=null, ATT=[], idx=0, score=0, curLv=0, weak={}, answered=false, ANS=[];
 function sample(arr,n){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a.slice(0,n); }
 function startLevel(lv){
   if(!canEnter(lv))return;
   if(lv>1&&!cpPaid()){ pmShow(); return; }
   if(lv===1&&!FREE_L1&&!cpPaid()){ pmShow(); return; }
   MODE='level'; curLv=lv; ATT=sample(CUR.pools[lv],Math.min(10,CUR.pools[lv].length));
-  idx=0;score=0;weak={};beginQ();
+  idx=0;score=0;weak={};ANS=[];beginQ();
 }
 function startDrill(i){
   if(!cpPaid()){ pmShow(); return; }
@@ -260,13 +263,13 @@ function startDrill(i){
   MODE='drill'; curLv=t.name;
   ATT=CUR.d.questions.filter(q=>!isBonus(q)&&q.topic===t.name);
   if(!ATT.length){ alert('No questions tagged for this topic.'); return; }
-  idx=0;score=0;weak={};beginQ();
+  idx=0;score=0;weak={};ANS=[];beginQ();
 }
 function startBonus(){
   if(!canEnter(4))return;
   if(!cpPaid()){ pmShow(); return; }
   MODE='bonus'; curLv='Bonus'; ATT=sample(CUR.pools.b,Math.min(10,CUR.pools.b.length));
-  idx=0;score=0;weak={};beginQ();
+  idx=0;score=0;weak={};ANS=[];beginQ();
 }
 function beginQ(){ show('quiz'); renderQ(); }
 function quitQuiz(){ openChapter(CUR.file); }
@@ -277,17 +280,41 @@ function whereTxt(){
 }
 function renderQ(){
   const q=ATT[idx]; answered=false;
+  const test=MODE==='level';
   $('q-where').textContent=whereTxt();
-  $('q-count').textContent='Q '+(idx+1)+' of '+ATT.length+(MODE!=='drill'?' · score '+score:'');
-  $('q-bar').style.width=(idx/ATT.length*100)+'%';
+  $('q-count').textContent='Q '+(idx+1)+' of '+ATT.length+(test?' · answered '+ANS.filter(a=>a!=null).length+'/'+ATT.length:(MODE!=='drill'?' · score '+score:''));
+  $('q-bar').style.width=((test?idx:idx)/ATT.length*100)+'%';
   $('q-text').innerHTML=q.question||q.q||q.text||'';
   $('q-fb').innerHTML='';
   $('q-hint').classList.remove('hidden');
   $('q-next').classList.add('hidden');
+  $('q-submit').classList.add('hidden');
+  $('q-prev').classList.toggle('hidden',!test||idx===0);
   $('q-report').href='mailto:support.collegepipe@gmail.com?subject='+encodeURIComponent('LevelUp question issue: '+(q.id||''))+'&body='+encodeURIComponent('Question ID: '+(q.id||'')+'\nChapter: '+CUR.m.name+'\nIssue: ');
   $('q-opts').innerHTML=q.options.map((o,i)=>
-    '<div class="opt" onclick="pick('+i+')"><span class="lb">'+'ABCD'[i]+'</span><span class="tx">'+o+'</span></div>').join('');
+    '<div class="opt'+(test&&ANS[idx]===i?' sel':'')+'" onclick="'+(test?'pickTest':'pick')+'('+i+')"><span class="lb">'+'ABCD'[i]+'</span><span class="tx">'+o+'</span></div>').join('');
+  if(test){
+    $('q-next').classList.toggle('hidden',idx===ATT.length-1);
+    $('q-next').textContent='Next →';
+    $('q-submit').classList.toggle('hidden',idx!==ATT.length-1);
+  }
   tex($('q-text')); tex($('q-opts'));
+}
+function pickTest(i){
+  ANS[idx]=(ANS[idx]===i)?null:i;
+  document.querySelectorAll('#q-opts .opt').forEach((el,j)=>el.classList.toggle('sel',ANS[idx]===j));
+  $('q-count').textContent='Q '+(idx+1)+' of '+ATT.length+' · answered '+ANS.filter(a=>a!=null).length+'/'+ATT.length;
+}
+function prevQ(){ if(idx>0){ idx--; renderQ(); } }
+function submitLevel(){
+  const un=ATT.length-ANS.filter(a=>a!=null).length;
+  if(un>0 && !confirm(un+' question'+(un>1?'s':'')+' unanswered. Submit anyway?')) return;
+  score=0; weak={};
+  ATT.forEach((q,i)=>{
+    if(ANS[i]===q.correct_index) score++;
+    else { const t=q.topic&&q.topic!=='Bonus'?q.topic:null; if(t)weak[t]=(weak[t]||0)+1; }
+  });
+  finish();
 }
 function showHint(){
   const q=ATT[idx];
@@ -312,6 +339,7 @@ function pick(i){
   $('q-next').textContent=(idx===ATT.length-1)?'Finish →':'Next →';
 }
 function nextQ(){
+  if(MODE==='level'){ if(idx<ATT.length-1){ idx++; renderQ(); } return; }
   if(idx<ATT.length-1){ idx++; renderQ(); return; }
   finish();
 }
@@ -327,6 +355,17 @@ function finish(){
     $('r-verdict').textContent=pass?'Level '+curLv+' cleared!':(st.a>=4?'Promoted to the next level':'Not cleared yet — attempt '+st.a+'/4 used');
     $('r-note').textContent=pass?(curLv<3?'Level '+(curLv+1)+' is now unlocked. Keep the streak going.':'All levels done — the Bonus round is unlocked. That is real-exam territory.')
       :(st.a>=4?'You have used 4 attempts, so the next level is open anyway — but the weak topics below are where marks are leaking. Drill them first.':'Score 6/10 to clear. Check the weak topics below, read the concept, drill, then retry.');
+    // full test-style review
+    const review=ATT.map((q,i)=>{
+      const ok=ANS[i]===q.correct_index, na=ANS[i]==null;
+      return '<div class="card" style="padding:14px;margin-bottom:10px;border-left:4px solid '+(ok?'var(--green)':na?'#c7ccd6':'var(--red)')+'">'+
+        '<div style="font-size:12px;color:var(--mut);margin-bottom:6px"><b>Q'+(i+1)+'</b> · '+(ok?'<span style="color:var(--green);font-weight:700">Correct</span>':na?'Unattempted':'<span style="color:var(--red);font-weight:700">Wrong</span>')+(q.topic&&q.topic!=='Bonus'?' · '+q.topic:'')+'</div>'+
+        '<div class="qtext" style="font-size:14px;margin-bottom:8px">'+(q.question||'')+'</div>'+
+        q.options.map((o,j)=>'<div class="opt dim'+(j===q.correct_index?' right':(j===ANS[i]?' wrong':''))+'" style="pointer-events:none;padding:8px 12px;margin-bottom:6px"><span class="lb">'+'ABCD'[j]+'</span><span class="tx" style="font-size:13px">'+o+'</span></div>').join('')+
+        '<div class="fb '+(ok?'ok':'bad')+'" style="margin:8px 0 0">'+(q.explanation||'')+'</div></div>';
+    }).join('');
+    document.getElementById('r-review').innerHTML='<div style="font-weight:800;font-size:14px;margin:18px 0 10px;text-align:left">Solution review</div>'+review;
+    tex(document.getElementById('r-review'));
     const wt=Object.keys(weak);
     $('r-weak').innerHTML=wt.length?'<div style="font-weight:800;font-size:13px;margin-bottom:6px">Weak topics this attempt:</div>'+wt.map(t=>{
       const ti=(CUR.d.topics||[]).findIndex(x=>x.name===t);
@@ -344,9 +383,9 @@ function finish(){
     $('r-score').textContent=score+'/'+total;
     $('r-verdict').textContent=MODE==='drill'?'Drill complete':'Bonus round done';
     $('r-note').textContent=MODE==='drill'?'Repeat the drill until this topic feels easy — that is how confidence is built.':'Mixed-concept questions are the closest thing to the real paper. Keep coming back.';
-    $('r-weak').innerHTML='';
+    $('r-weak').innerHTML=''; document.getElementById('r-review').innerHTML='';
     const btn=$('r-again'); btn.textContent='Go again →';
-    btn.onclick=MODE==='drill'?(()=>{idx=0;score=0;weak={};beginQ();}):startBonus;
+    btn.onclick=MODE==='drill'?(()=>{idx=0;score=0;weak={};ANS=[];beginQ();}):startBonus;
   }
   renderLevels(); renderGrid();
   show('result');
