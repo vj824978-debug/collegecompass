@@ -126,7 +126,7 @@ h1{font-size:22px;letter-spacing:-.3px}
   <div id="v-quiz" class="hidden">
     <button class="btn ghost" onclick="quitQuiz()" style="margin-bottom:12px">← Back to chapter</button>
     <div class="card">
-      <div class="qmeta"><span id="q-where"></span><span id="q-count"></span></div>
+      <div class="qmeta"><span id="q-where"></span><span style="display:flex;gap:14px"><span id="q-timer" style="font-weight:700;color:var(--teal)"></span><span id="q-count"></span></span></div>
       <div class="progress"><i id="q-bar" style="width:0%"></i></div>
       <div class="qtext" id="q-text"></div>
       <div id="q-opts"></div>
@@ -258,18 +258,43 @@ function renderTopics(){
 }
 /* ---------- sessions ---------- */
 let MODE=null, ATT=[], idx=0, score=0, curLv=0, weak={}, answered=false, ANS=[];
+/* ---------- stopwatch (pauses when tab hidden) + resumable attempts ---------- */
+let elapsed=0, tickIv=null;
+function fmtT(s2){ const m=Math.floor(s2/60),x=s2%60; return m+':'+(x<10?'0':'')+x; }
+function tickStart(){ if(tickIv)return; tickIv=setInterval(()=>{ elapsed++; const el=$('q-timer'); if(el)el.textContent='⏱ '+fmtT(elapsed); if(elapsed%5===0)saveLive(); },1000); }
+function tickStop(){ if(tickIv){clearInterval(tickIv);tickIv=null;} saveLive(); }
+document.addEventListener('visibilitychange',()=>{ if(MODE==='level'){ document.hidden?tickStop():tickStart(); } });
+window.addEventListener('pagehide',()=>{ if(MODE==='level')saveLive(); });
+function liveKey(){ return 'cp_conf_live'; }
+function saveLive(){
+  if(MODE!=='level'||!CUR)return;
+  try{ localStorage.setItem(liveKey(),JSON.stringify({file:CUR.file,lv:curLv,qids:ATT.map(q=>q.id),ans:ANS,el:elapsed})); }catch(e){}
+}
+function clearLive(){ try{localStorage.removeItem(liveKey());}catch(e){} }
+function getLive(){ try{return JSON.parse(localStorage.getItem(liveKey())||'null');}catch(e){return null;} }
 function sample(arr,n){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a.slice(0,n); }
 function startLevel(lv){
   if(!canEnter(lv))return;
   if(lv>1&&!cpPaid()){ pmShow(); return; }
   if(lv===1&&!FREE_L1&&!cpPaid()){ pmShow(); return; }
-  MODE='level'; curLv=lv; ATT=sample(CUR.pools[lv],CUR.pools[lv].length);
-  idx=0;score=0;weak={};ANS=[];beginQ();
+  MODE='level'; curLv=lv;
+  const live=getLive();
+  if(live&&live.file===CUR.file&&live.lv===lv&&live.qids&&live.ans&&live.ans.some(a=>a!=null)
+     &&confirm('You have an unfinished Level '+lv+' attempt ('+live.ans.filter(a=>a!=null).length+'/'+live.qids.length+' answered, '+fmtT(live.el||0)+' on the clock). Resume it?')){
+    const byId={}; CUR.pools[lv].forEach(q=>byId[q.id]=q);
+    ATT=live.qids.map(id=>byId[id]).filter(Boolean);
+    ANS=live.ans.slice(0,ATT.length); elapsed=live.el||0;
+    idx=Math.max(0,ANS.findIndex(a=>a==null)); if(idx===-1)idx=0;
+  } else {
+    ATT=sample(CUR.pools[lv],CUR.pools[lv].length);
+    ANS=[]; elapsed=0; idx=0;
+  }
+  score=0;weak={};tickStart();saveLive();beginQ();
 }
 function startDrill(i){
   if(!cpPaid()){ pmShow(); return; }
   const t=CUR.d.topics[i];
-  MODE='drill'; curLv=t.name;
+  MODE='drill'; curLv=t.name; tickStop(); elapsed=0;
   ATT=CUR.d.questions.filter(q=>!isBonus(q)&&q.topic===t.name);
   if(!ATT.length){ alert('No questions tagged for this topic.'); return; }
   idx=0;score=0;weak={};ANS=[];beginQ();
@@ -277,11 +302,14 @@ function startDrill(i){
 function startBonus(){
   if(!canEnter(4))return;
   if(!cpPaid()){ pmShow(); return; }
-  MODE='bonus'; curLv='Bonus'; ATT=sample(CUR.pools.b,Math.min(10,CUR.pools.b.length));
+  MODE='bonus'; curLv='Bonus'; tickStop(); elapsed=0; ATT=sample(CUR.pools.b,Math.min(10,CUR.pools.b.length));
   idx=0;score=0;weak={};ANS=[];beginQ();
 }
 function beginQ(){ show('quiz'); renderQ(); }
-function quitQuiz(){ openChapter(CUR.file); }
+function quitQuiz(){
+  if(MODE==='level'){ tickStop(); }
+  openChapter(CUR.file);
+}
 function whereTxt(){
   if(MODE==='level'){ const a=chProg(CUR.file)['l'+curLv].a; return CUR.m.name+' · Level '+curLv+' · Attempt '+Math.min(a+1,CAPS[curLv])+'/'+CAPS[curLv]; }
   if(MODE==='drill')return CUR.m.name+' · Drill: '+curLv;
@@ -291,6 +319,7 @@ function renderQ(){
   const q=ATT[idx]; answered=false;
   const test=MODE==='level';
   $('q-where').textContent=whereTxt();
+  $('q-timer').textContent=(MODE==='level')?('⏱ '+fmtT(elapsed)):'';
   $('q-count').textContent='Q '+(idx+1)+' of '+ATT.length+(test?' · answered '+ANS.filter(a=>a!=null).length+'/'+ATT.length:(MODE!=='drill'?' · score '+score:''));
   $('q-bar').style.width=((test?idx:idx)/ATT.length*100)+'%';
   $('q-text').innerHTML=q.question||q.q||q.text||'';
@@ -310,7 +339,7 @@ function renderQ(){
   tex($('q-text')); tex($('q-opts'));
 }
 function pickTest(i){
-  ANS[idx]=(ANS[idx]===i)?null:i;
+  ANS[idx]=(ANS[idx]===i)?null:i; saveLive();
   document.querySelectorAll('#q-opts .opt').forEach((el,j)=>el.classList.toggle('sel',ANS[idx]===j));
   $('q-count').textContent='Q '+(idx+1)+' of '+ATT.length+' · answered '+ANS.filter(a=>a!=null).length+'/'+ATT.length;
 }
@@ -318,6 +347,7 @@ function prevQ(){ if(idx>0){ idx--; renderQ(); } }
 function submitLevel(){
   const un=ATT.length-ANS.filter(a=>a!=null).length;
   if(un>0 && !confirm(un+' question'+(un>1?'s':'')+' unanswered. Submit anyway?')) return;
+  tickStop(); clearLive();
   score=0; weak={};
   ATT.forEach((q,i)=>{
     if(ANS[i]===q.correct_index) score++;
@@ -363,8 +393,10 @@ function finish(){
     $('r-emoji').textContent=pass?'🎉':(st.a>=4?'🚀':'💪');
     $('r-score').textContent=score+'/'+total;
     $('r-verdict').textContent=pass?'Level '+curLv+' cleared!':(st.a>=CAPS[curLv]?'Promoted to the next level':'Not cleared yet — attempt '+st.a+'/'+CAPS[curLv]+' used');
-    $('r-note').textContent=pass?(curLv<3?'Level '+(curLv+1)+' is now unlocked. Keep the streak going.':'All levels done — the Bonus round is unlocked. That is real-exam territory.')
-      :(st.a>=CAPS[curLv]?'You have used all '+CAPS[curLv]+' attempts, so the next level is open anyway — but the weak topics below are where marks are leaking. Drill them first.':'You needed '+need+'/'+total+' ('+Math.round(PASS[curLv]*100)+'%). Check the weak topics below, read the concept, drill, then retry.');
+    const perQ=elapsed&&total?Math.round(elapsed/total):0;
+    const pace=elapsed?(' Time: '+fmtT(elapsed)+' — about '+perQ+'s per question (JEE pace ≈ 100s).'):'';
+    $('r-note').textContent=(pass?(curLv<3?'Level '+(curLv+1)+' is now unlocked. Keep the streak going.':'All levels done — the Bonus round is unlocked. That is real-exam territory.')
+      :(st.a>=CAPS[curLv]?'You have used all '+CAPS[curLv]+' attempts, so the next level is open anyway — but the weak topics below are where marks are leaking. Drill them first.':'You needed '+need+'/'+total+' ('+Math.round(PASS[curLv]*100)+'%). Check the weak topics below, read the concept, drill, then retry.'))+pace;
     // full test-style review
     const review=ATT.map((q,i)=>{
       const ok=ANS[i]===q.correct_index, na=ANS[i]==null;
