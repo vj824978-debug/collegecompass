@@ -95,7 +95,7 @@ document.querySelectorAll('#mnav a').forEach(a=>{if(a.getAttribute('href')===p)a
     <p>Every JEE Main PYQ from 2019–2026, servable as full papers, chapter tests, and unlimited fresh mocks.</p>
     <div class="stats" id="stats">
       <span class="stat"><b>20,000+</b> PYQs</span>
-      <span class="stat"><b>4,000+</b> Non-PYQ Qs</span>
+      <span class="stat"><b>20,000+</b> Non-PYQs</span>
       <span class="stat"><b>130+</b> real papers</span>
       <span class="stat"><b>86</b> chapters</span>
       <span class="stat"><b>Free</b> forever</span>
@@ -136,7 +136,7 @@ fetch('data/index.json').then(r=>r.json()).then(d=>{
   const s=document.getElementById('stats');
   const pyqPapers=d.papers.filter(p=>p.kind==='pyq').length;
   s.innerHTML='<span class="stat"><b>20,000+</b> PYQs</span>'+
-    '<span class="stat"><b>4,000+</b> Non-PYQ Qs</span>'+
+    '<span class="stat"><b>20,000+</b> Non-PYQs</span>'+
     '<span class="stat"><b>'+pyqPapers+'</b> real papers</span>'+
     '<span class="stat"><b>'+d.counts.chapters+'</b> chapters</span>'+
     '<span class="stat"><b>Free</b> forever</span>';
