@@ -755,7 +755,7 @@ function rvImg(btn,i,which){
 init();
 </script>
 
-<!-- ===== CollegePIPE Premium ===== -->
+<!-- ===== CollegePIPE Premium v2 (sign in first, pay, auto-unlock) ===== -->
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 #pmodal{position:fixed;inset:0;background:rgba(10,16,28,.62);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
@@ -765,27 +765,37 @@ init();
 .pm-card h3{font-size:19px;color:#0d2347;margin-bottom:4px}
 .pm-price{font-size:15px;color:#667085;margin-bottom:14px}
 .pm-price b{color:#16a34a;font-size:22px}
+.pm-price s{color:#98a2b3;margin-left:4px}
 .pm-list{margin:0 0 16px;padding:0;list-style:none}
 .pm-list li{padding:7px 0 7px 26px;position:relative;font-size:13.5px;color:#101828;border-bottom:1px solid #f0f2f5}
 .pm-list li::before{content:"✓";position:absolute;left:2px;color:#16a34a;font-weight:800}
-.pm-pay{display:block;text-align:center;background:#f59e0b;color:#0d2347;font-weight:800;font-size:15px;padding:13px;border-radius:12px;text-decoration:none;margin-bottom:6px}
-.pm-note{font-size:11.5px;color:#98a2b3;text-align:center;margin-bottom:14px}
-.pm-div{display:flex;align-items:center;gap:10px;color:#98a2b3;font-size:12px;margin:10px 0}
-.pm-div::before,.pm-div::after{content:"";flex:1;height:1px;background:#e4e7ec}
+.pm-steps{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11.5px;font-weight:700;color:#98a2b3;margin:4px 0 12px}
+.pm-steps span{padding:4px 10px;border-radius:999px;background:#f2f4f7}
+.pm-steps span.on{background:#0d2347;color:#fff}
+.pm-steps span.ok{background:#e8f7ee;color:#16a34a}
+.pm-pay{display:block;text-align:center;background:#f59e0b;color:#0d2347;font-weight:800;font-size:15px;padding:13px;border-radius:12px;text-decoration:none;margin-bottom:6px;cursor:pointer}
+.pm-pay.ghost{background:#fff;border:1.5px solid #f59e0b;font-size:14px;padding:11px}
+.pm-who{text-align:center;font-size:13px;color:#344054;margin-bottom:10px}
+.pm-who a{color:#667085;text-decoration:underline;cursor:pointer;font-size:12px}
+.pm-note{font-size:11.5px;color:#98a2b3;text-align:center;margin-bottom:12px;line-height:1.5}
+.pm-sub{text-align:center;font-size:11.5px;color:#98a2b3;margin-top:8px}
+.pm-alt{text-align:center;font-size:11.5px;margin-top:12px}
+.pm-alt a{color:#667085}
 .pm-verify{display:flex;gap:8px}
-.pm-verify input{flex:1;height:42px;border:1.5px solid #e4e7ec;border-radius:10px;padding:0 12px;font-size:14px;outline:none}
+.pm-verify input{flex:1;height:42px;border:1.5px solid #e4e7ec;border-radius:10px;padding:0 12px;font-size:14px;outline:none;min-width:0}
 .pm-verify button{background:#0d2347;color:#fff;font-weight:700;font-size:13px;padding:0 16px;border-radius:10px;border:none;cursor:pointer}
-.pm-msg{font-size:12.5px;margin-top:8px;min-height:16px}
+.pm-msg{font-size:12.5px;margin-top:8px;min-height:16px;text-align:center}
 .pm-close{float:right;background:none;border:none;font-size:20px;color:#98a2b3;cursor:pointer}
+#pm-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#0d2347;color:#fff;font-weight:700;font-size:14px;padding:12px 20px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:300;max-width:92vw;text-align:center}
 </style>
 <div id="pmodal" class="hidden">
   <div class="pm-card">
     <button class="pm-close" onclick="pmHide()">✕</button>
     <span class="pm-badge">COLLEGEPIPE PREMIUM</span>
     <h3>Unlock all premium content</h3>
-    <div class="pm-price"><b>₹99</b> &nbsp;one-time · lifetime access</div>
+    <div class="pm-price"><b>₹99</b><s>₹999</s> &nbsp;one-time · lifetime access</div>
     <ul class="pm-list">
-      <li><b>LevelUp concept builder</b> — 11,000+ leveled questions with theory for every topic</li>
+      <li><b>LevelUp concept builder</b> — 11,000+ leveled questions, theory for every topic</li>
       <li><b>47 JEE Main full mocks</b> — fresh unseen questions, real CBT, instant results</li>
       <li><b>Rankers' Question Bank</b> — unseen, exam-grade JEE Advanced questions</li>
       <li><b>Syllabus &amp; chapter tests</b> in authentic Advanced pattern with partial marking</li>
@@ -793,14 +803,21 @@ init();
       <li>All solutions, analytics, mistake notebook &amp; bookmarks included</li>
       <li>Every future premium addition — no extra payment, ever</li>
     </ul>
-    <a class="pm-pay" href="https://pages.razorpay.com/pl_TVwLEAPGJ66fjT/view" target="_blank" rel="noopener">Pay ₹99 — Unlock Premium →</a>
-    <div class="pm-note">Secure payment via Razorpay · UPI / cards / netbanking</div>
-    <div class="pm-div">after paying, sign in to unlock</div>
-    <div id="pm-gbtn" style="display:flex;justify-content:center;margin:4px 0 2px"></div>
-    <div style="text-align:center;font-size:11.5px;color:#98a2b3;margin-top:6px">Sign in with the same Google account whose email you used at payment.<br><a href="#" onclick="document.getElementById('pm-manual').style.display='flex';return false" style="color:#667085">No Google account? Verify by email / mobile</a></div>
-    <div class="pm-verify" id="pm-manual" style="display:none;margin-top:10px">
-      <input id="pm-email" type="text" placeholder="Email or mobile used at payment">
-      <button onclick="pmVerify()">Verify</button>
+    <div class="pm-steps"><span id="pm-st1" class="on">1 · Sign in</span>›<span id="pm-st2">2 · Pay ₹99</span>›<span>3 · Unlocked</span></div>
+    <div id="pm-s1">
+      <div id="pm-gbtn" style="display:flex;justify-content:center;min-height:44px"></div>
+      <div class="pm-sub">Already paid? Sign in the same way — it unlocks instantly.</div>
+    </div>
+    <div id="pm-s2" style="display:none">
+      <div class="pm-who">Signed in as <b id="pm-who"></b> &nbsp;<a onclick="pmSwitch()">change</a></div>
+      <a class="pm-pay" href="#" onclick="return pmPay()">Pay ₹99 — Unlock Premium →</a>
+      <div class="pm-note">Secure payment via Razorpay · UPI / cards / netbanking<br>You'll come straight back here, unlocked — no second sign-in.</div>
+    </div>
+    <div class="pm-alt" id="pm-altlink"><a href="#" onclick="pmAlt();return false">No Google account? Pay &amp; verify with email / mobile</a></div>
+    <div id="pm-manual" style="display:none;margin-top:12px">
+      <a class="pm-pay ghost" href="#" onclick="return pmPayManual()">Pay ₹99 via Razorpay →</a>
+      <div class="pm-note">Already paid? Enter the email or mobile you used on the payment page:</div>
+      <div class="pm-verify"><input id="pm-email" type="text" placeholder="Email or mobile used at payment"><button onclick="pmVerify()">Verify</button></div>
     </div>
     <div class="pm-msg" id="pm-msg"></div>
   </div>
@@ -808,43 +825,118 @@ init();
 <script>
 const PREMIUM_API='https://script.google.com/macros/s/AKfycbzhrJNfN1HVKautQzCSfpjz6QI9mxTMlvWOn2L1q24Ervy6tc4bgczS8TaIltF51EKz/exec';
 const GOOGLE_CLIENT_ID='820315954425-5if3r5ea73q9m9nqrtegbt6ltnub4o3t.apps.googleusercontent.com';
+const RZP_LINK='https://pages.razorpay.com/pl_TVwLEAPGJ66fjT/view';
+const RZP_PREFILL=true; // adds ?email= to the payment page so the student's Gmail is pre-filled
+function cpPaid(){ try{return localStorage.getItem('cp_premium')==='1';}catch(e){return false;} }
+function pmLS(k,v){ try{ if(v===undefined)return localStorage.getItem(k); if(v===null)localStorage.removeItem(k); else localStorage.setItem(k,String(v)); }catch(e){ return null; } }
+function pmEl(id){ return document.getElementById(id); }
+function pmMsg(t,c){ const m=pmEl('pm-msg'); if(m){ m.style.color=c||'#667085'; m.textContent=t||''; } }
+/* remember which link (e.g. a mock card) opened the modal, so we can send the student back to it */
+let _pmHref=null;
+document.addEventListener('click',function(e){
+  const a=e.target.closest&&e.target.closest('a[href]');
+  if(!a||a.closest('#pmodal'))return;
+  const h=a.getAttribute('href')||'';
+  if(!h||h[0]==='#'||/^(javascript|mailto|tel):/i.test(h))return;
+  try{ if(new URL(a.href).origin===location.origin)_pmHref=a.href; }catch(err){}
+},true);
+function pmReturn(){
+  if(typeof pmReturnUrl==='function'){ try{ const u=pmReturnUrl(); if(u)return u; }catch(e){} }
+  return _pmHref||location.href;
+}
+async function pmApi(params){
+  const res=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(params)});
+  return res.json();
+}
+function pmUnlocked(email){
+  pmLS('cp_premium','1'); if(email)pmLS('cp_premium_email',email);
+  pmLS('cp_pm_pending',null);
+  const go=pmLS('cp_pm_return')||pmReturn(); pmLS('cp_pm_return',null);
+  return go;
+}
+function pmGo(go){ if(go&&go!==location.href)location.href=go; else location.reload(); }
+function pmState(n){
+  pmEl('pm-s1').style.display=n===1?'block':'none';
+  pmEl('pm-s2').style.display=n===2?'block':'none';
+  pmEl('pm-st1').className=n===1?'on':'ok';
+  pmEl('pm-st2').className=n===2?'on':'';
+  if(n===2){ pmEl('pm-who').textContent=pmLS('cp_pm_email')||''; }
+}
 let _gsiDone=false;
-function pmShow(){
-  document.getElementById('pmodal').classList.remove('hidden');
-  if(!_gsiDone && window.google && google.accounts){
+function pmInitGsi(tries){
+  if(_gsiDone)return;
+  if(window.google&&google.accounts&&google.accounts.id){
     _gsiDone=true;
     google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:onGoogleCred});
-    google.accounts.id.renderButton(document.getElementById('pm-gbtn'),
-      {theme:'filled_blue',size:'large',text:'signin_with',shape:'pill',width:280});
-  }
+    google.accounts.id.renderButton(pmEl('pm-gbtn'),{theme:'filled_blue',size:'large',text:'continue_with',shape:'pill',width:280});
+  } else if((tries||0)<40){ setTimeout(()=>pmInitGsi((tries||0)+1),250); }
+  else pmMsg('Google sign-in did not load. Check your connection, or use the email / mobile option below.','#dc2626');
 }
+function pmShow(){
+  pmEl('pmodal').classList.remove('hidden'); pmMsg('');
+  const em=pmLS('cp_pm_email');
+  if(em){ pmState(2); pmQuietCheck(em); } else { pmState(1); }
+  pmInitGsi(0);
+}
+function pmHide(){ pmEl('pmodal').classList.add('hidden'); _pmHref=null; }
+function pmSwitch(){ pmLS('cp_pm_email',null); pmState(1); pmMsg(''); }
+function pmAlt(){ pmEl('pm-manual').style.display='block'; pmEl('pm-altlink').style.display='none'; }
+function pmJwtEmail(tok){ try{ return JSON.parse(atob(tok.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))).email||''; }catch(e){ return ''; } }
 async function onGoogleCred(resp){
-  const msg=document.getElementById('pm-msg');
-  msg.style.color='#667085'; msg.textContent='Checking your account…';
+  pmMsg('Checking your account…');
   try{
-    const res=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:new URLSearchParams({action:'gverify',token:resp.credential})});
-    const d=await res.json();
-    if(d.paid){ localStorage.setItem('cp_premium','1'); localStorage.setItem('cp_premium_email',d.email||'');
-      msg.style.color='#16a34a'; msg.textContent='✓ Premium unlocked! Loading…'; setTimeout(()=>location.reload(),700); }
-    else{ msg.style.color='#dc2626'; msg.textContent='No payment found for '+(d.email||'this account')+'. If you paid with a different email, use the link above.'; }
-  }catch(e){ msg.style.color='#dc2626'; msg.textContent='Could not verify right now. Please retry.'; }
+    const d=await pmApi({action:'gverify',token:resp.credential});
+    const email=(d.email||pmJwtEmail(resp.credential)||'').toLowerCase();
+    if(d.paid){ pmMsg('✓ Premium unlocked! Loading…','#16a34a'); const go=pmUnlocked(email); setTimeout(()=>pmGo(go),700); return; }
+    if(!email){ pmMsg('Could not read your Google account. Please retry.','#dc2626'); return; }
+    pmLS('cp_pm_email',email); pmState(2); pmMsg('');
+  }catch(e){ pmMsg('Could not verify right now. Please retry.','#dc2626'); }
 }
-function pmHide(){ document.getElementById('pmodal').classList.add('hidden'); }
+async function pmQuietCheck(em){
+  try{ const d=await pmApi({action:'verify',email:em});
+    if(d.paid){ pmMsg('✓ Payment found — Premium unlocked! Loading…','#16a34a'); const go=pmUnlocked(em); setTimeout(()=>pmGo(go),700); }
+  }catch(e){}
+}
+function pmPay(){
+  const em=pmLS('cp_pm_email')||'';
+  pmLS('cp_pm_pending',Date.now()); pmLS('cp_pm_return',pmReturn());
+  location.href=RZP_LINK+(RZP_PREFILL&&em?('?email='+encodeURIComponent(em)):'');
+  return false;
+}
+function pmPayManual(){
+  pmLS('cp_pm_return',pmReturn());
+  location.href=RZP_LINK; return false;
+}
 async function pmVerify(){
-  const em=(document.getElementById('pm-email').value||'').trim().toLowerCase();
-  const msg=document.getElementById('pm-msg');
-  if(!em||(!em.includes('@')&&em.replace(/\D/g,'').length<10)){ msg.style.color='#dc2626'; msg.textContent='Enter the email or 10-digit mobile used while paying.'; return; }
-  msg.style.color='#667085'; msg.textContent='Checking…';
+  const em=(pmEl('pm-email').value||'').trim().toLowerCase();
+  if(!em||(!em.includes('@')&&em.replace(/\D/g,'').length<10)){ pmMsg('Enter the email or 10-digit mobile used while paying.','#dc2626'); return; }
+  pmMsg('Checking…');
   try{
-    const res=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:new URLSearchParams({action:'verify',email:em})});
-    const d=await res.json();
-    if(d.paid){ localStorage.setItem('cp_premium','1'); localStorage.setItem('cp_premium_email',em);
-      msg.style.color='#16a34a'; msg.textContent='✓ Premium unlocked! Loading…'; setTimeout(()=>location.reload(),700); }
-    else { msg.style.color='#dc2626'; msg.textContent='Payment not found for this email. If you just paid, wait a minute and retry — or contact us.'; }
-  }catch(e){ msg.style.color='#dc2626'; msg.textContent='Could not verify right now. Please try again.'; }
+    const d=await pmApi({action:'verify',email:em});
+    if(d.paid){ pmMsg('✓ Premium unlocked! Loading…','#16a34a'); const go=pmUnlocked(em); setTimeout(()=>pmGo(go),700); }
+    else pmMsg('Payment not found for this email / mobile. If you just paid, wait a minute and retry — or contact support.collegepipe@gmail.com.','#dc2626');
+  }catch(e){ pmMsg('Could not verify right now. Please try again.','#dc2626'); }
 }
+/* safety net: student paid but came back via Back button (or redirect not set) — detect and unlock quietly */
+(function pmPendingWatch(){
+  if(cpPaid())return;
+  const t=+pmLS('cp_pm_pending')||0, em=pmLS('cp_pm_email');
+  if(!t||!em)return;
+  if(Date.now()-t>6*3600*1000){ pmLS('cp_pm_pending',null); return; }
+  let n=0;
+  const poll=async()=>{
+    n++;
+    try{ const d=await pmApi({action:'verify',email:em});
+      if(d.paid){
+        pmUnlocked(em);
+        const box=document.createElement('div'); box.id='pm-toast'; box.textContent='🎉 Payment received — Premium unlocked!';
+        document.body.appendChild(box); setTimeout(()=>location.reload(),1400); return;
+      }
+    }catch(e){}
+    if(n<12)setTimeout(poll,5000);
+  };
+  setTimeout(poll,800);
+})();
 </script>
 
 </body>

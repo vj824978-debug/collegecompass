@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Unlocking Premium | CollegePIPE</title>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+:root{--navy:#0d2347;--pri:#f59e0b;--mut:#667085;--green:#16a34a;--red:#dc2626;--line:#e4e7ec}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;background:#f6f7fb;color:#101828;min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--navy);padding:12px 20px}
+.logo{font-weight:800;font-size:17px;color:#fff;text-decoration:none;display:inline-flex;align-items:center}
+.logo::before{content:"🎓";background:var(--pri);border-radius:9px;padding:3px 6px;font-size:15px;margin-right:8px}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.card{background:#fff;border-radius:18px;max-width:420px;width:100%;padding:32px 26px;text-align:center;box-shadow:0 10px 40px rgba(16,24,40,.08)}
+.big{font-size:46px;margin-bottom:8px}
+h1{font-size:21px;color:var(--navy);margin-bottom:6px}
+p{color:var(--mut);font-size:14px;line-height:1.6}
+.spin{width:34px;height:34px;border:4px solid #fde7bd;border-top-color:var(--pri);border-radius:50%;margin:18px auto 6px;animation:s 0.9s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+.steps{display:flex;justify-content:center;gap:6px;font-size:11.5px;font-weight:700;margin:16px 0 4px}
+.steps span{padding:4px 10px;border-radius:999px;background:#e8f7ee;color:var(--green)}
+.steps span.on{background:var(--navy);color:#fff}
+.btn{display:inline-block;margin-top:16px;background:var(--pri);color:var(--navy);font-weight:800;padding:12px 22px;border-radius:12px;text-decoration:none}
+#gbtn{display:flex;justify-content:center;margin-top:14px;min-height:44px}
+.small{font-size:12px;color:#98a2b3;margin-top:14px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<header><a class="logo" href="/tests/">CollegePIPE</a></header>
+<main>
+  <div class="card">
+    <div class="big" id="emoji">🎉</div>
+    <h1 id="title">Payment received!</h1>
+    <p id="text">Unlocking your Premium — this takes a few seconds.</p>
+    <div class="steps"><span>1 · Sign in ✓</span><span>2 · Paid ✓</span><span class="on" id="st3">3 · Unlocking…</span></div>
+    <div class="spin" id="spin"></div>
+    <div id="gwrap" class="hidden"><div id="gbtn"></div></div>
+    <a class="btn hidden" id="go" href="/tests/">Continue →</a>
+    <div class="small" id="foot"></div>
+  </div>
+</main>
+<script>
+const PREMIUM_API='https://script.google.com/macros/s/AKfycbzhrJNfN1HVKautQzCSfpjz6QI9mxTMlvWOn2L1q24Ervy6tc4bgczS8TaIltF51EKz/exec';
+const GOOGLE_CLIENT_ID='820315954425-5if3r5ea73q9m9nqrtegbt6ltnub4o3t.apps.googleusercontent.com';
+const $=id=>document.getElementById(id);
+function ls(k,v){ try{ if(v===undefined)return localStorage.getItem(k); if(v===null)localStorage.removeItem(k); else localStorage.setItem(k,String(v)); }catch(e){ return null; } }
+async function api(p){ const r=await fetch(PREMIUM_API,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(p)}); return r.json(); }
+const qs=new URLSearchParams(location.search);
+const payId=qs.get('razorpay_payment_id')||qs.get('payment_id')||'';
+function safeReturn(){
+  const r=ls('cp_pm_return');
+  try{ if(r&&new URL(r,location.href).origin===location.origin)return r; }catch(e){}
+  return '/tests/';
+}
+function done(email){
+  ls('cp_premium','1'); if(email)ls('cp_premium_email',email);
+  ls('cp_pm_pending',null);
+  const go=safeReturn(); ls('cp_pm_return',null);
+  $('emoji').textContent='✅'; $('title').textContent='Premium unlocked!';
+  $('text').textContent='Taking you back to where you were…';
+  $('st3').textContent='3 · Unlocked ✓'; $('st3').className='';
+  $('spin').classList.add('hidden'); $('gwrap').classList.add('hidden');
+  $('go').href=go; $('go').classList.remove('hidden');
+  setTimeout(()=>{ location.href=go; },1200);
+}
+function slow(){
+  $('spin').classList.add('hidden');
+  $('emoji').textContent='⏳'; $('title').textContent='Almost there';
+  $('text').innerHTML='Your payment is confirmed by Razorpay, but our records haven\'t updated yet. Give it a minute and tap <b>Check again</b> — or sign in with the Gmail you paid with.';
+  $('go').textContent='Check again'; $('go').href='#'; $('go').classList.remove('hidden');
+  $('go').onclick=e=>{ e.preventDefault(); $('go').classList.add('hidden'); $('spin').classList.remove('hidden'); start(); };
+  showGoogle();
+  $('foot').innerHTML='Still stuck? Email <b>support.collegepipe@gmail.com</b>'+(payId?' with payment ID <b>'+payId+'</b>':' with your Razorpay payment ID')+' — we\'ll unlock it manually.';
+}
+let pollEmail=null, polls=0, timer=null;
+async function poll(){
+  polls++;
+  try{ const d=await api({action:'verify',email:pollEmail}); if(d.paid){ done(pollEmail); return; } }catch(e){}
+  if(polls<30) timer=setTimeout(poll,3000); else slow();
+}
+function start(){ if(!pollEmail){ needSignIn(); return; } polls=0; clearTimeout(timer); poll(); }
+let gsi=false;
+function showGoogle(t){
+  $('gwrap').classList.remove('hidden');
+  if(gsi)return;
+  if(window.google&&google.accounts&&google.accounts.id){
+    gsi=true;
+    google.accounts.id.initialize({client_id:GOOGLE_CLIENT_ID,callback:onCred});
+    google.accounts.id.renderButton($('gbtn'),{theme:'filled_blue',size:'large',text:'continue_with',shape:'pill',width:280});
+  } else if((t||0)<40) setTimeout(()=>showGoogle((t||0)+1),250);
+}
+function needSignIn(){
+  $('spin').classList.add('hidden');
+  $('title').textContent='Payment received!';
+  $('text').textContent='One last step: continue with the Gmail you used on the payment page to unlock Premium on this device.';
+  $('st3').textContent='3 · Sign in to unlock';
+  showGoogle(0);
+}
+async function onCred(resp){
+  $('text').textContent='Checking your account…'; $('spin').classList.remove('hidden');
+  try{
+    const d=await api({action:'gverify',token:resp.credential});
+    let em=(d.email||'').toLowerCase();
+    if(!em){ try{ em=(JSON.parse(atob(resp.credential.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))).email||'').toLowerCase(); }catch(e){} }
+    if(d.paid){ done(em); return; }
+    if(em){ ls('cp_pm_email',em); pollEmail=em; $('gwrap').classList.add('hidden'); $('text').textContent='Waiting for your payment to register… ('+em+')'; start(); }
+  }catch(e){ $('text').textContent='Could not verify right now. Please retry.'; $('spin').classList.add('hidden'); }
+}
+// boot
+if(ls('cp_premium')==='1'){ done(ls('cp_premium_email')); }
+else { pollEmail=ls('cp_pm_email'); start(); }
+</script>
+</body>
+</html>
