@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD41LV501H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZD41LV501H');
+  function cpEvt(n,p){ try{ gtag('event',n,p||{}); }catch(e){} }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>Unlocking Premium | CollegePIPE</title>
@@ -57,7 +66,7 @@ function safeReturn(){
   return '/tests/';
 }
 function done(email){
-  ls('cp_premium','1'); if(email)ls('cp_premium_email',email);
+  ls('cp_premium','1'); if(email)ls('cp_premium_email',email); cpEvt('premium_unlocked',{page:'paid',transport_type:'beacon'});
   ls('cp_pm_pending',null);
   const go=safeReturn(); ls('cp_pm_return',null);
   $('emoji').textContent='✅'; $('title').textContent='Premium unlocked!';
@@ -111,6 +120,7 @@ async function onCred(resp){
   }catch(e){ $('text').textContent='Could not verify right now. Please retry.'; $('spin').classList.add('hidden'); }
 }
 // boot
+cpEvt('payment_return',{has_payment_id:!!payId});
 if(ls('cp_premium')==='1'){ done(ls('cp_premium_email')); }
 else { pollEmail=ls('cp_pm_email'); start(); }
 </script>

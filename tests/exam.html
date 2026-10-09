@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD41LV501H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZD41LV501H');
+  function cpEvt(n,p){ try{ gtag('event',n,p||{}); }catch(e){} }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>CBT Exam — CollegePipe</title>
@@ -849,7 +858,7 @@ async function pmApi(params){
   return res.json();
 }
 function pmUnlocked(email){
-  pmLS('cp_premium','1'); if(email)pmLS('cp_premium_email',email);
+  pmLS('cp_premium','1'); if(email)pmLS('cp_premium_email',email); cpEvt('premium_unlocked',{page:location.pathname,transport_type:'beacon'});
   pmLS('cp_pm_pending',null);
   const go=pmLS('cp_pm_return')||pmReturn(); pmLS('cp_pm_return',null);
   return go;
@@ -873,7 +882,7 @@ function pmInitGsi(tries){
   else pmMsg('Google sign-in did not load. Check your connection, or use the email / mobile option below.','#dc2626');
 }
 function pmShow(){
-  pmEl('pmodal').classList.remove('hidden'); pmMsg('');
+  pmEl('pmodal').classList.remove('hidden'); pmMsg(''); cpEvt('premium_modal_open',{page:location.pathname});
   const em=pmLS('cp_pm_email');
   if(em){ pmState(2); pmQuietCheck(em); } else { pmState(1); }
   pmInitGsi(0);
@@ -889,7 +898,7 @@ async function onGoogleCred(resp){
     const email=(d.email||pmJwtEmail(resp.credential)||'').toLowerCase();
     if(d.paid){ pmMsg('✓ Premium unlocked! Loading…','#16a34a'); const go=pmUnlocked(email); setTimeout(()=>pmGo(go),700); return; }
     if(!email){ pmMsg('Could not read your Google account. Please retry.','#dc2626'); return; }
-    pmLS('cp_pm_email',email); pmState(2); pmMsg('');
+    pmLS('cp_pm_email',email); pmState(2); pmMsg(''); cpEvt('premium_signin',{already_paid:false});
   }catch(e){ pmMsg('Could not verify right now. Please retry.','#dc2626'); }
 }
 async function pmQuietCheck(em){
@@ -899,7 +908,7 @@ async function pmQuietCheck(em){
 }
 function pmPay(){
   const em=pmLS('cp_pm_email')||'';
-  pmLS('cp_pm_pending',Date.now()); pmLS('cp_pm_return',pmReturn());
+  pmLS('cp_pm_pending',Date.now()); pmLS('cp_pm_return',pmReturn()); cpEvt('begin_checkout',{currency:'INR',value:99,transport_type:'beacon'});
   location.href=RZP_LINK+(RZP_PREFILL&&em?('?email='+encodeURIComponent(em)):'');
   return false;
 }
