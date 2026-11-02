@@ -853,5 +853,6 @@ const RANK_LABELS={open:'OPEN',ews:'EWS',obc:'OBC-NCL',sc:'SC',st:'ST'};
 function useRank(cat){if(!window._ranks)return;const r=window._ranks[cat];if(!r)return;document.getElementById('f_jmrank_p').value=r;document.getElementById('selRankVal').textContent=r.toLocaleString('en-IN');document.getElementById('selRankCat').textContent='('+RANK_LABELS[cat]+')';document.getElementById('selRankBadge').style.display='flex';}
 function clearRank(){document.getElementById('f_jmrank_p').value='0';document.getElementById('selRankBadge').style.display='none';}
 </script>
+<script src="/promo.js" defer></script>
 </body>
 </html>

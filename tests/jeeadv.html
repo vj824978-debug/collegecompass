@@ -746,6 +746,7 @@ function renderResult(R){
        }).join('')+
      '</div><div id="rvlist"></div></div>';
   $('resultscr').classList.remove('hidden');
+  if(window.cpUpsell)cpUpsell($('resultscr'),{type:'ja',per:R.per,total:R.total,max:P.max_marks});
   window._R=R;window._rvFilter='all';window._rvCur=null;
   renderRvDetail(null);window.scrollTo(0,0);
 }
@@ -999,6 +1000,7 @@ async function pmVerify(){
     else pmMsg('Payment not found for this email / mobile. If you just paid, wait a minute and retry — or contact support.collegepipe@gmail.com.','#dc2626');
   }catch(e){ pmMsg('Could not verify right now. Please try again.','#dc2626'); }
 }
+if(/[?&]premium=1/.test(location.search)&&!cpPaid())setTimeout(function(){pmShow();},300);
 /* safety net: student paid but came back via Back button (or redirect not set) — detect and unlock quietly */
 (function pmPendingWatch(){
   if(cpPaid())return;
@@ -1021,5 +1023,6 @@ async function pmVerify(){
 })();
 </script>
 
+<script src="/promo.js" defer></script>
 </body>
 </html>
