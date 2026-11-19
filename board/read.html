@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD41LV501H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZD41LV501H');
+  function cpEvt(n,p){ try{ gtag('event',n,p||{}); }catch(e){} }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBSE Board PYQs | CollegePIPE</title>
+<meta name="robots" content="noindex">
+<script src="data.js"></script>
+<style>
+:root{--navy:#0d2347;--pri:#f59e0b;--ink:#101828;--mut:#667085;--line:#e4e7ec;--bg:#e9edf3}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+#hdr{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.back{flex:none;font-size:13px;font-weight:700;color:#b9c4d8;background:rgba(255,255,255,.1);border-radius:9px;padding:7px 11px;white-space:nowrap}
+.back:hover{color:#fff}
+.ttl{flex:1;min-width:0}
+.ttl b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ttl span{font-size:12px;color:#b9c4d8}
+.pos{flex:none;font-size:12px;color:#b9c4d8;font-weight:700}
+main{max-width:860px;margin:0 auto;padding:16px 10px 40px}
+.pg{position:relative;width:100%;background:#fff center/100% 100% no-repeat;border-radius:6px;box-shadow:0 1px 4px rgba(16,24,40,.12);margin-bottom:12px;overflow:hidden}
+.pg::after{content:"";position:absolute;inset:0}           /* shield: nothing to long-press or drag */
+.pg .ld{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#98a2b3;font-size:13px}
+.pg.ok .ld{display:none}
+.gate{background:#fff;border:2px dashed #f3c46b;border-radius:14px;padding:22px 18px;text-align:center;margin:6px 0 14px}
+.gate h3{font-size:18px;color:var(--navy)}
+.gate p{font-size:13.5px;color:var(--mut);margin:6px 0 14px;line-height:1.55}
+.gate button{background:var(--pri);color:var(--navy);font-weight:800;font-size:15px;padding:12px 22px;border-radius:12px}
+.anshd{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 0 12px}
+.anshd b{font-size:15px;color:var(--navy)}
+.anshd button{font-size:12.5px;font-weight:700;color:var(--mut);background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 11px}
+.nav2{display:flex;gap:10px;margin-top:18px}
+.nav2 a{flex:1;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13px;color:var(--mut);min-width:0}
+.nav2 a b{display:block;color:var(--ink);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.nav2 a.nx{text-align:right}
+.nav2 a:hover{border-color:#f3c46b}
+.err{background:#fff;border-radius:14px;padding:30px;text-align:center;color:var(--mut)}
+@media print{ body *{display:none!important} body::before{content:"Printing is disabled. Read this chapter free at collegepipe.in/board";display:block;font:16px sans-serif;padding:40px} }
+@media(max-width:640px){#hdr{padding:9px 10px;gap:8px}.back{padding:6px 9px;font-size:12px}.ttl b{font-size:14px}main{padding:10px 6px 30px}.pg{margin-bottom:8px;border-radius:4px}}
+</style>
+</head>
+<body>
+<header id="hdr">
+  <a class="back" id="back" href="./">← Chapters</a>
+  <div class="ttl"><b id="t1">Loading…</b><span id="t2"></span></div>
+  <span class="pos" id="pos"></span>
+</header>
+<main id="main"></main>
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const qs=new URLSearchParams(location.search), bk=qs.get('b')||'', ci=parseInt(qs.get('c'),10);
+  const book=(window.BOARD||[]).find(b=>(b.cls+'-'+b.key)===bk), ch=book&&book.chapters[ci-1];
+  if(!ch){ $('main').innerHTML='<div class="err">Chapter not found. <a href="./" style="color:#b45309;font-weight:700">Go to all chapters →</a></div>'; $('t1').textContent='CBSE Board PYQs'; return; }
+  document.title=ch.name+' — Class '+book.cls+' '+book.title+' CBSE PYQs | CollegePIPE';
+  $('t1').textContent=ch.name; $('t2').textContent='Class '+book.cls+' · '+book.title+' · '+ch.q+' questions';
+  $('back').href='./#class'+book.cls+'-'+book.key;
+  try{ localStorage.setItem('cp_board',JSON.stringify({cls:book.cls,subj:book.key})); }catch(e){}
+  const qPages=ch.ans-1, aPages=ch.pages-qPages;
+  const page=n=>'<div class="pg" data-n="'+n+'" style="aspect-ratio:1/'+book.ar+'"><div class="ld">Loading page…</div></div>';
+  let h='';
+  for(let n=1;n<=qPages;n++)h+=page(n);
+  h+='<div id="ansWrap"><div class="gate"><h3>✍️ Answer key — '+aPages+' page'+(aPages>1?'s':'')+'</h3><p>Try the questions first, then check your answers.</p><button id="showAns">Show answers</button></div></div>';
+  const prev=book.chapters[ci-2], next=book.chapters[ci];
+  h+='<div class="nav2">'+(prev?'<a href="?b='+bk+'&c='+(ci-1)+'">← Previous<b>'+esc(prev.name)+'</b></a>':'<span style="flex:1"></span>')+
+     (next?'<a class="nx" href="?b='+bk+'&c='+(ci+1)+'">Next chapter →<b>'+esc(next.name)+'</b></a>':'<a class="nx" href="./#class'+book.cls+'-'+book.key+'">All chapters →<b>'+esc(book.title)+'</b></a>')+'</div>';
+  $('main').innerHTML=h;
+  // lazy-load pages as CSS backgrounds (no <img> to long-press, save or drag)
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting)return; const el=e.target; io.unobserve(el);
+    const src=ch.dir+'/'+el.dataset.n+'.webp', im=new Image();
+    im.onload=()=>{ el.style.backgroundImage='url("'+src+'")'; el.classList.add('ok'); };
+    im.onerror=()=>{ el.querySelector('.ld').textContent='Could not load this page — check your connection and refresh.'; };
+    im.src=src; }),{rootMargin:'900px 0px'});
+  const watch=()=>document.querySelectorAll('.pg:not([data-w])').forEach(el=>{ el.dataset.w=1; io.observe(el); });
+  watch();
+  $('showAns').onclick=function(){
+    let a='<div class="anshd"><b>✍️ Answer key</b><button id="hideAns">Hide answers</button></div>';
+    for(let n=ch.ans;n<=ch.pages;n++)a+=page(n);
+    $('ansWrap').innerHTML=a; watch();
+    $('hideAns').onclick=()=>location.reload();
+    cpEvt('board_show_answers',{cls:book.cls,subject:book.key,chapter:ch.name});
+  };
+  // page counter
+  addEventListener('scroll',()=>{ const ps=[...document.querySelectorAll('.pg')]; let k=0; ps.forEach((p,i)=>{ if(p.getBoundingClientRect().top<innerHeight*0.5)k=i+1; }); $('pos').textContent=k?('Page '+k+'/'+ps.length):''; },{passive:true});
+  // deterrents: no right-click / drag / save / print shortcuts
+  document.addEventListener('contextmenu',e=>e.preventDefault());
+  document.addEventListener('dragstart',e=>e.preventDefault());
+  document.addEventListener('keydown',e=>{ const k=(e.key||'').toLowerCase(); if((e.ctrlKey||e.metaKey)&&(k==='s'||k==='p'||k==='u')){ e.preventDefault(); } });
+  cpEvt('board_read',{cls:book.cls,subject:book.key,chapter:ch.name});
+})();
+</script>
+<script src="/promo.js" defer></script>
+</body>
+</html>

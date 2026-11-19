@@ -89,6 +89,9 @@ button.exam-btn { font-family: inherit; cursor: pointer; text-align: left; width
 .exam-neet:hover { background: linear-gradient(135deg, rgba(244,63,94,0.32), rgba(190,18,60,0.18)); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(244,63,94,0.30); }
 .exam-icon-wrap { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-head); font-size: 12px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
 .exam-jee .exam-icon-wrap { background: linear-gradient(135deg, #3b74e8, #1a3a8a); box-shadow: 0 6px 18px rgba(59,116,232,0.35), inset 0 1px 0 rgba(255,255,255,0.25); }
+.exam-board { background: linear-gradient(135deg, rgba(16,185,129,0.20), rgba(4,120,87,0.10)); --edge: linear-gradient(135deg, rgba(52,211,153,0.75), rgba(4,120,87,0.25)); }
+.exam-board:hover { background: linear-gradient(135deg, rgba(16,185,129,0.34), rgba(4,120,87,0.18)); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(16,185,129,0.30); }
+.exam-board .exam-icon-wrap { background: linear-gradient(135deg, #10b981, #047857); box-shadow: 0 6px 18px rgba(16,185,129,0.35), inset 0 1px 0 rgba(255,255,255,0.25); font-size: 11px; }
 .exam-neet .exam-icon-wrap { background: linear-gradient(135deg, #f43f5e, #9f1239); box-shadow: 0 6px 18px rgba(244,63,94,0.35), inset 0 1px 0 rgba(255,255,255,0.25); }
 .exam-text { flex: 1; min-width: 0; }
 .exam-name { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #fff; line-height: 1.2; }
@@ -356,6 +359,8 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
   </a>
   <div class="nav-links">
     <a href="/tests/" class="nav-link">🖥️ Mock Tests</a>
+    <a href="/board/" class="nav-link">📘 Board PYQs</a>
+    <template id="hidden-nav-predictors"><!-- college predictors hidden for now; move back out of <template> to restore -->
     <div class="nav-drop">
       <a href="jee-predictor.html" class="nav-link">Engineering ▾</a>
       <div class="nav-drop-menu">
@@ -372,6 +377,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
         <a href="neet-predictor.html">NEET UG Predictor</a>
       </div>
     </div>
+    </template>
     <a href="/tests/" class="nav-cta">Start a Mock Test →</a>
   </div>
 </nav>
@@ -396,13 +402,21 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
             <div class="exam-sub">JEE Main PYQs 2020–26 · Real exam interface · Free</div>
           </div>
         </a>
+        <a href="/board/" class="exam-btn exam-board">
+          <div class="exam-icon-wrap">CBSE</div>
+          <div class="exam-text">
+            <div class="exam-name">CBSE Board PYQs 10th &amp; 12th <span class="arrow">→</span></div>
+            <div class="exam-sub">Subject-wise · Chapter-wise · With answers · Free</div>
+          </div>
+        </a>
+      </div>
+      <template id="hidden-hero-predictors"><!-- college predictor buttons hidden for now -->
         <button type="button" class="exam-btn exam-jee" onclick="togglePicker('engg')">
           <div class="exam-icon-wrap">ENGG</div>
           <div class="exam-text">
             <div class="exam-name">Engineering Predictor <span class="arrow" id="arr-engg">▾</span></div>
             <div class="exam-sub">JEE · State CETs · Private Colleges</div>
-          </div>
-        </button>
+            </button>
         <button type="button" class="exam-btn exam-neet" onclick="togglePicker('neet')">
           <div class="exam-icon-wrap">NEET</div>
           <div class="exam-text">
@@ -436,6 +450,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
         });
       }
       </script>
+      </template>
       <div class="hero-actions">
   <a href="/tests/" class="btn-hero-primary">🖥️ Take a Free Mock Test</a>
   <a href="#features" class="btn-hero-secondary" style="font-size:13px;padding:10px 20px;">See How It Works ↓</a>
@@ -451,6 +466,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
         <div class="stat-pill"><div class="stat-num" style="color:#6ee7b7;">Free</div><div class="stat-label">Sample Report</div></div>
       </div>
 
+      <template id="hidden-also-predict">
       <!-- QUICK PREDICT PILLS -->
       <div class="hero-also">
         <div class="hero-also-divider"></div>
@@ -501,6 +517,7 @@ footer { background: #070f1e; padding: 32px 24px; text-align: center; font-size:
           <span class="pill-dot"></span>
         </a>
       </div>
+      </template>
     </div>
   </div>
 </section>
