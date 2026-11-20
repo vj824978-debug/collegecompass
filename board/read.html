@@ -86,6 +86,9 @@ main{max-width:860px;margin:0 auto;padding:16px 10px 40px}
     im.src=src; }),{rootMargin:'900px 0px'});
   const watch=()=>document.querySelectorAll('.pg:not([data-w])').forEach(el=>{ el.dataset.w=1; io.observe(el); });
   watch();
+  window._jump=(function(){ const m=(location.hash||'').match(/^#p(\d+)$/); if(!m)return; const n=+m[1]; let el=document.querySelector('.pg[data-n="'+n+'"]');
+    if(!el&&n>=ch.ans){ $('showAns').click(); el=document.querySelector('.pg[data-n="'+n+'"]'); }
+    if(el) setTimeout(()=>el.scrollIntoView({block:'start'}),60); });
   $('showAns').onclick=function(){
     let a='<div class="anshd"><b>✍️ Answer key</b><button id="hideAns">Hide answers</button></div>';
     for(let n=ch.ans;n<=ch.pages;n++)a+=page(n);
@@ -93,6 +96,7 @@ main{max-width:860px;margin:0 auto;padding:16px 10px 40px}
     $('hideAns').onclick=()=>location.reload();
     cpEvt('board_show_answers',{cls:book.cls,subject:book.key,chapter:ch.name});
   };
+  window._jump();
   // page counter
   addEventListener('scroll',()=>{ const ps=[...document.querySelectorAll('.pg')]; let k=0; ps.forEach((p,i)=>{ if(p.getBoundingClientRect().top<innerHeight*0.5)k=i+1; }); $('pos').textContent=k?('Page '+k+'/'+ps.length):''; },{passive:true});
   // deterrents: no right-click / drag / save / print shortcuts
